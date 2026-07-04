@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.7 - V03 Candidate Selection and Strategy Specification
+AlphaPilot V13.4.8 - Trend Pullback 1H V03 Strategy Smoke Backtest
 ```
 
 ## Positioning
@@ -512,9 +512,59 @@ download data, does not run backtests, does not enter Dry-run, does not use API
 keys, does not call Trade API or Withdraw API, does not read accounts, does not
 create orders, and does not auto trade.
 
+## V13.4.8 Trend Pullback 1H Smoke Backtest
+
+V13.4.8 implements the V13.4.7 selected V03A+D direction as a real Freqtrade
+strategy and runs a BTC/ETH/SOL smoke backtest.
+
+中文说明：
+
+```text
+V13.4.8 实现 AlphaPilot Trend Pullback 1H V0.1，并完成 BTC / ETH / SOL 真实 Freqtrade 冒烟回测。
+本版本仍然不进入 Dry-run，不实盘，不接 API Key，不自动交易。
+```
+
+Strategy:
+
+```text
+strategyClass = AlphaPilotTrendPullback1HV01
+strategyId = alpha_trend_pullback_1h_v01
+strategyName = AlphaPilot Trend Pullback 1H V0.1
+timeframe = 1h
+can_short = false
+stoploss = -2.5%
+minimal_roi = +5%
+dryRunApproved = false
+```
+
+Smoke result:
+
+```text
+pairs = BTC/USDT:USDT, ETH/USDT:USDT, SOL/USDT:USDT
+timerange = 20260401-
+isMock = false
+tradeCount = 61
+totalReturnPct = 6.6227
+maxDrawdownPct = 9.8727
+winRate = 47.541
+profitFactor = 1.1933
+```
+
+Outputs:
+
+```text
+user_data/strategies/AlphaPilotTrendPullback1HV01.py
+reports/v13_4_8_trend_pullback_1h_smoke_report.json
+reports/v13_4_8_trend_pullback_1h_smoke_summary.md
+docs/V13.4.8-trend-pullback-1h-smoke-backtest.md
+docs/trend-pullback-1h-v01-implementation.md
+```
+
+V13.4.8 smoke success does not approve Dry-run. It is a research checkpoint only.
+
 ## Next Versions
 
-- V13.4.8: implement Trend Pullback 1H V03 strategy and smoke backtest; still no Dry-run.
+- V13.4.9: run Trend Pullback 1H result diagnosis or expand validation to Top30, depending on the research decision.
 - V13.5: consider Dry-run preparation only after V03 passes stronger risk-adjusted validation.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.

@@ -21,6 +21,23 @@ DEFAULT_RESULT_DIR = Path("user_data/backtest_results")
 DEFAULT_SAMPLE_OUTPUT = Path("reports/sample_backtest_report.json")
 DEFAULT_LATEST_OUTPUT = Path("reports/latest_backtest_report.json")
 DEFAULT_SMOKE_OUTPUT = Path("reports/smoke_backtest_report.json")
+V13_4_8_REPORT_OUTPUT = Path("reports/v13_4_8_trend_pullback_1h_smoke_report.json")
+V13_4_8_SUMMARY_OUTPUT = Path("reports/v13_4_8_trend_pullback_1h_smoke_summary.md")
+
+STRATEGY_METADATA = {
+    "AlphaPilotVolumeReboundV01": {
+        "strategyId": "alpha_volume_rebound_v01",
+        "strategyName": "AlphaPilot Volume Rebound V0.1",
+        "strategyVersion": "0.1-v13.3",
+        "timeframe": "15m",
+    },
+    "AlphaPilotTrendPullback1HV01": {
+        "strategyId": "alpha_trend_pullback_1h_v01",
+        "strategyName": "AlphaPilot Trend Pullback 1H V0.1",
+        "strategyVersion": "0.1-v13.4.8",
+        "timeframe": "1h",
+    },
+}
 
 SKIP_REASONS = [
     "btc_crash_filter",
@@ -83,18 +100,16 @@ def _pick_number(source: dict[str, Any], names: list[str], default: float | None
     return default
 
 
-def _select_strategy_payload(payload: dict[str, Any] | list[Any]) -> dict[str, Any]:
+def _select_strategy_payload(payload: dict[str, Any] | list[Any]) -> tuple[str | None, dict[str, Any]]:
     if isinstance(payload, list):
-        return payload[0] if payload and isinstance(payload[0], dict) else {}
+        return None, payload[0] if payload and isinstance(payload[0], dict) else {}
 
     strategy = payload.get("strategy")
     if isinstance(strategy, dict):
-        if "AlphaPilotVolumeReboundV01" in strategy and isinstance(strategy["AlphaPilotVolumeReboundV01"], dict):
-            return strategy["AlphaPilotVolumeReboundV01"]
-        for value in strategy.values():
+        for strategy_name, value in strategy.items():
             if isinstance(value, dict):
-                return value
-    return payload
+                return str(strategy_name), value
+    return None, payload
 
 
 def _normalize_pct(value: float | None, source_name: str) -> float | None:
@@ -191,6 +206,7 @@ def _find_latest_freqtrade_result() -> Path | None:
 def build_sample_report() -> AlphaPilotBacktestReport:
     return AlphaPilotBacktestReport(
         strategyId="alpha_volume_rebound_v01",
+        strategyName="AlphaPilot Volume Rebound V0.1",
         strategyVersion="0.1-v13.3",
         market="OKX USDT swap",
         timeframe="15m",
@@ -236,7 +252,16 @@ def build_sample_report() -> AlphaPilotBacktestReport:
 
 def build_report_from_freqtrade_result(path: Path) -> AlphaPilotBacktestReport:
     payload = _read_freqtrade_result_payload(path)
-    source = _select_strategy_payload(payload)
+    strategy_class, source = _select_strategy_payload(payload)
+    metadata = STRATEGY_METADATA.get(
+        strategy_class or "",
+        {
+            "strategyId": str(source.get("strategyId", "unknown_strategy")),
+            "strategyName": str(strategy_class or source.get("strategyName", "Unknown Strategy")),
+            "strategyVersion": str(source.get("strategyVersion", "unknown")),
+            "timeframe": str(source.get("timeframe", "unknown")),
+        },
+    )
 
     pair_performance = source.get("results_per_pair", [])
     if not isinstance(pair_performance, list):
@@ -256,17 +281,20 @@ def build_report_from_freqtrade_result(path: Path) -> AlphaPilotBacktestReport:
         timerange = f"{timerange}{separator}{source.get('backtest_end')}"
 
     return AlphaPilotBacktestReport(
-        strategyId="alpha_volume_rebound_v01",
-        strategyVersion="0.1-v13.3",
+        strategyId=metadata["strategyId"],
+        strategyName=metadata["strategyName"],
+        strategyVersion=metadata["strategyVersion"],
         market="OKX USDT swap",
-        timeframe="15m",
-        universe=get_top30_usdt_swap_pairs(),
+        timeframe=metadata["timeframe"],
+        universe=_extract_pairs(source),
         timerange=timerange,
         config={
             "sourceResult": str(path),
             "feeRateOneWay": 0.0005,
             "slippageRateOneWay": 0.0005,
             "slippageModel": "planned, not yet applied by engine",
+            "dryRunApproved": False,
+            "liveTradingApproved": False,
         },
         metrics=_build_metrics(source),
         pairPerformance=pair_performance,
@@ -291,6 +319,86 @@ def build_report_from_freqtrade_result(path: Path) -> AlphaPilotBacktestReport:
     )
 
 
+def _extract_pairs(source: dict[str, Any]) -> list[str]:
+    pairs = source.get("backtest_pairs")
+    if isinstance(pairs, list) and pairs:
+        return [str(pair) for pair in pairs]
+
+    pair_performance = source.get("results_per_pair", [])
+    if isinstance(pair_performance, list):
+        extracted = [
+            str(item.get("key") or item.get("pair"))
+            for item in pair_performance
+            if isinstance(item, dict) and (item.get("key") or item.get("pair"))
+        ]
+        if extracted:
+            return extracted
+    return get_top30_usdt_swap_pairs()
+
+
+def _format_metric(value: Any, suffix: str = "") -> str:
+    if value is None:
+        return "null"
+    if isinstance(value, float):
+        return f"{value:.4f}{suffix}"
+    return f"{value}{suffix}"
+
+
+def _write_v13_4_8_outputs(report: AlphaPilotBacktestReport) -> None:
+    if report.strategyId != "alpha_trend_pullback_1h_v01" or report.isMock:
+        return
+
+    payload = report.to_dict()
+    payload["dryRunApproved"] = False
+    payload["qualityGate"] = {
+        "status": "smoke_backtest_only",
+        "dryRunApproved": False,
+        "message": "V13.4.8 smoke success does not approve Dry-run.",
+    }
+    V13_4_8_REPORT_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    V13_4_8_REPORT_OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    metrics = report.metrics
+    summary = "\n".join(
+        [
+            "# AlphaPilot V13.4.8 Trend Pullback 1H Smoke Backtest",
+            "",
+            "## Status",
+            "",
+            "- Strategy: AlphaPilot Trend Pullback 1H V0.1",
+            "- strategyId: alpha_trend_pullback_1h_v01",
+            "- isMock: false",
+            "- dryRunApproved: false",
+            "- Scope: BTC/USDT:USDT, ETH/USDT:USDT, SOL/USDT:USDT",
+            "- Timeframe: 1h",
+            "- Timerange: 20260401-",
+            "",
+            "This report is research-only. It is not Dry-run approval and not live trading approval.",
+            "",
+            "## Core Metrics",
+            "",
+            f"- Total return: {_format_metric(metrics.totalReturnPct, '%')}",
+            f"- Max drawdown: {_format_metric(metrics.maxDrawdownPct, '%')}",
+            f"- Win rate: {_format_metric(metrics.winRate, '%')}",
+            f"- Profit factor: {_format_metric(metrics.profitFactor)}",
+            f"- Trade count: {_format_metric(metrics.tradeCount)}",
+            f"- Average holding minutes: {_format_metric(metrics.averageHoldingMinutes)}",
+            f"- Fees paid: {_format_metric(metrics.feesPaid)}",
+            "",
+            "## Safety Boundary",
+            "",
+            "- No real API key.",
+            "- No Trade API.",
+            "- No Withdraw API.",
+            "- No account or position reads.",
+            "- No real order creation.",
+            "- No auto trading.",
+            "- No Dry-run.",
+        ]
+    )
+    V13_4_8_SUMMARY_OUTPUT.write_text(summary + "\n", encoding="utf-8")
+
+
 def export_report(
     input_path: Path | None = None,
     output_path: Path | None = None,
@@ -301,6 +409,7 @@ def export_report(
         output = output_path or DEFAULT_LATEST_OUTPUT
         DEFAULT_SMOKE_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
         DEFAULT_SMOKE_OUTPUT.write_text(json.dumps(report.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
+        _write_v13_4_8_outputs(report)
     else:
         report = build_sample_report()
         output = output_path or DEFAULT_SAMPLE_OUTPUT

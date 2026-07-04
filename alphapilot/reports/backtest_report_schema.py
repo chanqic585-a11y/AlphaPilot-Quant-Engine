@@ -23,6 +23,7 @@ class BacktestMetrics:
 @dataclass
 class AlphaPilotBacktestReport:
     strategyId: str
+    strategyName: str
     strategyVersion: str
     market: str
     timeframe: str
