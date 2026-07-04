@@ -280,6 +280,44 @@ ratio. The least primary-blocking filter is the no-chase filter. These findings
 prepare V13.4.3 strategy V0.2 candidate design, but V13.4.2 does not change the
 V0.1 thresholds.
 
+## V13.4.3 Strategy V0.2 Candidate Design
+
+V13.4.3 creates evidence-based V0.2 strategy candidates from the V13.4.1
+diagnosis and V13.4.2 signal audit. It does not tune parameters, does not run
+Dry-run, does not change the V0.1 strategy, and prepares V13.4.4 comparative
+backtesting.
+
+V13.4.3 基于 V13.4.1 亏损诊断和 V13.4.2 信号审计，提出 V0.2 候选修改方向。本版本不调参、不进入
+Dry-run、不修改 V0.1 真实策略，只为 V13.4.4 对比回测做准备。
+
+Run candidate matrix generation:
+
+```powershell
+python -m alphapilot.reports.generate_v02_candidate_matrix
+```
+
+Outputs:
+
+```text
+reports/v13_4_3_v02_candidate_matrix.json
+reports/v13_4_3_v02_candidate_summary.md
+docs/V13.4.3-strategy-v02-candidate-design.md
+docs/volume-rebound-v02-candidate-plan.md
+```
+
+V13.4.3 candidates:
+
+```text
+V0.2A Trend Strict Filter
+V0.2B Volume Quality Filter
+V0.2C Exit Cleanup
+V0.2D Early Failure Exit
+V0.2E Pair Risk Watchlist
+```
+
+All candidates are `candidate_only`. None are approved for Dry-run or live
+trading.
+
 Smoke preview:
 
 ```powershell

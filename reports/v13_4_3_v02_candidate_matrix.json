@@ -1,0 +1,458 @@
+{
+  "reportId": "v13_4_3_v02_candidate_matrix",
+  "sourceDiagnosis": "reports\\v13_4_1_diagnosis_report.json",
+  "sourceSignalAudit": "reports\\v13_4_2_signal_audit_report.json",
+  "strategyId": "alpha_volume_rebound_v01",
+  "currentStatus": {
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "V0.1 smoke backtest is negative and requires V0.2 comparative testing.",
+    "baseline": {
+      "totalReturnPct": -15.542,
+      "maxDrawdownPct": 24.4939,
+      "profitFactor": 0.8107,
+      "maxConsecutiveLosses": 13
+    }
+  },
+  "evidenceSummary": {
+    "totalTrades": 230,
+    "winRate": 41.3043,
+    "totalReturnPct": -15.542,
+    "maxDrawdownPct": 24.4939,
+    "profitFactor": 0.8107,
+    "maxConsecutiveLosses": 13,
+    "averageHoldingMinutes": 68.0,
+    "finalEntryCount": 305,
+    "actualTradeCount": 230,
+    "filterEffectivenessAvailable": true,
+    "topSkipReason": {
+      "skipReason": "weak_4h_trend",
+      "count": 11926,
+      "percentage": 45.0106
+    },
+    "trendPrimaryBlocks": 11926,
+    "volumePrimaryBlocks": 6243,
+    "noChasePrimaryBlocks": 0,
+    "largestPairLoss": {
+      "pair": "SOL/USDT:USDT",
+      "totalProfit": -94.83085485,
+      "profitFactor": 0.7643,
+      "tradeCount": 99
+    },
+    "solSignalTradeCounts": {
+      "finalEntryCount": 135,
+      "actualTradeCount": 99
+    },
+    "solProfitFactor": 0.7643,
+    "stopLossNetProfit": -420.36251129,
+    "stopLossTradeCount": 40,
+    "macdWeakExitNetProfit": -345.28583144,
+    "macdWeakExitTradeCount": 117,
+    "weakestHoldingBucket": {
+      "bucket": "1-3h",
+      "netProfit": -120.76496941,
+      "tradeCount": 117
+    },
+    "estimatedFeesPaid": 339.82529451,
+    "slippageApplied": false
+  },
+  "candidates": [
+    {
+      "candidateId": "alpha_volume_rebound_v02_a_trend_strict",
+      "name": "V0.2A Trend Strict Filter",
+      "description": "Strengthen the 4h trend gate to reduce weak-trend rebound failures.",
+      "status": "candidate_only",
+      "evidence": [
+        {
+          "source": "V13.4.2 signal audit",
+          "metric": "top_skip_reason",
+          "value": {
+            "skipReason": "weak_4h_trend",
+            "count": 11926,
+            "percentage": 45.0106
+          },
+          "note": "Weak 4h trend was the most common primary skip reason."
+        },
+        {
+          "source": "V13.4.2 signal audit",
+          "metric": "final_entry_count",
+          "value": 305,
+          "note": "Signals that passed the current 4h gate were still negative overall in V13.4."
+        },
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "profit_factor",
+          "value": 0.8107,
+          "note": "The V0.1 smoke profit factor is below 1."
+        }
+      ],
+      "proposedChanges": [
+        "Compare close_4h >= ema200_4h instead of close_4h >= ema200_4h * 0.98.",
+        "Optionally require 4h EMA20 >= 4h EMA200.",
+        "Optionally require non-negative 4h EMA20 slope."
+      ],
+      "expectedImpact": [
+        "Reduce trades in weak trend regimes.",
+        "Reduce stop-loss pressure from low-quality rebounds.",
+        "Lower total trade count before fees."
+      ],
+      "risks": [
+        "May filter too aggressively and miss early rebounds.",
+        "May reduce sample size enough to make results unstable.",
+        "Could overfit the V13.4 smoke period if adopted without broader comparison."
+      ],
+      "whatToTest": [
+        "V0.1 baseline versus trend-strict variant on the same BTC/ETH/SOL smoke sample.",
+        "Compare total return, max drawdown, profit factor, trade count, and max consecutive losses.",
+        "Review pair and month breakdown to ensure April loss does not simply move to another bucket."
+      ],
+      "doNotAssume": [
+        "Do not assume stricter trend automatically improves profit.",
+        "Do not approve Dry-run from this candidate alone."
+      ]
+    },
+    {
+      "candidateId": "alpha_volume_rebound_v02_b_volume_quality",
+      "name": "V0.2B Volume Quality Filter",
+      "description": "Raise the volume-quality bar to reduce low-quality rebound attempts and fee drag.",
+      "status": "candidate_only",
+      "evidence": [
+        {
+          "source": "V13.4.2 signal audit",
+          "metric": "volume_filter_primary_blocks",
+          "value": 6243,
+          "note": "Volume ratio was a major primary blocker, suggesting the filter is important."
+        },
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "estimated_fees_paid",
+          "value": 339.82529451,
+          "note": "Fees are material for the 15m sample."
+        },
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "total_trades",
+          "value": 230,
+          "note": "The smoke sample traded frequently enough that weak signals have cost impact."
+        }
+      ],
+      "proposedChanges": [
+        "Compare volumeRatio >= 2.0 against the V0.1 threshold of 1.5.",
+        "Add a non-isolated spike check so one-candle volume spikes do not qualify alone.",
+        "Consider a candle body quality check before accepting a rebound candle."
+      ],
+      "expectedImpact": [
+        "Reduce low-quality trades.",
+        "Reduce fee drag by lowering unnecessary entries.",
+        "Potentially improve signal selectivity."
+      ],
+      "risks": [
+        "May reject valid early rebounds.",
+        "Volume thresholds can be pair-specific and unstable across regimes.",
+        "A stricter threshold may reduce trades without improving expectancy."
+      ],
+      "whatToTest": [
+        "Compare trade count reduction versus profit factor improvement.",
+        "Review whether SOL remains overrepresented after volume-quality filtering.",
+        "Run fee and slippage-adjusted metrics in V13.4.4."
+      ],
+      "doNotAssume": [
+        "Do not treat volumeRatio 2.0 as final before comparative backtesting.",
+        "Do not ignore pair-specific volume behavior."
+      ]
+    },
+    {
+      "candidateId": "alpha_volume_rebound_v02_c_exit_cleanup",
+      "name": "V0.2C Exit Cleanup",
+      "description": "Re-evaluate MACD weakness exit behavior because it lost heavily in V13.4.1.",
+      "status": "candidate_only",
+      "evidence": [
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "macd_weak_exit_net_profit",
+          "value": -345.28583144,
+          "note": "MACD two-candle weakness was a large losing exit bucket."
+        },
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "stop_loss_net_profit",
+          "value": -420.36251129,
+          "note": "Stop loss remained the largest losing exit bucket."
+        },
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "average_holding_minutes",
+          "value": 68.0,
+          "note": "Current exits are concentrated in short holding windows."
+        }
+      ],
+      "proposedChanges": [
+        "Compare MACD weakness exit only when current trade profit is positive.",
+        "Compare removing MACD weakness exit and relying on ROI, stoploss, and time stop.",
+        "Compare MACD weakness exit only when close is also below EMA20."
+      ],
+      "expectedImpact": [
+        "Reduce noisy exits that cut positions in losing zones.",
+        "Clarify whether MACD exit helps or hurts net expectancy.",
+        "Potentially improve average loss handling if combined with early failure logic."
+      ],
+      "risks": [
+        "Removing or gating MACD exit may hold losing trades longer.",
+        "May increase drawdown or stop-loss count.",
+        "Exit changes can interact with ROI and time stop in non-obvious ways."
+      ],
+      "whatToTest": [
+        "Compare exit-reason breakdown after each exit-cleanup variant.",
+        "Track stop_loss loss and MACD weakness loss separately.",
+        "Require drawdown and max-loss-streak checks before considering any exit variant."
+      ],
+      "doNotAssume": [
+        "Do not assume the MACD exit is bad in every market regime.",
+        "Do not remove the exit in production without V13.4.4 comparison."
+      ]
+    },
+    {
+      "candidateId": "alpha_volume_rebound_v02_d_early_failure_exit",
+      "name": "V0.2D Early Failure Exit",
+      "description": "Add an early failure check for rebounds that do not work soon after entry.",
+      "status": "candidate_only",
+      "evidence": [
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "weakest_holding_bucket",
+          "value": {
+            "bucket": "1-3h",
+            "netProfit": -120.76496941,
+            "tradeCount": 117
+          },
+          "note": "The 1-3h holding bucket was the weakest result bucket."
+        },
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "max_consecutive_losses",
+          "value": 13,
+          "note": "Loss streak risk is high in the smoke run."
+        },
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "stop_loss_trade_count",
+          "value": 40,
+          "note": "Stop-loss exits are a large realized-loss bucket."
+        }
+      ],
+      "proposedChanges": [
+        "Compare an exit if the trade is not profitable after 4 closed 15m candles.",
+        "Compare an exit if the trade is not profitable after 6 closed 15m candles.",
+        "Compare replacing 12-candle no-profit time stop with 8 closed 15m candles."
+      ],
+      "expectedImpact": [
+        "Reduce failed rebounds before they reach stop loss.",
+        "Reduce time spent in unproductive 1-3h trades.",
+        "Potentially reduce max consecutive losses."
+      ],
+      "risks": [
+        "May exit before delayed rebounds recover.",
+        "May reduce win rate if early failure rules are too sensitive.",
+        "Needs careful slippage/fee treatment because it can add churn."
+      ],
+      "whatToTest": [
+        "Compare 4-candle, 6-candle, and 8-candle variants separately.",
+        "Measure changes in 1-3h holding bucket, stop_loss loss, and total fees.",
+        "Reject variants that improve return but worsen drawdown materially."
+      ],
+      "doNotAssume": [
+        "Do not assume shorter holding is safer without drawdown evidence.",
+        "Do not add an early exit without fee-adjusted comparison."
+      ]
+    },
+    {
+      "candidateId": "alpha_volume_rebound_v02_e_pair_risk_watchlist",
+      "name": "V0.2E Pair Risk Watchlist",
+      "description": "Track pair-level risk and exposure without permanently excluding SOL.",
+      "status": "candidate_only",
+      "evidence": [
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "largest_pair_loss",
+          "value": {
+            "pair": "SOL/USDT:USDT",
+            "totalProfit": -94.83085485,
+            "profitFactor": 0.7643,
+            "tradeCount": 99
+          },
+          "note": "SOL was the largest pair-level loss in the smoke sample."
+        },
+        {
+          "source": "V13.4.2 signal audit",
+          "metric": "sol_final_entries_actual_trades",
+          "value": {
+            "finalEntryCount": 135,
+            "actualTradeCount": 99
+          },
+          "note": "SOL had the highest final-entry and actual-trade count among the three pairs."
+        },
+        {
+          "source": "V13.4.1 diagnosis",
+          "metric": "sol_profit_factor",
+          "value": 0.7643,
+          "note": "SOL profit factor was below 1 in the smoke sample."
+        }
+      ],
+      "proposedChanges": [
+        "Add pair-level monitoring to the comparison report.",
+        "Compare pair-level cooldown after a loss streak.",
+        "Compare max trades per pair per day.",
+        "Compare pair-level risk cap without permanently excluding SOL."
+      ],
+      "expectedImpact": [
+        "Reduce single-pair overexposure.",
+        "Make pair-specific drawdown visible before Top 30 expansion.",
+        "Prepare a risk-control layer for broader universes."
+      ],
+      "risks": [
+        "The smoke sample is too small to permanently blacklist a pair.",
+        "Pair caps may reduce opportunity without improving expectancy.",
+        "Pair-level controls can overfit recent volatility."
+      ],
+      "whatToTest": [
+        "Measure pair contribution before and after pair-level controls.",
+        "Compare SOL-specific loss reduction against total return and opportunity cost.",
+        "Require the same logic to be tested on BTC and ETH, not SOL only."
+      ],
+      "doNotAssume": [
+        "Do not permanently remove SOL based on one smoke timerange.",
+        "Do not treat pair risk watchlist as proof of future underperformance."
+      ]
+    }
+  ],
+  "recommendedComparisonPlan": [
+    {
+      "step": 1,
+      "variant": "V0.1 baseline",
+      "purpose": "Keep the current V13.4 smoke baseline unchanged for comparison.",
+      "metrics": [
+        "total_return",
+        "max_drawdown",
+        "profit_factor",
+        "trade_count",
+        "win_rate",
+        "max_consecutive_losses",
+        "pair_performance",
+        "monthly_performance",
+        "stop_loss_loss",
+        "macd_weakness_exit_loss",
+        "fees",
+        "slippage_adjusted_net_return"
+      ]
+    },
+    {
+      "step": 2,
+      "variant": "V0.2A trend strict",
+      "purpose": "Test whether stricter 4h trend context reduces weak-trend losses.",
+      "metrics": [
+        "total_return",
+        "max_drawdown",
+        "profit_factor",
+        "trade_count",
+        "win_rate",
+        "max_consecutive_losses",
+        "pair_performance",
+        "monthly_performance",
+        "stop_loss_loss",
+        "macd_weakness_exit_loss",
+        "fees",
+        "slippage_adjusted_net_return"
+      ]
+    },
+    {
+      "step": 3,
+      "variant": "V0.2B volume quality",
+      "purpose": "Test whether a stronger volume-quality gate reduces fee drag and weak signals.",
+      "metrics": [
+        "total_return",
+        "max_drawdown",
+        "profit_factor",
+        "trade_count",
+        "win_rate",
+        "max_consecutive_losses",
+        "pair_performance",
+        "monthly_performance",
+        "stop_loss_loss",
+        "macd_weakness_exit_loss",
+        "fees",
+        "slippage_adjusted_net_return"
+      ]
+    },
+    {
+      "step": 4,
+      "variant": "V0.2C exit cleanup",
+      "purpose": "Test MACD weakness exit gating or removal against stop-loss and drawdown effects.",
+      "metrics": [
+        "total_return",
+        "max_drawdown",
+        "profit_factor",
+        "trade_count",
+        "win_rate",
+        "max_consecutive_losses",
+        "pair_performance",
+        "monthly_performance",
+        "stop_loss_loss",
+        "macd_weakness_exit_loss",
+        "fees",
+        "slippage_adjusted_net_return"
+      ]
+    },
+    {
+      "step": 5,
+      "variant": "V0.2D early failure exit",
+      "purpose": "Test whether earlier failure exits improve 1-3h loss behavior.",
+      "metrics": [
+        "total_return",
+        "max_drawdown",
+        "profit_factor",
+        "trade_count",
+        "win_rate",
+        "max_consecutive_losses",
+        "pair_performance",
+        "monthly_performance",
+        "stop_loss_loss",
+        "macd_weakness_exit_loss",
+        "fees",
+        "slippage_adjusted_net_return"
+      ]
+    },
+    {
+      "step": 6,
+      "variant": "V0.2E pair risk watchlist",
+      "purpose": "Test pair-level risk controls without permanently removing any pair.",
+      "metrics": [
+        "total_return",
+        "max_drawdown",
+        "profit_factor",
+        "trade_count",
+        "win_rate",
+        "max_consecutive_losses",
+        "pair_performance",
+        "monthly_performance",
+        "stop_loss_loss",
+        "macd_weakness_exit_loss",
+        "fees",
+        "slippage_adjusted_net_return"
+      ]
+    }
+  ],
+  "doNotChangeYet": [
+    "Do not enter Dry-run immediately.",
+    "Do not trade live.",
+    "Do not permanently remove SOL.",
+    "Do not directly change stoploss.",
+    "Do not directly change take profit.",
+    "Do not raise volumeRatio and treat it as final without comparison.",
+    "Do not remove MACD weakness exit and ship it without comparison.",
+    "Do not overfit to one smoke timerange.",
+    "Do not expand to Top 30 before V0.2 comparison evidence is reviewed."
+  ],
+  "warnings": [],
+  "generatedAt": "2026-07-04T18:04:34.030696+00:00",
+  "source": "alphapilot_v13_4_3_candidate_design"
+}
