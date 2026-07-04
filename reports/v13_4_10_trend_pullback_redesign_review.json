@@ -1,0 +1,720 @@
+{
+  "reportId": "v13_4_10_trend_pullback_redesign_review",
+  "version": "V13.4.10",
+  "strategyId": "alpha_trend_pullback_1h_v01",
+  "sourceReports": [
+    {
+      "key": "v13_4_8_smoke",
+      "path": "reports\\v13_4_8_trend_pullback_1h_smoke_report.json",
+      "exists": true,
+      "reportId": "v13_4_8_trend_pullback_1h_smoke_report",
+      "isMock": false,
+      "dryRunApproved": false
+    },
+    {
+      "key": "v13_4_9_expanded",
+      "path": "reports\\v13_4_9_trend_pullback_expanded_validation_report.json",
+      "exists": true,
+      "reportId": "v13_4_9_trend_pullback_expanded_validation",
+      "isMock": false,
+      "dryRunApproved": false
+    },
+    {
+      "key": "v13_4_9_expanded_summary",
+      "path": "reports\\v13_4_9_trend_pullback_expanded_validation_summary.md",
+      "exists": true,
+      "reportId": "markdown_summary"
+    }
+  ],
+  "currentStatus": "needs_redesign",
+  "dryRunApproved": false,
+  "smokeVsExpanded": {
+    "smoke": {
+      "scope": "BTC/ETH/SOL, 20260401-, 1h",
+      "tradeCount": 61,
+      "totalReturnPct": 6.6227,
+      "profitFactor": 1.1933,
+      "winRate": 47.541,
+      "maxDrawdownPct": 9.8727,
+      "maxConsecutiveLosses": 5
+    },
+    "expandedRaw": {
+      "scope": "fixed Top30, supported 28 pairs, 20260101-, 1h",
+      "tradeCount": 472,
+      "totalReturnPct": -61.0503,
+      "profitFactor": 0.7067,
+      "winRate": 31.5678,
+      "maxDrawdownPct": 67.296,
+      "maxConsecutiveLosses": 13
+    },
+    "expandedSlippageAdjusted": {
+      "tradeCount": 472,
+      "totalReturnPct": -113.218,
+      "profitFactor": 0.5361,
+      "winRate": 30.7203,
+      "maxDrawdownPct": 112.2244,
+      "maxConsecutiveLosses": 13
+    },
+    "divergence": {
+      "returnDeltaRaw": -67.673,
+      "profitFactorDeltaRaw": -0.4866,
+      "tradeCountMultiplier": 7.7377,
+      "interpretation": [
+        "The smoke result verified implementation, but it was too narrow to prove strategy robustness.",
+        "The expanded result added more pairs, more months, and more trades, exposing weak generalization.",
+        "The loss is not explained by one pair alone; the wider universe and longer period revealed structural fragility."
+      ]
+    }
+  },
+  "pairConcentration": {
+    "pairConcentrationAvailable": true,
+    "supportedPairs": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "XRP/USDT:USDT",
+      "ADA/USDT:USDT",
+      "AVAX/USDT:USDT",
+      "LINK/USDT:USDT",
+      "SUI/USDT:USDT",
+      "APT/USDT:USDT",
+      "OP/USDT:USDT",
+      "ARB/USDT:USDT",
+      "LTC/USDT:USDT",
+      "BCH/USDT:USDT",
+      "DOT/USDT:USDT",
+      "NEAR/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "WIF/USDT:USDT",
+      "ORDI/USDT:USDT",
+      "INJ/USDT:USDT",
+      "FIL/USDT:USDT",
+      "ETC/USDT:USDT",
+      "TRX/USDT:USDT",
+      "UNI/USDT:USDT",
+      "AAVE/USDT:USDT",
+      "ATOM/USDT:USDT",
+      "SEI/USDT:USDT",
+      "TIA/USDT:USDT"
+    ],
+    "excludedPairs": [
+      {
+        "pair": "TON/USDT:USDT",
+        "reason": "not present in completed Freqtrade result; pair may be unsupported by exchange or absent in validated data"
+      },
+      {
+        "pair": "FET/USDT:USDT",
+        "reason": "not present in completed Freqtrade result; pair may be unsupported by exchange or absent in validated data"
+      }
+    ],
+    "smokePairs": [
+      {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 16,
+        "totalReturnPct": 5.66,
+        "totalProfitAbs": 56.61276783,
+        "profitFactor": 1.6683,
+        "winRate": 50.0,
+        "maxDrawdownPct": 4.9855
+      },
+      {
+        "pair": "ETH/USDT:USDT",
+        "tradeCount": 20,
+        "totalReturnPct": 5.01,
+        "totalProfitAbs": 50.08743355,
+        "profitFactor": 1.463,
+        "winRate": 50.0,
+        "maxDrawdownPct": 3.131
+      },
+      {
+        "pair": "BTC/USDT:USDT",
+        "tradeCount": 25,
+        "totalReturnPct": -4.05,
+        "totalProfitAbs": -40.47282649,
+        "profitFactor": 0.7296,
+        "winRate": 44.0,
+        "maxDrawdownPct": 10.2744
+      }
+    ],
+    "topRawProfitPairs": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "tradeCount": 24,
+        "totalReturnPct": 6.12,
+        "totalProfitAbs": 61.23300872,
+        "profitFactor": 1.7874,
+        "winRate": 54.1667,
+        "maxDrawdownPct": 1.9633
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 23,
+        "totalReturnPct": 5.56,
+        "totalProfitAbs": 55.57861115,
+        "profitFactor": 1.6883,
+        "winRate": 47.8261,
+        "maxDrawdownPct": 2.7237
+      },
+      {
+        "pair": "TRX/USDT:USDT",
+        "tradeCount": 32,
+        "totalReturnPct": 2.66,
+        "totalProfitAbs": 26.64866252,
+        "profitFactor": 1.3249,
+        "winRate": 50.0,
+        "maxDrawdownPct": 2.7806
+      },
+      {
+        "pair": "LINK/USDT:USDT",
+        "tradeCount": 28,
+        "totalReturnPct": 0.94,
+        "totalProfitAbs": 9.42102499,
+        "profitFactor": 1.0829,
+        "winRate": 39.2857,
+        "maxDrawdownPct": 4.6823
+      },
+      {
+        "pair": "UNI/USDT:USDT",
+        "tradeCount": 13,
+        "totalReturnPct": 0.42,
+        "totalProfitAbs": 4.1620445,
+        "profitFactor": 1.0908,
+        "winRate": 38.4615,
+        "maxDrawdownPct": 1.8351
+      }
+    ],
+    "topRawLossPairs": [
+      {
+        "pair": "BTC/USDT:USDT",
+        "tradeCount": 36,
+        "totalReturnPct": -8.83,
+        "totalProfitAbs": -88.33952922,
+        "profitFactor": 0.4617,
+        "winRate": 36.1111,
+        "maxDrawdownPct": 10.4398
+      },
+      {
+        "pair": "FIL/USDT:USDT",
+        "tradeCount": 16,
+        "totalReturnPct": -5.46,
+        "totalProfitAbs": -54.56521731,
+        "profitFactor": 0.3752,
+        "winRate": 18.75,
+        "maxDrawdownPct": 8.1522
+      },
+      {
+        "pair": "ETC/USDT:USDT",
+        "tradeCount": 13,
+        "totalReturnPct": -5.33,
+        "totalProfitAbs": -53.25772481,
+        "profitFactor": 0.2752,
+        "winRate": 23.0769,
+        "maxDrawdownPct": 7.3481
+      },
+      {
+        "pair": "AVAX/USDT:USDT",
+        "tradeCount": 22,
+        "totalReturnPct": -4.78,
+        "totalProfitAbs": -47.84092463,
+        "profitFactor": 0.5768,
+        "winRate": 22.7273,
+        "maxDrawdownPct": 7.7353
+      },
+      {
+        "pair": "APT/USDT:USDT",
+        "tradeCount": 17,
+        "totalReturnPct": -4.32,
+        "totalProfitAbs": -43.24128822,
+        "profitFactor": 0.4593,
+        "winRate": 17.6471,
+        "maxDrawdownPct": 5.2861
+      }
+    ],
+    "topSlippageAdjustedProfitPairs": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "tradeCount": 24,
+        "totalReturnPct": 3.3254,
+        "totalProfitAbs": 33.25376521,
+        "profitFactor": 1.3627,
+        "winRate": 50.0,
+        "slippageCost": 27.97924351
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 23,
+        "totalReturnPct": 2.8367,
+        "totalProfitAbs": 28.36731545,
+        "profitFactor": 1.3009,
+        "winRate": 47.8261,
+        "slippageCost": 27.2112957
+      },
+      {
+        "pair": "TRX/USDT:USDT",
+        "tradeCount": 32,
+        "totalReturnPct": -0.7962,
+        "totalProfitAbs": -7.96247195,
+        "profitFactor": 0.9192,
+        "winRate": 46.875,
+        "slippageCost": 34.61113447
+      },
+      {
+        "pair": "UNI/USDT:USDT",
+        "tradeCount": 13,
+        "totalReturnPct": -0.8719,
+        "totalProfitAbs": -8.71927444,
+        "profitFactor": 0.8376,
+        "winRate": 38.4615,
+        "slippageCost": 12.88131894
+      },
+      {
+        "pair": "BCH/USDT:USDT",
+        "tradeCount": 3,
+        "totalReturnPct": -1.2626,
+        "totalProfitAbs": -12.62637074,
+        "profitFactor": 0.0712,
+        "winRate": 33.3333,
+        "slippageCost": 2.90822138
+      }
+    ],
+    "topSlippageAdjustedLossPairs": [
+      {
+        "pair": "BTC/USDT:USDT",
+        "tradeCount": 36,
+        "totalReturnPct": -13.0365,
+        "totalProfitAbs": -130.36531676,
+        "profitFactor": 0.3256,
+        "winRate": 30.5556,
+        "slippageCost": 42.02578754
+      },
+      {
+        "pair": "AVAX/USDT:USDT",
+        "tradeCount": 22,
+        "totalReturnPct": -7.3297,
+        "totalProfitAbs": -73.29664273,
+        "profitFactor": 0.4444,
+        "winRate": 22.7273,
+        "slippageCost": 25.4557181
+      },
+      {
+        "pair": "FIL/USDT:USDT",
+        "tradeCount": 16,
+        "totalReturnPct": -7.2707,
+        "totalProfitAbs": -72.70705801,
+        "profitFactor": 0.2881,
+        "winRate": 18.75,
+        "slippageCost": 18.1418407
+      },
+      {
+        "pair": "ETC/USDT:USDT",
+        "tradeCount": 13,
+        "totalReturnPct": -6.7993,
+        "totalProfitAbs": -67.99328391,
+        "profitFactor": 0.2111,
+        "winRate": 23.0769,
+        "slippageCost": 14.7355591
+      },
+      {
+        "pair": "ADA/USDT:USDT",
+        "tradeCount": 15,
+        "totalReturnPct": -6.1248,
+        "totalProfitAbs": -61.24836669,
+        "profitFactor": 0.3751,
+        "winRate": 20.0,
+        "slippageCost": 18.49853464
+      }
+    ],
+    "btcEthSolExpandedRaw": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "tradeCount": 24,
+        "totalReturnPct": 6.12,
+        "totalProfitAbs": 61.23300872,
+        "profitFactor": 1.7874,
+        "winRate": 54.1667,
+        "maxDrawdownPct": 1.9633
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 23,
+        "totalReturnPct": 5.56,
+        "totalProfitAbs": 55.57861115,
+        "profitFactor": 1.6883,
+        "winRate": 47.8261,
+        "maxDrawdownPct": 2.7237
+      },
+      {
+        "pair": "BTC/USDT:USDT",
+        "tradeCount": 36,
+        "totalReturnPct": -8.83,
+        "totalProfitAbs": -88.33952922,
+        "profitFactor": 0.4617,
+        "winRate": 36.1111,
+        "maxDrawdownPct": 10.4398
+      }
+    ],
+    "btcEthSolExpandedSlippageAdjusted": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "tradeCount": 24,
+        "totalReturnPct": 3.3254,
+        "totalProfitAbs": 33.25376521,
+        "profitFactor": 1.3627,
+        "winRate": 50.0,
+        "slippageCost": 27.97924351
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 23,
+        "totalReturnPct": 2.8367,
+        "totalProfitAbs": 28.36731545,
+        "profitFactor": 1.3009,
+        "winRate": 47.8261,
+        "slippageCost": 27.2112957
+      },
+      {
+        "pair": "BTC/USDT:USDT",
+        "tradeCount": 36,
+        "totalReturnPct": -13.0365,
+        "totalProfitAbs": -130.36531676,
+        "profitFactor": 0.3256,
+        "winRate": 30.5556,
+        "slippageCost": 42.02578754
+      }
+    ],
+    "btcEthSolRawTotalProfitAbs": 28.47209065,
+    "btcEthSolSlippageAdjustedTotalProfitAbs": -68.7442361,
+    "altRawTotalProfitAbs": -638.97549407,
+    "altSlippageAdjustedTotalProfitAbs": -1063.43621155,
+    "largestPairAbsContributionPct": 10.3842,
+    "analysis": [
+      "ETH and SOL remained positive in the expanded report, while BTC stayed negative.",
+      "Top30 expansion introduced broad altcoin drag, especially after slippage post-processing.",
+      "The largest pair contribution was not dominant, so the failure is portfolio-wide rather than one-pair-only.",
+      "Pair universe narrowing is a plausible next validation path, but it carries overfitting risk."
+    ]
+  },
+  "monthlyBreakdown": {
+    "monthlyBreakdownAvailable": true,
+    "rawRows": [
+      {
+        "month": "2026-01",
+        "profitAbs": -234.58263871,
+        "tradeCount": 101,
+        "wins": 28,
+        "losses": 73,
+        "profitFactor": 0.6473
+      },
+      {
+        "month": "2026-03",
+        "profitAbs": -68.05665789,
+        "tradeCount": 43,
+        "wins": 13,
+        "losses": 30,
+        "profitFactor": 0.6697
+      },
+      {
+        "month": "2026-04",
+        "profitAbs": -155.103966,
+        "tradeCount": 188,
+        "wins": 66,
+        "losses": 122,
+        "profitFactor": 0.8058
+      },
+      {
+        "month": "2026-05",
+        "profitAbs": -152.76014082,
+        "tradeCount": 140,
+        "wins": 42,
+        "losses": 98,
+        "profitFactor": 0.6288
+      }
+    ],
+    "slippageAdjustedRows": [
+      {
+        "month": "2026-01",
+        "profitAbs": -394.29915577,
+        "returnPct": -39.4299,
+        "tradeCount": 101,
+        "winRate": 26.7327,
+        "slippageCost": 159.71651706
+      },
+      {
+        "month": "2026-03",
+        "profitAbs": -120.67566935,
+        "returnPct": -12.0676,
+        "tradeCount": 43,
+        "winRate": 27.907,
+        "slippageCost": 52.61901146
+      },
+      {
+        "month": "2026-04",
+        "profitAbs": -362.95121646,
+        "returnPct": -36.2951,
+        "tradeCount": 188,
+        "winRate": 34.5745,
+        "slippageCost": 207.84725046
+      },
+      {
+        "month": "2026-05",
+        "profitAbs": -254.25440607,
+        "returnPct": -25.4254,
+        "tradeCount": 140,
+        "winRate": 29.2857,
+        "slippageCost": 101.49426525
+      }
+    ],
+    "worstRawMonths": [
+      {
+        "month": "2026-01",
+        "profitAbs": -234.58263871,
+        "tradeCount": 101,
+        "wins": 28,
+        "losses": 73,
+        "profitFactor": 0.6473
+      },
+      {
+        "month": "2026-04",
+        "profitAbs": -155.103966,
+        "tradeCount": 188,
+        "wins": 66,
+        "losses": 122,
+        "profitFactor": 0.8058
+      },
+      {
+        "month": "2026-05",
+        "profitAbs": -152.76014082,
+        "tradeCount": 140,
+        "wins": 42,
+        "losses": 98,
+        "profitFactor": 0.6288
+      }
+    ],
+    "bestRawMonths": [],
+    "worstSlippageAdjustedMonths": [
+      {
+        "month": "2026-01",
+        "profitAbs": -394.29915577,
+        "returnPct": -39.4299,
+        "tradeCount": 101,
+        "winRate": 26.7327,
+        "slippageCost": 159.71651706
+      },
+      {
+        "month": "2026-04",
+        "profitAbs": -362.95121646,
+        "returnPct": -36.2951,
+        "tradeCount": 188,
+        "winRate": 34.5745,
+        "slippageCost": 207.84725046
+      },
+      {
+        "month": "2026-05",
+        "profitAbs": -254.25440607,
+        "returnPct": -25.4254,
+        "tradeCount": 140,
+        "winRate": 29.2857,
+        "slippageCost": 101.49426525
+      }
+    ],
+    "analysis": [
+      "The expanded sample lost across multiple months rather than one isolated period.",
+      "January, April, and May were the largest raw loss months.",
+      "Slippage-adjusted losses worsened every active month.",
+      "The pattern suggests broad regime fragility, not a single bad event."
+    ]
+  },
+  "costSensitivity": {
+    "tradeCount": 472,
+    "averageHoldingMinutes": 76.1441,
+    "rawTotalReturnPct": -61.0503,
+    "slippageAdjustedTotalReturnPct": -113.218,
+    "returnDegradationPctPoints": -52.1677,
+    "rawProfitFactor": 0.7067,
+    "slippageAdjustedProfitFactor": 0.5361,
+    "profitFactorDegradation": -0.1706,
+    "slippageCost": 521.67704423,
+    "slippageRateOneWay": 0.0005,
+    "slippageAppliedByFreqtrade": false,
+    "slippageAppliedByPostProcessing": true,
+    "analysis": [
+      "A 472-trade six-month sample is still cost-sensitive for a 1h strategy.",
+      "Slippage turned an already failed raw result into a much deeper rejection.",
+      "Execution reality must be modeled before any future Dry-run discussion.",
+      "Lower frequency, stronger liquidity filters, or higher expected payoff are required."
+    ]
+  },
+  "payoffReview": {
+    "payoffDetailsAvailable": false,
+    "configuredStopLoss": "-2.5%",
+    "configuredTakeProfit": "+5%",
+    "averageWin": "unavailable",
+    "averageLoss": "unavailable",
+    "smokeWinRate": 47.541,
+    "expandedRawWinRate": 31.5678,
+    "expandedAdjustedWinRate": 30.7203,
+    "analysis": [
+      "The apparent 2:1 configured payoff did not survive expanded validation.",
+      "The expanded win rate fell to roughly 31.6% raw and 30.7% after slippage adjustment.",
+      "Average win/loss details are unavailable in the V13.4.9 report, so this review does not invent them.",
+      "The likely issue is entry quality and path behavior: too many trades reach stop-loss or weak exits before +5%."
+    ]
+  },
+  "filterReview": {
+    "filtersReviewed": [
+      "4h trend filter",
+      "BTC safety",
+      "1h pullback location",
+      "reclaim confirmation",
+      "volumeRatio >= 1.2",
+      "no-chase",
+      "ATR risk quality"
+    ],
+    "likelyTooLoose": [
+      "volumeRatio >= 1.2 may still admit noisy rebounds in weaker altcoins.",
+      "BTC safety alone does not represent full market regime strength.",
+      "Pullback and reclaim checks are binary and do not score trend quality.",
+      "No-chase and ATR filters reduce obvious bad entries but do not ensure positive expectancy."
+    ],
+    "missingFilters": [
+      "pair-level liquidity filter",
+      "execution reality filter",
+      "market regime filter beyond BTC only",
+      "signal score / quality gate",
+      "pair-specific trade cap or exposure cap"
+    ],
+    "analysis": [
+      "The current filters are useful guards but not sufficient quality gates.",
+      "Top30 altcoin behavior likely needs liquidity and pair quality control.",
+      "A score-based gate is preferable to another round of simple threshold tweaks."
+    ]
+  },
+  "strategyFamilyDecision": {
+    "status": "needs_redesign",
+    "notApprovedForDryRun": true,
+    "archiveCurrentImplementationForReference": true,
+    "doNotScaleCurrentTop30Strategy": true,
+    "reason": "Expanded validation and slippage-adjusted checks failed too severely for parameter tuning."
+  },
+  "failureFindings": [
+    "V13.4.8 small BTC/ETH/SOL smoke profit did not generalize to Top30 six-month validation.",
+    "V13.4.9 expanded raw result is deeply negative.",
+    "Slippage-adjusted post-processing worsened the already failed result.",
+    "The current strategy cannot enter Dry-run.",
+    "Continuing to micro-tune the current rules has high overfitting risk.",
+    "The next design must address pair selection, market regime, signal quality, and execution cost."
+  ],
+  "redesignOptions": [
+    {
+      "id": "option_a_pair_universe_narrowing",
+      "name": "Pair Universe Narrowing",
+      "direction": "Trade only high-liquidity majors or a high-quality subset instead of all Top30 pairs.",
+      "candidateScope": [
+        "BTC/ETH/SOL",
+        "Top10 liquidity",
+        "supportedPairs with stable expanded behavior"
+      ],
+      "evidence": [
+        "V13.4.8 BTC/ETH/SOL smoke was positive.",
+        "V13.4.9 Top30 expansion failed deeply.",
+        "BTC/ETH/SOL expanded adjusted total profit abs: -68.7442361"
+      ],
+      "risks": [
+        "smaller sample",
+        "overfitting to BTC/ETH/SOL",
+        "may miss broader market opportunities"
+      ]
+    },
+    {
+      "id": "option_b_market_regime_filter",
+      "name": "Market Regime Filter",
+      "direction": "Enable Trend Pullback only during trend-friendly market regimes.",
+      "candidateRules": [
+        "BTC 4h trend positive",
+        "ETH/SOL confirmation not weak",
+        "future total-market or dominance proxy"
+      ],
+      "evidence": [
+        "Expanded losses occurred across multiple months.",
+        "Single BTC safety was not enough to protect Top30 exposure."
+      ],
+      "risks": [
+        "more data needed",
+        "fewer signals",
+        "more complex validation"
+      ]
+    },
+    {
+      "id": "option_c_signal_score_quality_gate",
+      "name": "Signal Score / Quality Gate",
+      "direction": "Replace binary pass/fail entry with low-frequency high-quality signal scoring.",
+      "candidateFactors": [
+        "4h trend strength",
+        "1h pullback quality",
+        "volume quality",
+        "risk distance",
+        "no-chase distance",
+        "pair liquidity",
+        "BTC safety"
+      ],
+      "candidateRule": "score >= 80 before entry",
+      "evidence": [
+        "Current filters still generated 472 expanded trades with negative expectancy."
+      ],
+      "risks": [
+        "subjective weights",
+        "possible overfitting",
+        "may create too few trades"
+      ]
+    },
+    {
+      "id": "option_d_liquidity_execution_reality_filter",
+      "name": "Liquidity / Execution Reality Filter",
+      "direction": "Add pre-trade liquidity and execution feasibility checks.",
+      "candidateRules": [
+        "minimum 24h volume",
+        "minimum recent 1h volume",
+        "maximum position notional / volume ratio",
+        "future orderbook depth filter"
+      ],
+      "evidence": [
+        "Slippage-adjusted return degraded to -113.218%.",
+        "Slippage cost estimate: 521.67704423."
+      ],
+      "risks": [
+        "requires more market data",
+        "first version may only approximate execution quality"
+      ]
+    },
+    {
+      "id": "option_e_alternate_strategy_direction",
+      "name": "Alternate Strategy Direction",
+      "direction": "Pause Trend Pullback and return to Breakout Retest or another V03/V04 direction.",
+      "candidateDirections": [
+        "Breakout Retest Confirmation",
+        "High Score Signal Only",
+        "new V04 strategy family"
+      ],
+      "evidence": [
+        "Trend Pullback failed expanded validation severely."
+      ],
+      "risks": [
+        "longer development cycle",
+        "new strategy also requires full validation"
+      ]
+    }
+  ],
+  "recommendedNextStep": "V13.4.11 - Execution Reality and Liquidity Gate Design",
+  "doNotProceed": [
+    "Do not enter Dry-run.",
+    "Do not connect live trading.",
+    "Do not add or store API keys.",
+    "Do not auto trade.",
+    "Do not continue scaling the current Top30 Trend Pullback rule set.",
+    "Do not treat the V13.4.8 small-sample positive result as strategy approval."
+  ],
+  "warnings": [],
+  "generatedAt": "2026-07-04T20:24:46.830633+00:00",
+  "source": "alphapilot_v13_4_10_trend_pullback_redesign_review"
+}

@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.9 - Trend Pullback 1H Expanded Validation With Slippage
+AlphaPilot V13.4.10 - Trend Pullback Redesign Review
 ```
 
 ## Positioning
@@ -619,9 +619,71 @@ V13.4.9 rejects Dry-run. The V13.4.8 smoke result did not generalize to the
 wider Top30 validation sample. The next step should be V13.4.10 Trend Pullback
 Redesign Review.
 
+## V13.4.10 Trend Pullback Redesign Review
+
+V13.4.10 reads the V13.4.8 smoke report and V13.4.9 expanded validation report
+to explain why the small-sample Trend Pullback result failed to generalize.
+
+中文说明：
+
+```text
+V13.4.10 只做失败复盘和重设评审。
+本版本不调参、不修改策略代码、不下载数据、不运行回测、不进入 Dry-run、不实盘。
+```
+
+Run the review:
+
+```powershell
+python -m alphapilot.reports.generate_trend_pullback_redesign_review
+```
+
+Decision:
+
+```text
+strategyId = alpha_trend_pullback_1h_v01
+currentStatus = needs_redesign
+dryRunApproved = false
+recommendedNextStep = V13.4.11 - Execution Reality and Liquidity Gate Design
+```
+
+Key conclusion:
+
+```text
+V13.4.8 BTC/ETH/SOL smoke:
+tradeCount = 61
+totalReturnPct = 6.6227
+profitFactor = 1.1933
+maxDrawdownPct = 9.8727
+
+V13.4.9 Top30 raw:
+tradeCount = 472
+totalReturnPct = -61.0503
+profitFactor = 0.7067
+maxDrawdownPct = 67.296
+
+V13.4.9 slippage-adjusted:
+totalReturnPct = -113.218
+profitFactor = 0.5361
+maxDrawdownPct = 112.2244
+```
+
+Outputs:
+
+```text
+reports/v13_4_10_trend_pullback_redesign_review.json
+reports/v13_4_10_trend_pullback_redesign_summary.md
+docs/V13.4.10-trend-pullback-redesign-review.md
+docs/trend-pullback-expanded-failure-analysis.md
+docs/v13_4_11_next-step-options.md
+```
+
+V13.4.10 recommends redesigning the research gate around execution reality,
+liquidity, market regime, pair universe, and signal quality before another
+strategy implementation.
+
 ## Next Versions
 
-- V13.4.10: run Trend Pullback Redesign Review before any further implementation.
+- V13.4.11: design Execution Reality and Liquidity Gates before another implementation.
 - V13.5: consider Dry-run preparation only after V03 passes stronger risk-adjusted validation.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.

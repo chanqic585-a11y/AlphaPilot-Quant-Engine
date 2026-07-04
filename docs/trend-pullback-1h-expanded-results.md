@@ -68,8 +68,16 @@ Useful lessons:
 
 ## V13.4.10 Direction
 
-V13.4.10 should not be simple parameter tuning. It should review the strategy
-direction and decide whether to:
+V13.4.10 reviewed the strategy direction and confirmed that this should not be
+simple parameter tuning. The current status is:
+
+```text
+currentStatus = needs_redesign
+dryRunApproved = false
+recommendedNextStep = V13.4.11 - Execution Reality and Liquidity Gate Design
+```
+
+The review recommends deciding whether to:
 
 - require stronger market regime filters;
 - reduce trade frequency materially;
@@ -83,4 +91,3 @@ direction and decide whether to:
 This result is not a live signal and not a trading recommendation. AlphaPilot did
 not use exchange credentials, did not call Trade API or Withdraw API, did not
 read accounts or positions, did not create orders, and did not auto trade.
-
