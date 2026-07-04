@@ -1,0 +1,828 @@
+{
+  "reportId": "v13_4_17_dynamic_regime_expanded_report",
+  "version": "V13.4.17",
+  "strategyId": "alpha_dynamic_regime_v01",
+  "strategyName": "AlphaPilot Dynamic Regime V0.1",
+  "strategyVersion": "0.1-v13.4.15",
+  "timerange": "20260101-",
+  "timeframe": "1h",
+  "pairs": [
+    "AAVE/USDT:USDT",
+    "ADA/USDT:USDT",
+    "APT/USDT:USDT",
+    "ARB/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "BCH/USDT:USDT",
+    "BTC/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "DOT/USDT:USDT",
+    "ETC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "FIL/USDT:USDT",
+    "INJ/USDT:USDT",
+    "LINK/USDT:USDT",
+    "LTC/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "OP/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "PEPE/USDT:USDT",
+    "SOL/USDT:USDT",
+    "SUI/USDT:USDT",
+    "TIA/USDT:USDT",
+    "TRX/USDT:USDT",
+    "UNI/USDT:USDT",
+    "WIF/USDT:USDT",
+    "XRP/USDT:USDT"
+  ],
+  "isMock": false,
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "rawMetrics": {
+    "tradeCount": 0,
+    "totalReturnPct": 0.0,
+    "maxDrawdownPct": 0.0,
+    "profitFactor": 0.0,
+    "winRate": 0.0,
+    "maxConsecutiveLosses": 0,
+    "feesPaid": null,
+    "averageHoldingMinutes": null,
+    "slippageAppliedByFreqtrade": false,
+    "slippageAppliedByPostProcessing": false
+  },
+  "slippageStressMetrics": [
+    {
+      "slippageRateOneWay": 0.0005,
+      "slippageCostPctRoundTrip": 0.1,
+      "slippageAppliedByFreqtrade": false,
+      "slippageAppliedByPostProcessing": true,
+      "tradeCount": 0,
+      "totalSlippageCost": 0.0,
+      "slippageCostEstimated": false,
+      "slippageAdjustedTotalProfitAbs": 0.0,
+      "slippageAdjustedReturnPct": 0.0,
+      "slippageAdjustedProfitFactor": null,
+      "slippageAdjustedWinRate": null,
+      "maxDrawdownPct": 0.0,
+      "maxConsecutiveLosses": 0,
+      "largestPairAbsContributionPct": null,
+      "largestMonthAbsContributionPct": null
+    },
+    {
+      "slippageRateOneWay": 0.001,
+      "slippageCostPctRoundTrip": 0.2,
+      "slippageAppliedByFreqtrade": false,
+      "slippageAppliedByPostProcessing": true,
+      "tradeCount": 0,
+      "totalSlippageCost": 0.0,
+      "slippageCostEstimated": false,
+      "slippageAdjustedTotalProfitAbs": 0.0,
+      "slippageAdjustedReturnPct": 0.0,
+      "slippageAdjustedProfitFactor": null,
+      "slippageAdjustedWinRate": null,
+      "maxDrawdownPct": 0.0,
+      "maxConsecutiveLosses": 0,
+      "largestPairAbsContributionPct": null,
+      "largestMonthAbsContributionPct": null
+    },
+    {
+      "slippageRateOneWay": 0.002,
+      "slippageCostPctRoundTrip": 0.4,
+      "slippageAppliedByFreqtrade": false,
+      "slippageAppliedByPostProcessing": true,
+      "tradeCount": 0,
+      "totalSlippageCost": 0.0,
+      "slippageCostEstimated": false,
+      "slippageAdjustedTotalProfitAbs": 0.0,
+      "slippageAdjustedReturnPct": 0.0,
+      "slippageAdjustedProfitFactor": null,
+      "slippageAdjustedWinRate": null,
+      "maxDrawdownPct": 0.0,
+      "maxConsecutiveLosses": 0,
+      "largestPairAbsContributionPct": null,
+      "largestMonthAbsContributionPct": null
+    },
+    {
+      "slippageRateOneWay": 0.003,
+      "slippageCostPctRoundTrip": 0.6,
+      "slippageAppliedByFreqtrade": false,
+      "slippageAppliedByPostProcessing": true,
+      "tradeCount": 0,
+      "totalSlippageCost": 0.0,
+      "slippageCostEstimated": false,
+      "slippageAdjustedTotalProfitAbs": 0.0,
+      "slippageAdjustedReturnPct": 0.0,
+      "slippageAdjustedProfitFactor": null,
+      "slippageAdjustedWinRate": null,
+      "maxDrawdownPct": 0.0,
+      "maxConsecutiveLosses": 0,
+      "largestPairAbsContributionPct": null,
+      "largestMonthAbsContributionPct": null
+    }
+  ],
+  "liquidityGateSummary": {
+    "available": false,
+    "fallbackUsedRows": 119679,
+    "fallbackPolicy": "allowed for expanded validation research only; not a real liquidity approval"
+  },
+  "probabilityScoreSummary": {
+    "rowsEvaluated": 119679,
+    "available": 62352,
+    "pass": 0,
+    "fail": 119679,
+    "source": "reports\\v13_4_14_probability_score_table.json"
+  },
+  "probabilityBucketPerformance": [
+    {
+      "bucketId": "avoid_low_low_30-45_below_ema20_lower_weak",
+      "rows": 6447,
+      "available": 0,
+      "pass": 0,
+      "fail": 6447,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_below30_below_ema20_lower_weak",
+      "rows": 4341,
+      "available": 0,
+      "pass": 0,
+      "fail": 4341,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_45-55_near_ema20_middle_weak",
+      "rows": 3766,
+      "available": 3766,
+      "pass": 0,
+      "fail": 3766,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_55-65_near_ema20_middle_weak",
+      "rows": 3097,
+      "available": 0,
+      "pass": 0,
+      "fail": 3097,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_30-45_near_ema20_lower_weak",
+      "rows": 3079,
+      "available": 0,
+      "pass": 0,
+      "fail": 3079,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_30-45_below_ema20_lower_safe",
+      "rows": 2640,
+      "available": 2640,
+      "pass": 0,
+      "fail": 2640,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_45-55_near_ema20_lower_weak",
+      "rows": 2460,
+      "available": 2460,
+      "pass": 0,
+      "fail": 2460,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_30-45_near_ema20_lower_safe",
+      "rows": 2166,
+      "available": 2166,
+      "pass": 0,
+      "fail": 2166,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_above65_above_ema20_upper_weak",
+      "rows": 2025,
+      "available": 0,
+      "pass": 0,
+      "fail": 2025,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_45-55_below_ema20_lower_weak",
+      "rows": 2012,
+      "available": 0,
+      "pass": 0,
+      "fail": 2012,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_below30_below_ema20_lower_safe",
+      "rows": 1937,
+      "available": 1937,
+      "pass": 0,
+      "fail": 1937,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_30-45_below_ema20_lower_weak",
+      "rows": 1899,
+      "available": 1899,
+      "pass": 0,
+      "fail": 1899,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "trend_low_low_above65_above_ema20_upper_safe",
+      "rows": 1800,
+      "available": 1800,
+      "pass": 0,
+      "fail": 1800,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "trend_low_low_55-65_near_ema20_middle_safe",
+      "rows": 1441,
+      "available": 1441,
+      "pass": 0,
+      "fail": 1441,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "unknown_low_low_45-55_near_ema20_middle_safe",
+      "rows": 1364,
+      "available": 1364,
+      "pass": 0,
+      "fail": 1364,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_45-55_near_ema20_lower_safe",
+      "rows": 1303,
+      "available": 1303,
+      "pass": 0,
+      "fail": 1303,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_55-65_near_ema20_upper_weak",
+      "rows": 1287,
+      "available": 1287,
+      "pass": 0,
+      "fail": 1287,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_medium_low_30-45_below_ema20_lower_weak",
+      "rows": 1269,
+      "available": 0,
+      "pass": 0,
+      "fail": 1269,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_below30_below_ema20_lower_weak",
+      "rows": 1268,
+      "available": 1268,
+      "pass": 0,
+      "fail": 1268,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_55-65_above_ema20_upper_weak",
+      "rows": 1209,
+      "available": 1209,
+      "pass": 0,
+      "fail": 1209,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_30-45_near_ema20_lower_weak",
+      "rows": 1081,
+      "available": 1081,
+      "pass": 0,
+      "fail": 1081,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_below30_below_ema20_outside_weak",
+      "rows": 1022,
+      "available": 0,
+      "pass": 0,
+      "fail": 1022,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_above65_near_ema20_middle_weak",
+      "rows": 985,
+      "available": 0,
+      "pass": 0,
+      "fail": 985,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_medium_low_below30_below_ema20_lower_weak",
+      "rows": 959,
+      "available": 0,
+      "pass": 0,
+      "fail": 959,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_below30_below_ema20_outside_crash",
+      "rows": 915,
+      "available": 915,
+      "pass": 0,
+      "fail": 915,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_medium_30-45_below_ema20_lower_weak",
+      "rows": 852,
+      "available": 0,
+      "pass": 0,
+      "fail": 852,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_30-45_below_ema20_outside_weak",
+      "rows": 834,
+      "available": 0,
+      "pass": 0,
+      "fail": 834,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_above65_near_ema20_upper_weak",
+      "rows": 821,
+      "available": 0,
+      "pass": 0,
+      "fail": 821,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_45-55_near_ema20_middle_safe",
+      "rows": 805,
+      "available": 805,
+      "pass": 0,
+      "fail": 805,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_45-55_below_ema20_lower_safe",
+      "rows": 800,
+      "available": 800,
+      "pass": 0,
+      "fail": 800,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "unknown_low_low_45-55_near_ema20_middle_weak",
+      "rows": 800,
+      "available": 800,
+      "pass": 0,
+      "fail": 800,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_medium_low_45-55_near_ema20_middle_weak",
+      "rows": 748,
+      "available": 748,
+      "pass": 0,
+      "fail": 748,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_45-55_below_ema20_lower_weak",
+      "rows": 743,
+      "available": 743,
+      "pass": 0,
+      "fail": 743,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_55-65_near_ema20_middle_safe",
+      "rows": 730,
+      "available": 730,
+      "pass": 0,
+      "fail": 730,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "trend_low_low_55-65_near_ema20_middle_weak",
+      "rows": 700,
+      "available": 700,
+      "pass": 0,
+      "fail": 700,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_above65_above_ema20_outside_weak",
+      "rows": 700,
+      "available": 0,
+      "pass": 0,
+      "fail": 700,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_30-45_below_ema20_lower_safe",
+      "rows": 692,
+      "available": 0,
+      "pass": 0,
+      "fail": 692,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_30-45_near_ema20_middle_weak",
+      "rows": 678,
+      "available": 0,
+      "pass": 0,
+      "fail": 678,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_medium_low_30-45_near_ema20_lower_weak",
+      "rows": 667,
+      "available": 0,
+      "pass": 0,
+      "fail": 667,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "trend_low_low_above65_above_ema20_outside_safe",
+      "rows": 665,
+      "available": 665,
+      "pass": 0,
+      "fail": 665,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_low_low_45-55_near_ema20_lower_weak",
+      "rows": 653,
+      "available": 653,
+      "pass": 0,
+      "fail": 653,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "trend_low_low_55-65_above_ema20_upper_safe",
+      "rows": 651,
+      "available": 651,
+      "pass": 0,
+      "fail": 651,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_medium_low_30-45_below_ema20_lower_safe",
+      "rows": 630,
+      "available": 630,
+      "pass": 0,
+      "fail": 630,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_medium_low_55-65_near_ema20_middle_weak",
+      "rows": 627,
+      "available": 627,
+      "pass": 0,
+      "fail": 627,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "trend_low_low_55-65_near_ema20_upper_safe",
+      "rows": 609,
+      "available": 609,
+      "pass": 0,
+      "fail": 609,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "trend_low_low_above65_near_ema20_upper_safe",
+      "rows": 605,
+      "available": 0,
+      "pass": 0,
+      "fail": 605,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_low_low_30-45_near_ema20_lower_safe",
+      "rows": 596,
+      "available": 0,
+      "pass": 0,
+      "fail": 596,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "mean_reversion_medium_low_30-45_near_ema20_lower_safe",
+      "rows": 576,
+      "available": 576,
+      "pass": 0,
+      "fail": 576,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "avoid_high_low_30-45_below_ema20_lower_weak",
+      "rows": 571,
+      "available": 0,
+      "pass": 0,
+      "fail": 571,
+      "finalEntry": 0
+    },
+    {
+      "bucketId": "trend_low_low_above65_above_ema20_upper_weak",
+      "rows": 549,
+      "available": 549,
+      "pass": 0,
+      "fail": 549,
+      "finalEntry": 0
+    }
+  ],
+  "regimeBreakdown": {
+    "avoid": 69483,
+    "mean_reversion": 25212,
+    "trend": 17330,
+    "unknown": 7654
+  },
+  "moduleBreakdown": {
+    "trendModulePass": 598,
+    "meanReversionModulePass": 1775,
+    "finalEntrySignals": 0,
+    "skipReasons": {
+      "not_in_dynamic_universe": 82031,
+      "avoid_regime": 21716,
+      "probability_score_not_passed": 12469,
+      "probability_score_unavailable": 2950,
+      "data_missing": 513
+    }
+  },
+  "dynamicUniverseSummary": {
+    "source": "reports\\v13_4_13_dynamic_universe_snapshots.json",
+    "snapshotCount": 155,
+    "pairUnionCount": 27,
+    "pairsMode": "historical_dynamic_universe_union_for_backtest_with_strategy_date_filter",
+    "note": "Backtest pair list is the union of historical selectedPairs; strategy still filters rows by snapshot date."
+  },
+  "pairBreakdown": [
+    {
+      "pair": "AAVE/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 1224,
+      "trendModulePass": 12,
+      "meanReversionModulePass": 38,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "ADA/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 2368,
+      "trendModulePass": 12,
+      "meanReversionModulePass": 58,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "APT/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 120,
+      "trendModulePass": 19,
+      "meanReversionModulePass": 52,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "ARB/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 96,
+      "trendModulePass": 17,
+      "meanReversionModulePass": 43,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "ATOM/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 24,
+      "trendModulePass": 14,
+      "meanReversionModulePass": 92,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 480,
+      "trendModulePass": 30,
+      "meanReversionModulePass": 55,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "BCH/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 976,
+      "trendModulePass": 8,
+      "meanReversionModulePass": 55,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "BTC/USDT:USDT",
+      "rowsEvaluated": 4437,
+      "inDynamicUniverseRows": 3645,
+      "trendModulePass": 35,
+      "meanReversionModulePass": 100,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 3664,
+      "trendModulePass": 36,
+      "meanReversionModulePass": 69,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "DOT/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 432,
+      "trendModulePass": 19,
+      "meanReversionModulePass": 55,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "ETC/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 96,
+      "trendModulePass": 23,
+      "meanReversionModulePass": 68,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "rowsEvaluated": 4437,
+      "inDynamicUniverseRows": 3717,
+      "trendModulePass": 24,
+      "meanReversionModulePass": 75,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "FIL/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 2424,
+      "trendModulePass": 26,
+      "meanReversionModulePass": 43,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "INJ/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 456,
+      "trendModulePass": 24,
+      "meanReversionModulePass": 49,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "LINK/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 624,
+      "trendModulePass": 27,
+      "meanReversionModulePass": 62,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "LTC/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 48,
+      "trendModulePass": 32,
+      "meanReversionModulePass": 86,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "NEAR/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 1456,
+      "trendModulePass": 32,
+      "meanReversionModulePass": 85,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "OP/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 288,
+      "trendModulePass": 19,
+      "meanReversionModulePass": 58,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "ORDI/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 672,
+      "trendModulePass": 13,
+      "meanReversionModulePass": 52,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "PEPE/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 3448,
+      "trendModulePass": 24,
+      "meanReversionModulePass": 53,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "rowsEvaluated": 4437,
+      "inDynamicUniverseRows": 3717,
+      "trendModulePass": 30,
+      "meanReversionModulePass": 80,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 3136,
+      "trendModulePass": 14,
+      "meanReversionModulePass": 46,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "TIA/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 24,
+      "trendModulePass": 14,
+      "meanReversionModulePass": 48,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "TRX/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 24,
+      "trendModulePass": 43,
+      "meanReversionModulePass": 194,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "UNI/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 600,
+      "trendModulePass": 20,
+      "meanReversionModulePass": 39,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "WIF/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 384,
+      "trendModulePass": 12,
+      "meanReversionModulePass": 32,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    },
+    {
+      "pair": "XRP/USDT:USDT",
+      "rowsEvaluated": 4432,
+      "inDynamicUniverseRows": 2992,
+      "trendModulePass": 19,
+      "meanReversionModulePass": 88,
+      "probabilityScorePass": 0,
+      "finalEntrySignals": 0
+    }
+  ],
+  "monthlyBreakdown": [],
+  "qualityGate": {
+    "passed": false,
+    "primarySlippageRateOneWay": 0.001,
+    "rawTradeCount": 0,
+    "slippageAdjustedReturnPct": 0.0,
+    "slippageAdjustedProfitFactor": null,
+    "maxDrawdownPct": 0.0,
+    "maxConsecutiveLosses": 0,
+    "largestPairAbsContributionPct": null,
+    "largestMonthAbsContributionPct": null,
+    "reasons": [
+      "trade_count_not_meaningful",
+      "slippage_adjusted_return_not_positive",
+      "slippage_adjusted_profit_factor_not_above_1_15"
+    ]
+  },
+  "backtestResultPath": "user_data\\backtest_results\\backtest-result-2026-07-04_21-28-28.zip",
+  "reportWarnings": [],
+  "generatedAt": "2026-07-04T21:29:36.360932+00:00",
+  "source": "alphapilot_v13_4_17_dynamic_regime_expanded_report"
+}

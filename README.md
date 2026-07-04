@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.16 - Dynamic Regime Strategy Smoke Backtest
+AlphaPilot V13.4.17 - Dynamic Regime Expanded Validation
 ```
 
 ## Positioning
@@ -971,8 +971,57 @@ gate: V13.4.14 produced no `research_candidate` buckets for the smoke context.
 The strategy runtime path is valid, but the probability gate blocks entries.
 V13.4.16 keeps `dryRunApproved=false` and `liveTradingApproved=false`.
 
+## V13.4.17 Dynamic Regime Expanded Validation
+
+V13.4.17 expands `AlphaPilotDynamicRegimeV01` validation from the BTC / ETH /
+SOL smoke scope to the historical dynamic universe.
+
+Scope:
+
+```text
+strategy: AlphaPilotDynamicRegimeV01
+timeframe: 1h
+timerange: 20260101-
+universe: historical dynamic universe selectedPairs union
+slippage stress: 0.05%, 0.10%, 0.20%, 0.30% one-way
+```
+
+Run expanded validation:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_dynamic_regime_expanded_validation.ps1 -Timerange "20260101-" -Run
+python -m alphapilot.reports.generate_dynamic_regime_expanded_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_17_dynamic_regime_expanded_report.json
+reports/v13_4_17_dynamic_regime_expanded_summary.md
+docs/V13.4.17-dynamic-regime-expanded-validation.md
+```
+
+V13.4.17 reports raw metrics, slippage-adjusted metrics, liquidity gate
+summary, probability score summary, probability bucket performance, and
+regime/module breakdown. It keeps `dryRunApproved=false` and
+`liveTradingApproved=false` regardless of research gate outcome.
+
+Expanded validation result:
+
+```text
+isMock: false
+pairCount: 27
+tradeCount: 0
+probabilityScorePass: 0
+finalEntrySignals: 0
+qualityGatePassed: false
+```
+
+Interpretation: the expanded runtime path works, but the V13.4.14 probability
+gate still blocks all entries. This is not a strategy approval and not a
+Dry-run candidate.
+
 ## Next Versions
 
-- V13.4.17: run expanded validation with slippage and liquidity gates only if the zero-trade smoke result is accepted as a gate behavior checkpoint.
-- V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer.
+- V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.17 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.
