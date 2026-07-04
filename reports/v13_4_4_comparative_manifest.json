@@ -1,0 +1,73 @@
+{
+    "reportId":  "v13_4_4_comparative_manifest",
+    "timerange":  "20260401-",
+    "pairs":  [
+                  "BTC/USDT:USDT",
+                  "ETH/USDT:USDT",
+                  "SOL/USDT:USDT"
+              ],
+    "strategies":  [
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV01",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV01 --timerange 20260401- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV01.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV01.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV01.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-17-25.zip"
+                       },
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV02ATrendStrict",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV02ATrendStrict --timerange 20260401- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02ATrendStrict.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02ATrendStrict.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02ATrendStrict.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-17-33.zip"
+                       },
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV02BVolumeQuality",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV02BVolumeQuality --timerange 20260401- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02BVolumeQuality.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02BVolumeQuality.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02BVolumeQuality.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-17-41.zip"
+                       },
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV02CExitCleanup",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV02CExitCleanup --timerange 20260401- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02CExitCleanup.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02CExitCleanup.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02CExitCleanup.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-17-49.zip"
+                       },
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV02DEarlyFailureExit",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV02DEarlyFailureExit --timerange 20260401- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02DEarlyFailureExit.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02DEarlyFailureExit.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02DEarlyFailureExit.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-17-57.zip"
+                       },
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV02EPairRiskWatchlist --timerange 20260401- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02EPairRiskWatchlist.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02EPairRiskWatchlist.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02EPairRiskWatchlist.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-18-06.zip"
+                       }
+                   ],
+    "generatedAt":  "2026-07-04T18:17:17.3690330Z",
+    "safety":  "Backtesting only. No Dry-run, no live trading, no API keys, no Trade API, no Withdraw API."
+}

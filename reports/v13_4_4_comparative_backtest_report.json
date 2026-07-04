@@ -1,0 +1,785 @@
+{
+  "reportId": "v13_4_4_comparative_backtest",
+  "timerange": "20260401-",
+  "pairs": [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT"
+  ],
+  "baselineStrategy": "AlphaPilotVolumeReboundV01",
+  "baselineMetrics": {
+    "totalReturnPct": -15.542,
+    "maxDrawdownPct": 24.4939,
+    "profitFactor": 0.8107,
+    "tradeCount": 230,
+    "winRate": 41.3043,
+    "maxConsecutiveLosses": 13,
+    "averageHoldingMinutes": 68.0,
+    "feesPaid": 339.82529451,
+    "netReturnAfterCosts": -15.542,
+    "pairPerformance": [
+      {
+        "pair": "BTC/USDT:USDT",
+        "tradeCount": 72,
+        "totalProfit": -28.14238613,
+        "totalReturnPct": -2.81,
+        "profitFactor": 0.8541,
+        "winRate": 36.1111,
+        "maxDrawdownPct": 8.1554
+      },
+      {
+        "pair": "ETH/USDT:USDT",
+        "tradeCount": 59,
+        "totalProfit": -32.44700789,
+        "totalReturnPct": -3.24,
+        "profitFactor": 0.8564,
+        "winRate": 40.678,
+        "maxDrawdownPct": 7.5488
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 99,
+        "totalProfit": -94.83085485,
+        "totalReturnPct": -9.48,
+        "profitFactor": 0.7643,
+        "winRate": 45.4545,
+        "maxDrawdownPct": 15.6535
+      }
+    ],
+    "monthlyPerformance": [
+      {
+        "date": "30/04/2026",
+        "date_ts": 1777507200000,
+        "profit_abs": -158.49408035,
+        "wins": 47,
+        "draws": 0,
+        "losses": 71,
+        "trades": 118,
+        "profit_factor": 0.68886896
+      },
+      {
+        "date": "31/05/2026",
+        "date_ts": 1780185600000,
+        "profit_abs": -35.74506306,
+        "wins": 37,
+        "draws": 0,
+        "losses": 57,
+        "trades": 94,
+        "profit_factor": 0.86367663
+      },
+      {
+        "date": "30/06/2026",
+        "date_ts": 1782777600000,
+        "profit_abs": 1.11691949,
+        "wins": 5,
+        "draws": 0,
+        "losses": 5,
+        "trades": 10,
+        "profit_factor": 1.02916004
+      },
+      {
+        "date": "31/07/2026",
+        "date_ts": 1785456000000,
+        "profit_abs": 37.70197505,
+        "wins": 6,
+        "draws": 0,
+        "losses": 2,
+        "trades": 8,
+        "profit_factor": 4.33881162
+      }
+    ],
+    "stopLossLoss": -420.36251129,
+    "macdWeakExitLoss": -345.28583144,
+    "slippageApplied": false,
+    "sourceResult": "user_data\\backtest_results\\v13_4_4_AlphaPilotVolumeReboundV01.zip"
+  },
+  "candidateResults": [
+    {
+      "strategy": "AlphaPilotVolumeReboundV02ATrendStrict",
+      "candidateId": "alpha_volume_rebound_v02_a_trend_strict",
+      "isExecutable": true,
+      "backtestReport": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02ATrendStrict.zip",
+      "metrics": {
+        "totalReturnPct": -11.6607,
+        "maxDrawdownPct": 21.0664,
+        "profitFactor": 0.8251,
+        "tradeCount": 179,
+        "winRate": 41.3408,
+        "maxConsecutiveLosses": 10,
+        "averageHoldingMinutes": 66.0,
+        "feesPaid": 274.57577641,
+        "netReturnAfterCosts": -11.6607,
+        "pairPerformance": [
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 50,
+            "totalProfit": -7.60868177,
+            "totalReturnPct": -0.76,
+            "profitFactor": 0.9595,
+            "winRate": 44.0,
+            "maxDrawdownPct": 7.7076
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 63,
+            "totalProfit": -28.35875342,
+            "totalReturnPct": -2.84,
+            "profitFactor": 0.8471,
+            "winRate": 36.5079,
+            "maxDrawdownPct": 7.3828
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 66,
+            "totalProfit": -80.63955796,
+            "totalReturnPct": -8.06,
+            "profitFactor": 0.725,
+            "winRate": 43.9394,
+            "maxDrawdownPct": 13.6897
+          }
+        ],
+        "monthlyPerformance": [
+          {
+            "date": "30/04/2026",
+            "date_ts": 1777507200000,
+            "profit_abs": -119.35956737,
+            "wins": 44,
+            "draws": 0,
+            "losses": 63,
+            "trades": 107,
+            "profit_factor": 0.73845493
+          },
+          {
+            "date": "31/05/2026",
+            "date_ts": 1780185600000,
+            "profit_abs": -43.50903103,
+            "wins": 22,
+            "draws": 0,
+            "losses": 39,
+            "trades": 61,
+            "profit_factor": 0.76968934
+          },
+          {
+            "date": "30/06/2026",
+            "date_ts": 1782777600000,
+            "profit_abs": 6.8293879,
+            "wins": 2,
+            "draws": 0,
+            "losses": 1,
+            "trades": 3,
+            "profit_factor": 1.71725635
+          },
+          {
+            "date": "31/07/2026",
+            "date_ts": 1785456000000,
+            "profit_abs": 39.43221735,
+            "wins": 6,
+            "draws": 0,
+            "losses": 2,
+            "trades": 8,
+            "profit_factor": 4.33777983
+          }
+        ],
+        "stopLossLoss": -335.58167292,
+        "macdWeakExitLoss": -286.84500658,
+        "slippageApplied": false,
+        "sourceResult": "user_data\\backtest_results\\v13_4_4_AlphaPilotVolumeReboundV02ATrendStrict.zip"
+      },
+      "deltaVsBaseline": {
+        "totalReturnPct": 3.8813,
+        "maxDrawdownPct": -3.4275,
+        "profitFactor": 0.0144,
+        "tradeCount": -51.0,
+        "winRate": 0.0365,
+        "maxConsecutiveLosses": -3.0,
+        "averageHoldingMinutes": -2.0,
+        "feesPaid": -65.2495,
+        "netReturnAfterCosts": 3.8813,
+        "stopLossLoss": 84.7808,
+        "macdWeakExitLoss": 58.4408
+      },
+      "passedComparisonGate": true,
+      "warnings": [
+        "profit_total_pct missing; normalized profit_total instead."
+      ]
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02BVolumeQuality",
+      "candidateId": "alpha_volume_rebound_v02_b_volume_quality",
+      "isExecutable": true,
+      "backtestReport": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02BVolumeQuality.zip",
+      "metrics": {
+        "totalReturnPct": -4.0845,
+        "maxDrawdownPct": 11.4841,
+        "profitFactor": 0.9104,
+        "tradeCount": 116,
+        "winRate": 45.6897,
+        "maxConsecutiveLosses": 9,
+        "averageHoldingMinutes": 62.0,
+        "feesPaid": 187.32004574,
+        "netReturnAfterCosts": -4.0845,
+        "pairPerformance": [
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 32,
+            "totalProfit": 39.6843396,
+            "totalReturnPct": 3.97,
+            "profitFactor": 1.3367,
+            "winRate": 53.125,
+            "maxDrawdownPct": 4.4333
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 35,
+            "totalProfit": -3.02355032,
+            "totalReturnPct": -0.3,
+            "profitFactor": 0.9715,
+            "winRate": 37.1429,
+            "maxDrawdownPct": 4.3536
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 49,
+            "totalProfit": -77.50564835,
+            "totalReturnPct": -7.75,
+            "profitFactor": 0.6658,
+            "winRate": 46.9388,
+            "maxDrawdownPct": 11.4926
+          }
+        ],
+        "monthlyPerformance": [
+          {
+            "date": "30/04/2026",
+            "date_ts": 1777507200000,
+            "profit_abs": -47.78157824,
+            "wins": 26,
+            "draws": 0,
+            "losses": 33,
+            "trades": 59,
+            "profit_factor": 0.81619855
+          },
+          {
+            "date": "31/05/2026",
+            "date_ts": 1780185600000,
+            "profit_abs": -0.45481387,
+            "wins": 22,
+            "draws": 0,
+            "losses": 26,
+            "trades": 48,
+            "profit_factor": 0.99710525
+          },
+          {
+            "date": "30/06/2026",
+            "date_ts": 1782777600000,
+            "profit_abs": -20.49055836,
+            "wins": 2,
+            "draws": 0,
+            "losses": 4,
+            "trades": 6,
+            "profit_factor": 0.47245164
+          },
+          {
+            "date": "31/07/2026",
+            "date_ts": 1785456000000,
+            "profit_abs": 27.8820914,
+            "wins": 3,
+            "draws": 0,
+            "losses": 0,
+            "trades": 3,
+            "profit_factor": 0.0
+          }
+        ],
+        "stopLossLoss": -295.95327658,
+        "macdWeakExitLoss": -131.3940828,
+        "slippageApplied": false,
+        "sourceResult": "user_data\\backtest_results\\v13_4_4_AlphaPilotVolumeReboundV02BVolumeQuality.zip"
+      },
+      "deltaVsBaseline": {
+        "totalReturnPct": 11.4575,
+        "maxDrawdownPct": -13.0098,
+        "profitFactor": 0.0997,
+        "tradeCount": -114.0,
+        "winRate": 4.3854,
+        "maxConsecutiveLosses": -4.0,
+        "averageHoldingMinutes": -6.0,
+        "feesPaid": -152.5052,
+        "netReturnAfterCosts": 11.4575,
+        "stopLossLoss": 124.4092,
+        "macdWeakExitLoss": 213.8917
+      },
+      "passedComparisonGate": true,
+      "warnings": [
+        "profit_total_pct missing; normalized profit_total instead."
+      ]
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02CExitCleanup",
+      "candidateId": "alpha_volume_rebound_v02_c_exit_cleanup",
+      "isExecutable": true,
+      "backtestReport": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02CExitCleanup.zip",
+      "metrics": {
+        "totalReturnPct": -6.1609,
+        "maxDrawdownPct": 17.8594,
+        "profitFactor": 0.9319,
+        "tradeCount": 220,
+        "winRate": 51.3636,
+        "maxConsecutiveLosses": 10,
+        "averageHoldingMinutes": 93.0,
+        "feesPaid": 343.99564684,
+        "netReturnAfterCosts": -6.1609,
+        "pairPerformance": [
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 57,
+            "totalProfit": -0.7514991,
+            "totalReturnPct": -0.08,
+            "profitFactor": 0.997,
+            "winRate": 50.8772,
+            "maxDrawdownPct": 8.967
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 67,
+            "totalProfit": -15.17120997,
+            "totalReturnPct": -1.52,
+            "profitFactor": 0.9328,
+            "winRate": 46.2687,
+            "maxDrawdownPct": 6.4642
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 96,
+            "totalProfit": -45.68587754,
+            "totalReturnPct": -4.57,
+            "profitFactor": 0.8937,
+            "winRate": 55.2083,
+            "maxDrawdownPct": 12.7102
+          }
+        ],
+        "monthlyPerformance": [
+          {
+            "date": "30/04/2026",
+            "date_ts": 1777507200000,
+            "profit_abs": -109.75369814,
+            "wins": 55,
+            "draws": 0,
+            "losses": 57,
+            "trades": 112,
+            "profit_factor": 0.78944611
+          },
+          {
+            "date": "31/05/2026",
+            "date_ts": 1780185600000,
+            "profit_abs": -16.10194301,
+            "wins": 45,
+            "draws": 0,
+            "losses": 45,
+            "trades": 90,
+            "profit_factor": 0.95159514
+          },
+          {
+            "date": "30/06/2026",
+            "date_ts": 1782777600000,
+            "profit_abs": 11.62285009,
+            "wins": 6,
+            "draws": 0,
+            "losses": 4,
+            "trades": 10,
+            "profit_factor": 1.28871776
+          },
+          {
+            "date": "31/07/2026",
+            "date_ts": 1785456000000,
+            "profit_abs": 52.62420445,
+            "wins": 7,
+            "draws": 0,
+            "losses": 1,
+            "trades": 8,
+            "profit_factor": 6.08608511
+          }
+        ],
+        "stopLossLoss": -779.47102126,
+        "macdWeakExitLoss": null,
+        "slippageApplied": false,
+        "sourceResult": "user_data\\backtest_results\\v13_4_4_AlphaPilotVolumeReboundV02CExitCleanup.zip"
+      },
+      "deltaVsBaseline": {
+        "totalReturnPct": 9.3811,
+        "maxDrawdownPct": -6.6345,
+        "profitFactor": 0.1212,
+        "tradeCount": -10.0,
+        "winRate": 10.0593,
+        "maxConsecutiveLosses": -3.0,
+        "averageHoldingMinutes": 25.0,
+        "feesPaid": 4.1704,
+        "netReturnAfterCosts": 9.3811,
+        "stopLossLoss": -359.1085,
+        "macdWeakExitLoss": null
+      },
+      "passedComparisonGate": true,
+      "warnings": [
+        "profit_total_pct missing; normalized profit_total instead."
+      ]
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02DEarlyFailureExit",
+      "candidateId": "alpha_volume_rebound_v02_d_early_failure_exit",
+      "isExecutable": true,
+      "backtestReport": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02DEarlyFailureExit.zip",
+      "metrics": {
+        "totalReturnPct": -15.6258,
+        "maxDrawdownPct": 24.3002,
+        "profitFactor": 0.7979,
+        "tradeCount": 231,
+        "winRate": 36.7965,
+        "maxConsecutiveLosses": 13,
+        "averageHoldingMinutes": 61.0,
+        "feesPaid": 339.7125722,
+        "netReturnAfterCosts": -15.6258,
+        "pairPerformance": [
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 73,
+            "totalProfit": -9.78947184,
+            "totalReturnPct": -0.98,
+            "profitFactor": 0.9421,
+            "winRate": 32.8767,
+            "maxDrawdownPct": 5.885
+          },
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 59,
+            "totalProfit": -16.39569187,
+            "totalReturnPct": -1.64,
+            "profitFactor": 0.9213,
+            "winRate": 38.9831,
+            "maxDrawdownPct": 6.2801
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 99,
+            "totalProfit": -130.07273662,
+            "totalReturnPct": -13.01,
+            "profitFactor": 0.6712,
+            "winRate": 38.3838,
+            "maxDrawdownPct": 19.1369
+          }
+        ],
+        "monthlyPerformance": [
+          {
+            "date": "30/04/2026",
+            "date_ts": 1777507200000,
+            "profit_abs": -163.92653515,
+            "wins": 38,
+            "draws": 0,
+            "losses": 81,
+            "trades": 119,
+            "profit_factor": 0.65132729
+          },
+          {
+            "date": "31/05/2026",
+            "date_ts": 1780185600000,
+            "profit_abs": -31.10921092,
+            "wins": 36,
+            "draws": 0,
+            "losses": 58,
+            "trades": 94,
+            "profit_factor": 0.87727902
+          },
+          {
+            "date": "30/06/2026",
+            "date_ts": 1782777600000,
+            "profit_abs": 1.12037519,
+            "wins": 5,
+            "draws": 0,
+            "losses": 5,
+            "trades": 10,
+            "profit_factor": 1.02927646
+          },
+          {
+            "date": "31/07/2026",
+            "date_ts": 1785456000000,
+            "profit_abs": 37.65747055,
+            "wins": 6,
+            "draws": 0,
+            "losses": 2,
+            "trades": 8,
+            "profit_factor": 4.33712102
+          }
+        ],
+        "stopLossLoss": -396.34712289,
+        "macdWeakExitLoss": -290.96446658,
+        "slippageApplied": false,
+        "sourceResult": "user_data\\backtest_results\\v13_4_4_AlphaPilotVolumeReboundV02DEarlyFailureExit.zip"
+      },
+      "deltaVsBaseline": {
+        "totalReturnPct": -0.0838,
+        "maxDrawdownPct": -0.1937,
+        "profitFactor": -0.0128,
+        "tradeCount": 1.0,
+        "winRate": -4.5078,
+        "maxConsecutiveLosses": 0.0,
+        "averageHoldingMinutes": -7.0,
+        "feesPaid": -0.1127,
+        "netReturnAfterCosts": -0.0838,
+        "stopLossLoss": 24.0154,
+        "macdWeakExitLoss": 54.3214
+      },
+      "passedComparisonGate": false,
+      "warnings": [
+        "profit_total_pct missing; normalized profit_total instead."
+      ]
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+      "candidateId": "alpha_volume_rebound_v02_e_pair_risk_watchlist",
+      "isExecutable": true,
+      "backtestReport": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02EPairRiskWatchlist.zip",
+      "metrics": {
+        "totalReturnPct": -10.3361,
+        "maxDrawdownPct": 17.93,
+        "profitFactor": 0.8406,
+        "tradeCount": 182,
+        "winRate": 40.6593,
+        "maxConsecutiveLosses": 10,
+        "averageHoldingMinutes": 73.0,
+        "feesPaid": 287.9934956,
+        "netReturnAfterCosts": -10.3361,
+        "pairPerformance": [
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 72,
+            "totalProfit": -32.25654043,
+            "totalReturnPct": -3.23,
+            "profitFactor": 0.844,
+            "winRate": 36.1111,
+            "maxDrawdownPct": 8.7789
+          },
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 59,
+            "totalProfit": -35.49261487,
+            "totalReturnPct": -3.55,
+            "profitFactor": 0.8522,
+            "winRate": 40.678,
+            "maxDrawdownPct": 7.9332
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 51,
+            "totalProfit": -35.61185915,
+            "totalReturnPct": -3.56,
+            "profitFactor": 0.8231,
+            "winRate": 47.0588,
+            "maxDrawdownPct": 6.3078
+          }
+        ],
+        "monthlyPerformance": [
+          {
+            "date": "30/04/2026",
+            "date_ts": 1777507200000,
+            "profit_abs": -98.84792724,
+            "wins": 38,
+            "draws": 0,
+            "losses": 57,
+            "trades": 95,
+            "profit_factor": 0.74961837
+          },
+          {
+            "date": "31/05/2026",
+            "date_ts": 1780185600000,
+            "profit_abs": 2.96582251,
+            "wins": 32,
+            "draws": 0,
+            "losses": 46,
+            "trades": 78,
+            "profit_factor": 1.01406568
+          },
+          {
+            "date": "30/06/2026",
+            "date_ts": 1782777600000,
+            "profit_abs": -23.66902027,
+            "wins": 1,
+            "draws": 0,
+            "losses": 4,
+            "trades": 5,
+            "profit_factor": 0.27262753
+          },
+          {
+            "date": "31/07/2026",
+            "date_ts": 1785456000000,
+            "profit_abs": 16.19011055,
+            "wins": 3,
+            "draws": 0,
+            "losses": 1,
+            "trades": 4,
+            "profit_factor": 2.6056748
+          }
+        ],
+        "stopLossLoss": -278.32662503,
+        "macdWeakExitLoss": -317.91744313,
+        "slippageApplied": false,
+        "sourceResult": "user_data\\backtest_results\\v13_4_4_AlphaPilotVolumeReboundV02EPairRiskWatchlist.zip"
+      },
+      "deltaVsBaseline": {
+        "totalReturnPct": 5.2059,
+        "maxDrawdownPct": -6.5639,
+        "profitFactor": 0.0299,
+        "tradeCount": -48.0,
+        "winRate": -0.645,
+        "maxConsecutiveLosses": -3.0,
+        "averageHoldingMinutes": 5.0,
+        "feesPaid": -51.8318,
+        "netReturnAfterCosts": 5.2059,
+        "stopLossLoss": 142.0359,
+        "macdWeakExitLoss": 27.3684
+      },
+      "passedComparisonGate": true,
+      "warnings": [
+        "profit_total_pct missing; normalized profit_total instead."
+      ]
+    }
+  ],
+  "comparisonTable": [
+    {
+      "strategy": "AlphaPilotVolumeReboundV01",
+      "totalReturnPct": -15.542,
+      "maxDrawdownPct": 24.4939,
+      "profitFactor": 0.8107,
+      "tradeCount": 230,
+      "winRate": 41.3043,
+      "maxConsecutiveLosses": 13,
+      "feesPaid": 339.82529451,
+      "stopLossLoss": -420.36251129,
+      "macdWeakExitLoss": -345.28583144,
+      "passedComparisonGate": false
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02ATrendStrict",
+      "totalReturnPct": -11.6607,
+      "maxDrawdownPct": 21.0664,
+      "profitFactor": 0.8251,
+      "tradeCount": 179,
+      "winRate": 41.3408,
+      "maxConsecutiveLosses": 10,
+      "feesPaid": 274.57577641,
+      "stopLossLoss": -335.58167292,
+      "macdWeakExitLoss": -286.84500658,
+      "passedComparisonGate": true
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02BVolumeQuality",
+      "totalReturnPct": -4.0845,
+      "maxDrawdownPct": 11.4841,
+      "profitFactor": 0.9104,
+      "tradeCount": 116,
+      "winRate": 45.6897,
+      "maxConsecutiveLosses": 9,
+      "feesPaid": 187.32004574,
+      "stopLossLoss": -295.95327658,
+      "macdWeakExitLoss": -131.3940828,
+      "passedComparisonGate": true
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02CExitCleanup",
+      "totalReturnPct": -6.1609,
+      "maxDrawdownPct": 17.8594,
+      "profitFactor": 0.9319,
+      "tradeCount": 220,
+      "winRate": 51.3636,
+      "maxConsecutiveLosses": 10,
+      "feesPaid": 343.99564684,
+      "stopLossLoss": -779.47102126,
+      "macdWeakExitLoss": null,
+      "passedComparisonGate": true
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02DEarlyFailureExit",
+      "totalReturnPct": -15.6258,
+      "maxDrawdownPct": 24.3002,
+      "profitFactor": 0.7979,
+      "tradeCount": 231,
+      "winRate": 36.7965,
+      "maxConsecutiveLosses": 13,
+      "feesPaid": 339.7125722,
+      "stopLossLoss": -396.34712289,
+      "macdWeakExitLoss": -290.96446658,
+      "passedComparisonGate": false
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+      "totalReturnPct": -10.3361,
+      "maxDrawdownPct": 17.93,
+      "profitFactor": 0.8406,
+      "tradeCount": 182,
+      "winRate": 40.6593,
+      "maxConsecutiveLosses": 10,
+      "feesPaid": 287.9934956,
+      "stopLossLoss": -278.32662503,
+      "macdWeakExitLoss": -317.91744313,
+      "passedComparisonGate": true
+    }
+  ],
+  "ranking": [
+    {
+      "strategy": "AlphaPilotVolumeReboundV02CExitCleanup",
+      "passedComparisonGate": true,
+      "profitFactor": 0.9319,
+      "maxDrawdownPct": 17.8594,
+      "totalReturnPct": -6.1609,
+      "tradeCount": 220
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02BVolumeQuality",
+      "passedComparisonGate": true,
+      "profitFactor": 0.9104,
+      "maxDrawdownPct": 11.4841,
+      "totalReturnPct": -4.0845,
+      "tradeCount": 116
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+      "passedComparisonGate": true,
+      "profitFactor": 0.8406,
+      "maxDrawdownPct": 17.93,
+      "totalReturnPct": -10.3361,
+      "tradeCount": 182
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02ATrendStrict",
+      "passedComparisonGate": true,
+      "profitFactor": 0.8251,
+      "maxDrawdownPct": 21.0664,
+      "totalReturnPct": -11.6607,
+      "tradeCount": 179
+    },
+    {
+      "strategy": "AlphaPilotVolumeReboundV02DEarlyFailureExit",
+      "passedComparisonGate": false,
+      "profitFactor": 0.7979,
+      "maxDrawdownPct": 24.3002,
+      "totalReturnPct": -15.6258,
+      "tradeCount": 231
+    }
+  ],
+  "bestCandidate": "AlphaPilotVolumeReboundV02CExitCleanup",
+  "dryRunApproved": false,
+  "reasons": [
+    "V13.4.4 is comparative backtesting only.",
+    "Dry-run remains blocked until longer-range and broader-pair validation exists.",
+    "Slippage is not applied by the Freqtrade command; results are not live-performance estimates.",
+    "AlphaPilotVolumeReboundV02CExitCleanup passed the first comparison gate but still requires more validation."
+  ],
+  "warnings": [
+    "AlphaPilotVolumeReboundV01: profit_total_pct missing; normalized profit_total instead.",
+    "AlphaPilotVolumeReboundV02ATrendStrict: profit_total_pct missing; normalized profit_total instead.",
+    "AlphaPilotVolumeReboundV02BVolumeQuality: profit_total_pct missing; normalized profit_total instead.",
+    "AlphaPilotVolumeReboundV02CExitCleanup: profit_total_pct missing; normalized profit_total instead.",
+    "AlphaPilotVolumeReboundV02DEarlyFailureExit: profit_total_pct missing; normalized profit_total instead.",
+    "AlphaPilotVolumeReboundV02EPairRiskWatchlist: profit_total_pct missing; normalized profit_total instead."
+  ],
+  "slippageApplied": false,
+  "nextStepRecommendation": "If no candidate passes, redesign V0.2. If one improves materially, run longer timeranges and more pairs before any Dry-run discussion.",
+  "generatedAt": "2026-07-04T18:22:47.507669+00:00",
+  "source": "alphapilot_v13_4_4_comparative_backtest"
+}

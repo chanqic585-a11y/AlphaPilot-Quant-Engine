@@ -318,6 +318,45 @@ V0.2E Pair Risk Watchlist
 All candidates are `candidate_only`. None are approved for Dry-run or live
 trading.
 
+## V13.4.4 V0.1 vs V0.2 Comparative Backtest
+
+V13.4.4 compares V0.1 baseline with V0.2 candidate strategies using the same
+smoke backtest scope. It does not enter Dry-run. It does not approve live
+trading. It only identifies candidates for further validation.
+
+V13.4.4 在同一 smoke 回测范围内比较 V0.1 baseline 与 V0.2 候选策略。本版本不进入 Dry-run，不批准实盘，只筛选值得进一步验证的候选。
+
+Run comparative backtest:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_comparative_backtest.ps1 -Timerange "20260401-" -Pairs "BTC/USDT:USDT,ETH/USDT:USDT,SOL/USDT:USDT" -Run
+python -m alphapilot.reports.generate_comparative_backtest_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_4_comparative_manifest.json
+reports/v13_4_4_comparative_backtest_report.json
+reports/v13_4_4_comparative_backtest_summary.md
+docs/V13.4.4-comparative-backtest.md
+docs/volume-rebound-v02-comparison-results.md
+```
+
+Result summary:
+
+```text
+V0.1 baseline: -15.542% return, 24.4939% drawdown, 0.8107 profit factor
+V0.2A Trend Strict: -11.6607% return, 21.0664% drawdown, 0.8251 profit factor
+V0.2B Volume Quality: -4.0845% return, 11.4841% drawdown, 0.9104 profit factor
+V0.2C Exit Cleanup: -6.1609% return, 17.8594% drawdown, 0.9319 profit factor
+V0.2D Early Failure Exit: -15.6258% return, 24.3002% drawdown, 0.7979 profit factor
+V0.2E Pair Risk Watchlist: -10.3361% return, 17.93% drawdown, 0.8406 profit factor
+```
+
+A/B/C/E improved against the baseline comparison gate, while D did not. All
+candidate returns are still negative, so `dryRunApproved=false`.
+
 Smoke preview:
 
 ```powershell
@@ -329,7 +368,7 @@ Add `-Run` only after Docker Desktop is installed and running.
 
 ## Next Versions
 
-- V13.4.3: use signal audit evidence to design V0.2 candidates without entering Dry-run.
-- V13.5: run wider Top 30 historical tests only after diagnosis and risk gates are clearer.
+- V13.4.5: validate the most promising candidates over longer timeranges and more pairs, or redesign if weakness persists.
+- V13.5: consider Dry-run preparation only after broader validation shows stronger risk-adjusted evidence.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.

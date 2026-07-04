@@ -86,3 +86,20 @@ show acceptable drawdown, profit factor, loss streak, and pair/month stability.
 - Do not change V0.1 baseline.
 - Do not approve a candidate without fee and slippage review.
 
+## V13.4.4 Result Follow-up
+
+V13.4.4 executed the first smoke comparison for V0.1 and V0.2A/B/C/D/E.
+
+Summary:
+
+```text
+V0.1 baseline: -15.542% return, 24.4939% drawdown, 0.8107 profit factor
+V0.2A: -11.6607% return, 21.0664% drawdown, 0.8251 profit factor
+V0.2B: -4.0845% return, 11.4841% drawdown, 0.9104 profit factor
+V0.2C: -6.1609% return, 17.8594% drawdown, 0.9319 profit factor
+V0.2D: -15.6258% return, 24.3002% drawdown, 0.7979 profit factor
+V0.2E: -10.3361% return, 17.93% drawdown, 0.8406 profit factor
+```
+
+V0.2B, V0.2C, and V0.2E are the most useful follow-up candidates, but all
+remain negative in this smoke sample. Dry-run remains blocked.
