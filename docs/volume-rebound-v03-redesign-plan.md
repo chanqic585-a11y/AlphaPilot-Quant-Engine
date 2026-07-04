@@ -89,3 +89,19 @@ V13.4.7 - V03 Candidate Selection and Specification
 That version should select one V03 direction, define exact strategy rules, and
 prepare a backtest plan. It should not enter Dry-run.
 
+## V13.4.7 Selection
+
+V13.4.7 selects:
+
+```text
+V03A + V03D
+AlphaPilot Trend Pullback 1H V0.1
+strategyId: alpha_trend_pullback_1h_v01
+```
+
+V03A provides the trend pullback continuation structure. V03D is merged into the
+selected direction as the 1h primary timeframe choice. V03B remains the second
+priority, and V03C remains a future multi-factor scoring layer.
+
+V13.4.7 is still specification-only. V13.4.8 is the implementation and smoke
+backtest version.

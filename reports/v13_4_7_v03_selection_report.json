@@ -1,0 +1,411 @@
+{
+  "reportId": "v13_4_7_v03_selection",
+  "sourceReview": "reports\\v13_4_6_strategy_direction_review.json",
+  "sourceSummary": "reports\\v13_4_6_strategy_direction_summary.md",
+  "sourceStatusArchive": "reports\\v13_4_6_strategy_status_archive.json",
+  "selectedDirection": "V03A+D",
+  "selectedStrategyId": "alpha_trend_pullback_1h_v01",
+  "selectedStrategyName": "AlphaPilot Trend Pullback 1H V0.1",
+  "selectionReasons": [
+    "V0.1/V0.2 15m signals were too dense and cost-sensitive in expanded validation.",
+    "Raising the primary timeframe to 1h directly addresses noise, fee drag, and slippage sensitivity.",
+    "Trend pullback continuation addresses weak-rebound failures by requiring clearer 4h/1h structure.",
+    "The selected direction avoids continuing small threshold edits inside the failed 15m rebound framework.",
+    "V03A provides the structural logic, while V03D provides the lower-noise timeframe choice."
+  ],
+  "sourceCandidateEvidence": {
+    "v03a": {
+      "candidateId": "alpha_volume_rebound_v03a_trend_pullback_continuation",
+      "name": "V03A - Trend Pullback Continuation",
+      "positioning": "Trend pullback continuation strategy",
+      "coreIdea": "Trade only in clearer bullish trend structures, wait for a pullback into a support or EMA zone, and require renewed strength confirmation before any historical backtest entry.",
+      "ruleDirection": [
+        "4h trend is clearly up.",
+        "1h structure remains intact.",
+        "15m pulls back toward EMA20, EMA50, or a support area.",
+        "Price reclaims strength with volume confirmation.",
+        "Avoid weak-trend rebound attempts."
+      ],
+      "expectedBenefits": [
+        "Improves structural context versus random rebound entries.",
+        "Reduces weak-trend falling-knife behavior.",
+        "May reduce trade frequency and cost drag."
+      ],
+      "risks": [
+        "Signal count may become too low.",
+        "Late confirmation can miss early reversals.",
+        "Trend filters can still fail in regime shifts."
+      ],
+      "whatToSpecifyNext": [
+        "Exact 4h and 1h trend definitions.",
+        "Pullback zone definition and support evidence.",
+        "Reclaim confirmation candle and volume rules.",
+        "Reward/risk and time-stop framework."
+      ]
+    },
+    "v03d": {
+      "candidateId": "alpha_volume_rebound_v03d_1h_main_timeframe",
+      "name": "V03D - 1h Main Timeframe",
+      "positioning": "Lower-noise 1h strategy direction",
+      "coreIdea": "Move the primary signal timeframe from 15m to 1h to reduce noise, trade count, and cost sensitivity.",
+      "ruleDirection": [
+        "Use 1h candles as the main entry timeframe.",
+        "Use 4h market regime and trend filters.",
+        "Use 15m only for optional execution refinement in later versions.",
+        "Require wider targets or stronger risk/reward than 1:1."
+      ],
+      "expectedBenefits": [
+        "Lower trade frequency.",
+        "Lower fee and slippage sensitivity.",
+        "More stable signal context than 15m-only entries."
+      ],
+      "risks": [
+        "Entries are slower.",
+        "Sample size is smaller.",
+        "Wider candles may require different stops and targets."
+      ],
+      "whatToSpecifyNext": [
+        "1h setup definition.",
+        "4h regime filter.",
+        "Reward/risk target and stop model.",
+        "Minimum sample coverage before comparison."
+      ]
+    }
+  },
+  "rejectedAlternatives": [
+    {
+      "direction": "V03B Breakout Retest Confirmation",
+      "status": "second_priority",
+      "reason": "The structure is clear and useful, but it requires more robust support/resistance, breakout, and retest detection before first implementation.",
+      "futureUse": "Keep as a follow-up candidate if Trend Pullback 1H does not pass quality gates.",
+      "sourceCandidate": {
+        "candidateId": "alpha_volume_rebound_v03b_breakout_retest_confirmation",
+        "name": "V03B - Breakout Retest Confirmation",
+        "positioning": "Breakout retest confirmation strategy",
+        "coreIdea": "Avoid random rebounds and wait for a close above a meaningful resistance level, then require a retest that holds before historical backtest entry.",
+        "ruleDirection": [
+          "Identify a recent resistance zone.",
+          "Require 15m or 1h close above that zone.",
+          "Require retest without closing back below the breakout area.",
+          "Use volume confirmation and BTC environment safety.",
+          "Reject unconfirmed breakout candles."
+        ],
+        "expectedBenefits": [
+          "Clearer and more explainable entry structure.",
+          "Can improve payoff by entering after market acceptance.",
+          "Should reduce low-quality rebound attempts."
+        ],
+        "risks": [
+          "False breakouts remain possible.",
+          "Retests may not appear.",
+          "The setup may be too sparse for some pairs."
+        ],
+        "whatToSpecifyNext": [
+          "Resistance detection method.",
+          "Retest tolerance and invalidation rules.",
+          "Volume and momentum confirmation rules.",
+          "Pair-level and daily signal caps."
+        ]
+      }
+    },
+    {
+      "direction": "V03C High Score Signal Only",
+      "status": "future_enhancement_layer",
+      "reason": "A score model is attractive for low-frequency quality control, but first implementation should establish a simpler structural baseline before adding weights.",
+      "futureUse": "Use later as a scoring layer on top of V03A/V03B style structures.",
+      "sourceCandidate": {
+        "candidateId": "alpha_volume_rebound_v03c_high_score_signal_only",
+        "name": "V03C - High Score Signal Only",
+        "positioning": "Low-frequency high-quality signal strategy",
+        "coreIdea": "Keep the volume rebound theme but require a transparent multi-factor score. Only high-score historical signals enter backtesting.",
+        "ruleDirection": [
+          "Score market safety, trend context, rebound location, volume quality, momentum improvement, and risk quality.",
+          "Require score >= 80 before any backtest entry.",
+          "Use pair-level exposure caps and daily signal limits.",
+          "Record score components in reports for auditability."
+        ],
+        "expectedBenefits": [
+          "Directly attacks over-trading and noisy 15m signals.",
+          "Makes entry quality measurable and auditable.",
+          "Can later support supervised learning without changing the safety boundary."
+        ],
+        "risks": [
+          "Scoring weights can overfit easily.",
+          "Signal count may become too low.",
+          "Manual score design needs careful validation."
+        ],
+        "whatToSpecifyNext": [
+          "Score components and weights.",
+          "Minimum sample-size rules.",
+          "Ablation tests for each score component.",
+          "Slippage-adjusted quality gate before Dry-run."
+        ]
+      }
+    },
+    {
+      "direction": "V03D 1h Main Timeframe",
+      "status": "merged_into_selected_direction",
+      "reason": "V03D is a timeframe/noise reduction decision, not a complete standalone strategy.",
+      "futureUse": "Merged into V03A as the primary timeframe for Trend Pullback 1H.",
+      "sourceCandidate": {
+        "candidateId": "alpha_volume_rebound_v03d_1h_main_timeframe",
+        "name": "V03D - 1h Main Timeframe",
+        "positioning": "Lower-noise 1h strategy direction",
+        "coreIdea": "Move the primary signal timeframe from 15m to 1h to reduce noise, trade count, and cost sensitivity.",
+        "ruleDirection": [
+          "Use 1h candles as the main entry timeframe.",
+          "Use 4h market regime and trend filters.",
+          "Use 15m only for optional execution refinement in later versions.",
+          "Require wider targets or stronger risk/reward than 1:1."
+        ],
+        "expectedBenefits": [
+          "Lower trade frequency.",
+          "Lower fee and slippage sensitivity.",
+          "More stable signal context than 15m-only entries."
+        ],
+        "risks": [
+          "Entries are slower.",
+          "Sample size is smaller.",
+          "Wider candles may require different stops and targets."
+        ],
+        "whatToSpecifyNext": [
+          "1h setup definition.",
+          "4h regime filter.",
+          "Reward/risk target and stop model.",
+          "Minimum sample coverage before comparison."
+        ]
+      }
+    }
+  ],
+  "strategySpec": {
+    "strategyId": "alpha_trend_pullback_1h_v01",
+    "name": "AlphaPilot Trend Pullback 1H V0.1",
+    "version": "v13.4.7-spec",
+    "status": "spec_only",
+    "selectedDirection": "V03A+D",
+    "positioning": "Long-only 1h trend pullback continuation research strategy. It looks for clearer bullish trend structure, controlled pullback location, and 1h strength confirmation.",
+    "notA": [
+      "weak-trend bottom fishing",
+      "15m high-frequency rebound strategy",
+      "random volume chase",
+      "unfiltered full-market scanner",
+      "Dry-run-ready strategy",
+      "live-trading strategy"
+    ],
+    "market": {
+      "exchange": "okx",
+      "marketType": "USDT swap",
+      "universe": "fixed Top30 supported pairs",
+      "direction": "long_only",
+      "primaryTimeframe": "1h",
+      "higherTimeframe": "4h",
+      "btcFilterTimeframes": [
+        "1h",
+        "4h"
+      ],
+      "dynamicUniverse": false
+    },
+    "entryRules": {
+      "allRequired": true,
+      "filters": [
+        {
+          "id": "trend_4h_filter",
+          "name": "4h Trend Filter",
+          "timeframe": "4h",
+          "candidateRules": [
+            "close_4h > ema200_4h",
+            "ema20_4h >= ema50_4h",
+            "ema20_4h_slope >= 0"
+          ],
+          "purpose": "Search pullback continuation only when the larger structure is not weak."
+        },
+        {
+          "id": "btc_market_safety_filter",
+          "name": "BTC Market Safety Filter",
+          "timeframe": "1h/4h",
+          "candidateRules": [
+            "btc_1h_3_candle_change_pct > -1.5",
+            "btc_4h_close >= btc_4h_ema200",
+            "btc_1h_macd_hist is not worsening for multiple consecutive candles"
+          ],
+          "purpose": "Avoid altcoin continuation entries during BTC stress."
+        },
+        {
+          "id": "pullback_location_filter",
+          "name": "1h Pullback Location",
+          "timeframe": "1h",
+          "candidateRules": [
+            "close_1h >= ema50_1h",
+            "close_1h <= ema20_1h * 1.015",
+            "close_1h >= ema20_1h * 0.985"
+          ],
+          "purpose": "Enter research sample only near a reasonable trend pullback area, not after extension."
+        },
+        {
+          "id": "reclaim_confirmation_filter",
+          "name": "1h Reclaim / Confirmation",
+          "timeframe": "1h",
+          "candidateRules": [
+            "close_1h > ema20_1h",
+            "macd_hist_1h > macd_hist_1h.shift(1)"
+          ],
+          "purpose": "Require renewed strength instead of entering because price is merely lower."
+        },
+        {
+          "id": "volume_quality_filter",
+          "name": "Volume Quality",
+          "timeframe": "1h",
+          "candidateRules": [
+            "volume_ratio_1h >= 1.2"
+          ],
+          "purpose": "Require moderate confirmation while avoiding overly strict 15m-style thresholds.",
+          "futureVariants": [
+            "volume_ratio_1h >= 1.3",
+            "volume_ratio_1h >= 1.5"
+          ]
+        },
+        {
+          "id": "no_chase_filter",
+          "name": "No-Chase Filter",
+          "timeframe": "1h",
+          "candidateRules": [
+            "close_1h <= ema20_1h * 1.02",
+            "rsi14_1h <= 65"
+          ],
+          "purpose": "Avoid entering after the 1h move is already extended."
+        },
+        {
+          "id": "risk_quality_filter",
+          "name": "Risk Quality Filter",
+          "timeframe": "1h",
+          "candidateRules": [
+            "atr_pct_1h is not extreme",
+            "current candle body is not overextended",
+            "upper wick is not excessive"
+          ],
+          "purpose": "Track implementation candidates for candle quality and ATR risk.",
+          "implementationStatus": "optional_for_v13_4_8"
+        }
+      ]
+    },
+    "exitRules": {
+      "defaultProfile": "ExitProfileA",
+      "profiles": [
+        {
+          "id": "ExitProfileA",
+          "status": "recommended_first_implementation",
+          "stoploss": "-2.5%",
+          "takeProfit": "+5%",
+          "timeStop": "exit after 8 closed 1h candles if trade is not profitable",
+          "momentumExit": "only evaluate momentum exit when trade is profitable",
+          "reason": "Simple fixed profile with wider reward/risk than V0.1/V0.2 1:1 payoff."
+        },
+        {
+          "id": "ExitProfileB",
+          "status": "candidate_later",
+          "stoploss": "entry - 1.5 * ATR",
+          "takeProfit": "2R",
+          "timeStop": "exit after 8 closed 1h candles if trade is not profitable",
+          "momentumExit": "only evaluate momentum exit when trade is profitable",
+          "reason": "More adaptive risk model, but implementation and interpretation are more complex."
+        }
+      ],
+      "notDefault": [
+        "-3% stoploss and +3% take-profit 1:1 payoff"
+      ]
+    },
+    "riskRules": {
+      "riskPerTradePct": 1.0,
+      "leverage": "5x configurable research cap",
+      "marginMode": "isolated",
+      "positionSizingFormula": [
+        "riskAmount = accountEquity * riskPerTradePct",
+        "effectiveStopDistance = stopLossPct + feeRate * 2 + slippageRate * 2",
+        "positionNotional = riskAmount / effectiveStopDistance",
+        "requiredMargin = positionNotional / leverage"
+      ],
+      "pairLevelControls": [
+        "daily signal cap per pair",
+        "pair-level exposure cap",
+        "pair risk watchlist in reports"
+      ]
+    },
+    "qualityGate": {
+      "dryRunApprovedByDefault": false,
+      "minimumRequirements": [
+        "slippage-adjusted total return > 0",
+        "slippage-adjusted profit factor > 1.15",
+        "strict target profit factor >= 1.2",
+        "max drawdown materially below V0.1/V0.2 expanded validation",
+        "max consecutive losses acceptable for the proposed risk model",
+        "trade count sufficient but not excessive",
+        "no single pair dominates profit or loss",
+        "passes BTC/ETH/SOL smoke validation",
+        "passes six-month Top30 validation",
+        "preferably passes longer timerange validation"
+      ],
+      "failureRule": "If these gates are not met, the strategy must not enter Dry-run."
+    },
+    "implementationPlan": {
+      "targetVersion": "V13.4.8",
+      "title": "Implement Trend Pullback 1H V03 Strategy and Smoke Backtest",
+      "steps": [
+        "Add user_data/strategies/AlphaPilotTrendPullback1HV01.py.",
+        "Do not modify old VolumeRebound strategies.",
+        "Implement 1h trend pullback entry logic from this spec.",
+        "Implement ExitProfileA first.",
+        "Run BTC/ETH/SOL smoke backtest.",
+        "If smoke runs without runtime errors, run fixed Top30 six-month validation.",
+        "Generate slippage-adjusted AlphaPilot report.",
+        "Keep dryRunApproved=false unless quality gates are met in a later review."
+      ]
+    },
+    "safetyBoundary": {
+      "realApiKey": false,
+      "tradeApi": false,
+      "withdrawApi": false,
+      "accountReads": false,
+      "positionReads": false,
+      "realOrderCreation": false,
+      "autoTrading": false,
+      "dryRunApproved": false
+    }
+  },
+  "qualityGate": {
+    "dryRunApprovedByDefault": false,
+    "minimumRequirements": [
+      "slippage-adjusted total return > 0",
+      "slippage-adjusted profit factor > 1.15",
+      "strict target profit factor >= 1.2",
+      "max drawdown materially below V0.1/V0.2 expanded validation",
+      "max consecutive losses acceptable for the proposed risk model",
+      "trade count sufficient but not excessive",
+      "no single pair dominates profit or loss",
+      "passes BTC/ETH/SOL smoke validation",
+      "passes six-month Top30 validation",
+      "preferably passes longer timerange validation"
+    ],
+    "failureRule": "If these gates are not met, the strategy must not enter Dry-run."
+  },
+  "v13_4_8_plan": {
+    "targetVersion": "V13.4.8",
+    "title": "Implement Trend Pullback 1H V03 Strategy and Smoke Backtest",
+    "steps": [
+      "Add user_data/strategies/AlphaPilotTrendPullback1HV01.py.",
+      "Do not modify old VolumeRebound strategies.",
+      "Implement 1h trend pullback entry logic from this spec.",
+      "Implement ExitProfileA first.",
+      "Run BTC/ETH/SOL smoke backtest.",
+      "If smoke runs without runtime errors, run fixed Top30 six-month validation.",
+      "Generate slippage-adjusted AlphaPilot report.",
+      "Keep dryRunApproved=false unless quality gates are met in a later review."
+    ]
+  },
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "implementedStrategyCode": false,
+  "backtestExecuted": false,
+  "warnings": [],
+  "generatedAt": "2026-07-04T19:28:57.395875+00:00",
+  "source": "alphapilot_v13_4_7_v03_selection"
+}

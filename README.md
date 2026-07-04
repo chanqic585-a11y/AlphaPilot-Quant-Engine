@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.6 - Strategy Direction Review and V03 Redesign
+AlphaPilot V13.4.7 - V03 Candidate Selection and Strategy Specification
 ```
 
 ## Positioning
@@ -470,9 +470,51 @@ run backtests, does not enter Dry-run, does not use API keys, does not call
 Trade API or Withdraw API, does not read accounts, does not create orders, and
 does not auto trade.
 
+## V13.4.7 V03 Candidate Selection
+
+V13.4.7 selects Trend Pullback 1H as the first V03 implementation direction.
+It does not implement strategy code, does not run backtests, and does not enter
+Dry-run.
+
+中文说明：
+
+```text
+V13.4.7 基于 V13.4.6 策略方向复盘，选择“1h 趋势回调延续”作为 V03 第一实现方向。
+本版本只输出策略规格和 V13.4.8 实现计划，不写策略代码、不回测、不进入 Dry-run。
+```
+
+Selected V03 direction:
+
+```text
+selectedDirection = V03A+D
+selectedStrategyId = alpha_trend_pullback_1h_v01
+selectedStrategyName = AlphaPilot Trend Pullback 1H V0.1
+status = spec_only
+dryRunApproved = false
+implementedStrategyCode = false
+backtestExecuted = false
+```
+
+Outputs:
+
+```text
+alphapilot/strategy_specs/trend_pullback_1h_v01.py
+alphapilot/reports/generate_v03_selection_report.py
+reports/v13_4_7_v03_selection_report.json
+reports/v13_4_7_v03_strategy_spec.md
+docs/V13.4.7-v03-candidate-selection.md
+docs/trend-pullback-1h-v01-spec.md
+docs/v13_4_8_implementation_plan.md
+```
+
+V13.4.7 is research-only. It does not modify strategy execution files, does not
+download data, does not run backtests, does not enter Dry-run, does not use API
+keys, does not call Trade API or Withdraw API, does not read accounts, does not
+create orders, and does not auto trade.
+
 ## Next Versions
 
-- V13.4.7: select and specify one V03 candidate direction before implementation.
-- V13.5: consider Dry-run preparation only after a redesigned V03 candidate passes stronger risk-adjusted validation.
+- V13.4.8: implement Trend Pullback 1H V03 strategy and smoke backtest; still no Dry-run.
+- V13.5: consider Dry-run preparation only after V03 passes stronger risk-adjusted validation.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.
