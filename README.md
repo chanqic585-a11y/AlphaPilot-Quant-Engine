@@ -204,6 +204,42 @@ Runtime compatibility fixed in V13.4:
 
 V13.4 is a process success, not a strategy approval. The current AlphaPilot Volume Rebound V0.1 smoke result is negative, with `profitFactor < 1`, negative total return, and high drawdown. It must not enter Dry-run. The next step is V13.4.1 Backtest Result Diagnosis.
 
+## V13.4.1 Backtest Result Diagnosis
+
+V13.4.1 diagnoses the first real smoke backtest result. It does not tune
+strategy parameters, does not modify `AlphaPilotVolumeReboundV01.py`, and does
+not enter Dry-run.
+
+Run diagnosis:
+
+```powershell
+python -m alphapilot.reports.diagnose_backtest_result
+```
+
+Diagnosis outputs:
+
+```text
+reports/v13_4_1_diagnosis_report.json
+reports/v13_4_1_diagnosis_summary.md
+docs/V13.4.1-backtest-result-diagnosis.md
+docs/v13_4_1_diagnosis_findings.md
+```
+
+Main findings from V13.4.1:
+
+- The strategy cannot enter Dry-run.
+- SOL contributed the largest pair-level loss: `-94.83085485 USDT`.
+- April 2026 contributed the largest time-period loss: `-158.49408035 USDT`.
+- `stop_loss` was the largest exit-reason loss: `-420.36251129 USDT`.
+- `macd_histogram_two_candle_weakness` also lost heavily: `-345.28583144 USDT`.
+- The weakest holding bucket was `1-3h`: `-120.76496941 USDT`.
+- Fees were applied by Freqtrade and are material; slippage was not applied by the V13.4 command.
+- Filter effectiveness is unavailable because V13.4 did not include skipped-signal instrumentation.
+
+V13.4.1 prepares V0.2 candidate ideas, but those ideas are evidence categories,
+not parameter changes. The next work should add signal audit instrumentation and
+review the V0.2 candidates before any strategy modification.
+
 Smoke preview:
 
 ```powershell

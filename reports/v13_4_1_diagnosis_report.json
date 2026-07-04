@@ -1,0 +1,820 @@
+{
+  "reportId": "v13_4_1_diagnosis",
+  "sourceReport": "reports\\v13_4_smoke_backtest_report.json",
+  "sourceResult": "user_data\\backtest_results\\backtest-result-2026-07-04_17-07-53.zip",
+  "isMock": false,
+  "strategyId": "alpha_volume_rebound_v01",
+  "timerange": "20260401-2026-07-04 16:45:00",
+  "pairs": [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT"
+  ],
+  "overall": {
+    "totalTrades": 230,
+    "winningTrades": 95,
+    "losingTrades": 135,
+    "winRate": 41.3043,
+    "totalReturnPct": -15.542,
+    "maxDrawdownPct": 24.4939,
+    "profitFactor": 0.8107,
+    "averageProfitPct": -0.2092,
+    "averageWin": 7.00837262,
+    "averageLoss": -6.08307887,
+    "expectancy": -0.67574021,
+    "maxConsecutiveLosses": 13,
+    "averageHoldingMinutes": 68.0,
+    "medianHoldingMinutes": 60.0
+  },
+  "pairBreakdown": [
+    {
+      "pair": "BTC/USDT:USDT",
+      "tradeCount": 72,
+      "winRate": 36.1111,
+      "netProfitPct": -2.81,
+      "totalProfit": -28.14238613,
+      "averageWin": 6.3383289,
+      "averageLoss": -4.19432473,
+      "profitFactor": 0.8541,
+      "maxDrawdownPct": 8.1554,
+      "maxConsecutiveLosses": 8,
+      "averageHoldingMinutes": 91.4583,
+      "bestTrade": {
+        "pair": "BTC/USDT:USDT",
+        "openDate": "2026-04-08 12:00:00+00:00",
+        "closeDate": "2026-04-08 13:00:00+00:00",
+        "profitAbs": 10.23846369,
+        "profitRatioPct": 3.0,
+        "exitReason": "roi",
+        "durationMinutes": 60
+      },
+      "worstTrade": {
+        "pair": "BTC/USDT:USDT",
+        "openDate": "2026-04-16 15:45:00+00:00",
+        "closeDate": "2026-04-16 16:45:00+00:00",
+        "profitAbs": -11.0850653,
+        "profitRatioPct": -3.4899,
+        "exitReason": "stop_loss",
+        "durationMinutes": 60
+      }
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "tradeCount": 59,
+      "winRate": 40.678,
+      "netProfitPct": -3.24,
+      "totalProfit": -32.44700789,
+      "averageWin": 8.06554156,
+      "averageLoss": -6.45771444,
+      "profitFactor": 0.8564,
+      "maxDrawdownPct": 7.5488,
+      "maxConsecutiveLosses": 4,
+      "averageHoldingMinutes": 54.4068,
+      "bestTrade": {
+        "pair": "ETH/USDT:USDT",
+        "openDate": "2026-04-09 15:30:00+00:00",
+        "closeDate": "2026-04-09 15:30:00+00:00",
+        "profitAbs": 10.23778536,
+        "profitRatioPct": 2.9998,
+        "exitReason": "roi",
+        "durationMinutes": 0
+      },
+      "worstTrade": {
+        "pair": "ETH/USDT:USDT",
+        "openDate": "2026-04-14 13:45:00+00:00",
+        "closeDate": "2026-04-14 14:30:00+00:00",
+        "profitAbs": -11.50687876,
+        "profitRatioPct": -3.4951,
+        "exitReason": "stop_loss",
+        "durationMinutes": 45
+      }
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "tradeCount": 99,
+      "winRate": 45.4545,
+      "netProfitPct": -9.48,
+      "totalProfit": -94.83085485,
+      "averageWin": 6.83168556,
+      "averageLoss": -7.44919824,
+      "profitFactor": 0.7643,
+      "maxDrawdownPct": 15.6535,
+      "maxConsecutiveLosses": 8,
+      "averageHoldingMinutes": 58.4848,
+      "bestTrade": {
+        "pair": "SOL/USDT:USDT",
+        "openDate": "2026-04-09 15:00:00+00:00",
+        "closeDate": "2026-04-09 15:30:00+00:00",
+        "profitAbs": 10.0357852,
+        "profitRatioPct": 3.0268,
+        "exitReason": "roi",
+        "durationMinutes": 30
+      },
+      "worstTrade": {
+        "pair": "SOL/USDT:USDT",
+        "openDate": "2026-04-08 13:15:00+00:00",
+        "closeDate": "2026-04-08 13:30:00+00:00",
+        "profitAbs": -11.9309976,
+        "profitRatioPct": -3.4543,
+        "exitReason": "stop_loss",
+        "durationMinutes": 15
+      }
+    }
+  ],
+  "monthlyBreakdown": [
+    {
+      "period": "30/04/2026",
+      "tradeCount": 118,
+      "netProfit": -158.49408035,
+      "winRate": 39.8305,
+      "profitFactor": 0.6889,
+      "wins": 47,
+      "losses": 71
+    },
+    {
+      "period": "31/05/2026",
+      "tradeCount": 94,
+      "netProfit": -35.74506306,
+      "winRate": 39.3617,
+      "profitFactor": 0.8637,
+      "wins": 37,
+      "losses": 57
+    },
+    {
+      "period": "30/06/2026",
+      "tradeCount": 10,
+      "netProfit": 1.11691949,
+      "winRate": 50.0,
+      "profitFactor": 1.0292,
+      "wins": 5,
+      "losses": 5
+    },
+    {
+      "period": "31/07/2026",
+      "tradeCount": 8,
+      "netProfit": 37.70197505,
+      "winRate": 75.0,
+      "profitFactor": 4.3388,
+      "wins": 6,
+      "losses": 2
+    }
+  ],
+  "exitReasonBreakdown": [
+    {
+      "exitReason": "roi",
+      "tradeCount": 70,
+      "winRate": 100.0,
+      "netProfit": 621.39988306,
+      "netProfitPct": 62.14,
+      "averageProfitPct": 3.0,
+      "averageWin": 8.87714119,
+      "averageLoss": null,
+      "profitFactor": 0.0,
+      "durationAvg": "0:47:00"
+    },
+    {
+      "exitReason": "time_stop_12_candles_no_profit",
+      "tradeCount": 3,
+      "winRate": 0.0,
+      "netProfit": -11.1717892,
+      "netProfitPct": -1.12,
+      "averageProfitPct": -1.18,
+      "averageWin": null,
+      "averageLoss": -3.72392973,
+      "profitFactor": 0.0,
+      "durationAvg": "3:15:00"
+    },
+    {
+      "exitReason": "macd_histogram_two_candle_weakness",
+      "tradeCount": 117,
+      "winRate": 21.3675,
+      "netProfit": -345.28583144,
+      "netProfitPct": -34.53,
+      "averageProfitPct": -0.99,
+      "averageWin": 1.77582064,
+      "averageLoss": -4.23566682,
+      "profitFactor": 0.1139,
+      "durationAvg": "1:27:00"
+    },
+    {
+      "exitReason": "stop_loss",
+      "tradeCount": 40,
+      "winRate": 0.0,
+      "netProfit": -420.36251129,
+      "netProfitPct": -42.04,
+      "averageProfitPct": -3.48,
+      "averageWin": null,
+      "averageLoss": -10.50906278,
+      "profitFactor": 0.0,
+      "durationAvg": "0:37:00"
+    }
+  ],
+  "holdingTimeBreakdown": [
+    {
+      "bucket": "0-1h",
+      "tradeCount": 102,
+      "winRate": 44.1176,
+      "netProfit": -42.92963304,
+      "averageProfitPct": -0.1294
+    },
+    {
+      "bucket": "1-3h",
+      "tradeCount": 117,
+      "winRate": 36.7521,
+      "netProfit": -120.76496941,
+      "averageProfitPct": -0.3256
+    },
+    {
+      "bucket": "3-6h",
+      "tradeCount": 11,
+      "winRate": 63.6364,
+      "netProfit": 8.27435358,
+      "averageProfitPct": 0.29
+    },
+    {
+      "bucket": "6-12h",
+      "tradeCount": 0,
+      "winRate": null,
+      "netProfit": 0.0,
+      "averageProfitPct": null
+    },
+    {
+      "bucket": "12h+",
+      "tradeCount": 0,
+      "winRate": null,
+      "netProfit": 0.0,
+      "averageProfitPct": null
+    }
+  ],
+  "costAnalysis": {
+    "feesAvailable": true,
+    "feesAppliedByFreqtrade": true,
+    "estimatedFeesPaidFromOrders": 339.82529451,
+    "feesToGrossProfitRatio": 0.5104,
+    "feesToAbsolutePnlRatio": 0.2285,
+    "slippageApplied": false,
+    "slippageAvailable": false,
+    "slippageCost": null,
+    "netReturnAfterCosts": -15.542,
+    "note": "Freqtrade applied --fee 0.0005. Slippage is documented in the report schema but was not applied by the V13.4 command.",
+    "totalVolume": 679650.58902678
+  },
+  "consecutiveLossAnalysis": {
+    "maxConsecutiveLosses": 13,
+    "worstLossStreakStart": "2026-05-15 01:30:00+00:00",
+    "worstLossStreakEnd": "2026-05-17 01:00:00+00:00",
+    "symbolsInWorstLossStreak": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT"
+    ],
+    "largestLossStreakByNetLoss": {
+      "count": 13,
+      "start": "2026-05-15 01:30:00+00:00",
+      "end": "2026-05-17 01:00:00+00:00",
+      "netProfit": -74.50710009,
+      "symbols": [
+        "BTC/USDT:USDT",
+        "ETH/USDT:USDT",
+        "SOL/USDT:USDT"
+      ]
+    },
+    "lossStreaks": [
+      {
+        "count": 1,
+        "start": "2026-04-06 14:30:00+00:00",
+        "end": "2026-04-06 14:30:00+00:00",
+        "netProfit": -11.5687719,
+        "symbols": [
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 1,
+        "start": "2026-04-07 14:00:00+00:00",
+        "end": "2026-04-07 14:00:00+00:00",
+        "netProfit": -2.5883735,
+        "symbols": [
+          "BTC/USDT:USDT"
+        ]
+      },
+      {
+        "count": 4,
+        "start": "2026-04-08 13:30:00+00:00",
+        "end": "2026-04-09 13:45:00+00:00",
+        "netProfit": -41.77152706,
+        "symbols": [
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 4,
+        "start": "2026-04-10 03:00:00+00:00",
+        "end": "2026-04-10 10:45:00+00:00",
+        "netProfit": -31.17608047,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 3,
+        "start": "2026-04-11 04:00:00+00:00",
+        "end": "2026-04-11 06:15:00+00:00",
+        "netProfit": -17.36853771,
+        "symbols": [
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 3,
+        "start": "2026-04-11 22:30:00+00:00",
+        "end": "2026-04-12 14:30:00+00:00",
+        "netProfit": -25.45641985,
+        "symbols": [
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 5,
+        "start": "2026-04-13 03:00:00+00:00",
+        "end": "2026-04-13 10:45:00+00:00",
+        "netProfit": -27.25440372,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 7,
+        "start": "2026-04-14 14:30:00+00:00",
+        "end": "2026-04-16 10:15:00+00:00",
+        "netProfit": -52.05632724,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 1,
+        "start": "2026-04-16 13:45:00+00:00",
+        "end": "2026-04-16 13:45:00+00:00",
+        "netProfit": -10.89662017,
+        "symbols": [
+          "ETH/USDT:USDT"
+        ]
+      },
+      {
+        "count": 2,
+        "start": "2026-04-16 16:30:00+00:00",
+        "end": "2026-04-16 16:45:00+00:00",
+        "netProfit": -22.1210027,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT"
+        ]
+      },
+      {
+        "count": 9,
+        "start": "2026-04-18 08:15:00+00:00",
+        "end": "2026-04-19 09:45:00+00:00",
+        "netProfit": -63.5285439,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 5,
+        "start": "2026-04-20 16:15:00+00:00",
+        "end": "2026-04-21 06:15:00+00:00",
+        "netProfit": -31.32595795,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 8,
+        "start": "2026-04-21 14:45:00+00:00",
+        "end": "2026-04-22 12:45:00+00:00",
+        "netProfit": -57.16334831,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 4,
+        "start": "2026-04-23 01:15:00+00:00",
+        "end": "2026-04-23 19:15:00+00:00",
+        "netProfit": -24.33128406,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 2,
+        "start": "2026-04-24 02:45:00+00:00",
+        "end": "2026-04-24 03:15:00+00:00",
+        "netProfit": -16.30711576,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT"
+        ]
+      },
+      {
+        "count": 1,
+        "start": "2026-04-25 07:30:00+00:00",
+        "end": "2026-04-25 07:30:00+00:00",
+        "netProfit": -3.3796854,
+        "symbols": [
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 1,
+        "start": "2026-04-26 16:00:00+00:00",
+        "end": "2026-04-26 16:00:00+00:00",
+        "netProfit": -1.64999144,
+        "symbols": [
+          "BTC/USDT:USDT"
+        ]
+      },
+      {
+        "count": 2,
+        "start": "2026-04-26 22:30:00+00:00",
+        "end": "2026-04-27 00:30:00+00:00",
+        "netProfit": -15.24375687,
+        "symbols": [
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      {
+        "count": 1,
+        "start": "2026-04-27 14:15:00+00:00",
+        "end": "2026-04-27 14:15:00+00:00",
+        "netProfit": -2.57960616,
+        "symbols": [
+          "ETH/USDT:USDT"
+        ]
+      },
+      {
+        "count": 1,
+        "start": "2026-04-27 15:00:00+00:00",
+        "end": "2026-04-27 15:00:00+00:00",
+        "netProfit": -10.01662696,
+        "symbols": [
+          "BTC/USDT:USDT"
+        ]
+      }
+    ],
+    "lossStreakCount": 42
+  },
+  "filterEffectiveness": {
+    "filterEffectivenessAvailable": false,
+    "reason": "skipped signal instrumentation not available in V13.4",
+    "filtersReviewed": [
+      "BTC crash filter",
+      "4h trend filter",
+      "RSI 30-55 filter",
+      "volumeRatio >= 1.5",
+      "MACD histogram improving",
+      "close >= EMA20 * 0.995",
+      "pullback / no chase filter"
+    ],
+    "recommendedInstrumentation": [
+      "pre-filter signal count",
+      "post-filter signal count",
+      "skip reason count",
+      "per-pair skip reason count"
+    ]
+  },
+  "tradeQualityReview": {
+    "mfeMaeAvailable": true,
+    "averageFavorableExcursionPct": 0.5026,
+    "averageAdverseExcursionPct": -0.3752,
+    "maxFavorableExcursionPct": 2.1869,
+    "maxAdverseExcursionPct": -2.3441,
+    "lossTradesWithAtLeastHalfPercentFavorableMove": 16,
+    "quickStopLossesWithinOneHour": 35,
+    "lossTradeCount": 135,
+    "note": "MFE/MAE are approximated from Freqtrade min_rate/max_rate. Exact intratrade path and slippage are unavailable."
+  },
+  "diagnosisFindings": [
+    {
+      "id": "dry_run_blocked",
+      "severity": "critical",
+      "evidence": {
+        "totalReturnPct": -15.542,
+        "profitFactor": 0.8107,
+        "maxDrawdownPct": 24.4939
+      },
+      "finding": "Current V0.1 smoke backtest is negative and must not enter Dry-run."
+    },
+    {
+      "id": "loss_concentration_pair",
+      "severity": "high",
+      "evidence": {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 99,
+        "winRate": 45.4545,
+        "netProfitPct": -9.48,
+        "totalProfit": -94.83085485,
+        "averageWin": 6.83168556,
+        "averageLoss": -7.44919824,
+        "profitFactor": 0.7643,
+        "maxDrawdownPct": 15.6535,
+        "maxConsecutiveLosses": 8,
+        "averageHoldingMinutes": 58.4848,
+        "bestTrade": {
+          "pair": "SOL/USDT:USDT",
+          "openDate": "2026-04-09 15:00:00+00:00",
+          "closeDate": "2026-04-09 15:30:00+00:00",
+          "profitAbs": 10.0357852,
+          "profitRatioPct": 3.0268,
+          "exitReason": "roi",
+          "durationMinutes": 30
+        },
+        "worstTrade": {
+          "pair": "SOL/USDT:USDT",
+          "openDate": "2026-04-08 13:15:00+00:00",
+          "closeDate": "2026-04-08 13:30:00+00:00",
+          "profitAbs": -11.9309976,
+          "profitRatioPct": -3.4543,
+          "exitReason": "stop_loss",
+          "durationMinutes": 15
+        }
+      },
+      "finding": "Largest pair-level loss came from SOL/USDT:USDT."
+    },
+    {
+      "id": "relative_best_pair",
+      "severity": "info",
+      "evidence": {
+        "pair": "BTC/USDT:USDT",
+        "tradeCount": 72,
+        "winRate": 36.1111,
+        "netProfitPct": -2.81,
+        "totalProfit": -28.14238613,
+        "averageWin": 6.3383289,
+        "averageLoss": -4.19432473,
+        "profitFactor": 0.8541,
+        "maxDrawdownPct": 8.1554,
+        "maxConsecutiveLosses": 8,
+        "averageHoldingMinutes": 91.4583,
+        "bestTrade": {
+          "pair": "BTC/USDT:USDT",
+          "openDate": "2026-04-08 12:00:00+00:00",
+          "closeDate": "2026-04-08 13:00:00+00:00",
+          "profitAbs": 10.23846369,
+          "profitRatioPct": 3.0,
+          "exitReason": "roi",
+          "durationMinutes": 60
+        },
+        "worstTrade": {
+          "pair": "BTC/USDT:USDT",
+          "openDate": "2026-04-16 15:45:00+00:00",
+          "closeDate": "2026-04-16 16:45:00+00:00",
+          "profitAbs": -11.0850653,
+          "profitRatioPct": -3.4899,
+          "exitReason": "stop_loss",
+          "durationMinutes": 60
+        }
+      },
+      "finding": "Best relative pair was BTC/USDT:USDT, but it was still negative in this smoke run."
+    },
+    {
+      "id": "loss_concentration_month",
+      "severity": "high",
+      "evidence": {
+        "period": "30/04/2026",
+        "tradeCount": 118,
+        "netProfit": -158.49408035,
+        "winRate": 39.8305,
+        "profitFactor": 0.6889,
+        "wins": 47,
+        "losses": 71
+      },
+      "finding": "Largest monthly loss occurred in period 30/04/2026."
+    },
+    {
+      "id": "exit_reason_loss",
+      "severity": "high",
+      "evidence": {
+        "exitReason": "stop_loss",
+        "tradeCount": 40,
+        "winRate": 0.0,
+        "netProfit": -420.36251129,
+        "netProfitPct": -42.04,
+        "averageProfitPct": -3.48,
+        "averageWin": null,
+        "averageLoss": -10.50906278,
+        "profitFactor": 0.0,
+        "durationAvg": "0:37:00"
+      },
+      "finding": "Exit reason stop_loss contributed the largest net loss."
+    },
+    {
+      "id": "holding_time_loss",
+      "severity": "medium",
+      "evidence": {
+        "bucket": "1-3h",
+        "tradeCount": 117,
+        "winRate": 36.7521,
+        "netProfit": -120.76496941,
+        "averageProfitPct": -0.3256
+      },
+      "finding": "Holding bucket 1-3h had the weakest net result."
+    },
+    {
+      "id": "fees_not_primary_but_material",
+      "severity": "medium",
+      "evidence": {
+        "feesAvailable": true,
+        "feesAppliedByFreqtrade": true,
+        "estimatedFeesPaidFromOrders": 339.82529451,
+        "feesToGrossProfitRatio": 0.5104,
+        "feesToAbsolutePnlRatio": 0.2285,
+        "slippageApplied": false,
+        "slippageAvailable": false,
+        "slippageCost": null,
+        "netReturnAfterCosts": -15.542,
+        "note": "Freqtrade applied --fee 0.0005. Slippage is documented in the report schema but was not applied by the V13.4 command.",
+        "totalVolume": 679650.58902678
+      },
+      "finding": "Fees were applied by Freqtrade and are material for a 15m high-frequency sample; slippage was not applied."
+    },
+    {
+      "id": "loss_streak_risk",
+      "severity": "high",
+      "evidence": {
+        "maxConsecutiveLosses": 13,
+        "symbols": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ]
+      },
+      "finding": "Loss streak risk is significant and should be considered before any larger backtest or dry-run."
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "macd_exit_may_be_late_or_low_quality",
+      "classification": "needs_more_backtest",
+      "evidence": [
+        {
+          "exitReason": "macd_histogram_two_candle_weakness",
+          "tradeCount": 117,
+          "winRate": 21.3675,
+          "netProfit": -345.28583144,
+          "netProfitPct": -34.53,
+          "averageProfitPct": -0.99,
+          "averageWin": 1.77582064,
+          "averageLoss": -4.23566682,
+          "profitFactor": 0.1139,
+          "durationAvg": "1:27:00"
+        }
+      ],
+      "hypothesis": "MACD weakness exit may be cutting many trades after damage is already done, or may be too noisy."
+    },
+    {
+      "id": "stoploss_loss_size_may_overwhelm_roi",
+      "classification": "needs_more_backtest",
+      "evidence": [
+        {
+          "exitReason": "stop_loss",
+          "tradeCount": 40,
+          "winRate": 0.0,
+          "netProfit": -420.36251129,
+          "netProfitPct": -42.04,
+          "averageProfitPct": -3.48,
+          "averageWin": null,
+          "averageLoss": -10.50906278,
+          "profitFactor": 0.0,
+          "durationAvg": "0:37:00"
+        }
+      ],
+      "hypothesis": "-3% stoploss losses may be too large relative to +3% ROI and current win rate."
+    },
+    {
+      "id": "volume_rebound_entry_too_broad",
+      "classification": "hypothesis_only",
+      "evidence": "Skipped signal instrumentation is unavailable, so filter selectivity cannot be measured yet.",
+      "hypothesis": "Entry filters may be admitting too many weak rebound attempts."
+    },
+    {
+      "id": "pair_specific_behavior",
+      "classification": "data_supported",
+      "evidence": {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 99,
+        "winRate": 45.4545,
+        "netProfitPct": -9.48,
+        "totalProfit": -94.83085485,
+        "averageWin": 6.83168556,
+        "averageLoss": -7.44919824,
+        "profitFactor": 0.7643,
+        "maxDrawdownPct": 15.6535,
+        "maxConsecutiveLosses": 8,
+        "averageHoldingMinutes": 58.4848,
+        "bestTrade": {
+          "pair": "SOL/USDT:USDT",
+          "openDate": "2026-04-09 15:00:00+00:00",
+          "closeDate": "2026-04-09 15:30:00+00:00",
+          "profitAbs": 10.0357852,
+          "profitRatioPct": 3.0268,
+          "exitReason": "roi",
+          "durationMinutes": 30
+        },
+        "worstTrade": {
+          "pair": "SOL/USDT:USDT",
+          "openDate": "2026-04-08 13:15:00+00:00",
+          "closeDate": "2026-04-08 13:30:00+00:00",
+          "profitAbs": -11.9309976,
+          "profitRatioPct": -3.4543,
+          "exitReason": "stop_loss",
+          "durationMinutes": 15
+        }
+      },
+      "hypothesis": "SOL was the largest drag in the smoke sample and should be diagnosed separately before Top30 expansion."
+    }
+  ],
+  "v02CandidateIdeas": [
+    {
+      "idea": "Diagnose and possibly strengthen the 4h trend filter.",
+      "classification": "needs_more_backtest",
+      "evidence": "Filter skip counts are unavailable in V13.4."
+    },
+    {
+      "idea": "Evaluate a higher volumeRatio threshold or a scored volume confirmation.",
+      "classification": "hypothesis_only",
+      "evidence": "Entry selectivity cannot be measured without signal audit instrumentation."
+    },
+    {
+      "idea": "Add a stronger no-chase filter after sharp candles.",
+      "classification": "needs_more_backtest",
+      "evidence": "Trade quality review has approximate favorable/adverse excursion only."
+    },
+    {
+      "idea": "Review MACD weakness exit timing against actual loss distribution.",
+      "classification": "data_supported",
+      "evidence": [
+        {
+          "exitReason": "macd_histogram_two_candle_weakness",
+          "tradeCount": 117,
+          "winRate": 21.3675,
+          "netProfit": -345.28583144,
+          "netProfitPct": -34.53,
+          "averageProfitPct": -0.99,
+          "averageWin": 1.77582064,
+          "averageLoss": -4.23566682,
+          "profitFactor": 0.1139,
+          "durationAvg": "1:27:00"
+        }
+      ]
+    },
+    {
+      "idea": "Analyze whether -3% stoploss and +3% ROI produce poor payoff at current win rate.",
+      "classification": "data_supported",
+      "evidence": {
+        "winRate": 41.3043,
+        "profitFactor": 0.8107
+      }
+    },
+    {
+      "idea": "Add signal audit instrumentation before parameter tuning.",
+      "classification": "data_supported",
+      "evidence": "Filter effectiveness is unavailable in the V13.4 report."
+    }
+  ],
+  "doNotChangeYet": [
+    "Do not modify stoploss yet.",
+    "Do not modify take profit yet.",
+    "Do not modify RSI range yet.",
+    "Do not modify volumeRatio threshold yet.",
+    "Do not modify BTC crash filter yet.",
+    "Do not enter Dry-run.",
+    "Do not expand to Top30 full backtest before diagnosis is reviewed."
+  ],
+  "warnings": [
+    "Slippage is recorded as a planned model but is not applied by the Freqtrade command yet.",
+    "Filter effectiveness is unavailable because skipped-signal instrumentation was not present in V13.4.",
+    "Slippage was not applied by the V13.4 Freqtrade command.",
+    "MFE/MAE values are approximate because only min_rate/max_rate are available."
+  ],
+  "generatedAt": "2026-07-04T17:30:36.915495+00:00",
+  "source": "alphapilot_v13_4_1_backtest_diagnosis"
+}
