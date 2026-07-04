@@ -1,0 +1,59 @@
+{
+  "reportId": "v13_4_16_dynamic_regime_smoke_report",
+  "version": "V13.4.16",
+  "strategyId": "alpha_dynamic_regime_v01",
+  "strategyName": "AlphaPilot Dynamic Regime V0.1",
+  "strategyVersion": "0.1-v13.4.15",
+  "timerange": "20260401-",
+  "timeframe": "1h",
+  "pairs": [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT"
+  ],
+  "isMock": false,
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "metrics": {
+    "tradeCount": 0,
+    "totalReturnPct": 0.0,
+    "maxDrawdownPct": 0.0,
+    "profitFactor": 0.0,
+    "winRate": 0.0,
+    "feesPaid": null,
+    "averageHoldingMinutes": null
+  },
+  "regimeBreakdown": {
+    "avoid": 3627,
+    "mean_reversion": 1534,
+    "trend": 1174,
+    "unknown": 496
+  },
+  "moduleBreakdown": {
+    "trendModulePass": 51,
+    "meanReversionModulePass": 163,
+    "finalEntrySignals": 0,
+    "skipReasons": {
+      "avoid_regime": 3570,
+      "probability_score_not_passed": 2470,
+      "probability_score_unavailable": 710,
+      "data_missing": 57,
+      "not_in_dynamic_universe": 24
+    }
+  },
+  "probabilityScoreSummary": {
+    "rowsEvaluated": 6831,
+    "pass": 0,
+    "fail": 6831,
+    "source": "reports/v13_4_14_probability_score_table.json"
+  },
+  "liquidityGateSummary": {
+    "available": false,
+    "fallbackUsedRows": 6831,
+    "fallbackPolicy": "allowed for smoke backtest research only; not a real liquidity approval"
+  },
+  "backtestResultPath": "user_data\\backtest_results\\backtest-result-2026-07-04_21-19-20.zip",
+  "reportWarnings": [],
+  "generatedAt": "2026-07-04T21:19:30.264879+00:00",
+  "source": "alphapilot_v13_4_16_dynamic_regime_smoke_report"
+}

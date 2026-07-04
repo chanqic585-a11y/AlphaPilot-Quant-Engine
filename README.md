@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.15 - Dynamic Regime Strategy V0.1 Implementation
+AlphaPilot V13.4.16 - Dynamic Regime Strategy Smoke Backtest
 ```
 
 ## Positioning
@@ -926,9 +926,53 @@ V13.4.15 does not run Freqtrade backtests, enter Dry-run, use API keys, call
 Trade API or Withdraw API, read accounts, read positions, create orders, or
 auto trade.
 
+## V13.4.16 Dynamic Regime Strategy Smoke Backtest
+
+V13.4.16 runs the first real smoke backtest for `AlphaPilotDynamicRegimeV01`.
+It validates that Docker/Freqtrade can load the strategy, read the dynamic
+universe and probability score table, and produce a real Freqtrade result.
+
+中文说明：
+
+```text
+V13.4.16 对 AlphaPilotDynamicRegimeV01 执行 BTC / ETH / SOL 的真实本地 smoke backtest。
+本版本不进入 Dry-run，不实盘，不接真实 API Key，不自动交易。
+```
+
+Run commands:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\download_data.ps1 -Pairs "BTC/USDT:USDT,ETH/USDT:USDT,SOL/USDT:USDT" -Timeframes "1h,4h" -Timerange "20260401-" -Run
+powershell -ExecutionPolicy Bypass -File scripts\run_dynamic_regime_smoke_backtest.ps1 -Pairs "BTC/USDT:USDT,ETH/USDT:USDT,SOL/USDT:USDT" -Timerange "20260401-" -Timeframe "1h" -Run
+python -m alphapilot.reports.generate_dynamic_regime_smoke_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_16_dynamic_regime_smoke_report.json
+reports/v13_4_16_dynamic_regime_smoke_summary.md
+docs/V13.4.16-dynamic-regime-smoke-backtest.md
+```
+
+Smoke result:
+
+```text
+isMock: false
+tradeCount: 0
+totalReturnPct: 0.0
+maxDrawdownPct: 0.0
+probabilityScorePass: 0
+finalEntrySignals: 0
+```
+
+The zero-trade result is expected from the current strict probability score
+gate: V13.4.14 produced no `research_candidate` buckets for the smoke context.
+The strategy runtime path is valid, but the probability gate blocks entries.
+V13.4.16 keeps `dryRunApproved=false` and `liveTradingApproved=false`.
+
 ## Next Versions
 
-- V13.4.16: run Dynamic Regime smoke backtest.
-- V13.4.17: run expanded validation with slippage and liquidity gates.
+- V13.4.17: run expanded validation with slippage and liquidity gates only if the zero-trade smoke result is accepted as a gate behavior checkpoint.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.
