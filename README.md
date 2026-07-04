@@ -240,6 +240,46 @@ V13.4.1 prepares V0.2 candidate ideas, but those ideas are evidence categories,
 not parameter changes. The next work should add signal audit instrumentation and
 review the V0.2 candidates before any strategy modification.
 
+## V13.4.2 Signal Audit Instrumentation
+
+V13.4.2 adds skipped-signal audit instrumentation and filter effectiveness
+tracking for AlphaPilot Volume Rebound V0.1.
+
+This version does not tune strategy parameters, does not enter Dry-run, does not
+call exchange private APIs, and does not create orders.
+
+Run the audit:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_signal_audit.ps1
+```
+
+Outputs:
+
+```text
+reports/v13_4_2_signal_audit_report.json
+reports/v13_4_2_signal_audit_summary.md
+docs/V13.4.2-signal-audit-instrumentation.md
+docs/filter-effectiveness-methodology.md
+```
+
+Current V13.4.2 smoke audit:
+
+```text
+Candles evaluated: 26496
+Base candidate count: 26496
+Final entry count: 305
+Actual trade count: 230
+Filter effectiveness available: true
+Top skip reason: weak_4h_trend
+Data missing count: 0
+```
+
+The largest primary blocks in the smoke sample are 4h trend, RSI, and volume
+ratio. The least primary-blocking filter is the no-chase filter. These findings
+prepare V13.4.3 strategy V0.2 candidate design, but V13.4.2 does not change the
+V0.1 thresholds.
+
 Smoke preview:
 
 ```powershell
@@ -251,7 +291,7 @@ Add `-Run` only after Docker Desktop is installed and running.
 
 ## Next Versions
 
-- V13.4.1: diagnose the negative smoke backtest result before changing parameters.
+- V13.4.3: use signal audit evidence to design V0.2 candidates without entering Dry-run.
 - V13.5: run wider Top 30 historical tests only after diagnosis and risk gates are clearer.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.

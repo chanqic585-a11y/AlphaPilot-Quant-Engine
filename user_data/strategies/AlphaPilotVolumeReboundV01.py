@@ -175,6 +175,91 @@ class AlphaPilotVolumeReboundV01(IStrategy):
         )
         return dataframe
 
+    @staticmethod
+    def _entry_conditions(dataframe: DataFrame) -> Any:
+        return (
+            ~dataframe["btc_crash_filter_blocked"]
+            & dataframe["trend_4h_ok"]
+            & dataframe["rsi_ok"]
+            & dataframe["volume_rebound_ok"]
+            & dataframe["macd_improving"]
+            & dataframe["near_ema20_ok"]
+            & dataframe["pullback_zone_ok"]
+            & ~dataframe["skip_data_missing"]
+        )
+
+    @staticmethod
+    def _add_audit_columns(dataframe: DataFrame) -> DataFrame:
+        dataframe["ap_audit_data_ready"] = ~dataframe["skip_data_missing"]
+        dataframe["ap_audit_base_candidate"] = dataframe["ap_audit_data_ready"]
+        dataframe["ap_audit_pass_btc_crash_filter"] = ~dataframe["btc_crash_filter_blocked"]
+        dataframe["ap_audit_pass_4h_trend_filter"] = dataframe["trend_4h_ok"]
+        dataframe["ap_audit_pass_rsi_filter"] = dataframe["rsi_ok"]
+        dataframe["ap_audit_pass_volume_filter"] = dataframe["volume_rebound_ok"]
+        dataframe["ap_audit_pass_macd_filter"] = dataframe["macd_improving"]
+        dataframe["ap_audit_pass_ema20_reclaim_filter"] = dataframe["near_ema20_ok"]
+        dataframe["ap_audit_pass_no_chase_filter"] = dataframe["pullback_zone_ok"]
+        dataframe["ap_audit_final_entry"] = AlphaPilotVolumeReboundV01._entry_conditions(dataframe)
+
+        dataframe["ap_audit_close"] = dataframe["close"]
+        dataframe["ap_audit_volume"] = dataframe["volume"]
+        dataframe["ap_audit_volume_ratio"] = dataframe["volume_ratio"]
+        dataframe["ap_audit_rsi14"] = dataframe["rsi14"]
+        dataframe["ap_audit_macd_hist"] = dataframe["macd_histogram"]
+        dataframe["ap_audit_macd_hist_prev"] = dataframe["macd_histogram"].shift(1)
+        dataframe["ap_audit_ema20"] = dataframe["ema20"]
+        dataframe["ap_audit_ema200"] = dataframe["ema200"]
+        dataframe["ap_audit_bb_middle"] = dataframe["bb_middle"]
+        dataframe["ap_audit_bb_lower"] = dataframe["bb_lower"]
+        dataframe["ap_audit_btc_3_candle_return"] = dataframe["btc_3_candle_return_15m"]
+        dataframe["ap_audit_4h_close"] = dataframe["close_4h"]
+        dataframe["ap_audit_4h_ema200"] = dataframe["ema200_4h"]
+
+        dataframe["ap_audit_skip_reason"] = np.select(
+            [
+                dataframe["ap_audit_final_entry"],
+                ~dataframe["ap_audit_data_ready"],
+                ~dataframe["ap_audit_pass_btc_crash_filter"],
+                ~dataframe["ap_audit_pass_4h_trend_filter"],
+                ~dataframe["ap_audit_pass_rsi_filter"],
+                ~dataframe["ap_audit_pass_volume_filter"],
+                ~dataframe["ap_audit_pass_macd_filter"],
+                ~dataframe["ap_audit_pass_ema20_reclaim_filter"],
+                ~dataframe["ap_audit_pass_no_chase_filter"],
+            ],
+            [
+                "entry_signal_passed",
+                "data_missing",
+                "btc_crash_filter",
+                "weak_4h_trend",
+                "rsi_out_of_range",
+                "volume_ratio_too_low",
+                "macd_not_improving",
+                "ema20_reclaim_failed",
+                "price_too_extended",
+            ],
+            default="unknown",
+        )
+
+        audit_filters = [
+            ("btc_crash_filter", "ap_audit_pass_btc_crash_filter"),
+            ("weak_4h_trend", "ap_audit_pass_4h_trend_filter"),
+            ("rsi_out_of_range", "ap_audit_pass_rsi_filter"),
+            ("volume_ratio_too_low", "ap_audit_pass_volume_filter"),
+            ("macd_not_improving", "ap_audit_pass_macd_filter"),
+            ("ema20_reclaim_failed", "ap_audit_pass_ema20_reclaim_filter"),
+            ("price_too_extended", "ap_audit_pass_no_chase_filter"),
+        ]
+
+        def failed_filters(row: Any) -> str:
+            if not bool(row["ap_audit_data_ready"]):
+                return "data_missing"
+            failed = [reason for reason, column in audit_filters if not bool(row[column])]
+            return "|".join(failed) if failed else "none"
+
+        dataframe["ap_audit_failed_filters"] = dataframe.apply(failed_filters, axis=1)
+        return dataframe
+
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe = self._add_core_indicators(dataframe)
         dataframe = self._merge_4h_trend(dataframe, metadata)
@@ -200,22 +285,14 @@ class AlphaPilotVolumeReboundV01(IStrategy):
         dataframe["skip_data_missing"] = dataframe[
             ["btc_data_missing", "trend_4h_data_missing", "volume_ratio", "bb_middle", "ema20", "rsi14"]
         ].isna().any(axis=1) | dataframe[["btc_data_missing", "trend_4h_data_missing"]].any(axis=1)
+        dataframe = self._add_audit_columns(dataframe)
         return dataframe
 
     def populate_entry_trend(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
         dataframe["enter_long"] = 0
         dataframe["enter_tag"] = ""
 
-        entry_conditions = (
-            ~dataframe["btc_crash_filter_blocked"]
-            & dataframe["trend_4h_ok"]
-            & dataframe["rsi_ok"]
-            & dataframe["volume_rebound_ok"]
-            & dataframe["macd_improving"]
-            & dataframe["near_ema20_ok"]
-            & dataframe["pullback_zone_ok"]
-            & ~dataframe["skip_data_missing"]
-        )
+        entry_conditions = self._entry_conditions(dataframe)
 
         dataframe.loc[entry_conditions, "enter_long"] = 1
         dataframe.loc[entry_conditions, "enter_tag"] = "volume_rebound_v0_1"

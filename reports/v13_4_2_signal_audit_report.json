@@ -1,0 +1,733 @@
+{
+  "reportId": "v13_4_2_signal_audit",
+  "strategyId": "alpha_volume_rebound_v01",
+  "sourceBacktestReport": "reports/v13_4_smoke_backtest_report.json",
+  "isMock": false,
+  "timerange": "20260401-2026-07-04 16:45:00",
+  "pairs": [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT"
+  ],
+  "overall": {
+    "candlesEvaluated": 26496,
+    "baseCandidateCount": 26496,
+    "finalEntryCount": 305,
+    "actualTradeCount": 230,
+    "conversionRate": 1.1511,
+    "filterEffectivenessAvailable": true
+  },
+  "filterStats": [
+    {
+      "filterId": "data_ready",
+      "name": "Data Ready",
+      "passCount": 26496,
+      "failCount": 0,
+      "passRate": 100.0,
+      "failRate": 0.0,
+      "blockedAsPrimaryReason": 0,
+      "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+    },
+    {
+      "filterId": "btc_crash_filter",
+      "name": "BTC Crash Filter",
+      "passCount": 26181,
+      "failCount": 315,
+      "passRate": 98.8111,
+      "failRate": 1.1889,
+      "blockedAsPrimaryReason": 315,
+      "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+    },
+    {
+      "filterId": "4h_trend_filter",
+      "name": "4h Trend Filter",
+      "passCount": 14344,
+      "failCount": 12152,
+      "passRate": 54.1365,
+      "failRate": 45.8635,
+      "blockedAsPrimaryReason": 11926,
+      "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+    },
+    {
+      "filterId": "rsi_filter",
+      "name": "RSI Filter",
+      "passCount": 13574,
+      "failCount": 12922,
+      "passRate": 51.2304,
+      "failRate": 48.7696,
+      "blockedAsPrimaryReason": 7062,
+      "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+    },
+    {
+      "filterId": "volume_filter",
+      "name": "Volume Ratio Filter",
+      "passCount": 4713,
+      "failCount": 21783,
+      "passRate": 17.7876,
+      "failRate": 82.2124,
+      "blockedAsPrimaryReason": 6243,
+      "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+    },
+    {
+      "filterId": "macd_filter",
+      "name": "MACD Filter",
+      "passCount": 13273,
+      "failCount": 13223,
+      "passRate": 50.0944,
+      "failRate": 49.9056,
+      "blockedAsPrimaryReason": 635,
+      "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+    },
+    {
+      "filterId": "ema20_reclaim_filter",
+      "name": "EMA20 Reclaim Filter",
+      "passCount": 23105,
+      "failCount": 3391,
+      "passRate": 87.2018,
+      "failRate": 12.7982,
+      "blockedAsPrimaryReason": 10,
+      "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+    },
+    {
+      "filterId": "no_chase_filter",
+      "name": "No Chase Filter",
+      "passCount": 25054,
+      "failCount": 1442,
+      "passRate": 94.5577,
+      "failRate": 5.4423,
+      "blockedAsPrimaryReason": 0,
+      "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+    }
+  ],
+  "skipReasonCounts": [
+    {
+      "skipReason": "data_missing",
+      "count": 0,
+      "percentage": 0.0
+    },
+    {
+      "skipReason": "btc_crash_filter",
+      "count": 315,
+      "percentage": 1.1889
+    },
+    {
+      "skipReason": "weak_4h_trend",
+      "count": 11926,
+      "percentage": 45.0106
+    },
+    {
+      "skipReason": "rsi_out_of_range",
+      "count": 7062,
+      "percentage": 26.6531
+    },
+    {
+      "skipReason": "volume_ratio_too_low",
+      "count": 6243,
+      "percentage": 23.562
+    },
+    {
+      "skipReason": "macd_not_improving",
+      "count": 635,
+      "percentage": 2.3966
+    },
+    {
+      "skipReason": "ema20_reclaim_failed",
+      "count": 10,
+      "percentage": 0.0377
+    },
+    {
+      "skipReason": "price_too_extended",
+      "count": 0,
+      "percentage": 0.0
+    },
+    {
+      "skipReason": "entry_signal_passed",
+      "count": 305,
+      "percentage": 1.1511
+    },
+    {
+      "skipReason": "unknown",
+      "count": 0,
+      "percentage": 0.0
+    }
+  ],
+  "pairBreakdown": [
+    {
+      "pair": "BTC/USDT:USDT",
+      "candlesEvaluated": 8832,
+      "baseCandidateCount": 8832,
+      "finalEntryCount": 91,
+      "actualTradeCount": 72,
+      "topSkipReasons": [
+        {
+          "skipReason": "weak_4h_trend",
+          "count": 3702,
+          "percentage": 41.9158
+        },
+        {
+          "skipReason": "rsi_out_of_range",
+          "count": 2496,
+          "percentage": 28.2609
+        },
+        {
+          "skipReason": "volume_ratio_too_low",
+          "count": 2224,
+          "percentage": 25.1812
+        },
+        {
+          "skipReason": "macd_not_improving",
+          "count": 214,
+          "percentage": 2.423
+        },
+        {
+          "skipReason": "btc_crash_filter",
+          "count": 105,
+          "percentage": 1.1889
+        }
+      ],
+      "filterStats": [
+        {
+          "filterId": "data_ready",
+          "name": "Data Ready",
+          "passCount": 8832,
+          "failCount": 0,
+          "passRate": 100.0,
+          "failRate": 0.0,
+          "blockedAsPrimaryReason": 0,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "btc_crash_filter",
+          "name": "BTC Crash Filter",
+          "passCount": 8727,
+          "failCount": 105,
+          "passRate": 98.8111,
+          "failRate": 1.1889,
+          "blockedAsPrimaryReason": 105,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "4h_trend_filter",
+          "name": "4h Trend Filter",
+          "passCount": 5056,
+          "failCount": 3776,
+          "passRate": 57.2464,
+          "failRate": 42.7536,
+          "blockedAsPrimaryReason": 3702,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "rsi_filter",
+          "name": "RSI Filter",
+          "passCount": 4494,
+          "failCount": 4338,
+          "passRate": 50.8832,
+          "failRate": 49.1168,
+          "blockedAsPrimaryReason": 2496,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "volume_filter",
+          "name": "Volume Ratio Filter",
+          "passCount": 1536,
+          "failCount": 7296,
+          "passRate": 17.3913,
+          "failRate": 82.6087,
+          "blockedAsPrimaryReason": 2224,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "macd_filter",
+          "name": "MACD Filter",
+          "passCount": 4377,
+          "failCount": 4455,
+          "passRate": 49.5584,
+          "failRate": 50.4416,
+          "blockedAsPrimaryReason": 214,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "ema20_reclaim_filter",
+          "name": "EMA20 Reclaim Filter",
+          "passCount": 8031,
+          "failCount": 801,
+          "passRate": 90.9307,
+          "failRate": 9.0693,
+          "blockedAsPrimaryReason": 0,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "no_chase_filter",
+          "name": "No Chase Filter",
+          "passCount": 8555,
+          "failCount": 277,
+          "passRate": 96.8637,
+          "failRate": 3.1363,
+          "blockedAsPrimaryReason": 0,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        }
+      ]
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "candlesEvaluated": 8832,
+      "baseCandidateCount": 8832,
+      "finalEntryCount": 79,
+      "actualTradeCount": 59,
+      "topSkipReasons": [
+        {
+          "skipReason": "weak_4h_trend",
+          "count": 4686,
+          "percentage": 53.0571
+        },
+        {
+          "skipReason": "rsi_out_of_range",
+          "count": 1963,
+          "percentage": 22.226
+        },
+        {
+          "skipReason": "volume_ratio_too_low",
+          "count": 1803,
+          "percentage": 20.4144
+        },
+        {
+          "skipReason": "macd_not_improving",
+          "count": 190,
+          "percentage": 2.1513
+        },
+        {
+          "skipReason": "btc_crash_filter",
+          "count": 105,
+          "percentage": 1.1889
+        }
+      ],
+      "filterStats": [
+        {
+          "filterId": "data_ready",
+          "name": "Data Ready",
+          "passCount": 8832,
+          "failCount": 0,
+          "passRate": 100.0,
+          "failRate": 0.0,
+          "blockedAsPrimaryReason": 0,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "btc_crash_filter",
+          "name": "BTC Crash Filter",
+          "passCount": 8727,
+          "failCount": 105,
+          "passRate": 98.8111,
+          "failRate": 1.1889,
+          "blockedAsPrimaryReason": 105,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "4h_trend_filter",
+          "name": "4h Trend Filter",
+          "passCount": 4068,
+          "failCount": 4764,
+          "passRate": 46.0598,
+          "failRate": 53.9402,
+          "blockedAsPrimaryReason": 4686,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "rsi_filter",
+          "name": "RSI Filter",
+          "passCount": 4561,
+          "failCount": 4271,
+          "passRate": 51.6418,
+          "failRate": 48.3582,
+          "blockedAsPrimaryReason": 1963,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "volume_filter",
+          "name": "Volume Ratio Filter",
+          "passCount": 1566,
+          "failCount": 7266,
+          "passRate": 17.731,
+          "failRate": 82.269,
+          "blockedAsPrimaryReason": 1803,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "macd_filter",
+          "name": "MACD Filter",
+          "passCount": 4421,
+          "failCount": 4411,
+          "passRate": 50.0566,
+          "failRate": 49.9434,
+          "blockedAsPrimaryReason": 190,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "ema20_reclaim_filter",
+          "name": "EMA20 Reclaim Filter",
+          "passCount": 7640,
+          "failCount": 1192,
+          "passRate": 86.5036,
+          "failRate": 13.4964,
+          "blockedAsPrimaryReason": 6,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "no_chase_filter",
+          "name": "No Chase Filter",
+          "passCount": 8341,
+          "failCount": 491,
+          "passRate": 94.4407,
+          "failRate": 5.5593,
+          "blockedAsPrimaryReason": 0,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        }
+      ]
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "candlesEvaluated": 8832,
+      "baseCandidateCount": 8832,
+      "finalEntryCount": 135,
+      "actualTradeCount": 99,
+      "topSkipReasons": [
+        {
+          "skipReason": "weak_4h_trend",
+          "count": 3538,
+          "percentage": 40.0589
+        },
+        {
+          "skipReason": "rsi_out_of_range",
+          "count": 2603,
+          "percentage": 29.4724
+        },
+        {
+          "skipReason": "volume_ratio_too_low",
+          "count": 2216,
+          "percentage": 25.0906
+        },
+        {
+          "skipReason": "macd_not_improving",
+          "count": 231,
+          "percentage": 2.6155
+        },
+        {
+          "skipReason": "entry_signal_passed",
+          "count": 135,
+          "percentage": 1.5285
+        }
+      ],
+      "filterStats": [
+        {
+          "filterId": "data_ready",
+          "name": "Data Ready",
+          "passCount": 8832,
+          "failCount": 0,
+          "passRate": 100.0,
+          "failRate": 0.0,
+          "blockedAsPrimaryReason": 0,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "btc_crash_filter",
+          "name": "BTC Crash Filter",
+          "passCount": 8727,
+          "failCount": 105,
+          "passRate": 98.8111,
+          "failRate": 1.1889,
+          "blockedAsPrimaryReason": 105,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "4h_trend_filter",
+          "name": "4h Trend Filter",
+          "passCount": 5220,
+          "failCount": 3612,
+          "passRate": 59.1033,
+          "failRate": 40.8967,
+          "blockedAsPrimaryReason": 3538,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "rsi_filter",
+          "name": "RSI Filter",
+          "passCount": 4519,
+          "failCount": 4313,
+          "passRate": 51.1662,
+          "failRate": 48.8338,
+          "blockedAsPrimaryReason": 2603,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "volume_filter",
+          "name": "Volume Ratio Filter",
+          "passCount": 1611,
+          "failCount": 7221,
+          "passRate": 18.2405,
+          "failRate": 81.7595,
+          "blockedAsPrimaryReason": 2216,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "macd_filter",
+          "name": "MACD Filter",
+          "passCount": 4475,
+          "failCount": 4357,
+          "passRate": 50.668,
+          "failRate": 49.332,
+          "blockedAsPrimaryReason": 231,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "ema20_reclaim_filter",
+          "name": "EMA20 Reclaim Filter",
+          "passCount": 7434,
+          "failCount": 1398,
+          "passRate": 84.1712,
+          "failRate": 15.8288,
+          "blockedAsPrimaryReason": 4,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        },
+        {
+          "filterId": "no_chase_filter",
+          "name": "No Chase Filter",
+          "passCount": 8158,
+          "failCount": 674,
+          "passRate": 92.3687,
+          "failRate": 7.6313,
+          "blockedAsPrimaryReason": 0,
+          "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+        }
+      ]
+    }
+  ],
+  "monthlyBreakdown": [
+    {
+      "month": "2026-04",
+      "candlesEvaluated": 7860,
+      "baseCandidateCount": 7860,
+      "finalEntryCount": 158,
+      "actualTradeCount": 118,
+      "topSkipReasons": [
+        {
+          "skipReason": "rsi_out_of_range",
+          "count": 3593,
+          "percentage": 45.7125
+        },
+        {
+          "skipReason": "volume_ratio_too_low",
+          "count": 3282,
+          "percentage": 41.7557
+        },
+        {
+          "skipReason": "weak_4h_trend",
+          "count": 403,
+          "percentage": 5.1272
+        },
+        {
+          "skipReason": "macd_not_improving",
+          "count": 346,
+          "percentage": 4.402
+        },
+        {
+          "skipReason": "entry_signal_passed",
+          "count": 158,
+          "percentage": 2.0102
+        }
+      ]
+    },
+    {
+      "month": "2026-05",
+      "candlesEvaluated": 8928,
+      "baseCandidateCount": 8928,
+      "finalEntryCount": 124,
+      "actualTradeCount": 94,
+      "topSkipReasons": [
+        {
+          "skipReason": "weak_4h_trend",
+          "count": 3188,
+          "percentage": 35.7079
+        },
+        {
+          "skipReason": "rsi_out_of_range",
+          "count": 2838,
+          "percentage": 31.7876
+        },
+        {
+          "skipReason": "volume_ratio_too_low",
+          "count": 2488,
+          "percentage": 27.8674
+        },
+        {
+          "skipReason": "macd_not_improving",
+          "count": 259,
+          "percentage": 2.901
+        },
+        {
+          "skipReason": "entry_signal_passed",
+          "count": 124,
+          "percentage": 1.3889
+        }
+      ]
+    },
+    {
+      "month": "2026-06",
+      "candlesEvaluated": 8640,
+      "baseCandidateCount": 8640,
+      "finalEntryCount": 13,
+      "actualTradeCount": 10,
+      "topSkipReasons": [
+        {
+          "skipReason": "weak_4h_trend",
+          "count": 7839,
+          "percentage": 90.7292
+        },
+        {
+          "skipReason": "rsi_out_of_range",
+          "count": 312,
+          "percentage": 3.6111
+        },
+        {
+          "skipReason": "volume_ratio_too_low",
+          "count": 240,
+          "percentage": 2.7778
+        },
+        {
+          "skipReason": "btc_crash_filter",
+          "count": 216,
+          "percentage": 2.5
+        },
+        {
+          "skipReason": "macd_not_improving",
+          "count": 20,
+          "percentage": 0.2315
+        }
+      ]
+    },
+    {
+      "month": "2026-07",
+      "candlesEvaluated": 1068,
+      "baseCandidateCount": 1068,
+      "finalEntryCount": 10,
+      "actualTradeCount": 8,
+      "topSkipReasons": [
+        {
+          "skipReason": "weak_4h_trend",
+          "count": 496,
+          "percentage": 46.4419
+        },
+        {
+          "skipReason": "rsi_out_of_range",
+          "count": 319,
+          "percentage": 29.8689
+        },
+        {
+          "skipReason": "volume_ratio_too_low",
+          "count": 233,
+          "percentage": 21.8165
+        },
+        {
+          "skipReason": "macd_not_improving",
+          "count": 10,
+          "percentage": 0.9363
+        },
+        {
+          "skipReason": "entry_signal_passed",
+          "count": 10,
+          "percentage": 0.9363
+        }
+      ]
+    }
+  ],
+  "dataAvailability": {
+    "filterEffectivenessAvailable": true,
+    "dataDir": "user_data/data/okx/futures",
+    "sourceResult": "user_data\\backtest_results\\backtest-result-2026-07-04_17-07-53.zip",
+    "method": "offline_reconstruction_from_freqtrade_feather_data"
+  },
+  "findings": [
+    {
+      "id": "filter_effectiveness_available",
+      "severity": "info",
+      "finding": "Filter effectiveness is available from offline OHLCV audit reconstruction.",
+      "evidence": {
+        "filterStatsCount": 8,
+        "skipReasonCount": 10
+      }
+    },
+    {
+      "id": "top_skip_reason",
+      "severity": "medium",
+      "finding": "Most common primary skip reason is weak_4h_trend.",
+      "evidence": {
+        "skipReason": "weak_4h_trend",
+        "count": 11926,
+        "percentage": 45.0106
+      }
+    },
+    {
+      "id": "most_blocking_filter",
+      "severity": "medium",
+      "finding": "Most blocking filter is 4h_trend_filter.",
+      "evidence": {
+        "filterId": "4h_trend_filter",
+        "name": "4h Trend Filter",
+        "passCount": 14344,
+        "failCount": 12152,
+        "passRate": 54.1365,
+        "failRate": 45.8635,
+        "blockedAsPrimaryReason": 11926,
+        "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+      }
+    },
+    {
+      "id": "least_blocking_filter",
+      "severity": "medium",
+      "finding": "Least blocking filter is no_chase_filter.",
+      "evidence": {
+        "filterId": "no_chase_filter",
+        "name": "No Chase Filter",
+        "passCount": 25054,
+        "failCount": 1442,
+        "passRate": 94.5577,
+        "failRate": 5.4423,
+        "blockedAsPrimaryReason": 0,
+        "notes": "Counts are evaluated on data-ready rows except data_ready itself."
+      }
+    },
+    {
+      "id": "data_missing_check",
+      "severity": "info",
+      "finding": "Data missing count is 0.",
+      "evidence": {
+        "skipReason": "data_missing",
+        "count": 0,
+        "percentage": 0.0
+      }
+    },
+    {
+      "id": "signal_to_trade_gap",
+      "severity": "info",
+      "finding": "Final entry signals and actual trades can differ because Freqtrade applies wallet, max-open-trade, and engine execution constraints.",
+      "evidence": {
+        "finalEntryCount": 305,
+        "actualTradeCount": 230
+      }
+    },
+    {
+      "id": "v02_design_ready",
+      "severity": "info",
+      "finding": "Signal audit evidence is now available for V0.2 candidate design, but parameters were not changed in V13.4.2.",
+      "evidence": {
+        "nextStep": "V13.4.3 Strategy V0.2 Candidate Design"
+      }
+    }
+  ],
+  "warnings": [
+    "Audit counts are reconstructed from local OHLCV data and strategy-equivalent conditions.",
+    "Final entry signals may differ from actual trade count due Freqtrade wallet, max-open-trade, and engine constraints.",
+    "No strategy parameters were changed by V13.4.2."
+  ],
+  "generatedAt": "2026-07-04T17:48:18.157696+00:00",
+  "source": "alphapilot_v13_4_2_signal_audit"
+}
