@@ -1,0 +1,27 @@
+{
+  "candidateGateId": "probability_gate_cd_trend_research_combined",
+  "status": "research_only",
+  "sourceTables": [
+    "reports/v13_4_19_probability_score_table_coarse_c.json",
+    "reports/v13_4_19_probability_score_table_coarse_d.json"
+  ],
+  "allowedBuckets": [
+    "trend_medium_safe",
+    "trend_trend_module_low_safe"
+  ],
+  "rejectedBuckets": [
+    "avoid_low_weak",
+    "unknown_no_entry_module_low_safe"
+  ],
+  "minimumSampleCount": 50,
+  "minimumProfitFactor": 1.05,
+  "minimumExpectancy": 0,
+  "useForTrading": false,
+  "useForDryRun": false,
+  "notes": [
+    "Research-only combined candidate.",
+    "A row may pass if either C1 or D1 coarse trend candidate matches.",
+    "Rejected diagnostic buckets remain visible for analysis but are not entry allowed.",
+    "Not wired to AlphaPilotDynamicRegimeV01."
+  ]
+}

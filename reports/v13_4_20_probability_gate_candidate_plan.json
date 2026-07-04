@@ -1,0 +1,471 @@
+{
+  "reportId": "v13_4_20_probability_gate_candidate_plan",
+  "sourceCoarseningReport": "reports\\v13_4_19_probability_bucket_coarsening_report.json",
+  "currentGateStatus": {
+    "currentGatePassBucketCount": 0,
+    "dryRunApproved": false,
+    "source": "reports\\v13_4_19_probability_bucket_coarsening_report.json"
+  },
+  "candidateGates": [
+    {
+      "candidateGateId": "probability_gate_c1_trend_medium_safe",
+      "status": "research_only",
+      "allowedBuckets": [
+        "trend_medium_safe"
+      ],
+      "minimumSampleCount": 50,
+      "minimumProfitFactor": 1.05,
+      "minimumExpectancy": 0.0,
+      "useForTrading": false,
+      "useForDryRun": false,
+      "sourceTable": "reports/v13_4_19_probability_score_table_coarse_c.json",
+      "sourceTables": [
+        "reports/v13_4_19_probability_score_table_coarse_c.json"
+      ],
+      "rejectedBuckets": [],
+      "notes": [
+        "Research-only candidate from coarse C.",
+        "Allows only trend + medium liquidity + BTC safe bucket.",
+        "Not wired to AlphaPilotDynamicRegimeV01.",
+        "Requires V13.4.21 backtest before any further evaluation."
+      ],
+      "matchedBuckets": [
+        {
+          "sourceTable": "reports/v13_4_19_probability_score_table_coarse_c.json",
+          "bucketId": "trend_medium_safe",
+          "regimeCandidate": "trend",
+          "liquidityBucket": "medium",
+          "btcState": "safe",
+          "sampleCount": 79,
+          "hitTpBeforeSlProbability": 0.151899,
+          "hitSlBeforeTpProbability": 0.265823,
+          "averageMfePct": 0.02669956,
+          "averageMaePct": -0.02085476,
+          "averageReturnPct": 0.004643,
+          "profitFactor": 45.972475,
+          "expectancy": 0.004643,
+          "sourceBucketCount": 20,
+          "profitFactorAggregation": "sample_count_weighted_bucket_level_approximation",
+          "profitFactorAvailableSampleCount": 74,
+          "sourceBuckets": [
+            "trend_medium_high_55-65_extended_above_ema20_middle_safe",
+            "trend_medium_low_55-65_above_ema20_middle_safe",
+            "trend_medium_low_55-65_above_ema20_outside_safe",
+            "trend_medium_low_55-65_above_ema20_upper_safe",
+            "trend_medium_low_55-65_near_ema20_lower_safe",
+            "trend_medium_low_55-65_near_ema20_middle_safe",
+            "trend_medium_low_55-65_near_ema20_upper_safe",
+            "trend_medium_low_above65_above_ema20_middle_safe",
+            "trend_medium_low_above65_above_ema20_outside_safe",
+            "trend_medium_low_above65_above_ema20_upper_safe",
+            "trend_medium_low_above65_extended_above_ema20_outside_safe",
+            "trend_medium_low_above65_extended_above_ema20_upper_safe",
+            "trend_medium_low_above65_near_ema20_outside_safe",
+            "trend_medium_medium_55-65_above_ema20_middle_safe",
+            "trend_medium_medium_55-65_above_ema20_upper_safe",
+            "trend_medium_medium_55-65_extended_above_ema20_upper_safe",
+            "trend_medium_medium_55-65_near_ema20_middle_safe",
+            "trend_medium_medium_above65_extended_above_ema20_middle_safe",
+            "trend_medium_medium_above65_extended_above_ema20_outside_safe",
+            "trend_medium_medium_above65_extended_above_ema20_upper_safe"
+          ],
+          "confidenceLevel": "research_gate_candidate",
+          "decision": "research_candidate_not_strategy_wired"
+        }
+      ],
+      "missingBuckets": [],
+      "entryAllowed": false,
+      "backtestCandidate": true,
+      "strategyWired": false,
+      "validationStatus": "valid_research_only",
+      "safetyNotes": [
+        "Candidate gate is for backtest research only.",
+        "Candidate gate is not wired to AlphaPilotDynamicRegimeV01.",
+        "Candidate gate does not approve Dry-run or live trading."
+      ]
+    },
+    {
+      "candidateGateId": "probability_gate_cd_trend_research_combined",
+      "status": "research_only",
+      "allowedBuckets": [
+        "trend_medium_safe",
+        "trend_trend_module_low_safe"
+      ],
+      "minimumSampleCount": 50,
+      "minimumProfitFactor": 1.05,
+      "minimumExpectancy": 0.0,
+      "useForTrading": false,
+      "useForDryRun": false,
+      "sourceTable": null,
+      "sourceTables": [
+        "reports/v13_4_19_probability_score_table_coarse_c.json",
+        "reports/v13_4_19_probability_score_table_coarse_d.json"
+      ],
+      "rejectedBuckets": [
+        "avoid_low_weak",
+        "unknown_no_entry_module_low_safe"
+      ],
+      "notes": [
+        "Research-only combined candidate.",
+        "A row may pass if either C1 or D1 coarse trend candidate matches.",
+        "Rejected diagnostic buckets remain visible for analysis but are not entry allowed.",
+        "Not wired to AlphaPilotDynamicRegimeV01."
+      ],
+      "matchedBuckets": [
+        {
+          "sourceTable": "reports/v13_4_19_probability_score_table_coarse_c.json",
+          "bucketId": "trend_medium_safe",
+          "regimeCandidate": "trend",
+          "liquidityBucket": "medium",
+          "btcState": "safe",
+          "sampleCount": 79,
+          "hitTpBeforeSlProbability": 0.151899,
+          "hitSlBeforeTpProbability": 0.265823,
+          "averageMfePct": 0.02669956,
+          "averageMaePct": -0.02085476,
+          "averageReturnPct": 0.004643,
+          "profitFactor": 45.972475,
+          "expectancy": 0.004643,
+          "sourceBucketCount": 20,
+          "profitFactorAggregation": "sample_count_weighted_bucket_level_approximation",
+          "profitFactorAvailableSampleCount": 74,
+          "sourceBuckets": [
+            "trend_medium_high_55-65_extended_above_ema20_middle_safe",
+            "trend_medium_low_55-65_above_ema20_middle_safe",
+            "trend_medium_low_55-65_above_ema20_outside_safe",
+            "trend_medium_low_55-65_above_ema20_upper_safe",
+            "trend_medium_low_55-65_near_ema20_lower_safe",
+            "trend_medium_low_55-65_near_ema20_middle_safe",
+            "trend_medium_low_55-65_near_ema20_upper_safe",
+            "trend_medium_low_above65_above_ema20_middle_safe",
+            "trend_medium_low_above65_above_ema20_outside_safe",
+            "trend_medium_low_above65_above_ema20_upper_safe",
+            "trend_medium_low_above65_extended_above_ema20_outside_safe",
+            "trend_medium_low_above65_extended_above_ema20_upper_safe",
+            "trend_medium_low_above65_near_ema20_outside_safe",
+            "trend_medium_medium_55-65_above_ema20_middle_safe",
+            "trend_medium_medium_55-65_above_ema20_upper_safe",
+            "trend_medium_medium_55-65_extended_above_ema20_upper_safe",
+            "trend_medium_medium_55-65_near_ema20_middle_safe",
+            "trend_medium_medium_above65_extended_above_ema20_middle_safe",
+            "trend_medium_medium_above65_extended_above_ema20_outside_safe",
+            "trend_medium_medium_above65_extended_above_ema20_upper_safe"
+          ],
+          "confidenceLevel": "research_gate_candidate",
+          "decision": "research_candidate_not_strategy_wired"
+        },
+        {
+          "sourceTable": "reports/v13_4_19_probability_score_table_coarse_d.json",
+          "bucketId": "trend_trend_module_low_safe",
+          "regimeCandidate": "trend",
+          "moduleType": "trend_module",
+          "volatilityBucket": "low",
+          "btcState": "safe",
+          "sampleCount": 216,
+          "hitTpBeforeSlProbability": 0.087963,
+          "hitSlBeforeTpProbability": 0.240741,
+          "averageMfePct": 0.021419,
+          "averageMaePct": -0.01713658,
+          "averageReturnPct": 0.00260509,
+          "profitFactor": 17.370149,
+          "expectancy": 0.00260509,
+          "sourceBucketCount": 35,
+          "profitFactorAggregation": "sample_count_weighted_bucket_level_approximation",
+          "profitFactorAvailableSampleCount": 204,
+          "sourceBuckets": [
+            "trend_high_low_55-65_above_ema20_middle_safe",
+            "trend_high_low_55-65_above_ema20_upper_safe",
+            "trend_high_low_55-65_near_ema20_lower_safe",
+            "trend_high_low_55-65_near_ema20_middle_safe",
+            "trend_high_low_55-65_near_ema20_upper_safe",
+            "trend_high_low_above65_above_ema20_middle_safe",
+            "trend_high_low_above65_above_ema20_outside_safe",
+            "trend_high_low_above65_above_ema20_upper_safe",
+            "trend_high_low_above65_extended_above_ema20_outside_safe",
+            "trend_high_low_above65_extended_above_ema20_upper_safe",
+            "trend_high_low_above65_near_ema20_upper_safe",
+            "trend_low_low_55-65_above_ema20_middle_safe",
+            "trend_low_low_55-65_above_ema20_outside_safe",
+            "trend_low_low_55-65_above_ema20_upper_safe",
+            "trend_low_low_55-65_near_ema20_lower_safe",
+            "trend_low_low_55-65_near_ema20_middle_safe",
+            "trend_low_low_55-65_near_ema20_outside_safe",
+            "trend_low_low_55-65_near_ema20_upper_safe",
+            "trend_low_low_above65_above_ema20_middle_safe",
+            "trend_low_low_above65_above_ema20_outside_safe",
+            "trend_low_low_above65_above_ema20_upper_safe",
+            "trend_low_low_above65_extended_above_ema20_outside_safe",
+            "trend_low_low_above65_extended_above_ema20_upper_safe",
+            "trend_medium_low_55-65_above_ema20_middle_safe",
+            "trend_medium_low_55-65_above_ema20_outside_safe"
+          ],
+          "confidenceLevel": "research_gate_candidate",
+          "decision": "research_candidate_not_strategy_wired"
+        }
+      ],
+      "missingBuckets": [],
+      "entryAllowed": false,
+      "backtestCandidate": true,
+      "strategyWired": false,
+      "validationStatus": "valid_research_only",
+      "safetyNotes": [
+        "Candidate gate is for backtest research only.",
+        "Candidate gate is not wired to AlphaPilotDynamicRegimeV01.",
+        "Candidate gate does not approve Dry-run or live trading."
+      ]
+    },
+    {
+      "candidateGateId": "probability_gate_d1_trend_module_low_safe",
+      "status": "research_only",
+      "allowedBuckets": [
+        "trend_trend_module_low_safe"
+      ],
+      "minimumSampleCount": 50,
+      "minimumProfitFactor": 1.05,
+      "minimumExpectancy": 0.0,
+      "useForTrading": false,
+      "useForDryRun": false,
+      "sourceTable": "reports/v13_4_19_probability_score_table_coarse_d.json",
+      "sourceTables": [
+        "reports/v13_4_19_probability_score_table_coarse_d.json"
+      ],
+      "rejectedBuckets": [],
+      "notes": [
+        "Research-only candidate from coarse D.",
+        "Allows only trend regime + derived trend module + low volatility + BTC safe bucket.",
+        "moduleType is derived from regimeCandidate in V13.4.19.",
+        "Not wired to AlphaPilotDynamicRegimeV01."
+      ],
+      "matchedBuckets": [
+        {
+          "sourceTable": "reports/v13_4_19_probability_score_table_coarse_d.json",
+          "bucketId": "trend_trend_module_low_safe",
+          "regimeCandidate": "trend",
+          "moduleType": "trend_module",
+          "volatilityBucket": "low",
+          "btcState": "safe",
+          "sampleCount": 216,
+          "hitTpBeforeSlProbability": 0.087963,
+          "hitSlBeforeTpProbability": 0.240741,
+          "averageMfePct": 0.021419,
+          "averageMaePct": -0.01713658,
+          "averageReturnPct": 0.00260509,
+          "profitFactor": 17.370149,
+          "expectancy": 0.00260509,
+          "sourceBucketCount": 35,
+          "profitFactorAggregation": "sample_count_weighted_bucket_level_approximation",
+          "profitFactorAvailableSampleCount": 204,
+          "sourceBuckets": [
+            "trend_high_low_55-65_above_ema20_middle_safe",
+            "trend_high_low_55-65_above_ema20_upper_safe",
+            "trend_high_low_55-65_near_ema20_lower_safe",
+            "trend_high_low_55-65_near_ema20_middle_safe",
+            "trend_high_low_55-65_near_ema20_upper_safe",
+            "trend_high_low_above65_above_ema20_middle_safe",
+            "trend_high_low_above65_above_ema20_outside_safe",
+            "trend_high_low_above65_above_ema20_upper_safe",
+            "trend_high_low_above65_extended_above_ema20_outside_safe",
+            "trend_high_low_above65_extended_above_ema20_upper_safe",
+            "trend_high_low_above65_near_ema20_upper_safe",
+            "trend_low_low_55-65_above_ema20_middle_safe",
+            "trend_low_low_55-65_above_ema20_outside_safe",
+            "trend_low_low_55-65_above_ema20_upper_safe",
+            "trend_low_low_55-65_near_ema20_lower_safe",
+            "trend_low_low_55-65_near_ema20_middle_safe",
+            "trend_low_low_55-65_near_ema20_outside_safe",
+            "trend_low_low_55-65_near_ema20_upper_safe",
+            "trend_low_low_above65_above_ema20_middle_safe",
+            "trend_low_low_above65_above_ema20_outside_safe",
+            "trend_low_low_above65_above_ema20_upper_safe",
+            "trend_low_low_above65_extended_above_ema20_outside_safe",
+            "trend_low_low_above65_extended_above_ema20_upper_safe",
+            "trend_medium_low_55-65_above_ema20_middle_safe",
+            "trend_medium_low_55-65_above_ema20_outside_safe"
+          ],
+          "confidenceLevel": "research_gate_candidate",
+          "decision": "research_candidate_not_strategy_wired"
+        }
+      ],
+      "missingBuckets": [],
+      "entryAllowed": false,
+      "backtestCandidate": true,
+      "strategyWired": false,
+      "validationStatus": "valid_research_only",
+      "safetyNotes": [
+        "Candidate gate is for backtest research only.",
+        "Candidate gate is not wired to AlphaPilotDynamicRegimeV01.",
+        "Candidate gate does not approve Dry-run or live trading."
+      ]
+    }
+  ],
+  "rejectedBuckets": [
+    {
+      "bucketId": "avoid_low_weak",
+      "sourceTable": "reports/v13_4_19_probability_score_table_coarse_c.json",
+      "status": "diagnostic_only",
+      "entryAllowed": false,
+      "reason": "avoid regime cannot be promoted to entry candidate from bucket-level PF.",
+      "matchedBucket": {
+        "sourceTable": "reports/v13_4_19_probability_score_table_coarse_c.json",
+        "bucketId": "avoid_low_weak",
+        "regimeCandidate": "avoid",
+        "liquidityBucket": "low",
+        "btcState": "weak",
+        "sampleCount": 57,
+        "hitTpBeforeSlProbability": 0.087719,
+        "hitSlBeforeTpProbability": 0.263158,
+        "averageMfePct": 0.02229975,
+        "averageMaePct": -0.0167264,
+        "averageReturnPct": 0.00198279,
+        "profitFactor": 1.392737,
+        "expectancy": 0.00198279,
+        "sourceBucketCount": 10,
+        "profitFactorAggregation": "sample_count_weighted_bucket_level_approximation",
+        "profitFactorAvailableSampleCount": 55,
+        "sourceBuckets": [
+          "avoid_low_low_45-55_above_ema20_upper_weak",
+          "avoid_low_low_45-55_near_ema20_lower_weak",
+          "avoid_low_low_45-55_near_ema20_middle_weak",
+          "avoid_low_low_45-55_near_ema20_upper_weak",
+          "avoid_low_low_55-65_above_ema20_outside_weak",
+          "avoid_low_low_55-65_above_ema20_upper_weak",
+          "avoid_low_low_55-65_near_ema20_upper_weak",
+          "avoid_low_medium_45-55_near_ema20_middle_weak",
+          "avoid_low_medium_45-55_near_ema20_upper_weak",
+          "avoid_low_medium_55-65_above_ema20_upper_weak"
+        ],
+        "confidenceLevel": "research_gate_candidate",
+        "decision": "research_candidate_not_strategy_wired"
+      },
+      "useForTrading": false,
+      "useForDryRun": false
+    },
+    {
+      "bucketId": "unknown_no_entry_module_low_safe",
+      "sourceTable": "reports/v13_4_19_probability_score_table_coarse_d.json",
+      "status": "diagnostic_only",
+      "entryAllowed": false,
+      "reason": "unknown regime or no_entry module cannot become an entry candidate.",
+      "matchedBucket": {
+        "sourceTable": "reports/v13_4_19_probability_score_table_coarse_d.json",
+        "bucketId": "unknown_no_entry_module_low_safe",
+        "regimeCandidate": "unknown",
+        "moduleType": "no_entry_module",
+        "volatilityBucket": "low",
+        "btcState": "safe",
+        "sampleCount": 104,
+        "hitTpBeforeSlProbability": 0.038462,
+        "hitSlBeforeTpProbability": 0.134615,
+        "averageMfePct": 0.01674683,
+        "averageMaePct": -0.01414637,
+        "averageReturnPct": 0.00136352,
+        "profitFactor": 2.16282,
+        "expectancy": 0.00136352,
+        "sourceBucketCount": 23,
+        "profitFactorAggregation": "sample_count_weighted_bucket_level_approximation",
+        "profitFactorAvailableSampleCount": 93,
+        "sourceBuckets": [
+          "unknown_high_low_45-55_near_ema20_lower_safe",
+          "unknown_high_low_45-55_near_ema20_middle_safe",
+          "unknown_high_low_45-55_near_ema20_upper_safe",
+          "unknown_high_low_55-65_above_ema20_upper_safe",
+          "unknown_high_low_55-65_near_ema20_middle_safe",
+          "unknown_high_low_55-65_near_ema20_upper_safe",
+          "unknown_high_low_above65_above_ema20_upper_safe",
+          "unknown_low_low_45-55_near_ema20_lower_safe",
+          "unknown_low_low_45-55_near_ema20_middle_safe",
+          "unknown_low_low_45-55_near_ema20_upper_safe",
+          "unknown_low_low_55-65_above_ema20_outside_safe",
+          "unknown_low_low_55-65_above_ema20_upper_safe",
+          "unknown_low_low_55-65_near_ema20_middle_safe",
+          "unknown_low_low_55-65_near_ema20_outside_safe",
+          "unknown_low_low_above65_above_ema20_outside_safe",
+          "unknown_low_low_above65_extended_above_ema20_outside_safe",
+          "unknown_medium_low_45-55_near_ema20_lower_safe",
+          "unknown_medium_low_45-55_near_ema20_middle_safe",
+          "unknown_medium_low_45-55_near_ema20_upper_safe",
+          "unknown_medium_low_55-65_above_ema20_outside_safe",
+          "unknown_medium_low_55-65_above_ema20_upper_safe",
+          "unknown_medium_low_55-65_near_ema20_upper_safe",
+          "unknown_medium_low_above65_above_ema20_outside_safe"
+        ],
+        "confidenceLevel": "research_gate_candidate",
+        "decision": "research_candidate_not_strategy_wired"
+      },
+      "useForTrading": false,
+      "useForDryRun": false
+    }
+  ],
+  "backtestPlan": {
+    "version": "V13.4.21",
+    "name": "Probability Gate Candidate Backtest",
+    "runInThisVersion": false,
+    "comparisonVariants": [
+      {
+        "variantId": "baseline_dynamic_regime_current_gate",
+        "description": "Existing AlphaPilotDynamicRegimeV01 current probability gate."
+      },
+      {
+        "variantId": "probability_gate_c1_trend_medium_safe",
+        "description": "Research-only candidate gate configuration for comparison backtest."
+      },
+      {
+        "variantId": "probability_gate_cd_trend_research_combined",
+        "description": "Research-only candidate gate configuration for comparison backtest."
+      },
+      {
+        "variantId": "probability_gate_d1_trend_module_low_safe",
+        "description": "Research-only candidate gate configuration for comparison backtest."
+      }
+    ],
+    "scopes": [
+      {
+        "scopeId": "smoke",
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ],
+        "timerange": "20260401-",
+        "timeframe": "1h"
+      },
+      {
+        "scopeId": "expanded_dynamic_universe",
+        "pairs": "historical dynamic universe selectedPairs union",
+        "timerange": "20260101-",
+        "timeframe": "1h"
+      }
+    ],
+    "requiredComparisons": [
+      "entry count",
+      "trade count",
+      "profit factor",
+      "expectancy",
+      "max drawdown",
+      "slippage stress",
+      "liquidity gate interaction",
+      "dryRunApproved must remain false"
+    ],
+    "safetyRules": [
+      "Candidate gates are for backtest research only.",
+      "Passing candidate backtest does not approve Dry-run.",
+      "Candidate gates must go through expanded validation, slippage stress, liquidity gate, and shadow trading before any Dry-run decision."
+    ]
+  },
+  "safetyBoundary": {
+    "useForTrading": false,
+    "useForDryRun": false,
+    "modifiesDefaultProbabilityGate": false,
+    "modifiesStrategyCode": false,
+    "runsBacktest": false,
+    "status": "research_only"
+  },
+  "recommendedNextStep": "V13.4.21 - Probability Gate Candidate Backtest",
+  "warnings": [
+    "Research-only candidate wiring plan. No backtest was run.",
+    "Default probability gate and strategy code were not modified.",
+    "Candidate configs are not wired to Dry-run or live trading."
+  ],
+  "generatedAt": "2026-07-04T23:09:07.252872+00:00",
+  "source": "alphapilot_v13_4_20_probability_gate_candidate_plan"
+}

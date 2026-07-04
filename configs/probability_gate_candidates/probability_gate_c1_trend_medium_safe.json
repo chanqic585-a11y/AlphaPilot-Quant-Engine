@@ -1,0 +1,20 @@
+{
+  "candidateGateId": "probability_gate_c1_trend_medium_safe",
+  "status": "research_only",
+  "sourceTable": "reports/v13_4_19_probability_score_table_coarse_c.json",
+  "allowedBuckets": [
+    "trend_medium_safe"
+  ],
+  "rejectedBuckets": [],
+  "minimumSampleCount": 50,
+  "minimumProfitFactor": 1.05,
+  "minimumExpectancy": 0,
+  "useForTrading": false,
+  "useForDryRun": false,
+  "notes": [
+    "Research-only candidate from coarse C.",
+    "Allows only trend + medium liquidity + BTC safe bucket.",
+    "Not wired to AlphaPilotDynamicRegimeV01.",
+    "Requires V13.4.21 backtest before any further evaluation."
+  ]
+}
