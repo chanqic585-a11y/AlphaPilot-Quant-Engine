@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.19 - Probability Bucket Coarsening and Sample Coverage Expansion
+AlphaPilot V13.4.21 - FactorDataPanel and Manual Factor Library Implementation
 ```
 
 ## Positioning
@@ -1174,8 +1174,86 @@ no real orders
 no auto trading
 ```
 
+## V13.4.21 FactorDataPanel and Manual Factor Library
+
+V13.4.21 implements the local research data layer designed in V13.4.20. It
+reads local public Freqtrade OHLCV files, builds a point-in-time
+FactorDataPanel sample, and computes the first Manual Factor Library V01.
+
+Run the builder:
+
+```powershell
+python -m alphapilot.factors.build_factor_data_panel
+```
+
+or:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\build_factor_panel.ps1
+```
+
+Default scope:
+
+```text
+timerange = 20260101-
+timeframe = 1h
+pairs = auto-discovered local OKX USDT swap futures pairs
+```
+
+Outputs:
+
+```text
+reports/v13_4_21_factor_panel_report.json
+reports/v13_4_21_factor_panel_summary.md
+reports/v13_4_21_factor_panel_sample.json
+reports/v13_4_21_manual_factor_library_report.json
+docs/V13.4.21-factor-data-panel-implementation.md
+docs/factor-data-panel-local-data-generation.md
+docs/manual-factor-library-v01.md
+docs/no-lookahead-factor-computation.md
+```
+
+The initial local V13.4.21 build generated:
+
+```text
+rowsGenerated = 124111
+loadedPairs = 28
+factorCount = 16
+averageCoveragePct = 99.8435
+```
+
+Estimated fields are explicit:
+
+```text
+quoteVolume = close * volume
+quoteVolumeEstimated = true
+vwap = (high + low + close) / 3
+vwapEstimated = true
+```
+
+V13.4.21 no-lookahead rules:
+
+- rolling factors use only current and historical rows
+- cross-sectional ranks are computed only within the same timestamp
+- BTC relative strength context is timestamp-aligned
+- forward labels and backtest outcomes do not enter factor values
+- missing data remains null rather than being fabricated
+
+V13.4.21 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no backtest execution
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+```
+
 ## Next Versions
 
-- V13.4.21: Factor Data Panel and Manual Factor Library implementation, still research-only.
+- V13.4.22: evaluate factor coverage and decide whether to build forward-label factor research.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

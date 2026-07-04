@@ -48,11 +48,96 @@ class ManualFactorSpec:
     expectedDirection: str
     applicableRegime: list[str]
     riskNotes: list[str]
+    outputColumn: str | None = None
     source: str = "alphapilot_manual_factor_library_v01"
     researchOnly: bool = True
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
+
+
+@dataclass(frozen=True)
+class FactorDataPanelConfig:
+    timerange: str = "20260101-"
+    timeframe: str = "1h"
+    pairs: list[str] = field(default_factory=list)
+    dataPath: str = "user_data/data/okx/futures"
+    useDynamicUniverse: bool = False
+    universeSnapshotsPath: str | None = "reports/v13_4_13_dynamic_universe_snapshots.json"
+    sampleSize: int = 200
+    source: str = "alphapilot_factor_data_panel_v13_4_21"
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class FactorDataRow:
+    timestamp: str
+    pair: str
+    open: float
+    high: float
+    low: float
+    close: float
+    volume: float
+    quoteVolume: float | None
+    quoteVolumeEstimated: bool
+    vwap: float | None
+    vwapEstimated: bool
+    returns_1: float | None
+    returns_3: float | None
+    returns_6: float | None
+    returns_12: float | None
+    marketReturn: float | None
+    btcReturn: float | None
+    btcReturn_12: float | None
+    universeMember: bool
+    universeMembershipSource: str
+    regimeLabel: str
+    liquidityBucket: str
+    volatilityBucket: str
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+@dataclass(frozen=True)
+class FactorDataPanelReport:
+    reportId: str
+    version: str
+    status: str
+    config: FactorDataPanelConfig
+    rowsGenerated: int
+    sampleRowsWritten: int
+    timeframe: str
+    timerange: str
+    loadedPairs: list[str]
+    failedPairs: list[dict[str, str]]
+    missingTimeframes: list[str]
+    formatUsed: dict[str, str]
+    factorColumnsGenerated: list[str]
+    factorCoverage: dict[str, dict[str, Any]]
+    topMissingFactors: list[dict[str, Any]]
+    quoteVolumeEstimatedCount: int
+    vwapEstimatedCount: int
+    universeMembershipAvailable: bool
+    universeMembershipSource: str
+    dynamicUniverseSnapshotsUsed: int
+    warnings: list[str]
+    noLookaheadAssurance: list[str]
+    dryRunApproved: bool
+    liveTradingApproved: bool
+    outputPanelSamplePath: str
+    outputReportPath: str
+    outputSummaryPath: str
+    manualFactorLibraryReportPath: str
+    nextStepRecommendation: str
+    generatedAt: str
+
+    def to_dict(self) -> dict[str, Any]:
+        payload = asdict(self)
+        payload["config"] = self.config.to_dict()
+        return payload
 
 
 @dataclass(frozen=True)

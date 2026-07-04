@@ -1,0 +1,248 @@
+{
+  "reportId": "v13_4_21_factor_panel_report",
+  "version": "V13.4.21",
+  "status": "success",
+  "config": {
+    "timerange": "20260101-",
+    "timeframe": "1h",
+    "pairs": [],
+    "dataPath": "user_data/data/okx/futures",
+    "useDynamicUniverse": false,
+    "universeSnapshotsPath": "reports/v13_4_13_dynamic_universe_snapshots.json",
+    "sampleSize": 200,
+    "source": "alphapilot_factor_data_panel_v13_4_21"
+  },
+  "rowsGenerated": 124111,
+  "sampleRowsWritten": 200,
+  "timeframe": "1h",
+  "timerange": "20260101-",
+  "loadedPairs": [
+    "AAVE/USDT:USDT",
+    "ADA/USDT:USDT",
+    "APT/USDT:USDT",
+    "ARB/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "BCH/USDT:USDT",
+    "BTC/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "DOT/USDT:USDT",
+    "ETC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "FIL/USDT:USDT",
+    "INJ/USDT:USDT",
+    "LINK/USDT:USDT",
+    "LTC/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "OP/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "PEPE/USDT:USDT",
+    "SEI/USDT:USDT",
+    "SOL/USDT:USDT",
+    "SUI/USDT:USDT",
+    "TIA/USDT:USDT",
+    "TRX/USDT:USDT",
+    "UNI/USDT:USDT",
+    "WIF/USDT:USDT",
+    "XRP/USDT:USDT"
+  ],
+  "failedPairs": [],
+  "missingTimeframes": [],
+  "formatUsed": {
+    "AAVE/USDT:USDT": "feather",
+    "ADA/USDT:USDT": "feather",
+    "APT/USDT:USDT": "feather",
+    "ARB/USDT:USDT": "feather",
+    "ATOM/USDT:USDT": "feather",
+    "AVAX/USDT:USDT": "feather",
+    "BCH/USDT:USDT": "feather",
+    "BTC/USDT:USDT": "feather",
+    "DOGE/USDT:USDT": "feather",
+    "DOT/USDT:USDT": "feather",
+    "ETC/USDT:USDT": "feather",
+    "ETH/USDT:USDT": "feather",
+    "FIL/USDT:USDT": "feather",
+    "INJ/USDT:USDT": "feather",
+    "LINK/USDT:USDT": "feather",
+    "LTC/USDT:USDT": "feather",
+    "NEAR/USDT:USDT": "feather",
+    "OP/USDT:USDT": "feather",
+    "ORDI/USDT:USDT": "feather",
+    "PEPE/USDT:USDT": "feather",
+    "SEI/USDT:USDT": "feather",
+    "SOL/USDT:USDT": "feather",
+    "SUI/USDT:USDT": "feather",
+    "TIA/USDT:USDT": "feather",
+    "TRX/USDT:USDT": "feather",
+    "UNI/USDT:USDT": "feather",
+    "WIF/USDT:USDT": "feather",
+    "XRP/USDT:USDT": "feather"
+  },
+  "factorColumnsGenerated": [
+    "momentum_3",
+    "momentum_12",
+    "reversal_3",
+    "volume_expansion_24h",
+    "volume_expansion_3d",
+    "distance_to_ema20",
+    "distance_to_ema50",
+    "bollinger_position",
+    "volatility_24h",
+    "volatility_3d",
+    "relative_strength_vs_btc",
+    "liquidity_rank",
+    "atr_pct",
+    "trend_strength",
+    "mean_reversion_distance",
+    "breakout_pressure"
+  ],
+  "factorCoverage": {
+    "momentum_3": {
+      "nonNullCount": 124027,
+      "rowCount": 124111,
+      "coveragePct": 99.9323
+    },
+    "momentum_12": {
+      "nonNullCount": 123775,
+      "rowCount": 124111,
+      "coveragePct": 99.7293
+    },
+    "reversal_3": {
+      "nonNullCount": 124027,
+      "rowCount": 124111,
+      "coveragePct": 99.9323
+    },
+    "volume_expansion_24h": {
+      "nonNullCount": 123971,
+      "rowCount": 124111,
+      "coveragePct": 99.8872
+    },
+    "volume_expansion_3d": {
+      "nonNullCount": 123467,
+      "rowCount": 124111,
+      "coveragePct": 99.4811
+    },
+    "distance_to_ema20": {
+      "nonNullCount": 124111,
+      "rowCount": 124111,
+      "coveragePct": 100.0
+    },
+    "distance_to_ema50": {
+      "nonNullCount": 124111,
+      "rowCount": 124111,
+      "coveragePct": 100.0
+    },
+    "bollinger_position": {
+      "nonNullCount": 123859,
+      "rowCount": 124111,
+      "coveragePct": 99.797
+    },
+    "volatility_24h": {
+      "nonNullCount": 123943,
+      "rowCount": 124111,
+      "coveragePct": 99.8646
+    },
+    "volatility_3d": {
+      "nonNullCount": 123439,
+      "rowCount": 124111,
+      "coveragePct": 99.4585
+    },
+    "relative_strength_vs_btc": {
+      "nonNullCount": 123775,
+      "rowCount": 124111,
+      "coveragePct": 99.7293
+    },
+    "liquidity_rank": {
+      "nonNullCount": 124111,
+      "rowCount": 124111,
+      "coveragePct": 100.0
+    },
+    "atr_pct": {
+      "nonNullCount": 123999,
+      "rowCount": 124111,
+      "coveragePct": 99.9098
+    },
+    "trend_strength": {
+      "nonNullCount": 124111,
+      "rowCount": 124111,
+      "coveragePct": 100.0
+    },
+    "mean_reversion_distance": {
+      "nonNullCount": 123971,
+      "rowCount": 124111,
+      "coveragePct": 99.8872
+    },
+    "breakout_pressure": {
+      "nonNullCount": 123971,
+      "rowCount": 124111,
+      "coveragePct": 99.8872
+    }
+  },
+  "topMissingFactors": [
+    {
+      "factorId": "volatility_3d",
+      "coveragePct": 99.4585,
+      "missingCount": 672
+    },
+    {
+      "factorId": "volume_expansion_3d",
+      "coveragePct": 99.4811,
+      "missingCount": 644
+    },
+    {
+      "factorId": "momentum_12",
+      "coveragePct": 99.7293,
+      "missingCount": 336
+    },
+    {
+      "factorId": "relative_strength_vs_btc",
+      "coveragePct": 99.7293,
+      "missingCount": 336
+    },
+    {
+      "factorId": "bollinger_position",
+      "coveragePct": 99.797,
+      "missingCount": 252
+    },
+    {
+      "factorId": "volatility_24h",
+      "coveragePct": 99.8646,
+      "missingCount": 168
+    },
+    {
+      "factorId": "volume_expansion_24h",
+      "coveragePct": 99.8872,
+      "missingCount": 140
+    },
+    {
+      "factorId": "mean_reversion_distance",
+      "coveragePct": 99.8872,
+      "missingCount": 140
+    }
+  ],
+  "quoteVolumeEstimatedCount": 124111,
+  "vwapEstimatedCount": 124111,
+  "universeMembershipAvailable": false,
+  "universeMembershipSource": "local_loaded_pairs_fallback",
+  "dynamicUniverseSnapshotsUsed": 0,
+  "warnings": [
+    "Dynamic universe membership not requested; rows use local loaded pair fallback membership.",
+    "Research-only factor computation. No backtest was run.",
+    "No factor output is a trade signal, order, or live execution instruction."
+  ],
+  "noLookaheadAssurance": [
+    "Panel returns use close values from current and prior bars only.",
+    "Manual rolling factors use current and historical rows within each pair only.",
+    "Cross-sectional ranks use pairs at the same timestamp only.",
+    "Dynamic universe membership is read from historical snapshots by snapshot date when enabled.",
+    "No forward labels, trade outcomes, backtest results, or future candles feed into factor values."
+  ],
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "outputPanelSamplePath": "reports\\v13_4_21_factor_panel_sample.json",
+  "outputReportPath": "reports\\v13_4_21_factor_panel_report.json",
+  "outputSummaryPath": "reports\\v13_4_21_factor_panel_summary.md",
+  "manualFactorLibraryReportPath": "reports\\v13_4_21_manual_factor_library_report.json",
+  "nextStepRecommendation": "V13.4.22 - evaluate factor coverage and decide whether to build forward-label factor research.",
+  "generatedAt": "2026-07-04T23:45:05.328789+00:00"
+}

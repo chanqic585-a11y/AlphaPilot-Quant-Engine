@@ -27,6 +27,7 @@ def _factor(
         expectedDirection=expected_direction,
         applicableRegime=applicable_regime,
         riskNotes=risk_notes,
+        outputColumn=factor_id,
     )
 
 
@@ -52,3 +53,7 @@ MANUAL_FACTOR_LIBRARY_V01 = [
 
 def build_manual_factor_library_v01() -> list[dict[str, object]]:
     return [factor.to_dict() for factor in MANUAL_FACTOR_LIBRARY_V01]
+
+
+def manual_factor_output_columns() -> list[str]:
+    return [factor.outputColumn or factor.factorId for factor in MANUAL_FACTOR_LIBRARY_V01]
