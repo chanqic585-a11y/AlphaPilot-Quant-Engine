@@ -1,0 +1,15 @@
+.env
+*.sqlite
+*.db
+user_data/data/*
+!user_data/data/.gitkeep
+user_data/backtest_results/*
+!user_data/backtest_results/.gitkeep
+user_data/logs/*
+!user_data/logs/.gitkeep
+reports/*.jsonl
+reports/*_private*
+__pycache__/
+*.pyc
+.venv/
+venv/

@@ -1,0 +1,68 @@
+{
+  "strategyId": "alpha_volume_rebound_v01",
+  "strategyVersion": "0.1-skeleton",
+  "market": "OKX USDT swap",
+  "timeframe": "15m",
+  "universe": [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "XRP/USDT:USDT",
+    "ADA/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "LINK/USDT:USDT",
+    "SUI/USDT:USDT",
+    "APT/USDT:USDT",
+    "OP/USDT:USDT",
+    "ARB/USDT:USDT",
+    "LTC/USDT:USDT",
+    "BCH/USDT:USDT",
+    "DOT/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "PEPE/USDT:USDT",
+    "WIF/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "TON/USDT:USDT",
+    "INJ/USDT:USDT",
+    "FIL/USDT:USDT",
+    "ETC/USDT:USDT",
+    "TRX/USDT:USDT",
+    "UNI/USDT:USDT",
+    "AAVE/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "SEI/USDT:USDT",
+    "TIA/USDT:USDT",
+    "FET/USDT:USDT"
+  ],
+  "timerange": "mock_20240101-20240701",
+  "config": {
+    "source": "v13_2_mock_report",
+    "dryRunOnly": true
+  },
+  "metrics": {
+    "totalReturnPct": 0.0,
+    "maxDrawdownPct": 0.0,
+    "winRate": 0.0,
+    "profitFactor": 0.0,
+    "tradeCount": 0,
+    "maxConsecutiveLosses": 0,
+    "averageHoldingMinutes": 0.0,
+    "feesPaid": 0.0,
+    "slippageCost": 0.0,
+    "netReturnAfterCosts": 0.0
+  },
+  "pairPerformance": [],
+  "monthlyPerformance": [],
+  "trades": [],
+  "skippedSignals": [],
+  "riskGateSummary": {
+    "status": "skeleton",
+    "liveExecutionAllowed": false
+  },
+  "auditSummary": {
+    "status": "skeleton",
+    "ledger": "reports/audit_ledger.jsonl"
+  },
+  "generatedAt": "2026-07-04T16:03:29.110418+00:00"
+}

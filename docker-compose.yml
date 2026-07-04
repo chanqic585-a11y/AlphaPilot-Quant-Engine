@@ -1,0 +1,10 @@
+services:
+  freqtrade:
+    image: freqtradeorg/freqtrade:stable
+    container_name: alphapilot-freqtrade
+    volumes:
+      - "./user_data:/freqtrade/user_data"
+    working_dir: /freqtrade
+    command: ["--help"]
+    # V13.2 does not expose REST API ports and does not start live trading.
+    # Add localhost-only API bindings in a later controlled version if needed.
