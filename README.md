@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.18 - Dynamic Regime Pipeline Diagnosis
+AlphaPilot V13.4.19 - Probability Bucket Coarsening and Sample Coverage Expansion
 ```
 
 ## Positioning
@@ -1063,8 +1063,59 @@ the probability layer has no current-gate pass buckets. Bucket key format
 appears consistent, so the likely V13.4.19 direction is probability bucket
 coarsening and sample coverage expansion, not strategy approval.
 
+## V13.4.19 Probability Bucket Coarsening
+
+V13.4.19 reads the existing V13.4.14 probability score table and V13.4.18
+pipeline diagnosis, then generates research-only coarsened bucket tables. It
+does not modify `AlphaPilotDynamicRegimeV01.py`, does not modify the original
+probability score table, does not loosen the current gate, does not run a
+backtest, does not enter Dry-run, and does not approve live trading.
+
+Run coarsening analysis:
+
+```powershell
+python -m alphapilot.reports.generate_probability_bucket_coarsening_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_19_probability_bucket_coarsening_report.json
+reports/v13_4_19_probability_bucket_coarsening_summary.md
+reports/v13_4_19_probability_score_table_coarse_a.json
+reports/v13_4_19_probability_score_table_coarse_b.json
+reports/v13_4_19_probability_score_table_coarse_c.json
+reports/v13_4_19_probability_score_table_coarse_d.json
+docs/V13.4.19-probability-bucket-coarsening.md
+docs/probability-bucket-coverage-expansion.md
+docs/probability-gate-research-vs-trading.md
+```
+
+Result summary:
+
+```text
+original currentGatePassBucketCount: 0
+original researchGatePassBucketCount: 0
+original exploratoryGatePassBucketCount: 2
+coarse_a researchGatePassBucketCount: 0
+coarse_b researchGatePassBucketCount: 0
+coarse_c researchGatePassBucketCount: 2
+coarse_d researchGatePassBucketCount: 2
+rootCauseConclusion: A. probability_table_too_sparse
+recommendedNextStep: V13.4.20 - Probability Gate Candidate Wiring and Backtest Plan
+```
+
+Important limitation: the full raw probability sample dataset is not committed,
+so V13.4.19 aggregates the existing bucket-level score table. Profit factor in
+the coarsened tables is a sample-count weighted bucket-level approximation, not
+a raw win/loss recomputation.
+
+The current gate still has zero pass buckets after coarsening. Coarse C/D only
+create research buckets, so they are candidates for a future backtest plan, not
+Dry-run or live-trading approval.
+
 ## Next Versions
 
-- V13.4.19: probability bucket coarsening and sample coverage expansion.
-- V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.18 closeout.
+- V13.4.20: probability gate candidate wiring and backtest plan, still research-only.
+- V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

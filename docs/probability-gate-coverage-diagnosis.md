@@ -47,3 +47,11 @@ can. The blocker is that the statistical gate has no sufficiently supported
 The next research step should coarsen bucket dimensions and expand sample
 coverage before any new backtest approval decision. Do not change live trading
 permissions or enter Dry-run based on this diagnosis.
+
+## V13.4.19 Follow-up
+
+V13.4.19 performed bucket-level coarsening from the existing V13.4.14 score
+table. Broad schemes C and D produced research buckets, but no scheme produced a
+current-gate pass bucket. This supports the conclusion that the original table
+is too sparse while also preserving the trading boundary: coarsened buckets are
+research candidates only.
