@@ -1,0 +1,4337 @@
+[
+  {
+    "snapshotDate": "2026-01-31",
+    "generatedAt": "2026-07-04T21:01:56.080306+00:00",
+    "market": "okx_usdt_swap",
+    "refreshFrequency": "daily",
+    "maxPairs": 10,
+    "selectedPairs": [
+      "ETH/USDT:USDT",
+      "SUI/USDT:USDT",
+      "XRP/USDT:USDT",
+      "ADA/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "AAVE/USDT:USDT",
+      "LINK/USDT:USDT",
+      "SOL/USDT:USDT",
+      "BTC/USDT:USDT",
+      "DOGE/USDT:USDT"
+    ],
+    "pairScores": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "universeScore": 83.518519,
+        "rank": 1,
+        "quoteVolume24h": 15278667231.9426,
+        "quoteVolume3d": 36362975719.7387,
+        "volumeStability3d": 0.765208,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03492225,
+        "absReturn3d": 0.10494626,
+        "volatility24h": 0.0081816,
+        "volatility3d": 0.00691455,
+        "volumeExpansion24h": 1.7725752,
+        "volumeExpansion3d": 1.40623323,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 100.0,
+          "quoteVolume3d": 100.0,
+          "absReturn24h": 77.777778,
+          "absReturn3d": 66.666667,
+          "volatility3d": 22.222222,
+          "volumeExpansion24h": 59.259259
+        }
+      },
+      {
+        "pair": "SUI/USDT:USDT",
+        "universeScore": 82.962963,
+        "rank": 2,
+        "quoteVolume24h": 154435366.613,
+        "quoteVolume3d": 368812661.3211,
+        "volumeStability3d": 0.761598,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.04040709,
+        "absReturn3d": 0.11419624,
+        "volatility24h": 0.01014098,
+        "volatility3d": 0.00899909,
+        "volumeExpansion24h": 2.00758059,
+        "volumeExpansion3d": 1.59812517,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 77.777778,
+          "quoteVolume3d": 77.777778,
+          "absReturn24h": 96.296296,
+          "absReturn3d": 88.888889,
+          "volatility3d": 88.888889,
+          "volumeExpansion24h": 81.481481
+        }
+      },
+      {
+        "pair": "XRP/USDT:USDT",
+        "universeScore": 78.148148,
+        "rank": 3,
+        "quoteVolume24h": 576319444.0317,
+        "quoteVolume3d": 1245585981.4267,
+        "volumeStability3d": 0.643414,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03511213,
+        "absReturn3d": 0.09257418,
+        "volatility24h": 0.00870229,
+        "volatility3d": 0.00719596,
+        "volumeExpansion24h": 2.18875201,
+        "volumeExpansion3d": 1.57683315,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 88.888889,
+          "quoteVolume3d": 85.185185,
+          "absReturn24h": 85.185185,
+          "absReturn3d": 44.444444,
+          "volatility3d": 37.037037,
+          "volumeExpansion24h": 96.296296
+        }
+      },
+      {
+        "pair": "ADA/USDT:USDT",
+        "universeScore": 73.518519,
+        "rank": 4,
+        "quoteVolume24h": 122994007.343,
+        "quoteVolume3d": 297872600.904,
+        "volumeStability3d": 0.752552,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03954464,
+        "absReturn3d": 0.10795771,
+        "volatility24h": 0.00885026,
+        "volatility3d": 0.00757588,
+        "volumeExpansion24h": 1.75296067,
+        "volumeExpansion3d": 1.41513386,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 74.074074,
+          "quoteVolume3d": 74.074074,
+          "absReturn24h": 92.592593,
+          "absReturn3d": 74.074074,
+          "volatility3d": 51.851852,
+          "volumeExpansion24h": 51.851852
+        }
+      },
+      {
+        "pair": "PEPE/USDT:USDT",
+        "universeScore": 68.703703,
+        "rank": 5,
+        "quoteVolume24h": 278392511.123,
+        "quoteVolume3d": 682332088.91,
+        "volumeStability3d": 0.814358,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02256908,
+        "absReturn3d": 0.07872763,
+        "volatility24h": 0.01073717,
+        "volatility3d": 0.00888025,
+        "volumeExpansion24h": 1.45756046,
+        "volumeExpansion3d": 1.19081301,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 81.481481,
+          "quoteVolume3d": 81.481481,
+          "absReturn24h": 51.851852,
+          "absReturn3d": 29.62963,
+          "volatility3d": 85.185185,
+          "volumeExpansion24h": 11.111111
+        }
+      },
+      {
+        "pair": "AAVE/USDT:USDT",
+        "universeScore": 64.814815,
+        "rank": 6,
+        "quoteVolume24h": 49918566.6891,
+        "quoteVolume3d": 125748262.4634,
+        "volumeStability3d": 0.864068,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.05914859,
+        "absReturn3d": 0.13072802,
+        "volatility24h": 0.00860275,
+        "volatility3d": 0.00831456,
+        "volumeExpansion24h": 1.95841723,
+        "volumeExpansion3d": 1.64446204,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 48.148148,
+          "quoteVolume3d": 48.148148,
+          "absReturn24h": 100.0,
+          "absReturn3d": 96.296296,
+          "volatility3d": 74.074074,
+          "volumeExpansion24h": 77.777778
+        }
+      },
+      {
+        "pair": "LINK/USDT:USDT",
+        "universeScore": 64.62963,
+        "rank": 7,
+        "quoteVolume24h": 98589921.3018,
+        "quoteVolume3d": 246471527.5834,
+        "volumeStability3d": 0.781739,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03030848,
+        "absReturn3d": 0.10463378,
+        "volatility24h": 0.00825848,
+        "volatility3d": 0.00740888,
+        "volumeExpansion24h": 1.74705571,
+        "volumeExpansion3d": 1.45586041,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 66.666667,
+          "quoteVolume3d": 70.37037,
+          "absReturn24h": 70.37037,
+          "absReturn3d": 62.962963,
+          "volatility3d": 44.444444,
+          "volumeExpansion24h": 48.148148
+        }
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "universeScore": 63.518519,
+        "rank": 8,
+        "quoteVolume24h": 1596943473.7539,
+        "quoteVolume3d": 3629072113.0098,
+        "volumeStability3d": 0.67676,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00025521,
+        "absReturn3d": 0.07588268,
+        "volatility24h": 0.00846138,
+        "volatility3d": 0.00712848,
+        "volumeExpansion24h": 1.83575318,
+        "volumeExpansion3d": 1.39058996,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 92.592593,
+          "quoteVolume3d": 92.592593,
+          "absReturn24h": 0.0,
+          "absReturn3d": 14.814815,
+          "volatility3d": 33.333333,
+          "volumeExpansion24h": 62.962963
+        }
+      },
+      {
+        "pair": "BTC/USDT:USDT",
+        "universeScore": 62.592592,
+        "rank": 9,
+        "quoteVolume24h": 10391959523.7499,
+        "quoteVolume3d": 25515989889.5835,
+        "volumeStability3d": 0.752479,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00080575,
+        "absReturn3d": 0.05836897,
+        "volatility24h": 0.00594172,
+        "volatility3d": 0.00564752,
+        "volumeExpansion24h": 1.87674185,
+        "volumeExpansion3d": 1.53602491,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 96.296296,
+          "quoteVolume3d": 96.296296,
+          "absReturn24h": 3.703704,
+          "absReturn3d": 3.703704,
+          "volatility3d": 3.703704,
+          "volumeExpansion24h": 70.37037
+        }
+      },
+      {
+        "pair": "DOGE/USDT:USDT",
+        "universeScore": 62.222222,
+        "rank": 10,
+        "quoteVolume24h": 546189711.4156,
+        "quoteVolume3d": 1402341920.9171,
+        "volumeStability3d": 0.808374,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0106001,
+        "absReturn3d": 0.07982191,
+        "volatility24h": 0.00836969,
+        "volatility3d": 0.00712429,
+        "volumeExpansion24h": 1.58545013,
+        "volumeExpansion3d": 1.35688091,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 85.185185,
+          "quoteVolume3d": 88.888889,
+          "absReturn24h": 18.518519,
+          "absReturn3d": 33.333333,
+          "volatility3d": 29.62963,
+          "volumeExpansion24h": 22.222222
+        }
+      },
+      {
+        "pair": "NEAR/USDT:USDT",
+        "universeScore": 60.185185,
+        "rank": 11,
+        "quoteVolume24h": 40291662.9,
+        "quoteVolume3d": 89504708.388,
+        "volumeStability3d": 0.658606,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03508772,
+        "absReturn3d": 0.11587408,
+        "volatility24h": 0.00986536,
+        "volatility3d": 0.00836278,
+        "volumeExpansion24h": 2.04185056,
+        "volumeExpansion3d": 1.51193594,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 44.444444,
+          "quoteVolume3d": 44.444444,
+          "absReturn24h": 81.481481,
+          "absReturn3d": 92.592593,
+          "volatility3d": 77.777778,
+          "volumeExpansion24h": 85.185185
+        }
+      },
+      {
+        "pair": "UNI/USDT:USDT",
+        "universeScore": 56.111111,
+        "rank": 12,
+        "quoteVolume24h": 51014690.617,
+        "quoteVolume3d": 129257679.314,
+        "volumeStability3d": 0.749934,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02642971,
+        "absReturn3d": 0.11127288,
+        "volatility24h": 0.0097082,
+        "volatility3d": 0.00810143,
+        "volumeExpansion24h": 1.6889827,
+        "volumeExpansion3d": 1.42647789,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 51.851852,
+          "quoteVolume3d": 51.851852,
+          "absReturn24h": 59.259259,
+          "absReturn3d": 81.481481,
+          "volatility3d": 59.259259,
+          "volumeExpansion24h": 40.740741
+        }
+      },
+      {
+        "pair": "FIL/USDT:USDT",
+        "universeScore": 51.111111,
+        "rank": 13,
+        "quoteVolume24h": 84098874.6729,
+        "quoteVolume3d": 202733270.5291,
+        "volumeStability3d": 0.718538,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01510067,
+        "absReturn3d": 0.07776905,
+        "volatility24h": 0.00867507,
+        "volatility3d": 0.00826287,
+        "volumeExpansion24h": 1.76925038,
+        "volumeExpansion3d": 1.42168338,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 59.259259,
+          "quoteVolume3d": 59.259259,
+          "absReturn24h": 25.925926,
+          "absReturn3d": 18.518519,
+          "volatility3d": 70.37037,
+          "volumeExpansion24h": 55.555556
+        }
+      },
+      {
+        "pair": "WIF/USDT:USDT",
+        "universeScore": 50.925926,
+        "rank": 14,
+        "quoteVolume24h": 30882076.7038,
+        "quoteVolume3d": 85912174.2436,
+        "volumeStability3d": 0.872729,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02438198,
+        "absReturn3d": 0.11189889,
+        "volatility24h": 0.00831423,
+        "volatility3d": 0.00874969,
+        "volumeExpansion24h": 1.66585176,
+        "volumeExpansion3d": 1.54476816,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 40.740741,
+          "quoteVolume3d": 40.740741,
+          "absReturn24h": 55.555556,
+          "absReturn3d": 85.185185,
+          "volatility3d": 81.481481,
+          "volumeExpansion24h": 29.62963
+        }
+      },
+      {
+        "pair": "OP/USDT:USDT",
+        "universeScore": 49.814815,
+        "rank": 15,
+        "quoteVolume24h": 24206457.5642,
+        "quoteVolume3d": 65240148.9181,
+        "volumeStability3d": 0.720912,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03099631,
+        "absReturn3d": 0.13447594,
+        "volatility24h": 0.00911858,
+        "volatility3d": 0.0100587,
+        "volumeExpansion24h": 1.59452877,
+        "volumeExpansion3d": 1.43250059,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 29.62963,
+          "quoteVolume3d": 29.62963,
+          "absReturn24h": 74.074074,
+          "absReturn3d": 100.0,
+          "volatility3d": 96.296296,
+          "volumeExpansion24h": 25.925926
+        }
+      },
+      {
+        "pair": "LTC/USDT:USDT",
+        "universeScore": 48.518518,
+        "rank": 16,
+        "quoteVolume24h": 103760326.697,
+        "quoteVolume3d": 240833729.972,
+        "volumeStability3d": 0.749231,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01088765,
+        "absReturn3d": 0.06610508,
+        "volatility24h": 0.00812225,
+        "volatility3d": 0.00675774,
+        "volumeExpansion24h": 1.53399688,
+        "volumeExpansion3d": 1.18683188,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 70.37037,
+          "quoteVolume3d": 66.666667,
+          "absReturn24h": 22.222222,
+          "absReturn3d": 11.111111,
+          "volatility3d": 18.518519,
+          "volumeExpansion24h": 18.518519
+        }
+      },
+      {
+        "pair": "AVAX/USDT:USDT",
+        "universeScore": 47.777778,
+        "rank": 17,
+        "quoteVolume24h": 53661890.01,
+        "quoteVolume3d": 148956538.4794,
+        "volumeStability3d": 0.71954,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01718213,
+        "absReturn3d": 0.10418727,
+        "volatility24h": 0.00683732,
+        "volatility3d": 0.00736428,
+        "volumeExpansion24h": 1.42159906,
+        "volumeExpansion3d": 1.31537469,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 55.555556,
+          "quoteVolume3d": 55.555556,
+          "absReturn24h": 29.62963,
+          "absReturn3d": 55.555556,
+          "volatility3d": 40.740741,
+          "volumeExpansion24h": 7.407407
+        }
+      },
+      {
+        "pair": "BCH/USDT:USDT",
+        "universeScore": 46.481481,
+        "rank": 18,
+        "quoteVolume24h": 92310145.359,
+        "quoteVolume3d": 214793678.999,
+        "volumeStability3d": 0.660619,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00217549,
+        "absReturn3d": 0.07789825,
+        "volatility24h": 0.00663298,
+        "volatility3d": 0.0060105,
+        "volumeExpansion24h": 1.88151263,
+        "volumeExpansion3d": 1.4593449,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 62.962963,
+          "quoteVolume3d": 62.962963,
+          "absReturn24h": 11.111111,
+          "absReturn3d": 25.925926,
+          "volatility3d": 7.407407,
+          "volumeExpansion24h": 74.074074
+        }
+      },
+      {
+        "pair": "DOT/USDT:USDT",
+        "universeScore": 43.518518,
+        "rank": 19,
+        "quoteVolume24h": 30000055.21,
+        "quoteVolume3d": 74011893.181,
+        "volumeStability3d": 0.788673,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02878526,
+        "absReturn3d": 0.10074627,
+        "volatility24h": 0.00778657,
+        "volatility3d": 0.00743282,
+        "volumeExpansion24h": 1.68877352,
+        "volumeExpansion3d": 1.38876772,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 37.037037,
+          "quoteVolume3d": 37.037037,
+          "absReturn24h": 62.962963,
+          "absReturn3d": 51.851852,
+          "volatility3d": 48.148148,
+          "volumeExpansion24h": 37.037037
+        }
+      },
+      {
+        "pair": "ARB/USDT:USDT",
+        "universeScore": 38.888889,
+        "rank": 20,
+        "quoteVolume24h": 29255812.5009,
+        "quoteVolume3d": 73426531.7544,
+        "volumeStability3d": 0.734832,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01898734,
+        "absReturn3d": 0.09726267,
+        "volatility24h": 0.00854385,
+        "volatility3d": 0.00814471,
+        "volumeExpansion24h": 1.6813692,
+        "volumeExpansion3d": 1.4066391,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 33.333333,
+          "quoteVolume3d": 33.333333,
+          "absReturn24h": 40.740741,
+          "absReturn3d": 48.148148,
+          "volatility3d": 62.962963,
+          "volumeExpansion24h": 33.333333
+        }
+      },
+      {
+        "pair": "APT/USDT:USDT",
+        "universeScore": 35.185185,
+        "rank": 21,
+        "quoteVolume24h": 21604518.173,
+        "quoteVolume3d": 53615021.303,
+        "volumeStability3d": 0.845509,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03010033,
+        "absReturn3d": 0.08862351,
+        "volatility24h": 0.00819892,
+        "volatility3d": 0.00822768,
+        "volumeExpansion24h": 1.39718442,
+        "volumeExpansion3d": 1.15577788,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 22.222222,
+          "quoteVolume3d": 25.925926,
+          "absReturn24h": 66.666667,
+          "absReturn3d": 40.740741,
+          "volatility3d": 66.666667,
+          "volumeExpansion24h": 3.703704
+        }
+      },
+      {
+        "pair": "ORDI/USDT:USDT",
+        "universeScore": 32.037037,
+        "rank": 22,
+        "quoteVolume24h": 15845409.8095,
+        "quoteVolume3d": 33492678.2339,
+        "volumeStability3d": 0.620038,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02223413,
+        "absReturn3d": 0.07781708,
+        "volatility24h": 0.01136744,
+        "volatility3d": 0.0095659,
+        "volumeExpansion24h": 2.05851069,
+        "volumeExpansion3d": 1.45036821,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 14.814815,
+          "quoteVolume3d": 14.814815,
+          "absReturn24h": 48.148148,
+          "absReturn3d": 22.222222,
+          "volatility3d": 92.592593,
+          "volumeExpansion24h": 88.888889
+        }
+      },
+      {
+        "pair": "ETC/USDT:USDT",
+        "universeScore": 30.740741,
+        "rank": 23,
+        "quoteVolume24h": 23311456.433,
+        "quoteVolume3d": 53156362.265,
+        "volumeStability3d": 0.575842,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02035153,
+        "absReturn3d": 0.08628128,
+        "volatility24h": 0.00693526,
+        "volatility3d": 0.00635457,
+        "volumeExpansion24h": 2.12249469,
+        "volumeExpansion3d": 1.6132854,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 25.925926,
+          "quoteVolume3d": 22.222222,
+          "absReturn24h": 44.444444,
+          "absReturn3d": 37.037037,
+          "volatility3d": 11.111111,
+          "volumeExpansion24h": 92.592593
+        }
+      },
+      {
+        "pair": "TIA/USDT:USDT",
+        "universeScore": 29.814815,
+        "rank": 24,
+        "quoteVolume24h": 10458106.8725,
+        "quoteVolume3d": 27060665.5461,
+        "volumeStability3d": 0.754286,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01740812,
+        "absReturn3d": 0.1044513,
+        "volatility24h": 0.01018566,
+        "volatility3d": 0.01050505,
+        "volumeExpansion24h": 1.70192343,
+        "volumeExpansion3d": 1.46792599,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 11.111111,
+          "quoteVolume3d": 11.111111,
+          "absReturn24h": 33.333333,
+          "absReturn3d": 59.259259,
+          "volatility3d": 100.0,
+          "volumeExpansion24h": 44.444444
+        }
+      },
+      {
+        "pair": "SEI/USDT:USDT",
+        "universeScore": 26.851852,
+        "rank": 25,
+        "quoteVolume24h": 3728656.146,
+        "quoteVolume3d": 6966446.063,
+        "volumeStability3d": 0.519634,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03733602,
+        "absReturn3d": 0.10757717,
+        "volatility24h": 0.00789057,
+        "volatility3d": 0.00642618,
+        "volumeExpansion24h": 2.63567256,
+        "volumeExpansion3d": 1.64145562,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 0.0,
+          "quoteVolume3d": 0.0,
+          "absReturn24h": 88.888889,
+          "absReturn3d": 70.37037,
+          "volatility3d": 14.814815,
+          "volumeExpansion24h": 100.0
+        }
+      },
+      {
+        "pair": "INJ/USDT:USDT",
+        "universeScore": 24.444445,
+        "rank": 26,
+        "quoteVolume24h": 5818395.4634,
+        "quoteVolume3d": 13812647.0507,
+        "volumeStability3d": 0.711112,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01891427,
+        "absReturn3d": 0.10848214,
+        "volatility24h": 0.00726577,
+        "volatility3d": 0.00809003,
+        "volumeExpansion24h": 1.86887344,
+        "volumeExpansion3d": 1.47887789,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 3.703704,
+          "quoteVolume3d": 3.703704,
+          "absReturn24h": 37.037037,
+          "absReturn3d": 77.777778,
+          "volatility3d": 55.555556,
+          "volumeExpansion24h": 66.666667
+        }
+      },
+      {
+        "pair": "TRX/USDT:USDT",
+        "universeScore": 12.962963,
+        "rank": 27,
+        "quoteVolume24h": 19994874.2861,
+        "quoteVolume3d": 50392352.0445,
+        "volumeStability3d": 0.856698,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0013241,
+        "absReturn3d": 0.00074848,
+        "volatility24h": 0.00313712,
+        "volatility3d": 0.00290693,
+        "volumeExpansion24h": 1.49231295,
+        "volumeExpansion3d": 1.25367396,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 18.518519,
+          "quoteVolume3d": 18.518519,
+          "absReturn24h": 7.407407,
+          "absReturn3d": 0.0,
+          "volatility3d": 0.0,
+          "volumeExpansion24h": 14.814815
+        }
+      },
+      {
+        "pair": "ATOM/USDT:USDT",
+        "universeScore": 10.0,
+        "rank": 28,
+        "quoteVolume24h": 8524815.548,
+        "quoteVolume3d": 25934601.745,
+        "volumeStability3d": 0.988157,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00330813,
+        "absReturn3d": 0.05932203,
+        "volatility24h": 0.0063184,
+        "volatility3d": 0.00694734,
+        "volumeExpansion24h": 1.0267491,
+        "volumeExpansion3d": 1.04120841,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 7.407407,
+          "quoteVolume3d": 7.407407,
+          "absReturn24h": 14.814815,
+          "absReturn3d": 7.407407,
+          "volatility3d": 25.925926,
+          "volumeExpansion24h": 0.0
+        }
+      },
+      {
+        "pair": "FET/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      }
+    ],
+    "excludedPairs": [
+      "TON/USDT:USDT",
+      "FET/USDT:USDT"
+    ],
+    "insufficientDataPairs": [],
+    "warnings": []
+  },
+  {
+    "snapshotDate": "2026-02-01",
+    "generatedAt": "2026-07-04T21:01:56.080306+00:00",
+    "market": "okx_usdt_swap",
+    "refreshFrequency": "daily",
+    "maxPairs": 10,
+    "selectedPairs": [
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "SUI/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "ADA/USDT:USDT",
+      "FIL/USDT:USDT",
+      "BTC/USDT:USDT",
+      "WIF/USDT:USDT",
+      "XRP/USDT:USDT"
+    ],
+    "pairScores": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "universeScore": 82.222222,
+        "rank": 1,
+        "quoteVolume24h": 19163682548.0838,
+        "quoteVolume3d": 47145659742.9978,
+        "volumeStability3d": 0.831028,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.09394606,
+        "absReturn3d": 0.1852268,
+        "volatility24h": 0.01142279,
+        "volatility3d": 0.00928288,
+        "volumeExpansion24h": 2.01848655,
+        "volumeExpansion3d": 1.65526432,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 100.0,
+          "quoteVolume3d": 100.0,
+          "absReturn24h": 66.666667,
+          "absReturn3d": 74.074074,
+          "volatility3d": 40.740741,
+          "volumeExpansion24h": 14.814815
+        }
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "universeScore": 79.074074,
+        "rank": 2,
+        "quoteVolume24h": 2581749017.5852,
+        "quoteVolume3d": 5536622582.2754,
+        "volumeStability3d": 0.713014,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.10233271,
+        "absReturn3d": 0.15674984,
+        "volatility24h": 0.01310576,
+        "volatility3d": 0.01022954,
+        "volumeExpansion24h": 2.64668031,
+        "volumeExpansion3d": 1.89195643,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 92.592593,
+          "quoteVolume3d": 92.592593,
+          "absReturn24h": 81.481481,
+          "absReturn3d": 33.333333,
+          "volatility3d": 62.962963,
+          "volumeExpansion24h": 33.333333
+        }
+      },
+      {
+        "pair": "DOGE/USDT:USDT",
+        "universeScore": 73.888889,
+        "rank": 3,
+        "quoteVolume24h": 1018459949.0932,
+        "quoteVolume3d": 2078663128.3317,
+        "volumeStability3d": 0.667206,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0971488,
+        "absReturn3d": 0.16321285,
+        "volatility24h": 0.01084917,
+        "volatility3d": 0.00908039,
+        "volumeExpansion24h": 2.75395273,
+        "volumeExpansion3d": 1.87359356,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 88.888889,
+          "quoteVolume3d": 88.888889,
+          "absReturn24h": 74.074074,
+          "absReturn3d": 40.740741,
+          "volatility3d": 25.925926,
+          "volumeExpansion24h": 55.555556
+        }
+      },
+      {
+        "pair": "SUI/USDT:USDT",
+        "universeScore": 70.370371,
+        "rank": 4,
+        "quoteVolume24h": 224642677.9955,
+        "quoteVolume3d": 509599138.1547,
+        "volumeStability3d": 0.764849,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.09310562,
+        "absReturn3d": 0.17397849,
+        "volatility24h": 0.01342825,
+        "volatility3d": 0.01129148,
+        "volumeExpansion24h": 2.52502119,
+        "volumeExpansion3d": 1.90932645,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 77.777778,
+          "quoteVolume3d": 77.777778,
+          "absReturn24h": 62.962963,
+          "absReturn3d": 51.851852,
+          "volatility3d": 81.481481,
+          "volumeExpansion24h": 18.518519
+        }
+      },
+      {
+        "pair": "PEPE/USDT:USDT",
+        "universeScore": 69.444444,
+        "rank": 5,
+        "quoteVolume24h": 339438370.114,
+        "quoteVolume3d": 846770439.232,
+        "volumeStability3d": 0.839885,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.09891304,
+        "absReturn3d": 0.15511618,
+        "volatility24h": 0.01086827,
+        "volatility3d": 0.01017139,
+        "volumeExpansion24h": 1.67616292,
+        "volumeExpansion3d": 1.39379766,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 81.481481,
+          "quoteVolume3d": 81.481481,
+          "absReturn24h": 77.777778,
+          "absReturn3d": 29.62963,
+          "volatility3d": 59.259259,
+          "volumeExpansion24h": 0.0
+        }
+      },
+      {
+        "pair": "ADA/USDT:USDT",
+        "universeScore": 65.185185,
+        "rank": 6,
+        "quoteVolume24h": 220748013.264,
+        "quoteVolume3d": 453183525.047,
+        "volumeStability3d": 0.671751,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0834375,
+        "absReturn3d": 0.1772791,
+        "volatility24h": 0.01104512,
+        "volatility3d": 0.00924347,
+        "volumeExpansion24h": 2.85648677,
+        "volumeExpansion3d": 1.95473672,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 74.074074,
+          "quoteVolume3d": 74.074074,
+          "absReturn24h": 48.148148,
+          "absReturn3d": 62.962963,
+          "volatility3d": 37.037037,
+          "volumeExpansion24h": 70.37037
+        }
+      },
+      {
+        "pair": "FIL/USDT:USDT",
+        "universeScore": 62.407407,
+        "rank": 7,
+        "quoteVolume24h": 136468092.859,
+        "quoteVolume3d": 298267905.4506,
+        "volumeStability3d": 0.735221,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.10409556,
+        "absReturn3d": 0.17387884,
+        "volatility24h": 0.01313546,
+        "volatility3d": 0.0107185,
+        "volumeExpansion24h": 2.60548004,
+        "volumeExpansion3d": 1.89819969,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 59.259259,
+          "quoteVolume3d": 59.259259,
+          "absReturn24h": 85.185185,
+          "absReturn3d": 48.148148,
+          "volatility3d": 77.777778,
+          "volumeExpansion24h": 29.62963
+        }
+      },
+      {
+        "pair": "BTC/USDT:USDT",
+        "universeScore": 61.481481,
+        "rank": 8,
+        "quoteVolume24h": 11857780544.0312,
+        "quoteVolume3d": 31806389168.5531,
+        "volumeStability3d": 0.91029,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.06342111,
+        "absReturn3d": 0.11688586,
+        "volatility24h": 0.00594331,
+        "volatility3d": 0.00626539,
+        "volumeExpansion24h": 1.90286992,
+        "volumeExpansion3d": 1.70137014,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 96.296296,
+          "quoteVolume3d": 96.296296,
+          "absReturn24h": 14.814815,
+          "absReturn3d": 7.407407,
+          "volatility3d": 3.703704,
+          "volumeExpansion24h": 7.407407
+        }
+      },
+      {
+        "pair": "WIF/USDT:USDT",
+        "universeScore": 59.259259,
+        "rank": 9,
+        "quoteVolume24h": 61887672.1013,
+        "quoteVolume3d": 124303101.1952,
+        "volumeStability3d": 0.650891,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.11401674,
+        "absReturn3d": 0.20294856,
+        "volatility24h": 0.01524764,
+        "volatility3d": 0.01150781,
+        "volumeExpansion24h": 3.05847062,
+        "volumeExpansion3d": 2.04767428,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 40.740741,
+          "quoteVolume3d": 37.037037,
+          "absReturn24h": 92.592593,
+          "absReturn3d": 92.592593,
+          "volatility3d": 85.185185,
+          "volumeExpansion24h": 81.481481
+        }
+      },
+      {
+        "pair": "XRP/USDT:USDT",
+        "universeScore": 55.925926,
+        "rank": 10,
+        "quoteVolume24h": 808000866.4889,
+        "quoteVolume3d": 1834749316.9221,
+        "volumeStability3d": 0.757854,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.05174301,
+        "absReturn3d": 0.13652343,
+        "volatility24h": 0.01069663,
+        "volatility3d": 0.00897163,
+        "volumeExpansion24h": 2.56144441,
+        "volumeExpansion3d": 1.93878026,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 85.185185,
+          "quoteVolume3d": 85.185185,
+          "absReturn24h": 3.703704,
+          "absReturn3d": 11.111111,
+          "volatility3d": 18.518519,
+          "volumeExpansion24h": 25.925926
+        }
+      },
+      {
+        "pair": "LTC/USDT:USDT",
+        "universeScore": 55.185185,
+        "rank": 11,
+        "quoteVolume24h": 198195855.788,
+        "quoteVolume3d": 384433157.588,
+        "volumeStability3d": 0.607551,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.08774352,
+        "absReturn3d": 0.14023421,
+        "volatility24h": 0.01008021,
+        "volatility3d": 0.0085824,
+        "volumeExpansion24h": 2.67835348,
+        "volumeExpansion3d": 1.731701,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 70.37037,
+          "quoteVolume3d": 70.37037,
+          "absReturn24h": 55.555556,
+          "absReturn3d": 14.814815,
+          "volatility3d": 11.111111,
+          "volumeExpansion24h": 40.740741
+        }
+      },
+      {
+        "pair": "LINK/USDT:USDT",
+        "universeScore": 51.481482,
+        "rank": 12,
+        "quoteVolume24h": 160012707.9423,
+        "quoteVolume3d": 349270408.1951,
+        "volumeStability3d": 0.733804,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.07248397,
+        "absReturn3d": 0.15400915,
+        "volatility24h": 0.01115072,
+        "volatility3d": 0.00940268,
+        "volumeExpansion24h": 2.5321811,
+        "volumeExpansion3d": 1.84238685,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 66.666667,
+          "quoteVolume3d": 66.666667,
+          "absReturn24h": 22.222222,
+          "absReturn3d": 25.925926,
+          "volatility3d": 44.444444,
+          "volumeExpansion24h": 22.222222
+        }
+      },
+      {
+        "pair": "BCH/USDT:USDT",
+        "universeScore": 50.925926,
+        "rank": 13,
+        "quoteVolume24h": 155467365.083,
+        "quoteVolume3d": 332766055.333,
+        "volumeStability3d": 0.714756,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.08103698,
+        "absReturn3d": 0.14099305,
+        "volatility24h": 0.01209494,
+        "volatility3d": 0.00902372,
+        "volumeExpansion24h": 2.77670956,
+        "volumeExpansion3d": 1.98111179,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 62.962963,
+          "quoteVolume3d": 62.962963,
+          "absReturn24h": 40.740741,
+          "absReturn3d": 18.518519,
+          "volatility3d": 22.222222,
+          "volumeExpansion24h": 59.259259
+        }
+      },
+      {
+        "pair": "APT/USDT:USDT",
+        "universeScore": 50.185185,
+        "rank": 14,
+        "quoteVolume24h": 45580232.135,
+        "quoteVolume3d": 84182056.744,
+        "volumeStability3d": 0.553462,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.11903114,
+        "absReturn3d": 0.20188088,
+        "volatility24h": 0.01492987,
+        "volatility3d": 0.01153127,
+        "volumeExpansion24h": 2.83675788,
+        "volumeExpansion3d": 1.74640117,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 25.925926,
+          "quoteVolume3d": 22.222222,
+          "absReturn24h": 96.296296,
+          "absReturn3d": 88.888889,
+          "volatility3d": 88.888889,
+          "volumeExpansion24h": 66.666667
+        }
+      },
+      {
+        "pair": "OP/USDT:USDT",
+        "universeScore": 49.62963,
+        "rank": 15,
+        "quoteVolume24h": 43271085.1862,
+        "quoteVolume3d": 95115906.6857,
+        "volumeStability3d": 0.738296,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.10474006,
+        "absReturn3d": 0.21409396,
+        "volatility24h": 0.01496818,
+        "volatility3d": 0.01269401,
+        "volumeExpansion24h": 2.69328732,
+        "volumeExpansion3d": 1.97340761,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 22.222222,
+          "quoteVolume3d": 25.925926,
+          "absReturn24h": 88.888889,
+          "absReturn3d": 100.0,
+          "volatility3d": 96.296296,
+          "volumeExpansion24h": 48.148148
+        }
+      },
+      {
+        "pair": "ORDI/USDT:USDT",
+        "universeScore": 49.444445,
+        "rank": 16,
+        "quoteVolume24h": 29807768.0413,
+        "quoteVolume3d": 57725889.2099,
+        "volumeStability3d": 0.603561,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.14779006,
+        "absReturn3d": 0.20673695,
+        "volatility24h": 0.02135544,
+        "volatility3d": 0.01526593,
+        "volumeExpansion24h": 3.46199436,
+        "volumeExpansion3d": 2.23483917,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 18.518519,
+          "quoteVolume3d": 14.814815,
+          "absReturn24h": 100.0,
+          "absReturn3d": 96.296296,
+          "volatility3d": 100.0,
+          "volumeExpansion24h": 92.592593
+        }
+      },
+      {
+        "pair": "UNI/USDT:USDT",
+        "universeScore": 48.888889,
+        "rank": 17,
+        "quoteVolume24h": 91336138.051,
+        "quoteVolume3d": 192740824.434,
+        "volumeStability3d": 0.701828,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.07609711,
+        "absReturn3d": 0.1757601,
+        "volatility24h": 0.01136451,
+        "volatility3d": 0.00998798,
+        "volumeExpansion24h": 2.68202434,
+        "volumeExpansion3d": 1.88656828,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 51.851852,
+          "quoteVolume3d": 51.851852,
+          "absReturn24h": 29.62963,
+          "absReturn3d": 55.555556,
+          "volatility3d": 55.555556,
+          "volumeExpansion24h": 44.444444
+        }
+      },
+      {
+        "pair": "ARB/USDT:USDT",
+        "universeScore": 48.148148,
+        "rank": 18,
+        "quoteVolume24h": 59522571.8529,
+        "quoteVolume3d": 117649332.9034,
+        "volumeStability3d": 0.633841,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.09631545,
+        "absReturn3d": 0.18341121,
+        "volatility24h": 0.01294974,
+        "volatility3d": 0.01053353,
+        "volumeExpansion24h": 3.10794382,
+        "volumeExpansion3d": 2.04766867,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 33.333333,
+          "quoteVolume3d": 33.333333,
+          "absReturn24h": 70.37037,
+          "absReturn3d": 66.666667,
+          "volatility3d": 66.666667,
+          "volumeExpansion24h": 85.185185
+        }
+      },
+      {
+        "pair": "NEAR/USDT:USDT",
+        "universeScore": 47.777778,
+        "rank": 19,
+        "quoteVolume24h": 61274201.578,
+        "quoteVolume3d": 134751878.716,
+        "volumeStability3d": 0.734527,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.08504176,
+        "absReturn3d": 0.18415708,
+        "volatility24h": 0.01292422,
+        "volatility3d": 0.01054786,
+        "volumeExpansion24h": 2.66439932,
+        "volumeExpansion3d": 1.95314834,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 37.037037,
+          "quoteVolume3d": 44.444444,
+          "absReturn24h": 51.851852,
+          "absReturn3d": 70.37037,
+          "volatility3d": 70.37037,
+          "volumeExpansion24h": 37.037037
+        }
+      },
+      {
+        "pair": "AAVE/USDT:USDT",
+        "universeScore": 47.407407,
+        "rank": 20,
+        "quoteVolume24h": 85815839.0293,
+        "quoteVolume3d": 174465683.111,
+        "volumeStability3d": 0.654628,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.06202734,
+        "absReturn3d": 0.19219689,
+        "volatility24h": 0.01186018,
+        "volatility3d": 0.00986803,
+        "volumeExpansion24h": 2.87689235,
+        "volumeExpansion3d": 1.94959732,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 48.148148,
+          "quoteVolume3d": 48.148148,
+          "absReturn24h": 7.407407,
+          "absReturn3d": 85.185185,
+          "volatility3d": 51.851852,
+          "volumeExpansion24h": 74.074074
+        }
+      },
+      {
+        "pair": "DOT/USDT:USDT",
+        "universeScore": 46.481481,
+        "rank": 21,
+        "quoteVolume24h": 70585487.026,
+        "quoteVolume3d": 127003922.593,
+        "volumeStability3d": 0.52687,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.08204518,
+        "absReturn3d": 0.16855143,
+        "volatility24h": 0.0126143,
+        "volatility3d": 0.0097348,
+        "volumeExpansion24h": 3.71074658,
+        "volumeExpansion3d": 2.22557257,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 44.444444,
+          "quoteVolume3d": 40.740741,
+          "absReturn24h": 44.444444,
+          "absReturn3d": 44.444444,
+          "volatility3d": 48.148148,
+          "volumeExpansion24h": 96.296296
+        }
+      },
+      {
+        "pair": "AVAX/USDT:USDT",
+        "universeScore": 45.370371,
+        "rank": 22,
+        "quoteVolume24h": 109066982.666,
+        "quoteVolume3d": 227074095.7208,
+        "volumeStability3d": 0.682926,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0680247,
+        "absReturn3d": 0.15804813,
+        "volatility24h": 0.01041328,
+        "volatility3d": 0.00908382,
+        "volumeExpansion24h": 2.70179262,
+        "volumeExpansion3d": 1.87501632,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 55.555556,
+          "quoteVolume3d": 55.555556,
+          "absReturn24h": 18.518519,
+          "absReturn3d": 37.037037,
+          "volatility3d": 29.62963,
+          "volumeExpansion24h": 51.851852
+        }
+      },
+      {
+        "pair": "TIA/USDT:USDT",
+        "universeScore": 32.407407,
+        "rank": 23,
+        "quoteVolume24h": 19229931.537,
+        "quoteVolume3d": 40401361.9786,
+        "volumeStability3d": 0.697318,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.08065314,
+        "absReturn3d": 0.1868709,
+        "volatility24h": 0.01541073,
+        "volatility3d": 0.01258497,
+        "volumeExpansion24h": 2.82758415,
+        "volumeExpansion3d": 1.98021594,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 11.111111,
+          "quoteVolume3d": 11.111111,
+          "absReturn24h": 37.037037,
+          "absReturn3d": 77.777778,
+          "volatility3d": 92.592593,
+          "volumeExpansion24h": 62.962963
+        }
+      },
+      {
+        "pair": "ETC/USDT:USDT",
+        "universeScore": 31.481482,
+        "rank": 24,
+        "quoteVolume24h": 54986029.287,
+        "quoteVolume3d": 101047259.477,
+        "volumeStability3d": 0.552714,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.07844991,
+        "absReturn3d": 0.15069686,
+        "volatility24h": 0.01119525,
+        "volatility3d": 0.00868354,
+        "volumeExpansion24h": 4.25058569,
+        "volumeExpansion3d": 2.60375251,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 29.62963,
+          "quoteVolume3d": 29.62963,
+          "absReturn24h": 33.333333,
+          "absReturn3d": 22.222222,
+          "volatility3d": 14.814815,
+          "volumeExpansion24h": 100.0
+        }
+      },
+      {
+        "pair": "INJ/USDT:USDT",
+        "universeScore": 30.555556,
+        "rank": 25,
+        "quoteVolume24h": 10409155.0772,
+        "quoteVolume3d": 21468899.4004,
+        "volumeStability3d": 0.676907,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.09079477,
+        "absReturn3d": 0.18909825,
+        "volatility24h": 0.01393693,
+        "volatility3d": 0.01061076,
+        "volumeExpansion24h": 2.91129407,
+        "volumeExpansion3d": 2.00151626,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 3.703704,
+          "quoteVolume3d": 3.703704,
+          "absReturn24h": 59.259259,
+          "absReturn3d": 81.481481,
+          "volatility3d": 74.074074,
+          "volumeExpansion24h": 77.777778
+        }
+      },
+      {
+        "pair": "SEI/USDT:USDT",
+        "universeScore": 17.592593,
+        "rank": 26,
+        "quoteVolume24h": 5759499.18,
+        "quoteVolume3d": 11725720.088,
+        "volumeStability3d": 0.630699,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.07602957,
+        "absReturn3d": 0.17608286,
+        "volatility24h": 0.01238776,
+        "volatility3d": 0.0092265,
+        "volumeExpansion24h": 3.17577092,
+        "volumeExpansion3d": 2.15517587,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 0.0,
+          "quoteVolume3d": 0.0,
+          "absReturn24h": 25.925926,
+          "absReturn3d": 59.259259,
+          "volatility3d": 33.333333,
+          "volumeExpansion24h": 88.888889
+        }
+      },
+      {
+        "pair": "TRX/USDT:USDT",
+        "universeScore": 10.370371,
+        "rank": 27,
+        "quoteVolume24h": 24805459.2244,
+        "quoteVolume3d": 61010816.7513,
+        "volumeStability3d": 0.827053,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0229156,
+        "absReturn3d": 0.02992856,
+        "volatility24h": 0.00308038,
+        "volatility3d": 0.00314896,
+        "volumeExpansion24h": 1.91299678,
+        "volumeExpansion3d": 1.56838453,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 14.814815,
+          "quoteVolume3d": 18.518519,
+          "absReturn24h": 0.0,
+          "absReturn3d": 0.0,
+          "volatility3d": 0.0,
+          "volumeExpansion24h": 11.111111
+        }
+      },
+      {
+        "pair": "ATOM/USDT:USDT",
+        "universeScore": 7.407407,
+        "rank": 28,
+        "quoteVolume24h": 14935439.872,
+        "quoteVolume3d": 32235253.724,
+        "volumeStability3d": 0.72408,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.06241067,
+        "absReturn3d": 0.11391265,
+        "volatility24h": 0.01027141,
+        "volatility3d": 0.00846488,
+        "volumeExpansion24h": 1.75020138,
+        "volumeExpansion3d": 1.25915688,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 7.407407,
+          "quoteVolume3d": 7.407407,
+          "absReturn24h": 11.111111,
+          "absReturn3d": 3.703704,
+          "volatility3d": 7.407407,
+          "volumeExpansion24h": 3.703704
+        }
+      },
+      {
+        "pair": "FET/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      }
+    ],
+    "excludedPairs": [
+      "TON/USDT:USDT",
+      "FET/USDT:USDT"
+    ],
+    "insufficientDataPairs": [],
+    "warnings": []
+  },
+  {
+    "snapshotDate": "2026-02-02",
+    "generatedAt": "2026-07-04T21:01:56.080306+00:00",
+    "market": "okx_usdt_swap",
+    "refreshFrequency": "daily",
+    "maxPairs": 10,
+    "selectedPairs": [
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT",
+      "SUI/USDT:USDT",
+      "XRP/USDT:USDT",
+      "LINK/USDT:USDT",
+      "ADA/USDT:USDT",
+      "BTC/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "UNI/USDT:USDT"
+    ],
+    "pairScores": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "universeScore": 95.555556,
+        "rank": 1,
+        "quoteVolume24h": 13624539497.4825,
+        "quoteVolume3d": 48066889277.5089,
+        "volumeStability3d": 0.855097,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.07394108,
+        "absReturn3d": 0.19047432,
+        "volatility24h": 0.01024496,
+        "volatility3d": 0.00996991,
+        "volumeExpansion24h": 1.14136273,
+        "volumeExpansion3d": 1.342229,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 100.0,
+          "quoteVolume3d": 100.0,
+          "absReturn24h": 100.0,
+          "absReturn3d": 100.0,
+          "volatility3d": 62.962963,
+          "volumeExpansion24h": 85.185185
+        }
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "universeScore": 85.555556,
+        "rank": 2,
+        "quoteVolume24h": 1413048112.5975,
+        "quoteVolume3d": 5591740603.9366,
+        "volumeStability3d": 0.724715,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0458507,
+        "absReturn3d": 0.14317312,
+        "volatility24h": 0.00833564,
+        "volatility3d": 0.01024733,
+        "volumeExpansion24h": 1.07561832,
+        "volumeExpansion3d": 1.41881903,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 92.592593,
+          "quoteVolume3d": 92.592593,
+          "absReturn24h": 88.888889,
+          "absReturn3d": 59.259259,
+          "volatility3d": 70.37037,
+          "volumeExpansion24h": 74.074074
+        }
+      },
+      {
+        "pair": "SUI/USDT:USDT",
+        "universeScore": 76.481481,
+        "rank": 3,
+        "quoteVolume24h": 102674682.2595,
+        "quoteVolume3d": 481752726.868,
+        "volumeStability3d": 0.688745,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.05169294,
+        "absReturn3d": 0.17022239,
+        "volatility24h": 0.00839681,
+        "volatility3d": 0.01081685,
+        "volumeExpansion24h": 0.87177479,
+        "volumeExpansion3d": 1.36346459,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 70.37037,
+          "quoteVolume3d": 77.777778,
+          "absReturn24h": 92.592593,
+          "absReturn3d": 88.888889,
+          "volatility3d": 81.481481,
+          "volumeExpansion24h": 29.62963
+        }
+      },
+      {
+        "pair": "XRP/USDT:USDT",
+        "universeScore": 71.851852,
+        "rank": 4,
+        "quoteVolume24h": 443601795.6882,
+        "quoteVolume3d": 1827922106.2088,
+        "volumeStability3d": 0.752862,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.04395406,
+        "absReturn3d": 0.11524122,
+        "volatility24h": 0.00700316,
+        "volatility3d": 0.00893446,
+        "volumeExpansion24h": 1.05336372,
+        "volumeExpansion3d": 1.44684327,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 85.185185,
+          "quoteVolume3d": 85.185185,
+          "absReturn24h": 85.185185,
+          "absReturn3d": 22.222222,
+          "volatility3d": 22.222222,
+          "volumeExpansion24h": 70.37037
+        }
+      },
+      {
+        "pair": "LINK/USDT:USDT",
+        "universeScore": 68.703704,
+        "rank": 5,
+        "quoteVolume24h": 95666339.7903,
+        "quoteVolume3d": 354268969.0344,
+        "volumeStability3d": 0.748766,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.06082701,
+        "absReturn3d": 0.15433043,
+        "volatility24h": 0.007756,
+        "volatility3d": 0.00910546,
+        "volumeExpansion24h": 1.14633964,
+        "volumeExpansion3d": 1.41503118,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 66.666667,
+          "quoteVolume3d": 62.962963,
+          "absReturn24h": 96.296296,
+          "absReturn3d": 77.777778,
+          "volatility3d": 29.62963,
+          "volumeExpansion24h": 88.888889
+        }
+      },
+      {
+        "pair": "ADA/USDT:USDT",
+        "universeScore": 65.740741,
+        "rank": 6,
+        "quoteVolume24h": 116578993.011,
+        "quoteVolume3d": 460321013.618,
+        "volumeStability3d": 0.689353,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03317536,
+        "absReturn3d": 0.14439784,
+        "volatility24h": 0.00726023,
+        "volatility3d": 0.00917679,
+        "volumeExpansion24h": 1.10877807,
+        "volumeExpansion3d": 1.45936482,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 74.074074,
+          "quoteVolume3d": 74.074074,
+          "absReturn24h": 51.851852,
+          "absReturn3d": 62.962963,
+          "volatility3d": 33.333333,
+          "volumeExpansion24h": 77.777778
+        }
+      },
+      {
+        "pair": "BTC/USDT:USDT",
+        "universeScore": 64.814815,
+        "rank": 7,
+        "quoteVolume24h": 6973286824.93,
+        "quoteVolume3d": 29223026892.711,
+        "volumeStability3d": 0.789907,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02409625,
+        "absReturn3d": 0.08554886,
+        "volatility24h": 0.0051284,
+        "volatility3d": 0.00573729,
+        "volumeExpansion24h": 0.90632514,
+        "volumeExpansion3d": 1.26604878,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 96.296296,
+          "quoteVolume3d": 96.296296,
+          "absReturn24h": 25.925926,
+          "absReturn3d": 7.407407,
+          "volatility3d": 3.703704,
+          "volumeExpansion24h": 40.740741
+        }
+      },
+      {
+        "pair": "DOGE/USDT:USDT",
+        "universeScore": 62.222222,
+        "rank": 8,
+        "quoteVolume24h": 520004496.1528,
+        "quoteVolume3d": 2084654156.6616,
+        "volumeStability3d": 0.670374,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0057241,
+        "absReturn3d": 0.10907847,
+        "volatility24h": 0.00700408,
+        "volatility3d": 0.0090076,
+        "volumeExpansion24h": 1.04646408,
+        "volumeExpansion3d": 1.39839541,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 88.888889,
+          "quoteVolume3d": 88.888889,
+          "absReturn24h": 7.407407,
+          "absReturn3d": 18.518519,
+          "volatility3d": 25.925926,
+          "volumeExpansion24h": 66.666667
+        }
+      },
+      {
+        "pair": "PEPE/USDT:USDT",
+        "universeScore": 61.111111,
+        "rank": 9,
+        "quoteVolume24h": 201283628.834,
+        "quoteVolume3d": 819114510.071,
+        "volumeStability3d": 0.792965,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00120135,
+        "absReturn3d": 0.12318076,
+        "volatility24h": 0.01027166,
+        "volatility3d": 0.01069082,
+        "volumeExpansion24h": 0.84454994,
+        "volumeExpansion3d": 1.14561911,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 81.481481,
+          "quoteVolume3d": 81.481481,
+          "absReturn24h": 0.0,
+          "absReturn3d": 33.333333,
+          "volatility3d": 77.777778,
+          "volumeExpansion24h": 22.222222
+        }
+      },
+      {
+        "pair": "UNI/USDT:USDT",
+        "universeScore": 57.962963,
+        "rank": 10,
+        "quoteVolume24h": 56656228.72,
+        "quoteVolume3d": 199007057.388,
+        "volumeStability3d": 0.731255,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03739021,
+        "absReturn3d": 0.12599681,
+        "volatility24h": 0.00714801,
+        "volatility3d": 0.00954957,
+        "volumeExpansion24h": 1.235995,
+        "volumeExpansion3d": 1.44715908,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 59.259259,
+          "quoteVolume3d": 51.851852,
+          "absReturn24h": 70.37037,
+          "absReturn3d": 37.037037,
+          "volatility3d": 51.851852,
+          "volumeExpansion24h": 96.296296
+        }
+      },
+      {
+        "pair": "AAVE/USDT:USDT",
+        "universeScore": 55.555555,
+        "rank": 11,
+        "quoteVolume24h": 37109582.7123,
+        "quoteVolume3d": 172843988.4307,
+        "volumeStability3d": 0.642183,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.04374278,
+        "absReturn3d": 0.1528858,
+        "volatility24h": 0.00770708,
+        "volatility3d": 0.00948966,
+        "volumeExpansion24h": 0.9085822,
+        "volumeExpansion3d": 1.41062371,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 48.148148,
+          "quoteVolume3d": 48.148148,
+          "absReturn24h": 81.481481,
+          "absReturn3d": 74.074074,
+          "volatility3d": 48.148148,
+          "volumeExpansion24h": 44.444444
+        }
+      },
+      {
+        "pair": "BCH/USDT:USDT",
+        "universeScore": 53.518519,
+        "rank": 12,
+        "quoteVolume24h": 125009282.506,
+        "quoteVolume3d": 372786792.948,
+        "volumeStability3d": 0.792461,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00428266,
+        "absReturn3d": 0.06472081,
+        "volatility24h": 0.00724935,
+        "volatility3d": 0.00920109,
+        "volumeExpansion24h": 1.6662253,
+        "volumeExpansion3d": 1.65626844,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 77.777778,
+          "quoteVolume3d": 66.666667,
+          "absReturn24h": 3.703704,
+          "absReturn3d": 3.703704,
+          "volatility3d": 37.037037,
+          "volumeExpansion24h": 100.0
+        }
+      },
+      {
+        "pair": "WIF/USDT:USDT",
+        "universeScore": 51.666667,
+        "rank": 13,
+        "quoteVolume24h": 26453050.3807,
+        "quoteVolume3d": 119222799.1858,
+        "volumeStability3d": 0.603327,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03579858,
+        "absReturn3d": 0.16999661,
+        "volatility24h": 0.00986642,
+        "volatility3d": 0.01151741,
+        "volumeExpansion24h": 0.94615378,
+        "volumeExpansion3d": 1.42142526,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 37.037037,
+          "quoteVolume3d": 37.037037,
+          "absReturn24h": 59.259259,
+          "absReturn3d": 85.185185,
+          "volatility3d": 96.296296,
+          "volumeExpansion24h": 48.148148
+        }
+      },
+      {
+        "pair": "NEAR/USDT:USDT",
+        "universeScore": 48.518518,
+        "rank": 14,
+        "quoteVolume24h": 29849546.007,
+        "quoteVolume3d": 131415410.485,
+        "volumeStability3d": 0.701692,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03057851,
+        "absReturn3d": 0.14254386,
+        "volatility24h": 0.00783542,
+        "volatility3d": 0.01035835,
+        "volumeExpansion24h": 0.97130227,
+        "volumeExpansion3d": 1.42541628,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 44.444444,
+          "quoteVolume3d": 44.444444,
+          "absReturn24h": 40.740741,
+          "absReturn3d": 55.555556,
+          "volatility3d": 74.074074,
+          "volumeExpansion24h": 55.555556
+        }
+      },
+      {
+        "pair": "FIL/USDT:USDT",
+        "universeScore": 48.148148,
+        "rank": 15,
+        "quoteVolume24h": 51969076.0377,
+        "quoteVolume3d": 272536043.5696,
+        "volumeStability3d": 0.616658,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01895735,
+        "absReturn3d": 0.13171141,
+        "volatility24h": 0.00747313,
+        "volatility3d": 0.01011974,
+        "volumeExpansion24h": 0.759187,
+        "volumeExpansion3d": 1.32710859,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 55.555556,
+          "quoteVolume3d": 59.259259,
+          "absReturn24h": 18.518519,
+          "absReturn3d": 40.740741,
+          "volatility3d": 66.666667,
+          "volumeExpansion24h": 7.407407
+        }
+      },
+      {
+        "pair": "LTC/USDT:USDT",
+        "universeScore": 47.962963,
+        "rank": 16,
+        "quoteVolume24h": 82642943.804,
+        "quoteVolume3d": 384599126.289,
+        "volumeStability3d": 0.608112,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01912431,
+        "absReturn3d": 0.11583245,
+        "volatility24h": 0.00652676,
+        "volatility3d": 0.00841053,
+        "volumeExpansion24h": 0.83888225,
+        "volumeExpansion3d": 1.30131449,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 62.962963,
+          "quoteVolume3d": 70.37037,
+          "absReturn24h": 22.222222,
+          "absReturn3d": 25.925926,
+          "volatility3d": 14.814815,
+          "volumeExpansion24h": 18.518519
+        }
+      },
+      {
+        "pair": "DOT/USDT:USDT",
+        "universeScore": 46.666667,
+        "rank": 17,
+        "quoteVolume24h": 28616022.293,
+        "quoteVolume3d": 129201564.529,
+        "volumeStability3d": 0.547995,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03612903,
+        "absReturn3d": 0.13989637,
+        "volatility24h": 0.00705316,
+        "volatility3d": 0.0094292,
+        "volumeExpansion24h": 1.02064619,
+        "volumeExpansion3d": 1.53607518,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 40.740741,
+          "quoteVolume3d": 40.740741,
+          "absReturn24h": 62.962963,
+          "absReturn3d": 51.851852,
+          "volatility3d": 44.444444,
+          "volumeExpansion24h": 62.962963
+        }
+      },
+      {
+        "pair": "ARB/USDT:USDT",
+        "universeScore": 44.814815,
+        "rank": 18,
+        "quoteVolume24h": 25475176.1482,
+        "quoteVolume3d": 114253560.502,
+        "volumeStability3d": 0.599907,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03706344,
+        "absReturn3d": 0.14493671,
+        "volatility24h": 0.00722044,
+        "volatility3d": 0.0098751,
+        "volumeExpansion24h": 0.96124244,
+        "volumeExpansion3d": 1.43702469,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 33.333333,
+          "quoteVolume3d": 33.333333,
+          "absReturn24h": 66.666667,
+          "absReturn3d": 66.666667,
+          "volatility3d": 55.555556,
+          "volumeExpansion24h": 51.851852
+        }
+      },
+      {
+        "pair": "AVAX/USDT:USDT",
+        "universeScore": 40.925926,
+        "rank": 19,
+        "quoteVolume24h": 48266989.7985,
+        "quoteVolume3d": 210995862.4745,
+        "volumeStability3d": 0.609307,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02624079,
+        "absReturn3d": 0.10399711,
+        "volatility24h": 0.00725459,
+        "volatility3d": 0.00831584,
+        "volumeExpansion24h": 0.8922833,
+        "volumeExpansion3d": 1.30018526,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 51.851852,
+          "quoteVolume3d": 55.555556,
+          "absReturn24h": 29.62963,
+          "absReturn3d": 14.814815,
+          "volatility3d": 11.111111,
+          "volumeExpansion24h": 37.037037
+        }
+      },
+      {
+        "pair": "OP/USDT:USDT",
+        "universeScore": 40.185185,
+        "rank": 20,
+        "quoteVolume24h": 16859964.705,
+        "quoteVolume3d": 84337507.4554,
+        "volumeStability3d": 0.604075,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03560831,
+        "absReturn3d": 0.16051661,
+        "volatility24h": 0.00806653,
+        "volatility3d": 0.01114616,
+        "volumeExpansion24h": 0.78916689,
+        "volumeExpansion3d": 1.31586611,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 22.222222,
+          "quoteVolume3d": 25.925926,
+          "absReturn24h": 55.555556,
+          "absReturn3d": 81.481481,
+          "volatility3d": 88.888889,
+          "volumeExpansion24h": 11.111111
+        }
+      },
+      {
+        "pair": "APT/USDT:USDT",
+        "universeScore": 35.555556,
+        "rank": 21,
+        "quoteVolume24h": 14876788.476,
+        "quoteVolume3d": 82061538.784,
+        "volumeStability3d": 0.518261,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02987421,
+        "absReturn3d": 0.17458194,
+        "volatility24h": 0.0078942,
+        "volatility3d": 0.01085563,
+        "volumeExpansion24h": 0.68799186,
+        "volumeExpansion3d": 1.26500579,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 18.518519,
+          "quoteVolume3d": 22.222222,
+          "absReturn24h": 37.037037,
+          "absReturn3d": 92.592593,
+          "volatility3d": 85.185185,
+          "volumeExpansion24h": 3.703704
+        }
+      },
+      {
+        "pair": "TIA/USDT:USDT",
+        "universeScore": 34.444444,
+        "rank": 22,
+        "quoteVolume24h": 9088729.6337,
+        "quoteVolume3d": 38776768.0432,
+        "volumeStability3d": 0.652413,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.04122056,
+        "absReturn3d": 0.13394584,
+        "volatility24h": 0.00763065,
+        "volatility3d": 0.01147355,
+        "volumeExpansion24h": 0.99735098,
+        "volumeExpansion3d": 1.41838845,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 11.111111,
+          "quoteVolume3d": 11.111111,
+          "absReturn24h": 74.074074,
+          "absReturn3d": 44.444444,
+          "volatility3d": 92.592593,
+          "volumeExpansion24h": 59.259259
+        }
+      },
+      {
+        "pair": "ORDI/USDT:USDT",
+        "universeScore": 32.407408,
+        "rank": 23,
+        "quoteVolume24h": 10558370.4451,
+        "quoteVolume3d": 56211548.2959,
+        "volumeStability3d": 0.566626,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0128866,
+        "absReturn3d": 0.17921243,
+        "volatility24h": 0.00887744,
+        "volatility3d": 0.01497973,
+        "volumeExpansion24h": 0.8814733,
+        "volumeExpansion3d": 1.56428744,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 14.814815,
+          "quoteVolume3d": 14.814815,
+          "absReturn24h": 14.814815,
+          "absReturn3d": 96.296296,
+          "volatility3d": 100.0,
+          "volumeExpansion24h": 33.333333
+        }
+      },
+      {
+        "pair": "ETC/USDT:USDT",
+        "universeScore": 31.666667,
+        "rank": 24,
+        "quoteVolume24h": 22986289.8,
+        "quoteVolume3d": 101283775.52,
+        "volumeStability3d": 0.555444,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02865916,
+        "absReturn3d": 0.12210916,
+        "volatility24h": 0.00691651,
+        "volatility3d": 0.00855552,
+        "volumeExpansion24h": 1.13777147,
+        "volumeExpansion3d": 1.67110904,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 29.62963,
+          "quoteVolume3d": 29.62963,
+          "absReturn24h": 33.333333,
+          "absReturn3d": 29.62963,
+          "volatility3d": 18.518519,
+          "volumeExpansion24h": 81.481481
+        }
+      },
+      {
+        "pair": "SEI/USDT:USDT",
+        "universeScore": 24.074074,
+        "rank": 25,
+        "quoteVolume24h": 2207474.81,
+        "quoteVolume3d": 11695630.136,
+        "volumeStability3d": 0.626764,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.04318182,
+        "absReturn3d": 0.15035318,
+        "volatility24h": 0.00716011,
+        "volatility3d": 0.00939737,
+        "volumeExpansion24h": 0.86897,
+        "volumeExpansion3d": 1.53465727,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 0.0,
+          "quoteVolume3d": 0.0,
+          "absReturn24h": 77.777778,
+          "absReturn3d": 70.37037,
+          "volatility3d": 40.740741,
+          "volumeExpansion24h": 25.925926
+        }
+      },
+      {
+        "pair": "INJ/USDT:USDT",
+        "universeScore": 20.37037,
+        "rank": 26,
+        "quoteVolume24h": 3992524.9402,
+        "quoteVolume3d": 20220075.4808,
+        "volumeStability3d": 0.599493,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03111233,
+        "absReturn3d": 0.13559322,
+        "volatility24h": 0.00689654,
+        "volatility3d": 0.00990406,
+        "volumeExpansion24h": 0.82413237,
+        "volumeExpansion3d": 1.39126818,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 3.703704,
+          "quoteVolume3d": 3.703704,
+          "absReturn24h": 44.444444,
+          "absReturn3d": 48.148148,
+          "volatility3d": 59.259259,
+          "volumeExpansion24h": 14.814815
+        }
+      },
+      {
+        "pair": "TRX/USDT:USDT",
+        "universeScore": 20.0,
+        "rank": 27,
+        "quoteVolume24h": 17739240.6608,
+        "quoteVolume3d": 62539574.1713,
+        "volumeStability3d": 0.858636,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00583528,
+        "absReturn3d": 0.03401915,
+        "volatility24h": 0.0027174,
+        "volatility3d": 0.00298654,
+        "volumeExpansion24h": 1.18322421,
+        "volumeExpansion3d": 1.39048301,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 25.925926,
+          "quoteVolume3d": 18.518519,
+          "absReturn24h": 11.111111,
+          "absReturn3d": 0.0,
+          "volatility3d": 0.0,
+          "volumeExpansion24h": 92.592593
+        }
+      },
+      {
+        "pair": "ATOM/USDT:USDT",
+        "universeScore": 13.518518,
+        "rank": 28,
+        "quoteVolume24h": 6355681.26,
+        "quoteVolume3d": 29815936.68,
+        "volumeStability3d": 0.633496,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03194726,
+        "absReturn3d": 0.09782609,
+        "volatility24h": 0.00686139,
+        "volatility3d": 0.00798725,
+        "volumeExpansion24h": 0.64091584,
+        "volumeExpansion3d": 1.00222701,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 7.407407,
+          "quoteVolume3d": 7.407407,
+          "absReturn24h": 48.148148,
+          "absReturn3d": 11.111111,
+          "volatility3d": 7.407407,
+          "volumeExpansion24h": 0.0
+        }
+      },
+      {
+        "pair": "FET/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      }
+    ],
+    "excludedPairs": [
+      "TON/USDT:USDT",
+      "FET/USDT:USDT"
+    ],
+    "insufficientDataPairs": [],
+    "warnings": []
+  },
+  {
+    "snapshotDate": "2026-02-03",
+    "generatedAt": "2026-07-04T21:01:56.080306+00:00",
+    "market": "okx_usdt_swap",
+    "refreshFrequency": "daily",
+    "maxPairs": 10,
+    "selectedPairs": [
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "ADA/USDT:USDT",
+      "LINK/USDT:USDT",
+      "BTC/USDT:USDT",
+      "SUI/USDT:USDT",
+      "BCH/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "FIL/USDT:USDT"
+    ],
+    "pairScores": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "universeScore": 93.148148,
+        "rank": 1,
+        "quoteVolume24h": 18179532120.3129,
+        "quoteVolume3d": 50967754165.8792,
+        "volumeStability3d": 0.857975,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02351914,
+        "absReturn3d": 0.13279849,
+        "volatility24h": 0.00934628,
+        "volatility3d": 0.01057059,
+        "volumeExpansion24h": 1.42250624,
+        "volumeExpansion3d": 1.32936954,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 100.0,
+          "quoteVolume3d": 100.0,
+          "absReturn24h": 70.37037,
+          "absReturn3d": 96.296296,
+          "volatility3d": 81.481481,
+          "volumeExpansion24h": 96.296296
+        }
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "universeScore": 83.888889,
+        "rank": 2,
+        "quoteVolume24h": 1582864720.7024,
+        "quoteVolume3d": 5577661850.8851,
+        "volumeStability3d": 0.722687,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02211134,
+        "absReturn3d": 0.11059084,
+        "volatility24h": 0.00864731,
+        "volatility3d": 0.01055432,
+        "volumeExpansion24h": 1.18031317,
+        "volumeExpansion3d": 1.38638669,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 92.592593,
+          "quoteVolume3d": 92.592593,
+          "absReturn24h": 66.666667,
+          "absReturn3d": 77.777778,
+          "volatility3d": 77.777778,
+          "volumeExpansion24h": 55.555556
+        }
+      },
+      {
+        "pair": "DOGE/USDT:USDT",
+        "universeScore": 73.703704,
+        "rank": 3,
+        "quoteVolume24h": 644815758.9283,
+        "quoteVolume3d": 2183280204.1743,
+        "volumeStability3d": 0.709002,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02655373,
+        "absReturn3d": 0.06525695,
+        "volatility24h": 0.01000358,
+        "volatility3d": 0.00968323,
+        "volumeExpansion24h": 1.23121008,
+        "volumeExpansion3d": 1.3895838,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 88.888889,
+          "quoteVolume3d": 88.888889,
+          "absReturn24h": 74.074074,
+          "absReturn3d": 14.814815,
+          "volatility3d": 44.444444,
+          "volumeExpansion24h": 66.666667
+        }
+      },
+      {
+        "pair": "ADA/USDT:USDT",
+        "universeScore": 70.37037,
+        "rank": 4,
+        "quoteVolume24h": 142586406.061,
+        "quoteVolume3d": 479913412.336,
+        "volumeStability3d": 0.723276,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03425606,
+        "absReturn3d": 0.0659375,
+        "volatility24h": 0.00837403,
+        "volatility3d": 0.0093312,
+        "volumeExpansion24h": 1.30809268,
+        "volumeExpansion3d": 1.46758082,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 77.777778,
+          "quoteVolume3d": 77.777778,
+          "absReturn24h": 96.296296,
+          "absReturn3d": 22.222222,
+          "volatility3d": 29.62963,
+          "volumeExpansion24h": 81.481481
+        }
+      },
+      {
+        "pair": "LINK/USDT:USDT",
+        "universeScore": 69.444444,
+        "rank": 5,
+        "quoteVolume24h": 118082762.0692,
+        "quoteVolume3d": 373761809.8018,
+        "volumeStability3d": 0.785942,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02865239,
+        "absReturn3d": 0.08921104,
+        "volatility24h": 0.0082368,
+        "volatility3d": 0.00943118,
+        "volumeExpansion24h": 1.35127714,
+        "volumeExpansion3d": 1.42571131,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 74.074074,
+          "quoteVolume3d": 62.962963,
+          "absReturn24h": 85.185185,
+          "absReturn3d": 70.37037,
+          "volatility3d": 37.037037,
+          "volumeExpansion24h": 85.185185
+        }
+      },
+      {
+        "pair": "BTC/USDT:USDT",
+        "universeScore": 68.148148,
+        "rank": 6,
+        "quoteVolume24h": 10245858288.8406,
+        "quoteVolume3d": 29076925657.8017,
+        "volumeStability3d": 0.790335,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01362036,
+        "absReturn3d": 0.06343301,
+        "volatility24h": 0.00631444,
+        "volatility3d": 0.00602673,
+        "volumeExpansion24h": 1.29587003,
+        "volumeExpansion3d": 1.22585847,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 96.296296,
+          "quoteVolume3d": 96.296296,
+          "absReturn24h": 33.333333,
+          "absReturn3d": 11.111111,
+          "volatility3d": 3.703704,
+          "volumeExpansion24h": 77.777778
+        }
+      },
+      {
+        "pair": "SUI/USDT:USDT",
+        "universeScore": 67.777778,
+        "rank": 7,
+        "quoteVolume24h": 106409848.754,
+        "quoteVolume3d": 433727209.009,
+        "volumeStability3d": 0.608258,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02691826,
+        "absReturn3d": 0.09625374,
+        "volatility24h": 0.00734533,
+        "volatility3d": 0.01043367,
+        "volumeExpansion24h": 0.88781831,
+        "volumeExpansion3d": 1.20625099,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 62.962963,
+          "quoteVolume3d": 74.074074,
+          "absReturn24h": 81.481481,
+          "absReturn3d": 74.074074,
+          "volatility3d": 74.074074,
+          "volumeExpansion24h": 3.703704
+        }
+      },
+      {
+        "pair": "BCH/USDT:USDT",
+        "universeScore": 65.740741,
+        "rank": 8,
+        "quoteVolume24h": 116376816.518,
+        "quoteVolume3d": 396853464.107,
+        "volumeStability3d": 0.873248,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03492612,
+        "absReturn3d": 0.02229877,
+        "volatility24h": 0.00783895,
+        "volatility3d": 0.00965205,
+        "volumeExpansion24h": 1.3534993,
+        "volumeExpansion3d": 1.53851057,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 70.37037,
+          "quoteVolume3d": 70.37037,
+          "absReturn24h": 100.0,
+          "absReturn3d": 0.0,
+          "volatility3d": 40.740741,
+          "volumeExpansion24h": 88.888889
+        }
+      },
+      {
+        "pair": "PEPE/USDT:USDT",
+        "universeScore": 64.629629,
+        "rank": 9,
+        "quoteVolume24h": 239161128.217,
+        "quoteVolume3d": 779883127.165,
+        "volumeStability3d": 0.775783,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01143129,
+        "absReturn3d": 0.07673913,
+        "volatility24h": 0.00895141,
+        "volatility3d": 0.01026933,
+        "volumeExpansion24h": 1.00350847,
+        "volumeExpansion3d": 1.09078389,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 81.481481,
+          "quoteVolume3d": 81.481481,
+          "absReturn24h": 25.925926,
+          "absReturn3d": 44.444444,
+          "volatility3d": 62.962963,
+          "volumeExpansion24h": 22.222222
+        }
+      },
+      {
+        "pair": "FIL/USDT:USDT",
+        "universeScore": 61.481481,
+        "rank": 11,
+        "quoteVolume24h": 82696331.728,
+        "quoteVolume3d": 271133500.6247,
+        "volumeStability3d": 0.613605,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02656546,
+        "absReturn3d": 0.07679181,
+        "volatility24h": 0.00751265,
+        "volatility3d": 0.0101947,
+        "volumeExpansion24h": 1.23623157,
+        "volumeExpansion3d": 1.35106272,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 59.259259,
+          "quoteVolume3d": 59.259259,
+          "absReturn24h": 77.777778,
+          "absReturn3d": 48.148148,
+          "volatility3d": 59.259259,
+          "volumeExpansion24h": 70.37037
+        }
+      },
+      {
+        "pair": "XRP/USDT:USDT",
+        "universeScore": 61.481481,
+        "rank": 10,
+        "quoteVolume24h": 489842842.6857,
+        "quoteVolume3d": 1741445504.8628,
+        "volumeStability3d": 0.720949,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00916516,
+        "absReturn3d": 0.06735811,
+        "volatility24h": 0.00821651,
+        "volatility3d": 0.00891571,
+        "volumeExpansion24h": 1.09245417,
+        "volumeExpansion3d": 1.29459848,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 85.185185,
+          "quoteVolume3d": 85.185185,
+          "absReturn24h": 18.518519,
+          "absReturn3d": 33.333333,
+          "volatility3d": 18.518519,
+          "volumeExpansion24h": 48.148148
+        }
+      },
+      {
+        "pair": "LTC/USDT:USDT",
+        "universeScore": 54.814815,
+        "rank": 12,
+        "quoteVolume24h": 113147772.577,
+        "quoteVolume3d": 393986572.169,
+        "volumeStability3d": 0.627693,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01523874,
+        "absReturn3d": 0.08022703,
+        "volatility24h": 0.00782675,
+        "volatility3d": 0.00849426,
+        "volumeExpansion24h": 1.19728735,
+        "volumeExpansion3d": 1.38967278,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 66.666667,
+          "quoteVolume3d": 66.666667,
+          "absReturn24h": 37.037037,
+          "absReturn3d": 51.851852,
+          "volatility3d": 11.111111,
+          "volumeExpansion24h": 59.259259
+        }
+      },
+      {
+        "pair": "WIF/USDT:USDT",
+        "universeScore": 51.481481,
+        "rank": 13,
+        "quoteVolume24h": 35937959.8522,
+        "quoteVolume3d": 124278682.3342,
+        "volumeStability3d": 0.638451,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.020008,
+        "absReturn3d": 0.11122734,
+        "volatility24h": 0.00977798,
+        "volatility3d": 0.01225877,
+        "volumeExpansion24h": 1.22479254,
+        "volumeExpansion3d": 1.4118368,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 37.037037,
+          "quoteVolume3d": 37.037037,
+          "absReturn24h": 55.555556,
+          "absReturn3d": 81.481481,
+          "volatility3d": 96.296296,
+          "volumeExpansion24h": 62.962963
+        }
+      },
+      {
+        "pair": "DOT/USDT:USDT",
+        "universeScore": 48.148148,
+        "rank": 14,
+        "quoteVolume24h": 42050835.187,
+        "quoteVolume3d": 141252344.506,
+        "volumeStability3d": 0.628331,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01581028,
+        "absReturn3d": 0.08323424,
+        "volatility24h": 0.00821655,
+        "volatility3d": 0.00986141,
+        "volumeExpansion24h": 1.42069789,
+        "volumeExpansion3d": 1.59074849,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 44.444444,
+          "quoteVolume3d": 44.444444,
+          "absReturn24h": 40.740741,
+          "absReturn3d": 59.259259,
+          "volatility3d": 48.148148,
+          "volumeExpansion24h": 92.592593
+        }
+      },
+      {
+        "pair": "UNI/USDT:USDT",
+        "universeScore": 43.888889,
+        "rank": 15,
+        "quoteVolume24h": 49254847.385,
+        "quoteVolume3d": 197247214.156,
+        "volumeStability3d": 0.72101,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00744544,
+        "absReturn3d": 0.08403361,
+        "volatility24h": 0.00837451,
+        "volatility3d": 0.00939459,
+        "volumeExpansion24h": 0.99727726,
+        "volumeExpansion3d": 1.33124063,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 51.851852,
+          "quoteVolume3d": 51.851852,
+          "absReturn24h": 14.814815,
+          "absReturn3d": 62.962963,
+          "volatility3d": 33.333333,
+          "volumeExpansion24h": 18.518519
+        }
+      },
+      {
+        "pair": "AAVE/USDT:USDT",
+        "universeScore": 42.962963,
+        "rank": 17,
+        "quoteVolume24h": 43810834.1286,
+        "quoteVolume3d": 166736255.8702,
+        "volumeStability3d": 0.612169,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01744924,
+        "absReturn3d": 0.06719023,
+        "volatility24h": 0.00687259,
+        "volatility3d": 0.00932479,
+        "volumeExpansion24h": 1.0255077,
+        "volumeExpansion3d": 1.30096674,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 48.148148,
+          "quoteVolume3d": 48.148148,
+          "absReturn24h": 48.148148,
+          "absReturn3d": 29.62963,
+          "volatility3d": 25.925926,
+          "volumeExpansion24h": 25.925926
+        }
+      },
+      {
+        "pair": "AVAX/USDT:USDT",
+        "universeScore": 42.962963,
+        "rank": 16,
+        "quoteVolume24h": 56568836.4774,
+        "quoteVolume3d": 213902808.9419,
+        "volumeStability3d": 0.622462,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01278594,
+        "absReturn3d": 0.06544382,
+        "volatility24h": 0.00706871,
+        "volatility3d": 0.0085471,
+        "volumeExpansion24h": 1.03288162,
+        "volumeExpansion3d": 1.30187274,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 55.555556,
+          "quoteVolume3d": 55.555556,
+          "absReturn24h": 29.62963,
+          "absReturn3d": 18.518519,
+          "volatility3d": 14.814815,
+          "volumeExpansion24h": 37.037037
+        }
+      },
+      {
+        "pair": "NEAR/USDT:USDT",
+        "universeScore": 42.037037,
+        "rank": 18,
+        "quoteVolume24h": 38484669.312,
+        "quoteVolume3d": 129608416.897,
+        "volumeStability3d": 0.693174,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00671141,
+        "absReturn3d": 0.08883827,
+        "volatility24h": 0.00810072,
+        "volatility3d": 0.01013995,
+        "volumeExpansion24h": 1.24455907,
+        "volumeExpansion3d": 1.39713929,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 40.740741,
+          "quoteVolume3d": 40.740741,
+          "absReturn24h": 11.111111,
+          "absReturn3d": 66.666667,
+          "volatility3d": 55.555556,
+          "volumeExpansion24h": 74.074074
+        }
+      },
+      {
+        "pair": "APT/USDT:USDT",
+        "universeScore": 37.962963,
+        "rank": 19,
+        "quoteVolume24h": 18602793.554,
+        "quoteVolume3d": 79059814.165,
+        "volumeStability3d": 0.480886,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01834131,
+        "absReturn3d": 0.11626298,
+        "volatility24h": 0.00758291,
+        "volatility3d": 0.01104776,
+        "volumeExpansion24h": 0.89000271,
+        "volumeExpansion3d": 1.26080434,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 18.518519,
+          "quoteVolume3d": 22.222222,
+          "absReturn24h": 51.851852,
+          "absReturn3d": 88.888889,
+          "volatility3d": 88.888889,
+          "volumeExpansion24h": 7.407407
+        }
+      },
+      {
+        "pair": "ARB/USDT:USDT",
+        "universeScore": 37.222222,
+        "rank": 20,
+        "quoteVolume24h": 28511901.8998,
+        "quoteVolume3d": 113509649.9009,
+        "volumeStability3d": 0.593399,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00218341,
+        "absReturn3d": 0.11376858,
+        "volatility24h": 0.00912158,
+        "volatility3d": 0.01032365,
+        "volumeExpansion24h": 1.03954837,
+        "volumeExpansion3d": 1.37952649,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 33.333333,
+          "quoteVolume3d": 33.333333,
+          "absReturn24h": 0.0,
+          "absReturn3d": 85.185185,
+          "volatility3d": 66.666667,
+          "volumeExpansion24h": 40.740741
+        }
+      },
+      {
+        "pair": "OP/USDT:USDT",
+        "universeScore": 34.259259,
+        "rank": 21,
+        "quoteVolume24h": 21922803.5588,
+        "quoteVolume3d": 82053853.45,
+        "volumeStability3d": 0.581549,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0047619,
+        "absReturn3d": 0.12117737,
+        "volatility24h": 0.00768283,
+        "volatility3d": 0.01102999,
+        "volumeExpansion24h": 1.02611216,
+        "volumeExpansion3d": 1.28019601,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 22.222222,
+          "quoteVolume3d": 25.925926,
+          "absReturn24h": 3.703704,
+          "absReturn3d": 92.592593,
+          "volatility3d": 85.185185,
+          "volumeExpansion24h": 33.333333
+        }
+      },
+      {
+        "pair": "ORDI/USDT:USDT",
+        "universeScore": 32.777778,
+        "rank": 22,
+        "quoteVolume24h": 11177977.6718,
+        "quoteVolume3d": 51544116.1582,
+        "volumeStability3d": 0.480147,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01086262,
+        "absReturn3d": 0.14475138,
+        "volatility24h": 0.00871038,
+        "volatility3d": 0.01467006,
+        "volumeExpansion24h": 0.91251596,
+        "volumeExpansion3d": 1.402604,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 14.814815,
+          "quoteVolume3d": 14.814815,
+          "absReturn24h": 22.222222,
+          "absReturn3d": 100.0,
+          "volatility3d": 100.0,
+          "volumeExpansion24h": 11.111111
+        }
+      },
+      {
+        "pair": "TIA/USDT:USDT",
+        "universeScore": 32.222222,
+        "rank": 23,
+        "quoteVolume24h": 7179370.1147,
+        "quoteVolume3d": 35498031.2854,
+        "volumeStability3d": 0.553067,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03263851,
+        "absReturn3d": 0.06853043,
+        "volatility24h": 0.00754182,
+        "volatility3d": 0.01113508,
+        "volumeExpansion24h": 0.76941654,
+        "volumeExpansion3d": 1.26811369,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 7.407407,
+          "quoteVolume3d": 11.111111,
+          "absReturn24h": 92.592593,
+          "absReturn3d": 37.037037,
+          "volatility3d": 92.592593,
+          "volumeExpansion24h": 0.0
+        }
+      },
+      {
+        "pair": "ETC/USDT:USDT",
+        "universeScore": 30.925926,
+        "rank": 24,
+        "quoteVolume24h": 22253539.532,
+        "quoteVolume3d": 100225858.619,
+        "volumeStability3d": 0.543218,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01659751,
+        "absReturn3d": 0.07372401,
+        "volatility24h": 0.00745243,
+        "volatility3d": 0.00901092,
+        "volumeExpansion24h": 1.02611162,
+        "volumeExpansion3d": 1.54047282,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 25.925926,
+          "quoteVolume3d": 29.62963,
+          "absReturn24h": 44.444444,
+          "absReturn3d": 40.740741,
+          "volatility3d": 22.222222,
+          "volumeExpansion24h": 29.62963
+        }
+      },
+      {
+        "pair": "INJ/USDT:USDT",
+        "universeScore": 26.296296,
+        "rank": 25,
+        "quoteVolume24h": 5481267.2129,
+        "quoteVolume3d": 19882947.2303,
+        "volumeStability3d": 0.586259,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02038537,
+        "absReturn3d": 0.08098592,
+        "volatility24h": 0.0078239,
+        "volatility3d": 0.01037682,
+        "volumeExpansion24h": 1.12048387,
+        "volumeExpansion3d": 1.35482792,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 3.703704,
+          "quoteVolume3d": 3.703704,
+          "absReturn24h": 59.259259,
+          "absReturn3d": 55.555556,
+          "volatility3d": 70.37037,
+          "volumeExpansion24h": 51.851852
+        }
+      },
+      {
+        "pair": "SEI/USDT:USDT",
+        "universeScore": 23.333333,
+        "rank": 26,
+        "quoteVolume24h": 2736377.5242,
+        "quoteVolume3d": 10703351.5142,
+        "volumeStability3d": 0.561423,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02945285,
+        "absReturn3d": 0.06620908,
+        "volatility24h": 0.00800654,
+        "volatility3d": 0.00988921,
+        "volumeExpansion24h": 1.07181754,
+        "volumeExpansion3d": 1.39747286,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 0.0,
+          "quoteVolume3d": 0.0,
+          "absReturn24h": 88.888889,
+          "absReturn3d": 25.925926,
+          "volatility3d": 51.851852,
+          "volumeExpansion24h": 44.444444
+        }
+      },
+      {
+        "pair": "TRX/USDT:USDT",
+        "universeScore": 21.481482,
+        "rank": 27,
+        "quoteVolume24h": 23571902.8671,
+        "quoteVolume3d": 66116602.7523,
+        "volumeStability3d": 0.860169,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.00561798,
+        "absReturn3d": 0.0342711,
+        "volatility24h": 0.00223295,
+        "volatility3d": 0.00269111,
+        "volumeExpansion24h": 1.45437909,
+        "volumeExpansion3d": 1.35979129,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 29.62963,
+          "quoteVolume3d": 18.518519,
+          "absReturn24h": 7.407407,
+          "absReturn3d": 3.703704,
+          "volatility3d": 0.0,
+          "volumeExpansion24h": 100.0
+        }
+      },
+      {
+        "pair": "ATOM/USDT:USDT",
+        "universeScore": 17.407407,
+        "rank": 28,
+        "quoteVolume24h": 9213542.928,
+        "quoteVolume3d": 30504664.06,
+        "volumeStability3d": 0.649188,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02116675,
+        "absReturn3d": 0.0576465,
+        "volatility24h": 0.00560485,
+        "volatility3d": 0.00808636,
+        "volumeExpansion24h": 0.97077392,
+        "volumeExpansion3d": 1.07136247,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 11.111111,
+          "quoteVolume3d": 7.407407,
+          "absReturn24h": 62.962963,
+          "absReturn3d": 7.407407,
+          "volatility3d": 7.407407,
+          "volumeExpansion24h": 14.814815
+        }
+      },
+      {
+        "pair": "FET/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      }
+    ],
+    "excludedPairs": [
+      "TON/USDT:USDT",
+      "FET/USDT:USDT"
+    ],
+    "insufficientDataPairs": [],
+    "warnings": []
+  },
+  {
+    "snapshotDate": "2026-02-04",
+    "generatedAt": "2026-07-04T21:01:56.080306+00:00",
+    "market": "okx_usdt_swap",
+    "refreshFrequency": "daily",
+    "maxPairs": 10,
+    "selectedPairs": [
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT",
+      "BTC/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "XRP/USDT:USDT",
+      "LINK/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "SUI/USDT:USDT",
+      "ADA/USDT:USDT",
+      "ARB/USDT:USDT"
+    ],
+    "pairScores": [
+      {
+        "pair": "ETH/USDT:USDT",
+        "universeScore": 97.407407,
+        "rank": 1,
+        "quoteVolume24h": 18988693409.2039,
+        "quoteVolume3d": 50792765026.9993,
+        "volumeStability3d": 0.86054,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.05110832,
+        "absReturn3d": 0.08903534,
+        "volatility24h": 0.01923794,
+        "volatility3d": 0.01369177,
+        "volumeExpansion24h": 1.37051627,
+        "volumeExpansion3d": 1.2219958,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 100.0,
+          "quoteVolume3d": 100.0,
+          "absReturn24h": 92.592593,
+          "absReturn3d": 96.296296,
+          "volatility3d": 92.592593,
+          "volumeExpansion24h": 92.592593
+        }
+      },
+      {
+        "pair": "SOL/USDT:USDT",
+        "universeScore": 83.148148,
+        "rank": 2,
+        "quoteVolume24h": 1550558758.7748,
+        "quoteVolume3d": 4546471592.0747,
+        "volumeStability3d": 0.951416,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.06042267,
+        "absReturn3d": 0.07341796,
+        "volatility24h": 0.01348231,
+        "volatility3d": 0.01056751,
+        "volumeExpansion24h": 1.08347191,
+        "volumeExpansion3d": 1.05896755,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 92.592593,
+          "quoteVolume3d": 92.592593,
+          "absReturn24h": 96.296296,
+          "absReturn3d": 92.592593,
+          "volatility3d": 18.518519,
+          "volumeExpansion24h": 40.740741
+        }
+      },
+      {
+        "pair": "BTC/USDT:USDT",
+        "universeScore": 82.592592,
+        "rank": 3,
+        "quoteVolume24h": 11422730072.5936,
+        "quoteVolume3d": 28641875186.3642,
+        "volumeStability3d": 0.80283,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.04174379,
+        "absReturn3d": 0.03933983,
+        "volatility24h": 0.01189774,
+        "volatility3d": 0.00836264,
+        "volumeExpansion24h": 1.33374032,
+        "volumeExpansion3d": 1.11476047,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 96.296296,
+          "quoteVolume3d": 96.296296,
+          "absReturn24h": 85.185185,
+          "absReturn3d": 74.074074,
+          "volatility3d": 3.703704,
+          "volumeExpansion24h": 85.185185
+        }
+      },
+      {
+        "pair": "PEPE/USDT:USDT",
+        "universeScore": 73.333333,
+        "rank": 4,
+        "quoteVolume24h": 265839616.568,
+        "quoteVolume3d": 706284373.619,
+        "volumeStability3d": 0.887495,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03354445,
+        "absReturn3d": 0.0100913,
+        "volatility24h": 0.02089856,
+        "volatility3d": 0.01427813,
+        "volumeExpansion24h": 1.09216553,
+        "volumeExpansion3d": 0.9672241,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 81.481481,
+          "quoteVolume3d": 81.481481,
+          "absReturn24h": 74.074074,
+          "absReturn3d": 11.111111,
+          "volatility3d": 100.0,
+          "volumeExpansion24h": 44.444444
+        }
+      },
+      {
+        "pair": "XRP/USDT:USDT",
+        "universeScore": 70.185185,
+        "rank": 5,
+        "quoteVolume24h": 480859486.6086,
+        "quoteVolume3d": 1414304124.9825,
+        "volumeStability3d": 0.957535,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02411426,
+        "absReturn3d": 0.05098912,
+        "volatility24h": 0.01363828,
+        "volatility3d": 0.01000965,
+        "volumeExpansion24h": 1.0282792,
+        "volumeExpansion3d": 1.00812507,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 85.185185,
+          "quoteVolume3d": 85.185185,
+          "absReturn24h": 55.555556,
+          "absReturn3d": 81.481481,
+          "volatility3d": 11.111111,
+          "volumeExpansion24h": 29.62963
+        }
+      },
+      {
+        "pair": "LINK/USDT:USDT",
+        "universeScore": 69.444444,
+        "rank": 6,
+        "quoteVolume24h": 105541816.7528,
+        "quoteVolume3d": 319290918.6123,
+        "volumeStability3d": 0.913812,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03549634,
+        "absReturn3d": 0.0528366,
+        "volatility24h": 0.01672402,
+        "volatility3d": 0.01173661,
+        "volumeExpansion24h": 1.10834491,
+        "volumeExpansion3d": 1.11767536,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 70.37037,
+          "quoteVolume3d": 66.666667,
+          "absReturn24h": 81.481481,
+          "absReturn3d": 85.185185,
+          "volatility3d": 48.148148,
+          "volumeExpansion24h": 51.851852
+        }
+      },
+      {
+        "pair": "DOGE/USDT:USDT",
+        "universeScore": 69.074074,
+        "rank": 7,
+        "quoteVolume24h": 640810962.4413,
+        "quoteVolume3d": 1805631217.5224,
+        "volumeStability3d": 0.903775,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02006844,
+        "absReturn3d": 0.01087579,
+        "volatility24h": 0.01822625,
+        "volatility3d": 0.01255131,
+        "volumeExpansion24h": 1.13847598,
+        "volumeExpansion3d": 1.06930535,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 88.888889,
+          "quoteVolume3d": 88.888889,
+          "absReturn24h": 22.222222,
+          "absReturn3d": 14.814815,
+          "volatility3d": 81.481481,
+          "volumeExpansion24h": 55.555556
+        }
+      },
+      {
+        "pair": "SUI/USDT:USDT",
+        "universeScore": 69.074074,
+        "rank": 8,
+        "quoteVolume24h": 114533523.4175,
+        "quoteVolume3d": 323618054.431,
+        "volumeStability3d": 0.954107,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03297373,
+        "absReturn3d": 0.04238821,
+        "volatility24h": 0.01759965,
+        "volatility3d": 0.0121085,
+        "volumeExpansion24h": 0.9240834,
+        "volumeExpansion3d": 0.87034218,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 74.074074,
+          "quoteVolume3d": 70.37037,
+          "absReturn24h": 70.37037,
+          "absReturn3d": 77.777778,
+          "volatility3d": 70.37037,
+          "volumeExpansion24h": 3.703704
+        }
+      },
+      {
+        "pair": "ADA/USDT:USDT",
+        "universeScore": 67.222222,
+        "rank": 9,
+        "quoteVolume24h": 153645656.114,
+        "quoteVolume3d": 412811055.186,
+        "volumeStability3d": 0.887088,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02736069,
+        "absReturn3d": 0.01320244,
+        "volatility24h": 0.01751878,
+        "volatility3d": 0.0119606,
+        "volumeExpansion24h": 1.28260925,
+        "volumeExpansion3d": 1.14869345,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 77.777778,
+          "quoteVolume3d": 77.777778,
+          "absReturn24h": 59.259259,
+          "absReturn3d": 22.222222,
+          "volatility3d": 55.555556,
+          "volumeExpansion24h": 77.777778
+        }
+      },
+      {
+        "pair": "ARB/USDT:USDT",
+        "universeScore": 57.962963,
+        "rank": 10,
+        "quoteVolume24h": 43315769.413,
+        "quoteVolume3d": 97302847.461,
+        "volumeStability3d": 0.759711,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.04890511,
+        "absReturn3d": 0.07127584,
+        "volatility24h": 0.01708169,
+        "volatility3d": 0.01198739,
+        "volumeExpansion24h": 1.50832738,
+        "volumeExpansion3d": 1.12941584,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 44.444444,
+          "quoteVolume3d": 37.037037,
+          "absReturn24h": 88.888889,
+          "absReturn3d": 88.888889,
+          "volatility3d": 59.259259,
+          "volumeExpansion24h": 100.0
+        }
+      },
+      {
+        "pair": "OP/USDT:USDT",
+        "universeScore": 53.333333,
+        "rank": 11,
+        "quoteVolume24h": 33760106.6716,
+        "quoteVolume3d": 72542874.9354,
+        "volumeStability3d": 0.707133,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.07152202,
+        "absReturn3d": 0.09749894,
+        "volatility24h": 0.01650527,
+        "volatility3d": 0.01156928,
+        "volumeExpansion24h": 1.49635938,
+        "volumeExpansion3d": 1.0717799,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 33.333333,
+          "quoteVolume3d": 29.62963,
+          "absReturn24h": 100.0,
+          "absReturn3d": 100.0,
+          "volatility3d": 44.444444,
+          "volumeExpansion24h": 96.296296
+        }
+      },
+      {
+        "pair": "DOT/USDT:USDT",
+        "universeScore": 52.777778,
+        "rank": 12,
+        "quoteVolume24h": 44792124.304,
+        "quoteVolume3d": 115458981.784,
+        "volumeStability3d": 0.816337,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.03042071,
+        "absReturn3d": 0.03354839,
+        "volatility24h": 0.01670523,
+        "volatility3d": 0.01154733,
+        "volumeExpansion24h": 1.36048595,
+        "volumeExpansion3d": 1.1689579,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 48.148148,
+          "quoteVolume3d": 44.444444,
+          "absReturn24h": 66.666667,
+          "absReturn3d": 66.666667,
+          "volatility3d": 37.037037,
+          "volumeExpansion24h": 88.888889
+        }
+      },
+      {
+        "pair": "BCH/USDT:USDT",
+        "universeScore": 49.259259,
+        "rank": 13,
+        "quoteVolume24h": 94557894.03,
+        "quoteVolume3d": 335943993.054,
+        "volumeStability3d": 0.885567,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01826995,
+        "absReturn3d": 0.02511193,
+        "volatility24h": 0.01221661,
+        "volatility3d": 0.00937549,
+        "volumeExpansion24h": 0.97385084,
+        "volumeExpansion3d": 1.15329465,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 62.962963,
+          "quoteVolume3d": 74.074074,
+          "absReturn24h": 18.518519,
+          "absReturn3d": 48.148148,
+          "volatility3d": 7.407407,
+          "volumeExpansion24h": 7.407407
+        }
+      },
+      {
+        "pair": "FIL/USDT:USDT",
+        "universeScore": 47.222222,
+        "rank": 14,
+        "quoteVolume24h": 74692239.636,
+        "quoteVolume3d": 209357647.4017,
+        "volumeStability3d": 0.813497,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01658986,
+        "absReturn3d": 0.01137441,
+        "volatility24h": 0.01794873,
+        "volatility3d": 0.01209516,
+        "volumeExpansion24h": 1.01705581,
+        "volumeExpansion3d": 0.95024781,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 59.259259,
+          "quoteVolume3d": 59.259259,
+          "absReturn24h": 14.814815,
+          "absReturn3d": 18.518519,
+          "volatility3d": 62.962963,
+          "volumeExpansion24h": 25.925926
+        }
+      },
+      {
+        "pair": "NEAR/USDT:USDT",
+        "universeScore": 46.296296,
+        "rank": 15,
+        "quoteVolume24h": 39638946.898,
+        "quoteVolume3d": 107973162.217,
+        "volumeStability3d": 0.878631,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02246256,
+        "absReturn3d": 0.02892562,
+        "volatility24h": 0.01782474,
+        "volatility3d": 0.01218643,
+        "volumeExpansion24h": 1.17613637,
+        "volumeExpansion3d": 1.0678989,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 37.037037,
+          "quoteVolume3d": 40.740741,
+          "absReturn24h": 44.444444,
+          "absReturn3d": 55.555556,
+          "volatility3d": 74.074074,
+          "volumeExpansion24h": 70.37037
+        }
+      },
+      {
+        "pair": "UNI/USDT:USDT",
+        "universeScore": 45.555556,
+        "rank": 16,
+        "quoteVolume24h": 55001628.426,
+        "quoteVolume3d": 160912704.531,
+        "volumeStability3d": 0.940866,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01354806,
+        "absReturn3d": 0.03161857,
+        "volatility24h": 0.01665242,
+        "volatility3d": 0.01154924,
+        "volumeExpansion24h": 1.09626508,
+        "volumeExpansion3d": 1.06907731,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 51.851852,
+          "quoteVolume3d": 51.851852,
+          "absReturn24h": 11.111111,
+          "absReturn3d": 62.962963,
+          "volatility3d": 40.740741,
+          "volumeExpansion24h": 48.148148
+        }
+      },
+      {
+        "pair": "AVAX/USDT:USDT",
+        "universeScore": 45.0,
+        "rank": 17,
+        "quoteVolume24h": 57432637.6641,
+        "quoteVolume3d": 162268463.94,
+        "volumeStability3d": 0.923604,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02120943,
+        "absReturn3d": 0.02486486,
+        "volatility24h": 0.01539925,
+        "volatility3d": 0.01059355,
+        "volumeExpansion24h": 1.00947152,
+        "volumeExpansion3d": 0.95071026,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 55.555556,
+          "quoteVolume3d": 55.555556,
+          "absReturn24h": 25.925926,
+          "absReturn3d": 44.444444,
+          "volatility3d": 22.222222,
+          "volumeExpansion24h": 22.222222
+        }
+      },
+      {
+        "pair": "LTC/USDT:USDT",
+        "universeScore": 42.592593,
+        "rank": 18,
+        "quoteVolume24h": 98078766.582,
+        "quoteVolume3d": 293869482.963,
+        "volumeStability3d": 0.872864,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01032301,
+        "absReturn3d": 0.00285187,
+        "volatility24h": 0.01469619,
+        "volatility3d": 0.01027084,
+        "volumeExpansion24h": 0.98134709,
+        "volumeExpansion3d": 0.98012367,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 66.666667,
+          "quoteVolume3d": 62.962963,
+          "absReturn24h": 7.407407,
+          "absReturn3d": 3.703704,
+          "volatility3d": 14.814815,
+          "volumeExpansion24h": 11.111111
+        }
+      },
+      {
+        "pair": "AAVE/USDT:USDT",
+        "universeScore": 42.222222,
+        "rank": 19,
+        "quoteVolume24h": 40270228.8635,
+        "quoteVolume3d": 121190645.7044,
+        "volumeStability3d": 0.932241,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02165077,
+        "absReturn3d": 0.03604159,
+        "volatility24h": 0.01661045,
+        "volatility3d": 0.0113465,
+        "volumeExpansion24h": 0.88847517,
+        "volumeExpansion3d": 0.89126949,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 40.740741,
+          "quoteVolume3d": 48.148148,
+          "absReturn24h": 37.037037,
+          "absReturn3d": 70.37037,
+          "volatility3d": 33.333333,
+          "volumeExpansion24h": 0.0
+        }
+      },
+      {
+        "pair": "WIF/USDT:USDT",
+        "universeScore": 37.777778,
+        "rank": 20,
+        "quoteVolume24h": 31932844.8364,
+        "quoteVolume3d": 94323855.0693,
+        "volumeStability3d": 0.876348,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02228303,
+        "absReturn3d": 0.01612903,
+        "volatility24h": 0.01871826,
+        "volatility3d": 0.01352063,
+        "volumeExpansion24h": 0.9823964,
+        "volumeExpansion3d": 0.96727384,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 29.62963,
+          "quoteVolume3d": 33.333333,
+          "absReturn24h": 40.740741,
+          "absReturn3d": 33.333333,
+          "volatility3d": 88.888889,
+          "volumeExpansion24h": 14.814815
+        }
+      },
+      {
+        "pair": "ETC/USDT:USDT",
+        "universeScore": 33.148148,
+        "rank": 21,
+        "quoteVolume24h": 26880632.227,
+        "quoteVolume3d": 72120461.559,
+        "volumeStability3d": 0.91553,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02346939,
+        "absReturn3d": 0.02047083,
+        "volatility24h": 0.01566948,
+        "volatility3d": 0.01083683,
+        "volumeExpansion24h": 1.1618425,
+        "volumeExpansion3d": 1.03907052,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 25.925926,
+          "quoteVolume3d": 25.925926,
+          "absReturn24h": 51.851852,
+          "absReturn3d": 40.740741,
+          "volatility3d": 25.925926,
+          "volumeExpansion24h": 62.962963
+        }
+      },
+      {
+        "pair": "APT/USDT:USDT",
+        "universeScore": 32.222222,
+        "rank": 22,
+        "quoteVolume24h": 26494973.463,
+        "quoteVolume3d": 59974555.493,
+        "volumeStability3d": 0.757713,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02272727,
+        "absReturn3d": 0.01965409,
+        "volatility24h": 0.01734481,
+        "volatility3d": 0.01187109,
+        "volumeExpansion24h": 1.24168977,
+        "volumeExpansion3d": 0.93690466,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 22.222222,
+          "quoteVolume3d": 18.518519,
+          "absReturn24h": 48.148148,
+          "absReturn3d": 37.037037,
+          "volatility3d": 51.851852,
+          "volumeExpansion24h": 74.074074
+        }
+      },
+      {
+        "pair": "ATOM/USDT:USDT",
+        "universeScore": 28.333333,
+        "rank": 23,
+        "quoteVolume24h": 10807502.379,
+        "quoteVolume3d": 26376726.567,
+        "volumeStability3d": 0.790531,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02887538,
+        "absReturn3d": 0.02991886,
+        "volatility24h": 0.01712587,
+        "volatility3d": 0.01117229,
+        "volumeExpansion24h": 1.16403817,
+        "volumeExpansion3d": 0.94698157,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 11.111111,
+          "quoteVolume3d": 11.111111,
+          "absReturn24h": 62.962963,
+          "absReturn3d": 59.259259,
+          "volatility3d": 29.62963,
+          "volumeExpansion24h": 66.666667
+        }
+      },
+      {
+        "pair": "SEI/USDT:USDT",
+        "universeScore": 27.592593,
+        "rank": 24,
+        "quoteVolume24h": 3517108.7103,
+        "quoteVolume3d": 8460961.0445,
+        "volumeStability3d": 0.809263,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.0337952,
+        "absReturn3d": 0.02534091,
+        "volatility24h": 0.01764135,
+        "volatility3d": 0.01209713,
+        "volumeExpansion24h": 1.30662739,
+        "volumeExpansion3d": 1.04776626,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 0.0,
+          "quoteVolume3d": 0.0,
+          "absReturn24h": 77.777778,
+          "absReturn3d": 51.851852,
+          "volatility3d": 66.666667,
+          "volumeExpansion24h": 81.481481
+        }
+      },
+      {
+        "pair": "ORDI/USDT:USDT",
+        "universeScore": 22.222222,
+        "rank": 25,
+        "quoteVolume24h": 14818955.1313,
+        "quoteVolume3d": 36555303.2482,
+        "volumeStability3d": 0.845753,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.005468,
+        "absReturn3d": 0.00708763,
+        "volatility24h": 0.0203021,
+        "volatility3d": 0.01380539,
+        "volumeExpansion24h": 1.14380508,
+        "volumeExpansion3d": 0.94051034,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 14.814815,
+          "quoteVolume3d": 14.814815,
+          "absReturn24h": 0.0,
+          "absReturn3d": 7.407407,
+          "volatility3d": 96.296296,
+          "volumeExpansion24h": 59.259259
+        }
+      },
+      {
+        "pair": "TIA/USDT:USDT",
+        "universeScore": 21.851852,
+        "rank": 26,
+        "quoteVolume24h": 9399641.1044,
+        "quoteVolume3d": 25667740.8528,
+        "volumeStability3d": 0.885272,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02155976,
+        "absReturn3d": 0.01605996,
+        "volatility24h": 0.01884577,
+        "volatility3d": 0.01260072,
+        "volumeExpansion24h": 0.99096606,
+        "volumeExpansion3d": 0.90201529,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 7.407407,
+          "quoteVolume3d": 7.407407,
+          "absReturn24h": 33.333333,
+          "absReturn3d": 29.62963,
+          "volatility3d": 85.185185,
+          "volumeExpansion24h": 18.518519
+        }
+      },
+      {
+        "pair": "INJ/USDT:USDT",
+        "universeScore": 18.888889,
+        "rank": 27,
+        "quoteVolume24h": 5442069.3261,
+        "quoteVolume3d": 14915861.4792,
+        "volumeStability3d": 0.860669,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.02132313,
+        "absReturn3d": 0.01431718,
+        "volatility24h": 0.01886544,
+        "volatility3d": 0.01248791,
+        "volumeExpansion24h": 1.04460559,
+        "volumeExpansion3d": 0.95436688,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 3.703704,
+          "quoteVolume3d": 3.703704,
+          "absReturn24h": 29.62963,
+          "absReturn3d": 25.925926,
+          "volatility3d": 77.777778,
+          "volumeExpansion24h": 37.037037
+        }
+      },
+      {
+        "pair": "TRX/USDT:USDT",
+        "universeScore": 14.259259,
+        "rank": 28,
+        "quoteVolume24h": 18782401.576,
+        "quoteVolume3d": 60093545.1039,
+        "volumeStability3d": 0.873216,
+        "missingCandleRate": 0.0,
+        "absReturn24h": 0.01006711,
+        "absReturn3d": 0.0008386,
+        "volatility24h": 0.00311708,
+        "volatility3d": 0.00269673,
+        "volumeExpansion24h": 1.03698658,
+        "volumeExpansion3d": 1.1059324,
+        "excluded": false,
+        "excludeReason": null,
+        "warnings": [
+          "history_less_than_ideal_90d"
+        ],
+        "rankFactors": {
+          "quoteVolume24h": 18.518519,
+          "quoteVolume3d": 22.222222,
+          "absReturn24h": 3.703704,
+          "absReturn3d": 0.0,
+          "volatility3d": 0.0,
+          "volumeExpansion24h": 33.333333
+        }
+      },
+      {
+        "pair": "FET/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "universeScore": null,
+        "rank": null,
+        "quoteVolume24h": null,
+        "quoteVolume3d": null,
+        "volumeStability3d": null,
+        "missingCandleRate": null,
+        "absReturn24h": null,
+        "absReturn3d": null,
+        "volatility24h": null,
+        "volatility3d": null,
+        "volumeExpansion24h": null,
+        "volumeExpansion3d": null,
+        "excluded": true,
+        "excludeReason": "missing_ohlcv_file",
+        "warnings": [
+          "No local OHLCV data loaded for this pair."
+        ],
+        "rankFactors": {
+          "quoteVolume24h": null,
+          "quoteVolume3d": null,
+          "absReturn24h": null,
+          "absReturn3d": null,
+          "volatility3d": null,
+          "volumeExpansion24h": null
+        }
+      }
+    ],
+    "excludedPairs": [
+      "TON/USDT:USDT",
+      "FET/USDT:USDT"
+    ],
+    "insufficientDataPairs": [],
+    "warnings": []
+  }
+]

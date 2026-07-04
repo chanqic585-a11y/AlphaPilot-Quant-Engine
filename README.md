@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.12 - Dynamic Universe and Regime Strategy Specification
+AlphaPilot V13.4.13 - Historical Dynamic Universe Builder
 ```
 
 ## Positioning
@@ -791,10 +791,55 @@ docs/probability-score-design.md
 V13.4.12 keeps `dryRunApproved=false` and `liveTradingApproved=false`. The next
 recommended step is V13.4.13 Historical Dynamic Universe Builder.
 
+## V13.4.13 Historical Dynamic Universe Builder
+
+V13.4.13 implements the historical Dynamic Universe builder needed by the new
+Dynamic Regime strategy mainline.
+
+中文说明：
+
+```text
+V13.4.13 基于本地公开历史 OHLCV，为每个历史日期生成当时可见的动态币种池快照。
+本版本不写策略代码、不下载数据、不运行回测、不进入 Dry-run、不实盘。
+```
+
+Run the builder:
+
+```powershell
+python -m alphapilot.universe.build_historical_dynamic_universe
+```
+
+or:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\build_dynamic_universe.ps1 -Timerange "20260101-" -RefreshFrequency "daily" -MaxPairs 10
+```
+
+Outputs:
+
+```text
+reports/v13_4_13_dynamic_universe_snapshots.json
+reports/v13_4_13_dynamic_universe_sample_snapshots.json
+reports/v13_4_13_dynamic_universe_build_report.json
+reports/v13_4_13_dynamic_universe_summary.md
+docs/V13.4.13-historical-dynamic-universe-builder.md
+docs/historical-dynamic-universe-builder.md
+docs/dynamic-universe-lookahead-bias-protection.md
+```
+
+Lookahead bias rule:
+
+```text
+Each snapshot uses only candles with date < snapshotDate 00:00 UTC.
+```
+
+V13.4.13 reads local public OHLCV files only. It does not run a strategy
+backtest, enter Dry-run, use API keys, call Trade API or Withdraw API, read
+accounts, read positions, create orders, or auto trade.
+
 ## Next Versions
 
-- V13.4.13: build historical Dynamic Universe snapshots without lookahead bias.
-- V13.4.14: build Probability Score dataset and label tables.
+- V13.4.14: build Probability Score dataset and label tables from historical universe snapshots.
 - V13.4.15: implement Dynamic Regime Strategy V0.1.
 - V13.4.16: run Dynamic Regime smoke backtest.
 - V13.4.17: run expanded validation with slippage and liquidity gates.

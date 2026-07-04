@@ -1,0 +1,188 @@
+{
+  "reportId": "v13_4_13_dynamic_universe_build_report",
+  "version": "V13.4.13",
+  "status": "success",
+  "config": {
+    "market": "okx_usdt_swap",
+    "refreshFrequency": "daily",
+    "maxPairs": 10,
+    "candidateMode": "top30",
+    "timeframeForRanking": "1h",
+    "timerange": "20260101-",
+    "warmupDays": 30,
+    "minimumHistoryDays": 30,
+    "idealHistoryDays": 90,
+    "missingCandleRateLimit": 0.05,
+    "dataPath": "user_data/data/okx/futures",
+    "quoteVolumeEstimated": true,
+    "delistFilterAvailable": false
+  },
+  "timerange": "20260101-",
+  "refreshFrequency": "daily",
+  "maxPairs": 10,
+  "candidateMode": "top30",
+  "snapshotCount": 155,
+  "candidatePairsCount": 30,
+  "supportedPairs": [
+    "AAVE/USDT:USDT",
+    "ADA/USDT:USDT",
+    "APT/USDT:USDT",
+    "ARB/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "BCH/USDT:USDT",
+    "BTC/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "DOT/USDT:USDT",
+    "ETC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "FIL/USDT:USDT",
+    "INJ/USDT:USDT",
+    "LINK/USDT:USDT",
+    "LTC/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "OP/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "PEPE/USDT:USDT",
+    "SEI/USDT:USDT",
+    "SOL/USDT:USDT",
+    "SUI/USDT:USDT",
+    "TIA/USDT:USDT",
+    "TRX/USDT:USDT",
+    "UNI/USDT:USDT",
+    "WIF/USDT:USDT",
+    "XRP/USDT:USDT"
+  ],
+  "excludedPairs": [
+    "FET/USDT:USDT",
+    "TON/USDT:USDT"
+  ],
+  "insufficientDataPairs": [],
+  "missingDataPairs": [
+    "TON/USDT:USDT",
+    "FET/USDT:USDT"
+  ],
+  "pairsWithEstimatedQuoteVolume": [
+    "AAVE/USDT:USDT",
+    "ADA/USDT:USDT",
+    "APT/USDT:USDT",
+    "ARB/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "BCH/USDT:USDT",
+    "BTC/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "DOT/USDT:USDT",
+    "ETC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "FIL/USDT:USDT",
+    "INJ/USDT:USDT",
+    "LINK/USDT:USDT",
+    "LTC/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "OP/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "PEPE/USDT:USDT",
+    "SEI/USDT:USDT",
+    "SOL/USDT:USDT",
+    "SUI/USDT:USDT",
+    "TIA/USDT:USDT",
+    "TRX/USDT:USDT",
+    "UNI/USDT:USDT",
+    "WIF/USDT:USDT",
+    "XRP/USDT:USDT"
+  ],
+  "pairsWithHighMissingRate": [],
+  "averageSelectedPairs": 10.0,
+  "topMostSelectedPairs": [
+    {
+      "pair": "ETH/USDT:USDT",
+      "selectedCount": 155
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "selectedCount": 155
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "selectedCount": 153
+    },
+    {
+      "pair": "BTC/USDT:USDT",
+      "selectedCount": 152
+    },
+    {
+      "pair": "PEPE/USDT:USDT",
+      "selectedCount": 144
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "selectedCount": 131
+    },
+    {
+      "pair": "XRP/USDT:USDT",
+      "selectedCount": 125
+    },
+    {
+      "pair": "FIL/USDT:USDT",
+      "selectedCount": 101
+    },
+    {
+      "pair": "ADA/USDT:USDT",
+      "selectedCount": 99
+    },
+    {
+      "pair": "NEAR/USDT:USDT",
+      "selectedCount": 61
+    },
+    {
+      "pair": "AAVE/USDT:USDT",
+      "selectedCount": 51
+    },
+    {
+      "pair": "BCH/USDT:USDT",
+      "selectedCount": 41
+    },
+    {
+      "pair": "ORDI/USDT:USDT",
+      "selectedCount": 28
+    },
+    {
+      "pair": "LINK/USDT:USDT",
+      "selectedCount": 26
+    },
+    {
+      "pair": "UNI/USDT:USDT",
+      "selectedCount": 25
+    }
+  ],
+  "mostExcludedPairs": [
+    {
+      "pair": "TON/USDT:USDT",
+      "excludedCount": 155
+    },
+    {
+      "pair": "FET/USDT:USDT",
+      "excludedCount": 155
+    }
+  ],
+  "lookaheadBiasProtection": [
+    "Each snapshot uses only candles with date < snapshotDate 00:00 UTC.",
+    "Ranking factors are recalculated per snapshot and never use future candles.",
+    "Rolling windows are sliced before snapshotDate and cannot cross into future dates.",
+    "Pairs with insufficient history or missing data are excluded instead of filled with fake values.",
+    "The builder starts after warmupDays to avoid ranking from shallow history."
+  ],
+  "outputSnapshotsPath": "reports\\v13_4_13_dynamic_universe_snapshots.json",
+  "outputSampleSnapshotsPath": "reports\\v13_4_13_dynamic_universe_sample_snapshots.json",
+  "outputSummaryPath": "reports\\v13_4_13_dynamic_universe_summary.md",
+  "warnings": [
+    "TON/USDT:USDT: missing_ohlcv_file",
+    "FET/USDT:USDT: missing_ohlcv_file"
+  ],
+  "generatedAt": "2026-07-04T21:01:56.080306+00:00",
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "nextStepRecommendation": "V13.4.14 - Probability Score Dataset and Label Builder",
+  "source": "alphapilot_v13_4_13_historical_dynamic_universe_builder"
+}
