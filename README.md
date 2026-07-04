@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.13 - Historical Dynamic Universe Builder
+AlphaPilot V13.4.14 - Probability Score Dataset and Label Builder
 ```
 
 ## Positioning
@@ -837,10 +837,59 @@ V13.4.13 reads local public OHLCV files only. It does not run a strategy
 backtest, enter Dry-run, use API keys, call Trade API or Withdraw API, read
 accounts, read positions, create orders, or auto trade.
 
+## V13.4.14 Probability Score Dataset and Label Builder
+
+V13.4.14 builds the statistical probability layer needed by the Dynamic Regime
+strategy mainline. It reads V13.4.13 historical universe snapshots and local
+public OHLCV, then creates point-in-time candidate samples, forward TP/SL
+labels, MFE/MAE metrics, and a probability score table.
+
+中文说明：
+
+```text
+V13.4.14 基于历史动态币种池和本地公开 OHLCV，构建概率评分样本、未来标签和条件概率表。
+本版本只做统计数据集和标签，不写策略代码、不运行回测、不进入 Dry-run、不实盘。
+```
+
+Run the builder:
+
+```powershell
+python -m alphapilot.probability.build_probability_dataset
+```
+
+or:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\build_probability_dataset.ps1
+```
+
+Outputs:
+
+```text
+reports/v13_4_14_probability_dataset_report.json
+reports/v13_4_14_probability_score_table.json
+reports/v13_4_14_probability_sample_dataset.json
+reports/v13_4_14_probability_dataset_summary.md
+docs/V13.4.14-probability-score-dataset-label-builder.md
+docs/probability-score-methodology.md
+docs/probability-label-definition.md
+```
+
+No-lookahead rule:
+
+```text
+Features are point-in-time. Forward labels are evaluation-only and never flow back into feature buckets.
+```
+
+V13.4.14 produced 1,540 labeled samples across 155 historical snapshots. Most
+bucket combinations are marked `insufficient_sample`, which keeps the decision
+policy conservative and `observe_only`. V13.4.14 does not run a backtest, enter
+Dry-run, use API keys, call Trade API or Withdraw API, read accounts, read
+positions, create orders, or auto trade.
+
 ## Next Versions
 
-- V13.4.14: build Probability Score dataset and label tables from historical universe snapshots.
-- V13.4.15: implement Dynamic Regime Strategy V0.1.
+- V13.4.15: implement Dynamic Regime Strategy V0.1 using the V13.4.14 probability table.
 - V13.4.16: run Dynamic Regime smoke backtest.
 - V13.4.17: run expanded validation with slippage and liquidity gates.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer.
