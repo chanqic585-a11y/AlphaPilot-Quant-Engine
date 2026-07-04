@@ -1,0 +1,590 @@
+{
+  "reportId": "v13_4_18_dynamic_regime_pipeline_diagnosis_report",
+  "sourceExpandedReport": "reports\\v13_4_17_dynamic_regime_expanded_report.json",
+  "sourceProbabilityTable": "reports\\v13_4_14_probability_score_table.json",
+  "currentStatus": "diagnosis_only",
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "signalFunnel": {
+    "historicalUniverseSnapshots": 155,
+    "expandedValidationPairs": 27,
+    "rowsEvaluated": 119679,
+    "rowsWithRequiredData": 119166,
+    "dataMissingRows": 513,
+    "regimeRows": {
+      "avoid": 69483,
+      "mean_reversion": 25212,
+      "trend": 17330,
+      "unknown": 7654
+    },
+    "trendModuleCandidates": 598,
+    "meanReversionModuleCandidates": 1775,
+    "moduleCandidateRows": 2373,
+    "probabilityLookupAttempts": 119679,
+    "probabilityLookupHits": 62352,
+    "probabilityLookupMisses": 57327,
+    "probabilityScorePass": 0,
+    "probabilityTableSufficientSampleBuckets": 2,
+    "liquidityGateRowsAudited": 119679,
+    "liquidityGateEffectiveRowsAfterProbability": 0,
+    "finalEntrySignals": 0,
+    "actualTrades": 0,
+    "mainBlocker": "probability_score_gate",
+    "dryRunApproved": false,
+    "liveTradingApproved": false
+  },
+  "probabilityGateDiagnosis": {
+    "rowsEvaluated": 119679,
+    "lookupHits": 62352,
+    "lookupMisses": 57327,
+    "lookupHitRatePercent": 52.0994,
+    "probabilityScorePass": 0,
+    "probabilityScoreFail": 119679,
+    "probabilityScorePassRatePercent": 0.0,
+    "scoreTableCoverage": {
+      "totalBuckets": 283,
+      "decisionCounts": {
+        "observe_only": 283
+      },
+      "sampleCountBuckets": {
+        "0_to_9": 249,
+        "10_to_29": 25,
+        "30_to_49": 7,
+        "50_to_99": 2
+      },
+      "sufficientSampleBuckets": 2,
+      "insufficientSampleBuckets": 281,
+      "researchCandidateBuckets": 0,
+      "observeOnlyBuckets": 283,
+      "currentGatePassBuckets": 0,
+      "currentGateCriteria": {
+        "sampleCountGte": 50,
+        "hitTpBeforeSlProbabilityGte": 0.45,
+        "profitFactorGte": 1.2,
+        "expectancyGt": 0,
+        "decision": "research_candidate"
+      }
+    },
+    "datasetGateSummary": {
+      "totalBuckets": 283,
+      "researchPromisingBuckets": 0,
+      "observeOnlyBuckets": 2,
+      "insufficientSampleBuckets": 281,
+      "minimumSampleThreshold": 50,
+      "passCriteria": {
+        "sampleCount": ">= 50",
+        "hitTpBeforeSlProbability": ">= 0.45",
+        "profitFactor": ">= 1.2",
+        "expectancy": "> 0"
+      },
+      "decisionPolicy": "insufficient samples remain observe_only and cannot approve Dry-run."
+    },
+    "weightedTopBucketFailureReasons": {
+      "insufficient_sample": 34923,
+      "bucket_not_found_in_probability_table": 32252,
+      "hit_probability_too_low": 1899
+    },
+    "topMissingBucketKeysFromExpandedReport": [
+      {
+        "bucketId": "avoid_low_low_30-45_below_ema20_lower_weak",
+        "rows": 6447,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_below30_below_ema20_lower_weak",
+        "rows": 4341,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_55-65_near_ema20_middle_weak",
+        "rows": 3097,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_30-45_near_ema20_lower_weak",
+        "rows": 3079,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_above65_above_ema20_upper_weak",
+        "rows": 2025,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_45-55_below_ema20_lower_weak",
+        "rows": 2012,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_medium_low_30-45_below_ema20_lower_weak",
+        "rows": 1269,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_below30_below_ema20_outside_weak",
+        "rows": 1022,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_above65_near_ema20_middle_weak",
+        "rows": 985,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_medium_low_below30_below_ema20_lower_weak",
+        "rows": 959,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_medium_30-45_below_ema20_lower_weak",
+        "rows": 852,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_30-45_below_ema20_outside_weak",
+        "rows": 834,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_above65_near_ema20_upper_weak",
+        "rows": 821,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_above65_above_ema20_outside_weak",
+        "rows": 700,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_30-45_below_ema20_lower_safe",
+        "rows": 692,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_30-45_near_ema20_middle_weak",
+        "rows": 678,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_medium_low_30-45_near_ema20_lower_weak",
+        "rows": 667,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "trend_low_low_above65_near_ema20_upper_safe",
+        "rows": 605,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_low_low_30-45_near_ema20_lower_safe",
+        "rows": 596,
+        "available": 0,
+        "pass": 0
+      },
+      {
+        "bucketId": "avoid_high_low_30-45_below_ema20_lower_weak",
+        "rows": 571,
+        "available": 0,
+        "pass": 0
+      }
+    ],
+    "bucketKeyMismatchSuspected": false,
+    "diagnosis": "The probability gate is the immediate blocker: lookup hits exist, but no rows pass the current score table decision gate."
+  },
+  "bucketKeyConsistency": {
+    "scoreTableRows": 283,
+    "scoreTableRebuildMismatchCount": 0,
+    "scoreTableRebuildMismatchSamples": [],
+    "expandedReportBucketsChecked": 50,
+    "expandedReportLookupHitBuckets": 30,
+    "expandedReportLookupMissingBuckets": 20,
+    "expandedReportFormatMismatchCount": 0,
+    "expandedReportParseableMissingBuckets": 20,
+    "bucketKeyMismatchSuspected": false,
+    "checkedBucketSamples": [
+      {
+        "bucketId": "avoid_low_low_30-45_below_ema20_lower_weak",
+        "rows": 6447,
+        "foundInProbabilityTable": false,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "30-45",
+          "emaDistanceBucket": "below_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_below30_below_ema20_lower_weak",
+        "rows": 4341,
+        "foundInProbabilityTable": false,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "below30",
+          "emaDistanceBucket": "below_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_45-55_near_ema20_middle_weak",
+        "rows": 3766,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "45-55",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "middle",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_55-65_near_ema20_middle_weak",
+        "rows": 3097,
+        "foundInProbabilityTable": false,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "55-65",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "middle",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_30-45_near_ema20_lower_weak",
+        "rows": 3079,
+        "foundInProbabilityTable": false,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "30-45",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "mean_reversion_low_low_30-45_below_ema20_lower_safe",
+        "rows": 2640,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "mean_reversion",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "30-45",
+          "emaDistanceBucket": "below_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "safe"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_45-55_near_ema20_lower_weak",
+        "rows": 2460,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "45-55",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "mean_reversion_low_low_30-45_near_ema20_lower_safe",
+        "rows": 2166,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "mean_reversion",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "30-45",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "safe"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_above65_above_ema20_upper_weak",
+        "rows": 2025,
+        "foundInProbabilityTable": false,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "above65",
+          "emaDistanceBucket": "above_ema20",
+          "bbPositionBucket": "upper",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_45-55_below_ema20_lower_weak",
+        "rows": 2012,
+        "foundInProbabilityTable": false,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "45-55",
+          "emaDistanceBucket": "below_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "mean_reversion_low_low_below30_below_ema20_lower_safe",
+        "rows": 1937,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "mean_reversion",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "below30",
+          "emaDistanceBucket": "below_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "safe"
+        }
+      },
+      {
+        "bucketId": "mean_reversion_low_low_30-45_below_ema20_lower_weak",
+        "rows": 1899,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "mean_reversion",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "30-45",
+          "emaDistanceBucket": "below_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "trend_low_low_above65_above_ema20_upper_safe",
+        "rows": 1800,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "trend",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "above65",
+          "emaDistanceBucket": "above_ema20",
+          "bbPositionBucket": "upper",
+          "btcState": "safe"
+        }
+      },
+      {
+        "bucketId": "trend_low_low_55-65_near_ema20_middle_safe",
+        "rows": 1441,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "trend",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "55-65",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "middle",
+          "btcState": "safe"
+        }
+      },
+      {
+        "bucketId": "unknown_low_low_45-55_near_ema20_middle_safe",
+        "rows": 1364,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "unknown",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "45-55",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "middle",
+          "btcState": "safe"
+        }
+      },
+      {
+        "bucketId": "mean_reversion_low_low_45-55_near_ema20_lower_safe",
+        "rows": 1303,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "mean_reversion",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "45-55",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "safe"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_55-65_near_ema20_upper_weak",
+        "rows": 1287,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "55-65",
+          "emaDistanceBucket": "near_ema20",
+          "bbPositionBucket": "upper",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "avoid_medium_low_30-45_below_ema20_lower_weak",
+        "rows": 1269,
+        "foundInProbabilityTable": false,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "medium",
+          "volatilityBucket": "low",
+          "rsiBucket": "30-45",
+          "emaDistanceBucket": "below_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "mean_reversion_low_low_below30_below_ema20_lower_weak",
+        "rows": 1268,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "mean_reversion",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "below30",
+          "emaDistanceBucket": "below_ema20",
+          "bbPositionBucket": "lower",
+          "btcState": "weak"
+        }
+      },
+      {
+        "bucketId": "avoid_low_low_55-65_above_ema20_upper_weak",
+        "rows": 1209,
+        "foundInProbabilityTable": true,
+        "parseableWithScoreTableDomains": true,
+        "parsedComponents": {
+          "regimeCandidate": "avoid",
+          "liquidityBucket": "low",
+          "volatilityBucket": "low",
+          "rsiBucket": "55-65",
+          "emaDistanceBucket": "above_ema20",
+          "bbPositionBucket": "upper",
+          "btcState": "weak"
+        }
+      }
+    ],
+    "diagnosis": "Bucket key format appears consistent; missing buckets are more consistent with probability table coverage gaps."
+  },
+  "regimeRouterDiagnosis": {
+    "totalRows": 119679,
+    "trendRows": 17330,
+    "meanReversionRows": 25212,
+    "avoidRows": 69483,
+    "unknownRows": 7654,
+    "trendPercent": 14.4804,
+    "meanReversionPercent": 21.0664,
+    "avoidPercent": 58.0578,
+    "unknownPercent": 6.3954,
+    "eligibleRegimeRows": 42542,
+    "eligibleRegimePercent": 35.5468,
+    "regimeRouterTooStrictSuspected": false,
+    "diagnosis": "Regime router produced eligible trend and mean-reversion rows, so it is not the immediate zero-signal blocker."
+  },
+  "moduleCandidateDiagnosis": {
+    "trendModuleCandidates": 598,
+    "meanReversionModuleCandidates": 1775,
+    "moduleCandidateRows": 2373,
+    "trendModuleCandidateRateWithinTrendPercent": 3.4507,
+    "meanReversionCandidateRateWithinMeanReversionPercent": 7.0403,
+    "finalEntrySignals": 0,
+    "skipReasons": {
+      "not_in_dynamic_universe": 82031,
+      "avoid_regime": 21716,
+      "probability_score_not_passed": 12469,
+      "probability_score_unavailable": 2950,
+      "data_missing": 513
+    },
+    "moduleRulesTooStrictSuspected": false,
+    "diagnosis": "Module rules produced candidates, but downstream probability scoring reduced final entries to zero."
+  },
+  "liquidityGateDiagnosis": {
+    "liquidityDataAvailable": false,
+    "fallbackUsedRows": 119679,
+    "fallbackPolicy": "allowed for expanded validation research only; not a real liquidity approval",
+    "effectiveRowsAfterProbabilityGate": 0,
+    "liquidityGateBlockingSuspected": false,
+    "diagnosis": "Liquidity gate is not the immediate blocker because no rows reached it after the probability gate."
+  },
+  "rootCauseHypotheses": [
+    {
+      "category": "probability_table_insufficient_coverage",
+      "likelihood": "high",
+      "evidence": "Score table has 0 current-gate pass buckets and 0 research_candidate buckets."
+    },
+    {
+      "category": "probability_gate_too_strict",
+      "likelihood": "medium",
+      "evidence": "V13.4.17 has lookup hits but probabilityScorePass remains zero."
+    }
+  ],
+  "recommendedNextStep": {
+    "version": "V13.4.19",
+    "name": "Probability Bucket Coarsening and Sample Coverage Expansion",
+    "reason": "Current probability table coverage has no current-gate pass buckets."
+  },
+  "warnings": [
+    "Diagnosis-only report. No backtest was run.",
+    "No strategy rules, probability thresholds, bucket table, or execution settings were changed.",
+    "Dry-run and live trading remain explicitly disabled."
+  ],
+  "generatedAt": "2026-07-04T21:39:50.423052+00:00",
+  "source": "alphapilot_v13_4_18_dynamic_regime_pipeline_diagnosis"
+}

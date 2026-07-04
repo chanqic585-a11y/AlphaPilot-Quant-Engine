@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.17 - Dynamic Regime Expanded Validation
+AlphaPilot V13.4.18 - Dynamic Regime Pipeline Diagnosis
 ```
 
 ## Positioning
@@ -1021,7 +1021,50 @@ Interpretation: the expanded runtime path works, but the V13.4.14 probability
 gate still blocks all entries. This is not a strategy approval and not a
 Dry-run candidate.
 
+## V13.4.18 Dynamic Regime Pipeline Diagnosis
+
+V13.4.18 diagnoses the zero-trade V13.4.17 result without running a new
+backtest and without changing strategy rules, probability thresholds, bucket
+tables, regime router logic, module rules, liquidity logic, Dry-run settings,
+API keys, account access, order creation, or auto-trading behavior.
+
+Run diagnosis:
+
+```powershell
+python -m alphapilot.reports.generate_dynamic_regime_signal_pipeline_diagnosis
+```
+
+Outputs:
+
+```text
+reports/v13_4_18_dynamic_regime_pipeline_diagnosis_report.json
+reports/v13_4_18_dynamic_regime_pipeline_diagnosis_summary.md
+docs/V13.4.18-dynamic-regime-pipeline-diagnosis.md
+docs/probability-gate-coverage-diagnosis.md
+docs/bucket-key-consistency-check.md
+```
+
+Diagnosis result:
+
+```text
+rowsEvaluated: 119679
+trendModuleCandidates: 598
+meanReversionModuleCandidates: 1775
+probabilityLookupHits: 62352
+probabilityScorePass: 0
+finalEntrySignals: 0
+researchCandidateBuckets: 0
+currentGatePassBuckets: 0
+bucketKeyMismatchSuspected: false
+```
+
+Interpretation: the signal pipeline reaches module candidate generation, but
+the probability layer has no current-gate pass buckets. Bucket key format
+appears consistent, so the likely V13.4.19 direction is probability bucket
+coarsening and sample coverage expansion, not strategy approval.
+
 ## Next Versions
 
-- V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.17 closeout.
+- V13.4.19: probability bucket coarsening and sample coverage expansion.
+- V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.18 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.
