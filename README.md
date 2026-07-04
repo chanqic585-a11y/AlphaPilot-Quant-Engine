@@ -1114,8 +1114,68 @@ The current gate still has zero pass buckets after coarsening. Coarse C/D only
 create research buckets, so they are candidates for a future backtest plan, not
 Dry-run or live-trading approval.
 
+## V13.4.20 Alpha Factor Research Layer
+
+V13.4.20 changes the next step after V13.4.19. Instead of wiring coarse
+probability buckets into strategy entry logic, it designs AlphaPilot's own Alpha
+Factor Research Layer and Benchmark Strategy Suite.
+
+中文说明：V13.4.20 基于 alpha101 的因子研究思路和 CryptoAgentPro.beta 的策略 / 市场状态参考，设计 AlphaPilot 自己的因子研究层和基准策略组。本版本不写交易策略、不回测、不进入 Dry-run、不接真实 API Key。
+
+Why this route changed:
+
+```text
+V13.4.19 found coarse C / D research buckets, but the full raw sample dataset
+is not committed and coarse profit factor is a bucket-level approximation.
+Those buckets should not be promoted directly into strategy entries.
+```
+
+Generate the design report:
+
+```powershell
+python -m alphapilot.reports.generate_alpha_factor_research_design
+```
+
+Outputs:
+
+```text
+reports/v13_4_20_alpha_factor_research_design.json
+reports/v13_4_20_alpha_factor_research_summary.md
+docs/V13.4.20-alpha-factor-research-layer.md
+docs/factor-data-panel-design.md
+docs/factor-operator-subset.md
+docs/benchmark-strategy-suite.md
+docs/strategy-research-factory.md
+```
+
+The design includes:
+
+```text
+FactorDataPanel schema
+Factor operator subset
+Manual Factor Library V01
+Factor Evaluation Metrics
+Benchmark Strategy Suite
+Strategy Research Factory
+Dynamic Universe / Regime Router integration boundary
+```
+
+V13.4.20 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no strategy implementation
+no backtest execution
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+```
+
 ## Next Versions
 
-- V13.4.20: probability gate candidate wiring and backtest plan, still research-only.
+- V13.4.21: Factor Data Panel and Manual Factor Library implementation, still research-only.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

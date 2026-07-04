@@ -1,0 +1,1062 @@
+{
+  "reportId": "v13_4_20_alpha_factor_research_design",
+  "purpose": "Design Alpha Factor Research Layer and Benchmark Suite",
+  "sourceInsights": [
+    "alpha101 factor research workflow",
+    "CryptoAgentPro regime and benchmark architecture",
+    "AlphaPilot V13.4.x failed strategy evidence",
+    "V13.4.19 probability bucket coarsening limitations"
+  ],
+  "factorDataPanel": {
+    "panelId": "factor_data_panel_v01",
+    "purpose": "Organize OHLCV, returns, regime, liquidity, and universe membership into a time by pair research panel.",
+    "primaryIndex": [
+      "timestamp",
+      "pair"
+    ],
+    "fields": [
+      {
+        "fieldId": "timestamp",
+        "dataType": "datetime",
+        "description": "UTC candle timestamp.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "pair",
+        "dataType": "string",
+        "description": "Trading pair identifier such as BTC/USDT:USDT.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "open",
+        "dataType": "float",
+        "description": "Open price for the candle.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "high",
+        "dataType": "float",
+        "description": "High price for the candle.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "low",
+        "dataType": "float",
+        "description": "Low price for the candle.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "close",
+        "dataType": "float",
+        "description": "Close price for the candle.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "volume",
+        "dataType": "float",
+        "description": "Base asset candle volume.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "quoteVolume",
+        "dataType": "float",
+        "description": "Quote volume when available.",
+        "required": false,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "vwap",
+        "dataType": "float",
+        "description": "Volume weighted average price when available.",
+        "required": false,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "returns_1",
+        "dataType": "float",
+        "description": "One-bar close-to-close return.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "returns_3",
+        "dataType": "float",
+        "description": "Three-bar close-to-close return.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "returns_6",
+        "dataType": "float",
+        "description": "Six-bar close-to-close return.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "returns_12",
+        "dataType": "float",
+        "description": "Twelve-bar close-to-close return.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "marketReturn",
+        "dataType": "float",
+        "description": "Broad universe return proxy for the timestamp.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "btcReturn",
+        "dataType": "float",
+        "description": "BTC return over the same horizon.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "universeMember",
+        "dataType": "boolean",
+        "description": "Whether pair is in the historical dynamic universe.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "regimeLabel",
+        "dataType": "string",
+        "description": "Regime label at timestamp.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "liquidityBucket",
+        "dataType": "string",
+        "description": "Liquidity bucket from research liquidity gate.",
+        "required": true,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "volatilityBucket",
+        "dataType": "string",
+        "description": "Volatility bucket for regime-aware research.",
+        "required": true,
+        "source": "local_research_panel"
+      }
+    ],
+    "futureFields": [
+      {
+        "fieldId": "fundingRate",
+        "dataType": "float",
+        "description": "Public funding rate if available.",
+        "required": false,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "openInterest",
+        "dataType": "float",
+        "description": "Public open interest if available.",
+        "required": false,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "longShortRatio",
+        "dataType": "float",
+        "description": "Public long/short ratio if available.",
+        "required": false,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "orderbookSpread",
+        "dataType": "float",
+        "description": "Public orderbook spread sample.",
+        "required": false,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "orderbookDepth",
+        "dataType": "float",
+        "description": "Public orderbook depth sample.",
+        "required": false,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "newsSentiment",
+        "dataType": "float",
+        "description": "Optional external sentiment score.",
+        "required": false,
+        "source": "local_research_panel"
+      },
+      {
+        "fieldId": "macroEventFlag",
+        "dataType": "boolean",
+        "description": "Optional macro event flag.",
+        "required": false,
+        "source": "local_research_panel"
+      }
+    ],
+    "researchOnly": true
+  },
+  "operatorSubset": {
+    "operatorSetId": "alphapilot_factor_operator_subset_v01",
+    "purpose": "Keep first factor research iteration explainable, auditable, and lightweight.",
+    "timeSeriesOperators": [
+      {
+        "operatorId": "ts_mean",
+        "category": "time_series",
+        "description": "Rolling mean over a lookback window."
+      },
+      {
+        "operatorId": "ts_std",
+        "category": "time_series",
+        "description": "Rolling standard deviation over a lookback window."
+      },
+      {
+        "operatorId": "ts_rank",
+        "category": "time_series",
+        "description": "Rank latest value within a rolling window."
+      },
+      {
+        "operatorId": "ts_zscore",
+        "category": "time_series",
+        "description": "Rolling z-score of latest value."
+      },
+      {
+        "operatorId": "ts_delta",
+        "category": "time_series",
+        "description": "Difference from N bars ago."
+      },
+      {
+        "operatorId": "ts_return",
+        "category": "time_series",
+        "description": "Return over N bars."
+      },
+      {
+        "operatorId": "ts_ema",
+        "category": "time_series",
+        "description": "Exponential moving average."
+      },
+      {
+        "operatorId": "ts_corr",
+        "category": "time_series",
+        "description": "Rolling correlation between two fields."
+      },
+      {
+        "operatorId": "ts_min",
+        "category": "time_series",
+        "description": "Rolling minimum."
+      },
+      {
+        "operatorId": "ts_max",
+        "category": "time_series",
+        "description": "Rolling maximum."
+      }
+    ],
+    "crossSectionalOperators": [
+      {
+        "operatorId": "rank",
+        "category": "cross_sectional",
+        "description": "Cross-sectional rank at one timestamp."
+      },
+      {
+        "operatorId": "zscore",
+        "category": "cross_sectional",
+        "description": "Cross-sectional z-score at one timestamp."
+      },
+      {
+        "operatorId": "winsorize",
+        "category": "cross_sectional",
+        "description": "Clip extreme cross-sectional values."
+      },
+      {
+        "operatorId": "scale",
+        "category": "cross_sectional",
+        "description": "Scale values to comparable magnitude."
+      },
+      {
+        "operatorId": "demean",
+        "category": "cross_sectional",
+        "description": "Remove cross-sectional mean."
+      }
+    ],
+    "combinationOperators": [
+      {
+        "operatorId": "add",
+        "category": "combination",
+        "description": "Add two factor expressions."
+      },
+      {
+        "operatorId": "sub",
+        "category": "combination",
+        "description": "Subtract one factor expression from another."
+      },
+      {
+        "operatorId": "mul",
+        "category": "combination",
+        "description": "Multiply factor expressions."
+      },
+      {
+        "operatorId": "div_safe",
+        "category": "combination",
+        "description": "Safe division with zero guard."
+      },
+      {
+        "operatorId": "where",
+        "category": "combination",
+        "description": "Conditional selection."
+      },
+      {
+        "operatorId": "clip",
+        "category": "combination",
+        "description": "Clip values to a bounded range."
+      }
+    ],
+    "excludedOperatorFamilies": [
+      "genetic_programming",
+      "automatic_complex_expression_generation",
+      "deep_learning_factors",
+      "reinforcement_learning_factors"
+    ],
+    "researchOnly": true,
+    "implementationStatus": "design_only"
+  },
+  "manualFactorLibrary": [
+    {
+      "factorId": "momentum_3",
+      "name": "Momentum 3",
+      "description": "Short horizon momentum over three bars.",
+      "formula": "ts_return(close, 3)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_may_be_stronger",
+      "applicableRegime": [
+        "trend",
+        "breakout"
+      ],
+      "riskNotes": [
+        "Can overfit during choppy regimes."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "momentum_12",
+      "name": "Momentum 12",
+      "description": "Medium horizon momentum over twelve bars.",
+      "formula": "ts_return(close, 12)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_may_be_stronger",
+      "applicableRegime": [
+        "trend"
+      ],
+      "riskNotes": [
+        "May lag fast reversals."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "reversal_3",
+      "name": "Reversal 3",
+      "description": "Short horizon reversal pressure.",
+      "formula": "-ts_return(close, 3)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_may_indicate_rebound",
+      "applicableRegime": [
+        "mean_reversion"
+      ],
+      "riskNotes": [
+        "Can fight strong trends."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "volume_expansion_24h",
+      "name": "Volume Expansion 24H",
+      "description": "Volume expansion versus recent average.",
+      "formula": "volume / ts_mean(volume, 24)",
+      "requiredFields": [
+        "volume"
+      ],
+      "expectedDirection": "higher_indicates_attention",
+      "applicableRegime": [
+        "breakout",
+        "trend"
+      ],
+      "riskNotes": [
+        "Volume spikes can be exhaustion rather than continuation."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "volume_expansion_3d",
+      "name": "Volume Expansion 3D",
+      "description": "Three-day style volume expansion on 1h bars.",
+      "formula": "ts_mean(volume, 24) / ts_mean(volume, 72)",
+      "requiredFields": [
+        "volume"
+      ],
+      "expectedDirection": "higher_indicates_attention",
+      "applicableRegime": [
+        "breakout",
+        "trend"
+      ],
+      "riskNotes": [
+        "Requires enough history for stable comparison."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "distance_to_ema20",
+      "name": "Distance To Ema20",
+      "description": "Distance from close to EMA20.",
+      "formula": "(close - ts_ema(close, 20)) / ts_ema(close, 20)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "trend",
+        "mean_reversion"
+      ],
+      "riskNotes": [
+        "Large distance can mean strength or overextension."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "distance_to_ema50",
+      "name": "Distance To Ema50",
+      "description": "Distance from close to EMA50.",
+      "formula": "(close - ts_ema(close, 50)) / ts_ema(close, 50)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "trend",
+        "mean_reversion"
+      ],
+      "riskNotes": [
+        "Slower signal can lag new regimes."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "bollinger_position",
+      "name": "Bollinger Position",
+      "description": "Position inside a Bollinger-style range.",
+      "formula": "(close - lower_band) / (upper_band - lower_band)",
+      "requiredFields": [
+        "close",
+        "upper_band",
+        "lower_band"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "mean_reversion",
+        "breakout"
+      ],
+      "riskNotes": [
+        "Band position needs volatility context."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "volatility_24h",
+      "name": "Volatility 24H",
+      "description": "Short-term realized volatility.",
+      "formula": "ts_std(returns_1, 24)",
+      "requiredFields": [
+        "returns_1"
+      ],
+      "expectedDirection": "lower_or_moderate_preferred",
+      "applicableRegime": [
+        "trend",
+        "mean_reversion",
+        "avoid"
+      ],
+      "riskNotes": [
+        "Very low volatility can imply no opportunity."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "volatility_3d",
+      "name": "Volatility 3D",
+      "description": "Three-day realized volatility on 1h bars.",
+      "formula": "ts_std(returns_1, 72)",
+      "requiredFields": [
+        "returns_1"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "trend",
+        "breakout",
+        "avoid"
+      ],
+      "riskNotes": [
+        "High volatility can improve movement but harm execution."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "relative_strength_vs_btc",
+      "name": "Relative Strength Vs Btc",
+      "description": "Pair return relative to BTC.",
+      "formula": "ts_return(close, 12) - btcReturn_12",
+      "requiredFields": [
+        "close",
+        "btcReturn"
+      ],
+      "expectedDirection": "higher_may_be_stronger",
+      "applicableRegime": [
+        "trend"
+      ],
+      "riskNotes": [
+        "BTC proxy must be time-aligned."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "liquidity_rank",
+      "name": "Liquidity Rank",
+      "description": "Cross-sectional liquidity rank.",
+      "formula": "rank(quoteVolume)",
+      "requiredFields": [
+        "quoteVolume"
+      ],
+      "expectedDirection": "higher_preferred",
+      "applicableRegime": [
+        "all"
+      ],
+      "riskNotes": [
+        "Liquidity is a research filter, not alpha by itself."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "atr_pct",
+      "name": "Atr Pct",
+      "description": "ATR as a percentage of close.",
+      "formula": "atr / close",
+      "requiredFields": [
+        "atr",
+        "close"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "trend",
+        "mean_reversion",
+        "avoid"
+      ],
+      "riskNotes": [
+        "Requires consistent ATR calculation."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "trend_strength",
+      "name": "Trend Strength",
+      "description": "EMA trend structure strength.",
+      "formula": "(ts_ema(close, 20) - ts_ema(close, 50)) / close",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_may_be_stronger",
+      "applicableRegime": [
+        "trend"
+      ],
+      "riskNotes": [
+        "Can fail during late trend exhaustion."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "mean_reversion_distance",
+      "name": "Mean Reversion Distance",
+      "description": "Distance from mean for rebound research.",
+      "formula": "-abs((close - ts_mean(close, 24)) / ts_std(close, 24))",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_means_less_extreme",
+      "applicableRegime": [
+        "mean_reversion"
+      ],
+      "riskNotes": [
+        "Extreme distance needs separate direction logic."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "breakout_pressure",
+      "name": "Breakout Pressure",
+      "description": "Pressure near recent highs with volume.",
+      "formula": "rank(close / ts_max(high, 24)) + rank(volume / ts_mean(volume, 24))",
+      "requiredFields": [
+        "close",
+        "high",
+        "volume"
+      ],
+      "expectedDirection": "higher_may_indicate_breakout_pressure",
+      "applicableRegime": [
+        "breakout"
+      ],
+      "riskNotes": [
+        "Breakout pressure needs false-breakout control."
+      ],
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    }
+  ],
+  "factorEvaluationMetrics": {
+    "evaluationId": "factor_evaluation_report_v01",
+    "defaultTimeframe": "1h",
+    "forwardWindowsBars": [
+      4,
+      8,
+      12,
+      24
+    ],
+    "metrics": [
+      {
+        "metricId": "ic",
+        "name": "IC",
+        "description": "Pearson correlation between factor value and forward return.",
+        "preferredDirection": "higher_abs_value",
+        "caveats": []
+      },
+      {
+        "metricId": "rank_ic",
+        "name": "RankIC",
+        "description": "Spearman rank correlation between factor rank and forward return.",
+        "preferredDirection": "higher_abs_value",
+        "caveats": []
+      },
+      {
+        "metricId": "forward_return_mean",
+        "name": "Forward Return Mean",
+        "description": "Mean forward return by factor bucket.",
+        "preferredDirection": "higher",
+        "caveats": []
+      },
+      {
+        "metricId": "forward_return_median",
+        "name": "Forward Return Median",
+        "description": "Median forward return by factor bucket.",
+        "preferredDirection": "higher",
+        "caveats": []
+      },
+      {
+        "metricId": "top_bottom_spread",
+        "name": "Top-bottom spread",
+        "description": "Top quantile forward return minus bottom quantile forward return.",
+        "preferredDirection": "higher",
+        "caveats": []
+      },
+      {
+        "metricId": "hit_tp_before_sl_probability",
+        "name": "Hit TP before SL probability",
+        "description": "Research label probability from AlphaPilot label builder.",
+        "preferredDirection": "higher",
+        "caveats": [
+          "Not a live probability of profit."
+        ]
+      },
+      {
+        "metricId": "profit_factor",
+        "name": "Profit Factor",
+        "description": "Research-only gross win over gross loss approximation.",
+        "preferredDirection": "higher",
+        "caveats": [
+          "Requires raw samples before promotion."
+        ]
+      },
+      {
+        "metricId": "expectancy",
+        "name": "Expectancy",
+        "description": "Average research sample outcome.",
+        "preferredDirection": "higher",
+        "caveats": []
+      },
+      {
+        "metricId": "max_drawdown",
+        "name": "Max Drawdown",
+        "description": "Maximum historical drawdown in factor-sorted research simulation.",
+        "preferredDirection": "lower",
+        "caveats": []
+      },
+      {
+        "metricId": "monthly_stability",
+        "name": "Monthly Stability",
+        "description": "Consistency across calendar months.",
+        "preferredDirection": "higher",
+        "caveats": []
+      },
+      {
+        "metricId": "pair_stability",
+        "name": "Pair Stability",
+        "description": "Consistency across pairs.",
+        "preferredDirection": "higher",
+        "caveats": []
+      },
+      {
+        "metricId": "turnover",
+        "name": "Turnover",
+        "description": "How often selected factor names change.",
+        "preferredDirection": "lower_or_context_dependent",
+        "caveats": []
+      },
+      {
+        "metricId": "coverage",
+        "name": "Coverage",
+        "description": "Share of rows with valid factor values.",
+        "preferredDirection": "higher",
+        "caveats": []
+      },
+      {
+        "metricId": "missing_rate",
+        "name": "Missing Rate",
+        "description": "Share of rows without valid factor values.",
+        "preferredDirection": "lower",
+        "caveats": []
+      }
+    ],
+    "regimeSegments": [
+      "trend",
+      "mean_reversion",
+      "breakout",
+      "avoid",
+      "unknown"
+    ],
+    "universeSegments": [
+      "BTC_ETH_SOL",
+      "DynamicTop10",
+      "DynamicTop15",
+      "Top30"
+    ],
+    "minimumRequirementsBeforeStrategyCandidate": [
+      "sufficient raw sample coverage",
+      "regime-aware stability",
+      "pair-level stability",
+      "slippage-aware sanity check",
+      "no direct promotion to Dry-run"
+    ],
+    "researchOnly": true
+  },
+  "benchmarkSuite": {
+    "suiteId": "alphapilot_benchmark_strategy_suite_v01",
+    "purpose": "Compare AlphaPilot research candidates against transparent simple baselines.",
+    "benchmarks": [
+      {
+        "benchmarkId": "benchmark_ema_trend",
+        "name": "Benchmark EMA Trend",
+        "purpose": "Simple trend-following baseline.",
+        "hypothesis": "Complex AlphaPilot strategies should beat a simple EMA trend reference.",
+        "requiredFields": [
+          "close"
+        ],
+        "comparisonMetrics": [
+          "total_return",
+          "slippage_adjusted_return",
+          "max_drawdown",
+          "profit_factor",
+          "win_rate",
+          "trade_count",
+          "max_loss_streak",
+          "monthly_stability",
+          "pair_stability"
+        ],
+        "implementationStatus": "design_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false,
+        "riskNotes": [
+          "Benchmark is research-only.",
+          "Benchmark result does not approve Dry-run or live trading.",
+          "Benchmark should be compared after fees, slippage, liquidity, and drawdown are considered."
+        ]
+      },
+      {
+        "benchmarkId": "benchmark_rsi_mean_reversion",
+        "name": "Benchmark RSI Mean Reversion",
+        "purpose": "Simple RSI mean-reversion baseline.",
+        "hypothesis": "Mean reversion candidates should beat a transparent RSI baseline.",
+        "requiredFields": [
+          "close"
+        ],
+        "comparisonMetrics": [
+          "total_return",
+          "slippage_adjusted_return",
+          "max_drawdown",
+          "profit_factor",
+          "win_rate",
+          "trade_count",
+          "max_loss_streak",
+          "monthly_stability",
+          "pair_stability"
+        ],
+        "implementationStatus": "design_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false,
+        "riskNotes": [
+          "Benchmark is research-only.",
+          "Benchmark result does not approve Dry-run or live trading.",
+          "Benchmark should be compared after fees, slippage, liquidity, and drawdown are considered."
+        ]
+      },
+      {
+        "benchmarkId": "benchmark_macd_volume",
+        "name": "Benchmark MACD Volume",
+        "purpose": "MACD direction with volume confirmation baseline.",
+        "hypothesis": "Momentum candidates should justify complexity versus MACD plus volume.",
+        "requiredFields": [
+          "close",
+          "volume"
+        ],
+        "comparisonMetrics": [
+          "total_return",
+          "slippage_adjusted_return",
+          "max_drawdown",
+          "profit_factor",
+          "win_rate",
+          "trade_count",
+          "max_loss_streak",
+          "monthly_stability",
+          "pair_stability"
+        ],
+        "implementationStatus": "design_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false,
+        "riskNotes": [
+          "Benchmark is research-only.",
+          "Benchmark result does not approve Dry-run or live trading.",
+          "Benchmark should be compared after fees, slippage, liquidity, and drawdown are considered."
+        ]
+      },
+      {
+        "benchmarkId": "benchmark_bollinger_rebound",
+        "name": "Benchmark Bollinger Rebound",
+        "purpose": "Bollinger band rebound baseline.",
+        "hypothesis": "Rebound candidates should beat simple band-position logic.",
+        "requiredFields": [
+          "close"
+        ],
+        "comparisonMetrics": [
+          "total_return",
+          "slippage_adjusted_return",
+          "max_drawdown",
+          "profit_factor",
+          "win_rate",
+          "trade_count",
+          "max_loss_streak",
+          "monthly_stability",
+          "pair_stability"
+        ],
+        "implementationStatus": "design_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false,
+        "riskNotes": [
+          "Benchmark is research-only.",
+          "Benchmark result does not approve Dry-run or live trading.",
+          "Benchmark should be compared after fees, slippage, liquidity, and drawdown are considered."
+        ]
+      },
+      {
+        "benchmarkId": "benchmark_td9_exhaustion",
+        "name": "Benchmark TD9 Exhaustion",
+        "purpose": "Exhaustion-pattern comparison baseline.",
+        "hypothesis": "Exhaustion logic should be measured as a benchmark, not assumed useful.",
+        "requiredFields": [
+          "close"
+        ],
+        "comparisonMetrics": [
+          "total_return",
+          "slippage_adjusted_return",
+          "max_drawdown",
+          "profit_factor",
+          "win_rate",
+          "trade_count",
+          "max_loss_streak",
+          "monthly_stability",
+          "pair_stability"
+        ],
+        "implementationStatus": "design_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false,
+        "riskNotes": [
+          "Benchmark is research-only.",
+          "Benchmark result does not approve Dry-run or live trading.",
+          "Benchmark should be compared after fees, slippage, liquidity, and drawdown are considered."
+        ]
+      },
+      {
+        "benchmarkId": "benchmark_buy_and_hold_btc",
+        "name": "Benchmark Buy And Hold BTC",
+        "purpose": "BTC passive hold reference.",
+        "hypothesis": "Active research must be compared to BTC hold.",
+        "requiredFields": [
+          "close"
+        ],
+        "comparisonMetrics": [
+          "total_return",
+          "slippage_adjusted_return",
+          "max_drawdown",
+          "profit_factor",
+          "win_rate",
+          "trade_count",
+          "max_loss_streak",
+          "monthly_stability",
+          "pair_stability"
+        ],
+        "implementationStatus": "design_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false,
+        "riskNotes": [
+          "Benchmark is research-only.",
+          "Benchmark result does not approve Dry-run or live trading.",
+          "Benchmark should be compared after fees, slippage, liquidity, and drawdown are considered."
+        ]
+      },
+      {
+        "benchmarkId": "benchmark_no_trade",
+        "name": "Benchmark No Trade",
+        "purpose": "Zero-risk no-trade baseline.",
+        "hypothesis": "A strategy can be worse than not trading and must prove otherwise.",
+        "requiredFields": [],
+        "comparisonMetrics": [
+          "total_return",
+          "slippage_adjusted_return",
+          "max_drawdown",
+          "profit_factor",
+          "win_rate",
+          "trade_count",
+          "max_loss_streak",
+          "monthly_stability",
+          "pair_stability"
+        ],
+        "implementationStatus": "design_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false,
+        "riskNotes": [
+          "Benchmark is research-only.",
+          "Benchmark result does not approve Dry-run or live trading.",
+          "Benchmark should be compared after fees, slippage, liquidity, and drawdown are considered."
+        ]
+      }
+    ],
+    "comparisonMetrics": [
+      "total_return",
+      "slippage_adjusted_return",
+      "max_drawdown",
+      "profit_factor",
+      "win_rate",
+      "trade_count",
+      "max_loss_streak",
+      "monthly_stability",
+      "pair_stability"
+    ],
+    "rejectedBenchmarkIdeas": [
+      {
+        "benchmarkId": "martingale_inverse_averaging",
+        "status": "rejected_idea",
+        "reason": "Martingale or inverse averaging increases tail risk and conflicts with AlphaPilot risk-first principles."
+      }
+    ],
+    "researchOnly": true,
+    "implementationStatus": "design_only"
+  },
+  "strategyResearchFactory": {
+    "factoryId": "strategy_research_factory_v01",
+    "purpose": "Move AlphaPilot from write-strategy-first to validate-factor-first research.",
+    "workflow": [
+      "generate_candidate_factors",
+      "evaluate_factors",
+      "filter_stable_factors",
+      "combine_factors_into_strategy_hypotheses",
+      "compare_against_benchmark_suite",
+      "implement_freqtrade_strategy_only_after_research_pass",
+      "run_smoke_and_expanded_validation",
+      "keep_dry_run_approval_as_separate_review"
+    ],
+    "integrationWithDynamicRegime": {
+      "dynamicUniverseInput": "historical_dynamic_universe_snapshots",
+      "regimeInput": "regimeLabel in FactorDataPanel",
+      "factorEvaluationSegments": [
+        "trend",
+        "mean_reversion",
+        "breakout",
+        "avoid",
+        "unknown"
+      ],
+      "outputCandidateType": "dynamic_regime_strategy_candidate",
+      "approvalBoundary": "Research factory output is not a trading gate and not a Dry-run approval."
+    },
+    "auditRules": [
+      "record source factor ids",
+      "record data coverage and missing-rate caveats",
+      "record benchmark comparison",
+      "record rejected hypotheses",
+      "record safety boundary before any strategy implementation"
+    ],
+    "researchOnly": true,
+    "implementationStatus": "design_only",
+    "dryRunApproved": false,
+    "liveTradingApproved": false
+  },
+  "integrationWithDynamicRegime": {
+    "currentEvidence": {
+      "v13_4_19_rootCause": "A. probability_table_too_sparse",
+      "v13_4_19_recommendedNextStep": "V13.4.20 - Probability Gate Candidate Wiring and Backtest Plan",
+      "currentGatePassBucketCount": 0,
+      "researchGatePassBucketCount": 0
+    },
+    "futureFlow": [
+      "historical_ohlcv",
+      "historical_dynamic_universe_snapshots",
+      "regime_labels",
+      "factor_data_panel",
+      "factor_library",
+      "factor_evaluation_report",
+      "benchmark_strategy_suite",
+      "strategy_research_factory",
+      "dynamic_regime_strategy_candidate"
+    ],
+    "rule": "Do not wire coarse probability buckets directly into strategy entries without raw sample factor research."
+  },
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "nextStepRecommendation": "V13.4.21 - Factor Data Panel and Manual Factor Library Implementation",
+  "generatedAt": "2026-07-04T23:30:17.150583+00:00",
+  "warnings": [
+    "Design-only report. No backtest was run.",
+    "No strategy code was written or modified.",
+    "No external source code was copied.",
+    "dryRunApproved and liveTradingApproved remain false.",
+    "V13.4.19 coarse bucket PF is bucket-level approximate evidence and is not an entry gate."
+  ],
+  "source": "alphapilot_v13_4_20_alpha_factor_research_design"
+}
