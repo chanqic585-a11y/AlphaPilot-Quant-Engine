@@ -7,6 +7,7 @@ order and must pass risk and human gates before any future execution design.
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
+from typing import Any
 
 
 @dataclass
@@ -60,6 +61,10 @@ class TradeProposal:
     risk_flags: list[str] = field(default_factory=list)
     model_votes: list[ModelVote] = field(default_factory=list)
     news_context: list[NewsContext] = field(default_factory=list)
+    liquidity_context: dict[str, Any] | None = None
+    execution_reality_context: dict[str, Any] | None = None
+    shadow_trading_context: dict[str, Any] | None = None
+    live_feasibility_score: dict[str, Any] | None = None
     decision: str = "research_only"
     workflow_step: str = "proposal_created"
 

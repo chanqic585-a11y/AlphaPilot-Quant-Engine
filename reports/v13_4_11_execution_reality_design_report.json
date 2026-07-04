@@ -1,0 +1,289 @@
+{
+  "reportId": "v13_4_11_execution_reality_design",
+  "version": "V13.4.11",
+  "purpose": "Design execution reality and liquidity gate before Dry-run",
+  "modules": [
+    {
+      "module": "liquidity_gate",
+      "path": "alphapilot/execution_reality/liquidity_gate.py",
+      "purpose": "Reject or flag signals with insufficient public liquidity context.",
+      "executionCapability": false
+    },
+    {
+      "module": "slippage_model",
+      "path": "alphapilot/execution_reality/slippage_model.py",
+      "purpose": "Apply report-layer slippage stress scenarios.",
+      "executionCapability": false
+    },
+    {
+      "module": "order_impact",
+      "path": "alphapilot/execution_reality/order_impact.py",
+      "purpose": "Estimate theoretical order impact from public depth or volume approximations.",
+      "executionCapability": false
+    },
+    {
+      "module": "shadow_trading_schema",
+      "path": "alphapilot/execution_reality/shadow_trading_schema.py",
+      "purpose": "Define shadow signal, snapshot, and outcome structures without starting execution.",
+      "executionCapability": false
+    },
+    {
+      "module": "live_feasibility_score",
+      "path": "alphapilot/execution_reality/live_feasibility_score.py",
+      "purpose": "Score readiness for research, shadow trading, Dry-run candidate review, or controlled live design.",
+      "executionCapability": false
+    }
+  ],
+  "liquidityGate": {
+    "inputs": [
+      "symbol",
+      "timestamp",
+      "marketType",
+      "positionNotional",
+      "lastPrice",
+      "quoteVolume24h",
+      "quoteVolume1h",
+      "bidAskSpreadPct",
+      "orderbookDepthTop5",
+      "orderbookDepthTop10",
+      "maxPositionToVolumePct",
+      "maxPositionToDepthPct"
+    ],
+    "defaultRules": [
+      "missing quoteVolume1h prevents approval",
+      "positionNotional greater than quoteVolume1h * 0.001 is rejected or needs review",
+      "bidAskSpreadPct greater than 0.0008 is rejected or needs review",
+      "positionNotional greater than top5Depth * 0.10 is rejected",
+      "missing depth and 1h volume returns insufficient_liquidity_data"
+    ],
+    "sampleMissingDataResult": {
+      "approved": false,
+      "decision": "insufficient_liquidity_data",
+      "reasons": [
+        "liquidity_gate_research_only",
+        "no_order_will_be_created",
+        "no_1h_volume_or_orderbook_depth"
+      ],
+      "warnings": [
+        "quoteVolume1h unavailable; liquidity gate cannot approve by volume.",
+        "bidAskSpreadPct unavailable; spread risk cannot be measured.",
+        "orderbookDepthTop5 unavailable; depth impact cannot be measured."
+      ],
+      "liquidityScore": 0.0,
+      "estimatedSlippagePct": null,
+      "maxRecommendedNotional": null
+    },
+    "publicDataOnly": true,
+    "createsOrders": false
+  },
+  "slippageStressTest": {
+    "scenarioRates": [
+      {
+        "scenarioName": "one_way_0_05pct",
+        "oneWaySlippagePct": 0.0005
+      },
+      {
+        "scenarioName": "one_way_0_10pct",
+        "oneWaySlippagePct": 0.001
+      },
+      {
+        "scenarioName": "one_way_0_20pct",
+        "oneWaySlippagePct": 0.002
+      },
+      {
+        "scenarioName": "one_way_0_30pct",
+        "oneWaySlippagePct": 0.003
+      }
+    ],
+    "sampleStressRows": [
+      {
+        "scenarioName": "one_way_0_05pct",
+        "rawReturn": -61.0503,
+        "slippageAdjustedReturn": -108.2503,
+        "rawProfitFactor": 0.7067,
+        "slippageAdjustedProfitFactor": 0.5816,
+        "slippageCost": 472.0,
+        "slippageAppliedByPostProcessing": true,
+        "notes": [
+          "post_processing_model_only",
+          "not_freqtrade_native_matching",
+          "no_real_order_execution",
+          "total_round_trip_notional_estimated_from_starting_balance_and_trade_count"
+        ]
+      },
+      {
+        "scenarioName": "one_way_0_10pct",
+        "rawReturn": -61.0503,
+        "slippageAdjustedReturn": -155.4503,
+        "rawProfitFactor": 0.7067,
+        "slippageAdjustedProfitFactor": 0.4565,
+        "slippageCost": 944.0,
+        "slippageAppliedByPostProcessing": true,
+        "notes": [
+          "post_processing_model_only",
+          "not_freqtrade_native_matching",
+          "no_real_order_execution",
+          "total_round_trip_notional_estimated_from_starting_balance_and_trade_count"
+        ]
+      },
+      {
+        "scenarioName": "one_way_0_20pct",
+        "rawReturn": -61.0503,
+        "slippageAdjustedReturn": -249.8503,
+        "rawProfitFactor": 0.7067,
+        "slippageAdjustedProfitFactor": 0.2064,
+        "slippageCost": 1888.0,
+        "slippageAppliedByPostProcessing": true,
+        "notes": [
+          "post_processing_model_only",
+          "not_freqtrade_native_matching",
+          "no_real_order_execution",
+          "total_round_trip_notional_estimated_from_starting_balance_and_trade_count"
+        ]
+      },
+      {
+        "scenarioName": "one_way_0_30pct",
+        "rawReturn": -61.0503,
+        "slippageAdjustedReturn": -344.2503,
+        "rawProfitFactor": 0.7067,
+        "slippageAdjustedProfitFactor": 0.106,
+        "slippageCost": 2832.0,
+        "slippageAppliedByPostProcessing": true,
+        "notes": [
+          "post_processing_model_only",
+          "not_freqtrade_native_matching",
+          "no_real_order_execution",
+          "total_round_trip_notional_estimated_from_starting_balance_and_trade_count"
+        ]
+      }
+    ],
+    "modelBoundary": "report-layer post-processing, not Freqtrade native matching",
+    "createsOrders": false
+  },
+  "orderImpactModel": {
+    "inputs": [
+      "positionNotional",
+      "lastPrice",
+      "bidAskSpreadPct",
+      "orderbookDepth",
+      "quoteVolume1h",
+      "quoteVolume24h"
+    ],
+    "sampleNoDepthResult": {
+      "estimatedImpactPct": null,
+      "impactLevel": "unavailable",
+      "maxRecommendedNotional": null,
+      "warnings": [
+        "no depth or volume data available"
+      ]
+    },
+    "sampleVolumeApproximationResult": {
+      "estimatedImpactPct": 0.0009,
+      "impactLevel": "low",
+      "maxRecommendedNotional": 2000.0,
+      "warnings": [
+        "orderbookDepth unavailable; using quoteVolume1h approximation"
+      ]
+    },
+    "modelBoundary": "uses public depth or volume approximations only",
+    "createsOrders": false
+  },
+  "shadowTrading": {
+    "meaning": "record hypothetical signal and follow-up outcomes without placing orders",
+    "schemas": [
+      "ShadowSignal",
+      "ShadowExecutionSnapshot",
+      "ShadowOutcome"
+    ],
+    "followUps": [
+      "1m",
+      "5m",
+      "15m",
+      "1h",
+      "4h",
+      "24h"
+    ],
+    "tracks": [
+      "theoreticalEntryPrice",
+      "bidPriceAtSignal",
+      "askPriceAtSignal",
+      "spreadPctAtSignal",
+      "orderbookDepthAtSignal",
+      "wouldHitStop",
+      "wouldHitTakeProfit",
+      "maxFavorableExcursion",
+      "maxAdverseExcursion"
+    ],
+    "startedInV13_4_11": false,
+    "createsOrders": false
+  },
+  "liveFeasibilityScore": {
+    "dimensions": [
+      "backtestQuality",
+      "slippageRobustness",
+      "liquidityQuality",
+      "tradeFrequency",
+      "pairConcentration",
+      "drawdownRisk",
+      "lossStreakRisk",
+      "executionDataAvailability",
+      "shadowTradingReadiness",
+      "riskGateReadiness",
+      "hasShadowTradingResults"
+    ],
+    "levels": {
+      "0-39": "not_live_feasible",
+      "40-59": "research_only",
+      "60-74": "shadow_ready",
+      "75-84": "dry_run_candidate",
+      "85+": "controlled_live_candidate"
+    },
+    "defaultCap": "missing shadow trading results caps score at research_only or below",
+    "currentTrendPullbackExample": {
+      "totalScore": 19.71,
+      "level": "not_live_feasible",
+      "cappedBy": [],
+      "componentScores": {
+        "backtestQuality": 10.0,
+        "slippageRobustness": 5.0,
+        "liquidityQuality": null,
+        "tradeFrequency": 25.0,
+        "pairConcentration": 70.0,
+        "drawdownRisk": 5.0,
+        "lossStreakRisk": 20.0,
+        "executionDataAvailability": 20.0,
+        "shadowTradingReadiness": 0.0,
+        "riskGateReadiness": 30.0
+      },
+      "warnings": [
+        "liquidityQuality unavailable"
+      ]
+    },
+    "dryRunApprovalFromScore": false
+  },
+  "proposalIntegration": {
+    "fieldsAdded": [
+      "liquidity_context",
+      "execution_reality_context",
+      "shadow_trading_context",
+      "live_feasibility_score"
+    ],
+    "allFieldsOptional": true,
+    "createsOrders": false
+  },
+  "riskGateIntegration": {
+    "requiredBeforeDryRunCandidate": [
+      "liquidity_gate_result",
+      "execution_reality_result",
+      "shadow_trading_result"
+    ],
+    "defaultWithoutResults": "rejected_before_dry_run_candidate",
+    "createsOrders": false
+  },
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "nextStepRecommendation": "V13.4.12 - Shadow Trading Skeleton",
+  "warnings": [],
+  "generatedAt": "2026-07-04T20:36:50.597693+00:00",
+  "source": "alphapilot_v13_4_11_execution_reality_design"
+}

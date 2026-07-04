@@ -1,5 +1,27 @@
 # V13.4.11 Next-Step Options
 
+## Implementation Update
+
+V13.4.11 has now implemented the recommended path:
+
+```text
+Execution Reality and Liquidity Gate Design
+```
+
+The implemented version adds research-only liquidity, slippage, order impact,
+shadow trading schema, and live feasibility score modules. It keeps:
+
+```text
+dryRunApproved = false
+liveTradingApproved = false
+```
+
+The next recommended version is:
+
+```text
+V13.4.12 - Shadow Trading Skeleton
+```
+
 V13.4.10 recommends that the next version should not enter Dry-run and should
 not rush into another strategy implementation. The current priority is deciding
 how to rebuild the research gate.
@@ -114,4 +136,3 @@ Requires a new strategy cycle and full validation from smoke to expanded test.
 
 None of these options approve Dry-run or live trading. They are research design
 paths only.
-

@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.10 - Trend Pullback Redesign Review
+AlphaPilot V13.4.11 - Execution Reality and Liquidity Gate Design
 ```
 
 ## Positioning
@@ -681,9 +681,67 @@ V13.4.10 recommends redesigning the research gate around execution reality,
 liquidity, market regime, pair universe, and signal quality before another
 strategy implementation.
 
+## V13.4.11 Execution Reality and Liquidity Gate Design
+
+V13.4.11 adds the execution reality design layer required before any future
+Dry-run candidate review. It does not tune strategy parameters, does not run a
+backtest, does not enter Dry-run, and does not create real orders.
+
+中文说明：
+
+```text
+V13.4.11 补上执行真实性测试层和流动性闸门。
+本版本只做设计骨架和报告，不调参、不回测、不进入 Dry-run、不实盘。
+```
+
+Implemented modules:
+
+```text
+alphapilot/execution_reality/liquidity_gate.py
+alphapilot/execution_reality/slippage_model.py
+alphapilot/execution_reality/order_impact.py
+alphapilot/execution_reality/shadow_trading_schema.py
+alphapilot/execution_reality/live_feasibility_score.py
+```
+
+Generate the design report:
+
+```powershell
+python -m alphapilot.reports.generate_execution_reality_design_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_11_execution_reality_design_report.json
+reports/v13_4_11_execution_reality_summary.md
+docs/V13.4.11-execution-reality-liquidity-gate.md
+docs/liquidity-gate-design.md
+docs/shadow-trading-design.md
+docs/live-feasibility-score.md
+```
+
+V13.4.11 updates the proposal schema with optional execution reality context
+fields and updates the risk gate so Dry-run candidate review requires liquidity,
+execution reality, and shadow trading evidence first.
+
+Safety boundary:
+
+- No real API key.
+- No Trade API.
+- No Withdraw API.
+- No real account reads.
+- No real position reads.
+- No real order creation.
+- No automatic trading.
+- No Dry-run execution.
+
+V13.4.11 keeps `dryRunApproved=false` and `liveTradingApproved=false`. The next
+recommended step is V13.4.12 Shadow Trading Skeleton.
+
 ## Next Versions
 
-- V13.4.11: design Execution Reality and Liquidity Gates before another implementation.
+- V13.4.12: add Shadow Trading Skeleton after the execution reality design layer.
 - V13.5: consider Dry-run preparation only after V03 passes stronger risk-adjusted validation.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.
