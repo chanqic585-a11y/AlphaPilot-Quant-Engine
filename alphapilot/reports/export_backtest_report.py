@@ -1,7 +1,9 @@
-"""Export a mock AlphaPilot standard backtest report.
+"""Export AlphaPilot standard backtest reports.
 
-V13.2 does not convert real Freqtrade results yet. This module creates a stable
-sample report so the future mobile app and API adapter can target a schema.
+If a Freqtrade backtest JSON exists, this module converts the available fields
+into the AlphaPilot report schema. If no real result exists, it exports a sample
+report with isMock=true so nobody confuses the artifact with a completed
+backtest.
 """
 
 from __future__ import annotations
@@ -9,20 +11,134 @@ from __future__ import annotations
 import json
 from datetime import datetime, timezone
 from pathlib import Path
+from typing import Any
 
 from alphapilot.reports.backtest_report_schema import AlphaPilotBacktestReport, BacktestMetrics
 from alphapilot.universe.top30_usdt_swap import get_top30_usdt_swap_pairs
+
+DEFAULT_RESULT_DIR = Path("user_data/backtest_results")
+DEFAULT_SAMPLE_OUTPUT = Path("reports/sample_backtest_report.json")
+DEFAULT_LATEST_OUTPUT = Path("reports/latest_backtest_report.json")
+
+SKIP_REASONS = [
+    "btc_crash_filter",
+    "weak_4h_trend",
+    "rsi_out_of_range",
+    "volume_ratio_too_low",
+    "macd_not_improving",
+    "price_too_extended",
+    "data_missing",
+]
+
+
+def _utc_now() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
+def _read_json(path: Path) -> dict[str, Any] | list[Any]:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _to_float(value: Any, default: float = 0.0) -> float:
+    try:
+        if value is None:
+            return default
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _to_int(value: Any, default: int = 0) -> int:
+    try:
+        if value is None:
+            return default
+        return int(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def _pick_number(source: dict[str, Any], names: list[str], default: float = 0.0) -> float:
+    for name in names:
+        if name in source:
+            return _to_float(source.get(name), default)
+    return default
+
+
+def _select_strategy_payload(payload: dict[str, Any] | list[Any]) -> dict[str, Any]:
+    if isinstance(payload, list):
+        return payload[0] if payload and isinstance(payload[0], dict) else {}
+
+    strategy = payload.get("strategy")
+    if isinstance(strategy, dict):
+        if "AlphaPilotVolumeReboundV01" in strategy and isinstance(strategy["AlphaPilotVolumeReboundV01"], dict):
+            return strategy["AlphaPilotVolumeReboundV01"]
+        for value in strategy.values():
+            if isinstance(value, dict):
+                return value
+    return payload
+
+
+def _normalize_pct(value: float, source_name: str) -> float:
+    if source_name.endswith("_pct"):
+        return value
+    if -1.0 <= value <= 1.0:
+        return value * 100
+    return value
+
+
+def _build_metrics(source: dict[str, Any]) -> BacktestMetrics:
+    total_return_source = "profit_total_pct" if "profit_total_pct" in source else "profit_total"
+    total_return = _normalize_pct(_to_float(source.get(total_return_source)), total_return_source)
+    drawdown_source = "max_drawdown_account_pct" if "max_drawdown_account_pct" in source else "max_drawdown"
+    max_drawdown = abs(_normalize_pct(_to_float(source.get(drawdown_source)), drawdown_source))
+
+    trade_count = _to_int(source.get("total_trades", source.get("trade_count", 0)))
+    win_count = _to_int(source.get("wins", source.get("winning_trades", 0)))
+    win_rate = (win_count / trade_count * 100) if trade_count else _to_float(source.get("winrate", 0.0))
+
+    fees_paid = _pick_number(source, ["total_fee", "fees_paid", "feesPaid"], 0.0)
+    return BacktestMetrics(
+        totalReturnPct=round(total_return, 4),
+        maxDrawdownPct=round(max_drawdown, 4),
+        winRate=round(win_rate, 4),
+        profitFactor=round(_pick_number(source, ["profit_factor", "profitFactor"], 0.0), 4),
+        tradeCount=trade_count,
+        maxConsecutiveLosses=_to_int(source.get("max_consecutive_losses", 0)),
+        averageHoldingMinutes=round(_pick_number(source, ["holding_avg_s", "averageHoldingSeconds"], 0.0) / 60, 4),
+        feesPaid=round(fees_paid, 8),
+        slippageCost=0.0,
+        netReturnAfterCosts=round(total_return, 4),
+    )
+
+
+def _find_latest_freqtrade_result() -> Path | None:
+    if not DEFAULT_RESULT_DIR.exists():
+        return None
+    candidates = [
+        path
+        for path in DEFAULT_RESULT_DIR.glob("*.json")
+        if path.is_file() and not path.name.lower().endswith(".meta.json")
+    ]
+    if not candidates:
+        return None
+    return max(candidates, key=lambda path: path.stat().st_mtime)
 
 
 def build_sample_report() -> AlphaPilotBacktestReport:
     return AlphaPilotBacktestReport(
         strategyId="alpha_volume_rebound_v01",
-        strategyVersion="0.1-skeleton",
+        strategyVersion="0.1-v13.3",
         market="OKX USDT swap",
         timeframe="15m",
         universe=get_top30_usdt_swap_pairs(),
         timerange="mock_20240101-20240701",
-        config={"source": "v13_2_mock_report", "dryRunOnly": True},
+        config={
+            "source": "v13_3_mock_report",
+            "dryRunOnly": True,
+            "feeRateOneWay": 0.0005,
+            "slippageRateOneWay": 0.0005,
+            "slippageModel": "planned, not yet applied by engine",
+        },
         metrics=BacktestMetrics(
             totalReturnPct=0.0,
             maxDrawdownPct=0.0,
@@ -35,20 +151,91 @@ def build_sample_report() -> AlphaPilotBacktestReport:
             slippageCost=0.0,
             netReturnAfterCosts=0.0,
         ),
-        skippedSignals=[],
-        riskGateSummary={"status": "skeleton", "liveExecutionAllowed": False},
-        auditSummary={"status": "skeleton", "ledger": "reports/audit_ledger.jsonl"},
-        generatedAt=datetime.now(timezone.utc).isoformat(),
+        skippedSignals=[
+            {"skipReason": reason, "count": 0, "source": "schema_placeholder"} for reason in SKIP_REASONS
+        ],
+        riskGateSummary={
+            "status": "research_schema_ready",
+            "liveExecutionAllowed": False,
+            "skipReasonsTracked": SKIP_REASONS,
+        },
+        auditSummary={"status": "sample", "ledger": "reports/audit_ledger.jsonl"},
+        generatedAt=_utc_now(),
+        isMock=True,
+        source="alphapilot_report_exporter_v13_3_mock",
     )
 
 
-def export_sample_report(output_path: Path = Path("reports/sample_backtest_report.json")) -> Path:
-    report = build_sample_report()
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    output_path.write_text(json.dumps(report.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
-    return output_path
+def build_report_from_freqtrade_result(path: Path) -> AlphaPilotBacktestReport:
+    payload = _read_json(path)
+    source = _select_strategy_payload(payload)
+
+    pair_performance = source.get("results_per_pair", [])
+    if not isinstance(pair_performance, list):
+        pair_performance = []
+
+    monthly_performance = source.get("monthly_breakdown", source.get("results_per_month", []))
+    if not isinstance(monthly_performance, list):
+        monthly_performance = []
+
+    trades = source.get("trades", [])
+    if not isinstance(trades, list):
+        trades = []
+
+    timerange = str(source.get("timerange", source.get("backtest_start", "unknown")))
+    if source.get("backtest_end") and timerange != "unknown":
+        timerange = f"{timerange}-{source.get('backtest_end')}"
+
+    return AlphaPilotBacktestReport(
+        strategyId="alpha_volume_rebound_v01",
+        strategyVersion="0.1-v13.3",
+        market="OKX USDT swap",
+        timeframe="15m",
+        universe=get_top30_usdt_swap_pairs(),
+        timerange=timerange,
+        config={
+            "sourceResult": str(path),
+            "feeRateOneWay": 0.0005,
+            "slippageRateOneWay": 0.0005,
+            "slippageModel": "planned, not yet applied by engine",
+        },
+        metrics=_build_metrics(source),
+        pairPerformance=pair_performance,
+        monthlyPerformance=monthly_performance,
+        trades=trades[:500],
+        skippedSignals=[
+            {"skipReason": reason, "count": 0, "source": "strategy_column_or_future_risk_gate"}
+            for reason in SKIP_REASONS
+        ],
+        riskGateSummary={
+            "status": "backtest_result_converted",
+            "liveExecutionAllowed": False,
+            "skipReasonsTracked": SKIP_REASONS,
+        },
+        auditSummary={"status": "converted", "sourceResult": str(path)},
+        generatedAt=_utc_now(),
+        isMock=False,
+        source="alphapilot_report_exporter_v13_3_freqtrade_conversion",
+    )
+
+
+def export_report(
+    input_path: Path | None = None,
+    output_path: Path | None = None,
+) -> Path:
+    result_path = input_path if input_path and input_path.exists() else _find_latest_freqtrade_result()
+    if result_path:
+        report = build_report_from_freqtrade_result(result_path)
+        output = output_path or DEFAULT_LATEST_OUTPUT
+    else:
+        report = build_sample_report()
+        output = output_path or DEFAULT_SAMPLE_OUTPUT
+
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
+    return output
 
 
 if __name__ == "__main__":
-    path = export_sample_report()
-    print(f"Exported AlphaPilot sample backtest report: {path}")
+    exported_path = export_report()
+    print(f"Exported AlphaPilot backtest report: {exported_path}")

@@ -37,6 +37,8 @@ class AlphaPilotBacktestReport:
     riskGateSummary: dict[str, Any] = field(default_factory=dict)
     auditSummary: dict[str, Any] = field(default_factory=dict)
     generatedAt: str = ""
+    isMock: bool = True
+    source: str = "alphapilot_report_exporter_v13_3"
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)

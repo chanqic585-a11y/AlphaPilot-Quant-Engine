@@ -5,18 +5,18 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.2 - Quant Engine Skeleton With Freqtrade Foundation
+AlphaPilot V13.3 - Volume Rebound V0.1 Strategy and Baseline Backtest
 ```
 
 ## Positioning
 
-V13.2 creates a backend skeleton for future research, backtesting, dry-run preparation, proposal review, risk gating, audit logging, and controlled execution design.
+V13.3 builds on the backend skeleton and implements the first AlphaPilot research strategy for baseline backtesting.
 
 It is separate from the AlphaPilot Mobile App. The mobile app remains the phone-side AI control panel and manual trade record interface. This repository is the backend quant foundation.
 
 ## Safety Boundary
 
-V13.2 does not perform live trading.
+V13.3 does not perform live trading.
 
 - No real Trade API.
 - No Withdraw API.
@@ -40,7 +40,7 @@ Freqtrade gives AlphaPilot a practical open-source base for:
 - dry-run concepts
 - structured user_data layout
 
-V13.2 only creates the foundation. Strategy quality, backtest execution, Freqtrade tuning, and live execution are later work.
+V13.3 starts strategy backtesting work. Strategy quality, larger historical tests, Freqtrade tuning, and any controlled execution design remain later work.
 
 ## Structure
 
@@ -52,7 +52,7 @@ alphapilot/audit/           JSONL audit ledger skeleton
 alphapilot/reports/         report schema and mock export
 alphapilot/universe/        fixed Top 30 OKX USDT swap universe
 scripts/                    safe PowerShell command wrappers
-docs/                       V13.2 docs and safety notes
+docs/                       V13.2/V13.3 docs and safety notes
 ```
 
 ## Setup
@@ -100,30 +100,66 @@ Safety scan:
 powershell -ExecutionPolicy Bypass -File scripts/check_safety.ps1
 ```
 
-## V13.2 Strategy Placeholder
+## V13.3 Volume Rebound V0.1
 
-`AlphaPilotVolumeReboundV01` is a research/backtest strategy placeholder.
+V13.3 implements the first AlphaPilot research strategy for baseline backtesting:
 
-Consensus parameters recorded in this skeleton:
+```text
+AlphaPilot Volume Rebound V0.1
+```
 
-- strategyId: `alpha_volume_rebound_v01`
+中文说明：
+
+```text
+V13.3 实现第一条 AlphaPilot 自研策略：放量反弹 V0.1。
+本版本只用于研究和回测，不进行实盘交易，不接真实 API Key，不创建真实订单。
+```
+
+It does not trade live. It does not use real API keys. It is intended for research and backtesting only.
+
+Core V0.1 rules:
+
 - market: OKX USDT swap
 - direction: long only
 - timeframe: 15m
+- fixed universe: Top 30 USDT swap pairs
 - fixed stop loss: -3%
 - take profit: +3%
-- leverage: 5x configurable
-- risk per trade: 1%
+- leverage: 5x research cap
+- risk per trade: 1% documented research assumption
 - fee rate: 0.05% one-way
-- slippage rate: 0.05% one-way
+- slippage rate: 0.05% one-way planned in reports, not yet applied by the Freqtrade command
 - BTC crash filter: block new signals when BTC drops at least 1% over the latest three 15m candles
-- universe: fixed Top 30
+- 4h trend filter: current pair 4h close must be at least `EMA200 * 0.98`
 
-The V13.2 strategy is not a live recommendation and not a production trading strategy.
+Entry requires RSI14 between 30 and 55, volumeRatio at least 1.5, MACD histogram improvement, price near EMA20, and no chase above the Bollinger middle zone.
+
+Backtest command preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_backtest.ps1 -Smoke -Timerange "20240101-20240701"
+```
+
+Download command preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/download_data.ps1 -Pairs "BTC/USDT:USDT,ETH/USDT:USDT,SOL/USDT:USDT" -Timeframes "15m,1h,4h" -Timerange "20240101-"
+```
+
+Add `-Run` only when Docker and Freqtrade are ready.
+
+Report export:
+
+```powershell
+python -m alphapilot.reports.export_backtest_report
+```
+
+The exporter marks sample reports with `isMock=true`. It marks converted Freqtrade results with `isMock=false`.
+
+The V13.3 strategy is not a live recommendation and not a production trading strategy.
 
 ## Next Versions
 
-- V13.3: implement and test Volume Rebound V0.1 backtest logic.
-- V13.4: standardize Freqtrade result conversion into AlphaPilot report format.
+- V13.4: run wider Top 30 historical tests and improve skipped-signal aggregation.
 - V13.5: connect mobile control-panel read-only views to exported research reports.
 - V13.6+: consider dry-run architecture only after risk gates and audit rules are stronger.

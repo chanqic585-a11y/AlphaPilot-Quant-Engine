@@ -1,4 +1,4 @@
-"""Validate V13.2 Freqtrade config templates for safety."""
+"""Validate V13.3 Freqtrade config templates for safety."""
 
 from __future__ import annotations
 
@@ -63,6 +63,10 @@ def validate_config(path: Path) -> list[str]:
         errors.append(f"{path}: trading_mode must be futures")
     if config.get("margin_mode") != "isolated":
         errors.append(f"{path}: margin_mode must be isolated")
+    if config.get("timeframe") != "15m":
+        errors.append(f"{path}: timeframe must be 15m")
+    if config.get("strategy") != "AlphaPilotVolumeReboundV01":
+        errors.append(f"{path}: strategy must be AlphaPilotVolumeReboundV01")
 
     exchange = config.get("exchange", {})
     if exchange.get("name") != "okx":
@@ -74,7 +78,7 @@ def validate_config(path: Path) -> list[str]:
 
     api_server = config.get("api_server", {})
     if api_server.get("enabled") is not False:
-        errors.append(f"{path}: api_server.enabled must be false in V13.2")
+        errors.append(f"{path}: api_server.enabled must be false in V13.3")
 
     errors.extend(f"{path}: {finding}" for finding in _walk_for_secrets(config))
     return errors
@@ -86,12 +90,12 @@ def main() -> int:
         all_errors.extend(validate_config(path))
 
     if all_errors:
-        print("AlphaPilot V13.2 config validation failed:")
+        print("AlphaPilot V13.3 config validation failed:")
         for error in all_errors:
             print(f"- {error}")
         return 1
 
-    print("AlphaPilot V13.2 config validation passed.")
+    print("AlphaPilot V13.3 config validation passed.")
     print("liveTradingEnabled: false")
     print("tradeApiEnabled: false")
     print("withdrawApiEnabled: false")

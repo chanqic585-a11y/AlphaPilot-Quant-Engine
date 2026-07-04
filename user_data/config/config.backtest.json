@@ -9,11 +9,12 @@
   "trading_mode": "futures",
   "margin_mode": "isolated",
   "timeframe": "15m",
+  "strategy": "AlphaPilotVolumeReboundV01",
   "exchange": {
     "name": "okx",
-    "key": "PLACEHOLDER_BACKTEST_ONLY_DO_NOT_COMMIT_REAL_KEY",
-    "secret": "PLACEHOLDER_BACKTEST_ONLY_DO_NOT_COMMIT_REAL_SECRET",
-    "password": "PLACEHOLDER_BACKTEST_ONLY_DO_NOT_COMMIT_REAL_PASSWORD",
+    "key": "",
+    "secret": "",
+    "password": "",
     "ccxt_config": {},
     "ccxt_async_config": {},
     "pair_whitelist": [
@@ -67,7 +68,7 @@
     "username": "PLACEHOLDER_DISABLED",
     "password": "PLACEHOLDER_DISABLED"
   },
-  "bot_name": "alphapilot_v13_2_backtest",
+  "bot_name": "alphapilot_v13_3_backtest",
   "initial_state": "stopped",
   "force_entry_enable": false,
   "internals": {

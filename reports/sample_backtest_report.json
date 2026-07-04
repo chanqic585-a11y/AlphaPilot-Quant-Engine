@@ -1,6 +1,6 @@
 {
   "strategyId": "alpha_volume_rebound_v01",
-  "strategyVersion": "0.1-skeleton",
+  "strategyVersion": "0.1-v13.3",
   "market": "OKX USDT swap",
   "timeframe": "15m",
   "universe": [
@@ -37,8 +37,11 @@
   ],
   "timerange": "mock_20240101-20240701",
   "config": {
-    "source": "v13_2_mock_report",
-    "dryRunOnly": true
+    "source": "v13_3_mock_report",
+    "dryRunOnly": true,
+    "feeRateOneWay": 0.0005,
+    "slippageRateOneWay": 0.0005,
+    "slippageModel": "planned, not yet applied by engine"
   },
   "metrics": {
     "totalReturnPct": 0.0,
@@ -55,14 +58,61 @@
   "pairPerformance": [],
   "monthlyPerformance": [],
   "trades": [],
-  "skippedSignals": [],
+  "skippedSignals": [
+    {
+      "skipReason": "btc_crash_filter",
+      "count": 0,
+      "source": "schema_placeholder"
+    },
+    {
+      "skipReason": "weak_4h_trend",
+      "count": 0,
+      "source": "schema_placeholder"
+    },
+    {
+      "skipReason": "rsi_out_of_range",
+      "count": 0,
+      "source": "schema_placeholder"
+    },
+    {
+      "skipReason": "volume_ratio_too_low",
+      "count": 0,
+      "source": "schema_placeholder"
+    },
+    {
+      "skipReason": "macd_not_improving",
+      "count": 0,
+      "source": "schema_placeholder"
+    },
+    {
+      "skipReason": "price_too_extended",
+      "count": 0,
+      "source": "schema_placeholder"
+    },
+    {
+      "skipReason": "data_missing",
+      "count": 0,
+      "source": "schema_placeholder"
+    }
+  ],
   "riskGateSummary": {
-    "status": "skeleton",
-    "liveExecutionAllowed": false
+    "status": "research_schema_ready",
+    "liveExecutionAllowed": false,
+    "skipReasonsTracked": [
+      "btc_crash_filter",
+      "weak_4h_trend",
+      "rsi_out_of_range",
+      "volume_ratio_too_low",
+      "macd_not_improving",
+      "price_too_extended",
+      "data_missing"
+    ]
   },
   "auditSummary": {
-    "status": "skeleton",
+    "status": "sample",
     "ledger": "reports/audit_ledger.jsonl"
   },
-  "generatedAt": "2026-07-04T16:03:29.110418+00:00"
+  "generatedAt": "2026-07-04T16:36:07.404307+00:00",
+  "isMock": true,
+  "source": "alphapilot_report_exporter_v13_3_mock"
 }

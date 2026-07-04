@@ -9,6 +9,7 @@
   "trading_mode": "futures",
   "margin_mode": "isolated",
   "timeframe": "15m",
+  "strategy": "AlphaPilotVolumeReboundV01",
   "exchange": {
     "name": "okx",
     "key": "REPLACE_WITH_RUNTIME_ONLY_KEY_DO_NOT_COMMIT_REAL_VALUE",
@@ -67,7 +68,7 @@
     "username": "PLACEHOLDER_DISABLED",
     "password": "PLACEHOLDER_DISABLED"
   },
-  "bot_name": "alphapilot_v13_2_dryrun_template",
+  "bot_name": "alphapilot_v13_3_dryrun_template",
   "initial_state": "stopped",
   "force_entry_enable": false,
   "internals": {
