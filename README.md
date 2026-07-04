@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.14 - Probability Score Dataset and Label Builder
+AlphaPilot V13.4.15 - Dynamic Regime Strategy V0.1 Implementation
 ```
 
 ## Positioning
@@ -887,9 +887,47 @@ policy conservative and `observe_only`. V13.4.14 does not run a backtest, enter
 Dry-run, use API keys, call Trade API or Withdraw API, read accounts, read
 positions, create orders, or auto trade.
 
+## V13.4.15 Dynamic Regime Strategy V0.1 Implementation
+
+V13.4.15 implements the first Freqtrade strategy file for the Dynamic Regime
+mainline:
+
+```text
+user_data/strategies/AlphaPilotDynamicRegimeV01.py
+```
+
+中文说明：
+
+```text
+V13.4.15 实现 AlphaPilot Dynamic Regime Strategy V0.1 的第一版策略代码。
+本版本只写策略代码和文档，不运行回测、不进入 Dry-run、不实盘。
+```
+
+The strategy includes:
+
+- Dynamic Universe filter from `reports/v13_4_13_dynamic_universe_snapshots.json`.
+- Market Regime Router with `trend`, `mean_reversion`, and `avoid`.
+- TrendContinuationModuleV01.
+- MeanReversionModuleV01.
+- ProbabilityScoreV01 lookup from `reports/v13_4_14_probability_score_table.json`.
+- LiquidityGateV01 audit fallback for backtest research only.
+- Audit columns prefixed with `ap_dyn_audit_`.
+
+Static validation:
+
+```powershell
+python -m py_compile user_data\strategies\AlphaPilotDynamicRegimeV01.py
+python -m compileall alphapilot
+python -m alphapilot.scripts.validate_config
+powershell -ExecutionPolicy Bypass -File scripts\check_safety.ps1
+```
+
+V13.4.15 does not run Freqtrade backtests, enter Dry-run, use API keys, call
+Trade API or Withdraw API, read accounts, read positions, create orders, or
+auto trade.
+
 ## Next Versions
 
-- V13.4.15: implement Dynamic Regime Strategy V0.1 using the V13.4.14 probability table.
 - V13.4.16: run Dynamic Regime smoke backtest.
 - V13.4.17: run expanded validation with slippage and liquidity gates.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer.
