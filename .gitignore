@@ -9,6 +9,8 @@ user_data/logs/*
 !user_data/logs/.gitkeep
 reports/*.jsonl
 reports/*_private*
+reports/latest_backtest_report.json
+reports/smoke_backtest_report.json
 __pycache__/
 *.pyc
 .venv/

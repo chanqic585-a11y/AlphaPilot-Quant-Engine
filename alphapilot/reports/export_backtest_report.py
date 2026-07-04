@@ -12,6 +12,7 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
+from zipfile import ZipFile
 
 from alphapilot.reports.backtest_report_schema import AlphaPilotBacktestReport, BacktestMetrics
 from alphapilot.universe.top30_usdt_swap import get_top30_usdt_swap_pairs
@@ -38,6 +39,23 @@ def _utc_now() -> str:
 
 def _read_json(path: Path) -> dict[str, Any] | list[Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _read_freqtrade_result_payload(path: Path) -> dict[str, Any] | list[Any]:
+    if path.suffix.lower() != ".zip":
+        return _read_json(path)
+
+    with ZipFile(path) as archive:
+        result_members = [
+            name
+            for name in archive.namelist()
+            if name.lower().endswith(".json")
+            and not name.lower().endswith("_config.json")
+            and not name.lower().endswith(".meta.json")
+        ]
+        if not result_members:
+            return {}
+        return json.loads(archive.read(result_members[0]).decode("utf-8"))
 
 
 def _to_float(value: Any, default: float | None = 0.0) -> float | None:
@@ -92,7 +110,12 @@ def _normalize_pct(value: float | None, source_name: str) -> float | None:
 def _build_metrics(source: dict[str, Any]) -> BacktestMetrics:
     total_return_source = "profit_total_pct" if "profit_total_pct" in source else "profit_total"
     total_return = _normalize_pct(_to_float(source.get(total_return_source), None), total_return_source)
-    drawdown_source = "max_drawdown_account_pct" if "max_drawdown_account_pct" in source else "max_drawdown"
+    if "max_drawdown_account_pct" in source:
+        drawdown_source = "max_drawdown_account_pct"
+    elif "max_drawdown_account" in source:
+        drawdown_source = "max_drawdown_account"
+    else:
+        drawdown_source = "max_drawdown"
     raw_drawdown = _normalize_pct(_to_float(source.get(drawdown_source), None), drawdown_source)
     max_drawdown = abs(raw_drawdown) if raw_drawdown is not None else None
 
@@ -131,7 +154,7 @@ def _build_report_warnings(source: dict[str, Any]) -> list[str]:
         warnings.append("Trade count was not found in the Freqtrade result payload.")
     if not any(key in source for key in ("profit_total_pct", "profit_total")):
         warnings.append("Total return was not found in the Freqtrade result payload.")
-    if not any(key in source for key in ("max_drawdown_account_pct", "max_drawdown")):
+    if not any(key in source for key in ("max_drawdown_account_pct", "max_drawdown_account", "max_drawdown")):
         warnings.append("Max drawdown was not found in the Freqtrade result payload.")
     return warnings
 
@@ -139,10 +162,26 @@ def _build_report_warnings(source: dict[str, Any]) -> list[str]:
 def _find_latest_freqtrade_result() -> Path | None:
     if not DEFAULT_RESULT_DIR.exists():
         return None
+    last_result_path = DEFAULT_RESULT_DIR / ".last_result.json"
+    if last_result_path.exists():
+        try:
+            last_result = _read_json(last_result_path)
+            if isinstance(last_result, dict):
+                latest_backtest = last_result.get("latest_backtest")
+                if isinstance(latest_backtest, str):
+                    resolved = DEFAULT_RESULT_DIR / latest_backtest
+                    if resolved.exists():
+                        return resolved
+        except (OSError, json.JSONDecodeError):
+            pass
+
     candidates = [
         path
-        for path in DEFAULT_RESULT_DIR.glob("*.json")
-        if path.is_file() and not path.name.lower().endswith(".meta.json")
+        for pattern in ("*.zip", "*.json")
+        for path in DEFAULT_RESULT_DIR.glob(pattern)
+        if path.is_file()
+        and not path.name.lower().endswith(".meta.json")
+        and path.name != ".last_result.json"
     ]
     if not candidates:
         return None
@@ -196,7 +235,7 @@ def build_sample_report() -> AlphaPilotBacktestReport:
 
 
 def build_report_from_freqtrade_result(path: Path) -> AlphaPilotBacktestReport:
-    payload = _read_json(path)
+    payload = _read_freqtrade_result_payload(path)
     source = _select_strategy_payload(payload)
 
     pair_performance = source.get("results_per_pair", [])
@@ -213,7 +252,8 @@ def build_report_from_freqtrade_result(path: Path) -> AlphaPilotBacktestReport:
 
     timerange = str(source.get("timerange", source.get("backtest_start", "unknown")))
     if source.get("backtest_end") and timerange != "unknown":
-        timerange = f"{timerange}-{source.get('backtest_end')}"
+        separator = "" if timerange.endswith("-") else "-"
+        timerange = f"{timerange}{separator}{source.get('backtest_end')}"
 
     return AlphaPilotBacktestReport(
         strategyId="alpha_volume_rebound_v01",

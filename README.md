@@ -160,13 +160,31 @@ The V13.3 strategy is not a live recommendation and not a production trading str
 
 ## V13.4 Real Freqtrade Smoke Backtest
 
-V13.4 prepares and attempts the first real Freqtrade smoke backtest flow:
+V13.4 completed the first real Freqtrade smoke backtest flow:
 
 ```text
 public historical data download -> Freqtrade backtest -> Freqtrade JSON -> AlphaPilot report
 ```
 
-This Codex environment does not currently expose the `docker` command, so real smoke execution is blocked here. V13.4 is not tagged until a real smoke backtest succeeds and the exported report has:
+The V13.4 smoke run used public OKX historical futures data only:
+
+```text
+Pairs: BTC/USDT:USDT, ETH/USDT:USDT, SOL/USDT:USDT
+Timerange: 20260401-
+Trades: 230
+Win rate: 41.3043%
+Total return: -15.542%
+Max drawdown: 24.4939%
+Profit factor: 0.8107
+```
+
+The versioned report is:
+
+```text
+reports/v13_4_smoke_backtest_report.json
+```
+
+It is a real converted Freqtrade result and contains:
 
 ```json
 {
@@ -174,13 +192,17 @@ This Codex environment does not currently expose the `docker` command, so real s
 }
 ```
 
-Runtime prep added in V13.4:
+Runtime compatibility fixed in V13.4:
 
 - `scripts/download_data.ps1` supports `-UseTop30`.
 - `scripts/run_backtest.ps1` supports `-UseTop30`.
+- Freqtrade 2026.6 config requires `entry_pricing` and `exit_pricing`; both are present in the backtest config and dry-run template.
+- The report exporter supports the newer Freqtrade result layout where `.last_result.json` points to a zip file containing the real result JSON.
 - Report export preserves missing real metrics as `null` and records `reportWarnings`.
-- Real reports write `reports/latest_backtest_report.json` and `reports/smoke_backtest_report.json`.
+- Real dynamic reports write `reports/latest_backtest_report.json` and `reports/smoke_backtest_report.json`; these are ignored so reruns do not pollute git status.
 - Mock reports remain explicitly marked with `isMock=true`.
+
+V13.4 is a process success, not a strategy approval. The current AlphaPilot Volume Rebound V0.1 smoke result is negative, with `profitFactor < 1`, negative total return, and high drawdown. It must not enter Dry-run. The next step is V13.4.1 Backtest Result Diagnosis.
 
 Smoke preview:
 
@@ -193,7 +215,7 @@ Add `-Run` only after Docker Desktop is installed and running.
 
 ## Next Versions
 
-- V13.4: run real BTC / ETH / SOL smoke backtest when Docker is available, then tag only after `isMock=false` report export.
-- V13.5: run wider Top 30 historical tests and improve skipped-signal aggregation.
+- V13.4.1: diagnose the negative smoke backtest result before changing parameters.
+- V13.5: run wider Top 30 historical tests only after diagnosis and risk gates are clearer.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.
