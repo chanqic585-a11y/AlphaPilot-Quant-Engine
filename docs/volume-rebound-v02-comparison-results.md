@@ -53,3 +53,9 @@ All candidates remain negative in the smoke sample, and slippage is not applied
 by the Freqtrade command. Longer-range validation is required before any
 controlled execution discussion.
 
+## V13.4.6 Follow-up
+
+After V13.4.5 expanded validation with slippage, the V0.1/V0.2 family is
+rejected for Dry-run. B/C/E were useful diagnostic comparisons, but they should
+not be micro-tuned further as the next step. V13.4.6 moves the research program
+to V03 redesign.

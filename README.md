@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4 - Real Freqtrade Smoke Backtest Runtime Prep
+AlphaPilot V13.4.6 - Strategy Direction Review and V03 Redesign
 ```
 
 ## Positioning
@@ -407,9 +407,72 @@ All candidates remain negative after slippage post-processing. V02C is the best
 relative candidate by profit factor, but it is not approved for Dry-run. The
 next step should be V13.4.6 strategy direction review or V03 redesign.
 
+## V13.4.6 Strategy Direction Review
+
+V13.4.6 formally closes the current Volume Rebound V0.1/V0.2 research series
+for Dry-run consideration and starts the V03 redesign stage.
+
+中文说明：
+
+```text
+V13.4.6 基于 V13.4.5 扩大验证和滑点调整结果，正式复盘 Volume Rebound V0.1/V0.2 当前系列失败原因，并提出 V03 重设方向。
+本版本不调参、不回测、不进入 Dry-run、不实盘。
+```
+
+Run the direction review:
+
+```powershell
+python -m alphapilot.reports.generate_strategy_direction_review
+```
+
+Outputs:
+
+```text
+reports/v13_4_6_strategy_direction_review.json
+reports/v13_4_6_strategy_direction_summary.md
+reports/v13_4_6_strategy_status_archive.json
+docs/V13.4.6-strategy-direction-review.md
+docs/volume-rebound-failure-review.md
+docs/volume-rebound-v03-redesign-plan.md
+```
+
+V13.4.6 decision:
+
+```text
+strategyFamilyStatus = rejected_for_dry_run
+dryRunApproved = false
+```
+
+Main conclusion:
+
+- V0.1/V0.2 should not enter Dry-run.
+- B/C/E are relative improvements only; expanded validation and slippage still reject them.
+- The failure is not a single-parameter issue.
+- V03 should redesign entry quality, trade frequency, reward/risk, trend structure, pair exposure, cost sensitivity, market regime, and signal confirmation.
+
+V03 candidate directions:
+
+- V03A Trend Pullback Continuation
+- V03B Breakout Retest Confirmation
+- V03C High Score Signal Only
+- V03D 1h Main Timeframe
+
+V03 quality gate before any Dry-run discussion:
+
+- slippage-adjusted total return > 0
+- slippage-adjusted profit factor > 1.15
+- max drawdown materially below V0.1/V0.2 expanded validation
+- no single pair dominates profit or loss
+- smoke plus six-month Top30 validation must pass
+
+V13.4.6 is research-only. It does not modify V0.1/V0.2 strategy code, does not
+run backtests, does not enter Dry-run, does not use API keys, does not call
+Trade API or Withdraw API, does not read accounts, does not create orders, and
+does not auto trade.
+
 ## Next Versions
 
-- V13.4.6: run strategy direction review / V03 redesign because V13.4.5 remains negative after slippage.
-- V13.5: consider Dry-run preparation only after broader validation shows stronger risk-adjusted evidence.
+- V13.4.7: select and specify one V03 candidate direction before implementation.
+- V13.5: consider Dry-run preparation only after a redesigned V03 candidate passes stronger risk-adjusted validation.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.

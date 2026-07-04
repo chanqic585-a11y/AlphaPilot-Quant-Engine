@@ -1,0 +1,114 @@
+{
+  "reportId": "v13_4_6_strategy_status_archive",
+  "strategyFamily": "alpha_volume_rebound_v01_v02",
+  "familyStatus": "rejected_for_dry_run",
+  "researchStatus": "failed_research_current_sample",
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "records": [
+    {
+      "strategyId": "alpha_volume_rebound_v01",
+      "strategyName": "AlphaPilotVolumeReboundV01",
+      "status": "rejected_for_dry_run",
+      "researchStatus": "failed_research_current_sample",
+      "reason": "Expanded validation remains negative after slippage adjustment; rejected for Dry-run.",
+      "evidenceReports": [
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json"
+      ],
+      "canBeUsedForLive": false,
+      "canBeUsedForDryRun": false,
+      "archivedAt": "2026-07-04T19:19:28.387426+00:00"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_a_trend_strict",
+      "strategyName": "AlphaPilotVolumeReboundV02A",
+      "status": "rejected_for_dry_run",
+      "researchStatus": "failed_research_current_sample",
+      "reason": "Smoke comparison improved relatively, but the candidate was not included in the successful expanded validation set and is not approved.",
+      "evidenceReports": [
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json"
+      ],
+      "canBeUsedForLive": false,
+      "canBeUsedForDryRun": false,
+      "archivedAt": "2026-07-04T19:19:28.387426+00:00"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_b_volume_quality",
+      "strategyName": "AlphaPilotVolumeReboundV02B",
+      "status": "rejected_for_dry_run",
+      "researchStatus": "failed_research_current_sample",
+      "reason": "Expanded validation reduced trade count but remained deeply negative after slippage.",
+      "evidenceReports": [
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json"
+      ],
+      "canBeUsedForLive": false,
+      "canBeUsedForDryRun": false,
+      "archivedAt": "2026-07-04T19:19:28.387426+00:00"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_c_exit_cleanup",
+      "strategyName": "AlphaPilotVolumeReboundV02C",
+      "status": "rejected_for_dry_run",
+      "researchStatus": "failed_research_current_sample",
+      "reason": "Best relative expanded candidate, but still deeply negative after slippage and not usable for Dry-run.",
+      "evidenceReports": [
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json"
+      ],
+      "canBeUsedForLive": false,
+      "canBeUsedForDryRun": false,
+      "archivedAt": "2026-07-04T19:19:28.387426+00:00"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_d_early_failure_exit",
+      "strategyName": "AlphaPilotVolumeReboundV02D",
+      "status": "rejected_for_dry_run",
+      "researchStatus": "failed_research_current_sample",
+      "reason": "Failed the V13.4.4 smoke comparison gate and was eliminated before expanded validation.",
+      "evidenceReports": [
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json"
+      ],
+      "canBeUsedForLive": false,
+      "canBeUsedForDryRun": false,
+      "archivedAt": "2026-07-04T19:19:28.387426+00:00"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_e_pair_risk_watchlist",
+      "strategyName": "AlphaPilotVolumeReboundV02E",
+      "status": "rejected_for_dry_run",
+      "researchStatus": "failed_research_current_sample",
+      "reason": "Pair-risk changes did not improve enough in expanded validation and remain negative after slippage.",
+      "evidenceReports": [
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json"
+      ],
+      "canBeUsedForLive": false,
+      "canBeUsedForDryRun": false,
+      "archivedAt": "2026-07-04T19:19:28.387426+00:00"
+    }
+  ],
+  "archivedAt": "2026-07-04T19:19:28.387426+00:00",
+  "source": "alphapilot_v13_4_6_strategy_registry"
+}

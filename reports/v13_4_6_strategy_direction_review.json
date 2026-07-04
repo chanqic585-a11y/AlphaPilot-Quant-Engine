@@ -1,0 +1,586 @@
+{
+  "reportId": "v13_4_6_strategy_direction_review",
+  "sourceReports": [
+    {
+      "key": "expandedValidation",
+      "path": "reports\\v13_4_5_expanded_validation_report.json",
+      "exists": true,
+      "reportId": "v13_4_5_expanded_validation"
+    },
+    {
+      "key": "expandedSummary",
+      "path": "reports\\v13_4_5_expanded_validation_summary.md",
+      "exists": true,
+      "reportId": "markdown_summary"
+    },
+    {
+      "key": "comparativeBacktest",
+      "path": "reports\\v13_4_4_comparative_backtest_report.json",
+      "exists": true,
+      "reportId": "v13_4_4_comparative_backtest"
+    },
+    {
+      "key": "candidateMatrix",
+      "path": "reports\\v13_4_3_v02_candidate_matrix.json",
+      "exists": true,
+      "reportId": "v13_4_3_v02_candidate_matrix"
+    },
+    {
+      "key": "signalAudit",
+      "path": "reports\\v13_4_2_signal_audit_report.json",
+      "exists": true,
+      "reportId": "v13_4_2_signal_audit"
+    },
+    {
+      "key": "diagnosis",
+      "path": "reports\\v13_4_1_diagnosis_report.json",
+      "exists": true,
+      "reportId": "v13_4_1_diagnosis"
+    }
+  ],
+  "currentStrategyFamily": "alpha_volume_rebound_v01_v02",
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "strategyFamilyStatus": "rejected_for_dry_run",
+  "researchStatus": "failed_research_current_sample",
+  "failureSummary": {
+    "decision": {
+      "strategyFamilyStatus": "rejected_for_dry_run",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "reason": "Expanded validation and slippage-adjusted metrics remain deeply negative across V0.1/V0.2."
+    },
+    "expandedValidation": {
+      "rawComparisonTable": [
+        {
+          "strategy": "AlphaPilotVolumeReboundV01",
+          "totalReturnPct": -99.2732,
+          "maxDrawdownPct": 99.3724,
+          "profitFactor": 0.6689,
+          "tradeCount": 2701,
+          "winRate": 37.2825,
+          "maxConsecutiveLosses": 28,
+          "feesPaid": 941.84466739
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02BVolumeQuality",
+          "totalReturnPct": -94.171,
+          "maxDrawdownPct": 94.7185,
+          "profitFactor": 0.6152,
+          "tradeCount": 1515,
+          "winRate": 36.9637,
+          "maxConsecutiveLosses": 19,
+          "feesPaid": 743.77896729
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02CExitCleanup",
+          "totalReturnPct": -99.1303,
+          "maxDrawdownPct": 99.2719,
+          "profitFactor": 0.6739,
+          "tradeCount": 2496,
+          "winRate": 43.4295,
+          "maxConsecutiveLosses": 25,
+          "feesPaid": 881.07407065
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+          "totalReturnPct": -99.3093,
+          "maxDrawdownPct": 99.3953,
+          "profitFactor": 0.6637,
+          "tradeCount": 2671,
+          "winRate": 37.0273,
+          "maxConsecutiveLosses": 20,
+          "feesPaid": 924.33185017
+        }
+      ],
+      "slippageAdjustedComparisonTable": [
+        {
+          "strategy": "AlphaPilotVolumeReboundV01",
+          "slippageAdjustedTotalReturnPct": -193.4577,
+          "maxDrawdownPct": 191.6168,
+          "slippageAdjustedProfitFactor": 0.4603,
+          "tradeCount": 2701,
+          "slippageAdjustedWinRate": 34.6909,
+          "maxConsecutiveLosses": 28,
+          "totalSlippageCost": 941.84466739,
+          "largestPairAbsContributionPct": 8.462,
+          "passedExpandedGate": false
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02BVolumeQuality",
+          "slippageAdjustedTotalReturnPct": -168.5489,
+          "maxDrawdownPct": 165.9553,
+          "slippageAdjustedProfitFactor": 0.4225,
+          "tradeCount": 1515,
+          "slippageAdjustedWinRate": 34.7195,
+          "maxConsecutiveLosses": 36,
+          "totalSlippageCost": 743.77896729,
+          "largestPairAbsContributionPct": 8.5028,
+          "passedExpandedGate": false
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02CExitCleanup",
+          "slippageAdjustedTotalReturnPct": -187.2377,
+          "maxDrawdownPct": 182.3083,
+          "slippageAdjustedProfitFactor": 0.4726,
+          "tradeCount": 2496,
+          "slippageAdjustedWinRate": 39.7436,
+          "maxConsecutiveLosses": 25,
+          "totalSlippageCost": 881.07407065,
+          "largestPairAbsContributionPct": 8.6371,
+          "passedExpandedGate": true
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+          "slippageAdjustedTotalReturnPct": -191.7425,
+          "maxDrawdownPct": 190.0944,
+          "slippageAdjustedProfitFactor": 0.4569,
+          "tradeCount": 2671,
+          "slippageAdjustedWinRate": 34.4066,
+          "maxConsecutiveLosses": 20,
+          "totalSlippageCost": 924.33185017,
+          "largestPairAbsContributionPct": 8.5177,
+          "passedExpandedGate": false
+        }
+      ],
+      "bestRawCandidate": "AlphaPilotVolumeReboundV02CExitCleanup",
+      "bestSlippageAdjustedCandidate": "AlphaPilotVolumeReboundV02CExitCleanup",
+      "supportedPairs": [
+        "BTC/USDT:USDT",
+        "ETH/USDT:USDT",
+        "SOL/USDT:USDT",
+        "DOGE/USDT:USDT",
+        "XRP/USDT:USDT",
+        "ADA/USDT:USDT",
+        "AVAX/USDT:USDT",
+        "LINK/USDT:USDT",
+        "SUI/USDT:USDT",
+        "APT/USDT:USDT",
+        "OP/USDT:USDT",
+        "ARB/USDT:USDT",
+        "LTC/USDT:USDT",
+        "BCH/USDT:USDT",
+        "DOT/USDT:USDT",
+        "NEAR/USDT:USDT",
+        "PEPE/USDT:USDT",
+        "WIF/USDT:USDT",
+        "ORDI/USDT:USDT",
+        "INJ/USDT:USDT",
+        "FIL/USDT:USDT",
+        "ETC/USDT:USDT",
+        "TRX/USDT:USDT",
+        "UNI/USDT:USDT",
+        "AAVE/USDT:USDT",
+        "ATOM/USDT:USDT",
+        "SEI/USDT:USDT",
+        "TIA/USDT:USDT"
+      ],
+      "excludedPairs": [
+        {
+          "pair": "TON/USDT:USDT",
+          "reason": "not present in completed Freqtrade backtest result"
+        },
+        {
+          "pair": "FET/USDT:USDT",
+          "reason": "not present in completed Freqtrade backtest result"
+        }
+      ]
+    },
+    "smokeComparisonContext": {
+      "comparisonTable": [
+        {
+          "strategy": "AlphaPilotVolumeReboundV01",
+          "totalReturnPct": -15.542,
+          "maxDrawdownPct": 24.4939,
+          "profitFactor": 0.8107,
+          "tradeCount": 230,
+          "winRate": 41.3043,
+          "maxConsecutiveLosses": 13,
+          "feesPaid": 339.82529451,
+          "stopLossLoss": -420.36251129,
+          "macdWeakExitLoss": -345.28583144,
+          "passedComparisonGate": false
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02ATrendStrict",
+          "totalReturnPct": -11.6607,
+          "maxDrawdownPct": 21.0664,
+          "profitFactor": 0.8251,
+          "tradeCount": 179,
+          "winRate": 41.3408,
+          "maxConsecutiveLosses": 10,
+          "feesPaid": 274.57577641,
+          "stopLossLoss": -335.58167292,
+          "macdWeakExitLoss": -286.84500658,
+          "passedComparisonGate": true
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02BVolumeQuality",
+          "totalReturnPct": -4.0845,
+          "maxDrawdownPct": 11.4841,
+          "profitFactor": 0.9104,
+          "tradeCount": 116,
+          "winRate": 45.6897,
+          "maxConsecutiveLosses": 9,
+          "feesPaid": 187.32004574,
+          "stopLossLoss": -295.95327658,
+          "macdWeakExitLoss": -131.3940828,
+          "passedComparisonGate": true
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02CExitCleanup",
+          "totalReturnPct": -6.1609,
+          "maxDrawdownPct": 17.8594,
+          "profitFactor": 0.9319,
+          "tradeCount": 220,
+          "winRate": 51.3636,
+          "maxConsecutiveLosses": 10,
+          "feesPaid": 343.99564684,
+          "stopLossLoss": -779.47102126,
+          "macdWeakExitLoss": null,
+          "passedComparisonGate": true
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02DEarlyFailureExit",
+          "totalReturnPct": -15.6258,
+          "maxDrawdownPct": 24.3002,
+          "profitFactor": 0.7979,
+          "tradeCount": 231,
+          "winRate": 36.7965,
+          "maxConsecutiveLosses": 13,
+          "feesPaid": 339.7125722,
+          "stopLossLoss": -396.34712289,
+          "macdWeakExitLoss": -290.96446658,
+          "passedComparisonGate": false
+        },
+        {
+          "strategy": "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+          "totalReturnPct": -10.3361,
+          "maxDrawdownPct": 17.93,
+          "profitFactor": 0.8406,
+          "tradeCount": 182,
+          "winRate": 40.6593,
+          "maxConsecutiveLosses": 10,
+          "feesPaid": 287.9934956,
+          "stopLossLoss": -278.32662503,
+          "macdWeakExitLoss": -317.91744313,
+          "passedComparisonGate": true
+        }
+      ],
+      "dryRunApproved": false,
+      "bestCandidate": "AlphaPilotVolumeReboundV02CExitCleanup",
+      "interpretation": "A/B/C/E improved relatively in smoke comparison, but every candidate remained negative."
+    },
+    "tradeFrequencyProblem": {
+      "top30SixMonthTradeCounts": {
+        "AlphaPilotVolumeReboundV01": 2701,
+        "AlphaPilotVolumeReboundV02BVolumeQuality": 1515,
+        "AlphaPilotVolumeReboundV02CExitCleanup": 2496,
+        "AlphaPilotVolumeReboundV02EPairRiskWatchlist": 2671
+      },
+      "analysis": [
+        "V01, C, and E each produced roughly 2,500-2,700 trades on Top30 six-month validation.",
+        "B reduced trades to 1,515 but remained deeply negative after slippage.",
+        "15m signal density appears noisy and likely amplifies fee/slippage drag.",
+        "V03 should prefer fewer, higher-quality signals."
+      ]
+    },
+    "costProblem": {
+      "feesPaidRaw": {
+        "AlphaPilotVolumeReboundV01": 941.84466739,
+        "AlphaPilotVolumeReboundV02BVolumeQuality": 743.77896729,
+        "AlphaPilotVolumeReboundV02CExitCleanup": 881.07407065,
+        "AlphaPilotVolumeReboundV02EPairRiskWatchlist": 924.33185017
+      },
+      "slippageCost": {
+        "AlphaPilotVolumeReboundV01": 941.84466739,
+        "AlphaPilotVolumeReboundV02BVolumeQuality": 743.77896729,
+        "AlphaPilotVolumeReboundV02CExitCleanup": 881.07407065,
+        "AlphaPilotVolumeReboundV02EPairRiskWatchlist": 924.33185017
+      },
+      "analysis": [
+        "Every candidate became worse after slippage post-processing.",
+        "The strategy family is cost-sensitive because trade count is high and edge per trade is weak.",
+        "V03 must either reduce trade frequency, increase target expectancy, or both."
+      ]
+    },
+    "payoffProblem": {
+      "currentStopLoss": "-3%",
+      "currentTakeProfit": "+3%",
+      "diagnosisWinRate": 41.3043,
+      "expandedWinRates": {
+        "AlphaPilotVolumeReboundV01": 37.2825,
+        "AlphaPilotVolumeReboundV02BVolumeQuality": 36.9637,
+        "AlphaPilotVolumeReboundV02CExitCleanup": 43.4295,
+        "AlphaPilotVolumeReboundV02EPairRiskWatchlist": 37.0273
+      },
+      "analysis": [
+        "A roughly 1:1 payoff structure is not enough with win rate near the low-40% range.",
+        "After fees and slippage, the strategy needs materially higher win rate or higher reward/risk.",
+        "V03 should test at least 1.5R or 2R concepts before any controlled execution discussion."
+      ]
+    },
+    "entryQualityProblem": {
+      "signalAuditOverall": {
+        "candlesEvaluated": 26496,
+        "baseCandidateCount": 26496,
+        "finalEntryCount": 305,
+        "actualTradeCount": 230,
+        "conversionRate": 1.1511,
+        "filterEffectivenessAvailable": true
+      },
+      "analysis": [
+        "The volumeRatio, RSI, MACD, EMA20 reclaim, and broad 4h trend combination did not identify positive-expectancy entries.",
+        "The expanded results suggest the failure is structural, not a single threshold issue.",
+        "V03 should require stronger structure confirmation before entry."
+      ]
+    },
+    "trendFilterProblem": {
+      "weak4hTrendSkipReason": {
+        "skipReason": "weak_4h_trend",
+        "count": 11926,
+        "percentage": 45.0106
+      },
+      "analysis": [
+        "The 4h trend filter blocks many weak contexts and is useful as a guardrail.",
+        "Passing the current 4h filter is not sufficient; trades that passed still lost overall.",
+        "V03 should not rely on 4h EMA filtering alone."
+      ]
+    },
+    "pairRiskProblem": {
+      "solSmokeDiagnosis": {
+        "pair": "SOL/USDT:USDT",
+        "tradeCount": 99,
+        "winRate": 45.4545,
+        "netProfitPct": -9.48,
+        "totalProfit": -94.83085485,
+        "averageWin": 6.83168556,
+        "averageLoss": -7.44919824,
+        "profitFactor": 0.7643,
+        "maxDrawdownPct": 15.6535,
+        "maxConsecutiveLosses": 8,
+        "averageHoldingMinutes": 58.4848,
+        "bestTrade": {
+          "pair": "SOL/USDT:USDT",
+          "openDate": "2026-04-09 15:00:00+00:00",
+          "closeDate": "2026-04-09 15:30:00+00:00",
+          "profitAbs": 10.0357852,
+          "profitRatioPct": 3.0268,
+          "exitReason": "roi",
+          "durationMinutes": 30
+        },
+        "worstTrade": {
+          "pair": "SOL/USDT:USDT",
+          "openDate": "2026-04-08 13:15:00+00:00",
+          "closeDate": "2026-04-08 13:30:00+00:00",
+          "profitAbs": -11.9309976,
+          "profitRatioPct": -3.4543,
+          "exitReason": "stop_loss",
+          "durationMinutes": 15
+        }
+      },
+      "analysis": [
+        "SOL contributed heavily to the smoke-sample loss, showing pair-level risk can drag the portfolio.",
+        "A single smoke result is not enough to permanently exclude SOL.",
+        "V03 should add pair-level exposure caps, signal caps, and risk watchlists."
+      ]
+    },
+    "exitLossContext": {
+      "stopLoss": {
+        "exitReason": "stop_loss",
+        "tradeCount": 40,
+        "winRate": 0.0,
+        "netProfit": -420.36251129,
+        "netProfitPct": -42.04,
+        "averageProfitPct": -3.48,
+        "averageWin": null,
+        "averageLoss": -10.50906278,
+        "profitFactor": 0.0,
+        "durationAvg": "0:37:00"
+      },
+      "macdWeakness": {
+        "exitReason": "macd_histogram_two_candle_weakness",
+        "tradeCount": 117,
+        "winRate": 21.3675,
+        "netProfit": -345.28583144,
+        "netProfitPct": -34.53,
+        "averageProfitPct": -0.99,
+        "averageWin": 1.77582064,
+        "averageLoss": -4.23566682,
+        "profitFactor": 0.1139,
+        "durationAvg": "1:27:00"
+      },
+      "analysis": [
+        "Stop-loss and MACD weakness exits were major smoke-sample loss buckets.",
+        "The expanded failure shows exit cleanup alone is not enough to fix the strategy family."
+      ]
+    }
+  },
+  "lessonsLearned": [
+    "Relative improvement is not strategy approval when absolute returns remain deeply negative.",
+    "The current 15m rebound framework is highly cost-sensitive.",
+    "A 1:1 payoff profile is weak when win rate is near the low-40% range and costs are material.",
+    "The 4h trend filter blocks many weak contexts but is not sufficient by itself.",
+    "Pair-level risk must be measured, capped, and reported instead of handled through permanent one-off exclusions.",
+    "V03 should start from entry quality, trade frequency, payoff, and regime design rather than small threshold edits."
+  ],
+  "v03CandidateDirections": [
+    {
+      "candidateId": "alpha_volume_rebound_v03a_trend_pullback_continuation",
+      "name": "V03A - Trend Pullback Continuation",
+      "positioning": "Trend pullback continuation strategy",
+      "coreIdea": "Trade only in clearer bullish trend structures, wait for a pullback into a support or EMA zone, and require renewed strength confirmation before any historical backtest entry.",
+      "ruleDirection": [
+        "4h trend is clearly up.",
+        "1h structure remains intact.",
+        "15m pulls back toward EMA20, EMA50, or a support area.",
+        "Price reclaims strength with volume confirmation.",
+        "Avoid weak-trend rebound attempts."
+      ],
+      "expectedBenefits": [
+        "Improves structural context versus random rebound entries.",
+        "Reduces weak-trend falling-knife behavior.",
+        "May reduce trade frequency and cost drag."
+      ],
+      "risks": [
+        "Signal count may become too low.",
+        "Late confirmation can miss early reversals.",
+        "Trend filters can still fail in regime shifts."
+      ],
+      "whatToSpecifyNext": [
+        "Exact 4h and 1h trend definitions.",
+        "Pullback zone definition and support evidence.",
+        "Reclaim confirmation candle and volume rules.",
+        "Reward/risk and time-stop framework."
+      ]
+    },
+    {
+      "candidateId": "alpha_volume_rebound_v03b_breakout_retest_confirmation",
+      "name": "V03B - Breakout Retest Confirmation",
+      "positioning": "Breakout retest confirmation strategy",
+      "coreIdea": "Avoid random rebounds and wait for a close above a meaningful resistance level, then require a retest that holds before historical backtest entry.",
+      "ruleDirection": [
+        "Identify a recent resistance zone.",
+        "Require 15m or 1h close above that zone.",
+        "Require retest without closing back below the breakout area.",
+        "Use volume confirmation and BTC environment safety.",
+        "Reject unconfirmed breakout candles."
+      ],
+      "expectedBenefits": [
+        "Clearer and more explainable entry structure.",
+        "Can improve payoff by entering after market acceptance.",
+        "Should reduce low-quality rebound attempts."
+      ],
+      "risks": [
+        "False breakouts remain possible.",
+        "Retests may not appear.",
+        "The setup may be too sparse for some pairs."
+      ],
+      "whatToSpecifyNext": [
+        "Resistance detection method.",
+        "Retest tolerance and invalidation rules.",
+        "Volume and momentum confirmation rules.",
+        "Pair-level and daily signal caps."
+      ]
+    },
+    {
+      "candidateId": "alpha_volume_rebound_v03c_high_score_signal_only",
+      "name": "V03C - High Score Signal Only",
+      "positioning": "Low-frequency high-quality signal strategy",
+      "coreIdea": "Keep the volume rebound theme but require a transparent multi-factor score. Only high-score historical signals enter backtesting.",
+      "ruleDirection": [
+        "Score market safety, trend context, rebound location, volume quality, momentum improvement, and risk quality.",
+        "Require score >= 80 before any backtest entry.",
+        "Use pair-level exposure caps and daily signal limits.",
+        "Record score components in reports for auditability."
+      ],
+      "expectedBenefits": [
+        "Directly attacks over-trading and noisy 15m signals.",
+        "Makes entry quality measurable and auditable.",
+        "Can later support supervised learning without changing the safety boundary."
+      ],
+      "risks": [
+        "Scoring weights can overfit easily.",
+        "Signal count may become too low.",
+        "Manual score design needs careful validation."
+      ],
+      "whatToSpecifyNext": [
+        "Score components and weights.",
+        "Minimum sample-size rules.",
+        "Ablation tests for each score component.",
+        "Slippage-adjusted quality gate before Dry-run."
+      ]
+    },
+    {
+      "candidateId": "alpha_volume_rebound_v03d_1h_main_timeframe",
+      "name": "V03D - 1h Main Timeframe",
+      "positioning": "Lower-noise 1h strategy direction",
+      "coreIdea": "Move the primary signal timeframe from 15m to 1h to reduce noise, trade count, and cost sensitivity.",
+      "ruleDirection": [
+        "Use 1h candles as the main entry timeframe.",
+        "Use 4h market regime and trend filters.",
+        "Use 15m only for optional execution refinement in later versions.",
+        "Require wider targets or stronger risk/reward than 1:1."
+      ],
+      "expectedBenefits": [
+        "Lower trade frequency.",
+        "Lower fee and slippage sensitivity.",
+        "More stable signal context than 15m-only entries."
+      ],
+      "risks": [
+        "Entries are slower.",
+        "Sample size is smaller.",
+        "Wider candles may require different stops and targets."
+      ],
+      "whatToSpecifyNext": [
+        "1h setup definition.",
+        "4h regime filter.",
+        "Reward/risk target and stop model.",
+        "Minimum sample coverage before comparison."
+      ]
+    }
+  ],
+  "v03QualityGate": {
+    "dryRunApprovedByDefault": false,
+    "minimumRequirements": [
+      "slippage-adjusted total return > 0",
+      "slippage-adjusted profit factor > 1.15",
+      "max drawdown materially below V0.1/V0.2 expanded validation",
+      "max consecutive losses acceptable for the proposed risk model",
+      "trade count sufficient for evidence but not excessive",
+      "no single pair dominates profit or loss",
+      "passes smoke validation and six-month Top30 validation",
+      "preferably passes a longer timerange before any Dry-run discussion"
+    ],
+    "stricterTargets": {
+      "slippageAdjustedProfitFactor": ">= 1.2",
+      "maxDrawdownPct": "< 25",
+      "slippageAdjustedTotalReturnPct": "> 0",
+      "tradeCount": "moderate, not high-churn",
+      "pairDominance": "no single pair extreme"
+    },
+    "failureRule": "If these gates are not met, the candidate must not enter Dry-run."
+  },
+  "doNotProceed": [
+    "Do not enter Dry-run with V0.1/V0.2.",
+    "Do not continue minor B/C/E threshold edits as the next step.",
+    "Do not treat V02C relative improvement as usable performance.",
+    "Do not run live trading.",
+    "Do not add real API keys.",
+    "Do not call Trade API or Withdraw API.",
+    "Do not read real accounts or positions.",
+    "Do not create real orders.",
+    "Do not auto trade."
+  ],
+  "requiredConclusions": [
+    "Volume Rebound V0.1/V0.2 current series must not enter Dry-run.",
+    "B/C/E improved relatively in some comparisons but remain unusable after expanded validation and slippage.",
+    "The failure is not a single-parameter issue.",
+    "Continuing minor edits inside the current framework has high overfitting risk.",
+    "V03 should redesign entry quality, trade frequency, payoff structure, and risk controls."
+  ],
+  "nextStepRecommendation": "V13.4.7 - V03 Candidate Selection and Specification",
+  "warnings": [],
+  "generatedAt": "2026-07-04T19:19:28.387426+00:00",
+  "source": "alphapilot_v13_4_6_strategy_direction_review"
+}

@@ -53,6 +53,16 @@ No candidate is ready for Dry-run or live trading. The next step should be V13.4
 - rethinking the payoff structure,
 - validating on longer timeranges only after the strategy logic is redesigned.
 
+## V13.4.6 Follow-up
+
+V13.4.6 formally rejects the current V0.1/V0.2 series for Dry-run and archives
+the family as failed research for the current sample.
+
+The direction after this report is not more B/C/E micro-tuning. The next
+research step is V03 strategy redesign, with a new entry-quality framework,
+lower trade frequency, stronger reward/risk requirements, pair-level exposure
+controls, and slippage-adjusted quality gates.
+
 ## Safety
 
 This result is historical research only. It does not use real API keys, does not call Trade API or Withdraw API, does not read real accounts or positions, does not create orders, and does not auto trade.
