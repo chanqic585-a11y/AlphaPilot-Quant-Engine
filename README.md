@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.8 - Trend Pullback 1H V03 Strategy Smoke Backtest
+AlphaPilot V13.4.9 - Trend Pullback 1H Expanded Validation With Slippage
 ```
 
 ## Positioning
@@ -562,9 +562,66 @@ docs/trend-pullback-1h-v01-implementation.md
 
 V13.4.8 smoke success does not approve Dry-run. It is a research checkpoint only.
 
+## V13.4.9 Trend Pullback Expanded Validation
+
+V13.4.9 expands the V13.4.8 Trend Pullback 1H smoke result to a fixed Top30
+validation scope and applies AlphaPilot slippage post-processing.
+
+中文说明：
+
+```text
+V13.4.9 将 V13.4.8 的 BTC / ETH / SOL 冒烟结果扩大到固定 Top30 样本，并加入滑点后处理。
+扩大验证失败，仍然不进入 Dry-run，不实盘，不接 API Key，不自动交易。
+```
+
+Run expanded validation:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/download_data.ps1 -UseTop30 -Timeframes "1h,4h" -Timerange "20260101-" -Prepend -Run
+powershell -ExecutionPolicy Bypass -File scripts/run_trend_pullback_expanded_validation.ps1 -UseTop30 -Timerange "20260101-" -Run
+python -m alphapilot.reports.generate_trend_pullback_expanded_report
+```
+
+Result:
+
+```text
+requestedPairCount = 30
+supportedPairs = 28
+excludedPairs = TON/USDT:USDT, FET/USDT:USDT
+isMock = false
+dryRunApproved = false
+
+rawTradeCount = 472
+rawTotalReturnPct = -61.0503
+rawMaxDrawdownPct = 67.296
+rawWinRate = 31.5678
+rawProfitFactor = 0.7067
+rawMaxConsecutiveLosses = 13
+
+slippageAdjustedTotalReturnPct = -113.218
+slippageAdjustedProfitFactor = 0.5361
+slippageAdjustedWinRate = 30.7203
+slippageAdjustedMaxDrawdownPct = 112.2244
+slippageCost = 521.67704423
+```
+
+Outputs:
+
+```text
+reports/v13_4_9_trend_pullback_expanded_manifest.json
+reports/v13_4_9_trend_pullback_expanded_validation_report.json
+reports/v13_4_9_trend_pullback_expanded_validation_summary.md
+docs/V13.4.9-trend-pullback-expanded-validation.md
+docs/trend-pullback-1h-expanded-results.md
+```
+
+V13.4.9 rejects Dry-run. The V13.4.8 smoke result did not generalize to the
+wider Top30 validation sample. The next step should be V13.4.10 Trend Pullback
+Redesign Review.
+
 ## Next Versions
 
-- V13.4.9: run Trend Pullback 1H result diagnosis or expand validation to Top30, depending on the research decision.
+- V13.4.10: run Trend Pullback Redesign Review before any further implementation.
 - V13.5: consider Dry-run preparation only after V03 passes stronger risk-adjusted validation.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.

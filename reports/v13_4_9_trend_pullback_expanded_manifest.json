@@ -1,0 +1,55 @@
+{
+    "reportId":  "v13_4_9_trend_pullback_expanded_manifest",
+    "pairsMode":  "fixed_top30",
+    "timerange":  "20260101-",
+    "timeframe":  "1h",
+    "pairs":  [
+                  "BTC/USDT:USDT",
+                  "ETH/USDT:USDT",
+                  "SOL/USDT:USDT",
+                  "DOGE/USDT:USDT",
+                  "XRP/USDT:USDT",
+                  "ADA/USDT:USDT",
+                  "AVAX/USDT:USDT",
+                  "LINK/USDT:USDT",
+                  "SUI/USDT:USDT",
+                  "APT/USDT:USDT",
+                  "OP/USDT:USDT",
+                  "ARB/USDT:USDT",
+                  "LTC/USDT:USDT",
+                  "BCH/USDT:USDT",
+                  "DOT/USDT:USDT",
+                  "NEAR/USDT:USDT",
+                  "PEPE/USDT:USDT",
+                  "WIF/USDT:USDT",
+                  "ORDI/USDT:USDT",
+                  "TON/USDT:USDT",
+                  "INJ/USDT:USDT",
+                  "FIL/USDT:USDT",
+                  "ETC/USDT:USDT",
+                  "TRX/USDT:USDT",
+                  "UNI/USDT:USDT",
+                  "AAVE/USDT:USDT",
+                  "ATOM/USDT:USDT",
+                  "SEI/USDT:USDT",
+                  "TIA/USDT:USDT",
+                  "FET/USDT:USDT"
+              ],
+    "strategiesRequested":  [
+                                "AlphaPilotTrendPullback1HV01"
+                            ],
+    "strategies":  [
+                       {
+                           "strategy":  "AlphaPilotTrendPullback1HV01",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotTrendPullback1HV01 --timerange 20260101- --timeframe 1h --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_9_AlphaPilotTrendPullback1HV01.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT OP/USDT:USDT ARB/USDT:USDT LTC/USDT:USDT BCH/USDT:USDT DOT/USDT:USDT NEAR/USDT:USDT PEPE/USDT:USDT WIF/USDT:USDT ORDI/USDT:USDT TON/USDT:USDT INJ/USDT:USDT FIL/USDT:USDT ETC/USDT:USDT TRX/USDT:USDT UNI/USDT:USDT AAVE/USDT:USDT ATOM/USDT:USDT SEI/USDT:USDT TIA/USDT:USDT FET/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_9_AlphaPilotTrendPullback1HV01.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_9_AlphaPilotTrendPullback1HV01.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_20-11-03.zip"
+                       }
+                   ],
+    "generatedAt":  "2026-07-04T20:11:05.2498992Z",
+    "safety":  "Backtesting only. No Dry-run, no live trading, no API keys, no Trade API, no Withdraw API."
+}
