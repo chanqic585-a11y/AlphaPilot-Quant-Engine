@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.11 - Execution Reality and Liquidity Gate Design
+AlphaPilot V13.4.12 - Dynamic Universe and Regime Strategy Specification
 ```
 
 ## Positioning
@@ -736,12 +736,67 @@ Safety boundary:
 - No automatic trading.
 - No Dry-run execution.
 
-V13.4.11 keeps `dryRunApproved=false` and `liveTradingApproved=false`. The next
-recommended step is V13.4.12 Shadow Trading Skeleton.
+V13.4.11 keeps `dryRunApproved=false` and `liveTradingApproved=false`.
+
+## V13.4.12 Dynamic Universe and Regime Strategy Specification
+
+V13.4.12 defines the new AlphaPilot strategy mainline:
+
+```text
+AlphaPilot Dynamic Regime Strategy V0.1
+```
+
+中文说明：
+
+```text
+V13.4.12 正式切换到动态币种池 + 市场状态路由 + 概率评分的新策略主线。
+本版本只做规格，不写策略代码、不下载数据、不回测、不进入 Dry-run、不实盘。
+```
+
+New architecture:
+
+```text
+Universe -> Regime -> Module -> Probability -> Liquidity -> Risk -> Backtest / Shadow
+```
+
+V13.4.12 defines:
+
+- `DynamicUniverseV01`
+- historical dynamic universe snapshots
+- `MarketRegimeRouterV01`
+- `TrendContinuationModuleV01`
+- `MeanReversionModuleV01`
+- `ProbabilityScoreV01`
+- liquidity gate integration
+- risk gate integration
+- the backtest validation plan
+
+Generate the specification report:
+
+```powershell
+python -m alphapilot.reports.generate_dynamic_regime_strategy_spec
+```
+
+Outputs:
+
+```text
+reports/v13_4_12_dynamic_regime_strategy_spec.json
+reports/v13_4_12_dynamic_regime_strategy_summary.md
+docs/V13.4.12-dynamic-universe-regime-strategy-specification.md
+docs/dynamic-universe-design.md
+docs/market-regime-router-design.md
+docs/probability-score-design.md
+```
+
+V13.4.12 keeps `dryRunApproved=false` and `liveTradingApproved=false`. The next
+recommended step is V13.4.13 Historical Dynamic Universe Builder.
 
 ## Next Versions
 
-- V13.4.12: add Shadow Trading Skeleton after the execution reality design layer.
-- V13.5: consider Dry-run preparation only after V03 passes stronger risk-adjusted validation.
-- V13.6: connect mobile control-panel read-only views to exported research reports.
-- V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.
+- V13.4.13: build historical Dynamic Universe snapshots without lookahead bias.
+- V13.4.14: build Probability Score dataset and label tables.
+- V13.4.15: implement Dynamic Regime Strategy V0.1.
+- V13.4.16: run Dynamic Regime smoke backtest.
+- V13.4.17: run expanded validation with slippage and liquidity gates.
+- V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer.
+- V13.6: consider Dry-run candidate evaluation only after stronger validation.

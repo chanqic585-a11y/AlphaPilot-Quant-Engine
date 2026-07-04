@@ -16,11 +16,15 @@ dryRunApproved = false
 liveTradingApproved = false
 ```
 
-The next recommended version is:
+After reviewing the new strategy mainline, the next recommended version was
+updated from immediate Shadow Trading Skeleton to:
 
 ```text
-V13.4.12 - Shadow Trading Skeleton
+V13.4.12 - Dynamic Universe and Regime Strategy Specification
 ```
+
+Shadow Trading remains important, but it moves after the Dynamic Universe,
+Regime Router, and Probability Score research layer is specified.
 
 V13.4.10 recommends that the next version should not enter Dry-run and should
 not rush into another strategy implementation. The current priority is deciding
