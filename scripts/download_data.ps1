@@ -3,6 +3,7 @@ param(
   [string]$Timeframes = "15m,1h,4h",
   [string]$Timerange = "20240101-",
   [switch]$UseTop30,
+  [switch]$Prepend,
   [switch]$Run
 )
 
@@ -72,6 +73,10 @@ $dockerArgs = @(
   "--pairs"
 ) + $pairList + @("--timeframes") + $timeframeList
 
+if ($Prepend) {
+  $dockerArgs += "--prepend"
+}
+
 $commandPreview = "docker " + ($dockerArgs -join " ")
 
 Write-Host "AlphaPilot V13.4 public historical data download command:"
@@ -79,6 +84,7 @@ Write-Host $commandPreview
 Write-Host "Pairs: $($pairList -join ', ')"
 Write-Host "Timeframes: $($timeframeList -join ', ')"
 Write-Host "Timerange: $Timerange"
+Write-Host "Prepend missing earlier local data: $Prepend"
 Write-Host "Default mode is preview only. Add -Run to execute Docker."
 
 if ($Run) {

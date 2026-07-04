@@ -366,9 +366,50 @@ powershell -ExecutionPolicy Bypass -File scripts/run_backtest.ps1 -Timerange "20
 
 Add `-Run` only after Docker Desktop is installed and running.
 
+## V13.4.5 Expanded Candidate Validation
+
+V13.4.5 expands validation of the best V0.2 candidates on a larger Top30 scope
+and adds slippage-adjusted metrics.
+
+V13.4.5 对 V13.4.4 中相对较好的 B/C/E 候选进行 Top30 扩大验证，并加入滑点调整后的指标。
+本版本不进入 Dry-run，不批准实盘。
+
+Run expanded validation:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/download_data.ps1 -UseTop30 -Timeframes "15m,1h,4h" -Timerange "20260101-" -Prepend -Run
+powershell -ExecutionPolicy Bypass -File scripts/run_expanded_validation.ps1 -UseTop30 -Timerange "20260101-" -Run
+python -m alphapilot.reports.generate_expanded_validation_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_5_expanded_validation_manifest.json
+reports/v13_4_5_expanded_validation_report.json
+reports/v13_4_5_expanded_validation_summary.md
+docs/V13.4.5-expanded-validation-slippage.md
+docs/volume-rebound-expanded-validation-results.md
+```
+
+V13.4.5 result:
+
+```text
+Requested pairs: fixed Top30
+Supported pairs: 28
+Excluded pairs: TON/USDT:USDT, FET/USDT:USDT
+Best raw candidate: AlphaPilotVolumeReboundV02CExitCleanup
+Best slippage-adjusted candidate: AlphaPilotVolumeReboundV02CExitCleanup
+dryRunApproved: false
+```
+
+All candidates remain negative after slippage post-processing. V02C is the best
+relative candidate by profit factor, but it is not approved for Dry-run. The
+next step should be V13.4.6 strategy direction review or V03 redesign.
+
 ## Next Versions
 
-- V13.4.5: validate the most promising candidates over longer timeranges and more pairs, or redesign if weakness persists.
+- V13.4.6: run strategy direction review / V03 redesign because V13.4.5 remains negative after slippage.
 - V13.5: consider Dry-run preparation only after broader validation shows stronger risk-adjusted evidence.
 - V13.6: connect mobile control-panel read-only views to exported research reports.
 - V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.

@@ -1,0 +1,88 @@
+{
+    "reportId":  "v13_4_5_expanded_validation_manifest",
+    "pairsMode":  "fixed_top30",
+    "timerange":  "20260101-",
+    "timeframe":  "15m",
+    "pairs":  [
+                  "BTC/USDT:USDT",
+                  "ETH/USDT:USDT",
+                  "SOL/USDT:USDT",
+                  "DOGE/USDT:USDT",
+                  "XRP/USDT:USDT",
+                  "ADA/USDT:USDT",
+                  "AVAX/USDT:USDT",
+                  "LINK/USDT:USDT",
+                  "SUI/USDT:USDT",
+                  "APT/USDT:USDT",
+                  "OP/USDT:USDT",
+                  "ARB/USDT:USDT",
+                  "LTC/USDT:USDT",
+                  "BCH/USDT:USDT",
+                  "DOT/USDT:USDT",
+                  "NEAR/USDT:USDT",
+                  "PEPE/USDT:USDT",
+                  "WIF/USDT:USDT",
+                  "ORDI/USDT:USDT",
+                  "TON/USDT:USDT",
+                  "INJ/USDT:USDT",
+                  "FIL/USDT:USDT",
+                  "ETC/USDT:USDT",
+                  "TRX/USDT:USDT",
+                  "UNI/USDT:USDT",
+                  "AAVE/USDT:USDT",
+                  "ATOM/USDT:USDT",
+                  "SEI/USDT:USDT",
+                  "TIA/USDT:USDT",
+                  "FET/USDT:USDT"
+              ],
+    "strategiesRequested":  [
+                                "AlphaPilotVolumeReboundV01",
+                                "AlphaPilotVolumeReboundV02BVolumeQuality",
+                                "AlphaPilotVolumeReboundV02CExitCleanup",
+                                "AlphaPilotVolumeReboundV02EPairRiskWatchlist"
+                            ],
+    "strategies":  [
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV01",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV01 --timerange 20260101- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV01.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT OP/USDT:USDT ARB/USDT:USDT LTC/USDT:USDT BCH/USDT:USDT DOT/USDT:USDT NEAR/USDT:USDT PEPE/USDT:USDT WIF/USDT:USDT ORDI/USDT:USDT TON/USDT:USDT INJ/USDT:USDT FIL/USDT:USDT ETC/USDT:USDT TRX/USDT:USDT UNI/USDT:USDT AAVE/USDT:USDT ATOM/USDT:USDT SEI/USDT:USDT TIA/USDT:USDT FET/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV01.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV01.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-53-06.zip"
+                       },
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV02BVolumeQuality",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV02BVolumeQuality --timerange 20260101- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02BVolumeQuality.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT OP/USDT:USDT ARB/USDT:USDT LTC/USDT:USDT BCH/USDT:USDT DOT/USDT:USDT NEAR/USDT:USDT PEPE/USDT:USDT WIF/USDT:USDT ORDI/USDT:USDT TON/USDT:USDT INJ/USDT:USDT FIL/USDT:USDT ETC/USDT:USDT TRX/USDT:USDT UNI/USDT:USDT AAVE/USDT:USDT ATOM/USDT:USDT SEI/USDT:USDT TIA/USDT:USDT FET/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02BVolumeQuality.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02BVolumeQuality.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-53-39.zip"
+                       },
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV02CExitCleanup",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV02CExitCleanup --timerange 20260101- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02CExitCleanup.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT OP/USDT:USDT ARB/USDT:USDT LTC/USDT:USDT BCH/USDT:USDT DOT/USDT:USDT NEAR/USDT:USDT PEPE/USDT:USDT WIF/USDT:USDT ORDI/USDT:USDT TON/USDT:USDT INJ/USDT:USDT FIL/USDT:USDT ETC/USDT:USDT TRX/USDT:USDT UNI/USDT:USDT AAVE/USDT:USDT ATOM/USDT:USDT SEI/USDT:USDT TIA/USDT:USDT FET/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02CExitCleanup.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02CExitCleanup.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-54-12.zip"
+                       },
+                       {
+                           "strategy":  "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy AlphaPilotVolumeReboundV02EPairRiskWatchlist --timerange 20260101- --timeframe 15m --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02EPairRiskWatchlist.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT OP/USDT:USDT ARB/USDT:USDT LTC/USDT:USDT BCH/USDT:USDT DOT/USDT:USDT NEAR/USDT:USDT PEPE/USDT:USDT WIF/USDT:USDT ORDI/USDT:USDT TON/USDT:USDT INJ/USDT:USDT FIL/USDT:USDT ETC/USDT:USDT TRX/USDT:USDT UNI/USDT:USDT AAVE/USDT:USDT ATOM/USDT:USDT SEI/USDT:USDT TIA/USDT:USDT FET/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02EPairRiskWatchlist.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02EPairRiskWatchlist.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-04_18-54-42.zip"
+                       }
+                   ],
+    "generatedAt":  "2026-07-04T18:52:38.2228175Z",
+    "safety":  "Backtesting only. No Dry-run, no live trading, no API keys, no Trade API, no Withdraw API."
+}
