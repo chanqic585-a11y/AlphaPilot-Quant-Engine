@@ -2,6 +2,7 @@ param(
   [string]$Pairs = "BTC/USDT:USDT,ETH/USDT:USDT,SOL/USDT:USDT",
   [string]$Timeframes = "15m,1h,4h",
   [string]$Timerange = "20240101-",
+  [switch]$UseTop30,
   [switch]$Run
 )
 
@@ -12,7 +13,46 @@ function Split-CsvArg {
     Where-Object { $_.Length -gt 0 }
 }
 
-$pairList = @(Split-CsvArg $Pairs)
+function Get-Top30Pairs {
+  return @(
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "XRP/USDT:USDT",
+    "ADA/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "LINK/USDT:USDT",
+    "SUI/USDT:USDT",
+    "APT/USDT:USDT",
+    "OP/USDT:USDT",
+    "ARB/USDT:USDT",
+    "LTC/USDT:USDT",
+    "BCH/USDT:USDT",
+    "DOT/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "PEPE/USDT:USDT",
+    "WIF/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "TON/USDT:USDT",
+    "INJ/USDT:USDT",
+    "FIL/USDT:USDT",
+    "ETC/USDT:USDT",
+    "TRX/USDT:USDT",
+    "UNI/USDT:USDT",
+    "AAVE/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "SEI/USDT:USDT",
+    "TIA/USDT:USDT",
+    "FET/USDT:USDT"
+  )
+}
+
+$pairList = if ($UseTop30) {
+  @(Get-Top30Pairs)
+} else {
+  @(Split-CsvArg $Pairs)
+}
 $timeframeList = @(Split-CsvArg $Timeframes)
 
 $dockerArgs = @(
@@ -34,7 +74,7 @@ $dockerArgs = @(
 
 $commandPreview = "docker " + ($dockerArgs -join " ")
 
-Write-Host "AlphaPilot V13.3 public historical data download command:"
+Write-Host "AlphaPilot V13.4 public historical data download command:"
 Write-Host $commandPreview
 Write-Host "Pairs: $($pairList -join ', ')"
 Write-Host "Timeframes: $($timeframeList -join ', ')"

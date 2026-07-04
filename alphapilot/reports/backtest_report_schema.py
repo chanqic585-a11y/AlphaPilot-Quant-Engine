@@ -8,16 +8,16 @@ from typing import Any
 
 @dataclass
 class BacktestMetrics:
-    totalReturnPct: float
-    maxDrawdownPct: float
-    winRate: float
-    profitFactor: float
-    tradeCount: int
-    maxConsecutiveLosses: int
-    averageHoldingMinutes: float
-    feesPaid: float
-    slippageCost: float
-    netReturnAfterCosts: float
+    totalReturnPct: float | None
+    maxDrawdownPct: float | None
+    winRate: float | None
+    profitFactor: float | None
+    tradeCount: int | None
+    maxConsecutiveLosses: int | None
+    averageHoldingMinutes: float | None
+    feesPaid: float | None
+    slippageCost: float | None
+    netReturnAfterCosts: float | None
 
 
 @dataclass
@@ -36,6 +36,7 @@ class AlphaPilotBacktestReport:
     skippedSignals: list[dict[str, Any]] = field(default_factory=list)
     riskGateSummary: dict[str, Any] = field(default_factory=dict)
     auditSummary: dict[str, Any] = field(default_factory=dict)
+    reportWarnings: list[str] = field(default_factory=list)
     generatedAt: str = ""
     isMock: bool = True
     source: str = "alphapilot_report_exporter_v13_3"

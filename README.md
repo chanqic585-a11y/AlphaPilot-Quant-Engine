@@ -5,18 +5,18 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.3 - Volume Rebound V0.1 Strategy and Baseline Backtest
+AlphaPilot V13.4 - Real Freqtrade Smoke Backtest Runtime Prep
 ```
 
 ## Positioning
 
-V13.3 builds on the backend skeleton and implements the first AlphaPilot research strategy for baseline backtesting.
+V13.4 prepares real Freqtrade smoke backtest execution and report export on top of the V13.3 strategy implementation.
 
 It is separate from the AlphaPilot Mobile App. The mobile app remains the phone-side AI control panel and manual trade record interface. This repository is the backend quant foundation.
 
 ## Safety Boundary
 
-V13.3 does not perform live trading.
+V13.4 does not perform live trading.
 
 - No real Trade API.
 - No Withdraw API.
@@ -40,7 +40,7 @@ Freqtrade gives AlphaPilot a practical open-source base for:
 - dry-run concepts
 - structured user_data layout
 
-V13.3 starts strategy backtesting work. Strategy quality, larger historical tests, Freqtrade tuning, and any controlled execution design remain later work.
+V13.4 is not a strategy tuning version. It keeps the V13.3 strategy parameters fixed and focuses on the runtime path: data download, Freqtrade backtest, result JSON, and AlphaPilot report export.
 
 ## Structure
 
@@ -158,8 +158,42 @@ The exporter marks sample reports with `isMock=true`. It marks converted Freqtra
 
 The V13.3 strategy is not a live recommendation and not a production trading strategy.
 
+## V13.4 Real Freqtrade Smoke Backtest
+
+V13.4 prepares and attempts the first real Freqtrade smoke backtest flow:
+
+```text
+public historical data download -> Freqtrade backtest -> Freqtrade JSON -> AlphaPilot report
+```
+
+This Codex environment does not currently expose the `docker` command, so real smoke execution is blocked here. V13.4 is not tagged until a real smoke backtest succeeds and the exported report has:
+
+```json
+{
+  "isMock": false
+}
+```
+
+Runtime prep added in V13.4:
+
+- `scripts/download_data.ps1` supports `-UseTop30`.
+- `scripts/run_backtest.ps1` supports `-UseTop30`.
+- Report export preserves missing real metrics as `null` and records `reportWarnings`.
+- Real reports write `reports/latest_backtest_report.json` and `reports/smoke_backtest_report.json`.
+- Mock reports remain explicitly marked with `isMock=true`.
+
+Smoke preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/download_data.ps1 -Pairs "BTC/USDT:USDT,ETH/USDT:USDT,SOL/USDT:USDT" -Timeframes "15m,1h,4h" -Timerange "20260401-"
+powershell -ExecutionPolicy Bypass -File scripts/run_backtest.ps1 -Timerange "20260401-" -Pairs "BTC/USDT:USDT,ETH/USDT:USDT,SOL/USDT:USDT"
+```
+
+Add `-Run` only after Docker Desktop is installed and running.
+
 ## Next Versions
 
-- V13.4: run wider Top 30 historical tests and improve skipped-signal aggregation.
-- V13.5: connect mobile control-panel read-only views to exported research reports.
-- V13.6+: consider dry-run architecture only after risk gates and audit rules are stronger.
+- V13.4: run real BTC / ETH / SOL smoke backtest when Docker is available, then tag only after `isMock=false` report export.
+- V13.5: run wider Top 30 historical tests and improve skipped-signal aggregation.
+- V13.6: connect mobile control-panel read-only views to exported research reports.
+- V13.7+: consider dry-run architecture only after risk gates and audit rules are stronger.

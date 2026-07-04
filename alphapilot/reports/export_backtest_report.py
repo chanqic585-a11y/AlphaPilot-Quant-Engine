@@ -19,6 +19,7 @@ from alphapilot.universe.top30_usdt_swap import get_top30_usdt_swap_pairs
 DEFAULT_RESULT_DIR = Path("user_data/backtest_results")
 DEFAULT_SAMPLE_OUTPUT = Path("reports/sample_backtest_report.json")
 DEFAULT_LATEST_OUTPUT = Path("reports/latest_backtest_report.json")
+DEFAULT_SMOKE_OUTPUT = Path("reports/smoke_backtest_report.json")
 
 SKIP_REASONS = [
     "btc_crash_filter",
@@ -39,7 +40,7 @@ def _read_json(path: Path) -> dict[str, Any] | list[Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def _to_float(value: Any, default: float = 0.0) -> float:
+def _to_float(value: Any, default: float | None = 0.0) -> float | None:
     try:
         if value is None:
             return default
@@ -48,7 +49,7 @@ def _to_float(value: Any, default: float = 0.0) -> float:
         return default
 
 
-def _to_int(value: Any, default: int = 0) -> int:
+def _to_int(value: Any, default: int | None = 0) -> int | None:
     try:
         if value is None:
             return default
@@ -57,7 +58,7 @@ def _to_int(value: Any, default: int = 0) -> int:
         return default
 
 
-def _pick_number(source: dict[str, Any], names: list[str], default: float = 0.0) -> float:
+def _pick_number(source: dict[str, Any], names: list[str], default: float | None = 0.0) -> float | None:
     for name in names:
         if name in source:
             return _to_float(source.get(name), default)
@@ -78,7 +79,9 @@ def _select_strategy_payload(payload: dict[str, Any] | list[Any]) -> dict[str, A
     return payload
 
 
-def _normalize_pct(value: float, source_name: str) -> float:
+def _normalize_pct(value: float | None, source_name: str) -> float | None:
+    if value is None:
+        return None
     if source_name.endswith("_pct"):
         return value
     if -1.0 <= value <= 1.0:
@@ -88,27 +91,49 @@ def _normalize_pct(value: float, source_name: str) -> float:
 
 def _build_metrics(source: dict[str, Any]) -> BacktestMetrics:
     total_return_source = "profit_total_pct" if "profit_total_pct" in source else "profit_total"
-    total_return = _normalize_pct(_to_float(source.get(total_return_source)), total_return_source)
+    total_return = _normalize_pct(_to_float(source.get(total_return_source), None), total_return_source)
     drawdown_source = "max_drawdown_account_pct" if "max_drawdown_account_pct" in source else "max_drawdown"
-    max_drawdown = abs(_normalize_pct(_to_float(source.get(drawdown_source)), drawdown_source))
+    raw_drawdown = _normalize_pct(_to_float(source.get(drawdown_source), None), drawdown_source)
+    max_drawdown = abs(raw_drawdown) if raw_drawdown is not None else None
 
-    trade_count = _to_int(source.get("total_trades", source.get("trade_count", 0)))
-    win_count = _to_int(source.get("wins", source.get("winning_trades", 0)))
-    win_rate = (win_count / trade_count * 100) if trade_count else _to_float(source.get("winrate", 0.0))
+    trade_count = _to_int(source.get("total_trades", source.get("trade_count")), None)
+    win_count = _to_int(source.get("wins", source.get("winning_trades")), None)
+    if trade_count and win_count is not None:
+        win_rate = win_count / trade_count * 100
+    else:
+        win_rate = _to_float(source.get("winrate"), None)
 
-    fees_paid = _pick_number(source, ["total_fee", "fees_paid", "feesPaid"], 0.0)
+    fees_paid = _pick_number(source, ["total_fee", "fees_paid", "feesPaid"], None)
+    holding_seconds = _pick_number(source, ["holding_avg_s", "averageHoldingSeconds"], None)
     return BacktestMetrics(
-        totalReturnPct=round(total_return, 4),
-        maxDrawdownPct=round(max_drawdown, 4),
-        winRate=round(win_rate, 4),
-        profitFactor=round(_pick_number(source, ["profit_factor", "profitFactor"], 0.0), 4),
+        totalReturnPct=round(total_return, 4) if total_return is not None else None,
+        maxDrawdownPct=round(max_drawdown, 4) if max_drawdown is not None else None,
+        winRate=round(win_rate, 4) if win_rate is not None else None,
+        profitFactor=(
+            round(profit_factor, 4)
+            if (profit_factor := _pick_number(source, ["profit_factor", "profitFactor"], None)) is not None
+            else None
+        ),
         tradeCount=trade_count,
-        maxConsecutiveLosses=_to_int(source.get("max_consecutive_losses", 0)),
-        averageHoldingMinutes=round(_pick_number(source, ["holding_avg_s", "averageHoldingSeconds"], 0.0) / 60, 4),
-        feesPaid=round(fees_paid, 8),
-        slippageCost=0.0,
-        netReturnAfterCosts=round(total_return, 4),
+        maxConsecutiveLosses=_to_int(source.get("max_consecutive_losses"), None),
+        averageHoldingMinutes=round(holding_seconds / 60, 4) if holding_seconds is not None else None,
+        feesPaid=round(fees_paid, 8) if fees_paid is not None else None,
+        slippageCost=None,
+        netReturnAfterCosts=round(total_return, 4) if total_return is not None else None,
     )
+
+
+def _build_report_warnings(source: dict[str, Any]) -> list[str]:
+    warnings: list[str] = [
+        "Slippage is recorded as a planned model but is not applied by the Freqtrade command yet.",
+    ]
+    if "total_trades" not in source and "trade_count" not in source:
+        warnings.append("Trade count was not found in the Freqtrade result payload.")
+    if not any(key in source for key in ("profit_total_pct", "profit_total")):
+        warnings.append("Total return was not found in the Freqtrade result payload.")
+    if not any(key in source for key in ("max_drawdown_account_pct", "max_drawdown")):
+        warnings.append("Max drawdown was not found in the Freqtrade result payload.")
+    return warnings
 
 
 def _find_latest_freqtrade_result() -> Path | None:
@@ -133,7 +158,7 @@ def build_sample_report() -> AlphaPilotBacktestReport:
         universe=get_top30_usdt_swap_pairs(),
         timerange="mock_20240101-20240701",
         config={
-            "source": "v13_3_mock_report",
+            "source": "v13_4_mock_report",
             "dryRunOnly": True,
             "feeRateOneWay": 0.0005,
             "slippageRateOneWay": 0.0005,
@@ -160,9 +185,13 @@ def build_sample_report() -> AlphaPilotBacktestReport:
             "skipReasonsTracked": SKIP_REASONS,
         },
         auditSummary={"status": "sample", "ledger": "reports/audit_ledger.jsonl"},
+        reportWarnings=[
+            "No real Freqtrade result JSON was found. This is a mock schema sample.",
+            "Slippage is recorded as a planned model but is not applied by the Freqtrade command yet.",
+        ],
         generatedAt=_utc_now(),
         isMock=True,
-        source="alphapilot_report_exporter_v13_3_mock",
+        source="alphapilot_report_exporter_v13_4_mock",
     )
 
 
@@ -208,14 +237,17 @@ def build_report_from_freqtrade_result(path: Path) -> AlphaPilotBacktestReport:
             for reason in SKIP_REASONS
         ],
         riskGateSummary={
+            "available": False,
+            "reason": "skipped signal aggregation is not implemented in V13.4",
             "status": "backtest_result_converted",
             "liveExecutionAllowed": False,
             "skipReasonsTracked": SKIP_REASONS,
         },
         auditSummary={"status": "converted", "sourceResult": str(path)},
+        reportWarnings=_build_report_warnings(source),
         generatedAt=_utc_now(),
         isMock=False,
-        source="alphapilot_report_exporter_v13_3_freqtrade_conversion",
+        source="alphapilot_report_exporter_v13_4_freqtrade_conversion",
     )
 
 
@@ -227,6 +259,8 @@ def export_report(
     if result_path:
         report = build_report_from_freqtrade_result(result_path)
         output = output_path or DEFAULT_LATEST_OUTPUT
+        DEFAULT_SMOKE_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+        DEFAULT_SMOKE_OUTPUT.write_text(json.dumps(report.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
     else:
         report = build_sample_report()
         output = output_path or DEFAULT_SAMPLE_OUTPUT

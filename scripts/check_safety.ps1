@@ -41,10 +41,10 @@ $matches = foreach ($file in $files) {
 }
 
 if ($matches) {
-  Write-Host "Safety scan found terms. Review context below; V13.3 allows safety docs and negative statements only."
+  Write-Host "Safety scan found terms. Review context below; V13.4 allows safety docs and negative statements only."
   $matches | Format-Table -AutoSize
 } else {
   Write-Host "Safety scan found no matching terms."
 }
 
-Write-Host "Safety scan completed. No executable trade integration is expected in V13.3."
+Write-Host "Safety scan completed. No executable trade integration is expected in V13.4."

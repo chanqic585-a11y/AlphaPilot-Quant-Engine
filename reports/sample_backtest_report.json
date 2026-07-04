@@ -37,7 +37,7 @@
   ],
   "timerange": "mock_20240101-20240701",
   "config": {
-    "source": "v13_3_mock_report",
+    "source": "v13_4_mock_report",
     "dryRunOnly": true,
     "feeRateOneWay": 0.0005,
     "slippageRateOneWay": 0.0005,
@@ -112,7 +112,11 @@
     "status": "sample",
     "ledger": "reports/audit_ledger.jsonl"
   },
-  "generatedAt": "2026-07-04T16:36:07.404307+00:00",
+  "reportWarnings": [
+    "No real Freqtrade result JSON was found. This is a mock schema sample.",
+    "Slippage is recorded as a planned model but is not applied by the Freqtrade command yet."
+  ],
+  "generatedAt": "2026-07-04T16:49:06.790509+00:00",
   "isMock": true,
-  "source": "alphapilot_report_exporter_v13_3_mock"
+  "source": "alphapilot_report_exporter_v13_4_mock"
 }
