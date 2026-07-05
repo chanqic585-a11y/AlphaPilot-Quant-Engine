@@ -1,0 +1,250 @@
+{
+  "version": "V13.5.11",
+  "reportId": "v13_5_11_cross_market_public_data_smoke_report",
+  "generatedAt": "2026-07-05T21:14:07.939834+00:00",
+  "status": "completed",
+  "objective": "Build a cross-market public data smoke sample for research only, covering crypto-adjacent equity/index references without execution authority.",
+  "dataSource": {
+    "name": "Yahoo Finance public chart endpoint",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart",
+    "requiresApiKey": false,
+    "rawCacheCommittedToGit": false,
+    "note": "Use as public research data smoke only; verify data source terms before production redistribution."
+  },
+  "requestedRange": {
+    "startDate": "2024-01-01",
+    "endDate": "2026-07-06",
+    "interval": "1d"
+  },
+  "summary": {
+    "symbolCount": 8,
+    "successCount": 8,
+    "failureCount": 0,
+    "totalRows": 4928,
+    "markets": [
+      "cn_a_share",
+      "hk_stock",
+      "index",
+      "us_etf"
+    ]
+  },
+  "symbols": [
+    {
+      "metadata": {
+        "symbol": "600519.SS",
+        "display_name": "Kweichow Moutai",
+        "market": "cn_a_share",
+        "asset_type": "stock",
+        "currency": "CNY",
+        "data_source": "yahoo_finance_chart_public"
+      },
+      "interval": "1d",
+      "status": "ok",
+      "error": null,
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/600519.SS?period1=1704067200&period2=1783296000&interval=1d&events=history",
+      "summary": {
+        "rowCount": 604,
+        "startDate": "2024-01-02",
+        "endDate": "2026-07-03",
+        "missingOhlcvRows": 0,
+        "returnMeanDailyPct": -0.046118,
+        "returnVolDailyPct": 1.487094,
+        "maxDrawdownPct": 33.975706,
+        "dataQualityScore": 100
+      },
+      "rawDataCommittedToGit": false
+    },
+    {
+      "metadata": {
+        "symbol": "000001.SZ",
+        "display_name": "Ping An Bank",
+        "market": "cn_a_share",
+        "asset_type": "stock",
+        "currency": "CNY",
+        "data_source": "yahoo_finance_chart_public"
+      },
+      "interval": "1d",
+      "status": "ok",
+      "error": null,
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/000001.SZ?period1=1704067200&period2=1783296000&interval=1d&events=history",
+      "summary": {
+        "rowCount": 604,
+        "startDate": "2024-01-02",
+        "endDate": "2026-07-03",
+        "missingOhlcvRows": 0,
+        "returnMeanDailyPct": 0.027044,
+        "returnVolDailyPct": 1.317986,
+        "maxDrawdownPct": 23.748104,
+        "dataQualityScore": 100
+      },
+      "rawDataCommittedToGit": false
+    },
+    {
+      "metadata": {
+        "symbol": "0700.HK",
+        "display_name": "Tencent",
+        "market": "hk_stock",
+        "asset_type": "stock",
+        "currency": "HKD",
+        "data_source": "yahoo_finance_chart_public"
+      },
+      "interval": "1d",
+      "status": "ok",
+      "error": null,
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/0700.HK?period1=1704067200&period2=1783296000&interval=1d&events=history",
+      "summary": {
+        "rowCount": 613,
+        "startDate": "2024-01-02",
+        "endDate": "2026-07-03",
+        "missingOhlcvRows": 0,
+        "returnMeanDailyPct": 0.081399,
+        "returnVolDailyPct": 2.012586,
+        "maxDrawdownPct": 39.217714,
+        "dataQualityScore": 100
+      },
+      "rawDataCommittedToGit": false
+    },
+    {
+      "metadata": {
+        "symbol": "9988.HK",
+        "display_name": "Alibaba HK",
+        "market": "hk_stock",
+        "asset_type": "stock",
+        "currency": "HKD",
+        "data_source": "yahoo_finance_chart_public"
+      },
+      "interval": "1d",
+      "status": "ok",
+      "error": null,
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/9988.HK?period1=1704067200&period2=1783296000&interval=1d&events=history",
+      "summary": {
+        "rowCount": 613,
+        "startDate": "2024-01-02",
+        "endDate": "2026-07-03",
+        "missingOhlcvRows": 0,
+        "returnMeanDailyPct": 0.078703,
+        "returnVolDailyPct": 2.873082,
+        "maxDrawdownPct": 51.64776,
+        "dataQualityScore": 100
+      },
+      "rawDataCommittedToGit": false
+    },
+    {
+      "metadata": {
+        "symbol": "SPY",
+        "display_name": "SPDR S&P 500 ETF",
+        "market": "us_etf",
+        "asset_type": "etf",
+        "currency": "USD",
+        "data_source": "yahoo_finance_chart_public"
+      },
+      "interval": "1d",
+      "status": "ok",
+      "error": null,
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?period1=1704067200&period2=1783296000&interval=1d&events=history",
+      "summary": {
+        "rowCount": 627,
+        "startDate": "2024-01-02",
+        "endDate": "2026-07-02",
+        "missingOhlcvRows": 0,
+        "returnMeanDailyPct": 0.077675,
+        "returnVolDailyPct": 1.003774,
+        "maxDrawdownPct": 18.998904,
+        "dataQualityScore": 100
+      },
+      "rawDataCommittedToGit": false
+    },
+    {
+      "metadata": {
+        "symbol": "QQQ",
+        "display_name": "Invesco QQQ ETF",
+        "market": "us_etf",
+        "asset_type": "etf",
+        "currency": "USD",
+        "data_source": "yahoo_finance_chart_public"
+      },
+      "interval": "1d",
+      "status": "ok",
+      "error": null,
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/QQQ?period1=1704067200&period2=1783296000&interval=1d&events=history",
+      "summary": {
+        "rowCount": 627,
+        "startDate": "2024-01-02",
+        "endDate": "2026-07-02",
+        "missingOhlcvRows": 0,
+        "returnMeanDailyPct": 0.099946,
+        "returnVolDailyPct": 1.32159,
+        "maxDrawdownPct": 22.883307,
+        "dataQualityScore": 100
+      },
+      "rawDataCommittedToGit": false
+    },
+    {
+      "metadata": {
+        "symbol": "^HSI",
+        "display_name": "Hang Seng Index",
+        "market": "index",
+        "asset_type": "index",
+        "currency": "HKD",
+        "data_source": "yahoo_finance_chart_public"
+      },
+      "interval": "1d",
+      "status": "ok",
+      "error": null,
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EHSI?period1=1704067200&period2=1783296000&interval=1d&events=history",
+      "summary": {
+        "rowCount": 613,
+        "startDate": "2024-01-02",
+        "endDate": "2026-07-03",
+        "missingOhlcvRows": 0,
+        "returnMeanDailyPct": 0.06535,
+        "returnVolDailyPct": 1.502259,
+        "maxDrawdownPct": 19.954026,
+        "dataQualityScore": 100
+      },
+      "rawDataCommittedToGit": false
+    },
+    {
+      "metadata": {
+        "symbol": "^GSPC",
+        "display_name": "S&P 500 Index",
+        "market": "index",
+        "asset_type": "index",
+        "currency": "USD",
+        "data_source": "yahoo_finance_chart_public"
+      },
+      "interval": "1d",
+      "status": "ok",
+      "error": null,
+      "sourceUrl": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?period1=1704067200&period2=1783296000&interval=1d&events=history",
+      "summary": {
+        "rowCount": 627,
+        "startDate": "2024-01-02",
+        "endDate": "2026-07-02",
+        "missingOhlcvRows": 0,
+        "returnMeanDailyPct": 0.077682,
+        "returnVolDailyPct": 0.98241,
+        "maxDrawdownPct": 18.902206,
+        "dataQualityScore": 100
+      },
+      "rawDataCommittedToGit": false
+    }
+  ],
+  "integrationBoundary": {
+    "crossMarketResearchOnly": true,
+    "usedForCryptoExecution": false,
+    "normalizationRequiredBeforeModelUse": true,
+    "requiresSeparateValidation": true
+  },
+  "safetyBoundary": {
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "readsRealAccount": false,
+    "readsRealPositions": false,
+    "createsOrders": false,
+    "autoTrading": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false
+  }
+}

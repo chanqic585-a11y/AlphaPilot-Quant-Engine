@@ -7,6 +7,8 @@ user_data/backtest_results/*
 !user_data/backtest_results/.gitkeep
 user_data/logs/*
 !user_data/logs/.gitkeep
+user_data/cross_market_data/*
+!user_data/cross_market_data/.gitkeep
 reports/*.jsonl
 reports/*_private*
 reports/latest_backtest_report.json

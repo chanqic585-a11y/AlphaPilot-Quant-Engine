@@ -2926,10 +2926,54 @@ V13.5.10 does not add Trade API, Withdraw API, API key storage, real account
 reads, real position reads, real orders, emergency close, testnet execution, or
 automatic trading.
 
+## V13.5.11 Cross-Market Public Data Smoke
+
+V13.5.11 adds a public cross-market data smoke test so AlphaPilot can begin
+expanding its research sample base beyond crypto.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_11_cross_market_data_smoke.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_11_cross_market_data_smoke.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/cross_market/public_market_data.py
+alphapilot/reports/generate_v13_5_11_cross_market_data_smoke_report.py
+scripts/run_v13_5_11_cross_market_data_smoke.ps1
+reports/v13_5_11_cross_market_public_data_smoke_report.json
+reports/v13_5_11_cross_market_public_data_smoke_summary.md
+docs/V13.5.11-cross-market-public-data-smoke.md
+user_data/cross_market_data/
+```
+
+Default smoke symbols cover A-share, Hong Kong, US ETF, and index references:
+
+```text
+600519.SS, 000001.SZ, 0700.HK, 9988.HK, SPY, QQQ, ^HSI, ^GSPC
+```
+
+Raw OHLCV files are cached locally under `user_data/cross_market_data/` and are
+not committed to Git. Cross-market samples are research references for regime,
+volatility, liquidity, and factor robustness. They are not crypto execution
+commands and they do not approve exchange Dry-run or live trading.
+
+V13.5.11 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, or automatic
+trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.11: build a cross-market public data lake smoke test for crypto, A-shares, Hong Kong stocks, US equities, ETFs, and indices as research samples only.
 - V13.5.12: collect fresh public crypto data and run a new local paper monitoring refresh for the V13.5.7 4h alpha overlay; keep V13.5.8 adaptive rules as observer-only.
-- V13.5.13: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
+- V13.5.13: expand cross-market feature normalization and data quality scoring before using non-crypto samples in any model review.
+- V13.5.14: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
