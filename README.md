@@ -2970,10 +2970,59 @@ V13.5.11 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, or automatic
 trading.
 
+## V13.5.12 Active Alpha Overlay Replay
+
+V13.5.12 rebuilds the current V13.5.7 active alpha overlay pool into a
+single-trade event log and replays it through the local paper sandbox.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_12_active_alpha_overlay_replay.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_12_active_alpha_overlay_replay.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_12_active_alpha_overlay_replay_report.py
+scripts/run_v13_5_12_active_alpha_overlay_replay.ps1
+reports/v13_5_12_active_alpha_overlay_replay_report.json
+reports/v13_5_12_active_alpha_overlay_replay_summary.md
+reports/v13_5_12_active_alpha_overlay_signal_log.json
+reports/v13_5_12_active_alpha_overlay_paper_ledger.json
+docs/V13.5.12-active-alpha-overlay-replay.md
+```
+
+Current result:
+
+```text
+activeOverlayEventCount = 145
+filledSignalCount = 131
+tradeCount = 131
+winRate = 58.7786%
+profitFactor = 2.5656
+rewardRiskRatio = 1.7992
+maxDrawdown = 6.82632%
+```
+
+This is the first active-strategy replay that looks operationally useful. It is
+still historical replay, not forward validation. The next gate is fresh forward
+local paper monitoring after the active pool selection date.
+
+V13.5.12 does not add Trade API, Withdraw API, API key storage, real account
+reads, real position reads, real orders, exchange Dry-run execution, live
+trading, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.12: collect fresh public crypto data and run a new local paper monitoring refresh for the V13.5.7 4h alpha overlay; keep V13.5.8 adaptive rules as observer-only.
-- V13.5.13: expand cross-market feature normalization and data quality scoring before using non-crypto samples in any model review.
-- V13.5.14: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
+- V13.5.13: collect fresh public crypto data and run forward local paper monitoring for the V13.5.7 4h alpha overlay after the pool selection date.
+- V13.5.14: expand cross-market feature normalization and data quality scoring before using non-crypto samples in any model review.
+- V13.5.15: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

@@ -1,0 +1,109 @@
+{
+  "version": "V13.5.12",
+  "reportId": "v13_5_12_active_alpha_overlay_replay_report",
+  "generatedAt": "2026-07-05T21:17:54.440523+00:00",
+  "status": "completed",
+  "objective": "Rebuild the V13.5.7 active alpha overlay event log and replay it through the local paper sandbox as historical research evidence only.",
+  "activePool": {
+    "poolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+    "timeframe": "4h",
+    "overlayId": "alpha_short_exhaustion_pressure_watch",
+    "stopLossPct": 0.06,
+    "horizonBars": 24,
+    "rewardRMultiple": 2.0
+  },
+  "dataSource": {
+    "localPublicDataDir": "user_data\\data\\okx\\futures",
+    "loadedPairs": [
+      "AAVE/USDT:USDT",
+      "ADA/USDT:USDT",
+      "APT/USDT:USDT",
+      "ARB/USDT:USDT",
+      "ATOM/USDT:USDT",
+      "AVAX/USDT:USDT",
+      "BCH/USDT:USDT",
+      "BTC/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "DOT/USDT:USDT",
+      "ETC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "FIL/USDT:USDT",
+      "INJ/USDT:USDT",
+      "LINK/USDT:USDT",
+      "LTC/USDT:USDT",
+      "NEAR/USDT:USDT",
+      "OP/USDT:USDT",
+      "ORDI/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "SEI/USDT:USDT",
+      "SOL/USDT:USDT",
+      "SUI/USDT:USDT",
+      "TIA/USDT:USDT",
+      "TRX/USDT:USDT",
+      "UNI/USDT:USDT",
+      "WIF/USDT:USDT",
+      "XRP/USDT:USDT"
+    ],
+    "missingPairs": [],
+    "missingOptionalSources": {},
+    "publicDataOnly": true
+  },
+  "eventSummary": {
+    "allHighRewardEventCount": 12977,
+    "activeOverlayEventCount": 145,
+    "metrics": {
+      "tradeCount": 145,
+      "winRatePct": 58.6207,
+      "averageWinPct": 10.083141,
+      "averageLossPct": -5.53801,
+      "rewardRiskRatio": 1.8207,
+      "profitFactor": 2.5793,
+      "totalReturnPct": 10568.5947,
+      "maxDrawdownPct": 38.3157,
+      "researchWorthContinuing": false
+    }
+  },
+  "paperReplaySummary": {
+    "mode": "historical_replay_not_forward_validation",
+    "ledgerMetrics": {
+      "tradeCount": 131,
+      "winCount": 77,
+      "lossCount": 54,
+      "winRatePct": 58.7786,
+      "averageWin": 247.765371,
+      "averageLoss": -137.705593,
+      "rewardRiskRatio": 1.7992,
+      "profitFactor": 2.5656,
+      "initialEquity": 10000.0,
+      "finalEquity": 21641.831548,
+      "totalReturnPct": 116.4183,
+      "maxDrawdownPct": 6.82632,
+      "skippedSignalCount": 14,
+      "filledSignalCount": 131,
+      "maxConcurrentPositions": 3
+    },
+    "skippedSignalCount": 14,
+    "filledSignalCount": 131
+  },
+  "decision": {
+    "activeAlphaOverlayReplayCompleted": true,
+    "historicalReplayOnly": true,
+    "activeStrategySamplesPrepared": 145,
+    "readyForExchangeDryRunReview": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "active_strategy_historical_replay_ready_but_forward_local_paper_still_required"
+  },
+  "safetyBoundary": {
+    "usesPublicLocalDataOnly": true,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "readsRealAccount": false,
+    "readsRealPositions": false,
+    "createsOrders": false,
+    "autoTrading": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false
+  }
+}
