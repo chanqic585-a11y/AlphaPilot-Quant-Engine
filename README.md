@@ -1937,10 +1937,65 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.4.33 Low-Frequency Candidate Specification
+
+V13.4.33 uses the V13.4.32 low-frequency baselines to define candidate strategy specs and baseline hurdles before any strategy code is written.
+
+中文说明：
+
+```text
+V13.4.33 基于 V13.4.32 的低频基线，
+设计 BTC/ETH/SOL 4h/1d 低频候选策略规格与 baseline hurdles。
+本版本不写策略、不回测、不进入 Dry-run、不接 API Key。
+```
+
+Generate the candidate specification report:
+
+```powershell
+python -m alphapilot.reports.generate_low_frequency_candidate_spec_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_33_low_frequency_candidate_spec_report.json
+reports/v13_4_33_low_frequency_candidate_spec_summary.md
+docs/V13.4.33-low-frequency-candidate-specification.md
+docs/low-frequency-baseline-hurdles.md
+docs/low-frequency-directional-score-framework.md
+docs/v13_4_34_candidate-implementation-plan.md
+```
+
+Candidate specs:
+
+```text
+LF-CAND-A-4H-EMA-TREND-LONG
+LF-CAND-B-4H-BEAR-REJECTION-SHORT
+LF-CAND-C-1D-REGIME-4H-ENTRY-ROUTER
+LF-CAND-D-4H-BREAKOUT-RETEST
+LF-CAND-E-NOTRADE-DEFENSIVE-REGIME
+```
+
+V13.4.33 remains spec-only:
+
+```text
+no strategy implementation
+no Freqtrade strategy backtest
+no data download
+no Dry-run approval
+no live trading approval
+no real API key
+no Trade API / Withdraw API
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.4.33: use the V13.4.32 baseline hurdle before writing any low-frequency strategy candidate.
+- V13.4.34: implement Candidate A/B/E for research backtest only, with baseline and regime comparison.
 - Alternative future track: Funding/OI Public Data Collector if short research becomes the priority again.
 - Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.

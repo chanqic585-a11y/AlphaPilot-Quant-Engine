@@ -11,5 +11,7 @@ Minimum requirements:
 - report max drawdown, volatility, exposure time, and regime breakdown
 - avoid claiming historical baseline results as future performance
 - keep Dry-run and live trading disabled until a later explicit approval version
+- start from V13.4.33 candidate specs and baseline hurdles before writing any strategy code
+- keep first candidate implementations limited to 4-6 core conditions
 
-V13.4.32 is a data and baseline preparation step only.
+V13.4.32 is a data and baseline preparation step only. V13.4.33 is a candidate specification and baseline hurdle step only.
