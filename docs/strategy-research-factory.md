@@ -42,3 +42,26 @@ Every future strategy hypothesis should record:
 - benchmark comparison
 - rejected hypotheses
 - safety boundary before implementation
+
+## V13.4.25 Hypothesis Mining
+
+V13.4.25 turns the factory design into a research-only hypothesis registry.
+
+Inputs:
+
+- V13.4.22 factor evaluation
+- V13.4.23 benchmark suite
+- V13.4.24 benchmark result review
+
+Outputs:
+
+- `reports/v13_4_25_strategy_research_factory_report.json`
+- `reports/v13_4_25_strategy_research_factory_summary.md`
+- `reports/v13_4_25_research_hypotheses.json`
+
+The registry includes factor-based, benchmark-informed, regime-based,
+execution-reality, and rejected hypotheses. It does not write strategy code and
+does not approve Dry-run or live trading.
+
+The next step is V13.4.26, which should build a validation dataset for the
+highest-priority hypotheses before any strategy implementation.

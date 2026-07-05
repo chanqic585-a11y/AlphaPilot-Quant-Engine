@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.24 - Benchmark Result Review and Strategy Research Reset
+AlphaPilot V13.4.25 - Strategy Research Factory: Factor Hypothesis Mining
 ```
 
 ## Positioning
@@ -1442,8 +1442,57 @@ no real orders
 no auto trading
 ```
 
+## V13.4.25 Strategy Research Factory
+
+V13.4.25 converts prior research evidence into a structured hypothesis registry.
+It reads the V13.4.22 factor evaluation report, V13.4.23 benchmark suite report,
+and V13.4.24 benchmark result review.
+
+Generate the factory report:
+
+```powershell
+python -m alphapilot.reports.generate_strategy_research_factory_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_25_strategy_research_factory_report.json
+reports/v13_4_25_strategy_research_factory_summary.md
+reports/v13_4_25_research_hypotheses.json
+docs/V13.4.25-strategy-research-factory.md
+docs/factor-hypothesis-mining.md
+docs/rejected-strategy-hypotheses.md
+docs/next-experiment-plan.md
+```
+
+Hypothesis counts:
+
+```text
+total hypotheses: 14
+research-only: 9
+deferred: 1
+rejected: 4
+high priority: HYP-001, HYP-002, HYP-004, HYP-006, HYP-007, HYP-008
+```
+
+V13.4.25 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no strategy implementation
+no backtest execution
+no Dry-run
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+```
+
 ## Next Versions
 
-- V13.4.25: Strategy Research Factory - Factor Hypothesis Mining.
+- V13.4.26: Factor Hypothesis Validation Dataset.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

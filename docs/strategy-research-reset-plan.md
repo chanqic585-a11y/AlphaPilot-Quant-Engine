@@ -9,11 +9,15 @@ The V13.4.23 benchmark suite showed that simple rule families did not provide a
 tradable edge in the selected sample. Continuing to tune those benchmark
 parameters would risk overfitting a weak base.
 
-## Next Version
+## Reset Completed By
 
 ```text
 V13.4.25 - Strategy Research Factory: Factor Hypothesis Mining
 ```
+
+V13.4.25 completed the reset by converting V13.4.22 factor evidence, V13.4.23
+benchmark outcomes, and V13.4.24 failure review into a structured hypothesis
+registry.
 
 ## Goals
 
@@ -37,3 +41,12 @@ no account / position reads
 no real orders
 no auto trading
 ```
+
+## Current Next Version
+
+```text
+V13.4.26 - Factor Hypothesis Validation Dataset
+```
+
+V13.4.26 should validate the high-priority hypotheses from V13.4.25 in a
+research dataset before any future strategy implementation.

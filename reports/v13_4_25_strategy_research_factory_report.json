@@ -1,0 +1,960 @@
+{
+  "reportId": "v13_4_25_strategy_research_factory_report",
+  "version": "V13.4.25",
+  "status": "research_only",
+  "source": "alphapilot_v13_4_25_strategy_research_factory",
+  "inputReports": [
+    "reports/v13_4_22_factor_evaluation_report.json",
+    "reports/v13_4_22_factor_candidates.json",
+    "reports/v13_4_23_benchmark_suite_report.json",
+    "reports/v13_4_24_benchmark_result_review.json",
+    "reports/v13_4_24_benchmark_status_archive.json"
+  ],
+  "inputReportSummaries": {
+    "factorEvaluation": {
+      "reportId": "v13_4_22_factor_evaluation_report",
+      "sampleCount": 124111,
+      "validLabelCount": 123439,
+      "evaluatedFactorCount": 16,
+      "candidateFactorCount": 0,
+      "topFactorsByRankIC": [
+        {
+          "factorId": "volatility_3d",
+          "meanRankIC": -0.05978581
+        },
+        {
+          "factorId": "atr_pct",
+          "meanRankIC": -0.05667593
+        },
+        {
+          "factorId": "volatility_24h",
+          "meanRankIC": -0.05478825
+        },
+        {
+          "factorId": "distance_to_ema20",
+          "meanRankIC": -0.04514636
+        },
+        {
+          "factorId": "momentum_12",
+          "meanRankIC": -0.04436032
+        }
+      ],
+      "topFactorsBySpread": [
+        {
+          "factorId": "trend_strength",
+          "topBottomSpread": 0.00207277
+        },
+        {
+          "factorId": "distance_to_ema50",
+          "topBottomSpread": 0.00165647
+        },
+        {
+          "factorId": "volume_expansion_3d",
+          "topBottomSpread": 0.00163257
+        },
+        {
+          "factorId": "bollinger_position",
+          "topBottomSpread": 0.00123559
+        },
+        {
+          "factorId": "volume_expansion_24h",
+          "topBottomSpread": 0.00104826
+        }
+      ],
+      "topFactorsByProfitFactor": [
+        {
+          "factorId": "trend_strength",
+          "profitFactor": 1.01541027
+        },
+        {
+          "factorId": "distance_to_ema50",
+          "profitFactor": 0.99401297
+        },
+        {
+          "factorId": "atr_pct",
+          "profitFactor": 0.99390668
+        },
+        {
+          "factorId": "volume_expansion_3d",
+          "profitFactor": 0.98981413
+        },
+        {
+          "factorId": "volatility_24h",
+          "profitFactor": 0.98533611
+        }
+      ]
+    },
+    "factorCandidates": {
+      "reportId": "v13_4_22_factor_candidates",
+      "candidateCount": 0,
+      "notTradeReady": true
+    },
+    "benchmarkSuite": {
+      "reportId": "v13_4_23_benchmark_suite",
+      "timerange": "20260101-",
+      "timeframe": "1h",
+      "bestBenchmarkRaw": "BenchmarkBollingerRebound",
+      "bestBenchmarkSlippageAdjusted": "BenchmarkBollingerRebound",
+      "activeBenchmarkCount": 5
+    },
+    "benchmarkReview": {
+      "reportId": "v13_4_24_benchmark_result_review",
+      "noTradeSummary": "All active benchmarks underperformed NoTrade on the selected sample, before and after slippage stress.",
+      "buyHoldBtcSummary": "All active benchmarks underperformed BuyHoldBTC; simple passive BTC exposure lost less than frequent benchmark trading in this sample.",
+      "recommendedNextStep": "V13.4.25 - Strategy Research Factory: Factor Hypothesis Mining",
+      "failureFindingCount": 7,
+      "usefulHypothesisSeedCount": 5
+    },
+    "benchmarkArchive": {
+      "reportId": "v13_4_24_benchmark_status_archive",
+      "manifestStrategiesSucceeded": 5,
+      "benchmarkCount": 8
+    }
+  },
+  "hypothesisCategories": [
+    "factor_based",
+    "benchmark_informed",
+    "regime_based",
+    "execution_reality",
+    "rejected"
+  ],
+  "hypotheses": [
+    {
+      "hypothesisId": "HYP-001",
+      "name": "Volatility as Risk Filter",
+      "category": "factor_based",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_22_factor_evaluation_report.json",
+          "observation": "Volatility and ATR ranked near the top by rank IC, but with negative directionality, suggesting risk-filter use before entry use.",
+          "metrics": {
+            "volatility_3d_meanRankIC": -0.05978581,
+            "atr_pct_meanRankIC": -0.05667593
+          }
+        },
+        {
+          "source": "reports/v13_4_22_factor_evaluation_report.json",
+          "observation": "V13.4.22 produced zero trade-ready candidate factors; volatility should remain a filter hypothesis only.",
+          "metrics": {
+            "candidateFactors": 0
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_22_factor_evaluation_report.json",
+        "reports/v13_4_22_factor_candidates.json"
+      ],
+      "proposedMechanism": "Use volatility and ATR context to avoid unstable samples or separate high-risk regimes before considering any entry rule.",
+      "expectedBehavior": "Future candidates should trade less in extreme volatility buckets and show lower drawdown after costs.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Negative rank IC does not imply direct edge; it only supports regime segmentation research."
+      ],
+      "requiredData": [
+        "FactorDataPanel volatility_3d",
+        "FactorDataPanel volatility_24h",
+        "FactorDataPanel atr_pct",
+        "forward labels"
+      ],
+      "validationPlan": [
+        "Build validation dataset by volatility and ATR buckets.",
+        "Measure NoTrade, BuyHoldBTC, and benchmark-relative outcomes per bucket.",
+        "Check stability by pair, month, and regime before any strategy design."
+      ],
+      "invalidationRules": [
+        "Reject if volatility buckets do not reduce drawdown or improve loss avoidance after costs.",
+        "Reject if bucket behavior is concentrated in one pair or one month."
+      ],
+      "priority": "high",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-002",
+      "name": "Trend Strength as Regime Filter",
+      "category": "regime_based",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_22_factor_evaluation_report.json",
+          "observation": "trend_strength ranked first by top-bottom spread and first by profit factor, though the profit factor is only near breakeven.",
+          "metrics": {
+            "topBottomSpread": 0.00207277,
+            "profitFactor": 1.01541027
+          }
+        },
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "Simple EMA trend benchmarks failed badly, so trend evidence should gate regimes rather than become a simple crossover rule.",
+          "metrics": {
+            "emaTrendStatus": "failed_benchmark",
+            "emaTrendWeakness": "Excessive trade frequency and repeated losses overwhelm any simple rule edge."
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_22_factor_evaluation_report.json",
+        "reports/v13_4_24_benchmark_result_review.json"
+      ],
+      "proposedMechanism": "Use trend strength as a regime label that decides whether mean-reversion, pullback, or no-trade hypotheses are eligible.",
+      "expectedBehavior": "Future validation should show that some rule families perform less poorly or more selectively inside trend-compatible regimes.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Simple trend entries already failed; this hypothesis must not become EMA-cross tuning."
+      ],
+      "requiredData": [
+        "trend_strength",
+        "ema20",
+        "ema50",
+        "ema200",
+        "regime labels",
+        "benchmark outcomes"
+      ],
+      "validationPlan": [
+        "Segment factor and benchmark results by trend_strength buckets.",
+        "Compare benchmark family behavior inside high, medium, and low trend regimes.",
+        "Require cost-adjusted improvement before any entry rule work."
+      ],
+      "invalidationRules": [
+        "Reject if high trend_strength does not improve benchmark-relative outcomes after costs.",
+        "Reject if the effect reverses across pair or month slices."
+      ],
+      "priority": "high",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-003",
+      "name": "EMA50 Distance as Pullback Context",
+      "category": "factor_based",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_22_factor_evaluation_report.json",
+          "observation": "distance_to_ema50 ranked second by spread and near the top by profit factor, but did not become a trade-ready candidate.",
+          "metrics": {
+            "topBottomSpread": 0.00165647,
+            "profitFactor": 0.99401297
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_22_factor_evaluation_report.json",
+        "reports/v13_4_22_factor_candidates.json"
+      ],
+      "proposedMechanism": "Treat distance from EMA50 as context for pullback quality, not as a standalone trigger.",
+      "expectedBehavior": "Pullback candidates should require favorable distance buckets and avoid overextended entries.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "EMA distance can encourage overfitting if optimized directly against failed benchmark results."
+      ],
+      "requiredData": [
+        "distance_to_ema50",
+        "distance_to_ema20",
+        "trend_strength",
+        "forward labels"
+      ],
+      "validationPlan": [
+        "Evaluate forward labels by EMA50 distance buckets.",
+        "Cross the buckets with trend_strength and volatility buckets.",
+        "Check whether pullback contexts beat benchmark references after fees and slippage."
+      ],
+      "invalidationRules": [
+        "Reject if EMA50 distance buckets have weak coverage or no monotonic separation.",
+        "Reject if useful buckets disappear after slippage stress."
+      ],
+      "priority": "medium",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-004",
+      "name": "Bollinger Rebound Requires Regime Filter",
+      "category": "benchmark_informed",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "BenchmarkBollingerRebound was the relative best active benchmark, but still negative and not tradable.",
+          "metrics": {
+            "rawReturnPct": -87.6274,
+            "slippageAdjustedReturnPct": -181.9728,
+            "profitFactor": 0.4513,
+            "tradeCount": 816
+          }
+        },
+        {
+          "source": "reports/v13_4_22_factor_evaluation_report.json",
+          "observation": "bollinger_position appeared in spread ranking, supporting research use as context rather than standalone entry logic.",
+          "metrics": {
+            "topBottomSpread": 0.00123559
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_22_factor_evaluation_report.json",
+        "reports/v13_4_24_benchmark_result_review.json"
+      ],
+      "proposedMechanism": "Study Bollinger rebound only when regime, volatility, and liquidity filters agree; standalone rebound logic is insufficient.",
+      "expectedBehavior": "Filtered rebound samples should be lower frequency and less broadly negative than the unfiltered benchmark.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Relative best does not mean usable; V13.4.24 explicitly says relative best != tradable."
+      ],
+      "requiredData": [
+        "bollinger_position",
+        "trend_strength",
+        "volatility_3d",
+        "liquidity metrics",
+        "benchmark stability slices"
+      ],
+      "validationPlan": [
+        "Create a validation table for Bollinger position crossed with trend and volatility regimes.",
+        "Measure trade frequency reduction and cost-adjusted outcomes.",
+        "Keep BenchmarkBollingerRebound as the reference benchmark to beat."
+      ],
+      "invalidationRules": [
+        "Reject if filtered samples remain below NoTrade or BuyHoldBTC after costs.",
+        "Reject if pair/month stability remains broadly negative."
+      ],
+      "priority": "high",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-005",
+      "name": "Activity / Volume Expansion as Universe Filter",
+      "category": "factor_based",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_22_factor_evaluation_report.json",
+          "observation": "volume_expansion_3d ranked third by spread and appeared in the profit factor list, but below a trade-ready threshold.",
+          "metrics": {
+            "topBottomSpread": 0.00163257,
+            "profitFactor": 0.98981413
+          }
+        },
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "Momentum plus volume alone was cost sensitive, so volume should first filter universe/activity quality.",
+          "metrics": {
+            "macdVolumeStatus": "failed_benchmark",
+            "macdVolumeWeakness": "Excessive trade frequency and repeated losses overwhelm any simple rule edge."
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_22_factor_evaluation_report.json",
+        "reports/v13_4_24_benchmark_result_review.json"
+      ],
+      "proposedMechanism": "Use activity and volume expansion to filter tradable universe quality before strategy-rule evaluation.",
+      "expectedBehavior": "Filtered universes should reduce dead samples and support more stable benchmark comparisons.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Volume expansion alone failed as a benchmark component; it must remain a universe-quality filter hypothesis."
+      ],
+      "requiredData": [
+        "volume_expansion_3d",
+        "volume_expansion_24h",
+        "quote volume",
+        "trade count",
+        "dynamic universe snapshots"
+      ],
+      "validationPlan": [
+        "Compare factor outcomes inside active-volume buckets versus low-activity buckets.",
+        "Measure coverage, liquidity, and slippage sensitivity by bucket.",
+        "Validate with dynamic historical universe membership to avoid lookahead bias."
+      ],
+      "invalidationRules": [
+        "Reject if activity filters only select high-cost churn.",
+        "Reject if effects disappear outside the Top10 sample."
+      ],
+      "priority": "medium",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-006",
+      "name": "Low Frequency Requirement",
+      "category": "execution_reality",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "V13.4.24 found high or very high cost sensitivity across all active benchmarks.",
+          "metrics": {
+            "failureFindings": [
+              "High or very high cost sensitivity appears in: BenchmarkEMATrend, BenchmarkRSIMeanReversion, BenchmarkMACDVolume, BenchmarkBollingerRebound, BenchmarkTD9Exhaustion."
+            ]
+          }
+        },
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "Relative best BenchmarkBollingerRebound traded less than the very high-turnover references but still failed after costs.",
+          "metrics": {
+            "tradeCount": 816,
+            "slippageAdjustedReturnPct": -181.9728
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "reports/v13_4_24_benchmark_status_archive.json"
+      ],
+      "proposedMechanism": "Require future strategy hypotheses to prove lower turnover before implementation, because frequent simple rules were overwhelmed by costs.",
+      "expectedBehavior": "Future candidates should show fewer trades, lower fee/slippage drag, and stronger per-trade expectancy before any code strategy work.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Frequency reduction is a research constraint, not a guarantee of edge."
+      ],
+      "requiredData": [
+        "trade count",
+        "fee impact",
+        "slippage impact",
+        "holding duration",
+        "exit attribution"
+      ],
+      "validationPlan": [
+        "Add turnover bands to future hypothesis validation datasets.",
+        "Rank candidate contexts by cost-adjusted expectancy, not raw hit rate.",
+        "Require low-frequency viability before Freqtrade implementation."
+      ],
+      "invalidationRules": [
+        "Reject candidates that need high turnover to produce weak raw results.",
+        "Reject if cost-adjusted return remains worse than NoTrade."
+      ],
+      "priority": "high",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-007",
+      "name": "Liquidity Gate First",
+      "category": "execution_reality",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "All active benchmarks underperformed after slippage stress; execution reality must precede entry logic.",
+          "metrics": {
+            "activeBenchmarksOutperformedNoTrade": 0
+          }
+        },
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "Losses were broad by pair and month rather than isolated to a small pocket.",
+          "metrics": {
+            "finding": "Pair and month stability do not show a robust positive pattern."
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "reports/v13_4_24_benchmark_status_archive.json"
+      ],
+      "proposedMechanism": "Apply liquidity and execution feasibility gates before any hypothesis is eligible for rule validation.",
+      "expectedBehavior": "The research factory should reject contexts with insufficient volume, wide slippage sensitivity, or poor execution feasibility before strategy coding.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Liquidity gates protect research quality only; they do not approve live execution."
+      ],
+      "requiredData": [
+        "quote volume",
+        "spread proxy",
+        "slippage stress",
+        "pair stability",
+        "month stability",
+        "dynamic universe snapshots"
+      ],
+      "validationPlan": [
+        "Define minimum liquidity and slippage-stress thresholds for validation datasets.",
+        "Measure whether candidate contexts survive execution-reality filters.",
+        "Keep all failed liquidity contexts in the rejected hypothesis log."
+      ],
+      "invalidationRules": [
+        "Reject if liquidity filtering does not materially change cost-adjusted outcomes.",
+        "Reject if data coverage is too narrow for robust execution-reality assessment."
+      ],
+      "priority": "high",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-008",
+      "name": "BuyHoldBTC Benchmark Requirement",
+      "category": "benchmark_informed",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "All active benchmarks underperformed BuyHoldBTC; passive BTC exposure lost less than frequent benchmark trading in this sample.",
+          "metrics": {
+            "activeBenchmarksOutperformedBuyHoldBTC": 0,
+            "buyHoldReturnPct": -27.9751
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "reports/v13_4_24_benchmark_status_archive.json"
+      ],
+      "proposedMechanism": "Every future hypothesis must include a mandatory BuyHoldBTC comparison before promotion.",
+      "expectedBehavior": "Research promotion only happens when a candidate has a plausible path to beat NoTrade and BuyHoldBTC after costs.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Benchmark comparison is necessary but not sufficient for Dry-run approval."
+      ],
+      "requiredData": [
+        "NoTrade baseline",
+        "BuyHoldBTC baseline",
+        "relative active benchmark returns",
+        "slippage-adjusted outcomes"
+      ],
+      "validationPlan": [
+        "Embed NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound baselines into future validation reports.",
+        "Require benchmark-relative tables before any implementation proposal."
+      ],
+      "invalidationRules": [
+        "Reject or defer any hypothesis without benchmark-relative measurement.",
+        "Reject any hypothesis that only beats one weak active benchmark but fails NoTrade or BuyHoldBTC."
+      ],
+      "priority": "high",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-009",
+      "name": "Regime Router Before Rule Family",
+      "category": "regime_based",
+      "status": "research_only",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "Simple rule families failed broadly, implying rule family selection may need regime routing before entry evaluation.",
+          "metrics": {
+            "failureFindingCount": 7
+          }
+        },
+        {
+          "source": "reports/v13_4_22_factor_evaluation_report.json",
+          "observation": "Several factors were unstable across pairs or regimes, so validation must explicitly separate regimes.",
+          "metrics": {
+            "unstableFactorCount": 11
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_22_factor_evaluation_report.json",
+        "reports/v13_4_22_factor_candidates.json",
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "reports/v13_4_24_benchmark_status_archive.json"
+      ],
+      "proposedMechanism": "Route future hypotheses by regime first, then evaluate whether trend, rebound, or avoid logic is even eligible.",
+      "expectedBehavior": "Regime-routed validation should reveal smaller, testable pockets or reject rule families earlier.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Regime routers can overfit if built after seeing benchmark losses; validation must be predeclared."
+      ],
+      "requiredData": [
+        "regime labels",
+        "trend_strength",
+        "volatility buckets",
+        "benchmark family outcomes"
+      ],
+      "validationPlan": [
+        "Define fixed regime buckets before running candidate validation.",
+        "Measure each benchmark family by regime bucket and pair/month stability.",
+        "Defer any rule family with insufficient regime coverage."
+      ],
+      "invalidationRules": [
+        "Reject if regime routing produces no stable bucket or relies on tiny samples.",
+        "Reject if improvements are not visible after costs."
+      ],
+      "priority": "medium",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-010",
+      "name": "Dynamic Universe Quality Narrowing",
+      "category": "execution_reality",
+      "status": "deferred",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "Pair stability showed no positive pair pocket for the relative-best benchmark, so future tests need cleaner universe definitions.",
+          "metrics": {
+            "pairConcentration": {
+              "available": true,
+              "worst": {
+                "pair": "DOGE/USDT:USDT",
+                "tradeCount": 78,
+                "profitAbs": -112.27657245
+              },
+              "best": {
+                "pair": "AVAX/USDT:USDT",
+                "tradeCount": 71,
+                "profitAbs": -62.1100447
+              },
+              "negativeCount": 10,
+              "positiveCount": 0,
+              "totalCount": 10,
+              "labelKey": "pair"
+            }
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "reports/v13_4_24_benchmark_status_archive.json"
+      ],
+      "proposedMechanism": "Use dynamic historical universe and liquidity/activity filters to narrow research samples before rule-family testing.",
+      "expectedBehavior": "A narrower, historically valid universe should reduce unsupported pair churn and make validation conclusions clearer.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Deferred until a validation dataset can preserve no-lookahead universe membership."
+      ],
+      "requiredData": [
+        "historical dynamic universe snapshots",
+        "volume buckets",
+        "liquidity scores",
+        "pair stability"
+      ],
+      "validationPlan": [
+        "Build a no-lookahead dynamic universe validation dataset.",
+        "Compare benchmark behavior inside and outside the universe filter."
+      ],
+      "invalidationRules": [
+        "Reject if universe narrowing lowers coverage without improving cost-adjusted evidence.",
+        "Reject if universe membership uses future information."
+      ],
+      "priority": "medium",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-R01",
+      "name": "Martingale Rejected",
+      "category": "rejected",
+      "status": "rejected",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "V13.4.24 explicitly rejected martingale due to unacceptable tail risk.",
+          "metrics": {
+            "rejectedIdeas": [
+              {
+                "benchmarkId": "rejected_benchmark_martingale",
+                "name": "Rejected Benchmark Martingale",
+                "status": "rejected",
+                "reason": "Martingale or inverse averaging creates unacceptable tail risk and conflicts with AlphaPilot risk-first principles.",
+                "dryRunApproved": false,
+                "liveTradingApproved": false,
+                "canBeUsedAsStrategy": false
+              }
+            ]
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_24_benchmark_result_review.json"
+      ],
+      "proposedMechanism": "No martingale, inverse averaging, or recovery-size escalation mechanism is allowed in AlphaPilot research.",
+      "expectedBehavior": "Always rejected; never promoted to strategy, Dry-run, or live execution.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Tail-risk escalation conflicts with AlphaPilot risk-first principles."
+      ],
+      "requiredData": [],
+      "validationPlan": [
+        "Keep in rejected registry and block from future candidate templates."
+      ],
+      "invalidationRules": [
+        "None. This remains rejected by safety policy."
+      ],
+      "priority": "low",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-R02",
+      "name": "RSI Only Rejected",
+      "category": "rejected",
+      "status": "rejected",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "BenchmarkRSIMeanReversion failed as a simple standalone benchmark and was highly cost sensitive.",
+          "metrics": {
+            "status": "failed_benchmark",
+            "mainWeakness": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+            "profitFactor": 0.404
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_24_benchmark_result_review.json"
+      ],
+      "proposedMechanism": "RSI-only oversold or overbought logic is rejected as a standalone strategy hypothesis.",
+      "expectedBehavior": "RSI may be used as context in future validation but not as a standalone entry rule.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Standalone RSI logic was already disproven by the benchmark suite."
+      ],
+      "requiredData": [
+        "RSI only as contextual feature in future studies"
+      ],
+      "validationPlan": [
+        "Use RSI only inside multi-factor validation datasets."
+      ],
+      "invalidationRules": [
+        "Reject any future plan that promotes RSI alone as a strategy."
+      ],
+      "priority": "low",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-R03",
+      "name": "Simple EMA Cross Rejected",
+      "category": "rejected",
+      "status": "rejected",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "BenchmarkEMATrend had excessive turnover and severe drawdown, so simple EMA trend logic remains a negative reference.",
+          "metrics": {
+            "status": "failed_benchmark",
+            "mainWeakness": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+            "profitFactor": 0.5658
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_24_benchmark_result_review.json"
+      ],
+      "proposedMechanism": "Simple EMA cross or plain EMA trend entries are rejected as standalone strategy hypotheses.",
+      "expectedBehavior": "EMA context may help define regimes or pullback distance, but simple EMA cross entries should not be implemented.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Tuning a failed simple EMA benchmark would likely overfit a weak base."
+      ],
+      "requiredData": [
+        "EMA only as contextual factor"
+      ],
+      "validationPlan": [
+        "Keep EMA trend benchmark as a negative reference."
+      ],
+      "invalidationRules": [
+        "Reject any future plan that only changes EMA lengths on the same failed mechanism."
+      ],
+      "priority": "low",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "hypothesisId": "HYP-R04",
+      "name": "MACD Volume Only Rejected",
+      "category": "rejected",
+      "status": "rejected",
+      "evidence": [
+        {
+          "source": "reports/v13_4_24_benchmark_result_review.json",
+          "observation": "BenchmarkMACDVolume was highly cost sensitive and did not produce usable evidence.",
+          "metrics": {
+            "status": "failed_benchmark",
+            "mainWeakness": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+            "profitFactor": 0.6115
+          }
+        }
+      ],
+      "sourceReports": [
+        "reports/v13_4_24_benchmark_result_review.json"
+      ],
+      "proposedMechanism": "MACD plus volume alone is rejected as a standalone strategy hypothesis.",
+      "expectedBehavior": "MACD or volume can be studied as support context only.",
+      "riskNotes": [
+        "Research-only hypothesis.",
+        "Not a Freqtrade strategy.",
+        "Not Dry-run approval.",
+        "Not live trading approval.",
+        "No Trade API, Withdraw API, API key, account read, position read, order, or auto trading is involved.",
+        "Future validation must compare against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs.",
+        "Momentum-volume evidence must be filtered by regime, liquidity, and frequency before any strategy work."
+      ],
+      "requiredData": [
+        "MACD histogram",
+        "volume expansion",
+        "regime labels"
+      ],
+      "validationPlan": [
+        "Use as rejected benchmark reference and contextual factor only."
+      ],
+      "invalidationRules": [
+        "Reject standalone MACD-volume entry proposals."
+      ],
+      "priority": "low",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  ],
+  "hypothesisCounts": {
+    "total": 14,
+    "byCategory": {
+      "factor_based": 3,
+      "regime_based": 2,
+      "benchmark_informed": 2,
+      "execution_reality": 3,
+      "rejected": 4
+    },
+    "byStatus": {
+      "research_only": 9,
+      "deferred": 1,
+      "rejected": 4
+    },
+    "byPriority": {
+      "high": 6,
+      "medium": 4,
+      "low": 4
+    },
+    "highPriority": [
+      "HYP-001",
+      "HYP-002",
+      "HYP-004",
+      "HYP-006",
+      "HYP-007",
+      "HYP-008"
+    ],
+    "rejected": [
+      "HYP-R01",
+      "HYP-R02",
+      "HYP-R03",
+      "HYP-R04"
+    ]
+  },
+  "topPriorityHypotheses": [
+    "HYP-001",
+    "HYP-002",
+    "HYP-004",
+    "HYP-006",
+    "HYP-007",
+    "HYP-008"
+  ],
+  "rejectedHypotheses": [
+    "HYP-R01",
+    "HYP-R02",
+    "HYP-R03",
+    "HYP-R04"
+  ],
+  "nextExperimentPlan": {
+    "versionName": "V13.4.26 - Factor Hypothesis Validation Dataset",
+    "goal": "Build a validation dataset for the highest-priority research hypotheses before any strategy implementation.",
+    "scope": [
+      "materialize hypothesis validation rows from FactorDataPanel and benchmark reports",
+      "segment by volatility, trend strength, EMA50 distance, Bollinger position, volume expansion, and liquidity context",
+      "compare all candidate contexts against NoTrade, BuyHoldBTC, and BenchmarkBollingerRebound after costs",
+      "record invalidated and deferred hypotheses explicitly"
+    ],
+    "nonGoals": [
+      "no Freqtrade strategy implementation",
+      "no new backtest execution",
+      "no Dry-run",
+      "no Trade API or Withdraw API",
+      "no account or position read",
+      "no order creation",
+      "no auto trading"
+    ],
+    "minimumPromotionGate": [
+      "hypothesis has sufficient coverage",
+      "hypothesis improves cost-adjusted evidence versus NoTrade and BuyHoldBTC in validation data",
+      "effect is not isolated to one pair or one month",
+      "execution-reality and liquidity notes are complete"
+    ]
+  },
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "warnings": [
+    "Research hypothesis only. Not a strategy, not a signal, not Dry-run approval."
+  ],
+  "generatedAt": "2026-07-05T00:53:14.469408+00:00",
+  "outputReportPath": "reports/v13_4_25_strategy_research_factory_report.json",
+  "outputSummaryPath": "reports/v13_4_25_strategy_research_factory_summary.md",
+  "outputHypothesesPath": "reports/v13_4_25_research_hypotheses.json",
+  "notes": [
+    "Research hypotheses are not trading strategies.",
+    "V13.4.25 did not run a backtest or modify user_data/strategies.",
+    "No Dry-run, live trading, Trade API, Withdraw API, API key, account read, position read, order, or auto trading was used."
+  ]
+}
