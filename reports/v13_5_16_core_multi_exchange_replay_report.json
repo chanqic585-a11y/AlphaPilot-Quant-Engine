@@ -1,0 +1,293 @@
+{
+  "version": "V13.5.16",
+  "reportId": "v13_5_16_core_multi_exchange_replay_report",
+  "generatedAt": "2026-07-05T23:08:48.555753+00:00",
+  "activePoolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+  "poolConfig": {
+    "timeframe": "4h",
+    "overlayId": "alpha_short_exhaustion_pressure_watch",
+    "stopLossPct": 0.06,
+    "horizonBars": 24,
+    "rewardRMultiple": 2.0
+  },
+  "scope": {
+    "exchanges": [
+      "okx",
+      "binance",
+      "bybit"
+    ],
+    "pairs": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT"
+    ],
+    "dataRoot": "user_data\\data",
+    "localPublicDataOnly": true
+  },
+  "exchangeReports": [
+    {
+      "exchange": "okx",
+      "panel": {
+        "exchange": "okx",
+        "dataDir": "user_data\\data\\okx\\futures",
+        "rowCount": 40475,
+        "loadedPairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ],
+        "missingPairs": [],
+        "missingOptionalSources": {},
+        "firstDate": "2020-01-01T00:00:00+00:00",
+        "lastDate": "2026-07-05T12:00:00+00:00"
+      },
+      "allHighRewardEvents": {
+        "label": "all_high_reward_events",
+        "tradeCount": 2344,
+        "winRatePct": 42.4061,
+        "averageWinPct": 6.48121,
+        "averageLossPct": -5.016311,
+        "rewardRiskRatio": 1.292,
+        "profitFactor": 0.9513,
+        "totalReturnPct": -99.9737,
+        "maxDrawdownPct": 99.9957,
+        "researchWorthContinuing": false
+      },
+      "activePoolEvents": {
+        "label": "active_pool_events",
+        "tradeCount": 5,
+        "winRatePct": 40.0,
+        "averageWinPct": 13.436364,
+        "averageLossPct": -5.860377,
+        "rewardRiskRatio": 2.2927,
+        "profitFactor": 1.5285,
+        "totalReturnPct": 7.3549,
+        "maxDrawdownPct": 5.8604,
+        "researchWorthContinuing": false
+      },
+      "eventsByPair": [
+        {
+          "label": "SOL/USDT:USDT",
+          "tradeCount": 3,
+          "winRatePct": 66.6667,
+          "averageWinPct": 13.436364,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 2.2927,
+          "profitFactor": 4.5855,
+          "totalReturnPct": 21.1371,
+          "maxDrawdownPct": 5.8604,
+          "researchWorthContinuing": false
+        },
+        {
+          "label": "ETH/USDT:USDT",
+          "tradeCount": 2,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -11.3773,
+          "maxDrawdownPct": 5.8604,
+          "researchWorthContinuing": false
+        }
+      ],
+      "status": "completed"
+    },
+    {
+      "exchange": "binance",
+      "panel": {
+        "exchange": "binance",
+        "dataDir": "user_data\\data\\binance\\futures",
+        "rowCount": 41258,
+        "loadedPairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ],
+        "missingPairs": [],
+        "missingOptionalSources": {},
+        "firstDate": "2020-01-01T00:00:00+00:00",
+        "lastDate": "2026-07-05T16:00:00+00:00"
+      },
+      "allHighRewardEvents": {
+        "label": "all_high_reward_events",
+        "tradeCount": 2681,
+        "winRatePct": 41.3279,
+        "averageWinPct": 6.617778,
+        "averageLossPct": -5.058522,
+        "rewardRiskRatio": 1.3082,
+        "profitFactor": 0.9215,
+        "totalReturnPct": -99.9994,
+        "maxDrawdownPct": 99.9998,
+        "researchWorthContinuing": false
+      },
+      "activePoolEvents": {
+        "label": "active_pool_events",
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "eventsByPair": [],
+      "status": "completed"
+    },
+    {
+      "exchange": "bybit",
+      "panel": {
+        "exchange": "bybit",
+        "dataDir": "user_data\\data\\bybit\\futures",
+        "rowCount": 35743,
+        "loadedPairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ],
+        "missingPairs": [],
+        "missingOptionalSources": {},
+        "firstDate": "2020-03-25T08:00:00+00:00",
+        "lastDate": "2026-07-05T16:00:00+00:00"
+      },
+      "allHighRewardEvents": {
+        "label": "all_high_reward_events",
+        "tradeCount": 2240,
+        "winRatePct": 42.8125,
+        "averageWinPct": 6.172434,
+        "averageLossPct": -4.950367,
+        "rewardRiskRatio": 1.2469,
+        "profitFactor": 0.9334,
+        "totalReturnPct": -99.9841,
+        "maxDrawdownPct": 99.9955,
+        "researchWorthContinuing": false
+      },
+      "activePoolEvents": {
+        "label": "active_pool_events",
+        "tradeCount": 4,
+        "winRatePct": 50.0,
+        "averageWinPct": 13.436364,
+        "averageLossPct": -5.860377,
+        "rewardRiskRatio": 2.2927,
+        "profitFactor": 2.2927,
+        "totalReturnPct": 14.038,
+        "maxDrawdownPct": 5.8604,
+        "researchWorthContinuing": false
+      },
+      "eventsByPair": [
+        {
+          "label": "ETH/USDT:USDT",
+          "tradeCount": 2,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -11.3773,
+          "maxDrawdownPct": 5.8604,
+          "researchWorthContinuing": false
+        },
+        {
+          "label": "SOL/USDT:USDT",
+          "tradeCount": 2,
+          "winRatePct": 100.0,
+          "averageWinPct": 13.436364,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 28.6781,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      ],
+      "status": "completed"
+    }
+  ],
+  "combinedActivePoolMetrics": {
+    "label": "combined_active_pool_events",
+    "tradeCount": 9,
+    "winRatePct": 44.4444,
+    "averageWinPct": 13.436364,
+    "averageLossPct": -5.860377,
+    "rewardRiskRatio": 2.2927,
+    "profitFactor": 1.8342,
+    "totalReturnPct": 22.4254,
+    "maxDrawdownPct": 16.5709,
+    "researchWorthContinuing": false
+  },
+  "combinedByExchange": [
+    {
+      "label": "okx",
+      "tradeCount": 5,
+      "winRatePct": 40.0,
+      "averageWinPct": 13.436364,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 2.2927,
+      "profitFactor": 1.5285,
+      "totalReturnPct": 7.3549,
+      "maxDrawdownPct": 5.8604,
+      "researchWorthContinuing": false
+    },
+    {
+      "label": "bybit",
+      "tradeCount": 4,
+      "winRatePct": 50.0,
+      "averageWinPct": 13.436364,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 2.2927,
+      "profitFactor": 2.2927,
+      "totalReturnPct": 14.038,
+      "maxDrawdownPct": 5.8604,
+      "researchWorthContinuing": false
+    }
+  ],
+  "combinedByPair": [
+    {
+      "label": "SOL/USDT:USDT",
+      "tradeCount": 5,
+      "winRatePct": 80.0,
+      "averageWinPct": 13.436364,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 2.2927,
+      "profitFactor": 9.171,
+      "totalReturnPct": 55.8769,
+      "maxDrawdownPct": 5.8604,
+      "researchWorthContinuing": false
+    },
+    {
+      "label": "ETH/USDT:USDT",
+      "tradeCount": 4,
+      "winRatePct": 0.0,
+      "averageWinPct": null,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": null,
+      "profitFactor": 0.0,
+      "totalReturnPct": -21.4602,
+      "maxDrawdownPct": 16.5709,
+      "researchWorthContinuing": false
+    }
+  ],
+  "decision": {
+    "exchangeAwareCoreReplayCompleted": true,
+    "activePoolTradeCount": 9,
+    "activePoolUniqueExchanges": 2,
+    "activePoolUniquePairs": 2,
+    "activePoolCrossExchangeSampleAdequate": false,
+    "readyForExchangeDryRunReview": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "Core multi-exchange replay is historical diagnostics only. Dry-run review still requires forward samples, broader exchange-aware validation, and manual review.",
+    "nextAction": "expand_exchange_aware_replay_to_larger_resumable_universe_or_forward_ready_refresh"
+  },
+  "safety": {
+    "tradeApi": false,
+    "withdrawApi": false,
+    "apiKeyStorage": false,
+    "realAccountRead": false,
+    "realPositionRead": false,
+    "orderCreation": false,
+    "automaticTrading": false
+  }
+}

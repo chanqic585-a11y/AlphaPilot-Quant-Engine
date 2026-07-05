@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.15 - Multi-Exchange Historical Data Coverage
+AlphaPilot V13.5.16 - Core Multi-Exchange Replay
 ```
 
 ## Positioning
@@ -3166,10 +3166,54 @@ V13.5.15 does not change strategy parameters, run Dry-run, connect to private
 exchange endpoints, save API keys, read real accounts or positions, create
 orders, or enable automatic trading.
 
+## V13.5.16 Core Multi-Exchange Replay
+
+V13.5.16 points the existing feature and event pipeline at exchange-specific
+local public data directories and replays the fixed active V13.5.7 pool on
+BTC/ETH/SOL across OKX, Binance, and Bybit.
+
+Active pool:
+
+```text
+4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24
+```
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_16_core_multi_exchange_replay.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_16_core_multi_exchange_replay.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/derivatives/exchange_feature_panel.py
+alphapilot/reports/generate_v13_5_16_core_multi_exchange_replay_report.py
+scripts/run_v13_5_16_core_multi_exchange_replay.ps1
+reports/v13_5_16_core_multi_exchange_replay_report.json
+reports/v13_5_16_core_multi_exchange_replay_summary.md
+reports/v13_5_16_core_multi_exchange_signal_log.json
+docs/V13.5.16-core-multi-exchange-replay.md
+```
+
+This report keeps parameters fixed. It checks whether the active research pool
+has enough historical events across independent exchange public-data paths. It
+does not fit, optimize, or approve an execution path.
+
+V13.5.16 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.16: build an exchange-aware feature panel and replay the core BTC/ETH/SOL public-data sample across OKX, Binance, and Bybit.
-- V13.5.17: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
-- V13.5.18: consider resumable Binance/Bybit/OKX Top100 public-data expansion before any exchange Dry-run review.
+- V13.5.17: expand exchange-aware replay to a larger resumable universe without changing the active-pool parameters.
+- V13.5.18: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.19: consider resumable Binance/Bybit/OKX Top100 public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
