@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.17 - Available-Universe Exchange Replay
+AlphaPilot V13.5.18 - Non-OKX Expansion Replay
 ```
 
 ## Positioning
@@ -3247,10 +3247,42 @@ V13.5.17 does not change strategy parameters, run Dry-run, connect to private
 exchange endpoints, save API keys, read real accounts or positions, create
 orders, or enable automatic trading.
 
+## V13.5.18 Non-OKX Expansion Replay
+
+V13.5.18 expands Binance and Bybit public 4h futures data to the Top20 research
+subset in small resumable batches, then reruns the fixed active-pool replay.
+
+Data expansion command used:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\download_historical_robustness_data.ps1 -Pairs "<Top20 research subset>" -Exchanges "binance,bybit" -Timeframes "4h" -Timerange "20200101-" -BatchSize 5 -Prepend -Run
+```
+
+Generate replay report:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_18_non_okx_expansion_replay.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_18_non_okx_expansion_replay_report.py
+scripts/run_v13_5_18_non_okx_expansion_replay.ps1
+reports/v13_5_18_non_okx_expansion_replay_report.json
+reports/v13_5_18_non_okx_expansion_replay_summary.md
+reports/v13_5_18_non_okx_expansion_signal_log.json
+docs/V13.5.18-non-okx-expansion-replay.md
+```
+
+V13.5.18 is still research-only. It does not tune parameters, run exchange
+Dry-run, save API keys, read accounts, create orders, or enable automatic
+trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.18: expand non-OKX public data in smaller resumable batches if exchange balance remains insufficient.
-- V13.5.19: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
-- V13.5.20: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
+- V13.5.19: review active-pool drawdown and exchange-balance failure before any local paper refresh.
+- V13.5.20: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.21: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
