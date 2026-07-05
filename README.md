@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.6 - High Reward Event Redesign
+AlphaPilot V13.5.7 - External Alpha Overlay Research
 ```
 
 ## Positioning
@@ -2613,8 +2613,99 @@ no automatic trading
 exchange Dry-run remains disabled
 ```
 
+## V13.5.7 External Alpha Overlay Research
+
+V13.5.7 reviews two public GitHub projects as concept references and adds an
+Alpha101-style factor overlay to the existing high-reward event research
+pipeline.
+
+External references:
+
+```text
+yydhYYDH/alpha101
+ryckli/CryptoAgentPro.beta
+```
+
+AlphaPilot only stores URL/license/summary/citation metadata for these
+references. It does not copy external code or long source text.
+
+The overlay adds:
+
+```text
+cross-sectional ranks
+time-series ranks
+rolling return-volume correlation
+decay-style return and volume pressure
+rebound pressure
+exhaustion pressure
+liquidity quality
+```
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_7_external_alpha_overlay.ps1
+```
+
+Generate from existing local public data:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_7_external_alpha_overlay.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/factors/alpha101_style_overlay.py
+alphapilot/reports/generate_v13_5_7_external_alpha_overlay_report.py
+scripts/run_v13_5_7_external_alpha_overlay.ps1
+reports/v13_5_7_external_alpha_overlay_report.json
+reports/v13_5_7_external_alpha_overlay_summary.md
+reports/v13_5_7_alpha_overlay_candidates.json
+docs/V13.5.7-external-alpha-overlay.md
+```
+
+Current V13.5.7 decision:
+
+```text
+localPaperWatchApproved = true
+localPaperWatchPoolId = 4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24
+newFormalPaperCandidateApproved = false
+exchangeDryRunApproved = false
+liveTradingApproved = false
+```
+
+Best overlay pool:
+
+```text
+trades = 145
+winRate = 58.6207%
+rewardRiskRatio = 1.8207
+profitFactor = 2.5793
+maxDrawdown = 38.3157%
+recent20ProfitFactor = 3.2286
+observedToCostAdjusted2RCloseness = 0.956639
+```
+
+Interpretation: V13.5.7 finds a useful 4h short-exhaustion local paper watch
+pool, but drawdown remains high and the result requires fresh forward
+confirmation. It is not approved for exchange Dry-run or live trading.
+
+V13.5.7 remains research-only:
+
+```text
+no Trade API
+no Withdraw API
+no API key storage
+no real account reads
+no real position reads
+no real orders
+no automatic trading
+exchange Dry-run remains disabled
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.7: if V13.5.6 finds no stable 2R pool, add stronger execution/liquidity context or longer public history before another approval attempt.
+- V13.5.8: refresh forward data and test whether the V13.5.7 local paper watch pool remains stable; consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

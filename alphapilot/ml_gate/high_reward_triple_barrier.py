@@ -8,6 +8,11 @@ import pandas as pd
 from alphapilot.ml_gate.high_reward_event_setups import HIGH_REWARD_SETUP_NAMES, add_high_reward_event_setups
 from alphapilot.ml_gate.triple_barrier import BarrierConfig
 
+try:
+    from alphapilot.factors.alpha101_style_overlay import ALPHA101_STYLE_FACTOR_COLUMNS
+except ImportError:  # pragma: no cover - optional research overlay
+    ALPHA101_STYLE_FACTOR_COLUMNS = []
+
 
 HIGH_REWARD_FEATURE_COLUMNS = [
     "pair",
@@ -49,6 +54,7 @@ HIGH_REWARD_FEATURE_COLUMNS = [
     "btc_volatility_12",
     "relative_return_6",
     "btc_regime",
+    *ALPHA101_STYLE_FACTOR_COLUMNS,
 ]
 
 

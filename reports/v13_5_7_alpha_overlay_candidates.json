@@ -1,0 +1,4459 @@
+{
+  "reportId": "v13_5_7_external_alpha_overlay_report",
+  "version": "V13.5.7",
+  "generatedAt": "2026-07-05T20:13:33.701790+00:00",
+  "decision": {
+    "externalReferencesReviewed": true,
+    "alpha101StyleOverlayComputed": true,
+    "targetRMultipleUnchanged": true,
+    "localPaperWatchApproved": true,
+    "localPaperWatchPoolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+    "newFormalPaperCandidateApproved": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "alpha_overlay_local_paper_watch_only"
+  },
+  "approvedLocalPaperWatchPools": [
+    {
+      "overlayId": "alpha_short_exhaustion_pressure_watch",
+      "poolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+      "description": "Relative-strength exhaustion context with high cross-sectional return and volume pressure.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 145,
+        "winRatePct": 58.6207,
+        "averageWinPct": 10.083141,
+        "averageLossPct": -5.53801,
+        "rewardRiskRatio": 1.8207,
+        "profitFactor": 2.5793,
+        "totalReturnPct": 10568.5947,
+        "maxDrawdownPct": 38.3157,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 87,
+          "winRatePct": 56.3218,
+          "averageWinPct": 9.938816,
+          "averageLossPct": -5.539158,
+          "rewardRiskRatio": 1.7943,
+          "profitFactor": 2.3137,
+          "totalReturnPct": 1035.2283,
+          "maxDrawdownPct": 38.3157,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 29,
+          "winRatePct": 62.069,
+          "averageWinPct": 10.276352,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 1.7535,
+          "profitFactor": 2.8694,
+          "totalReturnPct": 194.7153,
+          "maxDrawdownPct": 21.4667,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 29,
+          "winRatePct": 62.069,
+          "averageWinPct": 10.282812,
+          "averageLossPct": -5.211675,
+          "rewardRiskRatio": 1.973,
+          "profitFactor": 3.2286,
+          "totalReturnPct": 218.8757,
+          "maxDrawdownPct": 26.9778,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 32,
+          "winRatePct": 50.0,
+          "averageWinPct": 11.830951,
+          "averageLossPct": -5.210155,
+          "rewardRiskRatio": 2.2707,
+          "profitFactor": 2.2707,
+          "totalReturnPct": 152.0952,
+          "maxDrawdownPct": 16.5709,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 31,
+          "winRatePct": 64.5161,
+          "averageWinPct": 11.67865,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 1.9928,
+          "profitFactor": 3.6233,
+          "totalReturnPct": 363.6737,
+          "maxDrawdownPct": 26.9337,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 38,
+          "winRatePct": 57.8947,
+          "averageWinPct": 9.560192,
+          "averageLossPct": -5.414394,
+          "rewardRiskRatio": 1.7657,
+          "profitFactor": 2.4278,
+          "totalReturnPct": 200.1912,
+          "maxDrawdownPct": 26.9778,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.956639,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 145,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.969163,
+          "cs_return_12_rank": 0.959967,
+          "cs_volume_ratio_rank": 0.976427,
+          "cs_bollinger_z_rank": 0.948812,
+          "cs_mark_basis_rank": 0.129337,
+          "cs_atr_rank": 0.793014,
+          "cs_liquidity_rank": 0.740005,
+          "ts_return_3_rank_24": 0.90546,
+          "ts_return_12_rank_24": 0.932759,
+          "ts_volume_ratio_rank_24": 0.95977,
+          "ts_bollinger_z_rank_24": 0.883046,
+          "ts_close_location_rank_24": 0.399713,
+          "ts_return_volume_corr_24": -0.073456,
+          "decay_return_12": 0.016179,
+          "decay_volume_pressure_12": 1.16888,
+          "alpha_rebound_pressure": 0.000785,
+          "alpha_exhaustion_pressure": 0.505438,
+          "alpha_liquidity_quality": 0.531518
+        },
+        "medians": {
+          "cs_return_3_rank": 1.0,
+          "cs_return_12_rank": 1.0,
+          "cs_volume_ratio_rank": 1.0,
+          "cs_bollinger_z_rank": 1.0,
+          "cs_mark_basis_rank": 0.111111,
+          "cs_atr_rank": 0.833333,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.333333,
+          "ts_return_volume_corr_24": -0.09833,
+          "decay_return_12": 0.013488,
+          "decay_volume_pressure_12": 1.119263,
+          "alpha_rebound_pressure": 0.0,
+          "alpha_exhaustion_pressure": 0.492859,
+          "alpha_liquidity_quality": 0.559821
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.8966
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 15,
+          "sharePct": 10.3448
+        },
+        {
+          "value": "2023-07",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "2023-09",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "2026-01",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2026-03",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2023-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-06",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2026-02",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2023-06",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-05",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-12",
+          "count": 4,
+          "sharePct": 2.7586
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_blowoff_reversal",
+          "count": 85,
+          "sharePct": 58.6207
+        },
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 60,
+          "sharePct": 41.3793
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "tradeCount": 145,
+        "uniquePairs": 25,
+        "uniqueMonths": 40,
+        "recentHoldoutTradeCount": 29
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": true,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [],
+        "reason": "approved_for_local_paper_watch_only",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 145,
+          "winRatePct": 58.6207,
+          "rewardRiskRatio": 1.8207,
+          "profitFactor": 2.5793,
+          "maxDrawdownPct": 38.3157
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_short_exhaustion_pressure_watch",
+      "poolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.04:h12",
+      "description": "Relative-strength exhaustion context with high cross-sectional return and volume pressure.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 12,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 145,
+        "winRatePct": 48.9655,
+        "averageWinPct": 6.658698,
+        "averageLossPct": -4.022731,
+        "rewardRiskRatio": 1.6553,
+        "profitFactor": 1.5882,
+        "totalReturnPct": 353.6678,
+        "maxDrawdownPct": 33.2694,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 87,
+          "winRatePct": 47.1264,
+          "averageWinPct": 6.80568,
+          "averageLossPct": -4.052521,
+          "rewardRiskRatio": 1.6794,
+          "profitFactor": 1.4968,
+          "totalReturnPct": 118.9373,
+          "maxDrawdownPct": 31.7284,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 29,
+          "winRatePct": 58.6207,
+          "averageWinPct": 5.984977,
+          "averageLossPct": -3.877303,
+          "rewardRiskRatio": 1.5436,
+          "profitFactor": 2.1868,
+          "totalReturnPct": 65.6548,
+          "maxDrawdownPct": 21.1138,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 29,
+          "winRatePct": 44.8276,
+          "averageWinPct": 7.076158,
+          "averageLossPct": -4.046154,
+          "rewardRiskRatio": 1.7489,
+          "profitFactor": 1.4209,
+          "totalReturnPct": 25.0876,
+          "maxDrawdownPct": 18.2905,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 32,
+          "winRatePct": 50.0,
+          "averageWinPct": 6.985078,
+          "averageLossPct": -4.046154,
+          "rewardRiskRatio": 1.7264,
+          "profitFactor": 1.7264,
+          "totalReturnPct": 51.2893,
+          "maxDrawdownPct": 18.0166,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 31,
+          "winRatePct": 51.6129,
+          "averageWinPct": 7.181832,
+          "averageLossPct": -3.911073,
+          "rewardRiskRatio": 1.8363,
+          "profitFactor": 1.9587,
+          "totalReturnPct": 65.7711,
+          "maxDrawdownPct": 33.2694,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 38,
+          "winRatePct": 50.0,
+          "averageWinPct": 6.116084,
+          "averageLossPct": -4.046154,
+          "rewardRiskRatio": 1.5116,
+          "profitFactor": 1.5116,
+          "totalReturnPct": 39.7795,
+          "maxDrawdownPct": 18.2905,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 8.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 7.8,
+        "stopNetLossPct": 4.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.857143,
+        "observedToCostAdjusted2RCloseness": 0.891315,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 145,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.969163,
+          "cs_return_12_rank": 0.959967,
+          "cs_volume_ratio_rank": 0.976427,
+          "cs_bollinger_z_rank": 0.948812,
+          "cs_mark_basis_rank": 0.129337,
+          "cs_atr_rank": 0.793014,
+          "cs_liquidity_rank": 0.740005,
+          "ts_return_3_rank_24": 0.90546,
+          "ts_return_12_rank_24": 0.932759,
+          "ts_volume_ratio_rank_24": 0.95977,
+          "ts_bollinger_z_rank_24": 0.883046,
+          "ts_close_location_rank_24": 0.399713,
+          "ts_return_volume_corr_24": -0.073456,
+          "decay_return_12": 0.016179,
+          "decay_volume_pressure_12": 1.16888,
+          "alpha_rebound_pressure": 0.000785,
+          "alpha_exhaustion_pressure": 0.505438,
+          "alpha_liquidity_quality": 0.531518
+        },
+        "medians": {
+          "cs_return_3_rank": 1.0,
+          "cs_return_12_rank": 1.0,
+          "cs_volume_ratio_rank": 1.0,
+          "cs_bollinger_z_rank": 1.0,
+          "cs_mark_basis_rank": 0.111111,
+          "cs_atr_rank": 0.833333,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.333333,
+          "ts_return_volume_corr_24": -0.09833,
+          "decay_return_12": 0.013488,
+          "decay_volume_pressure_12": 1.119263,
+          "alpha_rebound_pressure": 0.0,
+          "alpha_exhaustion_pressure": 0.492859,
+          "alpha_liquidity_quality": 0.559821
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.8966
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 15,
+          "sharePct": 10.3448
+        },
+        {
+          "value": "2023-07",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "2023-09",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "2026-01",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2026-03",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2023-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-06",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2026-02",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2023-06",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-05",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-12",
+          "count": 4,
+          "sharePct": 2.7586
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_blowoff_reversal",
+          "count": 85,
+          "sharePct": 58.6207
+        },
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 60,
+          "sharePct": 41.3793
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "tradeCount": 145,
+        "uniquePairs": 25,
+        "uniqueMonths": 40,
+        "recentHoldoutTradeCount": 29
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": true,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [],
+        "reason": "approved_for_local_paper_watch_only",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 145,
+          "winRatePct": 48.9655,
+          "rewardRiskRatio": 1.6553,
+          "profitFactor": 1.5882,
+          "maxDrawdownPct": 33.2694
+        }
+      }
+    }
+  ],
+  "topAlphaOverlayPools": [
+    {
+      "overlayId": "alpha_short_exhaustion_pressure_watch",
+      "poolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+      "description": "Relative-strength exhaustion context with high cross-sectional return and volume pressure.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 145,
+        "winRatePct": 58.6207,
+        "averageWinPct": 10.083141,
+        "averageLossPct": -5.53801,
+        "rewardRiskRatio": 1.8207,
+        "profitFactor": 2.5793,
+        "totalReturnPct": 10568.5947,
+        "maxDrawdownPct": 38.3157,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 87,
+          "winRatePct": 56.3218,
+          "averageWinPct": 9.938816,
+          "averageLossPct": -5.539158,
+          "rewardRiskRatio": 1.7943,
+          "profitFactor": 2.3137,
+          "totalReturnPct": 1035.2283,
+          "maxDrawdownPct": 38.3157,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 29,
+          "winRatePct": 62.069,
+          "averageWinPct": 10.276352,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 1.7535,
+          "profitFactor": 2.8694,
+          "totalReturnPct": 194.7153,
+          "maxDrawdownPct": 21.4667,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 29,
+          "winRatePct": 62.069,
+          "averageWinPct": 10.282812,
+          "averageLossPct": -5.211675,
+          "rewardRiskRatio": 1.973,
+          "profitFactor": 3.2286,
+          "totalReturnPct": 218.8757,
+          "maxDrawdownPct": 26.9778,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 32,
+          "winRatePct": 50.0,
+          "averageWinPct": 11.830951,
+          "averageLossPct": -5.210155,
+          "rewardRiskRatio": 2.2707,
+          "profitFactor": 2.2707,
+          "totalReturnPct": 152.0952,
+          "maxDrawdownPct": 16.5709,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 31,
+          "winRatePct": 64.5161,
+          "averageWinPct": 11.67865,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 1.9928,
+          "profitFactor": 3.6233,
+          "totalReturnPct": 363.6737,
+          "maxDrawdownPct": 26.9337,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 38,
+          "winRatePct": 57.8947,
+          "averageWinPct": 9.560192,
+          "averageLossPct": -5.414394,
+          "rewardRiskRatio": 1.7657,
+          "profitFactor": 2.4278,
+          "totalReturnPct": 200.1912,
+          "maxDrawdownPct": 26.9778,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.956639,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 145,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.969163,
+          "cs_return_12_rank": 0.959967,
+          "cs_volume_ratio_rank": 0.976427,
+          "cs_bollinger_z_rank": 0.948812,
+          "cs_mark_basis_rank": 0.129337,
+          "cs_atr_rank": 0.793014,
+          "cs_liquidity_rank": 0.740005,
+          "ts_return_3_rank_24": 0.90546,
+          "ts_return_12_rank_24": 0.932759,
+          "ts_volume_ratio_rank_24": 0.95977,
+          "ts_bollinger_z_rank_24": 0.883046,
+          "ts_close_location_rank_24": 0.399713,
+          "ts_return_volume_corr_24": -0.073456,
+          "decay_return_12": 0.016179,
+          "decay_volume_pressure_12": 1.16888,
+          "alpha_rebound_pressure": 0.000785,
+          "alpha_exhaustion_pressure": 0.505438,
+          "alpha_liquidity_quality": 0.531518
+        },
+        "medians": {
+          "cs_return_3_rank": 1.0,
+          "cs_return_12_rank": 1.0,
+          "cs_volume_ratio_rank": 1.0,
+          "cs_bollinger_z_rank": 1.0,
+          "cs_mark_basis_rank": 0.111111,
+          "cs_atr_rank": 0.833333,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.333333,
+          "ts_return_volume_corr_24": -0.09833,
+          "decay_return_12": 0.013488,
+          "decay_volume_pressure_12": 1.119263,
+          "alpha_rebound_pressure": 0.0,
+          "alpha_exhaustion_pressure": 0.492859,
+          "alpha_liquidity_quality": 0.559821
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.8966
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 15,
+          "sharePct": 10.3448
+        },
+        {
+          "value": "2023-07",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "2023-09",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "2026-01",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2026-03",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2023-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-06",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2026-02",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2023-06",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-05",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-12",
+          "count": 4,
+          "sharePct": 2.7586
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_blowoff_reversal",
+          "count": 85,
+          "sharePct": 58.6207
+        },
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 60,
+          "sharePct": 41.3793
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "tradeCount": 145,
+        "uniquePairs": 25,
+        "uniqueMonths": 40,
+        "recentHoldoutTradeCount": 29
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": true,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [],
+        "reason": "approved_for_local_paper_watch_only",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 145,
+          "winRatePct": 58.6207,
+          "rewardRiskRatio": 1.8207,
+          "profitFactor": 2.5793,
+          "maxDrawdownPct": 38.3157
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_short_exhaustion_pressure_watch",
+      "poolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.04:h12",
+      "description": "Relative-strength exhaustion context with high cross-sectional return and volume pressure.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 12,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 145,
+        "winRatePct": 48.9655,
+        "averageWinPct": 6.658698,
+        "averageLossPct": -4.022731,
+        "rewardRiskRatio": 1.6553,
+        "profitFactor": 1.5882,
+        "totalReturnPct": 353.6678,
+        "maxDrawdownPct": 33.2694,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 87,
+          "winRatePct": 47.1264,
+          "averageWinPct": 6.80568,
+          "averageLossPct": -4.052521,
+          "rewardRiskRatio": 1.6794,
+          "profitFactor": 1.4968,
+          "totalReturnPct": 118.9373,
+          "maxDrawdownPct": 31.7284,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 29,
+          "winRatePct": 58.6207,
+          "averageWinPct": 5.984977,
+          "averageLossPct": -3.877303,
+          "rewardRiskRatio": 1.5436,
+          "profitFactor": 2.1868,
+          "totalReturnPct": 65.6548,
+          "maxDrawdownPct": 21.1138,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 29,
+          "winRatePct": 44.8276,
+          "averageWinPct": 7.076158,
+          "averageLossPct": -4.046154,
+          "rewardRiskRatio": 1.7489,
+          "profitFactor": 1.4209,
+          "totalReturnPct": 25.0876,
+          "maxDrawdownPct": 18.2905,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 32,
+          "winRatePct": 50.0,
+          "averageWinPct": 6.985078,
+          "averageLossPct": -4.046154,
+          "rewardRiskRatio": 1.7264,
+          "profitFactor": 1.7264,
+          "totalReturnPct": 51.2893,
+          "maxDrawdownPct": 18.0166,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 31,
+          "winRatePct": 51.6129,
+          "averageWinPct": 7.181832,
+          "averageLossPct": -3.911073,
+          "rewardRiskRatio": 1.8363,
+          "profitFactor": 1.9587,
+          "totalReturnPct": 65.7711,
+          "maxDrawdownPct": 33.2694,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 38,
+          "winRatePct": 50.0,
+          "averageWinPct": 6.116084,
+          "averageLossPct": -4.046154,
+          "rewardRiskRatio": 1.5116,
+          "profitFactor": 1.5116,
+          "totalReturnPct": 39.7795,
+          "maxDrawdownPct": 18.2905,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 8.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 7.8,
+        "stopNetLossPct": 4.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.857143,
+        "observedToCostAdjusted2RCloseness": 0.891315,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 145,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.969163,
+          "cs_return_12_rank": 0.959967,
+          "cs_volume_ratio_rank": 0.976427,
+          "cs_bollinger_z_rank": 0.948812,
+          "cs_mark_basis_rank": 0.129337,
+          "cs_atr_rank": 0.793014,
+          "cs_liquidity_rank": 0.740005,
+          "ts_return_3_rank_24": 0.90546,
+          "ts_return_12_rank_24": 0.932759,
+          "ts_volume_ratio_rank_24": 0.95977,
+          "ts_bollinger_z_rank_24": 0.883046,
+          "ts_close_location_rank_24": 0.399713,
+          "ts_return_volume_corr_24": -0.073456,
+          "decay_return_12": 0.016179,
+          "decay_volume_pressure_12": 1.16888,
+          "alpha_rebound_pressure": 0.000785,
+          "alpha_exhaustion_pressure": 0.505438,
+          "alpha_liquidity_quality": 0.531518
+        },
+        "medians": {
+          "cs_return_3_rank": 1.0,
+          "cs_return_12_rank": 1.0,
+          "cs_volume_ratio_rank": 1.0,
+          "cs_bollinger_z_rank": 1.0,
+          "cs_mark_basis_rank": 0.111111,
+          "cs_atr_rank": 0.833333,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.333333,
+          "ts_return_volume_corr_24": -0.09833,
+          "decay_return_12": 0.013488,
+          "decay_volume_pressure_12": 1.119263,
+          "alpha_rebound_pressure": 0.0,
+          "alpha_exhaustion_pressure": 0.492859,
+          "alpha_liquidity_quality": 0.559821
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.8966
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 15,
+          "sharePct": 10.3448
+        },
+        {
+          "value": "2023-07",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "2023-09",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "2026-01",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2026-03",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2023-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-06",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2026-02",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2023-06",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-05",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-12",
+          "count": 4,
+          "sharePct": 2.7586
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_blowoff_reversal",
+          "count": 85,
+          "sharePct": 58.6207
+        },
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 60,
+          "sharePct": 41.3793
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "tradeCount": 145,
+        "uniquePairs": 25,
+        "uniqueMonths": 40,
+        "recentHoldoutTradeCount": 29
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": true,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [],
+        "reason": "approved_for_local_paper_watch_only",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 145,
+          "winRatePct": 48.9655,
+          "rewardRiskRatio": 1.6553,
+          "profitFactor": 1.5882,
+          "maxDrawdownPct": 33.2694
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_long_rebound_pressure_watch",
+      "poolId": "1h:alpha_long_rebound_pressure_watch:sl0.02:h24",
+      "description": "Extreme-volume rebound context with weak cross-sectional returns and high rebound pressure.",
+      "direction": "long",
+      "timeframe": "1h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.02,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 6,
+        "winRatePct": 66.6667,
+        "averageWinPct": 3.433138,
+        "averageLossPct": -2.2,
+        "rewardRiskRatio": 1.5605,
+        "profitFactor": 3.121,
+        "totalReturnPct": 9.4671,
+        "maxDrawdownPct": 4.3516,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 3,
+          "winRatePct": 100.0,
+          "averageWinPct": 3.31085,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 10.2576,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -2.2,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -2.2,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 2,
+          "winRatePct": 50.0,
+          "averageWinPct": 3.8,
+          "averageLossPct": -2.2,
+          "rewardRiskRatio": 1.7273,
+          "profitFactor": 1.7273,
+          "totalReturnPct": 1.5164,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 1,
+          "winRatePct": 100.0,
+          "averageWinPct": 3.8,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 3.8,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 0,
+          "winRatePct": null,
+          "averageWinPct": null,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 0.0,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 0,
+          "winRatePct": null,
+          "averageWinPct": null,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 0.0,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 4.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 3.8,
+        "stopNetLossPct": 2.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.727273,
+        "observedToCostAdjusted2RCloseness": 0.903447,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 6,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.2259,
+          "cs_return_12_rank": 0.122268,
+          "cs_volume_ratio_rank": 0.913767,
+          "cs_bollinger_z_rank": 0.249344,
+          "cs_mark_basis_rank": 0.42094,
+          "cs_atr_rank": 0.670131,
+          "cs_liquidity_rank": 0.701572,
+          "ts_return_3_rank_24": 0.076389,
+          "ts_return_12_rank_24": 0.069444,
+          "ts_volume_ratio_rank_24": 0.951389,
+          "ts_bollinger_z_rank_24": 0.090278,
+          "ts_close_location_rank_24": 0.868056,
+          "ts_return_volume_corr_24": -0.437926,
+          "decay_return_12": -0.014321,
+          "decay_volume_pressure_12": 1.413861,
+          "alpha_rebound_pressure": 0.518417,
+          "alpha_exhaustion_pressure": 0.006192,
+          "alpha_liquidity_quality": 0.521411
+        },
+        "medians": {
+          "cs_return_3_rank": 0.158654,
+          "cs_return_12_rank": 0.133929,
+          "cs_volume_ratio_rank": 0.961538,
+          "cs_bollinger_z_rank": 0.238095,
+          "cs_mark_basis_rank": 0.395833,
+          "cs_atr_rank": 0.828846,
+          "cs_liquidity_rank": 0.732692,
+          "ts_return_3_rank_24": 0.083333,
+          "ts_return_12_rank_24": 0.083333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.083333,
+          "ts_close_location_rank_24": 0.916667,
+          "ts_return_volume_corr_24": -0.513175,
+          "decay_return_12": -0.013527,
+          "decay_volume_pressure_12": 1.37737,
+          "alpha_rebound_pressure": 0.502705,
+          "alpha_exhaustion_pressure": 0.001143,
+          "alpha_liquidity_quality": 0.543007
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-04",
+          "count": 2,
+          "sharePct": 33.3333
+        },
+        {
+          "value": "2023-08",
+          "count": 2,
+          "sharePct": 33.3333
+        },
+        {
+          "value": "2023-03",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "2024-04",
+          "count": 1,
+          "sharePct": 16.6667
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_long_capitulation_reversal",
+          "count": 4,
+          "sharePct": 66.6667
+        },
+        {
+          "value": "hr_long_failed_breakdown_reclaim",
+          "count": 2,
+          "sharePct": 33.3333
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "pair_coverage_below_12",
+          "month_coverage_below_8",
+          "recent_holdout_sample_below_16"
+        ],
+        "warningReasons": [
+          "recent_holdout_small"
+        ],
+        "tradeCount": 6,
+        "uniquePairs": 6,
+        "uniqueMonths": 4,
+        "recentHoldoutTradeCount": 2
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": false,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "pair_coverage_below_12",
+          "month_coverage_below_8",
+          "recent_holdout_sample_below_16"
+        ],
+        "reason": "alpha_overlay_filter_requires_more_forward_evidence",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 6,
+          "winRatePct": 66.6667,
+          "rewardRiskRatio": 1.5605,
+          "profitFactor": 3.121,
+          "maxDrawdownPct": 4.3516
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_long_rebound_pressure_watch",
+      "poolId": "1h:alpha_long_rebound_pressure_watch:sl0.025:h30",
+      "description": "Extreme-volume rebound context with weak cross-sectional returns and high rebound pressure.",
+      "direction": "long",
+      "timeframe": "1h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.025,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 30,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 6,
+        "winRatePct": 66.6667,
+        "averageWinPct": 3.209559,
+        "averageLossPct": -2.7,
+        "rewardRiskRatio": 1.1887,
+        "profitFactor": 2.3775,
+        "totalReturnPct": 7.3739,
+        "maxDrawdownPct": 5.3271,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 3,
+          "winRatePct": 100.0,
+          "averageWinPct": 2.679412,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 8.2211,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -2.7,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -2.7,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 2,
+          "winRatePct": 50.0,
+          "averageWinPct": 4.8,
+          "averageLossPct": -2.7,
+          "rewardRiskRatio": 1.7778,
+          "profitFactor": 1.7778,
+          "totalReturnPct": 1.9704,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 1,
+          "winRatePct": 100.0,
+          "averageWinPct": 4.8,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 4.8,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 0,
+          "winRatePct": null,
+          "averageWinPct": null,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 0.0,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 0,
+          "winRatePct": null,
+          "averageWinPct": null,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 0.0,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 5.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 4.8,
+        "stopNetLossPct": 2.7,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.777778,
+        "observedToCostAdjusted2RCloseness": 0.668644,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 6,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.2259,
+          "cs_return_12_rank": 0.122268,
+          "cs_volume_ratio_rank": 0.913767,
+          "cs_bollinger_z_rank": 0.249344,
+          "cs_mark_basis_rank": 0.42094,
+          "cs_atr_rank": 0.670131,
+          "cs_liquidity_rank": 0.701572,
+          "ts_return_3_rank_24": 0.076389,
+          "ts_return_12_rank_24": 0.069444,
+          "ts_volume_ratio_rank_24": 0.951389,
+          "ts_bollinger_z_rank_24": 0.090278,
+          "ts_close_location_rank_24": 0.868056,
+          "ts_return_volume_corr_24": -0.437926,
+          "decay_return_12": -0.014321,
+          "decay_volume_pressure_12": 1.413861,
+          "alpha_rebound_pressure": 0.518417,
+          "alpha_exhaustion_pressure": 0.006192,
+          "alpha_liquidity_quality": 0.521411
+        },
+        "medians": {
+          "cs_return_3_rank": 0.158654,
+          "cs_return_12_rank": 0.133929,
+          "cs_volume_ratio_rank": 0.961538,
+          "cs_bollinger_z_rank": 0.238095,
+          "cs_mark_basis_rank": 0.395833,
+          "cs_atr_rank": 0.828846,
+          "cs_liquidity_rank": 0.732692,
+          "ts_return_3_rank_24": 0.083333,
+          "ts_return_12_rank_24": 0.083333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.083333,
+          "ts_close_location_rank_24": 0.916667,
+          "ts_return_volume_corr_24": -0.513175,
+          "decay_return_12": -0.013527,
+          "decay_volume_pressure_12": 1.37737,
+          "alpha_rebound_pressure": 0.502705,
+          "alpha_exhaustion_pressure": 0.001143,
+          "alpha_liquidity_quality": 0.543007
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-04",
+          "count": 2,
+          "sharePct": 33.3333
+        },
+        {
+          "value": "2023-08",
+          "count": 2,
+          "sharePct": 33.3333
+        },
+        {
+          "value": "2023-03",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "2024-04",
+          "count": 1,
+          "sharePct": 16.6667
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_long_capitulation_reversal",
+          "count": 4,
+          "sharePct": 66.6667
+        },
+        {
+          "value": "hr_long_failed_breakdown_reclaim",
+          "count": 2,
+          "sharePct": 33.3333
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "pair_coverage_below_12",
+          "month_coverage_below_8",
+          "recent_holdout_sample_below_16"
+        ],
+        "warningReasons": [
+          "recent_holdout_small"
+        ],
+        "tradeCount": 6,
+        "uniquePairs": 6,
+        "uniqueMonths": 4,
+        "recentHoldoutTradeCount": 2
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": false,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "pair_coverage_below_12",
+          "month_coverage_below_8",
+          "recent_holdout_sample_below_16",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ],
+        "reason": "alpha_overlay_filter_requires_more_forward_evidence",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 6,
+          "winRatePct": 66.6667,
+          "rewardRiskRatio": 1.1887,
+          "profitFactor": 2.3775,
+          "maxDrawdownPct": 5.3271
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_short_exhaustion_pressure_watch",
+      "poolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.08:h30",
+      "description": "Relative-strength exhaustion context with high cross-sectional return and volume pressure.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.08,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 30,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 145,
+        "winRatePct": 57.931,
+        "averageWinPct": 12.214591,
+        "averageLossPct": -7.1604,
+        "rewardRiskRatio": 1.7059,
+        "profitFactor": 2.349,
+        "totalReturnPct": 14952.0804,
+        "maxDrawdownPct": 60.0778,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 87,
+          "winRatePct": 51.7241,
+          "averageWinPct": 12.516647,
+          "averageLossPct": -7.287551,
+          "rewardRiskRatio": 1.7175,
+          "profitFactor": 1.8402,
+          "totalReturnPct": 679.0288,
+          "maxDrawdownPct": 60.0778,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 29,
+          "winRatePct": 68.9655,
+          "averageWinPct": 12.295173,
+          "averageLossPct": -7.607407,
+          "rewardRiskRatio": 1.6162,
+          "profitFactor": 3.5916,
+          "totalReturnPct": 386.3038,
+          "maxDrawdownPct": 27.13,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 29,
+          "winRatePct": 65.5172,
+          "averageWinPct": 11.414373,
+          "averageLossPct": -6.224055,
+          "rewardRiskRatio": 1.8339,
+          "profitFactor": 3.4844,
+          "totalReturnPct": 297.3154,
+          "maxDrawdownPct": 27.13,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 32,
+          "winRatePct": 50.0,
+          "averageWinPct": 14.425873,
+          "averageLossPct": -6.950926,
+          "rewardRiskRatio": 2.0754,
+          "profitFactor": 2.0754,
+          "totalReturnPct": 167.2251,
+          "maxDrawdownPct": 32.6735,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 31,
+          "winRatePct": 70.9677,
+          "averageWinPct": 13.420189,
+          "averageLossPct": -7.607407,
+          "rewardRiskRatio": 1.7641,
+          "profitFactor": 4.3122,
+          "totalReturnPct": 656.9086,
+          "maxDrawdownPct": 33.0685,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 38,
+          "winRatePct": 60.5263,
+          "averageWinPct": 11.086388,
+          "averageLossPct": -6.685172,
+          "rewardRiskRatio": 1.6584,
+          "profitFactor": 2.5428,
+          "totalReturnPct": 284.8231,
+          "maxDrawdownPct": 27.13,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 16.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 15.8,
+        "stopNetLossPct": 8.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+        "observedToCostAdjusted2RCloseness": 0.885341,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 145,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.969163,
+          "cs_return_12_rank": 0.959967,
+          "cs_volume_ratio_rank": 0.976427,
+          "cs_bollinger_z_rank": 0.948812,
+          "cs_mark_basis_rank": 0.129337,
+          "cs_atr_rank": 0.793014,
+          "cs_liquidity_rank": 0.740005,
+          "ts_return_3_rank_24": 0.90546,
+          "ts_return_12_rank_24": 0.932759,
+          "ts_volume_ratio_rank_24": 0.95977,
+          "ts_bollinger_z_rank_24": 0.883046,
+          "ts_close_location_rank_24": 0.399713,
+          "ts_return_volume_corr_24": -0.073456,
+          "decay_return_12": 0.016179,
+          "decay_volume_pressure_12": 1.16888,
+          "alpha_rebound_pressure": 0.000785,
+          "alpha_exhaustion_pressure": 0.505438,
+          "alpha_liquidity_quality": 0.531518
+        },
+        "medians": {
+          "cs_return_3_rank": 1.0,
+          "cs_return_12_rank": 1.0,
+          "cs_volume_ratio_rank": 1.0,
+          "cs_bollinger_z_rank": 1.0,
+          "cs_mark_basis_rank": 0.111111,
+          "cs_atr_rank": 0.833333,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.333333,
+          "ts_return_volume_corr_24": -0.09833,
+          "decay_return_12": 0.013488,
+          "decay_volume_pressure_12": 1.119263,
+          "alpha_rebound_pressure": 0.0,
+          "alpha_exhaustion_pressure": 0.492859,
+          "alpha_liquidity_quality": 0.559821
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.8966
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 15,
+          "sharePct": 10.3448
+        },
+        {
+          "value": "2023-07",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "2023-09",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "2026-01",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2026-03",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2023-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-06",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2026-02",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2023-06",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-05",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-12",
+          "count": 4,
+          "sharePct": 2.7586
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_blowoff_reversal",
+          "count": 85,
+          "sharePct": 58.6207
+        },
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 60,
+          "sharePct": 41.3793
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": false,
+        "failReasons": [
+          "max_drawdown_above_45"
+        ],
+        "warningReasons": [],
+        "tradeCount": 145,
+        "uniquePairs": 25,
+        "uniqueMonths": 40,
+        "recentHoldoutTradeCount": 29
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": false,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [
+          "max_drawdown_above_45"
+        ],
+        "reason": "alpha_overlay_filter_requires_more_forward_evidence",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 145,
+          "winRatePct": 57.931,
+          "rewardRiskRatio": 1.7059,
+          "profitFactor": 2.349,
+          "maxDrawdownPct": 60.0778
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_sideways_rejection_control",
+      "poolId": "4h:alpha_sideways_rejection_control:sl0.05:h18",
+      "description": "Sideways BTC failed-breakout rejection with high Bollinger rank and stable liquidity quality.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.05,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 49,
+        "winRatePct": 63.2653,
+        "averageWinPct": 5.323031,
+        "averageLossPct": -4.079697,
+        "rewardRiskRatio": 1.3048,
+        "profitFactor": 2.2471,
+        "totalReturnPct": 131.4045,
+        "maxDrawdownPct": 28.9028,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 29,
+          "winRatePct": 51.7241,
+          "averageWinPct": 5.551718,
+          "averageLossPct": -4.373352,
+          "rewardRiskRatio": 1.2694,
+          "profitFactor": 1.3601,
+          "totalReturnPct": 19.1087,
+          "maxDrawdownPct": 28.9028,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 10,
+          "winRatePct": 90.0,
+          "averageWinPct": 5.403749,
+          "averageLossPct": -4.961905,
+          "rewardRiskRatio": 1.089,
+          "profitFactor": 9.8014,
+          "totalReturnPct": 51.7585,
+          "maxDrawdownPct": 4.9619,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 10,
+          "winRatePct": 70.0,
+          "averageWinPct": 4.729207,
+          "averageLossPct": -2.415234,
+          "rewardRiskRatio": 1.9581,
+          "profitFactor": 4.5688,
+          "totalReturnPct": 28.0193,
+          "maxDrawdownPct": 4.9619,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 11,
+          "winRatePct": 54.5455,
+          "averageWinPct": 7.613279,
+          "averageLossPct": -4.043279,
+          "rewardRiskRatio": 1.8829,
+          "profitFactor": 2.2595,
+          "totalReturnPct": 25.8347,
+          "maxDrawdownPct": 15.3357,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 75.0,
+          "averageWinPct": 5.022639,
+          "averageLossPct": -4.961905,
+          "rewardRiskRatio": 1.0122,
+          "profitFactor": 3.0367,
+          "totalReturnPct": 60.5198,
+          "maxDrawdownPct": 13.72,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 6,
+          "winRatePct": 50.0,
+          "averageWinPct": 5.122121,
+          "averageLossPct": -2.415234,
+          "rewardRiskRatio": 2.1208,
+          "profitFactor": 2.1208,
+          "totalReturnPct": 7.6369,
+          "maxDrawdownPct": 4.9619,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 10.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 9.8,
+        "stopNetLossPct": 5.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+        "observedToCostAdjusted2RCloseness": 0.692343,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 49,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.790787,
+          "cs_return_12_rank": 0.759799,
+          "cs_volume_ratio_rank": 0.854291,
+          "cs_bollinger_z_rank": 0.898693,
+          "cs_mark_basis_rank": 0.605791,
+          "cs_atr_rank": 0.457197,
+          "cs_liquidity_rank": 0.783602,
+          "ts_return_3_rank_24": 0.89966,
+          "ts_return_12_rank_24": 0.884354,
+          "ts_volume_ratio_rank_24": 0.878401,
+          "ts_bollinger_z_rank_24": 0.883503,
+          "ts_close_location_rank_24": 0.368197,
+          "ts_return_volume_corr_24": -0.003875,
+          "decay_return_12": 0.007025,
+          "decay_volume_pressure_12": 0.750458,
+          "alpha_rebound_pressure": 0.010762,
+          "alpha_exhaustion_pressure": 0.37503,
+          "alpha_liquidity_quality": 0.65951
+        },
+        "medians": {
+          "cs_return_3_rank": 0.888889,
+          "cs_return_12_rank": 0.791667,
+          "cs_volume_ratio_rank": 0.958333,
+          "cs_bollinger_z_rank": 0.892857,
+          "cs_mark_basis_rank": 0.625,
+          "cs_atr_rank": 0.407407,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.875,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.291667,
+          "ts_return_volume_corr_24": -0.002064,
+          "decay_return_12": 0.005693,
+          "decay_volume_pressure_12": 0.694292,
+          "alpha_rebound_pressure": 0.002098,
+          "alpha_exhaustion_pressure": 0.350602,
+          "alpha_liquidity_quality": 0.607031
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "BTC/USDT:USDT",
+          "count": 8,
+          "sharePct": 16.3265
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 6,
+          "sharePct": 12.2449
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "ETH/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 1,
+          "sharePct": 2.0408
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-09",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2025-10",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2025-12",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2023-05",
+          "count": 4,
+          "sharePct": 8.1633
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 8.1633
+        },
+        {
+          "value": "2024-07",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2024-08",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2025-03",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2026-03",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2023-06",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2024-04",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2024-09",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2025-08",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2026-04",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2023-08",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2024-01",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2025-09",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2026-01",
+          "count": 1,
+          "sharePct": 2.0408
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 49,
+          "sharePct": 100.0
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "recent_holdout_sample_below_16"
+        ],
+        "warningReasons": [
+          "recent_holdout_small"
+        ],
+        "tradeCount": 49,
+        "uniquePairs": 19,
+        "uniqueMonths": 18,
+        "recentHoldoutTradeCount": 10
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": false,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "recent_holdout_sample_below_16",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ],
+        "reason": "alpha_overlay_filter_requires_more_forward_evidence",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 49,
+          "winRatePct": 63.2653,
+          "rewardRiskRatio": 1.3048,
+          "profitFactor": 2.2471,
+          "maxDrawdownPct": 28.9028
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_long_rebound_pressure_watch",
+      "poolId": "1h:alpha_long_rebound_pressure_watch:sl0.03:h36",
+      "description": "Extreme-volume rebound context with weak cross-sectional returns and high rebound pressure.",
+      "direction": "long",
+      "timeframe": "1h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.03,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 36,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 6,
+        "winRatePct": 66.6667,
+        "averageWinPct": 3.519571,
+        "averageLossPct": -3.2,
+        "rewardRiskRatio": 1.0999,
+        "profitFactor": 2.1997,
+        "totalReturnPct": 7.5015,
+        "maxDrawdownPct": 6.2976,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 3,
+          "winRatePct": 100.0,
+          "averageWinPct": 2.759428,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 8.4372,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -3.2,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -3.2,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 2,
+          "winRatePct": 50.0,
+          "averageWinPct": 5.8,
+          "averageLossPct": -3.2,
+          "rewardRiskRatio": 1.8125,
+          "profitFactor": 1.8125,
+          "totalReturnPct": 2.4144,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 1,
+          "winRatePct": 100.0,
+          "averageWinPct": 5.8,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 5.8,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 0,
+          "winRatePct": null,
+          "averageWinPct": null,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 0.0,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 0,
+          "winRatePct": null,
+          "averageWinPct": null,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 0.0,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 6.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 5.8,
+        "stopNetLossPct": 3.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.8125,
+        "observedToCostAdjusted2RCloseness": 0.606841,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 6,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.2259,
+          "cs_return_12_rank": 0.122268,
+          "cs_volume_ratio_rank": 0.913767,
+          "cs_bollinger_z_rank": 0.249344,
+          "cs_mark_basis_rank": 0.42094,
+          "cs_atr_rank": 0.670131,
+          "cs_liquidity_rank": 0.701572,
+          "ts_return_3_rank_24": 0.076389,
+          "ts_return_12_rank_24": 0.069444,
+          "ts_volume_ratio_rank_24": 0.951389,
+          "ts_bollinger_z_rank_24": 0.090278,
+          "ts_close_location_rank_24": 0.868056,
+          "ts_return_volume_corr_24": -0.437926,
+          "decay_return_12": -0.014321,
+          "decay_volume_pressure_12": 1.413861,
+          "alpha_rebound_pressure": 0.518417,
+          "alpha_exhaustion_pressure": 0.006192,
+          "alpha_liquidity_quality": 0.521411
+        },
+        "medians": {
+          "cs_return_3_rank": 0.158654,
+          "cs_return_12_rank": 0.133929,
+          "cs_volume_ratio_rank": 0.961538,
+          "cs_bollinger_z_rank": 0.238095,
+          "cs_mark_basis_rank": 0.395833,
+          "cs_atr_rank": 0.828846,
+          "cs_liquidity_rank": 0.732692,
+          "ts_return_3_rank_24": 0.083333,
+          "ts_return_12_rank_24": 0.083333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.083333,
+          "ts_close_location_rank_24": 0.916667,
+          "ts_return_volume_corr_24": -0.513175,
+          "decay_return_12": -0.013527,
+          "decay_volume_pressure_12": 1.37737,
+          "alpha_rebound_pressure": 0.502705,
+          "alpha_exhaustion_pressure": 0.001143,
+          "alpha_liquidity_quality": 0.543007
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 1,
+          "sharePct": 16.6667
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-04",
+          "count": 2,
+          "sharePct": 33.3333
+        },
+        {
+          "value": "2023-08",
+          "count": 2,
+          "sharePct": 33.3333
+        },
+        {
+          "value": "2023-03",
+          "count": 1,
+          "sharePct": 16.6667
+        },
+        {
+          "value": "2024-04",
+          "count": 1,
+          "sharePct": 16.6667
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_long_capitulation_reversal",
+          "count": 4,
+          "sharePct": 66.6667
+        },
+        {
+          "value": "hr_long_failed_breakdown_reclaim",
+          "count": 2,
+          "sharePct": 33.3333
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "pair_coverage_below_12",
+          "month_coverage_below_8",
+          "recent_holdout_sample_below_16"
+        ],
+        "warningReasons": [
+          "recent_holdout_small"
+        ],
+        "tradeCount": 6,
+        "uniquePairs": 6,
+        "uniqueMonths": 4,
+        "recentHoldoutTradeCount": 2
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": false,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "pair_coverage_below_12",
+          "month_coverage_below_8",
+          "recent_holdout_sample_below_16",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ],
+        "reason": "alpha_overlay_filter_requires_more_forward_evidence",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 6,
+          "winRatePct": 66.6667,
+          "rewardRiskRatio": 1.0999,
+          "profitFactor": 2.1997,
+          "maxDrawdownPct": 6.2976
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_sideways_rejection_control",
+      "poolId": "4h:alpha_sideways_rejection_control:sl0.06:h24",
+      "description": "Sideways BTC failed-breakout rejection with high Bollinger rank and stable liquidity quality.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 49,
+        "winRatePct": 57.1429,
+        "averageWinPct": 6.513063,
+        "averageLossPct": -4.248303,
+        "rewardRiskRatio": 1.5331,
+        "profitFactor": 2.0441,
+        "totalReturnPct": 127.9015,
+        "maxDrawdownPct": 31.9329,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 29,
+          "winRatePct": 48.2759,
+          "averageWinPct": 6.866528,
+          "averageLossPct": -4.667814,
+          "rewardRiskRatio": 1.471,
+          "profitFactor": 1.373,
+          "totalReturnPct": 21.9028,
+          "maxDrawdownPct": 31.9329,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 10,
+          "winRatePct": 80.0,
+          "averageWinPct": 8.949221,
+          "averageLossPct": -3.676659,
+          "rewardRiskRatio": 2.4341,
+          "profitFactor": 9.7363,
+          "totalReturnPct": 82.8563,
+          "maxDrawdownPct": 5.8604,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 10,
+          "winRatePct": 60.0,
+          "averageWinPct": 2.440102,
+          "averageLossPct": -2.960959,
+          "rewardRiskRatio": 0.8241,
+          "profitFactor": 1.2361,
+          "totalReturnPct": 2.2407,
+          "maxDrawdownPct": 8.1772,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 11,
+          "winRatePct": 54.5455,
+          "averageWinPct": 9.917166,
+          "averageLossPct": -4.815916,
+          "rewardRiskRatio": 2.0592,
+          "profitFactor": 2.4711,
+          "totalReturnPct": 37.2278,
+          "maxDrawdownPct": 16.0947,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 50.0,
+          "averageWinPct": 8.599475,
+          "averageLossPct": -4.075468,
+          "rewardRiskRatio": 2.1101,
+          "profitFactor": 2.1101,
+          "totalReturnPct": 48.5813,
+          "maxDrawdownPct": 17.9252,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 6,
+          "winRatePct": 83.3333,
+          "averageWinPct": 2.735198,
+          "averageLossPct": -3.507283,
+          "rewardRiskRatio": 0.7799,
+          "profitFactor": 3.8993,
+          "totalReturnPct": 10.2818,
+          "maxDrawdownPct": 3.5073,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.805527,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 49,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.790787,
+          "cs_return_12_rank": 0.759799,
+          "cs_volume_ratio_rank": 0.854291,
+          "cs_bollinger_z_rank": 0.898693,
+          "cs_mark_basis_rank": 0.605791,
+          "cs_atr_rank": 0.457197,
+          "cs_liquidity_rank": 0.783602,
+          "ts_return_3_rank_24": 0.89966,
+          "ts_return_12_rank_24": 0.884354,
+          "ts_volume_ratio_rank_24": 0.878401,
+          "ts_bollinger_z_rank_24": 0.883503,
+          "ts_close_location_rank_24": 0.368197,
+          "ts_return_volume_corr_24": -0.003875,
+          "decay_return_12": 0.007025,
+          "decay_volume_pressure_12": 0.750458,
+          "alpha_rebound_pressure": 0.010762,
+          "alpha_exhaustion_pressure": 0.37503,
+          "alpha_liquidity_quality": 0.65951
+        },
+        "medians": {
+          "cs_return_3_rank": 0.888889,
+          "cs_return_12_rank": 0.791667,
+          "cs_volume_ratio_rank": 0.958333,
+          "cs_bollinger_z_rank": 0.892857,
+          "cs_mark_basis_rank": 0.625,
+          "cs_atr_rank": 0.407407,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.875,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.291667,
+          "ts_return_volume_corr_24": -0.002064,
+          "decay_return_12": 0.005693,
+          "decay_volume_pressure_12": 0.694292,
+          "alpha_rebound_pressure": 0.002098,
+          "alpha_exhaustion_pressure": 0.350602,
+          "alpha_liquidity_quality": 0.607031
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "BTC/USDT:USDT",
+          "count": 8,
+          "sharePct": 16.3265
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 6,
+          "sharePct": 12.2449
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "ETH/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 1,
+          "sharePct": 2.0408
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-09",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2025-10",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2025-12",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2023-05",
+          "count": 4,
+          "sharePct": 8.1633
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 8.1633
+        },
+        {
+          "value": "2024-07",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2024-08",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2025-03",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2026-03",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2023-06",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2024-04",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2024-09",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2025-08",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2026-04",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2023-08",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2024-01",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2025-09",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2026-01",
+          "count": 1,
+          "sharePct": 2.0408
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 49,
+          "sharePct": 100.0
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "recent_holdout_sample_below_16"
+        ],
+        "warningReasons": [
+          "recent_holdout_small"
+        ],
+        "tradeCount": 49,
+        "uniquePairs": 19,
+        "uniqueMonths": 18,
+        "recentHoldoutTradeCount": 10
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": false,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "recent_holdout_sample_below_16"
+        ],
+        "reason": "alpha_overlay_filter_requires_more_forward_evidence",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 49,
+          "winRatePct": 57.1429,
+          "rewardRiskRatio": 1.5331,
+          "profitFactor": 2.0441,
+          "maxDrawdownPct": 31.9329
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_short_exhaustion_pressure_watch",
+      "poolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.05:h18",
+      "description": "Relative-strength exhaustion context with high cross-sectional return and volume pressure.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.05,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 145,
+        "winRatePct": 53.1034,
+        "averageWinPct": 8.374706,
+        "averageLossPct": -4.867034,
+        "rewardRiskRatio": 1.7207,
+        "profitFactor": 1.9484,
+        "totalReturnPct": 1467.1223,
+        "maxDrawdownPct": 45.0587,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 87,
+          "winRatePct": 49.4253,
+          "averageWinPct": 8.340963,
+          "averageLossPct": -4.961905,
+          "rewardRiskRatio": 1.681,
+          "profitFactor": 1.6428,
+          "totalReturnPct": 224.4605,
+          "maxDrawdownPct": 45.0587,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 29,
+          "winRatePct": 58.6207,
+          "averageWinPct": 8.061412,
+          "averageLossPct": -4.663691,
+          "rewardRiskRatio": 1.7285,
+          "profitFactor": 2.4488,
+          "totalReturnPct": 108.4632,
+          "maxDrawdownPct": 22.4666,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 29,
+          "winRatePct": 58.6207,
+          "averageWinPct": 8.773352,
+          "averageLossPct": -4.722515,
+          "rewardRiskRatio": 1.8578,
+          "profitFactor": 2.6318,
+          "totalReturnPct": 131.6923,
+          "maxDrawdownPct": 19.7739,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 32,
+          "winRatePct": 46.875,
+          "averageWinPct": 8.83034,
+          "averageLossPct": -4.961905,
+          "rewardRiskRatio": 1.7796,
+          "profitFactor": 1.5703,
+          "totalReturnPct": 48.294,
+          "maxDrawdownPct": 22.4666,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 31,
+          "winRatePct": 54.8387,
+          "averageWinPct": 9.866094,
+          "averageLossPct": -4.706293,
+          "rewardRiskRatio": 2.0964,
+          "profitFactor": 2.5456,
+          "totalReturnPct": 151.018,
+          "maxDrawdownPct": 29.8419,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 38,
+          "winRatePct": 60.5263,
+          "averageWinPct": 7.727391,
+          "averageLossPct": -4.770393,
+          "rewardRiskRatio": 1.6199,
+          "profitFactor": 2.4838,
+          "totalReturnPct": 162.1659,
+          "maxDrawdownPct": 19.7739,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 10.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 9.8,
+        "stopNetLossPct": 5.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+        "observedToCostAdjusted2RCloseness": 0.913024,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 145,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.969163,
+          "cs_return_12_rank": 0.959967,
+          "cs_volume_ratio_rank": 0.976427,
+          "cs_bollinger_z_rank": 0.948812,
+          "cs_mark_basis_rank": 0.129337,
+          "cs_atr_rank": 0.793014,
+          "cs_liquidity_rank": 0.740005,
+          "ts_return_3_rank_24": 0.90546,
+          "ts_return_12_rank_24": 0.932759,
+          "ts_volume_ratio_rank_24": 0.95977,
+          "ts_bollinger_z_rank_24": 0.883046,
+          "ts_close_location_rank_24": 0.399713,
+          "ts_return_volume_corr_24": -0.073456,
+          "decay_return_12": 0.016179,
+          "decay_volume_pressure_12": 1.16888,
+          "alpha_rebound_pressure": 0.000785,
+          "alpha_exhaustion_pressure": 0.505438,
+          "alpha_liquidity_quality": 0.531518
+        },
+        "medians": {
+          "cs_return_3_rank": 1.0,
+          "cs_return_12_rank": 1.0,
+          "cs_volume_ratio_rank": 1.0,
+          "cs_bollinger_z_rank": 1.0,
+          "cs_mark_basis_rank": 0.111111,
+          "cs_atr_rank": 0.833333,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.958333,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.333333,
+          "ts_return_volume_corr_24": -0.09833,
+          "decay_return_12": 0.013488,
+          "decay_volume_pressure_12": 1.119263,
+          "alpha_rebound_pressure": 0.0,
+          "alpha_exhaustion_pressure": 0.492859,
+          "alpha_liquidity_quality": 0.559821
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.8966
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 9,
+          "sharePct": 6.2069
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 5,
+          "sharePct": 3.4483
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 15,
+          "sharePct": 10.3448
+        },
+        {
+          "value": "2023-07",
+          "count": 11,
+          "sharePct": 7.5862
+        },
+        {
+          "value": "2023-09",
+          "count": 8,
+          "sharePct": 5.5172
+        },
+        {
+          "value": "2026-01",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2026-03",
+          "count": 6,
+          "sharePct": 4.1379
+        },
+        {
+          "value": "2023-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-06",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2024-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-07",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2025-11",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2026-02",
+          "count": 5,
+          "sharePct": 3.4483
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2023-06",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-05",
+          "count": 4,
+          "sharePct": 2.7586
+        },
+        {
+          "value": "2025-12",
+          "count": 4,
+          "sharePct": 2.7586
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_blowoff_reversal",
+          "count": 85,
+          "sharePct": 58.6207
+        },
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 60,
+          "sharePct": 41.3793
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": false,
+        "failReasons": [
+          "max_drawdown_above_45"
+        ],
+        "warningReasons": [],
+        "tradeCount": 145,
+        "uniquePairs": 25,
+        "uniqueMonths": 40,
+        "recentHoldoutTradeCount": 29
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": false,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [
+          "max_drawdown_above_45"
+        ],
+        "reason": "alpha_overlay_filter_requires_more_forward_evidence",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 145,
+          "winRatePct": 53.1034,
+          "rewardRiskRatio": 1.7207,
+          "profitFactor": 1.9484,
+          "maxDrawdownPct": 45.0587
+        }
+      }
+    },
+    {
+      "overlayId": "alpha_sideways_rejection_control",
+      "poolId": "4h:alpha_sideways_rejection_control:sl0.08:h30",
+      "description": "Sideways BTC failed-breakout rejection with high Bollinger rank and stable liquidity quality.",
+      "direction": "short",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.08,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 30,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 49,
+        "winRatePct": 55.102,
+        "averageWinPct": 7.955539,
+        "averageLossPct": -5.03855,
+        "rewardRiskRatio": 1.5789,
+        "profitFactor": 1.9378,
+        "totalReturnPct": 140.6599,
+        "maxDrawdownPct": 26.8845,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 29,
+          "winRatePct": 51.7241,
+          "averageWinPct": 8.514297,
+          "averageLossPct": -5.829042,
+          "rewardRiskRatio": 1.4607,
+          "profitFactor": 1.565,
+          "totalReturnPct": 41.8779,
+          "maxDrawdownPct": 27.5331,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 10,
+          "winRatePct": 80.0,
+          "averageWinPct": 8.028114,
+          "averageLossPct": -1.836754,
+          "rewardRiskRatio": 4.3708,
+          "profitFactor": 17.4833,
+          "totalReturnPct": 77.2712,
+          "maxDrawdownPct": 2.8587,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 10,
+          "winRatePct": 40.0,
+          "averageWinPct": 5.715045,
+          "averageLossPct": -4.261336,
+          "rewardRiskRatio": 1.3411,
+          "profitFactor": 0.8941,
+          "totalReturnPct": -4.3135,
+          "maxDrawdownPct": 16.584,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 11,
+          "winRatePct": 45.4545,
+          "averageWinPct": 13.483283,
+          "averageLossPct": -6.77632,
+          "rewardRiskRatio": 1.9898,
+          "profitFactor": 1.6581,
+          "totalReturnPct": 22.8754,
+          "maxDrawdownPct": 20.3804,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 60.0,
+          "averageWinPct": 8.948232,
+          "averageLossPct": -4.716343,
+          "rewardRiskRatio": 1.8973,
+          "profitFactor": 2.8459,
+          "totalReturnPct": 85.5706,
+          "maxDrawdownPct": 18.377,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 6,
+          "winRatePct": 66.6667,
+          "averageWinPct": 5.715045,
+          "averageLossPct": -3.362797,
+          "rewardRiskRatio": 1.6995,
+          "profitFactor": 3.399,
+          "totalReturnPct": 16.2747,
+          "maxDrawdownPct": 5.1776,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 16.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 15.8,
+        "stopNetLossPct": 8.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+        "observedToCostAdjusted2RCloseness": 0.819429,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "factorSnapshot": {
+        "factorColumns": [
+          "cs_return_3_rank",
+          "cs_return_12_rank",
+          "cs_volume_ratio_rank",
+          "cs_bollinger_z_rank",
+          "cs_mark_basis_rank",
+          "cs_atr_rank",
+          "cs_liquidity_rank",
+          "ts_return_3_rank_24",
+          "ts_return_12_rank_24",
+          "ts_volume_ratio_rank_24",
+          "ts_bollinger_z_rank_24",
+          "ts_close_location_rank_24",
+          "ts_return_volume_corr_24",
+          "decay_return_12",
+          "decay_volume_pressure_12",
+          "alpha_rebound_pressure",
+          "alpha_exhaustion_pressure",
+          "alpha_liquidity_quality"
+        ],
+        "availableRows": 49,
+        "availabilityPct": {
+          "cs_return_3_rank": 100.0,
+          "cs_return_12_rank": 100.0,
+          "cs_volume_ratio_rank": 100.0,
+          "cs_bollinger_z_rank": 100.0,
+          "cs_mark_basis_rank": 100.0,
+          "cs_atr_rank": 100.0,
+          "cs_liquidity_rank": 100.0,
+          "ts_return_3_rank_24": 100.0,
+          "ts_return_12_rank_24": 100.0,
+          "ts_volume_ratio_rank_24": 100.0,
+          "ts_bollinger_z_rank_24": 100.0,
+          "ts_close_location_rank_24": 100.0,
+          "ts_return_volume_corr_24": 100.0,
+          "decay_return_12": 100.0,
+          "decay_volume_pressure_12": 100.0,
+          "alpha_rebound_pressure": 100.0,
+          "alpha_exhaustion_pressure": 100.0,
+          "alpha_liquidity_quality": 100.0
+        },
+        "means": {
+          "cs_return_3_rank": 0.790787,
+          "cs_return_12_rank": 0.759799,
+          "cs_volume_ratio_rank": 0.854291,
+          "cs_bollinger_z_rank": 0.898693,
+          "cs_mark_basis_rank": 0.605791,
+          "cs_atr_rank": 0.457197,
+          "cs_liquidity_rank": 0.783602,
+          "ts_return_3_rank_24": 0.89966,
+          "ts_return_12_rank_24": 0.884354,
+          "ts_volume_ratio_rank_24": 0.878401,
+          "ts_bollinger_z_rank_24": 0.883503,
+          "ts_close_location_rank_24": 0.368197,
+          "ts_return_volume_corr_24": -0.003875,
+          "decay_return_12": 0.007025,
+          "decay_volume_pressure_12": 0.750458,
+          "alpha_rebound_pressure": 0.010762,
+          "alpha_exhaustion_pressure": 0.37503,
+          "alpha_liquidity_quality": 0.65951
+        },
+        "medians": {
+          "cs_return_3_rank": 0.888889,
+          "cs_return_12_rank": 0.791667,
+          "cs_volume_ratio_rank": 0.958333,
+          "cs_bollinger_z_rank": 0.892857,
+          "cs_mark_basis_rank": 0.625,
+          "cs_atr_rank": 0.407407,
+          "cs_liquidity_rank": 0.785714,
+          "ts_return_3_rank_24": 0.958333,
+          "ts_return_12_rank_24": 0.958333,
+          "ts_volume_ratio_rank_24": 0.875,
+          "ts_bollinger_z_rank_24": 0.916667,
+          "ts_close_location_rank_24": 0.291667,
+          "ts_return_volume_corr_24": -0.002064,
+          "decay_return_12": 0.005693,
+          "decay_volume_pressure_12": 0.694292,
+          "alpha_rebound_pressure": 0.002098,
+          "alpha_exhaustion_pressure": 0.350602,
+          "alpha_liquidity_quality": 0.607031
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "BTC/USDT:USDT",
+          "count": 8,
+          "sharePct": 16.3265
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 6,
+          "sharePct": 12.2449
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "ETH/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 1,
+          "sharePct": 2.0408
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-09",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2025-10",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2025-12",
+          "count": 5,
+          "sharePct": 10.2041
+        },
+        {
+          "value": "2023-05",
+          "count": 4,
+          "sharePct": 8.1633
+        },
+        {
+          "value": "2025-01",
+          "count": 4,
+          "sharePct": 8.1633
+        },
+        {
+          "value": "2024-07",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2024-08",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2025-03",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2026-03",
+          "count": 3,
+          "sharePct": 6.1224
+        },
+        {
+          "value": "2023-06",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2024-04",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2024-09",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2025-08",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2026-04",
+          "count": 2,
+          "sharePct": 4.0816
+        },
+        {
+          "value": "2023-08",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2024-01",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2025-09",
+          "count": 1,
+          "sharePct": 2.0408
+        },
+        {
+          "value": "2026-01",
+          "count": 1,
+          "sharePct": 2.0408
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 49,
+          "sharePct": 100.0
+        }
+      ],
+      "sampleQuality": {
+        "overlaySamplePassed": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "recent_holdout_sample_below_16"
+        ],
+        "warningReasons": [
+          "recent_holdout_small"
+        ],
+        "tradeCount": 49,
+        "uniquePairs": 19,
+        "uniqueMonths": 18,
+        "recentHoldoutTradeCount": 10
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "alphaOverlayComputed": true,
+        "localPaperWatchApproved": false,
+        "newFormalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "failReasons": [
+          "trade_count_below_80",
+          "recent_holdout_sample_below_16"
+        ],
+        "reason": "alpha_overlay_filter_requires_more_forward_evidence",
+        "note": "Approval here can only mean local paper watch; it is not exchange Dry-run or live trading.",
+        "observedMetrics": {
+          "tradeCount": 49,
+          "winRatePct": 55.102,
+          "rewardRiskRatio": 1.5789,
+          "profitFactor": 1.9378,
+          "maxDrawdownPct": 26.8845
+        }
+      }
+    }
+  ]
+}
