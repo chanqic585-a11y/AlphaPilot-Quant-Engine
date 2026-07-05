@@ -2180,9 +2180,93 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.5.1 Expanded Relaxed Derivatives Research
+
+V13.5.1 expands the V13.5 pipeline to the locally available 28-pair OKX futures
+universe and adds a relaxed shadow-watchlist gate.
+
+中文说明：
+
+```text
+V13.5.1 按用户要求扩大测试币种，并略微放宽研究门槛。
+但放宽后的候选仍然只是 research / forward-confirmation，不等于模拟盘或实盘批准。
+```
+
+Run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_1_expanded_relaxed_research.ps1 -Timeframe 1h -Run
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_1_expanded_relaxed_research.ps1 -Timeframe 4h -Run
+```
+
+Outputs:
+
+```text
+alphapilot/ml_gate/research_gates.py
+alphapilot/reports/generate_v13_5_1_expanded_relaxed_research_report.py
+scripts/run_v13_5_1_expanded_relaxed_research.ps1
+reports/v13_5_1_expanded_relaxed_1h_report.json
+reports/v13_5_1_expanded_relaxed_1h_summary.md
+reports/v13_5_1_expanded_relaxed_4h_report.json
+reports/v13_5_1_expanded_relaxed_4h_summary.md
+docs/V13.5.1-expanded-relaxed-derivatives-research.md
+```
+
+Current V13.5.1 result:
+
+```text
+Loaded pairs: 28
+Probability hard gate approved: false
+Probability relaxed shadow-watchlist approved: false
+Deterministic forward-confirmation candidate found: true
+Paper approved: false
+Dry-run approved: false
+Live trading approved: false
+```
+
+Closest 4h deterministic mined candidate:
+
+```text
+Condition: BTC regime bear + return_3 > 6% + Bollinger z > 2.0
+Trades: 166
+Win rate: 60.8434%
+Reward/risk: 1.9922
+Profit factor: 3.0956
+Max drawdown: 35.4801%
+Holdout trades: 50
+Holdout win rate: 56.0%
+Holdout reward/risk: 1.9965
+Holdout profit factor: 2.5411
+Status: forward-confirmation only, not paper approved
+```
+
+Closest 1h deterministic mined candidate:
+
+```text
+Condition: short_reversal_candidate + BTC regime bull + relative_return_6 between -1% and 1%
+Trades: 187
+Win rate: 73.262%
+Reward/risk: 1.2321
+Profit factor: 3.3759
+Max drawdown: 37.9023%
+Holdout trades: 57
+Holdout win rate: 70.1754%
+Holdout reward/risk: 2.0235
+Holdout profit factor: 4.7612
+Status: forward-confirmation only, not paper approved
+```
+
+Interpretation:
+
+```text
+V13.5.1 found useful deterministic research candidates, but the probability-gated
+walk-forward layer still did not pass. These candidates should be used for
+forward-confirmation / shadow observation design, not paper or Dry-run execution.
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.1: add historical open-interest / liquidation / liquidity data collectors if public data availability permits.
-- V13.5.2: add shadow signal logger after a candidate clears the hard gate.
+- V13.5.2: add forward-confirmation signal logger for V13.5.1 deterministic candidates.
+- V13.5.3: add historical open-interest / liquidation / liquidity data collectors if public data availability permits.
 - V13.6: consider Dry-run candidate evaluation only after shadow and paper validation.
