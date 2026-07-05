@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.30 - Short Rejection Failure Review and Negative Research Rules
+AlphaPilot V13.4.31 - Low-Frequency Mainstream Coin Research Plan
 ```
 
 ## Positioning
@@ -1810,11 +1810,76 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.4.31 Low-Frequency Mainstream Coin Research Plan
+
+V13.4.31 narrows the next research track to BTC/ETH/SOL on 4h/1d timeframes.
+
+中文说明：
+
+```text
+V13.4.31 将研究范围收窄到 BTC/ETH/SOL 的 4h/1d 低频方向，设计 long/short 均可研究的 regime-aware 低频研究计划。
+本版本不写策略、不回测、不进入 Dry-run、不接 API Key。
+```
+
+Generate the research plan:
+
+```powershell
+python -m alphapilot.reports.generate_low_frequency_research_plan
+```
+
+Outputs:
+
+```text
+reports/v13_4_31_low_frequency_research_plan.json
+reports/v13_4_31_low_frequency_research_summary.md
+docs/V13.4.31-low-frequency-mainstream-research-plan.md
+docs/low-frequency-research-hypotheses.md
+docs/mainstream-coin-research-scope.md
+docs/regime-aware-long-short-research.md
+```
+
+Research scope:
+
+```text
+pairs: BTC/USDT:USDT, ETH/USDT:USDT, SOL/USDT:USDT
+primaryTimeframes: 4h, 1d
+optionalTimeframes: 1h
+```
+
+V13.4.31 defines five low-frequency research hypotheses:
+
+```text
+LF-HYP-001 BTC/ETH/SOL 4h Trend Following
+LF-HYP-002 BTC/ETH/SOL 4h Bear Rejection Short
+LF-HYP-003 1d Regime + 4h Entry
+LF-HYP-004 Breakout Retest on Mainstream Coins
+LF-HYP-005 NoTrade as Active Decision
+```
+
+Long and short can both be researched, but they must be evaluated separately.
+Market regime is a direction-scoring and risk-weighting context, not the only
+hard entry switch.
+
+V13.4.31 remains research-plan-only:
+
+```text
+no strategy code
+no data download
+no backtest
+no Dry-run
+no real API key
+no Trade API / Withdraw API
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.4.31: Low-Frequency Mainstream Coin Research Plan.
-- Alternative V13.4.31 track: Funding/OI Public Data Collector if short research remains the priority.
+- V13.4.32: Low-Frequency Data Preparation and Baseline Builder.
+- Alternative future track: Funding/OI Public Data Collector if short research becomes the priority again.
 - Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

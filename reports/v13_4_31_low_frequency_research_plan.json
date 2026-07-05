@@ -1,0 +1,600 @@
+{
+  "reportId": "v13_4_31_low_frequency_research_plan",
+  "currentStatus": "research_plan_only",
+  "sourceReports": [
+    "reports/v13_4_30_short_rejection_failure_review.json",
+    "reports/v13_4_30_negative_research_rules.json",
+    "reports/v13_4_27_market_regime_data_integrity_report.json"
+  ],
+  "inputReportSummaries": {
+    "reports/v13_4_30_short_rejection_failure_review.json": {
+      "path": "reports/v13_4_30_short_rejection_failure_review.json",
+      "available": true,
+      "reportId": "v13_4_30_short_rejection_failure_review",
+      "status": "failed_research_current_sample",
+      "generatedAt": "2026-07-05T02:22:11.500941+00:00",
+      "currentStatus": "failed_research_current_sample",
+      "researchWorthContinuing": false,
+      "nextStepRecommendation": "V13.4.31 - Low-Frequency Mainstream Coin Research Plan",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "warnings": [
+        "Research gate failed; this short-only idea is not approved for continuation without redesign."
+      ]
+    },
+    "reports/v13_4_30_negative_research_rules.json": {
+      "path": "reports/v13_4_30_negative_research_rules.json",
+      "available": true,
+      "reportId": "v13_4_30_negative_research_rules",
+      "status": null,
+      "generatedAt": "2026-07-05T02:22:11.500941+00:00",
+      "warnings": [
+        "Research gate failed; this short-only idea is not approved for continuation without redesign."
+      ]
+    },
+    "reports/v13_4_27_market_regime_data_integrity_report.json": {
+      "path": "reports/v13_4_27_market_regime_data_integrity_report.json",
+      "available": true,
+      "reportId": "v13_4_27_market_regime_data_integrity_review",
+      "status": "completed_with_warnings",
+      "generatedAt": "2026-07-05T01:35:46.721260+00:00",
+      "warnings": [
+        "4 pair/timeframe files are missing locally.",
+        "BTC sanity warning for 2025-10-01: No BTC candle within 31 days of requested checkpoint."
+      ],
+      "dataIntegrity": {
+        "status": "warning",
+        "timerange": "20260101-",
+        "dataPath": "user_data\\data\\okx\\futures",
+        "timeframesChecked": [
+          "1h",
+          "4h"
+        ],
+        "pairCount": 30,
+        "pairTimeframeCount": 60,
+        "validCount": 55,
+        "warningCount": 1,
+        "invalidCount": 0,
+        "missingFileCount": 4,
+        "averageMissingRatePct": 0.0,
+        "maxMissingRatePct": 0.0,
+        "totalDuplicateTimestamps": 0,
+        "totalInvalidOhlcRows": 0,
+        "totalExtremeReturnRows": 1,
+        "pairFormatIssueCount": 0,
+        "spotSwapMismatchCount": 0,
+        "warnings": [
+          "4 pair/timeframe files are missing locally."
+        ]
+      },
+      "btcRegime": {
+        "status": "available",
+        "timerange": "20260101-",
+        "btcPair": "BTC/USDT:USDT",
+        "regimeDistribution": {
+          "bear": 521,
+          "sideways": 412,
+          "bull": 266,
+          "high_volatility": 217,
+          "unknown": 193,
+          "crash": 29,
+          "recovery": 2
+        },
+        "dominantRegimes": [
+          "bear",
+          "sideways",
+          "bull"
+        ],
+        "breadthSummary": {
+          "status": "available",
+          "source": "local_1h_ohlcv_breadth_proxy",
+          "limitation": "Breadth is computed from locally available pairs, not from an exchange-wide historical universe snapshot.",
+          "pairCount": 28,
+          "snapshotCount": 4437,
+          "latestSnapshot": {
+            "timestamp": "2026-07-04T20:00:00+00:00",
+            "pairCount": 3,
+            "positiveReturn24hPct": 66.6667,
+            "averageReturn24hPct": 0.3341,
+            "medianReturn24hPct": 0.7326,
+            "aboveEma50Pct": 100.0,
+            "aboveEma200Pct": 100.0
+          },
+          "averagePositiveReturn24hPct": 46.3835,
+          "averageAboveEma50Pct": 43.8843,
+          "averageAboveEma200Pct": 37.5556,
+          "recentSnapshots": [
+            {
+              "timestamp": "2026-07-04T01:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 96.4286,
+              "averageReturn24hPct": 2.7329,
+              "medianReturn24hPct": 2.1011,
+              "aboveEma50Pct": 92.8571,
+              "aboveEma200Pct": 96.4286
+            },
+            {
+              "timestamp": "2026-07-04T02:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 96.4286,
+              "averageReturn24hPct": 3.134,
+              "medianReturn24hPct": 2.515,
+              "aboveEma50Pct": 96.4286,
+              "aboveEma200Pct": 96.4286
+            },
+            {
+              "timestamp": "2026-07-04T03:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 96.4286,
+              "averageReturn24hPct": 3.5864,
+              "medianReturn24hPct": 3.0085,
+              "aboveEma50Pct": 96.4286,
+              "aboveEma200Pct": 100.0
+            },
+            {
+              "timestamp": "2026-07-04T04:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 100.0,
+              "averageReturn24hPct": 4.1561,
+              "medianReturn24hPct": 3.4078,
+              "aboveEma50Pct": 96.4286,
+              "aboveEma200Pct": 96.4286
+            },
+            {
+              "timestamp": "2026-07-04T05:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 100.0,
+              "averageReturn24hPct": 3.1781,
+              "medianReturn24hPct": 2.5694,
+              "aboveEma50Pct": 96.4286,
+              "aboveEma200Pct": 92.8571
+            },
+            {
+              "timestamp": "2026-07-04T06:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 92.8571,
+              "averageReturn24hPct": 2.463,
+              "medianReturn24hPct": 1.974,
+              "aboveEma50Pct": 92.8571,
+              "aboveEma200Pct": 92.8571
+            },
+            {
+              "timestamp": "2026-07-04T07:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 89.2857,
+              "averageReturn24hPct": 2.1617,
+              "medianReturn24hPct": 1.8134,
+              "aboveEma50Pct": 96.4286,
+              "aboveEma200Pct": 92.8571
+            },
+            {
+              "timestamp": "2026-07-04T08:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 92.8571,
+              "averageReturn24hPct": 2.13,
+              "medianReturn24hPct": 1.6999,
+              "aboveEma50Pct": 92.8571,
+              "aboveEma200Pct": 92.8571
+            },
+            {
+              "timestamp": "2026-07-04T09:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 71.4286,
+              "averageReturn24hPct": 1.2394,
+              "medianReturn24hPct": 1.0092,
+              "aboveEma50Pct": 71.4286,
+              "aboveEma200Pct": 89.2857
+            },
+            {
+              "timestamp": "2026-07-04T10:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 64.2857,
+              "averageReturn24hPct": 0.8775,
+              "medianReturn24hPct": 0.6294,
+              "aboveEma50Pct": 89.2857,
+              "aboveEma200Pct": 92.8571
+            },
+            {
+              "timestamp": "2026-07-04T11:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 60.7143,
+              "averageReturn24hPct": 0.5715,
+              "medianReturn24hPct": 0.4007,
+              "aboveEma50Pct": 85.7143,
+              "aboveEma200Pct": 96.4286
+            },
+            {
+              "timestamp": "2026-07-04T12:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 67.8571,
+              "averageReturn24hPct": 0.7792,
+              "medianReturn24hPct": 0.5209,
+              "aboveEma50Pct": 96.4286,
+              "aboveEma200Pct": 96.4286
+            },
+            {
+              "timestamp": "2026-07-04T13:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 60.7143,
+              "averageReturn24hPct": 0.2635,
+              "medianReturn24hPct": 0.4664,
+              "aboveEma50Pct": 89.2857,
+              "aboveEma200Pct": 92.8571
+            },
+            {
+              "timestamp": "2026-07-04T14:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 71.4286,
+              "averageReturn24hPct": 0.9034,
+              "medianReturn24hPct": 0.7529,
+              "aboveEma50Pct": 96.4286,
+              "aboveEma200Pct": 96.4286
+            },
+            {
+              "timestamp": "2026-07-04T15:00:00+00:00",
+              "pairCount": 28,
+              "positiveReturn24hPct": 85.7143,
+              "averageReturn24hPct": 2.2278,
+              "medianReturn24hPct": 1.8692,
+              "aboveEma50Pct": 96.4286,
+              "aboveEma200Pct": 100.0
+            },
+            {
+              "timestamp": "2026-07-04T16:00:00+00:00",
+              "pairCount": 3,
+              "positiveReturn24hPct": 100.0,
+              "averageReturn24hPct": 1.7408,
+              "medianReturn24hPct": 1.3072,
+              "aboveEma50Pct": 100.0,
+              "aboveEma200Pct": 100.0
+            },
+            {
+              "timestamp": "2026-07-04T17:00:00+00:00",
+              "pairCount": 3,
+              "positiveReturn24hPct": 100.0,
+              "averageReturn24hPct": 2.0575,
+              "medianReturn24hPct": 1.7307,
+              "aboveEma50Pct": 100.0,
+              "aboveEma200Pct": 100.0
+            },
+            {
+              "timestamp": "2026-07-04T18:00:00+00:00",
+              "pairCount": 3,
+              "positiveReturn24hPct": 100.0,
+              "averageReturn24hPct": 1.6266,
+              "medianReturn24hPct": 1.5448,
+              "aboveEma50Pct": 100.0,
+              "aboveEma200Pct": 100.0
+            },
+            {
+              "timestamp": "2026-07-04T19:00:00+00:00",
+              "pairCount": 3,
+              "positiveReturn24hPct": 66.6667,
+              "averageReturn24hPct": 1.2437,
+              "medianReturn24hPct": 1.756,
+              "aboveEma50Pct": 100.0,
+              "aboveEma200Pct": 100.0
+            },
+            {
+              "timestamp": "2026-07-04T20:00:00+00:00",
+              "pairCount": 3,
+              "positiveReturn24hPct": 66.6667,
+              "averageReturn24hPct": 0.3341,
+              "medianReturn24hPct": 0.7326,
+              "aboveEma50Pct": 100.0,
+              "aboveEma200Pct": 100.0
+            }
+          ]
+        },
+        "warnings": [
+          "BTC sanity warning for 2025-10-01: No BTC candle within 31 days of requested checkpoint."
+        ],
+        "labelCount": 1109
+      }
+    },
+    "reports/v13_4_23_benchmark_suite_report.json": {
+      "path": "reports/v13_4_23_benchmark_suite_report.json",
+      "available": true,
+      "reportId": "v13_4_23_benchmark_suite",
+      "status": null,
+      "generatedAt": "2026-07-05T00:29:37.502424+00:00",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "warnings": []
+    },
+    "reports/v13_4_24_benchmark_result_review.json": {
+      "path": "reports/v13_4_24_benchmark_result_review.json",
+      "available": true,
+      "reportId": "v13_4_24_benchmark_result_review",
+      "status": "benchmark_review_completed",
+      "generatedAt": "2026-07-05T00:42:12.424814+00:00",
+      "currentStatus": "benchmark_review_completed",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "warnings": [
+        "BenchmarkBollingerRebound exit attribution unavailable in V13.4.23 report.",
+        "BenchmarkEMATrend exit attribution unavailable in V13.4.23 report.",
+        "BenchmarkMACDVolume exit attribution unavailable in V13.4.23 report.",
+        "BenchmarkRSIMeanReversion exit attribution unavailable in V13.4.23 report.",
+        "BenchmarkTD9Exhaustion exit attribution unavailable in V13.4.23 report."
+      ]
+    },
+    "reports/v13_4_22_factor_evaluation_report.json": {
+      "path": "reports/v13_4_22_factor_evaluation_report.json",
+      "available": true,
+      "reportId": "v13_4_22_factor_evaluation_report",
+      "status": "success",
+      "generatedAt": "2026-07-05T00:11:16.838742+00:00",
+      "nextStepRecommendation": "V13.4.23 should implement a benchmark strategy suite or design factor-based hypotheses only after research review.",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "warnings": [
+        "Forward labels are evaluation targets only and do not feed back into factor computation.",
+        "Same-bar TP/SL collisions are handled conservatively as SL-first for label accounting.",
+        "Conservative same-bar TP/SL collision count: 56.",
+        "Research-only factor evaluation. No strategy code, backtest, Dry-run, API key, account read, order, or auto trading was used.",
+        "Forward labels are evaluation-only and do not feed back into factor computation or sample selection."
+      ]
+    },
+    "reports/v13_4_28_market_data_expansion_report.json": {
+      "path": "reports/v13_4_28_market_data_expansion_report.json",
+      "available": true,
+      "reportId": "v13_4_28_market_data_expansion",
+      "status": "completed_with_unresolved_gaps",
+      "generatedAt": "2026-07-05T01:52:16.277546+00:00",
+      "nextStepRecommendation": [
+        "Resolve remaining local OHLCV coverage gaps before approving V13.4.29 strategy specification.",
+        "Review whether unresolved pairs are unavailable on OKX futures or need universe replacement/mapping.",
+        "Keep V13.4.29 Bear Regime Short Strategy Specification blocked until coverage policy is explicit."
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "warnings": [
+        "Missing local OHLCV files remain after the public download repair attempt.",
+        "The affected symbols may be unavailable in the configured OKX futures market universe.",
+        "4 pair/timeframe files are missing locally.",
+        "Public data expansion is schema-only in V13.4.28; no new external collector is active."
+      ]
+    }
+  },
+  "scope": {
+    "pairs": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT"
+    ],
+    "primaryTimeframes": [
+      "4h",
+      "1d"
+    ],
+    "optionalTimeframes": [
+      "1h"
+    ],
+    "excludedFromMainline": [
+      "Top30 full-market expansion",
+      "new listings",
+      "low-liquidity altcoins",
+      "high-frequency 15m and broad 1h signal loops"
+    ]
+  },
+  "hypotheses": [
+    {
+      "hypothesisId": "LF-HYP-001",
+      "name": "BTC/ETH/SOL 4h Trend Following",
+      "thesis": "On mainstream coins, a 4h trend-following structure may be more stable than 1h high-frequency indicator signals.",
+      "direction": "long_only",
+      "primaryTimeframe": "4h",
+      "informativeTimeframes": [
+        "1d"
+      ],
+      "coreConditions": [
+        "4h close > EMA200",
+        "4h EMA20 > EMA50",
+        "4h trend slope positive",
+        "pullback then reclaim EMA20"
+      ],
+      "regimeUse": "Long candidates receive higher weight in bull, recovery, and neutral-positive regimes; bear/crash regimes reduce long weight.",
+      "validationFocus": [
+        "trade count reduction versus 1h research",
+        "slippage-adjusted performance versus NoTrade and BuyHoldBTC",
+        "drawdown behavior by regime"
+      ],
+      "firstVersionConditionLimit": "4-6 core conditions"
+    },
+    {
+      "hypothesisId": "LF-HYP-002",
+      "name": "BTC/ETH/SOL 4h Bear Rejection Short",
+      "thesis": "On mainstream coins, 4h rebound-failure shorts may be more stable than broad 1h short conditions.",
+      "direction": "short_only",
+      "primaryTimeframe": "4h",
+      "informativeTimeframes": [
+        "1d"
+      ],
+      "coreConditions": [
+        "4h close < EMA200",
+        "4h EMA20 < EMA50",
+        "price rebounds near EMA20 or EMA50",
+        "4h close weakens after rebound"
+      ],
+      "regimeUse": "Short candidates can appear outside bear regimes, but bull/recovery regimes reduce short weight and require stronger confirmation.",
+      "validationFocus": [
+        "trade count reduction versus V13.4.29",
+        "avoidance of chase shorts",
+        "short results by bull, recovery, bear, and crash regimes"
+      ],
+      "firstVersionConditionLimit": "4-6 core conditions"
+    },
+    {
+      "hypothesisId": "LF-HYP-003",
+      "name": "1d Regime plus 4h Entry",
+      "thesis": "A 1d regime filter paired with 4h entries may reduce noisy trades compared with single-timeframe 1h logic.",
+      "direction": "long_or_short_separated",
+      "primaryTimeframe": "4h",
+      "informativeTimeframes": [
+        "1d"
+      ],
+      "coreConditions": [
+        "1d regime label available",
+        "4h setup direction agrees with 1d context",
+        "avoidScore remains below threshold",
+        "entry occurs after 4h confirmation candle"
+      ],
+      "regimeUse": "Regime is not a sole on/off switch; it weights longScore, shortScore, and avoidScore.",
+      "validationFocus": [
+        "whether no-trade decisions reduce drawdown",
+        "long/short results separated by regime",
+        "exposure reduction during bear, crash, and high-volatility regimes"
+      ],
+      "firstVersionConditionLimit": "4-6 core conditions"
+    },
+    {
+      "hypothesisId": "LF-HYP-004",
+      "name": "Breakout Retest on Mainstream Coins",
+      "thesis": "4h breakout or breakdown retest structures may provide cleaner context than pure moving-average pursuit.",
+      "direction": "long_and_short_modules",
+      "primaryTimeframe": "4h",
+      "informativeTimeframes": [
+        "1d"
+      ],
+      "coreConditions": [
+        "break above recent N-bar high or below recent N-bar low",
+        "retest holds the breakout or breakdown area",
+        "volume does not contract materially",
+        "avoidScore remains low"
+      ],
+      "regimeUse": "Bull/recovery boosts long retests; bear/crash boosts short breakdown retests; sideways increases false-breakout caution.",
+      "validationFocus": [
+        "false breakout rate",
+        "reward/risk profile",
+        "benchmark comparison against simple 4h breakout retest"
+      ],
+      "firstVersionConditionLimit": "4-6 core conditions"
+    },
+    {
+      "hypothesisId": "LF-HYP-005",
+      "name": "NoTrade as Active Decision",
+      "thesis": "In bear, crash, or high-volatility regimes, actively choosing no trade may outperform forced low-quality entries.",
+      "direction": "avoidance_module",
+      "primaryTimeframe": "1d",
+      "informativeTimeframes": [
+        "4h"
+      ],
+      "coreConditions": [
+        "bear, crash, or high-volatility regime present",
+        "direction scores are conflicted",
+        "volatility or drawdown risk elevated",
+        "setup quality below research threshold"
+      ],
+      "regimeUse": "Regime increases avoidScore and lowers exposure rather than automatically forcing a direction.",
+      "validationFocus": [
+        "noTradeRatio by regime",
+        "drawdown avoided versus always-active baselines",
+        "opportunity cost versus BuyHoldBTC"
+      ],
+      "firstVersionConditionLimit": "4-6 core conditions"
+    }
+  ],
+  "longShortFramework": {
+    "scoreNames": [
+      "longScore",
+      "shortScore",
+      "avoidScore"
+    ],
+    "scoreInputs": {
+      "longScore": [
+        "4h trend strength",
+        "1d regime support",
+        "EMA structure",
+        "breakout/retest quality",
+        "pullback recovery quality"
+      ],
+      "shortScore": [
+        "4h downtrend strength",
+        "1d regime pressure",
+        "failed rebound quality",
+        "breakdown/retest quality",
+        "relative weakness"
+      ],
+      "avoidScore": [
+        "bear/crash risk for longs",
+        "bull/recovery risk for shorts",
+        "high-volatility instability",
+        "conflicting indicator context",
+        "insufficient data quality"
+      ]
+    },
+    "interpretation": {
+      "longCandidate": "longScore high and avoidScore low",
+      "shortCandidate": "shortScore high and avoidScore low",
+      "noTrade": "avoidScore high or direction scores conflicted"
+    },
+    "regimeRole": "Market regime adjusts direction scores and risk weight. It is not the only hard entry switch.",
+    "directionSeparationRequired": true
+  },
+  "minimalConditionsPhilosophy": {
+    "maxCoreConditionsPerDirection": "4-6",
+    "avoid": [
+      "10+ gate stacks in first version",
+      "small parameter rescue after structural failure",
+      "forced trades in noisy regimes"
+    ],
+    "process": [
+      "write a research specification first",
+      "validate with real backtest later",
+      "archive or downgrade failures instead of endless tuning"
+    ]
+  },
+  "benchmarkRequirements": [
+    "NoTrade",
+    "BuyHoldBTC",
+    "BuyHoldETH",
+    "BuyHoldSOL",
+    "Simple 4h EMA Trend",
+    "Simple 4h Bollinger Rebound",
+    "Simple 4h Breakout Retest"
+  ],
+  "evaluationMetrics": [
+    "tradeCount",
+    "tradesPerMonth",
+    "totalReturnPct",
+    "slippageAdjustedReturnPct",
+    "profitFactor",
+    "slippageAdjustedProfitFactor",
+    "maxDrawdownPct",
+    "winRate",
+    "maxConsecutiveLosses",
+    "averageHoldingHours",
+    "exposureTimePct",
+    "regimeBreakdown",
+    "longShortBreakdown",
+    "noTradeRatio",
+    "benchmarkComparison"
+  ],
+  "dataRequirements": [
+    "BTC/ETH/SOL 4h OHLCV",
+    "BTC/ETH/SOL 1d OHLCV",
+    "BTC/ETH/SOL 1h OHLCV optional for entry refinement",
+    "market regime labels",
+    "NoTrade baseline",
+    "BuyHoldBTC baseline",
+    "BuyHoldETH baseline",
+    "BuyHoldSOL baseline"
+  ],
+  "optionalFutureData": [
+    "fundingRate",
+    "openInterest",
+    "spread proxy",
+    "orderbook depth"
+  ],
+  "nextStepRecommendation": "V13.4.32 - Low-Frequency Data Preparation and Baseline Builder",
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "generatedAt": "2026-07-05T02:37:19.834598+00:00",
+  "warnings": [],
+  "notes": [
+    "This plan intentionally follows V13.4.30's failure review by reducing universe size and frequency.",
+    "This is not strategy code and does not approve Dry-run or live trading.",
+    "V13.4.31 is research-plan-only.",
+    "No strategy code, data download, backtest, Dry-run, live trading, Trade API, Withdraw API, account read, position read, order creation, or auto trading was used."
+  ]
+}
