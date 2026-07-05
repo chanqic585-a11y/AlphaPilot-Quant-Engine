@@ -1,0 +1,168 @@
+{
+    "reportId":  "v13_4_35_multi_strategy_batch_manifest",
+    "version":  "V13.4.35",
+    "runMode":  "executed",
+    "timerange":  "20240101-",
+    "timeframe":  "4h",
+    "pairs":  [
+                  "BTC/USDT:USDT",
+                  "ETH/USDT:USDT",
+                  "SOL/USDT:USDT"
+              ],
+    "strategies":  [
+                       "AlphaPilotBatchA_EMATrendLong4H",
+                       "AlphaPilotBatchB_EMATrendShort4H",
+                       "AlphaPilotBatchC_BreakoutRetestLong4H",
+                       "AlphaPilotBatchD_BreakdownRetestShort4H",
+                       "AlphaPilotBatchE_BollingerReversionLong4H",
+                       "AlphaPilotBatchF_BollingerReversionShort4H",
+                       "AlphaPilotBatchG_RelativeStrengthLong4H",
+                       "AlphaPilotBatchH_VolatilityCompressionBreakout4H"
+                   ],
+    "expandedTop10Executed":  false,
+    "results":  [
+                    {
+                        "strategyClass":  "AlphaPilotBatchA_EMATrendLong4H",
+                        "status":  "success",
+                        "exitCode":  0,
+                        "timerange":  "20240101-",
+                        "timeframe":  "4h",
+                        "pairs":  [
+                                      "BTC/USDT:USDT",
+                                      "ETH/USDT:USDT",
+                                      "SOL/USDT:USDT"
+                                  ],
+                        "resultZipPath":  "user_data/backtest_results/v13_4_35_AlphaPilotBatchA_EMATrendLong4H.zip",
+                        "error":  null,
+                        "startedAt":  "2026-07-05T03:42:09.5273056Z",
+                        "completedAt":  "2026-07-05T03:42:19.3106146Z"
+                    },
+                    {
+                        "strategyClass":  "AlphaPilotBatchB_EMATrendShort4H",
+                        "status":  "success",
+                        "exitCode":  0,
+                        "timerange":  "20240101-",
+                        "timeframe":  "4h",
+                        "pairs":  [
+                                      "BTC/USDT:USDT",
+                                      "ETH/USDT:USDT",
+                                      "SOL/USDT:USDT"
+                                  ],
+                        "resultZipPath":  "user_data/backtest_results/v13_4_35_AlphaPilotBatchB_EMATrendShort4H.zip",
+                        "error":  null,
+                        "startedAt":  "2026-07-05T03:42:19.3180481Z",
+                        "completedAt":  "2026-07-05T03:42:29.2823709Z"
+                    },
+                    {
+                        "strategyClass":  "AlphaPilotBatchC_BreakoutRetestLong4H",
+                        "status":  "success",
+                        "exitCode":  0,
+                        "timerange":  "20240101-",
+                        "timeframe":  "4h",
+                        "pairs":  [
+                                      "BTC/USDT:USDT",
+                                      "ETH/USDT:USDT",
+                                      "SOL/USDT:USDT"
+                                  ],
+                        "resultZipPath":  "user_data/backtest_results/v13_4_35_AlphaPilotBatchC_BreakoutRetestLong4H.zip",
+                        "error":  null,
+                        "startedAt":  "2026-07-05T03:42:29.2828837Z",
+                        "completedAt":  "2026-07-05T03:42:37.0258681Z"
+                    },
+                    {
+                        "strategyClass":  "AlphaPilotBatchD_BreakdownRetestShort4H",
+                        "status":  "success",
+                        "exitCode":  0,
+                        "timerange":  "20240101-",
+                        "timeframe":  "4h",
+                        "pairs":  [
+                                      "BTC/USDT:USDT",
+                                      "ETH/USDT:USDT",
+                                      "SOL/USDT:USDT"
+                                  ],
+                        "resultZipPath":  "user_data/backtest_results/v13_4_35_AlphaPilotBatchD_BreakdownRetestShort4H.zip",
+                        "error":  null,
+                        "startedAt":  "2026-07-05T03:42:37.0278600Z",
+                        "completedAt":  "2026-07-05T03:42:44.2130807Z"
+                    },
+                    {
+                        "strategyClass":  "AlphaPilotBatchE_BollingerReversionLong4H",
+                        "status":  "success",
+                        "exitCode":  0,
+                        "timerange":  "20240101-",
+                        "timeframe":  "4h",
+                        "pairs":  [
+                                      "BTC/USDT:USDT",
+                                      "ETH/USDT:USDT",
+                                      "SOL/USDT:USDT"
+                                  ],
+                        "resultZipPath":  "user_data/backtest_results/v13_4_35_AlphaPilotBatchE_BollingerReversionLong4H.zip",
+                        "error":  null,
+                        "startedAt":  "2026-07-05T03:42:44.2141205Z",
+                        "completedAt":  "2026-07-05T03:42:52.0522320Z"
+                    },
+                    {
+                        "strategyClass":  "AlphaPilotBatchF_BollingerReversionShort4H",
+                        "status":  "success",
+                        "exitCode":  0,
+                        "timerange":  "20240101-",
+                        "timeframe":  "4h",
+                        "pairs":  [
+                                      "BTC/USDT:USDT",
+                                      "ETH/USDT:USDT",
+                                      "SOL/USDT:USDT"
+                                  ],
+                        "resultZipPath":  "user_data/backtest_results/v13_4_35_AlphaPilotBatchF_BollingerReversionShort4H.zip",
+                        "error":  null,
+                        "startedAt":  "2026-07-05T03:42:52.0552374Z",
+                        "completedAt":  "2026-07-05T03:42:59.7471297Z"
+                    },
+                    {
+                        "strategyClass":  "AlphaPilotBatchG_RelativeStrengthLong4H",
+                        "status":  "success",
+                        "exitCode":  0,
+                        "timerange":  "20240101-",
+                        "timeframe":  "4h",
+                        "pairs":  [
+                                      "BTC/USDT:USDT",
+                                      "ETH/USDT:USDT",
+                                      "SOL/USDT:USDT"
+                                  ],
+                        "resultZipPath":  "user_data/backtest_results/v13_4_35_AlphaPilotBatchG_RelativeStrengthLong4H.zip",
+                        "error":  null,
+                        "startedAt":  "2026-07-05T03:42:59.7481349Z",
+                        "completedAt":  "2026-07-05T03:43:07.8508758Z"
+                    },
+                    {
+                        "strategyClass":  "AlphaPilotBatchH_VolatilityCompressionBreakout4H",
+                        "status":  "success",
+                        "exitCode":  0,
+                        "timerange":  "20240101-",
+                        "timeframe":  "4h",
+                        "pairs":  [
+                                      "BTC/USDT:USDT",
+                                      "ETH/USDT:USDT",
+                                      "SOL/USDT:USDT"
+                                  ],
+                        "resultZipPath":  "user_data/backtest_results/v13_4_35_AlphaPilotBatchH_VolatilityCompressionBreakout4H.zip",
+                        "error":  null,
+                        "startedAt":  "2026-07-05T03:43:07.8519087Z",
+                        "completedAt":  "2026-07-05T03:43:14.7954088Z"
+                    }
+                ],
+    "failedStrategies":  [
+
+                         ],
+    "safetyBoundary":  {
+                           "dryRunApproved":  false,
+                           "liveTradingApproved":  false,
+                           "tradeApiUsed":  false,
+                           "withdrawApiUsed":  false,
+                           "apiKeyStored":  false,
+                           "accountRead":  false,
+                           "positionRead":  false,
+                           "orderCreated":  false,
+                           "autoTradingUsed":  false
+                       },
+    "generatedAt":  "2026-07-05T03:43:14.7984101Z"
+}

@@ -2050,10 +2050,69 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.4.35 Multi-Strategy Batch Research Backtest
+
+V13.4.35 stops the single-strategy loop and tests eight low-frequency BTC/ETH/SOL 4h OHLCV-only strategy candidates in one research batch.
+
+中文说明：
+
+```text
+V13.4.35 一次性实现 8 个低频 4h 研究策略，
+批量运行真实本地 Freqtrade 回测，
+统一生成 leaderboard / slippage / baseline 对比报告。
+本轮所有策略均未通过研究继续门槛。
+```
+
+Run the batch:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_multi_strategy_batch_backtest.ps1 -UseMainstream -Timerange "20240101-" -Run
+python -m alphapilot.reports.generate_multi_strategy_batch_report
+```
+
+Outputs:
+
+```text
+user_data/strategies/AlphaPilotLowFrequencyStrategyBatchV01.py
+scripts/run_multi_strategy_batch_backtest.ps1
+reports/v13_4_35_multi_strategy_batch_manifest.json
+reports/v13_4_35_multi_strategy_batch_report.json
+reports/v13_4_35_multi_strategy_batch_summary.md
+docs/V13.4.35-multi-strategy-batch-backtest.md
+docs/multi-strategy-batch-strategy-definitions.md
+docs/multi-strategy-batch-results-interpretation.md
+```
+
+Batch result:
+
+```text
+realBacktestCount: 8
+failedStrategies: 0
+beatsNoTradeCount: 0
+beatsEqualWeightCount: 0
+researchWorthContinuingCount: 0
+bestRawStrategy: AlphaPilotBatchH_VolatilityCompressionBreakout4H
+bestRawReturnPct: -31.9496
+bestSlippageAdjustedReturnPct: -49.6662
+```
+
+V13.4.35 remains research-only:
+
+```text
+no Dry-run approval
+no live trading approval
+no real API key
+no Trade API / Withdraw API
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.4.35: redesign low-frequency research after V13.4.34 failed the baseline hurdle.
+- V13.4.36: review the V13.4.35 OHLCV batch failure and decide whether to start the funding/OI route.
 - Alternative future track: Funding/OI Public Data Collector if short research becomes the priority again.
 - Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
