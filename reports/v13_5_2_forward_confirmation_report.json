@@ -3,7 +3,7 @@
   "version": "V13.5.2",
   "status": "completed",
   "isMock": false,
-  "generatedAt": "2026-07-05T15:52:26.114730+00:00",
+  "generatedAt": "2026-07-05T17:15:03.495886+00:00",
   "objective": {
     "mode": "forward_confirmation_and_local_paper_sandbox_gate",
     "confirmationFraction": 0.3,
@@ -442,8 +442,8 @@
       "localPaperSandboxApproved": true,
       "localPaperSandboxFailReasons": [],
       "dataSummary": {
-        "panelRows": 123542,
-        "eventRows": 8659,
+        "panelRows": 124229,
+        "eventRows": 8711,
         "fixedRuleEventRows": 187,
         "loadedPairs": [
           "AAVE/USDT:USDT",
@@ -1273,8 +1273,8 @@
     "localPaperSandboxApproved": true,
     "localPaperSandboxFailReasons": [],
     "dataSummary": {
-      "panelRows": 123542,
-      "eventRows": 8659,
+      "panelRows": 124229,
+      "eventRows": 8711,
       "fixedRuleEventRows": 187,
       "loadedPairs": [
         "AAVE/USDT:USDT",

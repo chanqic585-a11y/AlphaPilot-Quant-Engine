@@ -2390,9 +2390,99 @@ no automatic trading
 exchange Dry-run remains disabled
 ```
 
+## V13.5.4 Local Paper Monitoring and Fresh Evidence Refresh
+
+V13.5.4 turns the V13.5.3 one-shot local paper ledger into a repeatable local
+monitoring pipeline. It can optionally refresh public 1h market data, rerun the
+V13.5.2 forward-confirmation signal log, rerun the V13.5.3 local paper ledger,
+and generate a V13.5.4 monitoring report with rolling windows, freshness checks,
+skipped-signal analysis, and decay warnings.
+
+Important boundary:
+
+```text
+localPaperMonitoringActive = local simulated observation only
+exchangeDryRunReviewReady = false
+liveTradingApproved = false
+```
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_4_local_paper_monitoring.ps1 -RefreshPublicData
+```
+
+Run with public data refresh:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_4_local_paper_monitoring.ps1 -RefreshPublicData -Run
+```
+
+Outputs:
+
+```text
+alphapilot/paper_sandbox/paper_monitoring.py
+alphapilot/reports/generate_v13_5_4_local_paper_monitoring_report.py
+scripts/run_v13_5_4_local_paper_monitoring.ps1
+reports/v13_5_4_local_paper_monitoring_report.json
+reports/v13_5_4_local_paper_monitoring_summary.md
+reports/v13_5_4_local_paper_monitoring_events.json
+docs/V13.5.4-local-paper-monitoring.md
+```
+
+Current V13.5.4 decision:
+
+```text
+Local paper monitoring active: true
+Monitoring health: watch
+Continue local paper monitoring: true
+Exchange Dry-run review ready: false
+Live trading approved: false
+Reason: local_paper_monitoring_continues_with_decay_warnings
+```
+
+Full local paper ledger metrics:
+
+```text
+filledTrades: 41
+winRate: 60.9756%
+rewardRiskRatio: 1.6922
+profitFactor: 2.644
+totalReturnPct: 14.9788
+maxDrawdownPct: 3.242758
+maxConsecutiveLosses: 3
+```
+
+Recent-window warnings:
+
+```text
+last 10 trades: winRate=50.0%, rewardRisk=1.1522, profitFactor=1.1522
+last 20 trades: winRate=50.0%, rewardRisk=1.3738, profitFactor=1.3738
+closed fill freshness: stale
+signal-to-closed-fill lag: above 5 days
+some approved signals skipped by max concurrent position cap
+```
+
+V13.5.4 public data refresh extended the local 1h OKX futures data through
+`2026-07-05 16:00 UTC` for the checked BTC/ETH/SOL files. The monitoring report
+still does not approve exchange Dry-run because recent closed-fill evidence is
+not fresh enough and the recent 10/20-trade windows show decay.
+
+V13.5.4 remains local simulation only:
+
+```text
+no Trade API
+no Withdraw API
+no API key storage
+no real account reads
+no real position reads
+no real orders
+no automatic trading
+exchange Dry-run remains disabled
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.4: keep collecting/refreshing local paper sandbox evidence and add decay monitoring.
-- V13.5.5: add historical open-interest / liquidation / liquidity data collectors if public data availability permits.
-- V13.6: consider exchange Dry-run candidate evaluation only after local paper validation.
+- V13.5.5: reduce local paper evidence lag, monitor additional fresh public samples, and inspect whether concurrency skips should become a queue policy.
+- V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh and stable.

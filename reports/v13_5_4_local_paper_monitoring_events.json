@@ -1,0 +1,73 @@
+[
+  {
+    "eventType": "rolling_window",
+    "windowTradeCount": 5,
+    "availableTradeCount": 5,
+    "winRatePct": 40.0,
+    "rewardRiskRatio": 2.5127,
+    "profitFactor": 1.6751,
+    "totalReturnPct": 1.0305,
+    "maxDrawdownPct": 1.526414,
+    "source": "v13_5_4_local_paper_monitoring_report"
+  },
+  {
+    "eventType": "rolling_window",
+    "windowTradeCount": 10,
+    "availableTradeCount": 10,
+    "winRatePct": 50.0,
+    "rewardRiskRatio": 1.1522,
+    "profitFactor": 1.1522,
+    "totalReturnPct": 0.5865,
+    "maxDrawdownPct": 3.701227,
+    "source": "v13_5_4_local_paper_monitoring_report"
+  },
+  {
+    "eventType": "rolling_window",
+    "windowTradeCount": 20,
+    "availableTradeCount": 20,
+    "winRatePct": 50.0,
+    "rewardRiskRatio": 1.3738,
+    "profitFactor": 1.3738,
+    "totalReturnPct": 2.0495,
+    "maxDrawdownPct": 3.648788,
+    "source": "v13_5_4_local_paper_monitoring_report"
+  },
+  {
+    "eventType": "rolling_window",
+    "windowTradeCount": 30,
+    "availableTradeCount": 30,
+    "winRatePct": 63.3333,
+    "rewardRiskRatio": 1.6011,
+    "profitFactor": 2.7655,
+    "totalReturnPct": 11.6959,
+    "maxDrawdownPct": 3.337044,
+    "source": "v13_5_4_local_paper_monitoring_report"
+  },
+  {
+    "eventType": "rolling_window",
+    "windowTradeCount": 40,
+    "availableTradeCount": 40,
+    "winRatePct": 60.0,
+    "rewardRiskRatio": 1.708,
+    "profitFactor": 2.562,
+    "totalReturnPct": 14.2316,
+    "maxDrawdownPct": 3.263747,
+    "source": "v13_5_4_local_paper_monitoring_report"
+  },
+  {
+    "eventType": "monitoring_decision",
+    "monitoringHealth": "watch",
+    "localPaperMonitoringActive": true,
+    "continueLocalPaperMonitoring": true,
+    "exchangeDryRunReviewReady": false,
+    "warningReasons": [
+      "recent_20_win_rate_below_55",
+      "recent_20_reward_risk_below_1_5",
+      "closed_fill_not_fresh",
+      "approved_signal_to_fill_lag_above_5_days",
+      "some_approved_signals_skipped_by_concurrency"
+    ],
+    "failReasons": [],
+    "source": "v13_5_4_local_paper_monitoring_report"
+  }
+]

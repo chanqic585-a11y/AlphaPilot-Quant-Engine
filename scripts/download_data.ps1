@@ -89,6 +89,9 @@ Write-Host "Default mode is preview only. Add -Run to execute Docker."
 
 if ($Run) {
   & docker @dockerArgs
+  if ($LASTEXITCODE -ne 0) {
+    exit $LASTEXITCODE
+  }
 } else {
   Write-Host "Dry preview only. No data was downloaded."
 }
