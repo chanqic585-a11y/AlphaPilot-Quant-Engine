@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.29 - Short Rejection 1H Research Strategy
+AlphaPilot V13.4.30 - Short Rejection Failure Review and Negative Research Rules
 ```
 
 ## Positioning
@@ -1746,10 +1746,75 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.4.30 Short Rejection Failure Review
+
+V13.4.30 reviews the failed V13.4.29 short-only research strategy and archives it as:
+
+```text
+failed_research_current_sample
+```
+
+中文说明：
+
+```text
+V13.4.30 复盘 V13.4.29 做空研究策略失败结果，归档该策略为 failed_research_current_sample，并提炼后续做空研究的负样本规则。
+本版本不调参、不回测、不进入 Dry-run、不接真实 API Key。
+```
+
+The source evidence is:
+
+```text
+reports/v13_4_29_short_rejection_1h_report.json
+reports/v13_4_29_short_rejection_1h_summary.md
+```
+
+Generate the failure review:
+
+```powershell
+python -m alphapilot.reports.generate_short_rejection_failure_review
+```
+
+Outputs:
+
+```text
+reports/v13_4_30_short_rejection_failure_review.json
+reports/v13_4_30_short_rejection_failure_summary.md
+reports/v13_4_30_short_strategy_status_archive.json
+reports/v13_4_30_negative_research_rules.json
+docs/V13.4.30-short-rejection-failure-review.md
+docs/short-strategy-negative-research-rules.md
+docs/failed-strategy-archive-policy.md
+docs/future-short-research-recommendations.md
+```
+
+Current conclusion:
+
+```text
+researchWorthContinuing: false
+dryRunApproved: false
+liveTradingApproved: false
+nextStepRecommendation: V13.4.31 - Low-Frequency Mainstream Coin Research Plan
+```
+
+V13.4.30 remains report-only:
+
+```text
+no strategy modification
+no new backtest
+no Dry-run
+no real API key
+no Trade API / Withdraw API
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.4.30: Short Strategy Failure Review and Archive as Benchmark.
+- V13.4.31: Low-Frequency Mainstream Coin Research Plan.
+- Alternative V13.4.31 track: Funding/OI Public Data Collector if short research remains the priority.
 - Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

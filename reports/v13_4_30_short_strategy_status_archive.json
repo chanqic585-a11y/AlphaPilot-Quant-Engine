@@ -1,0 +1,21 @@
+{
+  "strategyId": "alpha_short_rejection_1h_v01",
+  "strategyName": "AlphaPilot Short Rejection 1H V0.1",
+  "status": "failed_research_current_sample",
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "researchWorthContinuing": false,
+  "reason": "Expanded short-only backtest suffered near-total loss with excessive trade count.",
+  "evidenceReports": [
+    "reports\\v13_4_29_short_rejection_1h_report.json"
+  ],
+  "archiveMode": "research_reference",
+  "canBeUsedAsBenchmark": true,
+  "canBeRevivedIf": [
+    "new short thesis with stronger regime filter",
+    "funding/OI data support",
+    "much lower trade frequency",
+    "per-trade regime attribution improves"
+  ],
+  "generatedAt": "2026-07-05T02:22:11.500941+00:00"
+}

@@ -1,0 +1,69 @@
+{
+  "reportId": "v13_4_30_negative_research_rules",
+  "sourceShortReport": "reports\\v13_4_29_short_rejection_1h_report.json",
+  "strategyId": "alpha_short_rejection_1h_v01",
+  "rules": [
+    {
+      "ruleId": "SHORT_NEG_001",
+      "rule": "Do not mistake a small set of loose conditions for a constrained strategy.",
+      "evidence": "V13.4.29 produced 5052 expanded short trades and near-total loss."
+    },
+    {
+      "ruleId": "SHORT_NEG_002",
+      "rule": "Do not rely only on EMA rejection plus MACD/RSI weakening for short research.",
+      "evidence": "The shortScore design still generated excessive low-quality entries."
+    },
+    {
+      "ruleId": "SHORT_NEG_003",
+      "rule": "A loose shortScore can create overtrading even when each condition looks reasonable alone.",
+      "evidence": "The 1h strategy averaged hundreds of trades per month across the expanded sample."
+    },
+    {
+      "ruleId": "SHORT_NEG_004",
+      "rule": "Short research must explicitly monitor rebound and squeeze risk.",
+      "evidence": "The report lacks per-trade regime attribution and stop_loss dominated losses."
+    },
+    {
+      "ruleId": "SHORT_NEG_005",
+      "rule": "Short research must reduce trade frequency or use stronger trigger quality before expansion.",
+      "evidence": "5052 trades amplified stop-loss frequency and slippage-adjusted losses."
+    },
+    {
+      "ruleId": "SHORT_NEG_006",
+      "rule": "Regime context cannot be ignored, but it should be evaluated before becoming a hard switch.",
+      "evidence": "Regime background is available, but V13.4.29 has no per-trade regime attribution."
+    },
+    {
+      "ruleId": "SHORT_NEG_007",
+      "rule": "Do not try to rescue a deeply negative expanded backtest with small parameter tweaks.",
+      "evidence": "Expanded totalReturnPct was -99.9966 with maxDrawdownPct 99.9966."
+    },
+    {
+      "ruleId": "SHORT_NEG_008",
+      "rule": "Failed research strategies should be archived as benchmark/reference assets, not deleted.",
+      "evidence": "The failure explains what not to repeat in later short research."
+    },
+    {
+      "ruleId": "SHORT_NEG_009",
+      "rule": "Any future short strategy must include per-trade regime attribution before next-stage review.",
+      "evidence": "Current report only has background regime distribution, not trade-level attribution."
+    },
+    {
+      "ruleId": "SHORT_NEG_010",
+      "rule": "Any future short strategy must report separated direction metrics, costs, and stop-loss sources.",
+      "evidence": "V13.4.29 demonstrates that stop_loss and slippage can dominate headline results."
+    }
+  ],
+  "futureRequirements": [
+    "per-trade regime attribution",
+    "long/short separated metrics",
+    "exit reason loss attribution",
+    "slippage-adjusted metrics",
+    "trade-frequency review before expansion",
+    "public funding/OI support before renewed short research"
+  ],
+  "generatedAt": "2026-07-05T02:22:11.500941+00:00",
+  "warnings": [
+    "Research gate failed; this short-only idea is not approved for continuation without redesign."
+  ]
+}
