@@ -1,0 +1,181 @@
+{
+  "reportId": "v13_5_3_local_paper_sandbox_ledger_report",
+  "version": "V13.5.3",
+  "status": "completed",
+  "isMock": false,
+  "generatedAt": "2026-07-05T17:04:05.928392+00:00",
+  "inputReports": {
+    "decisionReport": "reports\\v13_5_2_forward_confirmation_report.json",
+    "signalLog": "reports\\v13_5_2_forward_confirmation_signal_log.json"
+  },
+  "approvedCandidateIds": [
+    "v13_5_1_1h_short_reversal_bull_relative_return"
+  ],
+  "ledgerConfig": {
+    "account_id": "default_local_paper_sandbox",
+    "initial_equity": 10000.0,
+    "risk_per_signal_pct": 1.0,
+    "max_concurrent_positions": 8,
+    "max_notional_per_signal_pct": 35.0,
+    "stop_loss_pct": 0.045,
+    "source": "local_paper_sandbox_v13_5_3"
+  },
+  "metrics": {
+    "tradeCount": 41,
+    "winCount": 25,
+    "lossCount": 16,
+    "winRatePct": 60.9756,
+    "averageWin": 96.359679,
+    "averageLoss": -56.944566,
+    "rewardRiskRatio": 1.6922,
+    "profitFactor": 2.644,
+    "initialEquity": 10000.0,
+    "finalEquity": 11497.878914,
+    "totalReturnPct": 14.9788,
+    "maxDrawdownPct": 3.242758,
+    "skippedSignalCount": 66,
+    "filledSignalCount": 41,
+    "maxConcurrentPositions": 8
+  },
+  "sensitivityResults": [
+    {
+      "maxConcurrentPositions": 3,
+      "paperMonitoringReady": false,
+      "paperMonitoringFailReasons": [
+        "filled_trade_count_below_40",
+        "paper_reward_risk_below_1_5"
+      ],
+      "metrics": {
+        "tradeCount": 25,
+        "winCount": 17,
+        "lossCount": 8,
+        "winRatePct": 68.0,
+        "averageWin": 79.157936,
+        "averageLoss": -74.412568,
+        "rewardRiskRatio": 1.0638,
+        "profitFactor": 2.2605,
+        "initialEquity": 10000.0,
+        "finalEquity": 10750.384371,
+        "totalReturnPct": 7.5038,
+        "maxDrawdownPct": 2.002764,
+        "skippedSignalCount": 82,
+        "filledSignalCount": 25,
+        "maxConcurrentPositions": 3
+      }
+    },
+    {
+      "maxConcurrentPositions": 5,
+      "paperMonitoringReady": false,
+      "paperMonitoringFailReasons": [
+        "filled_trade_count_below_40",
+        "paper_reward_risk_below_1_5"
+      ],
+      "metrics": {
+        "tradeCount": 33,
+        "winCount": 20,
+        "lossCount": 13,
+        "winRatePct": 60.6061,
+        "averageWin": 85.982724,
+        "averageLoss": -62.40257,
+        "rewardRiskRatio": 1.3779,
+        "profitFactor": 2.1198,
+        "initialEquity": 10000.0,
+        "finalEquity": 10908.421072,
+        "totalReturnPct": 9.0842,
+        "maxDrawdownPct": 3.242758,
+        "skippedSignalCount": 74,
+        "filledSignalCount": 33,
+        "maxConcurrentPositions": 5
+      }
+    },
+    {
+      "maxConcurrentPositions": 8,
+      "paperMonitoringReady": true,
+      "paperMonitoringFailReasons": [],
+      "metrics": {
+        "tradeCount": 41,
+        "winCount": 25,
+        "lossCount": 16,
+        "winRatePct": 60.9756,
+        "averageWin": 96.359679,
+        "averageLoss": -56.944566,
+        "rewardRiskRatio": 1.6922,
+        "profitFactor": 2.644,
+        "initialEquity": 10000.0,
+        "finalEquity": 11497.878914,
+        "totalReturnPct": 14.9788,
+        "maxDrawdownPct": 3.242758,
+        "skippedSignalCount": 66,
+        "filledSignalCount": 41,
+        "maxConcurrentPositions": 8
+      }
+    },
+    {
+      "maxConcurrentPositions": 12,
+      "paperMonitoringReady": true,
+      "paperMonitoringFailReasons": [],
+      "metrics": {
+        "tradeCount": 47,
+        "winCount": 30,
+        "lossCount": 17,
+        "winRatePct": 63.8298,
+        "averageWin": 110.820144,
+        "averageLoss": -63.031976,
+        "rewardRiskRatio": 1.7582,
+        "profitFactor": 3.1026,
+        "initialEquity": 10000.0,
+        "finalEquity": 12253.060743,
+        "totalReturnPct": 22.5306,
+        "maxDrawdownPct": 3.242758,
+        "skippedSignalCount": 60,
+        "filledSignalCount": 47,
+        "maxConcurrentPositions": 12
+      }
+    },
+    {
+      "maxConcurrentPositions": 999,
+      "paperMonitoringReady": true,
+      "paperMonitoringFailReasons": [],
+      "metrics": {
+        "tradeCount": 57,
+        "winCount": 40,
+        "lossCount": 17,
+        "winRatePct": 70.1754,
+        "averageWin": 119.155185,
+        "averageLoss": -68.368754,
+        "rewardRiskRatio": 1.7428,
+        "profitFactor": 4.1008,
+        "initialEquity": 10000.0,
+        "finalEquity": 13603.93858,
+        "totalReturnPct": 36.0394,
+        "maxDrawdownPct": 3.242758,
+        "skippedSignalCount": 50,
+        "filledSignalCount": 57,
+        "maxConcurrentPositions": 999
+      }
+    }
+  ],
+  "decision": {
+    "localPaperSandboxStarted": true,
+    "paperMonitoringReady": true,
+    "paperMonitoringFailReasons": [],
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "local_paper_sandbox_ledger_ready"
+  },
+  "ledgerPath": "reports\\v13_5_3_local_paper_sandbox_ledger.json",
+  "nextStep": "Monitor future local signal logs with the same ledger rules before exchange Dry-run review.",
+  "safetyBoundary": {
+    "localSimulationOnly": true,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "readsRealAccount": false,
+    "readsRealPositions": false,
+    "createsOrders": false,
+    "autoTrading": false,
+    "freqtradeDryRunApproved": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false
+  }
+}

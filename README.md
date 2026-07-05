@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.2 - Forward Confirmation and Local Paper Sandbox
+AlphaPilot V13.5.3 - Local Paper Sandbox Ledger
 ```
 
 ## Positioning
@@ -2325,9 +2325,74 @@ Reason: confirmation drawdown above 20%
 V13.5.2 does not use API keys, does not call Trade API or Withdraw API, does
 not read accounts or positions, does not create orders, and does not auto trade.
 
+## V13.5.3 Local Paper Sandbox Ledger
+
+V13.5.3 starts a local simulated ledger for the V13.5.2 approved candidate. It
+uses local JSON signal logs only. It does not run Freqtrade exchange Dry-run,
+does not connect to an exchange, does not use API keys, and does not create
+orders.
+
+Run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_3_local_paper_sandbox.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/paper_sandbox/local_paper_ledger.py
+alphapilot/reports/generate_v13_5_3_local_paper_sandbox_report.py
+scripts/run_v13_5_3_local_paper_sandbox.ps1
+reports/v13_5_3_local_paper_sandbox_ledger.json
+reports/v13_5_3_local_paper_sandbox_report.json
+reports/v13_5_3_local_paper_sandbox_summary.md
+docs/V13.5.3-local-paper-sandbox-ledger.md
+```
+
+Current V13.5.3 decision:
+
+```text
+Local paper sandbox started: true
+Paper monitoring ready: true
+Exchange Dry-run approved: false
+Live trading approved: false
+```
+
+Default local paper ledger result:
+
+```text
+initialEquity: 10000
+maxConcurrentPositions: 8
+filledTrades: 41
+winRate: 60.9756%
+rewardRiskRatio: 1.6922
+profitFactor: 2.644
+totalReturnPct: 14.9788
+maxDrawdownPct: 3.242758
+```
+
+The concurrency sensitivity table is included in the V13.5.3 summary. Lower
+caps such as 3 and 5 positions were too restrictive for this clustered
+multi-pair signal. `maxConcurrentPositions=8` is the first tested cap that
+passes the local paper monitoring gate.
+
+V13.5.3 remains local simulation only:
+
+```text
+no Trade API
+no Withdraw API
+no API key storage
+no real account reads
+no real position reads
+no real orders
+no automatic trading
+exchange Dry-run remains disabled
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.3: implement local paper sandbox ledger for the approved 1h candidate.
-- V13.5.4: add historical open-interest / liquidation / liquidity data collectors if public data availability permits.
+- V13.5.4: keep collecting/refreshing local paper sandbox evidence and add decay monitoring.
+- V13.5.5: add historical open-interest / liquidation / liquidity data collectors if public data availability permits.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation.
