@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.16 - Core Multi-Exchange Replay
+AlphaPilot V13.5.17 - Available-Universe Exchange Replay
 ```
 
 ## Positioning
@@ -3210,10 +3210,47 @@ V13.5.16 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.5.17 Available-Universe Exchange Replay
+
+V13.5.17 expands the fixed active-pool replay from BTC/ETH/SOL to every local
+public 4h futures file currently available per exchange.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_17_available_universe_exchange_replay.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_17_available_universe_exchange_replay.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_17_available_universe_exchange_replay_report.py
+scripts/run_v13_5_17_available_universe_exchange_replay.ps1
+reports/v13_5_17_available_universe_exchange_replay_report.json
+reports/v13_5_17_available_universe_exchange_replay_summary.md
+reports/v13_5_17_available_universe_exchange_signal_log.json
+docs/V13.5.17-available-universe-exchange-replay.md
+```
+
+This version uses only already downloaded public files. It does not trigger
+another long Top100 download. The goal is to measure whether the fixed active
+pool naturally gains sample size and exchange balance from local data before
+any next data-expansion command is run.
+
+V13.5.17 does not change strategy parameters, run Dry-run, connect to private
+exchange endpoints, save API keys, read real accounts or positions, create
+orders, or enable automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.17: expand exchange-aware replay to a larger resumable universe without changing the active-pool parameters.
-- V13.5.18: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
-- V13.5.19: consider resumable Binance/Bybit/OKX Top100 public-data expansion before any exchange Dry-run review.
+- V13.5.18: expand non-OKX public data in smaller resumable batches if exchange balance remains insufficient.
+- V13.5.19: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.20: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

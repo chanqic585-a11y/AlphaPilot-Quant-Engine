@@ -33,6 +33,19 @@ def get_exchange_futures_data_dir(exchange: str, data_root: Path = DEFAULT_DATA_
     return data_root / exchange / "futures"
 
 
+def discover_exchange_pairs(exchange: str, timeframe: str = "4h", data_root: Path = DEFAULT_DATA_ROOT) -> list[str]:
+    data_dir = get_exchange_futures_data_dir(exchange, data_root=data_root)
+    suffix = f"-{timeframe}-futures.feather"
+    pairs: list[str] = []
+    for path in sorted(data_dir.glob(f"*{suffix}")):
+        symbol = path.name.removesuffix(suffix)
+        parts = symbol.split("_")
+        if len(parts) >= 3 and parts[-2:] == ["USDT", "USDT"]:
+            base = "_".join(parts[:-2])
+            pairs.append(f"{base}/USDT:USDT")
+    return pairs
+
+
 def build_exchange_feature_panel(
     exchange: str,
     pairs: Iterable[str],
