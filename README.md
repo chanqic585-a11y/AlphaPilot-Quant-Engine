@@ -1992,10 +1992,68 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.4.34 Low-Frequency Directional 4H Research Strategy
+
+V13.4.34 implements the first real low-frequency directional 4h research strategy and runs a local Freqtrade backtest for BTC/ETH/SOL.
+
+中文说明：
+
+```text
+V13.4.34 实现 BTC/ETH/SOL 4h 多空低频研究策略，
+执行真实本地 Freqtrade 回测，
+并输出 baseline / slippage / regime / long-short 分解报告。
+本版本结果为失败研究样本，不进入 Dry-run，不进入实盘。
+```
+
+Run the research backtest:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_low_frequency_directional_backtest.ps1 -Timerange "20240101-" -Run
+python -m alphapilot.reports.generate_low_frequency_directional_report
+```
+
+Outputs:
+
+```text
+user_data/strategies/AlphaPilotLowFrequencyDirectional4HV01.py
+user_data/backtest_results/v13_4_34_low_frequency_directional_4h.zip
+reports/v13_4_34_low_frequency_directional_4h_report.json
+reports/v13_4_34_low_frequency_directional_4h_summary.md
+docs/V13.4.34-low-frequency-directional-4h-research-strategy.md
+docs/low-frequency-directional-4h-strategy-rules.md
+docs/low-frequency-directional-results-interpretation.md
+```
+
+Real backtest result:
+
+```text
+tradeCount: 2821
+longTradeCount: 1312
+shortTradeCount: 1509
+totalReturnPct: -99.9659
+slippageAdjustedTotalReturnPct: -150.0949
+maxDrawdownPct: 99.9676
+profitFactor: 0.6099
+researchWorthContinuing: false
+```
+
+V13.4.34 remains research-only:
+
+```text
+no Dry-run approval
+no live trading approval
+no real API key
+no Trade API / Withdraw API
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.4.34: implement Candidate A/B/E for research backtest only, with baseline and regime comparison.
+- V13.4.35: redesign low-frequency research after V13.4.34 failed the baseline hurdle.
 - Alternative future track: Funding/OI Public Data Collector if short research becomes the priority again.
 - Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
