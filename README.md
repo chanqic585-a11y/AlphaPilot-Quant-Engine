@@ -3019,10 +3019,55 @@ V13.5.12 does not add Trade API, Withdraw API, API key storage, real account
 reads, real position reads, real orders, exchange Dry-run execution, live
 trading, or automatic trading.
 
+## V13.5.13 Forward Readiness Monitor
+
+V13.5.13 checks whether enough post-selection public candles exist to produce
+closed forward local paper samples for the active V13.5.7 strategy.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_13_forward_readiness_monitor.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_13_forward_readiness_monitor.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_13_forward_readiness_monitor.py
+scripts/run_v13_5_13_forward_readiness_monitor.ps1
+reports/v13_5_13_forward_readiness_monitor_report.json
+reports/v13_5_13_forward_readiness_monitor_summary.md
+docs/V13.5.13-forward-readiness-monitor.md
+```
+
+Current readiness:
+
+```text
+selectionTime = 2026-07-05T20:13:33.701790+00:00
+requiredHorizonHours = 96
+earliestClosedSampleTime = 2026-07-09T20:13:33.701790+00:00
+latestLocalCandle = 2026-07-05T16:00:00+00:00
+readyPairCount = 0
+readyForForwardLocalPaperRefresh = false
+```
+
+This is a time/horizon constraint. The active 4h strategy cannot produce closed
+post-selection samples until enough 4h candles exist after selection.
+
+V13.5.13 does not add Trade API, Withdraw API, API key storage, real account
+reads, real position reads, real orders, exchange Dry-run execution, live
+trading, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.13: collect fresh public crypto data and run forward local paper monitoring for the V13.5.7 4h alpha overlay after the pool selection date.
-- V13.5.14: expand cross-market feature normalization and data quality scoring before using non-crypto samples in any model review.
-- V13.5.15: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
+- V13.5.14: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.15: expand cross-market feature normalization and data quality scoring before using non-crypto samples in any model review.
+- V13.5.16: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
