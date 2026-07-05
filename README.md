@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.22 - Factor Evaluation Report and Forward Label Analysis
+AlphaPilot V13.4.23 - Benchmark Strategy Suite Implementation and Baseline Research Backtest
 ```
 
 ## Positioning
@@ -1336,8 +1336,67 @@ no real orders
 no auto trading
 ```
 
+## V13.4.23 Benchmark Strategy Suite
+
+V13.4.23 implements the benchmark suite designed in V13.4.20 and runs it as a
+local research baseline against public historical OHLCV.
+
+Run the benchmark suite:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_benchmark_suite.ps1 -UseTop10 -Timerange "20260101-" -Run
+python -m alphapilot.reports.generate_benchmark_suite_report
+```
+
+Implemented benchmarks:
+
+```text
+BenchmarkNoTrade
+BenchmarkBuyHoldBTC
+BenchmarkEMATrend
+BenchmarkRSIMeanReversion
+BenchmarkMACDVolume
+BenchmarkBollingerRebound
+BenchmarkTD9Exhaustion
+```
+
+Outputs:
+
+```text
+reports/v13_4_23_benchmark_manifest.json
+reports/v13_4_23_benchmark_suite_report.json
+reports/v13_4_23_benchmark_suite_summary.md
+docs/V13.4.23-benchmark-strategy-suite.md
+docs/benchmark-strategy-definitions.md
+docs/benchmark-results-interpretation.md
+```
+
+The report compares each benchmark to:
+
+```text
+NoTrade baseline
+BuyHoldBTC baseline
+```
+
+It also estimates one-way slippage stress at 0.05%, 0.10%, and 0.20% in
+post-processing. Freqtrade itself does not apply that slippage in this version.
+
+V13.4.23 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no Dry-run approval
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+benchmark results are not trading signals
+```
+
 ## Next Versions
 
-- V13.4.23: implement a benchmark strategy suite or design factor-based strategy hypotheses after research review.
+- V13.4.24: review benchmark results and decide whether any hypothesis deserves deeper factor or regime research.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

@@ -1,0 +1,1002 @@
+{
+  "reportId": "v13_4_23_benchmark_suite",
+  "timerange": "20260101-",
+  "timeframe": "1h",
+  "requestedPairs": [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "XRP/USDT:USDT",
+    "ADA/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "LINK/USDT:USDT",
+    "SUI/USDT:USDT",
+    "APT/USDT:USDT"
+  ],
+  "supportedPairs": [
+    "ADA/USDT:USDT",
+    "APT/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "BTC/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "ETH/USDT:USDT",
+    "LINK/USDT:USDT",
+    "SOL/USDT:USDT",
+    "SUI/USDT:USDT",
+    "XRP/USDT:USDT"
+  ],
+  "excludedPairs": [],
+  "benchmarks": [
+    {
+      "benchmarkId": "benchmark_no_trade",
+      "name": "Benchmark No Trade",
+      "type": "report_only_baseline",
+      "totalReturnPct": 0.0,
+      "slippageAdjustedTotalReturnPct": 0.0,
+      "maxDrawdownPct": 0.0,
+      "profitFactor": null,
+      "slippageAdjustedProfitFactor": null,
+      "winRate": null,
+      "tradeCount": 0,
+      "maxConsecutiveLosses": 0,
+      "averageHoldingMinutes": null,
+      "feesPaid": 0.0,
+      "slippageCost": 0.0,
+      "monthlyStability": null,
+      "pairStability": null,
+      "status": "research_only",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "benchmarkId": "benchmark_buy_hold_btc",
+      "name": "Benchmark Buy Hold BTC",
+      "type": "report_only_baseline",
+      "timerange": "20260101-",
+      "timeframe": "1h",
+      "startClose": 87758.1,
+      "endClose": 63207.7,
+      "totalReturnPct": -27.9751,
+      "slippageAdjustedTotalReturnPct": -27.9751,
+      "maxDrawdownPct": 40.3093,
+      "profitFactor": null,
+      "slippageAdjustedProfitFactor": null,
+      "winRate": null,
+      "tradeCount": 1,
+      "maxConsecutiveLosses": null,
+      "averageHoldingMinutes": null,
+      "feesPaid": null,
+      "slippageCost": 0.0,
+      "monthlyStability": null,
+      "pairStability": "single_pair_reference",
+      "status": "research_only",
+      "warnings": [],
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    {
+      "benchmarkId": "benchmark_ema_trend",
+      "name": "Benchmark EMA Trend",
+      "type": "freqtrade_backtest_baseline",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "status": "research_only",
+      "description": "EMA20/EMA50 trend-following baseline with MACD confirmation.",
+      "riskNotes": [
+        "Research-only benchmark. Not a production AlphaPilot strategy.",
+        "Benchmark performance does not approve Dry-run or live trading.",
+        "No benchmark may use real API keys, Trade API, Withdraw API, account reads, orders, or auto trading."
+      ],
+      "isFreqtradeStrategy": true,
+      "className": "BenchmarkEMATrend",
+      "isReportOnly": false,
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "totalReturnPct": -99.971,
+      "maxDrawdownPct": 99.9714,
+      "profitFactor": 0.5658,
+      "winRate": 25.2663,
+      "tradeCount": 2723,
+      "maxConsecutiveLosses": 54,
+      "averageHoldingMinutes": 47.8149,
+      "feesPaid": 524.04210685,
+      "slippageCost": 1048.08421371,
+      "monthlyStability": {
+        "months": [
+          {
+            "month": "2026-01",
+            "tradeCount": 174,
+            "profitAbs": -450.11245466
+          },
+          {
+            "month": "2026-02",
+            "tradeCount": 490,
+            "profitAbs": -366.72849656
+          },
+          {
+            "month": "2026-03",
+            "tradeCount": 922,
+            "profitAbs": -177.60672967
+          },
+          {
+            "month": "2026-04",
+            "tradeCount": 634,
+            "profitAbs": -3.75037879
+          },
+          {
+            "month": "2026-05",
+            "tradeCount": 444,
+            "profitAbs": -1.35983858
+          },
+          {
+            "month": "2026-06",
+            "tradeCount": 47,
+            "profitAbs": -0.13786866
+          },
+          {
+            "month": "2026-07",
+            "tradeCount": 12,
+            "profitAbs": -0.01374638
+          }
+        ],
+        "positiveMonthRatio": 0.0,
+        "stable": false
+      },
+      "pairStability": {
+        "pairs": [
+          {
+            "pair": "ADA/USDT:USDT",
+            "tradeCount": 242,
+            "profitAbs": -144.7689032
+          },
+          {
+            "pair": "APT/USDT:USDT",
+            "tradeCount": 301,
+            "profitAbs": -32.4497509
+          },
+          {
+            "pair": "AVAX/USDT:USDT",
+            "tradeCount": 303,
+            "profitAbs": -74.85932861
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 187,
+            "profitAbs": -50.08776009
+          },
+          {
+            "pair": "DOGE/USDT:USDT",
+            "tradeCount": 324,
+            "profitAbs": -132.6309652
+          },
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 267,
+            "profitAbs": -124.1212684
+          },
+          {
+            "pair": "LINK/USDT:USDT",
+            "tradeCount": 268,
+            "profitAbs": -62.20913222
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 314,
+            "profitAbs": -165.08878219
+          },
+          {
+            "pair": "SUI/USDT:USDT",
+            "tradeCount": 258,
+            "profitAbs": -92.88239796
+          },
+          {
+            "pair": "XRP/USDT:USDT",
+            "tradeCount": 259,
+            "profitAbs": -120.61122453
+          }
+        ],
+        "positivePairRatio": 0.0,
+        "stable": false
+      },
+      "slippageAppliedByFreqtrade": false,
+      "slippageStress": {
+        "0.0005": {
+          "slippageRateOneWay": 0.0005,
+          "slippageCostPctRoundTrip": 0.1,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 524.04210685,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -152.3752,
+          "slippageAdjustedProfitFactor": 0.4346,
+          "slippageAdjustedWinRate": 25.2663,
+          "slippageAdjustedMaxConsecutiveLosses": 54
+        },
+        "0.001": {
+          "slippageRateOneWay": 0.001,
+          "slippageCostPctRoundTrip": 0.2,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 1048.08421371,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -204.7794,
+          "slippageAdjustedProfitFactor": 0.3369,
+          "slippageAdjustedWinRate": 25.2663,
+          "slippageAdjustedMaxConsecutiveLosses": 54
+        },
+        "0.002": {
+          "slippageRateOneWay": 0.002,
+          "slippageCostPctRoundTrip": 0.4,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 2096.16842741,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -309.5878,
+          "slippageAdjustedProfitFactor": 0.2009,
+          "slippageAdjustedWinRate": 25.2663,
+          "slippageAdjustedMaxConsecutiveLosses": 54
+        }
+      },
+      "slippageAdjustedTotalReturnPct": -204.7794,
+      "slippageAdjustedProfitFactor": 0.3369,
+      "slippageAdjustedWinRate": 25.2663,
+      "sourceResult": "user_data\\backtest_results\\v13_4_23_BenchmarkEMATrend.zip",
+      "backtestSucceeded": true,
+      "warnings": []
+    },
+    {
+      "benchmarkId": "benchmark_rsi_mean_reversion",
+      "name": "Benchmark RSI Mean Reversion",
+      "type": "freqtrade_backtest_baseline",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "status": "research_only",
+      "description": "RSI and Bollinger lower-band mean-reversion baseline.",
+      "riskNotes": [
+        "Research-only benchmark. Not a production AlphaPilot strategy.",
+        "Benchmark performance does not approve Dry-run or live trading.",
+        "No benchmark may use real API keys, Trade API, Withdraw API, account reads, orders, or auto trading."
+      ],
+      "isFreqtradeStrategy": true,
+      "className": "BenchmarkRSIMeanReversion",
+      "isReportOnly": false,
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "totalReturnPct": -99.831,
+      "maxDrawdownPct": 99.8411,
+      "profitFactor": 0.404,
+      "winRate": 31.5525,
+      "tradeCount": 2190,
+      "maxConsecutiveLosses": 45,
+      "averageHoldingMinutes": 31.3973,
+      "feesPaid": 478.40590416,
+      "slippageCost": 956.81180832,
+      "monthlyStability": {
+        "months": [
+          {
+            "month": "2026-01",
+            "tradeCount": 336,
+            "profitAbs": -729.65487898
+          },
+          {
+            "month": "2026-02",
+            "tradeCount": 381,
+            "profitAbs": -197.39260423
+          },
+          {
+            "month": "2026-03",
+            "tradeCount": 457,
+            "profitAbs": -50.24565116
+          },
+          {
+            "month": "2026-04",
+            "tradeCount": 325,
+            "profitAbs": -13.56681267
+          },
+          {
+            "month": "2026-05",
+            "tradeCount": 368,
+            "profitAbs": -5.5915229
+          },
+          {
+            "month": "2026-06",
+            "tradeCount": 321,
+            "profitAbs": -1.8831336
+          },
+          {
+            "month": "2026-07",
+            "tradeCount": 2,
+            "profitAbs": 0.02488935
+          }
+        ],
+        "positiveMonthRatio": 0.1429,
+        "stable": false
+      },
+      "pairStability": {
+        "pairs": [
+          {
+            "pair": "ADA/USDT:USDT",
+            "tradeCount": 251,
+            "profitAbs": -101.47131691
+          },
+          {
+            "pair": "APT/USDT:USDT",
+            "tradeCount": 201,
+            "profitAbs": -91.68263471
+          },
+          {
+            "pair": "AVAX/USDT:USDT",
+            "tradeCount": 228,
+            "profitAbs": -124.86856896
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 165,
+            "profitAbs": -73.71408696
+          },
+          {
+            "pair": "DOGE/USDT:USDT",
+            "tradeCount": 236,
+            "profitAbs": -155.96453592
+          },
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 237,
+            "profitAbs": -141.67760378
+          },
+          {
+            "pair": "LINK/USDT:USDT",
+            "tradeCount": 202,
+            "profitAbs": -63.80237635
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 236,
+            "profitAbs": -112.15287667
+          },
+          {
+            "pair": "SUI/USDT:USDT",
+            "tradeCount": 182,
+            "profitAbs": -79.43749195
+          },
+          {
+            "pair": "XRP/USDT:USDT",
+            "tradeCount": 252,
+            "profitAbs": -53.53822198
+          }
+        ],
+        "positivePairRatio": 0.0,
+        "stable": false
+      },
+      "slippageAppliedByFreqtrade": false,
+      "slippageStress": {
+        "0.0005": {
+          "slippageRateOneWay": 0.0005,
+          "slippageCostPctRoundTrip": 0.1,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 478.40590416,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -147.6716,
+          "slippageAdjustedProfitFactor": 0.2674,
+          "slippageAdjustedWinRate": 31.3699,
+          "slippageAdjustedMaxConsecutiveLosses": 45
+        },
+        "0.001": {
+          "slippageRateOneWay": 0.001,
+          "slippageCostPctRoundTrip": 0.2,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 956.81180832,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -195.5122,
+          "slippageAdjustedProfitFactor": 0.1709,
+          "slippageAdjustedWinRate": 31.1416,
+          "slippageAdjustedMaxConsecutiveLosses": 45
+        },
+        "0.002": {
+          "slippageRateOneWay": 0.002,
+          "slippageCostPctRoundTrip": 0.4,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 1913.62361664,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -291.1933,
+          "slippageAdjustedProfitFactor": 0.0436,
+          "slippageAdjustedWinRate": 30.9132,
+          "slippageAdjustedMaxConsecutiveLosses": 45
+        }
+      },
+      "slippageAdjustedTotalReturnPct": -195.5122,
+      "slippageAdjustedProfitFactor": 0.1709,
+      "slippageAdjustedWinRate": 31.1416,
+      "sourceResult": "user_data\\backtest_results\\v13_4_23_BenchmarkRSIMeanReversion.zip",
+      "backtestSucceeded": true,
+      "warnings": []
+    },
+    {
+      "benchmarkId": "benchmark_macd_volume",
+      "name": "Benchmark MACD Volume",
+      "type": "freqtrade_backtest_baseline",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "status": "research_only",
+      "description": "MACD momentum with volume confirmation baseline.",
+      "riskNotes": [
+        "Research-only benchmark. Not a production AlphaPilot strategy.",
+        "Benchmark performance does not approve Dry-run or live trading.",
+        "No benchmark may use real API keys, Trade API, Withdraw API, account reads, orders, or auto trading."
+      ],
+      "isFreqtradeStrategy": true,
+      "className": "BenchmarkMACDVolume",
+      "isReportOnly": false,
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "totalReturnPct": -99.6544,
+      "maxDrawdownPct": 99.6755,
+      "profitFactor": 0.6115,
+      "winRate": 30.78,
+      "tradeCount": 2141,
+      "maxConsecutiveLosses": 34,
+      "averageHoldingMinutes": 32.4521,
+      "feesPaid": 651.49685224,
+      "slippageCost": 1302.99370448,
+      "monthlyStability": {
+        "months": [
+          {
+            "month": "2026-01",
+            "tradeCount": 174,
+            "profitAbs": -500.15619841
+          },
+          {
+            "month": "2026-02",
+            "tradeCount": 299,
+            "profitAbs": -169.8874182
+          },
+          {
+            "month": "2026-03",
+            "tradeCount": 438,
+            "profitAbs": -197.54751656
+          },
+          {
+            "month": "2026-04",
+            "tradeCount": 444,
+            "profitAbs": -78.39043798
+          },
+          {
+            "month": "2026-05",
+            "tradeCount": 392,
+            "profitAbs": -41.55796508
+          },
+          {
+            "month": "2026-06",
+            "tradeCount": 279,
+            "profitAbs": -9.03511066
+          },
+          {
+            "month": "2026-07",
+            "tradeCount": 115,
+            "profitAbs": 0.03108228
+          }
+        ],
+        "positiveMonthRatio": 0.1429,
+        "stable": false
+      },
+      "pairStability": {
+        "pairs": [
+          {
+            "pair": "ADA/USDT:USDT",
+            "tradeCount": 221,
+            "profitAbs": -130.84578362
+          },
+          {
+            "pair": "APT/USDT:USDT",
+            "tradeCount": 217,
+            "profitAbs": -108.28400207
+          },
+          {
+            "pair": "AVAX/USDT:USDT",
+            "tradeCount": 209,
+            "profitAbs": -55.12862312
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 216,
+            "profitAbs": -79.43350659
+          },
+          {
+            "pair": "DOGE/USDT:USDT",
+            "tradeCount": 245,
+            "profitAbs": -117.75393839
+          },
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 222,
+            "profitAbs": -48.93788847
+          },
+          {
+            "pair": "LINK/USDT:USDT",
+            "tradeCount": 183,
+            "profitAbs": -52.84978808
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 236,
+            "profitAbs": -126.75197862
+          },
+          {
+            "pair": "SUI/USDT:USDT",
+            "tradeCount": 179,
+            "profitAbs": -136.67104689
+          },
+          {
+            "pair": "XRP/USDT:USDT",
+            "tradeCount": 213,
+            "profitAbs": -139.88700876
+          }
+        ],
+        "positivePairRatio": 0.0,
+        "stable": false
+      },
+      "slippageAppliedByFreqtrade": false,
+      "slippageStress": {
+        "0.0005": {
+          "slippageRateOneWay": 0.0005,
+          "slippageCostPctRoundTrip": 0.1,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 651.49685224,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -164.804,
+          "slippageAdjustedProfitFactor": 0.4532,
+          "slippageAdjustedWinRate": 29.9393,
+          "slippageAdjustedMaxConsecutiveLosses": 34
+        },
+        "0.001": {
+          "slippageRateOneWay": 0.001,
+          "slippageCostPctRoundTrip": 0.2,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 1302.99370448,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -229.9537,
+          "slippageAdjustedProfitFactor": 0.3365,
+          "slippageAdjustedWinRate": 29.4722,
+          "slippageAdjustedMaxConsecutiveLosses": 34
+        },
+        "0.002": {
+          "slippageRateOneWay": 0.002,
+          "slippageCostPctRoundTrip": 0.4,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 2605.98740895,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -360.2531,
+          "slippageAdjustedProfitFactor": 0.177,
+          "slippageAdjustedWinRate": 29.1453,
+          "slippageAdjustedMaxConsecutiveLosses": 34
+        }
+      },
+      "slippageAdjustedTotalReturnPct": -229.9537,
+      "slippageAdjustedProfitFactor": 0.3365,
+      "slippageAdjustedWinRate": 29.4722,
+      "sourceResult": "user_data\\backtest_results\\v13_4_23_BenchmarkMACDVolume.zip",
+      "backtestSucceeded": true,
+      "warnings": []
+    },
+    {
+      "benchmarkId": "benchmark_bollinger_rebound",
+      "name": "Benchmark Bollinger Rebound",
+      "type": "freqtrade_backtest_baseline",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "status": "research_only",
+      "description": "Bollinger lower-band reclaim baseline.",
+      "riskNotes": [
+        "Research-only benchmark. Not a production AlphaPilot strategy.",
+        "Benchmark performance does not approve Dry-run or live trading.",
+        "No benchmark may use real API keys, Trade API, Withdraw API, account reads, orders, or auto trading."
+      ],
+      "isFreqtradeStrategy": true,
+      "className": "BenchmarkBollingerRebound",
+      "isReportOnly": false,
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "totalReturnPct": -87.6274,
+      "maxDrawdownPct": 87.6274,
+      "profitFactor": 0.4513,
+      "winRate": 34.5588,
+      "tradeCount": 816,
+      "maxConsecutiveLosses": 31,
+      "averageHoldingMinutes": 35.0,
+      "feesPaid": 471.72698649,
+      "slippageCost": 943.45397297,
+      "monthlyStability": {
+        "months": [
+          {
+            "month": "2026-01",
+            "tradeCount": 107,
+            "profitAbs": -420.38036506
+          },
+          {
+            "month": "2026-02",
+            "tradeCount": 190,
+            "profitAbs": -212.89042871
+          },
+          {
+            "month": "2026-03",
+            "tradeCount": 130,
+            "profitAbs": -79.69858901
+          },
+          {
+            "month": "2026-04",
+            "tradeCount": 98,
+            "profitAbs": -62.01982116
+          },
+          {
+            "month": "2026-05",
+            "tradeCount": 106,
+            "profitAbs": -20.66842164
+          },
+          {
+            "month": "2026-06",
+            "tradeCount": 185,
+            "profitAbs": -80.61625603
+          }
+        ],
+        "positiveMonthRatio": 0.0,
+        "stable": false
+      },
+      "pairStability": {
+        "pairs": [
+          {
+            "pair": "ADA/USDT:USDT",
+            "tradeCount": 81,
+            "profitAbs": -99.06017588
+          },
+          {
+            "pair": "APT/USDT:USDT",
+            "tradeCount": 78,
+            "profitAbs": -93.09971388
+          },
+          {
+            "pair": "AVAX/USDT:USDT",
+            "tradeCount": 71,
+            "profitAbs": -62.1100447
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 94,
+            "profitAbs": -67.52898638
+          },
+          {
+            "pair": "DOGE/USDT:USDT",
+            "tradeCount": 78,
+            "profitAbs": -112.27657245
+          },
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 87,
+            "profitAbs": -105.82566207
+          },
+          {
+            "pair": "LINK/USDT:USDT",
+            "tradeCount": 74,
+            "profitAbs": -88.84561457
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 86,
+            "profitAbs": -75.46752373
+          },
+          {
+            "pair": "SUI/USDT:USDT",
+            "tradeCount": 76,
+            "profitAbs": -91.15450207
+          },
+          {
+            "pair": "XRP/USDT:USDT",
+            "tradeCount": 91,
+            "profitAbs": -80.90508588
+          }
+        ],
+        "positivePairRatio": 0.0,
+        "stable": false
+      },
+      "slippageAppliedByFreqtrade": false,
+      "slippageStress": {
+        "0.0005": {
+          "slippageRateOneWay": 0.0005,
+          "slippageCostPctRoundTrip": 0.1,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 471.72698649,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -134.8001,
+          "slippageAdjustedProfitFactor": 0.298,
+          "slippageAdjustedWinRate": 34.4363,
+          "slippageAdjustedMaxConsecutiveLosses": 31
+        },
+        "0.001": {
+          "slippageRateOneWay": 0.001,
+          "slippageCostPctRoundTrip": 0.2,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 943.45397297,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -181.9728,
+          "slippageAdjustedProfitFactor": 0.1895,
+          "slippageAdjustedWinRate": 33.9461,
+          "slippageAdjustedMaxConsecutiveLosses": 31
+        },
+        "0.002": {
+          "slippageRateOneWay": 0.002,
+          "slippageCostPctRoundTrip": 0.4,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 1886.90794594,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -276.3182,
+          "slippageAdjustedProfitFactor": 0.0481,
+          "slippageAdjustedWinRate": 33.4559,
+          "slippageAdjustedMaxConsecutiveLosses": 31
+        }
+      },
+      "slippageAdjustedTotalReturnPct": -181.9728,
+      "slippageAdjustedProfitFactor": 0.1895,
+      "slippageAdjustedWinRate": 33.9461,
+      "sourceResult": "user_data\\backtest_results\\v13_4_23_BenchmarkBollingerRebound.zip",
+      "backtestSucceeded": true,
+      "warnings": []
+    },
+    {
+      "benchmarkId": "benchmark_td9_exhaustion",
+      "name": "Benchmark TD9 Exhaustion",
+      "type": "freqtrade_backtest_baseline",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "status": "research_only",
+      "description": "Simplified TD9-style exhaustion baseline.",
+      "riskNotes": [
+        "Research-only benchmark. Not a production AlphaPilot strategy.",
+        "Benchmark performance does not approve Dry-run or live trading.",
+        "No benchmark may use real API keys, Trade API, Withdraw API, account reads, orders, or auto trading."
+      ],
+      "isFreqtradeStrategy": true,
+      "className": "BenchmarkTD9Exhaustion",
+      "isReportOnly": false,
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "totalReturnPct": -96.7071,
+      "maxDrawdownPct": 96.9997,
+      "profitFactor": 0.5499,
+      "winRate": 31.2078,
+      "tradeCount": 1333,
+      "maxConsecutiveLosses": 31,
+      "averageHoldingMinutes": 36.8192,
+      "feesPaid": 634.13238783,
+      "slippageCost": 1268.26477566,
+      "monthlyStability": {
+        "months": [
+          {
+            "month": "2026-01",
+            "tradeCount": 208,
+            "profitAbs": -425.5482113
+          },
+          {
+            "month": "2026-02",
+            "tradeCount": 215,
+            "profitAbs": -265.93726889
+          },
+          {
+            "month": "2026-03",
+            "tradeCount": 223,
+            "profitAbs": -65.75258545
+          },
+          {
+            "month": "2026-04",
+            "tradeCount": 229,
+            "profitAbs": -126.6554171
+          },
+          {
+            "month": "2026-05",
+            "tradeCount": 193,
+            "profitAbs": -42.89548347
+          },
+          {
+            "month": "2026-06",
+            "tradeCount": 261,
+            "profitAbs": -40.9730406
+          },
+          {
+            "month": "2026-07",
+            "tradeCount": 4,
+            "profitAbs": 0.6905535
+          }
+        ],
+        "positiveMonthRatio": 0.1429,
+        "stable": false
+      },
+      "pairStability": {
+        "pairs": [
+          {
+            "pair": "ADA/USDT:USDT",
+            "tradeCount": 165,
+            "profitAbs": -67.99812724
+          },
+          {
+            "pair": "APT/USDT:USDT",
+            "tradeCount": 159,
+            "profitAbs": -156.42022381
+          },
+          {
+            "pair": "AVAX/USDT:USDT",
+            "tradeCount": 131,
+            "profitAbs": -89.17672356
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 112,
+            "profitAbs": -112.56593131
+          },
+          {
+            "pair": "DOGE/USDT:USDT",
+            "tradeCount": 159,
+            "profitAbs": -191.99765577
+          },
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 104,
+            "profitAbs": -98.41290923
+          },
+          {
+            "pair": "LINK/USDT:USDT",
+            "tradeCount": 125,
+            "profitAbs": -50.5662185
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 109,
+            "profitAbs": -55.55331845
+          },
+          {
+            "pair": "SUI/USDT:USDT",
+            "tradeCount": 153,
+            "profitAbs": -72.01648074
+          },
+          {
+            "pair": "XRP/USDT:USDT",
+            "tradeCount": 116,
+            "profitAbs": -72.3638647
+          }
+        ],
+        "positivePairRatio": 0.0,
+        "stable": false
+      },
+      "slippageAppliedByFreqtrade": false,
+      "slippageStress": {
+        "0.0005": {
+          "slippageRateOneWay": 0.0005,
+          "slippageCostPctRoundTrip": 0.1,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 634.13238783,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -160.1204,
+          "slippageAdjustedProfitFactor": 0.3802,
+          "slippageAdjustedWinRate": 31.0578,
+          "slippageAdjustedMaxConsecutiveLosses": 31
+        },
+        "0.001": {
+          "slippageRateOneWay": 0.001,
+          "slippageCostPctRoundTrip": 0.2,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 1268.26477566,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -223.5336,
+          "slippageAdjustedProfitFactor": 0.2596,
+          "slippageAdjustedWinRate": 30.9827,
+          "slippageAdjustedMaxConsecutiveLosses": 31
+        },
+        "0.002": {
+          "slippageRateOneWay": 0.002,
+          "slippageCostPctRoundTrip": 0.4,
+          "slippageAppliedByFreqtrade": false,
+          "slippageAppliedByPostProcessing": true,
+          "slippageCost": 2536.52955132,
+          "slippageCostEstimated": false,
+          "slippageAdjustedTotalReturnPct": -350.3601,
+          "slippageAdjustedProfitFactor": 0.1,
+          "slippageAdjustedWinRate": 30.7577,
+          "slippageAdjustedMaxConsecutiveLosses": 31
+        }
+      },
+      "slippageAdjustedTotalReturnPct": -223.5336,
+      "slippageAdjustedProfitFactor": 0.2596,
+      "slippageAdjustedWinRate": 30.9827,
+      "sourceResult": "user_data\\backtest_results\\v13_4_23_BenchmarkTD9Exhaustion.zip",
+      "backtestSucceeded": true,
+      "warnings": []
+    }
+  ],
+  "bestBenchmarkRaw": "BenchmarkBollingerRebound",
+  "bestBenchmarkSlippageAdjusted": "BenchmarkBollingerRebound",
+  "noTradeBaseline": {
+    "benchmarkId": "benchmark_no_trade",
+    "name": "Benchmark No Trade",
+    "type": "report_only_baseline",
+    "totalReturnPct": 0.0,
+    "slippageAdjustedTotalReturnPct": 0.0,
+    "maxDrawdownPct": 0.0,
+    "profitFactor": null,
+    "slippageAdjustedProfitFactor": null,
+    "winRate": null,
+    "tradeCount": 0,
+    "maxConsecutiveLosses": 0,
+    "averageHoldingMinutes": null,
+    "feesPaid": 0.0,
+    "slippageCost": 0.0,
+    "monthlyStability": null,
+    "pairStability": null,
+    "status": "research_only",
+    "dryRunApproved": false,
+    "liveTradingApproved": false
+  },
+  "buyHoldBtcBaseline": {
+    "benchmarkId": "benchmark_buy_hold_btc",
+    "name": "Benchmark Buy Hold BTC",
+    "type": "report_only_baseline",
+    "timerange": "20260101-",
+    "timeframe": "1h",
+    "startClose": 87758.1,
+    "endClose": 63207.7,
+    "totalReturnPct": -27.9751,
+    "slippageAdjustedTotalReturnPct": -27.9751,
+    "maxDrawdownPct": 40.3093,
+    "profitFactor": null,
+    "slippageAdjustedProfitFactor": null,
+    "winRate": null,
+    "tradeCount": 1,
+    "maxConsecutiveLosses": null,
+    "averageHoldingMinutes": null,
+    "feesPaid": null,
+    "slippageCost": 0.0,
+    "monthlyStability": null,
+    "pairStability": "single_pair_reference",
+    "status": "research_only",
+    "warnings": [],
+    "dryRunApproved": false,
+    "liveTradingApproved": false
+  },
+  "rejectedBenchmarkIdeas": [
+    {
+      "benchmarkId": "rejected_benchmark_martingale",
+      "name": "Rejected Benchmark Martingale",
+      "status": "rejected_benchmark_idea",
+      "reason": "Martingale or inverse averaging creates unacceptable tail risk and conflicts with AlphaPilot risk-first principles.",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  ],
+  "interpretation": [
+    "Benchmark profitability does not imply trade readiness.",
+    "Benchmarks are comparison references only.",
+    "Future complex strategies must beat NoTrade, BuyHoldBTC, and simple benchmark baselines after costs.",
+    "No benchmark is approved for Dry-run or live trading.",
+    "Martingale and inverse averaging are rejected benchmark ideas."
+  ],
+  "warnings": [],
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "generatedAt": "2026-07-05T00:29:37.502424+00:00",
+  "source": "alphapilot_v13_4_23_benchmark_suite",
+  "slippageAppliedByFreqtrade": false,
+  "slippageAppliedByPostProcessing": true,
+  "slippageRatesOneWay": [
+    0.0005,
+    0.001,
+    0.002
+  ]
+}

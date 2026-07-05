@@ -1,4 +1,4 @@
-"""Benchmark Strategy Suite design for V13.4.20."""
+"""Benchmark Strategy Suite spec for V13.4.20+ and V13.4.23 implementation."""
 
 from __future__ import annotations
 
@@ -62,5 +62,5 @@ def build_benchmark_suite_spec() -> dict[str, Any]:
         "comparisonMetrics": COMPARISON_METRICS,
         "rejectedBenchmarkIdeas": REJECTED_BENCHMARK_IDEAS,
         "researchOnly": True,
-        "implementationStatus": "design_only",
+        "implementationStatus": "implemented_for_research_backtest_v13_4_23",
     }

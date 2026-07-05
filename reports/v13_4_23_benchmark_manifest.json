@@ -1,0 +1,79 @@
+{
+    "reportId":  "v13_4_23_benchmark_manifest",
+    "timerange":  "20260101-",
+    "timeframe":  "1h",
+    "pairsMode":  "top10",
+    "pairs":  [
+                  "BTC/USDT:USDT",
+                  "ETH/USDT:USDT",
+                  "SOL/USDT:USDT",
+                  "DOGE/USDT:USDT",
+                  "XRP/USDT:USDT",
+                  "ADA/USDT:USDT",
+                  "AVAX/USDT:USDT",
+                  "LINK/USDT:USDT",
+                  "SUI/USDT:USDT",
+                  "APT/USDT:USDT"
+              ],
+    "strategiesRequested":  [
+                                "BenchmarkEMATrend",
+                                "BenchmarkRSIMeanReversion",
+                                "BenchmarkMACDVolume",
+                                "BenchmarkBollingerRebound",
+                                "BenchmarkTD9Exhaustion"
+                            ],
+    "strategies":  [
+                       {
+                           "strategy":  "BenchmarkEMATrend",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy BenchmarkEMATrend --timerange 20260101- --timeframe 1h --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_23_BenchmarkEMATrend.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_23_BenchmarkEMATrend.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_23_BenchmarkEMATrend.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-05_00-26-34.zip"
+                       },
+                       {
+                           "strategy":  "BenchmarkRSIMeanReversion",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy BenchmarkRSIMeanReversion --timerange 20260101- --timeframe 1h --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_23_BenchmarkRSIMeanReversion.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_23_BenchmarkRSIMeanReversion.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_23_BenchmarkRSIMeanReversion.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-05_00-26-46.zip"
+                       },
+                       {
+                           "strategy":  "BenchmarkMACDVolume",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy BenchmarkMACDVolume --timerange 20260101- --timeframe 1h --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_23_BenchmarkMACDVolume.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_23_BenchmarkMACDVolume.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_23_BenchmarkMACDVolume.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-05_00-26-59.zip"
+                       },
+                       {
+                           "strategy":  "BenchmarkBollingerRebound",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy BenchmarkBollingerRebound --timerange 20260101- --timeframe 1h --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_23_BenchmarkBollingerRebound.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_23_BenchmarkBollingerRebound.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_23_BenchmarkBollingerRebound.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-05_00-27-08.zip"
+                       },
+                       {
+                           "strategy":  "BenchmarkTD9Exhaustion",
+                           "command":  "C:\\Program Files\\Docker\\Docker\\resources\\bin\\docker.exe compose run --rm freqtrade backtesting --config user_data/config/config.backtest.json --strategy BenchmarkTD9Exhaustion --timerange 20260101- --timeframe 1h --fee 0.0005 --export trades --export-filename user_data/backtest_results/v13_4_23_BenchmarkTD9Exhaustion.json --pairs BTC/USDT:USDT ETH/USDT:USDT SOL/USDT:USDT DOGE/USDT:USDT XRP/USDT:USDT ADA/USDT:USDT AVAX/USDT:USDT LINK/USDT:USDT SUI/USDT:USDT APT/USDT:USDT",
+                           "requestedExportFile":  "user_data/backtest_results/v13_4_23_BenchmarkTD9Exhaustion.json",
+                           "stableResult":  "user_data/backtest_results/v13_4_23_BenchmarkTD9Exhaustion.zip",
+                           "succeeded":  true,
+                           "exitCode":  0,
+                           "error":  null,
+                           "latestBacktest":  "backtest-result-2026-07-05_00-27-19.zip"
+                       }
+                   ],
+    "generatedAt":  "2026-07-05T00:26:20.5445182Z",
+    "safety":  "Research-only Freqtrade backtest. No Dry-run, no live trading, no API keys, no Trade API, no Withdraw API."
+}
