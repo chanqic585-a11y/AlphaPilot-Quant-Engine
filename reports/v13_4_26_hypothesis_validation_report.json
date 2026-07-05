@@ -1,0 +1,2781 @@
+{
+  "reportId": "v13_4_26_hypothesis_validation_report",
+  "version": "V13.4.26",
+  "status": "research_only",
+  "config": {
+    "hypothesesPath": "reports\\v13_4_25_research_hypotheses.json",
+    "factorPanelPath": null,
+    "timerange": "20260101-",
+    "timeframe": "1h",
+    "horizons": [
+      4,
+      8,
+      12,
+      24
+    ],
+    "tpPct": 0.05,
+    "slPct": 0.025,
+    "dataPath": "user_data/data/okx/futures",
+    "useDynamicUniverse": false,
+    "universeSnapshotsPath": "reports/v13_4_13_dynamic_universe_snapshots.json"
+  },
+  "hypothesisCount": 14,
+  "validatedHypothesisCount": 6,
+  "rejectedHypothesisCount": 4,
+  "sampleCount": 124111,
+  "factorPanelContext": {
+    "factorPanelInput": "rebuilt_from_local_public_ohlcv",
+    "panelRebuilt": true,
+    "rowsGenerated": 124111,
+    "baseRowsGenerated": 124111,
+    "timeframe": "1h",
+    "timerange": "20260101-",
+    "loadedPairs": [
+      "AAVE/USDT:USDT",
+      "ADA/USDT:USDT",
+      "APT/USDT:USDT",
+      "ARB/USDT:USDT",
+      "ATOM/USDT:USDT",
+      "AVAX/USDT:USDT",
+      "BCH/USDT:USDT",
+      "BTC/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "DOT/USDT:USDT",
+      "ETC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "FIL/USDT:USDT",
+      "INJ/USDT:USDT",
+      "LINK/USDT:USDT",
+      "LTC/USDT:USDT",
+      "NEAR/USDT:USDT",
+      "OP/USDT:USDT",
+      "ORDI/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "SEI/USDT:USDT",
+      "SOL/USDT:USDT",
+      "SUI/USDT:USDT",
+      "TIA/USDT:USDT",
+      "TRX/USDT:USDT",
+      "UNI/USDT:USDT",
+      "WIF/USDT:USDT",
+      "XRP/USDT:USDT"
+    ],
+    "failedPairs": [],
+    "universeMembershipAvailable": false,
+    "universeMembershipSource": "local_loaded_pairs_fallback",
+    "dynamicUniverseSnapshotsUsed": 0,
+    "fullPanelCommitted": false
+  },
+  "noLookaheadAssurance": [
+    "Condition features are point-in-time and use current or historical data only.",
+    "Cross-sectional ranks are computed within the same timestamp only.",
+    "Forward labels are forward-looking for validation only.",
+    "Forward labels are not used to construct conditions, select pairs, modify universe membership, create orders, or approve Dry-run.",
+    "BTC forward returns are used only for excess-return evaluation."
+  ],
+  "validationRules": [
+    {
+      "hypothesisId": "HYP-001",
+      "conditionId": "acceptable_volatility_atr_context",
+      "description": "Pass when current volatility_3d and atr_pct are not in the highest cross-sectional risk quartile.",
+      "requiredColumns": [
+        "volatility_3d",
+        "atr_pct",
+        "volatilityRankPct",
+        "atrRankPct"
+      ],
+      "noLookaheadNotes": [
+        "Uses current timestamp cross-sectional ranks only."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-002",
+      "conditionId": "top_trend_strength_regime",
+      "description": "Pass when trend_strength is in the top cross-sectional third at the current timestamp.",
+      "requiredColumns": [
+        "trend_strength",
+        "trendStrengthRankPct"
+      ],
+      "noLookaheadNotes": [
+        "Uses current timestamp cross-sectional trend rank only."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-004",
+      "conditionId": "bollinger_lower_non_crash_regime",
+      "description": "Pass when bollinger_position is near the lower band, regime is not trend_down, and BTC 12h momentum is not crash-like.",
+      "requiredColumns": [
+        "bollinger_position",
+        "regimeLabel",
+        "btc_momentum_12"
+      ],
+      "noLookaheadNotes": [
+        "Uses current Bollinger position, current regime label, and current BTC momentum only."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-006",
+      "conditionId": "low_frequency_quality_context",
+      "description": "Pass when strict rebound, acceptable volatility, and medium/high liquidity context all agree.",
+      "requiredColumns": [
+        "bollinger_position",
+        "volatilityRankPct",
+        "atrRankPct",
+        "liquidity_rank",
+        "regimeLabel"
+      ],
+      "noLookaheadNotes": [
+        "Uses only current factor values and current cross-sectional ranks."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-007",
+      "conditionId": "liquidity_gate_first",
+      "description": "Pass when liquidity_rank is at least the top third or liquidityBucket is high.",
+      "requiredColumns": [
+        "liquidity_rank",
+        "liquidityBucket"
+      ],
+      "noLookaheadNotes": [
+        "Uses current timestamp liquidity rank and current pair liquidity bucket only."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-008",
+      "conditionId": "benchmarkable_universe_with_btc_context",
+      "description": "Pass when the row is in the local research universe and BTC forward comparison labels are available.",
+      "requiredColumns": [
+        "universeMember",
+        "btcForwardReturn_12"
+      ],
+      "noLookaheadNotes": [
+        "Condition uses universe membership only; BTC forward return is used for evaluation metrics, not condition construction."
+      ]
+    }
+  ],
+  "validationMetrics": [
+    {
+      "hypothesisId": "HYP-001",
+      "hypothesisName": "Volatility as Risk Filter",
+      "supportLevel": "no_support",
+      "sampleCount": 124111,
+      "conditionPassCount": 84151,
+      "conditionPassRate": 0.67803015,
+      "validLabelCount": 83923,
+      "primaryHorizon": 12,
+      "averageForwardReturn": -0.00117066,
+      "medianForwardReturn": -0.00118203,
+      "hitTpBeforeSlProbability": 0.05371591,
+      "hitSlBeforeTpProbability": 0.26899658,
+      "profitFactor": 0.87276618,
+      "expectancy": -0.00117066,
+      "averageMfe": 0.01758856,
+      "averageMae": -0.01953849,
+      "averageExcessReturnVsBTC": -0.00040943,
+      "perHorizon": {
+        "4": {
+          "validLabelCount": 84078,
+          "averageForwardReturn": -0.00035539,
+          "medianForwardReturn": -0.00041818,
+          "profitFactor": 0.92918342,
+          "expectancy": -0.00035539,
+          "hitTpBeforeSlProbability": 0.01069245,
+          "hitSlBeforeTpProbability": 0.09040415,
+          "averageMfe": 0.01002411,
+          "averageMae": -0.01084665,
+          "averageExcessReturnVsBTC": -0.00011965
+        },
+        "8": {
+          "validLabelCount": 84000,
+          "averageForwardReturn": -0.00074541,
+          "medianForwardReturn": -0.00075815,
+          "profitFactor": 0.89885162,
+          "expectancy": -0.00074541,
+          "hitTpBeforeSlProbability": 0.03164286,
+          "hitSlBeforeTpProbability": 0.18758333,
+          "averageMfe": 0.01430277,
+          "averageMae": -0.0157088,
+          "averageExcessReturnVsBTC": -0.00025454
+        },
+        "12": {
+          "validLabelCount": 83923,
+          "averageForwardReturn": -0.00117066,
+          "medianForwardReturn": -0.00118203,
+          "profitFactor": 0.87276618,
+          "expectancy": -0.00117066,
+          "hitTpBeforeSlProbability": 0.05371591,
+          "hitSlBeforeTpProbability": 0.26899658,
+          "averageMfe": 0.01758856,
+          "averageMae": -0.01953849,
+          "averageExcessReturnVsBTC": -0.00040943
+        },
+        "24": {
+          "validLabelCount": 83702,
+          "averageForwardReturn": -0.00248775,
+          "medianForwardReturn": -0.00202415,
+          "profitFactor": 0.81863329,
+          "expectancy": -0.00248775,
+          "hitTpBeforeSlProbability": 0.11717761,
+          "hitSlBeforeTpProbability": 0.4254976,
+          "averageMfe": 0.02514376,
+          "averageMae": -0.02843693,
+          "averageExcessReturnVsBTC": -0.00086187
+        }
+      },
+      "monthlyStability": {
+        "rows": [
+          {
+            "group": "2026-01",
+            "sampleCount": 13908,
+            "validLabelCount": 13908,
+            "averageForwardReturn": -0.00323124,
+            "profitFactor": 0.67728631,
+            "expectancy": -0.00323124
+          },
+          {
+            "group": "2026-02",
+            "sampleCount": 12442,
+            "validLabelCount": 12442,
+            "averageForwardReturn": -0.00157445,
+            "profitFactor": 0.87677227,
+            "expectancy": -0.00157445
+          },
+          {
+            "group": "2026-03",
+            "sampleCount": 13721,
+            "validLabelCount": 13721,
+            "averageForwardReturn": -0.00040962,
+            "profitFactor": 0.95039722,
+            "expectancy": -0.00040962
+          },
+          {
+            "group": "2026-04",
+            "sampleCount": 13855,
+            "validLabelCount": 13855,
+            "averageForwardReturn": 0.00098433,
+            "profitFactor": 1.14879152,
+            "expectancy": 0.00098433
+          },
+          {
+            "group": "2026-05",
+            "sampleCount": 14553,
+            "validLabelCount": 14553,
+            "averageForwardReturn": -0.00047428,
+            "profitFactor": 0.93738045,
+            "expectancy": -0.00047428
+          },
+          {
+            "group": "2026-06",
+            "sampleCount": 13949,
+            "validLabelCount": 13949,
+            "averageForwardReturn": -0.00387325,
+            "profitFactor": 0.65402631,
+            "expectancy": -0.00387325
+          },
+          {
+            "group": "2026-07",
+            "sampleCount": 1723,
+            "validLabelCount": 1495,
+            "averageForwardReturn": 0.01284053,
+            "profitFactor": 8.42542063,
+            "expectancy": 0.01284053
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.28571429,
+        "usableGroupCount": 7
+      },
+      "pairStability": {
+        "rows": [
+          {
+            "group": "AAVE/USDT:USDT",
+            "sampleCount": 2654,
+            "validLabelCount": 2647,
+            "averageForwardReturn": -0.00238322,
+            "profitFactor": 0.78020737,
+            "expectancy": -0.00238322
+          },
+          {
+            "group": "ADA/USDT:USDT",
+            "sampleCount": 3801,
+            "validLabelCount": 3801,
+            "averageForwardReturn": -0.00186642,
+            "profitFactor": 0.82456037,
+            "expectancy": -0.00186642
+          },
+          {
+            "group": "APT/USDT:USDT",
+            "sampleCount": 1994,
+            "validLabelCount": 1983,
+            "averageForwardReturn": -0.00156417,
+            "profitFactor": 0.86981544,
+            "expectancy": -0.00156417
+          },
+          {
+            "group": "ARB/USDT:USDT",
+            "sampleCount": 2588,
+            "validLabelCount": 2576,
+            "averageForwardReturn": -0.00358586,
+            "profitFactor": 0.71525403,
+            "expectancy": -0.00358586
+          },
+          {
+            "group": "ATOM/USDT:USDT",
+            "sampleCount": 3535,
+            "validLabelCount": 3523,
+            "averageForwardReturn": -0.00019688,
+            "profitFactor": 0.97802382,
+            "expectancy": -0.00019688
+          },
+          {
+            "group": "AVAX/USDT:USDT",
+            "sampleCount": 3909,
+            "validLabelCount": 3897,
+            "averageForwardReturn": -0.00195611,
+            "profitFactor": 0.80080352,
+            "expectancy": -0.00195611
+          },
+          {
+            "group": "BCH/USDT:USDT",
+            "sampleCount": 3777,
+            "validLabelCount": 3766,
+            "averageForwardReturn": -0.00286847,
+            "profitFactor": 0.6971284,
+            "expectancy": -0.00286847
+          },
+          {
+            "group": "BTC/USDT:USDT",
+            "sampleCount": 4413,
+            "validLabelCount": 4401,
+            "averageForwardReturn": -0.00080846,
+            "profitFactor": 0.87190071,
+            "expectancy": -0.00080846
+          },
+          {
+            "group": "DOGE/USDT:USDT",
+            "sampleCount": 3708,
+            "validLabelCount": 3696,
+            "averageForwardReturn": -0.00055766,
+            "profitFactor": 0.93607547,
+            "expectancy": -0.00055766
+          },
+          {
+            "group": "DOT/USDT:USDT",
+            "sampleCount": 3603,
+            "validLabelCount": 3591,
+            "averageForwardReturn": -0.00093652,
+            "profitFactor": 0.90582976,
+            "expectancy": -0.00093652
+          },
+          {
+            "group": "ETC/USDT:USDT",
+            "sampleCount": 4186,
+            "validLabelCount": 4174,
+            "averageForwardReturn": -0.00081382,
+            "profitFactor": 0.90705637,
+            "expectancy": -0.00081382
+          },
+          {
+            "group": "ETH/USDT:USDT",
+            "sampleCount": 4122,
+            "validLabelCount": 4110,
+            "averageForwardReturn": -0.00064093,
+            "profitFactor": 0.92021801,
+            "expectancy": -0.00064093
+          },
+          {
+            "group": "FIL/USDT:USDT",
+            "sampleCount": 2011,
+            "validLabelCount": 1999,
+            "averageForwardReturn": 0.00029992,
+            "profitFactor": 1.03037536,
+            "expectancy": 0.00029992
+          },
+          {
+            "group": "INJ/USDT:USDT",
+            "sampleCount": 1908,
+            "validLabelCount": 1908,
+            "averageForwardReturn": 0.00114173,
+            "profitFactor": 1.12039096,
+            "expectancy": 0.00114173
+          },
+          {
+            "group": "LINK/USDT:USDT",
+            "sampleCount": 4397,
+            "validLabelCount": 4385,
+            "averageForwardReturn": -0.0010305,
+            "profitFactor": 0.88642151,
+            "expectancy": -0.0010305
+          },
+          {
+            "group": "LTC/USDT:USDT",
+            "sampleCount": 4336,
+            "validLabelCount": 4324,
+            "averageForwardReturn": -0.00135007,
+            "profitFactor": 0.81968548,
+            "expectancy": -0.00135007
+          },
+          {
+            "group": "NEAR/USDT:USDT",
+            "sampleCount": 1832,
+            "validLabelCount": 1832,
+            "averageForwardReturn": -0.00011851,
+            "profitFactor": 0.98792377,
+            "expectancy": -0.00011851
+          },
+          {
+            "group": "OP/USDT:USDT",
+            "sampleCount": 1266,
+            "validLabelCount": 1259,
+            "averageForwardReturn": -0.00269557,
+            "profitFactor": 0.77436992,
+            "expectancy": -0.00269557
+          },
+          {
+            "group": "ORDI/USDT:USDT",
+            "sampleCount": 789,
+            "validLabelCount": 784,
+            "averageForwardReturn": -0.00445268,
+            "profitFactor": 0.68156053,
+            "expectancy": -0.00445268
+          },
+          {
+            "group": "PEPE/USDT:USDT",
+            "sampleCount": 1825,
+            "validLabelCount": 1825,
+            "averageForwardReturn": -0.00429487,
+            "profitFactor": 0.63849039,
+            "expectancy": -0.00429487
+          },
+          {
+            "group": "SEI/USDT:USDT",
+            "sampleCount": 3439,
+            "validLabelCount": 3427,
+            "averageForwardReturn": -0.00190982,
+            "profitFactor": 0.82000218,
+            "expectancy": -0.00190982
+          },
+          {
+            "group": "SOL/USDT:USDT",
+            "sampleCount": 3961,
+            "validLabelCount": 3954,
+            "averageForwardReturn": -0.00070468,
+            "profitFactor": 0.92156241,
+            "expectancy": -0.00070468
+          },
+          {
+            "group": "SUI/USDT:USDT",
+            "sampleCount": 2583,
+            "validLabelCount": 2571,
+            "averageForwardReturn": -0.0005042,
+            "profitFactor": 0.94955662,
+            "expectancy": -0.0005042
+          },
+          {
+            "group": "TIA/USDT:USDT",
+            "sampleCount": 754,
+            "validLabelCount": 754,
+            "averageForwardReturn": -0.00218604,
+            "profitFactor": 0.82174462,
+            "expectancy": -0.00218604
+          },
+          {
+            "group": "TRX/USDT:USDT",
+            "sampleCount": 4403,
+            "validLabelCount": 4391,
+            "averageForwardReturn": 0.00039061,
+            "profitFactor": 1.12255859,
+            "expectancy": 0.00039061
+          },
+          {
+            "group": "UNI/USDT:USDT",
+            "sampleCount": 3262,
+            "validLabelCount": 3262,
+            "averageForwardReturn": -0.0012151,
+            "profitFactor": 0.88679149,
+            "expectancy": -0.0012151
+          },
+          {
+            "group": "WIF/USDT:USDT",
+            "sampleCount": 967,
+            "validLabelCount": 967,
+            "averageForwardReturn": 0.00272976,
+            "profitFactor": 1.24369134,
+            "expectancy": 0.00272976
+          },
+          {
+            "group": "XRP/USDT:USDT",
+            "sampleCount": 4128,
+            "validLabelCount": 4116,
+            "averageForwardReturn": -0.00096412,
+            "profitFactor": 0.88204231,
+            "expectancy": -0.00096412
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.14285714,
+        "usableGroupCount": 28
+      },
+      "regimeStability": {
+        "rows": [
+          {
+            "group": "range",
+            "sampleCount": 34751,
+            "validLabelCount": 34653,
+            "averageForwardReturn": -0.00150345,
+            "profitFactor": 0.8261883,
+            "expectancy": -0.00150345
+          },
+          {
+            "group": "trend_down",
+            "sampleCount": 21965,
+            "validLabelCount": 21912,
+            "averageForwardReturn": -0.00095582,
+            "profitFactor": 0.89932459,
+            "expectancy": -0.00095582
+          },
+          {
+            "group": "trend_up",
+            "sampleCount": 22023,
+            "validLabelCount": 21961,
+            "averageForwardReturn": -0.00083236,
+            "profitFactor": 0.91067429,
+            "expectancy": -0.00083236
+          },
+          {
+            "group": "volatile_range",
+            "sampleCount": 5412,
+            "validLabelCount": 5397,
+            "averageForwardReturn": -0.00128274,
+            "profitFactor": 0.88413008,
+            "expectancy": -0.00128274
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.0,
+        "usableGroupCount": 4
+      },
+      "liquidityStability": {
+        "rows": [
+          {
+            "group": "high",
+            "sampleCount": 34329,
+            "validLabelCount": 34239,
+            "averageForwardReturn": -0.00121031,
+            "profitFactor": 0.86431979,
+            "expectancy": -0.00121031
+          },
+          {
+            "group": "low",
+            "sampleCount": 24073,
+            "validLabelCount": 23995,
+            "averageForwardReturn": -0.00100532,
+            "profitFactor": 0.88889327,
+            "expectancy": -0.00100532
+          },
+          {
+            "group": "medium",
+            "sampleCount": 25749,
+            "validLabelCount": 25689,
+            "averageForwardReturn": -0.00127225,
+            "profitFactor": 0.86907393,
+            "expectancy": -0.00127225
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.0,
+        "usableGroupCount": 3
+      },
+      "warnings": [
+        "HYP-001 not stable across months by the V13.4.26 research rule."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-002",
+      "hypothesisName": "Trend Strength as Regime Filter",
+      "supportLevel": "no_support",
+      "sampleCount": 124111,
+      "conditionPassCount": 44315,
+      "conditionPassRate": 0.35705941,
+      "validLabelCount": 44195,
+      "primaryHorizon": 12,
+      "averageForwardReturn": -0.00039395,
+      "medianForwardReturn": -0.00137678,
+      "hitTpBeforeSlProbability": 0.09473922,
+      "hitSlBeforeTpProbability": 0.32591922,
+      "profitFactor": 0.96422343,
+      "expectancy": -0.00039395,
+      "averageMfe": 0.02319942,
+      "averageMae": -0.02272551,
+      "averageExcessReturnVsBTC": 0.00038429,
+      "perHorizon": {
+        "4": {
+          "validLabelCount": 44275,
+          "averageForwardReturn": -0.00016806,
+          "medianForwardReturn": -0.00057013,
+          "profitFactor": 0.97283596,
+          "expectancy": -0.00016806,
+          "hitTpBeforeSlProbability": 0.02787126,
+          "hitSlBeforeTpProbability": 0.1321965,
+          "averageMfe": 0.01306422,
+          "averageMae": -0.01299359,
+          "averageExcessReturnVsBTC": 8.733e-05
+        },
+        "8": {
+          "validLabelCount": 44236,
+          "averageForwardReturn": -0.00028607,
+          "medianForwardReturn": -0.00100047,
+          "profitFactor": 0.96786558,
+          "expectancy": -0.00028607,
+          "hitTpBeforeSlProbability": 0.06449498,
+          "hitSlBeforeTpProbability": 0.24231395,
+          "averageMfe": 0.0187612,
+          "averageMae": -0.01847436,
+          "averageExcessReturnVsBTC": 0.0002294
+        },
+        "12": {
+          "validLabelCount": 44195,
+          "averageForwardReturn": -0.00039395,
+          "medianForwardReturn": -0.00137678,
+          "profitFactor": 0.96422343,
+          "expectancy": -0.00039395,
+          "hitTpBeforeSlProbability": 0.09473922,
+          "hitSlBeforeTpProbability": 0.32591922,
+          "averageMfe": 0.02319942,
+          "averageMae": -0.02272551,
+          "averageExcessReturnVsBTC": 0.00038429
+        },
+        "24": {
+          "validLabelCount": 44078,
+          "averageForwardReturn": -0.00054052,
+          "medianForwardReturn": -0.00212303,
+          "profitFactor": 0.96613525,
+          "expectancy": -0.00054052,
+          "hitTpBeforeSlProbability": 0.16500295,
+          "hitSlBeforeTpProbability": 0.46823812,
+          "averageMfe": 0.03356613,
+          "averageMae": -0.03242144,
+          "averageExcessReturnVsBTC": 0.00103331
+        }
+      },
+      "monthlyStability": {
+        "rows": [
+          {
+            "group": "2026-01",
+            "sampleCount": 7430,
+            "validLabelCount": 7430,
+            "averageForwardReturn": -0.00232855,
+            "profitFactor": 0.79816167,
+            "expectancy": -0.00232855
+          },
+          {
+            "group": "2026-02",
+            "sampleCount": 6720,
+            "validLabelCount": 6720,
+            "averageForwardReturn": -0.00294808,
+            "profitFactor": 0.79183621,
+            "expectancy": -0.00294808
+          },
+          {
+            "group": "2026-03",
+            "sampleCount": 7440,
+            "validLabelCount": 7440,
+            "averageForwardReturn": -0.00155588,
+            "profitFactor": 0.83546398,
+            "expectancy": -0.00155588
+          },
+          {
+            "group": "2026-04",
+            "sampleCount": 7200,
+            "validLabelCount": 7200,
+            "averageForwardReturn": 0.00295453,
+            "profitFactor": 1.31688836,
+            "expectancy": 0.00295453
+          },
+          {
+            "group": "2026-05",
+            "sampleCount": 7440,
+            "validLabelCount": 7440,
+            "averageForwardReturn": 0.002363,
+            "profitFactor": 1.24793048,
+            "expectancy": 0.002363
+          },
+          {
+            "group": "2026-06",
+            "sampleCount": 7200,
+            "validLabelCount": 7200,
+            "averageForwardReturn": -0.00252679,
+            "profitFactor": 0.80852696,
+            "expectancy": -0.00252679
+          },
+          {
+            "group": "2026-07",
+            "sampleCount": 885,
+            "validLabelCount": 765,
+            "averageForwardReturn": 0.01387827,
+            "profitFactor": 5.51264552,
+            "expectancy": 0.01387827
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.42857143,
+        "usableGroupCount": 7
+      },
+      "pairStability": {
+        "rows": [
+          {
+            "group": "AAVE/USDT:USDT",
+            "sampleCount": 1770,
+            "validLabelCount": 1770,
+            "averageForwardReturn": -0.00082146,
+            "profitFactor": 0.93521185,
+            "expectancy": -0.00082146
+          },
+          {
+            "group": "ADA/USDT:USDT",
+            "sampleCount": 1373,
+            "validLabelCount": 1361,
+            "averageForwardReturn": 0.0001794,
+            "profitFactor": 1.0188127,
+            "expectancy": 0.0001794
+          },
+          {
+            "group": "APT/USDT:USDT",
+            "sampleCount": 1570,
+            "validLabelCount": 1570,
+            "averageForwardReturn": -0.00069611,
+            "profitFactor": 0.94388745,
+            "expectancy": -0.00069611
+          },
+          {
+            "group": "ARB/USDT:USDT",
+            "sampleCount": 1193,
+            "validLabelCount": 1193,
+            "averageForwardReturn": -0.0007795,
+            "profitFactor": 0.93250717,
+            "expectancy": -0.0007795
+          },
+          {
+            "group": "ATOM/USDT:USDT",
+            "sampleCount": 2077,
+            "validLabelCount": 2077,
+            "averageForwardReturn": 0.00090026,
+            "profitFactor": 1.0968696,
+            "expectancy": 0.00090026
+          },
+          {
+            "group": "AVAX/USDT:USDT",
+            "sampleCount": 1223,
+            "validLabelCount": 1223,
+            "averageForwardReturn": -0.00010451,
+            "profitFactor": 0.98858433,
+            "expectancy": -0.00010451
+          },
+          {
+            "group": "BCH/USDT:USDT",
+            "sampleCount": 1732,
+            "validLabelCount": 1720,
+            "averageForwardReturn": -0.00095227,
+            "profitFactor": 0.88599096,
+            "expectancy": -0.00095227
+          },
+          {
+            "group": "BTC/USDT:USDT",
+            "sampleCount": 2133,
+            "validLabelCount": 2133,
+            "averageForwardReturn": 0.00018573,
+            "profitFactor": 1.02967147,
+            "expectancy": 0.00018573
+          },
+          {
+            "group": "DOGE/USDT:USDT",
+            "sampleCount": 1590,
+            "validLabelCount": 1584,
+            "averageForwardReturn": 5.128e-05,
+            "profitFactor": 1.00554168,
+            "expectancy": 5.128e-05
+          },
+          {
+            "group": "DOT/USDT:USDT",
+            "sampleCount": 1097,
+            "validLabelCount": 1097,
+            "averageForwardReturn": -0.00423642,
+            "profitFactor": 0.68624341,
+            "expectancy": -0.00423642
+          },
+          {
+            "group": "ETC/USDT:USDT",
+            "sampleCount": 1474,
+            "validLabelCount": 1474,
+            "averageForwardReturn": 0.000555,
+            "profitFactor": 1.06623662,
+            "expectancy": 0.000555
+          },
+          {
+            "group": "ETH/USDT:USDT",
+            "sampleCount": 1874,
+            "validLabelCount": 1862,
+            "averageForwardReturn": -0.00147773,
+            "profitFactor": 0.83772495,
+            "expectancy": -0.00147773
+          },
+          {
+            "group": "FIL/USDT:USDT",
+            "sampleCount": 1504,
+            "validLabelCount": 1493,
+            "averageForwardReturn": -0.00676079,
+            "profitFactor": 0.59845052,
+            "expectancy": -0.00676079
+          },
+          {
+            "group": "INJ/USDT:USDT",
+            "sampleCount": 1769,
+            "validLabelCount": 1769,
+            "averageForwardReturn": 0.00199555,
+            "profitFactor": 1.15279285,
+            "expectancy": 0.00199555
+          },
+          {
+            "group": "LINK/USDT:USDT",
+            "sampleCount": 1279,
+            "validLabelCount": 1278,
+            "averageForwardReturn": -0.0020188,
+            "profitFactor": 0.79783305,
+            "expectancy": -0.0020188
+          },
+          {
+            "group": "LTC/USDT:USDT",
+            "sampleCount": 1773,
+            "validLabelCount": 1773,
+            "averageForwardReturn": -0.00210389,
+            "profitFactor": 0.75324313,
+            "expectancy": -0.00210389
+          },
+          {
+            "group": "NEAR/USDT:USDT",
+            "sampleCount": 1693,
+            "validLabelCount": 1688,
+            "averageForwardReturn": 0.00475742,
+            "profitFactor": 1.3792665,
+            "expectancy": 0.00475742
+          },
+          {
+            "group": "OP/USDT:USDT",
+            "sampleCount": 1434,
+            "validLabelCount": 1422,
+            "averageForwardReturn": 0.00076958,
+            "profitFactor": 1.06557134,
+            "expectancy": 0.00076958
+          },
+          {
+            "group": "ORDI/USDT:USDT",
+            "sampleCount": 1406,
+            "validLabelCount": 1406,
+            "averageForwardReturn": 0.00505437,
+            "profitFactor": 1.23300961,
+            "expectancy": 0.00505437
+          },
+          {
+            "group": "PEPE/USDT:USDT",
+            "sampleCount": 1346,
+            "validLabelCount": 1334,
+            "averageForwardReturn": -0.0015023,
+            "profitFactor": 0.89246277,
+            "expectancy": -0.0015023
+          },
+          {
+            "group": "SEI/USDT:USDT",
+            "sampleCount": 1231,
+            "validLabelCount": 1231,
+            "averageForwardReturn": -0.0003255,
+            "profitFactor": 0.9723782,
+            "expectancy": -0.0003255
+          },
+          {
+            "group": "SOL/USDT:USDT",
+            "sampleCount": 1645,
+            "validLabelCount": 1644,
+            "averageForwardReturn": -0.00026063,
+            "profitFactor": 0.97098637,
+            "expectancy": -0.00026063
+          },
+          {
+            "group": "SUI/USDT:USDT",
+            "sampleCount": 1165,
+            "validLabelCount": 1165,
+            "averageForwardReturn": 0.00209666,
+            "profitFactor": 1.19109409,
+            "expectancy": 0.00209666
+          },
+          {
+            "group": "TIA/USDT:USDT",
+            "sampleCount": 1808,
+            "validLabelCount": 1796,
+            "averageForwardReturn": 5.167e-05,
+            "profitFactor": 1.00344178,
+            "expectancy": 5.167e-05
+          },
+          {
+            "group": "TRX/USDT:USDT",
+            "sampleCount": 2348,
+            "validLabelCount": 2348,
+            "averageForwardReturn": -0.00061649,
+            "profitFactor": 0.8448933,
+            "expectancy": -0.00061649
+          },
+          {
+            "group": "UNI/USDT:USDT",
+            "sampleCount": 1483,
+            "validLabelCount": 1471,
+            "averageForwardReturn": -0.0038941,
+            "profitFactor": 0.7289889,
+            "expectancy": -0.0038941
+          },
+          {
+            "group": "WIF/USDT:USDT",
+            "sampleCount": 1691,
+            "validLabelCount": 1691,
+            "averageForwardReturn": -0.00059058,
+            "profitFactor": 0.95873694,
+            "expectancy": -0.00059058
+          },
+          {
+            "group": "XRP/USDT:USDT",
+            "sampleCount": 1634,
+            "validLabelCount": 1622,
+            "averageForwardReturn": -0.00188893,
+            "profitFactor": 0.78379434,
+            "expectancy": -0.00188893
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.39285714,
+        "usableGroupCount": 28
+      },
+      "regimeStability": {
+        "rows": [
+          {
+            "group": "range",
+            "sampleCount": 15662,
+            "validLabelCount": 15619,
+            "averageForwardReturn": -0.00112519,
+            "profitFactor": 0.88425697,
+            "expectancy": -0.00112519
+          },
+          {
+            "group": "trend_down",
+            "sampleCount": 11510,
+            "validLabelCount": 11482,
+            "averageForwardReturn": -0.00078536,
+            "profitFactor": 0.9312255,
+            "expectancy": -0.00078536
+          },
+          {
+            "group": "trend_up",
+            "sampleCount": 11591,
+            "validLabelCount": 11560,
+            "averageForwardReturn": 0.00039008,
+            "profitFactor": 1.03506346,
+            "expectancy": 0.00039008
+          },
+          {
+            "group": "volatile_range",
+            "sampleCount": 5552,
+            "validLabelCount": 5534,
+            "averageForwardReturn": 0.00084422,
+            "profitFactor": 1.06221964,
+            "expectancy": 0.00084422
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.5,
+        "usableGroupCount": 4
+      },
+      "liquidityStability": {
+        "rows": [
+          {
+            "group": "high",
+            "sampleCount": 15996,
+            "validLabelCount": 15918,
+            "averageForwardReturn": -0.00105638,
+            "profitFactor": 0.89344176,
+            "expectancy": -0.00105638
+          },
+          {
+            "group": "low",
+            "sampleCount": 14904,
+            "validLabelCount": 14880,
+            "averageForwardReturn": 0.00023751,
+            "profitFactor": 1.02272708,
+            "expectancy": 0.00023751
+          },
+          {
+            "group": "medium",
+            "sampleCount": 13415,
+            "validLabelCount": 13397,
+            "averageForwardReturn": -0.00030822,
+            "profitFactor": 0.97617825,
+            "expectancy": -0.00030822
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.33333333,
+        "usableGroupCount": 3
+      },
+      "warnings": [
+        "HYP-002 not stable across months by the V13.4.26 research rule."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-004",
+      "hypothesisName": "Bollinger Rebound Requires Regime Filter",
+      "supportLevel": "no_support",
+      "sampleCount": 124111,
+      "conditionPassCount": 15917,
+      "conditionPassRate": 0.1282481,
+      "validLabelCount": 15865,
+      "primaryHorizon": 12,
+      "averageForwardReturn": -0.00167366,
+      "medianForwardReturn": -0.00078462,
+      "hitTpBeforeSlProbability": 0.0643555,
+      "hitSlBeforeTpProbability": 0.29895997,
+      "profitFactor": 0.8397104,
+      "expectancy": -0.00167366,
+      "averageMfe": 0.01868042,
+      "averageMae": -0.02162486,
+      "averageExcessReturnVsBTC": -0.00033335,
+      "perHorizon": {
+        "4": {
+          "validLabelCount": 15909,
+          "averageForwardReturn": -0.00017108,
+          "medianForwardReturn": 0.0,
+          "profitFactor": 0.96764637,
+          "expectancy": -0.00017108,
+          "hitTpBeforeSlProbability": 0.01351436,
+          "hitSlBeforeTpProbability": 0.10302345,
+          "averageMfe": 0.01049407,
+          "averageMae": -0.01124389,
+          "averageExcessReturnVsBTC": 1.041e-05
+        },
+        "8": {
+          "validLabelCount": 15879,
+          "averageForwardReturn": -0.00110651,
+          "medianForwardReturn": -0.00029433,
+          "profitFactor": 0.8648929,
+          "expectancy": -0.00110651,
+          "hitTpBeforeSlProbability": 0.03677813,
+          "hitSlBeforeTpProbability": 0.21059261,
+          "averageMfe": 0.01508389,
+          "averageMae": -0.01703999,
+          "averageExcessReturnVsBTC": -0.00027054
+        },
+        "12": {
+          "validLabelCount": 15865,
+          "averageForwardReturn": -0.00167366,
+          "medianForwardReturn": -0.00078462,
+          "profitFactor": 0.8397104,
+          "expectancy": -0.00167366,
+          "hitTpBeforeSlProbability": 0.0643555,
+          "hitSlBeforeTpProbability": 0.29895997,
+          "averageMfe": 0.01868042,
+          "averageMae": -0.02162486,
+          "averageExcessReturnVsBTC": -0.00033335
+        },
+        "24": {
+          "validLabelCount": 15862,
+          "averageForwardReturn": 2.891e-05,
+          "medianForwardReturn": 0.00138893,
+          "profitFactor": 1.00202564,
+          "expectancy": 2.891e-05,
+          "hitTpBeforeSlProbability": 0.15035935,
+          "hitSlBeforeTpProbability": 0.45473459,
+          "averageMfe": 0.02891555,
+          "averageMae": -0.03153438,
+          "averageExcessReturnVsBTC": 0.00063516
+        }
+      },
+      "monthlyStability": {
+        "rows": [
+          {
+            "group": "2026-01",
+            "sampleCount": 2850,
+            "validLabelCount": 2850,
+            "averageForwardReturn": -0.00888601,
+            "profitFactor": 0.43017703,
+            "expectancy": -0.00888601
+          },
+          {
+            "group": "2026-02",
+            "sampleCount": 1719,
+            "validLabelCount": 1719,
+            "averageForwardReturn": -0.00826483,
+            "profitFactor": 0.44526259,
+            "expectancy": -0.00826483
+          },
+          {
+            "group": "2026-03",
+            "sampleCount": 2706,
+            "validLabelCount": 2706,
+            "averageForwardReturn": 0.00101601,
+            "profitFactor": 1.12730304,
+            "expectancy": 0.00101601
+          },
+          {
+            "group": "2026-04",
+            "sampleCount": 3196,
+            "validLabelCount": 3196,
+            "averageForwardReturn": 0.00319607,
+            "profitFactor": 1.48114316,
+            "expectancy": 0.00319607
+          },
+          {
+            "group": "2026-05",
+            "sampleCount": 3186,
+            "validLabelCount": 3186,
+            "averageForwardReturn": 0.00191612,
+            "profitFactor": 1.23858044,
+            "expectancy": 0.00191612
+          },
+          {
+            "group": "2026-06",
+            "sampleCount": 2127,
+            "validLabelCount": 2127,
+            "averageForwardReturn": -0.00365069,
+            "profitFactor": 0.71325405,
+            "expectancy": -0.00365069
+          },
+          {
+            "group": "2026-07",
+            "sampleCount": 133,
+            "validLabelCount": 81,
+            "averageForwardReturn": 0.02069271,
+            "profitFactor": 16.95101316,
+            "expectancy": 0.02069271
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.57142857,
+        "usableGroupCount": 7
+      },
+      "pairStability": {
+        "rows": [
+          {
+            "group": "AAVE/USDT:USDT",
+            "sampleCount": 549,
+            "validLabelCount": 549,
+            "averageForwardReturn": -0.00346578,
+            "profitFactor": 0.73963887,
+            "expectancy": -0.00346578
+          },
+          {
+            "group": "ADA/USDT:USDT",
+            "sampleCount": 626,
+            "validLabelCount": 626,
+            "averageForwardReturn": -0.00257188,
+            "profitFactor": 0.76683153,
+            "expectancy": -0.00257188
+          },
+          {
+            "group": "APT/USDT:USDT",
+            "sampleCount": 580,
+            "validLabelCount": 580,
+            "averageForwardReturn": 0.00028112,
+            "profitFactor": 1.02661396,
+            "expectancy": 0.00028112
+          },
+          {
+            "group": "ARB/USDT:USDT",
+            "sampleCount": 594,
+            "validLabelCount": 589,
+            "averageForwardReturn": -0.00155928,
+            "profitFactor": 0.85586617,
+            "expectancy": -0.00155928
+          },
+          {
+            "group": "ATOM/USDT:USDT",
+            "sampleCount": 665,
+            "validLabelCount": 662,
+            "averageForwardReturn": -0.00228352,
+            "profitFactor": 0.76552235,
+            "expectancy": -0.00228352
+          },
+          {
+            "group": "AVAX/USDT:USDT",
+            "sampleCount": 537,
+            "validLabelCount": 536,
+            "averageForwardReturn": -0.00384304,
+            "profitFactor": 0.66362096,
+            "expectancy": -0.00384304
+          },
+          {
+            "group": "BCH/USDT:USDT",
+            "sampleCount": 628,
+            "validLabelCount": 624,
+            "averageForwardReturn": -0.00501974,
+            "profitFactor": 0.53441754,
+            "expectancy": -0.00501974
+          },
+          {
+            "group": "BTC/USDT:USDT",
+            "sampleCount": 478,
+            "validLabelCount": 478,
+            "averageForwardReturn": -0.00220376,
+            "profitFactor": 0.68847366,
+            "expectancy": -0.00220376
+          },
+          {
+            "group": "DOGE/USDT:USDT",
+            "sampleCount": 549,
+            "validLabelCount": 549,
+            "averageForwardReturn": -0.00103267,
+            "profitFactor": 0.88254542,
+            "expectancy": -0.00103267
+          },
+          {
+            "group": "DOT/USDT:USDT",
+            "sampleCount": 598,
+            "validLabelCount": 594,
+            "averageForwardReturn": -0.00116422,
+            "profitFactor": 0.88092294,
+            "expectancy": -0.00116422
+          },
+          {
+            "group": "ETC/USDT:USDT",
+            "sampleCount": 572,
+            "validLabelCount": 571,
+            "averageForwardReturn": -0.00290305,
+            "profitFactor": 0.69796702,
+            "expectancy": -0.00290305
+          },
+          {
+            "group": "ETH/USDT:USDT",
+            "sampleCount": 480,
+            "validLabelCount": 480,
+            "averageForwardReturn": -0.00295436,
+            "profitFactor": 0.71092361,
+            "expectancy": -0.00295436
+          },
+          {
+            "group": "FIL/USDT:USDT",
+            "sampleCount": 538,
+            "validLabelCount": 537,
+            "averageForwardReturn": -0.00055204,
+            "profitFactor": 0.94749389,
+            "expectancy": -0.00055204
+          },
+          {
+            "group": "INJ/USDT:USDT",
+            "sampleCount": 538,
+            "validLabelCount": 532,
+            "averageForwardReturn": 0.00061624,
+            "profitFactor": 1.05228743,
+            "expectancy": 0.00061624
+          },
+          {
+            "group": "LINK/USDT:USDT",
+            "sampleCount": 483,
+            "validLabelCount": 483,
+            "averageForwardReturn": 0.0004028,
+            "profitFactor": 1.04858094,
+            "expectancy": 0.0004028
+          },
+          {
+            "group": "LTC/USDT:USDT",
+            "sampleCount": 521,
+            "validLabelCount": 521,
+            "averageForwardReturn": -0.00057355,
+            "profitFactor": 0.91583641,
+            "expectancy": -0.00057355
+          },
+          {
+            "group": "NEAR/USDT:USDT",
+            "sampleCount": 587,
+            "validLabelCount": 582,
+            "averageForwardReturn": 0.00121435,
+            "profitFactor": 1.13180039,
+            "expectancy": 0.00121435
+          },
+          {
+            "group": "OP/USDT:USDT",
+            "sampleCount": 613,
+            "validLabelCount": 613,
+            "averageForwardReturn": -0.00273957,
+            "profitFactor": 0.7891162,
+            "expectancy": -0.00273957
+          },
+          {
+            "group": "ORDI/USDT:USDT",
+            "sampleCount": 621,
+            "validLabelCount": 616,
+            "averageForwardReturn": -0.00286621,
+            "profitFactor": 0.82457844,
+            "expectancy": -0.00286621
+          },
+          {
+            "group": "PEPE/USDT:USDT",
+            "sampleCount": 541,
+            "validLabelCount": 541,
+            "averageForwardReturn": -0.0039271,
+            "profitFactor": 0.67490598,
+            "expectancy": -0.0039271
+          },
+          {
+            "group": "SEI/USDT:USDT",
+            "sampleCount": 663,
+            "validLabelCount": 659,
+            "averageForwardReturn": -0.00110312,
+            "profitFactor": 0.88902657,
+            "expectancy": -0.00110312
+          },
+          {
+            "group": "SOL/USDT:USDT",
+            "sampleCount": 521,
+            "validLabelCount": 517,
+            "averageForwardReturn": -0.0017101,
+            "profitFactor": 0.83263207,
+            "expectancy": -0.0017101
+          },
+          {
+            "group": "SUI/USDT:USDT",
+            "sampleCount": 556,
+            "validLabelCount": 555,
+            "averageForwardReturn": -0.00306149,
+            "profitFactor": 0.74692595,
+            "expectancy": -0.00306149
+          },
+          {
+            "group": "TIA/USDT:USDT",
+            "sampleCount": 595,
+            "validLabelCount": 590,
+            "averageForwardReturn": 8.32e-05,
+            "profitFactor": 1.00639546,
+            "expectancy": 8.32e-05
+          },
+          {
+            "group": "TRX/USDT:USDT",
+            "sampleCount": 541,
+            "validLabelCount": 541,
+            "averageForwardReturn": 0.00173257,
+            "profitFactor": 1.66396611,
+            "expectancy": 0.00173257
+          },
+          {
+            "group": "UNI/USDT:USDT",
+            "sampleCount": 574,
+            "validLabelCount": 573,
+            "averageForwardReturn": -0.00154591,
+            "profitFactor": 0.85169674,
+            "expectancy": -0.00154591
+          },
+          {
+            "group": "WIF/USDT:USDT",
+            "sampleCount": 588,
+            "validLabelCount": 586,
+            "averageForwardReturn": -0.00198116,
+            "profitFactor": 0.85082236,
+            "expectancy": -0.00198116
+          },
+          {
+            "group": "XRP/USDT:USDT",
+            "sampleCount": 581,
+            "validLabelCount": 581,
+            "averageForwardReturn": -0.00152641,
+            "profitFactor": 0.80062259,
+            "expectancy": -0.00152641
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.21428571,
+        "usableGroupCount": 28
+      },
+      "regimeStability": {
+        "rows": [
+          {
+            "group": "range",
+            "sampleCount": 9234,
+            "validLabelCount": 9215,
+            "averageForwardReturn": -0.00247947,
+            "profitFactor": 0.75780983,
+            "expectancy": -0.00247947
+          },
+          {
+            "group": "trend_up",
+            "sampleCount": 3238,
+            "validLabelCount": 3224,
+            "averageForwardReturn": -0.00031578,
+            "profitFactor": 0.96819697,
+            "expectancy": -0.00031578
+          },
+          {
+            "group": "volatile_range",
+            "sampleCount": 3445,
+            "validLabelCount": 3426,
+            "averageForwardReturn": -0.00078405,
+            "profitFactor": 0.93165242,
+            "expectancy": -0.00078405
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.0,
+        "usableGroupCount": 3
+      },
+      "liquidityStability": {
+        "rows": [
+          {
+            "group": "high",
+            "sampleCount": 5498,
+            "validLabelCount": 5488,
+            "averageForwardReturn": -0.00249122,
+            "profitFactor": 0.75309144,
+            "expectancy": -0.00249122
+          },
+          {
+            "group": "low",
+            "sampleCount": 5361,
+            "validLabelCount": 5337,
+            "averageForwardReturn": -0.00094,
+            "profitFactor": 0.90761869,
+            "expectancy": -0.00094
+          },
+          {
+            "group": "medium",
+            "sampleCount": 5058,
+            "validLabelCount": 5040,
+            "averageForwardReturn": -0.00156032,
+            "profitFactor": 0.85951335,
+            "expectancy": -0.00156032
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.0,
+        "usableGroupCount": 3
+      },
+      "warnings": [
+        "HYP-004 not stable across months by the V13.4.26 research rule."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-006",
+      "hypothesisName": "Low Frequency Requirement",
+      "supportLevel": "no_support",
+      "sampleCount": 124111,
+      "conditionPassCount": 4775,
+      "conditionPassRate": 0.03847362,
+      "validLabelCount": 4773,
+      "primaryHorizon": 12,
+      "averageForwardReturn": -0.00219212,
+      "medianForwardReturn": -0.00092564,
+      "hitTpBeforeSlProbability": 0.03959774,
+      "hitSlBeforeTpProbability": 0.25225225,
+      "profitFactor": 0.7677512,
+      "expectancy": -0.00219212,
+      "averageMfe": 0.01556712,
+      "averageMae": -0.02019594,
+      "averageExcessReturnVsBTC": -0.00064989,
+      "perHorizon": {
+        "4": {
+          "validLabelCount": 4775,
+          "averageForwardReturn": 4.094e-05,
+          "medianForwardReturn": 0.00043939,
+          "profitFactor": 1.00911546,
+          "expectancy": 4.094e-05,
+          "hitTpBeforeSlProbability": 0.00858639,
+          "hitSlBeforeTpProbability": 0.08460733,
+          "averageMfe": 0.0093133,
+          "averageMae": -0.0102719,
+          "averageExcessReturnVsBTC": 6.608e-05
+        },
+        "8": {
+          "validLabelCount": 4774,
+          "averageForwardReturn": -0.00105155,
+          "medianForwardReturn": 0.0,
+          "profitFactor": 0.85066739,
+          "expectancy": -0.00105155,
+          "hitTpBeforeSlProbability": 0.01948052,
+          "hitSlBeforeTpProbability": 0.17155425,
+          "averageMfe": 0.01276171,
+          "averageMae": -0.01574318,
+          "averageExcessReturnVsBTC": -0.00023966
+        },
+        "12": {
+          "validLabelCount": 4773,
+          "averageForwardReturn": -0.00219212,
+          "medianForwardReturn": -0.00092564,
+          "profitFactor": 0.7677512,
+          "expectancy": -0.00219212,
+          "hitTpBeforeSlProbability": 0.03959774,
+          "hitSlBeforeTpProbability": 0.25225225,
+          "averageMfe": 0.01556712,
+          "averageMae": -0.02019594,
+          "averageExcessReturnVsBTC": -0.00064989
+        },
+        "24": {
+          "validLabelCount": 4773,
+          "averageForwardReturn": -0.00218031,
+          "medianForwardReturn": 0.0,
+          "profitFactor": 0.83729476,
+          "expectancy": -0.00218031,
+          "hitTpBeforeSlProbability": 0.09805154,
+          "hitSlBeforeTpProbability": 0.4123193,
+          "averageMfe": 0.02318361,
+          "averageMae": -0.02953885,
+          "averageExcessReturnVsBTC": -0.00010395
+        }
+      },
+      "monthlyStability": {
+        "rows": [
+          {
+            "group": "2026-01",
+            "sampleCount": 899,
+            "validLabelCount": 899,
+            "averageForwardReturn": -0.00911562,
+            "profitFactor": 0.38135721,
+            "expectancy": -0.00911562
+          },
+          {
+            "group": "2026-02",
+            "sampleCount": 608,
+            "validLabelCount": 608,
+            "averageForwardReturn": -0.00276824,
+            "profitFactor": 0.77998955,
+            "expectancy": -0.00276824
+          },
+          {
+            "group": "2026-03",
+            "sampleCount": 735,
+            "validLabelCount": 735,
+            "averageForwardReturn": 0.00179643,
+            "profitFactor": 1.29159964,
+            "expectancy": 0.00179643
+          },
+          {
+            "group": "2026-04",
+            "sampleCount": 839,
+            "validLabelCount": 839,
+            "averageForwardReturn": 0.00211369,
+            "profitFactor": 1.45509415,
+            "expectancy": 0.00211369
+          },
+          {
+            "group": "2026-05",
+            "sampleCount": 914,
+            "validLabelCount": 914,
+            "averageForwardReturn": -0.00102664,
+            "profitFactor": 0.86640281,
+            "expectancy": -0.00102664
+          },
+          {
+            "group": "2026-06",
+            "sampleCount": 776,
+            "validLabelCount": 776,
+            "averageForwardReturn": -0.00357364,
+            "profitFactor": 0.68144752,
+            "expectancy": -0.00357364
+          },
+          {
+            "group": "2026-07",
+            "sampleCount": 4,
+            "validLabelCount": 2,
+            "averageForwardReturn": 0.01640033,
+            "profitFactor": null,
+            "expectancy": 0.01640033
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.33333333,
+        "usableGroupCount": 6
+      },
+      "pairStability": {
+        "rows": [
+          {
+            "group": "AAVE/USDT:USDT",
+            "sampleCount": 91,
+            "validLabelCount": 91,
+            "averageForwardReturn": -0.00371922,
+            "profitFactor": 0.68329122,
+            "expectancy": -0.00371922
+          },
+          {
+            "group": "ADA/USDT:USDT",
+            "sampleCount": 390,
+            "validLabelCount": 390,
+            "averageForwardReturn": -0.00357446,
+            "profitFactor": 0.67309222,
+            "expectancy": -0.00357446
+          },
+          {
+            "group": "APT/USDT:USDT",
+            "sampleCount": 1,
+            "validLabelCount": 1,
+            "averageForwardReturn": -0.0306914,
+            "profitFactor": 0.0,
+            "expectancy": -0.0306914
+          },
+          {
+            "group": "ARB/USDT:USDT",
+            "sampleCount": 2,
+            "validLabelCount": 2,
+            "averageForwardReturn": -0.01950457,
+            "profitFactor": 0.0,
+            "expectancy": -0.01950457
+          },
+          {
+            "group": "ATOM/USDT:USDT",
+            "sampleCount": 3,
+            "validLabelCount": 3,
+            "averageForwardReturn": -0.00761239,
+            "profitFactor": 0.568528,
+            "expectancy": -0.00761239
+          },
+          {
+            "group": "AVAX/USDT:USDT",
+            "sampleCount": 322,
+            "validLabelCount": 322,
+            "averageForwardReturn": -0.00365467,
+            "profitFactor": 0.69183711,
+            "expectancy": -0.00365467
+          },
+          {
+            "group": "BCH/USDT:USDT",
+            "sampleCount": 359,
+            "validLabelCount": 359,
+            "averageForwardReturn": -0.00724188,
+            "profitFactor": 0.46993439,
+            "expectancy": -0.00724188
+          },
+          {
+            "group": "BTC/USDT:USDT",
+            "sampleCount": 496,
+            "validLabelCount": 496,
+            "averageForwardReturn": -0.00263154,
+            "profitFactor": 0.66177626,
+            "expectancy": -0.00263154
+          },
+          {
+            "group": "DOGE/USDT:USDT",
+            "sampleCount": 397,
+            "validLabelCount": 397,
+            "averageForwardReturn": -0.0002481,
+            "profitFactor": 0.97126451,
+            "expectancy": -0.0002481
+          },
+          {
+            "group": "DOT/USDT:USDT",
+            "sampleCount": 86,
+            "validLabelCount": 86,
+            "averageForwardReturn": 0.00018064,
+            "profitFactor": 1.02131229,
+            "expectancy": 0.00018064
+          },
+          {
+            "group": "ETC/USDT:USDT",
+            "sampleCount": 18,
+            "validLabelCount": 18,
+            "averageForwardReturn": 0.00727034,
+            "profitFactor": 2.28006849,
+            "expectancy": 0.00727034
+          },
+          {
+            "group": "ETH/USDT:USDT",
+            "sampleCount": 429,
+            "validLabelCount": 429,
+            "averageForwardReturn": -0.00239855,
+            "profitFactor": 0.74748692,
+            "expectancy": -0.00239855
+          },
+          {
+            "group": "FIL/USDT:USDT",
+            "sampleCount": 31,
+            "validLabelCount": 31,
+            "averageForwardReturn": 0.00164196,
+            "profitFactor": 1.18731185,
+            "expectancy": 0.00164196
+          },
+          {
+            "group": "LINK/USDT:USDT",
+            "sampleCount": 444,
+            "validLabelCount": 444,
+            "averageForwardReturn": 2.015e-05,
+            "profitFactor": 1.00230507,
+            "expectancy": 2.015e-05
+          },
+          {
+            "group": "LTC/USDT:USDT",
+            "sampleCount": 374,
+            "validLabelCount": 374,
+            "averageForwardReturn": 0.00013264,
+            "profitFactor": 1.01848787,
+            "expectancy": 0.00013264
+          },
+          {
+            "group": "NEAR/USDT:USDT",
+            "sampleCount": 15,
+            "validLabelCount": 15,
+            "averageForwardReturn": -0.00243249,
+            "profitFactor": 0.69573997,
+            "expectancy": -0.00243249
+          },
+          {
+            "group": "OP/USDT:USDT",
+            "sampleCount": 1,
+            "validLabelCount": 1,
+            "averageForwardReturn": -0.01182432,
+            "profitFactor": 0.0,
+            "expectancy": -0.01182432
+          },
+          {
+            "group": "PEPE/USDT:USDT",
+            "sampleCount": 124,
+            "validLabelCount": 124,
+            "averageForwardReturn": -0.00443427,
+            "profitFactor": 0.66345427,
+            "expectancy": -0.00443427
+          },
+          {
+            "group": "SOL/USDT:USDT",
+            "sampleCount": 376,
+            "validLabelCount": 374,
+            "averageForwardReturn": -0.00201836,
+            "profitFactor": 0.78492859,
+            "expectancy": -0.00201836
+          },
+          {
+            "group": "SUI/USDT:USDT",
+            "sampleCount": 97,
+            "validLabelCount": 97,
+            "averageForwardReturn": -0.00317377,
+            "profitFactor": 0.71709983,
+            "expectancy": -0.00317377
+          },
+          {
+            "group": "TRX/USDT:USDT",
+            "sampleCount": 121,
+            "validLabelCount": 121,
+            "averageForwardReturn": 0.00028608,
+            "profitFactor": 1.0859483,
+            "expectancy": 0.00028608
+          },
+          {
+            "group": "UNI/USDT:USDT",
+            "sampleCount": 106,
+            "validLabelCount": 106,
+            "averageForwardReturn": -0.00750599,
+            "profitFactor": 0.46768524,
+            "expectancy": -0.00750599
+          },
+          {
+            "group": "XRP/USDT:USDT",
+            "sampleCount": 492,
+            "validLabelCount": 492,
+            "averageForwardReturn": -0.00053361,
+            "profitFactor": 0.92669884,
+            "expectancy": -0.00053361
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.29411765,
+        "usableGroupCount": 17
+      },
+      "regimeStability": {
+        "rows": [
+          {
+            "group": "range",
+            "sampleCount": 3565,
+            "validLabelCount": 3563,
+            "averageForwardReturn": -0.00285028,
+            "profitFactor": 0.7013879,
+            "expectancy": -0.00285028
+          },
+          {
+            "group": "trend_up",
+            "sampleCount": 1110,
+            "validLabelCount": 1110,
+            "averageForwardReturn": -0.00025416,
+            "profitFactor": 0.97188963,
+            "expectancy": -0.00025416
+          },
+          {
+            "group": "volatile_range",
+            "sampleCount": 100,
+            "validLabelCount": 100,
+            "averageForwardReturn": -0.00025289,
+            "profitFactor": 0.97484816,
+            "expectancy": -0.00025289
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.0,
+        "usableGroupCount": 3
+      },
+      "liquidityStability": {
+        "rows": [
+          {
+            "group": "high",
+            "sampleCount": 3191,
+            "validLabelCount": 3189,
+            "averageForwardReturn": -0.00258727,
+            "profitFactor": 0.73050743,
+            "expectancy": -0.00258727
+          },
+          {
+            "group": "low",
+            "sampleCount": 146,
+            "validLabelCount": 146,
+            "averageForwardReturn": 0.00041863,
+            "profitFactor": 1.0955837,
+            "expectancy": 0.00041863
+          },
+          {
+            "group": "medium",
+            "sampleCount": 1438,
+            "validLabelCount": 1438,
+            "averageForwardReturn": -0.00158087,
+            "profitFactor": 0.8352117,
+            "expectancy": -0.00158087
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.33333333,
+        "usableGroupCount": 3
+      },
+      "warnings": [
+        "HYP-006 not stable across months by the V13.4.26 research rule."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-007",
+      "hypothesisName": "Liquidity Gate First",
+      "supportLevel": "no_support",
+      "sampleCount": 124111,
+      "conditionPassCount": 50813,
+      "conditionPassRate": 0.40941576,
+      "validLabelCount": 50670,
+      "primaryHorizon": 12,
+      "averageForwardReturn": -0.00085053,
+      "medianForwardReturn": -0.00150398,
+      "hitTpBeforeSlProbability": 0.07718571,
+      "hitSlBeforeTpProbability": 0.30047365,
+      "profitFactor": 0.91744476,
+      "expectancy": -0.00085053,
+      "averageMfe": 0.02071542,
+      "averageMae": -0.0216251,
+      "averageExcessReturnVsBTC": -9.23e-05,
+      "perHorizon": {
+        "4": {
+          "validLabelCount": 50766,
+          "averageForwardReturn": -0.00028692,
+          "medianForwardReturn": -0.00049459,
+          "profitFactor": 0.94934567,
+          "expectancy": -0.00028692,
+          "hitTpBeforeSlProbability": 0.02204231,
+          "hitSlBeforeTpProbability": 0.11679077,
+          "averageMfe": 0.01176169,
+          "averageMae": -0.01220511,
+          "averageExcessReturnVsBTC": -4.651e-05
+        },
+        "8": {
+          "validLabelCount": 50717,
+          "averageForwardReturn": -0.00058363,
+          "medianForwardReturn": -0.00091262,
+          "profitFactor": 0.92950159,
+          "expectancy": -0.00058363,
+          "hitTpBeforeSlProbability": 0.05092967,
+          "hitSlBeforeTpProbability": 0.21897983,
+          "averageMfe": 0.01678308,
+          "averageMae": -0.01748743,
+          "averageExcessReturnVsBTC": -8.684e-05
+        },
+        "12": {
+          "validLabelCount": 50670,
+          "averageForwardReturn": -0.00085053,
+          "medianForwardReturn": -0.00150398,
+          "profitFactor": 0.91744476,
+          "expectancy": -0.00085053,
+          "hitTpBeforeSlProbability": 0.07718571,
+          "hitSlBeforeTpProbability": 0.30047365,
+          "averageMfe": 0.02071542,
+          "averageMae": -0.0216251,
+          "averageExcessReturnVsBTC": -9.23e-05
+        },
+        "24": {
+          "validLabelCount": 50528,
+          "averageForwardReturn": -0.0017757,
+          "medianForwardReturn": -0.00247856,
+          "profitFactor": 0.88343631,
+          "expectancy": -0.0017757,
+          "hitTpBeforeSlProbability": 0.14316814,
+          "hitSlBeforeTpProbability": 0.45147245,
+          "averageMfe": 0.02975407,
+          "averageMae": -0.0311685,
+          "averageExcessReturnVsBTC": -0.00022151
+        }
+      },
+      "monthlyStability": {
+        "rows": [
+          {
+            "group": "2026-01",
+            "sampleCount": 8390,
+            "validLabelCount": 8390,
+            "averageForwardReturn": -0.00193584,
+            "profitFactor": 0.81332722,
+            "expectancy": -0.00193584
+          },
+          {
+            "group": "2026-02",
+            "sampleCount": 7572,
+            "validLabelCount": 7572,
+            "averageForwardReturn": -0.00228966,
+            "profitFactor": 0.84160603,
+            "expectancy": -0.00228966
+          },
+          {
+            "group": "2026-03",
+            "sampleCount": 8363,
+            "validLabelCount": 8363,
+            "averageForwardReturn": -0.00043451,
+            "profitFactor": 0.95216121,
+            "expectancy": -0.00043451
+          },
+          {
+            "group": "2026-04",
+            "sampleCount": 8442,
+            "validLabelCount": 8442,
+            "averageForwardReturn": 0.0021531,
+            "profitFactor": 1.26731912,
+            "expectancy": 0.0021531
+          },
+          {
+            "group": "2026-05",
+            "sampleCount": 8667,
+            "validLabelCount": 8667,
+            "averageForwardReturn": -0.00074594,
+            "profitFactor": 0.91595947,
+            "expectancy": -0.00074594
+          },
+          {
+            "group": "2026-06",
+            "sampleCount": 8347,
+            "validLabelCount": 8347,
+            "averageForwardReturn": -0.00379775,
+            "profitFactor": 0.69194888,
+            "expectancy": -0.00379775
+          },
+          {
+            "group": "2026-07",
+            "sampleCount": 1032,
+            "validLabelCount": 889,
+            "averageForwardReturn": 0.01586577,
+            "profitFactor": 8.91392081,
+            "expectancy": 0.01586577
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.28571429,
+        "usableGroupCount": 7
+      },
+      "pairStability": {
+        "rows": [
+          {
+            "group": "AAVE/USDT:USDT",
+            "sampleCount": 647,
+            "validLabelCount": 642,
+            "averageForwardReturn": 0.00276301,
+            "profitFactor": 1.23585319,
+            "expectancy": 0.00276301
+          },
+          {
+            "group": "ADA/USDT:USDT",
+            "sampleCount": 4432,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00134461,
+            "profitFactor": 0.87166328,
+            "expectancy": -0.00134461
+          },
+          {
+            "group": "APT/USDT:USDT",
+            "sampleCount": 89,
+            "validLabelCount": 89,
+            "averageForwardReturn": -0.00394524,
+            "profitFactor": 0.66866012,
+            "expectancy": -0.00394524
+          },
+          {
+            "group": "ARB/USDT:USDT",
+            "sampleCount": 59,
+            "validLabelCount": 59,
+            "averageForwardReturn": -0.00829843,
+            "profitFactor": 0.51076785,
+            "expectancy": -0.00829843
+          },
+          {
+            "group": "ATOM/USDT:USDT",
+            "sampleCount": 17,
+            "validLabelCount": 17,
+            "averageForwardReturn": 0.00305727,
+            "profitFactor": 1.42867844,
+            "expectancy": 0.00305727
+          },
+          {
+            "group": "AVAX/USDT:USDT",
+            "sampleCount": 491,
+            "validLabelCount": 490,
+            "averageForwardReturn": 0.00043431,
+            "profitFactor": 1.0494932,
+            "expectancy": 0.00043431
+          },
+          {
+            "group": "BCH/USDT:USDT",
+            "sampleCount": 4432,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00232543,
+            "profitFactor": 0.75000987,
+            "expectancy": -0.00232543
+          },
+          {
+            "group": "BTC/USDT:USDT",
+            "sampleCount": 4437,
+            "validLabelCount": 4425,
+            "averageForwardReturn": -0.00076681,
+            "profitFactor": 0.87783936,
+            "expectancy": -0.00076681
+          },
+          {
+            "group": "DOGE/USDT:USDT",
+            "sampleCount": 4432,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.0008504,
+            "profitFactor": 0.90875298,
+            "expectancy": -0.0008504
+          },
+          {
+            "group": "DOT/USDT:USDT",
+            "sampleCount": 315,
+            "validLabelCount": 315,
+            "averageForwardReturn": 0.00329022,
+            "profitFactor": 1.2692372,
+            "expectancy": 0.00329022
+          },
+          {
+            "group": "ETC/USDT:USDT",
+            "sampleCount": 42,
+            "validLabelCount": 40,
+            "averageForwardReturn": -0.01057795,
+            "profitFactor": 0.44292462,
+            "expectancy": -0.01057795
+          },
+          {
+            "group": "ETH/USDT:USDT",
+            "sampleCount": 4437,
+            "validLabelCount": 4425,
+            "averageForwardReturn": -0.00114402,
+            "profitFactor": 0.86591911,
+            "expectancy": -0.00114402
+          },
+          {
+            "group": "FIL/USDT:USDT",
+            "sampleCount": 4432,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00077098,
+            "profitFactor": 0.93478571,
+            "expectancy": -0.00077098
+          },
+          {
+            "group": "INJ/USDT:USDT",
+            "sampleCount": 179,
+            "validLabelCount": 179,
+            "averageForwardReturn": -0.00767332,
+            "profitFactor": 0.65396821,
+            "expectancy": -0.00767332
+          },
+          {
+            "group": "LINK/USDT:USDT",
+            "sampleCount": 1186,
+            "validLabelCount": 1185,
+            "averageForwardReturn": -0.00286577,
+            "profitFactor": 0.73084013,
+            "expectancy": -0.00286577
+          },
+          {
+            "group": "LTC/USDT:USDT",
+            "sampleCount": 941,
+            "validLabelCount": 940,
+            "averageForwardReturn": -0.00243179,
+            "profitFactor": 0.74230213,
+            "expectancy": -0.00243179
+          },
+          {
+            "group": "NEAR/USDT:USDT",
+            "sampleCount": 1127,
+            "validLabelCount": 1116,
+            "averageForwardReturn": 0.00424368,
+            "profitFactor": 1.25446639,
+            "expectancy": 0.00424368
+          },
+          {
+            "group": "OP/USDT:USDT",
+            "sampleCount": 133,
+            "validLabelCount": 133,
+            "averageForwardReturn": -0.02317546,
+            "profitFactor": 0.24805386,
+            "expectancy": -0.02317546
+          },
+          {
+            "group": "ORDI/USDT:USDT",
+            "sampleCount": 474,
+            "validLabelCount": 474,
+            "averageForwardReturn": 0.01937957,
+            "profitFactor": 1.59700874,
+            "expectancy": 0.01937957
+          },
+          {
+            "group": "PEPE/USDT:USDT",
+            "sampleCount": 4432,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00051702,
+            "profitFactor": 0.95641333,
+            "expectancy": -0.00051702
+          },
+          {
+            "group": "SEI/USDT:USDT",
+            "sampleCount": 6,
+            "validLabelCount": 6,
+            "averageForwardReturn": -0.02807323,
+            "profitFactor": 0.17115042,
+            "expectancy": -0.02807323
+          },
+          {
+            "group": "SOL/USDT:USDT",
+            "sampleCount": 4437,
+            "validLabelCount": 4425,
+            "averageForwardReturn": -0.00083717,
+            "profitFactor": 0.91057581,
+            "expectancy": -0.00083717
+          },
+          {
+            "group": "SUI/USDT:USDT",
+            "sampleCount": 4432,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00118899,
+            "profitFactor": 0.8958454,
+            "expectancy": -0.00118899
+          },
+          {
+            "group": "TIA/USDT:USDT",
+            "sampleCount": 25,
+            "validLabelCount": 25,
+            "averageForwardReturn": -0.02233378,
+            "profitFactor": 0.11589798,
+            "expectancy": -0.02233378
+          },
+          {
+            "group": "TRX/USDT:USDT",
+            "sampleCount": 118,
+            "validLabelCount": 117,
+            "averageForwardReturn": -0.00085411,
+            "profitFactor": 0.80049942,
+            "expectancy": -0.00085411
+          },
+          {
+            "group": "UNI/USDT:USDT",
+            "sampleCount": 449,
+            "validLabelCount": 448,
+            "averageForwardReturn": 0.00014994,
+            "profitFactor": 1.01022423,
+            "expectancy": 0.00014994
+          },
+          {
+            "group": "WIF/USDT:USDT",
+            "sampleCount": 180,
+            "validLabelCount": 180,
+            "averageForwardReturn": -0.00204411,
+            "profitFactor": 0.89167713,
+            "expectancy": -0.00204411
+          },
+          {
+            "group": "XRP/USDT:USDT",
+            "sampleCount": 4432,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00101264,
+            "profitFactor": 0.88174487,
+            "expectancy": -0.00101264
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.23076923,
+        "usableGroupCount": 26
+      },
+      "regimeStability": {
+        "rows": [
+          {
+            "group": "range",
+            "sampleCount": 20534,
+            "validLabelCount": 20472,
+            "averageForwardReturn": -0.00152344,
+            "profitFactor": 0.83825054,
+            "expectancy": -0.00152344
+          },
+          {
+            "group": "trend_down",
+            "sampleCount": 13110,
+            "validLabelCount": 13081,
+            "averageForwardReturn": -0.0011323,
+            "profitFactor": 0.8944893,
+            "expectancy": -0.0011323
+          },
+          {
+            "group": "trend_up",
+            "sampleCount": 13261,
+            "validLabelCount": 13221,
+            "averageForwardReturn": -0.00019662,
+            "profitFactor": 0.981391,
+            "expectancy": -0.00019662
+          },
+          {
+            "group": "unknown",
+            "sampleCount": 10,
+            "validLabelCount": 10,
+            "averageForwardReturn": 0.00810201,
+            "profitFactor": 4.83046666,
+            "expectancy": 0.00810201
+          },
+          {
+            "group": "volatile_range",
+            "sampleCount": 3898,
+            "validLabelCount": 3886,
+            "averageForwardReturn": 0.00139515,
+            "profitFactor": 1.11036898,
+            "expectancy": 0.00139515
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.25,
+        "usableGroupCount": 4
+      },
+      "liquidityStability": {
+        "rows": [
+          {
+            "group": "high",
+            "sampleCount": 44335,
+            "validLabelCount": 44215,
+            "averageForwardReturn": -0.00107575,
+            "profitFactor": 0.88901472,
+            "expectancy": -0.00107575
+          },
+          {
+            "group": "low",
+            "sampleCount": 668,
+            "validLabelCount": 665,
+            "averageForwardReturn": -0.00976609,
+            "profitFactor": 0.47393854,
+            "expectancy": -0.00976609
+          },
+          {
+            "group": "medium",
+            "sampleCount": 5810,
+            "validLabelCount": 5790,
+            "averageForwardReturn": 0.00189333,
+            "profitFactor": 1.13513437,
+            "expectancy": 0.00189333
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.33333333,
+        "usableGroupCount": 3
+      },
+      "warnings": [
+        "HYP-007 not stable across months by the V13.4.26 research rule."
+      ]
+    },
+    {
+      "hypothesisId": "HYP-008",
+      "hypothesisName": "BuyHoldBTC Benchmark Requirement",
+      "supportLevel": "no_support",
+      "sampleCount": 124111,
+      "conditionPassCount": 123900,
+      "conditionPassRate": 0.99829991,
+      "validLabelCount": 123775,
+      "primaryHorizon": 12,
+      "averageForwardReturn": -0.0008202,
+      "medianForwardReturn": -0.00141343,
+      "hitTpBeforeSlProbability": 0.08053323,
+      "hitSlBeforeTpProbability": 0.31736619,
+      "profitFactor": 0.92159311,
+      "expectancy": -0.0008202,
+      "averageMfe": 0.02110499,
+      "averageMae": -0.02206517,
+      "averageExcessReturnVsBTC": -4.258e-05,
+      "perHorizon": {
+        "4": {
+          "validLabelCount": 123900,
+          "averageForwardReturn": -0.00027949,
+          "medianForwardReturn": -0.00052711,
+          "profitFactor": 0.95179589,
+          "expectancy": -0.00027949,
+          "hitTpBeforeSlProbability": 0.02069411,
+          "hitSlBeforeTpProbability": 0.12063761,
+          "averageMfe": 0.0119335,
+          "averageMae": -0.01242797,
+          "averageExcessReturnVsBTC": -2.006e-05
+        },
+        "8": {
+          "validLabelCount": 123875,
+          "averageForwardReturn": -0.00054769,
+          "medianForwardReturn": -0.0009194,
+          "profitFactor": 0.93496669,
+          "expectancy": -0.00054769,
+          "hitTpBeforeSlProbability": 0.05185873,
+          "hitSlBeforeTpProbability": 0.23091826,
+          "averageMfe": 0.01709403,
+          "averageMae": -0.01783188,
+          "averageExcessReturnVsBTC": -3.091e-05
+        },
+        "12": {
+          "validLabelCount": 123775,
+          "averageForwardReturn": -0.0008202,
+          "medianForwardReturn": -0.00141343,
+          "profitFactor": 0.92159311,
+          "expectancy": -0.0008202,
+          "hitTpBeforeSlProbability": 0.08053323,
+          "hitSlBeforeTpProbability": 0.31736619,
+          "averageMfe": 0.02110499,
+          "averageMae": -0.02206517,
+          "averageExcessReturnVsBTC": -4.258e-05
+        },
+        "24": {
+          "validLabelCount": 123439,
+          "averageForwardReturn": -0.00171166,
+          "medianForwardReturn": -0.00238819,
+          "profitFactor": 0.88813773,
+          "expectancy": -0.00171166,
+          "hitTpBeforeSlProbability": 0.15085994,
+          "hitSlBeforeTpProbability": 0.46947885,
+          "averageMfe": 0.03034264,
+          "averageMae": -0.03177538,
+          "averageExcessReturnVsBTC": -0.00013986
+        }
+      },
+      "monthlyStability": {
+        "rows": [
+          {
+            "group": "2026-01",
+            "sampleCount": 20832,
+            "validLabelCount": 20832,
+            "averageForwardReturn": -0.00224203,
+            "profitFactor": 0.79496583,
+            "expectancy": -0.00224203
+          },
+          {
+            "group": "2026-02",
+            "sampleCount": 18816,
+            "validLabelCount": 18816,
+            "averageForwardReturn": -0.00213749,
+            "profitFactor": 0.84866863,
+            "expectancy": -0.00213749
+          },
+          {
+            "group": "2026-03",
+            "sampleCount": 20832,
+            "validLabelCount": 20832,
+            "averageForwardReturn": -0.00065954,
+            "profitFactor": 0.92736953,
+            "expectancy": -0.00065954
+          },
+          {
+            "group": "2026-04",
+            "sampleCount": 20160,
+            "validLabelCount": 20160,
+            "averageForwardReturn": 0.00183328,
+            "profitFactor": 1.22487327,
+            "expectancy": 0.00183328
+          },
+          {
+            "group": "2026-05",
+            "sampleCount": 20832,
+            "validLabelCount": 20832,
+            "averageForwardReturn": 0.00022223,
+            "profitFactor": 1.02456823,
+            "expectancy": 0.00022223
+          },
+          {
+            "group": "2026-06",
+            "sampleCount": 20160,
+            "validLabelCount": 20160,
+            "averageForwardReturn": -0.00339735,
+            "profitFactor": 0.72921243,
+            "expectancy": -0.00339735
+          },
+          {
+            "group": "2026-07",
+            "sampleCount": 2268,
+            "validLabelCount": 2143,
+            "averageForwardReturn": 0.01215397,
+            "profitFactor": 5.1061085,
+            "expectancy": 0.01215397
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.42857143,
+        "usableGroupCount": 7
+      },
+      "pairStability": {
+        "rows": [
+          {
+            "group": "AAVE/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00091051,
+            "profitFactor": 0.91934993,
+            "expectancy": -0.00091051
+          },
+          {
+            "group": "ADA/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00134461,
+            "profitFactor": 0.87166328,
+            "expectancy": -0.00134461
+          },
+          {
+            "group": "APT/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.0021746,
+            "profitFactor": 0.8249818,
+            "expectancy": -0.0021746
+          },
+          {
+            "group": "ARB/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00187413,
+            "profitFactor": 0.84163576,
+            "expectancy": -0.00187413
+          },
+          {
+            "group": "ATOM/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00025596,
+            "profitFactor": 0.97206767,
+            "expectancy": -0.00025596
+          },
+          {
+            "group": "AVAX/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00125589,
+            "profitFactor": 0.87037179,
+            "expectancy": -0.00125589
+          },
+          {
+            "group": "BCH/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00232543,
+            "profitFactor": 0.75000987,
+            "expectancy": -0.00232543
+          },
+          {
+            "group": "BTC/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4425,
+            "averageForwardReturn": -0.00076681,
+            "profitFactor": 0.87783936,
+            "expectancy": -0.00076681
+          },
+          {
+            "group": "DOGE/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.0008504,
+            "profitFactor": 0.90875298,
+            "expectancy": -0.0008504
+          },
+          {
+            "group": "DOT/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00152058,
+            "profitFactor": 0.85879446,
+            "expectancy": -0.00152058
+          },
+          {
+            "group": "ETC/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00099926,
+            "profitFactor": 0.88943212,
+            "expectancy": -0.00099926
+          },
+          {
+            "group": "ETH/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4425,
+            "averageForwardReturn": -0.00114402,
+            "profitFactor": 0.86591911,
+            "expectancy": -0.00114402
+          },
+          {
+            "group": "FIL/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00077098,
+            "profitFactor": 0.93478571,
+            "expectancy": -0.00077098
+          },
+          {
+            "group": "INJ/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": 0.00097718,
+            "profitFactor": 1.07953581,
+            "expectancy": 0.00097718
+          },
+          {
+            "group": "LINK/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00089723,
+            "profitFactor": 0.90059254,
+            "expectancy": -0.00089723
+          },
+          {
+            "group": "LTC/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00131634,
+            "profitFactor": 0.82371433,
+            "expectancy": -0.00131634
+          },
+          {
+            "group": "NEAR/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": 0.00141886,
+            "profitFactor": 1.12001308,
+            "expectancy": 0.00141886
+          },
+          {
+            "group": "OP/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00190964,
+            "profitFactor": 0.85539359,
+            "expectancy": -0.00190964
+          },
+          {
+            "group": "ORDI/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": 0.00129727,
+            "profitFactor": 1.08080785,
+            "expectancy": 0.00129727
+          },
+          {
+            "group": "PEPE/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00051702,
+            "profitFactor": 0.95641333,
+            "expectancy": -0.00051702
+          },
+          {
+            "group": "SEI/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00180908,
+            "profitFactor": 0.8382499,
+            "expectancy": -0.00180908
+          },
+          {
+            "group": "SOL/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4425,
+            "averageForwardReturn": -0.00083717,
+            "profitFactor": 0.91057581,
+            "expectancy": -0.00083717
+          },
+          {
+            "group": "SUI/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00118899,
+            "profitFactor": 0.8958454,
+            "expectancy": -0.00118899
+          },
+          {
+            "group": "TIA/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": 0.00021334,
+            "profitFactor": 1.01618119,
+            "expectancy": 0.00021334
+          },
+          {
+            "group": "TRX/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": 0.00040129,
+            "profitFactor": 1.12660117,
+            "expectancy": 0.00040129
+          },
+          {
+            "group": "UNI/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00108746,
+            "profitFactor": 0.90293796,
+            "expectancy": -0.00108746
+          },
+          {
+            "group": "WIF/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00050458,
+            "profitFactor": 0.96168359,
+            "expectancy": -0.00050458
+          },
+          {
+            "group": "XRP/USDT:USDT",
+            "sampleCount": 4425,
+            "validLabelCount": 4420,
+            "averageForwardReturn": -0.00101264,
+            "profitFactor": 0.88174487,
+            "expectancy": -0.00101264
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.17857143,
+        "usableGroupCount": 28
+      },
+      "regimeStability": {
+        "rows": [
+          {
+            "group": "range",
+            "sampleCount": 44004,
+            "validLabelCount": 43949,
+            "averageForwardReturn": -0.00148206,
+            "profitFactor": 0.84439683,
+            "expectancy": -0.00148206
+          },
+          {
+            "group": "trend_down",
+            "sampleCount": 32200,
+            "validLabelCount": 32150,
+            "averageForwardReturn": -0.00084,
+            "profitFactor": 0.92196104,
+            "expectancy": -0.00084
+          },
+          {
+            "group": "trend_up",
+            "sampleCount": 32368,
+            "validLabelCount": 32368,
+            "averageForwardReturn": -0.00018596,
+            "profitFactor": 0.98241101,
+            "expectancy": -0.00018596
+          },
+          {
+            "group": "unknown",
+            "sampleCount": 28,
+            "validLabelCount": 28,
+            "averageForwardReturn": 0.0098847,
+            "profitFactor": 8.72792352,
+            "expectancy": 0.0098847
+          },
+          {
+            "group": "volatile_range",
+            "sampleCount": 15300,
+            "validLabelCount": 15280,
+            "averageForwardReturn": -0.00023806,
+            "profitFactor": 0.9806404,
+            "expectancy": -0.00023806
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.2,
+        "usableGroupCount": 5
+      },
+      "liquidityStability": {
+        "rows": [
+          {
+            "group": "high",
+            "sampleCount": 44250,
+            "validLabelCount": 44215,
+            "averageForwardReturn": -0.00107575,
+            "profitFactor": 0.88901472,
+            "expectancy": -0.00107575
+          },
+          {
+            "group": "low",
+            "sampleCount": 39825,
+            "validLabelCount": 39780,
+            "averageForwardReturn": -0.00082565,
+            "profitFactor": 0.92218251,
+            "expectancy": -0.00082565
+          },
+          {
+            "group": "medium",
+            "sampleCount": 39825,
+            "validLabelCount": 39780,
+            "averageForwardReturn": -0.00053072,
+            "profitFactor": 0.95246761,
+            "expectancy": -0.00053072
+          }
+        ],
+        "stable": false,
+        "positiveGroupRatio": 0.0,
+        "usableGroupCount": 3
+      },
+      "warnings": [
+        "HYP-008 not stable across months by the V13.4.26 research rule."
+      ]
+    }
+  ],
+  "topSupportedHypotheses": [],
+  "unsupportedHypotheses": [
+    "HYP-001",
+    "HYP-002",
+    "HYP-004",
+    "HYP-006",
+    "HYP-007",
+    "HYP-008"
+  ],
+  "insufficientSampleHypotheses": [],
+  "hypothesesWithPositiveExcessVsBTC": [
+    "HYP-002"
+  ],
+  "stabilityWarnings": [
+    "HYP-001 not stable across months by the V13.4.26 research rule.",
+    "HYP-002 not stable across months by the V13.4.26 research rule.",
+    "HYP-004 not stable across months by the V13.4.26 research rule.",
+    "HYP-006 not stable across months by the V13.4.26 research rule.",
+    "HYP-007 not stable across months by the V13.4.26 research rule.",
+    "HYP-008 not stable across months by the V13.4.26 research rule."
+  ],
+  "recommendations": [
+    {
+      "type": "data_expansion",
+      "hypothesisIds": [],
+      "reason": "No high-priority hypothesis reached research support under V13.4.26 gates."
+    },
+    {
+      "type": "safety_boundary",
+      "reason": "supportLevel is research evidence only; it is not a trading gate, Dry-run approval, order, or live trading permission."
+    }
+  ],
+  "nextStep": "V13.4.27 - Research Direction Reset / Data Expansion",
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "warnings": [
+    "Dynamic universe membership not requested; rows use local loaded pair fallback membership.",
+    "Research-only factor computation. No backtest was run.",
+    "No factor output is a trade signal, order, or live execution instruction.",
+    "Full factor panel was rebuilt in memory from local public OHLCV; full panel was not committed."
+  ],
+  "generatedAt": "2026-07-05T01:06:05.588442+00:00",
+  "outputReportPath": "reports/v13_4_26_hypothesis_validation_report.json",
+  "outputSummaryPath": "reports/v13_4_26_hypothesis_validation_summary.md",
+  "outputSamplePath": "reports/v13_4_26_hypothesis_validation_dataset_sample.json",
+  "outputRecommendationsPath": "reports/v13_4_26_hypothesis_recommendations.json",
+  "source": "alphapilot_v13_4_26_hypothesis_validation"
+}

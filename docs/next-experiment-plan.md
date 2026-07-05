@@ -1,6 +1,6 @@
 # Next Experiment Plan
 
-Recommended next version:
+Previous recommended next version:
 
 ```text
 V13.4.26 - Factor Hypothesis Validation Dataset
@@ -48,3 +48,26 @@ A research hypothesis should not move toward strategy design unless it has:
 
 Passing this gate would still not be Dry-run approval. It would only justify a
 future strategy design discussion.
+
+## V13.4.26 Result
+
+V13.4.26 completed this validation step and found no high-priority hypothesis
+with research support under the V13.4.26 gates.
+
+Observed summary:
+
+```text
+validatedHypothesisCount: 6
+topSupportedHypotheses: none
+unsupportedHypotheses: HYP-001, HYP-002, HYP-004, HYP-006, HYP-007, HYP-008
+hypothesesWithPositiveExcessVsBTC: HYP-002
+```
+
+HYP-002 had positive BTC excess return, but profit factor stayed below 1 and
+stability failed.
+
+Current next step:
+
+```text
+V13.4.27 - Research Direction Reset / Data Expansion
+```

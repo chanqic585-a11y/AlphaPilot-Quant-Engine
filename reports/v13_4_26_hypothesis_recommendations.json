@@ -1,0 +1,32 @@
+{
+  "reportId": "v13_4_26_hypothesis_recommendations",
+  "version": "V13.4.26",
+  "nextStep": "V13.4.27 - Research Direction Reset / Data Expansion",
+  "topSupportedHypotheses": [],
+  "unsupportedHypotheses": [
+    "HYP-001",
+    "HYP-002",
+    "HYP-004",
+    "HYP-006",
+    "HYP-007",
+    "HYP-008"
+  ],
+  "insufficientSampleHypotheses": [],
+  "hypothesesWithPositiveExcessVsBTC": [
+    "HYP-002"
+  ],
+  "recommendations": [
+    {
+      "type": "data_expansion",
+      "hypothesisIds": [],
+      "reason": "No high-priority hypothesis reached research support under V13.4.26 gates."
+    },
+    {
+      "type": "safety_boundary",
+      "reason": "supportLevel is research evidence only; it is not a trading gate, Dry-run approval, order, or live trading permission."
+    }
+  ],
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "generatedAt": "2026-07-05T01:06:05.588442+00:00"
+}

@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.25 - Strategy Research Factory: Factor Hypothesis Mining
+AlphaPilot V13.4.26 - Factor Hypothesis Validation Dataset
 ```
 
 ## Positioning
@@ -1491,8 +1491,64 @@ no real orders
 no auto trading
 ```
 
+## V13.4.26 Factor Hypothesis Validation Dataset
+
+V13.4.26 validates the high-priority research hypotheses from V13.4.25 against
+a rebuilt full FactorDataPanel and forward labels.
+
+Run the validator:
+
+```powershell
+python -m alphapilot.research_factory.validate_hypotheses
+```
+
+PowerShell wrapper:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\validate_hypotheses.ps1
+```
+
+Outputs:
+
+```text
+reports/v13_4_26_hypothesis_validation_report.json
+reports/v13_4_26_hypothesis_validation_summary.md
+reports/v13_4_26_hypothesis_validation_dataset_sample.json
+reports/v13_4_26_hypothesis_recommendations.json
+docs/V13.4.26-hypothesis-validation-dataset.md
+docs/hypothesis-validation-methodology.md
+docs/no-lookahead-hypothesis-validation.md
+docs/hypothesis-support-vs-trading-approval.md
+```
+
+Validation result:
+
+```text
+sampleCount: 124111
+validatedHypothesisCount: 6
+topSupportedHypotheses: none
+unsupportedHypotheses: HYP-001, HYP-002, HYP-004, HYP-006, HYP-007, HYP-008
+hypothesesWithPositiveExcessVsBTC: HYP-002
+nextStep: V13.4.27 - Research Direction Reset / Data Expansion
+```
+
+V13.4.26 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no strategy implementation
+no backtest execution
+no Dry-run
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+```
+
 ## Next Versions
 
-- V13.4.26: Factor Hypothesis Validation Dataset.
+- V13.4.27: Research Direction Reset / Data Expansion.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.
