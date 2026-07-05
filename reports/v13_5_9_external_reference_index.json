@@ -1,0 +1,18 @@
+[
+  {
+    "name": "yydhYYDH/alpha101",
+    "url": "https://github.com/yydhYYDH/alpha101",
+    "license": "unknown_from_raw_license_fetch",
+    "localReference": "docs/future-factor-research-reference-alpha101.md",
+    "usedFor": "factor panel and expression-search design reference",
+    "copiedCodeOrLongText": false
+  },
+  {
+    "name": "ryckli/CryptoAgentPro.beta",
+    "url": "https://github.com/ryckli/CryptoAgentPro.beta",
+    "license": "MIT",
+    "localReference": "docs/future-live-trading-reference-cryptoagentpro-beta.md",
+    "usedFor": "future execution-boundary and risk-gateway design reference",
+    "copiedCodeOrLongText": false
+  }
+]

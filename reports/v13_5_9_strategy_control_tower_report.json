@@ -1,0 +1,289 @@
+{
+  "version": "V13.5.9",
+  "reportId": "v13_5_9_strategy_control_tower_report",
+  "generatedAt": "2026-07-05T20:54:08.883651+00:00",
+  "status": "completed",
+  "objective": "Coordinate existing research candidates into local-paper-only strategy states and route intents without adding execution authority.",
+  "decision": {
+    "controlTowerComputed": true,
+    "activeLocalPaperStrategies": 1,
+    "primaryActiveStrategyId": "v13_5_7_alpha_overlay_fixed_watch",
+    "continueLocalPaperMonitoring": true,
+    "paperTrialApproved": false,
+    "exchangeDryRunReviewReady": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "continue_local_paper_watch_only"
+  },
+  "strategyStages": [
+    "research_candidate",
+    "local_paper_watch",
+    "paper_trial",
+    "dry_run_review",
+    "rejected",
+    "promoted"
+  ],
+  "strategyStates": [
+    {
+      "strategy_id": "v13_5_7_alpha_overlay_fixed_watch",
+      "strategy_name": "V13.5.7 Alpha101-style 4h overlay watch",
+      "source_report": "reports\\v13_5_7_external_alpha_overlay_report.json",
+      "stage": "local_paper_watch",
+      "route_action": "continue_local_paper_watch",
+      "priority": 1,
+      "candidate_pool_id": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+      "reason": "alpha_overlay_local_paper_watch_only",
+      "warnings": [
+        "approved_signal_to_fill_lag_above_5_days",
+        "closed_fill_not_fresh",
+        "paper_closed_fill_not_fresh",
+        "recent_20_reward_risk_below_1_5",
+        "recent_20_win_rate_below_55",
+        "some_approved_signals_skipped_by_concurrency"
+      ],
+      "blockers": [],
+      "metrics": {
+        "tradeCount": 145,
+        "winRatePct": 58.6207,
+        "rewardRiskRatio": 1.8207,
+        "profitFactor": 2.5793,
+        "totalReturnPct": 10568.5947,
+        "maxDrawdownPct": 38.3157,
+        "observedToCostAdjusted2RCloseness": 0.956639,
+        "recentProfitFactor": null,
+        "paperMonitoring": {
+          "tradeCount": 41,
+          "winRatePct": 60.9756,
+          "rewardRiskRatio": 1.6922,
+          "profitFactor": 2.644,
+          "totalReturnPct": 14.9788,
+          "maxDrawdownPct": 3.242758,
+          "latestSignal": null,
+          "latestClosedFill": null,
+          "signalFresh": true,
+          "closedFillFresh": false,
+          "monitoringHealth": "watch"
+        }
+      },
+      "risk_gate": {
+        "strategyId": "v13_5_7_alpha_overlay_fixed_watch",
+        "passedForLocalPaperWatch": true,
+        "exchangeDryRunReviewReady": false,
+        "liveTradingApproved": false,
+        "warnings": [
+          "approved_signal_to_fill_lag_above_5_days",
+          "closed_fill_not_fresh",
+          "paper_closed_fill_not_fresh",
+          "recent_20_reward_risk_below_1_5",
+          "recent_20_win_rate_below_55",
+          "some_approved_signals_skipped_by_concurrency"
+        ],
+        "blockers": [],
+        "checks": {
+          "localPaperOnly": true,
+          "usesApiKey": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "readsRealAccount": false,
+          "readsRealPositions": false,
+          "createsOrders": false,
+          "autoTrading": false
+        }
+      },
+      "evidence": {
+        "targetRMultipleUnchanged": true,
+        "sourceVersion": "V13.5.7",
+        "monitoringVersion": "V13.5.4"
+      }
+    },
+    {
+      "strategy_id": "v13_5_8_adaptive_ml_observer",
+      "strategy_name": "V13.5.8 adaptive ML observer",
+      "source_report": "reports\\v13_5_8_adaptive_ml_factor_report.json",
+      "stage": "research_candidate",
+      "route_action": "observe_only",
+      "priority": 2,
+      "candidate_pool_id": "1h:adaptive_ml_all_high_reward:sl0.025:h30",
+      "reason": "adaptive_ml_no_watch_candidate_passed",
+      "warnings": [
+        "adaptive_ml_no_local_paper_approval"
+      ],
+      "blockers": [],
+      "metrics": {
+        "tradeCount": 1275,
+        "winRatePct": 36.7059,
+        "rewardRiskRatio": 1.6143,
+        "profitFactor": 0.9362,
+        "totalReturnPct": -86.5794,
+        "maxDrawdownPct": 98.3195,
+        "observedToCostAdjusted2RCloseness": 0.908044,
+        "recentProfitFactor": null
+      },
+      "risk_gate": {
+        "passedForLocalPaperWatch": false,
+        "exchangeDryRunReviewReady": false,
+        "liveTradingApproved": false,
+        "checks": {
+          "localPaperOnly": true,
+          "usesApiKey": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "readsRealAccount": false,
+          "readsRealPositions": false,
+          "createsOrders": false,
+          "autoTrading": false
+        }
+      },
+      "evidence": {
+        "adaptiveMLComputed": true,
+        "targetRMultipleUnchanged": true,
+        "localPaperWatchApproved": false,
+        "sourceVersion": "V13.5.8"
+      }
+    }
+  ],
+  "localPaperRouterIntents": [
+    {
+      "intentId": "router-v13-5-9-0001",
+      "strategyId": "v13_5_7_alpha_overlay_fixed_watch",
+      "candidatePoolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+      "intentType": "local_paper_route",
+      "routeAction": "continue_local_paper_watch",
+      "isOrder": false,
+      "requiresHumanReviewBeforeDryRun": true,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false,
+      "riskGate": {
+        "strategyId": "v13_5_7_alpha_overlay_fixed_watch",
+        "passedForLocalPaperWatch": true,
+        "exchangeDryRunReviewReady": false,
+        "liveTradingApproved": false,
+        "warnings": [
+          "approved_signal_to_fill_lag_above_5_days",
+          "closed_fill_not_fresh",
+          "paper_closed_fill_not_fresh",
+          "recent_20_reward_risk_below_1_5",
+          "recent_20_win_rate_below_55",
+          "some_approved_signals_skipped_by_concurrency"
+        ],
+        "blockers": [],
+        "checks": {
+          "localPaperOnly": true,
+          "usesApiKey": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "readsRealAccount": false,
+          "readsRealPositions": false,
+          "createsOrders": false,
+          "autoTrading": false
+        }
+      }
+    },
+    {
+      "intentId": "router-v13-5-9-0002",
+      "strategyId": "v13_5_8_adaptive_ml_observer",
+      "candidatePoolId": "1h:adaptive_ml_all_high_reward:sl0.025:h30",
+      "intentType": "research_observer",
+      "routeAction": "observe_only",
+      "isOrder": false,
+      "requiresHumanReviewBeforeDryRun": true,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false,
+      "riskGate": {
+        "passedForLocalPaperWatch": false,
+        "exchangeDryRunReviewReady": false,
+        "liveTradingApproved": false,
+        "checks": {
+          "localPaperOnly": true,
+          "usesApiKey": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "readsRealAccount": false,
+          "readsRealPositions": false,
+          "createsOrders": false,
+          "autoTrading": false
+        }
+      }
+    }
+  ],
+  "ledgerSummary": {
+    "ledgerPath": "reports\\v13_5_3_local_paper_sandbox_ledger.json",
+    "tradeCount": 41,
+    "winRatePct": 60.9756,
+    "rewardRiskRatio": 1.6922,
+    "profitFactor": 2.644,
+    "totalReturnPct": 14.9788,
+    "maxDrawdownPct": 3.242758
+  },
+  "monitoringSummary": {
+    "monitoringPath": "reports\\v13_5_4_local_paper_monitoring_report.json",
+    "decision": {
+      "localPaperMonitoringActive": true,
+      "monitoringHealth": "watch",
+      "continueLocalPaperMonitoring": true,
+      "exchangeDryRunReviewReady": false,
+      "liveTradingApproved": false,
+      "failReasons": [],
+      "warningReasons": [
+        "recent_20_win_rate_below_55",
+        "recent_20_reward_risk_below_1_5",
+        "closed_fill_not_fresh",
+        "approved_signal_to_fill_lag_above_5_days",
+        "some_approved_signals_skipped_by_concurrency"
+      ],
+      "reason": "local_paper_monitoring_continues_with_decay_warnings"
+    },
+    "paperMetrics": {
+      "tradeCount": 41,
+      "winRatePct": 60.9756,
+      "rewardRiskRatio": 1.6922,
+      "profitFactor": 2.644,
+      "totalReturnPct": 14.9788,
+      "maxDrawdownPct": 3.242758,
+      "latestSignal": null,
+      "latestClosedFill": null,
+      "signalFresh": true,
+      "closedFillFresh": false,
+      "monitoringHealth": "watch"
+    }
+  },
+  "externalReferences": [
+    {
+      "name": "yydhYYDH/alpha101",
+      "url": "https://github.com/yydhYYDH/alpha101",
+      "license": "unknown_from_raw_license_fetch",
+      "localReference": "docs/future-factor-research-reference-alpha101.md",
+      "usedFor": "factor panel and expression-search design reference",
+      "copiedCodeOrLongText": false
+    },
+    {
+      "name": "ryckli/CryptoAgentPro.beta",
+      "url": "https://github.com/ryckli/CryptoAgentPro.beta",
+      "license": "MIT",
+      "localReference": "docs/future-live-trading-reference-cryptoagentpro-beta.md",
+      "usedFor": "future execution-boundary and risk-gateway design reference",
+      "copiedCodeOrLongText": false
+    }
+  ],
+  "safetyBoundary": {
+    "localPaperOnly": true,
+    "usesPublicLocalDataOnly": true,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "readsRealAccount": false,
+    "readsRealPositions": false,
+    "createsOrders": false,
+    "emergencyCloseImplemented": false,
+    "testnetExecutionImplemented": false,
+    "autoTrading": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false
+  },
+  "recommendations": [
+    "Keep V13.5.7 as the only active local paper watch strategy.",
+    "Keep V13.5.8 adaptive ML as observer-only until it passes independent validation.",
+    "Do not move to exchange Dry-run because monitoring still has freshness and decay warnings.",
+    "Use future paper/manual outcomes as strategy evolution samples; do not fabricate actual trade outcomes."
+  ]
+}

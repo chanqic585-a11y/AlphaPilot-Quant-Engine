@@ -2811,9 +2811,69 @@ strategy scheduling, and AI trend analysis. This is documentation only. It does
 not add Trade API, Withdraw API, exchange credentials, account reads, position
 reads, order creation, emergency close, testnet execution, or automatic trading.
 
+The repository also stores a reference-only note for `yydhYYDH/alpha101`:
+
+```text
+docs/future-factor-research-reference-alpha101.md
+```
+
+This records factor-panel, expression-grammar, factor-search, IC-style
+evaluation, and research-service ideas for future AlphaPilot factor work. It
+does not import alpha101, copy source code, create strategies, or approve
+execution.
+
+The combined external reference index is:
+
+```text
+docs/external-repository-reference-index.md
+```
+
+## V13.5.9 Strategy Control Tower and Local Paper Router
+
+V13.5.9 adds a local-paper-only control tower that coordinates existing research
+outputs into strategy states and router intents.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_9_strategy_control_tower.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_9_strategy_control_tower.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/control_tower/strategy_control_tower.py
+alphapilot/reports/generate_v13_5_9_strategy_control_tower_report.py
+scripts/run_v13_5_9_strategy_control_tower.ps1
+reports/v13_5_9_strategy_control_tower_report.json
+reports/v13_5_9_strategy_control_tower_summary.md
+reports/v13_5_9_local_paper_router_intents.json
+reports/v13_5_9_external_reference_index.json
+docs/V13.5.9-strategy-control-tower-local-paper-router.md
+```
+
+V13.5.9 current routing decision:
+
+```text
+V13.5.7 alpha overlay = active local paper watch
+V13.5.8 adaptive ML = observer only
+exchange Dry-run review = not ready
+live trading = not approved
+```
+
+Router intents are not orders. V13.5.9 does not add Trade API, Withdraw API,
+exchange credentials, account reads, position reads, order creation, emergency
+close, testnet execution, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.9: collect fresh public data and run local paper monitoring for the V13.5.7 4h alpha overlay; keep V13.5.8 adaptive rules as research signals only.
-- V13.5.10: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
+- V13.5.10: collect fresh public data and run a new local paper monitoring refresh for the V13.5.7 4h alpha overlay; keep V13.5.8 adaptive rules as observer-only.
+- V13.5.11: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
