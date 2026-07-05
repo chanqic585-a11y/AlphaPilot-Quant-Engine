@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.18 - Non-OKX Expansion Replay
+AlphaPilot V13.5.19 - Risk-Normalized Portfolio Replay
 ```
 
 ## Positioning
@@ -3279,10 +3279,49 @@ V13.5.18 is still research-only. It does not tune parameters, run exchange
 Dry-run, save API keys, read accounts, create orders, or enable automatic
 trading.
 
+## V13.5.19 Risk-Normalized Portfolio Replay
+
+V13.5.19 evaluates the V13.5.18 historical signal log with fixed portfolio-level
+throttles in R-multiple space. The active entry rules and 2R target are not
+changed.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_19_risk_normalized_portfolio_replay.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_19_risk_normalized_portfolio_replay.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/paper_sandbox/risk_normalized_replay.py
+alphapilot/reports/generate_v13_5_19_risk_normalized_portfolio_replay_report.py
+scripts/run_v13_5_19_risk_normalized_portfolio_replay.ps1
+reports/v13_5_19_risk_normalized_portfolio_replay_report.json
+reports/v13_5_19_risk_normalized_portfolio_replay_summary.md
+reports/v13_5_19_best_policy_selected_signals.json
+docs/V13.5.19-risk-normalized-portfolio-replay.md
+```
+
+The local paper refresh review gate is intentionally stricter than a pure
+profit-factor check: enough trades, enough exchanges, enough pairs, reward/risk
+near 2R, controlled max drawdown, and controlled consecutive losses. Passing
+this gate is not exchange Dry-run approval.
+
+V13.5.19 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.19: review active-pool drawdown and exchange-balance failure before any local paper refresh.
-- V13.5.20: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
-- V13.5.21: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
+- V13.5.20: if the local paper refresh review gate passes, prepare a local paper refresh candidate from selected signals only.
+- V13.5.21: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.22: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

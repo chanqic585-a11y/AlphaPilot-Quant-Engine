@@ -1,0 +1,703 @@
+{
+  "version": "V13.5.19",
+  "reportId": "v13_5_19_risk_normalized_portfolio_replay_report",
+  "generatedAt": "2026-07-05T23:35:54.993680+00:00",
+  "inputSignals": "reports\\v13_5_18_non_okx_expansion_signal_log.json",
+  "inputSignalCount": 500,
+  "riskUnit": "1R per selected historical signal",
+  "targetRMultipleUnchanged": 2.0,
+  "policyResults": [
+    {
+      "policyId": "pair_14d_cooldown",
+      "description": "At most one selected signal per pair every fourteen days.",
+      "metrics": {
+        "tradeCount": 264,
+        "winRatePct": 46.9697,
+        "averageWinR": 1.671696,
+        "averageLossR": -0.945965,
+        "profitFactor": 1.565222,
+        "rewardRiskRatio": 1.767186,
+        "totalR": 74.8552,
+        "maxDrawdownR": 7.4706,
+        "maxConsecutiveLosses": 7,
+        "uniquePairs": 36,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 146,
+          "winRatePct": 48.6301,
+          "averageWinR": 1.664844,
+          "averageLossR": -0.951839,
+          "profitFactor": 1.655798,
+          "rewardRiskRatio": 1.749082,
+          "totalR": 46.816,
+          "maxDrawdownR": 8.0141,
+          "maxConsecutiveLosses": 8,
+          "uniquePairs": 32,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 79,
+          "winRatePct": 46.8354,
+          "averageWinR": 1.695523,
+          "averageLossR": -0.952336,
+          "profitFactor": 1.568433,
+          "rewardRiskRatio": 1.780384,
+          "totalR": 22.7363,
+          "maxDrawdownR": 7.7877,
+          "maxConsecutiveLosses": 6,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        },
+        {
+          "tradeCount": 39,
+          "winRatePct": 41.0256,
+          "averageWinR": 1.647001,
+          "averageLossR": -0.915178,
+          "profitFactor": 1.251931,
+          "rewardRiskRatio": 1.79965,
+          "totalR": 5.3029,
+          "maxDrawdownR": 4.5613,
+          "maxConsecutiveLosses": 4,
+          "uniquePairs": 16,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount100": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_2": true,
+          "minRewardRisk1_8": false,
+          "maxDrawdown30R": true,
+          "maxConsecutiveLosses8": true
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "score": 0.622995
+    },
+    {
+      "policyId": "loss_guard_pair_21d",
+      "description": "Seven-day pair cooldown, extended to 21 days after a losing selected trade.",
+      "metrics": {
+        "tradeCount": 262,
+        "winRatePct": 47.3282,
+        "averageWinR": 1.685239,
+        "averageLossR": -0.95188,
+        "profitFactor": 1.590823,
+        "rewardRiskRatio": 1.770432,
+        "totalR": 77.6102,
+        "maxDrawdownR": 8.4474,
+        "maxConsecutiveLosses": 7,
+        "uniquePairs": 36,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 143,
+          "winRatePct": 50.3497,
+          "averageWinR": 1.672824,
+          "averageLossR": -0.9628,
+          "profitFactor": 1.761928,
+          "rewardRiskRatio": 1.737456,
+          "totalR": 52.0845,
+          "maxDrawdownR": 8.0141,
+          "maxConsecutiveLosses": 8,
+          "uniquePairs": 31,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 80,
+          "winRatePct": 43.75,
+          "averageWinR": 1.727072,
+          "averageLossR": -0.953962,
+          "profitFactor": 1.408105,
+          "rewardRiskRatio": 1.810421,
+          "totalR": 17.5192,
+          "maxDrawdownR": 9.7226,
+          "maxConsecutiveLosses": 6,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        },
+        {
+          "tradeCount": 39,
+          "winRatePct": 43.5897,
+          "averageWinR": 1.651697,
+          "averageLossR": -0.912381,
+          "profitFactor": 1.39888,
+          "rewardRiskRatio": 1.810315,
+          "totalR": 8.0065,
+          "maxDrawdownR": 3.9069,
+          "maxConsecutiveLosses": 4,
+          "uniquePairs": 16,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount100": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_2": true,
+          "minRewardRisk1_8": false,
+          "maxDrawdown30R": true,
+          "maxConsecutiveLosses8": true
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "score": 0.622559
+    },
+    {
+      "policyId": "exchange_24h_pair_7d",
+      "description": "At most one signal per exchange per 24 hours and one per pair every seven days.",
+      "metrics": {
+        "tradeCount": 252,
+        "winRatePct": 46.0317,
+        "averageWinR": 1.693838,
+        "averageLossR": -0.950489,
+        "profitFactor": 1.52,
+        "rewardRiskRatio": 1.782069,
+        "totalR": 67.2186,
+        "maxDrawdownR": 7.2519,
+        "maxConsecutiveLosses": 6,
+        "uniquePairs": 36,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 136,
+          "winRatePct": 47.7941,
+          "averageWinR": 1.667969,
+          "averageLossR": -0.960836,
+          "profitFactor": 1.589256,
+          "rewardRiskRatio": 1.735956,
+          "totalR": 40.1986,
+          "maxDrawdownR": 8.0141,
+          "maxConsecutiveLosses": 8,
+          "uniquePairs": 32,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 76,
+          "winRatePct": 44.7368,
+          "averageWinR": 1.703707,
+          "averageLossR": -0.952336,
+          "profitFactor": 1.44822,
+          "rewardRiskRatio": 1.788977,
+          "totalR": 17.9279,
+          "maxDrawdownR": 11.0038,
+          "maxConsecutiveLosses": 6,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        },
+        {
+          "tradeCount": 40,
+          "winRatePct": 42.5,
+          "averageWinR": 1.773009,
+          "averageLossR": -0.915178,
+          "profitFactor": 1.431945,
+          "rewardRiskRatio": 1.937337,
+          "totalR": 9.092,
+          "maxDrawdownR": 4.4447,
+          "maxConsecutiveLosses": 6,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount100": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_2": true,
+          "minRewardRisk1_8": false,
+          "maxDrawdown30R": true,
+          "maxConsecutiveLosses8": true
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "score": 0.620393
+    },
+    {
+      "policyId": "pair_7d_cooldown",
+      "description": "At most one selected signal per pair every seven days.",
+      "metrics": {
+        "tradeCount": 275,
+        "winRatePct": 46.5455,
+        "averageWinR": 1.685432,
+        "averageLossR": -0.94743,
+        "profitFactor": 1.549019,
+        "rewardRiskRatio": 1.778951,
+        "totalR": 76.4631,
+        "maxDrawdownR": 8.4474,
+        "maxConsecutiveLosses": 8,
+        "uniquePairs": 36,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 147,
+          "winRatePct": 48.9796,
+          "averageWinR": 1.672824,
+          "averageLossR": -0.951839,
+          "profitFactor": 1.687167,
+          "rewardRiskRatio": 1.757466,
+          "totalR": 49.0554,
+          "maxDrawdownR": 8.0141,
+          "maxConsecutiveLosses": 8,
+          "uniquePairs": 32,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 87,
+          "winRatePct": 44.8276,
+          "averageWinR": 1.723414,
+          "averageLossR": -0.955385,
+          "profitFactor": 1.465664,
+          "rewardRiskRatio": 1.803895,
+          "totalR": 21.3547,
+          "maxDrawdownR": 10.7687,
+          "maxConsecutiveLosses": 6,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        },
+        {
+          "tradeCount": 41,
+          "winRatePct": 41.4634,
+          "averageWinR": 1.651697,
+          "averageLossR": -0.917743,
+          "profitFactor": 1.274814,
+          "rewardRiskRatio": 1.799738,
+          "totalR": 6.053,
+          "maxDrawdownR": 4.7066,
+          "maxConsecutiveLosses": 4,
+          "uniquePairs": 16,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount100": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_2": true,
+          "minRewardRisk1_8": false,
+          "maxDrawdown30R": true,
+          "maxConsecutiveLosses8": true
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "score": 0.61906
+    },
+    {
+      "policyId": "drawdown_guard_12r_pause_14d",
+      "description": "Pair seven-day cooldown plus a 14-day global pause after 12R drawdown from equity peak.",
+      "metrics": {
+        "tradeCount": 275,
+        "winRatePct": 46.5455,
+        "averageWinR": 1.685432,
+        "averageLossR": -0.94743,
+        "profitFactor": 1.549019,
+        "rewardRiskRatio": 1.778951,
+        "totalR": 76.4631,
+        "maxDrawdownR": 8.4474,
+        "maxConsecutiveLosses": 8,
+        "uniquePairs": 36,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 147,
+          "winRatePct": 48.9796,
+          "averageWinR": 1.672824,
+          "averageLossR": -0.951839,
+          "profitFactor": 1.687167,
+          "rewardRiskRatio": 1.757466,
+          "totalR": 49.0554,
+          "maxDrawdownR": 8.0141,
+          "maxConsecutiveLosses": 8,
+          "uniquePairs": 32,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 87,
+          "winRatePct": 44.8276,
+          "averageWinR": 1.723414,
+          "averageLossR": -0.955385,
+          "profitFactor": 1.465664,
+          "rewardRiskRatio": 1.803895,
+          "totalR": 21.3547,
+          "maxDrawdownR": 10.7687,
+          "maxConsecutiveLosses": 6,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        },
+        {
+          "tradeCount": 41,
+          "winRatePct": 41.4634,
+          "averageWinR": 1.651697,
+          "averageLossR": -0.917743,
+          "profitFactor": 1.274814,
+          "rewardRiskRatio": 1.799738,
+          "totalR": 6.053,
+          "maxDrawdownR": 4.7066,
+          "maxConsecutiveLosses": 4,
+          "uniquePairs": 16,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount100": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_2": true,
+          "minRewardRisk1_8": false,
+          "maxDrawdown30R": true,
+          "maxConsecutiveLosses8": true
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "score": 0.61906
+    },
+    {
+      "policyId": "global_24h_pair_14d",
+      "description": "At most one global signal per 24 hours and one per pair every fourteen days.",
+      "metrics": {
+        "tradeCount": 219,
+        "winRatePct": 46.1187,
+        "averageWinR": 1.662497,
+        "averageLossR": -0.945377,
+        "profitFactor": 1.505204,
+        "rewardRiskRatio": 1.758555,
+        "totalR": 56.3578,
+        "maxDrawdownR": 7.2519,
+        "maxConsecutiveLosses": 6,
+        "uniquePairs": 36,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 126,
+          "winRatePct": 48.4127,
+          "averageWinR": 1.658845,
+          "averageLossR": -0.956287,
+          "profitFactor": 1.627924,
+          "rewardRiskRatio": 1.734673,
+          "totalR": 39.0309,
+          "maxDrawdownR": 7.4908,
+          "maxConsecutiveLosses": 7,
+          "uniquePairs": 30,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 62,
+          "winRatePct": 41.9355,
+          "averageWinR": 1.657346,
+          "averageLossR": -0.950197,
+          "profitFactor": 1.25971,
+          "rewardRiskRatio": 1.744214,
+          "totalR": 8.8839,
+          "maxDrawdownR": 11.2897,
+          "maxConsecutiveLosses": 6,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        },
+        {
+          "tradeCount": 31,
+          "winRatePct": 45.1613,
+          "averageWinR": 1.687977,
+          "averageLossR": -0.893454,
+          "profitFactor": 1.55587,
+          "rewardRiskRatio": 1.88927,
+          "totalR": 8.4429,
+          "maxDrawdownR": 2.9302,
+          "maxConsecutiveLosses": 4,
+          "uniquePairs": 16,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount100": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_2": true,
+          "minRewardRisk1_8": false,
+          "maxDrawdown30R": true,
+          "maxConsecutiveLosses8": true
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "score": 0.617032
+    },
+    {
+      "policyId": "exchange_24h_pair_14d",
+      "description": "At most one signal per exchange per 24 hours and one per pair every fourteen days.",
+      "metrics": {
+        "tradeCount": 243,
+        "winRatePct": 46.0905,
+        "averageWinR": 1.660516,
+        "averageLossR": -0.949488,
+        "profitFactor": 1.495204,
+        "rewardRiskRatio": 1.748855,
+        "totalR": 61.595,
+        "maxDrawdownR": 7.2519,
+        "maxConsecutiveLosses": 6,
+        "uniquePairs": 36,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 135,
+          "winRatePct": 47.4074,
+          "averageWinR": 1.65904,
+          "averageLossR": -0.960836,
+          "profitFactor": 1.55643,
+          "rewardRiskRatio": 1.726664,
+          "totalR": 37.9593,
+          "maxDrawdownR": 8.0141,
+          "maxConsecutiveLosses": 8,
+          "uniquePairs": 32,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 71,
+          "winRatePct": 45.0704,
+          "averageWinR": 1.670226,
+          "averageLossR": -0.950459,
+          "profitFactor": 1.441874,
+          "rewardRiskRatio": 1.757284,
+          "totalR": 16.3793,
+          "maxDrawdownR": 11.0038,
+          "maxConsecutiveLosses": 6,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        },
+        {
+          "tradeCount": 37,
+          "winRatePct": 43.2432,
+          "averageWinR": 1.647001,
+          "averageLossR": -0.909316,
+          "profitFactor": 1.380001,
+          "rewardRiskRatio": 1.811252,
+          "totalR": 7.2564,
+          "maxDrawdownR": 3.9069,
+          "maxConsecutiveLosses": 5,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount100": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_2": true,
+          "minRewardRisk1_8": false,
+          "maxDrawdown30R": true,
+          "maxConsecutiveLosses8": true
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "score": 0.615256
+    },
+    {
+      "policyId": "raw_all_signals",
+      "description": "No portfolio throttling. Diagnostic baseline.",
+      "metrics": {
+        "tradeCount": 500,
+        "winRatePct": 49.4,
+        "averageWinR": 1.72971,
+        "averageLossR": -0.950059,
+        "profitFactor": 1.777458,
+        "rewardRiskRatio": 1.820635,
+        "totalR": 186.8735,
+        "maxDrawdownR": 19.614,
+        "maxConsecutiveLosses": 14,
+        "uniquePairs": 36,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 278,
+          "winRatePct": 52.8777,
+          "averageWinR": 1.703151,
+          "averageLossR": -0.94695,
+          "profitFactor": 2.018238,
+          "rewardRiskRatio": 1.798566,
+          "totalR": 126.3128,
+          "maxDrawdownR": 12.8978,
+          "maxConsecutiveLosses": 13,
+          "uniquePairs": 35,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 130,
+          "winRatePct": 43.0769,
+          "averageWinR": 1.788906,
+          "averageLossR": -0.957393,
+          "profitFactor": 1.414013,
+          "rewardRiskRatio": 1.868517,
+          "totalR": 29.3316,
+          "maxDrawdownR": 16.4407,
+          "maxConsecutiveLosses": 10,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        },
+        {
+          "tradeCount": 92,
+          "winRatePct": 47.8261,
+          "averageWinR": 1.743102,
+          "averageLossR": -0.947237,
+          "profitFactor": 1.686847,
+          "rewardRiskRatio": 1.840197,
+          "totalR": 31.2291,
+          "maxDrawdownR": 12.1049,
+          "maxConsecutiveLosses": 9,
+          "uniquePairs": 17,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount100": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_2": true,
+          "minRewardRisk1_8": true,
+          "maxDrawdown30R": true,
+          "maxConsecutiveLosses8": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "score": 0.608017
+    }
+  ],
+  "bestPolicy": {
+    "policyId": "pair_14d_cooldown",
+    "description": "At most one selected signal per pair every fourteen days.",
+    "metrics": {
+      "tradeCount": 264,
+      "winRatePct": 46.9697,
+      "averageWinR": 1.671696,
+      "averageLossR": -0.945965,
+      "profitFactor": 1.565222,
+      "rewardRiskRatio": 1.767186,
+      "totalR": 74.8552,
+      "maxDrawdownR": 7.4706,
+      "maxConsecutiveLosses": 7,
+      "uniquePairs": 36,
+      "uniqueExchanges": 3
+    },
+    "byExchange": [
+      {
+        "tradeCount": 146,
+        "winRatePct": 48.6301,
+        "averageWinR": 1.664844,
+        "averageLossR": -0.951839,
+        "profitFactor": 1.655798,
+        "rewardRiskRatio": 1.749082,
+        "totalR": 46.816,
+        "maxDrawdownR": 8.0141,
+        "maxConsecutiveLosses": 8,
+        "uniquePairs": 32,
+        "uniqueExchanges": 1,
+        "exchange": "okx"
+      },
+      {
+        "tradeCount": 79,
+        "winRatePct": 46.8354,
+        "averageWinR": 1.695523,
+        "averageLossR": -0.952336,
+        "profitFactor": 1.568433,
+        "rewardRiskRatio": 1.780384,
+        "totalR": 22.7363,
+        "maxDrawdownR": 7.7877,
+        "maxConsecutiveLosses": 6,
+        "uniquePairs": 17,
+        "uniqueExchanges": 1,
+        "exchange": "binance"
+      },
+      {
+        "tradeCount": 39,
+        "winRatePct": 41.0256,
+        "averageWinR": 1.647001,
+        "averageLossR": -0.915178,
+        "profitFactor": 1.251931,
+        "rewardRiskRatio": 1.79965,
+        "totalR": 5.3029,
+        "maxDrawdownR": 4.5613,
+        "maxConsecutiveLosses": 4,
+        "uniquePairs": 16,
+        "uniqueExchanges": 1,
+        "exchange": "bybit"
+      }
+    ],
+    "gate": {
+      "checks": {
+        "minTradeCount100": true,
+        "minUniqueExchanges3": true,
+        "minUniquePairs10": true,
+        "minProfitFactor1_2": true,
+        "minRewardRisk1_8": false,
+        "maxDrawdown30R": true,
+        "maxConsecutiveLosses8": true
+      },
+      "passed": false,
+      "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+    },
+    "score": 0.622995
+  },
+  "decision": {
+    "readyForLocalPaperRefreshReview": false,
+    "readyForExchangeDryRunReview": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "Portfolio replay is local historical research only. Exchange Dry-run still requires forward validation, manual review, and explicit approval.",
+    "nextAction": "tighten_risk_controls_or_wait_for_forward_readiness"
+  },
+  "safety": {
+    "tradeApi": false,
+    "withdrawApi": false,
+    "apiKeyStorage": false,
+    "realAccountRead": false,
+    "realPositionRead": false,
+    "orderCreation": false,
+    "automaticTrading": false
+  }
+}
