@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.14 - Historical Robustness Expansion
+AlphaPilot V13.5.15 - Multi-Exchange Historical Data Coverage
 ```
 
 ## Positioning
@@ -3124,10 +3124,52 @@ V13.5.14 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.5.15 Multi-Exchange Historical Data Coverage
+
+V13.5.15 turns the 2020-to-present data expansion step into an auditable local
+coverage report before changing any strategy logic.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_15_multi_exchange_data_coverage.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_15_multi_exchange_data_coverage.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_15_multi_exchange_data_coverage_report.py
+scripts/run_v13_5_15_multi_exchange_data_coverage.ps1
+reports/v13_5_15_multi_exchange_data_coverage_report.json
+reports/v13_5_15_multi_exchange_data_coverage_summary.md
+docs/V13.5.15-multi-exchange-data-coverage.md
+```
+
+The report scans local public OHLCV files for OKX, Binance, and Bybit across
+the Top 100 USDT swap research universe and the 4h / 1d timeframes. It records
+which files are actually present, row counts, first/last timestamps, and core
+BTC/ETH/SOL multi-exchange readiness.
+
+V13.5.15 records the practical download reality: long Top100 2020-to-present
+downloads may complete partially and must be reported honestly instead of
+treated as full validation. Binance and Bybit core BTC/ETH/SOL files provide a
+first independent exchange-path sample; the strategy feature panel remains
+OKX-centered until an exchange-aware feature layer is built.
+
+V13.5.15 does not change strategy parameters, run Dry-run, connect to private
+exchange endpoints, save API keys, read real accounts or positions, create
+orders, or enable automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.15: expand cross-market feature normalization and data quality scoring before using non-crypto samples in any model review.
-- V13.5.16: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
-- V13.5.17: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
+- V13.5.16: build an exchange-aware feature panel and replay the core BTC/ETH/SOL public-data sample across OKX, Binance, and Bybit.
+- V13.5.17: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.18: consider resumable Binance/Bybit/OKX Top100 public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
