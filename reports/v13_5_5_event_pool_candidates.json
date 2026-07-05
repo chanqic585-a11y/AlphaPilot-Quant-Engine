@@ -1,0 +1,7904 @@
+[
+  {
+    "poolId": "1h:all_setups:sl0.04:h30",
+    "timeframe": "1h",
+    "setupName": "all_setups",
+    "barrierConfig": {
+      "stop_loss_pct": 0.04,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 30,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-01T19:00:00+00:00",
+    "lastSignalAt": "2026-07-05T14:00:00+00:00",
+    "metrics": {
+      "tradeCount": 64657,
+      "winRatePct": 41.5639,
+      "averageWinPct": 4.472914,
+      "averageLossPct": -3.48783,
+      "rewardRiskRatio": 1.2824,
+      "profitFactor": 0.9122,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 38794,
+        "winRatePct": 41.3621,
+        "averageWinPct": 4.619805,
+        "averageLossPct": -3.513667,
+        "rewardRiskRatio": 1.3148,
+        "profitFactor": 0.9274,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 12931,
+        "winRatePct": 40.894,
+        "averageWinPct": 4.556336,
+        "averageLossPct": -3.524527,
+        "rewardRiskRatio": 1.2928,
+        "profitFactor": 0.8944,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 12932,
+        "winRatePct": 42.8395,
+        "averageWinPct": 3.967834,
+        "averageLossPct": -3.370373,
+        "rewardRiskRatio": 1.1773,
+        "profitFactor": 0.8823,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 21354,
+        "winRatePct": 39.8614,
+        "averageWinPct": 4.863017,
+        "averageLossPct": -3.611004,
+        "rewardRiskRatio": 1.3467,
+        "profitFactor": 0.8926,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 19727,
+        "winRatePct": 40.9642,
+        "averageWinPct": 4.637677,
+        "averageLossPct": -3.573948,
+        "rewardRiskRatio": 1.2976,
+        "profitFactor": 0.9004,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 8732,
+        "winRatePct": 43.06,
+        "averageWinPct": 3.726414,
+        "averageLossPct": -3.275162,
+        "rewardRiskRatio": 1.1378,
+        "profitFactor": 0.8604,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 2975,
+        "sharePct": 4.6012
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 2916,
+        "sharePct": 4.51
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 2900,
+        "sharePct": 4.4852
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 2813,
+        "sharePct": 4.3507
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 2789,
+        "sharePct": 4.3135
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 2775,
+        "sharePct": 4.2919
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 2700,
+        "sharePct": 4.1759
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 2658,
+        "sharePct": 4.1109
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 2562,
+        "sharePct": 3.9624
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 2530,
+        "sharePct": 3.913
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 2530,
+        "sharePct": 3.913
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 2483,
+        "sharePct": 3.8403
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 22787,
+        "sharePct": 35.2429
+      },
+      {
+        "value": "short_reversal_candidate",
+        "count": 21686,
+        "sharePct": 33.5401
+      },
+      {
+        "value": "long_reversal_candidate",
+        "count": 20184,
+        "sharePct": 31.217
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 2529,
+        "sharePct": 3.9114
+      },
+      {
+        "value": "2024-12",
+        "count": 2098,
+        "sharePct": 3.2448
+      },
+      {
+        "value": "2025-07",
+        "count": 2075,
+        "sharePct": 3.2092
+      },
+      {
+        "value": "2023-12",
+        "count": 2069,
+        "sharePct": 3.2
+      },
+      {
+        "value": "2024-03",
+        "count": 2003,
+        "sharePct": 3.0979
+      },
+      {
+        "value": "2025-01",
+        "count": 1945,
+        "sharePct": 3.0082
+      },
+      {
+        "value": "2025-05",
+        "count": 1930,
+        "sharePct": 2.985
+      },
+      {
+        "value": "2024-07",
+        "count": 1890,
+        "sharePct": 2.9231
+      },
+      {
+        "value": "2024-08",
+        "count": 1866,
+        "sharePct": 2.886
+      },
+      {
+        "value": "2024-09",
+        "count": 1806,
+        "sharePct": 2.7932
+      },
+      {
+        "value": "2023-11",
+        "count": 1786,
+        "sharePct": 2.7623
+      },
+      {
+        "value": "2025-04",
+        "count": 1782,
+        "sharePct": 2.7561
+      },
+      {
+        "value": "2024-05",
+        "count": 1742,
+        "sharePct": 2.6942
+      },
+      {
+        "value": "2024-01",
+        "count": 1736,
+        "sharePct": 2.6849
+      },
+      {
+        "value": "2025-03",
+        "count": 1732,
+        "sharePct": 2.6788
+      },
+      {
+        "value": "2025-02",
+        "count": 1716,
+        "sharePct": 2.654
+      },
+      {
+        "value": "2025-11",
+        "count": 1665,
+        "sharePct": 2.5751
+      },
+      {
+        "value": "2024-04",
+        "count": 1632,
+        "sharePct": 2.5241
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.6012,
+      "maxMonthSharePct": 3.9114,
+      "recentHoldoutTradeCount": 12932
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:all_setups:sl0.03:h24",
+    "timeframe": "1h",
+    "setupName": "all_setups",
+    "barrierConfig": {
+      "stop_loss_pct": 0.03,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-01T19:00:00+00:00",
+    "lastSignalAt": "2026-07-05T14:00:00+00:00",
+    "metrics": {
+      "tradeCount": 64657,
+      "winRatePct": 39.2595,
+      "averageWinPct": 3.866648,
+      "averageLossPct": -2.821934,
+      "rewardRiskRatio": 1.3702,
+      "profitFactor": 0.8856,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 38794,
+        "winRatePct": 39.0035,
+        "averageWinPct": 3.92331,
+        "averageLossPct": -2.837001,
+        "rewardRiskRatio": 1.3829,
+        "profitFactor": 0.8843,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 12931,
+        "winRatePct": 38.7054,
+        "averageWinPct": 3.923767,
+        "averageLossPct": -2.85681,
+        "rewardRiskRatio": 1.3735,
+        "profitFactor": 0.8673,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 12932,
+        "winRatePct": 40.5815,
+        "averageWinPct": 3.64881,
+        "averageLossPct": -2.739558,
+        "rewardRiskRatio": 1.3319,
+        "profitFactor": 0.9097,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 21354,
+        "winRatePct": 37.3185,
+        "averageWinPct": 4.113016,
+        "averageLossPct": -2.88682,
+        "rewardRiskRatio": 1.4248,
+        "profitFactor": 0.8483,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 19727,
+        "winRatePct": 39.0379,
+        "averageWinPct": 4.020134,
+        "averageLossPct": -2.878113,
+        "rewardRiskRatio": 1.3968,
+        "profitFactor": 0.8945,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 8732,
+        "winRatePct": 40.197,
+        "averageWinPct": 3.437077,
+        "averageLossPct": -2.676685,
+        "rewardRiskRatio": 1.2841,
+        "profitFactor": 0.8631,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 2975,
+        "sharePct": 4.6012
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 2916,
+        "sharePct": 4.51
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 2900,
+        "sharePct": 4.4852
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 2813,
+        "sharePct": 4.3507
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 2789,
+        "sharePct": 4.3135
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 2775,
+        "sharePct": 4.2919
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 2700,
+        "sharePct": 4.1759
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 2658,
+        "sharePct": 4.1109
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 2562,
+        "sharePct": 3.9624
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 2530,
+        "sharePct": 3.913
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 2530,
+        "sharePct": 3.913
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 2483,
+        "sharePct": 3.8403
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 22787,
+        "sharePct": 35.2429
+      },
+      {
+        "value": "short_reversal_candidate",
+        "count": 21686,
+        "sharePct": 33.5401
+      },
+      {
+        "value": "long_reversal_candidate",
+        "count": 20184,
+        "sharePct": 31.217
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 2529,
+        "sharePct": 3.9114
+      },
+      {
+        "value": "2024-12",
+        "count": 2098,
+        "sharePct": 3.2448
+      },
+      {
+        "value": "2025-07",
+        "count": 2075,
+        "sharePct": 3.2092
+      },
+      {
+        "value": "2023-12",
+        "count": 2069,
+        "sharePct": 3.2
+      },
+      {
+        "value": "2024-03",
+        "count": 2003,
+        "sharePct": 3.0979
+      },
+      {
+        "value": "2025-01",
+        "count": 1945,
+        "sharePct": 3.0082
+      },
+      {
+        "value": "2025-05",
+        "count": 1930,
+        "sharePct": 2.985
+      },
+      {
+        "value": "2024-07",
+        "count": 1890,
+        "sharePct": 2.9231
+      },
+      {
+        "value": "2024-08",
+        "count": 1866,
+        "sharePct": 2.886
+      },
+      {
+        "value": "2024-09",
+        "count": 1806,
+        "sharePct": 2.7932
+      },
+      {
+        "value": "2023-11",
+        "count": 1786,
+        "sharePct": 2.7623
+      },
+      {
+        "value": "2025-04",
+        "count": 1782,
+        "sharePct": 2.7561
+      },
+      {
+        "value": "2024-05",
+        "count": 1742,
+        "sharePct": 2.6942
+      },
+      {
+        "value": "2024-01",
+        "count": 1736,
+        "sharePct": 2.6849
+      },
+      {
+        "value": "2025-03",
+        "count": 1732,
+        "sharePct": 2.6788
+      },
+      {
+        "value": "2025-02",
+        "count": 1716,
+        "sharePct": 2.654
+      },
+      {
+        "value": "2025-11",
+        "count": 1665,
+        "sharePct": 2.5751
+      },
+      {
+        "value": "2024-04",
+        "count": 1632,
+        "sharePct": 2.5241
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.6012,
+      "maxMonthSharePct": 3.9114,
+      "recentHoldoutTradeCount": 12932
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:all_setups:sl0.025:h18",
+    "timeframe": "1h",
+    "setupName": "all_setups",
+    "barrierConfig": {
+      "stop_loss_pct": 0.025,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-01T19:00:00+00:00",
+    "lastSignalAt": "2026-07-05T14:00:00+00:00",
+    "metrics": {
+      "tradeCount": 64657,
+      "winRatePct": 38.1707,
+      "averageWinPct": 3.269518,
+      "averageLossPct": -2.389642,
+      "rewardRiskRatio": 1.3682,
+      "profitFactor": 0.8447,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 38794,
+        "winRatePct": 37.8177,
+        "averageWinPct": 3.30007,
+        "averageLossPct": -2.396009,
+        "rewardRiskRatio": 1.3773,
+        "profitFactor": 0.8377,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 12931,
+        "winRatePct": 37.3289,
+        "averageWinPct": 3.363156,
+        "averageLossPct": -2.42044,
+        "rewardRiskRatio": 1.3895,
+        "profitFactor": 0.8276,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 12932,
+        "winRatePct": 40.0711,
+        "averageWinPct": 3.095798,
+        "averageLossPct": -2.33762,
+        "rewardRiskRatio": 1.3243,
+        "profitFactor": 0.8855,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 21354,
+        "winRatePct": 36.1993,
+        "averageWinPct": 3.463237,
+        "averageLossPct": -2.445534,
+        "rewardRiskRatio": 1.4161,
+        "profitFactor": 0.8035,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 19727,
+        "winRatePct": 38.1964,
+        "averageWinPct": 3.402872,
+        "averageLossPct": -2.446875,
+        "rewardRiskRatio": 1.3907,
+        "profitFactor": 0.8595,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 8732,
+        "winRatePct": 39.2923,
+        "averageWinPct": 2.933691,
+        "averageLossPct": -2.275602,
+        "rewardRiskRatio": 1.2892,
+        "profitFactor": 0.8344,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 2975,
+        "sharePct": 4.6012
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 2916,
+        "sharePct": 4.51
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 2900,
+        "sharePct": 4.4852
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 2813,
+        "sharePct": 4.3507
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 2789,
+        "sharePct": 4.3135
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 2775,
+        "sharePct": 4.2919
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 2700,
+        "sharePct": 4.1759
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 2658,
+        "sharePct": 4.1109
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 2562,
+        "sharePct": 3.9624
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 2530,
+        "sharePct": 3.913
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 2530,
+        "sharePct": 3.913
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 2483,
+        "sharePct": 3.8403
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 22787,
+        "sharePct": 35.2429
+      },
+      {
+        "value": "short_reversal_candidate",
+        "count": 21686,
+        "sharePct": 33.5401
+      },
+      {
+        "value": "long_reversal_candidate",
+        "count": 20184,
+        "sharePct": 31.217
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 2529,
+        "sharePct": 3.9114
+      },
+      {
+        "value": "2024-12",
+        "count": 2098,
+        "sharePct": 3.2448
+      },
+      {
+        "value": "2025-07",
+        "count": 2075,
+        "sharePct": 3.2092
+      },
+      {
+        "value": "2023-12",
+        "count": 2069,
+        "sharePct": 3.2
+      },
+      {
+        "value": "2024-03",
+        "count": 2003,
+        "sharePct": 3.0979
+      },
+      {
+        "value": "2025-01",
+        "count": 1945,
+        "sharePct": 3.0082
+      },
+      {
+        "value": "2025-05",
+        "count": 1930,
+        "sharePct": 2.985
+      },
+      {
+        "value": "2024-07",
+        "count": 1890,
+        "sharePct": 2.9231
+      },
+      {
+        "value": "2024-08",
+        "count": 1866,
+        "sharePct": 2.886
+      },
+      {
+        "value": "2024-09",
+        "count": 1806,
+        "sharePct": 2.7932
+      },
+      {
+        "value": "2023-11",
+        "count": 1786,
+        "sharePct": 2.7623
+      },
+      {
+        "value": "2025-04",
+        "count": 1782,
+        "sharePct": 2.7561
+      },
+      {
+        "value": "2024-05",
+        "count": 1742,
+        "sharePct": 2.6942
+      },
+      {
+        "value": "2024-01",
+        "count": 1736,
+        "sharePct": 2.6849
+      },
+      {
+        "value": "2025-03",
+        "count": 1732,
+        "sharePct": 2.6788
+      },
+      {
+        "value": "2025-02",
+        "count": 1716,
+        "sharePct": 2.654
+      },
+      {
+        "value": "2025-11",
+        "count": 1665,
+        "sharePct": 2.5751
+      },
+      {
+        "value": "2024-04",
+        "count": 1632,
+        "sharePct": 2.5241
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.6012,
+      "maxMonthSharePct": 3.9114,
+      "recentHoldoutTradeCount": 12932
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:all_setups:sl0.02:h12",
+    "timeframe": "1h",
+    "setupName": "all_setups",
+    "barrierConfig": {
+      "stop_loss_pct": 0.02,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 12,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-01T19:00:00+00:00",
+    "lastSignalAt": "2026-07-05T14:00:00+00:00",
+    "metrics": {
+      "tradeCount": 64657,
+      "winRatePct": 37.1298,
+      "averageWinPct": 2.662106,
+      "averageLossPct": -1.95292,
+      "rewardRiskRatio": 1.3631,
+      "profitFactor": 0.805,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 38794,
+        "winRatePct": 36.7093,
+        "averageWinPct": 2.684745,
+        "averageLossPct": -1.953504,
+        "rewardRiskRatio": 1.3743,
+        "profitFactor": 0.7971,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 12931,
+        "winRatePct": 36.7566,
+        "averageWinPct": 2.690618,
+        "averageLossPct": -1.974554,
+        "rewardRiskRatio": 1.3626,
+        "profitFactor": 0.792,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 12932,
+        "winRatePct": 38.7643,
+        "averageWinPct": 2.570759,
+        "averageLossPct": -1.928768,
+        "rewardRiskRatio": 1.3329,
+        "profitFactor": 0.8437,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 21354,
+        "winRatePct": 35.2768,
+        "averageWinPct": 2.839285,
+        "averageLossPct": -1.995971,
+        "rewardRiskRatio": 1.4225,
+        "profitFactor": 0.7753,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 19727,
+        "winRatePct": 36.8024,
+        "averageWinPct": 2.756445,
+        "averageLossPct": -1.995917,
+        "rewardRiskRatio": 1.381,
+        "profitFactor": 0.8042,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 8732,
+        "winRatePct": 39.1548,
+        "averageWinPct": 2.457851,
+        "averageLossPct": -1.890712,
+        "rewardRiskRatio": 1.3,
+        "profitFactor": 0.8365,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 2975,
+        "sharePct": 4.6012
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 2916,
+        "sharePct": 4.51
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 2900,
+        "sharePct": 4.4852
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 2813,
+        "sharePct": 4.3507
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 2789,
+        "sharePct": 4.3135
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 2775,
+        "sharePct": 4.2919
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 2700,
+        "sharePct": 4.1759
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 2658,
+        "sharePct": 4.1109
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 2562,
+        "sharePct": 3.9624
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 2530,
+        "sharePct": 3.913
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 2530,
+        "sharePct": 3.913
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 2483,
+        "sharePct": 3.8403
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 22787,
+        "sharePct": 35.2429
+      },
+      {
+        "value": "short_reversal_candidate",
+        "count": 21686,
+        "sharePct": 33.5401
+      },
+      {
+        "value": "long_reversal_candidate",
+        "count": 20184,
+        "sharePct": 31.217
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 2529,
+        "sharePct": 3.9114
+      },
+      {
+        "value": "2024-12",
+        "count": 2098,
+        "sharePct": 3.2448
+      },
+      {
+        "value": "2025-07",
+        "count": 2075,
+        "sharePct": 3.2092
+      },
+      {
+        "value": "2023-12",
+        "count": 2069,
+        "sharePct": 3.2
+      },
+      {
+        "value": "2024-03",
+        "count": 2003,
+        "sharePct": 3.0979
+      },
+      {
+        "value": "2025-01",
+        "count": 1945,
+        "sharePct": 3.0082
+      },
+      {
+        "value": "2025-05",
+        "count": 1930,
+        "sharePct": 2.985
+      },
+      {
+        "value": "2024-07",
+        "count": 1890,
+        "sharePct": 2.9231
+      },
+      {
+        "value": "2024-08",
+        "count": 1866,
+        "sharePct": 2.886
+      },
+      {
+        "value": "2024-09",
+        "count": 1806,
+        "sharePct": 2.7932
+      },
+      {
+        "value": "2023-11",
+        "count": 1786,
+        "sharePct": 2.7623
+      },
+      {
+        "value": "2025-04",
+        "count": 1782,
+        "sharePct": 2.7561
+      },
+      {
+        "value": "2024-05",
+        "count": 1742,
+        "sharePct": 2.6942
+      },
+      {
+        "value": "2024-01",
+        "count": 1736,
+        "sharePct": 2.6849
+      },
+      {
+        "value": "2025-03",
+        "count": 1732,
+        "sharePct": 2.6788
+      },
+      {
+        "value": "2025-02",
+        "count": 1716,
+        "sharePct": 2.654
+      },
+      {
+        "value": "2025-11",
+        "count": 1665,
+        "sharePct": 2.5751
+      },
+      {
+        "value": "2024-04",
+        "count": 1632,
+        "sharePct": 2.5241
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.6012,
+      "maxMonthSharePct": 3.9114,
+      "recentHoldoutTradeCount": 12932
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:all_setups:sl0.06:h24",
+    "timeframe": "4h",
+    "setupName": "all_setups",
+    "barrierConfig": {
+      "stop_loss_pct": 0.06,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T12:00:00+00:00",
+    "lastSignalAt": "2026-07-03T16:00:00+00:00",
+    "metrics": {
+      "tradeCount": 24308,
+      "winRatePct": 39.5549,
+      "averageWinPct": 7.805567,
+      "averageLossPct": -5.392577,
+      "rewardRiskRatio": 1.4475,
+      "profitFactor": 0.9472,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 14584,
+        "winRatePct": 39.4268,
+        "averageWinPct": 8.083223,
+        "averageLossPct": -5.4349,
+        "rewardRiskRatio": 1.4873,
+        "profitFactor": 0.9681,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4862,
+        "winRatePct": 38.6672,
+        "averageWinPct": 7.984703,
+        "averageLossPct": -5.434577,
+        "rewardRiskRatio": 1.4692,
+        "profitFactor": 0.9263,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4862,
+        "winRatePct": 40.8268,
+        "averageWinPct": 6.831613,
+        "averageLossPct": -5.219086,
+        "rewardRiskRatio": 1.309,
+        "profitFactor": 0.9031,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7422,
+        "winRatePct": 36.8364,
+        "averageWinPct": 8.706477,
+        "averageLossPct": -5.580449,
+        "rewardRiskRatio": 1.5602,
+        "profitFactor": 0.9099,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 7715,
+        "winRatePct": 39.4945,
+        "averageWinPct": 8.258369,
+        "averageLossPct": -5.560091,
+        "rewardRiskRatio": 1.4853,
+        "profitFactor": 0.9695,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 3703,
+        "winRatePct": 41.0748,
+        "averageWinPct": 6.571172,
+        "averageLossPct": -5.037253,
+        "rewardRiskRatio": 1.3045,
+        "profitFactor": 0.9093,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 1104,
+        "sharePct": 4.5417
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 1062,
+        "sharePct": 4.3689
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 1036,
+        "sharePct": 4.262
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 1033,
+        "sharePct": 4.2496
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 1012,
+        "sharePct": 4.1632
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 1008,
+        "sharePct": 4.1468
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 997,
+        "sharePct": 4.1015
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 996,
+        "sharePct": 4.0974
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 957,
+        "sharePct": 3.937
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 944,
+        "sharePct": 3.8835
+      },
+      {
+        "value": "DOGE/USDT:USDT",
+        "count": 940,
+        "sharePct": 3.867
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 939,
+        "sharePct": 3.8629
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 11335,
+        "sharePct": 46.6307
+      },
+      {
+        "value": "long_reversal_candidate",
+        "count": 9719,
+        "sharePct": 39.9827
+      },
+      {
+        "value": "long_continuation_candidate",
+        "count": 3254,
+        "sharePct": 13.3865
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-05",
+        "count": 940,
+        "sharePct": 3.867
+      },
+      {
+        "value": "2024-11",
+        "count": 845,
+        "sharePct": 3.4762
+      },
+      {
+        "value": "2025-07",
+        "count": 817,
+        "sharePct": 3.361
+      },
+      {
+        "value": "2025-01",
+        "count": 728,
+        "sharePct": 2.9949
+      },
+      {
+        "value": "2023-12",
+        "count": 720,
+        "sharePct": 2.962
+      },
+      {
+        "value": "2024-09",
+        "count": 700,
+        "sharePct": 2.8797
+      },
+      {
+        "value": "2024-07",
+        "count": 694,
+        "sharePct": 2.855
+      },
+      {
+        "value": "2026-06",
+        "count": 687,
+        "sharePct": 2.8262
+      },
+      {
+        "value": "2024-12",
+        "count": 667,
+        "sharePct": 2.744
+      },
+      {
+        "value": "2026-05",
+        "count": 662,
+        "sharePct": 2.7234
+      },
+      {
+        "value": "2025-11",
+        "count": 644,
+        "sharePct": 2.6493
+      },
+      {
+        "value": "2024-01",
+        "count": 638,
+        "sharePct": 2.6247
+      },
+      {
+        "value": "2026-01",
+        "count": 629,
+        "sharePct": 2.5876
+      },
+      {
+        "value": "2025-04",
+        "count": 621,
+        "sharePct": 2.5547
+      },
+      {
+        "value": "2024-10",
+        "count": 617,
+        "sharePct": 2.5383
+      },
+      {
+        "value": "2024-08",
+        "count": 613,
+        "sharePct": 2.5218
+      },
+      {
+        "value": "2025-06",
+        "count": 613,
+        "sharePct": 2.5218
+      },
+      {
+        "value": "2025-08",
+        "count": 610,
+        "sharePct": 2.5095
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.5417,
+      "maxMonthSharePct": 3.867,
+      "recentHoldoutTradeCount": 4862
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:all_setups:sl0.05:h18",
+    "timeframe": "4h",
+    "setupName": "all_setups",
+    "barrierConfig": {
+      "stop_loss_pct": 0.05,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T12:00:00+00:00",
+    "lastSignalAt": "2026-07-03T16:00:00+00:00",
+    "metrics": {
+      "tradeCount": 24308,
+      "winRatePct": 38.6539,
+      "averageWinPct": 6.669579,
+      "averageLossPct": -4.600673,
+      "rewardRiskRatio": 1.4497,
+      "profitFactor": 0.9134,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 14584,
+        "winRatePct": 38.1034,
+        "averageWinPct": 6.818207,
+        "averageLossPct": -4.621576,
+        "rewardRiskRatio": 1.4753,
+        "profitFactor": 0.9082,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4862,
+        "winRatePct": 38.1325,
+        "averageWinPct": 6.728044,
+        "averageLossPct": -4.642801,
+        "rewardRiskRatio": 1.4491,
+        "profitFactor": 0.8932,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4862,
+        "winRatePct": 40.8268,
+        "averageWinPct": 6.198887,
+        "averageLossPct": -4.49104,
+        "rewardRiskRatio": 1.3803,
+        "profitFactor": 0.9523,
+        "totalReturnPct": -99.9999,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7422,
+        "winRatePct": 35.7181,
+        "averageWinPct": 7.270141,
+        "averageLossPct": -4.744483,
+        "rewardRiskRatio": 1.5323,
+        "profitFactor": 0.8514,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 7715,
+        "winRatePct": 37.8743,
+        "averageWinPct": 6.953419,
+        "averageLossPct": -4.707501,
+        "rewardRiskRatio": 1.4771,
+        "profitFactor": 0.9005,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 3703,
+        "winRatePct": 41.6149,
+        "averageWinPct": 5.977917,
+        "averageLossPct": -4.386315,
+        "rewardRiskRatio": 1.3629,
+        "profitFactor": 0.9714,
+        "totalReturnPct": -99.9845,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 1104,
+        "sharePct": 4.5417
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 1062,
+        "sharePct": 4.3689
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 1036,
+        "sharePct": 4.262
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 1033,
+        "sharePct": 4.2496
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 1012,
+        "sharePct": 4.1632
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 1008,
+        "sharePct": 4.1468
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 997,
+        "sharePct": 4.1015
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 996,
+        "sharePct": 4.0974
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 957,
+        "sharePct": 3.937
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 944,
+        "sharePct": 3.8835
+      },
+      {
+        "value": "DOGE/USDT:USDT",
+        "count": 940,
+        "sharePct": 3.867
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 939,
+        "sharePct": 3.8629
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 11335,
+        "sharePct": 46.6307
+      },
+      {
+        "value": "long_reversal_candidate",
+        "count": 9719,
+        "sharePct": 39.9827
+      },
+      {
+        "value": "long_continuation_candidate",
+        "count": 3254,
+        "sharePct": 13.3865
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-05",
+        "count": 940,
+        "sharePct": 3.867
+      },
+      {
+        "value": "2024-11",
+        "count": 845,
+        "sharePct": 3.4762
+      },
+      {
+        "value": "2025-07",
+        "count": 817,
+        "sharePct": 3.361
+      },
+      {
+        "value": "2025-01",
+        "count": 728,
+        "sharePct": 2.9949
+      },
+      {
+        "value": "2023-12",
+        "count": 720,
+        "sharePct": 2.962
+      },
+      {
+        "value": "2024-09",
+        "count": 700,
+        "sharePct": 2.8797
+      },
+      {
+        "value": "2024-07",
+        "count": 694,
+        "sharePct": 2.855
+      },
+      {
+        "value": "2026-06",
+        "count": 687,
+        "sharePct": 2.8262
+      },
+      {
+        "value": "2024-12",
+        "count": 667,
+        "sharePct": 2.744
+      },
+      {
+        "value": "2026-05",
+        "count": 662,
+        "sharePct": 2.7234
+      },
+      {
+        "value": "2025-11",
+        "count": 644,
+        "sharePct": 2.6493
+      },
+      {
+        "value": "2024-01",
+        "count": 638,
+        "sharePct": 2.6247
+      },
+      {
+        "value": "2026-01",
+        "count": 629,
+        "sharePct": 2.5876
+      },
+      {
+        "value": "2025-04",
+        "count": 621,
+        "sharePct": 2.5547
+      },
+      {
+        "value": "2024-10",
+        "count": 617,
+        "sharePct": 2.5383
+      },
+      {
+        "value": "2024-08",
+        "count": 613,
+        "sharePct": 2.5218
+      },
+      {
+        "value": "2025-06",
+        "count": 613,
+        "sharePct": 2.5218
+      },
+      {
+        "value": "2025-08",
+        "count": 610,
+        "sharePct": 2.5095
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.5417,
+      "maxMonthSharePct": 3.867,
+      "recentHoldoutTradeCount": 4862
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:all_setups:sl0.04:h12",
+    "timeframe": "4h",
+    "setupName": "all_setups",
+    "barrierConfig": {
+      "stop_loss_pct": 0.04,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 12,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T12:00:00+00:00",
+    "lastSignalAt": "2026-07-03T16:00:00+00:00",
+    "metrics": {
+      "tradeCount": 24308,
+      "winRatePct": 38.3043,
+      "averageWinPct": 5.279114,
+      "averageLossPct": -3.760749,
+      "rewardRiskRatio": 1.4037,
+      "profitFactor": 0.8715,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 14584,
+        "winRatePct": 37.7331,
+        "averageWinPct": 5.450682,
+        "averageLossPct": -3.780263,
+        "rewardRiskRatio": 1.4419,
+        "profitFactor": 0.8738,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4862,
+        "winRatePct": 38.3587,
+        "averageWinPct": 5.155985,
+        "averageLossPct": -3.787042,
+        "rewardRiskRatio": 1.3615,
+        "profitFactor": 0.8472,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4862,
+        "winRatePct": 39.963,
+        "averageWinPct": 4.911382,
+        "averageLossPct": -3.673046,
+        "rewardRiskRatio": 1.3371,
+        "profitFactor": 0.8901,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7422,
+        "winRatePct": 34.6672,
+        "averageWinPct": 5.747883,
+        "averageLossPct": -3.848081,
+        "rewardRiskRatio": 1.4937,
+        "profitFactor": 0.7926,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 7715,
+        "winRatePct": 38.2631,
+        "averageWinPct": 5.440215,
+        "averageLossPct": -3.831769,
+        "rewardRiskRatio": 1.4198,
+        "profitFactor": 0.8799,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 3703,
+        "winRatePct": 40.2917,
+        "averageWinPct": 4.712165,
+        "averageLossPct": -3.614993,
+        "rewardRiskRatio": 1.3035,
+        "profitFactor": 0.8796,
+        "totalReturnPct": -99.9999,
+        "maxDrawdownPct": 99.9999,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 1104,
+        "sharePct": 4.5417
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 1062,
+        "sharePct": 4.3689
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 1036,
+        "sharePct": 4.262
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 1033,
+        "sharePct": 4.2496
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 1012,
+        "sharePct": 4.1632
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 1008,
+        "sharePct": 4.1468
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 997,
+        "sharePct": 4.1015
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 996,
+        "sharePct": 4.0974
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 957,
+        "sharePct": 3.937
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 944,
+        "sharePct": 3.8835
+      },
+      {
+        "value": "DOGE/USDT:USDT",
+        "count": 940,
+        "sharePct": 3.867
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 939,
+        "sharePct": 3.8629
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 11335,
+        "sharePct": 46.6307
+      },
+      {
+        "value": "long_reversal_candidate",
+        "count": 9719,
+        "sharePct": 39.9827
+      },
+      {
+        "value": "long_continuation_candidate",
+        "count": 3254,
+        "sharePct": 13.3865
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-05",
+        "count": 940,
+        "sharePct": 3.867
+      },
+      {
+        "value": "2024-11",
+        "count": 845,
+        "sharePct": 3.4762
+      },
+      {
+        "value": "2025-07",
+        "count": 817,
+        "sharePct": 3.361
+      },
+      {
+        "value": "2025-01",
+        "count": 728,
+        "sharePct": 2.9949
+      },
+      {
+        "value": "2023-12",
+        "count": 720,
+        "sharePct": 2.962
+      },
+      {
+        "value": "2024-09",
+        "count": 700,
+        "sharePct": 2.8797
+      },
+      {
+        "value": "2024-07",
+        "count": 694,
+        "sharePct": 2.855
+      },
+      {
+        "value": "2026-06",
+        "count": 687,
+        "sharePct": 2.8262
+      },
+      {
+        "value": "2024-12",
+        "count": 667,
+        "sharePct": 2.744
+      },
+      {
+        "value": "2026-05",
+        "count": 662,
+        "sharePct": 2.7234
+      },
+      {
+        "value": "2025-11",
+        "count": 644,
+        "sharePct": 2.6493
+      },
+      {
+        "value": "2024-01",
+        "count": 638,
+        "sharePct": 2.6247
+      },
+      {
+        "value": "2026-01",
+        "count": 629,
+        "sharePct": 2.5876
+      },
+      {
+        "value": "2025-04",
+        "count": 621,
+        "sharePct": 2.5547
+      },
+      {
+        "value": "2024-10",
+        "count": 617,
+        "sharePct": 2.5383
+      },
+      {
+        "value": "2024-08",
+        "count": 613,
+        "sharePct": 2.5218
+      },
+      {
+        "value": "2025-06",
+        "count": 613,
+        "sharePct": 2.5218
+      },
+      {
+        "value": "2025-08",
+        "count": 610,
+        "sharePct": 2.5095
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.5417,
+      "maxMonthSharePct": 3.867,
+      "recentHoldoutTradeCount": 4862
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:long_continuation_candidate:sl0.03:h24",
+    "timeframe": "1h",
+    "setupName": "long_continuation_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.03,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-01T19:00:00+00:00",
+    "lastSignalAt": "2026-07-05T14:00:00+00:00",
+    "metrics": {
+      "tradeCount": 22787,
+      "winRatePct": 40.3168,
+      "averageWinPct": 3.233588,
+      "averageLossPct": -2.583076,
+      "rewardRiskRatio": 1.2518,
+      "profitFactor": 0.8456,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 13672,
+        "winRatePct": 39.7382,
+        "averageWinPct": 3.267408,
+        "averageLossPct": -2.585752,
+        "rewardRiskRatio": 1.2636,
+        "profitFactor": 0.8333,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4557,
+        "winRatePct": 40.4652,
+        "averageWinPct": 3.526927,
+        "averageLossPct": -2.717641,
+        "rewardRiskRatio": 1.2978,
+        "profitFactor": 0.8821,
+        "totalReturnPct": -99.9988,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4558,
+        "winRatePct": 41.9043,
+        "averageWinPct": 2.854186,
+        "averageLossPct": -2.436884,
+        "rewardRiskRatio": 1.1712,
+        "profitFactor": 0.8448,
+        "totalReturnPct": -99.9995,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7272,
+        "winRatePct": 37.8163,
+        "averageWinPct": 3.528185,
+        "averageLossPct": -2.687305,
+        "rewardRiskRatio": 1.3129,
+        "profitFactor": 0.7984,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 5938,
+        "winRatePct": 39.9798,
+        "averageWinPct": 3.349203,
+        "averageLossPct": -2.674801,
+        "rewardRiskRatio": 1.2521,
+        "profitFactor": 0.8341,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 3137,
+        "winRatePct": 43.9273,
+        "averageWinPct": 2.900671,
+        "averageLossPct": -2.379727,
+        "rewardRiskRatio": 1.2189,
+        "profitFactor": 0.9549,
+        "totalReturnPct": -96.6334,
+        "maxDrawdownPct": 99.9995,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "TRX/USDT:USDT",
+        "count": 1953,
+        "sharePct": 8.5707
+      },
+      {
+        "value": "LTC/USDT:USDT",
+        "count": 1195,
+        "sharePct": 5.2442
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 1021,
+        "sharePct": 4.4806
+      },
+      {
+        "value": "ETH/USDT:USDT",
+        "count": 1009,
+        "sharePct": 4.428
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 990,
+        "sharePct": 4.3446
+      },
+      {
+        "value": "XRP/USDT:USDT",
+        "count": 989,
+        "sharePct": 4.3402
+      },
+      {
+        "value": "BCH/USDT:USDT",
+        "count": 976,
+        "sharePct": 4.2831
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 961,
+        "sharePct": 4.2173
+      },
+      {
+        "value": "ATOM/USDT:USDT",
+        "count": 921,
+        "sharePct": 4.0418
+      },
+      {
+        "value": "DOT/USDT:USDT",
+        "count": 893,
+        "sharePct": 3.9189
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 868,
+        "sharePct": 3.8092
+      },
+      {
+        "value": "ETC/USDT:USDT",
+        "count": 858,
+        "sharePct": 3.7653
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 22787,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-07",
+        "count": 973,
+        "sharePct": 4.27
+      },
+      {
+        "value": "2024-09",
+        "count": 914,
+        "sharePct": 4.0111
+      },
+      {
+        "value": "2024-11",
+        "count": 795,
+        "sharePct": 3.4888
+      },
+      {
+        "value": "2024-07",
+        "count": 773,
+        "sharePct": 3.3923
+      },
+      {
+        "value": "2023-11",
+        "count": 769,
+        "sharePct": 3.3747
+      },
+      {
+        "value": "2026-04",
+        "count": 765,
+        "sharePct": 3.3572
+      },
+      {
+        "value": "2023-12",
+        "count": 737,
+        "sharePct": 3.2343
+      },
+      {
+        "value": "2024-05",
+        "count": 729,
+        "sharePct": 3.1992
+      },
+      {
+        "value": "2024-02",
+        "count": 709,
+        "sharePct": 3.1114
+      },
+      {
+        "value": "2023-01",
+        "count": 695,
+        "sharePct": 3.05
+      },
+      {
+        "value": "2024-10",
+        "count": 685,
+        "sharePct": 3.0061
+      },
+      {
+        "value": "2023-07",
+        "count": 669,
+        "sharePct": 2.9359
+      },
+      {
+        "value": "2025-05",
+        "count": 662,
+        "sharePct": 2.9052
+      },
+      {
+        "value": "2023-10",
+        "count": 656,
+        "sharePct": 2.8788
+      },
+      {
+        "value": "2026-05",
+        "count": 635,
+        "sharePct": 2.7867
+      },
+      {
+        "value": "2025-04",
+        "count": 615,
+        "sharePct": 2.6989
+      },
+      {
+        "value": "2023-09",
+        "count": 585,
+        "sharePct": 2.5673
+      },
+      {
+        "value": "2023-04",
+        "count": 580,
+        "sharePct": 2.5453
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 27,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 8.5707,
+      "maxMonthSharePct": 4.27,
+      "recentHoldoutTradeCount": 4558
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:long_continuation_candidate:sl0.04:h30",
+    "timeframe": "1h",
+    "setupName": "long_continuation_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.04,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 30,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-01T19:00:00+00:00",
+    "lastSignalAt": "2026-07-05T14:00:00+00:00",
+    "metrics": {
+      "tradeCount": 22787,
+      "winRatePct": 41.2296,
+      "averageWinPct": 3.76525,
+      "averageLossPct": -3.137158,
+      "rewardRiskRatio": 1.2002,
+      "profitFactor": 0.842,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 13672,
+        "winRatePct": 41.1864,
+        "averageWinPct": 3.855854,
+        "averageLossPct": -3.141907,
+        "rewardRiskRatio": 1.2272,
+        "profitFactor": 0.8594,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4557,
+        "winRatePct": 39.5436,
+        "averageWinPct": 4.083569,
+        "averageLossPct": -3.301597,
+        "rewardRiskRatio": 1.2368,
+        "profitFactor": 0.809,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4558,
+        "winRatePct": 43.0452,
+        "averageWinPct": 3.212856,
+        "averageLossPct": -2.94794,
+        "rewardRiskRatio": 1.0899,
+        "profitFactor": 0.8237,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7272,
+        "winRatePct": 40.0853,
+        "averageWinPct": 4.167386,
+        "averageLossPct": -3.350184,
+        "rewardRiskRatio": 1.2439,
+        "profitFactor": 0.8322,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 5938,
+        "winRatePct": 39.3398,
+        "averageWinPct": 3.889781,
+        "averageLossPct": -3.266122,
+        "rewardRiskRatio": 1.1909,
+        "profitFactor": 0.7724,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 3137,
+        "winRatePct": 45.3618,
+        "averageWinPct": 3.211701,
+        "averageLossPct": -2.831413,
+        "rewardRiskRatio": 1.1343,
+        "profitFactor": 0.9417,
+        "totalReturnPct": -99.2829,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "TRX/USDT:USDT",
+        "count": 1953,
+        "sharePct": 8.5707
+      },
+      {
+        "value": "LTC/USDT:USDT",
+        "count": 1195,
+        "sharePct": 5.2442
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 1021,
+        "sharePct": 4.4806
+      },
+      {
+        "value": "ETH/USDT:USDT",
+        "count": 1009,
+        "sharePct": 4.428
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 990,
+        "sharePct": 4.3446
+      },
+      {
+        "value": "XRP/USDT:USDT",
+        "count": 989,
+        "sharePct": 4.3402
+      },
+      {
+        "value": "BCH/USDT:USDT",
+        "count": 976,
+        "sharePct": 4.2831
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 961,
+        "sharePct": 4.2173
+      },
+      {
+        "value": "ATOM/USDT:USDT",
+        "count": 921,
+        "sharePct": 4.0418
+      },
+      {
+        "value": "DOT/USDT:USDT",
+        "count": 893,
+        "sharePct": 3.9189
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 868,
+        "sharePct": 3.8092
+      },
+      {
+        "value": "ETC/USDT:USDT",
+        "count": 858,
+        "sharePct": 3.7653
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 22787,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-07",
+        "count": 973,
+        "sharePct": 4.27
+      },
+      {
+        "value": "2024-09",
+        "count": 914,
+        "sharePct": 4.0111
+      },
+      {
+        "value": "2024-11",
+        "count": 795,
+        "sharePct": 3.4888
+      },
+      {
+        "value": "2024-07",
+        "count": 773,
+        "sharePct": 3.3923
+      },
+      {
+        "value": "2023-11",
+        "count": 769,
+        "sharePct": 3.3747
+      },
+      {
+        "value": "2026-04",
+        "count": 765,
+        "sharePct": 3.3572
+      },
+      {
+        "value": "2023-12",
+        "count": 737,
+        "sharePct": 3.2343
+      },
+      {
+        "value": "2024-05",
+        "count": 729,
+        "sharePct": 3.1992
+      },
+      {
+        "value": "2024-02",
+        "count": 709,
+        "sharePct": 3.1114
+      },
+      {
+        "value": "2023-01",
+        "count": 695,
+        "sharePct": 3.05
+      },
+      {
+        "value": "2024-10",
+        "count": 685,
+        "sharePct": 3.0061
+      },
+      {
+        "value": "2023-07",
+        "count": 669,
+        "sharePct": 2.9359
+      },
+      {
+        "value": "2025-05",
+        "count": 662,
+        "sharePct": 2.9052
+      },
+      {
+        "value": "2023-10",
+        "count": 656,
+        "sharePct": 2.8788
+      },
+      {
+        "value": "2026-05",
+        "count": 635,
+        "sharePct": 2.7867
+      },
+      {
+        "value": "2025-04",
+        "count": 615,
+        "sharePct": 2.6989
+      },
+      {
+        "value": "2023-09",
+        "count": 585,
+        "sharePct": 2.5673
+      },
+      {
+        "value": "2023-04",
+        "count": 580,
+        "sharePct": 2.5453
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 27,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 8.5707,
+      "maxMonthSharePct": 4.27,
+      "recentHoldoutTradeCount": 4558
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:long_continuation_candidate:sl0.025:h18",
+    "timeframe": "1h",
+    "setupName": "long_continuation_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.025,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-01T19:00:00+00:00",
+    "lastSignalAt": "2026-07-05T14:00:00+00:00",
+    "metrics": {
+      "tradeCount": 22787,
+      "winRatePct": 39.7683,
+      "averageWinPct": 2.754971,
+      "averageLossPct": -2.189003,
+      "rewardRiskRatio": 1.2586,
+      "profitFactor": 0.831,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 13672,
+        "winRatePct": 39.3286,
+        "averageWinPct": 2.791296,
+        "averageLossPct": -2.185044,
+        "rewardRiskRatio": 1.2775,
+        "profitFactor": 0.8281,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4557,
+        "winRatePct": 39.9386,
+        "averageWinPct": 3.008332,
+        "averageLossPct": -2.296053,
+        "rewardRiskRatio": 1.3102,
+        "profitFactor": 0.8712,
+        "totalReturnPct": -99.9955,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4558,
+        "winRatePct": 40.9171,
+        "averageWinPct": 2.402994,
+        "averageLossPct": -2.092395,
+        "rewardRiskRatio": 1.1484,
+        "profitFactor": 0.7953,
+        "totalReturnPct": -99.9998,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7272,
+        "winRatePct": 38.0638,
+        "averageWinPct": 2.999435,
+        "averageLossPct": -2.288732,
+        "rewardRiskRatio": 1.3105,
+        "profitFactor": 0.8054,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 5938,
+        "winRatePct": 39.3567,
+        "averageWinPct": 2.881758,
+        "averageLossPct": -2.275713,
+        "rewardRiskRatio": 1.2663,
+        "profitFactor": 0.8218,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 3137,
+        "winRatePct": 42.8754,
+        "averageWinPct": 2.394922,
+        "averageLossPct": -2.02913,
+        "rewardRiskRatio": 1.1803,
+        "profitFactor": 0.8859,
+        "totalReturnPct": -99.4452,
+        "maxDrawdownPct": 99.9963,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "TRX/USDT:USDT",
+        "count": 1953,
+        "sharePct": 8.5707
+      },
+      {
+        "value": "LTC/USDT:USDT",
+        "count": 1195,
+        "sharePct": 5.2442
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 1021,
+        "sharePct": 4.4806
+      },
+      {
+        "value": "ETH/USDT:USDT",
+        "count": 1009,
+        "sharePct": 4.428
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 990,
+        "sharePct": 4.3446
+      },
+      {
+        "value": "XRP/USDT:USDT",
+        "count": 989,
+        "sharePct": 4.3402
+      },
+      {
+        "value": "BCH/USDT:USDT",
+        "count": 976,
+        "sharePct": 4.2831
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 961,
+        "sharePct": 4.2173
+      },
+      {
+        "value": "ATOM/USDT:USDT",
+        "count": 921,
+        "sharePct": 4.0418
+      },
+      {
+        "value": "DOT/USDT:USDT",
+        "count": 893,
+        "sharePct": 3.9189
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 868,
+        "sharePct": 3.8092
+      },
+      {
+        "value": "ETC/USDT:USDT",
+        "count": 858,
+        "sharePct": 3.7653
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 22787,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-07",
+        "count": 973,
+        "sharePct": 4.27
+      },
+      {
+        "value": "2024-09",
+        "count": 914,
+        "sharePct": 4.0111
+      },
+      {
+        "value": "2024-11",
+        "count": 795,
+        "sharePct": 3.4888
+      },
+      {
+        "value": "2024-07",
+        "count": 773,
+        "sharePct": 3.3923
+      },
+      {
+        "value": "2023-11",
+        "count": 769,
+        "sharePct": 3.3747
+      },
+      {
+        "value": "2026-04",
+        "count": 765,
+        "sharePct": 3.3572
+      },
+      {
+        "value": "2023-12",
+        "count": 737,
+        "sharePct": 3.2343
+      },
+      {
+        "value": "2024-05",
+        "count": 729,
+        "sharePct": 3.1992
+      },
+      {
+        "value": "2024-02",
+        "count": 709,
+        "sharePct": 3.1114
+      },
+      {
+        "value": "2023-01",
+        "count": 695,
+        "sharePct": 3.05
+      },
+      {
+        "value": "2024-10",
+        "count": 685,
+        "sharePct": 3.0061
+      },
+      {
+        "value": "2023-07",
+        "count": 669,
+        "sharePct": 2.9359
+      },
+      {
+        "value": "2025-05",
+        "count": 662,
+        "sharePct": 2.9052
+      },
+      {
+        "value": "2023-10",
+        "count": 656,
+        "sharePct": 2.8788
+      },
+      {
+        "value": "2026-05",
+        "count": 635,
+        "sharePct": 2.7867
+      },
+      {
+        "value": "2025-04",
+        "count": 615,
+        "sharePct": 2.6989
+      },
+      {
+        "value": "2023-09",
+        "count": 585,
+        "sharePct": 2.5673
+      },
+      {
+        "value": "2023-04",
+        "count": 580,
+        "sharePct": 2.5453
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 27,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 8.5707,
+      "maxMonthSharePct": 4.27,
+      "recentHoldoutTradeCount": 4558
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:long_continuation_candidate:sl0.02:h12",
+    "timeframe": "1h",
+    "setupName": "long_continuation_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.02,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 12,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-01T19:00:00+00:00",
+    "lastSignalAt": "2026-07-05T14:00:00+00:00",
+    "metrics": {
+      "tradeCount": 22787,
+      "winRatePct": 38.6273,
+      "averageWinPct": 2.246295,
+      "averageLossPct": -1.77778,
+      "rewardRiskRatio": 1.2635,
+      "profitFactor": 0.7953,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 13672,
+        "winRatePct": 38.1583,
+        "averageWinPct": 2.231187,
+        "averageLossPct": -1.77003,
+        "rewardRiskRatio": 1.2605,
+        "profitFactor": 0.7778,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4557,
+        "winRatePct": 39.4338,
+        "averageWinPct": 2.406681,
+        "averageLossPct": -1.848258,
+        "rewardRiskRatio": 1.3021,
+        "profitFactor": 0.8478,
+        "totalReturnPct": -99.9877,
+        "maxDrawdownPct": 99.999,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4558,
+        "winRatePct": 39.2277,
+        "averageWinPct": 2.129184,
+        "averageLossPct": -1.73121,
+        "rewardRiskRatio": 1.2299,
+        "profitFactor": 0.7939,
+        "totalReturnPct": -99.9983,
+        "maxDrawdownPct": 99.9999,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7272,
+        "winRatePct": 36.9912,
+        "averageWinPct": 2.419101,
+        "averageLossPct": -1.857416,
+        "rewardRiskRatio": 1.3024,
+        "profitFactor": 0.7646,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 5938,
+        "winRatePct": 38.5147,
+        "averageWinPct": 2.37574,
+        "averageLossPct": -1.833373,
+        "rewardRiskRatio": 1.2958,
+        "profitFactor": 0.8117,
+        "totalReturnPct": -99.9999,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 3137,
+        "winRatePct": 41.154,
+        "averageWinPct": 2.082576,
+        "averageLossPct": -1.702546,
+        "rewardRiskRatio": 1.2232,
+        "profitFactor": 0.8555,
+        "totalReturnPct": -99.4892,
+        "maxDrawdownPct": 99.9706,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "TRX/USDT:USDT",
+        "count": 1953,
+        "sharePct": 8.5707
+      },
+      {
+        "value": "LTC/USDT:USDT",
+        "count": 1195,
+        "sharePct": 5.2442
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 1021,
+        "sharePct": 4.4806
+      },
+      {
+        "value": "ETH/USDT:USDT",
+        "count": 1009,
+        "sharePct": 4.428
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 990,
+        "sharePct": 4.3446
+      },
+      {
+        "value": "XRP/USDT:USDT",
+        "count": 989,
+        "sharePct": 4.3402
+      },
+      {
+        "value": "BCH/USDT:USDT",
+        "count": 976,
+        "sharePct": 4.2831
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 961,
+        "sharePct": 4.2173
+      },
+      {
+        "value": "ATOM/USDT:USDT",
+        "count": 921,
+        "sharePct": 4.0418
+      },
+      {
+        "value": "DOT/USDT:USDT",
+        "count": 893,
+        "sharePct": 3.9189
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 868,
+        "sharePct": 3.8092
+      },
+      {
+        "value": "ETC/USDT:USDT",
+        "count": 858,
+        "sharePct": 3.7653
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 22787,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-07",
+        "count": 973,
+        "sharePct": 4.27
+      },
+      {
+        "value": "2024-09",
+        "count": 914,
+        "sharePct": 4.0111
+      },
+      {
+        "value": "2024-11",
+        "count": 795,
+        "sharePct": 3.4888
+      },
+      {
+        "value": "2024-07",
+        "count": 773,
+        "sharePct": 3.3923
+      },
+      {
+        "value": "2023-11",
+        "count": 769,
+        "sharePct": 3.3747
+      },
+      {
+        "value": "2026-04",
+        "count": 765,
+        "sharePct": 3.3572
+      },
+      {
+        "value": "2023-12",
+        "count": 737,
+        "sharePct": 3.2343
+      },
+      {
+        "value": "2024-05",
+        "count": 729,
+        "sharePct": 3.1992
+      },
+      {
+        "value": "2024-02",
+        "count": 709,
+        "sharePct": 3.1114
+      },
+      {
+        "value": "2023-01",
+        "count": 695,
+        "sharePct": 3.05
+      },
+      {
+        "value": "2024-10",
+        "count": 685,
+        "sharePct": 3.0061
+      },
+      {
+        "value": "2023-07",
+        "count": 669,
+        "sharePct": 2.9359
+      },
+      {
+        "value": "2025-05",
+        "count": 662,
+        "sharePct": 2.9052
+      },
+      {
+        "value": "2023-10",
+        "count": 656,
+        "sharePct": 2.8788
+      },
+      {
+        "value": "2026-05",
+        "count": 635,
+        "sharePct": 2.7867
+      },
+      {
+        "value": "2025-04",
+        "count": 615,
+        "sharePct": 2.6989
+      },
+      {
+        "value": "2023-09",
+        "count": 585,
+        "sharePct": 2.5673
+      },
+      {
+        "value": "2023-04",
+        "count": 580,
+        "sharePct": 2.5453
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 27,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 8.5707,
+      "maxMonthSharePct": 4.27,
+      "recentHoldoutTradeCount": 4558
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:short_reversal_candidate:sl0.04:h30",
+    "timeframe": "1h",
+    "setupName": "short_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.04,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 30,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-02T07:00:00+00:00",
+    "lastSignalAt": "2026-07-04T17:00:00+00:00",
+    "metrics": {
+      "tradeCount": 21686,
+      "winRatePct": 42.9955,
+      "averageWinPct": 5.018618,
+      "averageLossPct": -3.631703,
+      "rewardRiskRatio": 1.3819,
+      "profitFactor": 1.0423,
+      "totalReturnPct": -99.5793,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 13011,
+        "winRatePct": 41.488,
+        "averageWinPct": 5.129455,
+        "averageLossPct": -3.65519,
+        "rewardRiskRatio": 1.4033,
+        "profitFactor": 0.995,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4337,
+        "winRatePct": 42.0106,
+        "averageWinPct": 5.367125,
+        "averageLossPct": -3.618268,
+        "rewardRiskRatio": 1.4833,
+        "profitFactor": 1.0746,
+        "totalReturnPct": 410.0038,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4338,
+        "winRatePct": 48.5016,
+        "averageWinPct": 4.432459,
+        "averageLossPct": -3.566787,
+        "rewardRiskRatio": 1.2427,
+        "profitFactor": 1.1704,
+        "totalReturnPct": 925926.7234,
+        "maxDrawdownPct": 99.7855,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7647,
+        "winRatePct": 41.2711,
+        "averageWinPct": 5.19358,
+        "averageLossPct": -3.634286,
+        "rewardRiskRatio": 1.4291,
+        "profitFactor": 1.0042,
+        "totalReturnPct": -99.9696,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 6120,
+        "winRatePct": 43.7582,
+        "averageWinPct": 5.217547,
+        "averageLossPct": -3.565614,
+        "rewardRiskRatio": 1.4633,
+        "profitFactor": 1.1385,
+        "totalReturnPct": 1864186.9043,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 2813,
+        "winRatePct": 47.4227,
+        "averageWinPct": 4.109591,
+        "averageLossPct": -3.64807,
+        "rewardRiskRatio": 1.1265,
+        "profitFactor": 1.0161,
+        "totalReturnPct": -83.4471,
+        "maxDrawdownPct": 99.7633,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 1211,
+        "sharePct": 5.5842
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 1173,
+        "sharePct": 5.409
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 1170,
+        "sharePct": 5.3952
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 1093,
+        "sharePct": 5.0401
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 1067,
+        "sharePct": 4.9202
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 997,
+        "sharePct": 4.5974
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 990,
+        "sharePct": 4.5652
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 948,
+        "sharePct": 4.3715
+      },
+      {
+        "value": "INJ/USDT:USDT",
+        "count": 946,
+        "sharePct": 4.3623
+      },
+      {
+        "value": "WIF/USDT:USDT",
+        "count": 924,
+        "sharePct": 4.2608
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 893,
+        "sharePct": 4.1179
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 869,
+        "sharePct": 4.0072
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 21686,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 1246,
+        "sharePct": 5.7456
+      },
+      {
+        "value": "2023-12",
+        "count": 920,
+        "sharePct": 4.2424
+      },
+      {
+        "value": "2024-03",
+        "count": 880,
+        "sharePct": 4.0579
+      },
+      {
+        "value": "2024-12",
+        "count": 768,
+        "sharePct": 3.5415
+      },
+      {
+        "value": "2025-05",
+        "count": 748,
+        "sharePct": 3.4492
+      },
+      {
+        "value": "2025-07",
+        "count": 693,
+        "sharePct": 3.1956
+      },
+      {
+        "value": "2024-01",
+        "count": 692,
+        "sharePct": 3.191
+      },
+      {
+        "value": "2023-11",
+        "count": 652,
+        "sharePct": 3.0065
+      },
+      {
+        "value": "2025-01",
+        "count": 648,
+        "sharePct": 2.9881
+      },
+      {
+        "value": "2023-01",
+        "count": 640,
+        "sharePct": 2.9512
+      },
+      {
+        "value": "2024-05",
+        "count": 640,
+        "sharePct": 2.9512
+      },
+      {
+        "value": "2024-09",
+        "count": 598,
+        "sharePct": 2.7575
+      },
+      {
+        "value": "2024-02",
+        "count": 570,
+        "sharePct": 2.6284
+      },
+      {
+        "value": "2025-04",
+        "count": 547,
+        "sharePct": 2.5224
+      },
+      {
+        "value": "2025-08",
+        "count": 542,
+        "sharePct": 2.4993
+      },
+      {
+        "value": "2024-08",
+        "count": 536,
+        "sharePct": 2.4716
+      },
+      {
+        "value": "2023-03",
+        "count": 534,
+        "sharePct": 2.4624
+      },
+      {
+        "value": "2026-05",
+        "count": 514,
+        "sharePct": 2.3702
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.5842,
+      "maxMonthSharePct": 5.7456,
+      "recentHoldoutTradeCount": 4338
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:short_reversal_candidate:sl0.03:h24",
+    "timeframe": "1h",
+    "setupName": "short_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.03,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-02T07:00:00+00:00",
+    "lastSignalAt": "2026-07-04T17:00:00+00:00",
+    "metrics": {
+      "tradeCount": 21686,
+      "winRatePct": 39.7353,
+      "averageWinPct": 4.348109,
+      "averageLossPct": -2.916676,
+      "rewardRiskRatio": 1.4908,
+      "profitFactor": 0.9829,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 13011,
+        "winRatePct": 39.1361,
+        "averageWinPct": 4.406046,
+        "averageLossPct": -2.937967,
+        "rewardRiskRatio": 1.4997,
+        "profitFactor": 0.9643,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4337,
+        "winRatePct": 37.6528,
+        "averageWinPct": 4.510429,
+        "averageLossPct": -2.916391,
+        "rewardRiskRatio": 1.5466,
+        "profitFactor": 0.934,
+        "totalReturnPct": -99.9777,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4338,
+        "winRatePct": 43.6146,
+        "averageWinPct": 4.052084,
+        "averageLossPct": -2.848063,
+        "rewardRiskRatio": 1.4228,
+        "profitFactor": 1.1005,
+        "totalReturnPct": 5349.8992,
+        "maxDrawdownPct": 99.7679,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7647,
+        "winRatePct": 39.1134,
+        "averageWinPct": 4.437644,
+        "averageLossPct": -2.932943,
+        "rewardRiskRatio": 1.513,
+        "profitFactor": 0.972,
+        "totalReturnPct": -99.9922,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 6120,
+        "winRatePct": 39.9837,
+        "averageWinPct": 4.429357,
+        "averageLossPct": -2.873994,
+        "rewardRiskRatio": 1.5412,
+        "profitFactor": 1.0268,
+        "totalReturnPct": -81.4704,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 2813,
+        "winRatePct": 41.5926,
+        "averageWinPct": 3.852422,
+        "averageLossPct": -2.894487,
+        "rewardRiskRatio": 1.331,
+        "profitFactor": 0.9478,
+        "totalReturnPct": -98.6726,
+        "maxDrawdownPct": 99.7846,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 1211,
+        "sharePct": 5.5842
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 1173,
+        "sharePct": 5.409
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 1170,
+        "sharePct": 5.3952
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 1093,
+        "sharePct": 5.0401
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 1067,
+        "sharePct": 4.9202
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 997,
+        "sharePct": 4.5974
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 990,
+        "sharePct": 4.5652
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 948,
+        "sharePct": 4.3715
+      },
+      {
+        "value": "INJ/USDT:USDT",
+        "count": 946,
+        "sharePct": 4.3623
+      },
+      {
+        "value": "WIF/USDT:USDT",
+        "count": 924,
+        "sharePct": 4.2608
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 893,
+        "sharePct": 4.1179
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 869,
+        "sharePct": 4.0072
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 21686,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 1246,
+        "sharePct": 5.7456
+      },
+      {
+        "value": "2023-12",
+        "count": 920,
+        "sharePct": 4.2424
+      },
+      {
+        "value": "2024-03",
+        "count": 880,
+        "sharePct": 4.0579
+      },
+      {
+        "value": "2024-12",
+        "count": 768,
+        "sharePct": 3.5415
+      },
+      {
+        "value": "2025-05",
+        "count": 748,
+        "sharePct": 3.4492
+      },
+      {
+        "value": "2025-07",
+        "count": 693,
+        "sharePct": 3.1956
+      },
+      {
+        "value": "2024-01",
+        "count": 692,
+        "sharePct": 3.191
+      },
+      {
+        "value": "2023-11",
+        "count": 652,
+        "sharePct": 3.0065
+      },
+      {
+        "value": "2025-01",
+        "count": 648,
+        "sharePct": 2.9881
+      },
+      {
+        "value": "2023-01",
+        "count": 640,
+        "sharePct": 2.9512
+      },
+      {
+        "value": "2024-05",
+        "count": 640,
+        "sharePct": 2.9512
+      },
+      {
+        "value": "2024-09",
+        "count": 598,
+        "sharePct": 2.7575
+      },
+      {
+        "value": "2024-02",
+        "count": 570,
+        "sharePct": 2.6284
+      },
+      {
+        "value": "2025-04",
+        "count": 547,
+        "sharePct": 2.5224
+      },
+      {
+        "value": "2025-08",
+        "count": 542,
+        "sharePct": 2.4993
+      },
+      {
+        "value": "2024-08",
+        "count": 536,
+        "sharePct": 2.4716
+      },
+      {
+        "value": "2023-03",
+        "count": 534,
+        "sharePct": 2.4624
+      },
+      {
+        "value": "2026-05",
+        "count": 514,
+        "sharePct": 2.3702
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.5842,
+      "maxMonthSharePct": 5.7456,
+      "recentHoldoutTradeCount": 4338
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:short_reversal_candidate:sl0.025:h18",
+    "timeframe": "1h",
+    "setupName": "short_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.025,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-02T07:00:00+00:00",
+    "lastSignalAt": "2026-07-04T17:00:00+00:00",
+    "metrics": {
+      "tradeCount": 21686,
+      "winRatePct": 37.9369,
+      "averageWinPct": 3.68817,
+      "averageLossPct": -2.475775,
+      "rewardRiskRatio": 1.4897,
+      "profitFactor": 0.9106,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 13011,
+        "winRatePct": 37.1147,
+        "averageWinPct": 3.712722,
+        "averageLossPct": -2.487086,
+        "rewardRiskRatio": 1.4928,
+        "profitFactor": 0.881,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4337,
+        "winRatePct": 36.131,
+        "averageWinPct": 3.863913,
+        "averageLossPct": -2.473911,
+        "rewardRiskRatio": 1.5619,
+        "profitFactor": 0.8836,
+        "totalReturnPct": -99.9964,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4338,
+        "winRatePct": 42.2084,
+        "averageWinPct": 3.473015,
+        "averageLossPct": -2.44092,
+        "rewardRiskRatio": 1.4228,
+        "profitFactor": 1.0392,
+        "totalReturnPct": 28.5354,
+        "maxDrawdownPct": 99.8715,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7647,
+        "winRatePct": 36.6287,
+        "averageWinPct": 3.773893,
+        "averageLossPct": -2.485858,
+        "rewardRiskRatio": 1.5181,
+        "profitFactor": 0.8775,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 6120,
+        "winRatePct": 39.0686,
+        "averageWinPct": 3.725877,
+        "averageLossPct": -2.464027,
+        "rewardRiskRatio": 1.5121,
+        "profitFactor": 0.9696,
+        "totalReturnPct": -99.7461,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 2813,
+        "winRatePct": 39.4241,
+        "averageWinPct": 3.386026,
+        "averageLossPct": -2.443772,
+        "rewardRiskRatio": 1.3856,
+        "profitFactor": 0.9018,
+        "totalReturnPct": -99.557,
+        "maxDrawdownPct": 99.868,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 1211,
+        "sharePct": 5.5842
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 1173,
+        "sharePct": 5.409
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 1170,
+        "sharePct": 5.3952
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 1093,
+        "sharePct": 5.0401
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 1067,
+        "sharePct": 4.9202
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 997,
+        "sharePct": 4.5974
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 990,
+        "sharePct": 4.5652
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 948,
+        "sharePct": 4.3715
+      },
+      {
+        "value": "INJ/USDT:USDT",
+        "count": 946,
+        "sharePct": 4.3623
+      },
+      {
+        "value": "WIF/USDT:USDT",
+        "count": 924,
+        "sharePct": 4.2608
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 893,
+        "sharePct": 4.1179
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 869,
+        "sharePct": 4.0072
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 21686,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 1246,
+        "sharePct": 5.7456
+      },
+      {
+        "value": "2023-12",
+        "count": 920,
+        "sharePct": 4.2424
+      },
+      {
+        "value": "2024-03",
+        "count": 880,
+        "sharePct": 4.0579
+      },
+      {
+        "value": "2024-12",
+        "count": 768,
+        "sharePct": 3.5415
+      },
+      {
+        "value": "2025-05",
+        "count": 748,
+        "sharePct": 3.4492
+      },
+      {
+        "value": "2025-07",
+        "count": 693,
+        "sharePct": 3.1956
+      },
+      {
+        "value": "2024-01",
+        "count": 692,
+        "sharePct": 3.191
+      },
+      {
+        "value": "2023-11",
+        "count": 652,
+        "sharePct": 3.0065
+      },
+      {
+        "value": "2025-01",
+        "count": 648,
+        "sharePct": 2.9881
+      },
+      {
+        "value": "2023-01",
+        "count": 640,
+        "sharePct": 2.9512
+      },
+      {
+        "value": "2024-05",
+        "count": 640,
+        "sharePct": 2.9512
+      },
+      {
+        "value": "2024-09",
+        "count": 598,
+        "sharePct": 2.7575
+      },
+      {
+        "value": "2024-02",
+        "count": 570,
+        "sharePct": 2.6284
+      },
+      {
+        "value": "2025-04",
+        "count": 547,
+        "sharePct": 2.5224
+      },
+      {
+        "value": "2025-08",
+        "count": 542,
+        "sharePct": 2.4993
+      },
+      {
+        "value": "2024-08",
+        "count": 536,
+        "sharePct": 2.4716
+      },
+      {
+        "value": "2023-03",
+        "count": 534,
+        "sharePct": 2.4624
+      },
+      {
+        "value": "2026-05",
+        "count": 514,
+        "sharePct": 2.3702
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.5842,
+      "maxMonthSharePct": 5.7456,
+      "recentHoldoutTradeCount": 4338
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:short_reversal_candidate:sl0.02:h12",
+    "timeframe": "1h",
+    "setupName": "short_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.02,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 12,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-02T07:00:00+00:00",
+    "lastSignalAt": "2026-07-04T17:00:00+00:00",
+    "metrics": {
+      "tradeCount": 21686,
+      "winRatePct": 37.0193,
+      "averageWinPct": 2.983509,
+      "averageLossPct": -2.023249,
+      "rewardRiskRatio": 1.4746,
+      "profitFactor": 0.8668,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 13011,
+        "winRatePct": 36.154,
+        "averageWinPct": 3.041208,
+        "averageLossPct": -2.03057,
+        "rewardRiskRatio": 1.4977,
+        "profitFactor": 0.8481,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4337,
+        "winRatePct": 35.5084,
+        "averageWinPct": 3.086744,
+        "averageLossPct": -2.038331,
+        "rewardRiskRatio": 1.5143,
+        "profitFactor": 0.8338,
+        "totalReturnPct": -99.9983,
+        "maxDrawdownPct": 99.9997,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4338,
+        "winRatePct": 41.1249,
+        "averageWinPct": 2.742256,
+        "averageLossPct": -1.982918,
+        "rewardRiskRatio": 1.3829,
+        "profitFactor": 0.966,
+        "totalReturnPct": -95.447,
+        "maxDrawdownPct": 99.8556,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 7647,
+        "winRatePct": 36.2103,
+        "averageWinPct": 3.115204,
+        "averageLossPct": -2.027868,
+        "rewardRiskRatio": 1.5362,
+        "profitFactor": 0.872,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 6120,
+        "winRatePct": 37.6471,
+        "averageWinPct": 3.004107,
+        "averageLossPct": -2.010343,
+        "rewardRiskRatio": 1.4943,
+        "profitFactor": 0.9022,
+        "totalReturnPct": -99.9929,
+        "maxDrawdownPct": 99.9999,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 2813,
+        "winRatePct": 39.744,
+        "averageWinPct": 2.671289,
+        "averageLossPct": -2.012619,
+        "rewardRiskRatio": 1.3273,
+        "profitFactor": 0.8755,
+        "totalReturnPct": -99.3975,
+        "maxDrawdownPct": 99.8567,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 1211,
+        "sharePct": 5.5842
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 1173,
+        "sharePct": 5.409
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 1170,
+        "sharePct": 5.3952
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 1093,
+        "sharePct": 5.0401
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 1067,
+        "sharePct": 4.9202
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 997,
+        "sharePct": 4.5974
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 990,
+        "sharePct": 4.5652
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 948,
+        "sharePct": 4.3715
+      },
+      {
+        "value": "INJ/USDT:USDT",
+        "count": 946,
+        "sharePct": 4.3623
+      },
+      {
+        "value": "WIF/USDT:USDT",
+        "count": 924,
+        "sharePct": 4.2608
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 893,
+        "sharePct": 4.1179
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 869,
+        "sharePct": 4.0072
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 21686,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 1246,
+        "sharePct": 5.7456
+      },
+      {
+        "value": "2023-12",
+        "count": 920,
+        "sharePct": 4.2424
+      },
+      {
+        "value": "2024-03",
+        "count": 880,
+        "sharePct": 4.0579
+      },
+      {
+        "value": "2024-12",
+        "count": 768,
+        "sharePct": 3.5415
+      },
+      {
+        "value": "2025-05",
+        "count": 748,
+        "sharePct": 3.4492
+      },
+      {
+        "value": "2025-07",
+        "count": 693,
+        "sharePct": 3.1956
+      },
+      {
+        "value": "2024-01",
+        "count": 692,
+        "sharePct": 3.191
+      },
+      {
+        "value": "2023-11",
+        "count": 652,
+        "sharePct": 3.0065
+      },
+      {
+        "value": "2025-01",
+        "count": 648,
+        "sharePct": 2.9881
+      },
+      {
+        "value": "2023-01",
+        "count": 640,
+        "sharePct": 2.9512
+      },
+      {
+        "value": "2024-05",
+        "count": 640,
+        "sharePct": 2.9512
+      },
+      {
+        "value": "2024-09",
+        "count": 598,
+        "sharePct": 2.7575
+      },
+      {
+        "value": "2024-02",
+        "count": 570,
+        "sharePct": 2.6284
+      },
+      {
+        "value": "2025-04",
+        "count": 547,
+        "sharePct": 2.5224
+      },
+      {
+        "value": "2025-08",
+        "count": 542,
+        "sharePct": 2.4993
+      },
+      {
+        "value": "2024-08",
+        "count": 536,
+        "sharePct": 2.4716
+      },
+      {
+        "value": "2023-03",
+        "count": 534,
+        "sharePct": 2.4624
+      },
+      {
+        "value": "2026-05",
+        "count": 514,
+        "sharePct": 2.3702
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.5842,
+      "maxMonthSharePct": 5.7456,
+      "recentHoldoutTradeCount": 4338
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:long_reversal_candidate:sl0.04:h30",
+    "timeframe": "1h",
+    "setupName": "long_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.04,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 30,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-03T18:00:00+00:00",
+    "lastSignalAt": "2026-07-05T03:00:00+00:00",
+    "metrics": {
+      "tradeCount": 20184,
+      "winRatePct": 40.4033,
+      "averageWinPct": 4.664252,
+      "averageLossPct": -3.73038,
+      "rewardRiskRatio": 1.2503,
+      "profitFactor": 0.8477,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 12110,
+        "winRatePct": 40.0495,
+        "averageWinPct": 4.972214,
+        "averageLossPct": -3.82576,
+        "rewardRiskRatio": 1.2997,
+        "profitFactor": 0.8682,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4037,
+        "winRatePct": 42.2591,
+        "averageWinPct": 4.348628,
+        "averageLossPct": -3.725442,
+        "rewardRiskRatio": 1.1673,
+        "profitFactor": 0.8543,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4037,
+        "winRatePct": 39.6086,
+        "averageWinPct": 4.066903,
+        "averageLossPct": -3.451072,
+        "rewardRiskRatio": 1.1784,
+        "profitFactor": 0.7729,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 6435,
+        "winRatePct": 37.9332,
+        "averageWinPct": 5.266337,
+        "averageLossPct": -3.86935,
+        "rewardRiskRatio": 1.361,
+        "profitFactor": 0.8318,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 7669,
+        "winRatePct": 39.9922,
+        "averageWinPct": 4.700996,
+        "averageLossPct": -3.821118,
+        "rewardRiskRatio": 1.2303,
+        "profitFactor": 0.8199,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 2782,
+        "winRatePct": 36.0532,
+        "averageWinPct": 3.947032,
+        "averageLossPct": -3.392675,
+        "rewardRiskRatio": 1.1634,
+        "profitFactor": 0.6559,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 1144,
+        "sharePct": 5.6679
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 1131,
+        "sharePct": 5.6034
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 1056,
+        "sharePct": 5.2319
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 955,
+        "sharePct": 4.7315
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 950,
+        "sharePct": 4.7067
+      },
+      {
+        "value": "WIF/USDT:USDT",
+        "count": 928,
+        "sharePct": 4.5977
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 864,
+        "sharePct": 4.2806
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 856,
+        "sharePct": 4.241
+      },
+      {
+        "value": "ARB/USDT:USDT",
+        "count": 852,
+        "sharePct": 4.2212
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 847,
+        "sharePct": 4.1964
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 831,
+        "sharePct": 4.1171
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 812,
+        "sharePct": 4.023
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_reversal_candidate",
+        "count": 20184,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-02",
+        "count": 1062,
+        "sharePct": 5.2616
+      },
+      {
+        "value": "2025-11",
+        "count": 905,
+        "sharePct": 4.4837
+      },
+      {
+        "value": "2024-12",
+        "count": 882,
+        "sharePct": 4.3698
+      },
+      {
+        "value": "2024-08",
+        "count": 862,
+        "sharePct": 4.2707
+      },
+      {
+        "value": "2025-01",
+        "count": 796,
+        "sharePct": 3.9437
+      },
+      {
+        "value": "2024-04",
+        "count": 770,
+        "sharePct": 3.8149
+      },
+      {
+        "value": "2025-03",
+        "count": 761,
+        "sharePct": 3.7703
+      },
+      {
+        "value": "2026-06",
+        "count": 746,
+        "sharePct": 3.696
+      },
+      {
+        "value": "2026-02",
+        "count": 725,
+        "sharePct": 3.592
+      },
+      {
+        "value": "2025-10",
+        "count": 635,
+        "sharePct": 3.1461
+      },
+      {
+        "value": "2025-12",
+        "count": 633,
+        "sharePct": 3.1361
+      },
+      {
+        "value": "2025-04",
+        "count": 620,
+        "sharePct": 3.0717
+      },
+      {
+        "value": "2024-07",
+        "count": 617,
+        "sharePct": 3.0569
+      },
+      {
+        "value": "2024-01",
+        "count": 592,
+        "sharePct": 2.933
+      },
+      {
+        "value": "2024-03",
+        "count": 587,
+        "sharePct": 2.9082
+      },
+      {
+        "value": "2025-08",
+        "count": 541,
+        "sharePct": 2.6803
+      },
+      {
+        "value": "2025-06",
+        "count": 538,
+        "sharePct": 2.6655
+      },
+      {
+        "value": "2025-05",
+        "count": 520,
+        "sharePct": 2.5763
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.6679,
+      "maxMonthSharePct": 5.2616,
+      "recentHoldoutTradeCount": 4037
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:long_reversal_candidate:sl0.03:h24",
+    "timeframe": "1h",
+    "setupName": "long_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.03,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-03T18:00:00+00:00",
+    "lastSignalAt": "2026-07-05T03:00:00+00:00",
+    "metrics": {
+      "tradeCount": 20184,
+      "winRatePct": 37.5545,
+      "averageWinPct": 4.086593,
+      "averageLossPct": -2.981428,
+      "rewardRiskRatio": 1.3707,
+      "profitFactor": 0.8243,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 12110,
+        "winRatePct": 36.9447,
+        "averageWinPct": 4.199443,
+        "averageLossPct": -3.032354,
+        "rewardRiskRatio": 1.3849,
+        "profitFactor": 0.8114,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4037,
+        "winRatePct": 38.5682,
+        "averageWinPct": 4.028627,
+        "averageLossPct": -2.982134,
+        "rewardRiskRatio": 1.3509,
+        "profitFactor": 0.8481,
+        "totalReturnPct": -99.9999,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4037,
+        "winRatePct": 38.3701,
+        "averageWinPct": 3.81891,
+        "averageLossPct": -2.824427,
+        "rewardRiskRatio": 1.3521,
+        "profitFactor": 0.8418,
+        "totalReturnPct": -99.9999,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 6435,
+        "winRatePct": 34.6232,
+        "averageWinPct": 4.39907,
+        "averageLossPct": -3.050228,
+        "rewardRiskRatio": 1.4422,
+        "profitFactor": 0.7638,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 7669,
+        "winRatePct": 37.5538,
+        "averageWinPct": 4.22549,
+        "averageLossPct": -3.032579,
+        "rewardRiskRatio": 1.3934,
+        "profitFactor": 0.8379,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 2782,
+        "winRatePct": 34.5794,
+        "averageWinPct": 3.700293,
+        "averageLossPct": -2.76707,
+        "rewardRiskRatio": 1.3373,
+        "profitFactor": 0.7068,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 1144,
+        "sharePct": 5.6679
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 1131,
+        "sharePct": 5.6034
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 1056,
+        "sharePct": 5.2319
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 955,
+        "sharePct": 4.7315
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 950,
+        "sharePct": 4.7067
+      },
+      {
+        "value": "WIF/USDT:USDT",
+        "count": 928,
+        "sharePct": 4.5977
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 864,
+        "sharePct": 4.2806
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 856,
+        "sharePct": 4.241
+      },
+      {
+        "value": "ARB/USDT:USDT",
+        "count": 852,
+        "sharePct": 4.2212
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 847,
+        "sharePct": 4.1964
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 831,
+        "sharePct": 4.1171
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 812,
+        "sharePct": 4.023
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_reversal_candidate",
+        "count": 20184,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-02",
+        "count": 1062,
+        "sharePct": 5.2616
+      },
+      {
+        "value": "2025-11",
+        "count": 905,
+        "sharePct": 4.4837
+      },
+      {
+        "value": "2024-12",
+        "count": 882,
+        "sharePct": 4.3698
+      },
+      {
+        "value": "2024-08",
+        "count": 862,
+        "sharePct": 4.2707
+      },
+      {
+        "value": "2025-01",
+        "count": 796,
+        "sharePct": 3.9437
+      },
+      {
+        "value": "2024-04",
+        "count": 770,
+        "sharePct": 3.8149
+      },
+      {
+        "value": "2025-03",
+        "count": 761,
+        "sharePct": 3.7703
+      },
+      {
+        "value": "2026-06",
+        "count": 746,
+        "sharePct": 3.696
+      },
+      {
+        "value": "2026-02",
+        "count": 725,
+        "sharePct": 3.592
+      },
+      {
+        "value": "2025-10",
+        "count": 635,
+        "sharePct": 3.1461
+      },
+      {
+        "value": "2025-12",
+        "count": 633,
+        "sharePct": 3.1361
+      },
+      {
+        "value": "2025-04",
+        "count": 620,
+        "sharePct": 3.0717
+      },
+      {
+        "value": "2024-07",
+        "count": 617,
+        "sharePct": 3.0569
+      },
+      {
+        "value": "2024-01",
+        "count": 592,
+        "sharePct": 2.933
+      },
+      {
+        "value": "2024-03",
+        "count": 587,
+        "sharePct": 2.9082
+      },
+      {
+        "value": "2025-08",
+        "count": 541,
+        "sharePct": 2.6803
+      },
+      {
+        "value": "2025-06",
+        "count": 538,
+        "sharePct": 2.6655
+      },
+      {
+        "value": "2025-05",
+        "count": 520,
+        "sharePct": 2.5763
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.6679,
+      "maxMonthSharePct": 5.2616,
+      "recentHoldoutTradeCount": 4037
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:long_reversal_candidate:sl0.025:h18",
+    "timeframe": "1h",
+    "setupName": "long_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.025,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-03T18:00:00+00:00",
+    "lastSignalAt": "2026-07-05T03:00:00+00:00",
+    "metrics": {
+      "tradeCount": 20184,
+      "winRatePct": 36.6181,
+      "averageWinPct": 3.434392,
+      "averageLossPct": -2.514282,
+      "rewardRiskRatio": 1.366,
+      "profitFactor": 0.7892,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 12110,
+        "winRatePct": 35.7473,
+        "averageWinPct": 3.499926,
+        "averageLossPct": -2.549867,
+        "rewardRiskRatio": 1.3726,
+        "profitFactor": 0.7636,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4037,
+        "winRatePct": 36.8343,
+        "averageWinPct": 3.465043,
+        "averageLossPct": -2.509347,
+        "rewardRiskRatio": 1.3809,
+        "profitFactor": 0.8052,
+        "totalReturnPct": -99.9999,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4037,
+        "winRatePct": 39.0141,
+        "averageWinPct": 3.225329,
+        "averageLossPct": -2.406927,
+        "rewardRiskRatio": 1.34,
+        "profitFactor": 0.8572,
+        "totalReturnPct": -99.9966,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 6435,
+        "winRatePct": 33.582,
+        "averageWinPct": 3.654657,
+        "averageLossPct": -2.565055,
+        "rewardRiskRatio": 1.4248,
+        "profitFactor": 0.7204,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 7669,
+        "winRatePct": 36.6019,
+        "averageWinPct": 3.561595,
+        "averageLossPct": -2.56049,
+        "rewardRiskRatio": 1.391,
+        "profitFactor": 0.8031,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 2782,
+        "winRatePct": 35.1186,
+        "averageWinPct": 3.161945,
+        "averageLossPct": -2.361538,
+        "rewardRiskRatio": 1.3389,
+        "profitFactor": 0.7247,
+        "totalReturnPct": -99.9998,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 1144,
+        "sharePct": 5.6679
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 1131,
+        "sharePct": 5.6034
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 1056,
+        "sharePct": 5.2319
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 955,
+        "sharePct": 4.7315
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 950,
+        "sharePct": 4.7067
+      },
+      {
+        "value": "WIF/USDT:USDT",
+        "count": 928,
+        "sharePct": 4.5977
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 864,
+        "sharePct": 4.2806
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 856,
+        "sharePct": 4.241
+      },
+      {
+        "value": "ARB/USDT:USDT",
+        "count": 852,
+        "sharePct": 4.2212
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 847,
+        "sharePct": 4.1964
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 831,
+        "sharePct": 4.1171
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 812,
+        "sharePct": 4.023
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_reversal_candidate",
+        "count": 20184,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-02",
+        "count": 1062,
+        "sharePct": 5.2616
+      },
+      {
+        "value": "2025-11",
+        "count": 905,
+        "sharePct": 4.4837
+      },
+      {
+        "value": "2024-12",
+        "count": 882,
+        "sharePct": 4.3698
+      },
+      {
+        "value": "2024-08",
+        "count": 862,
+        "sharePct": 4.2707
+      },
+      {
+        "value": "2025-01",
+        "count": 796,
+        "sharePct": 3.9437
+      },
+      {
+        "value": "2024-04",
+        "count": 770,
+        "sharePct": 3.8149
+      },
+      {
+        "value": "2025-03",
+        "count": 761,
+        "sharePct": 3.7703
+      },
+      {
+        "value": "2026-06",
+        "count": 746,
+        "sharePct": 3.696
+      },
+      {
+        "value": "2026-02",
+        "count": 725,
+        "sharePct": 3.592
+      },
+      {
+        "value": "2025-10",
+        "count": 635,
+        "sharePct": 3.1461
+      },
+      {
+        "value": "2025-12",
+        "count": 633,
+        "sharePct": 3.1361
+      },
+      {
+        "value": "2025-04",
+        "count": 620,
+        "sharePct": 3.0717
+      },
+      {
+        "value": "2024-07",
+        "count": 617,
+        "sharePct": 3.0569
+      },
+      {
+        "value": "2024-01",
+        "count": 592,
+        "sharePct": 2.933
+      },
+      {
+        "value": "2024-03",
+        "count": 587,
+        "sharePct": 2.9082
+      },
+      {
+        "value": "2025-08",
+        "count": 541,
+        "sharePct": 2.6803
+      },
+      {
+        "value": "2025-06",
+        "count": 538,
+        "sharePct": 2.6655
+      },
+      {
+        "value": "2025-05",
+        "count": 520,
+        "sharePct": 2.5763
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.6679,
+      "maxMonthSharePct": 5.2616,
+      "recentHoldoutTradeCount": 4037
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "1h:long_reversal_candidate:sl0.02:h12",
+    "timeframe": "1h",
+    "setupName": "long_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.02,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 12,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-03T18:00:00+00:00",
+    "lastSignalAt": "2026-07-05T03:00:00+00:00",
+    "metrics": {
+      "tradeCount": 20184,
+      "winRatePct": 35.5579,
+      "averageWinPct": 2.812549,
+      "averageLossPct": -2.067381,
+      "rewardRiskRatio": 1.3604,
+      "profitFactor": 0.7507,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 12110,
+        "winRatePct": 34.3518,
+        "averageWinPct": 2.858954,
+        "averageLossPct": -2.086934,
+        "rewardRiskRatio": 1.3699,
+        "profitFactor": 0.7168,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 4037,
+        "winRatePct": 36.9581,
+        "averageWinPct": 2.76489,
+        "averageLossPct": -2.074397,
+        "rewardRiskRatio": 1.3329,
+        "profitFactor": 0.7814,
+        "totalReturnPct": -99.9997,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 4037,
+        "winRatePct": 37.7756,
+        "averageWinPct": 2.732592,
+        "averageLossPct": -1.998392,
+        "rewardRiskRatio": 1.3674,
+        "profitFactor": 0.8301,
+        "totalReturnPct": -99.9943,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 6435,
+        "winRatePct": 32.23,
+        "averageWinPct": 3.015887,
+        "averageLossPct": -2.105868,
+        "rewardRiskRatio": 1.4321,
+        "profitFactor": 0.6811,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 7669,
+        "winRatePct": 34.8025,
+        "averageWinPct": 2.868867,
+        "averageLossPct": -2.103597,
+        "rewardRiskRatio": 1.3638,
+        "profitFactor": 0.728,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 2782,
+        "winRatePct": 36.3048,
+        "averageWinPct": 2.701275,
+        "averageLossPct": -1.970127,
+        "rewardRiskRatio": 1.3711,
+        "profitFactor": 0.7815,
+        "totalReturnPct": -99.979,
+        "maxDrawdownPct": 99.9999,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 1144,
+        "sharePct": 5.6679
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 1131,
+        "sharePct": 5.6034
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 1056,
+        "sharePct": 5.2319
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 955,
+        "sharePct": 4.7315
+      },
+      {
+        "value": "TIA/USDT:USDT",
+        "count": 950,
+        "sharePct": 4.7067
+      },
+      {
+        "value": "WIF/USDT:USDT",
+        "count": 928,
+        "sharePct": 4.5977
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 864,
+        "sharePct": 4.2806
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 856,
+        "sharePct": 4.241
+      },
+      {
+        "value": "ARB/USDT:USDT",
+        "count": 852,
+        "sharePct": 4.2212
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 847,
+        "sharePct": 4.1964
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 831,
+        "sharePct": 4.1171
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 812,
+        "sharePct": 4.023
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_reversal_candidate",
+        "count": 20184,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-02",
+        "count": 1062,
+        "sharePct": 5.2616
+      },
+      {
+        "value": "2025-11",
+        "count": 905,
+        "sharePct": 4.4837
+      },
+      {
+        "value": "2024-12",
+        "count": 882,
+        "sharePct": 4.3698
+      },
+      {
+        "value": "2024-08",
+        "count": 862,
+        "sharePct": 4.2707
+      },
+      {
+        "value": "2025-01",
+        "count": 796,
+        "sharePct": 3.9437
+      },
+      {
+        "value": "2024-04",
+        "count": 770,
+        "sharePct": 3.8149
+      },
+      {
+        "value": "2025-03",
+        "count": 761,
+        "sharePct": 3.7703
+      },
+      {
+        "value": "2026-06",
+        "count": 746,
+        "sharePct": 3.696
+      },
+      {
+        "value": "2026-02",
+        "count": 725,
+        "sharePct": 3.592
+      },
+      {
+        "value": "2025-10",
+        "count": 635,
+        "sharePct": 3.1461
+      },
+      {
+        "value": "2025-12",
+        "count": 633,
+        "sharePct": 3.1361
+      },
+      {
+        "value": "2025-04",
+        "count": 620,
+        "sharePct": 3.0717
+      },
+      {
+        "value": "2024-07",
+        "count": 617,
+        "sharePct": 3.0569
+      },
+      {
+        "value": "2024-01",
+        "count": 592,
+        "sharePct": 2.933
+      },
+      {
+        "value": "2024-03",
+        "count": 587,
+        "sharePct": 2.9082
+      },
+      {
+        "value": "2025-08",
+        "count": 541,
+        "sharePct": 2.6803
+      },
+      {
+        "value": "2025-06",
+        "count": 538,
+        "sharePct": 2.6655
+      },
+      {
+        "value": "2025-05",
+        "count": 520,
+        "sharePct": 2.5763
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.6679,
+      "maxMonthSharePct": 5.2616,
+      "recentHoldoutTradeCount": 4037
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:short_reversal_candidate:sl0.06:h24",
+    "timeframe": "4h",
+    "setupName": "short_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.06,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T20:00:00+00:00",
+    "lastSignalAt": "2026-07-03T16:00:00+00:00",
+    "metrics": {
+      "tradeCount": 11335,
+      "winRatePct": 42.0468,
+      "averageWinPct": 8.344567,
+      "averageLossPct": -5.357112,
+      "rewardRiskRatio": 1.5577,
+      "profitFactor": 1.1301,
+      "totalReturnPct": 207238971.1178,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 6801,
+        "winRatePct": 38.8178,
+        "averageWinPct": 8.580687,
+        "averageLossPct": -5.406145,
+        "rewardRiskRatio": 1.5872,
+        "profitFactor": 1.007,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 2267,
+        "winRatePct": 41.1557,
+        "averageWinPct": 8.418613,
+        "averageLossPct": -5.421083,
+        "rewardRiskRatio": 1.5529,
+        "profitFactor": 1.0861,
+        "totalReturnPct": -5.9495,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 2267,
+        "winRatePct": 52.6246,
+        "averageWinPct": 7.764148,
+        "averageLossPct": -5.087684,
+        "rewardRiskRatio": 1.5261,
+        "profitFactor": 1.6952,
+        "totalReturnPct": 6494890288052327.0,
+        "maxDrawdownPct": 99.7906,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 3634,
+        "winRatePct": 37.727,
+        "averageWinPct": 9.077523,
+        "averageLossPct": -5.443268,
+        "rewardRiskRatio": 1.6677,
+        "profitFactor": 1.0103,
+        "totalReturnPct": -99.9906,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 3268,
+        "winRatePct": 46.6952,
+        "averageWinPct": 8.803208,
+        "averageLossPct": -5.393325,
+        "rewardRiskRatio": 1.6322,
+        "profitFactor": 1.4299,
+        "totalReturnPct": 1546384516354363.2,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 1577,
+        "winRatePct": 47.5587,
+        "averageWinPct": 7.318048,
+        "averageLossPct": -5.10875,
+        "rewardRiskRatio": 1.4325,
+        "profitFactor": 1.2991,
+        "totalReturnPct": 690400.1356,
+        "maxDrawdownPct": 99.7895,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 573,
+        "sharePct": 5.0551
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 513,
+        "sharePct": 4.5258
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 501,
+        "sharePct": 4.4199
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 497,
+        "sharePct": 4.3846
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 494,
+        "sharePct": 4.3582
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 484,
+        "sharePct": 4.27
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 472,
+        "sharePct": 4.1641
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 471,
+        "sharePct": 4.1553
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 464,
+        "sharePct": 4.0935
+      },
+      {
+        "value": "DOGE/USDT:USDT",
+        "count": 463,
+        "sharePct": 4.0847
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 447,
+        "sharePct": 3.9435
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 446,
+        "sharePct": 3.9347
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 11335,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 598,
+        "sharePct": 5.2757
+      },
+      {
+        "value": "2023-12",
+        "count": 490,
+        "sharePct": 4.3229
+      },
+      {
+        "value": "2025-07",
+        "count": 479,
+        "sharePct": 4.2258
+      },
+      {
+        "value": "2025-05",
+        "count": 443,
+        "sharePct": 3.9082
+      },
+      {
+        "value": "2024-02",
+        "count": 391,
+        "sharePct": 3.4495
+      },
+      {
+        "value": "2024-09",
+        "count": 377,
+        "sharePct": 3.326
+      },
+      {
+        "value": "2026-04",
+        "count": 331,
+        "sharePct": 2.9202
+      },
+      {
+        "value": "2025-04",
+        "count": 320,
+        "sharePct": 2.8231
+      },
+      {
+        "value": "2024-03",
+        "count": 317,
+        "sharePct": 2.7966
+      },
+      {
+        "value": "2023-11",
+        "count": 314,
+        "sharePct": 2.7702
+      },
+      {
+        "value": "2023-01",
+        "count": 312,
+        "sharePct": 2.7525
+      },
+      {
+        "value": "2024-07",
+        "count": 312,
+        "sharePct": 2.7525
+      },
+      {
+        "value": "2025-01",
+        "count": 311,
+        "sharePct": 2.7437
+      },
+      {
+        "value": "2026-03",
+        "count": 308,
+        "sharePct": 2.7172
+      },
+      {
+        "value": "2024-05",
+        "count": 304,
+        "sharePct": 2.682
+      },
+      {
+        "value": "2023-10",
+        "count": 300,
+        "sharePct": 2.6467
+      },
+      {
+        "value": "2024-01",
+        "count": 298,
+        "sharePct": 2.629
+      },
+      {
+        "value": "2025-08",
+        "count": 281,
+        "sharePct": 2.479
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.0551,
+      "maxMonthSharePct": 5.2757,
+      "recentHoldoutTradeCount": 2267
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:short_reversal_candidate:sl0.05:h18",
+    "timeframe": "4h",
+    "setupName": "short_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.05,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T20:00:00+00:00",
+    "lastSignalAt": "2026-07-03T16:00:00+00:00",
+    "metrics": {
+      "tradeCount": 11335,
+      "winRatePct": 40.0529,
+      "averageWinPct": 7.162298,
+      "averageLossPct": -4.567548,
+      "rewardRiskRatio": 1.5681,
+      "profitFactor": 1.0477,
+      "totalReturnPct": -99.9254,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 6801,
+        "winRatePct": 37.4798,
+        "averageWinPct": 7.315303,
+        "averageLossPct": -4.59972,
+        "rewardRiskRatio": 1.5904,
+        "profitFactor": 0.9534,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 2267,
+        "winRatePct": 37.8915,
+        "averageWinPct": 7.339307,
+        "averageLossPct": -4.594832,
+        "rewardRiskRatio": 1.5973,
+        "profitFactor": 0.9745,
+        "totalReturnPct": -99.7697,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 2267,
+        "winRatePct": 49.9338,
+        "averageWinPct": 6.683446,
+        "averageLossPct": -4.413174,
+        "rewardRiskRatio": 1.5144,
+        "profitFactor": 1.5104,
+        "totalReturnPct": 160911091141.4666,
+        "maxDrawdownPct": 99.2346,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 3634,
+        "winRatePct": 36.8189,
+        "averageWinPct": 7.673816,
+        "averageLossPct": -4.658312,
+        "rewardRiskRatio": 1.6473,
+        "profitFactor": 0.96,
+        "totalReturnPct": -99.9991,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 3268,
+        "winRatePct": 42.1053,
+        "averageWinPct": 7.317965,
+        "averageLossPct": -4.544157,
+        "rewardRiskRatio": 1.6104,
+        "profitFactor": 1.1712,
+        "totalReturnPct": 345318.7152,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 1577,
+        "winRatePct": 45.9734,
+        "averageWinPct": 6.68116,
+        "averageLossPct": -4.469916,
+        "rewardRiskRatio": 1.4947,
+        "profitFactor": 1.2719,
+        "totalReturnPct": 161139.0544,
+        "maxDrawdownPct": 99.1956,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 573,
+        "sharePct": 5.0551
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 513,
+        "sharePct": 4.5258
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 501,
+        "sharePct": 4.4199
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 497,
+        "sharePct": 4.3846
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 494,
+        "sharePct": 4.3582
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 484,
+        "sharePct": 4.27
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 472,
+        "sharePct": 4.1641
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 471,
+        "sharePct": 4.1553
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 464,
+        "sharePct": 4.0935
+      },
+      {
+        "value": "DOGE/USDT:USDT",
+        "count": 463,
+        "sharePct": 4.0847
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 447,
+        "sharePct": 3.9435
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 446,
+        "sharePct": 3.9347
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 11335,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 598,
+        "sharePct": 5.2757
+      },
+      {
+        "value": "2023-12",
+        "count": 490,
+        "sharePct": 4.3229
+      },
+      {
+        "value": "2025-07",
+        "count": 479,
+        "sharePct": 4.2258
+      },
+      {
+        "value": "2025-05",
+        "count": 443,
+        "sharePct": 3.9082
+      },
+      {
+        "value": "2024-02",
+        "count": 391,
+        "sharePct": 3.4495
+      },
+      {
+        "value": "2024-09",
+        "count": 377,
+        "sharePct": 3.326
+      },
+      {
+        "value": "2026-04",
+        "count": 331,
+        "sharePct": 2.9202
+      },
+      {
+        "value": "2025-04",
+        "count": 320,
+        "sharePct": 2.8231
+      },
+      {
+        "value": "2024-03",
+        "count": 317,
+        "sharePct": 2.7966
+      },
+      {
+        "value": "2023-11",
+        "count": 314,
+        "sharePct": 2.7702
+      },
+      {
+        "value": "2023-01",
+        "count": 312,
+        "sharePct": 2.7525
+      },
+      {
+        "value": "2024-07",
+        "count": 312,
+        "sharePct": 2.7525
+      },
+      {
+        "value": "2025-01",
+        "count": 311,
+        "sharePct": 2.7437
+      },
+      {
+        "value": "2026-03",
+        "count": 308,
+        "sharePct": 2.7172
+      },
+      {
+        "value": "2024-05",
+        "count": 304,
+        "sharePct": 2.682
+      },
+      {
+        "value": "2023-10",
+        "count": 300,
+        "sharePct": 2.6467
+      },
+      {
+        "value": "2024-01",
+        "count": 298,
+        "sharePct": 2.629
+      },
+      {
+        "value": "2025-08",
+        "count": 281,
+        "sharePct": 2.479
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.0551,
+      "maxMonthSharePct": 5.2757,
+      "recentHoldoutTradeCount": 2267
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:short_reversal_candidate:sl0.04:h12",
+    "timeframe": "4h",
+    "setupName": "short_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.04,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 12,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T20:00:00+00:00",
+    "lastSignalAt": "2026-07-03T16:00:00+00:00",
+    "metrics": {
+      "tradeCount": 11335,
+      "winRatePct": 39.5765,
+      "averageWinPct": 5.688906,
+      "averageLossPct": -3.737977,
+      "rewardRiskRatio": 1.5219,
+      "profitFactor": 0.9968,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 6801,
+        "winRatePct": 37.4945,
+        "averageWinPct": 5.798191,
+        "averageLossPct": -3.758313,
+        "rewardRiskRatio": 1.5428,
+        "profitFactor": 0.9254,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 2267,
+        "winRatePct": 38.2885,
+        "averageWinPct": 5.71414,
+        "averageLossPct": -3.737087,
+        "rewardRiskRatio": 1.529,
+        "profitFactor": 0.9487,
+        "totalReturnPct": -99.5817,
+        "maxDrawdownPct": 99.9999,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 2267,
+        "winRatePct": 47.1107,
+        "averageWinPct": 5.407466,
+        "averageLossPct": -3.666915,
+        "rewardRiskRatio": 1.4747,
+        "profitFactor": 1.3135,
+        "totalReturnPct": 5743208.5782,
+        "maxDrawdownPct": 98.2203,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 3634,
+        "winRatePct": 36.2686,
+        "averageWinPct": 6.074441,
+        "averageLossPct": -3.795547,
+        "rewardRiskRatio": 1.6004,
+        "profitFactor": 0.9108,
+        "totalReturnPct": -99.9996,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 3268,
+        "winRatePct": 41.9829,
+        "averageWinPct": 5.696359,
+        "averageLossPct": -3.743898,
+        "rewardRiskRatio": 1.5215,
+        "profitFactor": 1.101,
+        "totalReturnPct": 1927.8802,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 1577,
+        "winRatePct": 42.6126,
+        "averageWinPct": 5.442732,
+        "averageLossPct": -3.639323,
+        "rewardRiskRatio": 1.4955,
+        "profitFactor": 1.1105,
+        "totalReturnPct": 468.8525,
+        "maxDrawdownPct": 98.1948,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 573,
+        "sharePct": 5.0551
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 513,
+        "sharePct": 4.5258
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 501,
+        "sharePct": 4.4199
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 497,
+        "sharePct": 4.3846
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 494,
+        "sharePct": 4.3582
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 484,
+        "sharePct": 4.27
+      },
+      {
+        "value": "OP/USDT:USDT",
+        "count": 472,
+        "sharePct": 4.1641
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 471,
+        "sharePct": 4.1553
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 464,
+        "sharePct": 4.0935
+      },
+      {
+        "value": "DOGE/USDT:USDT",
+        "count": 463,
+        "sharePct": 4.0847
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 447,
+        "sharePct": 3.9435
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 446,
+        "sharePct": 3.9347
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "short_reversal_candidate",
+        "count": 11335,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2024-11",
+        "count": 598,
+        "sharePct": 5.2757
+      },
+      {
+        "value": "2023-12",
+        "count": 490,
+        "sharePct": 4.3229
+      },
+      {
+        "value": "2025-07",
+        "count": 479,
+        "sharePct": 4.2258
+      },
+      {
+        "value": "2025-05",
+        "count": 443,
+        "sharePct": 3.9082
+      },
+      {
+        "value": "2024-02",
+        "count": 391,
+        "sharePct": 3.4495
+      },
+      {
+        "value": "2024-09",
+        "count": 377,
+        "sharePct": 3.326
+      },
+      {
+        "value": "2026-04",
+        "count": 331,
+        "sharePct": 2.9202
+      },
+      {
+        "value": "2025-04",
+        "count": 320,
+        "sharePct": 2.8231
+      },
+      {
+        "value": "2024-03",
+        "count": 317,
+        "sharePct": 2.7966
+      },
+      {
+        "value": "2023-11",
+        "count": 314,
+        "sharePct": 2.7702
+      },
+      {
+        "value": "2023-01",
+        "count": 312,
+        "sharePct": 2.7525
+      },
+      {
+        "value": "2024-07",
+        "count": 312,
+        "sharePct": 2.7525
+      },
+      {
+        "value": "2025-01",
+        "count": 311,
+        "sharePct": 2.7437
+      },
+      {
+        "value": "2026-03",
+        "count": 308,
+        "sharePct": 2.7172
+      },
+      {
+        "value": "2024-05",
+        "count": 304,
+        "sharePct": 2.682
+      },
+      {
+        "value": "2023-10",
+        "count": 300,
+        "sharePct": 2.6467
+      },
+      {
+        "value": "2024-01",
+        "count": 298,
+        "sharePct": 2.629
+      },
+      {
+        "value": "2025-08",
+        "count": 281,
+        "sharePct": 2.479
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 5.0551,
+      "maxMonthSharePct": 5.2757,
+      "recentHoldoutTradeCount": 2267
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:long_reversal_candidate:sl0.06:h24",
+    "timeframe": "4h",
+    "setupName": "long_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.06,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-06T00:00:00+00:00",
+    "lastSignalAt": "2026-07-02T00:00:00+00:00",
+    "metrics": {
+      "tradeCount": 9719,
+      "winRatePct": 36.5264,
+      "averageWinPct": 7.44991,
+      "averageLossPct": -5.536316,
+      "rewardRiskRatio": 1.3456,
+      "profitFactor": 0.7744,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 5831,
+        "winRatePct": 38.2267,
+        "averageWinPct": 7.805208,
+        "averageLossPct": -5.60163,
+        "rewardRiskRatio": 1.3934,
+        "profitFactor": 0.8623,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 1944,
+        "winRatePct": 32.4588,
+        "averageWinPct": 7.654116,
+        "averageLossPct": -5.683305,
+        "rewardRiskRatio": 1.3468,
+        "profitFactor": 0.6472,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 1944,
+        "winRatePct": 35.4938,
+        "averageWinPct": 6.1154,
+        "averageLossPct": -5.194802,
+        "rewardRiskRatio": 1.1772,
+        "profitFactor": 0.6478,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 2772,
+        "winRatePct": 34.5238,
+        "averageWinPct": 8.385682,
+        "averageLossPct": -5.792394,
+        "rewardRiskRatio": 1.4477,
+        "profitFactor": 0.7633,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 3660,
+        "winRatePct": 34.235,
+        "averageWinPct": 7.926949,
+        "averageLossPct": -5.756432,
+        "rewardRiskRatio": 1.3771,
+        "profitFactor": 0.7168,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 1679,
+        "winRatePct": 33.651,
+        "averageWinPct": 6.071415,
+        "averageLossPct": -5.141621,
+        "rewardRiskRatio": 1.1808,
+        "profitFactor": 0.5989,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "OP/USDT:USDT",
+        "count": 484,
+        "sharePct": 4.9799
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 426,
+        "sharePct": 4.3832
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 419,
+        "sharePct": 4.3111
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 411,
+        "sharePct": 4.2288
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 409,
+        "sharePct": 4.2083
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 401,
+        "sharePct": 4.1259
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 400,
+        "sharePct": 4.1156
+      },
+      {
+        "value": "ARB/USDT:USDT",
+        "count": 399,
+        "sharePct": 4.1054
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 386,
+        "sharePct": 3.9716
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 386,
+        "sharePct": 3.9716
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 384,
+        "sharePct": 3.951
+      },
+      {
+        "value": "ATOM/USDT:USDT",
+        "count": 378,
+        "sharePct": 3.8893
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_reversal_candidate",
+        "count": 9719,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-11",
+        "count": 492,
+        "sharePct": 5.0622
+      },
+      {
+        "value": "2026-06",
+        "count": 470,
+        "sharePct": 4.8359
+      },
+      {
+        "value": "2025-02",
+        "count": 395,
+        "sharePct": 4.0642
+      },
+      {
+        "value": "2025-01",
+        "count": 384,
+        "sharePct": 3.951
+      },
+      {
+        "value": "2024-12",
+        "count": 345,
+        "sharePct": 3.5497
+      },
+      {
+        "value": "2024-08",
+        "count": 329,
+        "sharePct": 3.3851
+      },
+      {
+        "value": "2024-04",
+        "count": 324,
+        "sharePct": 3.3337
+      },
+      {
+        "value": "2025-10",
+        "count": 323,
+        "sharePct": 3.3234
+      },
+      {
+        "value": "2025-06",
+        "count": 315,
+        "sharePct": 3.2411
+      },
+      {
+        "value": "2026-02",
+        "count": 312,
+        "sharePct": 3.2102
+      },
+      {
+        "value": "2024-07",
+        "count": 311,
+        "sharePct": 3.1999
+      },
+      {
+        "value": "2025-12",
+        "count": 305,
+        "sharePct": 3.1382
+      },
+      {
+        "value": "2026-01",
+        "count": 301,
+        "sharePct": 3.097
+      },
+      {
+        "value": "2025-03",
+        "count": 290,
+        "sharePct": 2.9838
+      },
+      {
+        "value": "2025-05",
+        "count": 276,
+        "sharePct": 2.8398
+      },
+      {
+        "value": "2024-06",
+        "count": 246,
+        "sharePct": 2.5311
+      },
+      {
+        "value": "2024-01",
+        "count": 242,
+        "sharePct": 2.49
+      },
+      {
+        "value": "2025-08",
+        "count": 241,
+        "sharePct": 2.4797
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.9799,
+      "maxMonthSharePct": 5.0622,
+      "recentHoldoutTradeCount": 1944
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:long_reversal_candidate:sl0.05:h18",
+    "timeframe": "4h",
+    "setupName": "long_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.05,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-06T00:00:00+00:00",
+    "lastSignalAt": "2026-07-02T00:00:00+00:00",
+    "metrics": {
+      "tradeCount": 9719,
+      "winRatePct": 36.5264,
+      "averageWinPct": 6.286094,
+      "averageLossPct": -4.726842,
+      "rewardRiskRatio": 1.3299,
+      "profitFactor": 0.7653,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 5831,
+        "winRatePct": 36.9233,
+        "averageWinPct": 6.499813,
+        "averageLossPct": -4.77145,
+        "rewardRiskRatio": 1.3622,
+        "profitFactor": 0.7974,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 1944,
+        "winRatePct": 35.1852,
+        "averageWinPct": 6.376372,
+        "averageLossPct": -4.816503,
+        "rewardRiskRatio": 1.3239,
+        "profitFactor": 0.7187,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 1944,
+        "winRatePct": 36.677,
+        "averageWinPct": 5.554131,
+        "averageLossPct": -4.50179,
+        "rewardRiskRatio": 1.2338,
+        "profitFactor": 0.7146,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 2772,
+        "winRatePct": 33.2612,
+        "averageWinPct": 6.727453,
+        "averageLossPct": -4.933399,
+        "rewardRiskRatio": 1.3637,
+        "profitFactor": 0.6796,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 3660,
+        "winRatePct": 35.082,
+        "averageWinPct": 6.797578,
+        "averageLossPct": -4.884649,
+        "rewardRiskRatio": 1.3916,
+        "profitFactor": 0.752,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 1679,
+        "winRatePct": 35.9142,
+        "averageWinPct": 5.463808,
+        "averageLossPct": -4.453917,
+        "rewardRiskRatio": 1.2267,
+        "profitFactor": 0.6875,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "OP/USDT:USDT",
+        "count": 484,
+        "sharePct": 4.9799
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 426,
+        "sharePct": 4.3832
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 419,
+        "sharePct": 4.3111
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 411,
+        "sharePct": 4.2288
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 409,
+        "sharePct": 4.2083
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 401,
+        "sharePct": 4.1259
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 400,
+        "sharePct": 4.1156
+      },
+      {
+        "value": "ARB/USDT:USDT",
+        "count": 399,
+        "sharePct": 4.1054
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 386,
+        "sharePct": 3.9716
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 386,
+        "sharePct": 3.9716
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 384,
+        "sharePct": 3.951
+      },
+      {
+        "value": "ATOM/USDT:USDT",
+        "count": 378,
+        "sharePct": 3.8893
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_reversal_candidate",
+        "count": 9719,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-11",
+        "count": 492,
+        "sharePct": 5.0622
+      },
+      {
+        "value": "2026-06",
+        "count": 470,
+        "sharePct": 4.8359
+      },
+      {
+        "value": "2025-02",
+        "count": 395,
+        "sharePct": 4.0642
+      },
+      {
+        "value": "2025-01",
+        "count": 384,
+        "sharePct": 3.951
+      },
+      {
+        "value": "2024-12",
+        "count": 345,
+        "sharePct": 3.5497
+      },
+      {
+        "value": "2024-08",
+        "count": 329,
+        "sharePct": 3.3851
+      },
+      {
+        "value": "2024-04",
+        "count": 324,
+        "sharePct": 3.3337
+      },
+      {
+        "value": "2025-10",
+        "count": 323,
+        "sharePct": 3.3234
+      },
+      {
+        "value": "2025-06",
+        "count": 315,
+        "sharePct": 3.2411
+      },
+      {
+        "value": "2026-02",
+        "count": 312,
+        "sharePct": 3.2102
+      },
+      {
+        "value": "2024-07",
+        "count": 311,
+        "sharePct": 3.1999
+      },
+      {
+        "value": "2025-12",
+        "count": 305,
+        "sharePct": 3.1382
+      },
+      {
+        "value": "2026-01",
+        "count": 301,
+        "sharePct": 3.097
+      },
+      {
+        "value": "2025-03",
+        "count": 290,
+        "sharePct": 2.9838
+      },
+      {
+        "value": "2025-05",
+        "count": 276,
+        "sharePct": 2.8398
+      },
+      {
+        "value": "2024-06",
+        "count": 246,
+        "sharePct": 2.5311
+      },
+      {
+        "value": "2024-01",
+        "count": 242,
+        "sharePct": 2.49
+      },
+      {
+        "value": "2025-08",
+        "count": 241,
+        "sharePct": 2.4797
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.9799,
+      "maxMonthSharePct": 5.0622,
+      "recentHoldoutTradeCount": 1944
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:long_reversal_candidate:sl0.04:h12",
+    "timeframe": "4h",
+    "setupName": "long_reversal_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.04,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 12,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-06T00:00:00+00:00",
+    "lastSignalAt": "2026-07-02T00:00:00+00:00",
+    "metrics": {
+      "tradeCount": 9719,
+      "winRatePct": 35.9708,
+      "averageWinPct": 4.992385,
+      "averageLossPct": -3.850084,
+      "rewardRiskRatio": 1.2967,
+      "profitFactor": 0.7285,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 5831,
+        "winRatePct": 35.7229,
+        "averageWinPct": 5.246604,
+        "averageLossPct": -3.88591,
+        "rewardRiskRatio": 1.3502,
+        "profitFactor": 0.7504,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 1944,
+        "winRatePct": 36.3683,
+        "averageWinPct": 4.825991,
+        "averageLossPct": -3.942206,
+        "rewardRiskRatio": 1.2242,
+        "profitFactor": 0.6997,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 1944,
+        "winRatePct": 36.3169,
+        "averageWinPct": 4.40896,
+        "averageLossPct": -3.649575,
+        "rewardRiskRatio": 1.2081,
+        "profitFactor": 0.6889,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 2772,
+        "winRatePct": 31.3853,
+        "averageWinPct": 5.274809,
+        "averageLossPct": -3.952828,
+        "rewardRiskRatio": 1.3344,
+        "profitFactor": 0.6104,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 3660,
+        "winRatePct": 35.8197,
+        "averageWinPct": 5.340047,
+        "averageLossPct": -3.931854,
+        "rewardRiskRatio": 1.3581,
+        "profitFactor": 0.758,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 1679,
+        "winRatePct": 35.676,
+        "averageWinPct": 4.217425,
+        "averageLossPct": -3.707578,
+        "rewardRiskRatio": 1.1375,
+        "profitFactor": 0.6309,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "OP/USDT:USDT",
+        "count": 484,
+        "sharePct": 4.9799
+      },
+      {
+        "value": "PEPE/USDT:USDT",
+        "count": 426,
+        "sharePct": 4.3832
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 419,
+        "sharePct": 4.3111
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 411,
+        "sharePct": 4.2288
+      },
+      {
+        "value": "ORDI/USDT:USDT",
+        "count": 409,
+        "sharePct": 4.2083
+      },
+      {
+        "value": "SUI/USDT:USDT",
+        "count": 401,
+        "sharePct": 4.1259
+      },
+      {
+        "value": "FIL/USDT:USDT",
+        "count": 400,
+        "sharePct": 4.1156
+      },
+      {
+        "value": "ARB/USDT:USDT",
+        "count": 399,
+        "sharePct": 4.1054
+      },
+      {
+        "value": "AVAX/USDT:USDT",
+        "count": 386,
+        "sharePct": 3.9716
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 386,
+        "sharePct": 3.9716
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 384,
+        "sharePct": 3.951
+      },
+      {
+        "value": "ATOM/USDT:USDT",
+        "count": 378,
+        "sharePct": 3.8893
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_reversal_candidate",
+        "count": 9719,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-11",
+        "count": 492,
+        "sharePct": 5.0622
+      },
+      {
+        "value": "2026-06",
+        "count": 470,
+        "sharePct": 4.8359
+      },
+      {
+        "value": "2025-02",
+        "count": 395,
+        "sharePct": 4.0642
+      },
+      {
+        "value": "2025-01",
+        "count": 384,
+        "sharePct": 3.951
+      },
+      {
+        "value": "2024-12",
+        "count": 345,
+        "sharePct": 3.5497
+      },
+      {
+        "value": "2024-08",
+        "count": 329,
+        "sharePct": 3.3851
+      },
+      {
+        "value": "2024-04",
+        "count": 324,
+        "sharePct": 3.3337
+      },
+      {
+        "value": "2025-10",
+        "count": 323,
+        "sharePct": 3.3234
+      },
+      {
+        "value": "2025-06",
+        "count": 315,
+        "sharePct": 3.2411
+      },
+      {
+        "value": "2026-02",
+        "count": 312,
+        "sharePct": 3.2102
+      },
+      {
+        "value": "2024-07",
+        "count": 311,
+        "sharePct": 3.1999
+      },
+      {
+        "value": "2025-12",
+        "count": 305,
+        "sharePct": 3.1382
+      },
+      {
+        "value": "2026-01",
+        "count": 301,
+        "sharePct": 3.097
+      },
+      {
+        "value": "2025-03",
+        "count": 290,
+        "sharePct": 2.9838
+      },
+      {
+        "value": "2025-05",
+        "count": 276,
+        "sharePct": 2.8398
+      },
+      {
+        "value": "2024-06",
+        "count": 246,
+        "sharePct": 2.5311
+      },
+      {
+        "value": "2024-01",
+        "count": 242,
+        "sharePct": 2.49
+      },
+      {
+        "value": "2025-08",
+        "count": 241,
+        "sharePct": 2.4797
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 28,
+      "uniqueMonths": 43,
+      "maxPairSharePct": 4.9799,
+      "maxMonthSharePct": 5.0622,
+      "recentHoldoutTradeCount": 1944
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:long_continuation_candidate:sl0.05:h18",
+    "timeframe": "4h",
+    "setupName": "long_continuation_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.05,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T12:00:00+00:00",
+    "lastSignalAt": "2026-06-30T12:00:00+00:00",
+    "metrics": {
+      "tradeCount": 3254,
+      "winRatePct": 40.1352,
+      "averageWinPct": 5.999153,
+      "averageLossPct": -4.31666,
+      "rewardRiskRatio": 1.3898,
+      "profitFactor": 0.9317,
+      "totalReturnPct": -99.9983,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 1952,
+        "winRatePct": 41.4447,
+        "averageWinPct": 6.239255,
+        "averageLossPct": -4.326998,
+        "rewardRiskRatio": 1.4419,
+        "profitFactor": 1.0206,
+        "totalReturnPct": -89.7239,
+        "maxDrawdownPct": 99.9934,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 651,
+        "winRatePct": 34.5622,
+        "averageWinPct": 6.294274,
+        "averageLossPct": -4.611236,
+        "rewardRiskRatio": 1.365,
+        "profitFactor": 0.7209,
+        "totalReturnPct": -99.8601,
+        "maxDrawdownPct": 99.9972,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 651,
+        "winRatePct": 41.7819,
+        "averageWinPct": 5.0409,
+        "averageLossPct": -3.954372,
+        "rewardRiskRatio": 1.2748,
+        "profitFactor": 0.9149,
+        "totalReturnPct": -88.423,
+        "maxDrawdownPct": 99.5876,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 1016,
+        "winRatePct": 38.4843,
+        "averageWinPct": 7.168455,
+        "averageLossPct": -4.501852,
+        "rewardRiskRatio": 1.5923,
+        "profitFactor": 0.9962,
+        "totalReturnPct": -86.6726,
+        "maxDrawdownPct": 99.9374,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 787,
+        "winRatePct": 33.291,
+        "averageWinPct": 5.802593,
+        "averageLossPct": -4.494437,
+        "rewardRiskRatio": 1.2911,
+        "profitFactor": 0.6443,
+        "totalReturnPct": -99.9932,
+        "maxDrawdownPct": 99.9951,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 447,
+        "winRatePct": 47.651,
+        "averageWinPct": 5.039683,
+        "averageLossPct": -3.77107,
+        "rewardRiskRatio": 1.3364,
+        "profitFactor": 1.2165,
+        "totalReturnPct": 263.7806,
+        "maxDrawdownPct": 80.2879,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "TRX/USDT:USDT",
+        "count": 447,
+        "sharePct": 13.7369
+      },
+      {
+        "value": "ETH/USDT:USDT",
+        "count": 170,
+        "sharePct": 5.2243
+      },
+      {
+        "value": "LTC/USDT:USDT",
+        "count": 162,
+        "sharePct": 4.9785
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 156,
+        "sharePct": 4.7941
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 154,
+        "sharePct": 4.7326
+      },
+      {
+        "value": "BCH/USDT:USDT",
+        "count": 149,
+        "sharePct": 4.579
+      },
+      {
+        "value": "XRP/USDT:USDT",
+        "count": 147,
+        "sharePct": 4.5175
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 147,
+        "sharePct": 4.5175
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 146,
+        "sharePct": 4.4868
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 130,
+        "sharePct": 3.9951
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 122,
+        "sharePct": 3.7492
+      },
+      {
+        "value": "ETC/USDT:USDT",
+        "count": 121,
+        "sharePct": 3.7185
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 3254,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-05",
+        "count": 221,
+        "sharePct": 6.7916
+      },
+      {
+        "value": "2023-12",
+        "count": 152,
+        "sharePct": 4.6712
+      },
+      {
+        "value": "2026-05",
+        "count": 152,
+        "sharePct": 4.6712
+      },
+      {
+        "value": "2023-11",
+        "count": 143,
+        "sharePct": 4.3946
+      },
+      {
+        "value": "2024-09",
+        "count": 142,
+        "sharePct": 4.3639
+      },
+      {
+        "value": "2026-04",
+        "count": 136,
+        "sharePct": 4.1795
+      },
+      {
+        "value": "2023-07",
+        "count": 132,
+        "sharePct": 4.0565
+      },
+      {
+        "value": "2025-07",
+        "count": 122,
+        "sharePct": 3.7492
+      },
+      {
+        "value": "2024-02",
+        "count": 115,
+        "sharePct": 3.5341
+      },
+      {
+        "value": "2024-11",
+        "count": 115,
+        "sharePct": 3.5341
+      },
+      {
+        "value": "2023-04",
+        "count": 113,
+        "sharePct": 3.4726
+      },
+      {
+        "value": "2023-02",
+        "count": 112,
+        "sharePct": 3.4419
+      },
+      {
+        "value": "2024-10",
+        "count": 111,
+        "sharePct": 3.4112
+      },
+      {
+        "value": "2024-01",
+        "count": 98,
+        "sharePct": 3.0117
+      },
+      {
+        "value": "2025-09",
+        "count": 98,
+        "sharePct": 3.0117
+      },
+      {
+        "value": "2023-10",
+        "count": 96,
+        "sharePct": 2.9502
+      },
+      {
+        "value": "2024-12",
+        "count": 96,
+        "sharePct": 2.9502
+      },
+      {
+        "value": "2023-01",
+        "count": 93,
+        "sharePct": 2.858
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 27,
+      "uniqueMonths": 42,
+      "maxPairSharePct": 13.7369,
+      "maxMonthSharePct": 6.7916,
+      "recentHoldoutTradeCount": 651
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:long_continuation_candidate:sl0.04:h12",
+    "timeframe": "4h",
+    "setupName": "long_continuation_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.04,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 12,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T12:00:00+00:00",
+    "lastSignalAt": "2026-06-30T12:00:00+00:00",
+    "metrics": {
+      "tradeCount": 3254,
+      "winRatePct": 40.842,
+      "averageWinPct": 4.650127,
+      "averageLossPct": -3.552974,
+      "rewardRiskRatio": 1.3088,
+      "profitFactor": 0.9036,
+      "totalReturnPct": -99.9954,
+      "maxDrawdownPct": 99.9998,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 1952,
+        "winRatePct": 42.0082,
+        "averageWinPct": 4.814412,
+        "averageLossPct": -3.570089,
+        "rewardRiskRatio": 1.3485,
+        "profitFactor": 0.9769,
+        "totalReturnPct": -95.2421,
+        "maxDrawdownPct": 99.9282,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 651,
+        "winRatePct": 34.4086,
+        "averageWinPct": 5.08897,
+        "averageLossPct": -3.807163,
+        "rewardRiskRatio": 1.3367,
+        "profitFactor": 0.7012,
+        "totalReturnPct": -99.6209,
+        "maxDrawdownPct": 99.9694,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 651,
+        "winRatePct": 43.7788,
+        "averageWinPct": 3.832531,
+        "averageLossPct": -3.203485,
+        "rewardRiskRatio": 1.1964,
+        "profitFactor": 0.9316,
+        "totalReturnPct": -74.3304,
+        "maxDrawdownPct": 98.27,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 1016,
+        "winRatePct": 37.8937,
+        "averageWinPct": 5.698976,
+        "averageLossPct": -3.725171,
+        "rewardRiskRatio": 1.5299,
+        "profitFactor": 0.9334,
+        "totalReturnPct": -93.9305,
+        "maxDrawdownPct": 99.6455,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 787,
+        "winRatePct": 34.1804,
+        "averageWinPct": 4.621961,
+        "averageLossPct": -3.699537,
+        "rewardRiskRatio": 1.2493,
+        "profitFactor": 0.6488,
+        "totalReturnPct": -99.946,
+        "maxDrawdownPct": 99.9565,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 447,
+        "winRatePct": 49.4407,
+        "averageWinPct": 3.831658,
+        "averageLossPct": -3.075127,
+        "rewardRiskRatio": 1.246,
+        "profitFactor": 1.2184,
+        "totalReturnPct": 208.898,
+        "maxDrawdownPct": 77.1774,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "TRX/USDT:USDT",
+        "count": 447,
+        "sharePct": 13.7369
+      },
+      {
+        "value": "ETH/USDT:USDT",
+        "count": 170,
+        "sharePct": 5.2243
+      },
+      {
+        "value": "LTC/USDT:USDT",
+        "count": 162,
+        "sharePct": 4.9785
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 156,
+        "sharePct": 4.7941
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 154,
+        "sharePct": 4.7326
+      },
+      {
+        "value": "BCH/USDT:USDT",
+        "count": 149,
+        "sharePct": 4.579
+      },
+      {
+        "value": "XRP/USDT:USDT",
+        "count": 147,
+        "sharePct": 4.5175
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 147,
+        "sharePct": 4.5175
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 146,
+        "sharePct": 4.4868
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 130,
+        "sharePct": 3.9951
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 122,
+        "sharePct": 3.7492
+      },
+      {
+        "value": "ETC/USDT:USDT",
+        "count": 121,
+        "sharePct": 3.7185
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 3254,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-05",
+        "count": 221,
+        "sharePct": 6.7916
+      },
+      {
+        "value": "2023-12",
+        "count": 152,
+        "sharePct": 4.6712
+      },
+      {
+        "value": "2026-05",
+        "count": 152,
+        "sharePct": 4.6712
+      },
+      {
+        "value": "2023-11",
+        "count": 143,
+        "sharePct": 4.3946
+      },
+      {
+        "value": "2024-09",
+        "count": 142,
+        "sharePct": 4.3639
+      },
+      {
+        "value": "2026-04",
+        "count": 136,
+        "sharePct": 4.1795
+      },
+      {
+        "value": "2023-07",
+        "count": 132,
+        "sharePct": 4.0565
+      },
+      {
+        "value": "2025-07",
+        "count": 122,
+        "sharePct": 3.7492
+      },
+      {
+        "value": "2024-02",
+        "count": 115,
+        "sharePct": 3.5341
+      },
+      {
+        "value": "2024-11",
+        "count": 115,
+        "sharePct": 3.5341
+      },
+      {
+        "value": "2023-04",
+        "count": 113,
+        "sharePct": 3.4726
+      },
+      {
+        "value": "2023-02",
+        "count": 112,
+        "sharePct": 3.4419
+      },
+      {
+        "value": "2024-10",
+        "count": 111,
+        "sharePct": 3.4112
+      },
+      {
+        "value": "2024-01",
+        "count": 98,
+        "sharePct": 3.0117
+      },
+      {
+        "value": "2025-09",
+        "count": 98,
+        "sharePct": 3.0117
+      },
+      {
+        "value": "2023-10",
+        "count": 96,
+        "sharePct": 2.9502
+      },
+      {
+        "value": "2024-12",
+        "count": 96,
+        "sharePct": 2.9502
+      },
+      {
+        "value": "2023-01",
+        "count": 93,
+        "sharePct": 2.858
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 27,
+      "uniqueMonths": 42,
+      "maxPairSharePct": 13.7369,
+      "maxMonthSharePct": 6.7916,
+      "recentHoldoutTradeCount": 651
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  },
+  {
+    "poolId": "4h:long_continuation_candidate:sl0.06:h24",
+    "timeframe": "4h",
+    "setupName": "long_continuation_candidate",
+    "barrierConfig": {
+      "stop_loss_pct": 0.06,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "firstSignalAt": "2023-01-04T12:00:00+00:00",
+    "lastSignalAt": "2026-06-30T12:00:00+00:00",
+    "metrics": {
+      "tradeCount": 3254,
+      "winRatePct": 39.9201,
+      "averageWinPct": 6.799952,
+      "averageLossPct": -5.058174,
+      "rewardRiskRatio": 1.3443,
+      "profitFactor": 0.8933,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "timeSplitMetrics": {
+      "early60": {
+        "tradeCount": 1952,
+        "winRatePct": 40.9836,
+        "averageWinPct": 7.174567,
+        "averageLossPct": -5.112845,
+        "rewardRiskRatio": 1.4032,
+        "profitFactor": 0.9745,
+        "totalReturnPct": -99.7541,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "middle20": {
+        "tradeCount": 651,
+        "winRatePct": 36.2519,
+        "averageWinPct": 7.289946,
+        "averageLossPct": -5.411753,
+        "rewardRiskRatio": 1.3471,
+        "profitFactor": 0.766,
+        "totalReturnPct": -99.887,
+        "maxDrawdownPct": 99.9996,
+        "researchWorthContinuing": false
+      },
+      "recent20": {
+        "tradeCount": 651,
+        "winRatePct": 40.3994,
+        "averageWinPct": 5.220748,
+        "averageLossPct": -4.517667,
+        "rewardRiskRatio": 1.1556,
+        "profitFactor": 0.7833,
+        "totalReturnPct": -99.2377,
+        "maxDrawdownPct": 99.9548,
+        "researchWorthContinuing": false
+      },
+      "year2024": {
+        "tradeCount": 1016,
+        "winRatePct": 39.9606,
+        "averageWinPct": 8.209674,
+        "averageLossPct": -5.458744,
+        "rewardRiskRatio": 1.5039,
+        "profitFactor": 1.001,
+        "totalReturnPct": -92.8423,
+        "maxDrawdownPct": 99.9886,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 787,
+        "winRatePct": 34.0534,
+        "averageWinPct": 6.70555,
+        "averageLossPct": -5.209244,
+        "rewardRiskRatio": 1.2872,
+        "profitFactor": 0.6647,
+        "totalReturnPct": -99.9978,
+        "maxDrawdownPct": 99.9981,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 447,
+        "winRatePct": 46.085,
+        "averageWinPct": 5.222655,
+        "averageLossPct": -4.309479,
+        "rewardRiskRatio": 1.2119,
+        "profitFactor": 1.0359,
+        "totalReturnPct": -31.4595,
+        "maxDrawdownPct": 93.3238,
+        "researchWorthContinuing": false
+      }
+    },
+    "pairDistribution": [
+      {
+        "value": "TRX/USDT:USDT",
+        "count": 447,
+        "sharePct": 13.7369
+      },
+      {
+        "value": "ETH/USDT:USDT",
+        "count": 170,
+        "sharePct": 5.2243
+      },
+      {
+        "value": "LTC/USDT:USDT",
+        "count": 162,
+        "sharePct": 4.9785
+      },
+      {
+        "value": "AAVE/USDT:USDT",
+        "count": 156,
+        "sharePct": 4.7941
+      },
+      {
+        "value": "LINK/USDT:USDT",
+        "count": 154,
+        "sharePct": 4.7326
+      },
+      {
+        "value": "BCH/USDT:USDT",
+        "count": 149,
+        "sharePct": 4.579
+      },
+      {
+        "value": "XRP/USDT:USDT",
+        "count": 147,
+        "sharePct": 4.5175
+      },
+      {
+        "value": "NEAR/USDT:USDT",
+        "count": 147,
+        "sharePct": 4.5175
+      },
+      {
+        "value": "SOL/USDT:USDT",
+        "count": 146,
+        "sharePct": 4.4868
+      },
+      {
+        "value": "APT/USDT:USDT",
+        "count": 130,
+        "sharePct": 3.9951
+      },
+      {
+        "value": "UNI/USDT:USDT",
+        "count": 122,
+        "sharePct": 3.7492
+      },
+      {
+        "value": "ETC/USDT:USDT",
+        "count": 121,
+        "sharePct": 3.7185
+      }
+    ],
+    "setupDistribution": [
+      {
+        "value": "long_continuation_candidate",
+        "count": 3254,
+        "sharePct": 100.0
+      }
+    ],
+    "monthDistribution": [
+      {
+        "value": "2025-05",
+        "count": 221,
+        "sharePct": 6.7916
+      },
+      {
+        "value": "2023-12",
+        "count": 152,
+        "sharePct": 4.6712
+      },
+      {
+        "value": "2026-05",
+        "count": 152,
+        "sharePct": 4.6712
+      },
+      {
+        "value": "2023-11",
+        "count": 143,
+        "sharePct": 4.3946
+      },
+      {
+        "value": "2024-09",
+        "count": 142,
+        "sharePct": 4.3639
+      },
+      {
+        "value": "2026-04",
+        "count": 136,
+        "sharePct": 4.1795
+      },
+      {
+        "value": "2023-07",
+        "count": 132,
+        "sharePct": 4.0565
+      },
+      {
+        "value": "2025-07",
+        "count": 122,
+        "sharePct": 3.7492
+      },
+      {
+        "value": "2024-02",
+        "count": 115,
+        "sharePct": 3.5341
+      },
+      {
+        "value": "2024-11",
+        "count": 115,
+        "sharePct": 3.5341
+      },
+      {
+        "value": "2023-04",
+        "count": 113,
+        "sharePct": 3.4726
+      },
+      {
+        "value": "2023-02",
+        "count": 112,
+        "sharePct": 3.4419
+      },
+      {
+        "value": "2024-10",
+        "count": 111,
+        "sharePct": 3.4112
+      },
+      {
+        "value": "2024-01",
+        "count": 98,
+        "sharePct": 3.0117
+      },
+      {
+        "value": "2025-09",
+        "count": 98,
+        "sharePct": 3.0117
+      },
+      {
+        "value": "2023-10",
+        "count": 96,
+        "sharePct": 2.9502
+      },
+      {
+        "value": "2024-12",
+        "count": 96,
+        "sharePct": 2.9502
+      },
+      {
+        "value": "2023-01",
+        "count": 93,
+        "sharePct": 2.858
+      }
+    ],
+    "sampleQuality": {
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false,
+      "failReasons": [],
+      "warningReasons": [],
+      "targetFailReasons": [
+        "win_rate_below_45",
+        "reward_risk_below_2_0",
+        "profit_factor_below_1_35",
+        "max_drawdown_above_25",
+        "total_return_not_positive",
+        "recent_win_rate_below_50",
+        "recent_profit_factor_below_1"
+      ],
+      "uniquePairs": 27,
+      "uniqueMonths": 42,
+      "maxPairSharePct": 13.7369,
+      "maxMonthSharePct": 6.7916,
+      "recentHoldoutTradeCount": 651
+    },
+    "decision": {
+      "candidateReadyForForwardConfirmation": true,
+      "localPaperCandidateApproved": false,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false
+    }
+  }
+]

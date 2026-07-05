@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.3 - Local Paper Sandbox Ledger
+AlphaPilot V13.5.5 - Event Pool Expansion
 ```
 
 ## Positioning
@@ -2481,8 +2481,76 @@ no automatic trading
 exchange Dry-run remains disabled
 ```
 
+## V13.5.5 Event Pool Expansion
+
+V13.5.5 expands the amount of public historical data converted into candidate
+events. It is an anti-overfit research checkpoint: broad sample coverage,
+pair/month concentration, and recent holdout size are reported separately from
+headline win-rate metrics.
+
+Important boundary:
+
+```text
+eventPoolExpanded = public historical data research only
+newLocalPaperCandidateApproved = false
+exchangeDryRunApproved = false
+liveTradingApproved = false
+```
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_5_event_pool_expansion.ps1
+```
+
+Refresh public data and generate the event-pool report:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_5_event_pool_expansion.ps1 -RefreshPublicData -Prepend -Run
+```
+
+Generate from existing local data:
+
+```powershell
+python -m alphapilot.reports.generate_v13_5_5_event_pool_expansion_report
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_5_event_pool_expansion_report.py
+scripts/run_v13_5_5_event_pool_expansion.ps1
+reports/v13_5_5_event_pool_expansion_report.json
+reports/v13_5_5_event_pool_expansion_summary.md
+reports/v13_5_5_event_pool_candidates.json
+docs/V13.5.5-event-pool-expansion.md
+```
+
+V13.5.5 does not optimize parameters to chase a target win rate. It lowers the
+event-pool win-rate screen to `45%` while keeping the `2R` reward/risk target
+unchanged. Profit factor, drawdown, total return, sample breadth, and holdout
+checks still have to pass before any pool can become a forward-confirmation
+candidate.
+
+The default V13.5.5 report uses `1h` and `4h`. `15m` can be supplied manually,
+but it is not the default because it is substantially heavier and more prone to
+short-term noise.
+
+V13.5.5 remains research-only:
+
+```text
+no Trade API
+no Withdraw API
+no API key storage
+no real account reads
+no real position reads
+no real orders
+no automatic trading
+exchange Dry-run remains disabled
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.5: reduce local paper evidence lag, monitor additional fresh public samples, and inspect whether concurrency skips should become a queue policy.
-- V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh and stable.
+- V13.5.6: use the V13.5.5 event-pool report to decide whether any pool deserves fixed forward confirmation.
+- V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

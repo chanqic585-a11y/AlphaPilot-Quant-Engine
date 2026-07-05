@@ -101,9 +101,17 @@ def _add_base_features(frame: pd.DataFrame) -> pd.DataFrame:
 
 
 def _resample_mark(mark: pd.DataFrame, timeframe: str) -> pd.DataFrame:
+    pandas_frequency = {
+        "5m": "5min",
+        "15m": "15min",
+        "30m": "30min",
+        "1h": "1h",
+        "4h": "4h",
+        "1d": "1D",
+    }.get(timeframe, timeframe)
     resampled = (
         mark.set_index("date")[["close"]]
-        .resample(timeframe)
+        .resample(pandas_frequency)
         .last()
         .rename(columns={"close": "mark_close"})
         .dropna()
