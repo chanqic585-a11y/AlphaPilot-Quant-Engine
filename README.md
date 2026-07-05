@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.21 - FactorDataPanel and Manual Factor Library Implementation
+AlphaPilot V13.4.22 - Factor Evaluation Report and Forward Label Analysis
 ```
 
 ## Positioning
@@ -1252,8 +1252,92 @@ no real orders
 no auto trading
 ```
 
+## V13.4.22 Factor Evaluation Report and Forward Label Analysis
+
+V13.4.22 evaluates the V13.4.21 Manual Factor Library against forward-looking
+research labels. It rebuilds the full local FactorDataPanel from public OHLCV,
+adds 4 / 8 / 12 / 24 bar forward returns, MFE / MAE, and TP/SL first-touch
+labels, then evaluates all 16 manual factors.
+
+Run the evaluator:
+
+```powershell
+python -m alphapilot.factors.evaluate_factors
+```
+
+or:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\evaluate_factors.ps1
+```
+
+Default scope:
+
+```text
+timerange = 20260101-
+timeframe = 1h
+horizons = 4,8,12,24
+TP = +5%
+SL = -2.5%
+quantiles = 5
+```
+
+Outputs:
+
+```text
+reports/v13_4_22_factor_evaluation_report.json
+reports/v13_4_22_factor_evaluation_summary.md
+reports/v13_4_22_factor_candidates.json
+docs/V13.4.22-factor-evaluation-report.md
+docs/factor-evaluation-methodology.md
+docs/no-lookahead-forward-labels.md
+docs/research-factor-vs-trading-signal.md
+```
+
+The initial V13.4.22 local evaluation generated:
+
+```text
+sampleCount = 124111
+validLabelCount = 123439
+evaluatedFactorCount = 16
+candidateFactors = 0
+```
+
+Top research observations:
+
+```text
+Top absolute RankIC: volatility_3d, atr_pct, volatility_24h
+Top Q5-Q1 spread: trend_strength, distance_to_ema50, volume_expansion_3d
+Top profit factor: trend_strength, distance_to_ema50, atr_pct
+```
+
+No factor passed the V13.4.22 candidate gate. This is a research result, not a
+failure of the pipeline. It means the current manual factors should not be
+promoted directly into strategy entries or Dry-run candidates.
+
+V13.4.22 no-lookahead rules:
+
+- features are point-in-time
+- labels are forward-looking for evaluation only
+- labels never alter factor values, sample selection, or universe membership
+- candidate factors are research artifacts, not trade signals
+
+V13.4.22 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no strategy implementation
+no backtest execution
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+```
+
 ## Next Versions
 
-- V13.4.22: evaluate factor coverage and decide whether to build forward-label factor research.
+- V13.4.23: implement a benchmark strategy suite or design factor-based strategy hypotheses after research review.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

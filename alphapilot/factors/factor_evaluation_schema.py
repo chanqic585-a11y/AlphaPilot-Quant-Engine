@@ -8,6 +8,9 @@ from alphapilot.factors.factor_schema import FactorEvaluationMetric
 
 FORWARD_WINDOWS = [4, 8, 12, 24]
 DEFAULT_TIMEFRAME = "1h"
+DEFAULT_TP_PCT = 0.05
+DEFAULT_SL_PCT = 0.025
+DEFAULT_QUANTILES = 5
 REGIME_SEGMENTS = ["trend", "mean_reversion", "breakout", "avoid", "unknown"]
 UNIVERSE_SEGMENTS = ["BTC_ETH_SOL", "DynamicTop10", "DynamicTop15", "Top30"]
 
@@ -35,9 +38,17 @@ def build_factor_evaluation_design() -> dict[str, Any]:
         "evaluationId": "factor_evaluation_report_v01",
         "defaultTimeframe": DEFAULT_TIMEFRAME,
         "forwardWindowsBars": FORWARD_WINDOWS,
+        "defaultTakeProfitPct": DEFAULT_TP_PCT,
+        "defaultStopLossPct": DEFAULT_SL_PCT,
+        "defaultQuantiles": DEFAULT_QUANTILES,
         "metrics": [metric.to_dict() for metric in FACTOR_EVALUATION_METRICS],
         "regimeSegments": REGIME_SEGMENTS,
         "universeSegments": UNIVERSE_SEGMENTS,
+        "noLookaheadBoundary": [
+            "features are point-in-time",
+            "labels are forward-looking for evaluation only",
+            "forward labels do not alter factor values, sample selection, or universe membership",
+        ],
         "minimumRequirementsBeforeStrategyCandidate": [
             "sufficient raw sample coverage",
             "regime-aware stability",

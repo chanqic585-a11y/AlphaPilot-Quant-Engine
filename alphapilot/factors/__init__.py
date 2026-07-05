@@ -6,6 +6,7 @@ create strategy entries.
 """
 
 from alphapilot.factors.factor_evaluation_schema import build_factor_evaluation_design
+from alphapilot.factors.factor_evaluator import FactorEvaluationConfig, evaluate_factors
 from alphapilot.factors.factor_operator_spec import build_factor_operator_subset
 from alphapilot.factors.factor_schema import (
     FactorDataPanelConfig,
@@ -16,6 +17,7 @@ from alphapilot.factors.factor_schema import (
     FactorEvaluationMetric,
     ManualFactorSpec,
 )
+from alphapilot.factors.forward_label_builder import ForwardLabelConfig, build_forward_labels
 from alphapilot.factors.manual_factor_library import build_manual_factor_library_v01, manual_factor_output_columns
 
 __all__ = [
@@ -25,9 +27,13 @@ __all__ = [
     "FactorDataPanelSchema",
     "FactorDataRow",
     "FactorEvaluationMetric",
+    "FactorEvaluationConfig",
+    "ForwardLabelConfig",
     "ManualFactorSpec",
+    "build_forward_labels",
     "build_factor_evaluation_design",
     "build_factor_operator_subset",
     "build_manual_factor_library_v01",
+    "evaluate_factors",
     "manual_factor_output_columns",
 ]

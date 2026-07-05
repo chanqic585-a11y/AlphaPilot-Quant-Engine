@@ -1,0 +1,17 @@
+{
+  "reportId": "v13_4_22_factor_candidates",
+  "version": "V13.4.22",
+  "sourceReportId": "v13_4_22_factor_evaluation_report",
+  "candidateFactors": [],
+  "candidateCount": 0,
+  "status": "research_only",
+  "notTradeReady": true,
+  "notDryRunReady": true,
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "warnings": [
+    "Candidate factors are statistical research artifacts only.",
+    "Do not convert candidate factors directly into entries, orders, Dry-run, or live trading."
+  ],
+  "generatedAt": "2026-07-05T00:11:16.838742+00:00"
+}
