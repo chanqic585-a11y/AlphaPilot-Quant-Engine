@@ -1,0 +1,66 @@
+"""Schema helpers for future strategy evolution samples.
+
+The schema describes how local paper outcomes or future manually approved
+trading records can be fed back into research. It is metadata only and does not
+connect to exchanges, read accounts, create orders, or auto trade.
+"""
+
+from __future__ import annotations
+
+from typing import Any
+
+
+STRATEGY_EVOLUTION_SAMPLE_SCHEMA: dict[str, Any] = {
+    "schemaVersion": "strategy_evolution_sample_v1",
+    "recordType": "research_outcome_sample",
+    "requiredFields": [
+        "sampleId",
+        "sourceMode",
+        "strategyVersion",
+        "candidatePoolId",
+        "pair",
+        "timeframe",
+        "signalTime",
+        "direction",
+        "featureSnapshot",
+        "factorSnapshot",
+        "riskSnapshot",
+        "outcome",
+        "createdAt",
+    ],
+    "fields": {
+        "sampleId": "Stable local id for this research outcome sample.",
+        "sourceMode": "historical_label, local_paper, manual_trade_review, or future_approved_execution.",
+        "strategyVersion": "AlphaPilot strategy or research report version that produced the candidate.",
+        "candidatePoolId": "Pool/rule id used for the candidate.",
+        "pair": "Market pair such as BTC/USDT:USDT.",
+        "timeframe": "Signal timeframe.",
+        "signalTime": "UTC ISO timestamp for candidate generation.",
+        "entryTime": "UTC ISO timestamp for simulated or reviewed entry if available.",
+        "exitTime": "UTC ISO timestamp for simulated or reviewed exit if available.",
+        "direction": "long or short research direction.",
+        "featureSnapshot": "Point-in-time raw/base feature values.",
+        "factorSnapshot": "Point-in-time learned factor values and factor ranks.",
+        "riskSnapshot": "Risk context, liquidity context, fees, slippage assumptions, and exposure limits.",
+        "outcome": "Win/loss, netReturnPct, rMultiple, exitReason, drawdown, holdingBars, and review notes.",
+        "humanReview": "Optional user review: accepted, rejected, skipped, mistake tags, notes.",
+        "createdAt": "UTC ISO timestamp when the local sample record was written.",
+    },
+    "promotionRule": (
+        "Samples can improve future research only after offline validation. They must never trigger "
+        "automatic order creation or bypass safety gates."
+    ),
+    "safetyBoundary": {
+        "usesApiKey": False,
+        "tradeApiUsed": False,
+        "withdrawApiUsed": False,
+        "readsRealAccount": False,
+        "readsRealPositions": False,
+        "createsOrders": False,
+        "autoTrading": False,
+    },
+}
+
+
+def build_strategy_evolution_schema() -> dict[str, Any]:
+    return dict(STRATEGY_EVOLUTION_SAMPLE_SCHEMA)

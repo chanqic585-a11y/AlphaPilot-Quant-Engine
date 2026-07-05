@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.7 - External Alpha Overlay Research
+AlphaPilot V13.5.8 - Adaptive ML Factor Discovery
 ```
 
 ## Positioning
@@ -2704,8 +2704,101 @@ no automatic trading
 exchange Dry-run remains disabled
 ```
 
+## V13.5.8 Adaptive ML Factor Discovery
+
+V13.5.8 adds an auditable adaptive machine-learning layer. It lets AlphaPilot
+learn factor-threshold rules from prior folds and validate those rules on later
+folds. This creates a foundation for strategy evolution without granting the
+model any trading authority.
+
+The current runtime does not include sklearn/xgboost/lightgbm/catboost, so
+V13.5.8 uses a lightweight pandas/numpy learner:
+
+```text
+train-only context discovery
+factor quantile thresholds
+walk-forward validation
+fold stability checks
+strategy evolution sample schema
+```
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_8_adaptive_ml_factor_report.ps1
+```
+
+Generate from existing local public data:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_8_adaptive_ml_factor_report.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/ml_gate/adaptive_factor_learner.py
+alphapilot/ml_gate/strategy_evolution_schema.py
+alphapilot/reports/generate_v13_5_8_adaptive_ml_factor_report.py
+scripts/run_v13_5_8_adaptive_ml_factor_report.ps1
+reports/v13_5_8_adaptive_ml_factor_report.json
+reports/v13_5_8_adaptive_ml_factor_summary.md
+reports/v13_5_8_adaptive_ml_candidates.json
+reports/v13_5_8_strategy_evolution_sample_schema.json
+docs/V13.5.8-adaptive-ml-factor-discovery.md
+```
+
+Current V13.5.8 decision:
+
+```text
+adaptiveMLComputed = true
+targetRMultipleUnchanged = true
+localPaperWatchApproved = false
+localPaperWatchPoolId = null
+newFormalPaperCandidateApproved = false
+exchangeDryRunApproved = false
+liveTradingApproved = false
+```
+
+Best full adaptive candidate:
+
+```text
+pool = 1h:adaptive_ml_all_high_reward:sl0.025:h30
+selectedTrades = 1275
+winRate = 36.7059%
+rewardRiskRatio = 1.6143
+profitFactor = 0.9362
+totalReturn = -86.5794%
+maxDrawdown = 98.3195%
+```
+
+Interpretation: the adaptive learner improved some baselines and found
+positive small-sample rules, but the full walk-forward candidate is still
+negative. V13.5.8 does not approve a new local paper watch candidate. The
+current actionable research line remains the V13.5.7 fixed 4h alpha overlay,
+which still requires fresh forward confirmation.
+
+V13.5.8 also adds `strategy_evolution_sample_v1` so future local paper outcomes
+and manual trade-review outcomes can become research samples. These samples can
+only support offline retraining after validation; they must not trigger order
+creation or bypass risk review.
+
+V13.5.8 remains research-only:
+
+```text
+no Trade API
+no Withdraw API
+no API key storage
+no real account reads
+no real position reads
+no real orders
+no automatic trading
+exchange Dry-run remains disabled
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.8: refresh forward data and test whether the V13.5.7 local paper watch pool remains stable; consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
+- V13.5.9: collect fresh public data and run local paper monitoring for the V13.5.7 4h alpha overlay; keep V13.5.8 adaptive rules as research signals only.
+- V13.5.10: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
