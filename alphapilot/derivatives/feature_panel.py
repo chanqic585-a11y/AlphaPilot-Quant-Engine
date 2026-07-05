@@ -77,6 +77,10 @@ def _atr_pct(frame: pd.DataFrame, period: int = 14) -> pd.Series:
 def _add_base_features(frame: pd.DataFrame) -> pd.DataFrame:
     out = frame.copy()
     close = out["close"]
+    candle_range = (out["high"] - out["low"]).replace(0, np.nan)
+    candle_body = (out["close"] - out["open"]).abs()
+    upper_body = pd.concat([out["open"], out["close"]], axis=1).max(axis=1)
+    lower_body = pd.concat([out["open"], out["close"]], axis=1).min(axis=1)
     out["return_1"] = close.pct_change(1)
     out["return_3"] = close.pct_change(3)
     out["return_6"] = close.pct_change(6)
@@ -89,6 +93,10 @@ def _add_base_features(frame: pd.DataFrame) -> pd.DataFrame:
     out["rsi14"] = _rsi(close)
     out["atr_pct"] = _atr_pct(out)
     out["range_pct"] = (out["high"] - out["low"]) / close.replace(0, np.nan)
+    out["body_pct"] = candle_body / close.replace(0, np.nan)
+    out["upper_wick_pct"] = (out["high"] - upper_body) / close.replace(0, np.nan)
+    out["lower_wick_pct"] = (lower_body - out["low"]) / close.replace(0, np.nan)
+    out["close_location"] = (out["close"] - out["low"]) / candle_range
     out["volatility_12"] = out["return_1"].rolling(12, min_periods=12).std()
     out["volume_mean_20"] = out["volume"].rolling(20, min_periods=20).mean()
     out["volume_ratio"] = out["volume"] / out["volume_mean_20"].replace(0, np.nan)
@@ -97,6 +105,14 @@ def _add_base_features(frame: pd.DataFrame) -> pd.DataFrame:
     out["bollinger_z"] = (close - rolling_mean) / rolling_std.replace(0, np.nan)
     out["support_distance_pct"] = (close / out["low"].rolling(24, min_periods=24).min()) - 1
     out["resistance_distance_pct"] = (out["high"].rolling(24, min_periods=24).max() / close) - 1
+    out["prior_high_48"] = out["high"].shift(1).rolling(48, min_periods=24).max()
+    out["prior_low_48"] = out["low"].shift(1).rolling(48, min_periods=24).min()
+    out["breakout_above_48_pct"] = (out["high"] / out["prior_high_48"].replace(0, np.nan)) - 1
+    out["breakdown_below_48_pct"] = (out["prior_low_48"] / out["low"].replace(0, np.nan)) - 1
+    out["close_back_below_prior_high_48"] = out["close"] < out["prior_high_48"]
+    out["close_back_above_prior_low_48"] = out["close"] > out["prior_low_48"]
+    out["ema20_slope_6"] = out["ema20"].pct_change(6)
+    out["ema50_slope_6"] = out["ema50"].pct_change(6)
     return out
 
 

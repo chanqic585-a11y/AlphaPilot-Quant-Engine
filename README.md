@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.5 - Event Pool Expansion
+AlphaPilot V13.5.6 - High Reward Event Redesign
 ```
 
 ## Positioning
@@ -2549,8 +2549,72 @@ no automatic trading
 exchange Dry-run remains disabled
 ```
 
+## V13.5.6 High Reward Event Redesign
+
+V13.5.6 keeps the target at `2R` and redesigns event definitions toward
+structures that can naturally support higher reward/risk. This is not a
+parameter-optimization pass. It adds high-reward event hypotheses, labels them
+with the existing triple-barrier simulator, and reports whether any pool has
+enough breadth and recent stability to deserve forward confirmation.
+
+Important boundary:
+
+```text
+targetRMultiple = 2.0
+newLocalPaperCandidateApproved = report result only
+exploratoryLocalPaperWatchApproved = report result only
+exchangeDryRunApproved = false
+liveTradingApproved = false
+```
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_6_high_reward_event_redesign.ps1
+```
+
+Generate from existing local data:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_6_high_reward_event_redesign.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/ml_gate/high_reward_event_setups.py
+alphapilot/ml_gate/high_reward_triple_barrier.py
+alphapilot/reports/generate_v13_5_6_high_reward_event_redesign_report.py
+scripts/run_v13_5_6_high_reward_event_redesign.ps1
+reports/v13_5_6_high_reward_event_redesign_report.json
+reports/v13_5_6_high_reward_event_redesign_summary.md
+reports/v13_5_6_high_reward_candidates.json
+docs/V13.5.6-high-reward-event-redesign.md
+```
+
+V13.5.6 reports the cost-adjusted net reward/risk ceiling because roundtrip fee
+and slippage reduce observed net winners and deepen observed net losses. This
+is an accounting clarification, not a relaxation of the `2R` target.
+
+If a fixed exploratory filter clears the local watch screen, it is only approved
+for local paper observation. It is not approved for exchange Dry-run, live
+trading, order creation, or automatic execution.
+
+V13.5.6 remains research-only:
+
+```text
+no Trade API
+no Withdraw API
+no API key storage
+no real account reads
+no real position reads
+no real orders
+no automatic trading
+exchange Dry-run remains disabled
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.6: use the V13.5.5 event-pool report to decide whether any pool deserves fixed forward confirmation.
+- V13.5.7: if V13.5.6 finds no stable 2R pool, add stronger execution/liquidity context or longer public history before another approval attempt.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

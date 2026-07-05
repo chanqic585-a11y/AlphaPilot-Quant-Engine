@@ -1,0 +1,6258 @@
+{
+  "reportId": "v13_5_6_high_reward_event_redesign_report",
+  "version": "V13.5.6",
+  "generatedAt": "2026-07-05T19:58:33.720367+00:00",
+  "decision": {
+    "highRewardEventRedesignCompleted": true,
+    "targetRMultipleUnchanged": true,
+    "sampleSufficiencyReady": true,
+    "forwardConfirmationCandidateFound": false,
+    "newLocalPaperCandidateApproved": false,
+    "exploratoryLocalPaperWatchApproved": true,
+    "exploratoryLocalPaperWatchPoolId": "1h:hr_long_extreme_volume_btc_crash_rebound:sl0.02:h24",
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "exploratory_local_paper_watch_only"
+  },
+  "candidateSample": [
+    {
+      "poolId": "1h:hr_short_trend_pullback_acceleration:sl0.05:h60",
+      "timeframe": "1h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 5082,
+      "winRatePct": 44.2542,
+      "rewardRiskRatio": 1.4861,
+      "profitFactor": 1.1797,
+      "totalReturnPct": 24746161.7637,
+      "maxDrawdownPct": 99.9998,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+      "observedToCostAdjusted2RCloseness": 0.788543,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_failed_breakout_rejection:sl0.08:h30",
+      "timeframe": "4h",
+      "setupName": "hr_short_failed_breakout_rejection",
+      "tradeCount": 2660,
+      "winRatePct": 45.3383,
+      "rewardRiskRatio": 1.3782,
+      "profitFactor": 1.1431,
+      "totalReturnPct": 2521.8313,
+      "maxDrawdownPct": 99.9996,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+      "observedToCostAdjusted2RCloseness": 0.715268,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_failed_breakout_rejection:sl0.06:h24",
+      "timeframe": "4h",
+      "setupName": "hr_short_failed_breakout_rejection",
+      "tradeCount": 2660,
+      "winRatePct": 43.6842,
+      "rewardRiskRatio": 1.4664,
+      "profitFactor": 1.1375,
+      "totalReturnPct": 5197.7209,
+      "maxDrawdownPct": 99.9811,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+      "observedToCostAdjusted2RCloseness": 0.770481,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "1h:hr_short_trend_pullback_acceleration:sl0.04:h48",
+      "timeframe": "1h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 5082,
+      "winRatePct": 41.3617,
+      "rewardRiskRatio": 1.604,
+      "profitFactor": 1.1314,
+      "totalReturnPct": 170768.77,
+      "maxDrawdownPct": 99.9739,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.857143,
+      "observedToCostAdjusted2RCloseness": 0.863692,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_blowoff_reversal:sl0.08:h30",
+      "timeframe": "4h",
+      "setupName": "hr_short_blowoff_reversal",
+      "tradeCount": 2403,
+      "winRatePct": 42.4053,
+      "rewardRiskRatio": 1.5006,
+      "profitFactor": 1.1048,
+      "totalReturnPct": -46.8628,
+      "maxDrawdownPct": 100.0,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+      "observedToCostAdjusted2RCloseness": 0.778792,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_trend_pullback_acceleration:sl0.06:h24",
+      "timeframe": "4h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 1726,
+      "winRatePct": 42.0046,
+      "rewardRiskRatio": 1.521,
+      "profitFactor": 1.1016,
+      "totalReturnPct": 132.6909,
+      "maxDrawdownPct": 99.9999,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+      "observedToCostAdjusted2RCloseness": 0.799169,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_trend_pullback_acceleration:sl0.05:h18",
+      "timeframe": "4h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 1726,
+      "winRatePct": 42.0046,
+      "rewardRiskRatio": 1.5199,
+      "profitFactor": 1.1008,
+      "totalReturnPct": 237.9828,
+      "maxDrawdownPct": 99.9961,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+      "observedToCostAdjusted2RCloseness": 0.806478,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_blowoff_reversal:sl0.06:h24",
+      "timeframe": "4h",
+      "setupName": "hr_short_blowoff_reversal",
+      "tradeCount": 2403,
+      "winRatePct": 39.742,
+      "rewardRiskRatio": 1.6276,
+      "profitFactor": 1.0734,
+      "totalReturnPct": -66.1104,
+      "maxDrawdownPct": 99.9998,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+      "observedToCostAdjusted2RCloseness": 0.85518,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_failed_breakout_rejection:sl0.05:h18",
+      "timeframe": "4h",
+      "setupName": "hr_short_failed_breakout_rejection",
+      "tradeCount": 2660,
+      "winRatePct": 41.4662,
+      "rewardRiskRatio": 1.5109,
+      "profitFactor": 1.0703,
+      "totalReturnPct": 2.3941,
+      "maxDrawdownPct": 99.9125,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+      "observedToCostAdjusted2RCloseness": 0.801702,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "1h:hr_short_trend_pullback_acceleration:sl0.03:h36",
+      "timeframe": "1h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 5082,
+      "winRatePct": 38.5872,
+      "rewardRiskRatio": 1.6984,
+      "profitFactor": 1.0672,
+      "totalReturnPct": 606.1754,
+      "maxDrawdownPct": 99.9408,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.8125,
+      "observedToCostAdjusted2RCloseness": 0.937048,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "1h:hr_short_trend_pullback_acceleration:sl0.025:h30",
+      "timeframe": "1h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 5082,
+      "winRatePct": 38.9807,
+      "rewardRiskRatio": 1.6667,
+      "profitFactor": 1.0647,
+      "totalReturnPct": 674.4944,
+      "maxDrawdownPct": 99.826,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.777778,
+      "observedToCostAdjusted2RCloseness": 0.937519,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_trend_pullback_acceleration:sl0.08:h30",
+      "timeframe": "4h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 1726,
+      "winRatePct": 41.8888,
+      "rewardRiskRatio": 1.4567,
+      "profitFactor": 1.0501,
+      "totalReturnPct": -95.363,
+      "maxDrawdownPct": 100.0,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+      "observedToCostAdjusted2RCloseness": 0.756009,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "1h:hr_short_failed_breakout_rejection:sl0.05:h60",
+      "timeframe": "1h",
+      "setupName": "hr_short_failed_breakout_rejection",
+      "tradeCount": 10600,
+      "winRatePct": 43.0849,
+      "rewardRiskRatio": 1.3668,
+      "profitFactor": 1.0348,
+      "totalReturnPct": -99.9534,
+      "maxDrawdownPct": 100.0,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+      "observedToCostAdjusted2RCloseness": 0.725241,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_failed_breakout_rejection:sl0.04:h12",
+      "timeframe": "4h",
+      "setupName": "hr_short_failed_breakout_rejection",
+      "tradeCount": 2660,
+      "winRatePct": 41.6917,
+      "rewardRiskRatio": 1.445,
+      "profitFactor": 1.0332,
+      "totalReturnPct": -70.3412,
+      "maxDrawdownPct": 99.7986,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.857143,
+      "observedToCostAdjusted2RCloseness": 0.778077,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "1h:hr_short_trend_pullback_acceleration:sl0.02:h24",
+      "timeframe": "1h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 5082,
+      "winRatePct": 38.1739,
+      "rewardRiskRatio": 1.6724,
+      "profitFactor": 1.0326,
+      "totalReturnPct": 18.1263,
+      "maxDrawdownPct": 98.7143,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.727273,
+      "observedToCostAdjusted2RCloseness": 0.968232,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "1h:hr_short_blowoff_reversal:sl0.05:h60",
+      "timeframe": "1h",
+      "setupName": "hr_short_blowoff_reversal",
+      "tradeCount": 3680,
+      "winRatePct": 39.0217,
+      "rewardRiskRatio": 1.6103,
+      "profitFactor": 1.0305,
+      "totalReturnPct": -98.6962,
+      "maxDrawdownPct": 99.9993,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+      "observedToCostAdjusted2RCloseness": 0.854445,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_trend_pullback_acceleration:sl0.04:h12",
+      "timeframe": "4h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "tradeCount": 1726,
+      "winRatePct": 40.4983,
+      "rewardRiskRatio": 1.5118,
+      "profitFactor": 1.029,
+      "totalReturnPct": -56.6956,
+      "maxDrawdownPct": 99.9404,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.857143,
+      "observedToCostAdjusted2RCloseness": 0.814046,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_blowoff_reversal:sl0.04:h12",
+      "timeframe": "4h",
+      "setupName": "hr_short_blowoff_reversal",
+      "tradeCount": 2403,
+      "winRatePct": 38.8681,
+      "rewardRiskRatio": 1.6085,
+      "profitFactor": 1.0227,
+      "totalReturnPct": -86.0006,
+      "maxDrawdownPct": 99.9292,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.857143,
+      "observedToCostAdjusted2RCloseness": 0.866115,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:all_high_reward_setups:sl0.08:h30",
+      "timeframe": "4h",
+      "setupName": "all_high_reward_setups",
+      "tradeCount": 12975,
+      "winRatePct": 42.7052,
+      "rewardRiskRatio": 1.3517,
+      "profitFactor": 1.0075,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+      "observedToCostAdjusted2RCloseness": 0.701515,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    },
+    {
+      "poolId": "4h:hr_short_blowoff_reversal:sl0.05:h18",
+      "timeframe": "4h",
+      "setupName": "hr_short_blowoff_reversal",
+      "tradeCount": 2403,
+      "winRatePct": 37.2451,
+      "rewardRiskRatio": 1.6968,
+      "profitFactor": 1.0071,
+      "totalReturnPct": -98.7654,
+      "maxDrawdownPct": 99.9998,
+      "targetRMultiple": 2.0,
+      "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+      "observedToCostAdjusted2RCloseness": 0.900343,
+      "sampleSufficiencyPassed": true,
+      "targetMetricsPassed": false
+    }
+  ],
+  "topEventPools": [
+    {
+      "poolId": "1h:hr_short_trend_pullback_acceleration:sl0.05:h60",
+      "timeframe": "1h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "barrierConfig": {
+        "stop_loss_pct": 0.05,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 60,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-01-06T07:00:00+00:00",
+      "lastSignalAt": "2026-07-03T00:00:00+00:00",
+      "metrics": {
+        "tradeCount": 5082,
+        "winRatePct": 44.2542,
+        "averageWinPct": 6.198951,
+        "averageLossPct": -4.171299,
+        "rewardRiskRatio": 1.4861,
+        "profitFactor": 1.1797,
+        "totalReturnPct": 24746161.7637,
+        "maxDrawdownPct": 99.9998,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 10.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 9.8,
+        "stopNetLossPct": 5.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+        "observedToCostAdjusted2RCloseness": 0.788543,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 895,
+        "stopLossCount": 2112,
+        "timeExitCount": 2075,
+        "sameCandleStopCount": 0,
+        "takeProfitSharePct": 17.6112,
+        "stopLossSharePct": 41.5584,
+        "timeExitSharePct": 40.8304,
+        "sameCandleStopSharePct": 0.0,
+        "distribution": [
+          {
+            "value": "stop_loss",
+            "count": 2112,
+            "sharePct": 41.5584
+          },
+          {
+            "value": "time_exit",
+            "count": 2075,
+            "sharePct": 40.8304
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 895,
+            "sharePct": 17.6112
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 3049,
+          "winRatePct": 42.4401,
+          "averageWinPct": 6.3178,
+          "averageLossPct": -4.153006,
+          "rewardRiskRatio": 1.5213,
+          "profitFactor": 1.1217,
+          "totalReturnPct": 3443.6629,
+          "maxDrawdownPct": 99.9895,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 1016,
+          "winRatePct": 41.5354,
+          "averageWinPct": 6.011224,
+          "averageLossPct": -4.208607,
+          "rewardRiskRatio": 1.4283,
+          "profitFactor": 1.0147,
+          "totalReturnPct": -73.5426,
+          "maxDrawdownPct": 99.8408,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 1017,
+          "winRatePct": 52.409,
+          "averageWinPct": 6.059043,
+          "averageLossPct": -4.191844,
+          "rewardRiskRatio": 1.4454,
+          "profitFactor": 1.5918,
+          "totalReturnPct": 2639332.9196,
+          "maxDrawdownPct": 99.4889,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 1443,
+          "winRatePct": 45.6687,
+          "averageWinPct": 6.434142,
+          "averageLossPct": -4.292044,
+          "rewardRiskRatio": 1.4991,
+          "profitFactor": 1.2601,
+          "totalReturnPct": 43935.7629,
+          "maxDrawdownPct": 99.9779,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 1940,
+          "winRatePct": 39.9485,
+          "averageWinPct": 6.310417,
+          "averageLossPct": -4.227203,
+          "rewardRiskRatio": 1.4928,
+          "profitFactor": 0.9931,
+          "totalReturnPct": -97.4449,
+          "maxDrawdownPct": 99.9639,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 929,
+          "winRatePct": 54.0366,
+          "averageWinPct": 6.24228,
+          "averageLossPct": -4.173187,
+          "rewardRiskRatio": 1.4958,
+          "profitFactor": 1.7585,
+          "totalReturnPct": 12984948.6018,
+          "maxDrawdownPct": 99.4889,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "OP/USDT:USDT",
+          "count": 252,
+          "sharePct": 4.9587
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 243,
+          "sharePct": 4.7816
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 239,
+          "sharePct": 4.7029
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 239,
+          "sharePct": 4.7029
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 237,
+          "sharePct": 4.6635
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 234,
+          "sharePct": 4.6045
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 233,
+          "sharePct": 4.5848
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 231,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 220,
+          "sharePct": 4.329
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 213,
+          "sharePct": 4.1913
+        },
+        {
+          "value": "ADA/USDT:USDT",
+          "count": 208,
+          "sharePct": 4.0929
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 206,
+          "sharePct": 4.0535
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_trend_pullback_acceleration",
+          "count": 5082,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-11",
+          "count": 317,
+          "sharePct": 6.2377
+        },
+        {
+          "value": "2026-06",
+          "count": 300,
+          "sharePct": 5.9032
+        },
+        {
+          "value": "2026-02",
+          "count": 268,
+          "sharePct": 5.2735
+        },
+        {
+          "value": "2025-02",
+          "count": 237,
+          "sharePct": 4.6635
+        },
+        {
+          "value": "2025-06",
+          "count": 192,
+          "sharePct": 3.778
+        },
+        {
+          "value": "2024-08",
+          "count": 189,
+          "sharePct": 3.719
+        },
+        {
+          "value": "2025-03",
+          "count": 181,
+          "sharePct": 3.5616
+        },
+        {
+          "value": "2024-04",
+          "count": 173,
+          "sharePct": 3.4042
+        },
+        {
+          "value": "2024-01",
+          "count": 169,
+          "sharePct": 3.3255
+        },
+        {
+          "value": "2025-08",
+          "count": 168,
+          "sharePct": 3.3058
+        },
+        {
+          "value": "2025-05",
+          "count": 165,
+          "sharePct": 3.2468
+        },
+        {
+          "value": "2025-01",
+          "count": 162,
+          "sharePct": 3.1877
+        },
+        {
+          "value": "2024-06",
+          "count": 147,
+          "sharePct": 2.8926
+        },
+        {
+          "value": "2024-09",
+          "count": 132,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2024-12",
+          "count": 132,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2024-10",
+          "count": 130,
+          "sharePct": 2.558
+        },
+        {
+          "value": "2025-12",
+          "count": 129,
+          "sharePct": 2.5384
+        },
+        {
+          "value": "2026-01",
+          "count": 118,
+          "sharePct": 2.3219
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 43,
+        "maxPairSharePct": 4.9587,
+        "maxMonthSharePct": 6.2377,
+        "recentHoldoutTradeCount": 1017
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "4h:hr_short_failed_breakout_rejection:sl0.08:h30",
+      "timeframe": "4h",
+      "setupName": "hr_short_failed_breakout_rejection",
+      "barrierConfig": {
+        "stop_loss_pct": 0.08,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 30,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-01-05T04:00:00+00:00",
+      "lastSignalAt": "2026-07-03T12:00:00+00:00",
+      "metrics": {
+        "tradeCount": 2660,
+        "winRatePct": 45.3383,
+        "averageWinPct": 8.773303,
+        "averageLossPct": -6.365829,
+        "rewardRiskRatio": 1.3782,
+        "profitFactor": 1.1431,
+        "totalReturnPct": 2521.8313,
+        "maxDrawdownPct": 99.9996,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 16.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 15.8,
+        "stopNetLossPct": 8.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+        "observedToCostAdjusted2RCloseness": 0.715268,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 257,
+        "stopLossCount": 1078,
+        "timeExitCount": 1325,
+        "sameCandleStopCount": 0,
+        "takeProfitSharePct": 9.6617,
+        "stopLossSharePct": 40.5263,
+        "timeExitSharePct": 49.812,
+        "sameCandleStopSharePct": 0.0,
+        "distribution": [
+          {
+            "value": "time_exit",
+            "count": 1325,
+            "sharePct": 49.812
+          },
+          {
+            "value": "stop_loss",
+            "count": 1078,
+            "sharePct": 40.5263
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 257,
+            "sharePct": 9.6617
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 1596,
+          "winRatePct": 43.6717,
+          "averageWinPct": 9.13736,
+          "averageLossPct": -6.609859,
+          "rewardRiskRatio": 1.3824,
+          "profitFactor": 1.0718,
+          "totalReturnPct": -86.8266,
+          "maxDrawdownPct": 99.9996,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 532,
+          "winRatePct": 40.0376,
+          "averageWinPct": 9.392556,
+          "averageLossPct": -6.327063,
+          "rewardRiskRatio": 1.4845,
+          "profitFactor": 0.9912,
+          "totalReturnPct": -88.7609,
+          "maxDrawdownPct": 99.9914,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 532,
+          "winRatePct": 55.6391,
+          "averageWinPct": 7.470436,
+          "averageLossPct": -5.488638,
+          "rewardRiskRatio": 1.3611,
+          "profitFactor": 1.7071,
+          "totalReturnPct": 176982.8729,
+          "maxDrawdownPct": 95.8227,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 811,
+          "winRatePct": 44.5129,
+          "averageWinPct": 9.544618,
+          "averageLossPct": -6.537238,
+          "rewardRiskRatio": 1.46,
+          "profitFactor": 1.1713,
+          "totalReturnPct": 466.1273,
+          "maxDrawdownPct": 99.968,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 788,
+          "winRatePct": 48.9848,
+          "averageWinPct": 9.866329,
+          "averageLossPct": -6.155652,
+          "rewardRiskRatio": 1.6028,
+          "profitFactor": 1.539,
+          "totalReturnPct": 2066847.5546,
+          "maxDrawdownPct": 99.9914,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 348,
+          "winRatePct": 51.7241,
+          "averageWinPct": 6.845574,
+          "averageLossPct": -5.647481,
+          "rewardRiskRatio": 1.2121,
+          "profitFactor": 1.2987,
+          "totalReturnPct": 561.1219,
+          "maxDrawdownPct": 92.6692,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 118,
+          "sharePct": 4.4361
+        },
+        {
+          "value": "BTC/USDT:USDT",
+          "count": 117,
+          "sharePct": 4.3985
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 116,
+          "sharePct": 4.3609
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 115,
+          "sharePct": 4.3233
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 114,
+          "sharePct": 4.2857
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 113,
+          "sharePct": 4.2481
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 112,
+          "sharePct": 4.2105
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 110,
+          "sharePct": 4.1353
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 109,
+          "sharePct": 4.0977
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 109,
+          "sharePct": 4.0977
+        },
+        {
+          "value": "ETH/USDT:USDT",
+          "count": 106,
+          "sharePct": 3.985
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 103,
+          "sharePct": 3.8722
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 2660,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-07",
+          "count": 169,
+          "sharePct": 6.3534
+        },
+        {
+          "value": "2023-12",
+          "count": 140,
+          "sharePct": 5.2632
+        },
+        {
+          "value": "2024-11",
+          "count": 115,
+          "sharePct": 4.3233
+        },
+        {
+          "value": "2024-02",
+          "count": 113,
+          "sharePct": 4.2481
+        },
+        {
+          "value": "2023-11",
+          "count": 95,
+          "sharePct": 3.5714
+        },
+        {
+          "value": "2024-09",
+          "count": 88,
+          "sharePct": 3.3083
+        },
+        {
+          "value": "2026-01",
+          "count": 84,
+          "sharePct": 3.1579
+        },
+        {
+          "value": "2025-01",
+          "count": 80,
+          "sharePct": 3.0075
+        },
+        {
+          "value": "2025-05",
+          "count": 80,
+          "sharePct": 3.0075
+        },
+        {
+          "value": "2024-07",
+          "count": 79,
+          "sharePct": 2.9699
+        },
+        {
+          "value": "2023-01",
+          "count": 77,
+          "sharePct": 2.8947
+        },
+        {
+          "value": "2024-03",
+          "count": 77,
+          "sharePct": 2.8947
+        },
+        {
+          "value": "2023-10",
+          "count": 76,
+          "sharePct": 2.8571
+        },
+        {
+          "value": "2025-04",
+          "count": 74,
+          "sharePct": 2.782
+        },
+        {
+          "value": "2025-10",
+          "count": 74,
+          "sharePct": 2.782
+        },
+        {
+          "value": "2026-05",
+          "count": 73,
+          "sharePct": 2.7444
+        },
+        {
+          "value": "2026-03",
+          "count": 72,
+          "sharePct": 2.7068
+        },
+        {
+          "value": "2025-09",
+          "count": 70,
+          "sharePct": 2.6316
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 43,
+        "maxPairSharePct": 4.4361,
+        "maxMonthSharePct": 6.3534,
+        "recentHoldoutTradeCount": 532
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "4h:hr_short_failed_breakout_rejection:sl0.06:h24",
+      "timeframe": "4h",
+      "setupName": "hr_short_failed_breakout_rejection",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-01-05T04:00:00+00:00",
+      "lastSignalAt": "2026-07-03T12:00:00+00:00",
+      "metrics": {
+        "tradeCount": 2660,
+        "winRatePct": 43.6842,
+        "averageWinPct": 7.573571,
+        "averageLossPct": -5.164879,
+        "rewardRiskRatio": 1.4664,
+        "profitFactor": 1.1375,
+        "totalReturnPct": 5197.7209,
+        "maxDrawdownPct": 99.9811,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.770481,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 394,
+        "stopLossCount": 1219,
+        "timeExitCount": 1047,
+        "sameCandleStopCount": 0,
+        "takeProfitSharePct": 14.812,
+        "stopLossSharePct": 45.8271,
+        "timeExitSharePct": 39.3609,
+        "sameCandleStopSharePct": 0.0,
+        "distribution": [
+          {
+            "value": "stop_loss",
+            "count": 1219,
+            "sharePct": 45.8271
+          },
+          {
+            "value": "time_exit",
+            "count": 1047,
+            "sharePct": 39.3609
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 394,
+            "sharePct": 14.812
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 1596,
+          "winRatePct": 41.792,
+          "averageWinPct": 7.661211,
+          "averageLossPct": -5.277008,
+          "rewardRiskRatio": 1.4518,
+          "profitFactor": 1.0424,
+          "totalReturnPct": -85.9511,
+          "maxDrawdownPct": 99.9811,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 532,
+          "winRatePct": 40.6015,
+          "averageWinPct": 7.435146,
+          "averageLossPct": -5.181185,
+          "rewardRiskRatio": 1.435,
+          "profitFactor": 0.9809,
+          "totalReturnPct": -79.6523,
+          "maxDrawdownPct": 99.818,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 532,
+          "winRatePct": 52.4436,
+          "averageWinPct": 7.471219,
+          "averageLossPct": -4.732781,
+          "rewardRiskRatio": 1.5786,
+          "profitFactor": 1.7408,
+          "totalReturnPct": 185223.9523,
+          "maxDrawdownPct": 89.9612,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 811,
+          "winRatePct": 41.8002,
+          "averageWinPct": 7.964396,
+          "averageLossPct": -5.251984,
+          "rewardRiskRatio": 1.5165,
+          "profitFactor": 1.0891,
+          "totalReturnPct": 10.5996,
+          "maxDrawdownPct": 99.3348,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 788,
+          "winRatePct": 47.8426,
+          "averageWinPct": 8.394699,
+          "averageLossPct": -5.097108,
+          "rewardRiskRatio": 1.647,
+          "profitFactor": 1.5107,
+          "totalReturnPct": 458234.6008,
+          "maxDrawdownPct": 99.9429,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 348,
+          "winRatePct": 47.4138,
+          "averageWinPct": 6.68945,
+          "averageLossPct": -4.768222,
+          "rewardRiskRatio": 1.4029,
+          "profitFactor": 1.2649,
+          "totalReturnPct": 383.9354,
+          "maxDrawdownPct": 88.842,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 118,
+          "sharePct": 4.4361
+        },
+        {
+          "value": "BTC/USDT:USDT",
+          "count": 117,
+          "sharePct": 4.3985
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 116,
+          "sharePct": 4.3609
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 115,
+          "sharePct": 4.3233
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 114,
+          "sharePct": 4.2857
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 113,
+          "sharePct": 4.2481
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 112,
+          "sharePct": 4.2105
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 110,
+          "sharePct": 4.1353
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 109,
+          "sharePct": 4.0977
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 109,
+          "sharePct": 4.0977
+        },
+        {
+          "value": "ETH/USDT:USDT",
+          "count": 106,
+          "sharePct": 3.985
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 103,
+          "sharePct": 3.8722
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 2660,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-07",
+          "count": 169,
+          "sharePct": 6.3534
+        },
+        {
+          "value": "2023-12",
+          "count": 140,
+          "sharePct": 5.2632
+        },
+        {
+          "value": "2024-11",
+          "count": 115,
+          "sharePct": 4.3233
+        },
+        {
+          "value": "2024-02",
+          "count": 113,
+          "sharePct": 4.2481
+        },
+        {
+          "value": "2023-11",
+          "count": 95,
+          "sharePct": 3.5714
+        },
+        {
+          "value": "2024-09",
+          "count": 88,
+          "sharePct": 3.3083
+        },
+        {
+          "value": "2026-01",
+          "count": 84,
+          "sharePct": 3.1579
+        },
+        {
+          "value": "2025-01",
+          "count": 80,
+          "sharePct": 3.0075
+        },
+        {
+          "value": "2025-05",
+          "count": 80,
+          "sharePct": 3.0075
+        },
+        {
+          "value": "2024-07",
+          "count": 79,
+          "sharePct": 2.9699
+        },
+        {
+          "value": "2023-01",
+          "count": 77,
+          "sharePct": 2.8947
+        },
+        {
+          "value": "2024-03",
+          "count": 77,
+          "sharePct": 2.8947
+        },
+        {
+          "value": "2023-10",
+          "count": 76,
+          "sharePct": 2.8571
+        },
+        {
+          "value": "2025-04",
+          "count": 74,
+          "sharePct": 2.782
+        },
+        {
+          "value": "2025-10",
+          "count": 74,
+          "sharePct": 2.782
+        },
+        {
+          "value": "2026-05",
+          "count": 73,
+          "sharePct": 2.7444
+        },
+        {
+          "value": "2026-03",
+          "count": 72,
+          "sharePct": 2.7068
+        },
+        {
+          "value": "2025-09",
+          "count": 70,
+          "sharePct": 2.6316
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 43,
+        "maxPairSharePct": 4.4361,
+        "maxMonthSharePct": 6.3534,
+        "recentHoldoutTradeCount": 532
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "1h:hr_short_trend_pullback_acceleration:sl0.04:h48",
+      "timeframe": "1h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 48,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-01-06T07:00:00+00:00",
+      "lastSignalAt": "2026-07-03T00:00:00+00:00",
+      "metrics": {
+        "tradeCount": 5082,
+        "winRatePct": 41.3617,
+        "averageWinPct": 5.603478,
+        "averageLossPct": -3.49347,
+        "rewardRiskRatio": 1.604,
+        "profitFactor": 1.1314,
+        "totalReturnPct": 170768.77,
+        "maxDrawdownPct": 99.9739,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 8.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 7.8,
+        "stopNetLossPct": 4.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.857143,
+        "observedToCostAdjusted2RCloseness": 0.863692,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 1049,
+        "stopLossCount": 2327,
+        "timeExitCount": 1706,
+        "sameCandleStopCount": 0,
+        "takeProfitSharePct": 20.6415,
+        "stopLossSharePct": 45.7891,
+        "timeExitSharePct": 33.5695,
+        "sameCandleStopSharePct": 0.0,
+        "distribution": [
+          {
+            "value": "stop_loss",
+            "count": 2327,
+            "sharePct": 45.7891
+          },
+          {
+            "value": "time_exit",
+            "count": 1706,
+            "sharePct": 33.5695
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 1049,
+            "sharePct": 20.6415
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 3049,
+          "winRatePct": 39.4884,
+          "averageWinPct": 5.67639,
+          "averageLossPct": -3.491348,
+          "rewardRiskRatio": 1.6258,
+          "profitFactor": 1.061,
+          "totalReturnPct": 22.4058,
+          "maxDrawdownPct": 99.8879,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 1016,
+          "winRatePct": 41.6339,
+          "averageWinPct": 5.645328,
+          "averageLossPct": -3.577942,
+          "rewardRiskRatio": 1.5778,
+          "profitFactor": 1.1255,
+          "totalReturnPct": 301.3461,
+          "maxDrawdownPct": 98.7657,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 1017,
+          "winRatePct": 46.706,
+          "averageWinPct": 5.381399,
+          "averageLossPct": -3.408273,
+          "rewardRiskRatio": 1.5789,
+          "profitFactor": 1.3837,
+          "totalReturnPct": 34680.9741,
+          "maxDrawdownPct": 99.0646,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 1443,
+          "winRatePct": 41.58,
+          "averageWinPct": 5.968217,
+          "averageLossPct": -3.502692,
+          "rewardRiskRatio": 1.7039,
+          "profitFactor": 1.2127,
+          "totalReturnPct": 8010.9776,
+          "maxDrawdownPct": 99.6664,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 1940,
+          "winRatePct": 39.7938,
+          "averageWinPct": 5.640257,
+          "averageLossPct": -3.642774,
+          "rewardRiskRatio": 1.5483,
+          "profitFactor": 1.0234,
+          "totalReturnPct": -75.6608,
+          "maxDrawdownPct": 99.5297,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 929,
+          "winRatePct": 48.4392,
+          "averageWinPct": 5.537933,
+          "averageLossPct": -3.378078,
+          "rewardRiskRatio": 1.6394,
+          "profitFactor": 1.5401,
+          "totalReturnPct": 192533.0731,
+          "maxDrawdownPct": 99.0646,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "OP/USDT:USDT",
+          "count": 252,
+          "sharePct": 4.9587
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 243,
+          "sharePct": 4.7816
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 239,
+          "sharePct": 4.7029
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 239,
+          "sharePct": 4.7029
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 237,
+          "sharePct": 4.6635
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 234,
+          "sharePct": 4.6045
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 233,
+          "sharePct": 4.5848
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 231,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 220,
+          "sharePct": 4.329
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 213,
+          "sharePct": 4.1913
+        },
+        {
+          "value": "ADA/USDT:USDT",
+          "count": 208,
+          "sharePct": 4.0929
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 206,
+          "sharePct": 4.0535
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_trend_pullback_acceleration",
+          "count": 5082,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-11",
+          "count": 317,
+          "sharePct": 6.2377
+        },
+        {
+          "value": "2026-06",
+          "count": 300,
+          "sharePct": 5.9032
+        },
+        {
+          "value": "2026-02",
+          "count": 268,
+          "sharePct": 5.2735
+        },
+        {
+          "value": "2025-02",
+          "count": 237,
+          "sharePct": 4.6635
+        },
+        {
+          "value": "2025-06",
+          "count": 192,
+          "sharePct": 3.778
+        },
+        {
+          "value": "2024-08",
+          "count": 189,
+          "sharePct": 3.719
+        },
+        {
+          "value": "2025-03",
+          "count": 181,
+          "sharePct": 3.5616
+        },
+        {
+          "value": "2024-04",
+          "count": 173,
+          "sharePct": 3.4042
+        },
+        {
+          "value": "2024-01",
+          "count": 169,
+          "sharePct": 3.3255
+        },
+        {
+          "value": "2025-08",
+          "count": 168,
+          "sharePct": 3.3058
+        },
+        {
+          "value": "2025-05",
+          "count": 165,
+          "sharePct": 3.2468
+        },
+        {
+          "value": "2025-01",
+          "count": 162,
+          "sharePct": 3.1877
+        },
+        {
+          "value": "2024-06",
+          "count": 147,
+          "sharePct": 2.8926
+        },
+        {
+          "value": "2024-09",
+          "count": 132,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2024-12",
+          "count": 132,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2024-10",
+          "count": 130,
+          "sharePct": 2.558
+        },
+        {
+          "value": "2025-12",
+          "count": 129,
+          "sharePct": 2.5384
+        },
+        {
+          "value": "2026-01",
+          "count": 118,
+          "sharePct": 2.3219
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 43,
+        "maxPairSharePct": 4.9587,
+        "maxMonthSharePct": 6.2377,
+        "recentHoldoutTradeCount": 1017
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "4h:hr_short_blowoff_reversal:sl0.08:h30",
+      "timeframe": "4h",
+      "setupName": "hr_short_blowoff_reversal",
+      "barrierConfig": {
+        "stop_loss_pct": 0.08,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 30,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-01-05T00:00:00+00:00",
+      "lastSignalAt": "2026-07-03T16:00:00+00:00",
+      "metrics": {
+        "tradeCount": 2403,
+        "winRatePct": 42.4053,
+        "averageWinPct": 10.275723,
+        "averageLossPct": -6.847901,
+        "rewardRiskRatio": 1.5006,
+        "profitFactor": 1.1048,
+        "totalReturnPct": -46.8628,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 16.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 15.8,
+        "stopNetLossPct": 8.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+        "observedToCostAdjusted2RCloseness": 0.778792,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 291,
+        "stopLossCount": 1163,
+        "timeExitCount": 949,
+        "sameCandleStopCount": 0,
+        "takeProfitSharePct": 12.1099,
+        "stopLossSharePct": 48.3978,
+        "timeExitSharePct": 39.4923,
+        "sameCandleStopSharePct": 0.0,
+        "distribution": [
+          {
+            "value": "stop_loss",
+            "count": 1163,
+            "sharePct": 48.3978
+          },
+          {
+            "value": "time_exit",
+            "count": 949,
+            "sharePct": 39.4923
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 291,
+            "sharePct": 12.1099
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 1441,
+          "winRatePct": 37.127,
+          "averageWinPct": 10.559923,
+          "averageLossPct": -7.0288,
+          "rewardRiskRatio": 1.5024,
+          "profitFactor": 0.8872,
+          "totalReturnPct": -99.9999,
+          "maxDrawdownPct": 100.0,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 481,
+          "winRatePct": 44.0748,
+          "averageWinPct": 10.276108,
+          "averageLossPct": -6.674012,
+          "rewardRiskRatio": 1.5397,
+          "profitFactor": 1.2135,
+          "totalReturnPct": 452.336,
+          "maxDrawdownPct": 99.7875,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 481,
+          "winRatePct": 56.5489,
+          "averageWinPct": 9.716427,
+          "averageLossPct": -6.287523,
+          "rewardRiskRatio": 1.5454,
+          "profitFactor": 2.0112,
+          "totalReturnPct": 7006191.7385,
+          "maxDrawdownPct": 82.0366,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 675,
+          "winRatePct": 36.7407,
+          "averageWinPct": 11.282255,
+          "averageLossPct": -7.097717,
+          "rewardRiskRatio": 1.5896,
+          "profitFactor": 0.9232,
+          "totalReturnPct": -99.5882,
+          "maxDrawdownPct": 99.9948,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 642,
+          "winRatePct": 49.0654,
+          "averageWinPct": 11.145179,
+          "averageLossPct": -6.635483,
+          "rewardRiskRatio": 1.6796,
+          "profitFactor": 1.618,
+          "totalReturnPct": 2651410.7128,
+          "maxDrawdownPct": 99.77,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 367,
+          "winRatePct": 52.861,
+          "averageWinPct": 8.8492,
+          "averageLossPct": -6.375425,
+          "rewardRiskRatio": 1.388,
+          "profitFactor": 1.5565,
+          "totalReturnPct": 11151.1642,
+          "maxDrawdownPct": 81.2021,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 130,
+          "sharePct": 5.4099
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 126,
+          "sharePct": 5.2434
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 124,
+          "sharePct": 5.1602
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 124,
+          "sharePct": 5.1602
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 118,
+          "sharePct": 4.9105
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 113,
+          "sharePct": 4.7025
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 113,
+          "sharePct": 4.7025
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 111,
+          "sharePct": 4.6192
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 106,
+          "sharePct": 4.4112
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 95,
+          "sharePct": 3.9534
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 95,
+          "sharePct": 3.9534
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 92,
+          "sharePct": 3.8285
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_blowoff_reversal",
+          "count": 2403,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-12",
+          "count": 149,
+          "sharePct": 6.2006
+        },
+        {
+          "value": "2024-11",
+          "count": 104,
+          "sharePct": 4.3279
+        },
+        {
+          "value": "2023-07",
+          "count": 93,
+          "sharePct": 3.8702
+        },
+        {
+          "value": "2025-07",
+          "count": 93,
+          "sharePct": 3.8702
+        },
+        {
+          "value": "2023-11",
+          "count": 92,
+          "sharePct": 3.8285
+        },
+        {
+          "value": "2025-05",
+          "count": 88,
+          "sharePct": 3.6621
+        },
+        {
+          "value": "2024-02",
+          "count": 86,
+          "sharePct": 3.5789
+        },
+        {
+          "value": "2026-05",
+          "count": 80,
+          "sharePct": 3.3292
+        },
+        {
+          "value": "2026-03",
+          "count": 72,
+          "sharePct": 2.9963
+        },
+        {
+          "value": "2023-06",
+          "count": 67,
+          "sharePct": 2.7882
+        },
+        {
+          "value": "2023-01",
+          "count": 66,
+          "sharePct": 2.7466
+        },
+        {
+          "value": "2023-10",
+          "count": 66,
+          "sharePct": 2.7466
+        },
+        {
+          "value": "2025-06",
+          "count": 66,
+          "sharePct": 2.7466
+        },
+        {
+          "value": "2024-01",
+          "count": 65,
+          "sharePct": 2.705
+        },
+        {
+          "value": "2024-03",
+          "count": 64,
+          "sharePct": 2.6633
+        },
+        {
+          "value": "2024-10",
+          "count": 63,
+          "sharePct": 2.6217
+        },
+        {
+          "value": "2025-11",
+          "count": 55,
+          "sharePct": 2.2888
+        },
+        {
+          "value": "2026-04",
+          "count": 55,
+          "sharePct": 2.2888
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 43,
+        "maxPairSharePct": 5.4099,
+        "maxMonthSharePct": 6.2006,
+        "recentHoldoutTradeCount": 481
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30",
+          "total_return_not_positive",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "4h:hr_short_trend_pullback_acceleration:sl0.06:h24",
+      "timeframe": "4h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-02-13T20:00:00+00:00",
+      "lastSignalAt": "2026-07-02T08:00:00+00:00",
+      "metrics": {
+        "tradeCount": 1726,
+        "winRatePct": 42.0046,
+        "averageWinPct": 7.201114,
+        "averageLossPct": -4.734485,
+        "rewardRiskRatio": 1.521,
+        "profitFactor": 1.1016,
+        "totalReturnPct": 132.6909,
+        "maxDrawdownPct": 99.9999,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.799169,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 238,
+        "stopLossCount": 692,
+        "timeExitCount": 796,
+        "sameCandleStopCount": 0,
+        "takeProfitSharePct": 13.7891,
+        "stopLossSharePct": 40.0927,
+        "timeExitSharePct": 46.1182,
+        "sameCandleStopSharePct": 0.0,
+        "distribution": [
+          {
+            "value": "time_exit",
+            "count": 796,
+            "sharePct": 46.1182
+          },
+          {
+            "value": "stop_loss",
+            "count": 692,
+            "sharePct": 40.0927
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 238,
+            "sharePct": 13.7891
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 1035,
+          "winRatePct": 34.1063,
+          "averageWinPct": 6.594486,
+          "averageLossPct": -4.607566,
+          "rewardRiskRatio": 1.4312,
+          "profitFactor": 0.7408,
+          "totalReturnPct": -99.9962,
+          "maxDrawdownPct": 99.998,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 345,
+          "winRatePct": 61.1594,
+          "averageWinPct": 8.651113,
+          "averageLossPct": -5.137162,
+          "rewardRiskRatio": 1.684,
+          "profitFactor": 2.6517,
+          "totalReturnPct": 2724459.434,
+          "maxDrawdownPct": 95.8269,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 346,
+          "winRatePct": 46.5318,
+          "averageWinPct": 6.630865,
+          "averageLossPct": -4.910698,
+          "rewardRiskRatio": 1.3503,
+          "profitFactor": 1.1751,
+          "totalReturnPct": 126.7148,
+          "maxDrawdownPct": 95.2936,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 378,
+          "winRatePct": 35.1852,
+          "averageWinPct": 7.874934,
+          "averageLossPct": -4.824589,
+          "rewardRiskRatio": 1.6322,
+          "profitFactor": 0.8861,
+          "totalReturnPct": -89.0362,
+          "maxDrawdownPct": 97.1366,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 618,
+          "winRatePct": 38.1877,
+          "averageWinPct": 7.9827,
+          "averageLossPct": -4.937888,
+          "rewardRiskRatio": 1.6166,
+          "profitFactor": 0.9988,
+          "totalReturnPct": -79.6765,
+          "maxDrawdownPct": 99.9941,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 439,
+          "winRatePct": 54.6697,
+          "averageWinPct": 7.026694,
+          "averageLossPct": -4.8908,
+          "rewardRiskRatio": 1.4367,
+          "profitFactor": 1.7327,
+          "totalReturnPct": 42554.4476,
+          "maxDrawdownPct": 95.2936,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "ADA/USDT:USDT",
+          "count": 90,
+          "sharePct": 5.2144
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 87,
+          "sharePct": 5.0406
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 82,
+          "sharePct": 4.7509
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 81,
+          "sharePct": 4.6929
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 74,
+          "sharePct": 4.2874
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 72,
+          "sharePct": 4.1715
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 71,
+          "sharePct": 4.1136
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 71,
+          "sharePct": 4.1136
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 71,
+          "sharePct": 4.1136
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 71,
+          "sharePct": 4.1136
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 69,
+          "sharePct": 3.9977
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 68,
+          "sharePct": 3.9397
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_trend_pullback_acceleration",
+          "count": 1726,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-12",
+          "count": 104,
+          "sharePct": 6.0255
+        },
+        {
+          "value": "2026-06",
+          "count": 102,
+          "sharePct": 5.9096
+        },
+        {
+          "value": "2026-01",
+          "count": 95,
+          "sharePct": 5.5041
+        },
+        {
+          "value": "2025-10",
+          "count": 80,
+          "sharePct": 4.635
+        },
+        {
+          "value": "2025-09",
+          "count": 78,
+          "sharePct": 4.5191
+        },
+        {
+          "value": "2023-05",
+          "count": 75,
+          "sharePct": 4.3453
+        },
+        {
+          "value": "2026-03",
+          "count": 70,
+          "sharePct": 4.0556
+        },
+        {
+          "value": "2025-11",
+          "count": 66,
+          "sharePct": 3.8239
+        },
+        {
+          "value": "2026-02",
+          "count": 64,
+          "sharePct": 3.708
+        },
+        {
+          "value": "2026-05",
+          "count": 64,
+          "sharePct": 3.708
+        },
+        {
+          "value": "2025-02",
+          "count": 62,
+          "sharePct": 3.5921
+        },
+        {
+          "value": "2023-09",
+          "count": 61,
+          "sharePct": 3.5342
+        },
+        {
+          "value": "2023-08",
+          "count": 60,
+          "sharePct": 3.4762
+        },
+        {
+          "value": "2024-05",
+          "count": 59,
+          "sharePct": 3.4183
+        },
+        {
+          "value": "2024-08",
+          "count": 53,
+          "sharePct": 3.0707
+        },
+        {
+          "value": "2025-03",
+          "count": 50,
+          "sharePct": 2.8969
+        },
+        {
+          "value": "2024-09",
+          "count": 47,
+          "sharePct": 2.7231
+        },
+        {
+          "value": "2025-01",
+          "count": 47,
+          "sharePct": 2.7231
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 38,
+        "maxPairSharePct": 5.2144,
+        "maxMonthSharePct": 6.0255,
+        "recentHoldoutTradeCount": 346
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "4h:hr_short_trend_pullback_acceleration:sl0.05:h18",
+      "timeframe": "4h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "barrierConfig": {
+        "stop_loss_pct": 0.05,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-02-13T20:00:00+00:00",
+      "lastSignalAt": "2026-07-02T08:00:00+00:00",
+      "metrics": {
+        "tradeCount": 1726,
+        "winRatePct": 42.0046,
+        "averageWinPct": 6.130225,
+        "averageLossPct": -4.033402,
+        "rewardRiskRatio": 1.5199,
+        "profitFactor": 1.1008,
+        "totalReturnPct": 237.9828,
+        "maxDrawdownPct": 99.9961,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 10.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 9.8,
+        "stopNetLossPct": 5.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+        "observedToCostAdjusted2RCloseness": 0.806478,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 269,
+        "stopLossCount": 698,
+        "timeExitCount": 759,
+        "sameCandleStopCount": 0,
+        "takeProfitSharePct": 15.5852,
+        "stopLossSharePct": 40.4403,
+        "timeExitSharePct": 43.9745,
+        "sameCandleStopSharePct": 0.0,
+        "distribution": [
+          {
+            "value": "time_exit",
+            "count": 759,
+            "sharePct": 43.9745
+          },
+          {
+            "value": "stop_loss",
+            "count": 698,
+            "sharePct": 40.4403
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 269,
+            "sharePct": 15.5852
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 1035,
+          "winRatePct": 36.1353,
+          "averageWinPct": 5.866203,
+          "averageLossPct": -3.988702,
+          "rewardRiskRatio": 1.4707,
+          "profitFactor": 0.8321,
+          "totalReturnPct": -99.747,
+          "maxDrawdownPct": 99.9479,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 345,
+          "winRatePct": 60.5797,
+          "averageWinPct": 6.697714,
+          "averageLossPct": -4.245843,
+          "rewardRiskRatio": 1.5775,
+          "profitFactor": 2.4242,
+          "totalReturnPct": 177821.64,
+          "maxDrawdownPct": 92.2125,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 346,
+          "winRatePct": 41.0405,
+          "averageWinPct": 5.99036,
+          "averageLossPct": -4.036611,
+          "rewardRiskRatio": 1.484,
+          "profitFactor": 1.033,
+          "totalReturnPct": -24.9101,
+          "maxDrawdownPct": 92.4468,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 378,
+          "winRatePct": 42.328,
+          "averageWinPct": 6.674156,
+          "averageLossPct": -4.218853,
+          "rewardRiskRatio": 1.582,
+          "profitFactor": 1.1611,
+          "totalReturnPct": 122.8602,
+          "maxDrawdownPct": 90.5419,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 618,
+          "winRatePct": 38.0259,
+          "averageWinPct": 6.851797,
+          "averageLossPct": -4.198848,
+          "rewardRiskRatio": 1.6318,
+          "profitFactor": 1.0013,
+          "totalReturnPct": -66.5394,
+          "maxDrawdownPct": 99.9571,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 439,
+          "winRatePct": 50.3417,
+          "averageWinPct": 5.724949,
+          "averageLossPct": -4.055881,
+          "rewardRiskRatio": 1.4115,
+          "profitFactor": 1.4309,
+          "totalReturnPct": 2098.3257,
+          "maxDrawdownPct": 92.4468,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "ADA/USDT:USDT",
+          "count": 90,
+          "sharePct": 5.2144
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 87,
+          "sharePct": 5.0406
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 82,
+          "sharePct": 4.7509
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 81,
+          "sharePct": 4.6929
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 74,
+          "sharePct": 4.2874
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 72,
+          "sharePct": 4.1715
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 71,
+          "sharePct": 4.1136
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 71,
+          "sharePct": 4.1136
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 71,
+          "sharePct": 4.1136
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 71,
+          "sharePct": 4.1136
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 69,
+          "sharePct": 3.9977
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 68,
+          "sharePct": 3.9397
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_trend_pullback_acceleration",
+          "count": 1726,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-12",
+          "count": 104,
+          "sharePct": 6.0255
+        },
+        {
+          "value": "2026-06",
+          "count": 102,
+          "sharePct": 5.9096
+        },
+        {
+          "value": "2026-01",
+          "count": 95,
+          "sharePct": 5.5041
+        },
+        {
+          "value": "2025-10",
+          "count": 80,
+          "sharePct": 4.635
+        },
+        {
+          "value": "2025-09",
+          "count": 78,
+          "sharePct": 4.5191
+        },
+        {
+          "value": "2023-05",
+          "count": 75,
+          "sharePct": 4.3453
+        },
+        {
+          "value": "2026-03",
+          "count": 70,
+          "sharePct": 4.0556
+        },
+        {
+          "value": "2025-11",
+          "count": 66,
+          "sharePct": 3.8239
+        },
+        {
+          "value": "2026-02",
+          "count": 64,
+          "sharePct": 3.708
+        },
+        {
+          "value": "2026-05",
+          "count": 64,
+          "sharePct": 3.708
+        },
+        {
+          "value": "2025-02",
+          "count": 62,
+          "sharePct": 3.5921
+        },
+        {
+          "value": "2023-09",
+          "count": 61,
+          "sharePct": 3.5342
+        },
+        {
+          "value": "2023-08",
+          "count": 60,
+          "sharePct": 3.4762
+        },
+        {
+          "value": "2024-05",
+          "count": 59,
+          "sharePct": 3.4183
+        },
+        {
+          "value": "2024-08",
+          "count": 53,
+          "sharePct": 3.0707
+        },
+        {
+          "value": "2025-03",
+          "count": 50,
+          "sharePct": 2.8969
+        },
+        {
+          "value": "2024-09",
+          "count": 47,
+          "sharePct": 2.7231
+        },
+        {
+          "value": "2025-01",
+          "count": 47,
+          "sharePct": 2.7231
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 38,
+        "maxPairSharePct": 5.2144,
+        "maxMonthSharePct": 6.0255,
+        "recentHoldoutTradeCount": 346
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "4h:hr_short_blowoff_reversal:sl0.06:h24",
+      "timeframe": "4h",
+      "setupName": "hr_short_blowoff_reversal",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-01-05T00:00:00+00:00",
+      "lastSignalAt": "2026-07-03T16:00:00+00:00",
+      "metrics": {
+        "tradeCount": 2403,
+        "winRatePct": 39.742,
+        "averageWinPct": 8.91191,
+        "averageLossPct": -5.475655,
+        "rewardRiskRatio": 1.6276,
+        "profitFactor": 1.0734,
+        "totalReturnPct": -66.1104,
+        "maxDrawdownPct": 99.9998,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.85518,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 423,
+        "stopLossCount": 1290,
+        "timeExitCount": 690,
+        "sameCandleStopCount": 1,
+        "takeProfitSharePct": 17.603,
+        "stopLossSharePct": 53.6829,
+        "timeExitSharePct": 28.7141,
+        "sameCandleStopSharePct": 0.0416,
+        "distribution": [
+          {
+            "value": "stop_loss",
+            "count": 1289,
+            "sharePct": 53.6413
+          },
+          {
+            "value": "time_exit",
+            "count": 690,
+            "sharePct": 28.7141
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 423,
+            "sharePct": 17.603
+          },
+          {
+            "value": "stop_loss_same_candle",
+            "count": 1,
+            "sharePct": 0.0416
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 1441,
+          "winRatePct": 35.1145,
+          "averageWinPct": 9.140039,
+          "averageLossPct": -5.536044,
+          "rewardRiskRatio": 1.651,
+          "profitFactor": 0.8935,
+          "totalReturnPct": -99.993,
+          "maxDrawdownPct": 99.9996,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 481,
+          "winRatePct": 40.5405,
+          "averageWinPct": 8.608651,
+          "averageLossPct": -5.439884,
+          "rewardRiskRatio": 1.5825,
+          "profitFactor": 1.079,
+          "totalReturnPct": -12.5674,
+          "maxDrawdownPct": 99.2378,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 481,
+          "winRatePct": 52.8067,
+          "averageWinPct": 8.690263,
+          "averageLossPct": -5.271986,
+          "rewardRiskRatio": 1.6484,
+          "profitFactor": 1.8444,
+          "totalReturnPct": 554018.9096,
+          "maxDrawdownPct": 76.218,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 675,
+          "winRatePct": 34.3704,
+          "averageWinPct": 9.733829,
+          "averageLossPct": -5.583301,
+          "rewardRiskRatio": 1.7434,
+          "profitFactor": 0.913,
+          "totalReturnPct": -98.4392,
+          "maxDrawdownPct": 99.8145,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 642,
+          "winRatePct": 45.7944,
+          "averageWinPct": 9.275118,
+          "averageLossPct": -5.491473,
+          "rewardRiskRatio": 1.689,
+          "profitFactor": 1.4269,
+          "totalReturnPct": 43901.9901,
+          "maxDrawdownPct": 99.1904,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 367,
+          "winRatePct": 47.4114,
+          "averageWinPct": 8.095412,
+          "averageLossPct": -5.210393,
+          "rewardRiskRatio": 1.5537,
+          "profitFactor": 1.4007,
+          "totalReturnPct": 2014.2668,
+          "maxDrawdownPct": 76.218,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 130,
+          "sharePct": 5.4099
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 126,
+          "sharePct": 5.2434
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 124,
+          "sharePct": 5.1602
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 124,
+          "sharePct": 5.1602
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 118,
+          "sharePct": 4.9105
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 113,
+          "sharePct": 4.7025
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 113,
+          "sharePct": 4.7025
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 111,
+          "sharePct": 4.6192
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 106,
+          "sharePct": 4.4112
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 95,
+          "sharePct": 3.9534
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 95,
+          "sharePct": 3.9534
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 92,
+          "sharePct": 3.8285
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_blowoff_reversal",
+          "count": 2403,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-12",
+          "count": 149,
+          "sharePct": 6.2006
+        },
+        {
+          "value": "2024-11",
+          "count": 104,
+          "sharePct": 4.3279
+        },
+        {
+          "value": "2023-07",
+          "count": 93,
+          "sharePct": 3.8702
+        },
+        {
+          "value": "2025-07",
+          "count": 93,
+          "sharePct": 3.8702
+        },
+        {
+          "value": "2023-11",
+          "count": 92,
+          "sharePct": 3.8285
+        },
+        {
+          "value": "2025-05",
+          "count": 88,
+          "sharePct": 3.6621
+        },
+        {
+          "value": "2024-02",
+          "count": 86,
+          "sharePct": 3.5789
+        },
+        {
+          "value": "2026-05",
+          "count": 80,
+          "sharePct": 3.3292
+        },
+        {
+          "value": "2026-03",
+          "count": 72,
+          "sharePct": 2.9963
+        },
+        {
+          "value": "2023-06",
+          "count": 67,
+          "sharePct": 2.7882
+        },
+        {
+          "value": "2023-01",
+          "count": 66,
+          "sharePct": 2.7466
+        },
+        {
+          "value": "2023-10",
+          "count": 66,
+          "sharePct": 2.7466
+        },
+        {
+          "value": "2025-06",
+          "count": 66,
+          "sharePct": 2.7466
+        },
+        {
+          "value": "2024-01",
+          "count": 65,
+          "sharePct": 2.705
+        },
+        {
+          "value": "2024-03",
+          "count": 64,
+          "sharePct": 2.6633
+        },
+        {
+          "value": "2024-10",
+          "count": 63,
+          "sharePct": 2.6217
+        },
+        {
+          "value": "2025-11",
+          "count": 55,
+          "sharePct": 2.2888
+        },
+        {
+          "value": "2026-04",
+          "count": 55,
+          "sharePct": 2.2888
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 43,
+        "maxPairSharePct": 5.4099,
+        "maxMonthSharePct": 6.2006,
+        "recentHoldoutTradeCount": 481
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30",
+          "total_return_not_positive"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "4h:hr_short_failed_breakout_rejection:sl0.05:h18",
+      "timeframe": "4h",
+      "setupName": "hr_short_failed_breakout_rejection",
+      "barrierConfig": {
+        "stop_loss_pct": 0.05,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-01-05T04:00:00+00:00",
+      "lastSignalAt": "2026-07-03T12:00:00+00:00",
+      "metrics": {
+        "tradeCount": 2660,
+        "winRatePct": 41.4662,
+        "averageWinPct": 6.634346,
+        "averageLossPct": -4.391016,
+        "rewardRiskRatio": 1.5109,
+        "profitFactor": 1.0703,
+        "totalReturnPct": 2.3941,
+        "maxDrawdownPct": 99.9125,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 10.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 9.8,
+        "stopNetLossPct": 5.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+        "observedToCostAdjusted2RCloseness": 0.801702,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 408,
+        "stopLossCount": 1267,
+        "timeExitCount": 985,
+        "sameCandleStopCount": 4,
+        "takeProfitSharePct": 15.3383,
+        "stopLossSharePct": 47.6316,
+        "timeExitSharePct": 37.0301,
+        "sameCandleStopSharePct": 0.1504,
+        "distribution": [
+          {
+            "value": "stop_loss",
+            "count": 1263,
+            "sharePct": 47.4812
+          },
+          {
+            "value": "time_exit",
+            "count": 985,
+            "sharePct": 37.0301
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 408,
+            "sharePct": 15.3383
+          },
+          {
+            "value": "stop_loss_same_candle",
+            "count": 4,
+            "sharePct": 0.1504
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 1596,
+          "winRatePct": 39.4737,
+          "averageWinPct": 6.775182,
+          "averageLossPct": -4.451829,
+          "rewardRiskRatio": 1.5219,
+          "profitFactor": 0.9925,
+          "totalReturnPct": -96.0742,
+          "maxDrawdownPct": 99.9074,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 532,
+          "winRatePct": 38.1579,
+          "averageWinPct": 6.383177,
+          "averageLossPct": -4.483844,
+          "rewardRiskRatio": 1.4236,
+          "profitFactor": 0.8784,
+          "totalReturnPct": -93.3375,
+          "maxDrawdownPct": 99.7869,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 532,
+          "winRatePct": 50.7519,
+          "averageWinPct": 6.494569,
+          "averageLossPct": -4.05023,
+          "rewardRiskRatio": 1.6035,
+          "profitFactor": 1.6525,
+          "totalReturnPct": 39047.8594,
+          "maxDrawdownPct": 86.4091,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 811,
+          "winRatePct": 39.0875,
+          "averageWinPct": 7.29804,
+          "averageLossPct": -4.441335,
+          "rewardRiskRatio": 1.6432,
+          "profitFactor": 1.0544,
+          "totalReturnPct": -31.7378,
+          "maxDrawdownPct": 98.8457,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 788,
+          "winRatePct": 45.0508,
+          "averageWinPct": 6.789154,
+          "averageLossPct": -4.3373,
+          "rewardRiskRatio": 1.5653,
+          "profitFactor": 1.2833,
+          "totalReturnPct": 4493.8975,
+          "maxDrawdownPct": 99.8136,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 348,
+          "winRatePct": 45.977,
+          "averageWinPct": 6.485853,
+          "averageLossPct": -4.200971,
+          "rewardRiskRatio": 1.5439,
+          "profitFactor": 1.314,
+          "totalReturnPct": 554.0388,
+          "maxDrawdownPct": 86.4091,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 118,
+          "sharePct": 4.4361
+        },
+        {
+          "value": "BTC/USDT:USDT",
+          "count": 117,
+          "sharePct": 4.3985
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 116,
+          "sharePct": 4.3609
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 115,
+          "sharePct": 4.3233
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 114,
+          "sharePct": 4.2857
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 113,
+          "sharePct": 4.2481
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 112,
+          "sharePct": 4.2105
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 110,
+          "sharePct": 4.1353
+        },
+        {
+          "value": "DOGE/USDT:USDT",
+          "count": 109,
+          "sharePct": 4.0977
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 109,
+          "sharePct": 4.0977
+        },
+        {
+          "value": "ETH/USDT:USDT",
+          "count": 106,
+          "sharePct": 3.985
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 103,
+          "sharePct": 3.8722
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_failed_breakout_rejection",
+          "count": 2660,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-07",
+          "count": 169,
+          "sharePct": 6.3534
+        },
+        {
+          "value": "2023-12",
+          "count": 140,
+          "sharePct": 5.2632
+        },
+        {
+          "value": "2024-11",
+          "count": 115,
+          "sharePct": 4.3233
+        },
+        {
+          "value": "2024-02",
+          "count": 113,
+          "sharePct": 4.2481
+        },
+        {
+          "value": "2023-11",
+          "count": 95,
+          "sharePct": 3.5714
+        },
+        {
+          "value": "2024-09",
+          "count": 88,
+          "sharePct": 3.3083
+        },
+        {
+          "value": "2026-01",
+          "count": 84,
+          "sharePct": 3.1579
+        },
+        {
+          "value": "2025-01",
+          "count": 80,
+          "sharePct": 3.0075
+        },
+        {
+          "value": "2025-05",
+          "count": 80,
+          "sharePct": 3.0075
+        },
+        {
+          "value": "2024-07",
+          "count": 79,
+          "sharePct": 2.9699
+        },
+        {
+          "value": "2023-01",
+          "count": 77,
+          "sharePct": 2.8947
+        },
+        {
+          "value": "2024-03",
+          "count": 77,
+          "sharePct": 2.8947
+        },
+        {
+          "value": "2023-10",
+          "count": 76,
+          "sharePct": 2.8571
+        },
+        {
+          "value": "2025-04",
+          "count": 74,
+          "sharePct": 2.782
+        },
+        {
+          "value": "2025-10",
+          "count": 74,
+          "sharePct": 2.782
+        },
+        {
+          "value": "2026-05",
+          "count": 73,
+          "sharePct": 2.7444
+        },
+        {
+          "value": "2026-03",
+          "count": 72,
+          "sharePct": 2.7068
+        },
+        {
+          "value": "2025-09",
+          "count": 70,
+          "sharePct": 2.6316
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 43,
+        "maxPairSharePct": 4.4361,
+        "maxMonthSharePct": 6.3534,
+        "recentHoldoutTradeCount": 532
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "poolId": "1h:hr_short_trend_pullback_acceleration:sl0.03:h36",
+      "timeframe": "1h",
+      "setupName": "hr_short_trend_pullback_acceleration",
+      "barrierConfig": {
+        "stop_loss_pct": 0.03,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 36,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "firstSignalAt": "2023-01-06T07:00:00+00:00",
+      "lastSignalAt": "2026-07-03T00:00:00+00:00",
+      "metrics": {
+        "tradeCount": 5082,
+        "winRatePct": 38.5872,
+        "averageWinPct": 4.716133,
+        "averageLossPct": -2.776786,
+        "rewardRiskRatio": 1.6984,
+        "profitFactor": 1.0672,
+        "totalReturnPct": 606.1754,
+        "maxDrawdownPct": 99.9408,
+        "researchWorthContinuing": false
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 6.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 5.8,
+        "stopNetLossPct": 3.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.8125,
+        "observedToCostAdjusted2RCloseness": 0.937048,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "exitReasonSummary": {
+        "takeProfitCount": 1249,
+        "stopLossCount": 2596,
+        "timeExitCount": 1237,
+        "sameCandleStopCount": 0,
+        "takeProfitSharePct": 24.5769,
+        "stopLossSharePct": 51.0823,
+        "timeExitSharePct": 24.3408,
+        "sameCandleStopSharePct": 0.0,
+        "distribution": [
+          {
+            "value": "stop_loss",
+            "count": 2596,
+            "sharePct": 51.0823
+          },
+          {
+            "value": "take_profit_2r",
+            "count": 1249,
+            "sharePct": 24.5769
+          },
+          {
+            "value": "time_exit",
+            "count": 1237,
+            "sharePct": 24.3408
+          }
+        ]
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 3049,
+          "winRatePct": 37.3893,
+          "averageWinPct": 4.692065,
+          "averageLossPct": -2.769338,
+          "rewardRiskRatio": 1.6943,
+          "profitFactor": 1.0118,
+          "totalReturnPct": -80.9318,
+          "maxDrawdownPct": 99.6973,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 1016,
+          "winRatePct": 38.189,
+          "averageWinPct": 5.04784,
+          "averageLossPct": -2.804123,
+          "rewardRiskRatio": 1.8001,
+          "profitFactor": 1.1122,
+          "totalReturnPct": 216.5653,
+          "maxDrawdownPct": 94.9941,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 1017,
+          "winRatePct": 42.5762,
+          "averageWinPct": 4.482266,
+          "averageLossPct": -2.771736,
+          "rewardRiskRatio": 1.6171,
+          "profitFactor": 1.199,
+          "totalReturnPct": 1069.8724,
+          "maxDrawdownPct": 97.1139,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 1443,
+          "winRatePct": 39.8475,
+          "averageWinPct": 4.897922,
+          "averageLossPct": -2.810553,
+          "rewardRiskRatio": 1.7427,
+          "profitFactor": 1.1544,
+          "totalReturnPct": 1262.406,
+          "maxDrawdownPct": 97.8698,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 1940,
+          "winRatePct": 35.5155,
+          "averageWinPct": 4.958739,
+          "averageLossPct": -2.818361,
+          "rewardRiskRatio": 1.7594,
+          "profitFactor": 0.969,
+          "totalReturnPct": -92.498,
+          "maxDrawdownPct": 99.3038,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 929,
+          "winRatePct": 44.7793,
+          "averageWinPct": 4.5221,
+          "averageLossPct": -2.782524,
+          "rewardRiskRatio": 1.6252,
+          "profitFactor": 1.3179,
+          "totalReturnPct": 4459.8835,
+          "maxDrawdownPct": 97.1139,
+          "researchWorthContinuing": false
+        }
+      },
+      "pairDistribution": [
+        {
+          "value": "OP/USDT:USDT",
+          "count": 252,
+          "sharePct": 4.9587
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 243,
+          "sharePct": 4.7816
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 239,
+          "sharePct": 4.7029
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 239,
+          "sharePct": 4.7029
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 237,
+          "sharePct": 4.6635
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 234,
+          "sharePct": 4.6045
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 233,
+          "sharePct": 4.5848
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 231,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 220,
+          "sharePct": 4.329
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 213,
+          "sharePct": 4.1913
+        },
+        {
+          "value": "ADA/USDT:USDT",
+          "count": 208,
+          "sharePct": 4.0929
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 206,
+          "sharePct": 4.0535
+        }
+      ],
+      "setupDistribution": [
+        {
+          "value": "hr_short_trend_pullback_acceleration",
+          "count": 5082,
+          "sharePct": 100.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-11",
+          "count": 317,
+          "sharePct": 6.2377
+        },
+        {
+          "value": "2026-06",
+          "count": 300,
+          "sharePct": 5.9032
+        },
+        {
+          "value": "2026-02",
+          "count": 268,
+          "sharePct": 5.2735
+        },
+        {
+          "value": "2025-02",
+          "count": 237,
+          "sharePct": 4.6635
+        },
+        {
+          "value": "2025-06",
+          "count": 192,
+          "sharePct": 3.778
+        },
+        {
+          "value": "2024-08",
+          "count": 189,
+          "sharePct": 3.719
+        },
+        {
+          "value": "2025-03",
+          "count": 181,
+          "sharePct": 3.5616
+        },
+        {
+          "value": "2024-04",
+          "count": 173,
+          "sharePct": 3.4042
+        },
+        {
+          "value": "2024-01",
+          "count": 169,
+          "sharePct": 3.3255
+        },
+        {
+          "value": "2025-08",
+          "count": 168,
+          "sharePct": 3.3058
+        },
+        {
+          "value": "2025-05",
+          "count": 165,
+          "sharePct": 3.2468
+        },
+        {
+          "value": "2025-01",
+          "count": 162,
+          "sharePct": 3.1877
+        },
+        {
+          "value": "2024-06",
+          "count": 147,
+          "sharePct": 2.8926
+        },
+        {
+          "value": "2024-09",
+          "count": 132,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2024-12",
+          "count": 132,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2024-10",
+          "count": 130,
+          "sharePct": 2.558
+        },
+        {
+          "value": "2025-12",
+          "count": 129,
+          "sharePct": 2.5384
+        },
+        {
+          "value": "2026-01",
+          "count": 118,
+          "sharePct": 2.3219
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 28,
+        "uniqueMonths": 43,
+        "maxPairSharePct": 4.9587,
+        "maxMonthSharePct": 6.2377,
+        "recentHoldoutTradeCount": 1017
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "win_rate_below_45",
+          "profit_factor_below_1_35",
+          "max_drawdown_above_30"
+        ]
+      },
+      "decision": {
+        "targetRMultipleUnchanged": true,
+        "candidateReadyForForwardConfirmation": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    }
+  ],
+  "exploratoryFixedFilters": [
+    {
+      "filterId": "hr_long_extreme_volume_btc_crash_rebound",
+      "description": "Long rebound after extreme volume and BTC crash context.",
+      "poolId": "1h:hr_long_extreme_volume_btc_crash_rebound:sl0.02:h24",
+      "timeframe": "1h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.02,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 162,
+        "winRatePct": 70.9877,
+        "averageWinPct": 3.548157,
+        "averageLossPct": -2.2,
+        "rewardRiskRatio": 1.6128,
+        "profitFactor": 3.9462,
+        "totalReturnPct": 1831.8124,
+        "maxDrawdownPct": 32.9962,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 97,
+          "winRatePct": 76.2887,
+          "averageWinPct": 3.408622,
+          "averageLossPct": -2.2,
+          "rewardRiskRatio": 1.5494,
+          "profitFactor": 4.9849,
+          "totalReturnPct": 614.0703,
+          "maxDrawdownPct": 15.2206,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 32,
+          "winRatePct": 87.5,
+          "averageWinPct": 3.8,
+          "averageLossPct": -2.2,
+          "rewardRiskRatio": 1.7273,
+          "profitFactor": 12.0909,
+          "totalReturnPct": 159.9449,
+          "maxDrawdownPct": 2.2,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 33,
+          "winRatePct": 39.3939,
+          "averageWinPct": 3.8,
+          "averageLossPct": -2.2,
+          "rewardRiskRatio": 1.7273,
+          "profitFactor": 1.1227,
+          "totalReturnPct": 4.0741,
+          "maxDrawdownPct": 32.9962,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 57,
+          "winRatePct": 77.193,
+          "averageWinPct": 3.586181,
+          "averageLossPct": -2.2,
+          "rewardRiskRatio": 1.6301,
+          "profitFactor": 5.5172,
+          "totalReturnPct": 252.534,
+          "maxDrawdownPct": 12.3037,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 70,
+          "winRatePct": 67.1429,
+          "averageWinPct": 3.8,
+          "averageLossPct": -2.2,
+          "rewardRiskRatio": 1.7273,
+          "profitFactor": 3.5296,
+          "totalReturnPct": 245.9946,
+          "maxDrawdownPct": 31.489,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -2.2,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -2.2,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 4.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 3.8,
+        "stopNetLossPct": 2.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.727273,
+        "observedToCostAdjusted2RCloseness": 0.933726,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-02",
+          "count": 53,
+          "sharePct": 32.716
+        },
+        {
+          "value": "2024-08",
+          "count": 45,
+          "sharePct": 27.7778
+        },
+        {
+          "value": "2023-04",
+          "count": 16,
+          "sharePct": 9.8765
+        },
+        {
+          "value": "2023-08",
+          "count": 13,
+          "sharePct": 8.0247
+        },
+        {
+          "value": "2024-04",
+          "count": 12,
+          "sharePct": 7.4074
+        },
+        {
+          "value": "2025-11",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "2025-04",
+          "count": 6,
+          "sharePct": 3.7037
+        },
+        {
+          "value": "2023-12",
+          "count": 3,
+          "sharePct": 1.8519
+        },
+        {
+          "value": "2025-03",
+          "count": 2,
+          "sharePct": 1.2346
+        },
+        {
+          "value": "2023-03",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2023-06",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2026-06",
+          "count": 1,
+          "sharePct": 0.6173
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [
+          "single_month_concentration_above_25pct"
+        ],
+        "uniquePairs": 27,
+        "uniqueMonths": 12,
+        "maxPairSharePct": 5.5556,
+        "maxMonthSharePct": 32.716,
+        "recentHoldoutTradeCount": 33
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30",
+          "recent_win_rate_below_40"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": true,
+        "failReasons": [],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "approved_for_local_paper_watch_only"
+      }
+    },
+    {
+      "filterId": "hr_long_extreme_volume_btc_crash_rebound",
+      "description": "Long rebound after extreme volume and BTC crash context.",
+      "poolId": "1h:hr_long_extreme_volume_btc_crash_rebound:sl0.025:h30",
+      "timeframe": "1h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.025,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 30,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 162,
+        "winRatePct": 70.3704,
+        "averageWinPct": 4.28589,
+        "averageLossPct": -2.7,
+        "rewardRiskRatio": 1.5874,
+        "profitFactor": 3.77,
+        "totalReturnPct": 3089.6334,
+        "maxDrawdownPct": 38.9014,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 97,
+          "winRatePct": 71.134,
+          "averageWinPct": 3.950601,
+          "averageLossPct": -2.7,
+          "rewardRiskRatio": 1.4632,
+          "profitFactor": 3.6057,
+          "totalReturnPct": 568.6922,
+          "maxDrawdownPct": 19.3304,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 32,
+          "winRatePct": 100.0,
+          "averageWinPct": 4.8,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 348.2921,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 33,
+          "winRatePct": 39.3939,
+          "averageWinPct": 4.8,
+          "averageLossPct": -2.7,
+          "rewardRiskRatio": 1.7778,
+          "profitFactor": 1.1556,
+          "totalReturnPct": 6.4029,
+          "maxDrawdownPct": 38.9014,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 57,
+          "winRatePct": 66.6667,
+          "averageWinPct": 4.453425,
+          "averageLossPct": -2.7,
+          "rewardRiskRatio": 1.6494,
+          "profitFactor": 3.2988,
+          "totalReturnPct": 210.8536,
+          "maxDrawdownPct": 17.5841,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 70,
+          "winRatePct": 72.8571,
+          "averageWinPct": 4.8,
+          "averageLossPct": -2.7,
+          "rewardRiskRatio": 1.7778,
+          "profitFactor": 4.7719,
+          "totalReturnPct": 549.4854,
+          "maxDrawdownPct": 37.206,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -2.7,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -2.7,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 5.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 4.8,
+        "stopNetLossPct": 2.7,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.777778,
+        "observedToCostAdjusted2RCloseness": 0.892912,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-02",
+          "count": 53,
+          "sharePct": 32.716
+        },
+        {
+          "value": "2024-08",
+          "count": 45,
+          "sharePct": 27.7778
+        },
+        {
+          "value": "2023-04",
+          "count": 16,
+          "sharePct": 9.8765
+        },
+        {
+          "value": "2023-08",
+          "count": 13,
+          "sharePct": 8.0247
+        },
+        {
+          "value": "2024-04",
+          "count": 12,
+          "sharePct": 7.4074
+        },
+        {
+          "value": "2025-11",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "2025-04",
+          "count": 6,
+          "sharePct": 3.7037
+        },
+        {
+          "value": "2023-12",
+          "count": 3,
+          "sharePct": 1.8519
+        },
+        {
+          "value": "2025-03",
+          "count": 2,
+          "sharePct": 1.2346
+        },
+        {
+          "value": "2023-03",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2023-06",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2026-06",
+          "count": 1,
+          "sharePct": 0.6173
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [
+          "single_month_concentration_above_25pct"
+        ],
+        "uniquePairs": 27,
+        "uniqueMonths": 12,
+        "maxPairSharePct": 5.5556,
+        "maxMonthSharePct": 32.716,
+        "recentHoldoutTradeCount": 33
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30",
+          "recent_win_rate_below_40"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": false,
+        "failReasons": [
+          "observed_rr_not_close_enough_to_cost_adjusted_2r"
+        ],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": false,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "fixed exploratory filter; requires independent forward confirmation before any promotion"
+      }
+    },
+    {
+      "filterId": "hr_long_extreme_volume_btc_crash_rebound",
+      "description": "Long rebound after extreme volume and BTC crash context.",
+      "poolId": "1h:hr_long_extreme_volume_btc_crash_rebound:sl0.05:h60",
+      "timeframe": "1h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.05,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 60,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 162,
+        "winRatePct": 67.284,
+        "averageWinPct": 7.579278,
+        "averageLossPct": -4.769381,
+        "rewardRiskRatio": 1.5892,
+        "profitFactor": 3.2683,
+        "totalReturnPct": 20270.91,
+        "maxDrawdownPct": 61.7572,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 97,
+          "winRatePct": 63.9175,
+          "averageWinPct": 6.061338,
+          "averageLossPct": -4.54792,
+          "rewardRiskRatio": 1.3328,
+          "profitFactor": 2.3609,
+          "totalReturnPct": 623.9648,
+          "maxDrawdownPct": 55.7061,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 32,
+          "winRatePct": 100.0,
+          "averageWinPct": 9.8,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 1891.9337,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 33,
+          "winRatePct": 45.4545,
+          "averageWinPct": 9.11589,
+          "averageLossPct": -5.2,
+          "rewardRiskRatio": 1.7531,
+          "profitFactor": 1.4609,
+          "totalReturnPct": 41.2596,
+          "maxDrawdownPct": 61.7572,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 57,
+          "winRatePct": 49.1228,
+          "averageWinPct": 6.727177,
+          "averageLossPct": -4.817471,
+          "rewardRiskRatio": 1.3964,
+          "profitFactor": 1.3483,
+          "totalReturnPct": 44.6852,
+          "maxDrawdownPct": 41.3749,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 70,
+          "winRatePct": 75.7143,
+          "averageWinPct": 9.606384,
+          "averageLossPct": -5.2,
+          "rewardRiskRatio": 1.8474,
+          "profitFactor": 5.7595,
+          "totalReturnPct": 5101.142,
+          "maxDrawdownPct": 59.6595,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -5.2,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -5.2,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 10.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 9.8,
+        "stopNetLossPct": 5.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.884615,
+        "observedToCostAdjusted2RCloseness": 0.843249,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-02",
+          "count": 53,
+          "sharePct": 32.716
+        },
+        {
+          "value": "2024-08",
+          "count": 45,
+          "sharePct": 27.7778
+        },
+        {
+          "value": "2023-04",
+          "count": 16,
+          "sharePct": 9.8765
+        },
+        {
+          "value": "2023-08",
+          "count": 13,
+          "sharePct": 8.0247
+        },
+        {
+          "value": "2024-04",
+          "count": 12,
+          "sharePct": 7.4074
+        },
+        {
+          "value": "2025-11",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "2025-04",
+          "count": 6,
+          "sharePct": 3.7037
+        },
+        {
+          "value": "2023-12",
+          "count": 3,
+          "sharePct": 1.8519
+        },
+        {
+          "value": "2025-03",
+          "count": 2,
+          "sharePct": 1.2346
+        },
+        {
+          "value": "2023-03",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2023-06",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2026-06",
+          "count": 1,
+          "sharePct": 0.6173
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [
+          "single_month_concentration_above_25pct"
+        ],
+        "uniquePairs": 27,
+        "uniqueMonths": 12,
+        "maxPairSharePct": 5.5556,
+        "maxMonthSharePct": 32.716,
+        "recentHoldoutTradeCount": 33
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": false,
+        "failReasons": [
+          "max_drawdown_above_40",
+          "observed_rr_not_close_enough_to_cost_adjusted_2r"
+        ],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": false,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "fixed exploratory filter; requires independent forward confirmation before any promotion"
+      }
+    },
+    {
+      "filterId": "hr_long_extreme_volume_btc_crash_rebound",
+      "description": "Long rebound after extreme volume and BTC crash context.",
+      "poolId": "1h:hr_long_extreme_volume_btc_crash_rebound:sl0.03:h36",
+      "timeframe": "1h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.03,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 36,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 162,
+        "winRatePct": 64.1975,
+        "averageWinPct": 4.955019,
+        "averageLossPct": -3.105819,
+        "rewardRiskRatio": 1.5954,
+        "profitFactor": 2.8607,
+        "totalReturnPct": 2319.7307,
+        "maxDrawdownPct": 44.3127,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 97,
+          "winRatePct": 60.8247,
+          "averageWinPct": 4.310542,
+          "averageLossPct": -3.056251,
+          "rewardRiskRatio": 1.4104,
+          "profitFactor": 2.1898,
+          "totalReturnPct": 266.7793,
+          "maxDrawdownPct": 20.3607,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 32,
+          "winRatePct": 100.0,
+          "averageWinPct": 5.8,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 507.4931,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 33,
+          "winRatePct": 39.3939,
+          "averageWinPct": 5.8,
+          "averageLossPct": -3.2,
+          "rewardRiskRatio": 1.8125,
+          "profitFactor": 1.1781,
+          "totalReturnPct": 8.5977,
+          "maxDrawdownPct": 44.3127,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 57,
+          "winRatePct": 50.8772,
+          "averageWinPct": 4.965289,
+          "averageLossPct": -3.2,
+          "rewardRiskRatio": 1.5517,
+          "profitFactor": 1.6071,
+          "totalReturnPct": 63.4776,
+          "maxDrawdownPct": 21.372,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 70,
+          "winRatePct": 72.8571,
+          "averageWinPct": 5.8,
+          "averageLossPct": -3.2,
+          "rewardRiskRatio": 1.8125,
+          "profitFactor": 4.8651,
+          "totalReturnPct": 855.8744,
+          "maxDrawdownPct": 42.4718,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -3.2,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -3.2,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 6.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 5.8,
+        "stopNetLossPct": 3.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.8125,
+        "observedToCostAdjusted2RCloseness": 0.880221,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-02",
+          "count": 53,
+          "sharePct": 32.716
+        },
+        {
+          "value": "2024-08",
+          "count": 45,
+          "sharePct": 27.7778
+        },
+        {
+          "value": "2023-04",
+          "count": 16,
+          "sharePct": 9.8765
+        },
+        {
+          "value": "2023-08",
+          "count": 13,
+          "sharePct": 8.0247
+        },
+        {
+          "value": "2024-04",
+          "count": 12,
+          "sharePct": 7.4074
+        },
+        {
+          "value": "2025-11",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "2025-04",
+          "count": 6,
+          "sharePct": 3.7037
+        },
+        {
+          "value": "2023-12",
+          "count": 3,
+          "sharePct": 1.8519
+        },
+        {
+          "value": "2025-03",
+          "count": 2,
+          "sharePct": 1.2346
+        },
+        {
+          "value": "2023-03",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2023-06",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2026-06",
+          "count": 1,
+          "sharePct": 0.6173
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [
+          "single_month_concentration_above_25pct"
+        ],
+        "uniquePairs": 27,
+        "uniqueMonths": 12,
+        "maxPairSharePct": 5.5556,
+        "maxMonthSharePct": 32.716,
+        "recentHoldoutTradeCount": 33
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30",
+          "recent_win_rate_below_40"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": false,
+        "failReasons": [
+          "max_drawdown_above_40",
+          "observed_rr_not_close_enough_to_cost_adjusted_2r"
+        ],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": false,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "fixed exploratory filter; requires independent forward confirmation before any promotion"
+      }
+    },
+    {
+      "filterId": "hr_long_extreme_volume_btc_crash_rebound",
+      "description": "Long rebound after extreme volume and BTC crash context.",
+      "poolId": "1h:hr_long_extreme_volume_btc_crash_rebound:sl0.04:h48",
+      "timeframe": "1h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 48,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 162,
+        "winRatePct": 62.3457,
+        "averageWinPct": 6.405811,
+        "averageLossPct": -3.855016,
+        "rewardRiskRatio": 1.6617,
+        "profitFactor": 2.7513,
+        "totalReturnPct": 4565.0143,
+        "maxDrawdownPct": 53.8067,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 97,
+          "winRatePct": 55.6701,
+          "averageWinPct": 5.19235,
+          "averageLossPct": -3.710604,
+          "rewardRiskRatio": 1.3993,
+          "profitFactor": 1.7573,
+          "totalReturnPct": 195.9321,
+          "maxDrawdownPct": 35.8154,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 32,
+          "winRatePct": 100.0,
+          "averageWinPct": 7.8,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 1006.1152,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 33,
+          "winRatePct": 45.4545,
+          "averageWinPct": 7.8,
+          "averageLossPct": -4.2,
+          "rewardRiskRatio": 1.8571,
+          "profitFactor": 1.5476,
+          "totalReturnPct": 42.515,
+          "maxDrawdownPct": 53.8067,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 57,
+          "winRatePct": 38.5965,
+          "averageWinPct": 6.461006,
+          "averageLossPct": -3.799702,
+          "rewardRiskRatio": 1.7004,
+          "profitFactor": 1.0688,
+          "totalReturnPct": 1.3384,
+          "maxDrawdownPct": 27.6453,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 70,
+          "winRatePct": 75.7143,
+          "averageWinPct": 7.8,
+          "averageLossPct": -4.2,
+          "rewardRiskRatio": 1.8571,
+          "profitFactor": 5.7899,
+          "totalReturnPct": 2482.3076,
+          "maxDrawdownPct": 51.7815,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -4.2,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -4.2,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 8.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 7.8,
+        "stopNetLossPct": 4.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.857143,
+        "observedToCostAdjusted2RCloseness": 0.894762,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "ARB/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.9383
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "FIL/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        },
+        {
+          "value": "SUI/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.321
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2025-02",
+          "count": 53,
+          "sharePct": 32.716
+        },
+        {
+          "value": "2024-08",
+          "count": 45,
+          "sharePct": 27.7778
+        },
+        {
+          "value": "2023-04",
+          "count": 16,
+          "sharePct": 9.8765
+        },
+        {
+          "value": "2023-08",
+          "count": 13,
+          "sharePct": 8.0247
+        },
+        {
+          "value": "2024-04",
+          "count": 12,
+          "sharePct": 7.4074
+        },
+        {
+          "value": "2025-11",
+          "count": 9,
+          "sharePct": 5.5556
+        },
+        {
+          "value": "2025-04",
+          "count": 6,
+          "sharePct": 3.7037
+        },
+        {
+          "value": "2023-12",
+          "count": 3,
+          "sharePct": 1.8519
+        },
+        {
+          "value": "2025-03",
+          "count": 2,
+          "sharePct": 1.2346
+        },
+        {
+          "value": "2023-03",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2023-06",
+          "count": 1,
+          "sharePct": 0.6173
+        },
+        {
+          "value": "2026-06",
+          "count": 1,
+          "sharePct": 0.6173
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [
+          "single_month_concentration_above_25pct"
+        ],
+        "uniquePairs": 27,
+        "uniqueMonths": 12,
+        "maxPairSharePct": 5.5556,
+        "maxMonthSharePct": 32.716,
+        "recentHoldoutTradeCount": 33
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": false,
+        "failReasons": [
+          "max_drawdown_above_40",
+          "observed_rr_not_close_enough_to_cost_adjusted_2r"
+        ],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": false,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "fixed exploratory filter; requires independent forward confirmation before any promotion"
+      }
+    },
+    {
+      "filterId": "hr_short_sideways_breakout_reject_btc_up",
+      "description": "Short failed breakout rejection during sideways BTC regime and BTC upside impulse.",
+      "poolId": "4h:hr_short_sideways_breakout_reject_btc_up:sl0.08:h30",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.08,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 30,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 125,
+        "winRatePct": 64.8,
+        "averageWinPct": 7.635022,
+        "averageLossPct": -5.269686,
+        "rewardRiskRatio": 1.4489,
+        "profitFactor": 2.6672,
+        "totalReturnPct": 3061.1888,
+        "maxDrawdownPct": 39.5354,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 75,
+          "winRatePct": 62.6667,
+          "averageWinPct": 6.259327,
+          "averageLossPct": -5.526873,
+          "rewardRiskRatio": 1.1325,
+          "profitFactor": 1.901,
+          "totalReturnPct": 229.3305,
+          "maxDrawdownPct": 39.0629,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 25,
+          "winRatePct": 84.0,
+          "averageWinPct": 10.499567,
+          "averageLossPct": -6.42024,
+          "rewardRiskRatio": 1.6354,
+          "profitFactor": 8.5858,
+          "totalReturnPct": 508.8192,
+          "maxDrawdownPct": 7.6074,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 25,
+          "winRatePct": 52.0,
+          "averageWinPct": 7.981347,
+          "averageLossPct": -4.286065,
+          "rewardRiskRatio": 1.8622,
+          "profitFactor": 2.0173,
+          "totalReturnPct": 57.6631,
+          "maxDrawdownPct": 32.0851,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 32,
+          "winRatePct": 53.125,
+          "averageWinPct": 8.517377,
+          "averageLossPct": -6.337251,
+          "rewardRiskRatio": 1.344,
+          "profitFactor": 1.5232,
+          "totalReturnPct": 46.3123,
+          "maxDrawdownPct": 39.5354,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 54,
+          "winRatePct": 70.3704,
+          "averageWinPct": 9.948013,
+          "averageLossPct": -5.636163,
+          "rewardRiskRatio": 1.765,
+          "profitFactor": 4.192,
+          "totalReturnPct": 1276.6186,
+          "maxDrawdownPct": 29.6373,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 9,
+          "winRatePct": 55.5556,
+          "averageWinPct": 5.813116,
+          "averageLossPct": -4.341189,
+          "rewardRiskRatio": 1.3391,
+          "profitFactor": 1.6738,
+          "totalReturnPct": 10.6365,
+          "maxDrawdownPct": 10.4085,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 16.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 15.8,
+        "stopNetLossPct": 8.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+        "observedToCostAdjusted2RCloseness": 0.751961,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "BTC/USDT:USDT",
+          "count": 10,
+          "sharePct": 8.0
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 8,
+          "sharePct": 6.4
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 8,
+          "sharePct": 6.4
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 7,
+          "sharePct": 5.6
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 7,
+          "sharePct": 5.6
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 7,
+          "sharePct": 5.6
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 6,
+          "sharePct": 4.8
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-09",
+          "count": 16,
+          "sharePct": 12.8
+        },
+        {
+          "value": "2025-10",
+          "count": 14,
+          "sharePct": 11.2
+        },
+        {
+          "value": "2024-08",
+          "count": 13,
+          "sharePct": 10.4
+        },
+        {
+          "value": "2025-03",
+          "count": 13,
+          "sharePct": 10.4
+        },
+        {
+          "value": "2025-12",
+          "count": 12,
+          "sharePct": 9.6
+        },
+        {
+          "value": "2023-05",
+          "count": 11,
+          "sharePct": 8.8
+        },
+        {
+          "value": "2024-07",
+          "count": 7,
+          "sharePct": 5.6
+        },
+        {
+          "value": "2025-01",
+          "count": 6,
+          "sharePct": 4.8
+        },
+        {
+          "value": "2024-09",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "2026-03",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "2024-01",
+          "count": 4,
+          "sharePct": 3.2
+        },
+        {
+          "value": "2024-04",
+          "count": 3,
+          "sharePct": 2.4
+        },
+        {
+          "value": "2025-02",
+          "count": 3,
+          "sharePct": 2.4
+        },
+        {
+          "value": "2025-08",
+          "count": 3,
+          "sharePct": 2.4
+        },
+        {
+          "value": "2023-06",
+          "count": 2,
+          "sharePct": 1.6
+        },
+        {
+          "value": "2025-09",
+          "count": 2,
+          "sharePct": 1.6
+        },
+        {
+          "value": "2026-01",
+          "count": 2,
+          "sharePct": 1.6
+        },
+        {
+          "value": "2026-04",
+          "count": 2,
+          "sharePct": 1.6
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 27,
+        "uniqueMonths": 20,
+        "maxPairSharePct": 8.0,
+        "maxMonthSharePct": 12.8,
+        "recentHoldoutTradeCount": 25
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": false,
+        "failReasons": [
+          "observed_rr_not_close_enough_to_cost_adjusted_2r"
+        ],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": false,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "fixed exploratory filter; requires independent forward confirmation before any promotion"
+      }
+    },
+    {
+      "filterId": "hr_short_extreme_volume_relative_strength_basis_low",
+      "description": "Short exhaustion after relative strength, extreme volume, and slightly negative basis.",
+      "poolId": "4h:hr_short_extreme_volume_relative_strength_basis_low:sl0.06:h24",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 165,
+        "winRatePct": 57.5758,
+        "averageWinPct": 10.299006,
+        "averageLossPct": -5.584062,
+        "rewardRiskRatio": 1.8444,
+        "profitFactor": 2.5031,
+        "totalReturnPct": 18186.7608,
+        "maxDrawdownPct": 38.3157,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 99,
+          "winRatePct": 55.5556,
+          "averageWinPct": 10.193016,
+          "averageLossPct": -5.582961,
+          "rewardRiskRatio": 1.8257,
+          "profitFactor": 2.2822,
+          "totalReturnPct": 1480.1508,
+          "maxDrawdownPct": 38.3157,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 33,
+          "winRatePct": 57.5758,
+          "averageWinPct": 10.534308,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 1.7975,
+          "profitFactor": 2.4395,
+          "totalReturnPct": 183.5108,
+          "maxDrawdownPct": 38.315,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 33,
+          "winRatePct": 63.6364,
+          "averageWinPct": 10.363707,
+          "averageLossPct": -5.265733,
+          "rewardRiskRatio": 1.9681,
+          "profitFactor": 3.4442,
+          "totalReturnPct": 308.1959,
+          "maxDrawdownPct": 31.2572,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 35,
+          "winRatePct": 54.2857,
+          "averageWinPct": 11.749522,
+          "averageLossPct": -5.210155,
+          "rewardRiskRatio": 2.2551,
+          "profitFactor": 2.678,
+          "totalReturnPct": 247.3353,
+          "maxDrawdownPct": 16.5709,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 44,
+          "winRatePct": 56.8182,
+          "averageWinPct": 11.763728,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 2.0073,
+          "profitFactor": 2.6412,
+          "totalReturnPct": 405.8341,
+          "maxDrawdownPct": 38.315,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 40,
+          "winRatePct": 57.5,
+          "averageWinPct": 9.728721,
+          "averageLossPct": -5.440628,
+          "rewardRiskRatio": 1.7882,
+          "profitFactor": 2.4193,
+          "totalReturnPct": 220.5699,
+          "maxDrawdownPct": 31.2572,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.969092,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 12,
+          "sharePct": 7.2727
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 11,
+          "sharePct": 6.6667
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 11,
+          "sharePct": 6.6667
+        },
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 6.6667
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.0606
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.0606
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.0606
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.4545
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.4545
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.8485
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.8485
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 6,
+          "sharePct": 3.6364
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 16,
+          "sharePct": 9.697
+        },
+        {
+          "value": "2023-07",
+          "count": 13,
+          "sharePct": 7.8788
+        },
+        {
+          "value": "2023-09",
+          "count": 8,
+          "sharePct": 4.8485
+        },
+        {
+          "value": "2025-01",
+          "count": 7,
+          "sharePct": 4.2424
+        },
+        {
+          "value": "2024-03",
+          "count": 6,
+          "sharePct": 3.6364
+        },
+        {
+          "value": "2025-08",
+          "count": 6,
+          "sharePct": 3.6364
+        },
+        {
+          "value": "2026-01",
+          "count": 6,
+          "sharePct": 3.6364
+        },
+        {
+          "value": "2026-03",
+          "count": 6,
+          "sharePct": 3.6364
+        },
+        {
+          "value": "2023-11",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2024-06",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2024-07",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2025-07",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2025-11",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2026-02",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.4242
+        },
+        {
+          "value": "2023-06",
+          "count": 4,
+          "sharePct": 2.4242
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.4242
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.4242
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 25,
+        "uniqueMonths": 40,
+        "maxPairSharePct": 7.2727,
+        "maxMonthSharePct": 9.697,
+        "recentHoldoutTradeCount": 33
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": true,
+        "failReasons": [],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": true,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "approved_for_local_paper_watch_only"
+      }
+    },
+    {
+      "filterId": "hr_short_overheated_extreme_volume_basis_low",
+      "description": "Short overheated reversal context with extreme volume and slightly negative basis.",
+      "poolId": "4h:hr_short_overheated_extreme_volume_basis_low:sl0.06:h24",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 154,
+        "winRatePct": 57.7922,
+        "averageWinPct": 9.426909,
+        "averageLossPct": -5.237147,
+        "rewardRiskRatio": 1.8,
+        "profitFactor": 2.4646,
+        "totalReturnPct": 8255.3236,
+        "maxDrawdownPct": 47.3484,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 92,
+          "winRatePct": 57.6087,
+          "averageWinPct": 9.846864,
+          "averageLossPct": -5.209686,
+          "rewardRiskRatio": 1.8901,
+          "profitFactor": 2.5686,
+          "totalReturnPct": 1604.2239,
+          "maxDrawdownPct": 47.3484,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 31,
+          "winRatePct": 64.5161,
+          "averageWinPct": 8.425045,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 1.4376,
+          "profitFactor": 2.6139,
+          "totalReturnPct": 154.1351,
+          "maxDrawdownPct": 34.475,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 31,
+          "winRatePct": 51.6129,
+          "averageWinPct": 9.288136,
+          "averageLossPct": -4.851508,
+          "rewardRiskRatio": 1.9145,
+          "profitFactor": 2.0421,
+          "totalReturnPct": 92.9176,
+          "maxDrawdownPct": 41.0792,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 31,
+          "winRatePct": 41.9355,
+          "averageWinPct": 12.206098,
+          "averageLossPct": -4.999459,
+          "rewardRiskRatio": 2.4415,
+          "profitFactor": 1.7633,
+          "totalReturnPct": 76.4116,
+          "maxDrawdownPct": 21.4602,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 39,
+          "winRatePct": 69.2308,
+          "averageWinPct": 10.134891,
+          "averageLossPct": -5.860377,
+          "rewardRiskRatio": 1.7294,
+          "profitFactor": 3.8911,
+          "totalReturnPct": 541.0886,
+          "maxDrawdownPct": 34.475,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 41,
+          "winRatePct": 53.6585,
+          "averageWinPct": 8.732964,
+          "averageLossPct": -5.063902,
+          "rewardRiskRatio": 1.7246,
+          "profitFactor": 1.9969,
+          "totalReturnPct": 129.3351,
+          "maxDrawdownPct": 41.0792,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.945763,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 12,
+          "sharePct": 7.7922
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 12,
+          "sharePct": 7.7922
+        },
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 12,
+          "sharePct": 7.7922
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 11,
+          "sharePct": 7.1429
+        },
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 7.1429
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 8,
+          "sharePct": 5.1948
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "BCH/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 7,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 6,
+          "sharePct": 3.8961
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 6,
+          "sharePct": 3.8961
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 14,
+          "sharePct": 9.0909
+        },
+        {
+          "value": "2023-07",
+          "count": 10,
+          "sharePct": 6.4935
+        },
+        {
+          "value": "2026-03",
+          "count": 9,
+          "sharePct": 5.8442
+        },
+        {
+          "value": "2023-09",
+          "count": 7,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "2025-07",
+          "count": 7,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "2026-04",
+          "count": 7,
+          "sharePct": 4.5455
+        },
+        {
+          "value": "2024-07",
+          "count": 6,
+          "sharePct": 3.8961
+        },
+        {
+          "value": "2023-10",
+          "count": 5,
+          "sharePct": 3.2468
+        },
+        {
+          "value": "2025-01",
+          "count": 5,
+          "sharePct": 3.2468
+        },
+        {
+          "value": "2025-08",
+          "count": 5,
+          "sharePct": 3.2468
+        },
+        {
+          "value": "2026-01",
+          "count": 5,
+          "sharePct": 3.2468
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2023-12",
+          "count": 4,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2024-06",
+          "count": 4,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2025-06",
+          "count": 4,
+          "sharePct": 2.5974
+        },
+        {
+          "value": "2023-08",
+          "count": 3,
+          "sharePct": 1.9481
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 26,
+        "uniqueMonths": 42,
+        "maxPairSharePct": 7.7922,
+        "maxMonthSharePct": 9.0909,
+        "recentHoldoutTradeCount": 31
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": false,
+        "failReasons": [
+          "max_drawdown_above_40"
+        ],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": false,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "fixed exploratory filter; requires independent forward confirmation before any promotion"
+      }
+    },
+    {
+      "filterId": "hr_short_sideways_breakout_reject_btc_up",
+      "description": "Short failed breakout rejection during sideways BTC regime and BTC upside impulse.",
+      "poolId": "4h:hr_short_sideways_breakout_reject_btc_up:sl0.06:h24",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.06,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 125,
+        "winRatePct": 61.6,
+        "averageWinPct": 6.794191,
+        "averageLossPct": -4.512581,
+        "rewardRiskRatio": 1.5056,
+        "profitFactor": 2.4153,
+        "totalReturnPct": 1495.1755,
+        "maxDrawdownPct": 51.5358,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 75,
+          "winRatePct": 56.0,
+          "averageWinPct": 5.506685,
+          "averageLossPct": -4.551657,
+          "rewardRiskRatio": 1.2098,
+          "profitFactor": 1.5398,
+          "totalReturnPct": 97.7807,
+          "maxDrawdownPct": 51.5358,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 25,
+          "winRatePct": 72.0,
+          "averageWinPct": 10.801924,
+          "averageLossPct": -5.236458,
+          "rewardRiskRatio": 2.0628,
+          "profitFactor": 5.3044,
+          "totalReturnPct": 331.2859,
+          "maxDrawdownPct": 11.3773,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 25,
+          "winRatePct": 68.0,
+          "averageWinPct": 5.731605,
+          "averageLossPct": -3.718001,
+          "rewardRiskRatio": 1.5416,
+          "profitFactor": 3.2759,
+          "totalReturnPct": 87.0076,
+          "maxDrawdownPct": 13.5583,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 32,
+          "winRatePct": 46.875,
+          "averageWinPct": 7.326055,
+          "averageLossPct": -4.408431,
+          "rewardRiskRatio": 1.6618,
+          "profitFactor": 1.4663,
+          "totalReturnPct": 32.2903,
+          "maxDrawdownPct": 41.2263,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 54,
+          "winRatePct": 62.963,
+          "averageWinPct": 9.199103,
+          "averageLossPct": -4.801645,
+          "rewardRiskRatio": 1.9158,
+          "profitFactor": 3.2569,
+          "totalReturnPct": 623.3539,
+          "maxDrawdownPct": 25.0384,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 9,
+          "winRatePct": 66.6667,
+          "averageWinPct": 2.557845,
+          "averageLossPct": -4.337418,
+          "rewardRiskRatio": 0.5897,
+          "profitFactor": 1.1794,
+          "totalReturnPct": 1.7068,
+          "maxDrawdownPct": 9.2914,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 12.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 11.8,
+        "stopNetLossPct": 6.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.903226,
+        "observedToCostAdjusted2RCloseness": 0.791078,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "BTC/USDT:USDT",
+          "count": 10,
+          "sharePct": 8.0
+        },
+        {
+          "value": "SOL/USDT:USDT",
+          "count": 8,
+          "sharePct": 6.4
+        },
+        {
+          "value": "AVAX/USDT:USDT",
+          "count": 8,
+          "sharePct": 6.4
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 7,
+          "sharePct": 5.6
+        },
+        {
+          "value": "LINK/USDT:USDT",
+          "count": 7,
+          "sharePct": 5.6
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 7,
+          "sharePct": 5.6
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 6,
+          "sharePct": 4.8
+        },
+        {
+          "value": "ATOM/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 5,
+          "sharePct": 4.0
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2023-09",
+          "count": 16,
+          "sharePct": 12.8
+        },
+        {
+          "value": "2025-10",
+          "count": 14,
+          "sharePct": 11.2
+        },
+        {
+          "value": "2024-08",
+          "count": 13,
+          "sharePct": 10.4
+        },
+        {
+          "value": "2025-03",
+          "count": 13,
+          "sharePct": 10.4
+        },
+        {
+          "value": "2025-12",
+          "count": 12,
+          "sharePct": 9.6
+        },
+        {
+          "value": "2023-05",
+          "count": 11,
+          "sharePct": 8.8
+        },
+        {
+          "value": "2024-07",
+          "count": 7,
+          "sharePct": 5.6
+        },
+        {
+          "value": "2025-01",
+          "count": 6,
+          "sharePct": 4.8
+        },
+        {
+          "value": "2024-09",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "2026-03",
+          "count": 5,
+          "sharePct": 4.0
+        },
+        {
+          "value": "2024-01",
+          "count": 4,
+          "sharePct": 3.2
+        },
+        {
+          "value": "2024-04",
+          "count": 3,
+          "sharePct": 2.4
+        },
+        {
+          "value": "2025-02",
+          "count": 3,
+          "sharePct": 2.4
+        },
+        {
+          "value": "2025-08",
+          "count": 3,
+          "sharePct": 2.4
+        },
+        {
+          "value": "2023-06",
+          "count": 2,
+          "sharePct": 1.6
+        },
+        {
+          "value": "2025-09",
+          "count": 2,
+          "sharePct": 1.6
+        },
+        {
+          "value": "2026-01",
+          "count": 2,
+          "sharePct": 1.6
+        },
+        {
+          "value": "2026-04",
+          "count": 2,
+          "sharePct": 1.6
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 27,
+        "uniqueMonths": 20,
+        "maxPairSharePct": 8.0,
+        "maxMonthSharePct": 12.8,
+        "recentHoldoutTradeCount": 25
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30",
+          "observed_rr_not_close_to_cost_adjusted_2r"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": false,
+        "failReasons": [
+          "max_drawdown_above_40",
+          "observed_rr_not_close_enough_to_cost_adjusted_2r"
+        ],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": false,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "fixed exploratory filter; requires independent forward confirmation before any promotion"
+      }
+    },
+    {
+      "filterId": "hr_short_extreme_volume_relative_strength_basis_low",
+      "description": "Short exhaustion after relative strength, extreme volume, and slightly negative basis.",
+      "poolId": "4h:hr_short_extreme_volume_relative_strength_basis_low:sl0.08:h30",
+      "timeframe": "4h",
+      "barrierConfig": {
+        "stop_loss_pct": 0.08,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 30,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "metrics": {
+        "tradeCount": 165,
+        "winRatePct": 57.5758,
+        "averageWinPct": 12.288912,
+        "averageLossPct": -7.217872,
+        "rewardRiskRatio": 1.7026,
+        "profitFactor": 2.3106,
+        "totalReturnPct": 27329.087,
+        "maxDrawdownPct": 60.0778,
+        "researchWorthContinuing": false
+      },
+      "timeSplitMetrics": {
+        "early60": {
+          "tradeCount": 99,
+          "winRatePct": 52.5253,
+          "averageWinPct": 12.263677,
+          "averageLossPct": -7.321579,
+          "rewardRiskRatio": 1.675,
+          "profitFactor": 1.8532,
+          "totalReturnPct": 951.0319,
+          "maxDrawdownPct": 60.0778,
+          "researchWorthContinuing": false
+        },
+        "middle20": {
+          "tradeCount": 33,
+          "winRatePct": 63.6364,
+          "averageWinPct": 13.015733,
+          "averageLossPct": -7.607407,
+          "rewardRiskRatio": 1.7109,
+          "profitFactor": 2.9941,
+          "totalReturnPct": 391.4385,
+          "maxDrawdownPct": 37.7953,
+          "researchWorthContinuing": false
+        },
+        "recent20": {
+          "tradeCount": 33,
+          "winRatePct": 66.6667,
+          "averageWinPct": 11.654777,
+          "averageLossPct": -6.349814,
+          "rewardRiskRatio": 1.8355,
+          "profitFactor": 3.6709,
+          "totalReturnPct": 431.0388,
+          "maxDrawdownPct": 32.6735,
+          "researchWorthContinuing": false
+        },
+        "year2024": {
+          "tradeCount": 35,
+          "winRatePct": 48.5714,
+          "averageWinPct": 13.61232,
+          "averageLossPct": -7.023869,
+          "rewardRiskRatio": 1.938,
+          "profitFactor": 1.8303,
+          "totalReturnPct": 129.4722,
+          "maxDrawdownPct": 32.6735,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 44,
+          "winRatePct": 68.1818,
+          "averageWinPct": 13.47127,
+          "averageLossPct": -7.607407,
+          "rewardRiskRatio": 1.7708,
+          "profitFactor": 3.7946,
+          "totalReturnPct": 1300.037,
+          "maxDrawdownPct": 37.7953,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 40,
+          "winRatePct": 60.0,
+          "averageWinPct": 11.409773,
+          "averageLossPct": -6.742812,
+          "rewardRiskRatio": 1.6921,
+          "profitFactor": 2.5382,
+          "totalReturnPct": 322.5604,
+          "maxDrawdownPct": 32.6735,
+          "researchWorthContinuing": false
+        }
+      },
+      "costAdjusted2R": {
+        "targetRMultiple": 2.0,
+        "grossTargetReturnPct": 16.0,
+        "modeledRoundtripCostPct": 0.2,
+        "targetNetReturnPct": 15.8,
+        "stopNetLossPct": 8.2,
+        "costAdjustedTheoreticalRewardRiskRatio": 1.926829,
+        "observedToCostAdjusted2RCloseness": 0.883628,
+        "note": "Target remains fixed at 2R; modeled costs reduce the observed net reward/risk ceiling."
+      },
+      "pairDistribution": [
+        {
+          "value": "PEPE/USDT:USDT",
+          "count": 12,
+          "sharePct": 7.2727
+        },
+        {
+          "value": "UNI/USDT:USDT",
+          "count": 11,
+          "sharePct": 6.6667
+        },
+        {
+          "value": "ETC/USDT:USDT",
+          "count": 11,
+          "sharePct": 6.6667
+        },
+        {
+          "value": "INJ/USDT:USDT",
+          "count": 11,
+          "sharePct": 6.6667
+        },
+        {
+          "value": "OP/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.0606
+        },
+        {
+          "value": "ORDI/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.0606
+        },
+        {
+          "value": "TIA/USDT:USDT",
+          "count": 10,
+          "sharePct": 6.0606
+        },
+        {
+          "value": "NEAR/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.4545
+        },
+        {
+          "value": "DOT/USDT:USDT",
+          "count": 9,
+          "sharePct": 5.4545
+        },
+        {
+          "value": "APT/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.8485
+        },
+        {
+          "value": "AAVE/USDT:USDT",
+          "count": 8,
+          "sharePct": 4.8485
+        },
+        {
+          "value": "XRP/USDT:USDT",
+          "count": 6,
+          "sharePct": 3.6364
+        }
+      ],
+      "monthDistribution": [
+        {
+          "value": "2026-05",
+          "count": 16,
+          "sharePct": 9.697
+        },
+        {
+          "value": "2023-07",
+          "count": 13,
+          "sharePct": 7.8788
+        },
+        {
+          "value": "2023-09",
+          "count": 8,
+          "sharePct": 4.8485
+        },
+        {
+          "value": "2025-01",
+          "count": 7,
+          "sharePct": 4.2424
+        },
+        {
+          "value": "2024-03",
+          "count": 6,
+          "sharePct": 3.6364
+        },
+        {
+          "value": "2025-08",
+          "count": 6,
+          "sharePct": 3.6364
+        },
+        {
+          "value": "2026-01",
+          "count": 6,
+          "sharePct": 3.6364
+        },
+        {
+          "value": "2026-03",
+          "count": 6,
+          "sharePct": 3.6364
+        },
+        {
+          "value": "2023-11",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2024-06",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2024-07",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2025-07",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2025-11",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2026-02",
+          "count": 5,
+          "sharePct": 3.0303
+        },
+        {
+          "value": "2023-04",
+          "count": 4,
+          "sharePct": 2.4242
+        },
+        {
+          "value": "2023-06",
+          "count": 4,
+          "sharePct": 2.4242
+        },
+        {
+          "value": "2024-11",
+          "count": 4,
+          "sharePct": 2.4242
+        },
+        {
+          "value": "2025-03",
+          "count": 4,
+          "sharePct": 2.4242
+        }
+      ],
+      "sampleQuality": {
+        "sampleSufficiencyPassed": true,
+        "failReasons": [],
+        "warningReasons": [],
+        "uniquePairs": 25,
+        "uniqueMonths": 40,
+        "maxPairSharePct": 7.2727,
+        "maxMonthSharePct": 9.697,
+        "recentHoldoutTradeCount": 33
+      },
+      "targetQuality": {
+        "targetMetricsPassed": false,
+        "failReasons": [
+          "max_drawdown_above_30"
+        ]
+      },
+      "exploratoryWatchQuality": {
+        "exploratoryLocalPaperWatchApproved": false,
+        "failReasons": [
+          "max_drawdown_above_40",
+          "observed_rr_not_close_enough_to_cost_adjusted_2r"
+        ],
+        "note": "This only allows local paper observation, not exchange Dry-run or live trading."
+      },
+      "decision": {
+        "exploratoryOnly": true,
+        "exploratoryLocalPaperWatchApproved": false,
+        "newLocalPaperCandidateApproved": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "fixed exploratory filter; requires independent forward confirmation before any promotion"
+      }
+    }
+  ]
+}
