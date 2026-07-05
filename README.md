@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.28 - Market Data Coverage Repair and Public Data Expansion
+AlphaPilot V13.4.29 - Short Rejection 1H Research Strategy
 ```
 
 ## Positioning
@@ -1673,10 +1673,83 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.4.29 Short Rejection 1H Research Strategy
+
+V13.4.29 adds a simple short-only 1h research strategy:
+
+```text
+AlphaPilot Short Rejection 1H V0.1
+```
+
+The strategy tests whether a rebound-failure short idea has research value in
+the current local public OKX futures data. It does not treat bear regime as a
+hard entry gate. It uses a small `shortScore` model and only a few hard
+blockers.
+
+Run smoke backtest:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_short_rejection_backtest.ps1 -Smoke -Run
+```
+
+Run expanded supported-pair backtest:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_short_rejection_backtest.ps1 -Expanded -UseSupportedPairs -Timerange "20260101-" -Run
+```
+
+Generate the report:
+
+```powershell
+python -m alphapilot.reports.generate_short_rejection_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_29_short_rejection_1h_report.json
+reports/v13_4_29_short_rejection_1h_summary.md
+docs/V13.4.29-short-rejection-1h-research-strategy.md
+docs/short-rejection-1h-strategy-rules.md
+docs/short-strategy-risk-notes.md
+```
+
+Current result:
+
+```text
+smoke: 828 short trades, totalReturnPct -80.8628, profitFactor 0.6457
+expanded: 5052 short trades, totalReturnPct -99.9966, profitFactor 0.782
+expanded slippageAdjustedTotalReturnPct: -217.1225
+expanded slippageAdjustedProfitFactor: 0.5966
+maxDrawdownPct: 99.9966
+researchWorthContinuing: false
+```
+
+Scope decisions:
+
+```text
+excludedPairs: FET/USDT:USDT, TON/USDT:USDT
+watchlistPairs: ORDI/USDT:USDT
+```
+
+V13.4.29 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no Dry-run
+no real API key
+no Trade API / Withdraw API
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.4.29: Bear Regime Short Strategy Specification only after coverage policy is explicit.
+- V13.4.30: Short Strategy Failure Review and Archive as Benchmark.
 - Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.
