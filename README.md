@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.27 - Market Regime and Data Integrity Review
+AlphaPilot V13.4.28 - Market Data Coverage Repair and Public Data Expansion
 ```
 
 ## Positioning
@@ -1607,8 +1607,76 @@ no real orders
 no auto trading
 ```
 
+## V13.4.28 Market Data Coverage Repair and Public Data Expansion
+
+V13.4.28 attempts to repair the V13.4.27 local OHLCV coverage warnings before
+adding new market-context schemas. It also adds a public-data expansion
+skeleton for Funding Rate, Open Interest, Orderbook Spread Proxy, Liquidation,
+and Market Regime Proxy inputs.
+
+Run the post-repair integrity review:
+
+```powershell
+python -m alphapilot.reports.generate_market_regime_data_integrity_review --output-report reports/v13_4_28_post_repair_market_regime_data_integrity_report.json --output-summary reports/v13_4_28_post_repair_market_regime_data_integrity_summary.md --output-btc-labels reports/v13_4_28_post_repair_btc_regime_labels.json --output-data-quality reports/v13_4_28_post_repair_data_quality_by_pair.json
+```
+
+Generate the V13.4.28 coverage and expansion reports:
+
+```powershell
+python -m alphapilot.reports.generate_market_data_expansion_report
+```
+
+Outputs:
+
+```text
+reports/v13_4_28_data_coverage_repair_report.json
+reports/v13_4_28_data_coverage_repair_summary.md
+reports/v13_4_28_post_repair_data_quality_by_pair.json
+reports/v13_4_28_market_data_expansion_report.json
+reports/v13_4_28_market_data_expansion_summary.md
+docs/V13.4.28-market-data-coverage-repair-expansion.md
+docs/funding-rate-data-design.md
+docs/open-interest-data-design.md
+docs/orderbook-spread-proxy-design.md
+docs/market-data-source-registry.md
+docs/data-quality-requirements.md
+```
+
+Current V13.4.28 result:
+
+```text
+status: completed_with_unresolved_gaps
+preRepairMissingFileCount: 4
+postRepairMissingFileCount: 4
+unresolved files: FET/USDT:USDT 1h/4h, TON/USDT:USDT 1h/4h
+remaining warning: ORDI/USDT:USDT 4h extreme close-to-close return review
+```
+
+The public data expansion is schema-only in V13.4.28. No funding, open
+interest, orderbook, liquidation, or ticker collector is active yet. The data
+source registry records public-only sources and keeps `requiresApiKey=false`
+and `usesPrivateEndpoint=false`.
+
+V13.4.28 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no strategy implementation
+no backtest execution
+no Dry-run
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
-- V13.4.28: postponed data expansion after the V13.4.27 integrity baseline.
+- V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
+- V13.4.29: Bear Regime Short Strategy Specification only after coverage policy is explicit.
+- Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

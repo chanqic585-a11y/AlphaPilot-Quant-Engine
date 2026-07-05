@@ -1,0 +1,983 @@
+{
+  "reportId": "v13_4_28_market_data_expansion",
+  "version": "V13.4.28",
+  "status": "completed_with_unresolved_gaps",
+  "coverageRepair": {
+    "reportId": "v13_4_28_data_coverage_repair",
+    "version": "V13.4.28",
+    "status": "completed_with_unresolved_gaps",
+    "downloadCommand": "powershell -ExecutionPolicy Bypass -File scripts/download_data.ps1 -UseTop30 -Timeframes \"1h,4h\" -Timerange \"20260101-\" -Prepend -Run",
+    "preRepairSummary": {
+      "status": "warning",
+      "timerange": "20260101-",
+      "dataPath": "user_data\\data\\okx\\futures",
+      "timeframesChecked": [
+        "1h",
+        "4h"
+      ],
+      "pairCount": 30,
+      "pairTimeframeCount": 60,
+      "validCount": 55,
+      "warningCount": 1,
+      "invalidCount": 0,
+      "missingFileCount": 4,
+      "averageMissingRatePct": 0.0,
+      "maxMissingRatePct": 0.0,
+      "totalDuplicateTimestamps": 0,
+      "totalInvalidOhlcRows": 0,
+      "totalExtremeReturnRows": 1,
+      "pairFormatIssueCount": 0,
+      "spotSwapMismatchCount": 0,
+      "warnings": [
+        "4 pair/timeframe files are missing locally."
+      ]
+    },
+    "postRepairSummary": {
+      "status": "warning",
+      "timerange": "20260101-",
+      "dataPath": "user_data\\data\\okx\\futures",
+      "timeframesChecked": [
+        "1h",
+        "4h"
+      ],
+      "pairCount": 30,
+      "pairTimeframeCount": 60,
+      "validCount": 55,
+      "warningCount": 1,
+      "invalidCount": 0,
+      "missingFileCount": 4,
+      "averageMissingRatePct": 0.0,
+      "maxMissingRatePct": 0.0,
+      "totalDuplicateTimestamps": 0,
+      "totalInvalidOhlcRows": 0,
+      "totalExtremeReturnRows": 1,
+      "pairFormatIssueCount": 0,
+      "spotSwapMismatchCount": 0,
+      "warnings": [
+        "4 pair/timeframe files are missing locally."
+      ]
+    },
+    "missingPairTimeframes": [
+      {
+        "pair": "FET/USDT:USDT",
+        "timeframe": "1h",
+        "expectedPath": "user_data/data/okx/futures/FET_USDT_USDT-1h-futures.feather",
+        "reason": "Missing local 1h futures OHLCV file.",
+        "repairPlanned": true
+      },
+      {
+        "pair": "FET/USDT:USDT",
+        "timeframe": "4h",
+        "expectedPath": "user_data/data/okx/futures/FET_USDT_USDT-4h-futures.feather",
+        "reason": "Missing local 4h futures OHLCV file.",
+        "repairPlanned": true
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "timeframe": "1h",
+        "expectedPath": "user_data/data/okx/futures/TON_USDT_USDT-1h-futures.feather",
+        "reason": "Missing local 1h futures OHLCV file.",
+        "repairPlanned": true
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "timeframe": "4h",
+        "expectedPath": "user_data/data/okx/futures/TON_USDT_USDT-4h-futures.feather",
+        "reason": "Missing local 4h futures OHLCV file.",
+        "repairPlanned": true
+      }
+    ],
+    "dataCoverageGaps": [
+      {
+        "pair": "FET/USDT:USDT",
+        "timeframe": "1h",
+        "status": "missing_file",
+        "reason": "Missing local 1h futures OHLCV file.",
+        "warnings": [
+          "Missing local 1h futures OHLCV file."
+        ],
+        "rowCount": 0,
+        "missingRatePct": 100.0,
+        "repairStatus": "unresolved"
+      },
+      {
+        "pair": "FET/USDT:USDT",
+        "timeframe": "4h",
+        "status": "missing_file",
+        "reason": "Missing local 4h futures OHLCV file.",
+        "warnings": [
+          "Missing local 4h futures OHLCV file."
+        ],
+        "rowCount": 0,
+        "missingRatePct": 100.0,
+        "repairStatus": "unresolved"
+      },
+      {
+        "pair": "ORDI/USDT:USDT",
+        "timeframe": "4h",
+        "status": "warning",
+        "reason": "Extreme close-to-close returns detected: 1.; quoteVolume is not present in raw OHLCV; research layers estimate it when needed.",
+        "warnings": [
+          "Extreme close-to-close returns detected: 1.",
+          "quoteVolume is not present in raw OHLCV; research layers estimate it when needed."
+        ],
+        "rowCount": 1106,
+        "missingRatePct": 0.0,
+        "repairStatus": "unresolved"
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "timeframe": "1h",
+        "status": "missing_file",
+        "reason": "Missing local 1h futures OHLCV file.",
+        "warnings": [
+          "Missing local 1h futures OHLCV file."
+        ],
+        "rowCount": 0,
+        "missingRatePct": 100.0,
+        "repairStatus": "unresolved"
+      },
+      {
+        "pair": "TON/USDT:USDT",
+        "timeframe": "4h",
+        "status": "missing_file",
+        "reason": "Missing local 4h futures OHLCV file.",
+        "warnings": [
+          "Missing local 4h futures OHLCV file."
+        ],
+        "rowCount": 0,
+        "missingRatePct": 100.0,
+        "repairStatus": "unresolved"
+      }
+    ],
+    "repairConclusion": "The repair attempt completed, but the same missing local OHLCV gaps remain.",
+    "generatedAt": "2026-07-05T01:52:16.276545+00:00",
+    "warnings": [
+      "Missing local OHLCV files remain after the public download repair attempt.",
+      "The affected symbols may be unavailable in the configured OKX futures market universe.",
+      "4 pair/timeframe files are missing locally."
+    ]
+  },
+  "fundingRateSchema": {
+    "schemaId": "funding_rate_snapshot_v1",
+    "version": "V13.4.28",
+    "dataType": "funding_rate",
+    "storageStatus": "schema_only_not_collected",
+    "primaryKeys": [
+      "exchange",
+      "pair",
+      "marketType",
+      "timestamp"
+    ],
+    "fields": [
+      {
+        "name": "exchange",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Exchange identifier.",
+        "sourceNotes": "First version targets OKX public data."
+      },
+      {
+        "name": "pair",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Unified pair such as BTC/USDT:USDT.",
+        "sourceNotes": "Must match local OHLCV pair naming."
+      },
+      {
+        "name": "marketType",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Market type, expected futures/swap.",
+        "sourceNotes": "No spot funding rate is expected."
+      },
+      {
+        "name": "timestamp",
+        "valueType": "iso_datetime",
+        "required": true,
+        "nullable": false,
+        "description": "Funding observation timestamp.",
+        "sourceNotes": "Store UTC ISO strings."
+      },
+      {
+        "name": "fundingRate",
+        "valueType": "float",
+        "required": false,
+        "nullable": true,
+        "description": "Observed funding rate.",
+        "sourceNotes": "Null if public source is unavailable."
+      },
+      {
+        "name": "nextFundingTime",
+        "valueType": "iso_datetime",
+        "required": false,
+        "nullable": true,
+        "description": "Next funding timestamp if available.",
+        "sourceNotes": "Null when unavailable."
+      },
+      {
+        "name": "sourceId",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Data source registry id.",
+        "sourceNotes": "Example: okx_public_funding_rate."
+      },
+      {
+        "name": "qualityStatus",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "ok, warning, unavailable, or error.",
+        "sourceNotes": "Never promote missing data to ok."
+      },
+      {
+        "name": "warnings",
+        "valueType": "list[string]",
+        "required": true,
+        "nullable": false,
+        "description": "Collection or coverage warnings.",
+        "sourceNotes": "Must include source limitations."
+      }
+    ],
+    "qualityRules": [
+      {
+        "ruleId": "funding_rate_nullable",
+        "severity": "warning",
+        "description": "Funding rate may be unavailable for a pair/date.",
+        "failureHandling": "Store null and warning; do not fabricate."
+      },
+      {
+        "ruleId": "timestamp_required",
+        "severity": "error",
+        "description": "A usable record must have a timestamp.",
+        "failureHandling": "Reject record if missing."
+      },
+      {
+        "ruleId": "public_source_only",
+        "severity": "error",
+        "description": "Funding data must come from public endpoints or local public cache.",
+        "failureHandling": "Reject private/API-key sources."
+      }
+    ],
+    "unavailableHandling": "Store null fields and explicit warnings. Do not backfill with synthetic funding rates.",
+    "safetyNotes": [
+      "Public market data only.",
+      "No API key is required or stored.",
+      "No private exchange endpoint is used.",
+      "No account, position, order, Trade API, or Withdraw API access.",
+      "Data is research context only and must not trigger trading."
+    ]
+  },
+  "openInterestSchema": {
+    "schemaId": "open_interest_snapshot_v1",
+    "version": "V13.4.28",
+    "dataType": "open_interest",
+    "storageStatus": "schema_only_not_collected",
+    "primaryKeys": [
+      "exchange",
+      "pair",
+      "marketType",
+      "timestamp"
+    ],
+    "fields": [
+      {
+        "name": "exchange",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Exchange identifier.",
+        "sourceNotes": "First version targets OKX public data."
+      },
+      {
+        "name": "pair",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Unified pair such as BTC/USDT:USDT.",
+        "sourceNotes": "Must match local OHLCV pair naming."
+      },
+      {
+        "name": "marketType",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Market type, expected futures/swap.",
+        "sourceNotes": "Open interest is futures/swap context."
+      },
+      {
+        "name": "timestamp",
+        "valueType": "iso_datetime",
+        "required": true,
+        "nullable": false,
+        "description": "Open-interest observation timestamp.",
+        "sourceNotes": "Store UTC ISO strings."
+      },
+      {
+        "name": "openInterest",
+        "valueType": "float",
+        "required": false,
+        "nullable": true,
+        "description": "Observed open interest value.",
+        "sourceNotes": "Null if public source is unavailable."
+      },
+      {
+        "name": "openInterestCurrency",
+        "valueType": "string",
+        "required": false,
+        "nullable": true,
+        "description": "Native unit/currency if available.",
+        "sourceNotes": "Do not assume quote currency."
+      },
+      {
+        "name": "sourceId",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Data source registry id.",
+        "sourceNotes": "Example: okx_public_open_interest."
+      },
+      {
+        "name": "qualityStatus",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "ok, warning, unavailable, or error.",
+        "sourceNotes": "Never promote missing data to ok."
+      },
+      {
+        "name": "warnings",
+        "valueType": "list[string]",
+        "required": true,
+        "nullable": false,
+        "description": "Collection or coverage warnings.",
+        "sourceNotes": "Must include unit limitations."
+      }
+    ],
+    "qualityRules": [
+      {
+        "ruleId": "oi_nullable",
+        "severity": "warning",
+        "description": "Open interest may be unavailable for a pair/date.",
+        "failureHandling": "Store null and warning; do not fabricate."
+      },
+      {
+        "ruleId": "unit_required_when_value_present",
+        "severity": "warning",
+        "description": "Open-interest unit should be known when a value exists.",
+        "failureHandling": "Flag warning if missing."
+      },
+      {
+        "ruleId": "public_source_only",
+        "severity": "error",
+        "description": "Open-interest data must come from public endpoints or local public cache.",
+        "failureHandling": "Reject private/API-key sources."
+      }
+    ],
+    "unavailableHandling": "Store null values with warnings. Do not convert units without explicit metadata.",
+    "safetyNotes": [
+      "Public market data only.",
+      "No API key is required or stored.",
+      "No private exchange endpoint is used.",
+      "No account, position, order, Trade API, or Withdraw API access.",
+      "Data is research context only and must not trigger trading."
+    ]
+  },
+  "orderbookProxySchema": {
+    "schemaId": "orderbook_spread_proxy_snapshot_v1",
+    "version": "V13.4.28",
+    "dataType": "orderbook_spread_proxy",
+    "storageStatus": "schema_only_not_collected",
+    "primaryKeys": [
+      "exchange",
+      "pair",
+      "marketType",
+      "timestamp"
+    ],
+    "fields": [
+      {
+        "name": "exchange",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Exchange identifier.",
+        "sourceNotes": "First version targets OKX public data."
+      },
+      {
+        "name": "pair",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Unified pair such as BTC/USDT:USDT.",
+        "sourceNotes": "Must match local OHLCV pair naming."
+      },
+      {
+        "name": "marketType",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Market type, expected futures/swap.",
+        "sourceNotes": "Use the same market as OHLCV research."
+      },
+      {
+        "name": "timestamp",
+        "valueType": "iso_datetime",
+        "required": true,
+        "nullable": false,
+        "description": "Public orderbook sample timestamp.",
+        "sourceNotes": "Store UTC ISO strings."
+      },
+      {
+        "name": "bestBid",
+        "valueType": "float",
+        "required": false,
+        "nullable": true,
+        "description": "Best bid price from public orderbook snapshot.",
+        "sourceNotes": "Null when unavailable."
+      },
+      {
+        "name": "bestAsk",
+        "valueType": "float",
+        "required": false,
+        "nullable": true,
+        "description": "Best ask price from public orderbook snapshot.",
+        "sourceNotes": "Null when unavailable."
+      },
+      {
+        "name": "spreadBps",
+        "valueType": "float",
+        "required": false,
+        "nullable": true,
+        "description": "Best bid/ask spread in basis points.",
+        "sourceNotes": "Only compute when bid and ask are valid."
+      },
+      {
+        "name": "depthSampleAvailable",
+        "valueType": "bool",
+        "required": true,
+        "nullable": false,
+        "description": "Whether any depth sample was available.",
+        "sourceNotes": "False is acceptable for skeleton output."
+      },
+      {
+        "name": "sourceId",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Data source registry id.",
+        "sourceNotes": "Example: okx_public_orderbook_snapshot."
+      },
+      {
+        "name": "qualityStatus",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "ok, warning, unavailable, or error.",
+        "sourceNotes": "Never promote missing data to ok."
+      },
+      {
+        "name": "warnings",
+        "valueType": "list[string]",
+        "required": true,
+        "nullable": false,
+        "description": "Collection or coverage warnings.",
+        "sourceNotes": "Must include snapshot limitations."
+      }
+    ],
+    "qualityRules": [
+      {
+        "ruleId": "bid_ask_consistency",
+        "severity": "error",
+        "description": "bestAsk must be greater than or equal to bestBid when both exist.",
+        "failureHandling": "Reject inconsistent snapshots."
+      },
+      {
+        "ruleId": "spread_nullable",
+        "severity": "warning",
+        "description": "Spread is null when bid/ask are missing.",
+        "failureHandling": "Store warning; do not fabricate."
+      },
+      {
+        "ruleId": "public_source_only",
+        "severity": "error",
+        "description": "Orderbook proxy data must come from public endpoints or local public cache.",
+        "failureHandling": "Reject private/API-key sources."
+      }
+    ],
+    "unavailableHandling": "Store unavailable status and warning when a public orderbook sample is absent.",
+    "safetyNotes": [
+      "Public market data only.",
+      "No API key is required or stored.",
+      "No private exchange endpoint is used.",
+      "No account, position, order, Trade API, or Withdraw API access.",
+      "Data is research context only and must not trigger trading."
+    ]
+  },
+  "liquidationSchema": {
+    "schemaId": "liquidation_snapshot_v1",
+    "version": "V13.4.28",
+    "dataType": "liquidation",
+    "storageStatus": "schema_only_not_collected",
+    "primaryKeys": [
+      "exchange",
+      "pair",
+      "marketType",
+      "timestamp"
+    ],
+    "fields": [
+      {
+        "name": "exchange",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Exchange identifier.",
+        "sourceNotes": "Public availability may vary by exchange."
+      },
+      {
+        "name": "pair",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Unified pair such as BTC/USDT:USDT.",
+        "sourceNotes": "Must match local OHLCV pair naming."
+      },
+      {
+        "name": "marketType",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Market type, expected futures/swap.",
+        "sourceNotes": "Liquidation context is futures/swap."
+      },
+      {
+        "name": "timestamp",
+        "valueType": "iso_datetime",
+        "required": true,
+        "nullable": false,
+        "description": "Liquidation bucket timestamp.",
+        "sourceNotes": "Store UTC ISO strings."
+      },
+      {
+        "name": "longLiquidationVolume",
+        "valueType": "float",
+        "required": false,
+        "nullable": true,
+        "description": "Long-side liquidation volume if publicly available.",
+        "sourceNotes": "Null when unavailable."
+      },
+      {
+        "name": "shortLiquidationVolume",
+        "valueType": "float",
+        "required": false,
+        "nullable": true,
+        "description": "Short-side liquidation volume if publicly available.",
+        "sourceNotes": "Null when unavailable."
+      },
+      {
+        "name": "liquidationCurrency",
+        "valueType": "string",
+        "required": false,
+        "nullable": true,
+        "description": "Native unit/currency if available.",
+        "sourceNotes": "Do not infer units."
+      },
+      {
+        "name": "sourceId",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Data source registry id.",
+        "sourceNotes": "Status is planned until a public source is verified."
+      },
+      {
+        "name": "qualityStatus",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "ok, warning, unavailable, or error.",
+        "sourceNotes": "Never promote missing data to ok."
+      },
+      {
+        "name": "warnings",
+        "valueType": "list[string]",
+        "required": true,
+        "nullable": false,
+        "description": "Collection or coverage warnings.",
+        "sourceNotes": "Must state public-source limitations."
+      }
+    ],
+    "qualityRules": [
+      {
+        "ruleId": "liquidation_public_availability",
+        "severity": "warning",
+        "description": "Liquidation data may not be available through a reliable public source.",
+        "failureHandling": "Return unavailable; do not fabricate."
+      },
+      {
+        "ruleId": "unit_required_when_value_present",
+        "severity": "warning",
+        "description": "Liquidation unit should be known when a value exists.",
+        "failureHandling": "Flag warning if missing."
+      },
+      {
+        "ruleId": "public_source_only",
+        "severity": "error",
+        "description": "Liquidation data must come from public endpoints or verified public datasets.",
+        "failureHandling": "Reject private/API-key sources."
+      }
+    ],
+    "unavailableHandling": "Return unavailable until a stable public source is verified.",
+    "safetyNotes": [
+      "Public market data only.",
+      "No API key is required or stored.",
+      "No private exchange endpoint is used.",
+      "No account, position, order, Trade API, or Withdraw API access.",
+      "Data is research context only and must not trigger trading."
+    ]
+  },
+  "marketRegimeProxySchema": {
+    "schemaId": "market_regime_proxy_snapshot_v1",
+    "version": "V13.4.28",
+    "dataType": "market_regime_proxy",
+    "storageStatus": "schema_only_not_collected",
+    "primaryKeys": [
+      "pair",
+      "timeframe",
+      "timestamp"
+    ],
+    "fields": [
+      {
+        "name": "pair",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Unified pair such as BTC/USDT:USDT.",
+        "sourceNotes": "Must match local OHLCV pair naming."
+      },
+      {
+        "name": "timeframe",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "Research timeframe.",
+        "sourceNotes": "Use 1h or 4h first."
+      },
+      {
+        "name": "timestamp",
+        "valueType": "iso_datetime",
+        "required": true,
+        "nullable": false,
+        "description": "Proxy label timestamp.",
+        "sourceNotes": "Store UTC ISO strings."
+      },
+      {
+        "name": "btcRegime",
+        "valueType": "string",
+        "required": false,
+        "nullable": true,
+        "description": "BTC market regime from local OHLCV labels.",
+        "sourceNotes": "Null if BTC label unavailable."
+      },
+      {
+        "name": "fundingRegime",
+        "valueType": "string",
+        "required": false,
+        "nullable": true,
+        "description": "Funding context bucket.",
+        "sourceNotes": "Null until funding data is collected."
+      },
+      {
+        "name": "openInterestRegime",
+        "valueType": "string",
+        "required": false,
+        "nullable": true,
+        "description": "Open-interest context bucket.",
+        "sourceNotes": "Null until OI data is collected."
+      },
+      {
+        "name": "spreadRegime",
+        "valueType": "string",
+        "required": false,
+        "nullable": true,
+        "description": "Spread/liquidity context bucket.",
+        "sourceNotes": "Null until public orderbook proxy exists."
+      },
+      {
+        "name": "qualityStatus",
+        "valueType": "string",
+        "required": true,
+        "nullable": false,
+        "description": "ok, warning, unavailable, or error.",
+        "sourceNotes": "Reflect missing component data."
+      },
+      {
+        "name": "warnings",
+        "valueType": "list[string]",
+        "required": true,
+        "nullable": false,
+        "description": "Input coverage limitations.",
+        "sourceNotes": "Must mention missing context fields."
+      }
+    ],
+    "qualityRules": [
+      {
+        "ruleId": "no_imputed_public_context",
+        "severity": "error",
+        "description": "Missing funding/OI/spread context must not be imputed as favorable.",
+        "failureHandling": "Keep null and warning."
+      },
+      {
+        "ruleId": "btc_label_required_for_v1",
+        "severity": "warning",
+        "description": "BTC regime is the minimum usable proxy component.",
+        "failureHandling": "Mark unavailable if absent."
+      },
+      {
+        "ruleId": "research_context_only",
+        "severity": "error",
+        "description": "Regime proxy labels are research context, not trading commands.",
+        "failureHandling": "Do not wire to execution."
+      }
+    ],
+    "unavailableHandling": "Return partial proxy with null components and explicit warnings.",
+    "safetyNotes": [
+      "Public market data only.",
+      "No API key is required or stored.",
+      "No private exchange endpoint is used.",
+      "No account, position, order, Trade API, or Withdraw API access.",
+      "Data is research context only and must not trigger trading."
+    ]
+  },
+  "dataSourceRegistry": [
+    {
+      "sourceId": "okx_public_ohlcv",
+      "exchange": "okx",
+      "dataType": "ohlcv",
+      "requiresApiKey": false,
+      "usesPrivateEndpoint": false,
+      "supportsHistorical": true,
+      "supportsRealtime": false,
+      "status": "active_local_freqtrade_path",
+      "notes": "Current local OHLCV path uses Freqtrade public download-data outputs."
+    },
+    {
+      "sourceId": "okx_public_funding_rate",
+      "exchange": "okx",
+      "dataType": "funding_rate",
+      "requiresApiKey": false,
+      "usesPrivateEndpoint": false,
+      "supportsHistorical": true,
+      "supportsRealtime": true,
+      "status": "planned_not_collected",
+      "notes": "Schema registered for future public funding-rate collection; V13.4.28 does not fetch it."
+    },
+    {
+      "sourceId": "okx_public_open_interest",
+      "exchange": "okx",
+      "dataType": "open_interest",
+      "requiresApiKey": false,
+      "usesPrivateEndpoint": false,
+      "supportsHistorical": true,
+      "supportsRealtime": true,
+      "status": "planned_not_collected",
+      "notes": "Schema registered for future public OI collection; units and history coverage must be validated."
+    },
+    {
+      "sourceId": "okx_public_ticker",
+      "exchange": "okx",
+      "dataType": "ticker",
+      "requiresApiKey": false,
+      "usesPrivateEndpoint": false,
+      "supportsHistorical": false,
+      "supportsRealtime": true,
+      "status": "planned_not_collected",
+      "notes": "Public ticker can support spread and market-state checks later; V13.4.28 does not poll it."
+    },
+    {
+      "sourceId": "okx_public_orderbook_snapshot",
+      "exchange": "okx",
+      "dataType": "orderbook_spread_proxy",
+      "requiresApiKey": false,
+      "usesPrivateEndpoint": false,
+      "supportsHistorical": false,
+      "supportsRealtime": true,
+      "status": "planned_not_collected",
+      "notes": "Public orderbook snapshots can support spread proxy later; V13.4.28 does not collect snapshots."
+    },
+    {
+      "sourceId": "local_freqtrade_ohlcv",
+      "exchange": "local",
+      "dataType": "ohlcv",
+      "requiresApiKey": false,
+      "usesPrivateEndpoint": false,
+      "supportsHistorical": true,
+      "supportsRealtime": false,
+      "status": "active_local_cache",
+      "notes": "Local public OHLCV cache under user_data/data/okx/futures."
+    }
+  ],
+  "collectorSkeleton": {
+    "status": "skeleton_only_not_executing_network_requests",
+    "methods": [
+      "collect_funding_rate",
+      "collect_open_interest",
+      "collect_orderbook_spread_proxy",
+      "collect_liquidation",
+      "collect_market_regime_proxy"
+    ],
+    "sampleUnavailableResults": [
+      {
+        "requestId": "funding_rate_collector_skeleton_v1",
+        "sourceId": "okx_public_funding_rate",
+        "dataType": "funding_rate",
+        "status": "unavailable_skeleton_only",
+        "records": [],
+        "warnings": [
+          "V13.4.28 registers schema and source metadata only.",
+          "No public endpoint request is executed by this skeleton.",
+          "No API key, private endpoint, account data, position data, order creation, or auto trading is used."
+        ],
+        "safetyBoundary": {
+          "publicDataOnly": true,
+          "apiKeyRequired": false,
+          "privateEndpointUsed": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "accountRead": false,
+          "positionRead": false,
+          "orderCreated": false,
+          "autoTrading": false
+        },
+        "generatedAt": "2026-07-05T01:52:16.277546+00:00"
+      },
+      {
+        "requestId": "open_interest_collector_skeleton_v1",
+        "sourceId": "okx_public_open_interest",
+        "dataType": "open_interest",
+        "status": "unavailable_skeleton_only",
+        "records": [],
+        "warnings": [
+          "V13.4.28 registers schema and source metadata only.",
+          "No public endpoint request is executed by this skeleton.",
+          "No API key, private endpoint, account data, position data, order creation, or auto trading is used."
+        ],
+        "safetyBoundary": {
+          "publicDataOnly": true,
+          "apiKeyRequired": false,
+          "privateEndpointUsed": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "accountRead": false,
+          "positionRead": false,
+          "orderCreated": false,
+          "autoTrading": false
+        },
+        "generatedAt": "2026-07-05T01:52:16.277546+00:00"
+      },
+      {
+        "requestId": "orderbook_spread_proxy_collector_skeleton_v1",
+        "sourceId": "okx_public_orderbook_snapshot",
+        "dataType": "orderbook_spread_proxy",
+        "status": "unavailable_skeleton_only",
+        "records": [],
+        "warnings": [
+          "V13.4.28 registers schema and source metadata only.",
+          "No public endpoint request is executed by this skeleton.",
+          "No API key, private endpoint, account data, position data, order creation, or auto trading is used."
+        ],
+        "safetyBoundary": {
+          "publicDataOnly": true,
+          "apiKeyRequired": false,
+          "privateEndpointUsed": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "accountRead": false,
+          "positionRead": false,
+          "orderCreated": false,
+          "autoTrading": false
+        },
+        "generatedAt": "2026-07-05T01:52:16.277546+00:00"
+      },
+      {
+        "requestId": "liquidation_collector_skeleton_v1",
+        "sourceId": "public_liquidation_source_unverified",
+        "dataType": "liquidation",
+        "status": "unavailable_skeleton_only",
+        "records": [],
+        "warnings": [
+          "V13.4.28 registers schema and source metadata only.",
+          "No public endpoint request is executed by this skeleton.",
+          "No API key, private endpoint, account data, position data, order creation, or auto trading is used."
+        ],
+        "safetyBoundary": {
+          "publicDataOnly": true,
+          "apiKeyRequired": false,
+          "privateEndpointUsed": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "accountRead": false,
+          "positionRead": false,
+          "orderCreated": false,
+          "autoTrading": false
+        },
+        "generatedAt": "2026-07-05T01:52:16.277546+00:00"
+      },
+      {
+        "requestId": "market_regime_proxy_collector_skeleton_v1",
+        "sourceId": "local_market_regime_proxy",
+        "dataType": "market_regime_proxy",
+        "status": "unavailable_skeleton_only",
+        "records": [],
+        "warnings": [
+          "V13.4.28 registers schema and source metadata only.",
+          "No public endpoint request is executed by this skeleton.",
+          "No API key, private endpoint, account data, position data, order creation, or auto trading is used."
+        ],
+        "safetyBoundary": {
+          "publicDataOnly": true,
+          "apiKeyRequired": false,
+          "privateEndpointUsed": false,
+          "tradeApiUsed": false,
+          "withdrawApiUsed": false,
+          "accountRead": false,
+          "positionRead": false,
+          "orderCreated": false,
+          "autoTrading": false
+        },
+        "generatedAt": "2026-07-05T01:52:16.277546+00:00"
+      }
+    ]
+  },
+  "nextStepRecommendation": [
+    "Resolve remaining local OHLCV coverage gaps before approving V13.4.29 strategy specification.",
+    "Review whether unresolved pairs are unavailable on OKX futures or need universe replacement/mapping.",
+    "Keep V13.4.29 Bear Regime Short Strategy Specification blocked until coverage policy is explicit."
+  ],
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "safetyBoundary": {
+    "strategyImplemented": false,
+    "backtestExecuted": false,
+    "dryRunExecuted": false,
+    "liveTradingApproved": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "apiKeyRequired": false,
+    "apiKeyStored": false,
+    "accountRead": false,
+    "positionRead": false,
+    "orderCreated": false,
+    "autoTrading": false,
+    "mobileAppChanged": false
+  },
+  "generatedAt": "2026-07-05T01:52:16.277546+00:00",
+  "warnings": [
+    "Missing local OHLCV files remain after the public download repair attempt.",
+    "The affected symbols may be unavailable in the configured OKX futures market universe.",
+    "4 pair/timeframe files are missing locally.",
+    "Public data expansion is schema-only in V13.4.28; no new external collector is active."
+  ]
+}

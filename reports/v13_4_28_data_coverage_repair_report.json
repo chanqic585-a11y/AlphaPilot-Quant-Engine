@@ -1,0 +1,156 @@
+{
+  "reportId": "v13_4_28_data_coverage_repair",
+  "version": "V13.4.28",
+  "status": "completed_with_unresolved_gaps",
+  "downloadCommand": "powershell -ExecutionPolicy Bypass -File scripts/download_data.ps1 -UseTop30 -Timeframes \"1h,4h\" -Timerange \"20260101-\" -Prepend -Run",
+  "preRepairSummary": {
+    "status": "warning",
+    "timerange": "20260101-",
+    "dataPath": "user_data\\data\\okx\\futures",
+    "timeframesChecked": [
+      "1h",
+      "4h"
+    ],
+    "pairCount": 30,
+    "pairTimeframeCount": 60,
+    "validCount": 55,
+    "warningCount": 1,
+    "invalidCount": 0,
+    "missingFileCount": 4,
+    "averageMissingRatePct": 0.0,
+    "maxMissingRatePct": 0.0,
+    "totalDuplicateTimestamps": 0,
+    "totalInvalidOhlcRows": 0,
+    "totalExtremeReturnRows": 1,
+    "pairFormatIssueCount": 0,
+    "spotSwapMismatchCount": 0,
+    "warnings": [
+      "4 pair/timeframe files are missing locally."
+    ]
+  },
+  "postRepairSummary": {
+    "status": "warning",
+    "timerange": "20260101-",
+    "dataPath": "user_data\\data\\okx\\futures",
+    "timeframesChecked": [
+      "1h",
+      "4h"
+    ],
+    "pairCount": 30,
+    "pairTimeframeCount": 60,
+    "validCount": 55,
+    "warningCount": 1,
+    "invalidCount": 0,
+    "missingFileCount": 4,
+    "averageMissingRatePct": 0.0,
+    "maxMissingRatePct": 0.0,
+    "totalDuplicateTimestamps": 0,
+    "totalInvalidOhlcRows": 0,
+    "totalExtremeReturnRows": 1,
+    "pairFormatIssueCount": 0,
+    "spotSwapMismatchCount": 0,
+    "warnings": [
+      "4 pair/timeframe files are missing locally."
+    ]
+  },
+  "missingPairTimeframes": [
+    {
+      "pair": "FET/USDT:USDT",
+      "timeframe": "1h",
+      "expectedPath": "user_data/data/okx/futures/FET_USDT_USDT-1h-futures.feather",
+      "reason": "Missing local 1h futures OHLCV file.",
+      "repairPlanned": true
+    },
+    {
+      "pair": "FET/USDT:USDT",
+      "timeframe": "4h",
+      "expectedPath": "user_data/data/okx/futures/FET_USDT_USDT-4h-futures.feather",
+      "reason": "Missing local 4h futures OHLCV file.",
+      "repairPlanned": true
+    },
+    {
+      "pair": "TON/USDT:USDT",
+      "timeframe": "1h",
+      "expectedPath": "user_data/data/okx/futures/TON_USDT_USDT-1h-futures.feather",
+      "reason": "Missing local 1h futures OHLCV file.",
+      "repairPlanned": true
+    },
+    {
+      "pair": "TON/USDT:USDT",
+      "timeframe": "4h",
+      "expectedPath": "user_data/data/okx/futures/TON_USDT_USDT-4h-futures.feather",
+      "reason": "Missing local 4h futures OHLCV file.",
+      "repairPlanned": true
+    }
+  ],
+  "dataCoverageGaps": [
+    {
+      "pair": "FET/USDT:USDT",
+      "timeframe": "1h",
+      "status": "missing_file",
+      "reason": "Missing local 1h futures OHLCV file.",
+      "warnings": [
+        "Missing local 1h futures OHLCV file."
+      ],
+      "rowCount": 0,
+      "missingRatePct": 100.0,
+      "repairStatus": "unresolved"
+    },
+    {
+      "pair": "FET/USDT:USDT",
+      "timeframe": "4h",
+      "status": "missing_file",
+      "reason": "Missing local 4h futures OHLCV file.",
+      "warnings": [
+        "Missing local 4h futures OHLCV file."
+      ],
+      "rowCount": 0,
+      "missingRatePct": 100.0,
+      "repairStatus": "unresolved"
+    },
+    {
+      "pair": "ORDI/USDT:USDT",
+      "timeframe": "4h",
+      "status": "warning",
+      "reason": "Extreme close-to-close returns detected: 1.; quoteVolume is not present in raw OHLCV; research layers estimate it when needed.",
+      "warnings": [
+        "Extreme close-to-close returns detected: 1.",
+        "quoteVolume is not present in raw OHLCV; research layers estimate it when needed."
+      ],
+      "rowCount": 1106,
+      "missingRatePct": 0.0,
+      "repairStatus": "unresolved"
+    },
+    {
+      "pair": "TON/USDT:USDT",
+      "timeframe": "1h",
+      "status": "missing_file",
+      "reason": "Missing local 1h futures OHLCV file.",
+      "warnings": [
+        "Missing local 1h futures OHLCV file."
+      ],
+      "rowCount": 0,
+      "missingRatePct": 100.0,
+      "repairStatus": "unresolved"
+    },
+    {
+      "pair": "TON/USDT:USDT",
+      "timeframe": "4h",
+      "status": "missing_file",
+      "reason": "Missing local 4h futures OHLCV file.",
+      "warnings": [
+        "Missing local 4h futures OHLCV file."
+      ],
+      "rowCount": 0,
+      "missingRatePct": 100.0,
+      "repairStatus": "unresolved"
+    }
+  ],
+  "repairConclusion": "The repair attempt completed, but the same missing local OHLCV gaps remain.",
+  "generatedAt": "2026-07-05T01:52:16.276545+00:00",
+  "warnings": [
+    "Missing local OHLCV files remain after the public download repair attempt.",
+    "The affected symbols may be unavailable in the configured OKX futures market universe.",
+    "4 pair/timeframe files are missing locally."
+  ]
+}
