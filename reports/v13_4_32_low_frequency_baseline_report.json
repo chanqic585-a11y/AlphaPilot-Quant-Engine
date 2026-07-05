@@ -1,0 +1,562 @@
+{
+  "reportId": "v13_4_32_low_frequency_baseline_report",
+  "version": "V13.4.32",
+  "status": "completed",
+  "timerange": "20240101-",
+  "pairs": [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT"
+  ],
+  "timeframes": [
+    "4h",
+    "1d"
+  ],
+  "dataReportPath": "reports/v13_4_32_low_frequency_data_report.json",
+  "researchPlanPath": "reports/v13_4_31_low_frequency_research_plan.json",
+  "dataQualitySummary": {
+    "pairCount": 3,
+    "timeframeCount": 2,
+    "pairTimeframeCount": 6,
+    "validCount": 6,
+    "warningCount": 0,
+    "invalidCount": 0,
+    "unavailableCount": 0,
+    "minimumCandles": 200
+  },
+  "baselines": {
+    "noTrade": {
+      "baselineId": "low_frequency_no_trade",
+      "name": "NoTrade",
+      "type": "report_only_baseline",
+      "timerange": "20240101-",
+      "totalReturnPct": 0.0,
+      "maxDrawdownPct": 0.0,
+      "volatilityPct": 0.0,
+      "bestDrawupPct": 0.0,
+      "worstDrawdownPct": 0.0,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 0,
+      "exposureTimePct": 0.0,
+      "status": "research_only",
+      "interpretation": "NoTrade is an active benchmark for capital preservation and opportunity cost.",
+      "dryRunApproved": false,
+      "liveTradingApproved": false
+    },
+    "buyHold": [
+      {
+        "baselineId": "low_frequency_buy_hold_btc_usdt_usdt_4h",
+        "name": "BuyHold BTC/USDT:USDT",
+        "pair": "BTC/USDT:USDT",
+        "timeframe": "4h",
+        "timerange": "20240101-",
+        "firstTimestamp": "2024-01-01T00:00:00+00:00",
+        "lastTimestamp": "2026-07-04T16:00:00+00:00",
+        "candleCount": 5495,
+        "startClose": 42351.1,
+        "endClose": 63266.9,
+        "totalReturnPct": 49.3867,
+        "maxDrawdownPct": 53.4399,
+        "volatilityPct": 47.5225,
+        "bestDrawupPct": 222.6183,
+        "worstDrawdownPct": 53.4399,
+        "tradeCount": 0,
+        "syntheticHoldingCount": 1,
+        "exposureTimePct": 100.0,
+        "status": "research_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      },
+      {
+        "baselineId": "low_frequency_buy_hold_eth_usdt_usdt_4h",
+        "name": "BuyHold ETH/USDT:USDT",
+        "pair": "ETH/USDT:USDT",
+        "timeframe": "4h",
+        "timerange": "20240101-",
+        "firstTimestamp": "2024-01-01T00:00:00+00:00",
+        "lastTimestamp": "2026-07-04T16:00:00+00:00",
+        "candleCount": 5495,
+        "startClose": 2274.63,
+        "endClose": 1792.02,
+        "totalReturnPct": -21.2171,
+        "maxDrawdownPct": 68.0429,
+        "volatilityPct": 66.5194,
+        "bestDrawupPct": 240.6708,
+        "worstDrawdownPct": 68.0429,
+        "tradeCount": 0,
+        "syntheticHoldingCount": 1,
+        "exposureTimePct": 100.0,
+        "status": "research_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      },
+      {
+        "baselineId": "low_frequency_buy_hold_sol_usdt_usdt_4h",
+        "name": "BuyHold SOL/USDT:USDT",
+        "pair": "SOL/USDT:USDT",
+        "timeframe": "4h",
+        "timerange": "20240101-",
+        "firstTimestamp": "2024-01-01T00:00:00+00:00",
+        "lastTimestamp": "2026-07-04T16:00:00+00:00",
+        "candleCount": 5495,
+        "startClose": 103.13,
+        "endClose": 81.83,
+        "totalReturnPct": -20.6535,
+        "maxDrawdownPct": 78.4918,
+        "volatilityPct": 82.4955,
+        "bestDrawupPct": 256.995,
+        "worstDrawdownPct": 78.4918,
+        "tradeCount": 0,
+        "syntheticHoldingCount": 1,
+        "exposureTimePct": 100.0,
+        "status": "research_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      },
+      {
+        "baselineId": "low_frequency_buy_hold_btc_usdt_usdt_1d",
+        "name": "BuyHold BTC/USDT:USDT",
+        "pair": "BTC/USDT:USDT",
+        "timeframe": "1d",
+        "timerange": "20240101-",
+        "firstTimestamp": "2024-01-01T00:00:00+00:00",
+        "lastTimestamp": "2026-07-03T00:00:00+00:00",
+        "candleCount": 915,
+        "startClose": 44220.0,
+        "endClose": 62552.9,
+        "totalReturnPct": 41.4584,
+        "maxDrawdownPct": 52.9748,
+        "volatilityPct": 48.0248,
+        "bestDrawupPct": 214.8936,
+        "worstDrawdownPct": 52.9748,
+        "tradeCount": 0,
+        "syntheticHoldingCount": 1,
+        "exposureTimePct": 100.0,
+        "status": "research_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      },
+      {
+        "baselineId": "low_frequency_buy_hold_eth_usdt_usdt_1d",
+        "name": "BuyHold ETH/USDT:USDT",
+        "pair": "ETH/USDT:USDT",
+        "timeframe": "1d",
+        "timerange": "20240101-",
+        "firstTimestamp": "2024-01-01T00:00:00+00:00",
+        "lastTimestamp": "2026-07-03T00:00:00+00:00",
+        "candleCount": 915,
+        "startClose": 2353.21,
+        "endClose": 1757.25,
+        "totalReturnPct": -25.3254,
+        "maxDrawdownPct": 67.5684,
+        "volatilityPct": 69.2645,
+        "bestDrawupPct": 227.9038,
+        "worstDrawdownPct": 67.5684,
+        "tradeCount": 0,
+        "syntheticHoldingCount": 1,
+        "exposureTimePct": 100.0,
+        "status": "research_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      },
+      {
+        "baselineId": "low_frequency_buy_hold_sol_usdt_usdt_1d",
+        "name": "BuyHold SOL/USDT:USDT",
+        "pair": "SOL/USDT:USDT",
+        "timeframe": "1d",
+        "timerange": "20240101-",
+        "firstTimestamp": "2024-01-01T00:00:00+00:00",
+        "lastTimestamp": "2026-07-03T00:00:00+00:00",
+        "candleCount": 915,
+        "startClose": 109.97,
+        "endClose": 82.3,
+        "totalReturnPct": -25.1614,
+        "maxDrawdownPct": 76.2768,
+        "volatilityPct": 81.1811,
+        "bestDrawupPct": 212.4016,
+        "worstDrawdownPct": 76.2768,
+        "tradeCount": 0,
+        "syntheticHoldingCount": 1,
+        "exposureTimePct": 100.0,
+        "status": "research_only",
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    ],
+    "equalWeight": [
+      {
+        "baselineId": "low_frequency_equal_weight_4h",
+        "name": "EqualWeight BTC/ETH/SOL 4h",
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ],
+        "timeframe": "4h",
+        "timerange": "20240101-",
+        "firstTimestamp": "2024-01-01T00:00:00+00:00",
+        "lastTimestamp": "2026-07-04T16:00:00+00:00",
+        "candleCount": 5495,
+        "totalReturnPct": 2.5054,
+        "maxDrawdownPct": 62.9563,
+        "volatilityPct": 58.6735,
+        "bestDrawupPct": 174.0211,
+        "worstDrawdownPct": 62.9563,
+        "tradeCount": 0,
+        "syntheticHoldingCount": 3,
+        "exposureTimePct": 100.0,
+        "status": "research_only",
+        "warnings": [],
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      },
+      {
+        "baselineId": "low_frequency_equal_weight_1d",
+        "name": "EqualWeight BTC/ETH/SOL 1d",
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT"
+        ],
+        "timeframe": "1d",
+        "timerange": "20240101-",
+        "firstTimestamp": "2024-01-01T00:00:00+00:00",
+        "lastTimestamp": "2026-07-03T00:00:00+00:00",
+        "candleCount": 915,
+        "totalReturnPct": -3.0095,
+        "maxDrawdownPct": 62.315,
+        "volatilityPct": 58.9978,
+        "bestDrawupPct": 163.9134,
+        "worstDrawdownPct": 62.315,
+        "tradeCount": 0,
+        "syntheticHoldingCount": 3,
+        "exposureTimePct": 100.0,
+        "status": "research_only",
+        "warnings": [],
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    ],
+    "regimeBreakdown": {
+      "status": "available",
+      "source": "reports/v13_4_27_market_regime_data_integrity_report.json",
+      "timeframe": "4h",
+      "timerange": "20240101-",
+      "pairs": {
+        "BTC/USDT:USDT": [
+          {
+            "regime": "bear",
+            "candleCount": 497,
+            "averagePeriodReturnPct": -0.0297,
+            "cumulativeReturnPct": -15.8589,
+            "positiveReturnPct": 49.497
+          },
+          {
+            "regime": "bull",
+            "candleCount": 264,
+            "averagePeriodReturnPct": 0.0522,
+            "cumulativeReturnPct": 13.7476,
+            "positiveReturnPct": 51.5152
+          },
+          {
+            "regime": "crash",
+            "candleCount": 29,
+            "averagePeriodReturnPct": -0.731,
+            "cumulativeReturnPct": -19.6342,
+            "positiveReturnPct": 37.931
+          },
+          {
+            "regime": "high_volatility",
+            "candleCount": 41,
+            "averagePeriodReturnPct": -0.1591,
+            "cumulativeReturnPct": -6.4932,
+            "positiveReturnPct": 34.1463
+          },
+          {
+            "regime": "recovery",
+            "candleCount": 2,
+            "averagePeriodReturnPct": 1.5087,
+            "cumulativeReturnPct": 3.0395,
+            "positiveReturnPct": 100.0
+          },
+          {
+            "regime": "sideways",
+            "candleCount": 83,
+            "averagePeriodReturnPct": 0.0846,
+            "cumulativeReturnPct": 6.9434,
+            "positiveReturnPct": 51.8072
+          },
+          {
+            "regime": "unknown",
+            "candleCount": 4578,
+            "averagePeriodReturnPct": 0.019,
+            "cumulativeReturnPct": 88.4903,
+            "positiveReturnPct": 51.3761
+          }
+        ],
+        "ETH/USDT:USDT": [
+          {
+            "regime": "bear",
+            "candleCount": 497,
+            "averagePeriodReturnPct": -0.0122,
+            "cumulativeReturnPct": -9.7452,
+            "positiveReturnPct": 49.8994
+          },
+          {
+            "regime": "bull",
+            "candleCount": 264,
+            "averagePeriodReturnPct": 0.0542,
+            "cumulativeReturnPct": 13.4589,
+            "positiveReturnPct": 51.5152
+          },
+          {
+            "regime": "crash",
+            "candleCount": 29,
+            "averagePeriodReturnPct": -1.0772,
+            "cumulativeReturnPct": -27.5602,
+            "positiveReturnPct": 31.0345
+          },
+          {
+            "regime": "high_volatility",
+            "candleCount": 41,
+            "averagePeriodReturnPct": -0.3197,
+            "cumulativeReturnPct": -12.6665,
+            "positiveReturnPct": 36.5854
+          },
+          {
+            "regime": "recovery",
+            "candleCount": 2,
+            "averagePeriodReturnPct": 1.3195,
+            "cumulativeReturnPct": 2.6259,
+            "positiveReturnPct": 50.0
+          },
+          {
+            "regime": "sideways",
+            "candleCount": 83,
+            "averagePeriodReturnPct": 0.0901,
+            "cumulativeReturnPct": 7.1496,
+            "positiveReturnPct": 56.6265
+          },
+          {
+            "regime": "unknown",
+            "candleCount": 4578,
+            "averagePeriodReturnPct": 0.0126,
+            "cumulativeReturnPct": 10.5905,
+            "positiveReturnPct": 50.6116
+          }
+        ],
+        "SOL/USDT:USDT": [
+          {
+            "regime": "bear",
+            "candleCount": 497,
+            "averagePeriodReturnPct": 0.0066,
+            "cumulativeReturnPct": -1.9949,
+            "positiveReturnPct": 47.8873
+          },
+          {
+            "regime": "bull",
+            "candleCount": 264,
+            "averagePeriodReturnPct": 0.0411,
+            "cumulativeReturnPct": 9.5395,
+            "positiveReturnPct": 49.2424
+          },
+          {
+            "regime": "crash",
+            "candleCount": 29,
+            "averagePeriodReturnPct": -1.0789,
+            "cumulativeReturnPct": -27.6532,
+            "positiveReturnPct": 20.6897
+          },
+          {
+            "regime": "high_volatility",
+            "candleCount": 41,
+            "averagePeriodReturnPct": -0.2903,
+            "cumulativeReturnPct": -11.5225,
+            "positiveReturnPct": 39.0244
+          },
+          {
+            "regime": "recovery",
+            "candleCount": 2,
+            "averagePeriodReturnPct": 2.4534,
+            "cumulativeReturnPct": 4.9157,
+            "positiveReturnPct": 100.0
+          },
+          {
+            "regime": "sideways",
+            "candleCount": 83,
+            "averagePeriodReturnPct": 0.0695,
+            "cumulativeReturnPct": 5.1497,
+            "positiveReturnPct": 51.8072
+          },
+          {
+            "regime": "unknown",
+            "candleCount": 4578,
+            "averagePeriodReturnPct": 0.0176,
+            "cumulativeReturnPct": 4.6665,
+            "positiveReturnPct": 50.5461
+          }
+        ]
+      },
+      "warnings": []
+    },
+    "warnings": []
+  },
+  "comparisonTable": [
+    {
+      "baselineId": "low_frequency_no_trade",
+      "name": "NoTrade",
+      "pair": null,
+      "timeframe": null,
+      "status": "research_only",
+      "totalReturnPct": 0.0,
+      "maxDrawdownPct": 0.0,
+      "volatilityPct": 0.0,
+      "bestDrawupPct": 0.0,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 0,
+      "exposureTimePct": 0.0
+    },
+    {
+      "baselineId": "low_frequency_buy_hold_btc_usdt_usdt_4h",
+      "name": "BuyHold BTC/USDT:USDT",
+      "pair": "BTC/USDT:USDT",
+      "timeframe": "4h",
+      "status": "research_only",
+      "totalReturnPct": 49.3867,
+      "maxDrawdownPct": 53.4399,
+      "volatilityPct": 47.5225,
+      "bestDrawupPct": 222.6183,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 1,
+      "exposureTimePct": 100.0
+    },
+    {
+      "baselineId": "low_frequency_buy_hold_eth_usdt_usdt_4h",
+      "name": "BuyHold ETH/USDT:USDT",
+      "pair": "ETH/USDT:USDT",
+      "timeframe": "4h",
+      "status": "research_only",
+      "totalReturnPct": -21.2171,
+      "maxDrawdownPct": 68.0429,
+      "volatilityPct": 66.5194,
+      "bestDrawupPct": 240.6708,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 1,
+      "exposureTimePct": 100.0
+    },
+    {
+      "baselineId": "low_frequency_buy_hold_sol_usdt_usdt_4h",
+      "name": "BuyHold SOL/USDT:USDT",
+      "pair": "SOL/USDT:USDT",
+      "timeframe": "4h",
+      "status": "research_only",
+      "totalReturnPct": -20.6535,
+      "maxDrawdownPct": 78.4918,
+      "volatilityPct": 82.4955,
+      "bestDrawupPct": 256.995,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 1,
+      "exposureTimePct": 100.0
+    },
+    {
+      "baselineId": "low_frequency_buy_hold_btc_usdt_usdt_1d",
+      "name": "BuyHold BTC/USDT:USDT",
+      "pair": "BTC/USDT:USDT",
+      "timeframe": "1d",
+      "status": "research_only",
+      "totalReturnPct": 41.4584,
+      "maxDrawdownPct": 52.9748,
+      "volatilityPct": 48.0248,
+      "bestDrawupPct": 214.8936,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 1,
+      "exposureTimePct": 100.0
+    },
+    {
+      "baselineId": "low_frequency_buy_hold_eth_usdt_usdt_1d",
+      "name": "BuyHold ETH/USDT:USDT",
+      "pair": "ETH/USDT:USDT",
+      "timeframe": "1d",
+      "status": "research_only",
+      "totalReturnPct": -25.3254,
+      "maxDrawdownPct": 67.5684,
+      "volatilityPct": 69.2645,
+      "bestDrawupPct": 227.9038,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 1,
+      "exposureTimePct": 100.0
+    },
+    {
+      "baselineId": "low_frequency_buy_hold_sol_usdt_usdt_1d",
+      "name": "BuyHold SOL/USDT:USDT",
+      "pair": "SOL/USDT:USDT",
+      "timeframe": "1d",
+      "status": "research_only",
+      "totalReturnPct": -25.1614,
+      "maxDrawdownPct": 76.2768,
+      "volatilityPct": 81.1811,
+      "bestDrawupPct": 212.4016,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 1,
+      "exposureTimePct": 100.0
+    },
+    {
+      "baselineId": "low_frequency_equal_weight_4h",
+      "name": "EqualWeight BTC/ETH/SOL 4h",
+      "pair": null,
+      "timeframe": "4h",
+      "status": "research_only",
+      "totalReturnPct": 2.5054,
+      "maxDrawdownPct": 62.9563,
+      "volatilityPct": 58.6735,
+      "bestDrawupPct": 174.0211,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 3,
+      "exposureTimePct": 100.0
+    },
+    {
+      "baselineId": "low_frequency_equal_weight_1d",
+      "name": "EqualWeight BTC/ETH/SOL 1d",
+      "pair": null,
+      "timeframe": "1d",
+      "status": "research_only",
+      "totalReturnPct": -3.0095,
+      "maxDrawdownPct": 62.315,
+      "volatilityPct": 58.9978,
+      "bestDrawupPct": 163.9134,
+      "tradeCount": 0,
+      "syntheticHoldingCount": 3,
+      "exposureTimePct": 100.0
+    }
+  ],
+  "benchmarkRequirementsForFutureStrategy": [
+    "Beat NoTrade on risk-adjusted opportunity cost, not only raw return.",
+    "Compare against same-pair BuyHold for each tested direction and timeframe.",
+    "Compare against EqualWeight BTC/ETH/SOL to avoid mistaking market beta for alpha.",
+    "Report max drawdown, volatility, exposure time, and regime breakdown before any strategy approval.",
+    "Do not approve Dry-run or live trading from V13.4.32 baseline reports."
+  ],
+  "interpretation": [
+    "NoTrade is the capital-preservation baseline and opportunity-cost anchor.",
+    "BuyHold baselines describe passive exposure to BTC/ETH/SOL over the selected historical sample.",
+    "EqualWeight baselines describe simple passive mainstream-coin basket exposure.",
+    "Future low-frequency strategies must outperform relevant passive baselines after drawdown, exposure, and stability are considered.",
+    "These baselines are historical research context only. They are not trading advice and not an execution command."
+  ],
+  "safetyBoundary": {
+    "strategyImplemented": false,
+    "backtestExecuted": false,
+    "freqtradeBacktestExecuted": false,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "apiKeyStored": false,
+    "accountRead": false,
+    "positionRead": false,
+    "orderCreated": false,
+    "autoTradingUsed": false
+  },
+  "generatedAt": "2026-07-05T02:55:35.355378+00:00",
+  "warnings": []
+}

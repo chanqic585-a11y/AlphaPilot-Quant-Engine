@@ -1875,10 +1875,72 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.4.32 Low-Frequency Data Preparation and Baseline Builder
+
+V13.4.32 prepares BTC/ETH/SOL 4h/1d public OHLCV data and builds report-only baseline references before any low-frequency strategy implementation.
+
+中文说明：
+
+```text
+V13.4.32 只做低频数据准备和基线报告：
+检查 BTC/ETH/SOL 的 4h/1d 本地公共 OHLCV 数据，
+生成 NoTrade / BuyHold / EqualWeight 基线，
+为后续低频策略研究建立最低比较标准。
+```
+
+Generate the reports:
+
+```powershell
+python -m alphapilot.reports.generate_low_frequency_baseline_report
+```
+
+Optional public OHLCV preparation:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\build_low_frequency_baselines.ps1 -RunDownload -Prepend
+```
+
+Outputs:
+
+```text
+reports/v13_4_32_low_frequency_data_report.json
+reports/v13_4_32_low_frequency_baseline_report.json
+reports/v13_4_32_low_frequency_baseline_summary.md
+docs/V13.4.32-low-frequency-data-baseline-builder.md
+docs/low-frequency-data-quality-checks.md
+docs/no-trade-buyhold-mainstream-baselines.md
+docs/future-low-frequency-strategy-requirements.md
+```
+
+Baseline set:
+
+```text
+NoTrade
+BuyHold BTC
+BuyHold ETH
+BuyHold SOL
+EqualWeight BTC/ETH/SOL
+```
+
+V13.4.32 remains report-only:
+
+```text
+no strategy implementation
+no Freqtrade strategy backtest
+no Dry-run approval
+no live trading approval
+no real API key
+no Trade API / Withdraw API
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.4.32: Low-Frequency Data Preparation and Baseline Builder.
+- V13.4.33: use the V13.4.32 baseline hurdle before writing any low-frequency strategy candidate.
 - Alternative future track: Funding/OI Public Data Collector if short research becomes the priority again.
 - Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
