@@ -1,0 +1,123 @@
+"""Research-only Top 100 USDT swap universe.
+
+The list is used for public historical data expansion attempts. Exchanges may
+not support every pair in every historical period. Missing symbols must be
+reported, not fabricated.
+"""
+
+TOP100_USDT_SWAP_RESEARCH_PAIRS = [
+    "BTC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "SOL/USDT:USDT",
+    "XRP/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "BNB/USDT:USDT",
+    "ADA/USDT:USDT",
+    "TRX/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "LINK/USDT:USDT",
+    "SUI/USDT:USDT",
+    "LTC/USDT:USDT",
+    "BCH/USDT:USDT",
+    "DOT/USDT:USDT",
+    "UNI/USDT:USDT",
+    "AAVE/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "APT/USDT:USDT",
+    "ARB/USDT:USDT",
+    "OP/USDT:USDT",
+    "ETC/USDT:USDT",
+    "FIL/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "INJ/USDT:USDT",
+    "TIA/USDT:USDT",
+    "SEI/USDT:USDT",
+    "PEPE/USDT:USDT",
+    "WIF/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "TON/USDT:USDT",
+    "FET/USDT:USDT",
+    "TAO/USDT:USDT",
+    "RENDER/USDT:USDT",
+    "ONDO/USDT:USDT",
+    "JUP/USDT:USDT",
+    "PYTH/USDT:USDT",
+    "ENA/USDT:USDT",
+    "WLD/USDT:USDT",
+    "STRK/USDT:USDT",
+    "MANTA/USDT:USDT",
+    "STX/USDT:USDT",
+    "MKR/USDT:USDT",
+    "LDO/USDT:USDT",
+    "RUNE/USDT:USDT",
+    "SAND/USDT:USDT",
+    "MANA/USDT:USDT",
+    "APE/USDT:USDT",
+    "GALA/USDT:USDT",
+    "AXS/USDT:USDT",
+    "GMT/USDT:USDT",
+    "DYDX/USDT:USDT",
+    "CRV/USDT:USDT",
+    "COMP/USDT:USDT",
+    "SNX/USDT:USDT",
+    "LRC/USDT:USDT",
+    "IMX/USDT:USDT",
+    "BLUR/USDT:USDT",
+    "MASK/USDT:USDT",
+    "ENS/USDT:USDT",
+    "YFI/USDT:USDT",
+    "ZRO/USDT:USDT",
+    "ZK/USDT:USDT",
+    "EIGEN/USDT:USDT",
+    "PENDLE/USDT:USDT",
+    "ETHFI/USDT:USDT",
+    "JTO/USDT:USDT",
+    "JASMY/USDT:USDT",
+    "NOT/USDT:USDT",
+    "MEME/USDT:USDT",
+    "BONK/USDT:USDT",
+    "FLOKI/USDT:USDT",
+    "SHIB/USDT:USDT",
+    "1000SATS/USDT:USDT",
+    "PEOPLE/USDT:USDT",
+    "LPT/USDT:USDT",
+    "KAS/USDT:USDT",
+    "ICP/USDT:USDT",
+    "HBAR/USDT:USDT",
+    "XLM/USDT:USDT",
+    "ALGO/USDT:USDT",
+    "VET/USDT:USDT",
+    "FLOW/USDT:USDT",
+    "KAVA/USDT:USDT",
+    "KSM/USDT:USDT",
+    "EGLD/USDT:USDT",
+    "MINA/USDT:USDT",
+    "ROSE/USDT:USDT",
+    "ZIL/USDT:USDT",
+    "ONE/USDT:USDT",
+    "CHZ/USDT:USDT",
+    "CFX/USDT:USDT",
+    "GRT/USDT:USDT",
+    "SUSHI/USDT:USDT",
+    "1INCH/USDT:USDT",
+    "BAT/USDT:USDT",
+    "ZRX/USDT:USDT",
+    "IOTA/USDT:USDT",
+    "XMR/USDT:USDT",
+    "DASH/USDT:USDT",
+    "ZEC/USDT:USDT",
+]
+
+
+def get_top100_usdt_swap_research_pairs() -> list[str]:
+    """Return a copy of the research-only Top 100 pair list."""
+
+    return TOP100_USDT_SWAP_RESEARCH_PAIRS.copy()
+
+
+def main() -> None:
+    print(",".join(get_top100_usdt_swap_research_pairs()))
+
+
+if __name__ == "__main__":
+    main()

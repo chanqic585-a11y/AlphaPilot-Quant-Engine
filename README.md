@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.8 - Adaptive ML Factor Discovery
+AlphaPilot V13.5.14 - Historical Robustness Expansion
 ```
 
 ## Positioning
@@ -3064,10 +3064,70 @@ V13.5.13 does not add Trade API, Withdraw API, API key storage, real account
 reads, real position reads, real orders, exchange Dry-run execution, live
 trading, or automatic trading.
 
+## V13.5.14 Historical Robustness Expansion
+
+V13.5.14 expands historical diagnostics for the fixed active V13.5.7 alpha
+overlay pool without changing its parameters:
+
+```text
+4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24
+```
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_14_historical_robustness_expansion.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_14_historical_robustness_expansion.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_14_historical_robustness_expansion_report.py
+scripts/run_v13_5_14_historical_robustness_expansion.ps1
+reports/v13_5_14_historical_robustness_expansion_report.json
+reports/v13_5_14_historical_robustness_expansion_summary.md
+reports/v13_5_14_active_strategy_historical_signal_log.json
+docs/V13.5.14-historical-robustness-expansion.md
+```
+
+This report uses existing OKX public historical crypto data and the V13.5.11
+cross-market Yahoo public chart cache for A-share, Hong Kong, US ETF, and index
+context. Cross-market data is used as factor and regime research context only.
+It is not used to create crypto execution commands.
+
+Optional 2020-to-present Top100 multi-exchange public data expansion:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\download_historical_robustness_data.ps1 -UseTop100 -Exchanges "okx,binance,bybit" -Timeframes "4h,1d" -Timerange "20200101-" -BatchSize 20 -Prepend
+```
+
+Add `-Run` only when intentionally downloading public data. The downloader is
+batched because Top100 x multiple exchanges x six years can be slow and some
+symbols will be unavailable on some exchanges.
+
+V13.5.14 also adds walk-forward review, market-state slices, stress tests, and
+lightweight factor outcome separation for machine-learning research. These are
+research diagnostics only; they do not change strategy parameters or create
+orders.
+
+V13.5.14 does not replace V13.5.13 forward validation. It can improve historical
+robustness evidence, but the active 4h strategy still needs closed
+post-selection forward samples before any exchange Dry-run review.
+
+V13.5.14 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.14: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
 - V13.5.15: expand cross-market feature normalization and data quality scoring before using non-crypto samples in any model review.
-- V13.5.16: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
+- V13.5.16: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.17: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
