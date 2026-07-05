@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.20 - Exit-Aware Loss Cooldown
+AlphaPilot V13.5.21 - Local Paper Refresh Candidate
 ```
 
 ## Positioning
@@ -3371,10 +3371,60 @@ exchange Dry-run or live trading. It does not add Trade API, Withdraw API, API
 key storage, broker credentials, real account reads, real position reads, real
 orders, exchange Dry-run execution, live trading, or automatic trading.
 
+## V13.5.21 Local Paper Refresh Candidate
+
+V13.5.21 packages the V13.5.20 selected signals into the existing local paper
+sandbox ledger. It validates local simulation mechanics only.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_21_local_paper_refresh_candidate.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_21_local_paper_refresh_candidate.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_21_local_paper_refresh_candidate_report.py
+scripts/run_v13_5_21_local_paper_refresh_candidate.ps1
+reports/v13_5_21_local_paper_refresh_candidate_report.json
+reports/v13_5_21_local_paper_refresh_candidate_summary.md
+reports/v13_5_21_local_paper_refresh_candidate_ledger.json
+reports/v13_5_21_local_paper_refresh_candidate_package.json
+docs/V13.5.21-local-paper-refresh-candidate.md
+```
+
+Current result:
+
+```text
+candidateId: 4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24
+selectedPolicyId: pair_loss_exit_21d
+targetRMultiple: 2.0
+maxConcurrentPositions: 8
+filledSignalCount: 409
+skippedSignalCount: 3
+winRatePct: 51.1002
+profitFactor: 1.9588
+rewardRiskRatio: 1.8744
+maxDrawdownPct: 11.841614
+localPaperRefreshCandidateReady: true
+readyForExchangeDryRunReview: false
+```
+
+V13.5.21 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.21: package V13.5.20 selected signals into a local paper refresh candidate and validate local-only mechanics.
 - V13.5.22: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
-- V13.5.23: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
+- V13.5.23: compare V13.5.21 local paper package against newly closed forward samples and flag any drift.
+- V13.5.24: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

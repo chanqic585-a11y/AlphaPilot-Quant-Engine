@@ -1,0 +1,257 @@
+{
+  "version": "V13.5.21",
+  "reportId": "v13_5_21_local_paper_refresh_candidate_report",
+  "generatedAt": "2026-07-05T23:44:21.717143+00:00",
+  "status": "completed",
+  "inputReports": {
+    "decisionReport": "reports\\v13_5_20_exit_aware_loss_cooldown_report.json",
+    "selectedSignals": "reports\\v13_5_20_best_exit_aware_policy_selected_signals.json"
+  },
+  "candidatePackage": {
+    "version": "V13.5.21",
+    "packageId": "v13_5_21_local_paper_refresh_candidate_package",
+    "generatedAt": "2026-07-05T23:44:21.717143+00:00",
+    "candidateId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+    "selectedPolicyId": "pair_loss_exit_21d",
+    "sourceSelectedSignals": "reports\\v13_5_20_best_exit_aware_policy_selected_signals.json",
+    "sourceDecisionReport": "reports\\v13_5_20_exit_aware_loss_cooldown_report.json",
+    "selectedSignalCount": 412,
+    "stopLossPct": 0.06,
+    "targetRMultiple": 2.0,
+    "maxConcurrentPositions": 8,
+    "riskPerSignalPct": 1.0,
+    "maxNotionalPerSignalPct": 35.0,
+    "localSimulationOnly": true,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false
+  },
+  "ledgerConfig": {
+    "account_id": "default_local_paper_sandbox",
+    "initial_equity": 10000.0,
+    "risk_per_signal_pct": 1.0,
+    "max_concurrent_positions": 8,
+    "max_notional_per_signal_pct": 35.0,
+    "stop_loss_pct": 0.06,
+    "source": "local_paper_refresh_candidate_v13_5_21"
+  },
+  "ledgerMetrics": {
+    "tradeCount": 409,
+    "winCount": 209,
+    "lossCount": 200,
+    "winRatePct": 51.1002,
+    "averageWin": 370.378966,
+    "averageLoss": -197.597816,
+    "rewardRiskRatio": 1.8744,
+    "profitFactor": 1.9588,
+    "initialEquity": 10000.0,
+    "finalEquity": 47889.640696,
+    "totalReturnPct": 378.8964,
+    "maxDrawdownPct": 11.841614,
+    "skippedSignalCount": 3,
+    "filledSignalCount": 409,
+    "maxConcurrentPositions": 8
+  },
+  "gate": {
+    "checks": {
+      "minFilledSignals300": true,
+      "maxSkippedRate5Pct": true,
+      "minProfitFactor1_5": true,
+      "minRewardRisk1_8": true,
+      "maxDrawdown20Pct": true,
+      "positiveTotalReturn": true
+    },
+    "passed": true,
+    "skippedRatePct": 0.728155,
+    "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+  },
+  "sensitivityResults": [
+    {
+      "maxConcurrentPositions": 3,
+      "gate": {
+        "checks": {
+          "minFilledSignals300": true,
+          "maxSkippedRate5Pct": false,
+          "minProfitFactor1_5": true,
+          "minRewardRisk1_8": true,
+          "maxDrawdown20Pct": true,
+          "positiveTotalReturn": true
+        },
+        "passed": false,
+        "skippedRatePct": 15.533981,
+        "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+      },
+      "metrics": {
+        "tradeCount": 348,
+        "winCount": 173,
+        "lossCount": 175,
+        "winRatePct": 49.7126,
+        "averageWin": 308.359019,
+        "averageLoss": -169.38643,
+        "rewardRiskRatio": 1.8204,
+        "profitFactor": 1.7996,
+        "initialEquity": 10000.0,
+        "finalEquity": 33703.485009,
+        "totalReturnPct": 237.0349,
+        "maxDrawdownPct": 15.190288,
+        "skippedSignalCount": 64,
+        "filledSignalCount": 348,
+        "maxConcurrentPositions": 3
+      }
+    },
+    {
+      "maxConcurrentPositions": 5,
+      "gate": {
+        "checks": {
+          "minFilledSignals300": true,
+          "maxSkippedRate5Pct": true,
+          "minProfitFactor1_5": true,
+          "minRewardRisk1_8": true,
+          "maxDrawdown20Pct": true,
+          "positiveTotalReturn": true
+        },
+        "passed": true,
+        "skippedRatePct": 4.854369,
+        "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+      },
+      "metrics": {
+        "tradeCount": 392,
+        "winCount": 198,
+        "lossCount": 194,
+        "winRatePct": 50.5102,
+        "averageWin": 354.633259,
+        "averageLoss": -196.223881,
+        "rewardRiskRatio": 1.8073,
+        "profitFactor": 1.8446,
+        "initialEquity": 10000.0,
+        "finalEquity": 42149.952389,
+        "totalReturnPct": 321.4995,
+        "maxDrawdownPct": 11.403698,
+        "skippedSignalCount": 20,
+        "filledSignalCount": 392,
+        "maxConcurrentPositions": 5
+      }
+    },
+    {
+      "maxConcurrentPositions": 8,
+      "gate": {
+        "checks": {
+          "minFilledSignals300": true,
+          "maxSkippedRate5Pct": true,
+          "minProfitFactor1_5": true,
+          "minRewardRisk1_8": true,
+          "maxDrawdown20Pct": true,
+          "positiveTotalReturn": true
+        },
+        "passed": true,
+        "skippedRatePct": 0.728155,
+        "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+      },
+      "metrics": {
+        "tradeCount": 409,
+        "winCount": 209,
+        "lossCount": 200,
+        "winRatePct": 51.1002,
+        "averageWin": 370.378966,
+        "averageLoss": -197.597816,
+        "rewardRiskRatio": 1.8744,
+        "profitFactor": 1.9588,
+        "initialEquity": 10000.0,
+        "finalEquity": 47889.640696,
+        "totalReturnPct": 378.8964,
+        "maxDrawdownPct": 11.841614,
+        "skippedSignalCount": 3,
+        "filledSignalCount": 409,
+        "maxConcurrentPositions": 8
+      }
+    },
+    {
+      "maxConcurrentPositions": 12,
+      "gate": {
+        "checks": {
+          "minFilledSignals300": true,
+          "maxSkippedRate5Pct": true,
+          "minProfitFactor1_5": true,
+          "minRewardRisk1_8": true,
+          "maxDrawdown20Pct": true,
+          "positiveTotalReturn": true
+        },
+        "passed": true,
+        "skippedRatePct": 0.0,
+        "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+      },
+      "metrics": {
+        "tradeCount": 412,
+        "winCount": 210,
+        "lossCount": 202,
+        "winRatePct": 50.9709,
+        "averageWin": 367.035486,
+        "averageLoss": -193.962048,
+        "rewardRiskRatio": 1.8923,
+        "profitFactor": 1.9672,
+        "initialEquity": 10000.0,
+        "finalEquity": 47897.118287,
+        "totalReturnPct": 378.9712,
+        "maxDrawdownPct": 13.39029,
+        "skippedSignalCount": 0,
+        "filledSignalCount": 412,
+        "maxConcurrentPositions": 12
+      }
+    },
+    {
+      "maxConcurrentPositions": 999,
+      "gate": {
+        "checks": {
+          "minFilledSignals300": true,
+          "maxSkippedRate5Pct": true,
+          "minProfitFactor1_5": true,
+          "minRewardRisk1_8": true,
+          "maxDrawdown20Pct": true,
+          "positiveTotalReturn": true
+        },
+        "passed": true,
+        "skippedRatePct": 0.0,
+        "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+      },
+      "metrics": {
+        "tradeCount": 412,
+        "winCount": 210,
+        "lossCount": 202,
+        "winRatePct": 50.9709,
+        "averageWin": 367.035486,
+        "averageLoss": -193.962048,
+        "rewardRiskRatio": 1.8923,
+        "profitFactor": 1.9672,
+        "initialEquity": 10000.0,
+        "finalEquity": 47897.118287,
+        "totalReturnPct": 378.9712,
+        "maxDrawdownPct": 13.39029,
+        "skippedSignalCount": 0,
+        "filledSignalCount": 412,
+        "maxConcurrentPositions": 999
+      }
+    }
+  ],
+  "ledgerPath": "reports\\v13_5_21_local_paper_refresh_candidate_ledger.json",
+  "candidatePackagePath": "reports\\v13_5_21_local_paper_refresh_candidate_package.json",
+  "decision": {
+    "localPaperRefreshCandidateReady": true,
+    "localPaperMechanicsPassed": true,
+    "readyForExchangeDryRunReview": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "local_paper_refresh_candidate_packaged_and_mechanics_passed",
+    "nextAction": "run_forward_readiness_when_new_closed_samples_are_available"
+  },
+  "safetyBoundary": {
+    "localSimulationOnly": true,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "readsRealAccount": false,
+    "readsRealPositions": false,
+    "createsOrders": false,
+    "autoTrading": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false
+  }
+}
