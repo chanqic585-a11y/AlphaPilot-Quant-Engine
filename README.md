@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.26 - Factor Hypothesis Validation Dataset
+AlphaPilot V13.4.27 - Market Regime and Data Integrity Review
 ```
 
 ## Positioning
@@ -1547,8 +1547,68 @@ no real orders
 no auto trading
 ```
 
+## V13.4.27 Market Regime and Data Integrity Review
+
+V13.4.27 pauses the previous data expansion plan and first validates local
+OHLCV integrity plus market regime context.
+
+Run the review:
+
+```powershell
+python -m alphapilot.reports.generate_market_regime_data_integrity_review
+```
+
+Outputs:
+
+```text
+reports/v13_4_27_market_regime_data_integrity_report.json
+reports/v13_4_27_market_regime_data_integrity_summary.md
+reports/v13_4_27_btc_regime_labels.json
+reports/v13_4_27_data_quality_by_pair.json
+docs/V13.4.27-market-regime-data-integrity-review.md
+docs/ohlcv-data-integrity-checks.md
+docs/market-regime-labeling-methodology.md
+docs/regime-aware-research-recommendation.md
+```
+
+Initial local result:
+
+```text
+status: completed_with_warnings
+dataIntegrity.status: warning
+pairCount: 30
+pairTimeframeCount: 60
+validCount: 55
+warningCount: 1
+invalidCount: 0
+missingFileCount: 4
+totalInvalidOhlcRows: 0
+totalDuplicateTimestamps: 0
+```
+
+The review found no obvious OHLC corruption in the checked local files, but it
+did find local coverage warnings and a strongly regime-sensitive BTC sample.
+Recent long-only technical research failures should therefore be interpreted as
+a combination of adverse bear/high-volatility context plus sparse validated
+alpha, not as a single simple parameter issue.
+
+V13.4.27 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no strategy implementation
+no backtest execution
+no data download
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+```
+
 ## Next Versions
 
-- V13.4.27: Research Direction Reset / Data Expansion.
+- V13.4.28: postponed data expansion after the V13.4.27 integrity baseline.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.
