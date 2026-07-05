@@ -62,3 +62,18 @@ Simple exhaustion-pattern reference:
 
 Martingale or inverse averaging is rejected because it increases tail risk and
 conflicts with AlphaPilot's risk-first research boundary.
+
+## V13.4.24 Status Update
+
+After V13.4.24 review:
+
+- `BenchmarkNoTrade`: research baseline
+- `BenchmarkBuyHoldBTC`: research baseline
+- `BenchmarkEMATrend`: failed benchmark
+- `BenchmarkRSIMeanReversion`: failed benchmark
+- `BenchmarkMACDVolume`: failed benchmark
+- `BenchmarkBollingerRebound`: research reference and hypothesis seed only
+- `BenchmarkTD9Exhaustion`: failed benchmark
+- `RejectedBenchmarkMartingale`: rejected
+
+None of these benchmarks are approved for Dry-run or live trading.

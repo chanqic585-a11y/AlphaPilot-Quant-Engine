@@ -60,3 +60,17 @@ Additional work is required before any later Dry-run discussion:
 - risk gate review
 - manual approval workflow
 - explicit safety sign-off
+
+## V13.4.24 Result Review
+
+V13.4.24 reviewed the V13.4.23 benchmark output and found:
+
+- every active benchmark underperformed NoTrade after slippage stress
+- every active benchmark underperformed BuyHoldBTC
+- BenchmarkBollingerRebound was the relative best active benchmark, but still
+  negative and not strategy-ready
+- cost sensitivity was high across the active benchmark set
+- exit attribution should be added to future benchmark reports
+
+The recommended next step is research reset and hypothesis mining, not benchmark
+parameter tuning.

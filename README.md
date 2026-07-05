@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.23 - Benchmark Strategy Suite Implementation and Baseline Research Backtest
+AlphaPilot V13.4.24 - Benchmark Result Review and Strategy Research Reset
 ```
 
 ## Positioning
@@ -1395,8 +1395,55 @@ no auto trading
 benchmark results are not trading signals
 ```
 
+## V13.4.24 Benchmark Result Review and Strategy Research Reset
+
+V13.4.24 reviews the V13.4.23 benchmark suite output. It does not modify
+benchmark strategy code and does not run a new backtest.
+
+Generate the review:
+
+```powershell
+python -m alphapilot.reports.generate_benchmark_result_review
+```
+
+Outputs:
+
+```text
+reports/v13_4_24_benchmark_result_review.json
+reports/v13_4_24_benchmark_result_summary.md
+reports/v13_4_24_benchmark_status_archive.json
+docs/V13.4.24-benchmark-result-review.md
+docs/benchmark-failure-analysis.md
+docs/no-trade-buyhold-baseline-importance.md
+docs/strategy-research-reset-plan.md
+```
+
+Initial review conclusions:
+
+```text
+0/5 active benchmarks beat NoTrade
+0/5 active benchmarks beat BuyHoldBTC
+BenchmarkBollingerRebound is relative best but not usable
+relative best != tradable
+recommended next step: Strategy Research Factory / Factor Hypothesis Mining
+```
+
+V13.4.24 remains research-only:
+
+```text
+dryRunApproved: false
+liveTradingApproved: false
+no new backtest run
+no benchmark strategy code changes
+no Trade API / Withdraw API
+no real API key
+no account / position reads
+no real orders
+no auto trading
+```
+
 ## Next Versions
 
-- V13.4.24: review benchmark results and decide whether any hypothesis deserves deeper factor or regime research.
+- V13.4.25: Strategy Research Factory - Factor Hypothesis Mining.
 - V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
 - V13.6: consider Dry-run candidate evaluation only after stronger validation.

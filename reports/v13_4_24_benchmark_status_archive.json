@@ -1,0 +1,82 @@
+{
+  "reportId": "v13_4_24_benchmark_status_archive",
+  "sourceBenchmarkReport": "reports\\v13_4_23_benchmark_suite_report.json",
+  "benchmarks": [
+    {
+      "benchmarkId": "benchmark_no_trade",
+      "status": "research_reference",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "reason": "Baseline comparison reference.",
+      "canBeUsedAsBaseline": true,
+      "canBeUsedAsStrategy": false
+    },
+    {
+      "benchmarkId": "benchmark_buy_hold_btc",
+      "status": "research_reference",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "reason": "Baseline comparison reference.",
+      "canBeUsedAsBaseline": true,
+      "canBeUsedAsStrategy": false
+    },
+    {
+      "benchmarkId": "BenchmarkEMATrend",
+      "status": "failed_benchmark",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "reason": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+      "canBeUsedAsBaseline": true,
+      "canBeUsedAsStrategy": false
+    },
+    {
+      "benchmarkId": "BenchmarkRSIMeanReversion",
+      "status": "failed_benchmark",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "reason": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+      "canBeUsedAsBaseline": true,
+      "canBeUsedAsStrategy": false
+    },
+    {
+      "benchmarkId": "BenchmarkMACDVolume",
+      "status": "failed_benchmark",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "reason": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+      "canBeUsedAsBaseline": true,
+      "canBeUsedAsStrategy": false
+    },
+    {
+      "benchmarkId": "BenchmarkBollingerRebound",
+      "status": "research_reference",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "reason": "Relative best, but still negative with high drawdown and profit factor below 1.",
+      "canBeUsedAsBaseline": true,
+      "canBeUsedAsStrategy": false
+    },
+    {
+      "benchmarkId": "BenchmarkTD9Exhaustion",
+      "status": "failed_benchmark",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "reason": "Very high cost sensitivity after slippage stress.",
+      "canBeUsedAsBaseline": true,
+      "canBeUsedAsStrategy": false
+    },
+    {
+      "benchmarkId": "rejected_benchmark_martingale",
+      "name": "Rejected Benchmark Martingale",
+      "status": "rejected",
+      "reason": "Martingale or inverse averaging creates unacceptable tail risk and conflicts with AlphaPilot risk-first principles.",
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "canBeUsedAsStrategy": false
+    }
+  ],
+  "manifestStrategiesSucceeded": 5,
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "generatedAt": "2026-07-05T00:42:12.424814+00:00"
+}
