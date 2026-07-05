@@ -2109,11 +2109,80 @@ no auto trading
 no AlphaPilot Mobile App changes
 ```
 
+## V13.5 Derivatives ML-Gated Strategy Pipeline
+
+V13.5 pivots away from repeated OHLCV-only parameter tuning. It implements a
+research-only derivatives feature panel, triple-barrier labeling, walk-forward
+probability gate, and deterministic rule mining.
+
+中文说明：
+
+```text
+V13.5 不再继续微调普通技术指标策略。
+本版本建立衍生品特征 + 2R/1R 标签 + 概率门控 + 规则挖掘管线。
+目标是把“胜率 > 55%、盈亏比接近 2:1”作为硬验收门槛。
+未通过门槛，不进入模拟盘，不进入 Dry-run。
+```
+
+Run the V13.5 research pipeline:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_derivatives_ml_research.ps1 -Timeframe 4h -Run
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_derivatives_ml_research.ps1 -Timeframe 1h -Run
+```
+
+Outputs:
+
+```text
+alphapilot/derivatives/feature_panel.py
+alphapilot/ml_gate/triple_barrier.py
+alphapilot/ml_gate/probability_gate.py
+alphapilot/reports/generate_v13_5_derivatives_ml_strategy_report.py
+scripts/run_v13_5_derivatives_ml_research.ps1
+reports/v13_5_derivatives_ml_strategy_4h_report.json
+reports/v13_5_derivatives_ml_strategy_4h_summary.md
+reports/v13_5_derivatives_ml_strategy_1h_report.json
+reports/v13_5_derivatives_ml_strategy_1h_summary.md
+docs/V13.5-derivatives-ml-gated-strategy-pipeline.md
+docs/v13_5_strategy_decision_summary.md
+```
+
+Current decision:
+
+```text
+4h: no paper approval
+1h: no paper approval
+Dry-run: false
+Live trading: false
+Reason: no candidate passed the 55% win-rate and 2R hard gate
+```
+
+Closest findings:
+
+```text
+4h: ETH long continuation + neutral mark basis was historically useful but
+failed on sample size, reward/risk, and recent robustness.
+
+1h: SOL long continuation + low ATR had enough trades and win rate above 55%,
+but failed on reward/risk and drawdown.
+```
+
+V13.5 remains research-only:
+
+```text
+no Dry-run approval
+no live trading approval
+no real API key
+no Trade API / Withdraw API
+no account / position reads
+no real orders
+no auto trading
+no AlphaPilot Mobile App changes
+```
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.4.36: review the V13.4.35 OHLCV batch failure and decide whether to start the funding/OI route.
-- Alternative future track: Funding/OI Public Data Collector if short research becomes the priority again.
-- Future data engineering: implement public Funding/OI/Spread collectors after schemas are accepted.
-- V13.5: add Shadow Trading Skeleton after the dynamic strategy research layer. This is intentionally not executed as part of the V13.4.19 closeout.
-- V13.6: consider Dry-run candidate evaluation only after stronger validation.
+- V13.5.1: add historical open-interest / liquidation / liquidity data collectors if public data availability permits.
+- V13.5.2: add shadow signal logger after a candidate clears the hard gate.
+- V13.6: consider Dry-run candidate evaluation only after shadow and paper validation.
