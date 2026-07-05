@@ -2871,9 +2871,65 @@ Router intents are not orders. V13.5.9 does not add Trade API, Withdraw API,
 exchange credentials, account reads, position reads, order creation, emergency
 close, testnet execution, or automatic trading.
 
+## V13.5.10 Continuous Learning Loop
+
+V13.5.10 starts the AlphaPilot continuous learning loop by converting local
+paper outcomes into strategy evolution samples and a retraining-readiness gate.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_10_continuous_learning_loop.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_10_continuous_learning_loop.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/learning_loop/strategy_learning_loop.py
+alphapilot/reports/generate_v13_5_10_continuous_learning_loop_report.py
+scripts/run_v13_5_10_continuous_learning_loop.ps1
+reports/v13_5_10_continuous_learning_loop_report.json
+reports/v13_5_10_continuous_learning_loop_summary.md
+reports/v13_5_10_strategy_evolution_dataset.json
+reports/v13_5_10_learning_state.json
+docs/V13.5.10-continuous-learning-loop.md
+```
+
+Current learning-loop result:
+
+```text
+newTrainingSamplesFromPaper = 41
+usableTrainingSamplesFromPaper = 41
+activeStrategySamplesFromPaper = 0
+readyForRetraining = false
+continueLocalPaperMonitoring = true
+exchange Dry-run = not approved
+live trading = not approved
+```
+
+The 41 available paper samples belong to an older V13.5.1 candidate. The current
+V13.5.7 active local paper watch has no closed paper samples yet, so V13.5.10
+does not retrain a model.
+
+Future data expansion can include larger public sample pools across crypto,
+A-shares, Hong Kong stocks, US equities, ETFs, and indices. Cross-market samples
+must be stored as research data with explicit labels and must not become crypto
+execution commands.
+
+V13.5.10 does not add Trade API, Withdraw API, API key storage, real account
+reads, real position reads, real orders, emergency close, testnet execution, or
+automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.10: collect fresh public data and run a new local paper monitoring refresh for the V13.5.7 4h alpha overlay; keep V13.5.8 adaptive rules as observer-only.
-- V13.5.11: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
+- V13.5.11: build a cross-market public data lake smoke test for crypto, A-shares, Hong Kong stocks, US equities, ETFs, and indices as research samples only.
+- V13.5.12: collect fresh public crypto data and run a new local paper monitoring refresh for the V13.5.7 4h alpha overlay; keep V13.5.8 adaptive rules as observer-only.
+- V13.5.13: consider independent Binance/Bybit public-data expansion before any exchange Dry-run review.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

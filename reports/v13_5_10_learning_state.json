@@ -1,0 +1,21 @@
+{
+  "version": "V13.5.10",
+  "generatedAt": "2026-07-05T21:09:40.501585+00:00",
+  "learningLoopComputed": true,
+  "activeStrategyId": "v13_5_7_alpha_overlay_fixed_watch",
+  "activeCandidatePoolId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+  "observerStrategyIds": [
+    "v13_5_8_adaptive_ml_observer"
+  ],
+  "strategyEvolutionDatasetUpdated": true,
+  "newTrainingSamplesFromPaper": 41,
+  "usableTrainingSamplesFromPaper": 41,
+  "activeStrategySamplesFromPaper": 0,
+  "activeStrategyUsableSamplesFromPaper": 0,
+  "readyForRetraining": false,
+  "continueLocalPaperMonitoring": true,
+  "exchangeDryRunReviewReady": false,
+  "exchangeDryRunApproved": false,
+  "liveTradingApproved": false,
+  "reason": "learning_dataset_prepared_but_not_ready_for_retraining"
+}
