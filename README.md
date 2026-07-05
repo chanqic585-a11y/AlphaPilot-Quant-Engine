@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.4.31 - Low-Frequency Mainstream Coin Research Plan
+AlphaPilot V13.5.2 - Forward Confirmation and Local Paper Sandbox
 ```
 
 ## Positioning
@@ -2264,9 +2264,70 @@ walk-forward layer still did not pass. These candidates should be used for
 forward-confirmation / shadow observation design, not paper or Dry-run execution.
 ```
 
+## V13.5.2 Forward Confirmation and Local Paper Sandbox
+
+V13.5.2 replays the V13.5.1 deterministic candidates as fixed rules and checks
+their final holdout segment. This version introduces a local paper sandbox gate.
+
+Important boundary:
+
+```text
+localPaperSandboxApproved = local simulated observation only
+exchangeDryRunApproved = false
+liveTradingApproved = false
+```
+
+Run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_2_forward_confirmation.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_2_forward_confirmation_report.py
+scripts/run_v13_5_2_forward_confirmation.ps1
+reports/v13_5_2_forward_confirmation_report.json
+reports/v13_5_2_forward_confirmation_summary.md
+reports/v13_5_2_forward_confirmation_signal_log.json
+docs/V13.5.2-forward-confirmation-local-paper-sandbox.md
+```
+
+Current V13.5.2 decision:
+
+```text
+Local paper sandbox approved: true
+Approved candidate: v13_5_1_1h_short_reversal_bull_relative_return
+Exchange Dry-run approved: false
+Live trading approved: false
+```
+
+Approved local paper candidate:
+
+```text
+Condition: short_reversal_candidate + BTC bull regime + relative_return_6 between -1% and 1%
+Timeframe: 1h
+Confirmation trades: 57
+Confirmation win rate: 70.1754%
+Confirmation reward/risk: 2.0235
+Confirmation profit factor: 4.7612
+Confirmation max drawdown: 11.9756%
+```
+
+Rejected candidate:
+
+```text
+4h BTC bear + return_3 > 6% + Bollinger z > 2.0
+Reason: confirmation drawdown above 20%
+```
+
+V13.5.2 does not use API keys, does not call Trade API or Withdraw API, does
+not read accounts or positions, does not create orders, and does not auto trade.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.2: add forward-confirmation signal logger for V13.5.1 deterministic candidates.
-- V13.5.3: add historical open-interest / liquidation / liquidity data collectors if public data availability permits.
-- V13.6: consider Dry-run candidate evaluation only after shadow and paper validation.
+- V13.5.3: implement local paper sandbox ledger for the approved 1h candidate.
+- V13.5.4: add historical open-interest / liquidation / liquidity data collectors if public data availability permits.
+- V13.6: consider exchange Dry-run candidate evaluation only after local paper validation.
