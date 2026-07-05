@@ -2796,6 +2796,21 @@ no automatic trading
 exchange Dry-run remains disabled
 ```
 
+## Future Live Trading Reference Notes
+
+The repository now stores a reference-only design note for
+`ryckli/CryptoAgentPro.beta`:
+
+```text
+docs/future-live-trading-reference-cryptoagentpro-beta.md
+```
+
+It records future-review concepts such as API key configuration, order
+endpoints, emergency close, testnet mode, automatic mode, risk gateway,
+strategy scheduling, and AI trend analysis. This is documentation only. It does
+not add Trade API, Withdraw API, exchange credentials, account reads, position
+reads, order creation, emergency close, testnet execution, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
