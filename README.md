@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.19 - Risk-Normalized Portfolio Replay
+AlphaPilot V13.5.20 - Exit-Aware Loss Cooldown
 ```
 
 ## Positioning
@@ -3318,10 +3318,63 @@ V13.5.19 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.5.20 Exit-Aware Loss Cooldown
+
+V13.5.20 evaluates portfolio loss-cooldown policies that only activate after a
+selected historical trade closes. This avoids future leakage: the replay does
+not know a loss until `exitDate`.
+
+The active entry rules and 2R target are not changed.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_20_exit_aware_loss_cooldown.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_20_exit_aware_loss_cooldown.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/paper_sandbox/risk_normalized_replay.py
+alphapilot/reports/generate_v13_5_20_exit_aware_loss_cooldown_report.py
+scripts/run_v13_5_20_exit_aware_loss_cooldown.ps1
+reports/v13_5_20_exit_aware_loss_cooldown_report.json
+reports/v13_5_20_exit_aware_loss_cooldown_summary.md
+reports/v13_5_20_best_exit_aware_policy_selected_signals.json
+docs/V13.5.20-exit-aware-loss-cooldown.md
+```
+
+Current best policy:
+
+```text
+policyId: pair_loss_exit_21d
+tradeCount: 412
+winRatePct: 50.9709
+profitFactor: 1.873058
+rewardRiskRatio: 1.801704
+maxDrawdownR: 13.0628
+maxConsecutiveLosses: 11
+uniquePairs: 36
+uniqueExchanges: 3
+readyForLocalPaperRefreshReview: true
+readyForExchangeDryRunReview: false
+```
+
+V13.5.20 clears the local paper refresh review gate, but it does not approve
+exchange Dry-run or live trading. It does not add Trade API, Withdraw API, API
+key storage, broker credentials, real account reads, real position reads, real
+orders, exchange Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.20: if the local paper refresh review gate passes, prepare a local paper refresh candidate from selected signals only.
-- V13.5.21: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
-- V13.5.22: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
+- V13.5.21: package V13.5.20 selected signals into a local paper refresh candidate and validate local-only mechanics.
+- V13.5.22: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.23: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

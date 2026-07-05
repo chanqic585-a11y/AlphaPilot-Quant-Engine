@@ -27,6 +27,16 @@ class RiskPolicy:
     drawdown_pause_days: int = 0
 
 
+@dataclass(frozen=True)
+class ExitAwareLossPolicy:
+    policy_id: str
+    description: str
+    pair_loss_cooldown_days: int = 0
+    global_loss_pause_hours: int = 0
+    max_signals_per_day: int = 0
+    max_open_positions: int = 999
+
+
 DEFAULT_RISK_POLICIES = [
     RiskPolicy("raw_all_signals", "No portfolio throttling. Diagnostic baseline."),
     RiskPolicy("pair_7d_cooldown", "At most one selected signal per pair every seven days.", pair_cooldown_days=7),
@@ -196,6 +206,90 @@ def evaluate_risk_policies(signals: pd.DataFrame, policies: list[RiskPolicy] | N
     output: list[dict[str, Any]] = []
     for policy in policies or DEFAULT_RISK_POLICIES:
         selected, metrics = replay_policy(signals, policy)
+        by_exchange = []
+        if not selected.empty and "exchange" in selected:
+            for exchange, group in selected.groupby("exchange"):
+                row = _metrics(group)
+                row["exchange"] = str(exchange)
+                by_exchange.append(row)
+        output.append(
+            {
+                "policyId": policy.policy_id,
+                "description": policy.description,
+                "metrics": metrics,
+                "byExchange": sorted(by_exchange, key=lambda item: item.get("tradeCount") or 0, reverse=True),
+                "selectedSignals": selected,
+            }
+        )
+    return output
+
+
+def replay_exit_aware_loss_policy(signals: pd.DataFrame, policy: ExitAwareLossPolicy) -> tuple[pd.DataFrame, dict[str, Any]]:
+    """Replay a policy where loss cooldown starts only after exitDate.
+
+    This avoids future leakage: the policy cannot react to a loss until the
+    historical trade has closed.
+    """
+
+    if signals.empty:
+        return signals.copy(), _metrics(signals)
+    working = signals.sort_values(["entryDate", "exchange", "pair"]).reset_index(drop=True)
+    selected_rows: list[pd.Series] = []
+    pending: list[pd.Series] = []
+    pair_locked_until: dict[str, pd.Timestamp] = {}
+    global_locked_until: pd.Timestamp | None = None
+    day_counts: dict[pd.Timestamp, int] = {}
+
+    def close_known_trades(current_time: pd.Timestamp) -> None:
+        nonlocal global_locked_until
+        still_pending: list[pd.Series] = []
+        for trade in pending:
+            exit_date = trade.get("exitDate")
+            if pd.isna(exit_date) or exit_date > current_time:
+                still_pending.append(trade)
+                continue
+            if float(trade.get("rMultiple") or 0) <= 0:
+                pair = str(trade.get("pair"))
+                if policy.pair_loss_cooldown_days:
+                    next_pair_lock = exit_date + timedelta(days=policy.pair_loss_cooldown_days)
+                    existing_pair_lock = pair_locked_until.get(pair)
+                    if existing_pair_lock is None or next_pair_lock > existing_pair_lock:
+                        pair_locked_until[pair] = next_pair_lock
+                if policy.global_loss_pause_hours:
+                    next_global_lock = exit_date + timedelta(hours=policy.global_loss_pause_hours)
+                    if global_locked_until is None or next_global_lock > global_locked_until:
+                        global_locked_until = next_global_lock
+        pending[:] = still_pending
+
+    for _, row in working.iterrows():
+        entry_date = row["entryDate"]
+        close_known_trades(entry_date)
+        pair = str(row.get("pair"))
+        if global_locked_until is not None and entry_date < global_locked_until:
+            continue
+        if pair in pair_locked_until and entry_date < pair_locked_until[pair]:
+            continue
+        if policy.max_open_positions and len(pending) >= policy.max_open_positions:
+            continue
+        if policy.max_signals_per_day:
+            day = entry_date.floor("1D")
+            if day_counts.get(day, 0) >= policy.max_signals_per_day:
+                continue
+            day_counts[day] = day_counts.get(day, 0) + 1
+        selected_rows.append(row)
+        pending.append(row)
+
+    selected = pd.DataFrame(selected_rows).reset_index(drop=True) if selected_rows else pd.DataFrame(columns=signals.columns)
+    return selected, _metrics(selected)
+
+
+def evaluate_exit_aware_loss_policies(
+    signals: pd.DataFrame,
+    policies: list[ExitAwareLossPolicy],
+) -> list[dict[str, Any]]:
+    output: list[dict[str, Any]] = []
+    for policy in policies:
+        selected, metrics = replay_exit_aware_loss_policy(signals, policy)
         by_exchange = []
         if not selected.empty and "exchange" in selected:
             for exchange, group in selected.groupby("exchange"):
