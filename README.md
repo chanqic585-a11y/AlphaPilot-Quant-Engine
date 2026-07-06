@@ -2629,6 +2629,35 @@ ryckli/CryptoAgentPro.beta
 AlphaPilot only stores URL/license/summary/citation metadata for these
 references. It does not copy external code or long source text.
 
+## V13.7.3 External Quant Platform Reference Notes
+
+V13.7.3 records additional external platform references for future AlphaPilot
+architecture work:
+
+```text
+QuantFans/quantdigger
+brokermr810/QuantDinger
+HelloGitHub issue #3107
+Sina quant open-source roundup
+```
+
+The stored note is `docs/future-quant-platform-reference-notes.md`.
+
+It captures:
+
+```text
+event-driven strategy lifecycle ideas
+multi-strategy and portfolio-level backtest artifact ideas
+local-first AI trading OS architecture ideas
+agent gateway and audit-first boundary ideas
+public tool radar categories for future research
+```
+
+This is reference-only. AlphaPilot does not copy external source code, install
+new dependencies, enable exchange keys, call Trade API or Withdraw API, read
+real accounts or positions, create orders, enter Dry-run, live trade, or auto
+trade.
+
 The overlay adds:
 
 ```text

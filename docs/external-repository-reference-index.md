@@ -13,6 +13,9 @@ integration.
 |---|---|---|
 | `yydhYYDH/alpha101` | `docs/future-factor-research-reference-alpha101.md` | Factor panels, expression grammar, factor search, IC-style evaluation, research service ideas. |
 | `ryckli/CryptoAgentPro.beta` | `docs/future-live-trading-reference-cryptoagentpro-beta.md` | Future live-trading boundary, paper/testnet separation, risk gateway, human confirmation, emergency controls. |
+| `QuantFans/quantdigger` | `docs/future-quant-platform-reference-notes.md` | Event-driven strategy lifecycle, multi-strategy backtest artifacts, equity/reporting workflow references. |
+| `brokermr810/QuantDinger` | `docs/future-quant-platform-reference-notes.md` | Local-first AI trading OS structure, self-hosted dashboard/mobile split, agent gateway, audit-first paper/live boundary references. |
+| Sina quant open-source roundup | `docs/future-quant-platform-reference-notes.md` | Tool radar for frameworks, backtest engines, data/factor tools, crypto systems, and AI quant research references. |
 
 ## Current Boundary
 
@@ -20,6 +23,7 @@ The index does not add:
 
 - external repository dependencies
 - copied source code
+- long copied article text
 - exchange API key input or storage
 - Trade API
 - Withdraw API
