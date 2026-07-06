@@ -3627,6 +3627,42 @@ V13.7.1 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.7.4 Strategy Artifact Center
+
+V13.7.4 adds a read-only strategy artifact index for the desktop Control Console
+and mobile console.
+
+Run the artifact index builder:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\build_strategy_artifact_index.ps1
+```
+
+Outputs:
+
+```text
+alphapilot/artifacts/strategy_artifact_index.py
+alphapilot/reports/generate_v13_7_4_strategy_artifact_index.py
+scripts/build_strategy_artifact_index.ps1
+reports/strategy_artifact_index.json
+docs/V13.7.4-strategy-artifact-center.md
+```
+
+The index scans local `reports/*.json` files and classifies strategy artifacts
+into conservative research-routing tiers:
+
+```text
+paper_observation_ready
+research_watchlist
+needs_review
+archived_or_failed
+blocked_by_safety_review
+```
+
+Readiness tiers are not trading approval. V13.7.4 does not download data, run
+backtests, call exchanges, connect private APIs, create orders, run dry-run,
+run live trading, or enable automatic trading.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.
