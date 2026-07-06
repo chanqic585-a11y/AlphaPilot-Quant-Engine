@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.23 - Alpha191 Crypto-Safe Subset Replay
+AlphaPilot V13.7.1 - Strategy Runtime Data Contract
 ```
 
 ## Positioning
@@ -3553,8 +3553,54 @@ V13.5.23 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.7.1 Strategy Runtime Data Contract
+
+V13.7.1 creates a read-only local data contract for the AlphaPilot desktop and
+mobile consoles. It does not change strategy rules, does not run a new
+backtest, does not download market data, and does not connect to exchange
+private APIs.
+
+Run the contract builder:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\build_runtime_contract.ps1
+```
+
+Outputs:
+
+```text
+alphapilot/runtime/runtime_contract.py
+alphapilot/reports/generate_v13_7_1_runtime_contract.py
+scripts/build_runtime_contract.ps1
+reports/runtime_status.json
+reports/signal_tape.json
+reports/paper_observation_ledger.json
+docs/V13.7.1-strategy-runtime-data-contract.md
+```
+
+The runtime contract currently standardizes the V13.5.21 local paper refresh
+candidate as the active strategy and keeps the V13.5.23 Alpha191 subset as a
+research observer. The output is meant for dashboard display:
+
+```text
+activeStrategy = V13.5.21 local paper refresh candidate
+signalTapeCount = 412
+paperObservationCount = 409
+runtimeHealth = runtime_contract_ready
+```
+
+This is not exchange Dry-run approval. It is not live trading approval. It is a
+local file bridge that lets the Control Console and mobile app display strategy
+status, historical signal tape, and simulated paper observation context without
+creating any execution capability.
+
+V13.7.1 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
+- V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
 - V13.5.24: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
 - V13.5.25: compare V13.5.21 local paper package against newly closed forward samples and flag any drift.

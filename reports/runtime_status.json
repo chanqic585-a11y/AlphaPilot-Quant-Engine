@@ -1,0 +1,179 @@
+{
+  "version": "V13.7.1",
+  "source": "alphapilot_runtime_contract_v13_7_1",
+  "generatedAt": "2026-07-06T17:02:20.715465+00:00",
+  "activeStrategy": {
+    "strategyId": "v13_5_21_local_paper_refresh_candidate_package",
+    "strategyTitle": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+    "strategyVersion": "V13.5.21",
+    "candidateId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+    "selectedPolicyId": "pair_loss_exit_21d",
+    "status": "local_paper_ready",
+    "timeframe": "4h",
+    "direction": "short_research",
+    "targetRMultiple": 2.0,
+    "stopLossPct": 0.06,
+    "riskPerSignalPct": 1.0,
+    "maxConcurrentPositions": 8,
+    "selectedSignalCount": 412,
+    "metrics": {
+      "filledSignalCount": 409,
+      "winRatePct": 51.1002,
+      "profitFactor": 1.9588,
+      "rewardRiskRatio": 1.8744,
+      "totalReturnPct": 378.8964,
+      "maxDrawdownPct": 11.841614,
+      "finalEquity": 47889.640696
+    },
+    "gate": {
+      "checks": {
+        "minFilledSignals300": true,
+        "maxSkippedRate5Pct": true,
+        "minProfitFactor1_5": true,
+        "minRewardRisk1_8": true,
+        "maxDrawdown20Pct": true,
+        "positiveTotalReturn": true
+      },
+      "passed": true,
+      "skippedRatePct": 0.728155,
+      "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+    },
+    "sourceReport": "reports\\v13_5_21_local_paper_refresh_candidate_report.json",
+    "sourcePackage": "reports\\v13_5_21_local_paper_refresh_candidate_package.json",
+    "safetyBoundary": {
+      "localSimulationOnly": true,
+      "exchangeDryRunApproved": false,
+      "liveTradingApproved": false,
+      "orderCreationAllowed": false
+    }
+  },
+  "strategyCount": 2,
+  "strategies": [
+    {
+      "strategyId": "v13_5_21_local_paper_refresh_candidate_package",
+      "strategyTitle": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+      "strategyVersion": "V13.5.21",
+      "candidateId": "4h:alpha_short_exhaustion_pressure_watch:sl0.06:h24",
+      "selectedPolicyId": "pair_loss_exit_21d",
+      "status": "local_paper_ready",
+      "timeframe": "4h",
+      "direction": "short_research",
+      "targetRMultiple": 2.0,
+      "stopLossPct": 0.06,
+      "riskPerSignalPct": 1.0,
+      "maxConcurrentPositions": 8,
+      "selectedSignalCount": 412,
+      "metrics": {
+        "filledSignalCount": 409,
+        "winRatePct": 51.1002,
+        "profitFactor": 1.9588,
+        "rewardRiskRatio": 1.8744,
+        "totalReturnPct": 378.8964,
+        "maxDrawdownPct": 11.841614,
+        "finalEquity": 47889.640696
+      },
+      "gate": {
+        "checks": {
+          "minFilledSignals300": true,
+          "maxSkippedRate5Pct": true,
+          "minProfitFactor1_5": true,
+          "minRewardRisk1_8": true,
+          "maxDrawdown20Pct": true,
+          "positiveTotalReturn": true
+        },
+        "passed": true,
+        "skippedRatePct": 0.728155,
+        "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+      },
+      "sourceReport": "reports\\v13_5_21_local_paper_refresh_candidate_report.json",
+      "sourcePackage": "reports\\v13_5_21_local_paper_refresh_candidate_package.json",
+      "safetyBoundary": {
+        "localSimulationOnly": true,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "orderCreationAllowed": false
+      }
+    },
+    {
+      "strategyId": "v13_5_23_alpha191_crypto_subset_observer",
+      "strategyTitle": "4h:a191_short_exhaustion_quality_v01:sl0.06:h24",
+      "strategyVersion": "V13.5.23",
+      "candidateId": "4h:a191_short_exhaustion_quality_v01:sl0.06:h24",
+      "selectedPolicyId": "global_loss_exit_pause_8h",
+      "status": "research_only",
+      "timeframe": "4h",
+      "direction": "short_research",
+      "targetRMultiple": 2.0,
+      "stopLossPct": 0.06,
+      "riskPerSignalPct": null,
+      "maxConcurrentPositions": null,
+      "selectedSignalCount": 1412,
+      "metrics": {
+        "tradeCount": 3736,
+        "winRatePct": 40.5514,
+        "profitFactor": 1.163,
+        "rewardRiskRatio": 1.705,
+        "maxDrawdownPct": 99.7438
+      },
+      "gate": {
+        "rawReplayGatePassed": false,
+        "exitAwareGatePassed": false,
+        "localPaperGatePassed": false
+      },
+      "sourceReport": "reports\\v13_5_23_alpha191_crypto_subset_replay_report.json",
+      "safetyBoundary": {
+        "localSimulationOnly": true,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "orderCreationAllowed": false
+      }
+    }
+  ],
+  "reportCount": 2,
+  "signalTapeCount": 412,
+  "paperObservationCount": 409,
+  "runtimeHealth": {
+    "score": 100,
+    "label": "runtime_contract_ready",
+    "reasons": [
+      "primary_strategy_contract_available",
+      "signal_tape_sample_available",
+      "paper_observation_sample_available",
+      "historical_profit_factor_above_local_gate",
+      "historical_reward_risk_near_2r",
+      "historical_drawdown_within_local_gate"
+    ]
+  },
+  "latestSignalTime": "2026-07-01T16:00:00+00:00",
+  "paperObservationSummary": {
+    "totalObservations": 409,
+    "publishedObservationCount": 120,
+    "completedObservations": 409,
+    "pendingObservations": 0,
+    "winRatePct": 51.1002,
+    "profitFactor": 1.9588,
+    "rewardRiskRatio": 1.8744,
+    "averageOutcomeR": 0.409218,
+    "totalReturnPct": 378.8964,
+    "maxDrawdownPct": 11.841614,
+    "sourceFile": "reports\\v13_5_21_local_paper_refresh_candidate_ledger.json"
+  },
+  "nextStep": "Observe the standardized runtime feed in desktop and mobile consoles. Keep forward paper refresh separate from any future exchange review.",
+  "contractFiles": {
+    "runtimeStatus": "reports\\runtime_status.json",
+    "signalTape": "reports\\signal_tape.json",
+    "paperObservationLedger": "reports\\paper_observation_ledger.json"
+  },
+  "safetyBoundary": {
+    "localFileBridgeOnly": true,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "readsRealAccount": false,
+    "readsRealPositions": false,
+    "createsOrders": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "autoTrading": false
+  }
+}
