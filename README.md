@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.21 - Local Paper Refresh Candidate
+AlphaPilot V13.5.22 - Alpha191 Factor Extraction
 ```
 
 ## Positioning
@@ -3421,10 +3421,62 @@ V13.5.21 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.5.22 Alpha191 Factor Extraction
+
+V13.5.22 extracts a copyright-safe factor research catalog from the
+user-provided local PDF `Alpha191因子公式小白学习手册.pdf`.
+
+This version stores only source metadata, citation, factor IDs, categories,
+operator tags, required fields, short implementation notes, and crypto
+adaptation clusters. It does not store complete formulas, long source
+explanations, raw PDF text, or copied pages.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_22_alpha191_factor_extraction.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_22_alpha191_factor_extraction.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_5_22_alpha191_factor_extraction_report.py
+scripts/run_v13_5_22_alpha191_factor_extraction.ps1
+reports/v13_5_22_alpha191_factor_extraction_report.json
+reports/v13_5_22_alpha191_factor_extraction_summary.md
+reports/v13_5_22_alpha191_factor_candidate_catalog.json
+docs/V13.5.22-alpha191-factor-extraction.md
+```
+
+Parsed category counts:
+
+```text
+量价相关/协同: 47
+动量反转/均值回复: 46
+成交量/资金活跃: 36
+波动振幅/日内结构: 29
+综合价格形态: 13
+市场联动/回归: 8
+排序位置/相对强弱: 6
+条件统计/规则触发: 6
+```
+
+V13.5.22 is a research metadata step only. It does not change strategy rules,
+run backtests, change local paper trading, add Trade API, add Withdraw API,
+store API keys, read real accounts, read real positions, create orders, run
+exchange Dry-run, enable live trading, or enable automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.22: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
-- V13.5.23: compare V13.5.21 local paper package against newly closed forward samples and flag any drift.
-- V13.5.24: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
+- V13.5.23: design a small crypto-safe Alpha191-inspired factor implementation subset and test it against the existing V13.5 local paper gates.
+- V13.5.24: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
+- V13.5.25: compare V13.5.21 local paper package against newly closed forward samples and flag any drift.
+- V13.5.26: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.

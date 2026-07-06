@@ -1,0 +1,776 @@
+{
+  "version": "V13.5.22",
+  "reportId": "v13_5_22_alpha191_factor_extraction_report",
+  "generatedAt": "2026-07-06T05:17:07.943336+00:00",
+  "status": "completed",
+  "sourceMetadata": {
+    "sourceType": "user_provided_local_pdf_text_extraction",
+    "title": "Alpha 191 因子公式小白学习手册",
+    "sourceNotes": [
+      "The PDF describes Alpha191 formula learning notes and cites the original Guotai Junan short-cycle price-volume factor table as the underlying formula source.",
+      "The PDF also notes that BigQuant formula pages were used to cross-check extraction issues.",
+      "AlphaPilot stores only metadata, short summaries, categories, and implementation notes from this user-provided document."
+    ],
+    "license": "user_provided_local_reference_unknown_license",
+    "citation": "User-provided local PDF: Alpha191因子公式小白学习手册.pdf, reviewed on 2026-07-06.",
+    "copyrightPolicy": "Only URL/path metadata, source summary, citation, categories, operator tags, and short implementation notes are stored; full formulas and long explanations are not copied."
+  },
+  "aggregate": {
+    "factorCount": 191,
+    "categoryCounts": {
+      "量价相关/协同": 47,
+      "波动振幅/日内结构": 29,
+      "动量反转/均值回复": 46,
+      "排序位置/相对强弱": 6,
+      "成交量/资金活跃": 36,
+      "市场联动/回归": 8,
+      "综合价格形态": 13,
+      "条件统计/规则触发": 6
+    },
+    "implementationPriorityCounts": {
+      "high": 123,
+      "medium": 62,
+      "low": 6
+    },
+    "operatorCounts": {
+      "delay": 76,
+      "rank": 68,
+      "mean": 62,
+      "sum": 49,
+      "corr": 45,
+      "max": 41,
+      "conditional": 32,
+      "sma": 32,
+      "delta": 27,
+      "min": 27,
+      "ts_rank": 17,
+      "decay_linear": 17,
+      "std": 15,
+      "count": 6,
+      "log": 5,
+      "regression_beta": 4,
+      "sign": 3,
+      "wma": 2,
+      "sum_if": 2,
+      "regression_residual": 1
+    },
+    "requiredFieldCounts": {
+      "close": 128,
+      "volume": 78,
+      "high": 64,
+      "low": 59,
+      "vwap": 36,
+      "open": 29,
+      "return": 8,
+      "benchmark": 5,
+      "amount": 4
+    },
+    "manualReviewFactorCount": 6,
+    "formulaTextStored": false,
+    "longSourceTextStored": false
+  },
+  "candidateClusters": [
+    {
+      "clusterId": "btc_beta_residual",
+      "factorCount": 8,
+      "priorityCounts": {
+        "medium": 8
+      },
+      "highPriorityExamples": [],
+      "nextResearchUse": "Use for BTC/ETH beta and residual filters, not equity-index assumptions."
+    },
+    {
+      "clusterId": "event_condition_trigger",
+      "factorCount": 6,
+      "priorityCounts": {
+        "medium": 6
+      },
+      "highPriorityExamples": [],
+      "nextResearchUse": "Use as explicit event gates with walk-forward validation."
+    },
+    {
+      "clusterId": "liquidity_activity",
+      "factorCount": 36,
+      "priorityCounts": {
+        "high": 36
+      },
+      "highPriorityExamples": [
+        {
+          "factorId": "Alpha007",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delta",
+            "max",
+            "min",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, min, rank over close, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha008",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delta",
+            "rank"
+          ],
+          "requiredFields": [
+            "high",
+            "low",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, rank over high, low, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha012",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "rank",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "open",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using rank, sum over close, open, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha013",
+          "category": "成交量/资金活跃",
+          "operatorTags": [],
+          "requiredFields": [
+            "high",
+            "low",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using basic arithmetic or comparison over high, low, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha017",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delta",
+            "max",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, rank over close, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha025",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "decay_linear",
+            "delta",
+            "mean",
+            "rank",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "return",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using decay_linear, delta, mean, rank, sum over close, return, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha029",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delay over close, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha033",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delay",
+            "min",
+            "rank",
+            "sum",
+            "ts_rank"
+          ],
+          "requiredFields": [
+            "low",
+            "return",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delay, min, rank, sum, ts_rank over low, return, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha040",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "conditional",
+            "delay",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using conditional, delay, sum over close, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha041",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delta",
+            "max",
+            "rank"
+          ],
+          "requiredFields": [
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, rank over vwap; full formula intentionally not stored."
+        }
+      ],
+      "nextResearchUse": "Use as liquidity gates and thin-market filters before signal selection."
+    },
+    {
+      "clusterId": "momentum_reversal",
+      "factorCount": 46,
+      "priorityCounts": {
+        "high": 44,
+        "low": 2
+      },
+      "highPriorityExamples": [
+        {
+          "factorId": "Alpha003",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "conditional",
+            "delay",
+            "max",
+            "min",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "low"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, max, min, sum over close, high, low; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha014",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha015",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close",
+            "open"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close, open; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha018",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha019",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "conditional",
+            "delay"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha020",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha024",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay",
+            "sma"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, sma over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha027",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay",
+            "wma"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, wma over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha031",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "mean"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha034",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "mean"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored."
+        }
+      ],
+      "nextResearchUse": "Use as candidate exhaustion and rebound features for fixed 2R historical replay."
+    },
+    {
+      "clusterId": "price_pattern_composite",
+      "factorCount": 13,
+      "priorityCounts": {
+        "low": 1,
+        "medium": 12
+      },
+      "highPriorityExamples": [],
+      "nextResearchUse": "Use as explainability features in the factor panel before strategy gating."
+    },
+    {
+      "clusterId": "relative_strength_rank",
+      "factorCount": 6,
+      "priorityCounts": {
+        "medium": 6
+      },
+      "highPriorityExamples": [],
+      "nextResearchUse": "Use for universe-wide rank features after dynamic universe quality checks."
+    },
+    {
+      "clusterId": "volatility_range_structure",
+      "factorCount": 29,
+      "priorityCounts": {
+        "high": 27,
+        "low": 2
+      },
+      "highPriorityExamples": [
+        {
+          "factorId": "Alpha002",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "delta"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "low"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using delta over close, high, low; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha004",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "conditional",
+            "mean",
+            "std",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, mean, std, sum over close, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha009",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "delay",
+            "sma"
+          ],
+          "requiredFields": [
+            "high",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, sma over high, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha010",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "conditional",
+            "max",
+            "rank",
+            "std"
+          ],
+          "requiredFields": [
+            "close",
+            "return"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, max, rank, std over close, return; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha011",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using sum over close, high, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha060",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using sum over close, high, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha068",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "delay",
+            "sma"
+          ],
+          "requiredFields": [
+            "high",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, sma over high, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha069",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "conditional",
+            "sum"
+          ],
+          "requiredFields": [],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, sum over field review needed; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha070",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "std"
+          ],
+          "requiredFields": [
+            "amount"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using std over amount; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha076",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "delay",
+            "mean",
+            "std"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, mean, std over close, volume; full formula intentionally not stored."
+        }
+      ],
+      "nextResearchUse": "Use as failed-breakout, wick, range compression, and volatility context."
+    },
+    {
+      "clusterId": "volume_price_correlation",
+      "factorCount": 47,
+      "priorityCounts": {
+        "high": 16,
+        "low": 1,
+        "medium": 30
+      },
+      "highPriorityExamples": [
+        {
+          "factorId": "Alpha001",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "delta",
+            "log",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "open",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, log, rank over close, open, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha039",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "decay_linear",
+            "delta",
+            "mean",
+            "rank",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "open",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, mean, rank, sum over close, open, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha045",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "delta",
+            "mean",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "open",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, mean, rank over close, open, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha064",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "decay_linear",
+            "max",
+            "mean",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, max, mean, rank over close, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha073",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "decay_linear",
+            "mean",
+            "rank",
+            "ts_rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, mean, rank, ts_rank over close, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha091",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "max",
+            "mean",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, max, mean, rank over close, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha092",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "decay_linear",
+            "delta",
+            "max",
+            "mean",
+            "rank",
+            "ts_rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, max, mean, rank, ts_rank over close, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha099",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using rank over close, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha101",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "mean",
+            "rank",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, rank, sum over close, high, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha104",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "delta",
+            "rank",
+            "std"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, rank, std over close, high, volume; full formula intentionally not stored."
+        }
+      ],
+      "nextResearchUse": "Add as volume-price confirmation overlays for existing high-reward event filters."
+    }
+  ],
+  "manualReviewFactors": [
+    {
+      "factorId": "Alpha022",
+      "notes": [
+        "SMEAN function semantics are unclear in the source note and need manual platform review."
+      ]
+    },
+    {
+      "factorId": "Alpha023",
+      "notes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ]
+    },
+    {
+      "factorId": "Alpha052",
+      "notes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ]
+    },
+    {
+      "factorId": "Alpha131",
+      "notes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ]
+    },
+    {
+      "factorId": "Alpha159",
+      "notes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ]
+    },
+    {
+      "factorId": "Alpha188",
+      "notes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ]
+    }
+  ],
+  "decision": {
+    "alpha191MetadataExtracted": true,
+    "readyForFactorImplementationSpec": true,
+    "strategyChanged": false,
+    "paperTradingChanged": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "nextAction": "Design a small crypto-safe Alpha191-inspired factor implementation subset, then evaluate it against existing V13.5 local paper candidate gates."
+  },
+  "safetyBoundary": {
+    "researchOnly": true,
+    "fullFormulasCopied": false,
+    "longSourceTextCopied": false,
+    "tradeApi": false,
+    "withdrawApi": false,
+    "apiKeyStorage": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "automaticTrading": false
+  }
+}

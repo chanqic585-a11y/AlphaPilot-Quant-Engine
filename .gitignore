@@ -13,6 +13,7 @@ reports/*.jsonl
 reports/*_private*
 reports/latest_backtest_report.json
 reports/smoke_backtest_report.json
+tmp/
 __pycache__/
 *.pyc
 .venv/

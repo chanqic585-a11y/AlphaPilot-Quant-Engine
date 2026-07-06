@@ -1,0 +1,5823 @@
+{
+  "version": "V13.5.22",
+  "catalogId": "v13_5_22_alpha191_factor_candidate_catalog",
+  "generatedAt": "2026-07-06T05:17:07.943336+00:00",
+  "sourceTextPathUsedForExtraction": "tmp\\pdfs\\alpha191_extracted_text.txt",
+  "formulaTextStored": false,
+  "longSourceTextStored": false,
+  "factorRecords": [
+    {
+      "factorId": "Alpha001",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "delta",
+        "log",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "open",
+        "volume"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, log, rank over close, open, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha002",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "delta"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using delta over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha003",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max",
+        "min",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, max, min, sum over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha004",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "mean",
+        "std",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        8,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, mean, std, sum over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha005",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "max",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "high",
+        "volume"
+      ],
+      "windowCandidates": [
+        3,
+        5
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, max, rank, ts_rank over high, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha006",
+      "category": "排序位置/相对强弱",
+      "cryptoAdaptationCluster": "relative_strength_rank",
+      "operatorTags": [
+        "delta",
+        "rank",
+        "sign"
+      ],
+      "requiredFields": [
+        "high",
+        "open"
+      ],
+      "windowCandidates": [
+        4
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "relative_strength_rank factor using delta, rank, sign over high, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as cross-sectional relative-strength and time-series rank features across the active crypto universe.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha007",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delta",
+        "max",
+        "min",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        3
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, min, rank over close, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha008",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delta",
+        "rank"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        4
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, rank over high, low, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha009",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "delay",
+        "sma"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        7
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, sma over high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha010",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "max",
+        "rank",
+        "std"
+      ],
+      "requiredFields": [
+        "close",
+        "return"
+      ],
+      "windowCandidates": [
+        2,
+        5,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, max, rank, std over close, return; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha011",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using sum over close, high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha012",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "open",
+        "vwap"
+      ],
+      "windowCandidates": [
+        10
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using rank, sum over close, open, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha013",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [],
+      "requiredFields": [
+        "high",
+        "low",
+        "vwap"
+      ],
+      "windowCandidates": [],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using basic arithmetic or comparison over high, low, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha014",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha015",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close",
+        "open"
+      ],
+      "windowCandidates": [],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha016",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "max",
+        "rank"
+      ],
+      "requiredFields": [
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, max, rank over volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha017",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delta",
+        "max",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "vwap"
+      ],
+      "windowCandidates": [
+        5,
+        15
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, rank over close, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha018",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha019",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha020",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        6,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha021",
+      "category": "市场联动/回归",
+      "cryptoAdaptationCluster": "btc_beta_residual",
+      "operatorTags": [
+        "mean",
+        "regression_beta"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "btc_beta_residual factor using mean, regression_beta over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Adapt market-linkage factors to BTC/ETH beta, residual return, and regime filters rather than equity index linkage."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha022",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        3,
+        6,
+        12
+      ],
+      "implementationPriority": "low",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command.",
+        "SMEAN function semantics are unclear in the source note and need manual platform review."
+      ],
+      "manualReviewNotes": [
+        "SMEAN function semantics are unclear in the source note and need manual platform review."
+      ],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha023",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sma",
+        "std"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20,
+        100
+      ],
+      "implementationPriority": "low",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, delay, sma, std over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels.",
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "manualReviewNotes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha024",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha025",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "decay_linear",
+        "delta",
+        "mean",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "return",
+        "volume"
+      ],
+      "windowCandidates": [
+        7,
+        9,
+        20,
+        250
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using decay_linear, delta, mean, rank, sum over close, return, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha026",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "vwap"
+      ],
+      "windowCandidates": [
+        5,
+        7,
+        230
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delay, sum over close, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha027",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "wma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        3,
+        6,
+        12,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, wma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha028",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "max",
+        "min",
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        9,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using max, min, sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha029",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delay over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha030",
+      "category": "市场联动/回归",
+      "cryptoAdaptationCluster": "btc_beta_residual",
+      "operatorTags": [
+        "delay",
+        "regression_residual",
+        "wma"
+      ],
+      "requiredFields": [
+        "benchmark",
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        20,
+        60
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "btc_beta_residual factor using delay, regression_residual, wma over benchmark, close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Adapt market-linkage factors to BTC/ETH beta, residual return, and regime filters rather than equity index linkage.",
+        "Equity-market benchmark semantics should be mapped to BTC, ETH, or a documented crypto market index proxy."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha031",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha032",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "high",
+        "volume"
+      ],
+      "windowCandidates": [
+        3
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, rank, sum over high, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha033",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delay",
+        "min",
+        "rank",
+        "sum",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "low",
+        "return",
+        "volume"
+      ],
+      "windowCandidates": [
+        5,
+        20,
+        220,
+        240
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delay, min, rank, sum, ts_rank over low, return, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha034",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha035",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "delta",
+        "min",
+        "rank"
+      ],
+      "requiredFields": [
+        "open",
+        "volume"
+      ],
+      "windowCandidates": [
+        7,
+        15,
+        17
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, min, rank over open, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha036",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        6
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, rank, sum over volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha037",
+      "category": "排序位置/相对强弱",
+      "cryptoAdaptationCluster": "relative_strength_rank",
+      "operatorTags": [
+        "delay",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "open",
+        "return"
+      ],
+      "windowCandidates": [
+        5,
+        10
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "relative_strength_rank factor using delay, rank, sum over open, return; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as cross-sectional relative-strength and time-series rank features across the active crypto universe.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha038",
+      "category": "条件统计/规则触发",
+      "cryptoAdaptationCluster": "event_condition_trigger",
+      "operatorTags": [
+        "conditional",
+        "delta",
+        "sum"
+      ],
+      "requiredFields": [
+        "high"
+      ],
+      "windowCandidates": [
+        2,
+        20
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "event_condition_trigger factor using conditional, delta, sum over high; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as event gates or state triggers, then validate with walk-forward and stress tests."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha039",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "delta",
+        "mean",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "open",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        8,
+        12,
+        14,
+        37,
+        180
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, mean, rank, sum over close, open, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha040",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        26,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using conditional, delay, sum over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha041",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delta",
+        "max",
+        "rank"
+      ],
+      "requiredFields": [
+        "vwap"
+      ],
+      "windowCandidates": [
+        3,
+        5
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, rank over vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha042",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "rank",
+        "std"
+      ],
+      "requiredFields": [
+        "high",
+        "volume"
+      ],
+      "windowCandidates": [
+        10
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, rank, std over high, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha043",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using conditional, delay, sum over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha044",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "delta",
+        "mean",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "low",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        3,
+        4,
+        6,
+        7,
+        10,
+        15
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, mean, rank, ts_rank over low, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha045",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "delta",
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "open",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        15,
+        150
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, mean, rank over close, open, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha046",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        3,
+        4,
+        6,
+        12,
+        24
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha047",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "max",
+        "min",
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        6,
+        9,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using max, min, sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha048",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delay",
+        "rank",
+        "sign",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        5,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delay, rank, sign, sum over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha049",
+      "category": "条件统计/规则触发",
+      "cryptoAdaptationCluster": "event_condition_trigger",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max",
+        "sum"
+      ],
+      "requiredFields": [
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "event_condition_trigger factor using conditional, delay, max, sum over high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as event gates or state triggers, then validate with walk-forward and stress tests."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha050",
+      "category": "条件统计/规则触发",
+      "cryptoAdaptationCluster": "event_condition_trigger",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max",
+        "sum"
+      ],
+      "requiredFields": [
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "event_condition_trigger factor using conditional, delay, max, sum over high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as event gates or state triggers, then validate with walk-forward and stress tests."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha051",
+      "category": "条件统计/规则触发",
+      "cryptoAdaptationCluster": "event_condition_trigger",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max",
+        "sum"
+      ],
+      "requiredFields": [
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "event_condition_trigger factor using conditional, delay, max, sum over high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as event gates or state triggers, then validate with walk-forward and stress tests."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha052",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "delay",
+        "max",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        3,
+        26,
+        100
+      ],
+      "implementationPriority": "low",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using delay, max, sum over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates.",
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "manualReviewNotes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha053",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "count",
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using count, delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha054",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "rank",
+        "std"
+      ],
+      "requiredFields": [
+        "close",
+        "open"
+      ],
+      "windowCandidates": [
+        10
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, rank, std over close, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha055",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "open"
+      ],
+      "windowCandidates": [
+        2,
+        4,
+        16,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, max, sum over close, high, low, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha056",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "min",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        5,
+        12,
+        13,
+        19,
+        40
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, min, rank, sum over high, low, open, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha057",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "max",
+        "min",
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        3,
+        9,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using max, min, sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha058",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "count",
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using count, delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha059",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max",
+        "min",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, max, min, sum over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha060",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using sum over close, high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha061",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "delta",
+        "max",
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "low",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        8,
+        12,
+        17,
+        80
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, max, mean, rank over low, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha062",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "rank"
+      ],
+      "requiredFields": [
+        "high",
+        "volume"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, rank over high, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha063",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "max",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        6,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, max, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha064",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "max",
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        4,
+        13,
+        14,
+        60
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, max, mean, rank over close, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha065",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha066",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        6,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha067",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "max",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        24,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, max, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha068",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "delay",
+        "sma"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        15
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, sma over high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha069",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "sum"
+      ],
+      "requiredFields": [],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, sum over field review needed; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha070",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "std"
+      ],
+      "requiredFields": [
+        "amount"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using std over amount; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels.",
+        "Amount can be approximated from close * volume only when quote-volume is unavailable; mark the proxy explicitly."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha071",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        24,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha072",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "max",
+        "min",
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        6,
+        15,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using max, min, sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha073",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "mean",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        3,
+        4,
+        5,
+        10,
+        16,
+        30
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, mean, rank, ts_rank over close, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha074",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "low",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        6,
+        7,
+        20,
+        40
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, rank, sum over low, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha075",
+      "category": "市场联动/回归",
+      "cryptoAdaptationCluster": "btc_beta_residual",
+      "operatorTags": [
+        "count"
+      ],
+      "requiredFields": [
+        "benchmark",
+        "close",
+        "open"
+      ],
+      "windowCandidates": [
+        50
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "btc_beta_residual factor using count over benchmark, close, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Adapt market-linkage factors to BTC/ETH beta, residual return, and regime filters rather than equity index linkage.",
+        "Equity-market benchmark semantics should be mapped to BTC, ETH, or a documented crypto market index proxy."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha076",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "delay",
+        "mean",
+        "std"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, mean, std over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha077",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "mean",
+        "min",
+        "rank"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        6,
+        20,
+        40
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, mean, min, rank over high, low, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha078",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        3,
+        12
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using mean over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha079",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "max",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, max, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha080",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "volume"
+      ],
+      "windowCandidates": [
+        5,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delay over volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha081",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "sma"
+      ],
+      "requiredFields": [
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        21
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using sma over volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha082",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "max",
+        "min",
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        6,
+        20,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using max, min, sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha083",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "rank"
+      ],
+      "requiredFields": [
+        "high",
+        "volume"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using rank over high, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha084",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using conditional, delay, sum over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha085",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delta",
+        "mean",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        7,
+        8,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, mean, rank, ts_rank over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha086",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        10,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha087",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "decay_linear",
+        "delta",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "open",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        4,
+        7,
+        11
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using decay_linear, delta, rank, ts_rank over high, low, open, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha088",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha089",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        10,
+        13,
+        27
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha090",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "rank"
+      ],
+      "requiredFields": [
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, rank over volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha091",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "max",
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        5,
+        40
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, max, mean, rank over close, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha092",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "delta",
+        "max",
+        "mean",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        5,
+        13,
+        15,
+        180
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, max, mean, rank, ts_rank over close, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha093",
+      "category": "条件统计/规则触发",
+      "cryptoAdaptationCluster": "event_condition_trigger",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max",
+        "sum"
+      ],
+      "requiredFields": [
+        "low",
+        "open"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "event_condition_trigger factor using conditional, delay, max, sum over low, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as event gates or state triggers, then validate with walk-forward and stress tests."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha094",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        30
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using conditional, delay, sum over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha095",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "std"
+      ],
+      "requiredFields": [
+        "amount"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using std over amount; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels.",
+        "Amount can be approximated from close * volume only when quote-volume is unavailable; mark the proxy explicitly."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha096",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "max",
+        "min",
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        3,
+        9,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using max, min, sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha097",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "std"
+      ],
+      "requiredFields": [
+        "volume"
+      ],
+      "windowCandidates": [
+        10
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using std over volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha098",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "delta",
+        "min",
+        "sum"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        3,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, delta, min, sum over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha099",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using rank over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha100",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "std"
+      ],
+      "requiredFields": [
+        "volume"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using std over volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha101",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        11,
+        15,
+        30,
+        37
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, rank, sum over close, high, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha102",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delay",
+        "max",
+        "sma"
+      ],
+      "requiredFields": [
+        "volume"
+      ],
+      "windowCandidates": [
+        6,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delay, max, sma over volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha103",
+      "category": "排序位置/相对强弱",
+      "cryptoAdaptationCluster": "relative_strength_rank",
+      "operatorTags": [],
+      "requiredFields": [
+        "low"
+      ],
+      "windowCandidates": [
+        20,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "relative_strength_rank factor using basic arithmetic or comparison over low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as cross-sectional relative-strength and time-series rank features across the active crypto universe."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha104",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "delta",
+        "rank",
+        "std"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "volume"
+      ],
+      "windowCandidates": [
+        5,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, rank, std over close, high, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha105",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "rank"
+      ],
+      "requiredFields": [
+        "open",
+        "volume"
+      ],
+      "windowCandidates": [
+        10
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, rank over open, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha106",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha107",
+      "category": "排序位置/相对强弱",
+      "cryptoAdaptationCluster": "relative_strength_rank",
+      "operatorTags": [
+        "delay",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "open"
+      ],
+      "windowCandidates": [],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "relative_strength_rank factor using delay, rank over close, high, low, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as cross-sectional relative-strength and time-series rank features across the active crypto universe.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha108",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "min",
+        "rank"
+      ],
+      "requiredFields": [
+        "high",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        6,
+        120
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, min, rank over high, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha109",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "sma"
+      ],
+      "requiredFields": [
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        2,
+        10
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using sma over high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha110",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "max",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        20,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, max, sum over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha111",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        2,
+        4,
+        11
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha112",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, sum over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha113",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "delay",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        5,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delay, rank, sum over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha114",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "delay",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        5
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, rank, sum over close, high, low, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha115",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        4,
+        7,
+        10,
+        30
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, rank, ts_rank over close, high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha116",
+      "category": "市场联动/回归",
+      "cryptoAdaptationCluster": "btc_beta_residual",
+      "operatorTags": [
+        "regression_beta"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "btc_beta_residual factor using regression_beta over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Adapt market-linkage factors to BTC/ETH beta, residual return, and regime filters rather than equity index linkage."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha117",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "return",
+        "volume"
+      ],
+      "windowCandidates": [
+        16,
+        32
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using rank, ts_rank over close, high, low, return, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha118",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "sum"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "open"
+      ],
+      "windowCandidates": [
+        20,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using sum over high, low, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha119",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "mean",
+        "min",
+        "rank",
+        "sum",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "open",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        5,
+        7,
+        8,
+        9,
+        15,
+        21,
+        26
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, mean, min, rank, sum, ts_rank over open, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha120",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "vwap"
+      ],
+      "windowCandidates": [],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using rank over close, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha121",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "min",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        12,
+        18,
+        20,
+        60
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, min, rank, ts_rank over volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha122",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "delay",
+        "log",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        13
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using delay, log, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha123",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        6,
+        9,
+        20,
+        60
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, rank, sum over high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha124",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "decay_linear",
+        "max",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        30
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using decay_linear, max, rank over close, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha125",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "delta",
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        3,
+        16,
+        17,
+        20,
+        80
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, mean, rank over close, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha126",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        3
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using basic arithmetic or comparison over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha127",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [
+        "max",
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        12,
+        100
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using max, mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha128",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        3,
+        14,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using conditional, delay, sum over close, high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha129",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, sum over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha130",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "high",
+        "low",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        7,
+        9,
+        10,
+        40
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, mean, rank over high, low, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha131",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "delta",
+        "mean",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        18,
+        50
+      ],
+      "implementationPriority": "low",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, mean, rank, ts_rank over close, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes.",
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "manualReviewNotes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha132",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "amount"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using mean over amount; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Amount can be approximated from close * volume only when quote-volume is unavailable; mark the proxy explicitly."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha133",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [],
+      "requiredFields": [
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        20,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using basic arithmetic or comparison over high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha134",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delay over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha135",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha136",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "delta",
+        "rank"
+      ],
+      "requiredFields": [
+        "open",
+        "return",
+        "volume"
+      ],
+      "windowCandidates": [
+        3,
+        10
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, rank over open, return, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha137",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "open"
+      ],
+      "windowCandidates": [
+        2,
+        4,
+        16,
+        52,
+        191
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, max over close, high, low, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha138",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "delta",
+        "mean",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "low",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        3,
+        5,
+        7,
+        8,
+        16,
+        17,
+        19,
+        20,
+        60
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, mean, rank, ts_rank over low, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha139",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr"
+      ],
+      "requiredFields": [
+        "open",
+        "volume"
+      ],
+      "windowCandidates": [
+        10
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr over open, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha140",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "decay_linear",
+        "mean",
+        "min",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "open",
+        "volume"
+      ],
+      "windowCandidates": [
+        3,
+        7,
+        8,
+        20,
+        60
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, mean, min, rank, ts_rank over close, high, low, open, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha141",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "high",
+        "volume"
+      ],
+      "windowCandidates": [
+        9,
+        15
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, rank over high, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha142",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delta",
+        "mean",
+        "rank",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        5,
+        10,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, mean, rank, ts_rank over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha143",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha144",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "count",
+        "delay",
+        "sum_if"
+      ],
+      "requiredFields": [
+        "amount",
+        "close"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using count, delay, sum_if over amount, close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Amount can be approximated from close * volume only when quote-volume is unavailable; mark the proxy explicitly."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha145",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "volume"
+      ],
+      "windowCandidates": [
+        9,
+        12,
+        26,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using mean over volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha146",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "mean",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        20,
+        60,
+        61
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, mean, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha147",
+      "category": "市场联动/回归",
+      "cryptoAdaptationCluster": "btc_beta_residual",
+      "operatorTags": [
+        "mean",
+        "regression_beta"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "btc_beta_residual factor using mean, regression_beta over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Adapt market-linkage factors to BTC/ETH beta, residual return, and regime filters rather than equity index linkage."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha148",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "min",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "open",
+        "volume"
+      ],
+      "windowCandidates": [
+        6,
+        9,
+        14,
+        60
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, min, rank, sum over open, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha149",
+      "category": "市场联动/回归",
+      "cryptoAdaptationCluster": "btc_beta_residual",
+      "operatorTags": [
+        "delay",
+        "regression_beta"
+      ],
+      "requiredFields": [
+        "benchmark",
+        "close"
+      ],
+      "windowCandidates": [
+        252
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "btc_beta_residual factor using delay, regression_beta over benchmark, close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Adapt market-linkage factors to BTC/ETH beta, residual return, and regime filters rather than equity index linkage.",
+        "Equity-market benchmark semantics should be mapped to BTC, ETH, or a documented crypto market index proxy."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha150",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        3
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using basic arithmetic or comparison over close, high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha151",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha152",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "mean",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        9,
+        12,
+        26
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, mean, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha153",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        3,
+        4,
+        6,
+        12,
+        24
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha154",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "min"
+      ],
+      "requiredFields": [
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        16,
+        18,
+        180
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, min over volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha155",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "sma"
+      ],
+      "requiredFields": [
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        10,
+        13,
+        27
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using sma over volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha156",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "decay_linear",
+        "delta",
+        "max",
+        "rank"
+      ],
+      "requiredFields": [
+        "low",
+        "open",
+        "vwap"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        5
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using decay_linear, delta, max, rank over low, open, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha157",
+      "category": "排序位置/相对强弱",
+      "cryptoAdaptationCluster": "relative_strength_rank",
+      "operatorTags": [
+        "delay",
+        "delta",
+        "log",
+        "min",
+        "rank",
+        "sum",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "return"
+      ],
+      "windowCandidates": [
+        2,
+        5,
+        6
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "relative_strength_rank factor using delay, delta, log, min, rank, sum, ts_rank over close, return; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as cross-sectional relative-strength and time-series rank features across the active crypto universe.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha158",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        2,
+        15
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha159",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "max",
+        "min",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        6,
+        12,
+        24,
+        100
+      ],
+      "implementationPriority": "low",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, max, min, sum over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command.",
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "manualReviewNotes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha160",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sma",
+        "std"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, delay, sma, std over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha161",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "delay",
+        "max",
+        "mean"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, max, mean over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha162",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "max",
+        "min",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, max, min, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha163",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "return",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using mean, rank over close, high, return, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha164",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "min",
+        "sma"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        2,
+        12,
+        13,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, delay, min, sma over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha165",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "max",
+        "mean",
+        "min",
+        "std"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        48
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using max, mean, min, std over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha166",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "mean",
+        "sum"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, mean, sum over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha167",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sum"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        12
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, sum over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha168",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "volume"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using mean over volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha169",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "delay",
+        "mean",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        9,
+        10,
+        12,
+        26
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, mean, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha170",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delay",
+        "mean",
+        "rank",
+        "sum"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        5,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delay, mean, rank, sum over close, high, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha171",
+      "category": "综合价格形态",
+      "cryptoAdaptationCluster": "price_pattern_composite",
+      "operatorTags": [],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "open"
+      ],
+      "windowCandidates": [
+        5
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "price_pattern_composite factor using basic arithmetic or comparison over close, high, low, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as composite candle and price-structure context. Treat as explainability features before strategy gates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha172",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "mean",
+        "sum"
+      ],
+      "requiredFields": [],
+      "windowCandidates": [
+        6,
+        14,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, mean, sum over field review needed; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha173",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "log",
+        "sma"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        13
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using log, sma over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha174",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "sma",
+        "std"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, delay, sma, std over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha175",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "delay",
+        "max",
+        "mean"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, max, mean over close, high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha176",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "max",
+        "min",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        6,
+        12
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, max, min, rank over close, high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha177",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [],
+      "requiredFields": [
+        "high"
+      ],
+      "windowCandidates": [
+        20,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using basic arithmetic or comparison over high; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha178",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "delay"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using delay over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha179",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean",
+        "rank"
+      ],
+      "requiredFields": [
+        "low",
+        "volume",
+        "vwap"
+      ],
+      "windowCandidates": [
+        4,
+        12,
+        50
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, rank over low, volume, vwap; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Crypto OHLCV files may not include true tick VWAP; use exchange VWAP when available or a documented OHLCV proxy.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha180",
+      "category": "成交量/资金活跃",
+      "cryptoAdaptationCluster": "liquidity_activity",
+      "operatorTags": [
+        "conditional",
+        "delta",
+        "mean",
+        "rank",
+        "sign",
+        "ts_rank"
+      ],
+      "requiredFields": [
+        "close",
+        "volume"
+      ],
+      "windowCandidates": [
+        7,
+        20,
+        60
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "liquidity_activity factor using conditional, delta, mean, rank, sign, ts_rank over close, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as liquidity, activity, and volume-ratio filters for avoiding thin or noisy candidates.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha181",
+      "category": "市场联动/回归",
+      "cryptoAdaptationCluster": "btc_beta_residual",
+      "operatorTags": [
+        "delay",
+        "mean",
+        "sum"
+      ],
+      "requiredFields": [
+        "benchmark",
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        3,
+        20
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "btc_beta_residual factor using delay, mean, sum over benchmark, close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Adapt market-linkage factors to BTC/ETH beta, residual return, and regime filters rather than equity index linkage.",
+        "Equity-market benchmark semantics should be mapped to BTC, ETH, or a documented crypto market index proxy."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha182",
+      "category": "市场联动/回归",
+      "cryptoAdaptationCluster": "btc_beta_residual",
+      "operatorTags": [
+        "count"
+      ],
+      "requiredFields": [
+        "benchmark",
+        "close",
+        "open"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "btc_beta_residual factor using count over benchmark, close, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Adapt market-linkage factors to BTC/ETH beta, residual return, and regime filters rather than equity index linkage.",
+        "Equity-market benchmark semantics should be mapped to BTC, ETH, or a documented crypto market index proxy."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha183",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "max",
+        "mean",
+        "min",
+        "std"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        24
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using max, mean, min, std over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha184",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "delay",
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "open"
+      ],
+      "windowCandidates": [
+        200
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delay, rank over close, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha185",
+      "category": "排序位置/相对强弱",
+      "cryptoAdaptationCluster": "relative_strength_rank",
+      "operatorTags": [
+        "rank"
+      ],
+      "requiredFields": [
+        "close",
+        "open"
+      ],
+      "windowCandidates": [
+        2
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "relative_strength_rank factor using rank over close, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as cross-sectional relative-strength and time-series rank features across the active crypto universe.",
+        "Ranking features require stable universe membership and missing-data handling before backtesting."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha186",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "mean",
+        "sum"
+      ],
+      "requiredFields": [],
+      "windowCandidates": [
+        2,
+        6,
+        14,
+        100
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, delay, mean, sum over field review needed; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha187",
+      "category": "条件统计/规则触发",
+      "cryptoAdaptationCluster": "event_condition_trigger",
+      "operatorTags": [
+        "conditional",
+        "delay",
+        "max",
+        "sum"
+      ],
+      "requiredFields": [
+        "high",
+        "open"
+      ],
+      "windowCandidates": [
+        20
+      ],
+      "implementationPriority": "medium",
+      "copyrightSafeFormulaSummary": "event_condition_trigger factor using conditional, delay, max, sum over high, open; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as event gates or state triggers, then validate with walk-forward and stress tests."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha188",
+      "category": "波动振幅/日内结构",
+      "cryptoAdaptationCluster": "volatility_range_structure",
+      "operatorTags": [
+        "sma"
+      ],
+      "requiredFields": [
+        "high",
+        "low"
+      ],
+      "windowCandidates": [
+        2,
+        11,
+        100
+      ],
+      "implementationPriority": "low",
+      "copyrightSafeFormulaSummary": "volatility_range_structure factor using sma over high, low; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as wick, range, volatility compression, breakout, and failed-breakout context for crypto OHLCV panels.",
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "manualReviewNotes": [
+        "Source note flags extraction or spelling issues that require manual review."
+      ],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha189",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "mean"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        6
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha190",
+      "category": "动量反转/均值回复",
+      "cryptoAdaptationCluster": "momentum_reversal",
+      "operatorTags": [
+        "count",
+        "delay",
+        "log",
+        "sum_if"
+      ],
+      "requiredFields": [
+        "close"
+      ],
+      "windowCandidates": [
+        2,
+        19,
+        20,
+        70,
+        191
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "momentum_reversal factor using count, delay, log, sum_if over close; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as exhaustion, rebound, and mean-reversion context. Keep 2R evaluation and avoid treating a single indicator as an entry command."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    },
+    {
+      "factorId": "Alpha191",
+      "category": "量价相关/协同",
+      "cryptoAdaptationCluster": "volume_price_correlation",
+      "operatorTags": [
+        "corr",
+        "mean"
+      ],
+      "requiredFields": [
+        "close",
+        "high",
+        "low",
+        "volume"
+      ],
+      "windowCandidates": [
+        2,
+        5,
+        20
+      ],
+      "implementationPriority": "high",
+      "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean over close, high, low, volume; full formula intentionally not stored.",
+      "cryptoAdaptationNotes": [
+        "Use as crypto price-volume interaction factors: rolling correlation, volume pressure, liquidity confirmation, and cross-sectional rank overlays.",
+        "Rolling correlation factors should be stress-tested across bull, bear, sideways, and crash regimes."
+      ],
+      "manualReviewNotes": [],
+      "formulaCopied": false,
+      "longExplanationCopied": false
+    }
+  ],
+  "candidateClusters": [
+    {
+      "clusterId": "btc_beta_residual",
+      "factorCount": 8,
+      "priorityCounts": {
+        "medium": 8
+      },
+      "highPriorityExamples": [],
+      "nextResearchUse": "Use for BTC/ETH beta and residual filters, not equity-index assumptions."
+    },
+    {
+      "clusterId": "event_condition_trigger",
+      "factorCount": 6,
+      "priorityCounts": {
+        "medium": 6
+      },
+      "highPriorityExamples": [],
+      "nextResearchUse": "Use as explicit event gates with walk-forward validation."
+    },
+    {
+      "clusterId": "liquidity_activity",
+      "factorCount": 36,
+      "priorityCounts": {
+        "high": 36
+      },
+      "highPriorityExamples": [
+        {
+          "factorId": "Alpha007",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delta",
+            "max",
+            "min",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, min, rank over close, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha008",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delta",
+            "rank"
+          ],
+          "requiredFields": [
+            "high",
+            "low",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, rank over high, low, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha012",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "rank",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "open",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using rank, sum over close, open, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha013",
+          "category": "成交量/资金活跃",
+          "operatorTags": [],
+          "requiredFields": [
+            "high",
+            "low",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using basic arithmetic or comparison over high, low, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha017",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delta",
+            "max",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, rank over close, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha025",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "decay_linear",
+            "delta",
+            "mean",
+            "rank",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "return",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using decay_linear, delta, mean, rank, sum over close, return, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha029",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delay over close, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha033",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delay",
+            "min",
+            "rank",
+            "sum",
+            "ts_rank"
+          ],
+          "requiredFields": [
+            "low",
+            "return",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delay, min, rank, sum, ts_rank over low, return, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha040",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "conditional",
+            "delay",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using conditional, delay, sum over close, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha041",
+          "category": "成交量/资金活跃",
+          "operatorTags": [
+            "delta",
+            "max",
+            "rank"
+          ],
+          "requiredFields": [
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "liquidity_activity factor using delta, max, rank over vwap; full formula intentionally not stored."
+        }
+      ],
+      "nextResearchUse": "Use as liquidity gates and thin-market filters before signal selection."
+    },
+    {
+      "clusterId": "momentum_reversal",
+      "factorCount": 46,
+      "priorityCounts": {
+        "high": 44,
+        "low": 2
+      },
+      "highPriorityExamples": [
+        {
+          "factorId": "Alpha003",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "conditional",
+            "delay",
+            "max",
+            "min",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "low"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay, max, min, sum over close, high, low; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha014",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha015",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close",
+            "open"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close, open; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha018",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha019",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "conditional",
+            "delay"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using conditional, delay over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha020",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha024",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay",
+            "sma"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, sma over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha027",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "delay",
+            "wma"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using delay, wma over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha031",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "mean"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha034",
+          "category": "动量反转/均值回复",
+          "operatorTags": [
+            "mean"
+          ],
+          "requiredFields": [
+            "close"
+          ],
+          "copyrightSafeFormulaSummary": "momentum_reversal factor using mean over close; full formula intentionally not stored."
+        }
+      ],
+      "nextResearchUse": "Use as candidate exhaustion and rebound features for fixed 2R historical replay."
+    },
+    {
+      "clusterId": "price_pattern_composite",
+      "factorCount": 13,
+      "priorityCounts": {
+        "low": 1,
+        "medium": 12
+      },
+      "highPriorityExamples": [],
+      "nextResearchUse": "Use as explainability features in the factor panel before strategy gating."
+    },
+    {
+      "clusterId": "relative_strength_rank",
+      "factorCount": 6,
+      "priorityCounts": {
+        "medium": 6
+      },
+      "highPriorityExamples": [],
+      "nextResearchUse": "Use for universe-wide rank features after dynamic universe quality checks."
+    },
+    {
+      "clusterId": "volatility_range_structure",
+      "factorCount": 29,
+      "priorityCounts": {
+        "high": 27,
+        "low": 2
+      },
+      "highPriorityExamples": [
+        {
+          "factorId": "Alpha002",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "delta"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "low"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using delta over close, high, low; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha004",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "conditional",
+            "mean",
+            "std",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, mean, std, sum over close, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha009",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "delay",
+            "sma"
+          ],
+          "requiredFields": [
+            "high",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, sma over high, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha010",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "conditional",
+            "max",
+            "rank",
+            "std"
+          ],
+          "requiredFields": [
+            "close",
+            "return"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, max, rank, std over close, return; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha011",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using sum over close, high, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha060",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using sum over close, high, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha068",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "delay",
+            "sma"
+          ],
+          "requiredFields": [
+            "high",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, sma over high, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha069",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "conditional",
+            "sum"
+          ],
+          "requiredFields": [],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using conditional, sum over field review needed; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha070",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "std"
+          ],
+          "requiredFields": [
+            "amount"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using std over amount; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha076",
+          "category": "波动振幅/日内结构",
+          "operatorTags": [
+            "delay",
+            "mean",
+            "std"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volatility_range_structure factor using delay, mean, std over close, volume; full formula intentionally not stored."
+        }
+      ],
+      "nextResearchUse": "Use as failed-breakout, wick, range compression, and volatility context."
+    },
+    {
+      "clusterId": "volume_price_correlation",
+      "factorCount": 47,
+      "priorityCounts": {
+        "high": 16,
+        "low": 1,
+        "medium": 30
+      },
+      "highPriorityExamples": [
+        {
+          "factorId": "Alpha001",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "delta",
+            "log",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "open",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, log, rank over close, open, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha039",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "decay_linear",
+            "delta",
+            "mean",
+            "rank",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "open",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, mean, rank, sum over close, open, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha045",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "delta",
+            "mean",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "open",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, mean, rank over close, open, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha064",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "decay_linear",
+            "max",
+            "mean",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, max, mean, rank over close, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha073",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "decay_linear",
+            "mean",
+            "rank",
+            "ts_rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, mean, rank, ts_rank over close, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha091",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "max",
+            "mean",
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "low",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, max, mean, rank over close, low, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha092",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "decay_linear",
+            "delta",
+            "max",
+            "mean",
+            "rank",
+            "ts_rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, decay_linear, delta, max, mean, rank, ts_rank over close, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha099",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "rank"
+          ],
+          "requiredFields": [
+            "close",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using rank over close, volume; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha101",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "mean",
+            "rank",
+            "sum"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "volume",
+            "vwap"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, mean, rank, sum over close, high, volume, vwap; full formula intentionally not stored."
+        },
+        {
+          "factorId": "Alpha104",
+          "category": "量价相关/协同",
+          "operatorTags": [
+            "corr",
+            "delta",
+            "rank",
+            "std"
+          ],
+          "requiredFields": [
+            "close",
+            "high",
+            "volume"
+          ],
+          "copyrightSafeFormulaSummary": "volume_price_correlation factor using corr, delta, rank, std over close, high, volume; full formula intentionally not stored."
+        }
+      ],
+      "nextResearchUse": "Add as volume-price confirmation overlays for existing high-reward event filters."
+    }
+  ]
+}
