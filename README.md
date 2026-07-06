@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.5.22 - Alpha191 Factor Extraction
+AlphaPilot V13.5.23 - Alpha191 Crypto-Safe Subset Replay
 ```
 
 ## Positioning
@@ -3472,10 +3472,90 @@ run backtests, change local paper trading, add Trade API, add Withdraw API,
 store API keys, read real accounts, read real positions, create orders, run
 exchange Dry-run, enable live trading, or enable automatic trading.
 
+## V13.5.23 Alpha191 Crypto-Safe Subset Replay
+
+V13.5.23 implements a small Alpha191-inspired crypto-safe factor subset and
+tests it against the existing local historical replay gates. It does not copy
+Alpha191 formulas. It uses V13.5.22 metadata as a research guide and implements
+compact public-OHLCV-derived features that can be audited directly in
+AlphaPilot.
+
+Run preview:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_23_alpha191_crypto_subset_replay.ps1
+```
+
+Generate reports:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_5_23_alpha191_crypto_subset_replay.ps1 -Run
+```
+
+Outputs:
+
+```text
+alphapilot/factors/alpha191_crypto_safe_subset.py
+alphapilot/reports/generate_v13_5_23_alpha191_crypto_subset_replay_report.py
+scripts/run_v13_5_23_alpha191_crypto_subset_replay.ps1
+reports/v13_5_23_alpha191_crypto_subset_replay_report.json
+reports/v13_5_23_alpha191_crypto_subset_replay_summary.md
+reports/v13_5_23_alpha191_crypto_subset_signal_log.json
+reports/v13_5_23_alpha191_crypto_subset_selected_signals.json
+docs/V13.5.23-alpha191-crypto-safe-subset-replay.md
+```
+
+Current V13.5.23 result:
+
+```text
+Best raw candidate: 4h:a191_short_exhaustion_quality_v01:sl0.06:h24
+Raw trades: 3736
+Raw winRatePct: 40.5514
+Raw profitFactor: 1.163
+Raw rewardRiskRatio: 1.705
+Raw maxDrawdownPct: 99.7438
+Raw gate passed: false
+
+Best exit-aware policy: global_loss_exit_pause_8h
+Exit-aware trades: 1412
+Exit-aware profitFactor: 1.307052
+Exit-aware rewardRiskRatio: 1.688983
+Exit-aware maxDrawdownR: 91.7798
+Exit-aware gate passed: false
+
+Local paper filled signals: 1112
+Local paper winRatePct: 42.8957
+Local paper profitFactor: 1.3785
+Local paper rewardRiskRatio: 1.8351
+Local paper maxDrawdownPct: 51.845183
+Local paper gate passed: false
+```
+
+Decision:
+
+```text
+alpha191SubsetImplemented = true
+rawReplayGatePassed = false
+exitAwareGatePassed = false
+localPaperGatePassed = false
+readyForForwardRefreshComparison = false
+exchangeDryRunApproved = false
+liveTradingApproved = false
+nextAction = keep_alpha191_subset_as_research_only_and_do_not_replace_v13_5_21
+```
+
+Interpretation: V13.5.23 is useful research because it proves this first
+Alpha191-inspired subset does not clear the existing AlphaPilot gates. It should
+remain observer/research context. It does not replace the V13.5.21 local paper
+refresh candidate.
+
+V13.5.23 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.
-- V13.5.23: design a small crypto-safe Alpha191-inspired factor implementation subset and test it against the existing V13.5 local paper gates.
 - V13.5.24: rerun forward readiness after 2026-07-09T20:13:33Z and, if ready, run forward local paper refresh for the V13.5.7 4h alpha overlay.
 - V13.5.25: compare V13.5.21 local paper package against newly closed forward samples and flag any drift.
 - V13.5.26: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.

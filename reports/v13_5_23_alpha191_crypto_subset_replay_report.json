@@ -1,0 +1,2681 @@
+{
+  "version": "V13.5.23",
+  "reportId": "v13_5_23_alpha191_crypto_subset_replay_report",
+  "generatedAt": "2026-07-06T05:36:57.573416+00:00",
+  "status": "completed",
+  "sourceCatalog": "reports/v13_5_22_alpha191_factor_candidate_catalog.json",
+  "scope": {
+    "dataRoot": "user_data\\data",
+    "exchanges": [
+      "okx",
+      "binance",
+      "bybit"
+    ],
+    "timeframe": "4h",
+    "maxPairsPerExchange": null,
+    "localPublicDataOnly": true
+  },
+  "factorSubset": {
+    "columns": [
+      "a191_return_volume_corr_24",
+      "a191_return_volume_corr_48",
+      "a191_ts_close_location_rank_48",
+      "a191_ts_volume_ratio_rank_48",
+      "a191_cs_range_rank",
+      "a191_cs_volume_activity_rank",
+      "a191_cs_residual_strength_rank",
+      "a191_reversal_pressure",
+      "a191_short_exhaustion_pressure",
+      "a191_range_rejection_pressure",
+      "a191_liquidity_range_quality",
+      "a191_volume_reclaim_pressure"
+    ],
+    "conceptSource": "V13.5.22 Alpha191 category and operator metadata only",
+    "formulaCopied": false,
+    "fullFormulaStored": false,
+    "longSourceTextStored": false
+  },
+  "exchangeReports": [
+    {
+      "exchange": "okx",
+      "status": "completed",
+      "discoveredPairCount": 38,
+      "selectedPairCount": 38,
+      "loadedPairs": [
+        "AAVE/USDT:USDT",
+        "ADA/USDT:USDT",
+        "APT/USDT:USDT",
+        "ARB/USDT:USDT",
+        "ATOM/USDT:USDT",
+        "AVAX/USDT:USDT",
+        "BCH/USDT:USDT",
+        "BNB/USDT:USDT",
+        "BTC/USDT:USDT",
+        "CFX/USDT:USDT",
+        "CRV/USDT:USDT",
+        "DOGE/USDT:USDT",
+        "DOT/USDT:USDT",
+        "DYDX/USDT:USDT",
+        "ETC/USDT:USDT",
+        "ETH/USDT:USDT",
+        "FIL/USDT:USDT",
+        "FLOW/USDT:USDT",
+        "GRT/USDT:USDT",
+        "INJ/USDT:USDT",
+        "KSM/USDT:USDT",
+        "LINK/USDT:USDT",
+        "LTC/USDT:USDT",
+        "NEAR/USDT:USDT",
+        "OP/USDT:USDT",
+        "ORDI/USDT:USDT",
+        "PEPE/USDT:USDT",
+        "SEI/USDT:USDT",
+        "SHIB/USDT:USDT",
+        "SOL/USDT:USDT",
+        "SUI/USDT:USDT",
+        "TIA/USDT:USDT",
+        "TRX/USDT:USDT",
+        "UNI/USDT:USDT",
+        "WIF/USDT:USDT",
+        "XRP/USDT:USDT",
+        "ZK/USDT:USDT",
+        "ZRO/USDT:USDT"
+      ],
+      "missingPairs": [],
+      "missingOptionalSources": {
+        "CRV/USDT:USDT": [
+          "funding_rate"
+        ],
+        "GRT/USDT:USDT": [
+          "funding_rate"
+        ],
+        "KSM/USDT:USDT": [
+          "funding_rate"
+        ],
+        "SHIB/USDT:USDT": [
+          "funding_rate"
+        ],
+        "ZK/USDT:USDT": [
+          "funding_rate"
+        ]
+      },
+      "panelRows": 359791,
+      "eventRows": 93012
+    },
+    {
+      "exchange": "binance",
+      "status": "completed",
+      "discoveredPairCount": 20,
+      "selectedPairCount": 20,
+      "loadedPairs": [
+        "AAVE/USDT:USDT",
+        "ADA/USDT:USDT",
+        "APT/USDT:USDT",
+        "ARB/USDT:USDT",
+        "AVAX/USDT:USDT",
+        "BCH/USDT:USDT",
+        "BNB/USDT:USDT",
+        "BTC/USDT:USDT",
+        "DOGE/USDT:USDT",
+        "DOT/USDT:USDT",
+        "ETH/USDT:USDT",
+        "LINK/USDT:USDT",
+        "LTC/USDT:USDT",
+        "NEAR/USDT:USDT",
+        "OP/USDT:USDT",
+        "SOL/USDT:USDT",
+        "SUI/USDT:USDT",
+        "TRX/USDT:USDT",
+        "UNI/USDT:USDT",
+        "XRP/USDT:USDT"
+      ],
+      "missingPairs": [],
+      "missingOptionalSources": {},
+      "panelRows": 248118,
+      "eventRows": 71020
+    },
+    {
+      "exchange": "bybit",
+      "status": "completed",
+      "discoveredPairCount": 20,
+      "selectedPairCount": 20,
+      "loadedPairs": [
+        "AAVE/USDT:USDT",
+        "ADA/USDT:USDT",
+        "APT/USDT:USDT",
+        "ARB/USDT:USDT",
+        "AVAX/USDT:USDT",
+        "BCH/USDT:USDT",
+        "BNB/USDT:USDT",
+        "BTC/USDT:USDT",
+        "DOGE/USDT:USDT",
+        "DOT/USDT:USDT",
+        "ETH/USDT:USDT",
+        "LINK/USDT:USDT",
+        "LTC/USDT:USDT",
+        "NEAR/USDT:USDT",
+        "OP/USDT:USDT",
+        "SOL/USDT:USDT",
+        "SUI/USDT:USDT",
+        "TRX/USDT:USDT",
+        "UNI/USDT:USDT",
+        "XRP/USDT:USDT"
+      ],
+      "missingPairs": [],
+      "missingOptionalSources": {},
+      "panelRows": 213708,
+      "eventRows": 58536
+    }
+  ],
+  "candidateRows": [
+    {
+      "overlayId": "a191_short_exhaustion_quality_v01",
+      "description": "Short exhaustion context requiring Alpha191-inspired volume-price exhaustion and liquidity-range quality.",
+      "timeframe": "4h",
+      "stopLossPct": 0.06,
+      "horizonBars": 24,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_exhaustion_quality_v01",
+        "tradeCount": 3736,
+        "winRatePct": 40.5514,
+        "averageWinPct": 9.211227,
+        "averageLossPct": -5.402367,
+        "rewardRiskRatio": 1.705,
+        "profitFactor": 1.163,
+        "totalReturnPct": 424733.838,
+        "maxDrawdownPct": 99.7438,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 747,
+          "profitFactor": 1.8455
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.597916,
+      "candidateId": "4h:a191_short_exhaustion_quality_v01:sl0.06:h24"
+    },
+    {
+      "overlayId": "a191_short_exhaustion_quality_v01",
+      "description": "Short exhaustion context requiring Alpha191-inspired volume-price exhaustion and liquidity-range quality.",
+      "timeframe": "4h",
+      "stopLossPct": 0.08,
+      "horizonBars": 30,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_exhaustion_quality_v01",
+        "tradeCount": 3736,
+        "winRatePct": 43.3084,
+        "averageWinPct": 10.590336,
+        "averageLossPct": -6.931517,
+        "rewardRiskRatio": 1.5279,
+        "profitFactor": 1.1672,
+        "totalReturnPct": 129234.6642,
+        "maxDrawdownPct": 99.9862,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 747,
+          "profitFactor": 2.1643
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.59732,
+      "candidateId": "4h:a191_short_exhaustion_quality_v01:sl0.08:h30"
+    },
+    {
+      "overlayId": "a191_short_residual_exhaustion_v01",
+      "description": "Short context requiring strong BTC-residual relative strength and exhaustion pressure.",
+      "timeframe": "4h",
+      "stopLossPct": 0.06,
+      "horizonBars": 24,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_residual_exhaustion_v01",
+        "tradeCount": 6642,
+        "winRatePct": 41.9603,
+        "averageWinPct": 8.667753,
+        "averageLossPct": -5.203226,
+        "rewardRiskRatio": 1.6658,
+        "profitFactor": 1.2043,
+        "totalReturnPct": 493865950916.8879,
+        "maxDrawdownPct": 99.8879,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 70
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1328,
+          "profitFactor": 1.5714
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.58447,
+      "candidateId": "4h:a191_short_residual_exhaustion_v01:sl0.06:h24"
+    },
+    {
+      "overlayId": "a191_short_exhaustion_quality_v01",
+      "description": "Short exhaustion context requiring Alpha191-inspired volume-price exhaustion and liquidity-range quality.",
+      "timeframe": "4h",
+      "stopLossPct": 0.05,
+      "horizonBars": 18,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_exhaustion_quality_v01",
+        "tradeCount": 3736,
+        "winRatePct": 40.2034,
+        "averageWinPct": 7.72751,
+        "averageLossPct": -4.631243,
+        "rewardRiskRatio": 1.6686,
+        "profitFactor": 1.1218,
+        "totalReturnPct": 11800.6753,
+        "maxDrawdownPct": 99.1134,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 747,
+          "profitFactor": 1.5648
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.577809,
+      "candidateId": "4h:a191_short_exhaustion_quality_v01:sl0.05:h18"
+    },
+    {
+      "overlayId": "a191_short_residual_exhaustion_v01",
+      "description": "Short context requiring strong BTC-residual relative strength and exhaustion pressure.",
+      "timeframe": "4h",
+      "stopLossPct": 0.08,
+      "horizonBars": 30,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_residual_exhaustion_v01",
+        "tradeCount": 6642,
+        "winRatePct": 45.2273,
+        "averageWinPct": 9.929362,
+        "averageLossPct": -6.442166,
+        "rewardRiskRatio": 1.5413,
+        "profitFactor": 1.2727,
+        "totalReturnPct": 2.3342023914725786e+17,
+        "maxDrawdownPct": 99.981,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 70
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1328,
+          "profitFactor": 1.5454
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.577281,
+      "candidateId": "4h:a191_short_residual_exhaustion_v01:sl0.08:h30"
+    },
+    {
+      "overlayId": "a191_short_residual_exhaustion_v01",
+      "description": "Short context requiring strong BTC-residual relative strength and exhaustion pressure.",
+      "timeframe": "4h",
+      "stopLossPct": 0.05,
+      "horizonBars": 18,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_residual_exhaustion_v01",
+        "tradeCount": 6642,
+        "winRatePct": 41.1623,
+        "averageWinPct": 7.254362,
+        "averageLossPct": -4.477946,
+        "rewardRiskRatio": 1.62,
+        "profitFactor": 1.1334,
+        "totalReturnPct": 2723833.6229,
+        "maxDrawdownPct": 99.8326,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 70
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1328,
+          "profitFactor": 1.5299
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.572607,
+      "candidateId": "4h:a191_short_residual_exhaustion_v01:sl0.05:h18"
+    },
+    {
+      "overlayId": "a191_short_exhaustion_quality_v01",
+      "description": "Short exhaustion context requiring Alpha191-inspired volume-price exhaustion and liquidity-range quality.",
+      "timeframe": "4h",
+      "stopLossPct": 0.04,
+      "horizonBars": 12,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_exhaustion_quality_v01",
+        "tradeCount": 3736,
+        "winRatePct": 39.909,
+        "averageWinPct": 5.946596,
+        "averageLossPct": -3.802973,
+        "rewardRiskRatio": 1.5637,
+        "profitFactor": 1.0385,
+        "totalReturnPct": -80.657,
+        "maxDrawdownPct": 99.891,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 747,
+          "profitFactor": 1.4666
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.556816,
+      "candidateId": "4h:a191_short_exhaustion_quality_v01:sl0.04:h12"
+    },
+    {
+      "overlayId": "a191_short_residual_exhaustion_v01",
+      "description": "Short context requiring strong BTC-residual relative strength and exhaustion pressure.",
+      "timeframe": "4h",
+      "stopLossPct": 0.04,
+      "horizonBars": 12,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_residual_exhaustion_v01",
+        "tradeCount": 6642,
+        "winRatePct": 40.9967,
+        "averageWinPct": 5.647789,
+        "averageLossPct": -3.678277,
+        "rewardRiskRatio": 1.5354,
+        "profitFactor": 1.0669,
+        "totalReturnPct": 270.3827,
+        "maxDrawdownPct": 99.9398,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 70
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1328,
+          "profitFactor": 1.3987
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.553235,
+      "candidateId": "4h:a191_short_residual_exhaustion_v01:sl0.04:h12"
+    },
+    {
+      "overlayId": "a191_short_range_rejection_v01",
+      "description": "Short failed-breakout context requiring Alpha191-inspired range rejection pressure.",
+      "timeframe": "4h",
+      "stopLossPct": 0.06,
+      "horizonBars": 24,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_range_rejection_v01",
+        "tradeCount": 6899,
+        "winRatePct": 41.3393,
+        "averageWinPct": 8.274536,
+        "averageLossPct": -5.353075,
+        "rewardRiskRatio": 1.5458,
+        "profitFactor": 1.0893,
+        "totalReturnPct": 80.8058,
+        "maxDrawdownPct": 99.9788,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1379,
+          "profitFactor": 1.2415
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.548434,
+      "candidateId": "4h:a191_short_range_rejection_v01:sl0.06:h24"
+    },
+    {
+      "overlayId": "a191_short_range_rejection_v01",
+      "description": "Short failed-breakout context requiring Alpha191-inspired range rejection pressure.",
+      "timeframe": "4h",
+      "stopLossPct": 0.05,
+      "horizonBars": 18,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_range_rejection_v01",
+        "tradeCount": 6899,
+        "winRatePct": 40.2087,
+        "averageWinPct": 7.097172,
+        "averageLossPct": -4.520052,
+        "rewardRiskRatio": 1.5702,
+        "profitFactor": 1.0559,
+        "totalReturnPct": -94.1812,
+        "maxDrawdownPct": 99.9127,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1379,
+          "profitFactor": 1.1908
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.545565,
+      "candidateId": "4h:a191_short_range_rejection_v01:sl0.05:h18"
+    },
+    {
+      "overlayId": "a191_short_range_rejection_v01",
+      "description": "Short failed-breakout context requiring Alpha191-inspired range rejection pressure.",
+      "timeframe": "4h",
+      "stopLossPct": 0.08,
+      "horizonBars": 30,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_range_rejection_v01",
+        "tradeCount": 6899,
+        "winRatePct": 43.557,
+        "averageWinPct": 9.741796,
+        "averageLossPct": -6.706387,
+        "rewardRiskRatio": 1.4526,
+        "profitFactor": 1.121,
+        "totalReturnPct": 952.773,
+        "maxDrawdownPct": 99.9993,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1379,
+          "profitFactor": 1.2941
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.544952,
+      "candidateId": "4h:a191_short_range_rejection_v01:sl0.08:h30"
+    },
+    {
+      "overlayId": "a191_short_range_rejection_v01",
+      "description": "Short failed-breakout context requiring Alpha191-inspired range rejection pressure.",
+      "timeframe": "4h",
+      "stopLossPct": 0.04,
+      "horizonBars": 12,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_short_range_rejection_v01",
+        "tradeCount": 6899,
+        "winRatePct": 40.2377,
+        "averageWinPct": 5.547061,
+        "averageLossPct": -3.717775,
+        "rewardRiskRatio": 1.492,
+        "profitFactor": 1.0046,
+        "totalReturnPct": -99.9578,
+        "maxDrawdownPct": 99.9963,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1379,
+          "profitFactor": 1.1681
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.533203,
+      "candidateId": "4h:a191_short_range_rejection_v01:sl0.04:h12"
+    },
+    {
+      "overlayId": "a191_balanced_liquidity_quality_v01",
+      "description": "Existing active-pool direction with Alpha191-inspired liquidity and range-quality controls.",
+      "timeframe": "4h",
+      "stopLossPct": 0.06,
+      "horizonBars": 24,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_balanced_liquidity_quality_v01",
+        "tradeCount": 16021,
+        "winRatePct": 41.689,
+        "averageWinPct": 7.147261,
+        "averageLossPct": -5.271279,
+        "rewardRiskRatio": 1.3559,
+        "profitFactor": 0.9694,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 37,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 3204,
+          "profitFactor": 1.1474
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.516918,
+      "candidateId": "4h:a191_balanced_liquidity_quality_v01:sl0.06:h24"
+    },
+    {
+      "overlayId": "a191_balanced_liquidity_quality_v01",
+      "description": "Existing active-pool direction with Alpha191-inspired liquidity and range-quality controls.",
+      "timeframe": "4h",
+      "stopLossPct": 0.05,
+      "horizonBars": 18,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_balanced_liquidity_quality_v01",
+        "tradeCount": 16021,
+        "winRatePct": 40.8214,
+        "averageWinPct": 6.08885,
+        "averageLossPct": -4.500879,
+        "rewardRiskRatio": 1.3528,
+        "profitFactor": 0.9332,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 37,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 3204,
+          "profitFactor": 1.1561
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.514155,
+      "candidateId": "4h:a191_balanced_liquidity_quality_v01:sl0.05:h18"
+    },
+    {
+      "overlayId": "a191_balanced_liquidity_quality_v01",
+      "description": "Existing active-pool direction with Alpha191-inspired liquidity and range-quality controls.",
+      "timeframe": "4h",
+      "stopLossPct": 0.08,
+      "horizonBars": 30,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_balanced_liquidity_quality_v01",
+        "tradeCount": 16021,
+        "winRatePct": 43.0497,
+        "averageWinPct": 8.150825,
+        "averageLossPct": -6.468563,
+        "rewardRiskRatio": 1.2601,
+        "profitFactor": 0.9525,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 37,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 3204,
+          "profitFactor": 1.0329
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.501288,
+      "candidateId": "4h:a191_balanced_liquidity_quality_v01:sl0.08:h30"
+    },
+    {
+      "overlayId": "a191_balanced_liquidity_quality_v01",
+      "description": "Existing active-pool direction with Alpha191-inspired liquidity and range-quality controls.",
+      "timeframe": "4h",
+      "stopLossPct": 0.04,
+      "horizonBars": 12,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_balanced_liquidity_quality_v01",
+        "tradeCount": 16021,
+        "winRatePct": 39.8165,
+        "averageWinPct": 4.856064,
+        "averageLossPct": -3.674985,
+        "rewardRiskRatio": 1.3214,
+        "profitFactor": 0.8742,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 37,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": true
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 3204,
+          "profitFactor": 0.9977
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.498954,
+      "candidateId": "4h:a191_balanced_liquidity_quality_v01:sl0.04:h12"
+    },
+    {
+      "overlayId": "a191_long_capitulation_reclaim_v01",
+      "description": "Long capitulation context requiring Alpha191-inspired rebound pressure and lower-range reclaim.",
+      "timeframe": "4h",
+      "stopLossPct": 0.06,
+      "horizonBars": 24,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_long_capitulation_reclaim_v01",
+        "tradeCount": 6026,
+        "winRatePct": 38.5828,
+        "averageWinPct": 7.34106,
+        "averageLossPct": -5.509988,
+        "rewardRiskRatio": 1.3323,
+        "profitFactor": 0.837,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": false
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1205,
+          "profitFactor": 0.7299
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.484123,
+      "candidateId": "4h:a191_long_capitulation_reclaim_v01:sl0.06:h24"
+    },
+    {
+      "overlayId": "a191_long_capitulation_reclaim_v01",
+      "description": "Long capitulation context requiring Alpha191-inspired rebound pressure and lower-range reclaim.",
+      "timeframe": "4h",
+      "stopLossPct": 0.05,
+      "horizonBars": 18,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_long_capitulation_reclaim_v01",
+        "tradeCount": 6026,
+        "winRatePct": 39.2964,
+        "averageWinPct": 6.180655,
+        "averageLossPct": -4.742848,
+        "rewardRiskRatio": 1.3032,
+        "profitFactor": 0.8436,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": false
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1205,
+          "profitFactor": 0.7707
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.483942,
+      "candidateId": "4h:a191_long_capitulation_reclaim_v01:sl0.05:h18"
+    },
+    {
+      "overlayId": "a191_long_volume_reclaim_v01",
+      "description": "Long failed-breakdown context requiring volume reclaim pressure and liquidity-range quality.",
+      "timeframe": "4h",
+      "stopLossPct": 0.05,
+      "horizonBars": 18,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_long_volume_reclaim_v01",
+        "tradeCount": 4327,
+        "winRatePct": 39.2651,
+        "averageWinPct": 6.073764,
+        "averageLossPct": -4.733134,
+        "rewardRiskRatio": 1.2832,
+        "profitFactor": 0.8296,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 37,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 78
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": false
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 865,
+          "profitFactor": 0.7673
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.480825,
+      "candidateId": "4h:a191_long_volume_reclaim_v01:sl0.05:h18"
+    },
+    {
+      "overlayId": "a191_long_volume_reclaim_v01",
+      "description": "Long failed-breakdown context requiring volume reclaim pressure and liquidity-range quality.",
+      "timeframe": "4h",
+      "stopLossPct": 0.06,
+      "horizonBars": 24,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_long_volume_reclaim_v01",
+        "tradeCount": 4327,
+        "winRatePct": 38.3869,
+        "averageWinPct": 7.291626,
+        "averageLossPct": -5.508614,
+        "rewardRiskRatio": 1.3237,
+        "profitFactor": 0.8247,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 37,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 78
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": false
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 865,
+          "profitFactor": 0.6831
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.480104,
+      "candidateId": "4h:a191_long_volume_reclaim_v01:sl0.06:h24"
+    },
+    {
+      "overlayId": "a191_long_capitulation_reclaim_v01",
+      "description": "Long capitulation context requiring Alpha191-inspired rebound pressure and lower-range reclaim.",
+      "timeframe": "4h",
+      "stopLossPct": 0.04,
+      "horizonBars": 12,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_long_capitulation_reclaim_v01",
+        "tradeCount": 6026,
+        "winRatePct": 38.085,
+        "averageWinPct": 4.870038,
+        "averageLossPct": -3.88994,
+        "rewardRiskRatio": 1.252,
+        "profitFactor": 0.7701,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": false
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1205,
+          "profitFactor": 0.8165
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.475567,
+      "candidateId": "4h:a191_long_capitulation_reclaim_v01:sl0.04:h12"
+    },
+    {
+      "overlayId": "a191_long_volume_reclaim_v01",
+      "description": "Long failed-breakdown context requiring volume reclaim pressure and liquidity-range quality.",
+      "timeframe": "4h",
+      "stopLossPct": 0.04,
+      "horizonBars": 12,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_long_volume_reclaim_v01",
+        "tradeCount": 4327,
+        "winRatePct": 38.0633,
+        "averageWinPct": 4.872982,
+        "averageLossPct": -3.8868,
+        "rewardRiskRatio": 1.2537,
+        "profitFactor": 0.7705,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 37,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 78
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": false
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 865,
+          "profitFactor": 0.7683
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.473441,
+      "candidateId": "4h:a191_long_volume_reclaim_v01:sl0.04:h12"
+    },
+    {
+      "overlayId": "a191_long_capitulation_reclaim_v01",
+      "description": "Long capitulation context requiring Alpha191-inspired rebound pressure and lower-range reclaim.",
+      "timeframe": "4h",
+      "stopLossPct": 0.08,
+      "horizonBars": 30,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_long_capitulation_reclaim_v01",
+        "tradeCount": 6026,
+        "winRatePct": 39.8772,
+        "averageWinPct": 8.620309,
+        "averageLossPct": -6.857431,
+        "rewardRiskRatio": 1.2571,
+        "profitFactor": 0.8338,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 79
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": false
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 1205,
+          "profitFactor": 0.59
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.470258,
+      "candidateId": "4h:a191_long_capitulation_reclaim_v01:sl0.08:h30"
+    },
+    {
+      "overlayId": "a191_long_volume_reclaim_v01",
+      "description": "Long failed-breakdown context requiring volume reclaim pressure and liquidity-range quality.",
+      "timeframe": "4h",
+      "stopLossPct": 0.08,
+      "horizonBars": 30,
+      "targetRMultiple": 2.0,
+      "metrics": {
+        "label": "a191_long_volume_reclaim_v01",
+        "tradeCount": 4327,
+        "winRatePct": 39.3344,
+        "averageWinPct": 8.511912,
+        "averageLossPct": -6.85344,
+        "rewardRiskRatio": 1.242,
+        "profitFactor": 0.8053,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false,
+        "uniquePairs": 37,
+        "uniqueExchanges": 3,
+        "uniqueMonths": 78
+      },
+      "gate": {
+        "checks": {
+          "minTradeCount80": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minUniqueMonths8": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown45Pct": false,
+          "minRecentProfitFactor0_9": false
+        },
+        "passed": false,
+        "recent": {
+          "sampleCount": 865,
+          "profitFactor": 0.5745
+        },
+        "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+      },
+      "score": 0.46585,
+      "candidateId": "4h:a191_long_volume_reclaim_v01:sl0.08:h30"
+    }
+  ],
+  "bestRawCandidate": {
+    "overlayId": "a191_short_exhaustion_quality_v01",
+    "description": "Short exhaustion context requiring Alpha191-inspired volume-price exhaustion and liquidity-range quality.",
+    "timeframe": "4h",
+    "stopLossPct": 0.06,
+    "horizonBars": 24,
+    "targetRMultiple": 2.0,
+    "metrics": {
+      "label": "a191_short_exhaustion_quality_v01",
+      "tradeCount": 3736,
+      "winRatePct": 40.5514,
+      "averageWinPct": 9.211227,
+      "averageLossPct": -5.402367,
+      "rewardRiskRatio": 1.705,
+      "profitFactor": 1.163,
+      "totalReturnPct": 424733.838,
+      "maxDrawdownPct": 99.7438,
+      "researchWorthContinuing": false,
+      "uniquePairs": 38,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 79
+    },
+    "gate": {
+      "checks": {
+        "minTradeCount80": true,
+        "minUniqueExchanges3": true,
+        "minUniquePairs10": true,
+        "minUniqueMonths8": true,
+        "minProfitFactor1_5": false,
+        "minRewardRisk1_8": false,
+        "maxDrawdown45Pct": false,
+        "minRecentProfitFactor0_9": true
+      },
+      "passed": false,
+      "recent": {
+        "sampleCount": 747,
+        "profitFactor": 1.8455
+      },
+      "meaning": "Raw Alpha191-inspired overlay gate only, not exchange Dry-run approval."
+    },
+    "score": 0.597916,
+    "candidateId": "4h:a191_short_exhaustion_quality_v01:sl0.06:h24"
+  },
+  "bestRawCandidateByExchange": [
+    {
+      "label": "okx",
+      "tradeCount": 1463,
+      "winRatePct": 42.3103,
+      "averageWinPct": 9.402172,
+      "averageLossPct": -5.444083,
+      "rewardRiskRatio": 1.727,
+      "profitFactor": 1.2666,
+      "totalReturnPct": 216272.0363,
+      "maxDrawdownPct": 99.7438,
+      "researchWorthContinuing": false,
+      "uniquePairs": 38,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 77
+    },
+    {
+      "label": "binance",
+      "tradeCount": 1210,
+      "winRatePct": 38.0992,
+      "averageWinPct": 9.196511,
+      "averageLossPct": -5.42566,
+      "rewardRiskRatio": 1.695,
+      "profitFactor": 1.0433,
+      "totalReturnPct": -83.0724,
+      "maxDrawdownPct": 99.1681,
+      "researchWorthContinuing": false,
+      "uniquePairs": 20,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 79
+    },
+    {
+      "label": "bybit",
+      "tradeCount": 1063,
+      "winRatePct": 40.9219,
+      "averageWinPct": 8.955109,
+      "averageLossPct": -5.318523,
+      "rewardRiskRatio": 1.6838,
+      "profitFactor": 1.1663,
+      "totalReturnPct": 1059.9044,
+      "maxDrawdownPct": 99.5464,
+      "researchWorthContinuing": false,
+      "uniquePairs": 20,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 74
+    }
+  ],
+  "bestRawCandidateByPair": [
+    {
+      "label": "DOGE/USDT:USDT",
+      "tradeCount": 298,
+      "winRatePct": 36.5772,
+      "averageWinPct": 9.48801,
+      "averageLossPct": -5.594387,
+      "rewardRiskRatio": 1.696,
+      "profitFactor": 0.9781,
+      "totalReturnPct": -66.742,
+      "maxDrawdownPct": 82.1281,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 52
+    },
+    {
+      "label": "XRP/USDT:USDT",
+      "tradeCount": 248,
+      "winRatePct": 48.7903,
+      "averageWinPct": 8.260242,
+      "averageLossPct": -5.328222,
+      "rewardRiskRatio": 1.5503,
+      "profitFactor": 1.477,
+      "totalReturnPct": 1132.912,
+      "maxDrawdownPct": 45.4362,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 56
+    },
+    {
+      "label": "BCH/USDT:USDT",
+      "tradeCount": 203,
+      "winRatePct": 41.3793,
+      "averageWinPct": 8.588654,
+      "averageLossPct": -5.55898,
+      "rewardRiskRatio": 1.545,
+      "profitFactor": 1.0906,
+      "totalReturnPct": 1.0389,
+      "maxDrawdownPct": 79.2329,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 51
+    },
+    {
+      "label": "LTC/USDT:USDT",
+      "tradeCount": 191,
+      "winRatePct": 29.3194,
+      "averageWinPct": 8.742759,
+      "averageLossPct": -5.467464,
+      "rewardRiskRatio": 1.5991,
+      "profitFactor": 0.6633,
+      "totalReturnPct": -94.8407,
+      "maxDrawdownPct": 97.239,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 41
+    },
+    {
+      "label": "ADA/USDT:USDT",
+      "tradeCount": 188,
+      "winRatePct": 38.8298,
+      "averageWinPct": 9.134055,
+      "averageLossPct": -5.421594,
+      "rewardRiskRatio": 1.6848,
+      "profitFactor": 1.0695,
+      "totalReturnPct": -11.8856,
+      "maxDrawdownPct": 67.6463,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 45
+    },
+    {
+      "label": "LINK/USDT:USDT",
+      "tradeCount": 166,
+      "winRatePct": 39.759,
+      "averageWinPct": 9.98458,
+      "averageLossPct": -5.59394,
+      "rewardRiskRatio": 1.7849,
+      "profitFactor": 1.178,
+      "totalReturnPct": 58.8711,
+      "maxDrawdownPct": 72.0538,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 40
+    },
+    {
+      "label": "BNB/USDT:USDT",
+      "tradeCount": 163,
+      "winRatePct": 50.9202,
+      "averageWinPct": 6.985054,
+      "averageLossPct": -4.269161,
+      "rewardRiskRatio": 1.6362,
+      "profitFactor": 1.6975,
+      "totalReturnPct": 643.2574,
+      "maxDrawdownPct": 51.4911,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 49
+    },
+    {
+      "label": "TRX/USDT:USDT",
+      "tradeCount": 161,
+      "winRatePct": 47.8261,
+      "averageWinPct": 8.890251,
+      "averageLossPct": -4.759002,
+      "rewardRiskRatio": 1.8681,
+      "profitFactor": 1.7124,
+      "totalReturnPct": 963.1697,
+      "maxDrawdownPct": 46.2787,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 42
+    },
+    {
+      "label": "SOL/USDT:USDT",
+      "tradeCount": 158,
+      "winRatePct": 33.5443,
+      "averageWinPct": 10.864312,
+      "averageLossPct": -5.394521,
+      "rewardRiskRatio": 2.014,
+      "profitFactor": 1.0166,
+      "totalReturnPct": -34.0068,
+      "maxDrawdownPct": 74.5839,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 36
+    },
+    {
+      "label": "NEAR/USDT:USDT",
+      "tradeCount": 149,
+      "winRatePct": 39.5973,
+      "averageWinPct": 11.885201,
+      "averageLossPct": -5.834267,
+      "rewardRiskRatio": 2.0371,
+      "profitFactor": 1.3355,
+      "totalReturnPct": 226.9565,
+      "maxDrawdownPct": 75.2907,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 44
+    },
+    {
+      "label": "APT/USDT:USDT",
+      "tradeCount": 147,
+      "winRatePct": 39.4558,
+      "averageWinPct": 8.533772,
+      "averageLossPct": -5.277451,
+      "rewardRiskRatio": 1.617,
+      "profitFactor": 1.0538,
+      "totalReturnPct": -13.6723,
+      "maxDrawdownPct": 55.0362,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 28
+    },
+    {
+      "label": "UNI/USDT:USDT",
+      "tradeCount": 146,
+      "winRatePct": 56.8493,
+      "averageWinPct": 9.992876,
+      "averageLossPct": -4.992965,
+      "rewardRiskRatio": 2.0014,
+      "profitFactor": 2.6368,
+      "totalReturnPct": 9786.0947,
+      "maxDrawdownPct": 30.3959,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 34
+    },
+    {
+      "label": "OP/USDT:USDT",
+      "tradeCount": 142,
+      "winRatePct": 30.2817,
+      "averageWinPct": 11.012442,
+      "averageLossPct": -5.656128,
+      "rewardRiskRatio": 1.947,
+      "profitFactor": 0.8457,
+      "totalReturnPct": -73.0115,
+      "maxDrawdownPct": 90.0166,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 27
+    },
+    {
+      "label": "AAVE/USDT:USDT",
+      "tradeCount": 139,
+      "winRatePct": 33.8129,
+      "averageWinPct": 9.065093,
+      "averageLossPct": -5.683576,
+      "rewardRiskRatio": 1.595,
+      "profitFactor": 0.8148,
+      "totalReturnPct": -74.2586,
+      "maxDrawdownPct": 84.3998,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 43
+    },
+    {
+      "label": "ETH/USDT:USDT",
+      "tradeCount": 120,
+      "winRatePct": 33.3333,
+      "averageWinPct": 6.852794,
+      "averageLossPct": -4.972323,
+      "rewardRiskRatio": 1.3782,
+      "profitFactor": 0.6891,
+      "totalReturnPct": -77.4716,
+      "maxDrawdownPct": 79.5483,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 38
+    },
+    {
+      "label": "DOT/USDT:USDT",
+      "tradeCount": 106,
+      "winRatePct": 46.2264,
+      "averageWinPct": 8.500198,
+      "averageLossPct": -5.492815,
+      "rewardRiskRatio": 1.5475,
+      "profitFactor": 1.3303,
+      "totalReturnPct": 105.1283,
+      "maxDrawdownPct": 58.6103,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 32
+    },
+    {
+      "label": "SUI/USDT:USDT",
+      "tradeCount": 104,
+      "winRatePct": 35.5769,
+      "averageWinPct": 10.959711,
+      "averageLossPct": -5.849498,
+      "rewardRiskRatio": 1.8736,
+      "profitFactor": 1.0347,
+      "totalReturnPct": -18.5217,
+      "maxDrawdownPct": 61.7478,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 26
+    },
+    {
+      "label": "BTC/USDT:USDT",
+      "tradeCount": 101,
+      "winRatePct": 37.6238,
+      "averageWinPct": 4.221246,
+      "averageLossPct": -4.072506,
+      "rewardRiskRatio": 1.0365,
+      "profitFactor": 0.6252,
+      "totalReturnPct": -66.4268,
+      "maxDrawdownPct": 71.6795,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 29
+    },
+    {
+      "label": "AVAX/USDT:USDT",
+      "tradeCount": 98,
+      "winRatePct": 61.2245,
+      "averageWinPct": 9.157265,
+      "averageLossPct": -5.724058,
+      "rewardRiskRatio": 1.5998,
+      "profitFactor": 2.526,
+      "totalReturnPct": 1820.8013,
+      "maxDrawdownPct": 31.1972,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 27
+    },
+    {
+      "label": "ETC/USDT:USDT",
+      "tradeCount": 92,
+      "winRatePct": 41.3043,
+      "averageWinPct": 8.846395,
+      "averageLossPct": -5.293892,
+      "rewardRiskRatio": 1.6711,
+      "profitFactor": 1.1759,
+      "totalReturnPct": 26.7513,
+      "maxDrawdownPct": 77.2643,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 37
+    },
+    {
+      "label": "ARB/USDT:USDT",
+      "tradeCount": 77,
+      "winRatePct": 29.8701,
+      "averageWinPct": 8.225696,
+      "averageLossPct": -5.373284,
+      "rewardRiskRatio": 1.5309,
+      "profitFactor": 0.652,
+      "totalReturnPct": -70.1019,
+      "maxDrawdownPct": 85.5963,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 3,
+      "uniqueMonths": 21
+    },
+    {
+      "label": "SHIB/USDT:USDT",
+      "tradeCount": 76,
+      "winRatePct": 47.3684,
+      "averageWinPct": 7.839816,
+      "averageLossPct": -5.724611,
+      "rewardRiskRatio": 1.3695,
+      "profitFactor": 1.2325,
+      "totalReturnPct": 37.8004,
+      "maxDrawdownPct": 46.5278,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 32
+    },
+    {
+      "label": "CFX/USDT:USDT",
+      "tradeCount": 61,
+      "winRatePct": 42.623,
+      "averageWinPct": 11.664293,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 1.9904,
+      "profitFactor": 1.4786,
+      "totalReturnPct": 108.9966,
+      "maxDrawdownPct": 38.315,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 25
+    },
+    {
+      "label": "DYDX/USDT:USDT",
+      "tradeCount": 50,
+      "winRatePct": 34.0,
+      "averageWinPct": 11.783881,
+      "averageLossPct": -5.678801,
+      "rewardRiskRatio": 2.0751,
+      "profitFactor": 1.069,
+      "totalReturnPct": -4.4908,
+      "maxDrawdownPct": 60.1641,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 20
+    },
+    {
+      "label": "PEPE/USDT:USDT",
+      "tradeCount": 46,
+      "winRatePct": 32.6087,
+      "averageWinPct": 10.425141,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 1.7789,
+      "profitFactor": 0.8608,
+      "totalReturnPct": -32.8921,
+      "maxDrawdownPct": 71.435,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 19
+    },
+    {
+      "label": "GRT/USDT:USDT",
+      "tradeCount": 42,
+      "winRatePct": 28.5714,
+      "averageWinPct": 11.33009,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 1.9333,
+      "profitFactor": 0.7733,
+      "totalReturnPct": -41.2394,
+      "maxDrawdownPct": 60.8063,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 16
+    },
+    {
+      "label": "CRV/USDT:USDT",
+      "tradeCount": 41,
+      "winRatePct": 41.4634,
+      "averageWinPct": 9.84874,
+      "averageLossPct": -5.002218,
+      "rewardRiskRatio": 1.9689,
+      "profitFactor": 1.3946,
+      "totalReturnPct": 41.2845,
+      "maxDrawdownPct": 34.7202,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 24
+    },
+    {
+      "label": "FIL/USDT:USDT",
+      "tradeCount": 38,
+      "winRatePct": 36.8421,
+      "averageWinPct": 6.915619,
+      "averageLossPct": -5.146957,
+      "rewardRiskRatio": 1.3436,
+      "profitFactor": 0.7838,
+      "totalReturnPct": -29.1805,
+      "maxDrawdownPct": 51.3662,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 17
+    },
+    {
+      "label": "ZRO/USDT:USDT",
+      "tradeCount": 32,
+      "winRatePct": 34.375,
+      "averageWinPct": 11.476766,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 1.9584,
+      "profitFactor": 1.0258,
+      "totalReturnPct": -7.789,
+      "maxDrawdownPct": 54.3919,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 11
+    },
+    {
+      "label": "ORDI/USDT:USDT",
+      "tradeCount": 25,
+      "winRatePct": 48.0,
+      "averageWinPct": 12.773129,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 2.1796,
+      "profitFactor": 2.0119,
+      "totalReturnPct": 92.5206,
+      "maxDrawdownPct": 30.0268,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 17
+    },
+    {
+      "label": "TIA/USDT:USDT",
+      "tradeCount": 24,
+      "winRatePct": 58.3333,
+      "averageWinPct": 12.406373,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 2.117,
+      "profitFactor": 2.9638,
+      "totalReturnPct": 180.3918,
+      "maxDrawdownPct": 21.4602,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 10
+    },
+    {
+      "label": "WIF/USDT:USDT",
+      "tradeCount": 24,
+      "winRatePct": 29.1667,
+      "averageWinPct": 13.436364,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 2.2927,
+      "profitFactor": 0.9441,
+      "totalReturnPct": -13.4239,
+      "maxDrawdownPct": 30.3959,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 12
+    },
+    {
+      "label": "INJ/USDT:USDT",
+      "tradeCount": 20,
+      "winRatePct": 40.0,
+      "averageWinPct": 12.915298,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 2.2038,
+      "profitFactor": 1.4692,
+      "totalReturnPct": 27.9463,
+      "maxDrawdownPct": 34.475,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 10
+    },
+    {
+      "label": "KSM/USDT:USDT",
+      "tradeCount": 20,
+      "winRatePct": 40.0,
+      "averageWinPct": 12.542855,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 2.1403,
+      "profitFactor": 1.4269,
+      "totalReturnPct": 24.4575,
+      "maxDrawdownPct": 25.6708,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 12
+    },
+    {
+      "label": "ATOM/USDT:USDT",
+      "tradeCount": 14,
+      "winRatePct": 71.4286,
+      "averageWinPct": 6.906029,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 1.1784,
+      "profitFactor": 2.9461,
+      "totalReturnPct": 51.2108,
+      "maxDrawdownPct": 6.3484,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 9
+    },
+    {
+      "label": "ZK/USDT:USDT",
+      "tradeCount": 14,
+      "winRatePct": 28.5714,
+      "averageWinPct": 11.235391,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 1.9172,
+      "profitFactor": 0.7669,
+      "totalReturnPct": -16.5074,
+      "maxDrawdownPct": 21.4602,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 7
+    },
+    {
+      "label": "FLOW/USDT:USDT",
+      "tradeCount": 6,
+      "winRatePct": 66.6667,
+      "averageWinPct": 10.055982,
+      "averageLossPct": -5.860377,
+      "rewardRiskRatio": 1.7159,
+      "profitFactor": 3.4319,
+      "totalReturnPct": 29.5707,
+      "maxDrawdownPct": 5.8604,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 3
+    },
+    {
+      "label": "SEI/USDT:USDT",
+      "tradeCount": 6,
+      "winRatePct": 50.0,
+      "averageWinPct": 13.436364,
+      "averageLossPct": -4.958518,
+      "rewardRiskRatio": 2.7098,
+      "profitFactor": 2.7098,
+      "totalReturnPct": 25.2795,
+      "maxDrawdownPct": 8.8303,
+      "researchWorthContinuing": false,
+      "uniquePairs": 1,
+      "uniqueExchanges": 1,
+      "uniqueMonths": 4
+    }
+  ],
+  "exitAwarePolicyRows": [
+    {
+      "policyId": "global_loss_exit_pause_8h",
+      "description": "After any selected trade closes at a loss, pause all new selections for eight hours.",
+      "metrics": {
+        "tradeCount": 1412,
+        "winRatePct": 43.6261,
+        "averageWinR": 1.478558,
+        "averageLossR": -0.875413,
+        "profitFactor": 1.307052,
+        "rewardRiskRatio": 1.688983,
+        "totalR": 213.9629,
+        "maxDrawdownR": 91.7798,
+        "maxConsecutiveLosses": 42,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 629,
+          "winRatePct": 44.3561,
+          "averageWinR": 1.537588,
+          "averageLossR": -0.893127,
+          "profitFactor": 1.372344,
+          "rewardRiskRatio": 1.721579,
+          "totalR": 116.3927,
+          "maxDrawdownR": 47.4912,
+          "maxConsecutiveLosses": 20,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 401,
+          "winRatePct": 45.3865,
+          "averageWinR": 1.425836,
+          "averageLossR": -0.861986,
+          "profitFactor": 1.374664,
+          "rewardRiskRatio": 1.654128,
+          "totalR": 70.7271,
+          "maxDrawdownR": 21.1048,
+          "maxConsecutiveLosses": 18,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 382,
+          "winRatePct": 40.5759,
+          "averageWinR": 1.434209,
+          "averageLossR": -0.861054,
+          "profitFactor": 1.137333,
+          "rewardRiskRatio": 1.665643,
+          "totalR": 26.8431,
+          "maxDrawdownR": 29.4074,
+          "maxConsecutiveLosses": 14,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 1412
+    },
+    {
+      "policyId": "pair_loss_exit_3d",
+      "description": "After a selected trade closes at a loss, pause that pair for three days.",
+      "metrics": {
+        "tradeCount": 1526,
+        "winRatePct": 43.7746,
+        "averageWinR": 1.47255,
+        "averageLossR": -0.883934,
+        "profitFactor": 1.296998,
+        "rewardRiskRatio": 1.665905,
+        "totalR": 225.2479,
+        "maxDrawdownR": 125.9049,
+        "maxConsecutiveLosses": 55,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 685,
+          "winRatePct": 44.3796,
+          "averageWinR": 1.532138,
+          "averageLossR": -0.896727,
+          "profitFactor": 1.363284,
+          "rewardRiskRatio": 1.70859,
+          "totalR": 124.1171,
+          "maxDrawdownR": 54.2615,
+          "maxConsecutiveLosses": 21,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 438,
+          "winRatePct": 45.4338,
+          "averageWinR": 1.402323,
+          "averageLossR": -0.874887,
+          "profitFactor": 1.3346,
+          "rewardRiskRatio": 1.602861,
+          "totalR": 69.9642,
+          "maxDrawdownR": 37.1526,
+          "maxConsecutiveLosses": 15,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 403,
+          "winRatePct": 40.9429,
+          "averageWinR": 1.447464,
+          "averageLossR": -0.872541,
+          "profitFactor": 1.150082,
+          "rewardRiskRatio": 1.658906,
+          "totalR": 31.1667,
+          "maxDrawdownR": 37.032,
+          "maxConsecutiveLosses": 20,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 1526
+    },
+    {
+      "policyId": "pair_loss_exit_7d",
+      "description": "After a selected trade closes at a loss, pause that pair for seven days.",
+      "metrics": {
+        "tradeCount": 1465,
+        "winRatePct": 43.8225,
+        "averageWinR": 1.449847,
+        "averageLossR": -0.878256,
+        "profitFactor": 1.287764,
+        "rewardRiskRatio": 1.650825,
+        "totalR": 207.9972,
+        "maxDrawdownR": 121.7163,
+        "maxConsecutiveLosses": 52,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 657,
+          "winRatePct": 44.5967,
+          "averageWinR": 1.517876,
+          "averageLossR": -0.891701,
+          "profitFactor": 1.370198,
+          "rewardRiskRatio": 1.702225,
+          "totalR": 120.1586,
+          "maxDrawdownR": 48.2179,
+          "maxConsecutiveLosses": 18,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 421,
+          "winRatePct": 45.6057,
+          "averageWinR": 1.371804,
+          "averageLossR": -0.868364,
+          "profitFactor": 1.324513,
+          "rewardRiskRatio": 1.579758,
+          "totalR": 64.5311,
+          "maxDrawdownR": 37.249,
+          "maxConsecutiveLosses": 15,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 387,
+          "winRatePct": 40.5685,
+          "averageWinR": 1.418329,
+          "averageLossR": -0.866827,
+          "profitFactor": 1.116906,
+          "rewardRiskRatio": 1.636231,
+          "totalR": 23.3075,
+          "maxDrawdownR": 36.8371,
+          "maxConsecutiveLosses": 21,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 1465
+    },
+    {
+      "policyId": "pair_loss_exit_5d",
+      "description": "After a selected trade closes at a loss, pause that pair for five days.",
+      "metrics": {
+        "tradeCount": 1491,
+        "winRatePct": 43.5949,
+        "averageWinR": 1.451315,
+        "averageLossR": -0.882059,
+        "profitFactor": 1.271691,
+        "rewardRiskRatio": 1.645372,
+        "totalR": 201.5432,
+        "maxDrawdownR": 129.9789,
+        "maxConsecutiveLosses": 55,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 669,
+          "winRatePct": 44.2451,
+          "averageWinR": 1.513023,
+          "averageLossR": -0.895011,
+          "profitFactor": 1.341529,
+          "rewardRiskRatio": 1.690508,
+          "totalR": 114.0158,
+          "maxDrawdownR": 52.594,
+          "maxConsecutiveLosses": 21,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 429,
+          "winRatePct": 45.2214,
+          "averageWinR": 1.380748,
+          "averageLossR": -0.873154,
+          "profitFactor": 1.305443,
+          "rewardRiskRatio": 1.581335,
+          "totalR": 62.6741,
+          "maxDrawdownR": 39.6779,
+          "maxConsecutiveLosses": 15,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 393,
+          "winRatePct": 40.7125,
+          "averageWinR": 1.422716,
+          "averageLossR": -0.870305,
+          "profitFactor": 1.122563,
+          "rewardRiskRatio": 1.634732,
+          "totalR": 24.8534,
+          "maxDrawdownR": 38.2946,
+          "maxConsecutiveLosses": 20,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 1491
+    },
+    {
+      "policyId": "global_loss_exit_pause_24h",
+      "description": "After any selected trade closes at a loss, pause all new selections for twenty-four hours.",
+      "metrics": {
+        "tradeCount": 978,
+        "winRatePct": 43.6605,
+        "averageWinR": 1.411923,
+        "averageLossR": -0.860974,
+        "profitFactor": 1.270858,
+        "rewardRiskRatio": 1.639913,
+        "totalR": 128.4943,
+        "maxDrawdownR": 66.2121,
+        "maxConsecutiveLosses": 31,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 444,
+          "winRatePct": 44.3694,
+          "averageWinR": 1.495814,
+          "averageLossR": -0.878486,
+          "profitFactor": 1.358039,
+          "rewardRiskRatio": 1.702718,
+          "totalR": 77.6893,
+          "maxDrawdownR": 34.8216,
+          "maxConsecutiveLosses": 22,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 274,
+          "winRatePct": 44.8905,
+          "averageWinR": 1.284702,
+          "averageLossR": -0.840594,
+          "profitFactor": 1.244928,
+          "rewardRiskRatio": 1.528326,
+          "totalR": 31.0886,
+          "maxDrawdownR": 20.6758,
+          "maxConsecutiveLosses": 11,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 260,
+          "winRatePct": 41.1538,
+          "averageWinR": 1.403713,
+          "averageLossR": -0.852817,
+          "profitFactor": 1.151105,
+          "rewardRiskRatio": 1.645973,
+          "totalR": 19.7163,
+          "maxDrawdownR": 16.7404,
+          "maxConsecutiveLosses": 16,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 978
+    },
+    {
+      "policyId": "pair_loss_exit_10d",
+      "description": "After a selected trade closes at a loss, pause that pair for ten days.",
+      "metrics": {
+        "tradeCount": 1426,
+        "winRatePct": 43.5484,
+        "averageWinR": 1.43055,
+        "averageLossR": -0.886096,
+        "profitFactor": 1.245427,
+        "rewardRiskRatio": 1.614442,
+        "totalR": 175.0644,
+        "maxDrawdownR": 130.8929,
+        "maxConsecutiveLosses": 52,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 636,
+          "winRatePct": 44.1824,
+          "averageWinR": 1.49269,
+          "averageLossR": -0.898657,
+          "profitFactor": 1.314782,
+          "rewardRiskRatio": 1.661024,
+          "totalR": 100.4228,
+          "maxDrawdownR": 56.6352,
+          "maxConsecutiveLosses": 18,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 411,
+          "winRatePct": 45.2555,
+          "averageWinR": 1.360031,
+          "averageLossR": -0.8772,
+          "profitFactor": 1.281683,
+          "rewardRiskRatio": 1.550423,
+          "totalR": 55.5958,
+          "maxDrawdownR": 37.5346,
+          "maxConsecutiveLosses": 16,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 379,
+          "winRatePct": 40.6332,
+          "averageWinR": 1.402334,
+          "averageLossR": -0.875172,
+          "profitFactor": 1.096722,
+          "rewardRiskRatio": 1.602354,
+          "totalR": 19.0459,
+          "maxDrawdownR": 37.3107,
+          "maxConsecutiveLosses": 20,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 1426
+    },
+    {
+      "policyId": "global_loss_exit_pause_48h",
+      "description": "After any selected trade closes at a loss, pause all new selections for forty-eight hours.",
+      "metrics": {
+        "tradeCount": 821,
+        "winRatePct": 43.4836,
+        "averageWinR": 1.387078,
+        "averageLossR": -0.875811,
+        "profitFactor": 1.218543,
+        "rewardRiskRatio": 1.583764,
+        "totalR": 88.8106,
+        "maxDrawdownR": 61.9466,
+        "maxConsecutiveLosses": 34,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 363,
+          "winRatePct": 43.8017,
+          "averageWinR": 1.452205,
+          "averageLossR": -0.887742,
+          "profitFactor": 1.274994,
+          "rewardRiskRatio": 1.635842,
+          "totalR": 49.8013,
+          "maxDrawdownR": 30.0432,
+          "maxConsecutiveLosses": 18,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 231,
+          "winRatePct": 45.8874,
+          "averageWinR": 1.327596,
+          "averageLossR": -0.859094,
+          "profitFactor": 1.310451,
+          "rewardRiskRatio": 1.545343,
+          "totalR": 33.3383,
+          "maxDrawdownR": 15.408,
+          "maxConsecutiveLosses": 9,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 227,
+          "winRatePct": 40.5286,
+          "averageWinR": 1.343054,
+          "averageLossR": -0.873259,
+          "profitFactor": 1.048104,
+          "rewardRiskRatio": 1.537979,
+          "totalR": 5.671,
+          "maxDrawdownR": 22.2703,
+          "maxConsecutiveLosses": 16,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 821
+    },
+    {
+      "policyId": "pair_loss_exit_14d",
+      "description": "After a selected trade closes at a loss, pause that pair for fourteen days.",
+      "metrics": {
+        "tradeCount": 1358,
+        "winRatePct": 42.3417,
+        "averageWinR": 1.398126,
+        "averageLossR": -0.887133,
+        "profitFactor": 1.157347,
+        "rewardRiskRatio": 1.576005,
+        "totalR": 109.2975,
+        "maxDrawdownR": 141.1562,
+        "maxConsecutiveLosses": 52,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 610,
+          "winRatePct": 43.6066,
+          "averageWinR": 1.47397,
+          "averageLossR": -0.902499,
+          "profitFactor": 1.262889,
+          "rewardRiskRatio": 1.633209,
+          "totalR": 81.6164,
+          "maxDrawdownR": 54.504,
+          "maxConsecutiveLosses": 18,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 388,
+          "winRatePct": 43.299,
+          "averageWinR": 1.314789,
+          "averageLossR": -0.876403,
+          "profitFactor": 1.145615,
+          "rewardRiskRatio": 1.50021,
+          "totalR": 28.0759,
+          "maxDrawdownR": 46.7288,
+          "maxConsecutiveLosses": 18,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 360,
+          "winRatePct": 39.1667,
+          "averageWinR": 1.354339,
+          "averageLossR": -0.873774,
+          "profitFactor": 0.997937,
+          "rewardRiskRatio": 1.549987,
+          "totalR": -0.3948,
+          "maxDrawdownR": 42.3788,
+          "maxConsecutiveLosses": 20,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 1358
+    },
+    {
+      "policyId": "pair_loss_exit_21d",
+      "description": "After a selected trade closes at a loss, pause that pair for twenty-one days.",
+      "metrics": {
+        "tradeCount": 1245,
+        "winRatePct": 41.6867,
+        "averageWinR": 1.391013,
+        "averageLossR": -0.873497,
+        "profitFactor": 1.138416,
+        "rewardRiskRatio": 1.592466,
+        "totalR": 87.7775,
+        "maxDrawdownR": 109.2613,
+        "maxConsecutiveLosses": 52,
+        "uniquePairs": 38,
+        "uniqueExchanges": 3
+      },
+      "byExchange": [
+        {
+          "tradeCount": 573,
+          "winRatePct": 43.4555,
+          "averageWinR": 1.481902,
+          "averageLossR": -0.893288,
+          "profitFactor": 1.274918,
+          "rewardRiskRatio": 1.658929,
+          "totalR": 79.5682,
+          "maxDrawdownR": 42.1941,
+          "maxConsecutiveLosses": 19,
+          "uniquePairs": 38,
+          "uniqueExchanges": 1,
+          "exchange": "okx"
+        },
+        {
+          "tradeCount": 349,
+          "winRatePct": 41.8338,
+          "averageWinR": 1.320728,
+          "averageLossR": -0.855458,
+          "profitFactor": 1.11038,
+          "rewardRiskRatio": 1.543884,
+          "totalR": 19.1683,
+          "maxDrawdownR": 46.8555,
+          "maxConsecutiveLosses": 20,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "bybit"
+        },
+        {
+          "tradeCount": 323,
+          "winRatePct": 38.3901,
+          "averageWinR": 1.291259,
+          "averageLossR": -0.859674,
+          "profitFactor": 0.93594,
+          "rewardRiskRatio": 1.502033,
+          "totalR": -10.959,
+          "maxDrawdownR": 34.563,
+          "maxConsecutiveLosses": 20,
+          "uniquePairs": 20,
+          "uniqueExchanges": 1,
+          "exchange": "binance"
+        }
+      ],
+      "gate": {
+        "checks": {
+          "minTradeCount300": true,
+          "minUniqueExchanges3": true,
+          "minUniquePairs10": true,
+          "minProfitFactor1_5": false,
+          "minRewardRisk1_8": false,
+          "maxDrawdown20R": false,
+          "maxConsecutiveLosses12": false
+        },
+        "passed": false,
+        "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+      },
+      "selectedSignalCount": 1245
+    }
+  ],
+  "bestExitAwarePolicy": {
+    "policyId": "global_loss_exit_pause_8h",
+    "description": "After any selected trade closes at a loss, pause all new selections for eight hours.",
+    "metrics": {
+      "tradeCount": 1412,
+      "winRatePct": 43.6261,
+      "averageWinR": 1.478558,
+      "averageLossR": -0.875413,
+      "profitFactor": 1.307052,
+      "rewardRiskRatio": 1.688983,
+      "totalR": 213.9629,
+      "maxDrawdownR": 91.7798,
+      "maxConsecutiveLosses": 42,
+      "uniquePairs": 38,
+      "uniqueExchanges": 3
+    },
+    "byExchange": [
+      {
+        "tradeCount": 629,
+        "winRatePct": 44.3561,
+        "averageWinR": 1.537588,
+        "averageLossR": -0.893127,
+        "profitFactor": 1.372344,
+        "rewardRiskRatio": 1.721579,
+        "totalR": 116.3927,
+        "maxDrawdownR": 47.4912,
+        "maxConsecutiveLosses": 20,
+        "uniquePairs": 38,
+        "uniqueExchanges": 1,
+        "exchange": "okx"
+      },
+      {
+        "tradeCount": 401,
+        "winRatePct": 45.3865,
+        "averageWinR": 1.425836,
+        "averageLossR": -0.861986,
+        "profitFactor": 1.374664,
+        "rewardRiskRatio": 1.654128,
+        "totalR": 70.7271,
+        "maxDrawdownR": 21.1048,
+        "maxConsecutiveLosses": 18,
+        "uniquePairs": 20,
+        "uniqueExchanges": 1,
+        "exchange": "bybit"
+      },
+      {
+        "tradeCount": 382,
+        "winRatePct": 40.5759,
+        "averageWinR": 1.434209,
+        "averageLossR": -0.861054,
+        "profitFactor": 1.137333,
+        "rewardRiskRatio": 1.665643,
+        "totalR": 26.8431,
+        "maxDrawdownR": 29.4074,
+        "maxConsecutiveLosses": 14,
+        "uniquePairs": 20,
+        "uniqueExchanges": 1,
+        "exchange": "binance"
+      }
+    ],
+    "gate": {
+      "checks": {
+        "minTradeCount300": true,
+        "minUniqueExchanges3": true,
+        "minUniquePairs10": true,
+        "minProfitFactor1_5": false,
+        "minRewardRisk1_8": false,
+        "maxDrawdown20R": false,
+        "maxConsecutiveLosses12": false
+      },
+      "passed": false,
+      "meaning": "Research threshold for local paper refresh review only, not exchange Dry-run approval."
+    },
+    "selectedSignalCount": 1412
+  },
+  "localPaperSimulation": {
+    "config": {
+      "account_id": "default_local_paper_sandbox",
+      "initial_equity": 10000.0,
+      "risk_per_signal_pct": 1.0,
+      "max_concurrent_positions": 8,
+      "max_notional_per_signal_pct": 35.0,
+      "stop_loss_pct": 0.06,
+      "source": "v13_5_23_alpha191_crypto_subset_local_paper"
+    },
+    "ledgerMetrics": {
+      "tradeCount": 1112,
+      "winCount": 477,
+      "lossCount": 635,
+      "winRatePct": 42.8957,
+      "averageWin": 184.004652,
+      "averageLoss": -100.266826,
+      "rewardRiskRatio": 1.8351,
+      "profitFactor": 1.3785,
+      "initialEquity": 10000.0,
+      "finalEquity": 34100.784277,
+      "totalReturnPct": 241.0078,
+      "maxDrawdownPct": 51.845183,
+      "skippedSignalCount": 300,
+      "filledSignalCount": 1112,
+      "maxConcurrentPositions": 8
+    },
+    "gate": {
+      "checks": {
+        "minFilledSignals300": true,
+        "maxSkippedRate5Pct": false,
+        "minProfitFactor1_5": false,
+        "minRewardRisk1_8": true,
+        "maxDrawdown20Pct": false,
+        "positiveTotalReturn": true
+      },
+      "passed": false,
+      "skippedRatePct": 21.246459,
+      "meaning": "Local paper refresh mechanics gate only, not exchange Dry-run approval."
+    },
+    "skippedSignalCount": 300
+  },
+  "decision": {
+    "alpha191SubsetImplemented": true,
+    "formulaCopied": false,
+    "rawReplayGatePassed": false,
+    "exitAwareGatePassed": false,
+    "localPaperGatePassed": false,
+    "readyForForwardRefreshComparison": false,
+    "readyForExchangeDryRunReview": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "nextAction": "keep_alpha191_subset_as_research_only_and_do_not_replace_v13_5_21"
+  },
+  "safety": {
+    "tradeApi": false,
+    "withdrawApi": false,
+    "apiKeyStorage": false,
+    "realAccountRead": false,
+    "realPositionRead": false,
+    "orderCreation": false,
+    "automaticTrading": false
+  }
+}

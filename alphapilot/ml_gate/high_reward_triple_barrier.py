@@ -13,6 +13,11 @@ try:
 except ImportError:  # pragma: no cover - optional research overlay
     ALPHA101_STYLE_FACTOR_COLUMNS = []
 
+try:
+    from alphapilot.factors.alpha191_crypto_safe_subset import ALPHA191_CRYPTO_SAFE_FACTOR_COLUMNS
+except ImportError:  # pragma: no cover - optional research overlay
+    ALPHA191_CRYPTO_SAFE_FACTOR_COLUMNS = []
+
 
 HIGH_REWARD_FEATURE_COLUMNS = [
     "pair",
@@ -55,6 +60,7 @@ HIGH_REWARD_FEATURE_COLUMNS = [
     "relative_return_6",
     "btc_regime",
     *ALPHA101_STYLE_FACTOR_COLUMNS,
+    *ALPHA191_CRYPTO_SAFE_FACTOR_COLUMNS,
 ]
 
 
