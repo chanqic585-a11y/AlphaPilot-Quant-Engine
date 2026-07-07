@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.7.20 - Five Strategy Candidate Factory
+AlphaPilot V13.7.21 - Paper Observation Task Pack
 ```
 
 ## Positioning
@@ -3933,6 +3933,50 @@ and candidates 115/117 have thin train samples, so they require forward paper
 observation before any future exchange Dry-run review.
 
 V13.7.20 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
+## V13.7.21 Paper Observation Task Pack
+
+V13.7.21 turns the five V13.7.20 research candidates into local
+paper-observation tasks. This is the bridge between historical research and
+forward observation: the strategies still cannot create orders, cannot run
+exchange Dry-run, and cannot trade automatically.
+
+```powershell
+python -m alphapilot.reports.generate_v13_7_21_paper_observation_task_pack
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_7_21_paper_observation_task_pack.py
+reports/v13_7_21_paper_observation_task_pack_report.json
+reports/v13_7_21_paper_observation_task_pack_summary.md
+docs/V13.7.21-paper-observation-task-pack.md
+```
+
+Result:
+
+```text
+taskCount: 5
+plannedPaperObservationCount: 5
+targetClosedSamplesTotal: 130
+dryRunApproved: false
+liveTradingApproved: false
+```
+
+Each task includes:
+
+- observation days and target closed sample count
+- weak points from walk-forward splits
+- recommended pairs and pairs requiring review
+- daily log fields
+- promotion criteria
+- rejection criteria
+- blocked actions: exchange Dry-run, live trading, order creation, automatic trading, API key storage
+
+V13.7.21 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 

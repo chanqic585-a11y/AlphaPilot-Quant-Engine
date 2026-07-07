@@ -1,0 +1,829 @@
+{
+  "reportId": "v13_7_21_paper_observation_task_pack",
+  "version": "V13.7.21",
+  "status": "completed",
+  "generatedAt": "2026-07-07T02:30:47.738806Z",
+  "source": "alphapilot_paper_observation_task_pack_v13_7_21",
+  "objective": "Convert V13.7.20 approved research candidates into local paper-observation tasks.",
+  "inputReports": [
+    "reports\\v13_7_20_five_strategy_candidate_factory_report.json"
+  ],
+  "summary": {
+    "taskCount": 5,
+    "plannedPaperObservationCount": 5,
+    "standardConfidenceCount": 2,
+    "cautiousObservationCount": 3,
+    "targetClosedSamplesTotal": 130,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "nextStep": "Use the desktop console to track these local paper-observation tasks; do not move to exchange Dry-run."
+  },
+  "paperObservationTasks": [
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_089",
+      "strategyId": "v13_7_20_lf_research_candidate_089",
+      "candidateId": "lf_research_candidate_089",
+      "title": "1D 趋势突破确认 ATR2.0",
+      "displaySubtitle": "固定 2R · 本地纸面观察 · 不自动交易",
+      "status": "planned_paper_observation",
+      "rank": 1,
+      "sourceReport": "reports\\v13_7_20_five_strategy_candidate_factory_report.json",
+      "timeframe": "1d",
+      "family": "breakout",
+      "btcRegimes": [
+        "bull",
+        "recovery"
+      ],
+      "targetRewardRiskRatio": 2.0,
+      "historicalMetrics": {
+        "tradeCount": 319,
+        "winRatePct": 45.4545,
+        "profitFactor": 1.5035,
+        "totalReturnPct": 80.2621,
+        "maxDrawdownPct": 21.4697,
+        "maxConsecutiveLosses": 12
+      },
+      "observationPlan": {
+        "confidenceTier": "medium_caution",
+        "observationDays": 90,
+        "targetClosedSamples": 25,
+        "minimumRuleMatchedSignals": 12,
+        "recordNoSignalDays": true,
+        "recordInvalidatedSetups": true,
+        "recordMissedSignals": true,
+        "recordPairLevelDrift": true
+      },
+      "recommendedPairs": [
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 14,
+          "winRatePct": 64.2857,
+          "profitFactor": 4.1641,
+          "totalReturnPct": 12.621,
+          "maxDrawdownPct": 1.9025
+        },
+        {
+          "pair": "KSM/USDT:USDT",
+          "tradeCount": 7,
+          "winRatePct": 71.4286,
+          "profitFactor": 3.4891,
+          "totalReturnPct": 5.0227,
+          "maxDrawdownPct": 0.9894
+        },
+        {
+          "pair": "BNB/USDT:USDT",
+          "tradeCount": 13,
+          "winRatePct": 61.5385,
+          "profitFactor": 2.8021,
+          "totalReturnPct": 7.8569,
+          "maxDrawdownPct": 3.097
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 30,
+          "winRatePct": 56.6667,
+          "profitFactor": 2.4829,
+          "totalReturnPct": 16.0977,
+          "maxDrawdownPct": 3.0473
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 14,
+          "winRatePct": 57.1429,
+          "profitFactor": 2.1759,
+          "totalReturnPct": 7.139,
+          "maxDrawdownPct": 1.9286
+        },
+        {
+          "pair": "AVAX/USDT:USDT",
+          "tradeCount": 15,
+          "winRatePct": 60.0,
+          "profitFactor": 2.1152,
+          "totalReturnPct": 6.7574,
+          "maxDrawdownPct": 2.9738
+        },
+        {
+          "pair": "ETH/USDT:USDT",
+          "tradeCount": 28,
+          "winRatePct": 46.4286,
+          "profitFactor": 1.8473,
+          "totalReturnPct": 9.9184,
+          "maxDrawdownPct": 2.2383
+        },
+        {
+          "pair": "CFX/USDT:USDT",
+          "tradeCount": 12,
+          "winRatePct": 41.6667,
+          "profitFactor": 1.8416,
+          "totalReturnPct": 4.5456,
+          "maxDrawdownPct": 2.3256
+        }
+      ],
+      "avoidUntilReviewedPairs": [
+        {
+          "pair": "CRV/USDT:USDT",
+          "tradeCount": 18,
+          "profitFactor": 0.4483,
+          "totalReturnPct": -7.3404
+        },
+        {
+          "pair": "SUI/USDT:USDT",
+          "tradeCount": 13,
+          "profitFactor": 0.6127,
+          "totalReturnPct": -2.7496
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 21,
+          "profitFactor": 0.8533,
+          "totalReturnPct": -1.8896
+        },
+        {
+          "pair": "FLOKI/USDT:USDT",
+          "tradeCount": 7,
+          "profitFactor": 0.9293,
+          "totalReturnPct": -0.3024
+        },
+        {
+          "pair": "LINK/USDT:USDT",
+          "tradeCount": 23,
+          "profitFactor": 0.9859,
+          "totalReturnPct": -0.2029
+        },
+        {
+          "pair": "SHIB/USDT:USDT",
+          "tradeCount": 9,
+          "profitFactor": 0.9809,
+          "totalReturnPct": -0.1161
+        }
+      ],
+      "weakPoints": [
+        "test_2025_2026 profit factor is close to break-even: 1.0028.",
+        "test_2025_2026 return is thin: 0.0842%.",
+        "Historical max consecutive losses reached 12."
+      ],
+      "dailyLogFields": [
+        "date",
+        "pair",
+        "timeframe",
+        "signalObserved",
+        "ruleMatched",
+        "entryContext",
+        "btcRegime",
+        "paperOutcomeR",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "promotionCriteria": [
+        "Collect at least 25 closed local paper-observation samples.",
+        "Forward paper-observation profit factor must remain above 1.20.",
+        "Forward paper-observation average R must remain positive.",
+        "Max drawdown must stay within the historical drawdown plus a documented tolerance.",
+        "No unreviewed regime drift, liquidity issue, or data-quality issue may remain open."
+      ],
+      "rejectionCriteria": [
+        "Reject or redesign if forward paper-observation PF is below 1.0 after the target sample count.",
+        "Reject or redesign if three or more severe data-quality or liquidity warnings appear.",
+        "Reject or redesign if observed signals concentrate in pairs that were historically weak.",
+        "Reject or redesign if the rule requires discretionary exceptions to look acceptable."
+      ],
+      "allowedNextAction": "local_paper_observation_only",
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ],
+      "approval": {
+        "paperObservationApproved": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_117",
+      "strategyId": "v13_7_20_lf_research_candidate_117",
+      "candidateId": "lf_research_candidate_117",
+      "title": "1D 横盘超卖修复 ATR1.2",
+      "displaySubtitle": "固定 2R · 本地纸面观察 · 不自动交易",
+      "status": "planned_paper_observation",
+      "rank": 2,
+      "sourceReport": "reports\\v13_7_20_five_strategy_candidate_factory_report.json",
+      "timeframe": "1d",
+      "family": "mean_reversion",
+      "btcRegimes": [
+        "sideways"
+      ],
+      "targetRewardRiskRatio": 2.0,
+      "historicalMetrics": {
+        "tradeCount": 36,
+        "winRatePct": 58.3333,
+        "profitFactor": 2.4289,
+        "totalReturnPct": 21.7981,
+        "maxDrawdownPct": 6.8439,
+        "maxConsecutiveLosses": 7
+      },
+      "observationPlan": {
+        "confidenceTier": "medium_caution",
+        "observationDays": 90,
+        "targetClosedSamples": 25,
+        "minimumRuleMatchedSignals": 12,
+        "recordNoSignalDays": true,
+        "recordInvalidatedSetups": true,
+        "recordMissedSignals": true,
+        "recordPairLevelDrift": true
+      },
+      "recommendedPairs": [
+        {
+          "pair": "XRP/USDT:USDT",
+          "tradeCount": 6,
+          "winRatePct": 83.3333,
+          "profitFactor": 7.7462,
+          "totalReturnPct": 6.8329,
+          "maxDrawdownPct": 0.9749
+        },
+        {
+          "pair": "SUI/USDT:USDT",
+          "tradeCount": 4,
+          "winRatePct": 50.0,
+          "profitFactor": 1.9613,
+          "totalReturnPct": 1.9411,
+          "maxDrawdownPct": 1.0188
+        },
+        {
+          "pair": "ETH/USDT:USDT",
+          "tradeCount": 4,
+          "winRatePct": 100.0,
+          "profitFactor": null,
+          "totalReturnPct": 7.8898,
+          "maxDrawdownPct": 0.0
+        }
+      ],
+      "avoidUntilReviewedPairs": [
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 3,
+          "profitFactor": 0.9684,
+          "totalReturnPct": -0.0646
+        },
+        {
+          "pair": "LINK/USDT:USDT",
+          "tradeCount": 3,
+          "profitFactor": 0.9706,
+          "totalReturnPct": -0.0599
+        }
+      ],
+      "weakPoints": [
+        "train_2020_2022 sample is thin: 4 trades."
+      ],
+      "dailyLogFields": [
+        "date",
+        "pair",
+        "timeframe",
+        "signalObserved",
+        "ruleMatched",
+        "entryContext",
+        "btcRegime",
+        "paperOutcomeR",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "promotionCriteria": [
+        "Collect at least 25 closed local paper-observation samples.",
+        "Forward paper-observation profit factor must remain above 1.20.",
+        "Forward paper-observation average R must remain positive.",
+        "Max drawdown must stay within the historical drawdown plus a documented tolerance.",
+        "No unreviewed regime drift, liquidity issue, or data-quality issue may remain open."
+      ],
+      "rejectionCriteria": [
+        "Reject or redesign if forward paper-observation PF is below 1.0 after the target sample count.",
+        "Reject or redesign if three or more severe data-quality or liquidity warnings appear.",
+        "Reject or redesign if observed signals concentrate in pairs that were historically weak.",
+        "Reject or redesign if the rule requires discretionary exceptions to look acceptable."
+      ],
+      "allowedNextAction": "local_paper_observation_only",
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ],
+      "approval": {
+        "paperObservationApproved": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_115",
+      "strategyId": "v13_7_20_lf_research_candidate_115",
+      "candidateId": "lf_research_candidate_115",
+      "title": "1D 横盘超卖修复 ATR1.0",
+      "displaySubtitle": "固定 2R · 本地纸面观察 · 不自动交易",
+      "status": "planned_paper_observation",
+      "rank": 3,
+      "sourceReport": "reports\\v13_7_20_five_strategy_candidate_factory_report.json",
+      "timeframe": "1d",
+      "family": "mean_reversion",
+      "btcRegimes": [
+        "sideways"
+      ],
+      "targetRewardRiskRatio": 2.0,
+      "historicalMetrics": {
+        "tradeCount": 38,
+        "winRatePct": 55.2632,
+        "profitFactor": 2.2125,
+        "totalReturnPct": 21.0635,
+        "maxDrawdownPct": 7.7808,
+        "maxConsecutiveLosses": 8
+      },
+      "observationPlan": {
+        "confidenceTier": "cautious",
+        "observationDays": 120,
+        "targetClosedSamples": 30,
+        "minimumRuleMatchedSignals": 15,
+        "recordNoSignalDays": true,
+        "recordInvalidatedSetups": true,
+        "recordMissedSignals": true,
+        "recordPairLevelDrift": true
+      },
+      "recommendedPairs": [
+        {
+          "pair": "XRP/USDT:USDT",
+          "tradeCount": 6,
+          "winRatePct": 83.3333,
+          "profitFactor": 8.4876,
+          "totalReturnPct": 7.6046,
+          "maxDrawdownPct": 0.9702
+        },
+        {
+          "pair": "ETH/USDT:USDT",
+          "tradeCount": 5,
+          "winRatePct": 80.0,
+          "profitFactor": 7.5141,
+          "totalReturnPct": 6.8222,
+          "maxDrawdownPct": 1.0269
+        },
+        {
+          "pair": "SUI/USDT:USDT",
+          "tradeCount": 4,
+          "winRatePct": 50.0,
+          "profitFactor": 1.9537,
+          "totalReturnPct": 1.9297,
+          "maxDrawdownPct": 1.0208
+        }
+      ],
+      "avoidUntilReviewedPairs": [
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 3,
+          "profitFactor": 0.9622,
+          "totalReturnPct": -0.0775
+        },
+        {
+          "pair": "LINK/USDT:USDT",
+          "tradeCount": 3,
+          "profitFactor": 0.9649,
+          "totalReturnPct": -0.0719
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 3,
+          "profitFactor": 0.972,
+          "totalReturnPct": -0.0568
+        }
+      ],
+      "weakPoints": [
+        "train_2020_2022 sample is thin: 4 trades.",
+        "validation_2023_2024 profit factor is close to break-even: 1.0465.",
+        "validation_2023_2024 return is thin: 0.382%."
+      ],
+      "dailyLogFields": [
+        "date",
+        "pair",
+        "timeframe",
+        "signalObserved",
+        "ruleMatched",
+        "entryContext",
+        "btcRegime",
+        "paperOutcomeR",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "promotionCriteria": [
+        "Collect at least 30 closed local paper-observation samples.",
+        "Forward paper-observation profit factor must remain above 1.20.",
+        "Forward paper-observation average R must remain positive.",
+        "Max drawdown must stay within the historical drawdown plus a documented tolerance.",
+        "No unreviewed regime drift, liquidity issue, or data-quality issue may remain open."
+      ],
+      "rejectionCriteria": [
+        "Reject or redesign if forward paper-observation PF is below 1.0 after the target sample count.",
+        "Reject or redesign if three or more severe data-quality or liquidity warnings appear.",
+        "Reject or redesign if observed signals concentrate in pairs that were historically weak.",
+        "Reject or redesign if the rule requires discretionary exceptions to look acceptable."
+      ],
+      "allowedNextAction": "local_paper_observation_only",
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ],
+      "approval": {
+        "paperObservationApproved": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_090",
+      "strategyId": "v13_7_20_lf_research_candidate_090",
+      "candidateId": "lf_research_candidate_090",
+      "title": "1D 趋势低波突破 ATR2.0",
+      "displaySubtitle": "固定 2R · 本地纸面观察 · 不自动交易",
+      "status": "planned_paper_observation",
+      "rank": 4,
+      "sourceReport": "reports\\v13_7_20_five_strategy_candidate_factory_report.json",
+      "timeframe": "1d",
+      "family": "squeeze_breakout",
+      "btcRegimes": [
+        "bull",
+        "recovery"
+      ],
+      "targetRewardRiskRatio": 2.0,
+      "historicalMetrics": {
+        "tradeCount": 207,
+        "winRatePct": 43.4783,
+        "profitFactor": 1.3856,
+        "totalReturnPct": 40.6901,
+        "maxDrawdownPct": 20.0035,
+        "maxConsecutiveLosses": 10
+      },
+      "observationPlan": {
+        "confidenceTier": "standard",
+        "observationDays": 60,
+        "targetClosedSamples": 25,
+        "minimumRuleMatchedSignals": 12,
+        "recordNoSignalDays": true,
+        "recordInvalidatedSetups": true,
+        "recordMissedSignals": true,
+        "recordPairLevelDrift": true
+      },
+      "recommendedPairs": [
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 10,
+          "winRatePct": 80.0,
+          "profitFactor": 5.6478,
+          "totalReturnPct": 9.412,
+          "maxDrawdownPct": 1.9073
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 11,
+          "winRatePct": 54.5455,
+          "profitFactor": 3.1464,
+          "totalReturnPct": 7.2695,
+          "maxDrawdownPct": 1.939
+        },
+        {
+          "pair": "FLOKI/USDT:USDT",
+          "tradeCount": 6,
+          "winRatePct": 50.0,
+          "profitFactor": 2.6428,
+          "totalReturnPct": 3.7092,
+          "maxDrawdownPct": 0.9926
+        },
+        {
+          "pair": "BNB/USDT:USDT",
+          "tradeCount": 9,
+          "winRatePct": 55.5556,
+          "profitFactor": 2.4131,
+          "totalReturnPct": 4.7232,
+          "maxDrawdownPct": 3.1553
+        },
+        {
+          "pair": "ETH/USDT:USDT",
+          "tradeCount": 16,
+          "winRatePct": 50.0,
+          "profitFactor": 2.015,
+          "totalReturnPct": 7.3142,
+          "maxDrawdownPct": 4.2384
+        },
+        {
+          "pair": "KSM/USDT:USDT",
+          "tradeCount": 7,
+          "winRatePct": 57.1429,
+          "profitFactor": 1.9958,
+          "totalReturnPct": 3.0167,
+          "maxDrawdownPct": 1.9227
+        },
+        {
+          "pair": "SHIB/USDT:USDT",
+          "tradeCount": 6,
+          "winRatePct": 50.0,
+          "profitFactor": 1.9645,
+          "totalReturnPct": 2.921,
+          "maxDrawdownPct": 1.9434
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 17,
+          "winRatePct": 52.9412,
+          "profitFactor": 1.9356,
+          "totalReturnPct": 7.2875,
+          "maxDrawdownPct": 2.8917
+        }
+      ],
+      "avoidUntilReviewedPairs": [
+        {
+          "pair": "CRV/USDT:USDT",
+          "tradeCount": 13,
+          "profitFactor": 0.1936,
+          "totalReturnPct": -8.29
+        },
+        {
+          "pair": "SUI/USDT:USDT",
+          "tradeCount": 8,
+          "profitFactor": 0.5087,
+          "totalReturnPct": -2.2665
+        },
+        {
+          "pair": "DYDX/USDT:USDT",
+          "tradeCount": 5,
+          "profitFactor": 0.5305,
+          "totalReturnPct": -1.7576
+        },
+        {
+          "pair": "GRT/USDT:USDT",
+          "tradeCount": 8,
+          "profitFactor": 0.6692,
+          "totalReturnPct": -1.6689
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 12,
+          "profitFactor": 0.8535,
+          "totalReturnPct": -1.0479
+        },
+        {
+          "pair": "ETC/USDT:USDT",
+          "tradeCount": 10,
+          "profitFactor": 0.9264,
+          "totalReturnPct": -0.4733
+        },
+        {
+          "pair": "CFX/USDT:USDT",
+          "tradeCount": 6,
+          "profitFactor": 0.985,
+          "totalReturnPct": -0.0607
+        }
+      ],
+      "weakPoints": [
+        "Historical max consecutive losses reached 10."
+      ],
+      "dailyLogFields": [
+        "date",
+        "pair",
+        "timeframe",
+        "signalObserved",
+        "ruleMatched",
+        "entryContext",
+        "btcRegime",
+        "paperOutcomeR",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "promotionCriteria": [
+        "Collect at least 25 closed local paper-observation samples.",
+        "Forward paper-observation profit factor must remain above 1.20.",
+        "Forward paper-observation average R must remain positive.",
+        "Max drawdown must stay within the historical drawdown plus a documented tolerance.",
+        "No unreviewed regime drift, liquidity issue, or data-quality issue may remain open."
+      ],
+      "rejectionCriteria": [
+        "Reject or redesign if forward paper-observation PF is below 1.0 after the target sample count.",
+        "Reject or redesign if three or more severe data-quality or liquidity warnings appear.",
+        "Reject or redesign if observed signals concentrate in pairs that were historically weak.",
+        "Reject or redesign if the rule requires discretionary exceptions to look acceptable."
+      ],
+      "allowedNextAction": "local_paper_observation_only",
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ],
+      "approval": {
+        "paperObservationApproved": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_108",
+      "strategyId": "v13_7_20_lf_research_candidate_108",
+      "candidateId": "lf_research_candidate_108",
+      "title": "1D 广谱低波突破 ATR2.0",
+      "displaySubtitle": "固定 2R · 本地纸面观察 · 不自动交易",
+      "status": "planned_paper_observation",
+      "rank": 5,
+      "sourceReport": "reports\\v13_7_20_five_strategy_candidate_factory_report.json",
+      "timeframe": "1d",
+      "family": "squeeze_breakout",
+      "btcRegimes": [
+        "sideways",
+        "bull",
+        "recovery"
+      ],
+      "targetRewardRiskRatio": 2.0,
+      "historicalMetrics": {
+        "tradeCount": 220,
+        "winRatePct": 42.2727,
+        "profitFactor": 1.3152,
+        "totalReturnPct": 36.4671,
+        "maxDrawdownPct": 20.8539,
+        "maxConsecutiveLosses": 11
+      },
+      "observationPlan": {
+        "confidenceTier": "standard",
+        "observationDays": 60,
+        "targetClosedSamples": 25,
+        "minimumRuleMatchedSignals": 12,
+        "recordNoSignalDays": true,
+        "recordInvalidatedSetups": true,
+        "recordMissedSignals": true,
+        "recordPairLevelDrift": true
+      },
+      "recommendedPairs": [
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 11,
+          "winRatePct": 72.7273,
+          "profitFactor": 3.762,
+          "totalReturnPct": 8.3969,
+          "maxDrawdownPct": 1.9073
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 12,
+          "winRatePct": 50.0,
+          "profitFactor": 2.4212,
+          "totalReturnPct": 6.2551,
+          "maxDrawdownPct": 1.939
+        },
+        {
+          "pair": "AVAX/USDT:USDT",
+          "tradeCount": 12,
+          "winRatePct": 58.3333,
+          "profitFactor": 2.0741,
+          "totalReturnPct": 5.4216,
+          "maxDrawdownPct": 2.0242
+        },
+        {
+          "pair": "KSM/USDT:USDT",
+          "tradeCount": 7,
+          "winRatePct": 57.1429,
+          "profitFactor": 1.9958,
+          "totalReturnPct": 3.0167,
+          "maxDrawdownPct": 1.9227
+        },
+        {
+          "pair": "BNB/USDT:USDT",
+          "tradeCount": 10,
+          "winRatePct": 50.0,
+          "profitFactor": 1.8476,
+          "totalReturnPct": 3.7001,
+          "maxDrawdownPct": 3.1553
+        },
+        {
+          "pair": "FLOKI/USDT:USDT",
+          "tradeCount": 7,
+          "winRatePct": 42.8571,
+          "profitFactor": 1.8281,
+          "totalReturnPct": 2.7033,
+          "maxDrawdownPct": 1.9817
+        },
+        {
+          "pair": "ETH/USDT:USDT",
+          "tradeCount": 17,
+          "winRatePct": 47.0588,
+          "profitFactor": 1.7646,
+          "totalReturnPct": 6.2913,
+          "maxDrawdownPct": 5.195
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 19,
+          "winRatePct": 47.3684,
+          "profitFactor": 1.7405,
+          "totalReturnPct": 5.7926,
+          "maxDrawdownPct": 2.2737
+        }
+      ],
+      "avoidUntilReviewedPairs": [
+        {
+          "pair": "CRV/USDT:USDT",
+          "tradeCount": 13,
+          "profitFactor": 0.1936,
+          "totalReturnPct": -8.29
+        },
+        {
+          "pair": "SUI/USDT:USDT",
+          "tradeCount": 8,
+          "profitFactor": 0.5086,
+          "totalReturnPct": -2.2673
+        },
+        {
+          "pair": "DYDX/USDT:USDT",
+          "tradeCount": 5,
+          "profitFactor": 0.5305,
+          "totalReturnPct": -1.7576
+        },
+        {
+          "pair": "GRT/USDT:USDT",
+          "tradeCount": 8,
+          "profitFactor": 0.6692,
+          "totalReturnPct": -1.6689
+        },
+        {
+          "pair": "ETC/USDT:USDT",
+          "tradeCount": 10,
+          "profitFactor": 0.9264,
+          "totalReturnPct": -0.4733
+        },
+        {
+          "pair": "CFX/USDT:USDT",
+          "tradeCount": 6,
+          "profitFactor": 0.985,
+          "totalReturnPct": -0.0607
+        }
+      ],
+      "weakPoints": [
+        "Historical max consecutive losses reached 11."
+      ],
+      "dailyLogFields": [
+        "date",
+        "pair",
+        "timeframe",
+        "signalObserved",
+        "ruleMatched",
+        "entryContext",
+        "btcRegime",
+        "paperOutcomeR",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "promotionCriteria": [
+        "Collect at least 25 closed local paper-observation samples.",
+        "Forward paper-observation profit factor must remain above 1.20.",
+        "Forward paper-observation average R must remain positive.",
+        "Max drawdown must stay within the historical drawdown plus a documented tolerance.",
+        "No unreviewed regime drift, liquidity issue, or data-quality issue may remain open."
+      ],
+      "rejectionCriteria": [
+        "Reject or redesign if forward paper-observation PF is below 1.0 after the target sample count.",
+        "Reject or redesign if three or more severe data-quality or liquidity warnings appear.",
+        "Reject or redesign if observed signals concentrate in pairs that were historically weak.",
+        "Reject or redesign if the rule requires discretionary exceptions to look acceptable."
+      ],
+      "allowedNextAction": "local_paper_observation_only",
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ],
+      "approval": {
+        "paperObservationApproved": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    }
+  ],
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "safetyBoundary": {
+    "realTradingEnabled": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "apiKeyStorage": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "autoTrading": false
+  }
+}
