@@ -3707,6 +3707,74 @@ V13.7.13 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## Third-Party Reference Snapshot: TradingAgents
+
+AlphaPilot now keeps a local third-party reference snapshot of
+`tauricresearch/tradingagents`:
+
+```text
+third_party/tradingagents/
+third_party/tradingagents/ALPHAPILOT_SNAPSHOT.md
+third_party/tradingagents/LICENSE
+```
+
+The snapshot is Apache-2.0 licensed and keeps upstream attribution, license, and
+the captured commit metadata. AlphaPilot uses it only as an architecture
+reference for multi-agent research review, structured reports, checkpointing,
+and decision-memory ideas.
+
+Important boundary: the snapshot is not an execution adapter. Upstream
+transaction-oriented terminology must be mapped into AlphaPilot research-only
+language before any idea is reused. The snapshot must not create orders, connect
+Trade API, connect Withdraw API, store exchange API keys, read real account
+data, or automate trading.
+
+## V13.7.14 Multi-Agent Strategy Review
+
+V13.7.14 adds a deterministic, research-only multi-agent strategy review layer
+inspired by the TradingAgents architecture.
+
+Run the review:
+
+```powershell
+python -m alphapilot.reports.generate_v13_7_14_multi_agent_strategy_review
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_7_14_multi_agent_strategy_review.py
+reports/v13_7_14_multi_agent_strategy_review_report.json
+reports/v13_7_14_multi_agent_strategy_review_summary.md
+docs/V13.7.14-multi-agent-strategy-review.md
+```
+
+Reviewer roles:
+
+```text
+data_quality_reviewer
+backtest_validity_reviewer
+risk_reviewer
+skeptic_reviewer
+research_committee
+```
+
+Result:
+
+```text
+reviewedSubjectCount: 6
+keep_researching: 3
+reject_for_now: 3
+paperObservationCandidateCount: 0
+dryRunApproved: false
+liveTradingApproved: false
+```
+
+V13.7.14 does not call an LLM. It does not produce trading commands, does not
+approve paper observation, does not approve exchange Dry-run, and does not
+approve live trading. It only transforms existing V13.7.13 evidence into a
+clearer research committee-style review.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

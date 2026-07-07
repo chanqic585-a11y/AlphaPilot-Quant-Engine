@@ -21,6 +21,7 @@ $root = Resolve-Path "."
 $files = Get-ChildItem -Path $root -Recurse -File |
   Where-Object {
     $_.FullName -notmatch "\\.git\\" -and
+    $_.FullName -notmatch "\\third_party\\" -and
     $_.FullName -notmatch "__pycache__" -and
     $_.Extension -ne ".pyc" -and
     $_.FullName -notmatch "\\user_data\\data\\" -and

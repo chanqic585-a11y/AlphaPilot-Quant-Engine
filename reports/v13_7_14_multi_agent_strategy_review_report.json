@@ -1,0 +1,485 @@
+{
+  "reportId": "v13_7_14_multi_agent_strategy_review",
+  "version": "V13.7.14",
+  "status": "completed",
+  "generatedAt": "2026-07-07T00:59:49.382880Z",
+  "source": "alphapilot_multi_agent_strategy_review_v13_7_14",
+  "objective": "Create a research-only multi-agent review layer inspired by TradingAgents, mapped into AlphaPilot safety boundaries.",
+  "externalReference": {
+    "name": "TradingAgents",
+    "upstream": "https://github.com/tauricresearch/tradingagents",
+    "snapshotPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\third_party\\tradingagents",
+    "snapshotMetadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\third_party\\tradingagents\\ALPHAPILOT_SNAPSHOT.md",
+    "licensePath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\third_party\\tradingagents\\LICENSE",
+    "license": "Apache-2.0",
+    "usageBoundary": "architecture_reference_only_not_execution_adapter"
+  },
+  "reviewProtocol": {
+    "reviewers": [
+      "data_quality_reviewer",
+      "backtest_validity_reviewer",
+      "risk_reviewer",
+      "skeptic_reviewer",
+      "research_committee"
+    ],
+    "allowedStatuses": [
+      "keep_researching",
+      "needs_more_data",
+      "reject_for_now",
+      "paper_observation_candidate"
+    ],
+    "forbiddenActions": [
+      "no_trade_api",
+      "no_withdraw_api",
+      "no_api_key_storage",
+      "no_real_account_reads",
+      "no_real_position_reads",
+      "no_order_creation",
+      "no_dry_run_execution",
+      "no_auto_trading"
+    ]
+  },
+  "summary": {
+    "reviewedSubjectCount": 6,
+    "statusCounts": {
+      "keep_researching": 3,
+      "reject_for_now": 3
+    },
+    "paperObservationCandidateCount": 0,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "recommendedNextStep": "Keep failed candidates out of execution and use reviewer findings to design new lower-frequency or regime-aware hypotheses."
+  },
+  "reviews": [
+    {
+      "subjectId": "v13_4_21_manual_factor_library_report__report_summary",
+      "title": "因子研究观察策略 - 手工因子库",
+      "sourceVersion": "V13.4.21",
+      "completionStatus": "completed_research_data_generation",
+      "executableStrategyBacktest": false,
+      "sourceFiles": [
+        "reports/v13_7_13_manual_factor_library_report.json",
+        "reports/v13_7_13_factor_panel_report.json"
+      ],
+      "metrics": {
+        "factorCount": 16,
+        "computedFactorCount": 16,
+        "rowsGenerated": 597046,
+        "loadedPairCount": 28
+      },
+      "reviewerFindings": [
+        {
+          "reviewer": "data_quality_reviewer",
+          "verdict": "adequate_for_research",
+          "score": 82,
+          "notes": [
+            "样本规模足够支撑研究层审查。"
+          ]
+        },
+        {
+          "reviewer": "backtest_validity_reviewer",
+          "verdict": "research_data_only",
+          "score": 45,
+          "notes": [
+            "该对象不是完整入场/出场策略，不能按策略回测结论处理。"
+          ]
+        },
+        {
+          "reviewer": "risk_reviewer",
+          "verdict": "research_risk_watch",
+          "score": 58,
+          "notes": [
+            "保持研究态，不连接交易权限，不创建订单。",
+            "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+            "风险暂未通过观察批准，但可继续研究。"
+          ]
+        },
+        {
+          "reviewer": "skeptic_reviewer",
+          "verdict": "factor_not_strategy",
+          "score": 34,
+          "notes": [
+            "反方审查默认不相信单次回测，要求样本外、跨交易所和市场状态拆分。",
+            "不能因为某个指标在样本内看起来有效就进入执行链路。",
+            "因子资料还没有转化为可验证策略规则。"
+          ]
+        }
+      ],
+      "committee": {
+        "reviewer": "research_committee",
+        "researchStatus": "keep_researching",
+        "committeeScore": 54.75,
+        "paperObservationAllowed": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "多角色审查完成；本报告只决定研究状态，不生成交易指令。",
+        "nextAction": "保留为研究资料，先转化为明确规则再谈回测。"
+      }
+    },
+    {
+      "subjectId": "v13_4_21_factor_panel_report__report_summary",
+      "title": "因子研究观察策略 - 因子面板",
+      "sourceVersion": "V13.4.21",
+      "completionStatus": "completed_factor_panel_rebuild",
+      "executableStrategyBacktest": false,
+      "sourceFiles": [
+        "reports/v13_7_13_factor_panel_report.json",
+        "reports/v13_7_13_factor_panel_summary.md"
+      ],
+      "metrics": {
+        "rowsGenerated": 597046,
+        "loadedPairCount": 28,
+        "failedPairCount": 0,
+        "sampleRowsWritten": 500
+      },
+      "reviewerFindings": [
+        {
+          "reviewer": "data_quality_reviewer",
+          "verdict": "adequate_for_research",
+          "score": 82,
+          "notes": [
+            "样本规模足够支撑研究层审查。"
+          ]
+        },
+        {
+          "reviewer": "backtest_validity_reviewer",
+          "verdict": "research_data_only",
+          "score": 45,
+          "notes": [
+            "该对象不是完整入场/出场策略，不能按策略回测结论处理。"
+          ]
+        },
+        {
+          "reviewer": "risk_reviewer",
+          "verdict": "research_risk_watch",
+          "score": 58,
+          "notes": [
+            "保持研究态，不连接交易权限，不创建订单。",
+            "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+            "风险暂未通过观察批准，但可继续研究。"
+          ]
+        },
+        {
+          "reviewer": "skeptic_reviewer",
+          "verdict": "factor_not_strategy",
+          "score": 34,
+          "notes": [
+            "反方审查默认不相信单次回测，要求样本外、跨交易所和市场状态拆分。",
+            "不能因为某个指标在样本内看起来有效就进入执行链路。",
+            "因子资料还没有转化为可验证策略规则。"
+          ]
+        }
+      ],
+      "committee": {
+        "reviewer": "research_committee",
+        "researchStatus": "keep_researching",
+        "committeeScore": 54.75,
+        "paperObservationAllowed": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "多角色审查完成；本报告只决定研究状态，不生成交易指令。",
+        "nextAction": "保留为研究资料，先转化为明确规则再谈回测。"
+      }
+    },
+    {
+      "subjectId": "v13_4_22_factor_evaluation_report__report_summary",
+      "title": "因子研究观察策略 - forward label 因子评价",
+      "sourceVersion": "V13.4.22",
+      "completionStatus": "completed_factor_evaluation_no_candidate",
+      "executableStrategyBacktest": false,
+      "sourceFiles": [
+        "reports/v13_7_13_factor_evaluation_report.json",
+        "reports/v13_7_13_factor_candidates.json"
+      ],
+      "metrics": {
+        "sampleCount": 597046,
+        "validLabelCount": 596374,
+        "evaluatedFactorCount": 16,
+        "candidateFactorCount": 0
+      },
+      "reviewerFindings": [
+        {
+          "reviewer": "data_quality_reviewer",
+          "verdict": "adequate_for_research",
+          "score": 82,
+          "notes": [
+            "样本规模足够支撑研究层审查。"
+          ]
+        },
+        {
+          "reviewer": "backtest_validity_reviewer",
+          "verdict": "research_data_only",
+          "score": 45,
+          "notes": [
+            "该对象不是完整入场/出场策略，不能按策略回测结论处理。"
+          ]
+        },
+        {
+          "reviewer": "risk_reviewer",
+          "verdict": "research_risk_watch",
+          "score": 58,
+          "notes": [
+            "保持研究态，不连接交易权限，不创建订单。",
+            "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+            "风险暂未通过观察批准，但可继续研究。"
+          ]
+        },
+        {
+          "reviewer": "skeptic_reviewer",
+          "verdict": "factor_not_strategy",
+          "score": 34,
+          "notes": [
+            "反方审查默认不相信单次回测，要求样本外、跨交易所和市场状态拆分。",
+            "不能因为某个指标在样本内看起来有效就进入执行链路。",
+            "因子资料还没有转化为可验证策略规则。"
+          ]
+        }
+      ],
+      "committee": {
+        "reviewer": "research_committee",
+        "researchStatus": "keep_researching",
+        "committeeScore": 54.75,
+        "paperObservationAllowed": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "多角色审查完成；本报告只决定研究状态，不生成交易指令。",
+        "nextAction": "保留为研究资料，先转化为明确规则再谈回测。"
+      }
+    },
+    {
+      "subjectId": "v13_5_derivatives_ml_strategy_report__report_summary",
+      "title": "衍生品 ML-gated 策略研究",
+      "sourceVersion": "V13.5",
+      "completionStatus": "completed_broad_universe_walk_forward_failed",
+      "executableStrategyBacktest": true,
+      "sourceFiles": [
+        "reports/v13_7_13_derivatives_ml_strategy_1h_broad_report.json",
+        "reports/v13_7_13_derivatives_ml_strategy_4h_broad_report.json"
+      ],
+      "metrics": {
+        "oneHour": {
+          "tradeCount": 1009,
+          "winRatePct": 43.6075,
+          "profitFactor": 0.7525,
+          "rewardRiskRatio": 0.9731,
+          "totalReturnPct": -87.3082,
+          "maxDrawdownPct": 88.8058,
+          "researchWorthContinuing": false
+        },
+        "fourHour": {
+          "tradeCount": 41,
+          "winRatePct": 26.8293,
+          "profitFactor": 0.4602,
+          "rewardRiskRatio": 1.2551,
+          "totalReturnPct": -36.5201,
+          "maxDrawdownPct": 36.5852,
+          "researchWorthContinuing": false
+        },
+        "oneHourLoadedPairCount": 28,
+        "fourHourLoadedPairCount": 38
+      },
+      "reviewerFindings": [
+        {
+          "reviewer": "data_quality_reviewer",
+          "verdict": "not_applicable_or_missing",
+          "score": 25,
+          "notes": [
+            "没有可量化样本，当前只适合保留为研究资料。"
+          ]
+        },
+        {
+          "reviewer": "backtest_validity_reviewer",
+          "verdict": "insufficient_trade_count",
+          "score": 35,
+          "notes": [
+            "交易样本不足，统计不稳定。"
+          ]
+        },
+        {
+          "reviewer": "risk_reviewer",
+          "verdict": "research_risk_watch",
+          "score": 58,
+          "notes": [
+            "保持研究态，不连接交易权限，不创建订单。",
+            "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+            "风险暂未通过观察批准，但可继续研究。"
+          ]
+        },
+        {
+          "reviewer": "skeptic_reviewer",
+          "verdict": "ml_overfit_watch",
+          "score": 36,
+          "notes": [
+            "反方审查默认不相信单次回测，要求样本外、跨交易所和市场状态拆分。",
+            "不能因为某个指标在样本内看起来有效就进入执行链路。",
+            "机器学习候选需要特别防止过拟合和标签泄漏。"
+          ]
+        }
+      ],
+      "committee": {
+        "reviewer": "research_committee",
+        "researchStatus": "reject_for_now",
+        "committeeScore": 38.5,
+        "paperObservationAllowed": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "多角色审查完成；本报告只决定研究状态，不生成交易指令。",
+        "nextAction": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。"
+      }
+    },
+    {
+      "subjectId": "v13_5_8_adaptive_ml_factor_report__report_summary",
+      "title": "Adaptive ML 因子候选",
+      "sourceVersion": "V13.5.8",
+      "completionStatus": "completed_adaptive_ml_failed_watch_gate",
+      "executableStrategyBacktest": true,
+      "sourceFiles": [
+        "reports/v13_7_13_adaptive_ml_factor_report.json",
+        "reports/v13_7_13_adaptive_ml_candidates.json"
+      ],
+      "metrics": {
+        "totalCandidates": 7,
+        "localPaperWatchApprovedCount": 0,
+        "targetRMultipleUnchanged": true,
+        "reason": "adaptive_ml_no_watch_candidate_passed"
+      },
+      "reviewerFindings": [
+        {
+          "reviewer": "data_quality_reviewer",
+          "verdict": "not_applicable_or_missing",
+          "score": 25,
+          "notes": [
+            "没有可量化样本，当前只适合保留为研究资料。"
+          ]
+        },
+        {
+          "reviewer": "backtest_validity_reviewer",
+          "verdict": "insufficient_trade_count",
+          "score": 35,
+          "notes": [
+            "交易样本不足，统计不稳定。"
+          ]
+        },
+        {
+          "reviewer": "risk_reviewer",
+          "verdict": "research_risk_watch",
+          "score": 58,
+          "notes": [
+            "保持研究态，不连接交易权限，不创建订单。",
+            "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+            "风险暂未通过观察批准，但可继续研究。"
+          ]
+        },
+        {
+          "reviewer": "skeptic_reviewer",
+          "verdict": "factor_not_strategy",
+          "score": 34,
+          "notes": [
+            "反方审查默认不相信单次回测，要求样本外、跨交易所和市场状态拆分。",
+            "不能因为某个指标在样本内看起来有效就进入执行链路。",
+            "因子资料还没有转化为可验证策略规则。"
+          ]
+        }
+      ],
+      "committee": {
+        "reviewer": "research_committee",
+        "researchStatus": "reject_for_now",
+        "committeeScore": 38.0,
+        "paperObservationAllowed": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "多角色审查完成；本报告只决定研究状态，不生成交易指令。",
+        "nextAction": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。"
+      }
+    },
+    {
+      "subjectId": "v13_5_22_alpha191_factor_extraction_report__report_summary",
+      "title": "Alpha191 因子观察策略",
+      "sourceVersion": "V13.5.22/V13.5.23",
+      "completionStatus": "completed_with_existing_alpha191_subset_replay_failed",
+      "executableStrategyBacktest": true,
+      "sourceFiles": [
+        "reports/v13_5_22_alpha191_factor_extraction_report.json",
+        "reports/v13_5_22_alpha191_factor_candidate_catalog.json",
+        "reports/v13_5_23_alpha191_crypto_subset_replay_report.json"
+      ],
+      "metrics": {
+        "extractedFactorCount": 191,
+        "candidateClusterCount": 8,
+        "readyForFactorImplementationSpec": true,
+        "rawTradeCount": 3736,
+        "rawWinRatePct": 40.5514,
+        "rawProfitFactor": 1.163,
+        "rawRewardRiskRatio": 1.705,
+        "paperFilledSignalCount": 1112,
+        "paperWinRatePct": 42.8957,
+        "paperProfitFactor": 1.3785,
+        "paperRewardRiskRatio": 1.8351,
+        "paperMaxDrawdownPct": 51.845183,
+        "exitAwareSelectedSignalCount": 1412,
+        "exitAwareProfitFactor": 1.307052
+      },
+      "reviewerFindings": [
+        {
+          "reviewer": "data_quality_reviewer",
+          "verdict": "not_applicable_or_missing",
+          "score": 25,
+          "notes": [
+            "没有可量化样本，当前只适合保留为研究资料。"
+          ]
+        },
+        {
+          "reviewer": "backtest_validity_reviewer",
+          "verdict": "insufficient_trade_count",
+          "score": 35,
+          "notes": [
+            "交易样本不足，统计不稳定。"
+          ]
+        },
+        {
+          "reviewer": "risk_reviewer",
+          "verdict": "research_risk_watch",
+          "score": 58,
+          "notes": [
+            "保持研究态，不连接交易权限，不创建订单。",
+            "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+            "风险暂未通过观察批准，但可继续研究。"
+          ]
+        },
+        {
+          "reviewer": "skeptic_reviewer",
+          "verdict": "factor_not_strategy",
+          "score": 34,
+          "notes": [
+            "反方审查默认不相信单次回测，要求样本外、跨交易所和市场状态拆分。",
+            "不能因为某个指标在样本内看起来有效就进入执行链路。",
+            "因子资料还没有转化为可验证策略规则。"
+          ]
+        }
+      ],
+      "committee": {
+        "reviewer": "research_committee",
+        "researchStatus": "reject_for_now",
+        "committeeScore": 38.0,
+        "paperObservationAllowed": false,
+        "exchangeDryRunApproved": false,
+        "liveTradingApproved": false,
+        "reason": "多角色审查完成；本报告只决定研究状态，不生成交易指令。",
+        "nextAction": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。"
+      }
+    }
+  ],
+  "warnings": [],
+  "safetyBoundary": {
+    "realTradingEnabled": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "apiKeyStorage": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "autoTrading": false
+  }
+}
