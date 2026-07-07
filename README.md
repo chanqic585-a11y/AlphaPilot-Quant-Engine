@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.7.21 - Paper Observation Task Pack
+AlphaPilot V13.7.22 - Paper Observation Logbook
 ```
 
 ## Positioning
@@ -29,6 +29,36 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.7.22 Paper Observation Logbook
+
+V13.7.22 starts the local paper-observation journal for the five V13.7.21
+task-pack candidates.
+
+Generate the logbook baseline:
+
+```powershell
+python -m alphapilot.reports.generate_v13_7_22_paper_observation_logbook
+```
+
+Outputs:
+
+- `reports/v13_7_22_paper_observation_logbook_report.json`
+- `reports/v13_7_22_paper_observation_logbook_summary.md`
+- `docs/V13.7.22-paper-observation-logbook.md`
+
+Result:
+
+- taskCount: 5
+- targetClosedSamplesTotal: 130
+- currentLogCount: 0
+- dryRunApproved: false
+- liveTradingApproved: false
+
+This version only defines local daily observation fields and log types. The
+desktop Control Console records the actual daily logs locally. V13.7.22 does not
+add Trade API, Withdraw API, API key storage, real account reads, real position
+reads, order creation, exchange Dry-run, live trading, or automation.
 
 ## Why Freqtrade
 

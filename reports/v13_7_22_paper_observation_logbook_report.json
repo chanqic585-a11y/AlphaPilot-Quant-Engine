@@ -1,0 +1,325 @@
+{
+  "reportId": "v13_7_22_paper_observation_logbook",
+  "version": "V13.7.22",
+  "status": "completed",
+  "generatedAt": "2026-07-07T02:48:45.234052Z",
+  "source": "alphapilot_paper_observation_logbook_v13_7_22",
+  "objective": "Start a local daily paper-observation logbook for V13.7.21 tasks.",
+  "inputReports": [
+    "reports\\v13_7_21_paper_observation_task_pack_report.json"
+  ],
+  "summary": {
+    "taskCount": 5,
+    "readyForLoggingCount": 5,
+    "currentLogCount": 0,
+    "ruleMatchedCount": 0,
+    "closedPaperSampleCount": 0,
+    "targetClosedSamplesTotal": 130,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "nextStep": "Record daily paper-observation logs in the desktop console before considering any stricter simulation stage."
+  },
+  "allowedLogTypes": [
+    {
+      "logType": "no_signal",
+      "label": "No Signal",
+      "meaning": "The market was checked, but the rule did not show a usable paper-observation event."
+    },
+    {
+      "logType": "signal_seen",
+      "label": "Signal Seen",
+      "meaning": "A possible setup appeared, but it still needs rule confirmation."
+    },
+    {
+      "logType": "rule_matched",
+      "label": "Rule Matched",
+      "meaning": "The written research rule matched and should be tracked as a closed paper sample later."
+    },
+    {
+      "logType": "missed",
+      "label": "Missed",
+      "meaning": "A setup was discovered after the fact; record it without rewriting history."
+    },
+    {
+      "logType": "invalidated",
+      "label": "Invalidated",
+      "meaning": "The setup failed one of the rule, data-quality, liquidity, or regime conditions."
+    },
+    {
+      "logType": "risk_warning",
+      "label": "Risk Warning",
+      "meaning": "The setup raised a risk, liquidity, data, or discretionary-exception warning."
+    }
+  ],
+  "dailyFields": [
+    "date",
+    "taskId",
+    "candidateId",
+    "pair",
+    "timeframe",
+    "logType",
+    "signalObserved",
+    "ruleMatched",
+    "paperOutcomeR",
+    "btcRegime",
+    "invalidatedReason",
+    "riskNote",
+    "screenshotOrChartNote"
+  ],
+  "taskLogTemplates": [
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_089",
+      "candidateId": "lf_research_candidate_089",
+      "title": "1D 趋势突破确认 ATR2.0",
+      "status": "ready_for_local_logging",
+      "targetClosedSamples": 25,
+      "observationDays": 90,
+      "currentLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "latestLogAt": null,
+      "historicalReference": {
+        "tradeCount": 319,
+        "winRatePct": 45.4545,
+        "profitFactor": 1.5035,
+        "maxDrawdownPct": 21.4697
+      },
+      "dailyFields": [
+        "date",
+        "taskId",
+        "candidateId",
+        "pair",
+        "timeframe",
+        "logType",
+        "signalObserved",
+        "ruleMatched",
+        "paperOutcomeR",
+        "btcRegime",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "allowedLogTypes": [
+        "no_signal",
+        "signal_seen",
+        "rule_matched",
+        "missed",
+        "invalidated",
+        "risk_warning"
+      ],
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ]
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_117",
+      "candidateId": "lf_research_candidate_117",
+      "title": "1D 横盘超卖修复 ATR1.2",
+      "status": "ready_for_local_logging",
+      "targetClosedSamples": 25,
+      "observationDays": 90,
+      "currentLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "latestLogAt": null,
+      "historicalReference": {
+        "tradeCount": 36,
+        "winRatePct": 58.3333,
+        "profitFactor": 2.4289,
+        "maxDrawdownPct": 6.8439
+      },
+      "dailyFields": [
+        "date",
+        "taskId",
+        "candidateId",
+        "pair",
+        "timeframe",
+        "logType",
+        "signalObserved",
+        "ruleMatched",
+        "paperOutcomeR",
+        "btcRegime",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "allowedLogTypes": [
+        "no_signal",
+        "signal_seen",
+        "rule_matched",
+        "missed",
+        "invalidated",
+        "risk_warning"
+      ],
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ]
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_115",
+      "candidateId": "lf_research_candidate_115",
+      "title": "1D 横盘超卖修复 ATR1.0",
+      "status": "ready_for_local_logging",
+      "targetClosedSamples": 30,
+      "observationDays": 120,
+      "currentLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "latestLogAt": null,
+      "historicalReference": {
+        "tradeCount": 38,
+        "winRatePct": 55.2632,
+        "profitFactor": 2.2125,
+        "maxDrawdownPct": 7.7808
+      },
+      "dailyFields": [
+        "date",
+        "taskId",
+        "candidateId",
+        "pair",
+        "timeframe",
+        "logType",
+        "signalObserved",
+        "ruleMatched",
+        "paperOutcomeR",
+        "btcRegime",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "allowedLogTypes": [
+        "no_signal",
+        "signal_seen",
+        "rule_matched",
+        "missed",
+        "invalidated",
+        "risk_warning"
+      ],
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ]
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_090",
+      "candidateId": "lf_research_candidate_090",
+      "title": "1D 趋势低波突破 ATR2.0",
+      "status": "ready_for_local_logging",
+      "targetClosedSamples": 25,
+      "observationDays": 60,
+      "currentLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "latestLogAt": null,
+      "historicalReference": {
+        "tradeCount": 207,
+        "winRatePct": 43.4783,
+        "profitFactor": 1.3856,
+        "maxDrawdownPct": 20.0035
+      },
+      "dailyFields": [
+        "date",
+        "taskId",
+        "candidateId",
+        "pair",
+        "timeframe",
+        "logType",
+        "signalObserved",
+        "ruleMatched",
+        "paperOutcomeR",
+        "btcRegime",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "allowedLogTypes": [
+        "no_signal",
+        "signal_seen",
+        "rule_matched",
+        "missed",
+        "invalidated",
+        "risk_warning"
+      ],
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ]
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_108",
+      "candidateId": "lf_research_candidate_108",
+      "title": "1D 广谱低波突破 ATR2.0",
+      "status": "ready_for_local_logging",
+      "targetClosedSamples": 25,
+      "observationDays": 60,
+      "currentLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "latestLogAt": null,
+      "historicalReference": {
+        "tradeCount": 220,
+        "winRatePct": 42.2727,
+        "profitFactor": 1.3152,
+        "maxDrawdownPct": 20.8539
+      },
+      "dailyFields": [
+        "date",
+        "taskId",
+        "candidateId",
+        "pair",
+        "timeframe",
+        "logType",
+        "signalObserved",
+        "ruleMatched",
+        "paperOutcomeR",
+        "btcRegime",
+        "invalidatedReason",
+        "riskNote",
+        "screenshotOrChartNote"
+      ],
+      "allowedLogTypes": [
+        "no_signal",
+        "signal_seen",
+        "rule_matched",
+        "missed",
+        "invalidated",
+        "risk_warning"
+      ],
+      "blockedActions": [
+        "exchange_dry_run",
+        "live_trading",
+        "order_creation",
+        "automatic_trading",
+        "api_key_storage"
+      ]
+    }
+  ],
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "safetyBoundary": {
+    "realTradingEnabled": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "apiKeyStorage": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "autoTrading": false
+  }
+}
