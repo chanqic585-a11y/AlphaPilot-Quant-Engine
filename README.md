@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.7.1 - Strategy Runtime Data Contract
+AlphaPilot V13.7.20 - Five Strategy Candidate Factory
 ```
 
 ## Positioning
@@ -3876,6 +3876,63 @@ is negative, so the candidate remains research-only. The 2R target was not
 weakened to rescue the result.
 
 V13.7.19 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
+## V13.7.20 Five Strategy Candidate Factory
+
+V13.7.20 expands the deterministic low-frequency research layer into a batch
+candidate factory. It searches local public OKX futures OHLCV from 2020-2026
+for fixed 2R strategy candidates, then approves at most five candidates for
+local paper-observation review only.
+
+```powershell
+python -m alphapilot.reports.generate_v13_7_20_five_strategy_candidate_factory
+```
+
+Outputs:
+
+```text
+alphapilot/low_frequency/strategy_candidate_factory.py
+alphapilot/reports/generate_v13_7_20_five_strategy_candidate_factory.py
+reports/v13_7_20_five_strategy_candidate_factory_report.json
+reports/v13_7_20_five_strategy_candidate_factory_summary.md
+docs/V13.7.20-five-strategy-candidate-factory.md
+```
+
+Result:
+
+```text
+candidateCount: 120
+approvedCount: 5
+targetApprovedCount: 5
+targetRewardRiskRatio: 2.0
+paperObservationApprovedCount: 5
+dryRunApproved: false
+liveTradingApproved: false
+```
+
+Approved local paper-observation candidates:
+
+```text
+lf_research_candidate_089: 1d trend breakout confirmation ATR2.0
+  trades 319, winRatePct 45.4545, PF 1.5035, returnPct 80.2621, maxDD 21.4697
+lf_research_candidate_117: 1d sideways oversold reclaim ATR1.2
+  trades 36, winRatePct 58.3333, PF 2.4289, returnPct 21.7981, maxDD 6.8439
+lf_research_candidate_115: 1d sideways oversold reclaim ATR1.0
+  trades 38, winRatePct 55.2632, PF 2.2125, returnPct 21.0635, maxDD 7.7808
+lf_research_candidate_090: 1d trend squeeze breakout ATR2.0
+  trades 207, winRatePct 43.4783, PF 1.3856, returnPct 40.6901, maxDD 20.0035
+lf_research_candidate_108: 1d broad squeeze breakout ATR2.0
+  trades 220, winRatePct 42.2727, PF 1.3152, returnPct 36.4671, maxDD 20.8539
+```
+
+These candidates are not live strategies. They are local paper-observation
+research candidates. Candidate 089 has a barely positive 2025-2026 test split,
+and candidates 115/117 have thin train samples, so they require forward paper
+observation before any future exchange Dry-run review.
+
+V13.7.20 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
