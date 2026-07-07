@@ -3775,6 +3775,67 @@ approve paper observation, does not approve exchange Dry-run, and does not
 approve live trading. It only transforms existing V13.7.13 evidence into a
 clearer research committee-style review.
 
+## V13.7.15-V13.7.18 Strategy Learning Loop
+
+V13.7.15-V13.7.18 turns the multi-agent review output into a deterministic
+research learning loop:
+
+```powershell
+python -m alphapilot.reports.generate_v13_7_15_to_18_strategy_learning_loop
+```
+
+Outputs:
+
+```text
+alphapilot/reports/generate_v13_7_15_to_18_strategy_learning_loop.py
+reports/v13_7_15_strategy_learning_loop_report.json
+reports/v13_7_15_strategy_learning_loop_summary.md
+reports/v13_7_16_strategy_refactor_candidates_report.json
+reports/v13_7_16_strategy_refactor_candidates_summary.md
+reports/v13_7_17_regime_filtered_experiment_specs_report.json
+reports/v13_7_17_regime_filtered_experiment_specs_summary.md
+reports/v13_7_18_paper_observation_rereview_report.json
+reports/v13_7_18_paper_observation_rereview_summary.md
+docs/V13.7.15-strategy-learning-loop.md
+docs/V13.7.16-strategy-refactor-candidates.md
+docs/V13.7.17-regime-filtered-experiment-specs.md
+docs/V13.7.18-paper-observation-rereview.md
+```
+
+Version flow:
+
+- V13.7.15 builds a strategy learning ledger, graveyard, research watchlist,
+  and factor memory from V13.7.14 review evidence.
+- V13.7.16 converts that memory into refactor candidates instead of simply
+  adding more raw strategies.
+- V13.7.17 turns the best candidates into explicit low-frequency and
+  regime-filtered experiment specs.
+- V13.7.18 re-reviews paper-observation readiness and keeps all candidates in
+  research-backtest-only status until deterministic evidence exists.
+
+Result:
+
+```text
+learningItemCount: 6
+graveyardCount: 3
+researchWatchlistCount: 3
+refactorCandidateCount: 4
+experimentSpecCount: 3
+paperObservationApprovedCount: 0
+dryRunApproved: false
+liveTradingApproved: false
+```
+
+Recommended next executable research step:
+
+```text
+Implement a deterministic backtest for lf_factor_confluence_regime_filter_4h_v0_1 first.
+```
+
+V13.7.15-V13.7.18 do not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

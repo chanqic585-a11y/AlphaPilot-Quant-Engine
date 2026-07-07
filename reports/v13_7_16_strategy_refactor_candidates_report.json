@@ -1,0 +1,122 @@
+{
+  "reportId": "v13_7_16_strategy_refactor_candidates",
+  "version": "V13.7.16",
+  "status": "completed",
+  "generatedAt": "2026-07-07T01:13:15.638491Z",
+  "source": "alphapilot_strategy_refactor_candidates_v13_7_16",
+  "objective": "Convert strategy failures and research-only artifacts into next-generation refactor candidates.",
+  "inputReports": [
+    "reports/v13_7_15_strategy_learning_loop_report.json"
+  ],
+  "summary": {
+    "candidateCount": 4,
+    "researchBacktestSpecReadyCount": 3,
+    "paperObservationAllowedCount": 0,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "topCandidateId": "factor_confluence_low_frequency_filter_v0_1",
+    "nextStep": "Turn top refactor candidates into explicit low-frequency/regime-filtered experiment specs."
+  },
+  "refactorCandidates": [
+    {
+      "candidateId": "factor_confluence_low_frequency_filter_v0_1",
+      "title": "因子共振低频过滤候选",
+      "sourceLearningIds": [
+        "v13_4_21_manual_factor_library_report__report_summary",
+        "v13_4_21_factor_panel_report__report_summary",
+        "v13_4_22_factor_evaluation_report__report_summary"
+      ],
+      "hypothesis": "把因子面板从入场信号降级为低频过滤器，只在趋势、动量和波动条件共振时允许策略继续研究。",
+      "proposedChanges": [
+        "Use factors as filters, not direct entries.",
+        "Require 4h/1d context before testing lower-timeframe signals.",
+        "Keep target reward multiple at 2R."
+      ],
+      "blockedBy": [
+        "no explicit entry/exit rule yet",
+        "no completed stress-test yet"
+      ],
+      "specReadyForResearchBacktest": true,
+      "paperObservationAllowed": false,
+      "priority": 91
+    },
+    {
+      "candidateId": "ml_loss_avoidance_overlay_v0_1",
+      "title": "ML 亏损规避过滤候选",
+      "sourceLearningIds": [
+        "v13_5_derivatives_ml_strategy_report__report_summary",
+        "v13_5_8_adaptive_ml_factor_report__report_summary"
+      ],
+      "hypothesis": "把失败的 ML 方向从入场模型改造成亏损规避过滤器，只决定什么时候不研究某个信号。",
+      "proposedChanges": [
+        "ML output cannot create signals.",
+        "Use ML only to block high-risk market states.",
+        "Measure avoided loss against missed opportunity."
+      ],
+      "blockedBy": [
+        "needs leakage audit",
+        "needs walk-forward no-trade comparison"
+      ],
+      "specReadyForResearchBacktest": true,
+      "paperObservationAllowed": false,
+      "priority": 86
+    },
+    {
+      "candidateId": "regime_aware_low_frequency_rebuild_v0_1",
+      "title": "市场状态低频重构候选",
+      "sourceLearningIds": [
+        "v13_5_derivatives_ml_strategy_report__report_summary",
+        "v13_5_8_adaptive_ml_factor_report__report_summary",
+        "v13_5_22_alpha191_factor_extraction_report__report_summary"
+      ],
+      "hypothesis": "把失败的一小时/四小时候选重构为更低频、更少交易、带 BTC 状态过滤的策略族。",
+      "proposedChanges": [
+        "Use BTC regime labels as the first gate.",
+        "Prefer 4h/1d setups over dense 1h entries.",
+        "Reject trades during BTC急跌, high volatility expansion, or liquidity deterioration."
+      ],
+      "blockedBy": [
+        "needs deterministic rule implementation",
+        "needs 2020-2026 replay"
+      ],
+      "specReadyForResearchBacktest": true,
+      "paperObservationAllowed": false,
+      "priority": 88
+    },
+    {
+      "candidateId": "strategy_failure_memory_index_v0_1",
+      "title": "策略失败记忆索引候选",
+      "sourceLearningIds": [
+        "learn_v13_4_21_manual_factor_library_report__report_summary",
+        "learn_v13_4_21_factor_panel_report__report_summary",
+        "learn_v13_4_22_factor_evaluation_report__report_summary",
+        "learn_v13_5_derivatives_ml_strategy_report__report_summary",
+        "learn_v13_5_8_adaptive_ml_factor_report__report_summary",
+        "learn_v13_5_22_alpha191_factor_extraction_report__report_summary"
+      ],
+      "hypothesis": "把失败原因做成索引，后续每次生成新策略前先检查是否重复踩坑。",
+      "proposedChanges": [
+        "Index failure modes by factor, timeframe, market regime, and risk failure.",
+        "Block duplicate hypotheses before expensive backtests."
+      ],
+      "blockedBy": [
+        "requires more failure cases for richer taxonomy"
+      ],
+      "specReadyForResearchBacktest": false,
+      "paperObservationAllowed": false,
+      "priority": 75
+    }
+  ],
+  "safetyBoundary": {
+    "realTradingEnabled": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "apiKeyStorage": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "autoTrading": false
+  }
+}

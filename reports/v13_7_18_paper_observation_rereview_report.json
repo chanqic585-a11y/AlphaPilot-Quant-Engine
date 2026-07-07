@@ -1,0 +1,93 @@
+{
+  "reportId": "v13_7_18_paper_observation_rereview",
+  "version": "V13.7.18",
+  "status": "completed",
+  "generatedAt": "2026-07-07T01:13:15.639493Z",
+  "source": "alphapilot_paper_observation_rereview_v13_7_18",
+  "objective": "Re-review whether newly generated research specs can enter paper observation.",
+  "inputReports": [
+    "reports/v13_7_17_regime_filtered_experiment_specs_report.json"
+  ],
+  "summary": {
+    "reviewedExperimentCount": 3,
+    "paperObservationApprovedCount": 0,
+    "researchBacktestOnlyCount": 3,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "nextExecutableResearchStep": "Implement a deterministic backtest for lf_factor_confluence_regime_filter_4h_v0_1 first, then rerun paper observation review only after evidence exists."
+  },
+  "paperObservationReviews": [
+    {
+      "experimentId": "lf_factor_confluence_regime_filter_4h_v0_1",
+      "sourceCandidateId": "factor_confluence_low_frequency_filter_v0_1",
+      "paperObservationStatus": "not_approved",
+      "readinessScore": 35,
+      "missingEvidence": [
+        "No completed deterministic strategy implementation for this experiment.",
+        "No completed 2020-2026 replay for this exact rule set.",
+        "No walk-forward validation for this exact rule set.",
+        "No fee/slippage/latency stress report for this exact rule set.",
+        "No proof that 2R target survives after costs."
+      ],
+      "allowedNextAction": "research_backtest_only",
+      "blockedActions": [
+        "paper_observation",
+        "exchange_dry_run",
+        "live_trading",
+        "auto_trading"
+      ]
+    },
+    {
+      "experimentId": "ml_loss_avoidance_filter_overlay_v0_1",
+      "sourceCandidateId": "ml_loss_avoidance_overlay_v0_1",
+      "paperObservationStatus": "not_approved",
+      "readinessScore": 35,
+      "missingEvidence": [
+        "No completed deterministic strategy implementation for this experiment.",
+        "No completed 2020-2026 replay for this exact rule set.",
+        "No walk-forward validation for this exact rule set.",
+        "No fee/slippage/latency stress report for this exact rule set.",
+        "No proof that 2R target survives after costs."
+      ],
+      "allowedNextAction": "research_backtest_only",
+      "blockedActions": [
+        "paper_observation",
+        "exchange_dry_run",
+        "live_trading",
+        "auto_trading"
+      ]
+    },
+    {
+      "experimentId": "regime_aware_low_frequency_rebuild_4h_1d_v0_1",
+      "sourceCandidateId": "regime_aware_low_frequency_rebuild_v0_1",
+      "paperObservationStatus": "not_approved",
+      "readinessScore": 35,
+      "missingEvidence": [
+        "No completed deterministic strategy implementation for this experiment.",
+        "No completed 2020-2026 replay for this exact rule set.",
+        "No walk-forward validation for this exact rule set.",
+        "No fee/slippage/latency stress report for this exact rule set.",
+        "No proof that 2R target survives after costs."
+      ],
+      "allowedNextAction": "research_backtest_only",
+      "blockedActions": [
+        "paper_observation",
+        "exchange_dry_run",
+        "live_trading",
+        "auto_trading"
+      ]
+    }
+  ],
+  "safetyBoundary": {
+    "realTradingEnabled": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "apiKeyStorage": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "autoTrading": false
+  }
+}

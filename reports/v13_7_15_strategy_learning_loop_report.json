@@ -1,0 +1,318 @@
+{
+  "reportId": "v13_7_15_strategy_learning_loop",
+  "version": "V13.7.15",
+  "status": "completed",
+  "generatedAt": "2026-07-07T01:13:15.637506Z",
+  "source": "alphapilot_strategy_learning_loop_v13_7_15",
+  "objective": "Turn failed and inconclusive strategy research into reusable learning records.",
+  "inputReports": [
+    "reports/v13_7_14_multi_agent_strategy_review_report.json",
+    "reports/v13_7_13_backtest_task_completion_report.json"
+  ],
+  "summary": {
+    "reviewedSubjectCount": 6,
+    "learningItemCount": 6,
+    "graveyardCount": 3,
+    "researchWatchlistCount": 3,
+    "factorMemoryCount": 5,
+    "statusCounts": {
+      "keep_researching": 3,
+      "reject_for_now": 3
+    },
+    "kindCounts": {
+      "factor_research": 5,
+      "ml_research": 1
+    },
+    "topReviewerVerdicts": {
+      "research_risk_watch": 6,
+      "factor_not_strategy": 5,
+      "adequate_for_research": 3,
+      "research_data_only": 3,
+      "not_applicable_or_missing": 3,
+      "insufficient_trade_count": 3,
+      "ml_overfit_watch": 1
+    },
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "nextStep": "Generate refactor candidates from the learning ledger, not from raw optimism."
+  },
+  "learningLedger": [
+    {
+      "learningId": "learn_v13_4_21_manual_factor_library_report__report_summary",
+      "subjectId": "v13_4_21_manual_factor_library_report__report_summary",
+      "title": "因子研究观察策略 - 手工因子库",
+      "kind": "factor_research",
+      "researchStatus": "keep_researching",
+      "committeeScore": 54.75,
+      "dominantReviewerVerdicts": [
+        "adequate_for_research",
+        "research_data_only",
+        "research_risk_watch",
+        "factor_not_strategy"
+      ],
+      "whatWeLearned": [
+        "样本规模足够支撑研究层审查。",
+        "该对象不是完整入场/出场策略，不能按策略回测结论处理。",
+        "保持研究态，不连接交易权限，不创建订单。",
+        "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+        "风险暂未通过观察批准，但可继续研究。"
+      ],
+      "doNotRepeat": [
+        "Do not promote a report-only factor object as a strategy.",
+        "Do not lower the 2R requirement to rescue a weak candidate.",
+        "Do not move any failed sample into paper observation without new evidence."
+      ],
+      "reuseAs": "factor_input",
+      "nextResearchQuestion": "保留为研究资料，先转化为明确规则再谈回测。"
+    },
+    {
+      "learningId": "learn_v13_4_21_factor_panel_report__report_summary",
+      "subjectId": "v13_4_21_factor_panel_report__report_summary",
+      "title": "因子研究观察策略 - 因子面板",
+      "kind": "factor_research",
+      "researchStatus": "keep_researching",
+      "committeeScore": 54.75,
+      "dominantReviewerVerdicts": [
+        "adequate_for_research",
+        "research_data_only",
+        "research_risk_watch",
+        "factor_not_strategy"
+      ],
+      "whatWeLearned": [
+        "样本规模足够支撑研究层审查。",
+        "该对象不是完整入场/出场策略，不能按策略回测结论处理。",
+        "保持研究态，不连接交易权限，不创建订单。",
+        "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+        "风险暂未通过观察批准，但可继续研究。"
+      ],
+      "doNotRepeat": [
+        "Do not promote a report-only factor object as a strategy.",
+        "Do not lower the 2R requirement to rescue a weak candidate.",
+        "Do not move any failed sample into paper observation without new evidence."
+      ],
+      "reuseAs": "factor_input",
+      "nextResearchQuestion": "保留为研究资料，先转化为明确规则再谈回测。"
+    },
+    {
+      "learningId": "learn_v13_4_22_factor_evaluation_report__report_summary",
+      "subjectId": "v13_4_22_factor_evaluation_report__report_summary",
+      "title": "因子研究观察策略 - forward label 因子评价",
+      "kind": "factor_research",
+      "researchStatus": "keep_researching",
+      "committeeScore": 54.75,
+      "dominantReviewerVerdicts": [
+        "adequate_for_research",
+        "research_data_only",
+        "research_risk_watch",
+        "factor_not_strategy"
+      ],
+      "whatWeLearned": [
+        "样本规模足够支撑研究层审查。",
+        "该对象不是完整入场/出场策略，不能按策略回测结论处理。",
+        "保持研究态，不连接交易权限，不创建订单。",
+        "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+        "风险暂未通过观察批准，但可继续研究。"
+      ],
+      "doNotRepeat": [
+        "Do not promote a report-only factor object as a strategy.",
+        "Do not lower the 2R requirement to rescue a weak candidate.",
+        "Do not move any failed sample into paper observation without new evidence."
+      ],
+      "reuseAs": "factor_input",
+      "nextResearchQuestion": "保留为研究资料，先转化为明确规则再谈回测。"
+    },
+    {
+      "learningId": "learn_v13_5_derivatives_ml_strategy_report__report_summary",
+      "subjectId": "v13_5_derivatives_ml_strategy_report__report_summary",
+      "title": "衍生品 ML-gated 策略研究",
+      "kind": "ml_research",
+      "researchStatus": "reject_for_now",
+      "committeeScore": 38.5,
+      "dominantReviewerVerdicts": [
+        "not_applicable_or_missing",
+        "insufficient_trade_count",
+        "research_risk_watch",
+        "ml_overfit_watch"
+      ],
+      "whatWeLearned": [
+        "没有可量化样本，当前只适合保留为研究资料。",
+        "交易样本不足，统计不稳定。",
+        "保持研究态，不连接交易权限，不创建订单。",
+        "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+        "风险暂未通过观察批准，但可继续研究。"
+      ],
+      "doNotRepeat": [
+        "Do not promote a report-only factor object as a strategy.",
+        "Do not lower the 2R requirement to rescue a weak candidate.",
+        "Do not move any failed sample into paper observation without new evidence."
+      ],
+      "reuseAs": "negative_evidence",
+      "nextResearchQuestion": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。"
+    },
+    {
+      "learningId": "learn_v13_5_8_adaptive_ml_factor_report__report_summary",
+      "subjectId": "v13_5_8_adaptive_ml_factor_report__report_summary",
+      "title": "Adaptive ML 因子候选",
+      "kind": "factor_research",
+      "researchStatus": "reject_for_now",
+      "committeeScore": 38.0,
+      "dominantReviewerVerdicts": [
+        "not_applicable_or_missing",
+        "insufficient_trade_count",
+        "research_risk_watch",
+        "factor_not_strategy"
+      ],
+      "whatWeLearned": [
+        "没有可量化样本，当前只适合保留为研究资料。",
+        "交易样本不足，统计不稳定。",
+        "保持研究态，不连接交易权限，不创建订单。",
+        "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+        "风险暂未通过观察批准，但可继续研究。"
+      ],
+      "doNotRepeat": [
+        "Do not promote a report-only factor object as a strategy.",
+        "Do not lower the 2R requirement to rescue a weak candidate.",
+        "Do not move any failed sample into paper observation without new evidence."
+      ],
+      "reuseAs": "factor_input",
+      "nextResearchQuestion": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。"
+    },
+    {
+      "learningId": "learn_v13_5_22_alpha191_factor_extraction_report__report_summary",
+      "subjectId": "v13_5_22_alpha191_factor_extraction_report__report_summary",
+      "title": "Alpha191 因子观察策略",
+      "kind": "factor_research",
+      "researchStatus": "reject_for_now",
+      "committeeScore": 38.0,
+      "dominantReviewerVerdicts": [
+        "not_applicable_or_missing",
+        "insufficient_trade_count",
+        "research_risk_watch",
+        "factor_not_strategy"
+      ],
+      "whatWeLearned": [
+        "没有可量化样本，当前只适合保留为研究资料。",
+        "交易样本不足，统计不稳定。",
+        "保持研究态，不连接交易权限，不创建订单。",
+        "任何候选必须先证明滑点、手续费和连续亏损压力测试可接受。",
+        "风险暂未通过观察批准，但可继续研究。"
+      ],
+      "doNotRepeat": [
+        "Do not promote a report-only factor object as a strategy.",
+        "Do not lower the 2R requirement to rescue a weak candidate.",
+        "Do not move any failed sample into paper observation without new evidence."
+      ],
+      "reuseAs": "factor_input",
+      "nextResearchQuestion": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。"
+    }
+  ],
+  "strategyGraveyard": [
+    {
+      "subjectId": "v13_5_derivatives_ml_strategy_report__report_summary",
+      "title": "衍生品 ML-gated 策略研究",
+      "reason": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。",
+      "preserveEvidence": [
+        "reports/v13_7_13_derivatives_ml_strategy_1h_broad_report.json",
+        "reports/v13_7_13_derivatives_ml_strategy_4h_broad_report.json"
+      ],
+      "resurrectionRule": "Only revisit after a new rule, new data split, and explicit stress-test plan exist."
+    },
+    {
+      "subjectId": "v13_5_8_adaptive_ml_factor_report__report_summary",
+      "title": "Adaptive ML 因子候选",
+      "reason": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。",
+      "preserveEvidence": [
+        "reports/v13_7_13_adaptive_ml_factor_report.json",
+        "reports/v13_7_13_adaptive_ml_candidates.json"
+      ],
+      "resurrectionRule": "Only revisit after a new rule, new data split, and explicit stress-test plan exist."
+    },
+    {
+      "subjectId": "v13_5_22_alpha191_factor_extraction_report__report_summary",
+      "title": "Alpha191 因子观察策略",
+      "reason": "暂时淘汰，不进入模拟盘；保留失败原因供后续重构。",
+      "preserveEvidence": [
+        "reports/v13_5_22_alpha191_factor_extraction_report.json",
+        "reports/v13_5_22_alpha191_factor_candidate_catalog.json",
+        "reports/v13_5_23_alpha191_crypto_subset_replay_report.json"
+      ],
+      "resurrectionRule": "Only revisit after a new rule, new data split, and explicit stress-test plan exist."
+    }
+  ],
+  "researchWatchlist": [
+    {
+      "subjectId": "v13_4_21_manual_factor_library_report__report_summary",
+      "title": "因子研究观察策略 - 手工因子库",
+      "kind": "factor_research",
+      "nextAction": "保留为研究资料，先转化为明确规则再谈回测。",
+      "usableEvidence": [
+        "reports/v13_7_13_manual_factor_library_report.json",
+        "reports/v13_7_13_factor_panel_report.json"
+      ]
+    },
+    {
+      "subjectId": "v13_4_21_factor_panel_report__report_summary",
+      "title": "因子研究观察策略 - 因子面板",
+      "kind": "factor_research",
+      "nextAction": "保留为研究资料，先转化为明确规则再谈回测。",
+      "usableEvidence": [
+        "reports/v13_7_13_factor_panel_report.json",
+        "reports/v13_7_13_factor_panel_summary.md"
+      ]
+    },
+    {
+      "subjectId": "v13_4_22_factor_evaluation_report__report_summary",
+      "title": "因子研究观察策略 - forward label 因子评价",
+      "kind": "factor_research",
+      "nextAction": "保留为研究资料，先转化为明确规则再谈回测。",
+      "usableEvidence": [
+        "reports/v13_7_13_factor_evaluation_report.json",
+        "reports/v13_7_13_factor_candidates.json"
+      ]
+    }
+  ],
+  "factorMemory": [
+    {
+      "subjectId": "v13_4_21_manual_factor_library_report__report_summary",
+      "title": "因子研究观察策略 - 手工因子库",
+      "usableAs": "feature_or_filter_input_only",
+      "notUsableAs": "standalone_strategy"
+    },
+    {
+      "subjectId": "v13_4_21_factor_panel_report__report_summary",
+      "title": "因子研究观察策略 - 因子面板",
+      "usableAs": "feature_or_filter_input_only",
+      "notUsableAs": "standalone_strategy"
+    },
+    {
+      "subjectId": "v13_4_22_factor_evaluation_report__report_summary",
+      "title": "因子研究观察策略 - forward label 因子评价",
+      "usableAs": "feature_or_filter_input_only",
+      "notUsableAs": "standalone_strategy"
+    },
+    {
+      "subjectId": "v13_5_8_adaptive_ml_factor_report__report_summary",
+      "title": "Adaptive ML 因子候选",
+      "usableAs": "feature_or_filter_input_only",
+      "notUsableAs": "standalone_strategy"
+    },
+    {
+      "subjectId": "v13_5_22_alpha191_factor_extraction_report__report_summary",
+      "title": "Alpha191 因子观察策略",
+      "usableAs": "feature_or_filter_input_only",
+      "notUsableAs": "standalone_strategy"
+    }
+  ],
+  "safetyBoundary": {
+    "realTradingEnabled": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "apiKeyStorage": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "autoTrading": false
+  }
+}
