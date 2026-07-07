@@ -3836,6 +3836,49 @@ V13.7.15-V13.7.18 do not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.7.19 LF Factor Confluence Deterministic Backtest
+
+V13.7.19 implements the first deterministic research backtest requested by
+V13.7.18:
+
+```powershell
+python -m alphapilot.reports.generate_v13_7_19_lf_factor_confluence_backtest
+```
+
+Outputs:
+
+```text
+alphapilot/low_frequency/factor_confluence_backtest.py
+alphapilot/reports/generate_v13_7_19_lf_factor_confluence_backtest.py
+reports/v13_7_19_lf_factor_confluence_backtest_report.json
+reports/v13_7_19_lf_factor_confluence_backtest_summary.md
+docs/V13.7.19-lf-factor-confluence-backtest.md
+```
+
+Result:
+
+```text
+experimentId: lf_factor_confluence_regime_filter_4h_v0_1
+tradeCount: 92
+winRatePct: 39.1304
+profitFactor: 1.1694
+targetRewardRiskRatio: 2.0
+totalReturnPct: 9.7877
+maxDrawdownPct: 18.8774
+walkForwardValidationPositive: false
+paperObservationApproved: false
+dryRunApproved: false
+liveTradingApproved: false
+```
+
+The total sample is promising but the 2023-2024 walk-forward validation split
+is negative, so the candidate remains research-only. The 2R target was not
+weakened to rescue the result.
+
+V13.7.19 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.
