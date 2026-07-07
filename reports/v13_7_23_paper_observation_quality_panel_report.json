@@ -1,0 +1,222 @@
+{
+  "reportId": "v13_7_23_paper_observation_quality_panel",
+  "version": "V13.7.23",
+  "status": "completed",
+  "generatedAt": "2026-07-07T03:03:20.814169+00:00",
+  "source": "alphapilot_paper_observation_quality_panel_v13_7_23",
+  "objective": "Define local paper-observation quality scoring for the five V13.7.21 task-pack candidates.",
+  "inputReports": [
+    "reports\\v13_7_21_paper_observation_task_pack_report.json",
+    "reports\\v13_7_22_paper_observation_logbook_report.json"
+  ],
+  "summary": {
+    "taskCount": 5,
+    "notStartedCount": 5,
+    "prioritySeedCount": 0,
+    "targetClosedSamplesTotal": 130,
+    "qualityScoreMax": 100,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "nextStep": "Use the desktop console quality panel to decide which local observation task to review first."
+  },
+  "qualityRules": {
+    "scoreMax": 100,
+    "components": [
+      {
+        "component": "logCoverage",
+        "weight": 30,
+        "meaning": "How much of the target paper-observation sample has been logged."
+      },
+      {
+        "component": "ruleMatchCoverage",
+        "weight": 25,
+        "meaning": "Whether rule-matched observations are appearing often enough to be useful."
+      },
+      {
+        "component": "closedSampleCoverage",
+        "weight": 25,
+        "meaning": "How many observations have closed paper outcomes."
+      },
+      {
+        "component": "recency",
+        "weight": 10,
+        "meaning": "Whether the task has recent local observation activity."
+      },
+      {
+        "component": "riskHygiene",
+        "weight": 10,
+        "meaning": "Whether invalidation and risk-warning logs are still manageable."
+      }
+    ],
+    "labels": [
+      {
+        "qualityLabel": "not_started",
+        "consoleLabel": "未开始",
+        "condition": "No local observation logs yet.",
+        "nextAction": "Record no-signal days, signal-seen events, rule matches, and invalidations."
+      },
+      {
+        "qualityLabel": "needs_more_logs",
+        "consoleLabel": "需要补日志",
+        "condition": "Some logs exist, but log coverage is still thin.",
+        "nextAction": "Continue daily observation before judging strategy quality."
+      },
+      {
+        "qualityLabel": "continue_observing",
+        "consoleLabel": "继续观察",
+        "condition": "Logs and rule matches are developing, but closed samples are not enough yet.",
+        "nextAction": "Keep tracking until the target closed sample count is reached."
+      },
+      {
+        "qualityLabel": "priority_watch",
+        "consoleLabel": "优先观察",
+        "condition": "Good log coverage, rule matches, and low risk-warning pressure.",
+        "nextAction": "Review this task first during daily observation."
+      },
+      {
+        "qualityLabel": "needs_risk_review",
+        "consoleLabel": "需要风险复核",
+        "condition": "Invalidation or risk-warning logs are becoming material.",
+        "nextAction": "Review weak pairs, regime drift, liquidity, and data-quality notes."
+      },
+      {
+        "qualityLabel": "pause_candidate",
+        "consoleLabel": "暂停候选",
+        "condition": "Enough observation exists to show poor signal availability or risk pressure.",
+        "nextAction": "Pause or redesign after human review; do not delete the record."
+      }
+    ],
+    "promotionGate": {
+      "minimumClosedSamplesPerTask": "Use each task's targetClosedSamples.",
+      "minimumRuleMatchedSignals": "Use each task's minimumRuleMatchedSignals.",
+      "forbiddenShortcut": "Never promote because of one attractive event or one backtest metric."
+    }
+  },
+  "qualityRows": [
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_089",
+      "strategyId": "v13_7_20_lf_research_candidate_089",
+      "candidateId": "lf_research_candidate_089",
+      "title": "1D 趋势突破确认 ATR2.0",
+      "family": "breakout",
+      "timeframe": "1d",
+      "targetClosedSamples": 25,
+      "minimumRuleMatchedSignals": 12,
+      "baselinePriorityScore": 53.97,
+      "baselineRankHint": "cautious_seed",
+      "qualityLabel": "not_started",
+      "qualityScore": 0,
+      "localLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "riskWarningCount": 0,
+      "invalidatedCount": 0,
+      "nextAction": "Start local paper-observation logging in the desktop console."
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_117",
+      "strategyId": "v13_7_20_lf_research_candidate_117",
+      "candidateId": "lf_research_candidate_117",
+      "title": "1D 横盘超卖修复 ATR1.2",
+      "family": "mean_reversion",
+      "timeframe": "1d",
+      "targetClosedSamples": 25,
+      "minimumRuleMatchedSignals": 12,
+      "baselinePriorityScore": 61.46,
+      "baselineRankHint": "continue_observing_seed",
+      "qualityLabel": "not_started",
+      "qualityScore": 0,
+      "localLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "riskWarningCount": 0,
+      "invalidatedCount": 0,
+      "nextAction": "Start local paper-observation logging in the desktop console."
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_115",
+      "strategyId": "v13_7_20_lf_research_candidate_115",
+      "candidateId": "lf_research_candidate_115",
+      "title": "1D 横盘超卖修复 ATR1.0",
+      "family": "mean_reversion",
+      "timeframe": "1d",
+      "targetClosedSamples": 30,
+      "minimumRuleMatchedSignals": 15,
+      "baselinePriorityScore": 55.15,
+      "baselineRankHint": "continue_observing_seed",
+      "qualityLabel": "not_started",
+      "qualityScore": 0,
+      "localLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "riskWarningCount": 0,
+      "invalidatedCount": 0,
+      "nextAction": "Start local paper-observation logging in the desktop console."
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_090",
+      "strategyId": "v13_7_20_lf_research_candidate_090",
+      "candidateId": "lf_research_candidate_090",
+      "title": "1D 趋势低波突破 ATR2.0",
+      "family": "squeeze_breakout",
+      "timeframe": "1d",
+      "targetClosedSamples": 25,
+      "minimumRuleMatchedSignals": 12,
+      "baselinePriorityScore": 62.66,
+      "baselineRankHint": "continue_observing_seed",
+      "qualityLabel": "not_started",
+      "qualityScore": 0,
+      "localLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "riskWarningCount": 0,
+      "invalidatedCount": 0,
+      "nextAction": "Start local paper-observation logging in the desktop console."
+    },
+    {
+      "taskId": "v13_7_21_observe_lf_research_candidate_108",
+      "strategyId": "v13_7_20_lf_research_candidate_108",
+      "candidateId": "lf_research_candidate_108",
+      "title": "1D 广谱低波突破 ATR2.0",
+      "family": "squeeze_breakout",
+      "timeframe": "1d",
+      "targetClosedSamples": 25,
+      "minimumRuleMatchedSignals": 12,
+      "baselinePriorityScore": 61.72,
+      "baselineRankHint": "continue_observing_seed",
+      "qualityLabel": "not_started",
+      "qualityScore": 0,
+      "localLogCount": 0,
+      "ruleMatchedCount": 0,
+      "closedPaperSampleCount": 0,
+      "riskWarningCount": 0,
+      "invalidatedCount": 0,
+      "nextAction": "Start local paper-observation logging in the desktop console."
+    }
+  ],
+  "paperObservationLogbookSummary": {
+    "taskCount": 5,
+    "readyForLoggingCount": 5,
+    "currentLogCount": 0,
+    "ruleMatchedCount": 0,
+    "closedPaperSampleCount": 0,
+    "targetClosedSamplesTotal": 130,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "nextStep": "Record daily paper-observation logs in the desktop console before considering any stricter simulation stage."
+  },
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "safetyBoundary": {
+    "realTradingEnabled": false,
+    "exchangeDryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "apiKeyStorage": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "autoTrading": false
+  }
+}

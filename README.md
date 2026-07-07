@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.7.22 - Paper Observation Logbook
+AlphaPilot V13.7.23 - Paper Observation Quality Panel
 ```
 
 ## Positioning
@@ -29,6 +29,37 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.7.23 Paper Observation Quality Panel
+
+V13.7.23 adds a report-only quality scoring model for the five V13.7.21 local
+paper-observation tasks.
+
+Generate the quality panel baseline:
+
+```powershell
+python -m alphapilot.reports.generate_v13_7_23_paper_observation_quality_panel
+```
+
+Outputs:
+
+- `reports/v13_7_23_paper_observation_quality_panel_report.json`
+- `reports/v13_7_23_paper_observation_quality_panel_summary.md`
+- `docs/V13.7.23-paper-observation-quality-panel.md`
+
+Result:
+
+- taskCount: 5
+- targetClosedSamplesTotal: 130
+- qualityScoreMax: 100
+- dryRunApproved: false
+- liveTradingApproved: false
+
+The desktop Control Console combines this scoring model with local observation
+logs to show priority watch, continue observing, needs review, and pause
+candidate states. V13.7.23 does not add Trade API, Withdraw API, API key
+storage, real account reads, real position reads, order creation, exchange
+Dry-run, live trading, or automation.
 
 ## V13.7.22 Paper Observation Logbook
 
