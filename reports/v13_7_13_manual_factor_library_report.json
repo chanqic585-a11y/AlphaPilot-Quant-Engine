@@ -1,0 +1,448 @@
+{
+  "reportId": "v13_4_21_manual_factor_library_report",
+  "version": "V13.4.21",
+  "status": "success",
+  "factorCount": 16,
+  "computedFactors": [
+    "momentum_3",
+    "momentum_12",
+    "reversal_3",
+    "volume_expansion_24h",
+    "volume_expansion_3d",
+    "distance_to_ema20",
+    "distance_to_ema50",
+    "bollinger_position",
+    "volatility_24h",
+    "volatility_3d",
+    "relative_strength_vs_btc",
+    "liquidity_rank",
+    "atr_pct",
+    "trend_strength",
+    "mean_reversion_distance",
+    "breakout_pressure"
+  ],
+  "factorDefinitions": [
+    {
+      "factorId": "momentum_3",
+      "name": "Momentum 3",
+      "description": "Short horizon momentum over three bars.",
+      "formula": "ts_return(close, 3)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_may_be_stronger",
+      "applicableRegime": [
+        "trend",
+        "breakout"
+      ],
+      "riskNotes": [
+        "Can overfit during choppy regimes."
+      ],
+      "outputColumn": "momentum_3",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "momentum_12",
+      "name": "Momentum 12",
+      "description": "Medium horizon momentum over twelve bars.",
+      "formula": "ts_return(close, 12)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_may_be_stronger",
+      "applicableRegime": [
+        "trend"
+      ],
+      "riskNotes": [
+        "May lag fast reversals."
+      ],
+      "outputColumn": "momentum_12",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "reversal_3",
+      "name": "Reversal 3",
+      "description": "Short horizon reversal pressure.",
+      "formula": "-ts_return(close, 3)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_may_indicate_rebound",
+      "applicableRegime": [
+        "mean_reversion"
+      ],
+      "riskNotes": [
+        "Can fight strong trends."
+      ],
+      "outputColumn": "reversal_3",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "volume_expansion_24h",
+      "name": "Volume Expansion 24H",
+      "description": "Volume expansion versus recent average.",
+      "formula": "volume / ts_mean(volume, 24)",
+      "requiredFields": [
+        "volume"
+      ],
+      "expectedDirection": "higher_indicates_attention",
+      "applicableRegime": [
+        "breakout",
+        "trend"
+      ],
+      "riskNotes": [
+        "Volume spikes can be exhaustion rather than continuation."
+      ],
+      "outputColumn": "volume_expansion_24h",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "volume_expansion_3d",
+      "name": "Volume Expansion 3D",
+      "description": "Three-day style volume expansion on 1h bars.",
+      "formula": "ts_mean(volume, 24) / ts_mean(volume, 72)",
+      "requiredFields": [
+        "volume"
+      ],
+      "expectedDirection": "higher_indicates_attention",
+      "applicableRegime": [
+        "breakout",
+        "trend"
+      ],
+      "riskNotes": [
+        "Requires enough history for stable comparison."
+      ],
+      "outputColumn": "volume_expansion_3d",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "distance_to_ema20",
+      "name": "Distance To Ema20",
+      "description": "Distance from close to EMA20.",
+      "formula": "(close - ts_ema(close, 20)) / ts_ema(close, 20)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "trend",
+        "mean_reversion"
+      ],
+      "riskNotes": [
+        "Large distance can mean strength or overextension."
+      ],
+      "outputColumn": "distance_to_ema20",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "distance_to_ema50",
+      "name": "Distance To Ema50",
+      "description": "Distance from close to EMA50.",
+      "formula": "(close - ts_ema(close, 50)) / ts_ema(close, 50)",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "trend",
+        "mean_reversion"
+      ],
+      "riskNotes": [
+        "Slower signal can lag new regimes."
+      ],
+      "outputColumn": "distance_to_ema50",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "bollinger_position",
+      "name": "Bollinger Position",
+      "description": "Position inside a Bollinger-style range.",
+      "formula": "(close - lower_band) / (upper_band - lower_band)",
+      "requiredFields": [
+        "close",
+        "upper_band",
+        "lower_band"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "mean_reversion",
+        "breakout"
+      ],
+      "riskNotes": [
+        "Band position needs volatility context."
+      ],
+      "outputColumn": "bollinger_position",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "volatility_24h",
+      "name": "Volatility 24H",
+      "description": "Short-term realized volatility.",
+      "formula": "ts_std(returns_1, 24)",
+      "requiredFields": [
+        "returns_1"
+      ],
+      "expectedDirection": "lower_or_moderate_preferred",
+      "applicableRegime": [
+        "trend",
+        "mean_reversion",
+        "avoid"
+      ],
+      "riskNotes": [
+        "Very low volatility can imply no opportunity."
+      ],
+      "outputColumn": "volatility_24h",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "volatility_3d",
+      "name": "Volatility 3D",
+      "description": "Three-day realized volatility on 1h bars.",
+      "formula": "ts_std(returns_1, 72)",
+      "requiredFields": [
+        "returns_1"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "trend",
+        "breakout",
+        "avoid"
+      ],
+      "riskNotes": [
+        "High volatility can improve movement but harm execution."
+      ],
+      "outputColumn": "volatility_3d",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "relative_strength_vs_btc",
+      "name": "Relative Strength Vs Btc",
+      "description": "Pair return relative to BTC.",
+      "formula": "ts_return(close, 12) - btcReturn_12",
+      "requiredFields": [
+        "close",
+        "btcReturn"
+      ],
+      "expectedDirection": "higher_may_be_stronger",
+      "applicableRegime": [
+        "trend"
+      ],
+      "riskNotes": [
+        "BTC proxy must be time-aligned."
+      ],
+      "outputColumn": "relative_strength_vs_btc",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "liquidity_rank",
+      "name": "Liquidity Rank",
+      "description": "Cross-sectional liquidity rank.",
+      "formula": "rank(quoteVolume)",
+      "requiredFields": [
+        "quoteVolume"
+      ],
+      "expectedDirection": "higher_preferred",
+      "applicableRegime": [
+        "all"
+      ],
+      "riskNotes": [
+        "Liquidity is a research filter, not alpha by itself."
+      ],
+      "outputColumn": "liquidity_rank",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "atr_pct",
+      "name": "Atr Pct",
+      "description": "ATR as a percentage of close.",
+      "formula": "atr / close",
+      "requiredFields": [
+        "atr",
+        "close"
+      ],
+      "expectedDirection": "context_dependent",
+      "applicableRegime": [
+        "trend",
+        "mean_reversion",
+        "avoid"
+      ],
+      "riskNotes": [
+        "Requires consistent ATR calculation."
+      ],
+      "outputColumn": "atr_pct",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "trend_strength",
+      "name": "Trend Strength",
+      "description": "EMA trend structure strength.",
+      "formula": "(ts_ema(close, 20) - ts_ema(close, 50)) / close",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_may_be_stronger",
+      "applicableRegime": [
+        "trend"
+      ],
+      "riskNotes": [
+        "Can fail during late trend exhaustion."
+      ],
+      "outputColumn": "trend_strength",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "mean_reversion_distance",
+      "name": "Mean Reversion Distance",
+      "description": "Distance from mean for rebound research.",
+      "formula": "-abs((close - ts_mean(close, 24)) / ts_std(close, 24))",
+      "requiredFields": [
+        "close"
+      ],
+      "expectedDirection": "higher_means_less_extreme",
+      "applicableRegime": [
+        "mean_reversion"
+      ],
+      "riskNotes": [
+        "Extreme distance needs separate direction logic."
+      ],
+      "outputColumn": "mean_reversion_distance",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    },
+    {
+      "factorId": "breakout_pressure",
+      "name": "Breakout Pressure",
+      "description": "Pressure near recent highs with volume.",
+      "formula": "rank(close / ts_max(high, 24)) + rank(volume / ts_mean(volume, 24))",
+      "requiredFields": [
+        "close",
+        "high",
+        "volume"
+      ],
+      "expectedDirection": "higher_may_indicate_breakout_pressure",
+      "applicableRegime": [
+        "breakout"
+      ],
+      "riskNotes": [
+        "Breakout pressure needs false-breakout control."
+      ],
+      "outputColumn": "breakout_pressure",
+      "source": "alphapilot_manual_factor_library_v01",
+      "researchOnly": true
+    }
+  ],
+  "factorCoverage": {
+    "momentum_3": {
+      "nonNullCount": 596962,
+      "rowCount": 597046,
+      "coveragePct": 99.9859
+    },
+    "momentum_12": {
+      "nonNullCount": 596710,
+      "rowCount": 597046,
+      "coveragePct": 99.9437
+    },
+    "reversal_3": {
+      "nonNullCount": 596962,
+      "rowCount": 597046,
+      "coveragePct": 99.9859
+    },
+    "volume_expansion_24h": {
+      "nonNullCount": 596906,
+      "rowCount": 597046,
+      "coveragePct": 99.9766
+    },
+    "volume_expansion_3d": {
+      "nonNullCount": 596402,
+      "rowCount": 597046,
+      "coveragePct": 99.8921
+    },
+    "distance_to_ema20": {
+      "nonNullCount": 597046,
+      "rowCount": 597046,
+      "coveragePct": 100.0
+    },
+    "distance_to_ema50": {
+      "nonNullCount": 597046,
+      "rowCount": 597046,
+      "coveragePct": 100.0
+    },
+    "bollinger_position": {
+      "nonNullCount": 596794,
+      "rowCount": 597046,
+      "coveragePct": 99.9578
+    },
+    "volatility_24h": {
+      "nonNullCount": 596878,
+      "rowCount": 597046,
+      "coveragePct": 99.9719
+    },
+    "volatility_3d": {
+      "nonNullCount": 596374,
+      "rowCount": 597046,
+      "coveragePct": 99.8874
+    },
+    "relative_strength_vs_btc": {
+      "nonNullCount": 596710,
+      "rowCount": 597046,
+      "coveragePct": 99.9437
+    },
+    "liquidity_rank": {
+      "nonNullCount": 597046,
+      "rowCount": 597046,
+      "coveragePct": 100.0
+    },
+    "atr_pct": {
+      "nonNullCount": 596934,
+      "rowCount": 597046,
+      "coveragePct": 99.9812
+    },
+    "trend_strength": {
+      "nonNullCount": 597046,
+      "rowCount": 597046,
+      "coveragePct": 100.0
+    },
+    "mean_reversion_distance": {
+      "nonNullCount": 596906,
+      "rowCount": 597046,
+      "coveragePct": 99.9766
+    },
+    "breakout_pressure": {
+      "nonNullCount": 596906,
+      "rowCount": 597046,
+      "coveragePct": 99.9766
+    }
+  },
+  "averageCoveragePct": 99.9675,
+  "rowCount": 597046,
+  "pairCount": 28,
+  "timestampCount": 22000,
+  "noLookaheadRules": [
+    "Rolling features use only the current row and historical rows within each pair.",
+    "Forward returns are not computed in V13.4.21 factor outputs.",
+    "Cross-sectional ranks are computed only across pairs sharing the same timestamp.",
+    "BTC relative strength context is matched by exact timestamp only.",
+    "Missing values remain null; no future data is filled backward into earlier rows."
+  ],
+  "warnings": [
+    "Research-only factor computation. No backtest was run.",
+    "No factor output is a trade signal, order, or live execution instruction."
+  ],
+  "dryRunApproved": false,
+  "liveTradingApproved": false,
+  "generatedAt": "2026-07-06T21:24:25.102844+00:00"
+}

@@ -1,0 +1,1990 @@
+{
+  "reportId": "v13_5_derivatives_ml_strategy_report",
+  "version": "V13.5",
+  "status": "completed",
+  "isMock": false,
+  "generatedAt": "2026-07-06T21:53:08.610479+00:00",
+  "pairs": [
+    "AAVE/USDT:USDT",
+    "ADA/USDT:USDT",
+    "APT/USDT:USDT",
+    "ARB/USDT:USDT",
+    "ATOM/USDT:USDT",
+    "AVAX/USDT:USDT",
+    "BCH/USDT:USDT",
+    "BNB/USDT:USDT",
+    "BTC/USDT:USDT",
+    "CFX/USDT:USDT",
+    "CRV/USDT:USDT",
+    "DOGE/USDT:USDT",
+    "DOT/USDT:USDT",
+    "DYDX/USDT:USDT",
+    "ETC/USDT:USDT",
+    "ETH/USDT:USDT",
+    "FIL/USDT:USDT",
+    "FLOW/USDT:USDT",
+    "GRT/USDT:USDT",
+    "INJ/USDT:USDT",
+    "KSM/USDT:USDT",
+    "LINK/USDT:USDT",
+    "LTC/USDT:USDT",
+    "NEAR/USDT:USDT",
+    "OP/USDT:USDT",
+    "ORDI/USDT:USDT",
+    "PEPE/USDT:USDT",
+    "SEI/USDT:USDT",
+    "SHIB/USDT:USDT",
+    "SOL/USDT:USDT",
+    "SUI/USDT:USDT",
+    "TIA/USDT:USDT",
+    "TRX/USDT:USDT",
+    "UNI/USDT:USDT",
+    "WIF/USDT:USDT",
+    "XRP/USDT:USDT",
+    "ZK/USDT:USDT",
+    "ZRO/USDT:USDT"
+  ],
+  "timeframe": "4h",
+  "objective": {
+    "targetWinRatePct": 55,
+    "targetRewardRiskRatio": 2.0,
+    "hardGate": "A candidate must pass walk-forward, friction-adjusted metrics before paper testing."
+  },
+  "dataSummary": {
+    "panelRows": 359791,
+    "loadedPairs": [
+      "AAVE/USDT:USDT",
+      "ADA/USDT:USDT",
+      "APT/USDT:USDT",
+      "ARB/USDT:USDT",
+      "ATOM/USDT:USDT",
+      "AVAX/USDT:USDT",
+      "BCH/USDT:USDT",
+      "BNB/USDT:USDT",
+      "BTC/USDT:USDT",
+      "CFX/USDT:USDT",
+      "CRV/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "DOT/USDT:USDT",
+      "DYDX/USDT:USDT",
+      "ETC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "FIL/USDT:USDT",
+      "FLOW/USDT:USDT",
+      "GRT/USDT:USDT",
+      "INJ/USDT:USDT",
+      "KSM/USDT:USDT",
+      "LINK/USDT:USDT",
+      "LTC/USDT:USDT",
+      "NEAR/USDT:USDT",
+      "OP/USDT:USDT",
+      "ORDI/USDT:USDT",
+      "PEPE/USDT:USDT",
+      "SEI/USDT:USDT",
+      "SHIB/USDT:USDT",
+      "SOL/USDT:USDT",
+      "SUI/USDT:USDT",
+      "TIA/USDT:USDT",
+      "TRX/USDT:USDT",
+      "UNI/USDT:USDT",
+      "WIF/USDT:USDT",
+      "XRP/USDT:USDT",
+      "ZK/USDT:USDT",
+      "ZRO/USDT:USDT"
+    ],
+    "missingPairs": [],
+    "missingOptionalSources": {
+      "CRV/USDT:USDT": [
+        "funding_rate"
+      ],
+      "GRT/USDT:USDT": [
+        "funding_rate"
+      ],
+      "KSM/USDT:USDT": [
+        "funding_rate"
+      ],
+      "SHIB/USDT:USDT": [
+        "funding_rate"
+      ],
+      "ZK/USDT:USDT": [
+        "funding_rate"
+      ]
+    },
+    "openInterestStatus": "unavailable_not_fabricated",
+    "fundingRateCoverageNote": "Funding files are used when local public data exists; missing values are not fabricated."
+  },
+  "searchSummary": {
+    "configCount": 12,
+    "passingConfigCount": 0,
+    "folds": 5
+  },
+  "hardGateCriteria": {
+    "minTradeCount": 100,
+    "minWinRatePct": 55,
+    "minRewardRiskRatio": 1.8,
+    "targetRewardRiskRatio": 2.0,
+    "minProfitFactor": 1.35,
+    "maxDrawdownPct": 20,
+    "mustBePositiveAfterFeesAndSlippage": true
+  },
+  "bestCandidate": {
+    "barrierConfig": {
+      "stop_loss_pct": 0.045,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 18,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    },
+    "gateConfig": {
+      "train_min_events": 80,
+      "min_bucket_events": 8,
+      "probability_threshold": 0.4,
+      "min_score_components": 4
+    },
+    "candidateEventCount": 43992,
+    "gatedTradeCount": 41,
+    "rawMetrics": {
+      "tradeCount": 43992,
+      "winRatePct": 37.1613,
+      "averageWinPct": 6.729071,
+      "averageLossPct": -4.308268,
+      "rewardRiskRatio": 1.5619,
+      "profitFactor": 0.9237,
+      "totalReturnPct": -100.0,
+      "maxDrawdownPct": 100.0,
+      "researchWorthContinuing": false
+    },
+    "gatedMetrics": {
+      "tradeCount": 41,
+      "winRatePct": 26.8293,
+      "averageWinPct": 3.328394,
+      "averageLossPct": -2.651796,
+      "rewardRiskRatio": 1.2551,
+      "profitFactor": 0.4602,
+      "totalReturnPct": -36.5201,
+      "maxDrawdownPct": 36.5852,
+      "researchWorthContinuing": false
+    },
+    "bySetup": [
+      {
+        "value": "long_continuation_candidate",
+        "tradeCount": 32,
+        "winRatePct": 28.125,
+        "averageWinPct": 3.269333,
+        "averageLossPct": -2.272953,
+        "rewardRiskRatio": 1.4384,
+        "profitFactor": 0.5628,
+        "totalReturnPct": -21.7778,
+        "maxDrawdownPct": 32.4208,
+        "researchWorthContinuing": false
+      },
+      {
+        "value": "long_reversal_candidate",
+        "tradeCount": 9,
+        "winRatePct": 22.2222,
+        "averageWinPct": 3.59417,
+        "averageLossPct": -3.896567,
+        "rewardRiskRatio": 0.9224,
+        "profitFactor": 0.2635,
+        "totalReturnPct": -18.8467,
+        "maxDrawdownPct": 20.6034,
+        "researchWorthContinuing": false
+      }
+    ],
+    "byPair": [
+      {
+        "value": "BNB/USDT:USDT",
+        "tradeCount": 7,
+        "winRatePct": 28.5714,
+        "averageWinPct": 7.060478,
+        "averageLossPct": -3.142857,
+        "rewardRiskRatio": 2.2465,
+        "profitFactor": 0.8986,
+        "totalReturnPct": -2.4165,
+        "maxDrawdownPct": 5.8398,
+        "researchWorthContinuing": false
+      },
+      {
+        "value": "TRX/USDT:USDT",
+        "tradeCount": 31,
+        "winRatePct": 29.0323,
+        "averageWinPct": 2.499042,
+        "averageLossPct": -2.260891,
+        "rewardRiskRatio": 1.1053,
+        "profitFactor": 0.4522,
+        "totalReturnPct": -24.841,
+        "maxDrawdownPct": 29.179,
+        "researchWorthContinuing": false
+      },
+      {
+        "value": "LTC/USDT:USDT",
+        "tradeCount": 1,
+        "winRatePct": 0.0,
+        "averageWinPct": null,
+        "averageLossPct": -4.7,
+        "rewardRiskRatio": null,
+        "profitFactor": 0.0,
+        "totalReturnPct": -4.7,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      {
+        "value": "BTC/USDT:USDT",
+        "tradeCount": 2,
+        "winRatePct": 0.0,
+        "averageWinPct": null,
+        "averageLossPct": -4.7,
+        "rewardRiskRatio": null,
+        "profitFactor": 0.0,
+        "totalReturnPct": -9.1791,
+        "maxDrawdownPct": 4.7,
+        "researchWorthContinuing": false
+      }
+    ],
+    "configRankInputOrder": 11
+  },
+  "passingCandidates": [],
+  "topCandidates": [
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.045,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.4,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 41,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 37.1613,
+        "averageWinPct": 6.729071,
+        "averageLossPct": -4.308268,
+        "rewardRiskRatio": 1.5619,
+        "profitFactor": 0.9237,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 41,
+        "winRatePct": 26.8293,
+        "averageWinPct": 3.328394,
+        "averageLossPct": -2.651796,
+        "rewardRiskRatio": 1.2551,
+        "profitFactor": 0.4602,
+        "totalReturnPct": -36.5201,
+        "maxDrawdownPct": 36.5852,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [
+        {
+          "value": "long_continuation_candidate",
+          "tradeCount": 32,
+          "winRatePct": 28.125,
+          "averageWinPct": 3.269333,
+          "averageLossPct": -2.272953,
+          "rewardRiskRatio": 1.4384,
+          "profitFactor": 0.5628,
+          "totalReturnPct": -21.7778,
+          "maxDrawdownPct": 32.4208,
+          "researchWorthContinuing": false
+        },
+        {
+          "value": "long_reversal_candidate",
+          "tradeCount": 9,
+          "winRatePct": 22.2222,
+          "averageWinPct": 3.59417,
+          "averageLossPct": -3.896567,
+          "rewardRiskRatio": 0.9224,
+          "profitFactor": 0.2635,
+          "totalReturnPct": -18.8467,
+          "maxDrawdownPct": 20.6034,
+          "researchWorthContinuing": false
+        }
+      ],
+      "byPair": [
+        {
+          "value": "BNB/USDT:USDT",
+          "tradeCount": 7,
+          "winRatePct": 28.5714,
+          "averageWinPct": 7.060478,
+          "averageLossPct": -3.142857,
+          "rewardRiskRatio": 2.2465,
+          "profitFactor": 0.8986,
+          "totalReturnPct": -2.4165,
+          "maxDrawdownPct": 5.8398,
+          "researchWorthContinuing": false
+        },
+        {
+          "value": "TRX/USDT:USDT",
+          "tradeCount": 31,
+          "winRatePct": 29.0323,
+          "averageWinPct": 2.499042,
+          "averageLossPct": -2.260891,
+          "rewardRiskRatio": 1.1053,
+          "profitFactor": 0.4522,
+          "totalReturnPct": -24.841,
+          "maxDrawdownPct": 29.179,
+          "researchWorthContinuing": false
+        },
+        {
+          "value": "LTC/USDT:USDT",
+          "tradeCount": 1,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -4.7,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -4.7,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        },
+        {
+          "value": "BTC/USDT:USDT",
+          "tradeCount": 2,
+          "winRatePct": 0.0,
+          "averageWinPct": null,
+          "averageLossPct": -4.7,
+          "rewardRiskRatio": null,
+          "profitFactor": 0.0,
+          "totalReturnPct": -9.1791,
+          "maxDrawdownPct": 4.7,
+          "researchWorthContinuing": false
+        }
+      ],
+      "configRankInputOrder": 11
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.4,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 33.4925,
+        "averageWinPct": 6.327543,
+        "averageLossPct": -3.563282,
+        "rewardRiskRatio": 1.7758,
+        "profitFactor": 0.8943,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 1
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.45,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 33.4925,
+        "averageWinPct": 6.327543,
+        "averageLossPct": -3.563282,
+        "rewardRiskRatio": 1.7758,
+        "profitFactor": 0.8943,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 2
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.5,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 33.4925,
+        "averageWinPct": 6.327543,
+        "averageLossPct": -3.563282,
+        "rewardRiskRatio": 1.7758,
+        "profitFactor": 0.8943,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 3
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.54,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 33.4925,
+        "averageWinPct": 6.327543,
+        "averageLossPct": -3.563282,
+        "rewardRiskRatio": 1.7758,
+        "profitFactor": 0.8943,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 4
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.57,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 33.4925,
+        "averageWinPct": 6.327543,
+        "averageLossPct": -3.563282,
+        "rewardRiskRatio": 1.7758,
+        "profitFactor": 0.8943,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 5
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.4,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 34.5654,
+        "averageWinPct": 6.913045,
+        "averageLossPct": -3.989419,
+        "rewardRiskRatio": 1.7328,
+        "profitFactor": 0.9154,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 6
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.45,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 34.5654,
+        "averageWinPct": 6.913045,
+        "averageLossPct": -3.989419,
+        "rewardRiskRatio": 1.7328,
+        "profitFactor": 0.9154,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 7
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.5,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 34.5654,
+        "averageWinPct": 6.913045,
+        "averageLossPct": -3.989419,
+        "rewardRiskRatio": 1.7328,
+        "profitFactor": 0.9154,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 8
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.54,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 34.5654,
+        "averageWinPct": 6.913045,
+        "averageLossPct": -3.989419,
+        "rewardRiskRatio": 1.7328,
+        "profitFactor": 0.9154,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 9
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.57,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 34.5654,
+        "averageWinPct": 6.913045,
+        "averageLossPct": -3.989419,
+        "rewardRiskRatio": 1.7328,
+        "profitFactor": 0.9154,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 10
+    },
+    {
+      "barrierConfig": {
+        "stop_loss_pct": 0.045,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      },
+      "gateConfig": {
+        "train_min_events": 80,
+        "min_bucket_events": 8,
+        "probability_threshold": 0.45,
+        "min_score_components": 4
+      },
+      "candidateEventCount": 43992,
+      "gatedTradeCount": 0,
+      "rawMetrics": {
+        "tradeCount": 43992,
+        "winRatePct": 37.1613,
+        "averageWinPct": 6.729071,
+        "averageLossPct": -4.308268,
+        "rewardRiskRatio": 1.5619,
+        "profitFactor": 0.9237,
+        "totalReturnPct": -100.0,
+        "maxDrawdownPct": 100.0,
+        "researchWorthContinuing": false
+      },
+      "gatedMetrics": {
+        "tradeCount": 0,
+        "winRatePct": null,
+        "averageWinPct": null,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 0.0,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      },
+      "bySetup": [],
+      "byPair": [],
+      "configRankInputOrder": 12
+    }
+  ],
+  "bestDeterministicMinedCandidate": {
+    "columns": [
+      "bucket_pair",
+      "bucket_rsi14",
+      "bucket_return_3"
+    ],
+    "values": [
+      "TRX/USDT:USDT",
+      "(40, 50]",
+      "(0.0, 0.015]"
+    ],
+    "metrics": {
+      "tradeCount": 86,
+      "winRatePct": 68.6047,
+      "averageWinPct": 3.483964,
+      "averageLossPct": -2.204856,
+      "rewardRiskRatio": 1.5801,
+      "profitFactor": 3.4529,
+      "totalReturnPct": 304.7003,
+      "maxDrawdownPct": 12.1828,
+      "researchWorthContinuing": false
+    },
+    "periodMetrics": {
+      "before2025": {
+        "tradeCount": 54,
+        "winRatePct": 64.8148,
+        "averageWinPct": 4.011583,
+        "averageLossPct": -1.845847,
+        "rewardRiskRatio": 2.1733,
+        "profitFactor": 4.0035,
+        "totalReturnPct": 174.4479,
+        "maxDrawdownPct": 12.1828,
+        "researchWorthContinuing": false
+      },
+      "year2025": {
+        "tradeCount": 22,
+        "winRatePct": 63.6364,
+        "averageWinPct": 3.586265,
+        "averageLossPct": -3.057504,
+        "rewardRiskRatio": 1.1729,
+        "profitFactor": 2.0526,
+        "totalReturnPct": 27.1877,
+        "maxDrawdownPct": 10.7745,
+        "researchWorthContinuing": false
+      },
+      "year2026": {
+        "tradeCount": 10,
+        "winRatePct": 100.0,
+        "averageWinPct": 1.494074,
+        "averageLossPct": null,
+        "rewardRiskRatio": null,
+        "profitFactor": null,
+        "totalReturnPct": 15.9387,
+        "maxDrawdownPct": 0.0,
+        "researchWorthContinuing": false
+      }
+    },
+    "hardGatePassed": false,
+    "hardGateFailReasons": [
+      "trade_count_below_100",
+      "reward_risk_below_1_8",
+      "recent_2026_profit_factor_below_1"
+    ],
+    "barrierConfig": {
+      "stop_loss_pct": 0.035,
+      "reward_r_multiple": 2.0,
+      "horizon_bars": 24,
+      "fee_rate_roundtrip": 0.001,
+      "slippage_rate_roundtrip": 0.001
+    }
+  },
+  "deterministicMinedCandidates": [
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_return_3"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(0.0, 0.015]"
+      ],
+      "metrics": {
+        "tradeCount": 86,
+        "winRatePct": 68.6047,
+        "averageWinPct": 3.483964,
+        "averageLossPct": -2.204856,
+        "rewardRiskRatio": 1.5801,
+        "profitFactor": 3.4529,
+        "totalReturnPct": 304.7003,
+        "maxDrawdownPct": 12.1828,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 54,
+          "winRatePct": 64.8148,
+          "averageWinPct": 4.011583,
+          "averageLossPct": -1.845847,
+          "rewardRiskRatio": 2.1733,
+          "profitFactor": 4.0035,
+          "totalReturnPct": 174.4479,
+          "maxDrawdownPct": 12.1828,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 22,
+          "winRatePct": 63.6364,
+          "averageWinPct": 3.586265,
+          "averageLossPct": -3.057504,
+          "rewardRiskRatio": 1.1729,
+          "profitFactor": 2.0526,
+          "totalReturnPct": 27.1877,
+          "maxDrawdownPct": 10.7745,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 10,
+          "winRatePct": 100.0,
+          "averageWinPct": 1.494074,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 15.9387,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "trade_count_below_100",
+        "reward_risk_below_1_8",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_return_3"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(0.0, 0.015]"
+      ],
+      "metrics": {
+        "tradeCount": 86,
+        "winRatePct": 68.6047,
+        "averageWinPct": 3.75515,
+        "averageLossPct": -2.445597,
+        "rewardRiskRatio": 1.5355,
+        "profitFactor": 3.3553,
+        "totalReturnPct": 339.0395,
+        "maxDrawdownPct": 13.8913,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 54,
+          "winRatePct": 64.8148,
+          "averageWinPct": 4.383011,
+          "averageLossPct": -2.030057,
+          "rewardRiskRatio": 2.1591,
+          "profitFactor": 3.9772,
+          "totalReturnPct": 198.7116,
+          "maxDrawdownPct": 13.5436,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 22,
+          "winRatePct": 63.6364,
+          "averageWinPct": 3.800551,
+          "averageLossPct": -3.432504,
+          "rewardRiskRatio": 1.1072,
+          "profitFactor": 1.9376,
+          "totalReturnPct": 26.7719,
+          "maxDrawdownPct": 12.2529,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 10,
+          "winRatePct": 100.0,
+          "averageWinPct": 1.494074,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 15.9387,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "trade_count_below_100",
+        "reward_risk_below_1_8",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_return_3"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(0.0, 0.015]"
+      ],
+      "metrics": {
+        "tradeCount": 86,
+        "winRatePct": 67.4419,
+        "averageWinPct": 3.312124,
+        "averageLossPct": -2.293198,
+        "rewardRiskRatio": 1.4443,
+        "profitFactor": 2.9918,
+        "totalReturnPct": 236.0095,
+        "maxDrawdownPct": 13.4477,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 54,
+          "winRatePct": 64.8148,
+          "averageWinPct": 4.030155,
+          "averageLossPct": -2.101323,
+          "rewardRiskRatio": 1.9179,
+          "profitFactor": 3.533,
+          "totalReturnPct": 161.417,
+          "maxDrawdownPct": 13.4477,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 22,
+          "winRatePct": 59.0909,
+          "averageWinPct": 3.131685,
+          "averageLossPct": -2.698268,
+          "rewardRiskRatio": 1.1606,
+          "profitFactor": 1.6765,
+          "totalReturnPct": 15.9978,
+          "maxDrawdownPct": 11.6612,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 10,
+          "winRatePct": 100.0,
+          "averageWinPct": 1.033587,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 10.8073,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "trade_count_below_100",
+        "reward_risk_below_1_8",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.045,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_btc_regime",
+        "bucket_return_3"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "sideways",
+        "(0.0, 0.015]"
+      ],
+      "metrics": {
+        "tradeCount": 103,
+        "winRatePct": 68.932,
+        "averageWinPct": 3.359674,
+        "averageLossPct": -2.685088,
+        "rewardRiskRatio": 1.2512,
+        "profitFactor": 2.7762,
+        "totalReturnPct": 325.7758,
+        "maxDrawdownPct": 21.2739,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 59,
+          "winRatePct": 59.322,
+          "averageWinPct": 4.209255,
+          "averageLossPct": -2.430597,
+          "rewardRiskRatio": 1.7318,
+          "profitFactor": 2.5255,
+          "totalReturnPct": 130.4129,
+          "maxDrawdownPct": 21.2739,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 25,
+          "winRatePct": 80.0,
+          "averageWinPct": 3.174432,
+          "averageLossPct": -2.997693,
+          "rewardRiskRatio": 1.059,
+          "profitFactor": 4.2358,
+          "totalReturnPct": 59.7486,
+          "maxDrawdownPct": 6.4746,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 19,
+          "winRatePct": 84.2105,
+          "averageWinPct": 1.732766,
+          "averageLossPct": -4.2,
+          "rewardRiskRatio": 0.4126,
+          "profitFactor": 2.2003,
+          "totalReturnPct": 15.6744,
+          "maxDrawdownPct": 12.0782,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_btc_regime",
+        "bucket_return_3"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "sideways",
+        "(0.0, 0.015]"
+      ],
+      "metrics": {
+        "tradeCount": 103,
+        "winRatePct": 67.9612,
+        "averageWinPct": 2.861629,
+        "averageLossPct": -2.258678,
+        "rewardRiskRatio": 1.2669,
+        "profitFactor": 2.6875,
+        "totalReturnPct": 229.6052,
+        "maxDrawdownPct": 19.0468,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 59,
+          "winRatePct": 57.6271,
+          "averageWinPct": 4.098129,
+          "averageLossPct": -2.180631,
+          "rewardRiskRatio": 1.8793,
+          "profitFactor": 2.5559,
+          "totalReturnPct": 121.3855,
+          "maxDrawdownPct": 19.0468,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 25,
+          "winRatePct": 80.0,
+          "averageWinPct": 1.970199,
+          "averageLossPct": -2.938946,
+          "rewardRiskRatio": 0.6704,
+          "profitFactor": 2.6815,
+          "totalReturnPct": 26.963,
+          "maxDrawdownPct": 4.9062,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 19,
+          "winRatePct": 84.2105,
+          "averageWinPct": 1.348354,
+          "averageLossPct": -1.775289,
+          "rewardRiskRatio": 0.7595,
+          "profitFactor": 4.0507,
+          "totalReturnPct": 17.2648,
+          "maxDrawdownPct": 4.7,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "reward_risk_below_1_8"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.045,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_relative_return_6"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(0.01, 0.03]"
+      ],
+      "metrics": {
+        "tradeCount": 98,
+        "winRatePct": 68.3673,
+        "averageWinPct": 3.691034,
+        "averageLossPct": -3.031018,
+        "rewardRiskRatio": 1.2178,
+        "profitFactor": 2.6319,
+        "totalReturnPct": 325.0108,
+        "maxDrawdownPct": 22.7029,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 66,
+          "winRatePct": 62.1212,
+          "averageWinPct": 4.340067,
+          "averageLossPct": -2.750463,
+          "rewardRiskRatio": 1.5779,
+          "profitFactor": 2.5878,
+          "totalReturnPct": 178.4602,
+          "maxDrawdownPct": 21.1581,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 70.0,
+          "averageWinPct": 3.198736,
+          "averageLossPct": -4.2,
+          "rewardRiskRatio": 0.7616,
+          "profitFactor": 1.7771,
+          "totalReturnPct": 19.7327,
+          "maxDrawdownPct": 18.602,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 12,
+          "winRatePct": 100.0,
+          "averageWinPct": 2.047855,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 27.4747,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "trade_count_below_100",
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_btc_regime",
+        "bucket_return_3"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "sideways",
+        "(0.0, 0.015]"
+      ],
+      "metrics": {
+        "tradeCount": 103,
+        "winRatePct": 67.9612,
+        "averageWinPct": 3.230849,
+        "averageLossPct": -2.62814,
+        "rewardRiskRatio": 1.2293,
+        "profitFactor": 2.6077,
+        "totalReturnPct": 276.7598,
+        "maxDrawdownPct": 20.0348,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 59,
+          "winRatePct": 57.6271,
+          "averageWinPct": 3.998428,
+          "averageLossPct": -2.485606,
+          "rewardRiskRatio": 1.6086,
+          "profitFactor": 2.1877,
+          "totalReturnPct": 99.468,
+          "maxDrawdownPct": 20.0348,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 25,
+          "winRatePct": 80.0,
+          "averageWinPct": 3.124432,
+          "averageLossPct": -2.697693,
+          "rewardRiskRatio": 1.1582,
+          "profitFactor": 4.6327,
+          "totalReturnPct": 60.7577,
+          "maxDrawdownPct": 5.9865,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 19,
+          "winRatePct": 84.2105,
+          "averageWinPct": 1.732766,
+          "averageLossPct": -3.7,
+          "rewardRiskRatio": 0.4683,
+          "profitFactor": 2.4977,
+          "totalReturnPct": 17.495,
+          "maxDrawdownPct": 10.6944,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_bollinger_z"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(-0.5, 0.5]"
+      ],
+      "metrics": {
+        "tradeCount": 114,
+        "winRatePct": 65.7895,
+        "averageWinPct": 3.784314,
+        "averageLossPct": -2.863398,
+        "rewardRiskRatio": 1.3216,
+        "profitFactor": 2.5416,
+        "totalReturnPct": 401.6242,
+        "maxDrawdownPct": 20.2052,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 81,
+          "winRatePct": 62.963,
+          "averageWinPct": 4.528789,
+          "averageLossPct": -2.895155,
+          "rewardRiskRatio": 1.5643,
+          "profitFactor": 2.6592,
+          "totalReturnPct": 284.3378,
+          "maxDrawdownPct": 16.5467,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 55.0,
+          "averageWinPct": 2.796262,
+          "averageLossPct": -2.757539,
+          "rewardRiskRatio": 1.014,
+          "profitFactor": 1.2394,
+          "totalReturnPct": 4.912,
+          "maxDrawdownPct": 20.2052,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 13,
+          "winRatePct": 100.0,
+          "averageWinPct": 1.699722,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 24.4057,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.045,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_relative_return_6"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(0.01, 0.03]"
+      ],
+      "metrics": {
+        "tradeCount": 98,
+        "winRatePct": 59.1837,
+        "averageWinPct": 3.949193,
+        "averageLossPct": -2.26097,
+        "rewardRiskRatio": 1.7467,
+        "profitFactor": 2.5327,
+        "totalReturnPct": 266.1281,
+        "maxDrawdownPct": 26.5077,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 66,
+          "winRatePct": 51.5152,
+          "averageWinPct": 4.806361,
+          "averageLossPct": -2.220354,
+          "rewardRiskRatio": 2.1647,
+          "profitFactor": 2.3,
+          "totalReturnPct": 134.9848,
+          "maxDrawdownPct": 23.9618,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 60.0,
+          "averageWinPct": 3.617783,
+          "averageLossPct": -2.423433,
+          "rewardRiskRatio": 1.4928,
+          "profitFactor": 2.2393,
+          "totalReturnPct": 25.1405,
+          "maxDrawdownPct": 13.9343,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 12,
+          "winRatePct": 100.0,
+          "averageWinPct": 1.851958,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 24.5075,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "trade_count_below_100",
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.045,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_bollinger_z"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(-0.5, 0.5]"
+      ],
+      "metrics": {
+        "tradeCount": 114,
+        "winRatePct": 64.9123,
+        "averageWinPct": 3.866726,
+        "averageLossPct": -2.828679,
+        "rewardRiskRatio": 1.367,
+        "profitFactor": 2.5289,
+        "totalReturnPct": 413.266,
+        "maxDrawdownPct": 18.5178,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 81,
+          "winRatePct": 60.4938,
+          "averageWinPct": 4.521829,
+          "averageLossPct": -2.771473,
+          "rewardRiskRatio": 1.6316,
+          "profitFactor": 2.4983,
+          "totalReturnPct": 249.4249,
+          "maxDrawdownPct": 17.1807,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 60.0,
+          "averageWinPct": 3.53167,
+          "averageLossPct": -3.057504,
+          "rewardRiskRatio": 1.1551,
+          "profitFactor": 1.7326,
+          "totalReturnPct": 17.9663,
+          "maxDrawdownPct": 18.5178,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 13,
+          "winRatePct": 100.0,
+          "averageWinPct": 1.706773,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 24.5176,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "reward_risk_below_1_8",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_return_3",
+        "bucket_bollinger_z"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(0.0, 0.015]",
+        "(-0.5, 0.5]"
+      ],
+      "metrics": {
+        "tradeCount": 103,
+        "winRatePct": 64.0777,
+        "averageWinPct": 3.787238,
+        "averageLossPct": -2.674941,
+        "rewardRiskRatio": 1.4158,
+        "profitFactor": 2.5255,
+        "totalReturnPct": 310.0677,
+        "maxDrawdownPct": 22.5635,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 72,
+          "winRatePct": 62.5,
+          "averageWinPct": 4.72699,
+          "averageLossPct": -2.86663,
+          "rewardRiskRatio": 1.649,
+          "profitFactor": 2.7483,
+          "totalReturnPct": 253.8831,
+          "maxDrawdownPct": 20.5156,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 19,
+          "winRatePct": 63.1579,
+          "averageWinPct": 2.051446,
+          "averageLossPct": -2.494979,
+          "rewardRiskRatio": 0.8222,
+          "profitFactor": 1.4095,
+          "totalReturnPct": 6.5887,
+          "maxDrawdownPct": 13.8119,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 12,
+          "winRatePct": 75.0,
+          "averageWinPct": 1.402867,
+          "averageLossPct": -1.369655,
+          "rewardRiskRatio": 1.0242,
+          "profitFactor": 3.0727,
+          "totalReturnPct": 8.7138,
+          "maxDrawdownPct": 3.9119,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.045,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 18,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_rsi14",
+        "bucket_relative_return_6",
+        "bucket_atr_pct"
+      ],
+      "values": [
+        "> 70",
+        "(-0.01, 0.01]",
+        "(0.035, 0.055]"
+      ],
+      "metrics": {
+        "tradeCount": 85,
+        "winRatePct": 55.2941,
+        "averageWinPct": 7.25906,
+        "averageLossPct": -3.581643,
+        "rewardRiskRatio": 2.0267,
+        "profitFactor": 2.5068,
+        "totalReturnPct": 573.4039,
+        "maxDrawdownPct": 22.8788,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 73,
+          "winRatePct": 53.4247,
+          "averageWinPct": 7.326882,
+          "averageLossPct": -3.581643,
+          "rewardRiskRatio": 2.0457,
+          "profitFactor": 2.3465,
+          "totalReturnPct": 356.1028,
+          "maxDrawdownPct": 22.8788,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 10,
+          "winRatePct": 60.0,
+          "averageWinPct": 6.79561,
+          "averageLossPct": -3.581643,
+          "rewardRiskRatio": 1.8973,
+          "profitFactor": 2.846,
+          "totalReturnPct": 28.1728,
+          "maxDrawdownPct": 10.3647,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 2,
+          "winRatePct": 100.0,
+          "averageWinPct": 7.326882,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 15.1906,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "trade_count_below_100",
+        "max_drawdown_above_20",
+        "recent_2026_sample_below_10"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_bollinger_z"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(-0.5, 0.5]"
+      ],
+      "metrics": {
+        "tradeCount": 114,
+        "winRatePct": 64.0351,
+        "averageWinPct": 4.084962,
+        "averageLossPct": -2.948406,
+        "rewardRiskRatio": 1.3855,
+        "profitFactor": 2.4668,
+        "totalReturnPct": 427.7533,
+        "maxDrawdownPct": 21.0234,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 81,
+          "winRatePct": 59.2593,
+          "averageWinPct": 4.9327,
+          "averageLossPct": -2.831049,
+          "rewardRiskRatio": 1.7424,
+          "profitFactor": 2.5343,
+          "totalReturnPct": 282.0414,
+          "maxDrawdownPct": 19.3085,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 60.0,
+          "averageWinPct": 3.270381,
+          "averageLossPct": -3.432504,
+          "rewardRiskRatio": 0.9528,
+          "profitFactor": 1.4292,
+          "totalReturnPct": 10.9405,
+          "maxDrawdownPct": 21.0234,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 13,
+          "winRatePct": 100.0,
+          "averageWinPct": 1.706773,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 24.5176,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_relative_return_6"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(0.01, 0.03]"
+      ],
+      "metrics": {
+        "tradeCount": 98,
+        "winRatePct": 67.3469,
+        "averageWinPct": 3.448329,
+        "averageLossPct": -2.920847,
+        "rewardRiskRatio": 1.1806,
+        "profitFactor": 2.435,
+        "totalReturnPct": 255.7008,
+        "maxDrawdownPct": 23.7019,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 66,
+          "winRatePct": 60.6061,
+          "averageWinPct": 4.005829,
+          "averageLossPct": -2.741043,
+          "rewardRiskRatio": 1.4614,
+          "profitFactor": 2.2483,
+          "totalReturnPct": 130.1328,
+          "maxDrawdownPct": 18.6567,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 20,
+          "winRatePct": 70.0,
+          "averageWinPct": 3.055879,
+          "averageLossPct": -3.7,
+          "rewardRiskRatio": 0.8259,
+          "profitFactor": 1.9271,
+          "totalReturnPct": 21.2502,
+          "maxDrawdownPct": 16.4555,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 12,
+          "winRatePct": 100.0,
+          "averageWinPct": 2.047855,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 27.4747,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "trade_count_below_100",
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20",
+        "recent_2026_profit_factor_below_1"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.035,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    },
+    {
+      "columns": [
+        "bucket_pair",
+        "bucket_rsi14",
+        "bucket_return_3"
+      ],
+      "values": [
+        "TRX/USDT:USDT",
+        "(40, 50]",
+        "(-0.015, 0.0]"
+      ],
+      "metrics": {
+        "tradeCount": 97,
+        "winRatePct": 64.9485,
+        "averageWinPct": 4.305937,
+        "averageLossPct": -3.279253,
+        "rewardRiskRatio": 1.3131,
+        "profitFactor": 2.4331,
+        "totalReturnPct": 345.8931,
+        "maxDrawdownPct": 29.6661,
+        "researchWorthContinuing": false
+      },
+      "periodMetrics": {
+        "before2025": {
+          "tradeCount": 73,
+          "winRatePct": 61.6438,
+          "averageWinPct": 4.755248,
+          "averageLossPct": -3.219658,
+          "rewardRiskRatio": 1.4769,
+          "profitFactor": 2.3737,
+          "totalReturnPct": 216.6885,
+          "maxDrawdownPct": 22.6976,
+          "researchWorthContinuing": false
+        },
+        "year2025": {
+          "tradeCount": 18,
+          "winRatePct": 66.6667,
+          "averageWinPct": 3.724966,
+          "averageLossPct": -3.557365,
+          "rewardRiskRatio": 1.0471,
+          "profitFactor": 2.0942,
+          "totalReturnPct": 24.3387,
+          "maxDrawdownPct": 19.2986,
+          "researchWorthContinuing": false
+        },
+        "year2026": {
+          "tradeCount": 6,
+          "winRatePct": 100.0,
+          "averageWinPct": 2.098051,
+          "averageLossPct": null,
+          "rewardRiskRatio": null,
+          "profitFactor": null,
+          "totalReturnPct": 13.238,
+          "maxDrawdownPct": 0.0,
+          "researchWorthContinuing": false
+        }
+      },
+      "hardGatePassed": false,
+      "hardGateFailReasons": [
+        "trade_count_below_100",
+        "reward_risk_below_1_8",
+        "max_drawdown_above_20",
+        "recent_2026_sample_below_10"
+      ],
+      "barrierConfig": {
+        "stop_loss_pct": 0.04,
+        "reward_r_multiple": 2.0,
+        "horizon_bars": 24,
+        "fee_rate_roundtrip": 0.001,
+        "slippage_rate_roundtrip": 0.001
+      }
+    }
+  ],
+  "deterministicMinedPassingCount": 0,
+  "shadowSignalSamplePath": null,
+  "shadowOrPaperDecision": {
+    "shadowApproved": false,
+    "paperApproved": false,
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "reason": "no_candidate_passed_55pct_winrate_2r_hard_gate"
+  },
+  "recommendations": [
+    "No V13.5 candidate cleared the 55% win-rate and 2R hard gate.",
+    "Do not start paper or Dry-run from this result.",
+    "Prioritize richer derivatives data: open interest, liquidation proxies, order-book/liquidity spread, and longer funding history.",
+    "Best observed gated metrics: trades=41, winRate=26.8293, rewardRisk=1.2551, profitFactor=0.4602. Best deterministic mined candidate: trades=86, winRate=68.6047, rewardRisk=1.5801, profitFactor=3.4529, failReasons=['trade_count_below_100', 'reward_risk_below_1_8', 'recent_2026_profit_factor_below_1']."
+  ],
+  "safetyBoundary": {
+    "usesPublicLocalDataOnly": true,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "readsRealAccount": false,
+    "readsRealPositions": false,
+    "createsOrders": false,
+    "autoTrading": false,
+    "dryRunApproved": false,
+    "liveTradingApproved": false
+  }
+}

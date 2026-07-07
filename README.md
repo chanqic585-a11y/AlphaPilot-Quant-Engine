@@ -3663,6 +3663,50 @@ Readiness tiers are not trading approval. V13.7.4 does not download data, run
 backtests, call exchanges, connect private APIs, create orders, run dry-run,
 run live trading, or enable automatic trading.
 
+## V13.7.13 Backtest Task Completion
+
+V13.7.13 completes the six `needs_backtest` tasks that appeared in the
+V13.7.12 research task board.
+
+Run the completion report:
+
+```powershell
+python -m alphapilot.reports.generate_v13_7_13_backtest_task_completion_report
+```
+
+Outputs:
+
+```text
+reports/v13_7_13_factor_panel_report.json
+reports/v13_7_13_factor_evaluation_report.json
+reports/v13_7_13_derivatives_ml_strategy_1h_broad_report.json
+reports/v13_7_13_derivatives_ml_strategy_4h_broad_report.json
+reports/v13_7_13_adaptive_ml_factor_report.json
+reports/v13_7_13_backtest_task_completion_report.json
+reports/v13_7_13_backtest_task_completion_summary.md
+docs/V13.7.13-backtest-task-completion.md
+```
+
+Result:
+
+```text
+completedTaskCount: 6
+paperOrShadowApprovedCount: 0
+failedOrNotReadyCount: 6
+dryRunApproved: false
+liveTradingApproved: false
+```
+
+Interpretation: the six tasks are no longer vague backlog items. They have
+been audited or rerun with local public data evidence, and none of them clears
+the AlphaPilot observation, paper, exchange Dry-run, or live trading boundary.
+The useful result is negative evidence that should guide the next strategy
+specification instead of encouraging overfit tuning.
+
+V13.7.13 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.
