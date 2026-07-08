@@ -1,0 +1,34 @@
+﻿[
+    {
+        "strategy":  "AlphaPilotTrendPullback1HV01",
+        "timeframe":  "1h",
+        "pairs":  45,
+        "exitCode":  0,
+        "log":  "logs\\v13_7_38_top50_AlphaPilotTrendPullback1HV01_1h.log",
+        "zip":  "user_data\\backtest_results\\v13_7_38_top50_AlphaPilotTrendPullback1HV01_1h.zip"
+    },
+    {
+        "strategy":  "AlphaPilotShortRejection1HV01",
+        "timeframe":  "1h",
+        "pairs":  45,
+        "exitCode":  0,
+        "log":  "logs\\v13_7_38_top50_AlphaPilotShortRejection1HV01_1h.log",
+        "zip":  "user_data\\backtest_results\\v13_7_38_top50_AlphaPilotShortRejection1HV01_1h.zip"
+    },
+    {
+        "strategy":  "AlphaPilotBatchF_BollingerReversionShort4H",
+        "timeframe":  "30m",
+        "pairs":  45,
+        "exitCode":  0,
+        "log":  "logs\\v13_7_38_top50_AlphaPilotBatchF_BollingerReversionShort4H_30m.log",
+        "zip":  "user_data\\backtest_results\\v13_7_38_top50_AlphaPilotBatchF_BollingerReversionShort4H_30m.zip"
+    },
+    {
+        "strategy":  "AlphaPilotBatchH_VolatilityCompressionBreakout4H",
+        "timeframe":  "30m",
+        "pairs":  45,
+        "exitCode":  0,
+        "log":  "logs\\v13_7_38_top50_AlphaPilotBatchH_VolatilityCompressionBreakout4H_30m.log",
+        "zip":  "user_data\\backtest_results\\v13_7_38_top50_AlphaPilotBatchH_VolatilityCompressionBreakout4H_30m.zip"
+    }
+]
