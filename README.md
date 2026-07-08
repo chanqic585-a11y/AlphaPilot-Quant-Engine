@@ -4041,6 +4041,69 @@ V13.7.21 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.7.40 Short-Cycle Parameter Search
+
+V13.7.40 searches for short-cycle public-OHLCV research candidates with a fixed
+2R target. It expands the historical dataset with Binance Vision public futures
+klines from 2020-2026, then evaluates 15m / 30m / 1h candidate families. The
+useful result came from 1h short-side upper-wick rejection candidates with a
+train-segment-only asset filter.
+
+```powershell
+python -m alphapilot.reports.download_binance_vision_klines
+python -m alphapilot.reports.generate_v13_7_40_short_cycle_parameter_search --data-path user_data/data/binance_vision/futures --timerange 20200101- --timeframes 1h
+```
+
+Key outputs:
+
+```text
+alphapilot/data_expansion/binance_vision_klines.py
+alphapilot/short_cycle/parameter_search.py
+alphapilot/reports/generate_v13_7_40_short_cycle_parameter_search.py
+reports/v13_7_40_short_cycle_parameter_search_binance_vision_asset_filtered_report.json
+reports/v13_7_40_short_cycle_parameter_search_binance_vision_asset_filtered_summary.md
+reports/v13_7_40_short_cycle_selected_candidate_cards.json
+reports/v13_7_40_short_cycle_selected_candidate_cards.md
+docs/V13.7.40-short-cycle-parameter-search-binance-vision-asset-filtered.md
+```
+
+Result:
+
+```text
+dataCoverage: 44 Binance Vision futures pairs, 1h / 30m / 15m, 2020-2026
+candidateCount: 1011
+approvedCount: 33
+selectedCount: 5
+approvedSelectedCount: 5
+targetR: 2.0
+dryRunApproved: false
+liveTradingApproved: false
+```
+
+Selected candidates:
+
+```text
+1h short rejection ATR1.0 asset-filter Top10
+  trades 219, winRate 51.1416%, PF 1.5170, test PF 1.5075, maxDD 10.9678R
+1h short rejection ATR1.0 asset-filter Top10
+  trades 219, winRate 49.3151%, PF 1.4348, test PF 1.5031, maxDD 11.8513R
+1h short rejection ATR1.0 asset-filter Top10
+  trades 219, winRate 49.3151%, PF 1.5112, test PF 1.3785, maxDD 11.9660R
+1h short rejection ATR1.0 asset-filter Top8
+  trades 175, winRate 52.0000%, PF 1.5545, test PF 1.4233, maxDD 9.9030R
+1h short rejection ATR1.2 asset-filter Top10
+  trades 131, winRate 54.9618%, PF 1.6850, test PF 1.3186, maxDD 7.2055R
+```
+
+The asset filter selects pairs from the train split only; validation and test
+remain out of selection. These candidates are approved for local sandbox /
+paper-observation research only. They are not exchange Dry-run candidates and
+not live trading strategies.
+
+V13.7.40 does not add Trade API, Withdraw API, API key storage, broker
+credentials, real account reads, real position reads, real orders, exchange
+Dry-run execution, live trading, or automatic trading.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

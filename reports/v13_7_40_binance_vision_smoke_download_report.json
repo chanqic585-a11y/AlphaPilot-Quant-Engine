@@ -1,0 +1,58 @@
+{
+  "version": "V13.7.40",
+  "source": "binance_vision_public_monthly_klines_v13_7_40",
+  "generatedAt": "2026-07-07T19:41:53.008805Z",
+  "status": "completed",
+  "config": {
+    "pairs": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT"
+    ],
+    "timeframes": [
+      "15m"
+    ],
+    "startMonth": "2020-01",
+    "endMonth": "2020-02",
+    "outputPath": "user_data/data/binance_vision_smoke/futures",
+    "cachePath": "user_data/data/binance_vision_smoke/raw_zip_cache",
+    "workers": 4,
+    "force": false
+  },
+  "taskCount": 4,
+  "statusCounts": {
+    "loaded": 4
+  },
+  "outputCount": 2,
+  "outputs": [
+    {
+      "pair": "BTC/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision_smoke/futures/BTC_USDT_USDT-15m-futures.feather",
+      "rowCount": 5760,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2020-02-29T23:45:00+00:00"
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision_smoke/futures/ETH_USDT_USDT-15m-futures.feather",
+      "rowCount": 5760,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2020-02-29T23:45:00+00:00"
+    }
+  ],
+  "missingSamples": [],
+  "elapsedSeconds": 1.261,
+  "safetyBoundary": {
+    "publicDataOnly": true,
+    "apiKeyStorage": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "exchangeDryRun": false,
+    "liveTrading": false,
+    "autoTrading": false
+  }
+}

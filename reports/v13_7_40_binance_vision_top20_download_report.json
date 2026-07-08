@@ -1,0 +1,2344 @@
+{
+  "version": "V13.7.40",
+  "source": "binance_vision_public_monthly_klines_v13_7_40",
+  "generatedAt": "2026-07-07T19:48:38.017085Z",
+  "status": "completed",
+  "config": {
+    "pairs": [
+      "BTC/USDT:USDT",
+      "ETH/USDT:USDT",
+      "SOL/USDT:USDT",
+      "XRP/USDT:USDT",
+      "DOGE/USDT:USDT",
+      "BNB/USDT:USDT",
+      "ADA/USDT:USDT",
+      "TRX/USDT:USDT",
+      "AVAX/USDT:USDT",
+      "LINK/USDT:USDT",
+      "SUI/USDT:USDT",
+      "LTC/USDT:USDT",
+      "BCH/USDT:USDT",
+      "DOT/USDT:USDT",
+      "UNI/USDT:USDT",
+      "AAVE/USDT:USDT",
+      "NEAR/USDT:USDT",
+      "APT/USDT:USDT",
+      "ARB/USDT:USDT",
+      "OP/USDT:USDT"
+    ],
+    "timeframes": [
+      "15m",
+      "30m",
+      "1h"
+    ],
+    "startMonth": "2020-01",
+    "endMonth": "2026-07",
+    "outputPath": "user_data/data/binance_vision/futures",
+    "cachePath": "user_data/data/binance_vision/raw_zip_cache",
+    "workers": 8,
+    "force": false
+  },
+  "taskCount": 4740,
+  "statusCounts": {
+    "loaded": 4092,
+    "missing": 648
+  },
+  "outputCount": 60,
+  "outputs": [
+    {
+      "pair": "AAVE/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/AAVE_USDT_USDT-15m-futures.feather",
+      "rowCount": 200036,
+      "start": "2020-10-16T07:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "AAVE/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/AAVE_USDT_USDT-1h-futures.feather",
+      "rowCount": 50009,
+      "start": "2020-10-16T07:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "AAVE/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/AAVE_USDT_USDT-30m-futures.feather",
+      "rowCount": 100018,
+      "start": "2020-10-16T07:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "ADA/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/ADA_USDT_USDT-15m-futures.feather",
+      "rowCount": 224896,
+      "start": "2020-01-31T08:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "ADA/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/ADA_USDT_USDT-1h-futures.feather",
+      "rowCount": 56224,
+      "start": "2020-01-31T08:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "ADA/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/ADA_USDT_USDT-30m-futures.feather",
+      "rowCount": 112448,
+      "start": "2020-01-31T08:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "APT/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/APT_USDT_USDT-15m-futures.feather",
+      "rowCount": 129688,
+      "start": "2022-10-19T02:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "APT/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/APT_USDT_USDT-1h-futures.feather",
+      "rowCount": 32422,
+      "start": "2022-10-19T02:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "APT/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/APT_USDT_USDT-30m-futures.feather",
+      "rowCount": 64844,
+      "start": "2022-10-19T02:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "ARB/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/ARB_USDT_USDT-15m-futures.feather",
+      "rowCount": 114756,
+      "start": "2023-03-23T15:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "ARB/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/ARB_USDT_USDT-1h-futures.feather",
+      "rowCount": 28689,
+      "start": "2023-03-23T15:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "ARB/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/ARB_USDT_USDT-30m-futures.feather",
+      "rowCount": 57378,
+      "start": "2023-03-23T15:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/AVAX_USDT_USDT-15m-futures.feather",
+      "rowCount": 202244,
+      "start": "2020-09-23T07:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/AVAX_USDT_USDT-1h-futures.feather",
+      "rowCount": 50561,
+      "start": "2020-09-23T07:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/AVAX_USDT_USDT-30m-futures.feather",
+      "rowCount": 101122,
+      "start": "2020-09-23T07:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "BCH/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/BCH_USDT_USDT-15m-futures.feather",
+      "rowCount": 227808,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "BCH/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/BCH_USDT_USDT-1h-futures.feather",
+      "rowCount": 56952,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "BCH/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/BCH_USDT_USDT-30m-futures.feather",
+      "rowCount": 113904,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/BNB_USDT_USDT-15m-futures.feather",
+      "rowCount": 223936,
+      "start": "2020-02-10T08:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/BNB_USDT_USDT-1h-futures.feather",
+      "rowCount": 55984,
+      "start": "2020-02-10T08:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/BNB_USDT_USDT-30m-futures.feather",
+      "rowCount": 111968,
+      "start": "2020-02-10T08:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "BTC/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/BTC_USDT_USDT-15m-futures.feather",
+      "rowCount": 227808,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "BTC/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/BTC_USDT_USDT-1h-futures.feather",
+      "rowCount": 56952,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "BTC/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/BTC_USDT_USDT-30m-futures.feather",
+      "rowCount": 113904,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/DOGE_USDT_USDT-15m-futures.feather",
+      "rowCount": 209436,
+      "start": "2020-07-10T09:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/DOGE_USDT_USDT-1h-futures.feather",
+      "rowCount": 52359,
+      "start": "2020-07-10T09:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/DOGE_USDT_USDT-30m-futures.feather",
+      "rowCount": 104718,
+      "start": "2020-07-10T09:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "DOT/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/DOT_USDT_USDT-15m-futures.feather",
+      "rowCount": 205316,
+      "start": "2020-08-22T07:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "DOT/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/DOT_USDT_USDT-1h-futures.feather",
+      "rowCount": 51329,
+      "start": "2020-08-22T07:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "DOT/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/DOT_USDT_USDT-30m-futures.feather",
+      "rowCount": 102658,
+      "start": "2020-08-22T07:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/ETH_USDT_USDT-15m-futures.feather",
+      "rowCount": 227808,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/ETH_USDT_USDT-1h-futures.feather",
+      "rowCount": 56952,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/ETH_USDT_USDT-30m-futures.feather",
+      "rowCount": 113904,
+      "start": "2020-01-01T00:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "LINK/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/LINK_USDT_USDT-15m-futures.feather",
+      "rowCount": 226240,
+      "start": "2020-01-17T08:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "LINK/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/LINK_USDT_USDT-1h-futures.feather",
+      "rowCount": 56560,
+      "start": "2020-01-17T08:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "LINK/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/LINK_USDT_USDT-30m-futures.feather",
+      "rowCount": 113120,
+      "start": "2020-01-17T08:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "LTC/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/LTC_USDT_USDT-15m-futures.feather",
+      "rowCount": 226528,
+      "start": "2020-01-09T08:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "LTC/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/LTC_USDT_USDT-1h-futures.feather",
+      "rowCount": 56632,
+      "start": "2020-01-09T08:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "LTC/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/LTC_USDT_USDT-30m-futures.feather",
+      "rowCount": 113264,
+      "start": "2020-01-09T08:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "NEAR/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/NEAR_USDT_USDT-15m-futures.feather",
+      "rowCount": 199648,
+      "start": "2020-10-15T08:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "NEAR/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/NEAR_USDT_USDT-1h-futures.feather",
+      "rowCount": 49912,
+      "start": "2020-10-15T08:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "NEAR/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/NEAR_USDT_USDT-30m-futures.feather",
+      "rowCount": 99824,
+      "start": "2020-10-15T08:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "OP/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/OP_USDT_USDT-15m-futures.feather",
+      "rowCount": 143080,
+      "start": "2022-06-01T14:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "OP/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/OP_USDT_USDT-1h-futures.feather",
+      "rowCount": 35770,
+      "start": "2022-06-01T14:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "OP/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/OP_USDT_USDT-30m-futures.feather",
+      "rowCount": 71540,
+      "start": "2022-06-01T14:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/SOL_USDT_USDT-15m-futures.feather",
+      "rowCount": 202628,
+      "start": "2020-09-14T07:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/SOL_USDT_USDT-1h-futures.feather",
+      "rowCount": 50657,
+      "start": "2020-09-14T07:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/SOL_USDT_USDT-30m-futures.feather",
+      "rowCount": 101314,
+      "start": "2020-09-14T07:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/SUI_USDT_USDT-15m-futures.feather",
+      "rowCount": 110816,
+      "start": "2023-05-03T16:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/SUI_USDT_USDT-1h-futures.feather",
+      "rowCount": 27704,
+      "start": "2023-05-03T16:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/SUI_USDT_USDT-30m-futures.feather",
+      "rowCount": 55408,
+      "start": "2023-05-03T16:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "TRX/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/TRX_USDT_USDT-15m-futures.feather",
+      "rowCount": 225952,
+      "start": "2020-01-15T08:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "TRX/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/TRX_USDT_USDT-1h-futures.feather",
+      "rowCount": 56488,
+      "start": "2020-01-15T08:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "TRX/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/TRX_USDT_USDT-30m-futures.feather",
+      "rowCount": 112976,
+      "start": "2020-01-15T08:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "UNI/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/UNI_USDT_USDT-15m-futures.feather",
+      "rowCount": 202724,
+      "start": "2020-09-18T07:00:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "UNI/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/UNI_USDT_USDT-1h-futures.feather",
+      "rowCount": 50681,
+      "start": "2020-09-18T07:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "UNI/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/UNI_USDT_USDT-30m-futures.feather",
+      "rowCount": 101362,
+      "start": "2020-09-18T07:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    },
+    {
+      "pair": "XRP/USDT:USDT",
+      "timeframe": "15m",
+      "outputFile": "user_data/data/binance_vision/futures/XRP_USDT_USDT-15m-futures.feather",
+      "rowCount": 226815,
+      "start": "2020-01-06T08:15:00+00:00",
+      "end": "2026-06-30T23:45:00+00:00"
+    },
+    {
+      "pair": "XRP/USDT:USDT",
+      "timeframe": "1h",
+      "outputFile": "user_data/data/binance_vision/futures/XRP_USDT_USDT-1h-futures.feather",
+      "rowCount": 56704,
+      "start": "2020-01-06T08:00:00+00:00",
+      "end": "2026-06-30T23:00:00+00:00"
+    },
+    {
+      "pair": "XRP/USDT:USDT",
+      "timeframe": "30m",
+      "outputFile": "user_data/data/binance_vision/futures/XRP_USDT_USDT-30m-futures.feather",
+      "rowCount": 113408,
+      "start": "2020-01-06T08:00:00+00:00",
+      "end": "2026-06-30T23:30:00+00:00"
+    }
+  ],
+  "missingSamples": [
+    {
+      "pair": "BTC/USDT:USDT",
+      "symbol": "BTCUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/15m/BTCUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "BTC/USDT:USDT",
+      "symbol": "BTCUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/30m/BTCUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "BTC/USDT:USDT",
+      "symbol": "BTCUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1h/BTCUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "symbol": "ETHUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/ETHUSDT/15m/ETHUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "symbol": "ETHUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/ETHUSDT/30m/ETHUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "ETH/USDT:USDT",
+      "symbol": "ETHUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/ETHUSDT/1h/ETHUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/15m/SOLUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/30m/SOLUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SOL/USDT:USDT",
+      "symbol": "SOLUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SOLUSDT/1h/SOLUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "XRP/USDT:USDT",
+      "symbol": "XRPUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/XRPUSDT/15m/XRPUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "XRP/USDT:USDT",
+      "symbol": "XRPUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/XRPUSDT/30m/XRPUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "XRP/USDT:USDT",
+      "symbol": "XRPUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/XRPUSDT/1h/XRPUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/15m/DOGEUSDT-15m-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/15m/DOGEUSDT-15m-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/15m/DOGEUSDT-15m-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/15m/DOGEUSDT-15m-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/15m/DOGEUSDT-15m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/15m/DOGEUSDT-15m-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "30m",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/30m/DOGEUSDT-30m-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/15m/DOGEUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "30m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/30m/DOGEUSDT-30m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "30m",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/30m/DOGEUSDT-30m-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "30m",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/30m/DOGEUSDT-30m-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "30m",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/30m/DOGEUSDT-30m-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "30m",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/30m/DOGEUSDT-30m-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/30m/DOGEUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/1h/DOGEUSDT-1h-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/1h/DOGEUSDT-1h-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/1h/DOGEUSDT-1h-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/1h/DOGEUSDT-1h-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/1h/DOGEUSDT-1h-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/1h/DOGEUSDT-1h-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "DOGE/USDT:USDT",
+      "symbol": "DOGEUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/DOGEUSDT/1h/DOGEUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "symbol": "BNBUSDT",
+      "timeframe": "15m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BNBUSDT/15m/BNBUSDT-15m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "symbol": "BNBUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BNBUSDT/15m/BNBUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "symbol": "BNBUSDT",
+      "timeframe": "30m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BNBUSDT/30m/BNBUSDT-30m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BNBUSDT/1h/BNBUSDT-1h-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "symbol": "BNBUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BNBUSDT/30m/BNBUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "BNB/USDT:USDT",
+      "symbol": "BNBUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BNBUSDT/1h/BNBUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "ADA/USDT:USDT",
+      "symbol": "ADAUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/ADAUSDT/15m/ADAUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "ADA/USDT:USDT",
+      "symbol": "ADAUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/ADAUSDT/30m/ADAUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "ADA/USDT:USDT",
+      "symbol": "ADAUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/ADAUSDT/1h/ADAUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "TRX/USDT:USDT",
+      "symbol": "TRXUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/TRXUSDT/15m/TRXUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "TRX/USDT:USDT",
+      "symbol": "TRXUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/TRXUSDT/30m/TRXUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "TRX/USDT:USDT",
+      "symbol": "TRXUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/TRXUSDT/1h/TRXUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/15m/AVAXUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/30m/AVAXUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "AVAX/USDT:USDT",
+      "symbol": "AVAXUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/AVAXUSDT/1h/AVAXUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "LINK/USDT:USDT",
+      "symbol": "LINKUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/LINKUSDT/15m/LINKUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "LINK/USDT:USDT",
+      "symbol": "LINKUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/LINKUSDT/30m/LINKUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "LINK/USDT:USDT",
+      "symbol": "LINKUSDT",
+      "timeframe": "1h",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/LINKUSDT/1h/LINKUSDT-1h-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-09",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-09.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-10",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-10.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-11",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-11.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2020-12",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2020-12.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-11",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-11.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-10",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-10.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-09",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-09.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2021-12",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2021-12.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-10",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-10.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-09",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-09.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-12",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-12.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2022-11",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2022-11.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2023-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2023-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2023-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2023-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2023-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2023-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2023-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2023-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "15m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/15m/SUIUSDT-15m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-09",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-09.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-12",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-12.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-10",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-10.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2020-11",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2020-11.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-11",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-11.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-12",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-12.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-09",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-09.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2021-10",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2021-10.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-09",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-09.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-11",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-11.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2023-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2023-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2023-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2023-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-10",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-10.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2022-12",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2022-12.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2023-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2023-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2023-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2023-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "30m",
+      "month": "2026-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/30m/SUIUSDT-30m-2026-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-06",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-06.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-08",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-08.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-10",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-10.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-11",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-11.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-12",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-12.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2021-01",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2021-01.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2021-02",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2021-02.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2021-03",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2021-03.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2021-04",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2021-04.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2021-05",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2021-05.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2021-07",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2021-07.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2020-09",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2020-09.zip",
+      "rowCount": 0
+    },
+    {
+      "pair": "SUI/USDT:USDT",
+      "symbol": "SUIUSDT",
+      "timeframe": "1h",
+      "month": "2021-09",
+      "status": "missing",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/SUIUSDT/1h/SUIUSDT-1h-2021-09.zip",
+      "rowCount": 0
+    }
+  ],
+  "elapsedSeconds": 397.135,
+  "safetyBoundary": {
+    "publicDataOnly": true,
+    "apiKeyStorage": false,
+    "tradeApiEnabled": false,
+    "withdrawApiEnabled": false,
+    "realAccountReads": false,
+    "realPositionReads": false,
+    "orderCreation": false,
+    "exchangeDryRun": false,
+    "liveTrading": false,
+    "autoTrading": false
+  }
+}

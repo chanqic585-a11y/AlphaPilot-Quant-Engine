@@ -1,0 +1,429 @@
+{
+  "version": "V13.7.40",
+  "sourceReport": "reports\\v13_7_40_short_cycle_parameter_search_binance_vision_asset_filtered_report.json",
+  "selectedCandidates": [
+    {
+      "candidateId": "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+      "name": "1h 空头上影拒绝 ATR1.0 资产筛选Top10",
+      "family": "short_rejection",
+      "direction": "short",
+      "timeframe": "1h",
+      "targetR": 2.0,
+      "approvalTier": "strict_approved_asset_filtered",
+      "params": {
+        "upper_buffer": 0.006,
+        "trend_tolerance": 1.0,
+        "rsi_high": 60,
+        "volume_min": 1.2,
+        "stop_atr": 1.0,
+        "max_hold": 12
+      },
+      "assetFilter": {
+        "enabled": true,
+        "selectionMethod": "train_segment_positive_pair_filter",
+        "selectedPairCount": 10,
+        "selectedPairs": [
+          "APE/USDT:USDT",
+          "APT/USDT:USDT",
+          "BTC/USDT:USDT",
+          "GALA/USDT:USDT",
+          "LTC/USDT:USDT",
+          "MANA/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "SAND/USDT:USDT",
+          "SOL/USDT:USDT",
+          "TRX/USDT:USDT"
+        ],
+        "minTrainTradesPerPair": 3,
+        "minTrainProfitFactor": 1.05,
+        "requiresPositiveTrainExpectancy": true,
+        "note": "Pairs are selected from the train segment only; validation and test remain out of selection."
+      },
+      "metrics": {
+        "tradeCount": 219,
+        "winCount": 112,
+        "lossCount": 107,
+        "winRatePct": 51.1416,
+        "profitFactor": 1.517,
+        "expectancyR": 0.281784,
+        "totalR": 61.7107,
+        "maxDrawdownR": 10.9678,
+        "maxDrawdownPctAt1PctRisk": 10.9678,
+        "pairCount": 10,
+        "targetHitRatePct": 40.6393,
+        "stopHitRatePct": 46.1187
+      },
+      "validationMetrics": {
+        "tradeCount": 64,
+        "winCount": 28,
+        "lossCount": 36,
+        "winRatePct": 43.75,
+        "profitFactor": 1.0951,
+        "expectancyR": 0.057736,
+        "totalR": 3.6951,
+        "maxDrawdownR": 10.9539,
+        "maxDrawdownPctAt1PctRisk": 10.9539,
+        "pairCount": 10,
+        "targetHitRatePct": 29.6875,
+        "stopHitRatePct": 50.0
+      },
+      "testMetrics": {
+        "tradeCount": 65,
+        "winCount": 33,
+        "lossCount": 32,
+        "winRatePct": 50.7692,
+        "profitFactor": 1.5075,
+        "expectancyR": 0.285042,
+        "totalR": 18.5277,
+        "maxDrawdownR": 10.9678,
+        "maxDrawdownPctAt1PctRisk": 10.9678,
+        "pairCount": 10,
+        "targetHitRatePct": 43.0769,
+        "stopHitRatePct": 46.1538
+      },
+      "safety": {
+        "researchOnly": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "candidateId": "v13_7_40_1h_short_rejection_2148_asset_filter_top10",
+      "name": "1h 空头上影拒绝 ATR1.0 资产筛选Top10",
+      "family": "short_rejection",
+      "direction": "short",
+      "timeframe": "1h",
+      "targetR": 2.0,
+      "approvalTier": "strict_approved_asset_filtered",
+      "params": {
+        "upper_buffer": 0.006,
+        "trend_tolerance": 1.0,
+        "rsi_high": 60,
+        "volume_min": 1.2,
+        "stop_atr": 1.0,
+        "max_hold": 8
+      },
+      "assetFilter": {
+        "enabled": true,
+        "selectionMethod": "train_segment_positive_pair_filter",
+        "selectedPairCount": 10,
+        "selectedPairs": [
+          "APE/USDT:USDT",
+          "APT/USDT:USDT",
+          "BTC/USDT:USDT",
+          "GALA/USDT:USDT",
+          "LTC/USDT:USDT",
+          "MANA/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "SAND/USDT:USDT",
+          "SOL/USDT:USDT",
+          "TRX/USDT:USDT"
+        ],
+        "minTrainTradesPerPair": 3,
+        "minTrainProfitFactor": 1.05,
+        "requiresPositiveTrainExpectancy": true,
+        "note": "Pairs are selected from the train segment only; validation and test remain out of selection."
+      },
+      "metrics": {
+        "tradeCount": 219,
+        "winCount": 108,
+        "lossCount": 111,
+        "winRatePct": 49.3151,
+        "profitFactor": 1.4348,
+        "expectancyR": 0.227261,
+        "totalR": 49.7702,
+        "maxDrawdownR": 11.8513,
+        "maxDrawdownPctAt1PctRisk": 11.8513,
+        "pairCount": 10,
+        "targetHitRatePct": 34.2466,
+        "stopHitRatePct": 43.379
+      },
+      "validationMetrics": {
+        "tradeCount": 64,
+        "winCount": 27,
+        "lossCount": 37,
+        "winRatePct": 42.1875,
+        "profitFactor": 0.993,
+        "expectancyR": -0.003982,
+        "totalR": -0.2548,
+        "maxDrawdownR": 11.8513,
+        "maxDrawdownPctAt1PctRisk": 11.8513,
+        "pairCount": 10,
+        "targetHitRatePct": 21.875,
+        "stopHitRatePct": 45.3125
+      },
+      "testMetrics": {
+        "tradeCount": 65,
+        "winCount": 34,
+        "lossCount": 31,
+        "winRatePct": 52.3077,
+        "profitFactor": 1.5031,
+        "expectancyR": 0.274872,
+        "totalR": 17.8667,
+        "maxDrawdownR": 10.3932,
+        "maxDrawdownPctAt1PctRisk": 10.3932,
+        "pairCount": 10,
+        "targetHitRatePct": 38.4615,
+        "stopHitRatePct": 44.6154
+      },
+      "safety": {
+        "researchOnly": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "candidateId": "v13_7_40_1h_short_rejection_2150_asset_filter_top10",
+      "name": "1h 空头上影拒绝 ATR1.0 资产筛选Top10",
+      "family": "short_rejection",
+      "direction": "short",
+      "timeframe": "1h",
+      "targetR": 2.0,
+      "approvalTier": "strict_approved_asset_filtered",
+      "params": {
+        "upper_buffer": 0.006,
+        "trend_tolerance": 1.0,
+        "rsi_high": 60,
+        "volume_min": 1.2,
+        "stop_atr": 1.0,
+        "max_hold": 16
+      },
+      "assetFilter": {
+        "enabled": true,
+        "selectionMethod": "train_segment_positive_pair_filter",
+        "selectedPairCount": 10,
+        "selectedPairs": [
+          "APE/USDT:USDT",
+          "APT/USDT:USDT",
+          "BTC/USDT:USDT",
+          "GALA/USDT:USDT",
+          "LTC/USDT:USDT",
+          "MANA/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "SAND/USDT:USDT",
+          "SOL/USDT:USDT",
+          "TRX/USDT:USDT"
+        ],
+        "minTrainTradesPerPair": 3,
+        "minTrainProfitFactor": 1.05,
+        "requiresPositiveTrainExpectancy": true,
+        "note": "Pairs are selected from the train segment only; validation and test remain out of selection."
+      },
+      "metrics": {
+        "tradeCount": 219,
+        "winCount": 108,
+        "lossCount": 111,
+        "winRatePct": 49.3151,
+        "profitFactor": 1.5112,
+        "expectancyR": 0.290469,
+        "totalR": 63.6127,
+        "maxDrawdownR": 11.966,
+        "maxDrawdownPctAt1PctRisk": 11.966,
+        "pairCount": 10,
+        "targetHitRatePct": 44.7489,
+        "stopHitRatePct": 48.4018
+      },
+      "validationMetrics": {
+        "tradeCount": 64,
+        "winCount": 29,
+        "lossCount": 35,
+        "winRatePct": 45.3125,
+        "profitFactor": 1.1929,
+        "expectancyR": 0.119861,
+        "totalR": 7.6711,
+        "maxDrawdownR": 8.7007,
+        "maxDrawdownPctAt1PctRisk": 8.7007,
+        "pairCount": 10,
+        "targetHitRatePct": 35.9375,
+        "stopHitRatePct": 53.125
+      },
+      "testMetrics": {
+        "tradeCount": 65,
+        "winCount": 30,
+        "lossCount": 35,
+        "winRatePct": 46.1538,
+        "profitFactor": 1.3785,
+        "expectancyR": 0.234747,
+        "totalR": 15.2586,
+        "maxDrawdownR": 11.966,
+        "maxDrawdownPctAt1PctRisk": 11.966,
+        "pairCount": 10,
+        "targetHitRatePct": 46.1538,
+        "stopHitRatePct": 50.7692
+      },
+      "safety": {
+        "researchOnly": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "candidateId": "v13_7_40_1h_short_rejection_2077_asset_filter_top8",
+      "name": "1h 空头上影拒绝 ATR1.0 资产筛选Top8",
+      "family": "short_rejection",
+      "direction": "short",
+      "timeframe": "1h",
+      "targetR": 2.0,
+      "approvalTier": "strict_approved_asset_filtered",
+      "params": {
+        "upper_buffer": 0.003,
+        "trend_tolerance": 1.0,
+        "rsi_high": 60,
+        "volume_min": 1.2,
+        "stop_atr": 1.0,
+        "max_hold": 12
+      },
+      "assetFilter": {
+        "enabled": true,
+        "selectionMethod": "train_segment_positive_pair_filter",
+        "selectedPairCount": 8,
+        "selectedPairs": [
+          "APE/USDT:USDT",
+          "APT/USDT:USDT",
+          "BTC/USDT:USDT",
+          "GALA/USDT:USDT",
+          "LTC/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "SOL/USDT:USDT",
+          "TRX/USDT:USDT"
+        ],
+        "minTrainTradesPerPair": 3,
+        "minTrainProfitFactor": 1.05,
+        "requiresPositiveTrainExpectancy": true,
+        "note": "Pairs are selected from the train segment only; validation and test remain out of selection."
+      },
+      "metrics": {
+        "tradeCount": 175,
+        "winCount": 91,
+        "lossCount": 84,
+        "winRatePct": 52.0,
+        "profitFactor": 1.5545,
+        "expectancyR": 0.299841,
+        "totalR": 52.4722,
+        "maxDrawdownR": 9.903,
+        "maxDrawdownPctAt1PctRisk": 9.903,
+        "pairCount": 8,
+        "targetHitRatePct": 41.1429,
+        "stopHitRatePct": 45.1429
+      },
+      "validationMetrics": {
+        "tradeCount": 46,
+        "winCount": 20,
+        "lossCount": 26,
+        "winRatePct": 43.4783,
+        "profitFactor": 1.1085,
+        "expectancyR": 0.067674,
+        "totalR": 3.113,
+        "maxDrawdownR": 8.8535,
+        "maxDrawdownPctAt1PctRisk": 8.8535,
+        "pairCount": 8,
+        "targetHitRatePct": 30.4348,
+        "stopHitRatePct": 50.0
+      },
+      "testMetrics": {
+        "tradeCount": 56,
+        "winCount": 28,
+        "lossCount": 28,
+        "winRatePct": 50.0,
+        "profitFactor": 1.4233,
+        "expectancyR": 0.241901,
+        "totalR": 13.5464,
+        "maxDrawdownR": 9.903,
+        "maxDrawdownPctAt1PctRisk": 9.903,
+        "pairCount": 8,
+        "targetHitRatePct": 41.0714,
+        "stopHitRatePct": 46.4286
+      },
+      "safety": {
+        "researchOnly": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    },
+    {
+      "candidateId": "v13_7_40_1h_short_rejection_2021_asset_filter_top10",
+      "name": "1h 空头上影拒绝 ATR1.2 资产筛选Top10",
+      "family": "short_rejection",
+      "direction": "short",
+      "timeframe": "1h",
+      "targetR": 2.0,
+      "approvalTier": "strict_approved_asset_filtered",
+      "params": {
+        "upper_buffer": 0.003,
+        "trend_tolerance": 1.0,
+        "rsi_high": 62,
+        "volume_min": 1.2,
+        "stop_atr": 1.2,
+        "max_hold": 8
+      },
+      "assetFilter": {
+        "enabled": true,
+        "selectionMethod": "train_segment_positive_pair_filter",
+        "selectedPairCount": 10,
+        "selectedPairs": [
+          "ADA/USDT:USDT",
+          "AXS/USDT:USDT",
+          "BTC/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "GALA/USDT:USDT",
+          "LTC/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "SAND/USDT:USDT",
+          "SOL/USDT:USDT",
+          "TRX/USDT:USDT"
+        ],
+        "minTrainTradesPerPair": 3,
+        "minTrainProfitFactor": 1.05,
+        "requiresPositiveTrainExpectancy": true,
+        "note": "Pairs are selected from the train segment only; validation and test remain out of selection."
+      },
+      "metrics": {
+        "tradeCount": 131,
+        "winCount": 72,
+        "lossCount": 59,
+        "winRatePct": 54.9618,
+        "profitFactor": 1.685,
+        "expectancyR": 0.262404,
+        "totalR": 34.3749,
+        "maxDrawdownR": 7.2055,
+        "maxDrawdownPctAt1PctRisk": 7.2055,
+        "pairCount": 10,
+        "targetHitRatePct": 25.9542,
+        "stopHitRatePct": 30.5344
+      },
+      "validationMetrics": {
+        "tradeCount": 34,
+        "winCount": 21,
+        "lossCount": 13,
+        "winRatePct": 61.7647,
+        "profitFactor": 1.7159,
+        "expectancyR": 0.252051,
+        "totalR": 8.5697,
+        "maxDrawdownR": 4.4041,
+        "maxDrawdownPctAt1PctRisk": 4.4041,
+        "pairCount": 10,
+        "targetHitRatePct": 20.5882,
+        "stopHitRatePct": 29.4118
+      },
+      "testMetrics": {
+        "tradeCount": 34,
+        "winCount": 18,
+        "lossCount": 16,
+        "winRatePct": 52.9412,
+        "profitFactor": 1.3186,
+        "expectancyR": 0.153767,
+        "totalR": 5.2281,
+        "maxDrawdownR": 7.2055,
+        "maxDrawdownPctAt1PctRisk": 7.2055,
+        "pairCount": 10,
+        "targetHitRatePct": 23.5294,
+        "stopHitRatePct": 38.2353
+      },
+      "safety": {
+        "researchOnly": true,
+        "dryRunApproved": false,
+        "liveTradingApproved": false
+      }
+    }
+  ]
+}
