@@ -220,7 +220,15 @@ def load_resume_results(manifest_path: Path, run: bool) -> list[StrategyRunResul
     return loaded
 
 
-def build_command(strategy: str, timerange: str, pairs: list[str], data_dir: Path, config: Path, skip_pair_validation: bool) -> list[str]:
+def build_command(
+    strategy: str,
+    timeframe: str | None,
+    timerange: str,
+    pairs: list[str],
+    data_dir: Path,
+    config: Path,
+    skip_pair_validation: bool,
+) -> list[str]:
     config_arg = config.as_posix()
     data_dir_arg = data_dir.as_posix()
     command = [
@@ -245,6 +253,8 @@ def build_command(strategy: str, timerange: str, pairs: list[str], data_dir: Pat
         "--pairs",
         *pairs,
     ]
+    if timeframe:
+        command.extend(["--timeframe", timeframe])
     if skip_pair_validation:
         command.append("--skip-pair-validation")
     return command
@@ -265,7 +275,7 @@ def run_strategy(
     run: bool,
 ) -> StrategyRunResult:
     started_at = utc_now()
-    command = build_command(info.strategyClass, timerange, pairs, data_dir, config, skip_pair_validation)
+    command = build_command(info.strategyClass, info.timeframe, timerange, pairs, data_dir, config, skip_pair_validation)
     log_path = log_dir / f"{output_prefix}_{info.strategyClass}_chunk_{chunk_index:03d}_of_{chunk_count:03d}.log"
     if not run:
         return StrategyRunResult(
@@ -286,6 +296,7 @@ def run_strategy(
         )
     try:
         log_dir.mkdir(parents=True, exist_ok=True)
+        previous_latest = read_last_result(result_dir)
         with log_path.open("w", encoding="utf-8") as log_file:
             completed = subprocess.run(  # noqa: S603 - local docker command.
                 command,
@@ -300,12 +311,12 @@ def run_strategy(
         status = "success" if completed.returncode == 0 else "failed"
         error = None if completed.returncode == 0 else f"docker exited with code {completed.returncode}"
         if completed.returncode == 0:
-            if latest:
+            if latest and latest != previous_latest:
                 copied_path = result_dir / f"{output_prefix}_{info.strategyClass}_chunk_{chunk_index:03d}_of_{chunk_count:03d}.zip"
                 shutil.copy2(latest, copied_path)
             else:
                 status = "result_missing"
-                error = ".last_result.json did not point to a result zip"
+                error = ".last_result.json did not point to a new result zip"
         return StrategyRunResult(
             strategyClass=info.strategyClass,
             sourceFile=info.sourceFile,

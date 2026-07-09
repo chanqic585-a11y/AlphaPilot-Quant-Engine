@@ -1,0 +1,2372 @@
+{
+  "reportId": "external_5m_strategy_ranking",
+  "version": "V13.8 external 5m ranking",
+  "status": "completed",
+  "isPreliminary": false,
+  "manifestPath": "reports/contract_useful_strategy_backtest_manifest.json",
+  "timerange": "20200101-",
+  "dataDir": "user_data\\data\\local_contract_xlsx\\okx",
+  "pairCount": 17,
+  "selectedStrategyCount": 6,
+  "expectedChunkCount": 6,
+  "completedChunkCount": 6,
+  "successCount": 6,
+  "failedCount": 0,
+  "resultMissingCount": 0,
+  "progressPct": 100.0,
+  "slippageRateOneWay": 0.0005,
+  "tierCounts": {
+    "reject": 6
+  },
+  "rankedStrategies": [
+    {
+      "strategyClass": "AlphaPilotBatchH_VolatilityCompressionBreakout4H",
+      "strategyName": "4H 波动压缩突破",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 1236,
+      "totalProfitAbs": -997.50251904,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.7503,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 288.14965294,
+      "slippageAdjustedReturnPct": -128.5652,
+      "profitFactor": 0.5219,
+      "slippageAdjustedProfitFactor": 0.4459,
+      "winRate": 20.3883,
+      "averageWinAbs": 4.32075743,
+      "averageLossAbs": 2.12025751,
+      "rewardRiskRatio": 2.0378,
+      "maxConsecutiveLosses": 21,
+      "maxChunkDrawdownPct": 99.7631,
+      "coveredPairCount": 17,
+      "coveredMonthCount": 76,
+      "pairTradeConcentration": 0.0922,
+      "topPairsByProfit": [
+        {
+          "pair": "AXS/USDT:USDT",
+          "tradeCount": 50,
+          "profitAbs": 17.06466179,
+          "returnPctOfTotalCapital": 1.7065,
+          "winRate": 34.0,
+          "profitFactor": 2.1299
+        },
+        {
+          "pair": "ICX/USDT:USDT",
+          "tradeCount": 27,
+          "profitAbs": -1.13554805,
+          "returnPctOfTotalCapital": -0.1136,
+          "winRate": 14.8148,
+          "profitFactor": 0.5386
+        },
+        {
+          "pair": "APT/USDT:USDT",
+          "tradeCount": 59,
+          "profitAbs": -1.91354655,
+          "returnPctOfTotalCapital": -0.1914,
+          "winRate": 25.4237,
+          "profitFactor": 0.793
+        },
+        {
+          "pair": "GAS/USDT:USDT",
+          "tradeCount": 34,
+          "profitAbs": -2.2512015,
+          "returnPctOfTotalCapital": -0.2251,
+          "winRate": 20.5882,
+          "profitFactor": 0.4315
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 61,
+          "profitAbs": -8.27703892,
+          "returnPctOfTotalCapital": -0.8277,
+          "winRate": 21.3115,
+          "profitFactor": 0.5761
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 80,
+          "profitAbs": -16.5163086,
+          "returnPctOfTotalCapital": -1.6516,
+          "winRate": 20.0,
+          "profitFactor": 0.7251
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 80,
+          "profitAbs": -19.09621973,
+          "returnPctOfTotalCapital": -1.9096,
+          "winRate": 15.0,
+          "profitFactor": 0.8127
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 56,
+          "profitAbs": -32.72369117,
+          "returnPctOfTotalCapital": -3.2724,
+          "winRate": 14.2857,
+          "profitFactor": 0.1925
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 55,
+          "profitAbs": -36.19475715,
+          "returnPctOfTotalCapital": -3.6195,
+          "winRate": 18.1818,
+          "profitFactor": 0.2468
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 57,
+          "profitAbs": -37.83840085,
+          "returnPctOfTotalCapital": -3.7838,
+          "winRate": 15.7895,
+          "profitFactor": 0.1797
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 93,
+          "profitAbs": -233.69902818,
+          "returnPctOfTotalCapital": -23.3699,
+          "winRate": 21.5054,
+          "profitFactor": 0.4436
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 114,
+          "profitAbs": -189.8297816,
+          "returnPctOfTotalCapital": -18.983,
+          "winRate": 19.2982,
+          "profitFactor": 0.3347
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 77,
+          "profitAbs": -137.33853475,
+          "returnPctOfTotalCapital": -13.7339,
+          "winRate": 19.4805,
+          "profitFactor": 0.2859
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 93,
+          "profitAbs": -86.78042148,
+          "returnPctOfTotalCapital": -8.678,
+          "winRate": 17.2043,
+          "profitFactor": 0.2313
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 92,
+          "profitAbs": -78.81144585,
+          "returnPctOfTotalCapital": -7.8811,
+          "winRate": 19.5652,
+          "profitFactor": 0.4341
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 107,
+          "profitAbs": -76.92230445,
+          "returnPctOfTotalCapital": -7.6922,
+          "winRate": 22.4299,
+          "profitFactor": 0.713
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 101,
+          "profitAbs": -55.238952,
+          "returnPctOfTotalCapital": -5.5239,
+          "winRate": 25.7426,
+          "profitFactor": 0.8282
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 57,
+          "profitAbs": -37.83840085,
+          "returnPctOfTotalCapital": -3.7838,
+          "winRate": 15.7895,
+          "profitFactor": 0.1797
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 55,
+          "profitAbs": -36.19475715,
+          "returnPctOfTotalCapital": -3.6195,
+          "winRate": 18.1818,
+          "profitFactor": 0.2468
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 56,
+          "profitAbs": -32.72369117,
+          "returnPctOfTotalCapital": -3.2724,
+          "winRate": 14.2857,
+          "profitFactor": 0.1925
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotBatchH_VolatilityCompressionBreakout4H_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 40.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比达到 2R 目标。",
+        "币种覆盖较分散。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "AlphaPilotBatchB_EMATrendShort4H",
+      "strategyName": "4H EMA趋势做空",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 2477,
+      "totalProfitAbs": -999.99051328,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9991,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 495.79188588,
+      "slippageAdjustedReturnPct": -149.5782,
+      "profitFactor": 0.6853,
+      "slippageAdjustedProfitFactor": 0.5772,
+      "winRate": 23.8191,
+      "averageWinAbs": 3.69117746,
+      "averageLossAbs": 1.68404092,
+      "rewardRiskRatio": 2.1919,
+      "maxConsecutiveLosses": 37,
+      "maxChunkDrawdownPct": 99.9991,
+      "coveredPairCount": 13,
+      "coveredMonthCount": 62,
+      "pairTradeConcentration": 0.1692,
+      "topPairsByProfit": [
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 419,
+          "profitAbs": -0.09041726,
+          "returnPctOfTotalCapital": -0.009,
+          "winRate": 21.957,
+          "profitFactor": 0.5056
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 58,
+          "profitAbs": -0.1966695,
+          "returnPctOfTotalCapital": -0.0197,
+          "winRate": 27.5862,
+          "profitFactor": 0.3279
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 76,
+          "profitAbs": -0.7153797,
+          "returnPctOfTotalCapital": -0.0715,
+          "winRate": 26.3158,
+          "profitFactor": 0.7624
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 76,
+          "profitAbs": -2.8798815,
+          "returnPctOfTotalCapital": -0.288,
+          "winRate": 23.6842,
+          "profitFactor": 0.5627
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 320,
+          "profitAbs": -3.82953622,
+          "returnPctOfTotalCapital": -0.383,
+          "winRate": 20.0,
+          "profitFactor": 0.3343
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 90,
+          "profitAbs": -5.8701625,
+          "returnPctOfTotalCapital": -0.587,
+          "winRate": 21.1111,
+          "profitFactor": 0.4536
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 225,
+          "profitAbs": -17.93865216,
+          "returnPctOfTotalCapital": -1.7939,
+          "winRate": 30.6667,
+          "profitFactor": 0.9367
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 178,
+          "profitAbs": -27.487096,
+          "returnPctOfTotalCapital": -2.7487,
+          "winRate": 25.8427,
+          "profitFactor": 0.9023
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 149,
+          "profitAbs": -35.35453715,
+          "returnPctOfTotalCapital": -3.5355,
+          "winRate": 21.4765,
+          "profitFactor": 0.2349
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 103,
+          "profitAbs": -171.47373135,
+          "returnPctOfTotalCapital": -17.1474,
+          "winRate": 19.4175,
+          "profitFactor": 0.5217
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 186,
+          "profitAbs": -362.2607825,
+          "returnPctOfTotalCapital": -36.2261,
+          "winRate": 21.5054,
+          "profitFactor": 0.6113
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 411,
+          "profitAbs": -192.6953189,
+          "returnPctOfTotalCapital": -19.2695,
+          "winRate": 25.5474,
+          "profitFactor": 0.776
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 186,
+          "profitAbs": -179.19834854,
+          "returnPctOfTotalCapital": -17.9198,
+          "winRate": 26.3441,
+          "profitFactor": 0.5398
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 103,
+          "profitAbs": -171.47373135,
+          "returnPctOfTotalCapital": -17.1474,
+          "winRate": 19.4175,
+          "profitFactor": 0.5217
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 149,
+          "profitAbs": -35.35453715,
+          "returnPctOfTotalCapital": -3.5355,
+          "winRate": 21.4765,
+          "profitFactor": 0.2349
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 178,
+          "profitAbs": -27.487096,
+          "returnPctOfTotalCapital": -2.7487,
+          "winRate": 25.8427,
+          "profitFactor": 0.9023
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 225,
+          "profitAbs": -17.93865216,
+          "returnPctOfTotalCapital": -1.7939,
+          "winRate": 30.6667,
+          "profitFactor": 0.9367
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 90,
+          "profitAbs": -5.8701625,
+          "returnPctOfTotalCapital": -0.587,
+          "winRate": 21.1111,
+          "profitFactor": 0.4536
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 320,
+          "profitAbs": -3.82953622,
+          "returnPctOfTotalCapital": -0.383,
+          "winRate": 20.0,
+          "profitFactor": 0.3343
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 76,
+          "profitAbs": -2.8798815,
+          "returnPctOfTotalCapital": -0.288,
+          "winRate": 23.6842,
+          "profitFactor": 0.5627
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotBatchB_EMATrendShort4H_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 37.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比达到 2R 目标。",
+        "币种覆盖有限。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "AlphaPilotBatchD_BreakdownRetestShort4H",
+      "strategyName": "4H 跌破反抽做空",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 1891,
+      "totalProfitAbs": -999.71203132,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9712,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 229.12209683,
+      "slippageAdjustedReturnPct": -122.8834,
+      "profitFactor": 0.4012,
+      "slippageAdjustedProfitFactor": 0.3382,
+      "winRate": 24.9075,
+      "averageWinAbs": 1.42194219,
+      "averageLossAbs": 1.17566676,
+      "rewardRiskRatio": 1.2095,
+      "maxConsecutiveLosses": 43,
+      "maxChunkDrawdownPct": 99.9726,
+      "coveredPairCount": 17,
+      "coveredMonthCount": 76,
+      "pairTradeConcentration": 0.1121,
+      "topPairsByProfit": [
+        {
+          "pair": "APT/USDT:USDT",
+          "tradeCount": 8,
+          "profitAbs": 0.2020271,
+          "returnPctOfTotalCapital": 0.0202,
+          "winRate": 50.0,
+          "profitFactor": 1.7585
+        },
+        {
+          "pair": "GAS/USDT:USDT",
+          "tradeCount": 1,
+          "profitAbs": -0.0304085,
+          "returnPctOfTotalCapital": -0.003,
+          "winRate": 0.0,
+          "profitFactor": 0.0
+        },
+        {
+          "pair": "ICX/USDT:USDT",
+          "tradeCount": 93,
+          "profitAbs": -0.33633695,
+          "returnPctOfTotalCapital": -0.0336,
+          "winRate": 23.6559,
+          "profitFactor": 0.5294
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 126,
+          "profitAbs": -1.51959828,
+          "returnPctOfTotalCapital": -0.152,
+          "winRate": 27.7778,
+          "profitFactor": 0.6567
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 83,
+          "profitAbs": -8.9113405,
+          "returnPctOfTotalCapital": -0.8911,
+          "winRate": 32.5301,
+          "profitFactor": 0.599
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 161,
+          "profitAbs": -9.27411421,
+          "returnPctOfTotalCapital": -0.9274,
+          "winRate": 22.3602,
+          "profitFactor": 0.4183
+        },
+        {
+          "pair": "AXS/USDT:USDT",
+          "tradeCount": 174,
+          "profitAbs": -10.17189203,
+          "returnPctOfTotalCapital": -1.0172,
+          "winRate": 28.1609,
+          "profitFactor": 0.4912
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 78,
+          "profitAbs": -17.5283341,
+          "returnPctOfTotalCapital": -1.7528,
+          "winRate": 29.4872,
+          "profitFactor": 0.32
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 212,
+          "profitAbs": -20.91341955,
+          "returnPctOfTotalCapital": -2.0913,
+          "winRate": 27.3585,
+          "profitFactor": 0.4204
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 77,
+          "profitAbs": -30.1240573,
+          "returnPctOfTotalCapital": -3.0124,
+          "winRate": 23.3766,
+          "profitFactor": 0.3591
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 145,
+          "profitAbs": -237.80419475,
+          "returnPctOfTotalCapital": -23.7804,
+          "winRate": 21.3793,
+          "profitFactor": 0.1498
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 134,
+          "profitAbs": -181.43666865,
+          "returnPctOfTotalCapital": -18.1437,
+          "winRate": 23.8806,
+          "profitFactor": 0.3674
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 105,
+          "profitAbs": -152.598984,
+          "returnPctOfTotalCapital": -15.2599,
+          "winRate": 16.1905,
+          "profitFactor": 0.4505
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 139,
+          "profitAbs": -122.49017349,
+          "returnPctOfTotalCapital": -12.249,
+          "winRate": 25.1799,
+          "profitFactor": 0.594
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 119,
+          "profitAbs": -98.0967033,
+          "returnPctOfTotalCapital": -9.8097,
+          "winRate": 25.2101,
+          "profitFactor": 0.3932
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 91,
+          "profitAbs": -75.1419305,
+          "returnPctOfTotalCapital": -7.5142,
+          "winRate": 23.0769,
+          "profitFactor": 0.475
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 145,
+          "profitAbs": -33.53590231,
+          "returnPctOfTotalCapital": -3.3536,
+          "winRate": 22.7586,
+          "profitFactor": 0.2759
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 77,
+          "profitAbs": -30.1240573,
+          "returnPctOfTotalCapital": -3.0124,
+          "winRate": 23.3766,
+          "profitFactor": 0.3591
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 212,
+          "profitAbs": -20.91341955,
+          "returnPctOfTotalCapital": -2.0913,
+          "winRate": 27.3585,
+          "profitFactor": 0.4204
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 78,
+          "profitAbs": -17.5283341,
+          "returnPctOfTotalCapital": -1.7528,
+          "winRate": 29.4872,
+          "profitFactor": 0.32
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotBatchD_BreakdownRetestShort4H_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 35.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比未达 2R，但仍有观察价值。",
+        "币种覆盖较分散。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "AlphaPilotLowFrequencyDirectional4HV01",
+      "strategyName": "低频4H方向策略",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 3250,
+      "totalProfitAbs": -999.99495869,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9995,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 501.20404104,
+      "slippageAdjustedReturnPct": -150.1199,
+      "profitFactor": 0.6038,
+      "slippageAdjustedProfitFactor": 0.4811,
+      "winRate": 25.1692,
+      "averageWinAbs": 1.86324097,
+      "averageLossAbs": 1.03788079,
+      "rewardRiskRatio": 1.7952,
+      "maxConsecutiveLosses": 25,
+      "maxChunkDrawdownPct": 99.9995,
+      "coveredPairCount": 9,
+      "coveredMonthCount": 39,
+      "pairTradeConcentration": 0.2252,
+      "topPairsByProfit": [
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 12,
+          "profitAbs": 0.1881265,
+          "returnPctOfTotalCapital": 0.0188,
+          "winRate": 58.3333,
+          "profitFactor": 2.4742
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 25,
+          "profitAbs": -0.0027099,
+          "returnPctOfTotalCapital": -0.0003,
+          "winRate": 32.0,
+          "profitFactor": 0.8668
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 566,
+          "profitAbs": -0.07323681,
+          "returnPctOfTotalCapital": -0.0073,
+          "winRate": 23.1449,
+          "profitFactor": 0.4705
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 225,
+          "profitAbs": -0.11060693,
+          "returnPctOfTotalCapital": -0.0111,
+          "winRate": 23.5556,
+          "profitFactor": 0.5056
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 322,
+          "profitAbs": -3.32949838,
+          "returnPctOfTotalCapital": -0.3329,
+          "winRate": 22.9814,
+          "profitFactor": 0.5135
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 451,
+          "profitAbs": -60.5935293,
+          "returnPctOfTotalCapital": -6.0594,
+          "winRate": 24.3902,
+          "profitFactor": 0.693
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 474,
+          "profitAbs": -152.10644037,
+          "returnPctOfTotalCapital": -15.2106,
+          "winRate": 31.8565,
+          "profitFactor": 0.7591
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 732,
+          "profitAbs": -380.037968,
+          "returnPctOfTotalCapital": -38.0038,
+          "winRate": 22.8142,
+          "profitFactor": 0.5474
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 443,
+          "profitAbs": -403.9290955,
+          "returnPctOfTotalCapital": -40.3929,
+          "winRate": 26.4108,
+          "profitFactor": 0.5238
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 443,
+          "profitAbs": -403.9290955,
+          "returnPctOfTotalCapital": -40.3929,
+          "winRate": 26.4108,
+          "profitFactor": 0.5238
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 732,
+          "profitAbs": -380.037968,
+          "returnPctOfTotalCapital": -38.0038,
+          "winRate": 22.8142,
+          "profitFactor": 0.5474
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 474,
+          "profitAbs": -152.10644037,
+          "returnPctOfTotalCapital": -15.2106,
+          "winRate": 31.8565,
+          "profitFactor": 0.7591
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 451,
+          "profitAbs": -60.5935293,
+          "returnPctOfTotalCapital": -6.0594,
+          "winRate": 24.3902,
+          "profitFactor": 0.693
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 322,
+          "profitAbs": -3.32949838,
+          "returnPctOfTotalCapital": -0.3329,
+          "winRate": 22.9814,
+          "profitFactor": 0.5135
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 225,
+          "profitAbs": -0.11060693,
+          "returnPctOfTotalCapital": -0.0111,
+          "winRate": 23.5556,
+          "profitFactor": 0.5056
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 566,
+          "profitAbs": -0.07323681,
+          "returnPctOfTotalCapital": -0.0073,
+          "winRate": 23.1449,
+          "profitFactor": 0.4705
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 25,
+          "profitAbs": -0.0027099,
+          "returnPctOfTotalCapital": -0.0003,
+          "winRate": 32.0,
+          "profitFactor": 0.8668
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 12,
+          "profitAbs": 0.1881265,
+          "returnPctOfTotalCapital": 0.0188,
+          "winRate": 58.3333,
+          "profitFactor": 2.4742
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotLowFrequencyDirectional4HV01_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 32.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比未达 2R，但仍有观察价值。",
+        "币种覆盖有限。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "AlphaPilotShortRejection1HV01",
+      "strategyName": "1H 空头拒绝策略",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 3860,
+      "totalProfitAbs": -999.99428444,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9994,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 405.20685955,
+      "slippageAdjustedReturnPct": -140.5201,
+      "profitFactor": 0.4523,
+      "slippageAdjustedProfitFactor": 0.3442,
+      "winRate": 26.0622,
+      "averageWinAbs": 0.82099037,
+      "averageLossAbs": 0.63977246,
+      "rewardRiskRatio": 1.2833,
+      "maxConsecutiveLosses": 33,
+      "maxChunkDrawdownPct": 99.9994,
+      "coveredPairCount": 7,
+      "coveredMonthCount": 26,
+      "pairTradeConcentration": 0.2632,
+      "topPairsByProfit": [
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 18,
+          "profitAbs": -0.00417175,
+          "returnPctOfTotalCapital": -0.0004,
+          "winRate": 16.6667,
+          "profitFactor": 0.3519
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 650,
+          "profitAbs": -0.03246356,
+          "returnPctOfTotalCapital": -0.0032,
+          "winRate": 27.5385,
+          "profitFactor": 0.5518
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 676,
+          "profitAbs": -0.87195138,
+          "returnPctOfTotalCapital": -0.0872,
+          "winRate": 24.8521,
+          "profitFactor": 0.4218
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 308,
+          "profitAbs": -3.9700692,
+          "returnPctOfTotalCapital": -0.397,
+          "winRate": 27.9221,
+          "profitFactor": 0.6453
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 553,
+          "profitAbs": -246.69004825,
+          "returnPctOfTotalCapital": -24.669,
+          "winRate": 28.3906,
+          "profitFactor": 0.4967
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 1016,
+          "profitAbs": -296.7906998,
+          "returnPctOfTotalCapital": -29.6791,
+          "winRate": 25.0984,
+          "profitFactor": 0.5069
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 639,
+          "profitAbs": -451.6348805,
+          "returnPctOfTotalCapital": -45.1635,
+          "winRate": 24.7261,
+          "profitFactor": 0.3737
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 639,
+          "profitAbs": -451.6348805,
+          "returnPctOfTotalCapital": -45.1635,
+          "winRate": 24.7261,
+          "profitFactor": 0.3737
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 1016,
+          "profitAbs": -296.7906998,
+          "returnPctOfTotalCapital": -29.6791,
+          "winRate": 25.0984,
+          "profitFactor": 0.5069
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 553,
+          "profitAbs": -246.69004825,
+          "returnPctOfTotalCapital": -24.669,
+          "winRate": 28.3906,
+          "profitFactor": 0.4967
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 308,
+          "profitAbs": -3.9700692,
+          "returnPctOfTotalCapital": -0.397,
+          "winRate": 27.9221,
+          "profitFactor": 0.6453
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 676,
+          "profitAbs": -0.87195138,
+          "returnPctOfTotalCapital": -0.0872,
+          "winRate": 24.8521,
+          "profitFactor": 0.4218
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 650,
+          "profitAbs": -0.03246356,
+          "returnPctOfTotalCapital": -0.0032,
+          "winRate": 27.5385,
+          "profitFactor": 0.5518
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 18,
+          "profitAbs": -0.00417175,
+          "returnPctOfTotalCapital": -0.0004,
+          "winRate": 16.6667,
+          "profitFactor": 0.3519
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotShortRejection1HV01_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 32.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比未达 2R，但仍有观察价值。",
+        "币种覆盖有限。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "BenchmarkRSIMeanReversion",
+      "strategyName": "BenchmarkRSIMeanReversion",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 4019,
+      "totalProfitAbs": -999.98698101,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9987,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 736.3784032,
+      "slippageAdjustedReturnPct": -173.6365,
+      "profitFactor": 0.5692,
+      "slippageAdjustedProfitFactor": 0.3785,
+      "winRate": 31.5253,
+      "averageWinAbs": 1.04301913,
+      "averageLossAbs": 0.84356549,
+      "rewardRiskRatio": 1.2364,
+      "maxConsecutiveLosses": 27,
+      "maxChunkDrawdownPct": 99.9988,
+      "coveredPairCount": 13,
+      "coveredMonthCount": 66,
+      "pairTradeConcentration": 0.1953,
+      "topPairsByProfit": [
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 785,
+          "profitAbs": -0.08598948,
+          "returnPctOfTotalCapital": -0.0086,
+          "winRate": 34.5223,
+          "profitFactor": 0.5975
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 297,
+          "profitAbs": -0.15587232,
+          "returnPctOfTotalCapital": -0.0156,
+          "winRate": 32.6599,
+          "profitFactor": 0.5751
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 28,
+          "profitAbs": -0.462752,
+          "returnPctOfTotalCapital": -0.0463,
+          "winRate": 28.5714,
+          "profitFactor": 0.4432
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 165,
+          "profitAbs": -1.4018847,
+          "returnPctOfTotalCapital": -0.1402,
+          "winRate": 29.697,
+          "profitFactor": 0.5394
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 43,
+          "profitAbs": -1.8198495,
+          "returnPctOfTotalCapital": -0.182,
+          "winRate": 13.9535,
+          "profitFactor": 0.1795
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 62,
+          "profitAbs": -3.23137925,
+          "returnPctOfTotalCapital": -0.3231,
+          "winRate": 20.9677,
+          "profitFactor": 0.3065
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 545,
+          "profitAbs": -5.51331187,
+          "returnPctOfTotalCapital": -0.5513,
+          "winRate": 28.6239,
+          "profitFactor": 0.3949
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 180,
+          "profitAbs": -27.068738,
+          "returnPctOfTotalCapital": -2.7069,
+          "winRate": 35.5556,
+          "profitFactor": 0.6456
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 311,
+          "profitAbs": -46.00305319,
+          "returnPctOfTotalCapital": -4.6003,
+          "winRate": 28.6174,
+          "profitFactor": 0.5335
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 626,
+          "profitAbs": -143.8725565,
+          "returnPctOfTotalCapital": -14.3873,
+          "winRate": 33.2268,
+          "profitFactor": 0.69
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 311,
+          "profitAbs": -343.329327,
+          "returnPctOfTotalCapital": -34.3329,
+          "winRate": 30.5466,
+          "profitFactor": 0.5036
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 382,
+          "profitAbs": -275.0438594,
+          "returnPctOfTotalCapital": -27.5044,
+          "winRate": 33.2461,
+          "profitFactor": 0.576
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 284,
+          "profitAbs": -151.9984078,
+          "returnPctOfTotalCapital": -15.1998,
+          "winRate": 29.5775,
+          "profitFactor": 0.5274
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 626,
+          "profitAbs": -143.8725565,
+          "returnPctOfTotalCapital": -14.3873,
+          "winRate": 33.2268,
+          "profitFactor": 0.69
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 311,
+          "profitAbs": -46.00305319,
+          "returnPctOfTotalCapital": -4.6003,
+          "winRate": 28.6174,
+          "profitFactor": 0.5335
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 180,
+          "profitAbs": -27.068738,
+          "returnPctOfTotalCapital": -2.7069,
+          "winRate": 35.5556,
+          "profitFactor": 0.6456
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 545,
+          "profitAbs": -5.51331187,
+          "returnPctOfTotalCapital": -0.5513,
+          "winRate": 28.6239,
+          "profitFactor": 0.3949
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 62,
+          "profitAbs": -3.23137925,
+          "returnPctOfTotalCapital": -0.3231,
+          "winRate": 20.9677,
+          "profitFactor": 0.3065
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 43,
+          "profitAbs": -1.8198495,
+          "returnPctOfTotalCapital": -0.182,
+          "winRate": 13.9535,
+          "profitFactor": 0.1795
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 165,
+          "profitAbs": -1.4018847,
+          "returnPctOfTotalCapital": -0.1402,
+          "winRate": 29.697,
+          "profitFactor": 0.5394
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_BenchmarkRSIMeanReversion_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 32.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比未达 2R，但仍有观察价值。",
+        "币种覆盖有限。",
+        "跨月份覆盖较好。"
+      ]
+    }
+  ],
+  "sandboxCandidates": [],
+  "watchlist": [],
+  "rejected": [
+    {
+      "strategyClass": "AlphaPilotBatchH_VolatilityCompressionBreakout4H",
+      "strategyName": "4H 波动压缩突破",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 1236,
+      "totalProfitAbs": -997.50251904,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.7503,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 288.14965294,
+      "slippageAdjustedReturnPct": -128.5652,
+      "profitFactor": 0.5219,
+      "slippageAdjustedProfitFactor": 0.4459,
+      "winRate": 20.3883,
+      "averageWinAbs": 4.32075743,
+      "averageLossAbs": 2.12025751,
+      "rewardRiskRatio": 2.0378,
+      "maxConsecutiveLosses": 21,
+      "maxChunkDrawdownPct": 99.7631,
+      "coveredPairCount": 17,
+      "coveredMonthCount": 76,
+      "pairTradeConcentration": 0.0922,
+      "topPairsByProfit": [
+        {
+          "pair": "AXS/USDT:USDT",
+          "tradeCount": 50,
+          "profitAbs": 17.06466179,
+          "returnPctOfTotalCapital": 1.7065,
+          "winRate": 34.0,
+          "profitFactor": 2.1299
+        },
+        {
+          "pair": "ICX/USDT:USDT",
+          "tradeCount": 27,
+          "profitAbs": -1.13554805,
+          "returnPctOfTotalCapital": -0.1136,
+          "winRate": 14.8148,
+          "profitFactor": 0.5386
+        },
+        {
+          "pair": "APT/USDT:USDT",
+          "tradeCount": 59,
+          "profitAbs": -1.91354655,
+          "returnPctOfTotalCapital": -0.1914,
+          "winRate": 25.4237,
+          "profitFactor": 0.793
+        },
+        {
+          "pair": "GAS/USDT:USDT",
+          "tradeCount": 34,
+          "profitAbs": -2.2512015,
+          "returnPctOfTotalCapital": -0.2251,
+          "winRate": 20.5882,
+          "profitFactor": 0.4315
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 61,
+          "profitAbs": -8.27703892,
+          "returnPctOfTotalCapital": -0.8277,
+          "winRate": 21.3115,
+          "profitFactor": 0.5761
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 80,
+          "profitAbs": -16.5163086,
+          "returnPctOfTotalCapital": -1.6516,
+          "winRate": 20.0,
+          "profitFactor": 0.7251
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 80,
+          "profitAbs": -19.09621973,
+          "returnPctOfTotalCapital": -1.9096,
+          "winRate": 15.0,
+          "profitFactor": 0.8127
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 56,
+          "profitAbs": -32.72369117,
+          "returnPctOfTotalCapital": -3.2724,
+          "winRate": 14.2857,
+          "profitFactor": 0.1925
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 55,
+          "profitAbs": -36.19475715,
+          "returnPctOfTotalCapital": -3.6195,
+          "winRate": 18.1818,
+          "profitFactor": 0.2468
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 57,
+          "profitAbs": -37.83840085,
+          "returnPctOfTotalCapital": -3.7838,
+          "winRate": 15.7895,
+          "profitFactor": 0.1797
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 93,
+          "profitAbs": -233.69902818,
+          "returnPctOfTotalCapital": -23.3699,
+          "winRate": 21.5054,
+          "profitFactor": 0.4436
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 114,
+          "profitAbs": -189.8297816,
+          "returnPctOfTotalCapital": -18.983,
+          "winRate": 19.2982,
+          "profitFactor": 0.3347
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 77,
+          "profitAbs": -137.33853475,
+          "returnPctOfTotalCapital": -13.7339,
+          "winRate": 19.4805,
+          "profitFactor": 0.2859
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 93,
+          "profitAbs": -86.78042148,
+          "returnPctOfTotalCapital": -8.678,
+          "winRate": 17.2043,
+          "profitFactor": 0.2313
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 92,
+          "profitAbs": -78.81144585,
+          "returnPctOfTotalCapital": -7.8811,
+          "winRate": 19.5652,
+          "profitFactor": 0.4341
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 107,
+          "profitAbs": -76.92230445,
+          "returnPctOfTotalCapital": -7.6922,
+          "winRate": 22.4299,
+          "profitFactor": 0.713
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 101,
+          "profitAbs": -55.238952,
+          "returnPctOfTotalCapital": -5.5239,
+          "winRate": 25.7426,
+          "profitFactor": 0.8282
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 57,
+          "profitAbs": -37.83840085,
+          "returnPctOfTotalCapital": -3.7838,
+          "winRate": 15.7895,
+          "profitFactor": 0.1797
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 55,
+          "profitAbs": -36.19475715,
+          "returnPctOfTotalCapital": -3.6195,
+          "winRate": 18.1818,
+          "profitFactor": 0.2468
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 56,
+          "profitAbs": -32.72369117,
+          "returnPctOfTotalCapital": -3.2724,
+          "winRate": 14.2857,
+          "profitFactor": 0.1925
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotBatchH_VolatilityCompressionBreakout4H_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 40.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比达到 2R 目标。",
+        "币种覆盖较分散。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "AlphaPilotBatchB_EMATrendShort4H",
+      "strategyName": "4H EMA趋势做空",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 2477,
+      "totalProfitAbs": -999.99051328,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9991,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 495.79188588,
+      "slippageAdjustedReturnPct": -149.5782,
+      "profitFactor": 0.6853,
+      "slippageAdjustedProfitFactor": 0.5772,
+      "winRate": 23.8191,
+      "averageWinAbs": 3.69117746,
+      "averageLossAbs": 1.68404092,
+      "rewardRiskRatio": 2.1919,
+      "maxConsecutiveLosses": 37,
+      "maxChunkDrawdownPct": 99.9991,
+      "coveredPairCount": 13,
+      "coveredMonthCount": 62,
+      "pairTradeConcentration": 0.1692,
+      "topPairsByProfit": [
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 419,
+          "profitAbs": -0.09041726,
+          "returnPctOfTotalCapital": -0.009,
+          "winRate": 21.957,
+          "profitFactor": 0.5056
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 58,
+          "profitAbs": -0.1966695,
+          "returnPctOfTotalCapital": -0.0197,
+          "winRate": 27.5862,
+          "profitFactor": 0.3279
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 76,
+          "profitAbs": -0.7153797,
+          "returnPctOfTotalCapital": -0.0715,
+          "winRate": 26.3158,
+          "profitFactor": 0.7624
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 76,
+          "profitAbs": -2.8798815,
+          "returnPctOfTotalCapital": -0.288,
+          "winRate": 23.6842,
+          "profitFactor": 0.5627
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 320,
+          "profitAbs": -3.82953622,
+          "returnPctOfTotalCapital": -0.383,
+          "winRate": 20.0,
+          "profitFactor": 0.3343
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 90,
+          "profitAbs": -5.8701625,
+          "returnPctOfTotalCapital": -0.587,
+          "winRate": 21.1111,
+          "profitFactor": 0.4536
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 225,
+          "profitAbs": -17.93865216,
+          "returnPctOfTotalCapital": -1.7939,
+          "winRate": 30.6667,
+          "profitFactor": 0.9367
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 178,
+          "profitAbs": -27.487096,
+          "returnPctOfTotalCapital": -2.7487,
+          "winRate": 25.8427,
+          "profitFactor": 0.9023
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 149,
+          "profitAbs": -35.35453715,
+          "returnPctOfTotalCapital": -3.5355,
+          "winRate": 21.4765,
+          "profitFactor": 0.2349
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 103,
+          "profitAbs": -171.47373135,
+          "returnPctOfTotalCapital": -17.1474,
+          "winRate": 19.4175,
+          "profitFactor": 0.5217
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 186,
+          "profitAbs": -362.2607825,
+          "returnPctOfTotalCapital": -36.2261,
+          "winRate": 21.5054,
+          "profitFactor": 0.6113
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 411,
+          "profitAbs": -192.6953189,
+          "returnPctOfTotalCapital": -19.2695,
+          "winRate": 25.5474,
+          "profitFactor": 0.776
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 186,
+          "profitAbs": -179.19834854,
+          "returnPctOfTotalCapital": -17.9198,
+          "winRate": 26.3441,
+          "profitFactor": 0.5398
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 103,
+          "profitAbs": -171.47373135,
+          "returnPctOfTotalCapital": -17.1474,
+          "winRate": 19.4175,
+          "profitFactor": 0.5217
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 149,
+          "profitAbs": -35.35453715,
+          "returnPctOfTotalCapital": -3.5355,
+          "winRate": 21.4765,
+          "profitFactor": 0.2349
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 178,
+          "profitAbs": -27.487096,
+          "returnPctOfTotalCapital": -2.7487,
+          "winRate": 25.8427,
+          "profitFactor": 0.9023
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 225,
+          "profitAbs": -17.93865216,
+          "returnPctOfTotalCapital": -1.7939,
+          "winRate": 30.6667,
+          "profitFactor": 0.9367
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 90,
+          "profitAbs": -5.8701625,
+          "returnPctOfTotalCapital": -0.587,
+          "winRate": 21.1111,
+          "profitFactor": 0.4536
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 320,
+          "profitAbs": -3.82953622,
+          "returnPctOfTotalCapital": -0.383,
+          "winRate": 20.0,
+          "profitFactor": 0.3343
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 76,
+          "profitAbs": -2.8798815,
+          "returnPctOfTotalCapital": -0.288,
+          "winRate": 23.6842,
+          "profitFactor": 0.5627
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotBatchB_EMATrendShort4H_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 37.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比达到 2R 目标。",
+        "币种覆盖有限。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "AlphaPilotBatchD_BreakdownRetestShort4H",
+      "strategyName": "4H 跌破反抽做空",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 1891,
+      "totalProfitAbs": -999.71203132,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9712,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 229.12209683,
+      "slippageAdjustedReturnPct": -122.8834,
+      "profitFactor": 0.4012,
+      "slippageAdjustedProfitFactor": 0.3382,
+      "winRate": 24.9075,
+      "averageWinAbs": 1.42194219,
+      "averageLossAbs": 1.17566676,
+      "rewardRiskRatio": 1.2095,
+      "maxConsecutiveLosses": 43,
+      "maxChunkDrawdownPct": 99.9726,
+      "coveredPairCount": 17,
+      "coveredMonthCount": 76,
+      "pairTradeConcentration": 0.1121,
+      "topPairsByProfit": [
+        {
+          "pair": "APT/USDT:USDT",
+          "tradeCount": 8,
+          "profitAbs": 0.2020271,
+          "returnPctOfTotalCapital": 0.0202,
+          "winRate": 50.0,
+          "profitFactor": 1.7585
+        },
+        {
+          "pair": "GAS/USDT:USDT",
+          "tradeCount": 1,
+          "profitAbs": -0.0304085,
+          "returnPctOfTotalCapital": -0.003,
+          "winRate": 0.0,
+          "profitFactor": 0.0
+        },
+        {
+          "pair": "ICX/USDT:USDT",
+          "tradeCount": 93,
+          "profitAbs": -0.33633695,
+          "returnPctOfTotalCapital": -0.0336,
+          "winRate": 23.6559,
+          "profitFactor": 0.5294
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 126,
+          "profitAbs": -1.51959828,
+          "returnPctOfTotalCapital": -0.152,
+          "winRate": 27.7778,
+          "profitFactor": 0.6567
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 83,
+          "profitAbs": -8.9113405,
+          "returnPctOfTotalCapital": -0.8911,
+          "winRate": 32.5301,
+          "profitFactor": 0.599
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 161,
+          "profitAbs": -9.27411421,
+          "returnPctOfTotalCapital": -0.9274,
+          "winRate": 22.3602,
+          "profitFactor": 0.4183
+        },
+        {
+          "pair": "AXS/USDT:USDT",
+          "tradeCount": 174,
+          "profitAbs": -10.17189203,
+          "returnPctOfTotalCapital": -1.0172,
+          "winRate": 28.1609,
+          "profitFactor": 0.4912
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 78,
+          "profitAbs": -17.5283341,
+          "returnPctOfTotalCapital": -1.7528,
+          "winRate": 29.4872,
+          "profitFactor": 0.32
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 212,
+          "profitAbs": -20.91341955,
+          "returnPctOfTotalCapital": -2.0913,
+          "winRate": 27.3585,
+          "profitFactor": 0.4204
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 77,
+          "profitAbs": -30.1240573,
+          "returnPctOfTotalCapital": -3.0124,
+          "winRate": 23.3766,
+          "profitFactor": 0.3591
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 145,
+          "profitAbs": -237.80419475,
+          "returnPctOfTotalCapital": -23.7804,
+          "winRate": 21.3793,
+          "profitFactor": 0.1498
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 134,
+          "profitAbs": -181.43666865,
+          "returnPctOfTotalCapital": -18.1437,
+          "winRate": 23.8806,
+          "profitFactor": 0.3674
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 105,
+          "profitAbs": -152.598984,
+          "returnPctOfTotalCapital": -15.2599,
+          "winRate": 16.1905,
+          "profitFactor": 0.4505
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 139,
+          "profitAbs": -122.49017349,
+          "returnPctOfTotalCapital": -12.249,
+          "winRate": 25.1799,
+          "profitFactor": 0.594
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 119,
+          "profitAbs": -98.0967033,
+          "returnPctOfTotalCapital": -9.8097,
+          "winRate": 25.2101,
+          "profitFactor": 0.3932
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 91,
+          "profitAbs": -75.1419305,
+          "returnPctOfTotalCapital": -7.5142,
+          "winRate": 23.0769,
+          "profitFactor": 0.475
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 145,
+          "profitAbs": -33.53590231,
+          "returnPctOfTotalCapital": -3.3536,
+          "winRate": 22.7586,
+          "profitFactor": 0.2759
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 77,
+          "profitAbs": -30.1240573,
+          "returnPctOfTotalCapital": -3.0124,
+          "winRate": 23.3766,
+          "profitFactor": 0.3591
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 212,
+          "profitAbs": -20.91341955,
+          "returnPctOfTotalCapital": -2.0913,
+          "winRate": 27.3585,
+          "profitFactor": 0.4204
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 78,
+          "profitAbs": -17.5283341,
+          "returnPctOfTotalCapital": -1.7528,
+          "winRate": 29.4872,
+          "profitFactor": 0.32
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotBatchD_BreakdownRetestShort4H_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 35.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比未达 2R，但仍有观察价值。",
+        "币种覆盖较分散。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "AlphaPilotLowFrequencyDirectional4HV01",
+      "strategyName": "低频4H方向策略",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 3250,
+      "totalProfitAbs": -999.99495869,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9995,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 501.20404104,
+      "slippageAdjustedReturnPct": -150.1199,
+      "profitFactor": 0.6038,
+      "slippageAdjustedProfitFactor": 0.4811,
+      "winRate": 25.1692,
+      "averageWinAbs": 1.86324097,
+      "averageLossAbs": 1.03788079,
+      "rewardRiskRatio": 1.7952,
+      "maxConsecutiveLosses": 25,
+      "maxChunkDrawdownPct": 99.9995,
+      "coveredPairCount": 9,
+      "coveredMonthCount": 39,
+      "pairTradeConcentration": 0.2252,
+      "topPairsByProfit": [
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 12,
+          "profitAbs": 0.1881265,
+          "returnPctOfTotalCapital": 0.0188,
+          "winRate": 58.3333,
+          "profitFactor": 2.4742
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 25,
+          "profitAbs": -0.0027099,
+          "returnPctOfTotalCapital": -0.0003,
+          "winRate": 32.0,
+          "profitFactor": 0.8668
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 566,
+          "profitAbs": -0.07323681,
+          "returnPctOfTotalCapital": -0.0073,
+          "winRate": 23.1449,
+          "profitFactor": 0.4705
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 225,
+          "profitAbs": -0.11060693,
+          "returnPctOfTotalCapital": -0.0111,
+          "winRate": 23.5556,
+          "profitFactor": 0.5056
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 322,
+          "profitAbs": -3.32949838,
+          "returnPctOfTotalCapital": -0.3329,
+          "winRate": 22.9814,
+          "profitFactor": 0.5135
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 451,
+          "profitAbs": -60.5935293,
+          "returnPctOfTotalCapital": -6.0594,
+          "winRate": 24.3902,
+          "profitFactor": 0.693
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 474,
+          "profitAbs": -152.10644037,
+          "returnPctOfTotalCapital": -15.2106,
+          "winRate": 31.8565,
+          "profitFactor": 0.7591
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 732,
+          "profitAbs": -380.037968,
+          "returnPctOfTotalCapital": -38.0038,
+          "winRate": 22.8142,
+          "profitFactor": 0.5474
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 443,
+          "profitAbs": -403.9290955,
+          "returnPctOfTotalCapital": -40.3929,
+          "winRate": 26.4108,
+          "profitFactor": 0.5238
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 443,
+          "profitAbs": -403.9290955,
+          "returnPctOfTotalCapital": -40.3929,
+          "winRate": 26.4108,
+          "profitFactor": 0.5238
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 732,
+          "profitAbs": -380.037968,
+          "returnPctOfTotalCapital": -38.0038,
+          "winRate": 22.8142,
+          "profitFactor": 0.5474
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 474,
+          "profitAbs": -152.10644037,
+          "returnPctOfTotalCapital": -15.2106,
+          "winRate": 31.8565,
+          "profitFactor": 0.7591
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 451,
+          "profitAbs": -60.5935293,
+          "returnPctOfTotalCapital": -6.0594,
+          "winRate": 24.3902,
+          "profitFactor": 0.693
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 322,
+          "profitAbs": -3.32949838,
+          "returnPctOfTotalCapital": -0.3329,
+          "winRate": 22.9814,
+          "profitFactor": 0.5135
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 225,
+          "profitAbs": -0.11060693,
+          "returnPctOfTotalCapital": -0.0111,
+          "winRate": 23.5556,
+          "profitFactor": 0.5056
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 566,
+          "profitAbs": -0.07323681,
+          "returnPctOfTotalCapital": -0.0073,
+          "winRate": 23.1449,
+          "profitFactor": 0.4705
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 25,
+          "profitAbs": -0.0027099,
+          "returnPctOfTotalCapital": -0.0003,
+          "winRate": 32.0,
+          "profitFactor": 0.8668
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 12,
+          "profitAbs": 0.1881265,
+          "returnPctOfTotalCapital": 0.0188,
+          "winRate": 58.3333,
+          "profitFactor": 2.4742
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotLowFrequencyDirectional4HV01_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 32.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比未达 2R，但仍有观察价值。",
+        "币种覆盖有限。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "AlphaPilotShortRejection1HV01",
+      "strategyName": "1H 空头拒绝策略",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 3860,
+      "totalProfitAbs": -999.99428444,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9994,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 405.20685955,
+      "slippageAdjustedReturnPct": -140.5201,
+      "profitFactor": 0.4523,
+      "slippageAdjustedProfitFactor": 0.3442,
+      "winRate": 26.0622,
+      "averageWinAbs": 0.82099037,
+      "averageLossAbs": 0.63977246,
+      "rewardRiskRatio": 1.2833,
+      "maxConsecutiveLosses": 33,
+      "maxChunkDrawdownPct": 99.9994,
+      "coveredPairCount": 7,
+      "coveredMonthCount": 26,
+      "pairTradeConcentration": 0.2632,
+      "topPairsByProfit": [
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 18,
+          "profitAbs": -0.00417175,
+          "returnPctOfTotalCapital": -0.0004,
+          "winRate": 16.6667,
+          "profitFactor": 0.3519
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 650,
+          "profitAbs": -0.03246356,
+          "returnPctOfTotalCapital": -0.0032,
+          "winRate": 27.5385,
+          "profitFactor": 0.5518
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 676,
+          "profitAbs": -0.87195138,
+          "returnPctOfTotalCapital": -0.0872,
+          "winRate": 24.8521,
+          "profitFactor": 0.4218
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 308,
+          "profitAbs": -3.9700692,
+          "returnPctOfTotalCapital": -0.397,
+          "winRate": 27.9221,
+          "profitFactor": 0.6453
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 553,
+          "profitAbs": -246.69004825,
+          "returnPctOfTotalCapital": -24.669,
+          "winRate": 28.3906,
+          "profitFactor": 0.4967
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 1016,
+          "profitAbs": -296.7906998,
+          "returnPctOfTotalCapital": -29.6791,
+          "winRate": 25.0984,
+          "profitFactor": 0.5069
+        },
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 639,
+          "profitAbs": -451.6348805,
+          "returnPctOfTotalCapital": -45.1635,
+          "winRate": 24.7261,
+          "profitFactor": 0.3737
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 639,
+          "profitAbs": -451.6348805,
+          "returnPctOfTotalCapital": -45.1635,
+          "winRate": 24.7261,
+          "profitFactor": 0.3737
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 1016,
+          "profitAbs": -296.7906998,
+          "returnPctOfTotalCapital": -29.6791,
+          "winRate": 25.0984,
+          "profitFactor": 0.5069
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 553,
+          "profitAbs": -246.69004825,
+          "returnPctOfTotalCapital": -24.669,
+          "winRate": 28.3906,
+          "profitFactor": 0.4967
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 308,
+          "profitAbs": -3.9700692,
+          "returnPctOfTotalCapital": -0.397,
+          "winRate": 27.9221,
+          "profitFactor": 0.6453
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 676,
+          "profitAbs": -0.87195138,
+          "returnPctOfTotalCapital": -0.0872,
+          "winRate": 24.8521,
+          "profitFactor": 0.4218
+        },
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 650,
+          "profitAbs": -0.03246356,
+          "returnPctOfTotalCapital": -0.0032,
+          "winRate": 27.5385,
+          "profitFactor": 0.5518
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 18,
+          "profitAbs": -0.00417175,
+          "returnPctOfTotalCapital": -0.0004,
+          "winRate": 16.6667,
+          "profitFactor": 0.3519
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_AlphaPilotShortRejection1HV01_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 32.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比未达 2R，但仍有观察价值。",
+        "币种覆盖有限。",
+        "跨月份覆盖较好。"
+      ]
+    },
+    {
+      "strategyClass": "BenchmarkRSIMeanReversion",
+      "strategyName": "BenchmarkRSIMeanReversion",
+      "chunkCount": 1,
+      "loadedChunkCount": 1,
+      "tradeCount": 4019,
+      "totalProfitAbs": -999.98698101,
+      "totalStartingBalance": 1000.0,
+      "totalReturnPct": -99.9987,
+      "slippageRateOneWay": 0.0005,
+      "slippageCost": 736.3784032,
+      "slippageAdjustedReturnPct": -173.6365,
+      "profitFactor": 0.5692,
+      "slippageAdjustedProfitFactor": 0.3785,
+      "winRate": 31.5253,
+      "averageWinAbs": 1.04301913,
+      "averageLossAbs": 0.84356549,
+      "rewardRiskRatio": 1.2364,
+      "maxConsecutiveLosses": 27,
+      "maxChunkDrawdownPct": 99.9988,
+      "coveredPairCount": 13,
+      "coveredMonthCount": 66,
+      "pairTradeConcentration": 0.1953,
+      "topPairsByProfit": [
+        {
+          "pair": "APE/USDT:USDT",
+          "tradeCount": 785,
+          "profitAbs": -0.08598948,
+          "returnPctOfTotalCapital": -0.0086,
+          "winRate": 34.5223,
+          "profitFactor": 0.5975
+        },
+        {
+          "pair": "GALA/USDT:USDT",
+          "tradeCount": 297,
+          "profitAbs": -0.15587232,
+          "returnPctOfTotalCapital": -0.0156,
+          "winRate": 32.6599,
+          "profitFactor": 0.5751
+        },
+        {
+          "pair": "SAND/USDT:USDT",
+          "tradeCount": 28,
+          "profitAbs": -0.462752,
+          "returnPctOfTotalCapital": -0.0463,
+          "winRate": 28.5714,
+          "profitFactor": 0.4432
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 165,
+          "profitAbs": -1.4018847,
+          "returnPctOfTotalCapital": -0.1402,
+          "winRate": 29.697,
+          "profitFactor": 0.5394
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 43,
+          "profitAbs": -1.8198495,
+          "returnPctOfTotalCapital": -0.182,
+          "winRate": 13.9535,
+          "profitFactor": 0.1795
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 62,
+          "profitAbs": -3.23137925,
+          "returnPctOfTotalCapital": -0.3231,
+          "winRate": 20.9677,
+          "profitFactor": 0.3065
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 545,
+          "profitAbs": -5.51331187,
+          "returnPctOfTotalCapital": -0.5513,
+          "winRate": 28.6239,
+          "profitFactor": 0.3949
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 180,
+          "profitAbs": -27.068738,
+          "returnPctOfTotalCapital": -2.7069,
+          "winRate": 35.5556,
+          "profitFactor": 0.6456
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 311,
+          "profitAbs": -46.00305319,
+          "returnPctOfTotalCapital": -4.6003,
+          "winRate": 28.6174,
+          "profitFactor": 0.5335
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 626,
+          "profitAbs": -143.8725565,
+          "returnPctOfTotalCapital": -14.3873,
+          "winRate": 33.2268,
+          "profitFactor": 0.69
+        }
+      ],
+      "bottomPairsByProfit": [
+        {
+          "pair": "LTC/USDT:USDT",
+          "tradeCount": 311,
+          "profitAbs": -343.329327,
+          "returnPctOfTotalCapital": -34.3329,
+          "winRate": 30.5466,
+          "profitFactor": 0.5036
+        },
+        {
+          "pair": "BTC/USDT:USDT",
+          "tradeCount": 382,
+          "profitAbs": -275.0438594,
+          "returnPctOfTotalCapital": -27.5044,
+          "winRate": 33.2461,
+          "profitFactor": 0.576
+        },
+        {
+          "pair": "ADA/USDT:USDT",
+          "tradeCount": 284,
+          "profitAbs": -151.9984078,
+          "returnPctOfTotalCapital": -15.1998,
+          "winRate": 29.5775,
+          "profitFactor": 0.5274
+        },
+        {
+          "pair": "TRX/USDT:USDT",
+          "tradeCount": 626,
+          "profitAbs": -143.8725565,
+          "returnPctOfTotalCapital": -14.3873,
+          "winRate": 33.2268,
+          "profitFactor": 0.69
+        },
+        {
+          "pair": "DOGE/USDT:USDT",
+          "tradeCount": 311,
+          "profitAbs": -46.00305319,
+          "returnPctOfTotalCapital": -4.6003,
+          "winRate": 28.6174,
+          "profitFactor": 0.5335
+        },
+        {
+          "pair": "ZRX/USDT:USDT",
+          "tradeCount": 180,
+          "profitAbs": -27.068738,
+          "returnPctOfTotalCapital": -2.7069,
+          "winRate": 35.5556,
+          "profitFactor": 0.6456
+        },
+        {
+          "pair": "SOL/USDT:USDT",
+          "tradeCount": 545,
+          "profitAbs": -5.51331187,
+          "returnPctOfTotalCapital": -0.5513,
+          "winRate": 28.6239,
+          "profitFactor": 0.3949
+        },
+        {
+          "pair": "NEAR/USDT:USDT",
+          "tradeCount": 62,
+          "profitAbs": -3.23137925,
+          "returnPctOfTotalCapital": -0.3231,
+          "winRate": 20.9677,
+          "profitFactor": 0.3065
+        },
+        {
+          "pair": "MANA/USDT:USDT",
+          "tradeCount": 43,
+          "profitAbs": -1.8198495,
+          "returnPctOfTotalCapital": -0.182,
+          "winRate": 13.9535,
+          "profitFactor": 0.1795
+        },
+        {
+          "pair": "CRO/USDT:USDT",
+          "tradeCount": 165,
+          "profitAbs": -1.4018847,
+          "returnPctOfTotalCapital": -0.1402,
+          "winRate": 29.697,
+          "profitFactor": 0.5394
+        }
+      ],
+      "sourceResultCount": 1,
+      "sourceResultsPreview": [
+        "user_data\\backtest_results\\contract_useful_strategy_BenchmarkRSIMeanReversion_chunk_001_of_001.zip"
+      ],
+      "warnings": [],
+      "score": 32.0,
+      "tier": "reject",
+      "decisionReasons": [
+        "样本数充足。",
+        "收益没有通过初筛。",
+        "profit factor 不足。",
+        "回撤过高或不可用。",
+        "胜率不足。",
+        "平均盈亏比未达 2R，但仍有观察价值。",
+        "币种覆盖有限。",
+        "跨月份覆盖较好。"
+      ]
+    }
+  ],
+  "safetyBoundary": {
+    "dryRunApproved": false,
+    "liveTradingApproved": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "apiKeyStored": false,
+    "accountRead": false,
+    "positionRead": false,
+    "orderCreated": false,
+    "autoTradingUsed": false
+  },
+  "warnings": [],
+  "generatedAt": "2026-07-09T01:46:58.071199+00:00"
+}

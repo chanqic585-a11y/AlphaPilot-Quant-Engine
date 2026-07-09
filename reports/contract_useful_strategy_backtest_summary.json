@@ -1,0 +1,13 @@
+{
+  "reportId": "external_5m_all_strategy_backtest_manifest",
+  "runMode": "executed",
+  "timerange": "20200101-",
+  "pairCount": 17,
+  "selectedStrategyCount": 6,
+  "runCount": 6,
+  "successCount": 6,
+  "failedCount": 0,
+  "resultMissingCount": 0,
+  "previewCount": 0,
+  "generatedAt": "2026-07-09T01:46:49.628313+00:00"
+}
