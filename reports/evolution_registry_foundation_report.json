@@ -1,0 +1,98 @@
+{
+  "version": "V13.11.0",
+  "source": "alphapilot_evolution_registry_foundation_v13_11_0",
+  "generatedAt": "2026-07-09T23:54:43.940360+00:00",
+  "status": "completed_with_errors",
+  "summary": {
+    "scannedFileCount": 168,
+    "validJsonCount": 158,
+    "validObjectCount": 142,
+    "invalidFileCount": 10,
+    "newEvidenceCount": 158,
+    "totalEvidenceCount": 158,
+    "independentStrategyFamilyCount": 1,
+    "classificationCounts": {
+      "factor_asset": 23,
+      "incomplete_evidence": 58,
+      "report_summary": 76,
+      "strategy_candidate_evidence": 1
+    },
+    "errors": [
+      {
+        "file": "reports/v13_5_12_active_alpha_overlay_signal_log.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_14_active_strategy_historical_signal_log.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_16_core_multi_exchange_signal_log.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_17_available_universe_exchange_signal_log.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_18_non_okx_expansion_signal_log.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_19_best_policy_selected_signals.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_20_best_exit_aware_policy_selected_signals.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_23_alpha191_crypto_subset_selected_signals.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_23_alpha191_crypto_subset_signal_log.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      },
+      {
+        "file": "reports/v13_5_2_forward_confirmation_signal_log.json",
+        "error": "ValueError: non_finite_json_number:NaN"
+      }
+    ],
+    "automaticCandidateCreation": false,
+    "automaticDemoPromotion": false,
+    "nonCandidateReasonCounts": {
+      "factor_schema_or_filename_detected": 23,
+      "missing_factor_or_complete_strategy_contract": 44,
+      "performance_metrics_without_complete_rules": 76,
+      "top_level_array_research_artifact": 14
+    },
+    "duplicateFamilyMemberCount": 0,
+    "duplicateFamilyMembers": [],
+    "candidateFormationAssessment": {
+      "legacyCandidateEvidenceCount": 1,
+      "blockedFromRunnableCandidateCount": 158,
+      "automaticCreationAllowed": false,
+      "blockingReasons": [
+        "formal_strategy_contract_required",
+        "point_in_time_validation_required",
+        "semantic_and_correlation_dedup_required",
+        "purged_walk_forward_evaluation_required",
+        "cost_and_multiple_testing_controls_required"
+      ]
+    },
+    "strategyCandidateCount": 0,
+    "demoReleaseCount": 0
+  },
+  "safetyBoundary": {
+    "researchOnly": true,
+    "createsStrategyCandidate": false,
+    "createsDemoRelease": false,
+    "createsOrders": false,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "automaticLivePromotion": false
+  },
+  "nextStep": "Validate Factor DSL and point-in-time research inputs before candidate creation."
+}

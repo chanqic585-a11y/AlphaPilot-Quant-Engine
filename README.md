@@ -4104,6 +4104,50 @@ V13.7.40 does not add Trade API, Withdraw API, API key storage, broker
 credentials, real account reads, real position reads, real orders, exchange
 Dry-run execution, live trading, or automatic trading.
 
+## V13.11.0 Evolution Registry Foundation
+
+V13.11.0 adds the first foundation of the Factor Evolution Research Kernel: a
+local, immutable SQLite registry for data snapshots, factor definitions,
+experiments, models, strategy families, promotion decisions, Demo releases,
+drift events, audit events, and legacy research evidence.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/build_evolution_registry_foundation.ps1
+```
+
+Current inventory result:
+
+```text
+scanned JSON artifacts: 168
+registered evidence: 158
+invalid non-standard NaN artifacts: 10
+legacy strategy evidence with complete rule fields: 1
+runnable StrategyCandidates created: 0
+DemoReleases created: 0
+orders created: 0
+```
+
+Top-level array logs are retained as research evidence but cannot be promoted.
+Non-standard `NaN` values are rejected and reported instead of being replaced
+with fabricated defaults. Legacy evidence still requires a formal contract,
+point-in-time validation, semantic/correlation deduplication, purged
+walk-forward evaluation, cost stress, and multiple-testing controls.
+
+Key paths:
+
+```text
+alphapilot/evolution/registry/
+alphapilot/evolution/data_lineage/
+alphapilot/evolution/adapters/
+alphapilot/reports/generate_evolution_registry_foundation_report.py
+reports/evolution_registry_foundation_report.json
+docs/V13.11.0-evolution-registry-foundation.md
+```
+
+V13.11.0 is research infrastructure only. It does not use or store API keys,
+call Trade API or Withdraw API, read exchange accounts, create orders, promote
+legacy reports to Demo/live execution, or enable automatic trading.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.
