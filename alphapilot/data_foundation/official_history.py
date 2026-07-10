@@ -60,6 +60,7 @@ class OfficialCollectionResult:
     partitions: tuple[OfficialPartition, ...]
     checkpointPath: str
     generatedAt: str
+    fundingPaths: tuple[str, ...] = ()
 
     def to_dict(self) -> dict[str, Any]:
         value = asdict(self)
@@ -304,15 +305,38 @@ class OkxOfficialHistoryCollector:
             provenanceStatus="official_okx_public",
         )
 
-    def _collect_funding(self, instrument_ids: list[str]) -> int:
-        completed = 0
+    def _collect_funding(
+        self, instrument_ids: list[str], *, start_ms: int
+    ) -> tuple[str, ...]:
+        completed: list[str] = []
         endpoint = f"{self.client.base_url}/api/v5/public/funding-rate-history"
         for instrument_id in instrument_ids:
             if pause_requested(self.pause_file):
                 break
-            rows = self.client.funding_rate_history(
-                instrument_id=instrument_id, limit=100
-            )
+            rows: list[dict[str, Any]] = []
+            cursor: int | None = None
+            seen_cursors: set[int] = set()
+            for _ in range(1_000):
+                page = self.client.funding_rate_history(
+                    instrument_id=instrument_id,
+                    after_ms=cursor,
+                    limit=100,
+                )
+                if not page:
+                    break
+                rows.extend(page)
+                timestamps = [
+                    int(row["fundingTime"])
+                    for row in page
+                    if row.get("fundingTime") not in {None, ""}
+                ]
+                if not timestamps:
+                    break
+                oldest = min(timestamps)
+                if oldest <= start_ms or oldest in seen_cursors:
+                    break
+                seen_cursors.add(oldest)
+                cursor = oldest
             parsed = [
                 {
                     "instrument_id": instrument_id,
@@ -324,6 +348,7 @@ class OkxOfficialHistoryCollector:
                 for row in rows
                 if row.get("fundingRate") not in {None, ""}
                 and row.get("fundingTime") not in {None, ""}
+                and int(row["fundingTime"]) >= start_ms
             ]
             if not parsed:
                 continue
@@ -341,8 +366,8 @@ class OkxOfficialHistoryCollector:
                 self.capacity_guard(self.layout, max(1024**2, len(frame) * 100))
                 output.parent.mkdir(parents=True, exist_ok=True)
                 frame.to_parquet(output, index=False, compression="zstd")
-            completed += 1
-        return completed
+            completed.append(str(output))
+        return tuple(completed)
 
     def collect(
         self, contract: StrategyDataContractRecord
@@ -411,7 +436,11 @@ class OkxOfficialHistoryCollector:
                     write_json_atomic(checkpoint_path, checkpoint)
             if paused:
                 break
-        funding_count = 0 if paused else self._collect_funding(instruments)
+        funding_paths = (
+            ()
+            if paused
+            else self._collect_funding(instruments, start_ms=start_ms + 1)
+        )
         completed = sum(
             1 for item in partitions if item.status in {"collected", "reused"}
         )
@@ -435,10 +464,11 @@ class OkxOfficialHistoryCollector:
             completedPartitionCount=completed,
             reusedPartitionCount=reused_count,
             failedPartitionCount=failed,
-            fundingFileCount=funding_count,
+            fundingFileCount=len(funding_paths),
             partitions=tuple(partitions),
             checkpointPath=str(checkpoint_path),
             generatedAt=_utc_now(),
+            fundingPaths=funding_paths,
         )
         write_json_atomic(
             self.layout.reportRoot
