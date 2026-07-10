@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.19.0 - Real-Time Local Forward Observation
+AlphaPilot V13.20.0 - Immutable-Release-Gated OKX Demo
 ```
 
 ## Positioning
@@ -29,6 +29,39 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.20.0 Immutable-Release-Gated OKX Demo
+
+V13.20 converts completed research and real-time local forward evidence into an
+immutable OKX Demo release only when every fixed hard gate passes. The release
+binds the StrategyCandidate, code/data/model checksums, forward sample count,
+calendar coverage, cost and concentration tests, and a 1000 USDT risk envelope.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_20_okx_demo_release.ps1
+```
+
+Eligible releases are exported as checksum-protected
+`demo_release_contract_<id>.json` files for AlphaPilot Control Console. The
+console accepts no externally supplied automatic signal: it scans the frozen
+release against OKX public candles and public instrument metadata, sizes inside
+the immutable envelope, reconciles Demo balance/positions, applies arbitration
+and drift guards, and then uses the existing idempotent Demo-only lifecycle.
+
+The current registry contains no formal StrategyCandidate, ForwardRelease, or
+closed real-time forward evidence. The real V13.20 report therefore remains
+`blocked_no_formal_strategy_candidate`, writes no DemoRelease contract, and
+cannot create an order.
+
+Key paths:
+
+- `alphapilot/reports/generate_v13_20_okx_demo_release_report.py`
+- `reports/v13_20_okx_demo_release_report.json`
+- `reports/v13_20_okx_demo_readiness_contract.json`
+- `docs/V13.20.0-immutable-release-gated-okx-demo.md`
+
+Runtime Demo credentials remain process-only in Control Console. V13.20 does
+not store credentials, enable Withdraw, access Live, or promote to Live.
 
 ## V13.19.0 Real-Time Local Forward Observation
 
