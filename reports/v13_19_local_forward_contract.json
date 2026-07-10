@@ -1,0 +1,21 @@
+{
+  "activeSessionCount": 0,
+  "blockers": [
+    "no_formal_strategy_candidate",
+    "no_candidate_bound_historical_replay",
+    "no_immutable_forward_release"
+  ],
+  "closedForwardOutcomeCount": 0,
+  "collectionFailureCount": 0,
+  "collectionGapCount": 0,
+  "contractHash": "local_forward_contract_49d48a6f4b89932f59ffb701ccfb27adcd4ce936937939177c23db23284ff213",
+  "createsOrders": false,
+  "eligibleForwardReleaseCount": 0,
+  "evidenceClass": "realtime_local_forward",
+  "executionEnabled": false,
+  "initialEquityUsdt": 1000.0,
+  "schemaVersion": "local_forward_console_contract_v1",
+  "stage": "local_forward",
+  "status": "blocked_no_eligible_forward_release",
+  "timeCanBeAccelerated": false
+}

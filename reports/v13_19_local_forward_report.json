@@ -1,0 +1,48 @@
+{
+  "blockers": [
+    "no_formal_strategy_candidate",
+    "no_candidate_bound_historical_replay",
+    "no_immutable_forward_release"
+  ],
+  "closedForwardOutcomeCount": 0,
+  "codeCommit": "7bac18f39643aff415ddafefbd1f64625b8a0604",
+  "collectionFailureCount": 0,
+  "collectionGapCount": 0,
+  "cycleResults": [],
+  "eligibleForwardReleaseCount": 0,
+  "eventTypes": {},
+  "evidenceClass": "realtime_local_forward",
+  "formalPromotionEligible": false,
+  "forwardEventCount": 0,
+  "forwardEventManifestHash": "forward_event_manifest_4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "forwardSessionCount": 0,
+  "generatedAt": "2026-07-10T16:03:36.769392+00:00",
+  "performance": {
+    "averageNetR": null,
+    "profitFactor": null,
+    "profitabilityClaimAllowed": false,
+    "sampleCount": 0,
+    "totalNetR": 0
+  },
+  "reportId": "v13_19_local_forward_report",
+  "safetyBoundary": {
+    "accountRead": false,
+    "apiKeyUsed": false,
+    "demoExecutionEnabled": false,
+    "downtimeBackfilled": false,
+    "historicalReplayMixedIntoForward": false,
+    "liveExecutionEnabled": false,
+    "orderCreated": false,
+    "positionRead": false,
+    "publicMarketDataOnly": true,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false
+  },
+  "status": "blocked_no_eligible_forward_release",
+  "version": "V13.19.0",
+  "virtualAccount": {
+    "exchangeAccountUsed": false,
+    "initialEquityUsdt": 1000.0,
+    "timeCanBeAccelerated": false
+  }
+}
