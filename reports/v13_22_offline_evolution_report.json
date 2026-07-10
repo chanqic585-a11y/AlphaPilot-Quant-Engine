@@ -1,0 +1,417 @@
+{
+  "codeCommit": "3f7a483b7a426cb4d5b74e0f31f451cb1cf40ce4",
+  "generatedAt": "2026-07-10T16:39:41.717981+00:00",
+  "loop": {
+    "boundedFactorGeneration": {
+      "createsDemoRelease": false,
+      "createsOrders": false,
+      "createsStrategyCandidate": false,
+      "generatedCandidateCount": 0,
+      "maximumLifecycleStage": "shadow_research",
+      "newRegisteredFactorDefinitionCount": 0,
+      "status": "blocked_no_formal_feedback_evidence"
+    },
+    "candidateRegistration": {
+      "allowed": false,
+      "registeredCount": 0,
+      "requestedCount": 0,
+      "rows": []
+    },
+    "championChallengerReview": {
+      "decision": {
+        "approvedForShadow": false,
+        "autoReplacesDemo": false,
+        "challengerModelId": "model_record_e1445caa0383fb81a67dd0712b5ec2e73aa96824f244ab912b35a2873c90e53d",
+        "championModelId": "model_record_89be36930a6708359d719ea888ec7642dab1e581b8a463de047e26894cdeea03",
+        "checks": {
+          "brier_improved": false,
+          "calibration_passed": false,
+          "cost_stress_passed": false,
+          "log_loss_improved": false,
+          "minimum_walk_forward_folds": false,
+          "stability_passed": false
+        },
+        "createsOrders": false,
+        "reasons": [
+          "log_loss_improved",
+          "brier_improved",
+          "minimum_walk_forward_folds",
+          "cost_stress_passed",
+          "stability_passed",
+          "calibration_passed"
+        ],
+        "requestedStatus": "rejected"
+      },
+      "status": "completed"
+    },
+    "config": {
+      "correlationThreshold": 0.9,
+      "maxGeneratedFactors": 24,
+      "minimumCorrelationObservations": 30,
+      "minimumFormalOutcomes": 30,
+      "researchBudget": 48
+    },
+    "correlationReview": {
+      "acceptedIds": [],
+      "inventedFactorValues": false,
+      "status": "blocked_missing_materialized_factor_values"
+    },
+    "evidenceIngestion": {
+      "acceptedCounts": {
+        "historical_path_replay": 0,
+        "live": 0,
+        "okx_demo": 0,
+        "realtime_local_forward": 0
+      },
+      "acceptedOutcomeIdOmittedCounts": {
+        "historical_path_replay": 0,
+        "live": 0,
+        "okx_demo": 0,
+        "realtime_local_forward": 0
+      },
+      "acceptedOutcomeIds": {
+        "historical_path_replay": [],
+        "live": [],
+        "okx_demo": [],
+        "realtime_local_forward": []
+      },
+      "formalOutcomeCount": 0,
+      "invalid": [],
+      "invalidCount": 0,
+      "quarantined": [
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_55127ebdb2fa1a88d295935efc7f91b770db887db14187ec2ce7c970a8952fd0",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_6d2da7e9316351c58d339bd47fc3f29b594462291565b2a58976ed9a95c33018",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_8a491b603f856ce20bd6023f4def37e935d546bac0860c050d18636528ee02ce",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_c1b688e583d0e9fca997b11f1b6d2c6ab6a3c6ece0707a4600dfe32397f4c905",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_1a25aeff55b52bd42dc2b4a4394ff257e25ed4cec2ca25e16202bdc0bb1ff067",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_9e6fec9cf3023ef135e7315481bda031cff4508f1f3a5d00671defef49c6a3c3",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_acc65d2cb3f18caabf8c549f37ea97ed0493edaee64c9100419e8ce1f545908b",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_f9d34a7b74d6c8f5c646ac69c66e9e9bc8023152337bd06348bcacf1ff8f14c7",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_07ea89cc722ad7d83dfbc13e8dbd20f33ede3546795d6e332485e80d84867e57",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_1149a90e6e5c3ba9b673b9bd8b51e01a9902db808e1274ec50e2358c902dd720",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_95e93e82144071fb449540e9047c1a64cefeee8802b2ec8cf7c9c3a9e0dcc936",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_cfd7762d3080dd571e1fde0ef12fa32e6f6764b3b18edea1b8ebf303e0e5c181",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_173b443cf36a19fc070a520b43b8e72424e506c28516419259bff5197b9a06a3",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_4c4bf62613f2f8ffb0f9730b8367eae8d51ae8d6bbdae841d515ab9d3d538112",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_5352ff086ac15587196552e4cea60619c37f43920636f163bb8b5615f5230155",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_ba8b243ceb3dba56612720994b68055a29164fc90adbb53b563c34cb81321c40",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_655719a0bf17ef5dc6f48201795e0e5c069ef863dc14892e89bb174b7eb5dbf8",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_a9009e73d3306a9c714897104e0322940081429f29631acbbf9e58d8d8a19b9b",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_ab735709cf2528f65ec924cb2513a7df99028b66b7f96be12d6c6354f599247f",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_c0d70c2b179bb3487549fcd77a7c238a5b6268ea6b781e606148fefbf796d9b6",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_0ec9ce96c2c1ab47f49d8c109825ae483683a61c1c6116370cca32890de97617",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_2f6c219e69022e1104bf69f6890d50ea9387e639e04440ac4219b6cc3243365b",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_479403c29ee077ba84abc61a699f3188a5df1a7f21ad4e2684c19518b72e2c87",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_c6bf7bfaa3a061b975e94d24d09c1b15d098760e5794e91edc7d00de4fd00479",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        },
+        {
+          "evidenceClass": "historical_path_replay_probe",
+          "outcomeId": "outcome_250194fbbbaa6f62406699fc2d1c60add2a20e9fd8c6db71b47fb6144775b638",
+          "reason": "non_formal_or_synthetic_evidence_class"
+        }
+      ],
+      "quarantinedCount": 676,
+      "quarantinedDetailOmittedCount": 651,
+      "syntheticEvidencePromoted": false
+    },
+    "failureAttribution": {
+      "byEvidenceClass": {
+        "historical_path_replay": {
+          "failureModes": [],
+          "metrics": {
+            "closedOutcomeCount": 0,
+            "earlyMeanNetR": null,
+            "exitReasonCounts": {},
+            "factorDecayAvailable": false,
+            "factorDecayDeltaR": null,
+            "largestMonthShare": null,
+            "largestSymbolShare": null,
+            "meanCostDragR": null,
+            "meanNetR": null,
+            "metricAvailableCount": 0,
+            "metricUnavailableCount": 0,
+            "netRSum": 0,
+            "profitFactor": null,
+            "recentMeanNetR": null,
+            "sameBarAmbiguityRate": null,
+            "stopRate": null,
+            "targetHitRate": null,
+            "winRate": null
+          }
+        },
+        "live": {
+          "failureModes": [],
+          "metrics": {
+            "closedOutcomeCount": 0,
+            "earlyMeanNetR": null,
+            "exitReasonCounts": {},
+            "factorDecayAvailable": false,
+            "factorDecayDeltaR": null,
+            "largestMonthShare": null,
+            "largestSymbolShare": null,
+            "meanCostDragR": null,
+            "meanNetR": null,
+            "metricAvailableCount": 0,
+            "metricUnavailableCount": 0,
+            "netRSum": 0,
+            "profitFactor": null,
+            "recentMeanNetR": null,
+            "sameBarAmbiguityRate": null,
+            "stopRate": null,
+            "targetHitRate": null,
+            "winRate": null
+          }
+        },
+        "okx_demo": {
+          "failureModes": [],
+          "metrics": {
+            "closedOutcomeCount": 0,
+            "earlyMeanNetR": null,
+            "exitReasonCounts": {},
+            "factorDecayAvailable": false,
+            "factorDecayDeltaR": null,
+            "largestMonthShare": null,
+            "largestSymbolShare": null,
+            "meanCostDragR": null,
+            "meanNetR": null,
+            "metricAvailableCount": 0,
+            "metricUnavailableCount": 0,
+            "netRSum": 0,
+            "profitFactor": null,
+            "recentMeanNetR": null,
+            "sameBarAmbiguityRate": null,
+            "stopRate": null,
+            "targetHitRate": null,
+            "winRate": null
+          }
+        },
+        "realtime_local_forward": {
+          "failureModes": [],
+          "metrics": {
+            "closedOutcomeCount": 0,
+            "earlyMeanNetR": null,
+            "exitReasonCounts": {},
+            "factorDecayAvailable": false,
+            "factorDecayDeltaR": null,
+            "largestMonthShare": null,
+            "largestSymbolShare": null,
+            "meanCostDragR": null,
+            "meanNetR": null,
+            "metricAvailableCount": 0,
+            "metricUnavailableCount": 0,
+            "netRSum": 0,
+            "profitFactor": null,
+            "recentMeanNetR": null,
+            "sameBarAmbiguityRate": null,
+            "stopRate": null,
+            "targetHitRate": null,
+            "winRate": null
+          }
+        }
+      },
+      "combinedFormalEvidence": {
+        "failureModes": [],
+        "metrics": {
+          "closedOutcomeCount": 0,
+          "earlyMeanNetR": null,
+          "exitReasonCounts": {},
+          "factorDecayAvailable": false,
+          "factorDecayDeltaR": null,
+          "largestMonthShare": null,
+          "largestSymbolShare": null,
+          "meanCostDragR": null,
+          "meanNetR": null,
+          "metricAvailableCount": 0,
+          "metricUnavailableCount": 0,
+          "netRSum": 0,
+          "profitFactor": null,
+          "recentMeanNetR": null,
+          "sameBarAmbiguityRate": null,
+          "stopRate": null,
+          "targetHitRate": null,
+          "winRate": null
+        }
+      },
+      "quarantinedEvidenceIncluded": false,
+      "schemaVersion": "offline_failure_attribution_v1"
+    },
+    "loopId": "offline_evolution_loop_3842039ffb6912e96cec14f5379c3326610c7a3ddbff58d0801fcfe3fd6f70ae",
+    "maximumLifecycleStage": "shadow_candidate",
+    "releaseLineage": {
+      "after": {
+        "demoReleases": {},
+        "forwardReleases": {},
+        "liveCandidatePackages": {}
+      },
+      "before": {
+        "demoReleases": {},
+        "forwardReleases": {},
+        "liveCandidatePackages": {}
+      },
+      "unchanged": true
+    },
+    "researchTriggers": [
+      {
+        "allowsFactorGeneration": false,
+        "formalOutcomeCount": 0,
+        "priority": "blocking",
+        "required": 30,
+        "researchOnly": true,
+        "suggestedAction": "continue_formal_replay_forward_or_demo_collection",
+        "triggerId": "offline_research_trigger_7c54627a7b158b7f18bbfcc4d3284883508761f28da7c2b4470ccf3ccac725ef",
+        "triggerType": "formal_evidence_gap"
+      }
+    ],
+    "rollbackReadiness": {
+      "automaticLiveRollbackAllowed": false,
+      "demoReleaseCount": 0,
+      "driftEventCount": 0,
+      "explicitRollbackTargetCount": 0,
+      "liveActionAllowed": false,
+      "manageExistingPositionsByOriginalRelease": true,
+      "stopNewEntriesBeforeRollback": true
+    },
+    "safetyBoundary": {
+      "autoReplacesRunningRelease": false,
+      "createsDemoRelease": false,
+      "createsLiveRelease": false,
+      "createsOrders": false,
+      "offlineOnly": true,
+      "onlineModelMutation": false,
+      "runningChampionImmutable": true,
+      "tradeApiUsed": false,
+      "usesApiKey": false,
+      "withdrawApiUsed": false
+    },
+    "status": "blocked_no_formal_feedback_evidence",
+    "version": "V13.22.0"
+  },
+  "registryCountsAfter": {
+    "demoReleases": 0,
+    "factorDefinitions": 74,
+    "forwardReleases": 0,
+    "liveCandidatePackages": 0,
+    "models": 2,
+    "outcomes": 676,
+    "strategyCandidates": 0
+  },
+  "registryCountsBefore": {
+    "demoReleases": 0,
+    "factorDefinitions": 74,
+    "forwardReleases": 0,
+    "liveCandidatePackages": 0,
+    "models": 2,
+    "outcomes": 676,
+    "strategyCandidates": 0
+  },
+  "reportId": "v13_22_offline_evolution_report",
+  "safetyBoundary": {
+    "autoReplacesRunningRelease": false,
+    "createsDemoRelease": false,
+    "createsLiveRelease": false,
+    "createsOrders": false,
+    "offlineOnly": true,
+    "onlineModelMutation": false,
+    "runningChampionImmutable": true,
+    "tradeApiUsed": false,
+    "usesApiKey": false,
+    "withdrawApiUsed": false
+  },
+  "status": "blocked_no_formal_feedback_evidence",
+  "version": "V13.22.0"
+}

@@ -1,0 +1,24 @@
+{
+  "automaticPromotionAllowed": false,
+  "createsOrders": false,
+  "formalOutcomeCount": 0,
+  "loopId": "offline_evolution_loop_3842039ffb6912e96cec14f5379c3326610c7a3ddbff58d0801fcfe3fd6f70ae",
+  "maximumLifecycleStage": "shadow_candidate",
+  "quarantinedOutcomeCount": 676,
+  "runningReleaseMutationAllowed": false,
+  "schemaVersion": "offline_research_trigger_manifest_v1",
+  "status": "blocked_no_formal_feedback_evidence",
+  "triggers": [
+    {
+      "allowsFactorGeneration": false,
+      "formalOutcomeCount": 0,
+      "priority": "blocking",
+      "required": 30,
+      "researchOnly": true,
+      "suggestedAction": "continue_formal_replay_forward_or_demo_collection",
+      "triggerId": "offline_research_trigger_7c54627a7b158b7f18bbfcc4d3284883508761f28da7c2b4470ccf3ccac725ef",
+      "triggerType": "formal_evidence_gap"
+    }
+  ],
+  "version": "V13.22.0"
+}
