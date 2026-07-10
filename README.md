@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.21.0 - Live Safety Candidate Boundary
+AlphaPilot V13.22.0 - Offline Evolution Feedback Loop
 ```
 
 ## Positioning
@@ -29,6 +29,37 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.22.0 Offline Evolution Feedback Loop
+
+V13.22 closes the engineering loop from immutable outcomes back into bounded,
+offline research. Historical path replay, real-time local forward, OKX Demo,
+and future Live outcomes remain separate evidence classes. Probe and synthetic
+records are quarantined and cannot trigger factor generation or promotion.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_22_offline_evolution.ps1
+```
+
+The loop computes failure attribution, fixed-2R target/stop behavior, cost drag,
+concentration, and chronological factor-decay diagnostics. Formal evidence can
+create research triggers, bounded shadow factor mutations, correlation review,
+champion/challenger review, and fully validated shadow StrategyCandidates.
+It cannot mutate or replace a running release and cannot create Demo/Live
+releases or orders.
+
+The actual registry currently contains 676 `historical_path_replay_probe`
+records and zero formal feedback outcomes. The real V13.22 report therefore
+quarantines all 676 records and remains `blocked_no_formal_feedback_evidence`;
+it registers no new candidate and changes no release.
+
+Artifacts:
+
+- `alphapilot/evolution/offline/`
+- `alphapilot/reports/generate_v13_22_offline_evolution_report.py`
+- `reports/v13_22_offline_evolution_report.json`
+- `reports/v13_22_offline_research_triggers.json`
+- `docs/V13.22.0-offline-evolution-feedback-loop.md`
 
 ## V13.21.0 Live Safety Candidate Boundary
 
