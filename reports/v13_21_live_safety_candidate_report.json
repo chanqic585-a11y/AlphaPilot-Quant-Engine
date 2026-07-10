@@ -1,0 +1,38 @@
+{
+  "blockers": [
+    "no_demo_release",
+    "no_demo_validation_evidence",
+    "no_live_candidate_package"
+  ],
+  "codeCommit": "4397bebb5a66ca0a167c3af9d62af21daa22db0c",
+  "demoReleaseCount": 0,
+  "fixedRiskBudget": {
+    "capitalLimitUsdt": 1000.0,
+    "dailyLossStopPercent": 2.0,
+    "maxConcurrentPositions": 3,
+    "maxDrawdownStopPercent": 5.0,
+    "maxLeverage": 2,
+    "maxOpenRiskPercent": 1.0,
+    "maxOrderNotionalUsdt": 250.0,
+    "riskPerTradePercent": 0.25
+  },
+  "generatedAt": "2026-07-10T16:27:44.548724+00:00",
+  "liveCandidatePackageCount": 0,
+  "packages": [],
+  "releaseEvaluations": [],
+  "reportId": "v13_21_live_safety_candidate_report",
+  "safetyBoundary": {
+    "approvalEnablesExecution": false,
+    "idempotencyRequired": true,
+    "killSwitchRequired": true,
+    "liveExecutionAdapterPresent": false,
+    "liveExecutionEnabled": false,
+    "liveReleaseExecutionApprovalImplemented": false,
+    "manualApprovalRequired": true,
+    "privateStateReconciliationRequired": true,
+    "requestExpiryRequired": true,
+    "withdrawApiEnabled": false
+  },
+  "status": "blocked_no_validated_demo_release",
+  "version": "V13.21.0"
+}

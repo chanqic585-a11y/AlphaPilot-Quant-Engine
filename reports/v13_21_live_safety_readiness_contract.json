@@ -1,0 +1,18 @@
+{
+  "approvalEnablesExecution": false,
+  "blockers": [
+    "no_demo_release",
+    "no_demo_validation_evidence",
+    "no_live_candidate_package"
+  ],
+  "demoReleaseCount": 0,
+  "liveCandidatePackageCount": 0,
+  "liveExecutionAdapterPresent": false,
+  "liveExecutionEnabled": false,
+  "liveReleaseExecutionApprovalImplemented": false,
+  "manualApprovalRequired": true,
+  "schemaVersion": "live_safety_readiness_contract_v1",
+  "stage": "future_live_review_only",
+  "status": "blocked_no_validated_demo_release",
+  "withdrawApiEnabled": false
+}
