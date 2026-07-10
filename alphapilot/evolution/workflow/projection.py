@@ -12,6 +12,19 @@ from .states import STAGE_LABELS, STAGE_ORDER, STAGE_PAGES, STATUS_LABELS
 from .types import WorkflowRunRecord
 
 
+PHASE_LABELS = {
+    "checking_local_data": "检查本地数据",
+    "research_smoke_running": "本地研究烟测",
+    "preparing_official_data": "准备官方数据",
+    "validating_official_data": "校验正式数据",
+    "freezing_data_snapshot": "冻结正式快照",
+    "building_validation_manifests": "构建正式验证集",
+    "formal_backtest_running": "正式回测中",
+    "evaluating_gate": "评估回测门槛",
+    "public_forward_observation": "本地前向运行中",
+}
+
+
 def _current_run(runs: list[WorkflowRunRecord]) -> WorkflowRunRecord:
     return max(
         runs,
@@ -38,6 +51,8 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
             strategy_version_id=version.strategyVersionId
         )
         binding = repository.get_evaluation_binding_for_run(current.workflowRunId)
+        phase = str(current.progress.get("phase") or "")
+        artifacts = current.progress.get("artifacts") or {}
         diagnosis = repository.get_latest_failure_diagnosis(current.workflowRunId)
         events = repository.list_stage_events(
             strategy_version_id=version.strategyVersionId
@@ -55,6 +70,37 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
             "evaluationBindingId": (
                 binding.evaluationBindingId if binding else None
             ),
+            "workflowMode": "dual_layer_backtest",
+            "evidenceClass": (
+                "formal_backtest"
+                if binding is not None
+                else (
+                    "research_smoke"
+                    if "research_smoke_running"
+                    in set(current.progress.get("completedPhases") or [])
+                    else "pending"
+                )
+            ),
+            "phase": phase or None,
+            "phaseLabel": PHASE_LABELS.get(phase, STATUS_LABELS[current.status]),
+            "dataCoverage": {
+                "strategyDataContractId": (
+                    contracts[-1].strategyDataContractId if contracts else None
+                ),
+                "dataSnapshotId": (
+                    binding.dataSnapshotId
+                    if binding
+                    else artifacts.get("dataSnapshotId")
+                ),
+            },
+            "downloadProgress": {
+                "completed": int(artifacts.get("downloadedPartitions") or 0),
+                "required": int(artifacts.get("requiredPartitions") or 0),
+                "fundingFiles": int(
+                    artifacts.get("downloadedFundingFiles") or 0
+                ),
+            },
+            "automaticNextStage": "local_forward",
             "stage": current.stage,
             "stageLabel": STAGE_LABELS[current.stage],
             "status": current.status,
@@ -101,8 +147,8 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
     page_counts = Counter(str(item["page"]) for item in items)
     status_counts = Counter(str(item["status"]) for item in items)
     return {
-        "version": "V13.27.1",
-        "source": "workflow_orchestrator_projection_v1",
+        "version": "V13.27.1.1",
+        "source": "workflow_orchestrator_projection_v2",
         "generatedAt": utc_now(),
         "summary": {
             "totalStrategyVersionCount": len(items) + len(archived_items),

@@ -274,7 +274,15 @@ def run_dual_layer_backtest_workflow(
         else:
             collection = deps.collectOfficialHistory(contract, layout)
             write_json_atomic(collection_path, collection.to_dict())
-        finish("preparing_official_data", officialCollectionPath=str(collection_path))
+        finish(
+            "preparing_official_data",
+            officialCollectionPath=str(collection_path),
+            downloadedPartitions=collection.completedPartitionCount,
+            requiredPartitions=(
+                collection.completedPartitionCount + collection.failedPartitionCount
+            ),
+            downloadedFundingFiles=collection.fundingFileCount,
+        )
 
         if not begin("validating_official_data"):
             return current()

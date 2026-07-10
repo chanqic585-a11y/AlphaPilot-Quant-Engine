@@ -6,6 +6,7 @@ import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
+from unittest.mock import patch
 
 from alphapilot.evolution.workflow.cli import main
 
@@ -62,6 +63,29 @@ class WorkflowCliTests(unittest.TestCase):
         failure = refreshed["items"][0]["failure"]
         self.assertEqual(failure["category"], "data_integrity")
         self.assertIn("data_snapshot_id_missing", failure["summary"])
+
+    def test_one_click_uses_approved_warehouse_and_dual_layer_worker(self) -> None:
+        self.run_cli("bootstrap")
+        projection = self.run_cli("projection")
+        run_id = projection["items"][0]["workflowRunId"]
+        captured = {}
+
+        def fake_worker(workflow, registry, workflow_run_id, **kwargs):
+            captured.update(kwargs)
+            return workflow.get_workflow_run(workflow_run_id)
+
+        with patch(
+            "alphapilot.evolution.workflow.cli.run_dual_layer_backtest_workflow",
+            side_effect=fake_worker,
+        ):
+            result = self.run_cli("one-click-backtest", "--run-id", run_id)
+
+        self.assertEqual(result["status"], "queued")
+        self.assertEqual(
+            Path(captured["warehouse_root"]),
+            Path(r"D:\Codex-Workspace\回测数据"),
+        )
+        self.assertEqual(Path(captured["output_root"]), self.output_root)
 
 
 if __name__ == "__main__":

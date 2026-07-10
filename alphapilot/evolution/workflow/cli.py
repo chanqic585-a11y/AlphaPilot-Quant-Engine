@@ -10,9 +10,13 @@ from typing import Any, Sequence
 
 from alphapilot.evolution.registry.database import connect_registry
 from alphapilot.evolution.registry.repositories import RegistryRepository
+from alphapilot.data_foundation.research_smoke import run_research_smoke
+from alphapilot.data_foundation.warehouse import WarehouseLayout
 
 from .backtest import run_backtest_workflow
 from .bootstrap import register_alpha191_observer
+from .dual_layer import run_dual_layer_backtest_workflow
+from .data_contract import derive_strategy_data_contract
 from .projection import build_workflow_projection
 from .repository import WorkflowRepository
 from .service import (
@@ -23,8 +27,12 @@ from .service import (
     pause_workflow_run,
     queue_workflow_run,
     retry_workflow_run,
+    retry_backtest_for_data_preparation,
 )
 from .states import WorkflowError
+
+
+APPROVED_WAREHOUSE_ROOT = Path(r"D:\Codex-Workspace\回测数据")
 
 
 def _json_object(value: str, field_name: str) -> dict[str, Any]:
@@ -41,6 +49,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="AlphaPilot workflow orchestrator")
     parser.add_argument("--registry", default="data/evolution_registry.sqlite")
     parser.add_argument("--output-root", default="data/workflow/backtests")
+    parser.add_argument("--warehouse-root", default=str(APPROVED_WAREHOUSE_ROOT))
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("bootstrap")
     commands.add_parser("projection")
@@ -48,6 +57,10 @@ def build_parser() -> argparse.ArgumentParser:
     for command in ("queue", "run", "recover", "pause", "cancel", "retry"):
         child = commands.add_parser(command)
         child.add_argument("--run-id", required=True)
+    one_click = commands.add_parser("one-click-backtest")
+    one_click.add_argument("--run-id", required=True)
+    smoke = commands.add_parser("research-smoke")
+    smoke.add_argument("--run-id", required=True)
 
     archive = commands.add_parser("archive")
     archive.add_argument("--strategy-version-id", required=True)
@@ -86,13 +99,50 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
             )
         if args.command == "recover":
             return asdict(
-                run_backtest_workflow(
+                run_dual_layer_backtest_workflow(
                     workflow,
                     registry,
                     args.run_id,
+                    warehouse_root=args.warehouse_root,
                     output_root=args.output_root,
-                    recover_running=True,
                 )
+            )
+        if args.command == "one-click-backtest":
+            run = workflow.get_workflow_run(args.run_id)
+            if run is None:
+                raise WorkflowError(f"workflow_run_missing:{args.run_id}")
+            if run.status in {"awaiting", "paused"}:
+                run = queue_workflow_run(
+                    workflow, run.workflowRunId, actor="user"
+                )
+            elif run.status == "blocked":
+                run = retry_backtest_for_data_preparation(
+                    workflow, run.workflowRunId, actor="user"
+                )
+            return asdict(
+                run_dual_layer_backtest_workflow(
+                    workflow,
+                    registry,
+                    run.workflowRunId,
+                    warehouse_root=args.warehouse_root,
+                    output_root=args.output_root,
+                )
+            )
+        if args.command == "research-smoke":
+            run = workflow.get_workflow_run(args.run_id)
+            if run is None:
+                raise WorkflowError(f"workflow_run_missing:{args.run_id}")
+            version = workflow.get_strategy_version(run.strategyVersionId)
+            if version is None:
+                raise WorkflowError(
+                    f"strategy_version_missing:{run.strategyVersionId}"
+                )
+            contract = derive_strategy_data_contract(version, workflow)
+            layout = WarehouseLayout.from_root(args.warehouse_root)
+            return run_research_smoke(
+                contract,
+                layout,
+                Path(args.output_root) / run.workflowRunId / "research-smoke.json",
             )
         if args.command == "pause":
             return asdict(pause_workflow_run(workflow, args.run_id, actor="user"))
@@ -134,10 +184,11 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                 )
                 completed.append(
                     asdict(
-                        run_backtest_workflow(
+                        run_dual_layer_backtest_workflow(
                             workflow,
                             registry,
                             queued.workflowRunId,
+                            warehouse_root=args.warehouse_root,
                             output_root=args.output_root,
                         )
                     )
@@ -153,7 +204,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     args = parser.parse_args(argv)
     try:
         payload = _execute(args)
-    except WorkflowError as error:
+    except (WorkflowError, ValueError) as error:
         print(
             json.dumps(
                 {"status": "error", "error": str(error)},
