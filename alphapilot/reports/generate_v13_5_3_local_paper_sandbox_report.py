@@ -102,6 +102,9 @@ def run_local_paper_sandbox(
         "status": "completed",
         "isMock": False,
         "generatedAt": utc_now(),
+        "evidenceClass": "legacy_synthetic",
+        "excludedFromFormalTraining": True,
+        "formalPromotionEligible": False,
         "inputReports": {
             "decisionReport": str(decision_path),
             "signalLog": str(signal_log_path),

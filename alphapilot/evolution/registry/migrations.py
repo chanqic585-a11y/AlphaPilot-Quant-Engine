@@ -199,6 +199,39 @@ MIGRATIONS: tuple[Migration, ...] = (
             "CREATE INDEX IF NOT EXISTS idx_legacy_evidence_type ON LegacyEvidence(evidenceType)",
         ),
     ),
+    Migration(
+        version=2,
+        name="create_outcome_ledger_v2",
+        statements=(
+            """
+            CREATE TABLE IF NOT EXISTS OutcomeLedger (
+              outcomeId TEXT PRIMARY KEY,
+              evidenceClass TEXT NOT NULL,
+              sourceEntityType TEXT NOT NULL,
+              sourceEntityId TEXT NOT NULL,
+              dataSnapshotId TEXT NOT NULL,
+              strategyCandidateId TEXT,
+              instrumentId TEXT NOT NULL,
+              timeframe TEXT NOT NULL,
+              direction TEXT NOT NULL,
+              decisionAt TEXT NOT NULL,
+              entryAt TEXT NOT NULL,
+              exitAt TEXT NOT NULL,
+              status TEXT NOT NULL,
+              outcomeJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (dataSnapshotId) REFERENCES DataSnapshots(dataSnapshotId),
+              FOREIGN KEY (strategyCandidateId) REFERENCES StrategyCandidates(strategyCandidateId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_outcome_ledger_source ON OutcomeLedger(sourceEntityType, sourceEntityId)",
+            "CREATE INDEX IF NOT EXISTS idx_outcome_ledger_snapshot ON OutcomeLedger(dataSnapshotId)",
+            "CREATE INDEX IF NOT EXISTS idx_outcome_ledger_candidate ON OutcomeLedger(strategyCandidateId)",
+            "CREATE INDEX IF NOT EXISTS idx_outcome_ledger_instrument ON OutcomeLedger(instrumentId, timeframe)",
+            "CREATE INDEX IF NOT EXISTS idx_outcome_ledger_exit ON OutcomeLedger(exitAt)",
+        ),
+    ),
 )
 
 

@@ -54,7 +54,7 @@ class MaterializedFactorMatrix:
         return asdict(self)
 
 
-def _load_snapshot_frames(
+def load_snapshot_frames(
     snapshot: DataSnapshotRecord,
     *,
     canonical_root: Path,
@@ -173,7 +173,7 @@ def materialize_factor_matrix(
     if not specs:
         raise ValueError("At least one factor specification is required")
     definitions = [_register_definition(spec, repository) for spec in specs]
-    frames = _load_snapshot_frames(
+    frames = load_snapshot_frames(
         snapshot,
         canonical_root=Path(canonical_root).resolve(),
         timeframe=timeframe,

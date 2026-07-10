@@ -81,6 +81,26 @@ class ModelRecord:
 
 
 @dataclass(frozen=True)
+class OutcomeLedgerRecord:
+    outcomeId: str
+    evidenceClass: str
+    sourceEntityType: str
+    sourceEntityId: str
+    dataSnapshotId: str
+    strategyCandidateId: str | None
+    instrumentId: str
+    timeframe: str
+    direction: str
+    decisionAt: str
+    entryAt: str
+    exitAt: str
+    status: str
+    outcome: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
 class StrategyFamilyRecord:
     strategyFamilyId: str
     familyKey: str

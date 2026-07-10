@@ -19,6 +19,7 @@ from .types import (
     LegacyEvidenceRecord,
     LiveCandidatePackageRecord,
     ModelRecord,
+    OutcomeLedgerRecord,
     PromotionDecisionRecord,
     StrategyCandidateRecord,
     StrategyFamilyRecord,
@@ -35,6 +36,7 @@ ALLOWED_COUNT_TABLES = {
     "FactorRuns",
     "Experiments",
     "Models",
+    "OutcomeLedger",
     "StrategyFamilies",
     "StrategyCandidates",
     "PromotionDecisions",
@@ -314,6 +316,92 @@ class RegistryRepository:
     def list_models(self) -> list[ModelRecord]:
         rows = self.connection.execute("SELECT * FROM Models ORDER BY createdAt, modelId").fetchall()
         return [self.get_model(row["modelId"]) for row in rows if row]
+
+    def create_outcome(self, record: OutcomeLedgerRecord) -> OutcomeLedgerRecord:
+        existing = self.get_outcome(record.outcomeId)
+        if existing:
+            self._assert_same_hash(record.outcomeId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO OutcomeLedger(
+                  outcomeId, evidenceClass, sourceEntityType, sourceEntityId,
+                  dataSnapshotId, strategyCandidateId, instrumentId, timeframe,
+                  direction, decisionAt, entryAt, exitAt, status, outcomeJson,
+                  contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.outcomeId,
+                    record.evidenceClass,
+                    record.sourceEntityType,
+                    record.sourceEntityId,
+                    record.dataSnapshotId,
+                    record.strategyCandidateId,
+                    record.instrumentId,
+                    record.timeframe,
+                    record.direction,
+                    record.decisionAt,
+                    record.entryAt,
+                    record.exitAt,
+                    record.status,
+                    canonical_json(record.outcome),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_outcome(self, record_id: str) -> OutcomeLedgerRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM OutcomeLedger WHERE outcomeId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return OutcomeLedgerRecord(
+            outcomeId=row["outcomeId"],
+            evidenceClass=row["evidenceClass"],
+            sourceEntityType=row["sourceEntityType"],
+            sourceEntityId=row["sourceEntityId"],
+            dataSnapshotId=row["dataSnapshotId"],
+            strategyCandidateId=row["strategyCandidateId"],
+            instrumentId=row["instrumentId"],
+            timeframe=row["timeframe"],
+            direction=row["direction"],
+            decisionAt=row["decisionAt"],
+            entryAt=row["entryAt"],
+            exitAt=row["exitAt"],
+            status=row["status"],
+            outcome=_decode_json(row["outcomeJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_outcomes(
+        self,
+        *,
+        source_entity_type: str | None = None,
+        source_entity_id: str | None = None,
+    ) -> list[OutcomeLedgerRecord]:
+        query = "SELECT outcomeId FROM OutcomeLedger"
+        clauses: list[str] = []
+        values: list[str] = []
+        if source_entity_type is not None:
+            clauses.append("sourceEntityType = ?")
+            values.append(source_entity_type)
+        if source_entity_id is not None:
+            clauses.append("sourceEntityId = ?")
+            values.append(source_entity_id)
+        if clauses:
+            query += " WHERE " + " AND ".join(clauses)
+        query += " ORDER BY decisionAt, outcomeId"
+        rows = self.connection.execute(query, values).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_outcome(row["outcomeId"])) is not None
+        ]
 
     def create_strategy_family(self, record: StrategyFamilyRecord) -> StrategyFamilyRecord:
         existing = self.get_strategy_family(record.strategyFamilyId)

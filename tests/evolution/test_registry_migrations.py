@@ -16,6 +16,7 @@ EXPECTED_TABLES = {
     "FactorRuns",
     "Experiments",
     "Models",
+    "OutcomeLedger",
     "StrategyFamilies",
     "StrategyCandidates",
     "PromotionDecisions",

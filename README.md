@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.17.0 - Point-in-Time FactorRun and Backtest
+AlphaPilot V13.18.0 - Actual-Candle Historical Path Replay
 ```
 
 ## Positioning
@@ -29,6 +29,39 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.18.0 Actual-Candle Historical Path Replay
+
+V13.18 adds an event-time replay engine over immutable canonical candles. It
+supports next-bar fills, persistent position intervals, `1R` stops, `2R`
+targets, conservative same-bar ambiguity, timeouts, fees, slippage, optional
+funding, MFE/MAE, same-instrument conflicts, and portfolio concurrency limits.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_18_historical_path_replay.ps1
+```
+
+Replay outcomes are immutable rows in the evolution registry `OutcomeLedger`
+and a checksum-bound Parquet artifact under ignored `data/market/replay/`.
+Existing precomputed-return sandbox evidence is explicitly classified as
+`legacy_synthetic` and excluded from formal training and profitability claims.
+
+Because V13.17 created no formal StrategyCandidate, the current real-data run
+uses fixed-cadence alternating signals only as an engine probe. It closed 338
+actual candle paths and wrote 338 Outcome Ledger rows, but these results are not
+a strategy backtest and cannot be promoted. The console contract reports
+`engine_ready_waiting_formal_candidate`.
+
+Key paths:
+
+- `alphapilot/evolution/replay/`
+- `reports/v13_18_historical_path_replay_report.json`
+- `reports/v13_18_historical_replay_contract.json`
+- `docs/V13.18.0-actual-candle-historical-path-replay.md`
+
+V13.18 is local historical research only. It does not use API keys, private
+exchange endpoints, account state, Trade API, Withdraw API, orders, Demo
+releases, or Live execution.
 
 ## V13.17.0 Point-in-Time FactorRun and Backtest
 
