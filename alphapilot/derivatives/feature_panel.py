@@ -238,3 +238,89 @@ def build_derivatives_feature_panel(
     panel = pd.concat(rows, ignore_index=True)
     panel = panel.sort_values(["pair", "date"]).reset_index(drop=True)
     return FeaturePanelResult(panel, sorted(base_by_pair), missing_pairs, missing_optional_sources)
+
+
+def _instrument_to_pair(instrument_id: str) -> str:
+    if instrument_id.endswith("-USDT-SWAP"):
+        return f"{instrument_id.removesuffix('-USDT-SWAP')}/USDT:USDT"
+    return instrument_id.replace("-", "/", 1)
+
+
+def build_derivatives_feature_panel_from_frames(
+    ohlcv_frames: dict[str, pd.DataFrame],
+    *,
+    timeframe: str,
+    funding_frames: dict[str, pd.DataFrame] | None = None,
+) -> FeaturePanelResult:
+    """Build features only from explicitly supplied immutable snapshot frames."""
+
+    missing_optional_sources: dict[str, list[str]] = {}
+    base_by_pair: dict[str, pd.DataFrame] = {}
+    for instrument_id, source in sorted(ohlcv_frames.items()):
+        pair = _instrument_to_pair(instrument_id)
+        frame = source.copy()
+        if "date" not in frame.columns:
+            frame["date"] = pd.to_datetime(
+                frame["timestamp_ms"], unit="ms", utc=True
+            ).astype("datetime64[ns, UTC]")
+        else:
+            frame["date"] = pd.to_datetime(frame["date"], utc=True).astype(
+                "datetime64[ns, UTC]"
+            )
+        frame = frame.sort_values("date").reset_index(drop=True)
+        enriched = _add_base_features(frame)
+        enriched["pair"] = pair
+        enriched["timeframe"] = timeframe
+        enriched["mark_close"] = np.nan
+        enriched["mark_basis_pct"] = np.nan
+        missing_optional_sources.setdefault(pair, []).append("mark_price")
+        funding = (funding_frames or {}).get(instrument_id)
+        if funding is None or funding.empty:
+            enriched["funding_rate"] = np.nan
+            missing_optional_sources.setdefault(pair, []).append("funding_rate")
+        else:
+            prepared = funding.copy()
+            if "date" not in prepared.columns:
+                prepared["date"] = pd.to_datetime(
+                    prepared["timestamp_ms"], unit="ms", utc=True
+                ).astype("datetime64[ns, UTC]")
+            else:
+                prepared["date"] = pd.to_datetime(
+                    prepared["date"], utc=True
+                ).astype("datetime64[ns, UTC]")
+            prepared["funding_rate"] = pd.to_numeric(
+                prepared["funding_rate"], errors="coerce"
+            )
+            enriched = pd.merge_asof(
+                enriched.sort_values("date"),
+                prepared[["date", "funding_rate"]]
+                .dropna(subset=["funding_rate"])
+                .sort_values("date"),
+                on="date",
+                direction="backward",
+            )
+        enriched["funding_rate"] = enriched["funding_rate"].ffill()
+        enriched["funding_z_60"] = (
+            enriched["funding_rate"]
+            - enriched["funding_rate"].rolling(60, min_periods=20).mean()
+        ) / enriched["funding_rate"].rolling(60, min_periods=20).std().replace(
+            0, np.nan
+        )
+        base_by_pair[pair] = enriched
+
+    btc_context = base_by_pair.get("BTC/USDT:USDT")
+    rows = [
+        _add_btc_context(frame, btc_context)
+        for _, frame in sorted(base_by_pair.items())
+    ]
+    if not rows:
+        return FeaturePanelResult(pd.DataFrame(), [], [], missing_optional_sources)
+    panel = pd.concat(rows, ignore_index=True).sort_values(
+        ["pair", "date"]
+    ).reset_index(drop=True)
+    return FeaturePanelResult(
+        rows=panel,
+        loaded_pairs=sorted(base_by_pair),
+        missing_pairs=[],
+        missing_optional_sources=missing_optional_sources,
+    )

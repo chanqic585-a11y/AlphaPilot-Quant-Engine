@@ -195,16 +195,21 @@ def _score(metrics: dict[str, Any], gate: dict[str, Any]) -> float:
 def _apply_alpha191_filter(events: pd.DataFrame, overlay_id: str) -> pd.Series:
     if events.empty:
         return pd.Series([], dtype=bool)
-    direction = events["direction"].fillna("")
-    setup = events["setupName"].fillna("")
-    liquidity_quality = events["a191_liquidity_range_quality"].fillna(0)
-    short_pressure = events["a191_short_exhaustion_pressure"].fillna(0)
-    reversal_pressure = events["a191_reversal_pressure"].fillna(0)
-    range_rejection = events["a191_range_rejection_pressure"].fillna(0)
-    volume_reclaim = events["a191_volume_reclaim_pressure"].fillna(0)
-    residual_rank = events["a191_cs_residual_strength_rank"].fillna(0.5)
-    volume_rank = events["a191_ts_volume_ratio_rank_48"].fillna(0.5)
-    corr_24 = events["a191_return_volume_corr_24"].fillna(0)
+    def column(name: str, default: Any) -> pd.Series:
+        if name in events.columns:
+            return events[name].fillna(default)
+        return pd.Series(default, index=events.index)
+
+    direction = column("direction", "")
+    setup = column("setupName", "")
+    liquidity_quality = column("a191_liquidity_range_quality", 0)
+    short_pressure = column("a191_short_exhaustion_pressure", 0)
+    reversal_pressure = column("a191_reversal_pressure", 0)
+    range_rejection = column("a191_range_rejection_pressure", 0)
+    volume_reclaim = column("a191_volume_reclaim_pressure", 0)
+    residual_rank = column("a191_cs_residual_strength_rank", 0.5)
+    volume_rank = column("a191_ts_volume_ratio_rank_48", 0.5)
+    corr_24 = column("a191_return_volume_corr_24", 0)
 
     if overlay_id == "a191_short_exhaustion_quality_v01":
         return (
@@ -253,6 +258,64 @@ def _apply_alpha191_filter(events: pd.DataFrame, overlay_id: str) -> pd.Series:
             & (direction.isin(["long", "short"]))
         )
     return pd.Series([False] * len(events), index=events.index)
+
+
+def build_alpha191_observer_signals(
+    feature_panel: pd.DataFrame,
+    *,
+    overlay_id: str,
+) -> pd.DataFrame:
+    """Return deterministic current-candle signals without labels or path data."""
+
+    if feature_panel.empty:
+        return pd.DataFrame()
+    enriched = add_high_reward_event_setups(
+        add_alpha191_crypto_safe_factors(
+            add_alpha101_style_factors(feature_panel.copy())
+        )
+    )
+    signal_frames: list[pd.DataFrame] = []
+    for setup_name in (
+        "hr_long_failed_breakdown_reclaim",
+        "hr_short_failed_breakout_rejection",
+        "hr_long_capitulation_reversal",
+        "hr_short_blowoff_reversal",
+        "hr_long_trend_pullback_acceleration",
+        "hr_short_trend_pullback_acceleration",
+    ):
+        if setup_name not in enriched.columns:
+            continue
+        selected = enriched[enriched[setup_name].fillna(False)].copy()
+        if selected.empty:
+            continue
+        selected["setupName"] = setup_name
+        selected["direction"] = (
+            "long" if setup_name.startswith("hr_long_") else "short"
+        )
+        signal_frames.append(selected)
+    if not signal_frames:
+        return pd.DataFrame()
+    candidates = pd.concat(signal_frames, ignore_index=True)
+    selected = candidates[_apply_alpha191_filter(candidates, overlay_id)].copy()
+    if selected.empty:
+        return pd.DataFrame()
+    selected["signalDate"] = pd.to_datetime(selected["date"], utc=True)
+    selected["signalTimestampMs"] = (
+        selected["signalDate"].astype("int64") // 1_000_000
+    )
+    selected["overlayId"] = overlay_id
+    columns = [
+        "pair",
+        "timeframe",
+        "signalDate",
+        "signalTimestampMs",
+        "direction",
+        "setupName",
+        "overlayId",
+    ]
+    return selected[columns].sort_values(
+        ["signalTimestampMs", "pair", "setupName"]
+    ).reset_index(drop=True)
 
 
 def _build_events_for_exchange(
