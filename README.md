@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.18.0 - Actual-Candle Historical Path Replay
+AlphaPilot V13.19.0 - Real-Time Local Forward Observation
 ```
 
 ## Positioning
@@ -29,6 +29,45 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.19.0 Real-Time Local Forward Observation
+
+V13.19 adds a restart-safe, event-sourced forward runner that consumes only
+confirmed OKX public candles. A frozen eligible release may create pending
+research signals at a completed candle, enter virtually at the next candle
+open, and follow `1R` stop / `2R` target paths inside a 1000 USDT virtual
+account. It never creates an exchange order.
+
+```powershell
+# One public-market observation cycle.
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_19_local_forward.ps1
+
+# Resume-safe loop. Missing downtime bars remain explicit collection gaps.
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_19_local_forward.ps1 -Loop -PollSeconds 60
+```
+
+Registry migration 3 adds immutable `ForwardReleases`, `ForwardSessions`, and
+`ForwardEvents`. State checkpoints persist pending signals, open virtual
+positions, equity, costs, and last-seen candle times. Closed paths enter the
+shared Outcome Ledger with evidence class `realtime_local_forward`; historical
+replay and forward evidence are never mixed.
+
+The current real registry has no formal StrategyCandidate and therefore no
+candidate-bound historical replay or immutable ForwardRelease. The V13.19
+runtime correctly reports `blocked_no_eligible_forward_release` and performs
+no network polling. Test fixtures validate next-bar fills, 2R exits, gap
+recording, restart recovery, accounting, and fail-closed release creation.
+
+Key paths:
+
+- `alphapilot/evolution/forward/`
+- `reports/v13_19_local_forward_report.json`
+- `reports/v13_19_local_forward_contract.json`
+- `docs/V13.19.0-real-time-local-forward-observation.md`
+
+V13.19 does not use API keys, read exchange accounts or positions, call Trade
+API or Withdraw API, create orders, or enable Demo/Live execution. Forward
+time cannot be accelerated and downtime observations are never fabricated.
 
 ## V13.18.0 Actual-Candle Historical Path Replay
 

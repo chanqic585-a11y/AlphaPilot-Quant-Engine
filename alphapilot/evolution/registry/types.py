@@ -101,6 +101,42 @@ class OutcomeLedgerRecord:
 
 
 @dataclass(frozen=True)
+class ForwardReleaseRecord:
+    forwardReleaseId: str
+    strategyCandidateId: str
+    status: str
+    riskEnvelope: dict[str, Any]
+    release: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
+class ForwardSessionRecord:
+    forwardSessionId: str
+    forwardReleaseId: str
+    accountId: str
+    initialEquity: float
+    session: dict[str, Any]
+    contentHash: str
+    startedAt: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
+class ForwardEventRecord:
+    forwardEventId: str
+    forwardSessionId: str
+    forwardReleaseId: str
+    eventType: str
+    observedAt: str
+    instrumentId: str | None
+    payload: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
 class StrategyFamilyRecord:
     strategyFamilyId: str
     familyKey: str

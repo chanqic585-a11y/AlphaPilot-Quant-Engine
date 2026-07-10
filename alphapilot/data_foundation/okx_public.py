@@ -166,6 +166,47 @@ class OkxPublicClient:
         frame = frame.drop_duplicates(subset=["timestamp_ms"], keep="last").sort_values("timestamp_ms").reset_index(drop=True)
         return frame[["timestamp_ms", "date", "open", "high", "low", "close", "volume", "confirmed"]], request_count
 
+    def latest_completed_candles(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        limit: int = 300,
+    ) -> pd.DataFrame:
+        """Return only exchange-confirmed public candles for forward observation."""
+
+        if timeframe not in BAR_VALUES:
+            raise ValueError(f"Unsupported OKX timeframe: {timeframe}")
+        data = self._get(
+            "/api/v5/market/candles",
+            {
+                "instId": instrument_id,
+                "bar": BAR_VALUES[timeframe],
+                "limit": max(1, min(int(limit), 300)),
+            },
+        )
+        rows = [item for item in data if isinstance(item, list) and len(item) >= 9 and str(item[8]) == "1"]
+        if not rows:
+            return pd.DataFrame(
+                columns=["timestamp_ms", "date", "open", "high", "low", "close", "volume", "confirmed"]
+            )
+        frame = pd.DataFrame(
+            {
+                "timestamp_ms": [int(item[0]) for item in rows],
+                "open": [float(item[1]) for item in rows],
+                "high": [float(item[2]) for item in rows],
+                "low": [float(item[3]) for item in rows],
+                "close": [float(item[4]) for item in rows],
+                "volume": [float(item[7]) for item in rows],
+                "confirmed": [int(item[8]) for item in rows],
+            }
+        )
+        frame["date"] = pd.to_datetime(frame["timestamp_ms"], unit="ms", utc=True)
+        frame = frame.drop_duplicates("timestamp_ms", keep="last").sort_values("timestamp_ms")
+        return frame.reset_index(drop=True)[
+            ["timestamp_ms", "date", "open", "high", "low", "close", "volume", "confirmed"]
+        ]
+
 
 def latest_canonical_timestamp(
     canonical_root: Path | str,

@@ -232,6 +232,57 @@ MIGRATIONS: tuple[Migration, ...] = (
             "CREATE INDEX IF NOT EXISTS idx_outcome_ledger_exit ON OutcomeLedger(exitAt)",
         ),
     ),
+    Migration(
+        version=3,
+        name="create_local_forward_registry_v3",
+        statements=(
+            """
+            CREATE TABLE IF NOT EXISTS ForwardReleases (
+              forwardReleaseId TEXT PRIMARY KEY,
+              strategyCandidateId TEXT NOT NULL,
+              status TEXT NOT NULL,
+              riskEnvelopeJson TEXT NOT NULL,
+              releaseJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (strategyCandidateId) REFERENCES StrategyCandidates(strategyCandidateId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_forward_releases_candidate ON ForwardReleases(strategyCandidateId)",
+            """
+            CREATE TABLE IF NOT EXISTS ForwardSessions (
+              forwardSessionId TEXT PRIMARY KEY,
+              forwardReleaseId TEXT NOT NULL,
+              accountId TEXT NOT NULL,
+              initialEquity REAL NOT NULL,
+              sessionJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              startedAt TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (forwardReleaseId) REFERENCES ForwardReleases(forwardReleaseId)
+            )
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_forward_sessions_release_account ON ForwardSessions(forwardReleaseId, accountId)",
+            """
+            CREATE TABLE IF NOT EXISTS ForwardEvents (
+              forwardEventId TEXT PRIMARY KEY,
+              forwardSessionId TEXT NOT NULL,
+              forwardReleaseId TEXT NOT NULL,
+              eventType TEXT NOT NULL,
+              observedAt TEXT NOT NULL,
+              instrumentId TEXT,
+              payloadJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (forwardSessionId) REFERENCES ForwardSessions(forwardSessionId),
+              FOREIGN KEY (forwardReleaseId) REFERENCES ForwardReleases(forwardReleaseId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_forward_events_session ON ForwardEvents(forwardSessionId, observedAt)",
+            "CREATE INDEX IF NOT EXISTS idx_forward_events_release ON ForwardEvents(forwardReleaseId, observedAt)",
+            "CREATE INDEX IF NOT EXISTS idx_forward_events_type ON ForwardEvents(eventType, observedAt)",
+        ),
+    ),
 )
 
 

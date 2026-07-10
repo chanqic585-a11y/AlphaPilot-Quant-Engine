@@ -10,7 +10,12 @@ from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.types import (
     DataSnapshotRecord,
     FactorDefinitionRecord,
+    ForwardEventRecord,
+    ForwardReleaseRecord,
+    ForwardSessionRecord,
     OutcomeLedgerRecord,
+    StrategyCandidateRecord,
+    StrategyFamilyRecord,
 )
 
 
@@ -134,6 +139,72 @@ class RegistryRepositoryTests(unittest.TestCase):
 
         self.assertEqual(rows, [record])
         self.assertEqual(self.repository.count("OutcomeLedger"), 1)
+
+    def test_forward_registry_records_are_idempotent_and_restart_queryable(self) -> None:
+        family = StrategyFamilyRecord(
+            strategyFamilyId="family_forward",
+            familyKey="forward_test",
+            name="Forward Test",
+            status="research_only",
+            metadata={},
+            contentHash="family-hash",
+        )
+        candidate = StrategyCandidateRecord(
+            strategyCandidateId="candidate_forward",
+            strategyFamilyId=family.strategyFamilyId,
+            name="Forward Candidate",
+            status="shadow_candidate",
+            candidate={},
+            contentHash="candidate-hash",
+        )
+        release = ForwardReleaseRecord(
+            forwardReleaseId="forward_release_test",
+            strategyCandidateId=candidate.strategyCandidateId,
+            status="forward_eligible",
+            riskEnvelope={"initialEquityUsdt": 1000.0},
+            release={"createsOrders": False},
+            contentHash="release-hash",
+        )
+        session = ForwardSessionRecord(
+            forwardSessionId="forward_session_test",
+            forwardReleaseId=release.forwardReleaseId,
+            accountId="account_test",
+            initialEquity=1000.0,
+            session={"publicMarketOnly": True},
+            contentHash="session-hash",
+            startedAt="2026-07-10T00:00:00+00:00",
+        )
+        event = ForwardEventRecord(
+            forwardEventId="forward_event_test",
+            forwardSessionId=session.forwardSessionId,
+            forwardReleaseId=release.forwardReleaseId,
+            eventType="state_checkpoint",
+            observedAt="2026-07-10T04:00:00+00:00",
+            instrumentId=None,
+            payload={"state": {"equity": 1000.0}},
+            contentHash="event-hash",
+        )
+        self.repository.create_strategy_family(family)
+        self.repository.create_strategy_candidate(candidate)
+        self.repository.create_forward_release(release)
+        self.repository.create_forward_session(session)
+        self.repository.create_forward_event(event)
+        self.repository.create_forward_event(event)
+
+        self.assertEqual(self.repository.list_forward_releases(), [release])
+        self.assertEqual(
+            self.repository.get_forward_session_by_release_account(
+                release.forwardReleaseId, session.accountId
+            ),
+            session,
+        )
+        self.assertEqual(
+            self.repository.get_latest_forward_event(
+                session.forwardSessionId, event_type="state_checkpoint"
+            ),
+            event,
+        )
+        self.assertEqual(self.repository.count("ForwardEvents"), 1)
 
 
 if __name__ == "__main__":

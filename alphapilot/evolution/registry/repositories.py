@@ -16,6 +16,9 @@ from .types import (
     ExperimentRecord,
     FactorDefinitionRecord,
     FactorRunRecord,
+    ForwardEventRecord,
+    ForwardReleaseRecord,
+    ForwardSessionRecord,
     LegacyEvidenceRecord,
     LiveCandidatePackageRecord,
     ModelRecord,
@@ -37,6 +40,9 @@ ALLOWED_COUNT_TABLES = {
     "Experiments",
     "Models",
     "OutcomeLedger",
+    "ForwardReleases",
+    "ForwardSessions",
+    "ForwardEvents",
     "StrategyFamilies",
     "StrategyCandidates",
     "PromotionDecisions",
@@ -402,6 +408,208 @@ class RegistryRepository:
             for row in rows
             if (record := self.get_outcome(row["outcomeId"])) is not None
         ]
+
+    def create_forward_release(self, record: ForwardReleaseRecord) -> ForwardReleaseRecord:
+        existing = self.get_forward_release(record.forwardReleaseId)
+        if existing:
+            self._assert_same_hash(record.forwardReleaseId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO ForwardReleases(
+                  forwardReleaseId, strategyCandidateId, status, riskEnvelopeJson,
+                  releaseJson, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.forwardReleaseId,
+                    record.strategyCandidateId,
+                    record.status,
+                    canonical_json(record.riskEnvelope),
+                    canonical_json(record.release),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_forward_release(self, record_id: str) -> ForwardReleaseRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM ForwardReleases WHERE forwardReleaseId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return ForwardReleaseRecord(
+            forwardReleaseId=row["forwardReleaseId"],
+            strategyCandidateId=row["strategyCandidateId"],
+            status=row["status"],
+            riskEnvelope=_decode_json(row["riskEnvelopeJson"]),
+            release=_decode_json(row["releaseJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_forward_releases(self, *, status: str | None = None) -> list[ForwardReleaseRecord]:
+        query = "SELECT forwardReleaseId FROM ForwardReleases"
+        values: tuple[str, ...] = ()
+        if status is not None:
+            query += " WHERE status = ?"
+            values = (status,)
+        query += " ORDER BY createdAt, forwardReleaseId"
+        rows = self.connection.execute(query, values).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_forward_release(row["forwardReleaseId"])) is not None
+        ]
+
+    def create_forward_session(self, record: ForwardSessionRecord) -> ForwardSessionRecord:
+        existing = self.get_forward_session(record.forwardSessionId)
+        if existing:
+            self._assert_same_hash(record.forwardSessionId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO ForwardSessions(
+                  forwardSessionId, forwardReleaseId, accountId, initialEquity,
+                  sessionJson, contentHash, startedAt, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.forwardSessionId,
+                    record.forwardReleaseId,
+                    record.accountId,
+                    record.initialEquity,
+                    canonical_json(record.session),
+                    record.contentHash,
+                    record.startedAt,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_forward_session(self, record_id: str) -> ForwardSessionRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM ForwardSessions WHERE forwardSessionId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return ForwardSessionRecord(
+            forwardSessionId=row["forwardSessionId"],
+            forwardReleaseId=row["forwardReleaseId"],
+            accountId=row["accountId"],
+            initialEquity=float(row["initialEquity"]),
+            session=_decode_json(row["sessionJson"]),
+            contentHash=row["contentHash"],
+            startedAt=row["startedAt"],
+            createdAt=row["createdAt"],
+        )
+
+    def get_forward_session_by_release_account(
+        self, forward_release_id: str, account_id: str
+    ) -> ForwardSessionRecord | None:
+        row = self.connection.execute(
+            """
+            SELECT forwardSessionId FROM ForwardSessions
+            WHERE forwardReleaseId = ? AND accountId = ?
+            """,
+            (forward_release_id, account_id),
+        ).fetchone()
+        return self.get_forward_session(row["forwardSessionId"]) if row else None
+
+    def list_forward_sessions(self) -> list[ForwardSessionRecord]:
+        rows = self.connection.execute(
+            "SELECT forwardSessionId FROM ForwardSessions ORDER BY startedAt, forwardSessionId"
+        ).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_forward_session(row["forwardSessionId"])) is not None
+        ]
+
+    def create_forward_event(self, record: ForwardEventRecord) -> ForwardEventRecord:
+        existing = self.get_forward_event(record.forwardEventId)
+        if existing:
+            self._assert_same_hash(record.forwardEventId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO ForwardEvents(
+                  forwardEventId, forwardSessionId, forwardReleaseId, eventType,
+                  observedAt, instrumentId, payloadJson, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.forwardEventId,
+                    record.forwardSessionId,
+                    record.forwardReleaseId,
+                    record.eventType,
+                    record.observedAt,
+                    record.instrumentId,
+                    canonical_json(record.payload),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_forward_event(self, record_id: str) -> ForwardEventRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM ForwardEvents WHERE forwardEventId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return ForwardEventRecord(
+            forwardEventId=row["forwardEventId"],
+            forwardSessionId=row["forwardSessionId"],
+            forwardReleaseId=row["forwardReleaseId"],
+            eventType=row["eventType"],
+            observedAt=row["observedAt"],
+            instrumentId=row["instrumentId"],
+            payload=_decode_json(row["payloadJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_forward_events(
+        self,
+        *,
+        forward_session_id: str | None = None,
+        event_type: str | None = None,
+    ) -> list[ForwardEventRecord]:
+        query = "SELECT forwardEventId FROM ForwardEvents"
+        clauses: list[str] = []
+        values: list[str] = []
+        if forward_session_id is not None:
+            clauses.append("forwardSessionId = ?")
+            values.append(forward_session_id)
+        if event_type is not None:
+            clauses.append("eventType = ?")
+            values.append(event_type)
+        if clauses:
+            query += " WHERE " + " AND ".join(clauses)
+        query += " ORDER BY observedAt, createdAt, forwardEventId"
+        rows = self.connection.execute(query, values).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_forward_event(row["forwardEventId"])) is not None
+        ]
+
+    def get_latest_forward_event(
+        self, forward_session_id: str, *, event_type: str | None = None
+    ) -> ForwardEventRecord | None:
+        query = "SELECT forwardEventId FROM ForwardEvents WHERE forwardSessionId = ?"
+        values: list[str] = [forward_session_id]
+        if event_type is not None:
+            query += " AND eventType = ?"
+            values.append(event_type)
+        query += " ORDER BY observedAt DESC, createdAt DESC, forwardEventId DESC LIMIT 1"
+        row = self.connection.execute(query, values).fetchone()
+        return self.get_forward_event(row["forwardEventId"]) if row else None
 
     def create_strategy_family(self, record: StrategyFamilyRecord) -> StrategyFamilyRecord:
         existing = self.get_strategy_family(record.strategyFamilyId)

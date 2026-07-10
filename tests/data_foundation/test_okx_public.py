@@ -29,6 +29,27 @@ class _Response:
 
 
 class OkxPublicTests(unittest.TestCase):
+    def test_latest_completed_candles_excludes_open_exchange_bar(self) -> None:
+        def opener(_request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            return _Response(
+                {
+                    "code": "0",
+                    "msg": "",
+                    "data": [
+                        ["2000", "10", "12", "9", "11", "1", "1", "100", "0"],
+                        ["1000", "9", "11", "8", "10", "1", "1", "90", "1"],
+                    ],
+                }
+            )
+
+        frame = OkxPublicClient(opener=opener).latest_completed_candles(
+            instrument_id="BTC-USDT-SWAP", timeframe="15m"
+        )
+
+        self.assertEqual(frame["timestamp_ms"].tolist(), [1000])
+        self.assertEqual(frame["confirmed"].tolist(), [1])
+
     def test_history_candles_filters_cutoff_and_unconfirmed_rows(self) -> None:
         calls: list[str] = []
 
