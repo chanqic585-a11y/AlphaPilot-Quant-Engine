@@ -4,6 +4,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
 import pandas as pd
 
@@ -29,6 +30,48 @@ class _Response:
 
 
 class OkxPublicTests(unittest.TestCase):
+    def test_public_metadata_and_funding_methods_use_unauthenticated_endpoints(self) -> None:
+        calls: list[str] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            url = str(getattr(request, "full_url"))
+            calls.append(url)
+            path = urlparse(url).path
+            if path.endswith("/public/instruments"):
+                data: list[object] = [
+                    {"instId": "BTC-USDT-SWAP", "instType": "SWAP", "state": "live"}
+                ]
+            elif path.endswith("/public/funding-rate-history"):
+                data = [{"instId": "BTC-USDT-SWAP", "fundingRate": "0.0001", "fundingTime": "1000"}]
+            else:
+                data = [["1000", "1", "2", "0.5", "1.5", "1", "1", "10", "1"]]
+            return _Response({"code": "0", "msg": "", "data": data})
+
+        client = OkxPublicClient(opener=opener, throttle_seconds=0)
+        instruments = client.public_instruments(instrument_type="SWAP")
+        funding = client.funding_rate_history(
+            instrument_id="BTC-USDT-SWAP", before_ms=2000, limit=50
+        )
+        candles = client.history_candle_page(
+            instrument_id="BTC-USDT-SWAP",
+            timeframe="4h",
+            after_ms=3000,
+            limit=25,
+        )
+
+        self.assertEqual(instruments[0]["instId"], "BTC-USDT-SWAP")
+        self.assertEqual(funding[0]["fundingRate"], "0.0001")
+        self.assertEqual(candles[0][0], "1000")
+        parsed = [(urlparse(url).path, parse_qs(urlparse(url).query)) for url in calls]
+        self.assertEqual(parsed[0][0], "/api/v5/public/instruments")
+        self.assertEqual(parsed[0][1]["instType"], ["SWAP"])
+        self.assertEqual(parsed[1][0], "/api/v5/public/funding-rate-history")
+        self.assertEqual(parsed[1][1]["before"], ["2000"])
+        self.assertEqual(parsed[2][0], "/api/v5/market/history-candles")
+        self.assertEqual(parsed[2][1]["after"], ["3000"])
+        self.assertTrue(all("OK-ACCESS" not in url for url in calls))
+
     def test_latest_completed_candles_excludes_open_exchange_bar(self) -> None:
         def opener(_request: object, timeout: int) -> _Response:
             self.assertEqual(timeout, 30)

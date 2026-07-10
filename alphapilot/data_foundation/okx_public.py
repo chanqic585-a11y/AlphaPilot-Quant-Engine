@@ -80,10 +80,12 @@ class OkxPublicClient:
         base_url: str = OKX_GLOBAL_API,
         opener: Callable[..., Any] = urllib.request.urlopen,
         throttle_seconds: float = 0.12,
+        max_rate_limit_retries: int = 3,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.opener = opener
         self.throttle_seconds = max(0.0, throttle_seconds)
+        self.max_rate_limit_retries = max(0, int(max_rate_limit_retries))
 
     def _get(self, path: str, parameters: dict[str, Any]) -> list[Any]:
         query = urllib.parse.urlencode(parameters)
@@ -95,14 +97,81 @@ class OkxPublicClient:
             },
             method="GET",
         )
-        with self.opener(request, timeout=30) as response:
-            payload = json.loads(response.read().decode("utf-8"))
-        if str(payload.get("code")) != "0":
-            raise RuntimeError(f"OKX public request failed: {payload.get('code')} {payload.get('msg')}")
+        payload: dict[str, Any] = {}
+        for attempt in range(self.max_rate_limit_retries + 1):
+            with self.opener(request, timeout=30) as response:
+                payload = json.loads(response.read().decode("utf-8"))
+            code = str(payload.get("code"))
+            if code == "0":
+                break
+            if code != "50011" or attempt >= self.max_rate_limit_retries:
+                raise RuntimeError(
+                    f"OKX public request failed: {code} {payload.get('msg')}"
+                )
+            time.sleep(max(self.throttle_seconds, 0.25) * (2**attempt))
         data = payload.get("data")
         if not isinstance(data, list):
             raise RuntimeError("OKX public response data is not an array")
         return data
+
+    def public_instruments(
+        self, *, instrument_type: str = "SWAP"
+    ) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/instruments",
+                {"instType": instrument_type},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def funding_rate_history(
+        self,
+        *,
+        instrument_id: str,
+        before_ms: int | None = None,
+        after_ms: int | None = None,
+        limit: int = 100,
+    ) -> list[dict[str, Any]]:
+        parameters: dict[str, Any] = {
+            "instId": instrument_id,
+            "limit": max(1, min(int(limit), 100)),
+        }
+        if before_ms is not None:
+            parameters["before"] = int(before_ms)
+        if after_ms is not None:
+            parameters["after"] = int(after_ms)
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/funding-rate-history", parameters
+            )
+            if isinstance(item, dict)
+        ]
+
+    def history_candle_page(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        after_ms: int | None,
+        limit: int = 100,
+    ) -> list[list[Any]]:
+        if timeframe not in BAR_VALUES:
+            raise ValueError(f"Unsupported OKX timeframe: {timeframe}")
+        parameters: dict[str, Any] = {
+            "instId": instrument_id,
+            "bar": BAR_VALUES[timeframe],
+            "limit": max(1, min(int(limit), 100)),
+        }
+        if after_ms is not None:
+            parameters["after"] = int(after_ms)
+        return [
+            list(item)
+            for item in self._get("/api/v5/market/history-candles", parameters)
+            if isinstance(item, list)
+        ]
 
     def history_candles(
         self,
