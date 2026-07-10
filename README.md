@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.20.0 - Immutable-Release-Gated OKX Demo
+AlphaPilot V13.21.0 - Live Safety Candidate Boundary
 ```
 
 ## Positioning
@@ -29,6 +29,32 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.21.0 Live Safety Candidate Boundary
+
+V13.21 converts only a checksum-bound, fully validated Demo release into an
+immutable Live review candidate. Demo evidence must include at least 50 closed
+trades and 30 calendar days, net profit factor >= 1.15, drawdown below 5%,
+matched ledgers/checksums, stable symbol/regime/time slices, and no unresolved
+critical drift. The proposed risk budget is capped at 1000 USDT, 0.25% per
+trade, 250 USDT per order, three concurrent positions, and 2x leverage.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_21_live_safety_candidate.ps1
+```
+
+The current registry has no validated Demo release, so the real report is
+`blocked_no_validated_demo_release` and exports no Live candidate package.
+Manual candidate approval remains review-only: there is no Live adapter, no
+execution approval, no credential storage, no account access, and no Withdraw
+path.
+
+Artifacts:
+
+- `alphapilot/reports/generate_v13_21_live_safety_candidate_report.py`
+- `reports/v13_21_live_safety_candidate_report.json`
+- `reports/v13_21_live_safety_readiness_contract.json`
+- `docs/V13.21.0-live-safety-candidate-boundary.md`
 
 ## V13.20.0 Immutable-Release-Gated OKX Demo
 

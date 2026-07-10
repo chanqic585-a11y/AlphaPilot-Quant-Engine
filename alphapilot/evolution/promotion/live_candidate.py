@@ -112,15 +112,18 @@ def build_live_candidate_package(
         raise LiveCandidateNotEligible("Demo release lineage checksums are incomplete")
 
     risk_budget = {**asdict(proposedRiskBudget), "maximumLossUsdt": proposedRiskBudget.maximumLossUsdt}
+    evidence_payload = asdict(demoEvidence)
     payload = {
-        "schemaVersion": "live_candidate_package_v1",
+        "schemaVersion": "live_candidate_package_v2",
         "demoReleaseId": demoRelease.demoReleaseId,
         "demoReleaseHash": demoRelease.contentHash,
         "strategyCandidateId": demoRelease.strategyCandidateId,
         "strategy": demoRelease.release.get("strategy", {}),
         "lineageChecksums": checksums,
-        "demoEvidence": asdict(demoEvidence),
+        "demoEvidence": evidence_payload,
+        "demoEvidenceHash": stable_hash(evidence_payload),
         "proposedRiskBudget": risk_budget,
+        "proposedRiskBudgetHash": stable_hash(risk_budget),
         "rollbackPolicy": {
             "targetDemoReleaseId": rollback_target,
             "stopNewEntriesFirst": True,
@@ -128,9 +131,21 @@ def build_live_candidate_package(
         },
         "manualApprovalRequired": True,
         "automaticApprovalAllowed": False,
+        "liveReleaseExecutionApprovalImplemented": False,
         "liveExecutionAdapterPresent": False,
         "liveExecutionEnabled": False,
         "withdrawAllowed": False,
+        "safetyPolicy": {
+            "requestExpirySeconds": 30,
+            "idempotencyRequired": True,
+            "instrumentStateRequired": "live",
+            "maximumReferencePriceDeviationPercent": 1.0,
+            "privateStateReconciliationRequired": True,
+            "restartRecoveryRequired": True,
+            "circuitBreakerRequired": True,
+            "killSwitchRequired": True,
+            "approvalEnablesExecution": False,
+        },
     }
     content_hash = stable_hash(payload)
     return repository.create_live_candidate_package(
