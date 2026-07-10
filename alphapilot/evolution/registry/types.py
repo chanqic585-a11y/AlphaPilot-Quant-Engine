@@ -231,6 +231,18 @@ class LiveCandidatePackageRecord:
 
 
 @dataclass(frozen=True)
+class LiveReleaseRecord:
+    liveReleaseId: str
+    liveCandidatePackageId: str
+    strategyCandidateId: str
+    status: str
+    riskProfileId: str
+    release: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
 class LegacyEvidenceRecord:
     legacyEvidenceId: str
     sourcePath: str

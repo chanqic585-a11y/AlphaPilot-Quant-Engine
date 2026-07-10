@@ -4578,6 +4578,24 @@ RiskProfile activation does not grant order permission. V13.24.0 stores no raw
 API credentials, has no Withdraw support, has no Live exchange adapter, and
 keeps Live execution disabled.
 
+## V13.25.0 Fail-Closed OKX Live Canary
+
+V13.25.0 adds an immutable `LiveRelease` registry contract and a fail-closed
+OKX Live Canary runtime adapter in the Control Console. A release requires an
+approved Live candidate, active checksum-matched Live Canary RiskProfile, and
+timestamped manual approval.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_25_live_canary_report.ps1
+```
+
+The Live runtime is disabled by default. It requires separate master, read,
+Canary, and order process gates, process-only credentials, read-only private
+state reconciliation, manual ARM, isolated margin, attached TP/SL, at least 2R,
+idempotency, restart recovery, and kill-switch support. Unknown state pauses
+new entries. Withdraw is not implemented. The V13.25 report reads no
+credentials or private account state and places no order.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

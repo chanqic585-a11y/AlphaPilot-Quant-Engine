@@ -21,6 +21,7 @@ from .types import (
     ForwardSessionRecord,
     LegacyEvidenceRecord,
     LiveCandidatePackageRecord,
+    LiveReleaseRecord,
     ModelRecord,
     OutcomeLedgerRecord,
     PromotionDecisionRecord,
@@ -52,6 +53,7 @@ ALLOWED_COUNT_TABLES = {
     "PromotionDecisions",
     "DemoReleases",
     "LiveCandidatePackages",
+    "LiveReleases",
     "DriftEvents",
     "AuditEvents",
     "LegacyEvidence",
@@ -1029,6 +1031,59 @@ class RegistryRepository:
             record
             for row in rows
             if (record := self.get_live_candidate_package(row["liveCandidatePackageId"])) is not None
+        ]
+
+    def create_live_release(self, record: LiveReleaseRecord) -> LiveReleaseRecord:
+        existing = self.get_live_release(record.liveReleaseId)
+        if existing:
+            self._assert_same_hash(record.liveReleaseId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO LiveReleases(
+                  liveReleaseId, liveCandidatePackageId, strategyCandidateId,
+                  status, riskProfileId, releaseJson, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.liveReleaseId,
+                    record.liveCandidatePackageId,
+                    record.strategyCandidateId,
+                    record.status,
+                    record.riskProfileId,
+                    canonical_json(record.release),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_live_release(self, record_id: str) -> LiveReleaseRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM LiveReleases WHERE liveReleaseId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return LiveReleaseRecord(
+            liveReleaseId=row["liveReleaseId"],
+            liveCandidatePackageId=row["liveCandidatePackageId"],
+            strategyCandidateId=row["strategyCandidateId"],
+            status=row["status"],
+            riskProfileId=row["riskProfileId"],
+            release=_decode_json(row["releaseJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_live_releases(self) -> list[LiveReleaseRecord]:
+        rows = self.connection.execute(
+            "SELECT liveReleaseId FROM LiveReleases ORDER BY createdAt, liveReleaseId"
+        ).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_live_release(row["liveReleaseId"])) is not None
         ]
 
     def create_drift_event(self, record: DriftEventRecord) -> DriftEventRecord:

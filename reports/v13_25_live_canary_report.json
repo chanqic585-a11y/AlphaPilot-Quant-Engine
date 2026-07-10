@@ -1,0 +1,37 @@
+{
+  "blockers": [
+    "no_approved_live_release",
+    "runtime_credentials_not_loaded",
+    "live_process_gates_disabled",
+    "live_canary_kill_switch_active",
+    "live_reconciliation_not_confirmed"
+  ],
+  "codeCommit": "1ae64e3df54d9c0d60304945bb688545d1cec649",
+  "executionEvidence": {
+    "liveCredentialsReadByReport": false,
+    "privateAccountRequestedByReport": false,
+    "realOrdersPlacedByReport": 0
+  },
+  "generatedAt": "2026-07-10T18:16:42.013726+00:00",
+  "liveReleaseCount": 0,
+  "liveReleases": [],
+  "reportId": "v13_25_live_canary_report",
+  "runtimeContract": {
+    "activeRiskProfileHashRequired": true,
+    "adapterPresent": true,
+    "approvedLiveReleaseRequired": true,
+    "attachedStopLossRequired": true,
+    "attachedTakeProfitRequired": true,
+    "enabledByDefault": false,
+    "idempotencyRequired": true,
+    "killSwitchRequired": true,
+    "minimumRewardRiskRatio": 2.0,
+    "rawCredentialStorageAllowed": false,
+    "readOnlyReconciliationRequired": true,
+    "restartRecoveryRequired": true,
+    "unknownStatePausesEntries": true,
+    "withdrawAllowed": false
+  },
+  "status": "blocked_no_live_release",
+  "version": "V13.25.0"
+}

@@ -27,6 +27,7 @@ EXPECTED_TABLES = {
     "PromotionDecisions",
     "DemoReleases",
     "LiveCandidatePackages",
+    "LiveReleases",
     "DriftEvents",
     "AuditEvents",
     "LegacyEvidence",

@@ -321,6 +321,30 @@ MIGRATIONS: tuple[Migration, ...] = (
             "CREATE INDEX IF NOT EXISTS idx_risk_profile_activations_environment ON RiskProfileActivations(environment, createdAt)",
         ),
     ),
+    Migration(
+        version=5,
+        name="create_live_releases_v5",
+        statements=(
+            """
+            CREATE TABLE IF NOT EXISTS LiveReleases (
+              liveReleaseId TEXT PRIMARY KEY,
+              liveCandidatePackageId TEXT NOT NULL,
+              strategyCandidateId TEXT NOT NULL,
+              status TEXT NOT NULL,
+              riskProfileId TEXT NOT NULL,
+              releaseJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (liveCandidatePackageId) REFERENCES LiveCandidatePackages(liveCandidatePackageId),
+              FOREIGN KEY (strategyCandidateId) REFERENCES StrategyCandidates(strategyCandidateId),
+              FOREIGN KEY (riskProfileId) REFERENCES RiskProfiles(riskProfileId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_live_releases_candidate ON LiveReleases(strategyCandidateId, createdAt)",
+            "CREATE INDEX IF NOT EXISTS idx_live_releases_profile ON LiveReleases(riskProfileId, createdAt)",
+            "CREATE INDEX IF NOT EXISTS idx_live_releases_status ON LiveReleases(status, createdAt)",
+        ),
+    ),
 )
 
 
