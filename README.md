@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.7.23 - Paper Observation Quality Panel
+AlphaPilot V13.14.0 - Automatic Demo Promotion
 ```
 
 ## Positioning
@@ -29,6 +29,34 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.14.0 Automatic Demo Promotion
+
+V13.14.0 adds a fail-closed bridge from immutable research evidence to OKX
+Demo only. A candidate must pass point-in-time and leakage checks, at least
+three walk-forward folds, FDR/Deflated-Sharpe/PBO checks, locked OOS and 2x cost
+profit-factor gates, drawdown and concentration limits, frequency-specific OOS
+samples, public-market Shadow samples, calendar coverage, and checksum checks.
+
+Passed candidates create immutable `PromotionDecision` and `DemoRelease`
+records. The exported Control Console contract contains the strategy, fixed
+1000 USDT Demo risk envelope, evidence checksums, and release checksum. It never
+contains credentials. Current registry data still has no formally eligible
+candidate, so the readiness report correctly remains blocked rather than
+fabricating a release.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_demo_promotion_readiness.ps1
+```
+
+Outputs:
+
+- `reports/demo_promotion_readiness_report.json`
+- `reports/demo_promotion_readiness_summary.md`
+- `docs/V13.14.0-automatic-demo-promotion.md`
+
+Demo releases may be automated in the separate Control Console. Live automatic
+promotion, Withdraw API, and raw API key storage remain forbidden.
 
 ## V13.7.23 Paper Observation Quality Panel
 

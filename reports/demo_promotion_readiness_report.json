@@ -1,0 +1,28 @@
+{
+  "version": "V13.14.0",
+  "source": "demo_promotion_readiness_report_v1",
+  "generatedAt": "2026-07-10T01:03:22.995024+00:00",
+  "status": "blocked",
+  "summary": {
+    "strategyCandidateCount": 0,
+    "promotionDecisionCount": 0,
+    "passedPromotionDecisionCount": 0,
+    "demoReleaseCount": 0,
+    "controlConsoleContractCount": 0,
+    "initialDemoEquityUsdt": 1000.0,
+    "maxOrderNotionalUsdt": 250.0
+  },
+  "candidateStates": [],
+  "promotionDecisions": [],
+  "demoReleases": [],
+  "controlConsoleContracts": [],
+  "blockers": [
+    "no_formal_strategy_candidate_has_passed_all_demo_hard_gates"
+  ],
+  "safetyBoundary": {
+    "okxDemoOnly": true,
+    "rawCredentialStorageAllowed": false,
+    "withdrawAllowed": false,
+    "liveAutomaticPromotionAllowed": false
+  }
+}

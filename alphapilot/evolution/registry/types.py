@@ -103,6 +103,41 @@ class StrategyCandidateRecord:
 
 
 @dataclass(frozen=True)
+class PromotionDecisionRecord:
+    promotionDecisionId: str
+    strategyCandidateId: str
+    fromStatus: str | None
+    toStatus: str
+    passed: bool
+    reasons: list[str]
+    evidence: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
+class DemoReleaseRecord:
+    demoReleaseId: str
+    strategyCandidateId: str
+    status: str
+    riskEnvelope: dict[str, Any]
+    release: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
+class DriftEventRecord:
+    driftEventId: str
+    demoReleaseId: str
+    severity: str
+    eventType: str
+    payload: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
 class LegacyEvidenceRecord:
     legacyEvidenceId: str
     sourcePath: str

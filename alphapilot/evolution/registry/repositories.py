@@ -11,11 +11,14 @@ from .hashing import canonical_json
 from .types import (
     AuditEventRecord,
     DataSnapshotRecord,
+    DemoReleaseRecord,
+    DriftEventRecord,
     ExperimentRecord,
     FactorDefinitionRecord,
     FactorRunRecord,
     LegacyEvidenceRecord,
     ModelRecord,
+    PromotionDecisionRecord,
     StrategyCandidateRecord,
     StrategyFamilyRecord,
 )
@@ -382,6 +385,182 @@ class RegistryRepository:
                 ),
             )
         return record
+
+    def get_strategy_candidate(self, record_id: str) -> StrategyCandidateRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM StrategyCandidates WHERE strategyCandidateId = ?",
+            (record_id,),
+        ).fetchone()
+        if not row:
+            return None
+        return StrategyCandidateRecord(
+            strategyCandidateId=row["strategyCandidateId"],
+            strategyFamilyId=row["strategyFamilyId"],
+            name=row["name"],
+            status=row["status"],
+            candidate=_decode_json(row["candidateJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_strategy_candidates(self) -> list[StrategyCandidateRecord]:
+        rows = self.connection.execute(
+            "SELECT strategyCandidateId FROM StrategyCandidates ORDER BY createdAt, strategyCandidateId"
+        ).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_strategy_candidate(row["strategyCandidateId"])) is not None
+        ]
+
+    def create_promotion_decision(
+        self, record: PromotionDecisionRecord
+    ) -> PromotionDecisionRecord:
+        existing = self.get_promotion_decision(record.promotionDecisionId)
+        if existing:
+            self._assert_same_hash(record.promotionDecisionId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO PromotionDecisions(
+                  promotionDecisionId, strategyCandidateId, fromStatus, toStatus,
+                  passed, reasonsJson, evidenceJson, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.promotionDecisionId,
+                    record.strategyCandidateId,
+                    record.fromStatus,
+                    record.toStatus,
+                    int(record.passed),
+                    canonical_json(record.reasons),
+                    canonical_json(record.evidence),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_promotion_decision(self, record_id: str) -> PromotionDecisionRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM PromotionDecisions WHERE promotionDecisionId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return PromotionDecisionRecord(
+            promotionDecisionId=row["promotionDecisionId"],
+            strategyCandidateId=row["strategyCandidateId"],
+            fromStatus=row["fromStatus"],
+            toStatus=row["toStatus"],
+            passed=bool(row["passed"]),
+            reasons=_decode_json(row["reasonsJson"]),
+            evidence=_decode_json(row["evidenceJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_promotion_decisions(self) -> list[PromotionDecisionRecord]:
+        rows = self.connection.execute(
+            "SELECT promotionDecisionId FROM PromotionDecisions ORDER BY createdAt, promotionDecisionId"
+        ).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_promotion_decision(row["promotionDecisionId"])) is not None
+        ]
+
+    def create_demo_release(self, record: DemoReleaseRecord) -> DemoReleaseRecord:
+        existing = self.get_demo_release(record.demoReleaseId)
+        if existing:
+            self._assert_same_hash(record.demoReleaseId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO DemoReleases(
+                  demoReleaseId, strategyCandidateId, status, riskEnvelopeJson,
+                  releaseJson, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.demoReleaseId,
+                    record.strategyCandidateId,
+                    record.status,
+                    canonical_json(record.riskEnvelope),
+                    canonical_json(record.release),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_demo_release(self, record_id: str) -> DemoReleaseRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM DemoReleases WHERE demoReleaseId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return DemoReleaseRecord(
+            demoReleaseId=row["demoReleaseId"],
+            strategyCandidateId=row["strategyCandidateId"],
+            status=row["status"],
+            riskEnvelope=_decode_json(row["riskEnvelopeJson"]),
+            release=_decode_json(row["releaseJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_demo_releases(self) -> list[DemoReleaseRecord]:
+        rows = self.connection.execute(
+            "SELECT demoReleaseId FROM DemoReleases ORDER BY createdAt, demoReleaseId"
+        ).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_demo_release(row["demoReleaseId"])) is not None
+        ]
+
+    def create_drift_event(self, record: DriftEventRecord) -> DriftEventRecord:
+        existing = self.get_drift_event(record.driftEventId)
+        if existing:
+            self._assert_same_hash(record.driftEventId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO DriftEvents(
+                  driftEventId, demoReleaseId, severity, eventType,
+                  payloadJson, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.driftEventId,
+                    record.demoReleaseId,
+                    record.severity,
+                    record.eventType,
+                    canonical_json(record.payload),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_drift_event(self, record_id: str) -> DriftEventRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM DriftEvents WHERE driftEventId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return DriftEventRecord(
+            driftEventId=row["driftEventId"],
+            demoReleaseId=row["demoReleaseId"],
+            severity=row["severity"],
+            eventType=row["eventType"],
+            payload=_decode_json(row["payloadJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
 
     def create_legacy_evidence(self, record: LegacyEvidenceRecord) -> LegacyEvidenceRecord:
         existing = self.get_legacy_evidence(record.legacyEvidenceId)
