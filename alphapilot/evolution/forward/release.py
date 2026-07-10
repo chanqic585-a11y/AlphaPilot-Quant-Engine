@@ -6,7 +6,12 @@ from typing import Any
 
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
-from alphapilot.evolution.registry.types import ForwardReleaseRecord, StrategyCandidateRecord
+from alphapilot.evolution.registry.types import (
+    ForwardReleaseRecord,
+    RiskProfileRecord,
+    StrategyCandidateRecord,
+)
+from alphapilot.evolution.risk_profiles import execution_envelope, register_default_risk_profiles
 
 from .types import ForwardRiskEnvelope
 
@@ -17,6 +22,7 @@ def create_forward_release(
     replay_report: dict[str, Any],
     repository: RegistryRepository,
     code_commit: str,
+    risk_profile: RiskProfileRecord | None = None,
 ) -> ForwardReleaseRecord:
     """Create an immutable release only from formal, candidate-bound replay evidence."""
 
@@ -49,7 +55,22 @@ def create_forward_release(
     data_snapshot_id = evidence.get("dataSnapshotId")
     if not data_snapshot_id or repository.get_data_snapshot(str(data_snapshot_id)) is None:
         raise ValueError("Forward release training snapshot is not registered")
-    envelope = ForwardRiskEnvelope()
+    profile = risk_profile or register_default_risk_profiles(repository)["local_forward"]
+    registered_profile = repository.get_risk_profile(profile.riskProfileId)
+    if registered_profile is None or registered_profile.contentHash != profile.contentHash:
+        raise ValueError("Forward release requires a registered immutable RiskProfile")
+    if profile.environment != "local_forward":
+        raise ValueError("Forward release requires a local_forward RiskProfile")
+    envelope = ForwardRiskEnvelope(
+        initialEquityUsdt=float(profile.profile["capitalLimitUsdt"]),
+        riskPerTradePercent=float(profile.profile["riskPerTradePercent"]),
+        maxOpenRiskPercent=float(profile.profile["maxOpenRiskPercent"]),
+        maxOrderNotionalUsdt=float(profile.profile["maxOrderNotionalUsdt"]),
+        maxConcurrentPositions=int(profile.profile["maxConcurrentPositions"]),
+        feeRate=float(profile.profile["feeRate"]),
+        slippageRate=float(profile.profile["slippageRate"]),
+        rewardRiskRatio=float(profile.profile["rewardRiskRatio"]),
+    )
     envelope.validate()
     release_payload = {
         "schemaVersion": "local_forward_release_v1",
@@ -70,13 +91,15 @@ def create_forward_release(
             "closedReplayCount": int(replay_report.get("formalStrategyReplayCount", 0)),
         },
         "codeCommit": code_commit,
+        "riskProfileId": profile.riskProfileId,
+        "riskProfileHash": profile.contentHash,
         "environment": "local_forward_public_market_only",
         "virtualAccountOnly": True,
         "createsOrders": False,
         "demoExecutionAllowed": False,
         "liveExecutionAllowed": False,
     }
-    risk_envelope = envelope.to_dict()
+    risk_envelope = {**execution_envelope(profile), **envelope.to_dict()}
     content_hash = stable_hash({"release": release_payload, "riskEnvelope": risk_envelope})
     return repository.create_forward_release(
         ForwardReleaseRecord(

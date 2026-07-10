@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import math
 from dataclasses import asdict, dataclass, field
 from typing import Any
 
@@ -27,8 +28,8 @@ class ForwardRiskEnvelope:
     rewardRiskRatio: float = 2.0
 
     def validate(self) -> None:
-        if self.initialEquityUsdt != 1000.0:
-            raise ValueError("V13.19 forward accounts must start with 1000 USDT")
+        if not math.isfinite(self.initialEquityUsdt) or self.initialEquityUsdt <= 0:
+            raise ValueError("Forward initial equity must be finite and positive")
         if not 0 < self.riskPerTradePercent <= 1.0:
             raise ValueError("Forward risk per trade must be within (0, 1%]")
         if self.maxOpenRiskPercent < self.riskPerTradePercent:

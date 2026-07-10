@@ -9,23 +9,29 @@ from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.registry.types import (
     DemoReleaseRecord,
     PromotionDecisionRecord,
+    RiskProfileRecord,
     StrategyCandidateRecord,
+)
+from alphapilot.evolution.risk_profiles import (
+    build_risk_profile_record,
+    conservative_profile,
+    execution_envelope,
+    register_default_risk_profiles,
 )
 
 from .gate import PromotionGateResult
 
 
+_DEFAULT_DEMO_PROFILE = build_risk_profile_record(
+    conservative_profile("okx_demo"), status="preset"
+)
 DEFAULT_DEMO_RISK_ENVELOPE = {
-    "schemaVersion": "demo_risk_envelope_v1",
-    "initialEquityUsdt": 1000.0,
-    "riskPerTradePercent": 0.25,
-    "maxOpenRiskPercent": 1.0,
-    "maxOrderNotionalUsdt": 250.0,
-    "maxConcurrentPositions": 3,
-    "defaultMaxLeverage": 2,
-    "hardMaxLeverage": 5,
-    "dailyLossStopPercent": 2.0,
-    "demoDrawdownPausePercent": 5.0,
+    **execution_envelope(_DEFAULT_DEMO_PROFILE),
+    "schemaVersion": "demo_risk_envelope_v2",
+    "initialEquityUsdt": _DEFAULT_DEMO_PROFILE.profile["capitalLimitUsdt"],
+    "defaultMaxLeverage": _DEFAULT_DEMO_PROFILE.profile["maxLeverage"],
+    "hardMaxLeverage": _DEFAULT_DEMO_PROFILE.safetyEnvelope["maxLeverage"],
+    "demoDrawdownPausePercent": _DEFAULT_DEMO_PROFILE.profile["maxDrawdownStopPercent"],
 }
 
 
@@ -50,12 +56,27 @@ def promote_candidate_to_demo(
     codeCommit: str,
     dataChecksum: str,
     modelChecksum: str,
+    riskProfile: RiskProfileRecord | None = None,
 ) -> DemoPromotionOutcome:
     code_commit = _required_text(codeCommit, "codeCommit")
     data_checksum = _required_text(dataChecksum, "dataChecksum")
     model_checksum = _required_text(modelChecksum, "modelChecksum")
     if repository.get_strategy_candidate(candidate.strategyCandidateId) is None:
         raise ValueError("Strategy candidate must be registered before promotion")
+    profile = riskProfile or register_default_risk_profiles(repository)["okx_demo"]
+    registered_profile = repository.get_risk_profile(profile.riskProfileId)
+    if registered_profile is None or registered_profile.contentHash != profile.contentHash:
+        raise ValueError("Demo release requires a registered immutable RiskProfile")
+    if profile.environment != "okx_demo":
+        raise ValueError("Demo release requires an okx_demo RiskProfile")
+    risk_envelope = {
+        **execution_envelope(profile),
+        "schemaVersion": "demo_risk_envelope_v2",
+        "initialEquityUsdt": profile.profile["capitalLimitUsdt"],
+        "defaultMaxLeverage": profile.profile["maxLeverage"],
+        "hardMaxLeverage": profile.safetyEnvelope["maxLeverage"],
+        "demoDrawdownPausePercent": profile.profile["maxDrawdownStopPercent"],
+    }
 
     decision_evidence = {
         "candidateContentHash": candidate.contentHash,
@@ -99,6 +120,8 @@ def promote_candidate_to_demo(
         "strategy": candidate.candidate,
         "checksums": decision_evidence["checksums"],
         "gateEvidenceHash": stable_hash(gateResult.as_dict()),
+        "riskProfileId": profile.riskProfileId,
+        "riskProfileHash": profile.contentHash,
         "executionEnvironment": "okx_demo_only",
         "automaticDemoExecutionAllowed": True,
         "liveExecutionAllowed": False,
@@ -106,14 +129,14 @@ def promote_candidate_to_demo(
         "immutable": True,
     }
     release_hash = stable_hash(
-        {"release": release_payload, "riskEnvelope": DEFAULT_DEMO_RISK_ENVELOPE}
+        {"release": release_payload, "riskEnvelope": risk_envelope}
     )
     release = repository.create_demo_release(
         DemoReleaseRecord(
             demoReleaseId=stable_hash(release_hash, prefix="demo_release"),
             strategyCandidateId=candidate.strategyCandidateId,
             status="demo_eligible",
-            riskEnvelope=dict(DEFAULT_DEMO_RISK_ENVELOPE),
+            riskEnvelope=risk_envelope,
             release=release_payload,
             contentHash=release_hash,
         )

@@ -24,6 +24,8 @@ from .types import (
     ModelRecord,
     OutcomeLedgerRecord,
     PromotionDecisionRecord,
+    RiskProfileActivationRecord,
+    RiskProfileRecord,
     StrategyCandidateRecord,
     StrategyFamilyRecord,
 )
@@ -40,6 +42,8 @@ ALLOWED_COUNT_TABLES = {
     "Experiments",
     "Models",
     "OutcomeLedger",
+    "RiskProfiles",
+    "RiskProfileActivations",
     "ForwardReleases",
     "ForwardSessions",
     "ForwardEvents",
@@ -408,6 +412,164 @@ class RegistryRepository:
             for row in rows
             if (record := self.get_outcome(row["outcomeId"])) is not None
         ]
+
+    def create_risk_profile(self, record: RiskProfileRecord) -> RiskProfileRecord:
+        existing = self.get_risk_profile(record.riskProfileId)
+        if existing:
+            self._assert_same_hash(record.riskProfileId, existing.contentHash, record.contentHash)
+            return existing
+        duplicate = self.connection.execute(
+            "SELECT riskProfileId FROM RiskProfiles WHERE profileKey = ? AND version = ?",
+            (record.profileKey, record.version),
+        ).fetchone()
+        if duplicate:
+            existing_duplicate = self.get_risk_profile(duplicate["riskProfileId"])
+            if existing_duplicate is None:
+                raise RuntimeError("Risk profile index points to a missing record")
+            self._assert_same_hash(
+                f"{record.profileKey}:v{record.version}",
+                existing_duplicate.contentHash,
+                record.contentHash,
+            )
+            return existing_duplicate
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO RiskProfiles(
+                  riskProfileId, profileKey, version, environment, name, status,
+                  profileJson, safetyEnvelopeJson, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.riskProfileId,
+                    record.profileKey,
+                    record.version,
+                    record.environment,
+                    record.name,
+                    record.status,
+                    canonical_json(record.profile),
+                    canonical_json(record.safetyEnvelope),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_risk_profile(self, record_id: str) -> RiskProfileRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM RiskProfiles WHERE riskProfileId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return RiskProfileRecord(
+            riskProfileId=row["riskProfileId"],
+            profileKey=row["profileKey"],
+            version=int(row["version"]),
+            environment=row["environment"],
+            name=row["name"],
+            status=row["status"],
+            profile=_decode_json(row["profileJson"]),
+            safetyEnvelope=_decode_json(row["safetyEnvelopeJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_risk_profiles(self, *, environment: str | None = None) -> list[RiskProfileRecord]:
+        query = "SELECT riskProfileId FROM RiskProfiles"
+        values: tuple[str, ...] = ()
+        if environment is not None:
+            query += " WHERE environment = ?"
+            values = (environment,)
+        query += " ORDER BY profileKey, version, riskProfileId"
+        rows = self.connection.execute(query, values).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_risk_profile(row["riskProfileId"])) is not None
+        ]
+
+    def create_risk_profile_activation(
+        self, record: RiskProfileActivationRecord
+    ) -> RiskProfileActivationRecord:
+        existing = self.get_risk_profile_activation(record.activationId)
+        if existing:
+            self._assert_same_hash(record.activationId, existing.contentHash, record.contentHash)
+            return existing
+        profile = self.get_risk_profile(record.riskProfileId)
+        if profile is None or profile.environment != record.environment:
+            raise ValueError("Risk profile activation requires a matching registered environment")
+        if record.previousRiskProfileId and self.get_risk_profile(record.previousRiskProfileId) is None:
+            raise ValueError("Risk profile rollback target is not registered")
+        if record.action not in {"activated", "rolled_back"}:
+            raise ValueError("Unsupported risk profile activation action")
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO RiskProfileActivations(
+                  activationId, environment, riskProfileId, previousRiskProfileId,
+                  action, actor, reason, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.activationId,
+                    record.environment,
+                    record.riskProfileId,
+                    record.previousRiskProfileId,
+                    record.action,
+                    record.actor,
+                    record.reason,
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_risk_profile_activation(
+        self, record_id: str
+    ) -> RiskProfileActivationRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM RiskProfileActivations WHERE activationId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return RiskProfileActivationRecord(
+            activationId=row["activationId"],
+            environment=row["environment"],
+            riskProfileId=row["riskProfileId"],
+            previousRiskProfileId=row["previousRiskProfileId"],
+            action=row["action"],
+            actor=row["actor"],
+            reason=row["reason"],
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_risk_profile_activations(
+        self, *, environment: str | None = None
+    ) -> list[RiskProfileActivationRecord]:
+        query = "SELECT activationId FROM RiskProfileActivations"
+        values: tuple[str, ...] = ()
+        if environment is not None:
+            query += " WHERE environment = ?"
+            values = (environment,)
+        query += " ORDER BY createdAt, activationId"
+        rows = self.connection.execute(query, values).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_risk_profile_activation(row["activationId"])) is not None
+        ]
+
+    def get_active_risk_profile(self, environment: str) -> RiskProfileRecord | None:
+        row = self.connection.execute(
+            """
+            SELECT riskProfileId FROM RiskProfileActivations
+            WHERE environment = ?
+            ORDER BY createdAt DESC, activationId DESC LIMIT 1
+            """,
+            (environment,),
+        ).fetchone()
+        return self.get_risk_profile(row["riskProfileId"]) if row else None
 
     def create_forward_release(self, record: ForwardReleaseRecord) -> ForwardReleaseRecord:
         existing = self.get_forward_release(record.forwardReleaseId)

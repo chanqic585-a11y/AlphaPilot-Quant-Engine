@@ -7,7 +7,17 @@ from dataclasses import asdict, dataclass
 
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
-from alphapilot.evolution.registry.types import DemoReleaseRecord, LiveCandidatePackageRecord
+from alphapilot.evolution.registry.types import (
+    DemoReleaseRecord,
+    LiveCandidatePackageRecord,
+    RiskProfileRecord,
+)
+from alphapilot.evolution.risk_profiles import (
+    RiskProfileSpec,
+    build_risk_profile_record,
+    execution_envelope,
+    validate_profile,
+)
 
 
 class LiveCandidateNotEligible(RuntimeError):
@@ -33,14 +43,31 @@ class DemoValidationEvidence:
 
 @dataclass(frozen=True)
 class LiveRiskBudgetProposal:
+    profileKey: str = "live_canary_custom"
+    profileVersion: int = 1
+    profileName: str = "Live Canary Custom"
     capitalLimitUsdt: float = 1000.0
+    maxActiveStrategies: int = 1
     riskPerTradePercent: float = 0.25
     maxOpenRiskPercent: float = 1.0
+    maxStrategyOpenRiskPercent: float = 1.0
+    maxSymbolOpenRiskPercent: float = 0.5
+    maxDirectionOpenRiskPercent: float = 1.0
+    maxCorrelatedOpenRiskPercent: float = 1.0
     maxOrderNotionalUsdt: float = 250.0
     maxConcurrentPositions: int = 3
+    maxPositionsPerStrategy: int = 2
+    maxPositionsPerSymbol: int = 1
     maxLeverage: int = 2
+    marginMode: str = "isolated"
     dailyLossStopPercent: float = 2.0
     maxDrawdownStopPercent: float = 5.0
+    canaryLossStopUsdt: float = 25.0
+    cooldownAfterLossMinutes: int = 60
+    rewardRiskRatio: float = 2.0
+    feeRate: float = 0.0005
+    slippageRate: float = 0.0002
+    allowNewEntries: bool = True
 
     @property
     def maximumLossUsdt(self) -> float:
@@ -72,27 +99,47 @@ def _validate_demo_evidence(evidence: DemoValidationEvidence) -> list[str]:
     return [name for name, passed in checks.items() if not passed]
 
 
-def _validate_risk_budget(risk: LiveRiskBudgetProposal) -> None:
-    values = asdict(risk)
-    if not all(math.isfinite(float(value)) and float(value) > 0 for value in values.values()):
-        raise ValueError("Live risk budget values must be finite and positive")
-    if risk.capitalLimitUsdt > 1000 or risk.riskPerTradePercent > 0.25:
-        raise ValueError("Proposed Live capital or per-trade risk exceeds the reviewed boundary")
-    if risk.maxOpenRiskPercent > 1.0 or risk.maxOrderNotionalUsdt > 250:
-        raise ValueError("Proposed Live open risk or order notional exceeds the reviewed boundary")
-    if risk.maxConcurrentPositions > 3 or risk.maxLeverage > 2:
-        raise ValueError("Proposed Live concurrency or leverage exceeds the reviewed boundary")
-    if risk.dailyLossStopPercent > 2.0 or risk.maxDrawdownStopPercent > 5.0:
-        raise ValueError("Proposed Live loss limits exceed the reviewed boundary")
+def _profile_from_proposal(risk: LiveRiskBudgetProposal) -> RiskProfileRecord:
+    spec = RiskProfileSpec(
+        profileKey=risk.profileKey,
+        version=risk.profileVersion,
+        environment="live_canary",
+        name=risk.profileName,
+        capitalLimitUsdt=risk.capitalLimitUsdt,
+        maxActiveStrategies=risk.maxActiveStrategies,
+        maxConcurrentPositions=risk.maxConcurrentPositions,
+        maxPositionsPerStrategy=risk.maxPositionsPerStrategy,
+        maxPositionsPerSymbol=risk.maxPositionsPerSymbol,
+        maxOrderNotionalUsdt=risk.maxOrderNotionalUsdt,
+        maxLeverage=risk.maxLeverage,
+        marginMode=risk.marginMode,
+        riskPerTradePercent=risk.riskPerTradePercent,
+        maxOpenRiskPercent=risk.maxOpenRiskPercent,
+        maxStrategyOpenRiskPercent=risk.maxStrategyOpenRiskPercent,
+        maxSymbolOpenRiskPercent=risk.maxSymbolOpenRiskPercent,
+        maxDirectionOpenRiskPercent=risk.maxDirectionOpenRiskPercent,
+        maxCorrelatedOpenRiskPercent=risk.maxCorrelatedOpenRiskPercent,
+        dailyLossStopPercent=risk.dailyLossStopPercent,
+        maxDrawdownStopPercent=risk.maxDrawdownStopPercent,
+        canaryLossStopUsdt=risk.canaryLossStopUsdt,
+        cooldownAfterLossMinutes=risk.cooldownAfterLossMinutes,
+        rewardRiskRatio=risk.rewardRiskRatio,
+        feeRate=risk.feeRate,
+        slippageRate=risk.slippageRate,
+        allowNewEntries=risk.allowNewEntries,
+    )
+    validate_profile(spec)
+    return build_risk_profile_record(spec, status="awaiting_live_review")
 
 
 def build_live_candidate_package(
     *,
     demoRelease: DemoReleaseRecord,
     demoEvidence: DemoValidationEvidence,
-    proposedRiskBudget: LiveRiskBudgetProposal,
+    proposedRiskBudget: LiveRiskBudgetProposal | None,
     rollbackTargetReleaseId: str,
     repository: RegistryRepository,
+    riskProfile: RiskProfileRecord | None = None,
 ) -> LiveCandidatePackageRecord:
     registered = repository.get_demo_release(demoRelease.demoReleaseId)
     if registered is None or registered.contentHash != demoRelease.contentHash:
@@ -102,7 +149,14 @@ def build_live_candidate_package(
     failed = _validate_demo_evidence(demoEvidence)
     if failed:
         raise LiveCandidateNotEligible("Demo validation failed: " + ",".join(failed))
-    _validate_risk_budget(proposedRiskBudget)
+    if proposedRiskBudget is None and riskProfile is None:
+        raise ValueError("A versioned Live RiskProfile is required")
+    profile = riskProfile or _profile_from_proposal(proposedRiskBudget or LiveRiskBudgetProposal())
+    if not profile.environment.startswith("live_"):
+        raise ValueError("Live candidate requires a Live RiskProfile")
+    registered_profile = repository.create_risk_profile(profile)
+    if registered_profile.contentHash != profile.contentHash:
+        raise ValueError("Registered Live RiskProfile checksum mismatch")
     rollback_target = str(rollbackTargetReleaseId or "").strip()
     if not rollback_target:
         raise ValueError("A reviewed Demo rollback target is required")
@@ -111,12 +165,19 @@ def build_live_candidate_package(
     if any(not str(checksums.get(key) or "").strip() for key in required_checksums):
         raise LiveCandidateNotEligible("Demo release lineage checksums are incomplete")
 
-    risk_budget = {**asdict(proposedRiskBudget), "maximumLossUsdt": proposedRiskBudget.maximumLossUsdt}
+    risk_budget = {
+        **execution_envelope(profile),
+        "maximumLossUsdt": float(profile.profile["capitalLimitUsdt"])
+        * float(profile.profile["maxDrawdownStopPercent"])
+        / 100.0,
+    }
     evidence_payload = asdict(demoEvidence)
     payload = {
         "schemaVersion": "live_candidate_package_v2",
         "demoReleaseId": demoRelease.demoReleaseId,
         "demoReleaseHash": demoRelease.contentHash,
+        "riskProfileId": profile.riskProfileId,
+        "riskProfileHash": profile.contentHash,
         "strategyCandidateId": demoRelease.strategyCandidateId,
         "strategy": demoRelease.release.get("strategy", {}),
         "lineageChecksums": checksums,

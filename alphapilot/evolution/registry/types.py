@@ -101,6 +101,33 @@ class OutcomeLedgerRecord:
 
 
 @dataclass(frozen=True)
+class RiskProfileRecord:
+    riskProfileId: str
+    profileKey: str
+    version: int
+    environment: str
+    name: str
+    status: str
+    profile: dict[str, Any]
+    safetyEnvelope: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
+class RiskProfileActivationRecord:
+    activationId: str
+    environment: str
+    riskProfileId: str
+    previousRiskProfileId: str | None
+    action: str
+    actor: str
+    reason: str
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
 class ForwardReleaseRecord:
     forwardReleaseId: str
     strategyCandidateId: str

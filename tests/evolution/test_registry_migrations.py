@@ -17,6 +17,8 @@ EXPECTED_TABLES = {
     "Experiments",
     "Models",
     "OutcomeLedger",
+    "RiskProfiles",
+    "RiskProfileActivations",
     "ForwardReleases",
     "ForwardSessions",
     "ForwardEvents",

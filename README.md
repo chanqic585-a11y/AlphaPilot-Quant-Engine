@@ -4555,6 +4555,29 @@ V13.13.0 does not use or store API keys, call Trade API or Withdraw API, read
 private exchange state, create Demo/live releases, create orders, or trade
 automatically.
 
+## V13.24.0 Versioned Risk Profiles
+
+V13.24.0 replaces long-term hard-coded capital and position assumptions with
+immutable `RiskProfile` versions for Local Forward, OKX Demo, Live Canary, and
+future Live Standard operation.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_24_risk_profiles.ps1
+```
+
+Profiles include configurable capital, strategy and position counts, order
+notional, leverage, per-trade and portfolio risk, symbol/direction/correlation
+concentration, daily loss, drawdown, Canary loss, cooldown, fees, slippage, and
+allowed strategies. Values remain bounded by a separate code-reviewed
+`SafetyEnvelope`; the routine UI cannot raise that envelope. Every change
+creates a new checksum-bound version with append-only activation and rollback
+history. Existing positions remain attributable to the profile used when they
+were opened.
+
+RiskProfile activation does not grant order permission. V13.24.0 stores no raw
+API credentials, has no Withdraw support, has no Live exchange adapter, and
+keeps Live execution disabled.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

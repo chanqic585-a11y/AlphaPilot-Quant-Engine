@@ -283,6 +283,44 @@ MIGRATIONS: tuple[Migration, ...] = (
             "CREATE INDEX IF NOT EXISTS idx_forward_events_type ON ForwardEvents(eventType, observedAt)",
         ),
     ),
+    Migration(
+        version=4,
+        name="create_versioned_risk_profiles_v4",
+        statements=(
+            """
+            CREATE TABLE IF NOT EXISTS RiskProfiles (
+              riskProfileId TEXT PRIMARY KEY,
+              profileKey TEXT NOT NULL,
+              version INTEGER NOT NULL,
+              environment TEXT NOT NULL,
+              name TEXT NOT NULL,
+              status TEXT NOT NULL,
+              profileJson TEXT NOT NULL,
+              safetyEnvelopeJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL
+            )
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_risk_profiles_key_version ON RiskProfiles(profileKey, version)",
+            "CREATE INDEX IF NOT EXISTS idx_risk_profiles_environment ON RiskProfiles(environment, createdAt)",
+            """
+            CREATE TABLE IF NOT EXISTS RiskProfileActivations (
+              activationId TEXT PRIMARY KEY,
+              environment TEXT NOT NULL,
+              riskProfileId TEXT NOT NULL,
+              previousRiskProfileId TEXT,
+              action TEXT NOT NULL,
+              actor TEXT NOT NULL,
+              reason TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (riskProfileId) REFERENCES RiskProfiles(riskProfileId),
+              FOREIGN KEY (previousRiskProfileId) REFERENCES RiskProfiles(riskProfileId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_risk_profile_activations_environment ON RiskProfileActivations(environment, createdAt)",
+        ),
+    ),
 )
 
 
