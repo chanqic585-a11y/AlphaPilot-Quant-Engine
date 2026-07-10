@@ -540,6 +540,80 @@ def retry_workflow_run(
     return retry
 
 
+def retry_backtest_for_data_preparation(
+    repository: WorkflowRepository,
+    blocked_run_id: str,
+    *,
+    actor: str,
+) -> WorkflowRunRecord:
+    """Retry a blocked data-preparation attempt without changing strategy logic."""
+
+    validate_actor(actor)
+    source = repository.get_workflow_run(blocked_run_id)
+    if source is None:
+        raise WorkflowConflict(f"workflow_run_missing:{blocked_run_id}")
+    retry_key = f"data-preparation-retry::{source.workflowRunId}::{source.attemptNumber + 1}"
+    existing = repository.get_workflow_run_by_idempotency_key(retry_key)
+    if existing is not None:
+        return existing
+    if source.stage != "backtest" or source.status != "blocked":
+        raise WorkflowTransitionError(
+            f"data_preparation_retry_not_allowed:{source.stage}:{source.status}"
+        )
+    diagnosis = repository.get_latest_failure_diagnosis(source.workflowRunId)
+    if diagnosis is None or diagnosis.category not in {
+        "data_integrity",
+        "worker_operational",
+        "exchange_operational",
+    }:
+        raise WorkflowTransitionError("data_preparation_retry_requires_data_blocker")
+    source = _transition_run(
+        repository,
+        source,
+        next_status="cancelled",
+        actor="system",
+        reason_code="blocked_data_attempt_closed_for_retry",
+        evidence={"preservedStrategyVersionId": source.strategyVersionId},
+    )
+    completed = [
+        phase
+        for phase in source.progress.get("completedPhases", [])
+        if phase in {"checking_local_data", "research_smoke_running"}
+    ]
+    artifacts = dict(source.progress.get("artifacts") or {})
+    artifacts = {
+        key: value
+        for key, value in artifacts.items()
+        if key in {"strategyDataContractId", "researchSmokePath"}
+    }
+    retry_progress = {
+        "phase": completed[-1] if completed else None,
+        "phaseHistory": completed,
+        "completedPhases": completed,
+        "artifacts": artifacts,
+    }
+    retry = repository.create_workflow_run(
+        strategy_version_id=source.strategyVersionId,
+        stage="backtest",
+        status="queued",
+        attempt_number=source.attemptNumber + 1,
+        gate_profile_id=source.gateProfileId,
+        risk_profile_id=source.riskProfileId,
+        idempotency_key=retry_key,
+        progress=retry_progress,
+        result={},
+    )
+    _record_initial_event(
+        repository,
+        retry,
+        previous_stage=source.stage,
+        previous_status=source.status,
+        reason_code="data_preparation_retry_created",
+        actor=actor,
+    )
+    return retry
+
+
 def create_next_stage_run(
     repository: WorkflowRepository, strategy_version_id: str, *, actor: str
 ) -> WorkflowRunRecord:

@@ -34,6 +34,10 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
         if not runs:
             continue
         current = _current_run(runs)
+        contracts = repository.list_strategy_data_contracts(
+            strategy_version_id=version.strategyVersionId
+        )
+        binding = repository.get_evaluation_binding_for_run(current.workflowRunId)
         diagnosis = repository.get_latest_failure_diagnosis(current.workflowRunId)
         events = repository.list_stage_events(
             strategy_version_id=version.strategyVersionId
@@ -45,6 +49,12 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
             "displayName": version.displayName,
             "sourceType": version.sourceType,
             "contentHash": version.contentHash,
+            "strategyDataContractId": (
+                contracts[-1].strategyDataContractId if contracts else None
+            ),
+            "evaluationBindingId": (
+                binding.evaluationBindingId if binding else None
+            ),
             "stage": current.stage,
             "stageLabel": STAGE_LABELS[current.stage],
             "status": current.status,

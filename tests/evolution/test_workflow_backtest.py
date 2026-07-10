@@ -30,6 +30,7 @@ from alphapilot.evolution.workflow.bootstrap import (
     ensure_default_backtest_gate_profile,
     register_alpha191_observer,
 )
+from alphapilot.evolution.workflow.data_contract import derive_strategy_data_contract
 from alphapilot.evolution.workflow.states import WorkflowTransitionError
 
 
@@ -156,6 +157,32 @@ class WorkflowBacktestTests(unittest.TestCase):
         self.assertEqual(completed.result["evidence"]["reportSha256"], "report_sha")
         events = self.workflow.list_stage_events(workflow_run_id=queued.workflowRunId)
         self.assertTrue(any(event.reasonCode == "checkpoint_saved" for event in events))
+
+    def test_new_contract_bound_run_requires_evaluation_binding(self) -> None:
+        version = register_alpha191_observer(self.registry, self.workflow)
+        derive_strategy_data_contract(version, self.workflow)
+        queued = self.queue_initial(version.strategyVersionId)
+        called = False
+
+        def execute(context, checkpoint):
+            nonlocal called
+            called = True
+            raise AssertionError("adapter must not run without an evaluation binding")
+
+        completed = run_backtest_workflow(
+            self.workflow,
+            self.registry,
+            queued.workflowRunId,
+            output_root=self.root / "binding-required",
+            adapter_executor=execute,
+        )
+
+        self.assertEqual(completed.status, "blocked")
+        self.assertIn(
+            "evaluation_binding_missing",
+            completed.result["prerequisiteErrors"],
+        )
+        self.assertFalse(called)
 
     def test_worker_blocks_missing_registered_snapshot_before_adapter_execution(self) -> None:
         version = self.register_version(data_snapshot_id="missing_snapshot")

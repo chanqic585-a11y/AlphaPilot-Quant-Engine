@@ -23,7 +23,7 @@ from .service import (
     start_workflow_run,
 )
 from .states import WorkflowConflict, WorkflowTransitionError
-from .types import StrategyVersionRecord, WorkflowRunRecord
+from .types import EvaluationBindingRecord, StrategyVersionRecord, WorkflowRunRecord
 
 
 @dataclass(frozen=True)
@@ -118,9 +118,11 @@ def _build_manifest(
     version: StrategyVersionRecord,
     gate_rules: dict[str, Any],
     snapshot: Any,
+    binding: EvaluationBindingRecord | None = None,
 ) -> dict[str, Any]:
     backtest = version.definition.get("backtest")
     backtest_config = backtest if isinstance(backtest, dict) else {}
+    bound = binding is not None
     core = {
         "schemaVersion": "workflow_backtest_manifest_v1",
         "workflowRunId": run.workflowRunId,
@@ -129,11 +131,36 @@ def _build_manifest(
         "gateProfileId": run.gateProfileId,
         "gateRules": gate_rules,
         "adapterId": backtest_config.get("adapterId"),
-        "dataSnapshotId": backtest_config.get("dataSnapshotId"),
+        "evaluationBindingId": binding.evaluationBindingId if binding else None,
+        "strategyDataContractId": (
+            binding.strategyDataContractId if binding else None
+        ),
+        "dataSnapshotId": (
+            binding.dataSnapshotId if binding else backtest_config.get("dataSnapshotId")
+        ),
         "dataSnapshotContentHash": getattr(snapshot, "contentHash", None),
-        "walkForwardManifestHash": backtest_config.get("walkForwardManifestHash"),
-        "lockedOosManifestHash": backtest_config.get("lockedOosManifestHash"),
-        "costModel": backtest_config.get("costModel"),
+        "walkForwardManifestHash": (
+            binding.walkForwardManifestHash
+            if bound
+            else backtest_config.get("walkForwardManifestHash")
+        ),
+        "holdoutManifestHash": (
+            binding.holdoutManifestHash if bound else None
+        ),
+        "lockedOosManifestHash": (
+            binding.lockedOosManifestHash
+            if bound
+            else backtest_config.get("lockedOosManifestHash")
+        ),
+        "regimeManifestHash": (
+            binding.evidence.get("regimeManifestHash") if bound else None
+        ),
+        "costManifestHash": (
+            binding.evidence.get("costManifestHash") if bound else None
+        ),
+        "costModel": (
+            binding.costModel if bound else backtest_config.get("costModel")
+        ),
         "targetR": version.definition.get("targetR"),
         "attemptNumber": run.attemptNumber,
     }
@@ -388,9 +415,19 @@ def run_backtest_workflow(
     gate_rules = gate.rules if gate is not None else {}
     backtest = version.definition.get("backtest")
     backtest_config = backtest if isinstance(backtest, dict) else {}
-    snapshot_id = str(backtest_config.get("dataSnapshotId") or "")
+    binding = workflow.get_evaluation_binding_for_run(run.workflowRunId)
+    contracts = workflow.list_strategy_data_contracts(
+        strategy_version_id=version.strategyVersionId
+    )
+    snapshot_id = str(
+        binding.dataSnapshotId
+        if binding is not None
+        else backtest_config.get("dataSnapshotId") or ""
+    )
     snapshot = registry.get_data_snapshot(snapshot_id) if snapshot_id else None
-    manifest = _build_manifest(run, version, gate_rules, snapshot)
+    manifest = _build_manifest(
+        run, version, gate_rules, snapshot, binding=binding
+    )
     run_root = Path(output_root).resolve() / run.workflowRunId
     write_json_atomic(run_root / "manifest.json", manifest)
     checkpoint_workflow_run(
@@ -401,6 +438,10 @@ def run_backtest_workflow(
     )
 
     prerequisite_errors = [] if gate is not None else ["gate_profile_missing"]
+    if contracts and binding is None:
+        prerequisite_errors.append("evaluation_binding_missing")
+    if binding is not None and binding.gateProfileId != run.gateProfileId:
+        prerequisite_errors.append("evaluation_binding_gate_profile_mismatch")
     prerequisite_errors.extend(_prerequisite_errors(manifest, snapshot=snapshot))
     if prerequisite_errors:
         return complete_workflow_run(
@@ -492,8 +533,13 @@ def run_backtest_workflow(
             "manifestHash": manifest["manifestHash"],
             "dataSnapshotId": manifest["dataSnapshotId"],
             "dataSnapshotContentHash": manifest["dataSnapshotContentHash"],
+            "evaluationBindingId": manifest.get("evaluationBindingId"),
+            "strategyDataContractId": manifest.get("strategyDataContractId"),
             "walkForwardManifestHash": manifest["walkForwardManifestHash"],
+            "holdoutManifestHash": manifest.get("holdoutManifestHash"),
             "lockedOosManifestHash": manifest["lockedOosManifestHash"],
+            "regimeManifestHash": manifest.get("regimeManifestHash"),
+            "costManifestHash": manifest.get("costManifestHash"),
         },
     }
     result_payload["resultHash"] = stable_hash(result_payload, prefix="backtest_result")
