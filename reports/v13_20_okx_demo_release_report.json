@@ -1,0 +1,31 @@
+{
+  "blockers": [
+    "no_formal_strategy_candidate",
+    "no_completed_local_forward_evidence",
+    "no_immutable_demo_release"
+  ],
+  "candidateEvaluations": [],
+  "codeCommit": "c0d2069dc6edd5cb61ec6f619c33794b4cc4d5e3",
+  "contractPaths": [],
+  "demoReleaseCount": 0,
+  "generatedAt": "2026-07-10T16:16:19.082179+00:00",
+  "generatedContractCount": 0,
+  "reportId": "v13_20_okx_demo_release_report",
+  "riskEnvelope": {
+    "initialEquityUsdt": 1000.0,
+    "maxConcurrentPositions": 3,
+    "maxOrderNotionalUsdt": 250.0,
+    "riskPerTradePercent": 0.25
+  },
+  "safetyBoundary": {
+    "automaticLivePromotion": false,
+    "immutableDemoReleaseRequired": true,
+    "liveExecutionEnabled": false,
+    "noKeyModeFailsClosed": true,
+    "runtimeCredentialsStored": false,
+    "withdrawApiEnabled": false
+  },
+  "status": "blocked_no_formal_strategy_candidate",
+  "strategyCandidateCount": 0,
+  "version": "V13.20.0"
+}

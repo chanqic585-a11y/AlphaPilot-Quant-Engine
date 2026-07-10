@@ -1,0 +1,17 @@
+{
+  "blockers": [
+    "no_formal_strategy_candidate",
+    "no_completed_local_forward_evidence",
+    "no_immutable_demo_release"
+  ],
+  "demoReleaseCount": 0,
+  "generatedContractCount": 0,
+  "liveExecutionEnabled": false,
+  "requiresAutomationGate": true,
+  "requiresOrderGate": true,
+  "requiresRuntimeCredentials": true,
+  "schemaVersion": "okx_demo_readiness_contract_v1",
+  "stage": "okx_demo",
+  "status": "blocked_no_formal_strategy_candidate",
+  "withdrawApiEnabled": false
+}
