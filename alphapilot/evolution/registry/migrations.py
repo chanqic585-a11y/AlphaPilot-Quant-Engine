@@ -345,6 +345,110 @@ MIGRATIONS: tuple[Migration, ...] = (
             "CREATE INDEX IF NOT EXISTS idx_live_releases_status ON LiveReleases(status, createdAt)",
         ),
     ),
+    Migration(
+        version=6,
+        name="create_workflow_orchestrator_v6",
+        statements=(
+            """
+            CREATE TABLE IF NOT EXISTS StrategyVersions (
+              strategyVersionId TEXT PRIMARY KEY,
+              strategyFamilyId TEXT NOT NULL,
+              parentStrategyVersionId TEXT,
+              strategyCandidateId TEXT,
+              displayName TEXT NOT NULL,
+              sourceType TEXT NOT NULL,
+              status TEXT NOT NULL,
+              definitionJson TEXT NOT NULL,
+              parametersJson TEXT NOT NULL,
+              modelArtifactId TEXT,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (strategyFamilyId) REFERENCES StrategyFamilies(strategyFamilyId),
+              FOREIGN KEY (parentStrategyVersionId) REFERENCES StrategyVersions(strategyVersionId),
+              FOREIGN KEY (strategyCandidateId) REFERENCES StrategyCandidates(strategyCandidateId)
+            )
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_strategy_versions_family_content ON StrategyVersions(strategyFamilyId, contentHash)",
+            "CREATE INDEX IF NOT EXISTS idx_strategy_versions_parent ON StrategyVersions(parentStrategyVersionId, createdAt)",
+            """
+            CREATE TABLE IF NOT EXISTS GateProfiles (
+              gateProfileId TEXT PRIMARY KEY,
+              profileKey TEXT NOT NULL,
+              version INTEGER NOT NULL,
+              stage TEXT NOT NULL,
+              status TEXT NOT NULL,
+              rulesJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL
+            )
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_gate_profiles_key_version ON GateProfiles(profileKey, version)",
+            "CREATE INDEX IF NOT EXISTS idx_gate_profiles_stage ON GateProfiles(stage, status, createdAt)",
+            """
+            CREATE TABLE IF NOT EXISTS WorkflowRuns (
+              workflowRunId TEXT PRIMARY KEY,
+              strategyVersionId TEXT NOT NULL,
+              stage TEXT NOT NULL,
+              status TEXT NOT NULL,
+              attemptNumber INTEGER NOT NULL,
+              gateProfileId TEXT,
+              riskProfileId TEXT,
+              idempotencyKey TEXT NOT NULL,
+              progressJson TEXT NOT NULL,
+              resultJson TEXT NOT NULL,
+              startedAt TEXT,
+              checkpointAt TEXT,
+              completedAt TEXT,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              updatedAt TEXT NOT NULL,
+              FOREIGN KEY (strategyVersionId) REFERENCES StrategyVersions(strategyVersionId),
+              FOREIGN KEY (gateProfileId) REFERENCES GateProfiles(gateProfileId),
+              FOREIGN KEY (riskProfileId) REFERENCES RiskProfiles(riskProfileId)
+            )
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_workflow_runs_idempotency ON WorkflowRuns(idempotencyKey)",
+            "CREATE INDEX IF NOT EXISTS idx_workflow_runs_version ON WorkflowRuns(strategyVersionId, stage, attemptNumber)",
+            "CREATE INDEX IF NOT EXISTS idx_workflow_runs_status ON WorkflowRuns(stage, status, updatedAt)",
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_workflow_runs_active_stage ON WorkflowRuns(strategyVersionId, stage) WHERE status IN ('awaiting', 'queued', 'running', 'paused', 'blocked')",
+            """
+            CREATE TABLE IF NOT EXISTS StageEvents (
+              stageEventId TEXT PRIMARY KEY,
+              workflowRunId TEXT NOT NULL,
+              strategyVersionId TEXT NOT NULL,
+              previousStage TEXT,
+              nextStage TEXT NOT NULL,
+              previousStatus TEXT,
+              nextStatus TEXT NOT NULL,
+              reasonCode TEXT NOT NULL,
+              actor TEXT NOT NULL,
+              evidenceJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (workflowRunId) REFERENCES WorkflowRuns(workflowRunId),
+              FOREIGN KEY (strategyVersionId) REFERENCES StrategyVersions(strategyVersionId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_stage_events_run ON StageEvents(workflowRunId, createdAt)",
+            "CREATE INDEX IF NOT EXISTS idx_stage_events_version ON StageEvents(strategyVersionId, createdAt)",
+            """
+            CREATE TABLE IF NOT EXISTS FailureDiagnoses (
+              failureDiagnosisId TEXT PRIMARY KEY,
+              workflowRunId TEXT NOT NULL,
+              category TEXT NOT NULL,
+              summary TEXT NOT NULL,
+              retryDisposition TEXT NOT NULL,
+              metricsJson TEXT NOT NULL,
+              suggestionsJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (workflowRunId) REFERENCES WorkflowRuns(workflowRunId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_failure_diagnoses_run ON FailureDiagnoses(workflowRunId, createdAt)",
+            "CREATE INDEX IF NOT EXISTS idx_failure_diagnoses_category ON FailureDiagnoses(category, retryDisposition, createdAt)",
+        ),
+    ),
 )
 
 

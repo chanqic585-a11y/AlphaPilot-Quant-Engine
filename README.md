@@ -4617,6 +4617,28 @@ release, or create an order. The current report remains
 `blocked_no_formal_execution_outcomes` until genuine closed Demo or Live
 outcomes exist.
 
+## V13.27.0 Unified Workflow Foundation
+
+V13.27.0 adds the immutable state and audit foundation for one strategy
+lifecycle:
+
+```text
+Strategy backtest -> Local real-time forward -> OKX Demo -> Live
+```
+
+Registry migration v6 adds `StrategyVersions`, `GateProfiles`, `WorkflowRuns`,
+`StageEvents`, and `FailureDiagnoses`. Strategy logic and parameters are
+immutable: any change creates a challenger version that starts again at
+backtesting. User actions may request work but cannot mark a stage passed.
+Operational failures may retry the same version; strategy-performance failures
+require a changed challenger. Checkpoints, idempotency keys, append-only stage
+events, and one-current-stage projections provide restart and audit support.
+
+This release is orchestration infrastructure only. It does not launch a real
+backtest worker, create an OKX Demo or Live release, store credentials, place
+orders, or enable automatic trading. See
+`docs/V13.27.0-unified-workflow-foundation.md`.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

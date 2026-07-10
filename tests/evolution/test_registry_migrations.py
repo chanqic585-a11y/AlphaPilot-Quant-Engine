@@ -6,7 +6,11 @@ import unittest
 from pathlib import Path
 
 from alphapilot.evolution.registry.database import connect_registry
-from alphapilot.evolution.registry.migrations import Migration, apply_migrations
+from alphapilot.evolution.registry.migrations import (
+    MIGRATIONS,
+    Migration,
+    apply_migrations,
+)
 
 
 EXPECTED_TABLES = {
@@ -31,6 +35,11 @@ EXPECTED_TABLES = {
     "DriftEvents",
     "AuditEvents",
     "LegacyEvidence",
+    "StrategyVersions",
+    "GateProfiles",
+    "WorkflowRuns",
+    "StageEvents",
+    "FailureDiagnoses",
 }
 
 
@@ -51,6 +60,9 @@ class RegistryMigrationTests(unittest.TestCase):
                 migration_count = connection.execute(
                     "SELECT COUNT(*) FROM RegistryMigrations"
                 ).fetchone()[0]
+                foreign_key_violations = connection.execute(
+                    "PRAGMA foreign_key_check"
+                ).fetchall()
             finally:
                 connection.close()
 
@@ -58,6 +70,7 @@ class RegistryMigrationTests(unittest.TestCase):
         self.assertEqual(second, 0)
         self.assertTrue(EXPECTED_TABLES.issubset(tables))
         self.assertEqual(migration_count, first)
+        self.assertEqual(foreign_key_violations, [])
 
     def test_failed_migration_rolls_back_all_statements(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -85,6 +98,56 @@ class RegistryMigrationTests(unittest.TestCase):
 
         self.assertEqual(table_count, 0)
         self.assertEqual(migration_count, 0)
+
+    def test_v5_registry_upgrades_to_workflow_v6_without_rebuilding_old_tables(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "registry.sqlite"
+            connection = connect_registry(path, initialize=False)
+            try:
+                initial_count = apply_migrations(
+                    connection, migrations=MIGRATIONS[:5]
+                )
+                old_strategy_family_sql = connection.execute(
+                    """
+                    SELECT sql FROM sqlite_master
+                    WHERE type = 'table' AND name = 'StrategyFamilies'
+                    """
+                ).fetchone()[0]
+
+                upgraded_count = apply_migrations(connection)
+                repeated_count = apply_migrations(connection)
+                preserved_strategy_family_sql = connection.execute(
+                    """
+                    SELECT sql FROM sqlite_master
+                    WHERE type = 'table' AND name = 'StrategyFamilies'
+                    """
+                ).fetchone()[0]
+                workflow_table_count = connection.execute(
+                    """
+                    SELECT COUNT(*) FROM sqlite_master
+                    WHERE type = 'table' AND name IN (
+                      'StrategyVersions', 'GateProfiles', 'WorkflowRuns',
+                      'StageEvents', 'FailureDiagnoses'
+                    )
+                    """
+                ).fetchone()[0]
+                foreign_key_violations = connection.execute(
+                    "PRAGMA foreign_key_check"
+                ).fetchall()
+            finally:
+                connection.close()
+
+        self.assertEqual(initial_count, 5)
+        self.assertEqual(upgraded_count, 1)
+        self.assertEqual(repeated_count, 0)
+        self.assertEqual(workflow_table_count, 5)
+        self.assertEqual(
+            preserved_strategy_family_sql,
+            old_strategy_family_sql,
+        )
+        self.assertEqual(foreign_key_violations, [])
 
 
 if __name__ == "__main__":
