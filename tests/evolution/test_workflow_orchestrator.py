@@ -12,15 +12,18 @@ from alphapilot.evolution.registry.repositories import (
 )
 from alphapilot.evolution.registry.types import StrategyFamilyRecord
 from alphapilot.evolution.workflow import (
-    WorkflowConflict,
     GateProfileRecord,
+    WorkflowConflict,
     WorkflowRepository,
     WorkflowTransitionError,
+    archive_strategy_version,
     build_workflow_projection,
+    cancel_workflow_run,
     checkpoint_workflow_run,
     complete_workflow_run,
     create_challenger_version,
     create_next_stage_run,
+    pause_workflow_run,
     queue_workflow_run,
     register_strategy_version,
     retry_workflow_run,
@@ -80,6 +83,24 @@ class WorkflowOrchestratorTests(unittest.TestCase):
         self.assertEqual(runs[0].status, "awaiting")
         self.assertEqual(self.workflow.count("StrategyVersions"), 1)
 
+    def test_missing_initial_gate_fails_before_strategy_version_is_written(self) -> None:
+        with self.assertRaisesRegex(
+            WorkflowConflict,
+            "initial_gate_profile_missing:missing_gate",
+        ):
+            register_strategy_version(
+                self.workflow,
+                strategy_family_id=self.family.strategyFamilyId,
+                display_name="无效门禁测试策略",
+                source_type="test_fixture",
+                definition={"entry": "test", "targetR": 2.0},
+                parameters={"threshold": 1.0},
+                initial_gate_profile_id="missing_gate",
+            )
+
+        self.assertEqual(self.workflow.count("StrategyVersions"), 0)
+        self.assertEqual(self.workflow.count("WorkflowRuns"), 0)
+
     def test_user_cannot_mark_a_workflow_run_passed(self) -> None:
         _, running = self.start_initial_run()
 
@@ -105,6 +126,47 @@ class WorkflowOrchestratorTests(unittest.TestCase):
 
         with self.assertRaises(WorkflowTransitionError):
             start_workflow_run(self.workflow, queued.workflowRunId, actor="user")
+
+    def test_running_work_can_pause_resume_and_cancel_without_changing_version(self) -> None:
+        version, running = self.start_initial_run()
+        paused = pause_workflow_run(
+            self.workflow, running.workflowRunId, actor="user"
+        )
+        repeated_pause = pause_workflow_run(
+            self.workflow, running.workflowRunId, actor="user"
+        )
+        resumed = queue_workflow_run(
+            self.workflow, running.workflowRunId, actor="user"
+        )
+        cancelled = cancel_workflow_run(
+            self.workflow, running.workflowRunId, actor="user"
+        )
+
+        self.assertEqual(paused, repeated_pause)
+        self.assertEqual(resumed.status, "queued")
+        self.assertEqual(cancelled.status, "cancelled")
+        self.assertEqual(cancelled.strategyVersionId, version.strategyVersionId)
+
+    def test_archive_hides_version_from_active_page_without_deleting_history(self) -> None:
+        version = self.register()
+        archived = archive_strategy_version(
+            self.workflow, version.strategyVersionId, actor="user"
+        )
+        repeated = archive_strategy_version(
+            self.workflow, version.strategyVersionId, actor="user"
+        )
+        projection = build_workflow_projection(self.workflow)
+
+        self.assertEqual(archived, repeated)
+        self.assertEqual(archived.status, "archived")
+        self.assertEqual(projection["summary"]["totalStrategyVersionCount"], 1)
+        self.assertEqual(projection["summary"]["strategyCount"], 0)
+        self.assertEqual(projection["summary"]["archivedCount"], 1)
+        self.assertEqual(projection["items"], [])
+        self.assertEqual(len(projection["archivedItems"]), 1)
+        self.assertGreaterEqual(
+            projection["archivedItems"][0]["historyEventCount"], 2
+        )
 
     def test_passed_backtest_can_create_one_local_forward_run(self) -> None:
         version, running = self.start_initial_run()

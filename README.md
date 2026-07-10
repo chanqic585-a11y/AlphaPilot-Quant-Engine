@@ -4639,6 +4639,27 @@ backtest worker, create an OKX Demo or Live release, store credentials, place
 orders, or enable automatic trading. See
 `docs/V13.27.0-unified-workflow-foundation.md`.
 
+## V13.27.1 Strategy Backtest Workflow
+
+V13.27.1 connects the immutable workflow foundation to a real local backtest
+worker and a fixed command boundary.
+
+- Every run is bound to a strategy hash, registered point-in-time data,
+  walk-forward and locked-OOS manifests, cost assumptions, GateProfile, and a
+  target of at least 2R.
+- Progress, manifests, results, and failure diagnoses are restart-safe and
+  auditable.
+- Duplicate active workers fail closed, fixed-output adapters are serialized,
+  and pause/cancel stops the local adapter process; recovery must be explicit.
+- Operational failures may retry the same version, while a strategy-performance
+  failure requires a changed challenger version that restarts at backtesting.
+- The Alpha191 observer remains waiting because formal data lineage is not yet
+  bound. No missing evidence is replaced with a favorable default.
+
+V13.27.1 adds no exchange request, credential storage, order creation, Demo or
+Live release, automatic promotion, or automatic trading. See
+`docs/V13.27.1-strategy-backtest-workflow.md`.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

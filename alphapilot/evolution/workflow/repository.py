@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sqlite3
+from dataclasses import replace
 from typing import Any
 
 from alphapilot.evolution.registry.hashing import canonical_json, stable_hash
@@ -112,6 +113,39 @@ class WorkflowRepository:
             "SELECT * FROM StrategyVersions ORDER BY createdAt, strategyVersionId"
         ).fetchall()
         return [self._strategy_version_from_row(row) for row in rows]
+
+    def update_strategy_version_status(
+        self,
+        *,
+        strategy_version_id: str,
+        expected_status: str,
+        next_status: str,
+        event: StageEventRecord,
+    ) -> StrategyVersionRecord:
+        try:
+            with self.connection:
+                cursor = self.connection.execute(
+                    """
+                    UPDATE StrategyVersions SET status = ?
+                    WHERE strategyVersionId = ? AND status = ?
+                    """,
+                    (next_status, strategy_version_id, expected_status),
+                )
+                if cursor.rowcount != 1:
+                    raise WorkflowConflict(
+                        f"strategy_version_status_changed:{strategy_version_id}:{expected_status}"
+                    )
+                self._insert_stage_event(event)
+        except sqlite3.IntegrityError as error:
+            raise WorkflowConflict(
+                f"strategy_version_status_update_conflict:{error}"
+            ) from error
+        stored = self.get_strategy_version(strategy_version_id)
+        if stored is None:
+            raise WorkflowConflict(
+                f"strategy_version_missing_after_update:{strategy_version_id}"
+            )
+        return replace(stored, status=next_status)
 
     def create_gate_profile(self, record: GateProfileRecord) -> GateProfileRecord:
         validate_stage(record.stage)

@@ -26,6 +26,7 @@ def _current_run(runs: list[WorkflowRunRecord]) -> WorkflowRunRecord:
 
 def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
+    archived_items: list[dict[str, Any]] = []
     for version in repository.list_strategy_versions():
         runs = repository.list_workflow_runs(
             strategy_version_id=version.strategyVersionId
@@ -37,40 +38,43 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
         events = repository.list_stage_events(
             strategy_version_id=version.strategyVersionId
         )
-        items.append(
-            {
-                "strategyVersionId": version.strategyVersionId,
-                "strategyFamilyId": version.strategyFamilyId,
-                "parentStrategyVersionId": version.parentStrategyVersionId,
-                "displayName": version.displayName,
-                "sourceType": version.sourceType,
-                "contentHash": version.contentHash,
-                "stage": current.stage,
-                "stageLabel": STAGE_LABELS[current.stage],
-                "status": current.status,
-                "statusLabel": STATUS_LABELS[current.status],
-                "page": STAGE_PAGES[current.stage],
-                "workflowRunId": current.workflowRunId,
-                "attemptNumber": current.attemptNumber,
-                "progress": current.progress,
-                "result": current.result,
-                "startedAt": current.startedAt,
-                "checkpointAt": current.checkpointAt,
-                "completedAt": current.completedAt,
-                "failure": (
-                    {
-                        "category": diagnosis.category,
-                        "summary": diagnosis.summary,
-                        "retryDisposition": diagnosis.retryDisposition,
-                        "metrics": diagnosis.metrics,
-                        "suggestions": diagnosis.suggestions,
-                    }
-                    if diagnosis
-                    else None
-                ),
-                "historyEventCount": len(events),
-            }
-        )
+        item = {
+            "strategyVersionId": version.strategyVersionId,
+            "strategyFamilyId": version.strategyFamilyId,
+            "parentStrategyVersionId": version.parentStrategyVersionId,
+            "displayName": version.displayName,
+            "sourceType": version.sourceType,
+            "contentHash": version.contentHash,
+            "stage": current.stage,
+            "stageLabel": STAGE_LABELS[current.stage],
+            "status": current.status,
+            "statusLabel": STATUS_LABELS[current.status],
+            "page": STAGE_PAGES[current.stage],
+            "workflowRunId": current.workflowRunId,
+            "attemptNumber": current.attemptNumber,
+            "progress": current.progress,
+            "result": current.result,
+            "startedAt": current.startedAt,
+            "checkpointAt": current.checkpointAt,
+            "completedAt": current.completedAt,
+            "failure": (
+                {
+                    "category": diagnosis.category,
+                    "summary": diagnosis.summary,
+                    "retryDisposition": diagnosis.retryDisposition,
+                    "metrics": diagnosis.metrics,
+                    "suggestions": diagnosis.suggestions,
+                }
+                if diagnosis
+                else None
+            ),
+            "historyEventCount": len(events),
+            "archived": version.status == "archived",
+        }
+        if version.status == "archived":
+            archived_items.append({**item, "page": "archive"})
+        else:
+            items.append(item)
     items.sort(
         key=lambda item: (
             -STAGE_ORDER[str(item["stage"])],
@@ -78,14 +82,20 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
             str(item["strategyVersionId"]),
         )
     )
+    archived_items.sort(
+        key=lambda item: (
+            str(item["displayName"]),
+            str(item["strategyVersionId"]),
+        )
+    )
     page_counts = Counter(str(item["page"]) for item in items)
     status_counts = Counter(str(item["status"]) for item in items)
     return {
-        "version": "V13.27.0",
+        "version": "V13.27.1",
         "source": "workflow_orchestrator_projection_v1",
         "generatedAt": utc_now(),
         "summary": {
-            "totalStrategyVersionCount": len(items),
+            "totalStrategyVersionCount": len(items) + len(archived_items),
             "strategyCount": page_counts["strategy"],
             "localSimulationCount": page_counts["local_simulation"],
             "demoCount": page_counts["demo"],
@@ -97,8 +107,10 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
             "failedCount": status_counts["failed"],
             "blockedCount": status_counts["blocked"],
             "pausedCount": status_counts["paused"],
+            "archivedCount": len(archived_items),
         },
         "items": items,
+        "archivedItems": archived_items,
         "byPage": {
             page: [item for item in items if item["page"] == page]
             for page in ("strategy", "local_simulation", "demo", "live")

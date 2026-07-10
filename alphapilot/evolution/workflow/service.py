@@ -144,9 +144,17 @@ def register_strategy_version(
     parent_strategy_version_id: str | None = None,
     strategy_candidate_id: str | None = None,
     model_artifact_id: str | None = None,
+    initial_gate_profile_id: str | None = None,
 ) -> StrategyVersionRecord:
     if not repository.strategy_family_exists(strategy_family_id):
         raise WorkflowConflict(f"strategy_family_missing:{strategy_family_id}")
+    if (
+        initial_gate_profile_id is not None
+        and repository.get_gate_profile(initial_gate_profile_id) is None
+    ):
+        raise WorkflowConflict(
+            f"initial_gate_profile_missing:{initial_gate_profile_id}"
+        )
     content = _strategy_content(
         strategy_family_id=strategy_family_id,
         definition=definition,
@@ -174,7 +182,7 @@ def register_strategy_version(
         stage="backtest",
         status="awaiting",
         attempt_number=1,
-        gate_profile_id=None,
+        gate_profile_id=initial_gate_profile_id,
         risk_profile_id=None,
         idempotency_key=f"initial::{stored.strategyVersionId}::backtest",
         progress={},
@@ -274,6 +282,8 @@ def queue_workflow_run(
     run = repository.get_workflow_run(workflow_run_id)
     if run is None:
         raise WorkflowConflict(f"workflow_run_missing:{workflow_run_id}")
+    if run.status == "queued":
+        return run
     if run.status not in {"awaiting", "paused"}:
         raise WorkflowTransitionError(f"workflow_run_not_queueable:{run.status}")
     return _transition_run(
@@ -300,6 +310,82 @@ def start_workflow_run(
         next_status="running",
         actor=actor,
         reason_code="workflow_run_started",
+    )
+
+
+def pause_workflow_run(
+    repository: WorkflowRepository, workflow_run_id: str, *, actor: str
+) -> WorkflowRunRecord:
+    run = repository.get_workflow_run(workflow_run_id)
+    if run is None:
+        raise WorkflowConflict(f"workflow_run_missing:{workflow_run_id}")
+    if run.status == "paused":
+        return run
+    if run.status != "running":
+        raise WorkflowTransitionError(f"workflow_run_not_pauseable:{run.status}")
+    return _transition_run(
+        repository,
+        run,
+        next_status="paused",
+        actor=actor,
+        reason_code="workflow_run_paused",
+    )
+
+
+def cancel_workflow_run(
+    repository: WorkflowRepository, workflow_run_id: str, *, actor: str
+) -> WorkflowRunRecord:
+    run = repository.get_workflow_run(workflow_run_id)
+    if run is None:
+        raise WorkflowConflict(f"workflow_run_missing:{workflow_run_id}")
+    if run.status == "cancelled":
+        return run
+    if run.status not in {"awaiting", "queued", "running", "paused", "blocked"}:
+        raise WorkflowTransitionError(f"workflow_run_not_cancellable:{run.status}")
+    return _transition_run(
+        repository,
+        run,
+        next_status="cancelled",
+        actor=actor,
+        reason_code="workflow_run_cancelled",
+    )
+
+
+def archive_strategy_version(
+    repository: WorkflowRepository, strategy_version_id: str, *, actor: str
+) -> StrategyVersionRecord:
+    validate_actor(actor)
+    version = repository.get_strategy_version(strategy_version_id)
+    if version is None:
+        raise WorkflowConflict(f"strategy_version_missing:{strategy_version_id}")
+    if version.status == "archived":
+        return version
+    if version.status != "active":
+        raise WorkflowTransitionError(
+            f"strategy_version_not_archivable:{version.status}"
+        )
+    current = _current_run(repository, strategy_version_id)
+    if current is None:
+        raise WorkflowConflict(f"strategy_workflow_missing:{strategy_version_id}")
+    if current.status in {"awaiting", "queued", "running", "paused", "blocked"}:
+        current = cancel_workflow_run(
+            repository, current.workflowRunId, actor=actor
+        )
+    event = _make_stage_event(
+        current,
+        previous_stage=current.stage,
+        previous_status=current.status,
+        next_stage=current.stage,
+        next_status=current.status,
+        reason_code="strategy_version_archived",
+        actor=actor,
+        evidence={"strategyContentHash": version.contentHash},
+    )
+    return repository.update_strategy_version_status(
+        strategy_version_id=strategy_version_id,
+        expected_status=version.status,
+        next_status="archived",
+        event=event,
     )
 
 
