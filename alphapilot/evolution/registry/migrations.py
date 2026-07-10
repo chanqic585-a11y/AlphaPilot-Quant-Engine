@@ -449,6 +449,47 @@ MIGRATIONS: tuple[Migration, ...] = (
             "CREATE INDEX IF NOT EXISTS idx_failure_diagnoses_category ON FailureDiagnoses(category, retryDisposition, createdAt)",
         ),
     ),
+    Migration(
+        version=7,
+        name="create_workflow_evaluation_bindings_v7",
+        statements=(
+            """
+            CREATE TABLE IF NOT EXISTS StrategyDataContracts (
+              strategyDataContractId TEXT PRIMARY KEY,
+              strategyVersionId TEXT NOT NULL,
+              schemaVersion TEXT NOT NULL,
+              contractJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (strategyVersionId) REFERENCES StrategyVersions(strategyVersionId)
+            )
+            """,
+            "CREATE UNIQUE INDEX IF NOT EXISTS idx_strategy_data_contracts_version_hash ON StrategyDataContracts(strategyVersionId, contentHash)",
+            """
+            CREATE TABLE IF NOT EXISTS EvaluationBindings (
+              evaluationBindingId TEXT PRIMARY KEY,
+              workflowRunId TEXT NOT NULL UNIQUE,
+              strategyDataContractId TEXT NOT NULL,
+              dataSnapshotId TEXT NOT NULL,
+              walkForwardManifestHash TEXT NOT NULL,
+              holdoutManifestHash TEXT NOT NULL,
+              lockedOosManifestHash TEXT NOT NULL,
+              gateProfileId TEXT NOT NULL,
+              runnerVersion TEXT NOT NULL,
+              costModelJson TEXT NOT NULL,
+              evidenceJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (workflowRunId) REFERENCES WorkflowRuns(workflowRunId),
+              FOREIGN KEY (strategyDataContractId) REFERENCES StrategyDataContracts(strategyDataContractId),
+              FOREIGN KEY (dataSnapshotId) REFERENCES DataSnapshots(dataSnapshotId),
+              FOREIGN KEY (gateProfileId) REFERENCES GateProfiles(gateProfileId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_evaluation_bindings_contract ON EvaluationBindings(strategyDataContractId, createdAt)",
+            "CREATE INDEX IF NOT EXISTS idx_evaluation_bindings_snapshot ON EvaluationBindings(dataSnapshotId, createdAt)",
+        ),
+    ),
 )
 
 

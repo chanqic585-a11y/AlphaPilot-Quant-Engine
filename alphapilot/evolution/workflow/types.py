@@ -37,6 +37,33 @@ class GateProfileRecord:
 
 
 @dataclass(frozen=True)
+class StrategyDataContractRecord:
+    strategyDataContractId: str
+    strategyVersionId: str
+    schemaVersion: str
+    contract: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
+class EvaluationBindingRecord:
+    evaluationBindingId: str
+    workflowRunId: str
+    strategyDataContractId: str
+    dataSnapshotId: str
+    walkForwardManifestHash: str
+    holdoutManifestHash: str
+    lockedOosManifestHash: str
+    gateProfileId: str
+    runnerVersion: str
+    costModel: dict[str, Any]
+    evidence: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
 class WorkflowRunRecord:
     workflowRunId: str
     strategyVersionId: str

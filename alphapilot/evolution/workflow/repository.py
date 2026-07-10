@@ -13,9 +13,11 @@ from alphapilot.evolution.registry.types import utc_now
 
 from .states import WorkflowConflict, validate_stage, validate_status
 from .types import (
+    EvaluationBindingRecord,
     FailureDiagnosisRecord,
     GateProfileRecord,
     StageEventRecord,
+    StrategyDataContractRecord,
     StrategyVersionRecord,
     WorkflowRunRecord,
 )
@@ -27,6 +29,8 @@ WORKFLOW_TABLES = {
     "WorkflowRuns",
     "StageEvents",
     "FailureDiagnoses",
+    "StrategyDataContracts",
+    "EvaluationBindings",
 }
 
 def _decode_json(value: str) -> Any:
@@ -199,6 +203,137 @@ class WorkflowRepository:
             contentHash=row["contentHash"],
             createdAt=row["createdAt"],
         )
+
+    def create_strategy_data_contract(
+        self, record: StrategyDataContractRecord
+    ) -> StrategyDataContractRecord:
+        existing = self.get_strategy_data_contract(record.strategyDataContractId)
+        if existing is not None:
+            self._assert_same_hash(
+                record.strategyDataContractId,
+                existing.contentHash,
+                record.contentHash,
+            )
+            return existing
+        try:
+            with self.connection:
+                self.connection.execute(
+                    """
+                    INSERT INTO StrategyDataContracts(
+                      strategyDataContractId, strategyVersionId, schemaVersion,
+                      contractJson, contentHash, createdAt
+                    ) VALUES (?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        record.strategyDataContractId,
+                        record.strategyVersionId,
+                        record.schemaVersion,
+                        canonical_json(record.contract),
+                        record.contentHash,
+                        record.createdAt,
+                    ),
+                )
+        except sqlite3.IntegrityError as error:
+            raise WorkflowConflict(
+                f"strategy_data_contract_insert_conflict:{error}"
+            ) from error
+        return record
+
+    def get_strategy_data_contract(
+        self, record_id: str
+    ) -> StrategyDataContractRecord | None:
+        row = self.connection.execute(
+            """
+            SELECT * FROM StrategyDataContracts
+            WHERE strategyDataContractId = ?
+            """,
+            (record_id,),
+        ).fetchone()
+        return self._strategy_data_contract_from_row(row) if row else None
+
+    def list_strategy_data_contracts(
+        self, *, strategy_version_id: str | None = None
+    ) -> list[StrategyDataContractRecord]:
+        query = "SELECT * FROM StrategyDataContracts"
+        values: tuple[str, ...] = ()
+        if strategy_version_id is not None:
+            query += " WHERE strategyVersionId = ?"
+            values = (strategy_version_id,)
+        query += " ORDER BY createdAt, strategyDataContractId"
+        return [
+            self._strategy_data_contract_from_row(row)
+            for row in self.connection.execute(query, values).fetchall()
+        ]
+
+    def create_evaluation_binding(
+        self, record: EvaluationBindingRecord
+    ) -> EvaluationBindingRecord:
+        existing = self.get_evaluation_binding(record.evaluationBindingId)
+        if existing is not None:
+            self._assert_same_hash(
+                record.evaluationBindingId,
+                existing.contentHash,
+                record.contentHash,
+            )
+            return existing
+        run_binding = self.get_evaluation_binding_for_run(record.workflowRunId)
+        if run_binding is not None:
+            self._assert_same_hash(
+                record.workflowRunId,
+                run_binding.contentHash,
+                record.contentHash,
+            )
+            return run_binding
+        try:
+            with self.connection:
+                self.connection.execute(
+                    """
+                    INSERT INTO EvaluationBindings(
+                      evaluationBindingId, workflowRunId, strategyDataContractId,
+                      dataSnapshotId, walkForwardManifestHash, holdoutManifestHash,
+                      lockedOosManifestHash, gateProfileId, runnerVersion,
+                      costModelJson, evidenceJson, contentHash, createdAt
+                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                    """,
+                    (
+                        record.evaluationBindingId,
+                        record.workflowRunId,
+                        record.strategyDataContractId,
+                        record.dataSnapshotId,
+                        record.walkForwardManifestHash,
+                        record.holdoutManifestHash,
+                        record.lockedOosManifestHash,
+                        record.gateProfileId,
+                        record.runnerVersion,
+                        canonical_json(record.costModel),
+                        canonical_json(record.evidence),
+                        record.contentHash,
+                        record.createdAt,
+                    ),
+                )
+        except sqlite3.IntegrityError as error:
+            raise WorkflowConflict(
+                f"evaluation_binding_insert_conflict:{error}"
+            ) from error
+        return record
+
+    def get_evaluation_binding(
+        self, record_id: str
+    ) -> EvaluationBindingRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM EvaluationBindings WHERE evaluationBindingId = ?",
+            (record_id,),
+        ).fetchone()
+        return self._evaluation_binding_from_row(row) if row else None
+
+    def get_evaluation_binding_for_run(
+        self, workflow_run_id: str
+    ) -> EvaluationBindingRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM EvaluationBindings WHERE workflowRunId = ?",
+            (workflow_run_id,),
+        ).fetchone()
+        return self._evaluation_binding_from_row(row) if row else None
 
     def create_workflow_run(
         self,
@@ -509,6 +644,37 @@ class WorkflowRepository:
             definition=_decode_json(row["definitionJson"]),
             parameters=_decode_json(row["parametersJson"]),
             modelArtifactId=row["modelArtifactId"],
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    @staticmethod
+    def _strategy_data_contract_from_row(
+        row: sqlite3.Row,
+    ) -> StrategyDataContractRecord:
+        return StrategyDataContractRecord(
+            strategyDataContractId=row["strategyDataContractId"],
+            strategyVersionId=row["strategyVersionId"],
+            schemaVersion=row["schemaVersion"],
+            contract=_decode_json(row["contractJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    @staticmethod
+    def _evaluation_binding_from_row(row: sqlite3.Row) -> EvaluationBindingRecord:
+        return EvaluationBindingRecord(
+            evaluationBindingId=row["evaluationBindingId"],
+            workflowRunId=row["workflowRunId"],
+            strategyDataContractId=row["strategyDataContractId"],
+            dataSnapshotId=row["dataSnapshotId"],
+            walkForwardManifestHash=row["walkForwardManifestHash"],
+            holdoutManifestHash=row["holdoutManifestHash"],
+            lockedOosManifestHash=row["lockedOosManifestHash"],
+            gateProfileId=row["gateProfileId"],
+            runnerVersion=row["runnerVersion"],
+            costModel=_decode_json(row["costModelJson"]),
+            evidence=_decode_json(row["evidenceJson"]),
             contentHash=row["contentHash"],
             createdAt=row["createdAt"],
         )

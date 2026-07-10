@@ -40,6 +40,8 @@ EXPECTED_TABLES = {
     "WorkflowRuns",
     "StageEvents",
     "FailureDiagnoses",
+    "StrategyDataContracts",
+    "EvaluationBindings",
 }
 
 
@@ -140,13 +142,59 @@ class RegistryMigrationTests(unittest.TestCase):
                 connection.close()
 
         self.assertEqual(initial_count, 5)
-        self.assertEqual(upgraded_count, 1)
+        self.assertEqual(upgraded_count, 2)
         self.assertEqual(repeated_count, 0)
         self.assertEqual(workflow_table_count, 5)
         self.assertEqual(
             preserved_strategy_family_sql,
             old_strategy_family_sql,
         )
+        self.assertEqual(foreign_key_violations, [])
+
+    def test_v6_registry_upgrades_to_evaluation_bindings_v7_without_rebuilding_workflow_tables(
+        self,
+    ) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "registry.sqlite"
+            connection = connect_registry(path, initialize=False)
+            try:
+                initial_count = apply_migrations(
+                    connection, migrations=MIGRATIONS[:6]
+                )
+                old_workflow_sql = connection.execute(
+                    """
+                    SELECT sql FROM sqlite_master
+                    WHERE type = 'table' AND name = 'WorkflowRuns'
+                    """
+                ).fetchone()[0]
+
+                upgraded_count = apply_migrations(connection)
+                repeated_count = apply_migrations(connection)
+                preserved_workflow_sql = connection.execute(
+                    """
+                    SELECT sql FROM sqlite_master
+                    WHERE type = 'table' AND name = 'WorkflowRuns'
+                    """
+                ).fetchone()[0]
+                new_table_count = connection.execute(
+                    """
+                    SELECT COUNT(*) FROM sqlite_master
+                    WHERE type = 'table' AND name IN (
+                      'StrategyDataContracts', 'EvaluationBindings'
+                    )
+                    """
+                ).fetchone()[0]
+                foreign_key_violations = connection.execute(
+                    "PRAGMA foreign_key_check"
+                ).fetchall()
+            finally:
+                connection.close()
+
+        self.assertEqual(initial_count, 6)
+        self.assertEqual(upgraded_count, 1)
+        self.assertEqual(repeated_count, 0)
+        self.assertEqual(new_table_count, 2)
+        self.assertEqual(preserved_workflow_sql, old_workflow_sql)
         self.assertEqual(foreign_key_violations, [])
 
 
