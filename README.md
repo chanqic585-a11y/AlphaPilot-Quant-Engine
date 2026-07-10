@@ -54,6 +54,12 @@ engineering research smoke run but keeps formal promotion blocked. Completed
 FactorRuns and shadow-only models may be registered; no StrategyCandidate,
 DemoRelease, Live candidate, or order is fabricated around the blocker.
 
+The current fixed-threshold smoke run materialized 40,346 rows over 14,223
+timestamps and four OOS folds. It registered ten FactorRuns, two completed
+Experiments, and two shadow-only models. The long model generated one OOS
+observation and zero locked observations; the short model generated none, so
+the performance gate also failed and StrategyCandidate count remains zero.
+
 Key paths:
 
 - `alphapilot/evolution/factor_runs/`

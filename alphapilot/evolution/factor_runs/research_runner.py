@@ -610,14 +610,17 @@ def run_factor_research(
                     "status": candidate.status,
                 }
             )
+    top_level_blockers = sorted(
+        {
+            blocker
+            for experiment in experiment_rows
+            for blocker in experiment["blockers"]
+        }
+    )
     return {
         "reportId": "v13_17_factor_run_backtest_report",
         "version": "V13.17.0",
-        "status": (
-            "completed_with_provenance_blocker"
-            if not matrix.formalPromotionEligible
-            else "completed"
-        ),
+        "status": "completed" if candidate_rows else "completed_no_candidate",
         "generatedAt": _utc_now(),
         "dataSnapshotId": matrix.dataSnapshotId,
         "matrix": matrix.to_dict(),
@@ -635,11 +638,7 @@ def run_factor_research(
         "models": model_rows,
         "strategyCandidates": candidate_rows,
         "formalPromotionEligible": bool(candidate_rows),
-        "blockers": (
-            []
-            if matrix.formalPromotionEligible
-            else ["local_base_source_provenance_not_verified"]
-        ),
+        "blockers": top_level_blockers,
         "safetyBoundary": {
             "researchOnly": True,
             "apiKeyUsed": False,

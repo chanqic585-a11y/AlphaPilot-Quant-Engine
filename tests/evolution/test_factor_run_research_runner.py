@@ -91,9 +91,10 @@ class FactorRunResearchRunnerTests(unittest.TestCase):
                     label_config=labels,
                     code_commit="test",
                 )
-                self.assertEqual(first["status"], "completed_with_provenance_blocker")
+                self.assertEqual(first["status"], "completed_no_candidate")
                 self.assertFalse(first["formalPromotionEligible"])
                 self.assertEqual(first["strategyCandidates"], [])
+                self.assertIn("data_snapshot_provenance_not_formal", first["blockers"])
                 self.assertEqual(len(first["experiments"]), 2)
                 self.assertEqual(len(first["models"]), 2)
                 self.assertEqual(repository.count("Experiments"), 2)

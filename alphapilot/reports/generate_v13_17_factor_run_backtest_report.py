@@ -43,11 +43,34 @@ def _summary(report: dict) -> str:
         f"- Strategy candidates: `{len(report['strategyCandidates'])}`",
         f"- Formal promotion eligible: `{str(report['formalPromotionEligible']).lower()}`",
         "",
-        "The current local historical base has no authoritative source manifest, so formal",
-        "promotion remains blocked. No candidate, Demo release, Live release, or order is",
-        "fabricated to bypass that evidence boundary.",
-        "",
     ]
+    for experiment in report["experiments"]:
+        selected = experiment["evaluation"]["selectedModelType"]
+        oos = experiment["evaluation"]["modelResults"][selected]["strategy"]
+        locked = experiment["evaluation"]["lockedTest"]["strategy"]
+        lines.extend(
+            [
+                f"## {experiment['direction'].title()}",
+                "",
+                f"- Selected model: `{selected}`",
+                f"- OOS trades: `{oos['tradeCount']}`",
+                f"- OOS win rate: `{oos['winRate']}`",
+                f"- OOS average net R: `{oos['averageNetR']}`",
+                f"- OOS profit factor: `{oos['profitFactor']}`",
+                f"- Locked trades: `{locked['tradeCount']}`",
+                f"- Locked average net R: `{locked['averageNetR']}`",
+                f"- Blockers: `{', '.join(experiment['blockers'])}`",
+                "",
+            ]
+        )
+    lines.extend(
+        [
+            "The fixed research gate did not pass. The local historical base also has no",
+            "authoritative source manifest. No candidate, Demo release, Live release, or",
+            "order is fabricated to bypass performance or provenance evidence.",
+            "",
+        ]
+    )
     return "\n".join(lines)
 
 
