@@ -53,6 +53,9 @@ def _release_fingerprints(repository: RegistryRepository) -> dict[str, dict[str,
             row.liveCandidatePackageId: row.contentHash
             for row in repository.list_live_candidate_packages()
         },
+        "liveReleases": {
+            row.liveReleaseId: row.contentHash for row in repository.list_live_releases()
+        },
     }
 
 

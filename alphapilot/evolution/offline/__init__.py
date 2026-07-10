@@ -7,12 +7,18 @@ from .evidence_feedback import (
     ingest_evidence_classed_outcomes,
 )
 from .loop import OfflineEvolutionConfig, run_offline_evolution_loop
+from .execution_outcome_importer import (
+    ExecutionOutcomeImportResult,
+    import_execution_outcome_export,
+)
 
 __all__ = [
     "EvidenceIngestionResult",
     "OfflineEvolutionConfig",
+    "ExecutionOutcomeImportResult",
     "build_failure_attribution",
     "build_research_triggers",
     "ingest_evidence_classed_outcomes",
+    "import_execution_outcome_export",
     "run_offline_evolution_loop",
 ]

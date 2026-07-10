@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.22.0 - Offline Evolution Feedback Loop
+AlphaPilot V13.26.0 - Formal Execution Outcome Feedback
 ```
 
 ## Positioning
@@ -4595,6 +4595,27 @@ state reconciliation, manual ARM, isolated margin, attached TP/SL, at least 2R,
 idempotency, restart recovery, and kill-switch support. Unknown state pauses
 new entries. Withdraw is not implemented. The V13.25 report reads no
 credentials or private account state and places no order.
+
+## V13.26.0 Formal Execution Outcome Feedback
+
+V13.26.0 closes the evidence path from fully reconciled OKX Demo and Live
+Canary trades back into the immutable offline Outcome Ledger.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_26_execution_feedback.ps1
+```
+
+The importer verifies the export manifest, every outcome checksum,
+DataSnapshot, StrategyCandidate, DemoRelease or LiveRelease, and Live
+RiskProfile lineage. Entry fills without confirmed exit evidence, incomplete
+records, missing parents, checksum mismatches, and private account values are
+quarantined. They are never converted into formal feedback by filling gaps.
+
+Execution feedback is offline only. It may inform bounded Shadow research, but
+cannot mutate an online model, replace a running release, create a Demo/Live
+release, or create an order. The current report remains
+`blocked_no_formal_execution_outcomes` until genuine closed Demo or Live
+outcomes exist.
 
 ## Next Versions
 

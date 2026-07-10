@@ -1,0 +1,82 @@
+{
+  "codeCommit": "f459d50c141fdc4d54fcd5d61d3c4be87db11a79",
+  "executionEvidence": {
+    "formalExecutionOutcomeCount": 0,
+    "liveOutcomeCount": 0,
+    "okxDemoOutcomeCount": 0
+  },
+  "executionOutcomeImport": {
+    "accountValuesImported": false,
+    "duplicateCount": 0,
+    "importedCount": 0,
+    "importedOutcomeIds": [],
+    "inventedLineage": false,
+    "manifestHash": "c3c47817e9c63d0b0a74c63e8df961422b72168dfd081a9b100094109bdbde1c",
+    "quarantined": [],
+    "quarantinedCount": 0,
+    "recordCount": 0,
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\formal_outcome_exports\\latest_execution_outcomes.json",
+    "status": "blocked_no_formal_execution_outcomes"
+  },
+  "generatedAt": "2026-07-10T18:42:58.215996+00:00",
+  "offlineEvolution": {
+    "maximumLifecycleStage": "shadow_candidate",
+    "releaseLineage": {
+      "after": {
+        "demoReleases": {},
+        "forwardReleases": {},
+        "liveCandidatePackages": {},
+        "liveReleases": {}
+      },
+      "before": {
+        "demoReleases": {},
+        "forwardReleases": {},
+        "liveCandidatePackages": {},
+        "liveReleases": {}
+      },
+      "unchanged": true
+    },
+    "safetyBoundary": {
+      "autoReplacesRunningRelease": false,
+      "createsDemoRelease": false,
+      "createsLiveRelease": false,
+      "createsOrders": false,
+      "offlineOnly": true,
+      "onlineModelMutation": false
+    },
+    "status": "blocked_no_formal_execution_feedback",
+    "version": "V13.26.0"
+  },
+  "releaseLineage": {
+    "after": {
+      "demoReleases": {},
+      "forwardReleases": {},
+      "liveCandidatePackages": {},
+      "liveReleases": {}
+    },
+    "before": {
+      "demoReleases": {},
+      "forwardReleases": {},
+      "liveCandidatePackages": {},
+      "liveReleases": {}
+    },
+    "unchanged": true
+  },
+  "reportId": "v13_26_execution_feedback_report",
+  "safetyBoundary": {
+    "autoPromotion": false,
+    "closedReconciledOutcomesOnly": true,
+    "createsDemoRelease": false,
+    "createsLiveRelease": false,
+    "createsOrders": false,
+    "incompleteExecutionsPromoted": false,
+    "inventedLineage": false,
+    "offlineOnly": true,
+    "onlineModelMutation": false,
+    "readsCredentials": false,
+    "readsPrivateAccount": false,
+    "withdrawApiUsed": false
+  },
+  "status": "blocked_no_formal_execution_outcomes",
+  "version": "V13.26.0"
+}
