@@ -3,7 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import asdict, dataclass
+import os
 from pathlib import Path
+import subprocess
 from typing import Any, Callable
 
 from alphapilot.data_foundation.checkpoint import load_json, write_json_atomic
@@ -23,6 +25,8 @@ from alphapilot.evolution.evaluation.validation_pack import (
     FormalValidationPack,
     build_formal_validation_pack,
 )
+from alphapilot.evolution.forward.public_market import OkxForwardPublicMarket
+from alphapilot.evolution.forward.runner import ForwardPublicMarket
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.registry.types import DataSnapshotRecord
@@ -30,6 +34,7 @@ from alphapilot.evolution.registry.types import DataSnapshotRecord
 from .backtest import BacktestAdapterResult, _apply_gate_rules
 from .data_contract import derive_strategy_data_contract
 from .evaluation_binding import create_formal_evaluation_binding
+from .local_forward_bridge import start_local_forward_after_pass
 from .repository import WorkflowRepository
 from .service import (
     checkpoint_workflow_run,
@@ -60,6 +65,24 @@ class DualLayerDependencies:
     freezeFormalSnapshot: Callable[..., DataSnapshotRecord]
     buildValidationPack: Callable[..., FormalValidationPack]
     runFormalBacktest: Callable[..., BacktestAdapterResult]
+    marketData: ForwardPublicMarket | None = None
+    codeCommit: str = ""
+
+
+def _code_commit() -> str:
+    configured = str(os.environ.get("ALPHAPILOT_CODE_COMMIT") or "").strip()
+    if configured:
+        return configured
+    try:
+        return subprocess.check_output(
+            ["git", "rev-parse", "HEAD"],
+            cwd=Path.cwd(),
+            text=True,
+            stderr=subprocess.DEVNULL,
+            timeout=5,
+        ).strip()
+    except (OSError, subprocess.SubprocessError):
+        return "unresolved-working-tree-commit"
 
 
 def _default_dependencies() -> DualLayerDependencies:
@@ -74,6 +97,8 @@ def _default_dependencies() -> DualLayerDependencies:
         freezeFormalSnapshot=freeze_formal_snapshot,
         buildValidationPack=build_formal_validation_pack,
         runFormalBacktest=run_formal_strategy_backtest,
+        marketData=OkxForwardPublicMarket(),
+        codeCommit=_code_commit(),
     )
 
 
@@ -351,13 +376,24 @@ def run_dual_layer_backtest_workflow(
         }
         finish("evaluating_gate")
         if passed:
-            return complete_workflow_run(
+            passed_run = complete_workflow_run(
                 workflow,
                 run.workflowRunId,
                 status="passed",
                 actor="worker",
                 result=result,
                 evidence=evidence,
+            )
+            if deps.marketData is None:
+                return passed_run
+            return start_local_forward_after_pass(
+                workflow,
+                registry,
+                version,
+                passed_run,
+                binding,
+                code_commit=deps.codeCommit or _code_commit(),
+                market_data=deps.marketData,
             )
         failed_checks = sorted(key for key, value in evaluated_checks.items() if not value)
         return complete_workflow_run(

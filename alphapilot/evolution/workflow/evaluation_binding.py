@@ -41,6 +41,7 @@ def create_formal_evaluation_binding(
         "blockers": list(research_smoke.get("blockers") or []),
     }
     evidence = {
+        "evidenceClass": "formal_backtest",
         "canonicalRoot": canonical_root,
         "strategyContentHash": contract.contract["strategyContentHash"],
         "strategyDataContractHash": contract.contentHash,

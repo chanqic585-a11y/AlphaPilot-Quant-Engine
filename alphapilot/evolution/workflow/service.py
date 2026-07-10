@@ -395,6 +395,7 @@ def checkpoint_workflow_run(
     *,
     progress: dict[str, Any],
     actor: str,
+    result: dict[str, Any] | None = None,
 ) -> WorkflowRunRecord:
     validate_actor(actor)
     if actor not in WORKER_RESULT_ACTORS:
@@ -405,7 +406,13 @@ def checkpoint_workflow_run(
     if run.status not in {"running", "paused"}:
         raise WorkflowTransitionError(f"workflow_run_not_checkpointable:{run.status}")
     now = utc_now()
-    updated = replace(run, progress=progress, checkpointAt=now, updatedAt=now)
+    updated = replace(
+        run,
+        progress=progress,
+        result=run.result if result is None else result,
+        checkpointAt=now,
+        updatedAt=now,
+    )
     event = _make_stage_event(
         run,
         previous_stage=run.stage,
