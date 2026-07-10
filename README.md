@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.16.0 - Auditable Market Data Foundation
+AlphaPilot V13.17.0 - Point-in-Time FactorRun and Backtest
 ```
 
 ## Positioning
@@ -29,6 +29,41 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.17.0 Point-in-Time FactorRun and Backtest
+
+V13.17 materializes ten approved factor expressions from an immutable
+DataSnapshot, creates next-bar directional labels with a `1R` stop and `2R`
+target, and evaluates deterministic logistic and boosted-stump challengers.
+Signals are decided at completed bar `t`; entry is the next bar open. If one
+OHLC bar touches both stop and target, the label records the stop first.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_17_factor_run_backtest.ps1
+```
+
+The development sample uses purged walk-forward folds with an embargo. The
+last 20% of timestamps remain locked until the fixed model-selection rule has
+chosen the lower-Brier challenger. Baseline, 2x, 3x, one-bar-delay, and extreme
+gap cost scenarios are recorded, together with pair/month concentration and
+multiple-testing evidence.
+
+The current composite snapshot still contains a local historical base whose
+authoritative source manifest is missing. V13.17 therefore permits an
+engineering research smoke run but keeps formal promotion blocked. Completed
+FactorRuns and shadow-only models may be registered; no StrategyCandidate,
+DemoRelease, Live candidate, or order is fabricated around the blocker.
+
+Key paths:
+
+- `alphapilot/evolution/factor_runs/`
+- `reports/v13_17_factor_run_backtest_report.json`
+- `reports/v13_17_factor_run_backtest_summary.md`
+- `docs/V13.17.0-point-in-time-factor-run-and-backtest.md`
+
+This phase uses local/public market data only. It does not use API keys, read
+accounts or positions, call Trade API or Withdraw API, create orders, or
+enable Demo/Live execution.
 
 ## V13.16.0 Auditable Market Data Foundation
 

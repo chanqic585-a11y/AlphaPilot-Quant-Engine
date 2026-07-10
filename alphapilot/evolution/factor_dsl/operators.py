@@ -28,6 +28,19 @@ OPERATOR_SPECS: dict[str, OperatorSpec] = {
     "zscore": OperatorSpec("zscore", 2, 2, windowArgs=(1,), domainRequirements=("std_nonzero",)),
     "correlation": OperatorSpec("correlation", 3, 3, windowArgs=(2,)),
     "decay_linear": OperatorSpec("decay_linear", 2, 2, windowArgs=(1,)),
+    "ewm_mean": OperatorSpec("ewm_mean", 2, 2, windowArgs=(1,)),
+    "rsi": OperatorSpec("rsi", 2, 2, windowArgs=(1,)),
+    "macd_histogram": OperatorSpec(
+        "macd_histogram", 4, 4, windowArgs=(1, 2, 3)
+    ),
+    "bollinger_position": OperatorSpec(
+        "bollinger_position",
+        3,
+        3,
+        windowArgs=(1,),
+        domainRequirements=("std_nonzero",),
+    ),
+    "atr": OperatorSpec("atr", 4, 4, windowArgs=(3,)),
     "cross_sectional_rank": OperatorSpec("cross_sectional_rank", 1, 1),
     "group_neutralize": OperatorSpec(
         "group_neutralize", 2, 2, argumentTypes=("number", "group")
