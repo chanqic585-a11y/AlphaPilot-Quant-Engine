@@ -1,0 +1,12 @@
+{
+  "createsOrders": false,
+  "dataSnapshotId": "data_snapshot_7a348587674343ecd30d6f6f1138febcea32400448026569738e584e95019e35",
+  "engineProbeIsStrategyPerformance": false,
+  "engineProbeOutcomeCount": 338,
+  "executionEnabled": false,
+  "formalStrategyReplayCount": 0,
+  "reportPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\reports\\v13_18_historical_path_replay_report.json",
+  "schemaVersion": "local_replay_console_contract_v1",
+  "stage": "local_replay",
+  "status": "engine_ready_waiting_formal_candidate"
+}
