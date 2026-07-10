@@ -1,0 +1,1359 @@
+{
+  "version": "V13.13.0",
+  "source": "alphapilot_evolution_and_ml_v13_13_0",
+  "generatedAt": "2026-07-10T00:37:19.256347+00:00",
+  "status": "completed_shadow_research",
+  "factorBaseline": {
+    "factorCount": 16,
+    "dslSupportedCount": 11,
+    "dslBlockedCount": 5,
+    "legacyCandidateFactorCount": 0,
+    "formalResearchReadyCount": 0,
+    "newFactorDefinitionCount": 0,
+    "totalRegisteredFactorDefinitionCount": 64,
+    "manualReportPath": "reports/v13_7_13_manual_factor_library_report.json",
+    "manualReportSha256": "a3c0878d54aa212f14f053a53aab44673d992b75007139bf3884b79d91de22a9",
+    "evaluationReportPath": "reports/v13_7_13_factor_evaluation_report.json",
+    "evaluationReportSha256": "4353c588fe67912c1287a733e53d101e6f2bce6ed7be61b7a9ea8791f7426220",
+    "valueMutationPerformed": false,
+    "factorValuesLoaded": false,
+    "createsStrategyCandidate": false,
+    "createsDemoRelease": false
+  },
+  "cycle": {
+    "cycleId": "evolution_cycle_cefd2536455ac979ddbb3d9c55372920eea6da65c59651f9ab48592f9a4f4596",
+    "version": "V13.13.0",
+    "status": "completed_shadow_research",
+    "maximumLifecycleStage": "shadow_research",
+    "config": {
+      "researchBudget": 96,
+      "maxCandidates": 48,
+      "allowedWindows": [
+        3,
+        6,
+        12,
+        24,
+        48,
+        72
+      ],
+      "fieldReplacements": {
+        "close": [
+          "volume",
+          "returns_1"
+        ],
+        "returns_1": [
+          "btc_return_12"
+        ],
+        "volume": [
+          "quote_volume"
+        ]
+      },
+      "additionalFieldTypes": {},
+      "crossOperators": [
+        "safe_add",
+        "safe_multiply"
+      ]
+    },
+    "seedFactorCount": 11,
+    "blockedSeeds": [],
+    "generatedCandidateCount": 48,
+    "semanticUniqueCount": 48,
+    "semanticDuplicateCount": 0,
+    "newRegisteredFactorDefinitionCount": 0,
+    "registeredGeneratedFactors": [
+      {
+        "candidateId": "factor_candidate_00a4c620e26c0812befe9f7d473684bbf9a71c6367f9b6fbb920bf8e97039aa8",
+        "expressionId": "factor_expression_fb26001970c85e0a1f9d16d6b70d378b1fc820d6c69b3b364180ee0d91f1beb2",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82"
+        ],
+        "mutationType": "field",
+        "mutationDetail": {
+          "source": "close",
+          "target": "returns_1"
+        },
+        "canonicalExpression": "safe_divide(safe_subtract(returns_1,lower_band),safe_subtract(upper_band,lower_band))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_7a22e03e620d06f2a92a73bc201e524c54ff730615600d45a0357706d574e341",
+        "validationFields": [
+          "lower_band",
+          "returns_1",
+          "upper_band"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_04f39445e2be2c256317a2c8e306b9ebae7860a067a0206f557c73f80b2f6498",
+        "expressionId": "factor_expression_d3a2f484f6a234a96e09552893aa196b0cc1a676bc6f448e5b1bddb65b1f2cc3",
+        "parentIds": [
+          "factor_definition_73ed1679a385654175a1707c0cf95142f7b85e6d6cc304b5e7aaa922d506b1df",
+          "factor_definition_e2ee8f4c2a82fac49f005fa4b3db798e400dd8e36b692317cfec88fa6e0985be"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_add(cross_sectional_rank(safe_divide(close,rolling_max(high,24))),cross_sectional_rank(safe_divide(volume,rolling_mean(volume,24)))),safe_divide(rolling_mean(volume,24),rolling_mean(volume,72)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_e5537acaa604d77233cbd3d504b41f6ac725c9cbf410798fda7d232ac3cafdb9",
+        "validationFields": [
+          "close",
+          "high",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_0521fc1b3069f2b7246113aacb09a18842977311422a332b54f938f2155724f8",
+        "expressionId": "factor_expression_f352458e3d4aa34fdc14918c9b6ed22cd1bd20aee4a4d4cc00548e5c928abc02",
+        "parentIds": [
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "field",
+        "mutationDetail": {
+          "source": "close",
+          "target": "returns_1"
+        },
+        "canonicalExpression": "safe_multiply(-1,safe_divide(delta(returns_1,3),lag(returns_1,3)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_b9156975868e9aeb8a74df4c3bb43dcdc5249e03e704a8697bae4c73fa2add3b",
+        "validationFields": [
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_0784fae8d26c5c723e9879464e8646c4b11ac31ecda92e1053dce6bf719e0d20",
+        "expressionId": "factor_expression_edaf99ea3246a4aa317377dc37df42817e7c34ceaf12c6c4c3989a50ff0d90c4",
+        "parentIds": [
+          "factor_definition_e2ee8f4c2a82fac49f005fa4b3db798e400dd8e36b692317cfec88fa6e0985be",
+          "factor_definition_f675fb2272cdee868917114bfdb84baaeaa1a235cb3a02d2d491bda3d3ba7e04"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(cross_sectional_rank(quote_volume),safe_divide(rolling_mean(volume,24),rolling_mean(volume,72)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_4ddb0ec90b79801df2fdd01ced7e3b2f4e265c81064ab48e7743371031b03f52",
+        "validationFields": [
+          "quote_volume",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_07ea53931cc214c0d43eb99533faa599e3ee6b4003d16e97f0f69726a8e50f4c",
+        "expressionId": "factor_expression_c2853718595831c6ce32654aaa4968eb48bf133dcdabe52f75d8fb8c8dfe4924",
+        "parentIds": [
+          "factor_definition_73ed1679a385654175a1707c0cf95142f7b85e6d6cc304b5e7aaa922d506b1df"
+        ],
+        "mutationType": "window",
+        "mutationDetail": {
+          "window": 6
+        },
+        "canonicalExpression": "safe_add(cross_sectional_rank(safe_divide(close,rolling_max(high,6))),cross_sectional_rank(safe_divide(volume,rolling_mean(volume,6))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_d8d9d28d7c5d50d29a7654a37a7c94c8432a4eece9926efaf4ca1c82c2890d6f",
+        "validationFields": [
+          "close",
+          "high",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_08e4841af389fba6cb434c3a2e1c86a141948e3c71c144e2389607be88e73ada",
+        "expressionId": "factor_expression_cbfbfa03ebe32e6165cca53be5e2dc4d3e02ef8dca50e5aa0d0fc5acd9415d30",
+        "parentIds": [
+          "factor_definition_92b7dfd1e3743f13c1515c5beeb1f150dc589d9cf5c0cd932b71f9561de5c833",
+          "factor_definition_f675fb2272cdee868917114bfdb84baaeaa1a235cb3a02d2d491bda3d3ba7e04"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(cross_sectional_rank(quote_volume),rolling_std(returns_1,72))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_0d952c7f1f2ed82800b5b25bd67b93cab097d3f34a57443bb796cf4eda06c636",
+        "validationFields": [
+          "quote_volume",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_118d01c424108a85caefef8bac39d490d65ec2f48ba628c6c7441ed3a86d13df",
+        "expressionId": "factor_expression_c409d811ed8f04d148a245001023085251c2852a4e13013fcf0f8f80317f1b54",
+        "parentIds": [
+          "factor_definition_341f8afb523b1b4528d66071f7701ad3c860cf9c95207a31414d29fa1718e767",
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(safe_divide(atr,close),safe_divide(delta(close,12),lag(close,12)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_f547a646e2e2720dff6d5e57106020b338ba52dffeb55e4a6ffbf3d502f35e76",
+        "validationFields": [
+          "atr",
+          "close"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_13adf435cf52fd96601e69f323ea574deaf5d127815c7e6cd89510a9adf61962",
+        "expressionId": "factor_expression_523f8ccb783740175ec5e1225e11e9effd812bbe38e60356590011652e7b1c30",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_341f8afb523b1b4528d66071f7701ad3c860cf9c95207a31414d29fa1718e767"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(safe_divide(atr,close),safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_65c9284ebede3744fc0859f214710d3af407f2257205853690446168a01fdf1f",
+        "validationFields": [
+          "atr",
+          "close",
+          "lower_band",
+          "upper_band"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_14cf841455a99ec9930fdc44149e5bfed6d98aef454e03da07676bf930b17c59",
+        "expressionId": "factor_expression_19ebabbd3f6bc63ee244bd24db97f0e8b2116dcae2cbcdeba0322f4801fc26a0",
+        "parentIds": [
+          "factor_definition_1e6bbf4c5e7cac9114ac6ae274604375c4af72bf422dc3b31afb49d2a506f714",
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(rolling_std(returns_1,24),safe_divide(delta(close,12),lag(close,12)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_b36c5a7f652db4922ebd495464242e7bbac69e5f3e9aadae3894734272af685c",
+        "validationFields": [
+          "close",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_18534e45061294a746dd51858d9377aff146fda7da4480a16e27fe9d4d36ef79",
+        "expressionId": "factor_expression_4412ab1848e4fd89b711d0aba30801b4655614649e598aec7c346a3b09d879fb",
+        "parentIds": [
+          "factor_definition_1e6bbf4c5e7cac9114ac6ae274604375c4af72bf422dc3b31afb49d2a506f714",
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(rolling_std(returns_1,24),safe_divide(delta(close,12),lag(close,12)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_4a7e6ab6226e87107b2ca2709f3e608b901325f8c4f62e00068cc9618aa426fb",
+        "validationFields": [
+          "close",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_1a994a783137248ace4f976af8e5231ad35e9c93df642a2bcc0c0c366f6befac",
+        "expressionId": "factor_expression_e3ea08bb9ae75a72ec3d118ae92cde4153b84a694b2c5a19b810d86dcf3e0c80",
+        "parentIds": [
+          "factor_definition_e2ee8f4c2a82fac49f005fa4b3db798e400dd8e36b692317cfec88fa6e0985be"
+        ],
+        "mutationType": "window",
+        "mutationDetail": {
+          "window": 72
+        },
+        "canonicalExpression": "safe_divide(rolling_mean(volume,72),rolling_mean(volume,72))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_04133a1bda0deed18ecf26ecb41c2dfcd203878bbf971c0ab1636d998e54b390",
+        "validationFields": [
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_1b0ef035b3bcfe1818325b41fdeccacfed53d4434c7f8d0a517d60832fc34142",
+        "expressionId": "factor_expression_019cf1bbe278488d6ffb792409ba1b037f8ab897608dea4e630f8cd918d7b110",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_f675fb2272cdee868917114bfdb84baaeaa1a235cb3a02d2d491bda3d3ba7e04"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(cross_sectional_rank(quote_volume),safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_395f1f7be28647cbf815a5976f29dd1f074f505c91ac0318197f95e9dc85ebab",
+        "validationFields": [
+          "close",
+          "lower_band",
+          "quote_volume",
+          "upper_band"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_1d6115759b17665f3e62c85b23e0783b3797ef7863f84ffe4e78776df5457b4c",
+        "expressionId": "factor_expression_509bf38bd6c3db2934504f17245a010cf54ee71729729ebeeb21feab3676e026",
+        "parentIds": [
+          "factor_definition_341f8afb523b1b4528d66071f7701ad3c860cf9c95207a31414d29fa1718e767",
+          "factor_definition_5dd505b5c6c2b2420c3cfaf8168f57ed8095e7c567bb2848e61233f8cd9662f4"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(atr,close),safe_divide(delta(close,3),lag(close,3)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_73a812aee1838b79b4d25c5f8ec2841b497c807d25e568cd6050ab7007eeb610",
+        "validationFields": [
+          "atr",
+          "close"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_21362d7a4f36a23fa9d9862ebfea59b578a73d64a5d1b7870c1f7e1b237c519e",
+        "expressionId": "factor_expression_a0f96e4e6022d1e6e47514d2aebb6e14cd0a9e25cc816d2321e5b97791e5cdf9",
+        "parentIds": [
+          "factor_definition_1e6bbf4c5e7cac9114ac6ae274604375c4af72bf422dc3b31afb49d2a506f714",
+          "factor_definition_f675fb2272cdee868917114bfdb84baaeaa1a235cb3a02d2d491bda3d3ba7e04"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(cross_sectional_rank(quote_volume),rolling_std(returns_1,24))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_4e919cf9f08039d36dfc7b69d06a593c533a276de2029dbb8c73a1b24d415004",
+        "validationFields": [
+          "quote_volume",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_227534c7a6a637263368a37f67c43bbd4ffe50a0fea7607aad4a02f294bd7b9c",
+        "expressionId": "factor_expression_fcfb7e69a276ce537ba7f764e209389d6ef439124377e2f1b37130bc8b1a89f0",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)),safe_divide(volume,rolling_mean(volume,24)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_317b385cd70f396e5f7b13a216ce4ea1415c76117b8c9823da1009274f142c13",
+        "validationFields": [
+          "close",
+          "lower_band",
+          "upper_band",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_23206aced9a212fcbc3a3d7d01757d3ab894fe4338917a43f4d8797c059e3384",
+        "expressionId": "factor_expression_dfe99b887e8e378b62a3a19f34738457da98c74c8294a5b4f660a3dc361fa0f4",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_e2ee8f4c2a82fac49f005fa4b3db798e400dd8e36b692317cfec88fa6e0985be"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(safe_divide(rolling_mean(volume,24),rolling_mean(volume,72)),safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_f061a092141f93fec9f71907e4cfe0ec98bbeb33cf4383bfed53aae0d22eea23",
+        "validationFields": [
+          "close",
+          "lower_band",
+          "upper_band",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_284539915a944086362130b1cf8eec1fa9b37bfeb0d512e6263240715f2e02f1",
+        "expressionId": "factor_expression_fa4b518712a6aba82bb3a0fd66ed676b881bd052e2c2184d3a670a881b64b502",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_73ed1679a385654175a1707c0cf95142f7b85e6d6cc304b5e7aaa922d506b1df"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_add(cross_sectional_rank(safe_divide(close,rolling_max(high,24))),cross_sectional_rank(safe_divide(volume,rolling_mean(volume,24)))),safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_7b7893f2b02621b9fd6ee96092a1e631896ac9126f85b514143b326714df8e8e",
+        "validationFields": [
+          "close",
+          "high",
+          "lower_band",
+          "upper_band",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_2a44c3a2fd8ce91eeb9138164cd3656e660e36c64e99f493dd316b18eba4abb3",
+        "expressionId": "factor_expression_6ffe9ec339c88b3f25d699fd01850d3d167fdafbd79ca490e38d41cab07c700f",
+        "parentIds": [
+          "factor_definition_1e6bbf4c5e7cac9114ac6ae274604375c4af72bf422dc3b31afb49d2a506f714",
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(rolling_std(returns_1,24),safe_multiply(-1,safe_divide(delta(close,3),lag(close,3))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_743ae8f3801815f9fcb4a3bb1661a854d37026d389de5315212e8994426b6a0d",
+        "validationFields": [
+          "close",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_2c7b5da597193def1b75169767fd3f841e2f31b3cb70aab42b8f376cd428d2bb",
+        "expressionId": "factor_expression_df8fac6d12febf654f1cdb0a27fc57c440b0e86942dc4ab5de23a05bb96ef121",
+        "parentIds": [
+          "factor_definition_e2ee8f4c2a82fac49f005fa4b3db798e400dd8e36b692317cfec88fa6e0985be"
+        ],
+        "mutationType": "window",
+        "mutationDetail": {
+          "window": 48
+        },
+        "canonicalExpression": "safe_divide(rolling_mean(volume,48),rolling_mean(volume,48))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_7c7f08b154e2477e360aaf26171d9aa06268911fb107b4e52f063b3016444c3a",
+        "validationFields": [
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_2cb483416aee12f69b9d217c0aaf215e5a2965fac96d8aa57c48a12a987b3903",
+        "expressionId": "factor_expression_f100101f6a8e9c4a97844f37003cd7f3f3841c8ff32ff973c9b8948b32f8db31",
+        "parentIds": [
+          "factor_definition_5dd505b5c6c2b2420c3cfaf8168f57ed8095e7c567bb2848e61233f8cd9662f4",
+          "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(delta(close,3),lag(close,3)),safe_divide(volume,rolling_mean(volume,24)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_a29fcd7156840018fdd6ee713c8885c3930db5f7dc5a333bdabcdee943e53be7",
+        "validationFields": [
+          "close",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_2d314e9e40fc4c3791e5450b1eab5faa6b3ad55c3dac64add258dc9828a004cb",
+        "expressionId": "factor_expression_f09f6c73936d4f732eb979fbe5490979f1e74fcc15ec99e547c6c63205a9e968",
+        "parentIds": [
+          "factor_definition_92b7dfd1e3743f13c1515c5beeb1f150dc589d9cf5c0cd932b71f9561de5c833",
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(rolling_std(returns_1,72),safe_multiply(-1,safe_divide(delta(close,3),lag(close,3))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_fb61826ff3ae20c350355aed7dc85918a4fcd2e76c570af891450a494662f11e",
+        "validationFields": [
+          "close",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_30fc8ef76501bc05808057a4f40eb9e0c2c6405b135b0eaf963cd6af5487eba5",
+        "expressionId": "factor_expression_40edbd3486d62ac8cb6ff30283606638a21b6edace8ccbeb7d7ee556ea5daf4c",
+        "parentIds": [
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489",
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(delta(close,12),lag(close,12)),safe_multiply(-1,safe_divide(delta(close,3),lag(close,3))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_28cc53014e58134b159903e7e50373f5c8f866e22856c4f324e10573935b6e57",
+        "validationFields": [
+          "close"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_335b60274c926ad2e4491207cc695cfcae29fe495e615590fe0a556ab896a02f",
+        "expressionId": "factor_expression_09b8bafe9fec355bf28a297a4225302635a5f1f2d168bd7aeac71789eae50003",
+        "parentIds": [
+          "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179",
+          "factor_definition_f675fb2272cdee868917114bfdb84baaeaa1a235cb3a02d2d491bda3d3ba7e04"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(cross_sectional_rank(quote_volume),safe_divide(volume,rolling_mean(volume,24)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_4830d8fdc51fbfcedc4e80edb2b0ccc89aa5690fa1f2fb1b46ec75b854f6152b",
+        "validationFields": [
+          "quote_volume",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_3512a9e57f48e14813b2480fe07477cb0e1308e5c267e846b6449e088f2bd52b",
+        "expressionId": "factor_expression_0914d36d7c1aee34904f3402220a9b87d15369a06730b80a6fd01ce8ebf18ef9",
+        "parentIds": [
+          "factor_definition_341f8afb523b1b4528d66071f7701ad3c860cf9c95207a31414d29fa1718e767",
+          "factor_definition_e2ee8f4c2a82fac49f005fa4b3db798e400dd8e36b692317cfec88fa6e0985be"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(atr,close),safe_divide(rolling_mean(volume,24),rolling_mean(volume,72)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_7992b0d9a5285b05edbcd4b0db13b39d012cdb6cade7ac18435ad1d4be4999c3",
+        "validationFields": [
+          "atr",
+          "close",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_361cf78817094e769d0b82bdb61b27d284efc210e0cf60505d7d4050295e3af9",
+        "expressionId": "factor_expression_654db6ddd15cfcac2cc938e5b7f06643a5b4722c8d7ae2d791f26ee81219347c",
+        "parentIds": [
+          "factor_definition_5dd505b5c6c2b2420c3cfaf8168f57ed8095e7c567bb2848e61233f8cd9662f4",
+          "factor_definition_73ed1679a385654175a1707c0cf95142f7b85e6d6cc304b5e7aaa922d506b1df"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(safe_add(cross_sectional_rank(safe_divide(close,rolling_max(high,24))),cross_sectional_rank(safe_divide(volume,rolling_mean(volume,24)))),safe_divide(delta(close,3),lag(close,3)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_a6c0babe9de15bc53177b1e532ba4c20f4e0be30a6628cc22c3a2fd8540e17f0",
+        "validationFields": [
+          "close",
+          "high",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_36da6eef8200f1912a43051aad927c2bbcaf6b58b8a43aa547e6123e2c5b8ad6",
+        "expressionId": "factor_expression_6a5f33a9e128117c73dabfe3c1168a94eaaa4acdf1c8d0d2cf615dc912f008e9",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)),safe_divide(volume,rolling_mean(volume,24)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_9f423da9f201264b48a5f89552cb5be95e419ef70397d72b6669b9e3348fb7ac",
+        "validationFields": [
+          "close",
+          "lower_band",
+          "upper_band",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_389cf62cc7dd02184094f1dc1621fdd6bca356e0813edab15f714e28ca5ec156",
+        "expressionId": "factor_expression_897e2bec918b251bf4b573e95869715485abdb97c7c733b3ae27b0f696100266",
+        "parentIds": [
+          "factor_definition_5dd505b5c6c2b2420c3cfaf8168f57ed8095e7c567bb2848e61233f8cd9662f4",
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(delta(close,12),lag(close,12)),safe_divide(delta(close,3),lag(close,3)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_4c6b90c79a14476fad18b44edd20131d83c3605c87d001f63005c43531946c5e",
+        "validationFields": [
+          "close"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_38d40413bd6de5ba87254e1a18a6b7e00198d2fb3c76fede041644d5baa900b2",
+        "expressionId": "factor_expression_bf359069e49ada978c9523bd2aaf503096501b6319ecbf0d60ee4dfaae6a3117",
+        "parentIds": [
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "field",
+        "mutationDetail": {
+          "source": "close",
+          "target": "volume"
+        },
+        "canonicalExpression": "safe_multiply(-1,safe_divide(delta(volume,3),lag(volume,3)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_85c527da45612ee61918801040ceb16ee356b2229f74a0681ba01f0503874053",
+        "validationFields": [
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_38e847a11a055dda0e04013527a9d2e39bea3711599336c79c3823b981cadddc",
+        "expressionId": "factor_expression_88d53d9c8142c1e9fb45078a71097bacbd6eda950250a7e91497d6da9cf0a74a",
+        "parentIds": [
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5",
+          "factor_definition_f675fb2272cdee868917114bfdb84baaeaa1a235cb3a02d2d491bda3d3ba7e04"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(cross_sectional_rank(quote_volume),safe_multiply(-1,safe_divide(delta(close,3),lag(close,3))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_6865b6e12d2345ce232d2e34966096c856582dac1410f56bdada70a457558ad4",
+        "validationFields": [
+          "close",
+          "quote_volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_39122dfc766007a412797359ab233bcb2e07b3f92ccc143f1e965e223a738e87",
+        "expressionId": "factor_expression_a54ed17b8f4c4e2cbcbc7cd93638c9e32f04b275d4ea9c5e94cfd22986140e7f",
+        "parentIds": [
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "window",
+        "mutationDetail": {
+          "window": 48
+        },
+        "canonicalExpression": "safe_multiply(-1,safe_divide(delta(close,48),lag(close,48)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_1051b4c8971b36f0f76ffe934fc08850bc396a080f568b0b1f28424c8bafb6f9",
+        "validationFields": [
+          "close"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_3a37d3d86c9729018440e863cfa177d8ee1f5a604a54f00fcc7932d2b18eaf80",
+        "expressionId": "factor_expression_845cd45326f5e2637602eb44fa7b9cd95259281d79f547a50a2614555c1fcd72",
+        "parentIds": [
+          "factor_definition_5dd505b5c6c2b2420c3cfaf8168f57ed8095e7c567bb2848e61233f8cd9662f4"
+        ],
+        "mutationType": "field",
+        "mutationDetail": {
+          "source": "close",
+          "target": "returns_1"
+        },
+        "canonicalExpression": "safe_divide(delta(returns_1,3),lag(returns_1,3))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_49d0a1bd94ed44a109cc5bfd3bfeddee08dfc03a6ce0aa80beb29e44a574b978",
+        "validationFields": [
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_3bf42869461413dddbb3037b95e07bbf0001607adcd5bfa59d86ab78850a649e",
+        "expressionId": "factor_expression_97dbc98fe0afc7ebe3748774720c6df0fa496ac36403189f3742f72d3a465afc",
+        "parentIds": [
+          "factor_definition_341f8afb523b1b4528d66071f7701ad3c860cf9c95207a31414d29fa1718e767",
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(atr,close),safe_multiply(-1,safe_divide(delta(close,3),lag(close,3))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_34859d959f3817800e1daa82c7672142b3db9b920f88b29958f4541999bc855a",
+        "validationFields": [
+          "atr",
+          "close"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_3e4859c7484dc6421bb702c787f41bfd718073b711c8796bde8b41c580fcc94d",
+        "expressionId": "factor_expression_4c82162cbf596f92ee214fea23a23ec1551c9dcb3e94f52e9507fb488522688f",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)),safe_multiply(-1,safe_divide(delta(close,3),lag(close,3))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_6cf3e2fb3d7418632aaf1f38f56a6fca162e029c84bc591d71b35a5ebb3c6bcd",
+        "validationFields": [
+          "close",
+          "lower_band",
+          "upper_band"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_3f25d46603e7f247a3c352464cb58f1b6342dc5eeac8da653f5cbdb3518ffd9b",
+        "expressionId": "factor_expression_84ce0a9178257c00dfb79b4d38cb2a8bbc46b3a51012df2ec352f5ec5bb767e2",
+        "parentIds": [
+          "factor_definition_e2ee8f4c2a82fac49f005fa4b3db798e400dd8e36b692317cfec88fa6e0985be"
+        ],
+        "mutationType": "window",
+        "mutationDetail": {
+          "window": 6
+        },
+        "canonicalExpression": "safe_divide(rolling_mean(volume,6),rolling_mean(volume,6))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_9439f4584d26b06f2a19ef3d1675ded82f1abff63235adc85d28330a1df8e773",
+        "validationFields": [
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_4197d79539ac3ee5cb16fe9ac4618fcb794f3e09c158a4572272497af3688aeb",
+        "expressionId": "factor_expression_9557c1d960248d35097259751623954c27bbf03e559a7a5a7ad45edc65560a32",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_92b7dfd1e3743f13c1515c5beeb1f150dc589d9cf5c0cd932b71f9561de5c833"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(rolling_std(returns_1,72),safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_c92bc3b09326803b7f14f33a017f01160604c98b2a092bee451bd1051bd25650",
+        "validationFields": [
+          "close",
+          "lower_band",
+          "returns_1",
+          "upper_band"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_42ea018d10d9e4f2946deb75f6ec75cee060fa4b794c1345b62e7ce14d43cb3b",
+        "expressionId": "factor_expression_9bde2cdd9b3d94a7e88955ac765d3608b54b21fdc8e20d415f0fea67d6800a74",
+        "parentIds": [
+          "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+          "factor_definition_341f8afb523b1b4528d66071f7701ad3c860cf9c95207a31414d29fa1718e767"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_divide(atr,close),safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_b434a0f8c078913f50efe7ba31b87cf13d877bd4d421849647b0477fa2038d44",
+        "validationFields": [
+          "atr",
+          "close",
+          "lower_band",
+          "upper_band"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_46184eeaf38a47b05eeb0204bce635c11bc841d2655a45cc9ddfb5bb39a1ab8e",
+        "expressionId": "factor_expression_f0ef000476282c297499a1ba68a61cf04b4963ee3c19356903bdda6c69bc32ff",
+        "parentIds": [
+          "factor_definition_92b7dfd1e3743f13c1515c5beeb1f150dc589d9cf5c0cd932b71f9561de5c833",
+          "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(rolling_std(returns_1,72),safe_divide(volume,rolling_mean(volume,24)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_e29c6fcf1c4a96ff4cc506c040d374ed10872e2e14041c71ed3b1947408a49ec",
+        "validationFields": [
+          "returns_1",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_463615b37796073763a40bd1181ad5086e808a0d770c688d446d37e8e62ebc0c",
+        "expressionId": "factor_expression_ed4198e82b1a71cfad340b8f5272e52f97784c909fee4a684af65ccd79dc0a55",
+        "parentIds": [
+          "factor_definition_73ed1679a385654175a1707c0cf95142f7b85e6d6cc304b5e7aaa922d506b1df",
+          "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(safe_add(cross_sectional_rank(safe_divide(close,rolling_max(high,24))),cross_sectional_rank(safe_divide(volume,rolling_mean(volume,24)))),safe_divide(volume,rolling_mean(volume,24)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_16c340403f8a1da2c3eb1cb61a5e0ed83281f8e413c5b352bf48fadb0ef45520",
+        "validationFields": [
+          "close",
+          "high",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_47a172d8a29fa5066970edc269f82dc9dbd2314f1c596adb5ea8cd7d35a5b995",
+        "expressionId": "factor_expression_9943795a6faa58df4d943de9a549f4b9f68475273a75059e2e802ac95b41f81b",
+        "parentIds": [
+          "factor_definition_5dd505b5c6c2b2420c3cfaf8168f57ed8095e7c567bb2848e61233f8cd9662f4"
+        ],
+        "mutationType": "window",
+        "mutationDetail": {
+          "window": 48
+        },
+        "canonicalExpression": "safe_divide(delta(close,48),lag(close,48))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_16a802e9f53d4947673dd563ef1ae5011e10a6ef6412ea8d868277eb1fb9d6b8",
+        "validationFields": [
+          "close"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_49e9510a760f2fa0e01f3e56e6c4250c45e98bf5e54e036c5c3f16297f97d04a",
+        "expressionId": "factor_expression_2a72d7ecae40b7aaed1e3405e67e3486c8e2475f40d19be654e713f6c618595c",
+        "parentIds": [
+          "factor_definition_73ed1679a385654175a1707c0cf95142f7b85e6d6cc304b5e7aaa922d506b1df"
+        ],
+        "mutationType": "field",
+        "mutationDetail": {
+          "source": "close",
+          "target": "returns_1"
+        },
+        "canonicalExpression": "safe_add(cross_sectional_rank(safe_divide(returns_1,rolling_max(high,24))),cross_sectional_rank(safe_divide(volume,rolling_mean(volume,24))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_fa59013f3755ed00e261ab965053fbed0feb1f423ac925744c8bb4c7ae647fc2",
+        "validationFields": [
+          "high",
+          "returns_1",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_4b51822ea9c0d347be289be27d55912258201ab64f3081eacd2a271320195431",
+        "expressionId": "factor_expression_9911b57630e068f9b987b1752ab6d1c8b2a1cfe171bd9c05a0335e168b1c762d",
+        "parentIds": [
+          "factor_definition_73ed1679a385654175a1707c0cf95142f7b85e6d6cc304b5e7aaa922d506b1df",
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(safe_add(cross_sectional_rank(safe_divide(close,rolling_max(high,24))),cross_sectional_rank(safe_divide(volume,rolling_mean(volume,24)))),safe_divide(delta(close,12),lag(close,12)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_f6f82df8727636a7e4920ba72847c571b96955cc3d70ade5d6c4287b94fd41bb",
+        "validationFields": [
+          "close",
+          "high",
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_4c4f5b64e95d711b1951cdbe3b5bbf5792f42a640c243ffc5e056848b36655d4",
+        "expressionId": "factor_expression_cca5cbb9702edc6a74467c07910cfe50c02f4244037c0d2c59e4fc9eec785f4d",
+        "parentIds": [
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489",
+          "factor_definition_f675fb2272cdee868917114bfdb84baaeaa1a235cb3a02d2d491bda3d3ba7e04"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(cross_sectional_rank(quote_volume),safe_divide(delta(close,12),lag(close,12)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_73c88942b1f6468d1400388937240481bf6d714c661e74c26cab3902823ddb0e",
+        "validationFields": [
+          "close",
+          "quote_volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_4db400aa09471452dd5094f0eabbfbb8ceec6dd50b4fd574c9166371f4417dfc",
+        "expressionId": "factor_expression_df8ef7341cb985d5c411e8142cf716c4082ee2af6d82e81c0f70e0d342a543f6",
+        "parentIds": [
+          "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179"
+        ],
+        "mutationType": "window",
+        "mutationDetail": {
+          "window": 6
+        },
+        "canonicalExpression": "safe_divide(volume,rolling_mean(volume,6))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_ba1ed79cc04ba3237a57fd623671ca6489c0bbed352205c625a35b8015bfc7c7",
+        "validationFields": [
+          "volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_4e747fc347abf6fa9fea4fcff3642f49aac32a9cb6fd2a1e412b36c0bfc207ae",
+        "expressionId": "factor_expression_6ee944bf986602234d73c27d39a5ecb91d23271f97bb73092bc802bfb7a53ecf",
+        "parentIds": [
+          "factor_definition_92b7dfd1e3743f13c1515c5beeb1f150dc589d9cf5c0cd932b71f9561de5c833",
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(rolling_std(returns_1,72),safe_divide(delta(close,12),lag(close,12)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_f97144a5774cfd4c9942f3bb7f326c6f5cc695c6663be4883f2ca21d80f58a6c",
+        "validationFields": [
+          "close",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_50de1a6e45bb67e45aa55399f861fbecb5fa34ef8398993dfa86c8fef3fb943b",
+        "expressionId": "factor_expression_42c17f323eb4aae905bd7010fd3579c1270c7c3c7ad0fcab76833c51bafaca1e",
+        "parentIds": [
+          "factor_definition_1e6bbf4c5e7cac9114ac6ae274604375c4af72bf422dc3b31afb49d2a506f714",
+          "factor_definition_5dd505b5c6c2b2420c3cfaf8168f57ed8095e7c567bb2848e61233f8cd9662f4"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(rolling_std(returns_1,24),safe_divide(delta(close,3),lag(close,3)))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_7c6a2273c5290f3ab7fb79e5e033ed3fb430da574259866f7325c0b1672e85c4",
+        "validationFields": [
+          "close",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_513921d21b5d2123bc3768fa9901f905c2a231fdc75aa091533adaaa489361f9",
+        "expressionId": "factor_expression_6fc24b48be3a887223db9e93789125f716947d614dc13e1a924acb4cfac5897d",
+        "parentIds": [
+          "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179"
+        ],
+        "mutationType": "field",
+        "mutationDetail": {
+          "source": "volume",
+          "target": "quote_volume"
+        },
+        "canonicalExpression": "safe_divide(quote_volume,rolling_mean(quote_volume,24))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_77b7c129cdf161bafbaa7c76d8c58822040ccca192d48f913c1b3dadfd8233a5",
+        "validationFields": [
+          "quote_volume"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_544ba1e6a733a4b30db8288df278b655f6e12e22f4b13db4c831c70f0fa3adba",
+        "expressionId": "factor_expression_abb18cfca9d8a71749300b4833f1e4434c1c670e04cf5b741d909c9fb2ffa16a",
+        "parentIds": [
+          "factor_definition_92b7dfd1e3743f13c1515c5beeb1f150dc589d9cf5c0cd932b71f9561de5c833",
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_add"
+        },
+        "canonicalExpression": "safe_add(rolling_std(returns_1,72),safe_multiply(-1,safe_divide(delta(close,3),lag(close,3))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_28d4c3a009c25c6fe6a88b3fe2ad07f3c240901b2c6302d54531e42f35a2d511",
+        "validationFields": [
+          "close",
+          "returns_1"
+        ],
+        "lifecycleStatus": "shadow_research"
+      },
+      {
+        "candidateId": "factor_candidate_56130cebfcab0b35b7442dd4f9c8dc8ae3bea0b7c9f9b293ed84b86b73246d98",
+        "expressionId": "factor_expression_df9ede88306d718033b0aa6c56af0205aa490da95ee289a8a29e1ebb84ecc05d",
+        "parentIds": [
+          "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489",
+          "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5"
+        ],
+        "mutationType": "cross",
+        "mutationDetail": {
+          "operator": "safe_multiply"
+        },
+        "canonicalExpression": "safe_multiply(safe_divide(delta(close,12),lag(close,12)),safe_multiply(-1,safe_divide(delta(close,3),lag(close,3))))",
+        "researchOnly": true,
+        "factorDefinitionId": "factor_definition_generated_df41f0096ceb47a374aee64b21679a7899587c763694b6056c22ab4ffeef40c2",
+        "validationFields": [
+          "close"
+        ],
+        "lifecycleStatus": "shadow_research"
+      }
+    ],
+    "correlationFilterStatus": "blocked_missing_factor_values",
+    "correlationFilterInventedValues": false,
+    "researchAllocation": {
+      "totalBudget": 96,
+      "allocatedBudget": 96,
+      "allocations": [
+        {
+          "candidateId": "factor_candidate_00a4c620e26c0812befe9f7d473684bbf9a71c6367f9b6fbb920bf8e97039aa8",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7174349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_04f39445e2be2c256317a2c8e306b9ebae7860a067a0206f557c73f80b2f6498",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7094349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_0521fc1b3069f2b7246113aacb09a18842977311422a332b54f938f2155724f8",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7174349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_0784fae8d26c5c723e9879464e8646c4b11ac31ecda92e1053dce6bf719e0d20",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8074349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_07ea53931cc214c0d43eb99533faa599e3ee6b4003d16e97f0f69726a8e50f4c",
+          "evaluationUnits": 1,
+          "priorityScore": 0.7212002858455707,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_08e4841af389fba6cb434c3a2e1c86a141948e3c71c144e2389607be88e73ada",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_118d01c424108a85caefef8bac39d490d65ec2f48ba628c6c7441ed3a86d13df",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_13adf435cf52fd96601e69f323ea574deaf5d127815c7e6cd89510a9adf61962",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7984349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_14cf841455a99ec9930fdc44149e5bfed6d98aef454e03da07676bf930b17c59",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_18534e45061294a746dd51858d9377aff146fda7da4480a16e27fe9d4d36ef79",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_1a994a783137248ace4f976af8e5231ad35e9c93df642a2bcc0c0c366f6befac",
+          "evaluationUnits": 1,
+          "priorityScore": 0.7562002858455708,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_1b0ef035b3bcfe1818325b41fdeccacfed53d4434c7f8d0a517d60832fc34142",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7914349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_1d6115759b17665f3e62c85b23e0783b3797ef7863f84ffe4e78776df5457b4c",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_21362d7a4f36a23fa9d9862ebfea59b578a73d64a5d1b7870c1f7e1b237c519e",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_227534c7a6a637263368a37f67c43bbd4ffe50a0fea7607aad4a02f294bd7b9c",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7774349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_23206aced9a212fcbc3a3d7d01757d3ab894fe4338917a43f4d8797c059e3384",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7604349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_284539915a944086362130b1cf8eec1fa9b37bfeb0d512e6263240715f2e02f1",
+          "evaluationUnits": 2,
+          "priorityScore": 0.6884349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_2a44c3a2fd8ce91eeb9138164cd3656e660e36c64e99f493dd316b18eba4abb3",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_2c7b5da597193def1b75169767fd3f841e2f31b3cb70aab42b8f376cd428d2bb",
+          "evaluationUnits": 1,
+          "priorityScore": 0.7562002858455708,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_2cb483416aee12f69b9d217c0aaf215e5a2965fac96d8aa57c48a12a987b3903",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_2d314e9e40fc4c3791e5450b1eab5faa6b3ad55c3dac64add258dc9828a004cb",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_30fc8ef76501bc05808057a4f40eb9e0c2c6405b135b0eaf963cd6af5487eba5",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8064349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_335b60274c926ad2e4491207cc695cfcae29fe495e615590fe0a556ab896a02f",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8174349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_3512a9e57f48e14813b2480fe07477cb0e1308e5c267e846b6449e088f2bd52b",
+          "evaluationUnits": 3,
+          "priorityScore": 0.7347143500566086,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_361cf78817094e769d0b82bdb61b27d284efc210e0cf60505d7d4050295e3af9",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7244349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_36da6eef8200f1912a43051aad927c2bbcaf6b58b8a43aa547e6123e2c5b8ad6",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7824349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_389cf62cc7dd02184094f1dc1621fdd6bca356e0813edab15f714e28ca5ec156",
+          "evaluationUnits": 3,
+          "priorityScore": 0.7347143500566086,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_38d40413bd6de5ba87254e1a18a6b7e00198d2fb3c76fede041644d5baa900b2",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7174349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_38e847a11a055dda0e04013527a9d2e39bea3711599336c79c3823b981cadddc",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8094349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_39122dfc766007a412797359ab233bcb2e07b3f92ccc143f1e965e223a738e87",
+          "evaluationUnits": 1,
+          "priorityScore": 0.7562002858455708,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_3a37d3d86c9729018440e863cfa177d8ee1f5a604a54f00fcc7932d2b18eaf80",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7174349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_3bf42869461413dddbb3037b95e07bbf0001607adcd5bfa59d86ab78850a649e",
+          "evaluationUnits": 3,
+          "priorityScore": 0.7347143500566086,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_3e4859c7484dc6421bb702c787f41bfd718073b711c8796bde8b41c580fcc94d",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7674349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_3f25d46603e7f247a3c352464cb58f1b6342dc5eeac8da653f5cbdb3518ffd9b",
+          "evaluationUnits": 1,
+          "priorityScore": 0.7562002858455708,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_4197d79539ac3ee5cb16fe9ac4618fcb794f3e09c158a4572272497af3688aeb",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8004349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_42ea018d10d9e4f2946deb75f6ec75cee060fa4b794c1345b62e7ce14d43cb3b",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8034349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_46184eeaf38a47b05eeb0204bce635c11bc841d2655a45cc9ddfb5bb39a1ab8e",
+          "evaluationUnits": 3,
+          "priorityScore": 0.7347143500566086,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_463615b37796073763a40bd1181ad5086e808a0d770c688d446d37e8e62ebc0c",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7264349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_47a172d8a29fa5066970edc269f82dc9dbd2314f1c596adb5ea8cd7d35a5b995",
+          "evaluationUnits": 1,
+          "priorityScore": 0.7562002858455708,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_49e9510a760f2fa0e01f3e56e6c4250c45e98bf5e54e036c5c3f16297f97d04a",
+          "evaluationUnits": 1,
+          "priorityScore": 0.8152002858455707,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_4b51822ea9c0d347be289be27d55912258201ab64f3081eacd2a271320195431",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7224349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_4c4f5b64e95d711b1951cdbe3b5bbf5792f42a640c243ffc5e056848b36655d4",
+          "evaluationUnits": 3,
+          "priorityScore": 0.7347143500566086,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_4db400aa09471452dd5094f0eabbfbb8ceec6dd50b4fd574c9166371f4417dfc",
+          "evaluationUnits": 1,
+          "priorityScore": 0.7562002858455708,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_4e747fc347abf6fa9fea4fcff3642f49aac32a9cb6fd2a1e412b36c0bfc207ae",
+          "evaluationUnits": 3,
+          "priorityScore": 0.7347143500566086,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_50de1a6e45bb67e45aa55399f861fbecb5fa34ef8398993dfa86c8fef3fb943b",
+          "evaluationUnits": 3,
+          "priorityScore": 0.7347143500566086,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_513921d21b5d2123bc3768fa9901f905c2a231fdc75aa091533adaaa489361f9",
+          "evaluationUnits": 2,
+          "priorityScore": 0.7174349478894776,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_544ba1e6a733a4b30db8288df278b655f6e12e22f4b13db4c831c70f0fa3adba",
+          "evaluationUnits": 3,
+          "priorityScore": 0.7347143500566086,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        },
+        {
+          "candidateId": "factor_candidate_56130cebfcab0b35b7442dd4f9c8dc8ae3bea0b7c9f9b293ed84b86b73246d98",
+          "evaluationUnits": 2,
+          "priorityScore": 0.8014349478894777,
+          "reason": "research_ucb_with_novelty_and_compute_cost"
+        }
+      ],
+      "researchOnly": true
+    },
+    "registeredFactorRunCount": 0,
+    "modelTrainingStatus": "blocked_missing_registered_training_dataset",
+    "modelCount": 0,
+    "strategyCandidateCount": 0,
+    "demoReleaseCount": 0,
+    "safetyBoundary": {
+      "researchOnly": true,
+      "banditAllocatesResearchOnly": true,
+      "onlineModelMutation": false,
+      "createsStrategyCandidate": false,
+      "createsDemoRelease": false,
+      "createsLiveRelease": false,
+      "createsOrders": false,
+      "usesApiKey": false,
+      "tradeApiUsed": false,
+      "withdrawApiUsed": false
+    }
+  },
+  "safetyBoundary": {
+    "researchOnly": true,
+    "banditAllocatesResearchOnly": true,
+    "onlineModelMutation": false,
+    "createsStrategyCandidate": false,
+    "createsDemoRelease": false,
+    "createsLiveRelease": false,
+    "createsOrders": false,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false
+  },
+  "nextStep": "Materialize registered point-in-time FactorRuns before offline model training."
+}

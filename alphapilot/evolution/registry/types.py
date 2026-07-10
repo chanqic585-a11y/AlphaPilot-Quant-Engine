@@ -38,6 +38,49 @@ class FactorDefinitionRecord:
 
 
 @dataclass(frozen=True)
+class FactorRunRecord:
+    factorRunId: str
+    factorDefinitionId: str
+    dataSnapshotId: str
+    codeCommit: str | None
+    configHash: str
+    resultPath: str | None
+    resultSha256: str | None
+    status: str
+    payload: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
+class ExperimentRecord:
+    experimentId: str
+    experimentType: str
+    status: str
+    dataSnapshotId: str | None
+    splitDefinition: dict[str, Any]
+    costModel: dict[str, Any]
+    parameters: dict[str, Any]
+    codeCommit: str | None
+    payload: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
+class ModelRecord:
+    modelId: str
+    experimentId: str
+    algorithm: str
+    status: str
+    artifactPath: str | None
+    artifactSha256: str | None
+    payload: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
 class StrategyFamilyRecord:
     strategyFamilyId: str
     familyKey: str

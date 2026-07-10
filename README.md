@@ -4191,6 +4191,51 @@ docs/V13.12.0-factor-research-kernel.md
 V13.12.0 adds no API key handling, private exchange access, StrategyCandidate
 auto-promotion, Demo/live release, order creation, or automatic trading.
 
+## V13.13.0 Evolution and ML
+
+V13.13.0 adds bounded AST factor generation, semantic and correlation filters,
+a research-only Bandit, deterministic Logistic/boosted-stump models, Platt
+calibration, immutable shadow model registration, champion/challenger review,
+and a complete 2R strategy-candidate contract.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_evolution_cycle.ps1
+```
+
+Current cycle result:
+
+```text
+safe seed factors: 11
+generated Shadow research factors: 48
+research allocation units: 96
+correlation filter: blocked_missing_factor_values
+registered new-kernel FactorRuns: 0
+model training: blocked_missing_registered_training_dataset
+Models created: 0
+StrategyCandidates created: 0
+DemoReleases created: 0
+orders created: 0
+```
+
+No values or labels are invented to force correlation filtering or ML. Model
+training requires registered point-in-time FactorRuns and a matching purged
+walk-forward manifest. Champion/challenger success can request Shadow only.
+
+Key paths:
+
+```text
+alphapilot/evolution/factor_mining/
+alphapilot/evolution/models/
+alphapilot/evolution/strategies/
+alphapilot/evolution/orchestrator.py
+reports/evolution_cycle_report.json
+docs/V13.13.0-evolution-and-ml.md
+```
+
+V13.13.0 does not use or store API keys, call Trade API or Withdraw API, read
+private exchange state, create Demo/live releases, create orders, or trade
+automatically.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.
