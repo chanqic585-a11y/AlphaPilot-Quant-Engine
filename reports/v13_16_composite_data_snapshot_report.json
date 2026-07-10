@@ -1,0 +1,685 @@
+{
+  "reportId": "v13_16_composite_data_snapshot_report",
+  "version": "V13.16.0",
+  "status": "completed_with_provenance_warning",
+  "generatedAt": "2026-07-10T15:02:34.803131+00:00",
+  "requestedGroupCount": 12,
+  "validGroupCount": 12,
+  "canonicalFileCount": 33,
+  "groups": [
+    {
+      "instrumentId": "BTC-USDT-SWAP",
+      "timeframe": "15m",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 228729,
+      "uniqueRows": 228729,
+      "startTime": "2020-01-01T00:00:00+00:00",
+      "endTime": "2026-07-10T14:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "BTC-USDT-SWAP",
+      "timeframe": "1h",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 57182,
+      "uniqueRows": 57182,
+      "startTime": "2020-01-01T00:00:00+00:00",
+      "endTime": "2026-07-10T13:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "BTC-USDT-SWAP",
+      "timeframe": "4h",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 14295,
+      "uniqueRows": 14295,
+      "startTime": "2020-01-01T00:00:00+00:00",
+      "endTime": "2026-07-10T08:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "BTC-USDT-SWAP",
+      "timeframe": "1d",
+      "valid": true,
+      "fileCount": 2,
+      "rows": 2381,
+      "uniqueRows": 2381,
+      "startTime": "2020-01-01T16:00:00+00:00",
+      "endTime": "2026-07-08T16:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 1,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "ETH-USDT-SWAP",
+      "timeframe": "15m",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 228729,
+      "uniqueRows": 228729,
+      "startTime": "2020-01-01T00:00:00+00:00",
+      "endTime": "2026-07-10T14:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "ETH-USDT-SWAP",
+      "timeframe": "1h",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 57182,
+      "uniqueRows": 57182,
+      "startTime": "2020-01-01T00:00:00+00:00",
+      "endTime": "2026-07-10T13:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "ETH-USDT-SWAP",
+      "timeframe": "4h",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 14295,
+      "uniqueRows": 14295,
+      "startTime": "2020-01-01T00:00:00+00:00",
+      "endTime": "2026-07-10T08:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "ETH-USDT-SWAP",
+      "timeframe": "1d",
+      "valid": true,
+      "fileCount": 2,
+      "rows": 2381,
+      "uniqueRows": 2381,
+      "startTime": "2020-01-01T16:00:00+00:00",
+      "endTime": "2026-07-08T16:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 1,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "SOL-USDT-SWAP",
+      "timeframe": "15m",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 191550,
+      "uniqueRows": 191550,
+      "startTime": "2021-01-22T06:45:00+00:00",
+      "endTime": "2026-07-10T14:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "SOL-USDT-SWAP",
+      "timeframe": "1h",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 47888,
+      "uniqueRows": 47888,
+      "startTime": "2021-01-22T06:00:00+00:00",
+      "endTime": "2026-07-10T13:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "SOL-USDT-SWAP",
+      "timeframe": "4h",
+      "valid": true,
+      "fileCount": 3,
+      "rows": 11972,
+      "uniqueRows": 11972,
+      "startTime": "2021-01-22T04:00:00+00:00",
+      "endTime": "2026-07-10T08:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 2,
+        "unknown": 1
+      },
+      "errors": []
+    },
+    {
+      "instrumentId": "SOL-USDT-SWAP",
+      "timeframe": "1d",
+      "valid": true,
+      "fileCount": 2,
+      "rows": 1995,
+      "uniqueRows": 1995,
+      "startTime": "2021-01-21T16:00:00+00:00",
+      "endTime": "2026-07-08T16:00:00+00:00",
+      "duplicateTimestampCount": 0,
+      "gapEventCount": 0,
+      "missingBarCount": 0,
+      "misalignedIntervalCount": 0,
+      "sourceCounts": {
+        "okx": 1,
+        "unknown": 1
+      },
+      "errors": []
+    }
+  ],
+  "dataSnapshot": {
+    "schemaVersion": "data_snapshot_manifest_v1",
+    "source": "alphapilot_v13_16_composite_market_data",
+    "exchange": "mixed",
+    "marketType": "swap",
+    "timeframe": "multi",
+    "startTime": "2020-01-01T00:00:00+00:00",
+    "endTime": "2026-07-10T14:00:00+00:00",
+    "pointInTimeCutoff": "2026-07-08T16:00:00+00:00",
+    "universeMembers": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "SOL-USDT-SWAP"
+    ],
+    "files": [
+      {
+        "path": "okx/swap/ohlcv/BTC-USDT-SWAP/15m/increment-1778987700000-1783665000000-921bcec35dab8efc.parquet",
+        "size": 193564,
+        "sha256": "59b09cf462d577e9f87e5798333f3fc10824b298db100bc8f768e7fd659a7743"
+      },
+      {
+        "path": "okx/swap/ohlcv/BTC-USDT-SWAP/15m/increment-1783665900000-1783692000000-42f55652b00e3bee.parquet",
+        "size": 10203,
+        "sha256": "8ca9c9f40ae06c42d88919d04161d693373c61c358205af0a81a10462a98198c"
+      },
+      {
+        "path": "okx/swap/ohlcv/BTC-USDT-SWAP/1d/increment-1778947200000-1783526400000-cf96b8cb10f682c8.parquet",
+        "size": 11210,
+        "sha256": "eb94f03c546aa5509b7269da231273cf2975f62a45dacd2924ae223c45825c5d"
+      },
+      {
+        "path": "okx/swap/ohlcv/BTC-USDT-SWAP/1h/increment-1778986800000-1783659600000-84bc29e2de4351af.parquet",
+        "size": 54927,
+        "sha256": "e189e483b6cbac0daf5fc43a1bb836b1231602e3974416e3e2c68c1d7d7cbc25"
+      },
+      {
+        "path": "okx/swap/ohlcv/BTC-USDT-SWAP/1h/increment-1783663200000-1783688400000-46f149baaeb59751.parquet",
+        "size": 9293,
+        "sha256": "da4eb3345001837c30bd5ed2da22a6357423d55711fc7e3d12fb9ee068b9106b"
+      },
+      {
+        "path": "okx/swap/ohlcv/BTC-USDT-SWAP/4h/increment-1778976000000-1783641600000-c9cbf2cf038df96b.parquet",
+        "size": 20459,
+        "sha256": "cae2ed697ec22486132ebc465046f034d0bf15a44a28fdf014423634f811188e"
+      },
+      {
+        "path": "okx/swap/ohlcv/BTC-USDT-SWAP/4h/increment-1783656000000-1783670400000-7adf7590eaf7012d.parquet",
+        "size": 8993,
+        "sha256": "0e7d579e77775bede2fde314e9ba7857426709a61966ef196498fde4289d62af"
+      },
+      {
+        "path": "okx/swap/ohlcv/ETH-USDT-SWAP/15m/increment-1779029100000-1783665000000-1811adb109fe7f84.parquet",
+        "size": 183200,
+        "sha256": "1cbc891c9dd01cc0bdf09b911191020bc3d9076e5c7a616642d227b1d8861915"
+      },
+      {
+        "path": "okx/swap/ohlcv/ETH-USDT-SWAP/15m/increment-1783665900000-1783692000000-c00daf290622a998.parquet",
+        "size": 10355,
+        "sha256": "90634428528014d4d54bc111ad1e07d9c233953ce5662f1a51a80e5210544665"
+      },
+      {
+        "path": "okx/swap/ohlcv/ETH-USDT-SWAP/1d/increment-1778947200000-1783526400000-30be0fb61d71e4ae.parquet",
+        "size": 11411,
+        "sha256": "a5c10be0c8341413676ab2cc0dc1ac35de174400d82040e1f5f2baf1a05f37a2"
+      },
+      {
+        "path": "okx/swap/ohlcv/ETH-USDT-SWAP/1h/increment-1779026400000-1783659600000-52e72ece20701770.parquet",
+        "size": 53217,
+        "sha256": "dc4fb4f9320bf1186b7f3367a13303afdbdd6ef8c0f05e829d5762f2922a93af"
+      },
+      {
+        "path": "okx/swap/ohlcv/ETH-USDT-SWAP/1h/increment-1783663200000-1783688400000-85f2c944e09e4e09.parquet",
+        "size": 9331,
+        "sha256": "3cac9cf0a33b7632ab25989c0d8f7c21e1d94a9a606f2ab1f4df19cc356fb07c"
+      },
+      {
+        "path": "okx/swap/ohlcv/ETH-USDT-SWAP/4h/increment-1779019200000-1783641600000-21c697a0b430c12a.parquet",
+        "size": 20627,
+        "sha256": "ce2b2d2fa602dbc10af04aced0616bea99692c665f2bcff92f5218c664e2da8f"
+      },
+      {
+        "path": "okx/swap/ohlcv/ETH-USDT-SWAP/4h/increment-1783656000000-1783670400000-72072c103802c658.parquet",
+        "size": 8993,
+        "sha256": "4cd5ee044ec48af4f92d6622a5cf2eca2573d86eaa58123028ddad9554e6d6f7"
+      },
+      {
+        "path": "okx/swap/ohlcv/SOL-USDT-SWAP/15m/increment-1779286500000-1783665000000-685909994b6cdb67.parquet",
+        "size": 142396,
+        "sha256": "506260bc55e89eef8512cb1f9ca50c2be17d0f1df6c06ec1a9467acca9b90a47"
+      },
+      {
+        "path": "okx/swap/ohlcv/SOL-USDT-SWAP/15m/increment-1783665900000-1783692000000-072142ff3fe7ccc3.parquet",
+        "size": 10288,
+        "sha256": "ea4551215ba98be1a5ed9c2ac2b8e5a78aa3477acd116a9db5f4ff9335fe963f"
+      },
+      {
+        "path": "okx/swap/ohlcv/SOL-USDT-SWAP/1d/increment-1779206400000-1783526400000-4d0fd462b2a8f329.parquet",
+        "size": 11257,
+        "sha256": "8dd2788d4e8df0de163a0f52ceb0a7efa125bad6804fc1f1e1747b76de141707"
+      },
+      {
+        "path": "okx/swap/ohlcv/SOL-USDT-SWAP/1h/increment-1779285600000-1783659600000-0835627f1068249a.parquet",
+        "size": 46905,
+        "sha256": "cc12d80cb7fe033528cb7724aadeb195a7744b9a7bae199fe1e2d911a4523964"
+      },
+      {
+        "path": "okx/swap/ohlcv/SOL-USDT-SWAP/1h/increment-1783663200000-1783688400000-d14cb519596fbc17.parquet",
+        "size": 9322,
+        "sha256": "78d6eccfc080615ddb02edafbdc70ab4ce277a8a11d50d3409d6f2fe520040ed"
+      },
+      {
+        "path": "okx/swap/ohlcv/SOL-USDT-SWAP/4h/increment-1779278400000-1783641600000-2d0babafe430bc95.parquet",
+        "size": 19584,
+        "sha256": "57775de0f084731e8ece3f35d12c52f4656f1985fa03c714ef399feee8068d1e"
+      },
+      {
+        "path": "okx/swap/ohlcv/SOL-USDT-SWAP/4h/increment-1783656000000-1783670400000-79ffc41dd5b21682.parquet",
+        "size": 8993,
+        "sha256": "7053b0ce310c9d47819672f51c2b89046ab101dfa7225f3213100ccd2c0cf0aa"
+      },
+      {
+        "path": "unknown/swap/ohlcv/BTC-USDT-SWAP/15m/part-all-faac33dec218761b.parquet",
+        "size": 7691408,
+        "sha256": "ae02b8529e5456bf27079ca32c2e344e896ba85ca5f3826ddb41c553f056df4f"
+      },
+      {
+        "path": "unknown/swap/ohlcv/BTC-USDT-SWAP/1d/part-all-e97d3e0a028f4d44.parquet",
+        "size": 106468,
+        "sha256": "b71a6c12e951e12758b11344765d42b6741e98601bc91f982945ff0902f55dfb"
+      },
+      {
+        "path": "unknown/swap/ohlcv/BTC-USDT-SWAP/1h/part-all-9336aa7d598bf1d8.parquet",
+        "size": 2418779,
+        "sha256": "0258132f430d101c6c46188237a89c3a93dc312785ee90e9c10503bdfb2a1e06"
+      },
+      {
+        "path": "unknown/swap/ohlcv/BTC-USDT-SWAP/4h/part-all-938505bdd70387e0.parquet",
+        "size": 535797,
+        "sha256": "7f5019726dce159c438890bde0183e969ef37cd5c3beaaf0e9f9ea69381764ec"
+      },
+      {
+        "path": "unknown/swap/ohlcv/ETH-USDT-SWAP/15m/part-all-93eb827a82d87859.parquet",
+        "size": 7519201,
+        "sha256": "0c6bac3189a19ba303619e835e71ab317bfab694e339f1664d9a05e084dd292b"
+      },
+      {
+        "path": "unknown/swap/ohlcv/ETH-USDT-SWAP/1d/part-all-5de606e737736a76.parquet",
+        "size": 106941,
+        "sha256": "74ff72a1c152f008779a79fcb221794f49d5fb5110522f8a6b5cc6c4fb7692da"
+      },
+      {
+        "path": "unknown/swap/ohlcv/ETH-USDT-SWAP/1h/part-all-edab80747e6e0bce.parquet",
+        "size": 2341689,
+        "sha256": "cc39aa101448eba389e90af838b28b9715602a26e7322566748c9ffafb8cdf05"
+      },
+      {
+        "path": "unknown/swap/ohlcv/ETH-USDT-SWAP/4h/part-all-c2b01c2698467c03.parquet",
+        "size": 536458,
+        "sha256": "0abfa4b4acf80c5b7c42ca04e3b126f9b4ff3fa252f6604526027b1ef9823879"
+      },
+      {
+        "path": "unknown/swap/ohlcv/SOL-USDT-SWAP/15m/part-all-91cb363ebd9c2c25.parquet",
+        "size": 5890605,
+        "sha256": "6ffdf011e88ddb1c00b271350bbb0327f76ee1a2fdc17cc91360577601066cb4"
+      },
+      {
+        "path": "unknown/swap/ohlcv/SOL-USDT-SWAP/1d/part-all-57439393a3d0aed4.parquet",
+        "size": 79436,
+        "sha256": "afb18227a044cd7225092c2ee44cc23ab92ef8c51150ff128b343ebd12646abf"
+      },
+      {
+        "path": "unknown/swap/ohlcv/SOL-USDT-SWAP/1h/part-all-8d260b46fbd476b0.parquet",
+        "size": 1769629,
+        "sha256": "f82ce7ecf4384b24768404e4324debc126033c51aa2da5337bc9f8af7ad88646"
+      },
+      {
+        "path": "unknown/swap/ohlcv/SOL-USDT-SWAP/4h/part-all-b9a322704fbfa594.parquet",
+        "size": 439290,
+        "sha256": "9961ccb62a732d9f82eb8fc424565f4f420b32ab6ada686da4b641daaf8bc902"
+      }
+    ],
+    "metadata": {
+      "commonStartTime": "2021-01-22T06:45:00+00:00",
+      "provenanceComplete": false,
+      "formalPromotionEligible": false,
+      "provenanceStatus": "mixed_unverified_local_base_plus_verified_okx_public_increment",
+      "canonicalSources": [
+        "okx",
+        "unknown"
+      ],
+      "groupQuality": [
+        {
+          "instrumentId": "BTC-USDT-SWAP",
+          "timeframe": "15m",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 228729,
+          "uniqueRows": 228729,
+          "startTime": "2020-01-01T00:00:00+00:00",
+          "endTime": "2026-07-10T14:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "BTC-USDT-SWAP",
+          "timeframe": "1h",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 57182,
+          "uniqueRows": 57182,
+          "startTime": "2020-01-01T00:00:00+00:00",
+          "endTime": "2026-07-10T13:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "BTC-USDT-SWAP",
+          "timeframe": "4h",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 14295,
+          "uniqueRows": 14295,
+          "startTime": "2020-01-01T00:00:00+00:00",
+          "endTime": "2026-07-10T08:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "BTC-USDT-SWAP",
+          "timeframe": "1d",
+          "valid": true,
+          "fileCount": 2,
+          "rows": 2381,
+          "uniqueRows": 2381,
+          "startTime": "2020-01-01T16:00:00+00:00",
+          "endTime": "2026-07-08T16:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 1,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "ETH-USDT-SWAP",
+          "timeframe": "15m",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 228729,
+          "uniqueRows": 228729,
+          "startTime": "2020-01-01T00:00:00+00:00",
+          "endTime": "2026-07-10T14:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "ETH-USDT-SWAP",
+          "timeframe": "1h",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 57182,
+          "uniqueRows": 57182,
+          "startTime": "2020-01-01T00:00:00+00:00",
+          "endTime": "2026-07-10T13:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "ETH-USDT-SWAP",
+          "timeframe": "4h",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 14295,
+          "uniqueRows": 14295,
+          "startTime": "2020-01-01T00:00:00+00:00",
+          "endTime": "2026-07-10T08:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "ETH-USDT-SWAP",
+          "timeframe": "1d",
+          "valid": true,
+          "fileCount": 2,
+          "rows": 2381,
+          "uniqueRows": 2381,
+          "startTime": "2020-01-01T16:00:00+00:00",
+          "endTime": "2026-07-08T16:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 1,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "SOL-USDT-SWAP",
+          "timeframe": "15m",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 191550,
+          "uniqueRows": 191550,
+          "startTime": "2021-01-22T06:45:00+00:00",
+          "endTime": "2026-07-10T14:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "SOL-USDT-SWAP",
+          "timeframe": "1h",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 47888,
+          "uniqueRows": 47888,
+          "startTime": "2021-01-22T06:00:00+00:00",
+          "endTime": "2026-07-10T13:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "SOL-USDT-SWAP",
+          "timeframe": "4h",
+          "valid": true,
+          "fileCount": 3,
+          "rows": 11972,
+          "uniqueRows": 11972,
+          "startTime": "2021-01-22T04:00:00+00:00",
+          "endTime": "2026-07-10T08:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 2,
+            "unknown": 1
+          },
+          "errors": []
+        },
+        {
+          "instrumentId": "SOL-USDT-SWAP",
+          "timeframe": "1d",
+          "valid": true,
+          "fileCount": 2,
+          "rows": 1995,
+          "uniqueRows": 1995,
+          "startTime": "2021-01-21T16:00:00+00:00",
+          "endTime": "2026-07-08T16:00:00+00:00",
+          "duplicateTimestampCount": 0,
+          "gapEventCount": 0,
+          "missingBarCount": 0,
+          "misalignedIntervalCount": 0,
+          "sourceCounts": {
+            "okx": 1,
+            "unknown": 1
+          },
+          "errors": []
+        }
+      ],
+      "rewardRiskMinimum": 2.0
+    },
+    "dataSnapshotId": "data_snapshot_7a348587674343ecd30d6f6f1138febcea32400448026569738e584e95019e35",
+    "manifestHash": "7a348587674343ecd30d6f6f1138febcea32400448026569738e584e95019e35",
+    "createdAt": "2026-07-10T15:02:34.741508+00:00"
+  },
+  "dataSnapshotVerification": {
+    "valid": true,
+    "dataSnapshotId": "data_snapshot_7a348587674343ecd30d6f6f1138febcea32400448026569738e584e95019e35",
+    "checkedFileCount": 33,
+    "errors": []
+  },
+  "dataSnapshotRegistered": true,
+  "formalPromotionEligible": false,
+  "blockers": [
+    "local_base_source_provenance_not_verified"
+  ],
+  "safetyBoundary": {
+    "localOrPublicDataOnly": true,
+    "apiKeyUsed": false,
+    "accountRead": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "orderCreated": false,
+    "liveTradingEnabled": false
+  }
+}

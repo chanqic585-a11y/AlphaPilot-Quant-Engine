@@ -1,0 +1,481 @@
+{
+  "reportId": "v13_16_data_foundation_report",
+  "version": "V13.16.0",
+  "status": "completed_with_provenance_warning",
+  "generatedAt": "2026-07-10T15:01:59.869706+00:00",
+  "rawRoot": "D:\\Codex-Workspace\\回测数据",
+  "marketRoot": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market",
+  "catalogSummary": {
+    "totalFileCount": 12473,
+    "selectedFileCount": 3107,
+    "totalSizeBytes": 28295314781,
+    "provenanceComplete": false,
+    "selectionSummary": {
+      "checkpoint_file": 5,
+      "duplicate_of_all_partition": 9360,
+      "selected": 3107,
+      "timestamped_duplicate_export": 1
+    },
+    "flagSummary": {
+      "checkpoint_file": 5,
+      "exchange_unverified": 12473,
+      "market_type_unverified": 287,
+      "timestamped_duplicate_export": 1
+    },
+    "hashSummary": {
+      "hashedFileCount": 0,
+      "reusedHashCount": 12473,
+      "pauseRequested": false
+    }
+  },
+  "smokeRequested": {
+    "symbols": [
+      "BTC",
+      "ETH",
+      "SOL"
+    ],
+    "timeframes": [
+      "15m",
+      "1d",
+      "1h",
+      "4h"
+    ],
+    "marketType": "swap"
+  },
+  "smokeAssetCount": 12,
+  "canonicalCreatedOrExistingCount": 12,
+  "canonicalFailedCount": 0,
+  "canonicalAssets": [
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_15m\\BTC_USDT_SWAP\\BTC_USDT_SWAP_swap_candles_15m_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\15m\\part-all-faac33dec218761b.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "BTC-USDT-SWAP",
+      "timeframe": "15m",
+      "contentSha256": "ae02b8529e5456bf27079ca32c2e344e896ba85ca5f3826ddb41c553f056df4f",
+      "quality": {
+        "rows": 223501,
+        "startTime": "2020-01-01T00:00:00+00:00",
+        "endTime": "2026-05-17T03:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 223502,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1D\\BTC_USDT_SWAP\\BTC_USDT_SWAP_swap_candles_1D_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\1d\\part-all-e97d3e0a028f4d44.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "BTC-USDT-SWAP",
+      "timeframe": "1d",
+      "contentSha256": "b71a6c12e951e12758b11344765d42b6741e98601bc91f982945ff0902f55dfb",
+      "quality": {
+        "rows": 2327,
+        "startTime": "2020-01-01T16:00:00+00:00",
+        "endTime": "2026-05-15T16:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 2328,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1H\\BTC_USDT_SWAP\\BTC_USDT_SWAP_swap_candles_1H_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\part-all-9336aa7d598bf1d8.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "BTC-USDT-SWAP",
+      "timeframe": "1h",
+      "contentSha256": "0258132f430d101c6c46188237a89c3a93dc312785ee90e9c10503bdfb2a1e06",
+      "quality": {
+        "rows": 55875,
+        "startTime": "2020-01-01T00:00:00+00:00",
+        "endTime": "2026-05-17T02:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 55876,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_4H\\BTC_USDT_SWAP\\BTC_USDT_SWAP_swap_candles_4H_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\part-all-938505bdd70387e0.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "BTC-USDT-SWAP",
+      "timeframe": "4h",
+      "contentSha256": "7f5019726dce159c438890bde0183e969ef37cd5c3beaaf0e9f9ea69381764ec",
+      "quality": {
+        "rows": 13968,
+        "startTime": "2020-01-01T00:00:00+00:00",
+        "endTime": "2026-05-16T20:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 13969,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_15m\\ETH_USDT_SWAP\\ETH_USDT_SWAP_swap_candles_15m_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\15m\\part-all-93eb827a82d87859.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "ETH-USDT-SWAP",
+      "timeframe": "15m",
+      "contentSha256": "0c6bac3189a19ba303619e835e71ab317bfab694e339f1664d9a05e084dd292b",
+      "quality": {
+        "rows": 223547,
+        "startTime": "2020-01-01T00:00:00+00:00",
+        "endTime": "2026-05-17T14:30:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 223548,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1D\\ETH_USDT_SWAP\\ETH_USDT_SWAP_swap_candles_1D_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\1d\\part-all-5de606e737736a76.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "ETH-USDT-SWAP",
+      "timeframe": "1d",
+      "contentSha256": "74ff72a1c152f008779a79fcb221794f49d5fb5110522f8a6b5cc6c4fb7692da",
+      "quality": {
+        "rows": 2327,
+        "startTime": "2020-01-01T16:00:00+00:00",
+        "endTime": "2026-05-15T16:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 2328,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1H\\ETH_USDT_SWAP\\ETH_USDT_SWAP_swap_candles_1H_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\part-all-edab80747e6e0bce.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "ETH-USDT-SWAP",
+      "timeframe": "1h",
+      "contentSha256": "cc39aa101448eba389e90af838b28b9715602a26e7322566748c9ffafb8cdf05",
+      "quality": {
+        "rows": 55886,
+        "startTime": "2020-01-01T00:00:00+00:00",
+        "endTime": "2026-05-17T13:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 55887,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_4H\\ETH_USDT_SWAP\\ETH_USDT_SWAP_swap_candles_4H_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\part-all-c2b01c2698467c03.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "ETH-USDT-SWAP",
+      "timeframe": "4h",
+      "contentSha256": "0abfa4b4acf80c5b7c42ca04e3b126f9b4ff3fa252f6604526027b1ef9823879",
+      "quality": {
+        "rows": 13971,
+        "startTime": "2020-01-01T00:00:00+00:00",
+        "endTime": "2026-05-17T08:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 13972,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_15m\\SOL_USDT_SWAP\\SOL_USDT_SWAP_swap_candles_15m_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\15m\\part-all-91cb363ebd9c2c25.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "SOL-USDT-SWAP",
+      "timeframe": "15m",
+      "contentSha256": "6ffdf011e88ddb1c00b271350bbb0327f76ee1a2fdc17cc91360577601066cb4",
+      "quality": {
+        "rows": 186654,
+        "startTime": "2021-01-22T06:45:00+00:00",
+        "endTime": "2026-05-20T14:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 186655,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1D\\SOL_USDT_SWAP\\SOL_USDT_SWAP_swap_candles_1D_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\1d\\part-all-57439393a3d0aed4.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "SOL-USDT-SWAP",
+      "timeframe": "1d",
+      "contentSha256": "afb18227a044cd7225092c2ee44cc23ab92ef8c51150ff128b343ebd12646abf",
+      "quality": {
+        "rows": 1944,
+        "startTime": "2021-01-21T16:00:00+00:00",
+        "endTime": "2026-05-18T16:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 1945,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1H\\SOL_USDT_SWAP\\SOL_USDT_SWAP_swap_candles_1H_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\part-all-8d260b46fbd476b0.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "SOL-USDT-SWAP",
+      "timeframe": "1h",
+      "contentSha256": "f82ce7ecf4384b24768404e4324debc126033c51aa2da5337bc9f8af7ad88646",
+      "quality": {
+        "rows": 46664,
+        "startTime": "2021-01-22T06:00:00+00:00",
+        "endTime": "2026-05-20T13:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 46665,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_4H\\SOL_USDT_SWAP\\SOL_USDT_SWAP_swap_candles_4H_ALL.xlsx",
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\4h\\part-all-b9a322704fbfa594.parquet",
+      "status": "existing",
+      "marketType": "swap",
+      "instrumentId": "SOL-USDT-SWAP",
+      "timeframe": "4h",
+      "contentSha256": "9961ccb62a732d9f82eb8fc424565f4f420b32ab6ada686da4b641daaf8bc902",
+      "quality": {
+        "rows": 11666,
+        "startTime": "2021-01-22T04:00:00+00:00",
+        "endTime": "2026-05-20T08:00:00+00:00",
+        "duplicateTimestampCount": 0,
+        "backwardTimestampCount": 0,
+        "gapEventCount": 0,
+        "missingBarCount": 0,
+        "invalidOhlcCount": 0,
+        "negativeVolumeCount": 0,
+        "unconfirmedDroppedCount": 1,
+        "sourceRows": 11667,
+        "errors": [],
+        "warnings": [
+          "unconfirmed_rows_removed"
+        ]
+      },
+      "error": null
+    }
+  ],
+  "dataSnapshot": {
+    "schemaVersion": "data_snapshot_manifest_v1",
+    "source": "alphapilot_v13_16_local_market_data",
+    "exchange": "unknown",
+    "marketType": "swap",
+    "timeframe": "multi",
+    "startTime": "2020-01-01T00:00:00+00:00",
+    "endTime": "2026-05-20T14:00:00+00:00",
+    "pointInTimeCutoff": "2026-05-15T16:00:00+00:00",
+    "universeMembers": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "SOL-USDT-SWAP"
+    ],
+    "files": [
+      {
+        "path": "unknown/swap/ohlcv/BTC-USDT-SWAP/15m/part-all-faac33dec218761b.parquet",
+        "size": 7691408,
+        "sha256": "ae02b8529e5456bf27079ca32c2e344e896ba85ca5f3826ddb41c553f056df4f"
+      },
+      {
+        "path": "unknown/swap/ohlcv/BTC-USDT-SWAP/1d/part-all-e97d3e0a028f4d44.parquet",
+        "size": 106468,
+        "sha256": "b71a6c12e951e12758b11344765d42b6741e98601bc91f982945ff0902f55dfb"
+      },
+      {
+        "path": "unknown/swap/ohlcv/BTC-USDT-SWAP/1h/part-all-9336aa7d598bf1d8.parquet",
+        "size": 2418779,
+        "sha256": "0258132f430d101c6c46188237a89c3a93dc312785ee90e9c10503bdfb2a1e06"
+      },
+      {
+        "path": "unknown/swap/ohlcv/BTC-USDT-SWAP/4h/part-all-938505bdd70387e0.parquet",
+        "size": 535797,
+        "sha256": "7f5019726dce159c438890bde0183e969ef37cd5c3beaaf0e9f9ea69381764ec"
+      },
+      {
+        "path": "unknown/swap/ohlcv/ETH-USDT-SWAP/15m/part-all-93eb827a82d87859.parquet",
+        "size": 7519201,
+        "sha256": "0c6bac3189a19ba303619e835e71ab317bfab694e339f1664d9a05e084dd292b"
+      },
+      {
+        "path": "unknown/swap/ohlcv/ETH-USDT-SWAP/1d/part-all-5de606e737736a76.parquet",
+        "size": 106941,
+        "sha256": "74ff72a1c152f008779a79fcb221794f49d5fb5110522f8a6b5cc6c4fb7692da"
+      },
+      {
+        "path": "unknown/swap/ohlcv/ETH-USDT-SWAP/1h/part-all-edab80747e6e0bce.parquet",
+        "size": 2341689,
+        "sha256": "cc39aa101448eba389e90af838b28b9715602a26e7322566748c9ffafb8cdf05"
+      },
+      {
+        "path": "unknown/swap/ohlcv/ETH-USDT-SWAP/4h/part-all-c2b01c2698467c03.parquet",
+        "size": 536458,
+        "sha256": "0abfa4b4acf80c5b7c42ca04e3b126f9b4ff3fa252f6604526027b1ef9823879"
+      },
+      {
+        "path": "unknown/swap/ohlcv/SOL-USDT-SWAP/15m/part-all-91cb363ebd9c2c25.parquet",
+        "size": 5890605,
+        "sha256": "6ffdf011e88ddb1c00b271350bbb0327f76ee1a2fdc17cc91360577601066cb4"
+      },
+      {
+        "path": "unknown/swap/ohlcv/SOL-USDT-SWAP/1d/part-all-57439393a3d0aed4.parquet",
+        "size": 79436,
+        "sha256": "afb18227a044cd7225092c2ee44cc23ab92ef8c51150ff128b343ebd12646abf"
+      },
+      {
+        "path": "unknown/swap/ohlcv/SOL-USDT-SWAP/1h/part-all-8d260b46fbd476b0.parquet",
+        "size": 1769629,
+        "sha256": "f82ce7ecf4384b24768404e4324debc126033c51aa2da5337bc9f8af7ad88646"
+      },
+      {
+        "path": "unknown/swap/ohlcv/SOL-USDT-SWAP/4h/part-all-b9a322704fbfa594.parquet",
+        "size": 439290,
+        "sha256": "9961ccb62a732d9f82eb8fc424565f4f420b32ab6ada686da4b641daaf8bc902"
+      }
+    ],
+    "metadata": {
+      "provenanceComplete": false,
+      "formalPromotionEligible": false,
+      "catalogSchemaVersion": "market_data_catalog_v1",
+      "rewardRiskMinimum": 2.0,
+      "commonStartTime": "2021-01-22T06:45:00+00:00"
+    },
+    "dataSnapshotId": "data_snapshot_be4f39bd75ac8d4453601f65962f89fd6a3ff05a668d0c4f79efe89384167166",
+    "manifestHash": "be4f39bd75ac8d4453601f65962f89fd6a3ff05a668d0c4f79efe89384167166",
+    "createdAt": "2026-07-10T15:01:59.763968+00:00"
+  },
+  "dataSnapshotVerification": {
+    "valid": true,
+    "dataSnapshotId": "data_snapshot_be4f39bd75ac8d4453601f65962f89fd6a3ff05a668d0c4f79efe89384167166",
+    "checkedFileCount": 12,
+    "errors": []
+  },
+  "dataSnapshotRegistered": true,
+  "formalPromotionEligible": false,
+  "blockers": [
+    "source_provenance_not_verified"
+  ],
+  "safetyBoundary": {
+    "localOrPublicDataOnly": true,
+    "apiKeyUsed": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "accountRead": false,
+    "orderCreated": false,
+    "liveTradingEnabled": false
+  }
+}

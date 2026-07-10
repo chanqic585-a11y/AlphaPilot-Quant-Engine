@@ -1,0 +1,80 @@
+{
+  "reportId": "v13_16_canonical_metadata_seed_report",
+  "version": "V13.16.0",
+  "status": "completed",
+  "generatedAt": "2026-07-10T15:03:28.394782+00:00",
+  "requestedCount": 12,
+  "seededCount": 12,
+  "errorCount": 0,
+  "seeded": [
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_15m\\BTC_USDT_SWAP\\BTC_USDT_SWAP_swap_candles_15m_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\15m\\part-all-faac33dec218761b.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\15m\\part-all-faac33dec218761b.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1D\\BTC_USDT_SWAP\\BTC_USDT_SWAP_swap_candles_1D_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\1d\\part-all-e97d3e0a028f4d44.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\1d\\part-all-e97d3e0a028f4d44.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1H\\BTC_USDT_SWAP\\BTC_USDT_SWAP_swap_candles_1H_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\part-all-9336aa7d598bf1d8.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\part-all-9336aa7d598bf1d8.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_4H\\BTC_USDT_SWAP\\BTC_USDT_SWAP_swap_candles_4H_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\part-all-938505bdd70387e0.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\part-all-938505bdd70387e0.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_15m\\ETH_USDT_SWAP\\ETH_USDT_SWAP_swap_candles_15m_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\15m\\part-all-93eb827a82d87859.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\15m\\part-all-93eb827a82d87859.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1D\\ETH_USDT_SWAP\\ETH_USDT_SWAP_swap_candles_1D_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\1d\\part-all-5de606e737736a76.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\1d\\part-all-5de606e737736a76.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1H\\ETH_USDT_SWAP\\ETH_USDT_SWAP_swap_candles_1H_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\part-all-edab80747e6e0bce.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\part-all-edab80747e6e0bce.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_4H\\ETH_USDT_SWAP\\ETH_USDT_SWAP_swap_candles_4H_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\part-all-c2b01c2698467c03.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\part-all-c2b01c2698467c03.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_15m\\SOL_USDT_SWAP\\SOL_USDT_SWAP_swap_candles_15m_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\15m\\part-all-91cb363ebd9c2c25.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\15m\\part-all-91cb363ebd9c2c25.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1D\\SOL_USDT_SWAP\\SOL_USDT_SWAP_swap_candles_1D_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\1d\\part-all-57439393a3d0aed4.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\1d\\part-all-57439393a3d0aed4.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_1H\\SOL_USDT_SWAP\\SOL_USDT_SWAP_swap_candles_1H_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\part-all-8d260b46fbd476b0.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\part-all-8d260b46fbd476b0.parquet.metadata.json"
+    },
+    {
+      "sourcePath": "D:\\Codex-Workspace\\回测数据\\合约数据\\swap_candles_4H\\SOL_USDT_SWAP\\SOL_USDT_SWAP_swap_candles_4H_ALL.xlsx",
+      "canonicalPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\4h\\part-all-b9a322704fbfa594.parquet",
+      "metadataPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\market\\canonical\\unknown\\swap\\ohlcv\\SOL-USDT-SWAP\\4h\\part-all-b9a322704fbfa594.parquet.metadata.json"
+    }
+  ],
+  "errors": [],
+  "safetyBoundary": {
+    "localDataOnly": true,
+    "rawFilesModified": false,
+    "apiKeyUsed": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "orderCreated": false
+  }
+}

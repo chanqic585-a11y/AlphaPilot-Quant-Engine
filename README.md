@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.15.0 - Live Candidate Boundary
+AlphaPilot V13.16.0 - Auditable Market Data Foundation
 ```
 
 ## Positioning
@@ -29,6 +29,65 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.16.0 Auditable Market Data Foundation
+
+V13.16.0 starts the evidence-first rebuild required before FactorRun, machine
+learning, replay, forward observation, Demo, or Live release work can be
+trusted. The original files under `D:\Codex-Workspace\回测数据` remain
+read-only. Canonical Parquet files, checkpoints, immutable snapshot manifests,
+and local registry rows are generated under `data/market/` and the existing
+evolution registry.
+
+```powershell
+# Build the raw catalog and BTC/ETH/SOL canonical smoke base.
+powershell -ExecutionPolicy Bypass -File scripts\build_v13_16_data_foundation.ps1
+
+# Resume-safe full SHA-256 catalog for all raw files.
+powershell -ExecutionPolicy Bypass -File scripts\build_v13_16_data_foundation.ps1 -HashMode all
+
+# Or run the full hash as a detached, auditable background job.
+powershell -ExecutionPolicy Bypass -File scripts\start_v13_16_full_hash_job.ps1
+powershell -ExecutionPolicy Bypass -File scripts\get_v13_16_full_hash_job_status.ps1
+
+# Seed source-verified metadata sidecars for existing canonical smoke files.
+powershell -ExecutionPolicy Bypass -File scripts\seed_v13_16_canonical_metadata.ps1
+
+# Collect public-only OKX increments for 15m / 1h / 4h / 1d.
+powershell -ExecutionPolicy Bypass -File scripts\collect_v13_16_public_increment.ps1
+
+# Verify base/increment continuity and register one composite snapshot.
+powershell -ExecutionPolicy Bypass -File scripts\build_v13_16_composite_snapshot.ps1
+```
+
+Current smoke evidence covers BTC, ETH, and SOL perpetual public candles over
+four timeframes. All 12 canonical groups are continuous; the composite
+snapshot contains the local base plus verified OKX public increments. Repeating
+the increment command uses the latest saved cutoff and does not download the
+same rows again. Canonical metadata sidecars bind the source and Parquet
+checksums to the recorded quality result, so unchanged source files can be
+verified without reopening multi-year XLSX exports on every run.
+
+The local base resembles OKX exports but has no authoritative source, license,
+download-time, or checksum manifest. It is therefore recorded as unverified
+provenance and remains a hard formal-promotion blocker. No missing provenance
+is inferred or fabricated. The default strategy reward/risk requirement stays
+at or above `2R`, but V13.16 creates no strategy, FactorRun, model, Demo release,
+Live candidate, or order.
+
+Key paths:
+
+- `alphapilot/data_foundation/`
+- `reports/v13_16_data_foundation_report.json`
+- `reports/v13_16_public_increment_report.json`
+- `reports/v13_16_public_increment_idempotency_report.json`
+- `reports/v13_16_composite_data_snapshot_report.json`
+- `reports/v13_16_canonical_metadata_seed_report.json`
+- `docs/V13.16.0-auditable-market-data-foundation.md`
+
+V13.16.0 uses local files and unauthenticated public market endpoints only. It
+does not use API keys, read exchange accounts or positions, call Trade API or
+Withdraw API, create orders, or enable Live execution.
 
 ## V13.15.0 Live Candidate Boundary
 

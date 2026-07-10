@@ -1,6 +1,7 @@
 .env
 *.sqlite
 *.db
+data/market/
 user_data/data/*
 !user_data/data/.gitkeep
 user_data/backtest_results/*

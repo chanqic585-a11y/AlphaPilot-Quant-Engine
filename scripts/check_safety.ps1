@@ -1,3 +1,8 @@
+param(
+  [switch]$IncludeDocumentation,
+  [switch]$ShowAllMatches
+)
+
 $patterns = @(
   "apiSecret",
   "passphrase",
@@ -18,34 +23,66 @@ $patterns = @(
 )
 
 $root = Resolve-Path "."
-$files = Get-ChildItem -Path $root -Recurse -File |
-  Where-Object {
-    $_.FullName -notmatch "\\.git\\" -and
-    $_.FullName -notmatch "\\third_party\\" -and
-    $_.FullName -notmatch "__pycache__" -and
-    $_.Extension -ne ".pyc" -and
-    $_.FullName -notmatch "\\user_data\\data\\" -and
-    $_.FullName -notmatch "\\user_data\\backtest_results\\" -and
-    $_.FullName -notmatch "\\user_data\\logs\\" -and
-    $_.Name -ne "check_safety.ps1"
-  }
-
-$matches = foreach ($file in $files) {
-  Select-String -Path $file.FullName -Pattern $patterns -SimpleMatch -CaseSensitive:$false |
-    ForEach-Object {
-      [PSCustomObject]@{
-        Path = $_.Path
-        Line = $_.LineNumber
-        Text = $_.Line.Trim()
-      }
-    }
+$scanRoots = @(
+  "alphapilot",
+  "scripts",
+  "tests",
+  "user_data\config",
+  "user_data\freqaimodels",
+  "user_data\hyperopts",
+  "user_data\notebooks",
+  "user_data\strategies"
+)
+if ($IncludeDocumentation) {
+  $scanRoots += @("docs", "reports")
 }
+$textExtensions = @(
+  ".py", ".ps1", ".psm1", ".cmd", ".bat", ".sh",
+  ".md", ".txt", ".json", ".yaml", ".yml", ".toml", ".ini", ".cfg", ".example", ".ipynb"
+)
+$fileMap = @{}
+foreach ($relativeRoot in $scanRoots) {
+  $scanRoot = Join-Path $root $relativeRoot
+  if (-not (Test-Path -LiteralPath $scanRoot)) { continue }
+  foreach ($file in Get-ChildItem -LiteralPath $scanRoot -Recurse -File) {
+    if (
+      $file.FullName -notmatch "__pycache__" -and
+      $file.FullName -notmatch "\\.pytest_cache\\" -and
+      $file.Extension.ToLowerInvariant() -in $textExtensions -and
+      $file.Name -ne "check_safety.ps1"
+    ) {
+      $fileMap[$file.FullName] = $file
+    }
+  }
+}
+foreach ($file in Get-ChildItem -LiteralPath $root -File) {
+  if ($file.Extension.ToLowerInvariant() -in $textExtensions) {
+    $fileMap[$file.FullName] = $file
+  }
+}
+$files = @($fileMap.Values)
+
+$rawMatches = if ($files.Count -gt 0) {
+  Select-String -LiteralPath @($files.FullName) -Pattern $patterns -SimpleMatch -CaseSensitive:$false
+} else { @() }
+$matches = @($rawMatches | ForEach-Object {
+  [PSCustomObject]@{
+    Path = $_.Path
+    Line = $_.LineNumber
+    Text = $_.Line.Trim()
+  }
+})
 
 if ($matches) {
-  Write-Host "Safety scan found terms. Review context below; V13.4 allows safety docs and negative statements only."
-  $matches | Format-Table -AutoSize
+  $uniqueFileCount = @($matches.Path | Sort-Object -Unique).Count
+  Write-Host "Safety scan found $($matches.Count) term matches across $uniqueFileCount files. Review context; test fixtures and negative statements are allowed."
+  $displayMatches = if ($ShowAllMatches) { $matches } else { @($matches | Select-Object -First 100) }
+  $displayMatches | Format-Table -AutoSize
+  if (-not $ShowAllMatches -and $matches.Count -gt $displayMatches.Count) {
+    Write-Host "Showing first $($displayMatches.Count) matches. Use -ShowAllMatches for the complete list."
+  }
 } else {
   Write-Host "Safety scan found no matching terms."
 }
 
-Write-Host "Safety scan completed. No executable trade integration is expected in V13.4."
+Write-Host "Safety scan completed. Review any executable integration against the current release boundary."

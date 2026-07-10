@@ -18,7 +18,7 @@ from typing import Iterable
 import pandas as pd
 
 
-DEFAULT_SOURCE_DIR = Path(r"E:\BaiduNetdiskDownload\5m")
+DEFAULT_SOURCE_DIR = Path(r"D:\Codex-Workspace\回测数据\5m")
 DEFAULT_OUTPUT_DIR = Path("user_data/data/local5m/okx/futures")
 DEFAULT_REPORT_PATH = Path("reports/external_5m_import_report.json")
 FILENAME_RE = re.compile(r"^(?P<symbol>.+)_USDT_5m_from_\d+\.csv$", re.IGNORECASE)
@@ -215,6 +215,8 @@ def build_report(imported: list[ImportedPair], source_dir: Path, output_dir: Pat
         "reportId": "external_5m_import_report",
         "source": "alphapilot_external_5m_csv_importer",
         "sourceDir": str(source_dir),
+        "provenanceStatus": "missing_source_manifest",
+        "formalPromotionEligible": False,
         "outputDir": str(output_dir),
         "timeframes": timeframes,
         "totalSources": len(imported),
