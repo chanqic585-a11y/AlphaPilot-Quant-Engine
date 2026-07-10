@@ -4148,6 +4148,49 @@ V13.11.0 is research infrastructure only. It does not use or store API keys,
 call Trade API or Withdraw API, read exchange accounts, create orders, promote
 legacy reports to Demo/live execution, or enable automatic trading.
 
+## V13.12.0 Factor Research Kernel
+
+V13.12.0 adds a restricted data-only factor DSL, point-in-time validation,
+purged walk-forward manifests, FDR, Deflated Sharpe probability, PBO-like
+selection diagnostics, block bootstrap, cross-dimension stability, and cost /
+latency / gap stress helpers.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/run_factor_research_kernel_baseline.ps1
+```
+
+Existing 16-factor compatibility result:
+
+```text
+DSL supported: 11
+DSL blocked: 5
+legacy candidate factors: 0
+formal research ready factors: 0
+factor values loaded or modified: false
+StrategyCandidates created: 0
+DemoReleases created: 0
+orders created: 0
+```
+
+Three EMA formulas remain blocked because `ts_ema` is outside the whitelist;
+one formula uses unapproved `abs`; one formula references `btcReturn_12` while
+declaring only `btcReturn`. These definitions are reported, not silently fixed.
+DSL compatibility alone is not promotion evidence.
+
+Key paths:
+
+```text
+alphapilot/evolution/factor_dsl/
+alphapilot/evolution/data_lineage/point_in_time_validator.py
+alphapilot/evolution/evaluation/
+alphapilot/evolution/adapters/legacy_factor_adapter.py
+reports/factor_research_kernel_baseline_report.json
+docs/V13.12.0-factor-research-kernel.md
+```
+
+V13.12.0 adds no API key handling, private exchange access, StrategyCandidate
+auto-promotion, Demo/live release, order creation, or automatic trading.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

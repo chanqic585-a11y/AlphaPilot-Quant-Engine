@@ -1,0 +1,1187 @@
+{
+  "version": "V13.12.0",
+  "source": "alphapilot_factor_research_kernel_v13_12_0",
+  "generatedAt": "2026-07-10T00:16:00.285128+00:00",
+  "status": "completed_with_blocks",
+  "summary": {
+    "factorCount": 16,
+    "dslSupportedCount": 11,
+    "dslBlockedCount": 5,
+    "legacyCandidateFactorCount": 0,
+    "formalResearchReadyCount": 0,
+    "newFactorDefinitionCount": 0,
+    "totalRegisteredFactorDefinitionCount": 16,
+    "manualReportPath": "reports/v13_7_13_manual_factor_library_report.json",
+    "manualReportSha256": "a3c0878d54aa212f14f053a53aab44673d992b75007139bf3884b79d91de22a9",
+    "evaluationReportPath": "reports/v13_7_13_factor_evaluation_report.json",
+    "evaluationReportSha256": "4353c588fe67912c1287a733e53d101e6f2bce6ed7be61b7a9ea8791f7426220",
+    "valueMutationPerformed": false,
+    "factorValuesLoaded": false,
+    "factors": [
+      {
+        "factorId": "momentum_3",
+        "factorDefinitionId": "factor_definition_5dd505b5c6c2b2420c3cfaf8168f57ed8095e7c567bb2848e61233f8cd9662f4",
+        "sourceFormula": "ts_return(close, 3)",
+        "sourceFormulaHash": "source_formula_2b344cf1ef0fb18763810af6c5b3331a7ea26b736c1379406a59d8e2be8d40ed",
+        "requiredFields": [
+          "close"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "safe_divide(delta(close,3),lag(close,3))",
+        "expressionId": "factor_expression_88223f20e305ce2d2260a7402ccde645aa2e40ba3d11ff7c63f800e0374d12b9",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "momentum_3",
+          "expectedDirection": "higher_may_be_stronger",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9859,
+          "missingRate": 0.0141,
+          "sampleCount": 597046,
+          "nonNullCount": 596962,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": false,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": false,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.00692026,
+            "medianIC": -0.0078719,
+            "positiveICRatio": 0.4903798,
+            "meanRankIC": -0.0164144,
+            "medianRankIC": -0.01675214,
+            "positiveRankICRatio": 0.47532408,
+            "topBottomSpread": 0.00042879,
+            "monotonicityScore": 1.0,
+            "profitFactor": 1.00955889,
+            "expectancy": 0.00012502,
+            "winRate": 0.48329088,
+            "validSampleCount": 596626
+          },
+          "stability": {
+            "stableAcrossMonths": false,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.5483871,
+            "positivePairRatio": 0.5,
+            "positiveRegimeRatio": 0.75,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "momentum_12",
+        "factorDefinitionId": "factor_definition_977ab25c5f23f753dc54d85fb3d2f386b111251f5da46c16d906e355d8447489",
+        "sourceFormula": "ts_return(close, 12)",
+        "sourceFormulaHash": "source_formula_59378a833782c836632e29643e1805cdcc9fb8f690b1682ba2b45d3d5c26bbd9",
+        "requiredFields": [
+          "close"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "safe_divide(delta(close,12),lag(close,12))",
+        "expressionId": "factor_expression_751007d13c270f7ebb1d7ffaf63346f3f8e1289b57d57d07728a394ffe366eec",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "momentum_12",
+          "expectedDirection": "higher_may_be_stronger",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9437,
+          "missingRate": 0.0563,
+          "sampleCount": 597046,
+          "nonNullCount": 596710,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": true,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.01339194,
+            "medianIC": -0.01653685,
+            "positiveICRatio": 0.48161631,
+            "meanRankIC": -0.0286097,
+            "medianRankIC": -0.02930403,
+            "positiveRankICRatio": 0.45900073,
+            "topBottomSpread": 0.00046246,
+            "monotonicityScore": 0.75,
+            "profitFactor": 1.00693206,
+            "expectancy": 9.222e-05,
+            "winRate": 0.47871792,
+            "validSampleCount": 596374
+          },
+          "stability": {
+            "stableAcrossMonths": true,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.67741935,
+            "positivePairRatio": 0.5,
+            "positiveRegimeRatio": 0.75,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "reversal_3",
+        "factorDefinitionId": "factor_definition_df886aca7b28a4b410f3d28e093616093b40166a361f207f5688d632bfc6e9f5",
+        "sourceFormula": "-ts_return(close, 3)",
+        "sourceFormulaHash": "source_formula_fc0112399a3688fc840d3c8bda2314a0ea2c6bce7c411053b8592ec9b9f892cb",
+        "requiredFields": [
+          "close"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "safe_multiply(-1,safe_divide(delta(close,3),lag(close,3)))",
+        "expressionId": "factor_expression_291e0838e420aa480647fdb2165a19be0e8aa30c053107452a937d3662a7970a",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "reversal_3",
+          "expectedDirection": "higher_may_indicate_rebound",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9859,
+          "missingRate": 0.0141,
+          "sampleCount": 597046,
+          "nonNullCount": 596962,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": false,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": false,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": false,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": 0.00692026,
+            "medianIC": 0.0078719,
+            "positiveICRatio": 0.5096202,
+            "meanRankIC": 0.0164144,
+            "medianRankIC": 0.01675214,
+            "positiveRankICRatio": 0.52390266,
+            "topBottomSpread": -0.00037228,
+            "monotonicityScore": 0.0,
+            "profitFactor": 0.98123684,
+            "expectancy": -0.00023287,
+            "winRate": 0.48599782,
+            "validSampleCount": 596626
+          },
+          "stability": {
+            "stableAcrossMonths": false,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": false,
+            "positiveMonthRatio": 0.4516129,
+            "positivePairRatio": 0.5,
+            "positiveRegimeRatio": 0.25,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "volume_expansion_24h",
+        "factorDefinitionId": "factor_definition_bc82a6e7f9f13de5ee012dd31caa05a4eaf0cc50dfc1c63af2f87e813a57a179",
+        "sourceFormula": "volume / ts_mean(volume, 24)",
+        "sourceFormulaHash": "source_formula_b3afec8b9ea80bcb8e1d473fe3cc84ddf89712d98603bbfb77ecb3214996c429",
+        "requiredFields": [
+          "volume"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "safe_divide(volume,rolling_mean(volume,24))",
+        "expressionId": "factor_expression_abb5ee31360e7ea8e9a193977dd0c9d5660c5ee1b2d2e83de8f970abacd9557c",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "volume_expansion_24h",
+          "expectedDirection": "higher_indicates_attention",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9766,
+          "missingRate": 0.0234,
+          "sampleCount": 597046,
+          "nonNullCount": 596906,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": false,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": true,
+              "stableAcrossPairs": true
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.00044323,
+            "medianIC": -0.00682998,
+            "positiveICRatio": 0.48892326,
+            "meanRankIC": -0.00448064,
+            "medianRankIC": -0.004884,
+            "positiveRankICRatio": 0.49147068,
+            "topBottomSpread": 0.00048734,
+            "monotonicityScore": 0.5,
+            "profitFactor": 1.02252872,
+            "expectancy": 0.00028169,
+            "winRate": 0.48857045,
+            "validSampleCount": 596570
+          },
+          "stability": {
+            "stableAcrossMonths": true,
+            "stableAcrossPairs": true,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.70967742,
+            "positivePairRatio": 0.71428571,
+            "positiveRegimeRatio": 1.0,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "volume_expansion_3d",
+        "factorDefinitionId": "factor_definition_e2ee8f4c2a82fac49f005fa4b3db798e400dd8e36b692317cfec88fa6e0985be",
+        "sourceFormula": "ts_mean(volume, 24) / ts_mean(volume, 72)",
+        "sourceFormulaHash": "source_formula_885e3f2e0278bd8e0f0a8ebb866f8ee6c9405bb9e7e62f55381d2fbb924899e4",
+        "requiredFields": [
+          "volume"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "safe_divide(rolling_mean(volume,24),rolling_mean(volume,72))",
+        "expressionId": "factor_expression_fcea457649fe898387a302448e1fd36f996db043b56a36dca2c32dbe18a533a0",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "volume_expansion_3d",
+          "expectedDirection": "higher_indicates_attention",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.8921,
+          "missingRate": 0.1079,
+          "sampleCount": 597046,
+          "nonNullCount": 596402,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": false,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": false,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": false,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.01426335,
+            "medianIC": -0.0135437,
+            "positiveICRatio": 0.47860135,
+            "meanRankIC": -0.01783603,
+            "medianRankIC": -0.01648352,
+            "positiveRankICRatio": 0.47081588,
+            "topBottomSpread": -0.00043015,
+            "monotonicityScore": 0.25,
+            "profitFactor": 0.9699251,
+            "expectancy": -0.00038794,
+            "winRate": 0.48094552,
+            "validSampleCount": 596066
+          },
+          "stability": {
+            "stableAcrossMonths": false,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": false,
+            "positiveMonthRatio": 0.38709677,
+            "positivePairRatio": 0.32142857,
+            "positiveRegimeRatio": 0.0,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "distance_to_ema20",
+        "factorDefinitionId": "factor_definition_62b6342faec6dd1f97d05db3931d1619ad7fc3b0602582568735f19cdec91c66",
+        "sourceFormula": "(close - ts_ema(close, 20)) / ts_ema(close, 20)",
+        "sourceFormulaHash": "source_formula_e5a22ca35be2947690b8aeba267266909c4a56625dad66f533311ddd43cf5997",
+        "requiredFields": [
+          "close"
+        ],
+        "dslSupported": false,
+        "canonicalExpression": null,
+        "expressionId": null,
+        "validationIssues": [
+          {
+            "code": "dsl_parse_or_canonicalization_failed",
+            "message": "Unknown or forbidden function 'ts_ema'",
+            "path": "root"
+          }
+        ],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "distance_to_ema20",
+          "expectedDirection": "context_dependent",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 100.0,
+          "missingRate": 0.0,
+          "sampleCount": 597046,
+          "nonNullCount": 597046,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": true,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": true,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.01482836,
+            "medianIC": -0.01763516,
+            "positiveICRatio": 0.47769136,
+            "meanRankIC": -0.03136924,
+            "medianRankIC": -0.03296703,
+            "positiveRankICRatio": 0.45399554,
+            "topBottomSpread": 0.00049152,
+            "monotonicityScore": 0.75,
+            "profitFactor": 1.00934847,
+            "expectancy": 0.00012402,
+            "winRate": 0.47867945,
+            "validSampleCount": 596710
+          },
+          "stability": {
+            "stableAcrossMonths": true,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.58064516,
+            "positivePairRatio": 0.53571429,
+            "positiveRegimeRatio": 0.75,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_unsupported_or_invalid_dsl",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "distance_to_ema50",
+        "factorDefinitionId": "factor_definition_6207e3317a3a9f04cc3a2750d7ccc9d3bebda0bf21156249e86f1f94daf4dd09",
+        "sourceFormula": "(close - ts_ema(close, 50)) / ts_ema(close, 50)",
+        "sourceFormulaHash": "source_formula_cd7fe8da101793c078dfc722491c083ddf741bae84b1bd1d5a27df43294e680f",
+        "requiredFields": [
+          "close"
+        ],
+        "dslSupported": false,
+        "canonicalExpression": null,
+        "expressionId": null,
+        "validationIssues": [
+          {
+            "code": "dsl_parse_or_canonicalization_failed",
+            "message": "Unknown or forbidden function 'ts_ema'",
+            "path": "root"
+          }
+        ],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "distance_to_ema50",
+          "expectedDirection": "context_dependent",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 100.0,
+          "missingRate": 0.0,
+          "sampleCount": 597046,
+          "nonNullCount": 597046,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": true,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": false,
+              "stableAcrossPairs": true
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.01640073,
+            "medianIC": -0.01922973,
+            "positiveICRatio": 0.47841907,
+            "meanRankIC": -0.03571791,
+            "medianRankIC": -0.0350301,
+            "positiveRankICRatio": 0.45290399,
+            "topBottomSpread": 0.00039563,
+            "monotonicityScore": 0.75,
+            "profitFactor": 1.00316223,
+            "expectancy": 4.225e-05,
+            "winRate": 0.47609193,
+            "validSampleCount": 596710
+          },
+          "stability": {
+            "stableAcrossMonths": false,
+            "stableAcrossPairs": true,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.5483871,
+            "positivePairRatio": 0.57142857,
+            "positiveRegimeRatio": 0.75,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_unsupported_or_invalid_dsl",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "bollinger_position",
+        "factorDefinitionId": "factor_definition_05875eca431555ab7ae04b6a6d36687fa24e46d65776c35c95ed41783f07bb82",
+        "sourceFormula": "(close - lower_band) / (upper_band - lower_band)",
+        "sourceFormulaHash": "source_formula_3e87e853305d826c3a4150d10345c0923965445948f645ba311811b8d39360c3",
+        "requiredFields": [
+          "close",
+          "upper_band",
+          "lower_band"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "safe_divide(safe_subtract(close,lower_band),safe_subtract(upper_band,lower_band))",
+        "expressionId": "factor_expression_5b7dc247dab87d9c4608413b4c6a9b4e57b0c162c3f9418257a0b674c5dea343",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "bollinger_position",
+          "expectedDirection": "context_dependent",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9578,
+          "missingRate": 0.0422,
+          "sampleCount": 597046,
+          "nonNullCount": 596794,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": true,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.00430989,
+            "medianIC": -0.00621528,
+            "positiveICRatio": 0.49228809,
+            "meanRankIC": -0.02113931,
+            "medianRankIC": -0.02189381,
+            "positiveRankICRatio": 0.46608126,
+            "topBottomSpread": 0.00072899,
+            "monotonicityScore": 0.75,
+            "profitFactor": 1.01583028,
+            "expectancy": 0.00020262,
+            "winRate": 0.48213676,
+            "validSampleCount": 596458
+          },
+          "stability": {
+            "stableAcrossMonths": true,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.64516129,
+            "positivePairRatio": 0.5,
+            "positiveRegimeRatio": 1.0,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "volatility_24h",
+        "factorDefinitionId": "factor_definition_1e6bbf4c5e7cac9114ac6ae274604375c4af72bf422dc3b31afb49d2a506f714",
+        "sourceFormula": "ts_std(returns_1, 24)",
+        "sourceFormulaHash": "source_formula_10191f065733a79d533c21ab5ba3b0be64090404aab7fa24c5f39375c04aa0e6",
+        "requiredFields": [
+          "returns_1"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "rolling_std(returns_1,24)",
+        "expressionId": "factor_expression_98d8ac26e0e66aa370c528f5fdba06a7ef8bc95c9911d729f5a90c77ecbffe7e",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "volatility_24h",
+          "expectedDirection": "lower_or_moderate_preferred",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9719,
+          "missingRate": 0.0281,
+          "sampleCount": 597046,
+          "nonNullCount": 596878,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": false,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": true,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": false,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.04237361,
+            "medianIC": -0.04602567,
+            "positiveICRatio": 0.46069511,
+            "meanRankIC": -0.06411356,
+            "medianRankIC": -0.07503895,
+            "positiveRankICRatio": 0.43208079,
+            "topBottomSpread": -0.00015502,
+            "monotonicityScore": 0.25,
+            "profitFactor": 1.00498737,
+            "expectancy": 7.968e-05,
+            "winRate": 0.47090802,
+            "validSampleCount": 596542
+          },
+          "stability": {
+            "stableAcrossMonths": false,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": false,
+            "positiveMonthRatio": 0.38709677,
+            "positivePairRatio": 0.33333333,
+            "positiveRegimeRatio": 0.25,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "volatility_3d",
+        "factorDefinitionId": "factor_definition_92b7dfd1e3743f13c1515c5beeb1f150dc589d9cf5c0cd932b71f9561de5c833",
+        "sourceFormula": "ts_std(returns_1, 72)",
+        "sourceFormulaHash": "source_formula_8c8bd82371a9f2b921e57400ab74c42bfacf2e768736556aafdaa6b751e57d3d",
+        "requiredFields": [
+          "returns_1"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "rolling_std(returns_1,72)",
+        "expressionId": "factor_expression_c015b1eaf8855801474ae099ac1586835d671b791cf300f1355b6bcc67d6f861",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "volatility_3d",
+          "expectedDirection": "context_dependent",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.8874,
+          "missingRate": 0.1126,
+          "sampleCount": 597046,
+          "nonNullCount": 596374,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": false,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": true,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": false,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.04241862,
+            "medianIC": -0.04342403,
+            "positiveICRatio": 0.46298488,
+            "meanRankIC": -0.06083201,
+            "medianRankIC": -0.06884174,
+            "positiveRankICRatio": 0.441222,
+            "topBottomSpread": -0.0001823,
+            "monotonicityScore": 0.5,
+            "profitFactor": 1.00152478,
+            "expectancy": 2.432e-05,
+            "winRate": 0.47292539,
+            "validSampleCount": 596038
+          },
+          "stability": {
+            "stableAcrossMonths": false,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": false,
+            "positiveMonthRatio": 0.25806452,
+            "positivePairRatio": 0.38461538,
+            "positiveRegimeRatio": 0.25,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "relative_strength_vs_btc",
+        "factorDefinitionId": "factor_definition_cbbd030fb912a252bffecaa5d6784bca6190dcd7038c03fe3ee54043e91c3c90",
+        "sourceFormula": "ts_return(close, 12) - btcReturn_12",
+        "sourceFormulaHash": "source_formula_9bf1bcfba529d7d58a806946bc40dfb8a177b241106f970a1b3e13b468ad9d1f",
+        "requiredFields": [
+          "close",
+          "btc_return"
+        ],
+        "dslSupported": false,
+        "canonicalExpression": null,
+        "expressionId": null,
+        "validationIssues": [
+          {
+            "code": "unknown_field",
+            "message": "Unknown factor field: btc_return_12",
+            "path": "root.args[1]"
+          }
+        ],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "relative_strength_vs_btc",
+          "expectedDirection": "higher_may_be_stronger",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9437,
+          "missingRate": 0.0563,
+          "sampleCount": 597046,
+          "nonNullCount": 596710,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": true,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.01339194,
+            "medianIC": -0.01653685,
+            "positiveICRatio": 0.48161631,
+            "meanRankIC": -0.0286097,
+            "medianRankIC": -0.02930403,
+            "positiveRankICRatio": 0.45900073,
+            "topBottomSpread": 0.00046246,
+            "monotonicityScore": 0.75,
+            "profitFactor": 1.00693206,
+            "expectancy": 9.222e-05,
+            "winRate": 0.47871792,
+            "validSampleCount": 596374
+          },
+          "stability": {
+            "stableAcrossMonths": true,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.67741935,
+            "positivePairRatio": 0.5,
+            "positiveRegimeRatio": 0.75,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_unsupported_or_invalid_dsl",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "liquidity_rank",
+        "factorDefinitionId": "factor_definition_f675fb2272cdee868917114bfdb84baaeaa1a235cb3a02d2d491bda3d3ba7e04",
+        "sourceFormula": "rank(quoteVolume)",
+        "sourceFormulaHash": "source_formula_2fb50341165530538c66e806105a6bdb6da18918f66474ee41babf5006bedd35",
+        "requiredFields": [
+          "quote_volume"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "cross_sectional_rank(quote_volume)",
+        "expressionId": "factor_expression_29edd3ff502f503a10ad94536e82e6a1d675fe1d16f5c4db9123ff1f7ea33b6e",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "liquidity_rank",
+          "expectedDirection": "higher_preferred",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 100.0,
+          "missingRate": 0.0,
+          "sampleCount": 597046,
+          "nonNullCount": 597046,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": false,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": true,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": 0.01016793,
+            "medianIC": 0.01255376,
+            "positiveICRatio": 0.51941968,
+            "meanRankIC": 0.00591557,
+            "medianRankIC": 0.00671551,
+            "positiveRankICRatio": 0.50873204,
+            "topBottomSpread": 0.00053283,
+            "monotonicityScore": 0.75,
+            "profitFactor": 1.03940325,
+            "expectancy": 0.00044488,
+            "winRate": 0.49332969,
+            "validSampleCount": 596710
+          },
+          "stability": {
+            "stableAcrossMonths": true,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.70967742,
+            "positivePairRatio": 0.30434783,
+            "positiveRegimeRatio": 0.8,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "atr_pct",
+        "factorDefinitionId": "factor_definition_341f8afb523b1b4528d66071f7701ad3c860cf9c95207a31414d29fa1718e767",
+        "sourceFormula": "atr / close",
+        "sourceFormulaHash": "source_formula_1bcbe93131d14cec3a8c5eccb5ebb2c1cfce2d9be5d03c60007d805b59d44f31",
+        "requiredFields": [
+          "atr",
+          "close"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "safe_divide(atr,close)",
+        "expressionId": "factor_expression_1f0d808e635493c3aaf3b68eeac8088fbb9ad8d5f727edc017e28c13be5b509d",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "atr_pct",
+          "expectedDirection": "context_dependent",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9812,
+          "missingRate": 0.0188,
+          "sampleCount": 597046,
+          "nonNullCount": 596934,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": false,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": true,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": false,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.04441873,
+            "medianIC": -0.04660462,
+            "positiveICRatio": 0.46042576,
+            "meanRankIC": -0.06840921,
+            "medianRankIC": -0.07997558,
+            "positiveRankICRatio": 0.42931223,
+            "topBottomSpread": -0.00019272,
+            "monotonicityScore": 0.75,
+            "profitFactor": 0.99908724,
+            "expectancy": -1.482e-05,
+            "winRate": 0.47000091,
+            "validSampleCount": 596598
+          },
+          "stability": {
+            "stableAcrossMonths": false,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": false,
+            "positiveMonthRatio": 0.35483871,
+            "positivePairRatio": 0.33333333,
+            "positiveRegimeRatio": 0.25,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "trend_strength",
+        "factorDefinitionId": "factor_definition_860d5e806224f0cebfb5288c643c63c9fb4afc9133f81ad8c0f848b24688759e",
+        "sourceFormula": "(ts_ema(close, 20) - ts_ema(close, 50)) / close",
+        "sourceFormulaHash": "source_formula_2d7493115878d33f75227cc5fa0877574d15b688d3a36a19bcea2052c38d6609",
+        "requiredFields": [
+          "close"
+        ],
+        "dslSupported": false,
+        "canonicalExpression": null,
+        "expressionId": null,
+        "validationIssues": [
+          {
+            "code": "dsl_parse_or_canonicalization_failed",
+            "message": "Unknown or forbidden function 'ts_ema'",
+            "path": "root"
+          }
+        ],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "trend_strength",
+          "expectedDirection": "higher_may_be_stronger",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 100.0,
+          "missingRate": 0.0,
+          "sampleCount": 597046,
+          "nonNullCount": 597046,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": true,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": true,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.01348719,
+            "medianIC": -0.0146677,
+            "positiveICRatio": 0.48132988,
+            "meanRankIC": -0.02893168,
+            "medianRankIC": -0.02442002,
+            "positiveRankICRatio": 0.46645745,
+            "topBottomSpread": 0.00039721,
+            "monotonicityScore": 0.75,
+            "profitFactor": 1.00279118,
+            "expectancy": 3.66e-05,
+            "winRate": 0.47675141,
+            "validSampleCount": 596710
+          },
+          "stability": {
+            "stableAcrossMonths": true,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.58064516,
+            "positivePairRatio": 0.46428571,
+            "positiveRegimeRatio": 1.0,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_unsupported_or_invalid_dsl",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "mean_reversion_distance",
+        "factorDefinitionId": "factor_definition_df3270a08b32adffef2a3ad37598361cd0bc5267413ac536b98eb672da348aa3",
+        "sourceFormula": "-abs((close - ts_mean(close, 24)) / ts_std(close, 24))",
+        "sourceFormulaHash": "source_formula_69d5e07991ad5daecc80ee36da171156c36e5d393758e48520fbbe0213a29e84",
+        "requiredFields": [
+          "close"
+        ],
+        "dslSupported": false,
+        "canonicalExpression": null,
+        "expressionId": null,
+        "validationIssues": [
+          {
+            "code": "dsl_parse_or_canonicalization_failed",
+            "message": "Unknown or forbidden function 'abs'",
+            "path": "root"
+          }
+        ],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "mean_reversion_distance",
+          "expectedDirection": "higher_means_less_extreme",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9766,
+          "missingRate": 0.0234,
+          "sampleCount": 597046,
+          "nonNullCount": 596906,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": false,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": false,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": false,
+              "stableAcrossPairs": false
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": -0.00951295,
+            "medianIC": -0.01107762,
+            "positiveICRatio": 0.4843288,
+            "meanRankIC": -0.00919461,
+            "medianRankIC": -0.00976801,
+            "positiveRankICRatio": 0.48260019,
+            "topBottomSpread": -0.00062043,
+            "monotonicityScore": 0.25,
+            "profitFactor": 0.96486979,
+            "expectancy": -0.00042418,
+            "winRate": 0.48419233,
+            "validSampleCount": 596570
+          },
+          "stability": {
+            "stableAcrossMonths": false,
+            "stableAcrossPairs": false,
+            "stableAcrossRegimes": false,
+            "positiveMonthRatio": 0.22580645,
+            "positivePairRatio": 0.28571429,
+            "positiveRegimeRatio": 0.0,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_unsupported_or_invalid_dsl",
+        "valueMutationPerformed": false
+      },
+      {
+        "factorId": "breakout_pressure",
+        "factorDefinitionId": "factor_definition_73ed1679a385654175a1707c0cf95142f7b85e6d6cc304b5e7aaa922d506b1df",
+        "sourceFormula": "rank(close / ts_max(high, 24)) + rank(volume / ts_mean(volume, 24))",
+        "sourceFormulaHash": "source_formula_e7f05ce6138d6d5e37e5a9dfe7ce4e7c2608cf65dd4f41018534fc96678415d1",
+        "requiredFields": [
+          "close",
+          "high",
+          "volume"
+        ],
+        "dslSupported": true,
+        "canonicalExpression": "safe_add(cross_sectional_rank(safe_divide(close,rolling_max(high,24))),cross_sectional_rank(safe_divide(volume,rolling_mean(volume,24))))",
+        "expressionId": "factor_expression_ab88dab5611dd1577c0d949a26ef09f5025669e27fde1ab508a174ae2326a3fb",
+        "validationIssues": [],
+        "existingLegacyCandidate": false,
+        "existingEvaluation": {
+          "factorId": "breakout_pressure",
+          "expectedDirection": "higher_may_indicate_breakout_pressure",
+          "factorDirectionAdjusted": false,
+          "coveragePct": 99.9766,
+          "missingRate": 0.0234,
+          "sampleCount": 597046,
+          "nonNullCount": 596906,
+          "primaryHorizon": 12,
+          "warnings": [],
+          "candidateStatus": {
+            "researchCandidate": false,
+            "strictCandidate": false,
+            "checks": {
+              "coveragePct>=80": true,
+              "validSampleCount>=1000": true,
+              "abs(meanRankIC)>=0.02": false,
+              "positiveRankICRatio>=0.55": false,
+              "topBottomSpread>0": true,
+              "profitFactor>1.05": false
+            },
+            "strictChecks": {
+              "abs(meanRankIC)>=0.03": false,
+              "profitFactor>=1.15": false,
+              "stableAcrossMonths": true,
+              "stableAcrossPairs": true
+            }
+          },
+          "primaryHorizonMetrics": {
+            "meanIC": 0.01032896,
+            "medianIC": 0.01000417,
+            "positiveICRatio": 0.51398808,
+            "meanRankIC": 0.01020382,
+            "medianRankIC": 0.0140458,
+            "positiveRankICRatio": 0.52117545,
+            "topBottomSpread": 0.00044409,
+            "monotonicityScore": 0.75,
+            "profitFactor": 1.01639244,
+            "expectancy": 0.00018046,
+            "winRate": 0.49423004,
+            "validSampleCount": 596570
+          },
+          "stability": {
+            "stableAcrossMonths": true,
+            "stableAcrossPairs": true,
+            "stableAcrossRegimes": true,
+            "positiveMonthRatio": 0.61290323,
+            "positivePairRatio": 0.60714286,
+            "positiveRegimeRatio": 0.75,
+            "concentrationWarnings": []
+          }
+        },
+        "formalResearchReady": false,
+        "newKernelStatus": "blocked_missing_formal_statistical_evidence",
+        "valueMutationPerformed": false
+      }
+    ],
+    "createsStrategyCandidate": false,
+    "createsDemoRelease": false
+  },
+  "requiredFormalEvidence": [
+    "point_in_time_validation",
+    "purged_walk_forward_with_embargo",
+    "benjamini_hochberg_fdr",
+    "deflated_sharpe_probability",
+    "probability_of_backtest_overfitting",
+    "block_bootstrap_confidence_interval",
+    "pair_month_exchange_regime_stability",
+    "transaction_cost_latency_and_gap_stress"
+  ],
+  "safetyBoundary": {
+    "researchOnly": true,
+    "factorValuesMutated": false,
+    "createsStrategyCandidate": false,
+    "createsDemoRelease": false,
+    "createsOrders": false,
+    "usesApiKey": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "automaticLivePromotion": false
+  },
+  "nextStep": "Run new point-in-time datasets through the formal evaluation kernel."
+}
