@@ -17,6 +17,7 @@ from .types import (
     FactorDefinitionRecord,
     FactorRunRecord,
     LegacyEvidenceRecord,
+    LiveCandidatePackageRecord,
     ModelRecord,
     PromotionDecisionRecord,
     StrategyCandidateRecord,
@@ -519,6 +520,57 @@ class RegistryRepository:
             record
             for row in rows
             if (record := self.get_demo_release(row["demoReleaseId"])) is not None
+        ]
+
+    def create_live_candidate_package(
+        self, record: LiveCandidatePackageRecord
+    ) -> LiveCandidatePackageRecord:
+        existing = self.get_live_candidate_package(record.liveCandidatePackageId)
+        if existing:
+            self._assert_same_hash(record.liveCandidatePackageId, existing.contentHash, record.contentHash)
+            return existing
+        with self.connection:
+            self.connection.execute(
+                """
+                INSERT INTO LiveCandidatePackages(
+                  liveCandidatePackageId, demoReleaseId, status,
+                  packageJson, contentHash, createdAt
+                ) VALUES (?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    record.liveCandidatePackageId,
+                    record.demoReleaseId,
+                    record.status,
+                    canonical_json(record.package),
+                    record.contentHash,
+                    record.createdAt,
+                ),
+            )
+        return record
+
+    def get_live_candidate_package(self, record_id: str) -> LiveCandidatePackageRecord | None:
+        row = self.connection.execute(
+            "SELECT * FROM LiveCandidatePackages WHERE liveCandidatePackageId = ?", (record_id,)
+        ).fetchone()
+        if not row:
+            return None
+        return LiveCandidatePackageRecord(
+            liveCandidatePackageId=row["liveCandidatePackageId"],
+            demoReleaseId=row["demoReleaseId"],
+            status=row["status"],
+            package=_decode_json(row["packageJson"]),
+            contentHash=row["contentHash"],
+            createdAt=row["createdAt"],
+        )
+
+    def list_live_candidate_packages(self) -> list[LiveCandidatePackageRecord]:
+        rows = self.connection.execute(
+            "SELECT liveCandidatePackageId FROM LiveCandidatePackages ORDER BY createdAt, liveCandidatePackageId"
+        ).fetchall()
+        return [
+            record
+            for row in rows
+            if (record := self.get_live_candidate_package(row["liveCandidatePackageId"])) is not None
         ]
 
     def create_drift_event(self, record: DriftEventRecord) -> DriftEventRecord:

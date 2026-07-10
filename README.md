@@ -5,7 +5,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.14.0 - Automatic Demo Promotion
+AlphaPilot V13.15.0 - Live Candidate Boundary
 ```
 
 ## Positioning
@@ -29,6 +29,35 @@ V13.4 does not perform live trading.
 - No public REST API exposure.
 
 All configs are templates for research, backtest preparation, or future dry-run design. Never commit real exchange credentials.
+
+## V13.15.0 Live Candidate Boundary
+
+V13.15.0 can turn a checksum-verified, fully validated Demo release into an
+immutable `LiveCandidatePackage`. It does not implement a live exchange
+adapter and does not enable execution.
+
+The package requires at least 50 closed Demo trades across 30 calendar days,
+net profit factor of at least 1.15, drawdown below 5%, no unresolved critical
+drift, matched ledger and checksums, symbol/regime/time stability, an outcome
+sample manifest, a rollback target, and complete code/data/model lineage.
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_live_candidate_boundary.ps1
+```
+
+Current registry result: no Demo release has completed these hard gates, so the
+report contains zero Live candidates and remains blocked. No evidence is
+fabricated to create a package.
+
+Key paths:
+
+- `alphapilot/evolution/promotion/live_candidate.py`
+- `alphapilot/reports/generate_live_candidate_boundary_report.py`
+- `reports/live_candidate_boundary_report.json`
+- `docs/V13.15.0-live-candidate-boundary.md`
+
+Automatic Live promotion, live order execution, Withdraw API, credential
+storage, and AI/Bandit/ML approval remain forbidden.
 
 ## V13.14.0 Automatic Demo Promotion
 

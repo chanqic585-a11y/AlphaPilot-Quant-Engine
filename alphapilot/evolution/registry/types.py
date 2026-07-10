@@ -138,6 +138,16 @@ class DriftEventRecord:
 
 
 @dataclass(frozen=True)
+class LiveCandidatePackageRecord:
+    liveCandidatePackageId: str
+    demoReleaseId: str
+    status: str
+    package: dict[str, Any]
+    contentHash: str
+    createdAt: str = field(default_factory=utc_now)
+
+
+@dataclass(frozen=True)
 class LegacyEvidenceRecord:
     legacyEvidenceId: str
     sourcePath: str

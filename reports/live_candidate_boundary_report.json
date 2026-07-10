@@ -1,0 +1,25 @@
+{
+  "version": "V13.15.0",
+  "source": "live_candidate_boundary_report_v1",
+  "generatedAt": "2026-07-10T01:29:09.035920+00:00",
+  "status": "blocked",
+  "summary": {
+    "liveCandidatePackageCount": 0,
+    "awaitingManualApprovalCount": 0,
+    "automaticApprovalCount": 0,
+    "liveExecutionAdapterCount": 0
+  },
+  "packages": [],
+  "blockers": [
+    "no_demo_release_has_completed_live_candidate_validation"
+  ],
+  "safetyBoundary": {
+    "automaticLivePromotionAllowed": false,
+    "aiApprovalAllowed": false,
+    "banditApprovalAllowed": false,
+    "mlApprovalAllowed": false,
+    "approvalEnablesExecution": false,
+    "liveExecutionAdapterPresent": false,
+    "withdrawAllowed": false
+  }
+}
