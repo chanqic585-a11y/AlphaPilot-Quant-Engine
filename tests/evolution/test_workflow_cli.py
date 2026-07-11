@@ -72,7 +72,7 @@ class WorkflowCliTests(unittest.TestCase):
         ]
 
         self.assertEqual(first, second)
-        self.assertEqual(projection["version"], "V13.27.3")
+        self.assertEqual(projection["version"], "V13.27.4")
         self.assertEqual(first["count"], 10)
         self.assertEqual(len(first["strategyVersionIds"]), 10)
         self.assertEqual(len(items), 10)

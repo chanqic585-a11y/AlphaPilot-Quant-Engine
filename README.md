@@ -1,5 +1,19 @@
 # AlphaPilot Quant Engine
 
+## V13.27.4 Workflow Recovery and Demo Release
+
+V13.27.4 makes workflow state match the real worker state. Official OKX history
+collection checks pause/cancel before every page, a resumed task waits for the
+old worker lock to be released, and all selected backtests enter the visible
+queue before one serial worker processes them in order.
+
+A formal backtest pass continues to start the first public local-forward cycle
+automatically. Local-forward results now retain the immutable
+`strategyCandidateId`, allowing the Control Console to create an audited
+Demo-only release without name matching or fabricated samples.
+
+See `docs/V13.27.4-workflow-recovery-demo-release.md`.
+
 ## V13.27.3 Short-Cycle Workflow Candidate Pack
 
 V13.27.3 registers ten executable research candidates: five 5-minute and five
@@ -32,7 +46,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.27.3 - Short-Cycle Workflow Candidate Pack
+AlphaPilot V13.27.4 - Workflow Recovery and Demo Release
 ```
 
 ## Positioning
