@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import os
+import time
 from contextlib import contextmanager
 from pathlib import Path
 from typing import Iterator
@@ -40,6 +41,9 @@ def _unlock(handle) -> None:
 def workflow_worker_lock(
     output_root: Path | str,
     workflow_run_id: str,
+    *,
+    wait_seconds: float = 0.0,
+    poll_seconds: float = 0.1,
 ) -> Iterator[bool]:
     """Yield whether this process owns the durable run-scoped worker lock."""
 
@@ -51,6 +55,11 @@ def workflow_worker_lock(
         handle.write(b"0")
         handle.flush()
     acquired = _try_lock(handle)
+    deadline = time.monotonic() + max(0.0, float(wait_seconds))
+    interval = max(0.01, float(poll_seconds))
+    while not acquired and time.monotonic() < deadline:
+        time.sleep(min(interval, max(0.0, deadline - time.monotonic())))
+        acquired = _try_lock(handle)
     try:
         yield acquired
     finally:

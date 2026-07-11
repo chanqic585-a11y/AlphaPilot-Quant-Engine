@@ -11,6 +11,12 @@ from unittest.mock import Mock, patch
 from alphapilot.evolution.registry.database import connect_registry
 from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.workflow.cli import _run_selected_forward_cycles, main
+from alphapilot.evolution.workflow.repository import WorkflowRepository
+from alphapilot.evolution.workflow.service import (
+    pause_workflow_run,
+    queue_workflow_run,
+    start_workflow_run,
+)
 from alphapilot.evolution.workflow.types import WorkflowRunRecord
 
 
@@ -421,6 +427,38 @@ class WorkflowCliTests(unittest.TestCase):
 
         worker.assert_not_called()
         self.assertEqual(result["status"], "awaiting")
+
+    def test_one_click_resume_waits_for_paused_worker_lock_handoff(self) -> None:
+        self.run_cli("bootstrap")
+        run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            queue_workflow_run(workflow, run_id, actor="user")
+            start_workflow_run(workflow, run_id, actor="worker")
+            pause_workflow_run(workflow, run_id, actor="user")
+        finally:
+            connection.close()
+
+        with patch(
+            "alphapilot.evolution.workflow.cli.workflow_worker_lock"
+        ) as lock, patch(
+            "alphapilot.evolution.workflow.cli.run_dual_layer_backtest_workflow"
+        ) as worker:
+            lock.return_value.__enter__.return_value = True
+            worker.side_effect = (
+                lambda workflow, _registry, workflow_run_id, **_kwargs: (
+                    workflow.get_workflow_run(workflow_run_id)
+                )
+            )
+            result = self.run_cli("one-click-backtest", "--run-id", run_id)
+
+        lock.assert_called_once_with(
+            str(self.output_root),
+            run_id,
+            wait_seconds=120.0,
+        )
+        self.assertEqual(result["status"], "queued")
 
 
 if __name__ == "__main__":

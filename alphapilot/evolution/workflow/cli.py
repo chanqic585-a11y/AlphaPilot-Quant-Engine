@@ -61,7 +61,12 @@ def _run_dual_layer_once(
     output_root: Path | str,
     queue_before_run: bool = False,
 ):
-    with workflow_worker_lock(output_root, workflow_run_id) as acquired:
+    wait_seconds = 120.0 if queue_before_run else 0.0
+    with workflow_worker_lock(
+        output_root,
+        workflow_run_id,
+        wait_seconds=wait_seconds,
+    ) as acquired:
         if not acquired:
             current = workflow.get_workflow_run(workflow_run_id)
             if current is None:
