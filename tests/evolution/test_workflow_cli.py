@@ -208,6 +208,21 @@ class WorkflowCliTests(unittest.TestCase):
         )
         self.assertEqual(Path(captured["output_root"]), self.output_root)
 
+    def test_one_click_does_not_start_a_duplicate_locked_worker(self) -> None:
+        self.run_cli("bootstrap")
+        run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
+
+        with patch(
+            "alphapilot.evolution.workflow.cli.workflow_worker_lock"
+        ) as lock, patch(
+            "alphapilot.evolution.workflow.cli.run_dual_layer_backtest_workflow"
+        ) as worker:
+            lock.return_value.__enter__.return_value = False
+            result = self.run_cli("one-click-backtest", "--run-id", run_id)
+
+        worker.assert_not_called()
+        self.assertEqual(result["status"], "queued")
+
 
 if __name__ == "__main__":
     unittest.main()

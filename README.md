@@ -1,5 +1,15 @@
 # AlphaPilot Quant Engine
 
+## V13.27.1.6 Resumable Workflow Worker
+
+V13.27.1.6 adds a run-scoped cross-process worker lock for the dual-layer
+backtest CLI. A Control Console restart can safely launch the same workflow run:
+the first worker owns the lock, duplicate workers return without mutating the
+run, and a later process continues from the persisted workflow and official-data
+checkpoints. Explicitly paused runs remain paused until the user resumes them.
+
+See `docs/V13.27.1.6-resumable-workflow-worker.md`.
+
 AlphaPilot Quant Engine is the future backend research and execution-control layer for AlphaPilot.
 
 Current version:

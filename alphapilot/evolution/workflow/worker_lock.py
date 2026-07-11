@@ -1,0 +1,59 @@
+"""Cross-process lock for one workflow worker per run."""
+
+from __future__ import annotations
+
+import os
+from contextlib import contextmanager
+from pathlib import Path
+from typing import Iterator
+
+
+def _try_lock(handle) -> bool:
+    handle.seek(0)
+    try:
+        if os.name == "nt":
+            import msvcrt
+
+            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+        else:
+            import fcntl
+
+            fcntl.flock(handle.fileno(), fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except OSError:
+        return False
+    return True
+
+
+def _unlock(handle) -> None:
+    handle.seek(0)
+    if os.name == "nt":
+        import msvcrt
+
+        msvcrt.locking(handle.fileno(), msvcrt.LK_UNLCK, 1)
+    else:
+        import fcntl
+
+        fcntl.flock(handle.fileno(), fcntl.LOCK_UN)
+
+
+@contextmanager
+def workflow_worker_lock(
+    output_root: Path | str,
+    workflow_run_id: str,
+) -> Iterator[bool]:
+    """Yield whether this process owns the durable run-scoped worker lock."""
+
+    run_root = Path(output_root).resolve() / workflow_run_id
+    run_root.mkdir(parents=True, exist_ok=True)
+    lock_path = run_root / ".worker.lock"
+    handle = lock_path.open("a+b")
+    if lock_path.stat().st_size == 0:
+        handle.write(b"0")
+        handle.flush()
+    acquired = _try_lock(handle)
+    try:
+        yield acquired
+    finally:
+        if acquired:
+            _unlock(handle)
+        handle.close()

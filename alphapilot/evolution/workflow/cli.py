@@ -30,6 +30,7 @@ from .service import (
     retry_backtest_for_data_preparation,
 )
 from .states import WorkflowError
+from .worker_lock import workflow_worker_lock
 
 
 APPROVED_WAREHOUSE_ROOT = Path(r"D:\Codex-Workspace\回测数据")
@@ -43,6 +44,29 @@ def _json_object(value: str, field_name: str) -> dict[str, Any]:
     if not isinstance(parsed, dict):
         raise argparse.ArgumentTypeError(f"{field_name} must be a JSON object")
     return parsed
+
+
+def _run_dual_layer_once(
+    workflow: WorkflowRepository,
+    registry: RegistryRepository,
+    workflow_run_id: str,
+    *,
+    warehouse_root: Path | str,
+    output_root: Path | str,
+):
+    with workflow_worker_lock(output_root, workflow_run_id) as acquired:
+        if not acquired:
+            current = workflow.get_workflow_run(workflow_run_id)
+            if current is None:
+                raise WorkflowError(f"workflow_run_missing:{workflow_run_id}")
+            return current
+        return run_dual_layer_backtest_workflow(
+            workflow,
+            registry,
+            workflow_run_id,
+            warehouse_root=warehouse_root,
+            output_root=output_root,
+        )
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -124,7 +148,7 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
             )
         if args.command == "recover":
             return asdict(
-                run_dual_layer_backtest_workflow(
+                _run_dual_layer_once(
                     workflow,
                     registry,
                     args.run_id,
@@ -145,7 +169,7 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                     workflow, run.workflowRunId, actor="user"
                 )
             return asdict(
-                run_dual_layer_backtest_workflow(
+                _run_dual_layer_once(
                     workflow,
                     registry,
                     run.workflowRunId,
@@ -224,7 +248,7 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                 )
                 completed.append(
                     asdict(
-                        run_dual_layer_backtest_workflow(
+                        _run_dual_layer_once(
                             workflow,
                             registry,
                             queued.workflowRunId,
