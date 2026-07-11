@@ -129,9 +129,13 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
         if args.command == "bootstrap":
             return asdict(register_alpha191_observer(registry, workflow))
         if args.command == "projection":
-            return build_workflow_projection(workflow)
+            return build_workflow_projection(
+                workflow, warehouse_root=args.warehouse_root
+            )
         if args.command == "resolve-backtest-run":
-            projection = build_workflow_projection(workflow)
+            projection = build_workflow_projection(
+                workflow, warehouse_root=args.warehouse_root
+            )
             matches = [
                 item
                 for item in projection["items"]
@@ -246,7 +250,9 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
             )
         if args.command == "run-all-awaiting":
             completed: list[dict[str, Any]] = []
-            projection = build_workflow_projection(workflow)
+            projection = build_workflow_projection(
+                workflow, warehouse_root=args.warehouse_root
+            )
             for item in projection["items"]:
                 if item["stage"] != "backtest" or item["status"] != "awaiting":
                     continue

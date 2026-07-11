@@ -5,6 +5,8 @@ import unittest
 from pathlib import Path
 from unittest.mock import patch
 
+from alphapilot.data_foundation.checkpoint import write_json_atomic
+from alphapilot.data_foundation.warehouse import WarehouseLayout
 from alphapilot.evolution.registry.database import connect_registry
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
@@ -445,6 +447,33 @@ class WorkflowBacktestTests(unittest.TestCase):
         self.assertEqual(projection["summary"]["strategyCount"], 1)
         self.assertEqual(projection["items"][0]["stage"], "backtest")
         self.assertEqual(projection["items"][0]["status"], "awaiting")
+
+    def test_projection_reads_incremental_official_collection_checkpoint(self) -> None:
+        version = register_alpha191_observer(self.registry, self.workflow)
+        contract = derive_strategy_data_contract(version, self.workflow)
+        warehouse_root = self.root / "warehouse"
+        layout = WarehouseLayout.from_root(warehouse_root)
+        layout.ensure_directories()
+        write_json_atomic(
+            layout.checkpointRoot / f"official-{contract.strategyDataContractId}.json",
+            {
+                "schemaVersion": "okx_official_history_collection_v1",
+                "completed": {
+                    "BTC-USDT-SWAP|4h": {"status": "collected"},
+                    "ETH-USDT-SWAP|4h": {"status": "collected"},
+                },
+            },
+        )
+
+        projection = build_workflow_projection(
+            self.workflow,
+            warehouse_root=warehouse_root,
+        )
+
+        self.assertEqual(
+            projection["items"][0]["downloadProgress"],
+            {"completed": 2, "required": 150, "fundingFiles": 0},
+        )
 
 
 if __name__ == "__main__":

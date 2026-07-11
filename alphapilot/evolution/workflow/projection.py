@@ -3,13 +3,16 @@
 from __future__ import annotations
 
 from collections import Counter
+from pathlib import Path
 from typing import Any
 
+from alphapilot.data_foundation.checkpoint import load_json
+from alphapilot.data_foundation.warehouse import WarehouseLayout
 from alphapilot.evolution.registry.types import utc_now
 
 from .repository import WorkflowRepository
 from .states import STAGE_LABELS, STAGE_ORDER, STAGE_PAGES, STATUS_LABELS
-from .types import WorkflowRunRecord
+from .types import StrategyDataContractRecord, WorkflowRunRecord
 
 
 PHASE_LABELS = {
@@ -37,7 +40,48 @@ def _current_run(runs: list[WorkflowRunRecord]) -> WorkflowRunRecord:
     )
 
 
-def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
+def _checkpoint_download_progress(
+    contract: StrategyDataContractRecord | None,
+    warehouse_root: Path | str | None,
+    *,
+    funding_files: int,
+) -> dict[str, int] | None:
+    if contract is None or warehouse_root is None:
+        return None
+    checkpoint_path = (
+        WarehouseLayout.from_root(warehouse_root).checkpointRoot
+        / f"official-{contract.strategyDataContractId}.json"
+    )
+    if not checkpoint_path.is_file():
+        return None
+    completed = load_json(checkpoint_path).get("completed")
+    if not isinstance(completed, dict):
+        return None
+    timeframes = {
+        str(value)
+        for value in (
+            contract.contract.get("signalTimeframe"),
+            contract.contract.get("executionTimeframe"),
+            contract.contract.get("executionFallbackTimeframe"),
+        )
+        if value
+    }
+    target_members = int(
+        (contract.contract.get("universePolicy") or {}).get("targetMembers", 0)
+    )
+    required = target_members * len(timeframes)
+    return {
+        "completed": len(completed),
+        "required": max(len(completed), required),
+        "fundingFiles": funding_files,
+    }
+
+
+def build_workflow_projection(
+    repository: WorkflowRepository,
+    *,
+    warehouse_root: Path | str | None = None,
+) -> dict[str, Any]:
     items: list[dict[str, Any]] = []
     archived_items: list[dict[str, Any]] = []
     for version in repository.list_strategy_versions():
@@ -50,6 +94,7 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
         contracts = repository.list_strategy_data_contracts(
             strategy_version_id=version.strategyVersionId
         )
+        latest_contract = contracts[-1] if contracts else None
         binding = repository.get_evaluation_binding_for_run(current.workflowRunId)
         phase = str(current.progress.get("phase") or "")
         artifacts = current.progress.get("artifacts") or {}
@@ -57,6 +102,17 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
         events = repository.list_stage_events(
             strategy_version_id=version.strategyVersionId
         )
+        funding_files = int(artifacts.get("downloadedFundingFiles") or 0)
+        checkpoint_progress = _checkpoint_download_progress(
+            latest_contract,
+            warehouse_root,
+            funding_files=funding_files,
+        )
+        download_progress = checkpoint_progress or {
+            "completed": int(artifacts.get("downloadedPartitions") or 0),
+            "required": int(artifacts.get("requiredPartitions") or 0),
+            "fundingFiles": funding_files,
+        }
         item = {
             "strategyVersionId": version.strategyVersionId,
             "strategyFamilyId": version.strategyFamilyId,
@@ -93,13 +149,7 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
                     else artifacts.get("dataSnapshotId")
                 ),
             },
-            "downloadProgress": {
-                "completed": int(artifacts.get("downloadedPartitions") or 0),
-                "required": int(artifacts.get("requiredPartitions") or 0),
-                "fundingFiles": int(
-                    artifacts.get("downloadedFundingFiles") or 0
-                ),
-            },
+            "downloadProgress": download_progress,
             "automaticNextStage": "local_forward",
             "stage": current.stage,
             "stageLabel": STAGE_LABELS[current.stage],
