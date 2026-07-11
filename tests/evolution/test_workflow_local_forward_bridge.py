@@ -218,6 +218,11 @@ class WorkflowLocalForwardBridgeTests(unittest.TestCase):
         self.assertIn("forwardSessionId", local_run.result)
         release = self.registry.get_forward_release(local_run.result["forwardReleaseId"])
         assert release is not None
+        self.assertIn("strategyCandidateId", local_run.result)
+        self.assertEqual(
+            local_run.result["strategyCandidateId"],
+            release.strategyCandidateId,
+        )
         self.assertTrue(release.release["virtualAccountOnly"])
         self.assertFalse(release.release["createsOrders"])
         self.assertFalse(release.release["demoExecutionAllowed"])
@@ -275,6 +280,20 @@ class WorkflowLocalForwardBridgeTests(unittest.TestCase):
             )
 
         self.assertEqual(blocked.status, "blocked")
+        release = self.registry.get_forward_release(blocked.result["forwardReleaseId"])
+        assert release is not None
+        self.assertIn("strategyCandidateId", blocked.result)
+        self.assertEqual(
+            blocked.result["strategyCandidateId"],
+            release.strategyCandidateId,
+        )
+        events = self.workflow.list_stage_events(
+            workflow_run_id=blocked.workflowRunId
+        )
+        self.assertEqual(
+            events[-1].evidence["strategyCandidateId"],
+            release.strategyCandidateId,
+        )
         diagnosis = self.workflow.get_latest_failure_diagnosis(blocked.workflowRunId)
         assert diagnosis is not None
         self.assertEqual(diagnosis.retryDisposition, "same_version_retry")

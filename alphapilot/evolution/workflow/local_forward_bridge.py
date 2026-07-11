@@ -180,8 +180,13 @@ def _persist_forward_cycle_result(
     )
     total_closed = len(outcomes)
     binding_id = evaluation_binding_id or run.result.get("evaluationBindingId")
+    release = registry.get_forward_release(cycle.forwardReleaseId)
+    candidate_id = str(run.result.get("strategyCandidateId") or "").strip()
+    if not candidate_id and release is not None:
+        candidate_id = release.strategyCandidateId
     cycle_result = {
         **run.result,
+        "strategyCandidateId": candidate_id,
         "forwardReleaseId": cycle.forwardReleaseId,
         "forwardSessionId": cycle.forwardSessionId,
         "cycleStatus": cycle.status,
@@ -196,6 +201,7 @@ def _persist_forward_cycle_result(
         "createsOrders": False,
     }
     evidence = {
+        "strategyCandidateId": candidate_id,
         "forwardReleaseId": cycle.forwardReleaseId,
         "forwardSessionId": cycle.forwardSessionId,
         "evaluationBindingId": binding_id,
@@ -271,6 +277,7 @@ def run_local_forward_cycle(
             actor="worker",
             result={
                 **run.result,
+                "strategyCandidateId": release.strategyCandidateId,
                 "forwardReleaseId": release.forwardReleaseId,
                 "publicMarketOnly": True,
                 "virtualAccountOnly": True,
@@ -278,6 +285,7 @@ def run_local_forward_cycle(
                 "error": str(error),
             },
             evidence={
+                "strategyCandidateId": release.strategyCandidateId,
                 "forwardReleaseId": release.forwardReleaseId,
                 "evaluationBindingId": run.result.get("evaluationBindingId"),
             },
@@ -340,6 +348,26 @@ def start_local_forward_after_pass(
     next_run = start_workflow_run(
         workflow, next_run.workflowRunId, actor="worker"
     )
+    next_run = checkpoint_workflow_run(
+        workflow,
+        next_run.workflowRunId,
+        progress={
+            "phase": "public_forward_observation",
+            "completed": 0,
+            "required": LOCAL_FORWARD_REVIEW_SAMPLE_TARGET,
+            "percent": 0,
+            "closedOutcomeCount": 0,
+        },
+        result={
+            "strategyCandidateId": candidate.strategyCandidateId,
+            "forwardReleaseId": release.forwardReleaseId,
+            "evaluationBindingId": evaluation_binding.evaluationBindingId,
+            "publicMarketOnly": True,
+            "virtualAccountOnly": True,
+            "createsOrders": False,
+        },
+        actor="worker",
+    )
     try:
         cycle = run_forward_cycle(
             release,
@@ -354,11 +382,13 @@ def start_local_forward_after_pass(
             status="blocked",
             actor="worker",
             result={
+                "strategyCandidateId": candidate.strategyCandidateId,
                 "forwardReleaseId": release.forwardReleaseId,
                 "evaluationBindingId": evaluation_binding.evaluationBindingId,
                 "error": str(error),
             },
             evidence={
+                "strategyCandidateId": candidate.strategyCandidateId,
                 "forwardReleaseId": release.forwardReleaseId,
                 "evaluationBindingId": evaluation_binding.evaluationBindingId,
             },
