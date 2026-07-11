@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import inspect
 import tempfile
 import unittest
 from pathlib import Path
@@ -7,6 +8,7 @@ from pathlib import Path
 import pandas as pd
 
 from alphapilot.data_foundation.official_history import OkxOfficialHistoryCollector
+from alphapilot.data_foundation.okx_public import OkxHistoryCollectionStopped
 from alphapilot.data_foundation.warehouse import WarehouseLayout
 from alphapilot.evolution.workflow.types import StrategyDataContractRecord
 
@@ -101,6 +103,21 @@ class FakeOkxClient:
         ]
 
 
+class InterruptingOkxClient(FakeOkxClient):
+    def history_candles(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        stop_requested=None,
+        **_kwargs,
+    ):
+        self.history_calls.append((instrument_id, timeframe))
+        if stop_requested is None:
+            raise AssertionError("collector_did_not_forward_stop_callback")
+        raise OkxHistoryCollectionStopped("official_history_collection_stopped")
+
+
 class OfficialHistoryCollectorTests(unittest.TestCase):
     def test_collects_strategy_first_official_partitions_and_resumes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -138,6 +155,28 @@ class OfficialHistoryCollectorTests(unittest.TestCase):
             self.assertEqual(result.status, "paused")
             self.assertEqual(result.completedPartitionCount, 0)
             self.assertEqual(client.history_calls, [])
+
+    def test_page_level_stop_returns_paused_without_partial_partition(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            client = InterruptingOkxClient()
+
+            self.assertIn(
+                "stop_requested",
+                inspect.signature(OkxOfficialHistoryCollector).parameters,
+            )
+
+            result = OkxOfficialHistoryCollector(
+                client=client,
+                layout=layout,
+                stop_requested=lambda: False,
+            ).collect(_contract())
+
+            self.assertEqual(result.status, "paused")
+            self.assertEqual(result.completedPartitionCount, 0)
+            self.assertEqual(result.failedPartitionCount, 0)
+            self.assertEqual(result.partitions, ())
+            self.assertEqual(client.history_calls, [("BTC-USDT-SWAP", "15m")])
 
     def test_invalid_ohlc_partition_is_quarantined(self) -> None:
         with tempfile.TemporaryDirectory() as directory:

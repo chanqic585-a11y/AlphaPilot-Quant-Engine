@@ -29,6 +29,10 @@ TIMEFRAME_MILLISECONDS = {
 CANONICAL_SOURCE_NAMES = ("unknown", "okx")
 
 
+class OkxHistoryCollectionStopped(RuntimeError):
+    """Raised when a caller requests a clean stop between history pages."""
+
+
 def _utc_now() -> str:
     return datetime.now(UTC).isoformat()
 
@@ -181,6 +185,7 @@ class OkxPublicClient:
         start_exclusive_ms: int,
         max_pages: int = 500,
         page_limit: int = 100,
+        stop_requested: Callable[[], bool] | None = None,
     ) -> tuple[pd.DataFrame, int]:
         if timeframe not in BAR_VALUES:
             raise ValueError(f"Unsupported OKX timeframe: {timeframe}")
@@ -191,6 +196,8 @@ class OkxPublicClient:
         rows: list[list[Any]] = []
         seen_cursors: set[int] = set()
         for _ in range(max_pages):
+            if stop_requested is not None and stop_requested():
+                raise OkxHistoryCollectionStopped("official_history_collection_stopped")
             parameters: dict[str, Any] = {
                 "instId": instrument_id,
                 "bar": BAR_VALUES[timeframe],

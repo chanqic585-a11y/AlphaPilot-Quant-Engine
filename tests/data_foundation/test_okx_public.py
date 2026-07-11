@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import inspect
 import tempfile
 import unittest
 from pathlib import Path
@@ -13,6 +14,7 @@ from alphapilot.data_foundation.okx_public import (
     collect_public_increment,
     latest_canonical_timestamp,
 )
+from alphapilot.data_foundation import okx_public
 
 
 class _Response:
@@ -30,6 +32,46 @@ class _Response:
 
 
 class OkxPublicTests(unittest.TestCase):
+    def test_history_candles_stops_before_requesting_the_next_page(self) -> None:
+        calls: list[str] = []
+        stop_checks = 0
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(str(getattr(request, "full_url")))
+            return _Response(
+                {
+                    "code": "0",
+                    "msg": "",
+                    "data": [
+                        ["3000", "10", "12", "9", "11", "1", "1", "100", "1"],
+                        ["2000", "9", "11", "8", "10", "1", "1", "90", "1"],
+                    ],
+                }
+            )
+
+        def stop_requested() -> bool:
+            nonlocal stop_checks
+            stop_checks += 1
+            return stop_checks > 1
+
+        self.assertTrue(hasattr(okx_public, "OkxHistoryCollectionStopped"))
+        self.assertIn(
+            "stop_requested",
+            inspect.signature(OkxPublicClient.history_candles).parameters,
+        )
+        client = OkxPublicClient(opener=opener, throttle_seconds=0)
+        with self.assertRaises(okx_public.OkxHistoryCollectionStopped):
+            client.history_candles(
+                instrument_id="BTC-USDT-SWAP",
+                timeframe="15m",
+                start_exclusive_ms=1000,
+                max_pages=3,
+                stop_requested=stop_requested,
+            )
+
+        self.assertEqual(len(calls), 1)
+
     def test_public_metadata_and_funding_methods_use_unauthenticated_endpoints(self) -> None:
         calls: list[str] = []
 

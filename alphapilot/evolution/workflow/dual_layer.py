@@ -85,10 +85,14 @@ def resolve_code_commit() -> str:
         return "unresolved-working-tree-commit"
 
 
-def _default_dependencies() -> DualLayerDependencies:
+def _default_dependencies(
+    *, stop_requested: Callable[[], bool] | None = None
+) -> DualLayerDependencies:
     def collect(contract: StrategyDataContractRecord, layout: WarehouseLayout):
         return OkxOfficialHistoryCollector(
-            client=OkxPublicClient(), layout=layout
+            client=OkxPublicClient(),
+            layout=layout,
+            stop_requested=stop_requested,
         ).collect(contract)
 
     return DualLayerDependencies(
@@ -193,7 +197,6 @@ def run_dual_layer_backtest_workflow(
     if run.status != "running":
         raise WorkflowTransitionError(f"workflow_run_not_executable:{run.status}")
 
-    deps = dependencies or _default_dependencies()
     layout = WarehouseLayout.from_root(warehouse_root)
     layout.ensure_directories()
     run_root = Path(output_root).resolve() / run.workflowRunId
@@ -208,6 +211,10 @@ def run_dual_layer_backtest_workflow(
         if value is None:
             raise WorkflowConflict(f"workflow_run_missing:{run.workflowRunId}")
         return value
+
+    deps = dependencies or _default_dependencies(
+        stop_requested=lambda: current().status in {"paused", "cancelled"}
+    )
 
     def begin(name: str) -> bool:
         state = current()

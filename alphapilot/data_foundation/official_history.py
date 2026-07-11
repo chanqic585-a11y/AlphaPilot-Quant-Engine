@@ -16,7 +16,12 @@ from alphapilot.evolution.workflow.types import StrategyDataContractRecord
 
 from .catalog import discover_raw_assets
 from .checkpoint import load_json, pause_requested, write_json_atomic
-from .okx_public import OKX_GLOBAL_API, TIMEFRAME_MILLISECONDS, OkxPublicClient
+from .okx_public import (
+    OKX_GLOBAL_API,
+    TIMEFRAME_MILLISECONDS,
+    OkxHistoryCollectionStopped,
+    OkxPublicClient,
+)
 from .warehouse import WarehouseLayout, ensure_capacity
 
 
@@ -75,12 +80,19 @@ class OkxOfficialHistoryCollector:
         client: OkxPublicClient,
         layout: WarehouseLayout,
         pause_file: Path | None = None,
+        stop_requested: Callable[[], bool] | None = None,
         capacity_guard: Callable[[WarehouseLayout, int], None] = ensure_capacity,
     ) -> None:
         self.client = client
         self.layout = layout
         self.pause_file = pause_file or layout.checkpointRoot / "PAUSE_REQUESTED"
+        self.stop_requested = stop_requested
         self.capacity_guard = capacity_guard
+
+    def _should_stop(self) -> bool:
+        return pause_requested(self.pause_file) or bool(
+            self.stop_requested is not None and self.stop_requested()
+        )
 
     def _candidate_instruments(self, contract: dict[str, Any]) -> list[str]:
         official_rows = self.client.public_instruments(instrument_type="SWAP")
@@ -311,12 +323,14 @@ class OkxOfficialHistoryCollector:
         completed: list[str] = []
         endpoint = f"{self.client.base_url}/api/v5/public/funding-rate-history"
         for instrument_id in instrument_ids:
-            if pause_requested(self.pause_file):
+            if self._should_stop():
                 break
             rows: list[dict[str, Any]] = []
             cursor: int | None = None
             seen_cursors: set[int] = set()
             for _ in range(1_000):
+                if self._should_stop():
+                    break
                 page = self.client.funding_rate_history(
                     instrument_id=instrument_id,
                     after_ms=cursor,
@@ -389,7 +403,7 @@ class OkxOfficialHistoryCollector:
         paused = False
         for instrument_id in instruments:
             for timeframe in timeframes:
-                if pause_requested(self.pause_file):
+                if self._should_stop():
                     paused = True
                     break
                 key = f"{instrument_id}|{timeframe}"
@@ -406,6 +420,7 @@ class OkxOfficialHistoryCollector:
                         timeframe=timeframe,
                         start_exclusive_ms=start_ms,
                         max_pages=max_pages,
+                        stop_requested=self._should_stop,
                     )
                     partition = self._write_partition(
                         instrument_id=instrument_id,
@@ -415,6 +430,9 @@ class OkxOfficialHistoryCollector:
                         endpoint=endpoint,
                         collected_at=collected_at,
                     )
+                except OkxHistoryCollectionStopped:
+                    paused = True
+                    break
                 except Exception as error:
                     partition = OfficialPartition(
                         instrumentId=instrument_id,
@@ -441,6 +459,8 @@ class OkxOfficialHistoryCollector:
             if paused
             else self._collect_funding(instruments, start_ms=start_ms + 1)
         )
+        if self._should_stop():
+            paused = True
         completed = sum(
             1 for item in partitions if item.status in {"collected", "reused"}
         )

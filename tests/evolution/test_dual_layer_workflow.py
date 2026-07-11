@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import inspect
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from alphapilot.data_foundation.checkpoint import write_json_atomic
 from alphapilot.data_foundation.official_history import OfficialCollectionResult
@@ -17,10 +19,12 @@ from alphapilot.evolution.workflow.dual_layer import (
     DualLayerDependencies,
     run_dual_layer_backtest_workflow,
 )
+from alphapilot.evolution.workflow import dual_layer as dual_layer_module
 from alphapilot.evolution.workflow.data_contract import derive_strategy_data_contract
 from alphapilot.evolution.workflow.repository import WorkflowRepository
 from alphapilot.evolution.workflow.service import (
     checkpoint_workflow_run,
+    pause_workflow_run,
     queue_workflow_run,
     retry_backtest_for_data_preparation,
     start_workflow_run,
@@ -200,6 +204,61 @@ class DualLayerWorkflowTests(unittest.TestCase):
         )
         self.assertEqual(same.workflowRunId, completed.workflowRunId)
         self.assertEqual(self.calls, calls_before)
+
+    def test_default_workflow_dependencies_receive_live_pause_status_callback(self) -> None:
+        self.assertIn(
+            "stop_requested",
+            inspect.signature(dual_layer_module._default_dependencies).parameters,
+        )
+
+        def build_dependencies(stop_requested):
+            base = self.dependencies()
+
+            def collect(contract, layout):
+                self.calls.append("collect")
+                pause_workflow_run(
+                    self.workflow,
+                    self.run.workflowRunId,
+                    actor="user",
+                )
+                self.assertTrue(stop_requested())
+                return OfficialCollectionResult(
+                    status="paused",
+                    strategyDataContractId=contract.strategyDataContractId,
+                    instrumentCount=2,
+                    completedPartitionCount=0,
+                    reusedPartitionCount=0,
+                    failedPartitionCount=0,
+                    fundingFileCount=0,
+                    partitions=(),
+                    checkpointPath=str(self.root / "official-checkpoint.json"),
+                    generatedAt="2026-07-12T00:00:00+00:00",
+                )
+
+            return DualLayerDependencies(
+                runResearchSmoke=base.runResearchSmoke,
+                collectOfficialHistory=collect,
+                freezeFormalSnapshot=base.freezeFormalSnapshot,
+                buildValidationPack=base.buildValidationPack,
+                runFormalBacktest=base.runFormalBacktest,
+                marketData=base.marketData,
+                codeCommit=base.codeCommit,
+            )
+
+        with patch.object(
+            dual_layer_module,
+            "_default_dependencies",
+            side_effect=build_dependencies,
+        ):
+            paused = run_dual_layer_backtest_workflow(
+                self.workflow,
+                self.registry,
+                self.run.workflowRunId,
+                warehouse_root=self.root / "warehouse",
+                output_root=self.root / "output",
+            )
+
+        self.assertEqual(paused.status, "paused")
 
     def test_official_data_failure_blocks_and_data_retry_preserves_attempt(self) -> None:
         blocked = run_dual_layer_backtest_workflow(
