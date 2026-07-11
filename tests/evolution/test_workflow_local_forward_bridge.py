@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from dataclasses import replace
 from pathlib import Path
+from unittest.mock import patch
 
 import pandas as pd
 
@@ -22,6 +23,7 @@ from alphapilot.evolution.workflow.evaluation_binding import (
     create_formal_evaluation_binding,
 )
 from alphapilot.evolution.workflow.local_forward_bridge import (
+    run_local_forward_cycle,
     start_local_forward_after_pass,
 )
 from alphapilot.evolution.workflow.repository import WorkflowRepository
@@ -222,6 +224,61 @@ class WorkflowLocalForwardBridgeTests(unittest.TestCase):
         self.assertFalse(release.release["liveExecutionAllowed"])
         self.assertEqual(self.registry.list_demo_releases(), [])
         self.assertEqual(self.registry.list_live_releases(), [])
+
+    def test_existing_local_forward_run_can_collect_another_public_cycle(self) -> None:
+        local_run = start_local_forward_after_pass(
+            self.workflow,
+            self.registry,
+            self.version,
+            self.backtest_run,
+            self.binding,
+            code_commit="test-commit",
+            market_data=_PublicMarket(),
+        )
+
+        refreshed = run_local_forward_cycle(
+            self.workflow,
+            self.registry,
+            local_run.workflowRunId,
+            code_commit="test-commit-2",
+            market_data=_PublicMarket(),
+        )
+
+        self.assertEqual(refreshed.workflowRunId, local_run.workflowRunId)
+        self.assertEqual(refreshed.stage, "local_forward")
+        self.assertEqual(refreshed.status, "running")
+        self.assertEqual(refreshed.progress["phase"], "public_forward_observation")
+        self.assertIn("totalClosedOutcomeCount", refreshed.result)
+        self.assertFalse(refreshed.result["createsOrders"])
+
+    def test_existing_local_forward_cycle_records_release_level_failure(self) -> None:
+        local_run = start_local_forward_after_pass(
+            self.workflow,
+            self.registry,
+            self.version,
+            self.backtest_run,
+            self.binding,
+            code_commit="test-commit",
+            market_data=_PublicMarket(),
+        )
+
+        with patch(
+            "alphapilot.evolution.workflow.local_forward_bridge.run_forward_cycle",
+            side_effect=RuntimeError("public market unavailable"),
+        ):
+            blocked = run_local_forward_cycle(
+                self.workflow,
+                self.registry,
+                local_run.workflowRunId,
+                code_commit="test-commit-2",
+                market_data=_PublicMarket(),
+            )
+
+        self.assertEqual(blocked.status, "blocked")
+        diagnosis = self.workflow.get_latest_failure_diagnosis(blocked.workflowRunId)
+        assert diagnosis is not None
+        self.assertEqual(diagnosis.retryDisposition, "same_version_retry")
+        self.assertIn("public market unavailable", diagnosis.summary)
 
     def test_strict_formal_promotion_rejections(self) -> None:
         with self.subTest("failed gate"):

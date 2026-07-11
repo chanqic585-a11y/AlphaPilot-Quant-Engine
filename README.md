@@ -1,5 +1,22 @@
 # AlphaPilot Quant Engine
 
+## V13.27.3 Short-Cycle Workflow Candidate Pack
+
+V13.27.3 registers ten executable research candidates: five 5-minute and five
+15-minute strategies. Registration is idempotent and creates only immutable
+StrategyVersion records plus awaiting backtest runs.
+
+Formal backtests use historical point-in-time dynamic Top50 OKX USDT perpetual
+universes. Single-symbol runs are smoke/debug only. Promotion still requires
+`targetR >= 2`, fees, slippage, funding, delay, purged walk-forward, locked OOS,
+and unseen-symbol evidence.
+
+Selected backtests and public local-forward cycles run serially. Local forward
+uses completed public candles, preserves a separate release/session/ledger per
+strategy, and never creates an exchange order.
+
+See `docs/V13.27.3-short-cycle-workflow-candidate-pack.md`.
+
 ## V13.27.1.6 Resumable Workflow Worker
 
 V13.27.1.6 adds a run-scoped cross-process worker lock for the dual-layer
@@ -15,7 +32,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.26.0 - Formal Execution Outcome Feedback
+AlphaPilot V13.27.3 - Short-Cycle Workflow Candidate Pack
 ```
 
 ## Positioning

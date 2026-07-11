@@ -6,11 +6,12 @@ import tempfile
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
-from unittest.mock import patch
+from unittest.mock import Mock, patch
 
 from alphapilot.evolution.registry.database import connect_registry
 from alphapilot.evolution.registry.repositories import RegistryRepository
-from alphapilot.evolution.workflow.cli import main
+from alphapilot.evolution.workflow.cli import _run_selected_forward_cycles, main
+from alphapilot.evolution.workflow.types import WorkflowRunRecord
 
 
 class WorkflowCliTests(unittest.TestCase):
@@ -285,6 +286,83 @@ class WorkflowCliTests(unittest.TestCase):
         )
         self.assertEqual(ineligible_code, 2)
         self.assertIn("selected_backtest_run_not_eligible", ineligible["error"])
+
+    def test_selected_forward_cycles_run_in_requested_serial_order(self) -> None:
+        def local_run(run_id: str, *, status: str = "running") -> WorkflowRunRecord:
+            return WorkflowRunRecord(
+                workflowRunId=run_id,
+                strategyVersionId=f"version-{run_id}",
+                stage="local_forward",
+                status=status,
+                attemptNumber=1,
+                gateProfileId=None,
+                riskProfileId="risk-local",
+                idempotencyKey=f"local::{run_id}",
+                progress={},
+                result={"forwardReleaseId": f"release-{run_id}"},
+                startedAt="2026-07-12T00:00:00+00:00",
+                checkpointAt=None,
+                completedAt=None,
+                contentHash=f"hash-{run_id}",
+            )
+
+        runs = {"run-2": local_run("run-2"), "run-1": local_run("run-1")}
+        workflow = Mock()
+        workflow.get_workflow_run.side_effect = runs.get
+        observed: list[str] = []
+
+        def fake_cycle(_workflow, _registry, workflow_run_id, **_kwargs):
+            observed.append(workflow_run_id)
+            return runs[workflow_run_id]
+
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_local_forward_once",
+            side_effect=fake_cycle,
+        ):
+            result = _run_selected_forward_cycles(
+                workflow,
+                Mock(),
+                ["run-2", "run-1"],
+                output_root=self.output_root,
+            )
+
+        self.assertEqual(observed, ["run-2", "run-1"])
+        self.assertEqual(result["processedCount"], 2)
+        self.assertEqual(result["workflowRunIds"], ["run-2", "run-1"])
+
+    def test_selected_forward_cycles_reject_duplicates_and_ineligible_runs(self) -> None:
+        workflow = Mock()
+        workflow.get_workflow_run.return_value = WorkflowRunRecord(
+            workflowRunId="run-1",
+            strategyVersionId="version-1",
+            stage="backtest",
+            status="running",
+            attemptNumber=1,
+            gateProfileId=None,
+            riskProfileId=None,
+            idempotencyKey="backtest::run-1",
+            progress={},
+            result={},
+            startedAt=None,
+            checkpointAt=None,
+            completedAt=None,
+            contentHash="hash-run-1",
+        )
+
+        with self.assertRaisesRegex(Exception, "must_be_unique"):
+            _run_selected_forward_cycles(
+                workflow,
+                Mock(),
+                ["run-1", "run-1"],
+                output_root=self.output_root,
+            )
+        with self.assertRaisesRegex(Exception, "not_eligible"):
+            _run_selected_forward_cycles(
+                workflow,
+                Mock(),
+                ["run-1"],
+                output_root=self.output_root,
+            )
 
     def test_queue_then_run_records_precise_alpha191_data_blocker(self) -> None:
         bootstrapped = self.run_cli("bootstrap")

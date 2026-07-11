@@ -10,6 +10,7 @@ from typing import Any, Sequence
 
 from alphapilot.evolution.registry.database import connect_registry
 from alphapilot.evolution.registry.repositories import RegistryRepository
+from alphapilot.evolution.forward.public_market import OkxForwardPublicMarket
 from alphapilot.data_foundation.research_smoke import run_research_smoke
 from alphapilot.data_foundation.warehouse import WarehouseLayout
 
@@ -19,7 +20,8 @@ from .bootstrap import (
     register_optimized_legacy_strategy,
     register_short_cycle_candidate_pack,
 )
-from .dual_layer import run_dual_layer_backtest_workflow
+from .dual_layer import resolve_code_commit, run_dual_layer_backtest_workflow
+from .local_forward_bridge import run_local_forward_cycle
 from .data_contract import derive_strategy_data_contract
 from .projection import build_workflow_projection
 from .repository import WorkflowRepository
@@ -125,6 +127,67 @@ def _run_selected_backtests(
     }
 
 
+def _run_local_forward_once(
+    workflow: WorkflowRepository,
+    registry: RegistryRepository,
+    workflow_run_id: str,
+    *,
+    output_root: Path | str,
+):
+    with workflow_worker_lock(output_root, workflow_run_id) as acquired:
+        if not acquired:
+            current = workflow.get_workflow_run(workflow_run_id)
+            if current is None:
+                raise WorkflowError(f"workflow_run_missing:{workflow_run_id}")
+            return current
+        return run_local_forward_cycle(
+            workflow,
+            registry,
+            workflow_run_id,
+            code_commit=resolve_code_commit(),
+            market_data=OkxForwardPublicMarket(),
+        )
+
+
+def _run_selected_forward_cycles(
+    workflow: WorkflowRepository,
+    registry: RegistryRepository,
+    workflow_run_ids: Sequence[str],
+    *,
+    output_root: Path | str,
+) -> dict[str, Any]:
+    run_ids = [str(value).strip() for value in workflow_run_ids]
+    if not run_ids or any(not value for value in run_ids):
+        raise WorkflowError("selected_forward_run_ids_required")
+    if len(set(run_ids)) != len(run_ids):
+        raise WorkflowError("selected_forward_run_ids_must_be_unique")
+    for run_id in run_ids:
+        run = workflow.get_workflow_run(run_id)
+        if run is None:
+            raise WorkflowError(f"selected_forward_run_missing:{run_id}")
+        if run.stage != "local_forward" or run.status != "running":
+            raise WorkflowError(
+                f"selected_forward_run_not_eligible:{run_id}:{run.stage}:{run.status}"
+            )
+
+    completed = [
+        asdict(
+            _run_local_forward_once(
+                workflow,
+                registry,
+                run_id,
+                output_root=output_root,
+            )
+        )
+        for run_id in run_ids
+    ]
+    return {
+        "processedCount": len(completed),
+        "workflowRunIds": run_ids,
+        "runs": completed,
+    }
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="AlphaPilot workflow orchestrator")
     parser.add_argument("--registry", default="data/evolution_registry.sqlite")
@@ -152,6 +215,8 @@ def build_parser() -> argparse.ArgumentParser:
     commands.add_parser("run-all-awaiting")
     selected_backtests = commands.add_parser("run-selected-backtests")
     selected_backtests.add_argument("--run-id", action="append", required=True)
+    selected_forward = commands.add_parser("run-selected-forward-cycles")
+    selected_forward.add_argument("--run-id", action="append", required=True)
 
     challenger = commands.add_parser("challenger")
     challenger.add_argument("--parent-version-id", required=True)
@@ -331,6 +396,13 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                 registry,
                 args.run_id,
                 warehouse_root=args.warehouse_root,
+                output_root=args.output_root,
+            )
+        if args.command == "run-selected-forward-cycles":
+            return _run_selected_forward_cycles(
+                workflow,
+                registry,
+                args.run_id,
                 output_root=args.output_root,
             )
         raise WorkflowError(f"unsupported_workflow_command:{args.command}")

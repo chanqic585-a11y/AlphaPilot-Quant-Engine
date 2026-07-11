@@ -69,7 +69,7 @@ class DualLayerDependencies:
     codeCommit: str = ""
 
 
-def _code_commit() -> str:
+def resolve_code_commit() -> str:
     configured = str(os.environ.get("ALPHAPILOT_CODE_COMMIT") or "").strip()
     if configured:
         return configured
@@ -98,7 +98,7 @@ def _default_dependencies() -> DualLayerDependencies:
         buildValidationPack=build_formal_validation_pack,
         runFormalBacktest=run_formal_strategy_backtest,
         marketData=OkxForwardPublicMarket(),
-        codeCommit=_code_commit(),
+        codeCommit=resolve_code_commit(),
     )
 
 
@@ -400,7 +400,7 @@ def run_dual_layer_backtest_workflow(
                 version,
                 passed_run,
                 binding,
-                code_commit=deps.codeCommit or _code_commit(),
+                code_commit=deps.codeCommit or resolve_code_commit(),
                 market_data=deps.marketData,
             )
         failed_checks = sorted(key for key, value in evaluated_checks.items() if not value)

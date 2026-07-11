@@ -5,7 +5,11 @@ from __future__ import annotations
 from typing import Any
 
 from alphapilot.evolution.forward.release import create_workflow_forward_release
-from alphapilot.evolution.forward.runner import ForwardPublicMarket, run_forward_cycle
+from alphapilot.evolution.forward.runner import (
+    ForwardCycleResult,
+    ForwardPublicMarket,
+    run_forward_cycle,
+)
 from alphapilot.evolution.forward.rules import is_supported_frozen_policy
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
@@ -25,6 +29,9 @@ from .types import (
     StrategyVersionRecord,
     WorkflowRunRecord,
 )
+
+
+LOCAL_FORWARD_REVIEW_SAMPLE_TARGET = 30
 
 
 def _formal_evidence(backtest_run: WorkflowRunRecord) -> dict[str, Any]:
@@ -159,6 +166,132 @@ def _ensure_candidate(
     )
 
 
+def _persist_forward_cycle_result(
+    workflow: WorkflowRepository,
+    registry: RegistryRepository,
+    run: WorkflowRunRecord,
+    cycle: ForwardCycleResult,
+    *,
+    evaluation_binding_id: str | None = None,
+) -> WorkflowRunRecord:
+    outcomes = registry.list_outcomes(
+        source_entity_type="local_forward_session",
+        source_entity_id=cycle.forwardSessionId,
+    )
+    total_closed = len(outcomes)
+    binding_id = evaluation_binding_id or run.result.get("evaluationBindingId")
+    cycle_result = {
+        **run.result,
+        "forwardReleaseId": cycle.forwardReleaseId,
+        "forwardSessionId": cycle.forwardSessionId,
+        "cycleStatus": cycle.status,
+        "observedInstrumentCount": cycle.observedInstrumentCount,
+        "eventCount": cycle.eventCount,
+        "closedOutcomeCount": cycle.closedOutcomeCount,
+        "totalClosedOutcomeCount": total_closed,
+        "collectionFailureCount": cycle.collectionFailureCount,
+        "evaluationBindingId": binding_id,
+        "publicMarketOnly": True,
+        "virtualAccountOnly": True,
+        "createsOrders": False,
+    }
+    evidence = {
+        "forwardReleaseId": cycle.forwardReleaseId,
+        "forwardSessionId": cycle.forwardSessionId,
+        "evaluationBindingId": binding_id,
+    }
+    if cycle.collectionFailureCount:
+        return complete_workflow_run(
+            workflow,
+            run.workflowRunId,
+            status="blocked",
+            actor="worker",
+            result=cycle_result,
+            evidence=evidence,
+            failure={
+                "category": "exchange_operational",
+                "summary": "Public local-forward collection failed for one or more instruments.",
+                "retryDisposition": "same_version_retry",
+                "metrics": {
+                    "collectionFailureCount": cycle.collectionFailureCount
+                },
+                "suggestions": ["Retry after public market data recovers."],
+            },
+        )
+    return checkpoint_workflow_run(
+        workflow,
+        run.workflowRunId,
+        progress={
+            "phase": "public_forward_observation",
+            "cycleStatus": cycle.status,
+            "completed": min(total_closed, LOCAL_FORWARD_REVIEW_SAMPLE_TARGET),
+            "required": LOCAL_FORWARD_REVIEW_SAMPLE_TARGET,
+            "percent": min(
+                100,
+                round(total_closed / LOCAL_FORWARD_REVIEW_SAMPLE_TARGET * 100),
+            ),
+            "closedOutcomeCount": total_closed,
+        },
+        result=cycle_result,
+        actor="worker",
+    )
+
+
+def run_local_forward_cycle(
+    workflow: WorkflowRepository,
+    registry: RegistryRepository,
+    workflow_run_id: str,
+    *,
+    code_commit: str,
+    market_data: ForwardPublicMarket,
+) -> WorkflowRunRecord:
+    """Collect one new completed-candle cycle for an existing formal forward run."""
+
+    run = workflow.get_workflow_run(workflow_run_id)
+    if run is None:
+        raise ValueError("Local forward workflow run is missing")
+    if run.stage != "local_forward" or run.status != "running":
+        raise ValueError("Local forward cycle requires a running local_forward run")
+    release_id = str(run.result.get("forwardReleaseId") or "").strip()
+    release = registry.get_forward_release(release_id)
+    if release is None:
+        raise ValueError("Local forward release is missing")
+    try:
+        cycle = run_forward_cycle(
+            release,
+            repository=registry,
+            market_data=market_data,
+            code_commit=code_commit,
+        )
+    except Exception as error:
+        return complete_workflow_run(
+            workflow,
+            run.workflowRunId,
+            status="blocked",
+            actor="worker",
+            result={
+                **run.result,
+                "forwardReleaseId": release.forwardReleaseId,
+                "publicMarketOnly": True,
+                "virtualAccountOnly": True,
+                "createsOrders": False,
+                "error": str(error),
+            },
+            evidence={
+                "forwardReleaseId": release.forwardReleaseId,
+                "evaluationBindingId": run.result.get("evaluationBindingId"),
+            },
+            failure={
+                "category": "exchange_operational",
+                "summary": str(error),
+                "retryDisposition": "same_version_retry",
+                "metrics": {},
+                "suggestions": ["Retry the public local-forward cycle."],
+            },
+        )
+    return _persist_forward_cycle_result(workflow, registry, run, cycle)
+
+
 def start_local_forward_after_pass(
     workflow: WorkflowRepository,
     registry: RegistryRepository,
@@ -237,46 +370,10 @@ def start_local_forward_after_pass(
                 "suggestions": ["Retry the public local-forward cycle."],
             },
         )
-    cycle_result = {
-        "forwardReleaseId": cycle.forwardReleaseId,
-        "forwardSessionId": cycle.forwardSessionId,
-        "evaluationBindingId": evaluation_binding.evaluationBindingId,
-        "cycleStatus": cycle.status,
-        "observedInstrumentCount": cycle.observedInstrumentCount,
-        "eventCount": cycle.eventCount,
-        "closedOutcomeCount": cycle.closedOutcomeCount,
-        "collectionFailureCount": cycle.collectionFailureCount,
-    }
-    if cycle.collectionFailureCount:
-        return complete_workflow_run(
-            workflow,
-            next_run.workflowRunId,
-            status="blocked",
-            actor="worker",
-            result=cycle_result,
-            evidence={
-                "forwardReleaseId": cycle.forwardReleaseId,
-                "forwardSessionId": cycle.forwardSessionId,
-                "evaluationBindingId": evaluation_binding.evaluationBindingId,
-            },
-            failure={
-                "category": "exchange_operational",
-                "summary": "Public local-forward collection failed for one or more instruments.",
-                "retryDisposition": "same_version_retry",
-                "metrics": {
-                    "collectionFailureCount": cycle.collectionFailureCount
-                },
-                "suggestions": ["Retry after public market data recovers."],
-            },
-        )
-    return checkpoint_workflow_run(
+    return _persist_forward_cycle_result(
         workflow,
-        next_run.workflowRunId,
-        progress={
-            "phase": "public_forward_observation",
-            "cycleStatus": cycle.status,
-            "closedOutcomeCount": cycle.closedOutcomeCount,
-        },
-        result=cycle_result,
-        actor="worker",
+        registry,
+        next_run,
+        cycle,
+        evaluation_binding_id=evaluation_binding.evaluationBindingId,
     )
