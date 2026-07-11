@@ -82,6 +82,49 @@ def _run_dual_layer_once(
         )
 
 
+def _run_selected_backtests(
+    workflow: WorkflowRepository,
+    registry: RegistryRepository,
+    workflow_run_ids: Sequence[str],
+    *,
+    warehouse_root: Path | str,
+    output_root: Path | str,
+) -> dict[str, Any]:
+    run_ids = [str(value).strip() for value in workflow_run_ids]
+    if not run_ids or any(not value for value in run_ids):
+        raise WorkflowError("selected_backtest_run_ids_required")
+    if len(set(run_ids)) != len(run_ids):
+        raise WorkflowError("selected_backtest_run_ids_must_be_unique")
+    for run_id in run_ids:
+        run = workflow.get_workflow_run(run_id)
+        if run is None:
+            raise WorkflowError(f"selected_backtest_run_missing:{run_id}")
+        if run.stage != "backtest" or run.status not in {"awaiting", "paused"}:
+            raise WorkflowError(
+                f"selected_backtest_run_not_eligible:{run_id}:{run.stage}:{run.status}"
+            )
+
+    completed: list[dict[str, Any]] = []
+    for run_id in run_ids:
+        queued = queue_workflow_run(workflow, run_id, actor="user")
+        completed.append(
+            asdict(
+                _run_dual_layer_once(
+                    workflow,
+                    registry,
+                    queued.workflowRunId,
+                    warehouse_root=warehouse_root,
+                    output_root=output_root,
+                )
+            )
+        )
+    return {
+        "processedCount": len(completed),
+        "workflowRunIds": run_ids,
+        "runs": completed,
+    }
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="AlphaPilot workflow orchestrator")
     parser.add_argument("--registry", default="data/evolution_registry.sqlite")
@@ -107,6 +150,8 @@ def build_parser() -> argparse.ArgumentParser:
     advance = commands.add_parser("advance")
     advance.add_argument("--strategy-version-id", required=True)
     commands.add_parser("run-all-awaiting")
+    selected_backtests = commands.add_parser("run-selected-backtests")
+    selected_backtests.add_argument("--run-id", action="append", required=True)
 
     challenger = commands.add_parser("challenger")
     challenger.add_argument("--parent-version-id", required=True)
@@ -263,28 +308,31 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                 )
             )
         if args.command == "run-all-awaiting":
-            completed: list[dict[str, Any]] = []
             projection = build_workflow_projection(
                 workflow, warehouse_root=args.warehouse_root
             )
-            for item in projection["items"]:
-                if item["stage"] != "backtest" or item["status"] != "awaiting":
-                    continue
-                queued = queue_workflow_run(
-                    workflow, item["workflowRunId"], actor="user"
-                )
-                completed.append(
-                    asdict(
-                        _run_dual_layer_once(
-                            workflow,
-                            registry,
-                            queued.workflowRunId,
-                            warehouse_root=args.warehouse_root,
-                            output_root=args.output_root,
-                        )
-                    )
-                )
-            return {"processedCount": len(completed), "runs": completed}
+            run_ids = [
+                item["workflowRunId"]
+                for item in projection["items"]
+                if item["stage"] == "backtest" and item["status"] == "awaiting"
+            ]
+            if not run_ids:
+                return {"processedCount": 0, "workflowRunIds": [], "runs": []}
+            return _run_selected_backtests(
+                workflow,
+                registry,
+                run_ids,
+                warehouse_root=args.warehouse_root,
+                output_root=args.output_root,
+            )
+        if args.command == "run-selected-backtests":
+            return _run_selected_backtests(
+                workflow,
+                registry,
+                args.run_id,
+                warehouse_root=args.warehouse_root,
+                output_root=args.output_root,
+            )
         raise WorkflowError(f"unsupported_workflow_command:{args.command}")
     finally:
         connection.close()

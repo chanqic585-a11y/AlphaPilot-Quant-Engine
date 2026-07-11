@@ -230,6 +230,62 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertNotIn("run-all-awaiting", content)
         self.assertNotIn("one-click-backtest", content)
 
+    def test_selected_backtests_run_in_requested_serial_order(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        awaiting = [
+            item
+            for item in self.run_cli("projection")["items"]
+            if item["sourceType"] == "short_cycle_candidate_pack_v13_27_3"
+        ][:2]
+        requested_ids = [item["workflowRunId"] for item in awaiting]
+        observed: list[str] = []
+
+        def fake_worker(workflow, _registry, workflow_run_id, **_kwargs):
+            observed.append(workflow_run_id)
+            return workflow.get_workflow_run(workflow_run_id)
+
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            side_effect=fake_worker,
+        ):
+            result = self.run_cli(
+                "run-selected-backtests",
+                "--run-id",
+                requested_ids[0],
+                "--run-id",
+                requested_ids[1],
+            )
+
+        self.assertEqual(observed, requested_ids)
+        self.assertEqual(result["processedCount"], 2)
+        self.assertEqual(result["workflowRunIds"], requested_ids)
+        self.assertEqual(
+            [run["status"] for run in result["runs"]], ["queued", "queued"]
+        )
+
+    def test_selected_backtests_reject_duplicates_and_ineligible_runs(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
+
+        duplicate_code, duplicate = self.run_cli_raw(
+            "run-selected-backtests",
+            "--run-id",
+            run_id,
+            "--run-id",
+            run_id,
+        )
+        self.run_cli("queue", "--run-id", run_id)
+        ineligible_code, ineligible = self.run_cli_raw(
+            "run-selected-backtests", "--run-id", run_id
+        )
+
+        self.assertEqual(duplicate_code, 2)
+        self.assertEqual(
+            duplicate["error"], "selected_backtest_run_ids_must_be_unique"
+        )
+        self.assertEqual(ineligible_code, 2)
+        self.assertIn("selected_backtest_run_not_eligible", ineligible["error"])
+
     def test_queue_then_run_records_precise_alpha191_data_blocker(self) -> None:
         bootstrapped = self.run_cli("bootstrap")
         projection = self.run_cli("projection")
