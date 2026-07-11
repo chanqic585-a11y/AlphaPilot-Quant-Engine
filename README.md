@@ -4660,6 +4660,47 @@ V13.27.1 adds no exchange request, credential storage, order creation, Demo or
 Live release, automatic promotion, or automatic trading. See
 `docs/V13.27.1-strategy-backtest-workflow.md`.
 
+## V13.27.1.1 Dual-Data One-Click Backtest
+
+V13.27.1.1 connects the workflow backtest action to two evidence classes under
+`D:\Codex-Workspace\回测数据`:
+
+- Existing `5m`, `合约数据`, and `现货数据` files are read-only
+  `third_party_unverified` research inputs. They can validate implementation,
+  but can never satisfy a formal promotion gate.
+- Official OKX public OHLCV and funding data are stored separately under
+  `_alphapilot`, checksum-bound, validated, and frozen into immutable formal
+  snapshots before a fixed `targetR >= 2` backtest can run.
+- The workflow is restart-safe and preserves download, snapshot, manifest, and
+  backtest checkpoints. A formal pass may create only an awaiting Local Forward
+  run. It cannot enter OKX Demo or Live automatically.
+- The PowerShell wrapper resolves Unicode strategy names through the Python CLI
+  and remains ASCII-safe for Windows PowerShell 5.
+
+Observed release verification:
+
+- Local research smoke completed over 14 selected assets with
+  `formalPromotionEligible=false`; metadata fingerprints for all 12,473 source
+  files remained unchanged.
+- A bounded BTC/ETH/SOL OKX public integration collected 9/9 OHLCV partitions
+  for `5m`, `15m`, and `4h`, plus 3 funding files. All partition SHA-256 values
+  verified.
+- The bounded integration produced a 12-file immutable snapshot and a 4-fold
+  purged walk-forward pack with SOL as the unseen-symbol holdout.
+- This bounded pack validates the data pipeline only. Alpha191 has not passed
+  the full 2020-2026 dynamic-universe formal backtest and did not enter Local
+  Forward.
+
+Run the research-only local smoke:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_v13_27_1_1_dual_backtest.ps1 -StrategyName "Alpha191 加密因子观察策略" -SmokeOnly
+```
+
+Omit `-SmokeOnly` only when the strategy's complete official-data contract is
+ready. No API key, private exchange endpoint, account state, position state,
+order creation, Demo transition, or Live activation is used by this workflow.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

@@ -45,6 +45,32 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertEqual(projection["summary"]["strategyCount"], 1)
         self.assertEqual(projection["items"][0]["status"], "awaiting")
 
+    def test_resolve_backtest_run_supports_unicode_strategy_name(self) -> None:
+        self.run_cli("bootstrap")
+        projection = self.run_cli("projection")
+
+        resolved = self.run_cli(
+            "resolve-backtest-run",
+            "--strategy-name",
+            "Alpha191 加密因子观察策略",
+        )
+
+        self.assertEqual(
+            resolved,
+            {"workflowRunId": projection["items"][0]["workflowRunId"]},
+        )
+
+    def test_powershell_wrapper_is_ascii_for_windows_powershell_compatibility(
+        self,
+    ) -> None:
+        script = (
+            Path(__file__).resolve().parents[2]
+            / "scripts"
+            / "run_v13_27_1_1_dual_backtest.ps1"
+        )
+
+        script.read_bytes().decode("ascii")
+
     def test_queue_then_run_records_precise_alpha191_data_blocker(self) -> None:
         bootstrapped = self.run_cli("bootstrap")
         projection = self.run_cli("projection")

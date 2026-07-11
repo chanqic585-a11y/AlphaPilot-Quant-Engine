@@ -2,6 +2,8 @@
 *.sqlite
 *.db
 data/market/
+data/integration/
+data/workflow/
 user_data/data/*
 !user_data/data/.gitkeep
 user_data/backtest_results/*

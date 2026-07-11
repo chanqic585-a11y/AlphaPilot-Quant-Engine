@@ -53,6 +53,8 @@ def build_parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("bootstrap")
     commands.add_parser("projection")
+    resolve_backtest = commands.add_parser("resolve-backtest-run")
+    resolve_backtest.add_argument("--strategy-name")
 
     for command in ("queue", "run", "recover", "pause", "cancel", "retry"):
         child = commands.add_parser(command)
@@ -86,6 +88,20 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
             return asdict(register_alpha191_observer(registry, workflow))
         if args.command == "projection":
             return build_workflow_projection(workflow)
+        if args.command == "resolve-backtest-run":
+            projection = build_workflow_projection(workflow)
+            matches = [
+                item
+                for item in projection["items"]
+                if item["stage"] == "backtest"
+                and (
+                    not args.strategy_name
+                    or item["displayName"] == args.strategy_name
+                )
+            ]
+            if not matches:
+                raise WorkflowError("matching_backtest_workflow_missing")
+            return {"workflowRunId": matches[0]["workflowRunId"]}
         if args.command == "queue":
             return asdict(queue_workflow_run(workflow, args.run_id, actor="user"))
         if args.command == "run":
