@@ -8,6 +8,8 @@ from contextlib import redirect_stdout
 from pathlib import Path
 from unittest.mock import patch
 
+from alphapilot.evolution.registry.database import connect_registry
+from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.workflow.cli import main
 
 
@@ -51,6 +53,54 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertEqual(first["strategyVersionId"], second["strategyVersionId"])
         self.assertEqual(projection["summary"]["strategyCount"], 1)
         self.assertEqual(projection["items"][0]["status"], "awaiting")
+
+    def test_short_cycle_bootstrap_is_idempotent_and_awaiting_only(self) -> None:
+        first = self.run_cli("bootstrap-short-cycle")
+        second = self.run_cli("bootstrap-short-cycle")
+        projection = self.run_cli("projection")
+        items = [
+            item
+            for item in projection["items"]
+            if item["sourceType"] == "short_cycle_candidate_pack_v13_27_3"
+        ]
+
+        self.assertEqual(first, second)
+        self.assertEqual(first["count"], 10)
+        self.assertEqual(len(first["strategyVersionIds"]), 10)
+        self.assertEqual(len(items), 10)
+        self.assertEqual(
+            {(item["stage"], item["status"]) for item in items},
+            {("backtest", "awaiting")},
+        )
+
+        connection = connect_registry(self.registry)
+        try:
+            repository = RegistryRepository(connection)
+            self.assertEqual(repository.list_strategy_candidates(), [])
+            self.assertEqual(repository.list_demo_releases(), [])
+            self.assertEqual(repository.list_live_candidate_packages(), [])
+            self.assertEqual(repository.list_live_releases(), [])
+        finally:
+            connection.close()
+
+    def test_short_cycle_bootstrap_does_not_reset_an_existing_run(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        item = next(
+            item
+            for item in self.run_cli("projection")["items"]
+            if item["sourceType"] == "short_cycle_candidate_pack_v13_27_3"
+        )
+
+        queued = self.run_cli("queue", "--run-id", item["workflowRunId"])
+        self.run_cli("bootstrap-short-cycle")
+        refreshed = next(
+            candidate
+            for candidate in self.run_cli("projection")["items"]
+            if candidate["strategyVersionId"] == item["strategyVersionId"]
+        )
+
+        self.assertEqual(queued["status"], "queued")
+        self.assertEqual(refreshed["status"], "queued")
 
     def test_projection_exposes_immutable_optimization_context(self) -> None:
         self.run_cli("bootstrap")
@@ -165,6 +215,20 @@ class WorkflowCliTests(unittest.TestCase):
         )
 
         script.read_bytes().decode("ascii")
+
+    def test_short_cycle_registration_wrapper_is_ascii_and_registration_only(
+        self,
+    ) -> None:
+        script = (
+            Path(__file__).resolve().parents[2]
+            / "scripts"
+            / "register_v13_27_3_short_cycle_candidates.ps1"
+        )
+
+        content = script.read_bytes().decode("ascii")
+        self.assertIn("bootstrap-short-cycle", content)
+        self.assertNotIn("run-all-awaiting", content)
+        self.assertNotIn("one-click-backtest", content)
 
     def test_queue_then_run_records_precise_alpha191_data_blocker(self) -> None:
         bootstrapped = self.run_cli("bootstrap")

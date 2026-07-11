@@ -14,7 +14,11 @@ from alphapilot.data_foundation.research_smoke import run_research_smoke
 from alphapilot.data_foundation.warehouse import WarehouseLayout
 
 from .backtest import run_backtest_workflow
-from .bootstrap import register_alpha191_observer, register_optimized_legacy_strategy
+from .bootstrap import (
+    register_alpha191_observer,
+    register_optimized_legacy_strategy,
+    register_short_cycle_candidate_pack,
+)
 from .dual_layer import run_dual_layer_backtest_workflow
 from .data_contract import derive_strategy_data_contract
 from .projection import build_workflow_projection
@@ -85,6 +89,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--warehouse-root", default=str(APPROVED_WAREHOUSE_ROOT))
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("bootstrap")
+    commands.add_parser("bootstrap-short-cycle")
     commands.add_parser("projection")
     resolve_backtest = commands.add_parser("resolve-backtest-run")
     resolve_backtest.add_argument("--strategy-name")
@@ -128,6 +133,15 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
         workflow = WorkflowRepository(connection)
         if args.command == "bootstrap":
             return asdict(register_alpha191_observer(registry, workflow))
+        if args.command == "bootstrap-short-cycle":
+            versions = register_short_cycle_candidate_pack(registry, workflow)
+            return {
+                "count": len(versions),
+                "strategyVersionIds": [
+                    version.strategyVersionId for version in versions
+                ],
+                "displayNames": [version.displayName for version in versions],
+            }
         if args.command == "projection":
             return build_workflow_projection(
                 workflow, warehouse_root=args.warehouse_root
