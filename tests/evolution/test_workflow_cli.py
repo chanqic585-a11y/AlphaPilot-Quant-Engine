@@ -208,7 +208,7 @@ class WorkflowCliTests(unittest.TestCase):
         )
         self.assertEqual(Path(captured["output_root"]), self.output_root)
 
-    def test_one_click_does_not_start_a_duplicate_locked_worker(self) -> None:
+    def test_one_click_does_not_queue_when_another_worker_holds_the_lock(self) -> None:
         self.run_cli("bootstrap")
         run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
 
@@ -221,7 +221,7 @@ class WorkflowCliTests(unittest.TestCase):
             result = self.run_cli("one-click-backtest", "--run-id", run_id)
 
         worker.assert_not_called()
-        self.assertEqual(result["status"], "queued")
+        self.assertEqual(result["status"], "awaiting")
 
 
 if __name__ == "__main__":

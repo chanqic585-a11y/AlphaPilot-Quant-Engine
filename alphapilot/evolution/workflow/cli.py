@@ -53,6 +53,7 @@ def _run_dual_layer_once(
     *,
     warehouse_root: Path | str,
     output_root: Path | str,
+    queue_before_run: bool = False,
 ):
     with workflow_worker_lock(output_root, workflow_run_id) as acquired:
         if not acquired:
@@ -60,6 +61,14 @@ def _run_dual_layer_once(
             if current is None:
                 raise WorkflowError(f"workflow_run_missing:{workflow_run_id}")
             return current
+        if queue_before_run:
+            current = workflow.get_workflow_run(workflow_run_id)
+            if current is None:
+                raise WorkflowError(f"workflow_run_missing:{workflow_run_id}")
+            if current.status in {"awaiting", "paused"}:
+                queue_workflow_run(
+                    workflow, current.workflowRunId, actor="user"
+                )
         return run_dual_layer_backtest_workflow(
             workflow,
             registry,
@@ -160,11 +169,8 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
             run = workflow.get_workflow_run(args.run_id)
             if run is None:
                 raise WorkflowError(f"workflow_run_missing:{args.run_id}")
-            if run.status in {"awaiting", "paused"}:
-                run = queue_workflow_run(
-                    workflow, run.workflowRunId, actor="user"
-                )
-            elif run.status == "blocked":
+            queue_before_run = run.status in {"awaiting", "paused"}
+            if run.status == "blocked":
                 run = retry_backtest_for_data_preparation(
                     workflow, run.workflowRunId, actor="user"
                 )
@@ -175,6 +181,7 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                     run.workflowRunId,
                     warehouse_root=args.warehouse_root,
                     output_root=args.output_root,
+                    queue_before_run=queue_before_run,
                 )
             )
         if args.command == "research-smoke":
