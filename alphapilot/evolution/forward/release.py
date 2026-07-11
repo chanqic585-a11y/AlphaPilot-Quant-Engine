@@ -18,6 +18,7 @@ from alphapilot.evolution.workflow.types import (
 )
 
 from .types import ForwardRiskEnvelope
+from .rules import is_supported_frozen_policy
 
 
 def create_forward_release(
@@ -50,7 +51,9 @@ def create_forward_release(
     if not isinstance(instruments, list) or not instruments:
         raise ValueError("Forward release requires replay-verified eligible instruments")
     signal_policy = candidate.candidate.get("forwardSignalPolicy")
-    if not isinstance(signal_policy, dict) or not signal_policy.get("rules"):
+    if not isinstance(signal_policy, dict) or not is_supported_frozen_policy(
+        signal_policy
+    ):
         raise ValueError("Candidate is missing a frozen forward signal policy")
     market_definition = candidate.candidate.get("marketDefinition")
     evidence = candidate.candidate.get("evidence")
@@ -148,7 +151,9 @@ def create_workflow_forward_release(
     if candidate.get("strategyContentHash") != strategy_version.contentHash:
         raise ValueError("Forward candidate strategy content hash mismatch")
     signal_policy = candidate.get("forwardSignalPolicy")
-    if not isinstance(signal_policy, dict) or not signal_policy.get("rules"):
+    if not isinstance(signal_policy, dict) or not is_supported_frozen_policy(
+        signal_policy
+    ):
         raise ValueError("Candidate is missing a frozen forward signal policy")
     market_definition = candidate.get("marketDefinition")
     if (

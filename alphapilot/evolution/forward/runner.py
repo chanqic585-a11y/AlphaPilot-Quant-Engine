@@ -218,16 +218,30 @@ def run_forward_cycle(
     failures = 0
     observed = 0
     latest_observed_at = now
+    frame_cache: dict[str, pd.DataFrame] = {}
+
+    def load_frame(instrument_id: str) -> pd.DataFrame:
+        cached = frame_cache.get(instrument_id)
+        if cached is not None:
+            return cached
+        loaded = market_data.completed_candles(instrument_id, timeframe, limit=300)
+        if loaded.empty:
+            raise RuntimeError("no_confirmed_public_candles")
+        frame_cache[instrument_id] = loaded
+        return loaded
+
     for instrument in sorted({str(item).upper() for item in instruments}):
         try:
-            frame = market_data.completed_candles(instrument, timeframe, limit=300)
-            if frame.empty:
-                raise RuntimeError("no_confirmed_public_candles")
+            frame = load_frame(instrument)
+            reference_frames = None
+            if policy.get("schemaVersion") == "short_cycle_forward_policy_v1":
+                reference_frames = {"BTC-USDT-SWAP": load_frame("BTC-USDT-SWAP")}
             evaluation = evaluate_frozen_policy(
                 frame,
                 policy=policy,
                 release_id=release.forwardReleaseId,
                 instrument_id=instrument,
+                reference_frames=reference_frames,
             )
             row = frame.sort_values("timestamp_ms").iloc[-1]
             bar = ForwardBar(

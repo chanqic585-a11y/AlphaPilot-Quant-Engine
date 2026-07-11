@@ -6,6 +6,7 @@ from typing import Any
 
 from alphapilot.evolution.forward.release import create_workflow_forward_release
 from alphapilot.evolution.forward.runner import ForwardPublicMarket, run_forward_cycle
+from alphapilot.evolution.forward.rules import is_supported_frozen_policy
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.registry.types import StrategyCandidateRecord
@@ -47,7 +48,9 @@ def _validate_promotion(
     if strategy_version.contentHash != binding.evidence.get("strategyContentHash"):
         raise ValueError("Strategy content hash mismatch")
     signal_policy = strategy_version.definition.get("forwardSignalPolicy")
-    if not isinstance(signal_policy, dict) or not signal_policy.get("rules"):
+    if not isinstance(signal_policy, dict) or not is_supported_frozen_policy(
+        signal_policy
+    ):
         raise ValueError("Local forward requires a frozen signal policy")
     market_access = strategy_version.definition.get("marketDataAccess", "public")
     if market_access != "public":
@@ -83,8 +86,28 @@ def _ensure_candidate(
     if not instruments:
         raise ValueError("Local forward formal universe is empty")
     target_r = float(strategy_version.definition["targetR"])
-    stop_loss_pct = float(strategy_version.parameters.get("stopLossPct") or 0)
-    max_holding = int(strategy_version.parameters.get("horizonBars") or 0)
+    is_short_cycle = (
+        signal_policy.get("schemaVersion") == "short_cycle_forward_policy_v1"
+    )
+    max_holding = int(
+        strategy_version.parameters.get(
+            "max_hold" if is_short_cycle else "horizonBars"
+        )
+        or 0
+    )
+    exit_rules = {
+        "stopLossR": 1.0,
+        "takeProfitR": target_r,
+        "maxHoldingBars": max_holding,
+    }
+    if is_short_cycle:
+        exit_rules["stopAtr"] = float(
+            strategy_version.parameters.get("stop_atr") or 0
+        )
+    else:
+        exit_rules["stopLossPct"] = float(
+            strategy_version.parameters.get("stopLossPct") or 0
+        )
     payload = {
         "schemaVersion": "workflow_strategy_candidate_v1",
         "strategyVersionId": strategy_version.strategyVersionId,
@@ -101,12 +124,7 @@ def _ensure_candidate(
             "publicOnly": True,
         },
         "forwardSignalPolicy": signal_policy,
-        "exitRules": {
-            "stopLossPct": stop_loss_pct,
-            "stopLossR": 1.0,
-            "takeProfitR": target_r,
-            "maxHoldingBars": max_holding,
-        },
+        "exitRules": exit_rules,
         "riskRules": {
             "riskPerTradePct": 0.25,
             "maxLeverage": 1,

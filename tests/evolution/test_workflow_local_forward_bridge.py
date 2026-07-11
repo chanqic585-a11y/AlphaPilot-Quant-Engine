@@ -31,6 +31,9 @@ from alphapilot.evolution.workflow.service import (
     register_strategy_version,
     start_workflow_run,
 )
+from alphapilot.short_cycle.workflow_candidates import (
+    short_cycle_workflow_candidates,
+)
 
 
 class _PublicMarket:
@@ -345,6 +348,101 @@ class WorkflowLocalForwardBridgeTests(unittest.TestCase):
                 code_commit="test-commit",
                 risk_profile=wrong_profile,
             )
+
+    def test_short_cycle_policy_creates_public_virtual_forward_release(self) -> None:
+        item = short_cycle_workflow_candidates()[0]
+        version = register_strategy_version(
+            self.workflow,
+            strategy_family_id=self.family.strategyFamilyId,
+            display_name=item.displayName,
+            source_type="short_cycle_candidate_pack_v13_27_3",
+            definition=item.definition(),
+            parameters=item.parameters,
+            initial_gate_profile_id=self.gate.gateProfileId,
+        )
+        initial = self.workflow.get_latest_workflow_run(version.strategyVersionId)
+        assert initial is not None
+        running = start_workflow_run(
+            self.workflow,
+            queue_workflow_run(
+                self.workflow, initial.workflowRunId, actor="user"
+            ).workflowRunId,
+            actor="worker",
+        )
+        contract = derive_strategy_data_contract(version, self.workflow)
+        pack = FormalValidationPack(
+            strategyDataContractId=contract.strategyDataContractId,
+            dataSnapshotId=self.snapshot.dataSnapshotId,
+            walkForwardManifestHash="walk_forward_short_cycle",
+            holdoutManifestHash="holdout_short_cycle",
+            lockedOosManifestHash="locked_short_cycle",
+            regimeManifestHash="regime_short_cycle",
+            costManifestHash="cost_short_cycle",
+            holdoutSymbols=("ETH-USDT-SWAP",),
+            trainingSymbols=("BTC-USDT-SWAP",),
+            walkForwardFoldCount=3,
+            lockedStartIndex=300,
+            manifestPaths=(),
+        )
+        binding = create_formal_evaluation_binding(
+            self.workflow,
+            run=running,
+            contract=contract,
+            snapshot=self.snapshot,
+            validation_pack=pack,
+            canonical_root=str(self.root / "canonical"),
+            research_smoke={
+                "status": "blocked",
+                "formalPromotionEligible": False,
+                "reportHash": "smoke_hash_short_cycle",
+                "blockers": [],
+            },
+        )
+        evidence = {
+            "evaluationBindingId": binding.evaluationBindingId,
+            "strategyDataContractId": contract.strategyDataContractId,
+            "dataSnapshotId": self.snapshot.dataSnapshotId,
+            "walkForwardManifestHash": binding.walkForwardManifestHash,
+            "holdoutManifestHash": binding.holdoutManifestHash,
+            "lockedOosManifestHash": binding.lockedOosManifestHash,
+            "regimeManifestHash": binding.evidence["regimeManifestHash"],
+            "costManifestHash": binding.evidence["costManifestHash"],
+            "formalEvidenceOnly": True,
+        }
+        passed = complete_workflow_run(
+            self.workflow,
+            running.workflowRunId,
+            status="passed",
+            actor="worker",
+            result={
+                "metrics": {"tradeCount": 100, "profitFactor": 1.4},
+                "checks": {"allFormalGates": True},
+            },
+            evidence=evidence,
+        )
+
+        local_run = start_local_forward_after_pass(
+            self.workflow,
+            self.registry,
+            version,
+            passed,
+            binding,
+            code_commit="test-short-cycle",
+            market_data=_PublicMarket(),
+        )
+
+        release = self.registry.get_forward_release(local_run.result["forwardReleaseId"])
+        assert release is not None
+        candidate = self.registry.get_strategy_candidate(release.strategyCandidateId)
+        assert candidate is not None
+        self.assertEqual(
+            release.release["signalPolicy"]["schemaVersion"],
+            "short_cycle_forward_policy_v1",
+        )
+        self.assertEqual(candidate.candidate["exitRules"]["stopAtr"], 1.2)
+        self.assertNotIn("stopLossPct", candidate.candidate["exitRules"])
+        self.assertTrue(release.release["virtualAccountOnly"])
+        self.assertFalse(release.release["createsOrders"])
 
 
 if __name__ == "__main__":
