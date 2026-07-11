@@ -278,6 +278,42 @@ class WorkflowCliTests(unittest.TestCase):
             [run["status"] for run in result["runs"]], ["queued", "queued"]
         )
 
+    def test_selected_backtests_recover_queued_and_running_runs_serially(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        items = self.run_cli("projection")["items"][:2]
+        run_ids = [item["workflowRunId"] for item in items]
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            queue_workflow_run(workflow, run_ids[0], actor="user")
+            queue_workflow_run(workflow, run_ids[1], actor="user")
+            start_workflow_run(workflow, run_ids[1], actor="worker")
+        finally:
+            connection.close()
+        observed: list[str] = []
+
+        def fake_worker(workflow, _registry, workflow_run_id, **_kwargs):
+            observed.append(workflow_run_id)
+            return workflow.get_workflow_run(workflow_run_id)
+
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            side_effect=fake_worker,
+        ):
+            result = self.run_cli(
+                "run-selected-backtests",
+                "--run-id",
+                run_ids[0],
+                "--run-id",
+                run_ids[1],
+            )
+
+        self.assertEqual(observed, run_ids)
+        self.assertEqual(
+            [item["status"] for item in result["runs"]],
+            ["queued", "running"],
+        )
+
     def test_selected_backtests_reject_duplicates_and_ineligible_runs(self) -> None:
         self.run_cli("bootstrap-short-cycle")
         run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
@@ -290,6 +326,7 @@ class WorkflowCliTests(unittest.TestCase):
             run_id,
         )
         self.run_cli("queue", "--run-id", run_id)
+        self.run_cli("cancel", "--run-id", run_id)
         ineligible_code, ineligible = self.run_cli_raw(
             "run-selected-backtests", "--run-id", run_id
         )

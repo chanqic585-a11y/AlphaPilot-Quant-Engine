@@ -102,17 +102,27 @@ def _run_selected_backtests(
         raise WorkflowError("selected_backtest_run_ids_required")
     if len(set(run_ids)) != len(run_ids):
         raise WorkflowError("selected_backtest_run_ids_must_be_unique")
+    validated_runs = []
     for run_id in run_ids:
         run = workflow.get_workflow_run(run_id)
         if run is None:
             raise WorkflowError(f"selected_backtest_run_missing:{run_id}")
-        if run.stage != "backtest" or run.status not in {"awaiting", "paused"}:
+        if run.stage != "backtest" or run.status not in {
+            "awaiting",
+            "paused",
+            "queued",
+            "running",
+        }:
             raise WorkflowError(
                 f"selected_backtest_run_not_eligible:{run_id}:{run.stage}:{run.status}"
             )
+        validated_runs.append(run)
 
     queued_runs = [
-        queue_workflow_run(workflow, run_id, actor="user") for run_id in run_ids
+        queue_workflow_run(workflow, run.workflowRunId, actor="user")
+        if run.status in {"awaiting", "paused"}
+        else run
+        for run in validated_runs
     ]
     completed: list[dict[str, Any]] = []
     for queued in queued_runs:
