@@ -22,19 +22,26 @@ class WorkflowCliTests(unittest.TestCase):
         self.temp.cleanup()
 
     def run_cli(self, *args: str) -> dict:
-        output = io.StringIO()
-        with redirect_stdout(output):
-            exit_code = main(
-                [
-                    "--registry",
-                    str(self.registry),
-                    "--output-root",
-                    str(self.output_root),
-                    *args,
-                ]
-            )
+        exit_code, payload = self.run_cli_raw(*args)
         self.assertEqual(exit_code, 0)
-        return json.loads(output.getvalue())
+        return payload
+
+    def run_cli_raw(self, *args: str) -> tuple[int, dict]:
+        output = io.StringIO()
+        try:
+            with redirect_stdout(output):
+                exit_code = main(
+                    [
+                        "--registry",
+                        str(self.registry),
+                        "--output-root",
+                        str(self.output_root),
+                        *args,
+                    ]
+                )
+        except SystemExit as error:
+            self.fail(f"workflow CLI command is unavailable: {error}")
+        return exit_code, json.loads(output.getvalue())
 
     def test_bootstrap_and_projection_are_idempotent(self) -> None:
         first = self.run_cli("bootstrap")
@@ -44,6 +51,94 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertEqual(first["strategyVersionId"], second["strategyVersionId"])
         self.assertEqual(projection["summary"]["strategyCount"], 1)
         self.assertEqual(projection["items"][0]["status"], "awaiting")
+
+    def test_projection_exposes_immutable_optimization_context(self) -> None:
+        self.run_cli("bootstrap")
+
+        item = self.run_cli("projection")["items"][0]
+
+        context = item["optimizationContext"]
+        self.assertEqual(context["sourceKind"], "workflow_version")
+        self.assertEqual(context["definition"]["timeframe"], "4h")
+        self.assertEqual(context["parameters"]["targetRMultiple"], 2.0)
+        self.assertEqual(
+            context["parentStrategyVersionId"], item["strategyVersionId"]
+        )
+
+    def test_import_optimized_legacy_strategy_creates_backtest_version(self) -> None:
+        imported = self.run_cli(
+            "import-optimized",
+            "--legacy-strategy-id",
+            "legacy-short-1",
+            "--display-name",
+            "空头上影拒绝 优化版",
+            "--definition-json",
+            json.dumps(
+                {
+                    "schemaVersion": "strategy_workflow_definition_v1",
+                    "family": "short_rejection",
+                    "direction": "short",
+                    "timeframe": "1h",
+                    "targetR": 2.0,
+                }
+            ),
+            "--base-parameters-json",
+            json.dumps({"volume_min": 1.2, "targetRMultiple": 2.0}),
+            "--parameters-json",
+            json.dumps({"volume_min": 1.3, "targetRMultiple": 2.0}),
+        )
+        projection = self.run_cli("projection")
+
+        self.assertIsNone(imported["strategyCandidateId"])
+        self.assertEqual(
+            imported["definition"]["optimizationLineage"]["legacyStrategyId"],
+            "legacy-short-1",
+        )
+        self.assertEqual(imported["sourceType"], "legacy_stage_optimization")
+        self.assertIsNone(imported["parentStrategyVersionId"])
+        self.assertEqual(projection["items"][0]["stage"], "backtest")
+        self.assertEqual(projection["items"][0]["status"], "awaiting")
+        self.assertEqual(
+            projection["items"][0]["optimizationContext"]["parameters"]["volume_min"],
+            1.3,
+        )
+
+    def test_import_optimized_rejects_unchanged_parameters(self) -> None:
+        parameters = {"volume_min": 1.2, "targetRMultiple": 2.0}
+        exit_code, payload = self.run_cli_raw(
+            "import-optimized",
+            "--legacy-strategy-id",
+            "legacy-short-1",
+            "--display-name",
+            "空头上影拒绝 优化版",
+            "--definition-json",
+            json.dumps({"timeframe": "1h", "targetR": 2.0}),
+            "--base-parameters-json",
+            json.dumps(parameters),
+            "--parameters-json",
+            json.dumps(parameters),
+        )
+
+        self.assertEqual(exit_code, 2)
+        self.assertEqual(payload["error"], "optimized_parameters_unchanged")
+
+    def test_import_optimized_rejects_target_below_two_r(self) -> None:
+        exit_code, payload = self.run_cli_raw(
+            "import-optimized",
+            "--legacy-strategy-id",
+            "legacy-short-1",
+            "--display-name",
+            "空头上影拒绝 优化版",
+            "--definition-json",
+            json.dumps({"timeframe": "1h", "targetR": 2.0}),
+            "--base-parameters-json",
+            json.dumps({"volume_min": 1.2, "targetRMultiple": 2.0}),
+            "--parameters-json",
+            json.dumps({"volume_min": 1.3, "targetRMultiple": 1.5}),
+        )
+
+        self.assertEqual(exit_code, 2)
+        self.assertEqual(payload["error"], "minimum_target_r_is_2")
 
     def test_resolve_backtest_run_supports_unicode_strategy_name(self) -> None:
         self.run_cli("bootstrap")

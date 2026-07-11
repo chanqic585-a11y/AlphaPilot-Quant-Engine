@@ -124,6 +124,14 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
                 if diagnosis
                 else None
             ),
+            "optimizationContext": {
+                "sourceKind": "workflow_version",
+                "parentStrategyVersionId": version.strategyVersionId,
+                "definition": version.definition,
+                "parameters": version.parameters,
+                "failureSuggestions": list(diagnosis.suggestions) if diagnosis else [],
+                "targetRFloor": 2.0,
+            },
             "historyEventCount": len(events),
             "archived": version.status == "archived",
         }

@@ -14,7 +14,7 @@ from alphapilot.data_foundation.research_smoke import run_research_smoke
 from alphapilot.data_foundation.warehouse import WarehouseLayout
 
 from .backtest import run_backtest_workflow
-from .bootstrap import register_alpha191_observer
+from .bootstrap import register_alpha191_observer, register_optimized_legacy_strategy
 from .dual_layer import run_dual_layer_backtest_workflow
 from .data_contract import derive_strategy_data_contract
 from .projection import build_workflow_projection
@@ -76,6 +76,15 @@ def build_parser() -> argparse.ArgumentParser:
     challenger.add_argument("--source-type", default="manual_challenger")
     challenger.add_argument("--definition-json", required=True)
     challenger.add_argument("--parameters-json", required=True)
+    legacy_optimized = commands.add_parser("import-optimized")
+    legacy_optimized.add_argument("--legacy-strategy-id", required=True)
+    legacy_optimized.add_argument("--display-name", required=True)
+    legacy_optimized.add_argument(
+        "--source-type", default="legacy_stage_optimization"
+    )
+    legacy_optimized.add_argument("--definition-json", required=True)
+    legacy_optimized.add_argument("--base-parameters-json", required=True)
+    legacy_optimized.add_argument("--parameters-json", required=True)
     return parser
 
 
@@ -186,6 +195,21 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                     display_name=args.display_name,
                     source_type=args.source_type,
                     definition=_json_object(args.definition_json, "definition-json"),
+                    parameters=_json_object(args.parameters_json, "parameters-json"),
+                )
+            )
+        if args.command == "import-optimized":
+            return asdict(
+                register_optimized_legacy_strategy(
+                    registry,
+                    workflow,
+                    legacy_strategy_id=args.legacy_strategy_id,
+                    display_name=args.display_name,
+                    source_type=args.source_type,
+                    definition=_json_object(args.definition_json, "definition-json"),
+                    base_parameters=_json_object(
+                        args.base_parameters_json, "base-parameters-json"
+                    ),
                     parameters=_json_object(args.parameters_json, "parameters-json"),
                 )
             )

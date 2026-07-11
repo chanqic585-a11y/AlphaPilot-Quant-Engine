@@ -2,12 +2,15 @@
 
 from __future__ import annotations
 
+from typing import Any
+
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.strategies.family_registry import ensure_strategy_family
 
 from .repository import WorkflowRepository
 from .service import register_strategy_version
+from .states import WorkflowConflict
 from .types import GateProfileRecord, StrategyVersionRecord
 
 
@@ -88,6 +91,70 @@ def register_alpha191_observer(
         display_name="Alpha191 加密因子观察策略",
         source_type="legacy_research_import",
         definition=definition,
+        parameters=parameters,
+        initial_gate_profile_id=gate.gateProfileId,
+    )
+
+
+def register_optimized_legacy_strategy(
+    registry: RegistryRepository,
+    workflow: WorkflowRepository,
+    *,
+    legacy_strategy_id: str,
+    display_name: str,
+    definition: dict[str, Any],
+    base_parameters: dict[str, Any],
+    parameters: dict[str, Any],
+    source_type: str = "legacy_stage_optimization",
+) -> StrategyVersionRecord:
+    """Import a changed legacy strategy as a canonical backtest version."""
+
+    legacy_id = str(legacy_strategy_id or "").strip()
+    if not legacy_id:
+        raise WorkflowConflict("legacy_strategy_id_required")
+    if stable_hash(base_parameters) == stable_hash(parameters):
+        raise WorkflowConflict("optimized_parameters_unchanged")
+
+    target_values: list[float] = []
+    for container in (definition, parameters):
+        for key in ("targetR", "targetRMultiple", "targetRewardRiskRatio"):
+            if key not in container:
+                continue
+            try:
+                target_values.append(float(container[key]))
+            except (TypeError, ValueError) as error:
+                raise WorkflowConflict("target_r_must_be_numeric") from error
+    if not target_values:
+        raise WorkflowConflict("target_r_required")
+    if min(target_values) < 2.0:
+        raise WorkflowConflict("minimum_target_r_is_2")
+
+    family_digest = stable_hash({"legacyStrategyId": legacy_id})[:24]
+    family = ensure_strategy_family(
+        repository=registry,
+        family_key=f"legacy_optimized_{family_digest}",
+        name=display_name,
+        metadata={
+            "legacyStrategyId": legacy_id,
+            "optimizationImport": True,
+        },
+    )
+    gate = ensure_default_backtest_gate_profile(workflow)
+    enriched_definition = {
+        **definition,
+        "researchOnly": True,
+        "optimizationLineage": {
+            "legacyStrategyId": legacy_id,
+            "baseParameterHash": stable_hash(base_parameters),
+            "optimizedParameterHash": stable_hash(parameters),
+        },
+    }
+    return register_strategy_version(
+        workflow,
+        strategy_family_id=family.strategyFamilyId,
+        display_name=display_name,
+        source_type=source_type,
+        definition=enriched_definition,
         parameters=parameters,
         initial_gate_profile_id=gate.gateProfileId,
     )
