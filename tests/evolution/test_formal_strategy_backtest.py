@@ -11,6 +11,9 @@ import pandas as pd
 from alphapilot.evolution.evaluation.formal_strategy_backtest import (
     run_formal_strategy_backtest,
 )
+from alphapilot.evolution.evaluation.fixed_r_path import (
+    evaluate_fixed_r_path as evaluate_fixed_r_path_real,
+)
 from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
 from alphapilot.evolution.registry.types import DataSnapshotRecord
 from alphapilot.evolution.workflow.types import (
@@ -31,7 +34,11 @@ class FormalStrategyBacktestTests(unittest.TestCase):
         self.symbols = ["BTC-USDT-SWAP", "ETH-USDT-SWAP", "SOL-USDT-SWAP"]
         files: list[dict[str, object]] = []
         for symbol_index, symbol in enumerate(self.symbols):
-            for timeframe, minutes, rows in (("4h", 240, 400), ("15m", 15, 6400)):
+            for timeframe, minutes, rows in (
+                ("4h", 240, 400),
+                ("15m", 15, 6400),
+                ("5m", 5, 19200),
+            ):
                 dates = pd.date_range(
                     "2024-01-01", periods=rows, freq=f"{minutes}min", tz="UTC"
                 )
@@ -268,6 +275,108 @@ class FormalStrategyBacktestTests(unittest.TestCase):
             run_formal_strategy_backtest(
                 strategy_version=self.version,
                 evaluation_binding=broken,
+                snapshot=self.snapshot,
+                manifest_root=self.manifests,
+            )
+
+    def test_short_cycle_dispatch_uses_signal_stop_and_converted_horizon(self) -> None:
+        version = StrategyVersionRecord(
+            **{
+                **self.version.__dict__,
+                "displayName": "15m 放量突破测试",
+                "definition": {
+                    "signalEngine": "short_cycle_v1",
+                    "signalFamily": "breakout_volume_long",
+                    "timeframe": "15m",
+                    "direction": "long",
+                    "targetR": 2.0,
+                },
+                "parameters": {
+                    "lookback": 20,
+                    "breakout_buffer": 0.0,
+                    "rsi_max": 100,
+                    "volume_min": 1.0,
+                    "stop_atr": 1.4,
+                    "max_hold": 16,
+                },
+            }
+        )
+        binding = EvaluationBindingRecord(
+            **{
+                **self.binding.__dict__,
+                "evidence": {
+                    **self.binding.evidence,
+                    "signalTimeframe": "15m",
+                    "executionTimeframe": "5m",
+                },
+            }
+        )
+        source_timestamp = int(
+            pd.Timestamp("2024-01-02 00:00", tz="UTC").timestamp() * 1000
+        )
+        signals = pd.DataFrame(
+            [
+                {
+                    "pair": "ETH/USDT:USDT",
+                    "timeframe": "15m",
+                    "signalDate": pd.Timestamp(
+                        source_timestamp + 900_000 - 1, unit="ms", tz="UTC"
+                    ).isoformat(),
+                    "signalTimestampMs": source_timestamp + 900_000 - 1,
+                    "sourceTimestampMs": source_timestamp,
+                    "signalIndex": 96,
+                    "direction": "long",
+                    "setupName": "breakout_volume_long",
+                    "stopLossPct": 0.0125,
+                }
+            ]
+        )
+        configs = []
+
+        def capture_path(**kwargs):
+            configs.append(kwargs["config"])
+            return evaluate_fixed_r_path_real(**kwargs)
+
+        with patch(
+            "alphapilot.evolution.evaluation.formal_strategy_backtest.build_short_cycle_formal_signals",
+            return_value=signals,
+        ) as short_builder, patch(
+            "alphapilot.evolution.evaluation.formal_strategy_backtest.build_alpha191_observer_signals"
+        ) as alpha_builder, patch(
+            "alphapilot.evolution.evaluation.formal_strategy_backtest.evaluate_fixed_r_path",
+            side_effect=capture_path,
+        ):
+            result = run_formal_strategy_backtest(
+                strategy_version=version,
+                evaluation_binding=binding,
+                snapshot=self.snapshot,
+                manifest_root=self.manifests,
+            )
+
+        short_builder.assert_called_once()
+        alpha_builder.assert_not_called()
+        self.assertGreater(result.metrics["tradeCount"], 0)
+        self.assertTrue(configs)
+        self.assertEqual({config.stopLossPct for config in configs}, {0.0125})
+        self.assertEqual({config.horizonBars for config in configs}, {48})
+
+    def test_unknown_signal_engine_fails_closed(self) -> None:
+        version = StrategyVersionRecord(
+            **{
+                **self.version.__dict__,
+                "definition": {
+                    **self.version.definition,
+                    "signalEngine": "unknown_engine",
+                },
+            }
+        )
+
+        with self.assertRaisesRegex(
+            ValueError, "formal_signal_engine_not_supported:unknown_engine"
+        ):
+            run_formal_strategy_backtest(
+                strategy_version=version,
+                evaluation_binding=self.binding,
                 snapshot=self.snapshot,
                 manifest_root=self.manifests,
             )

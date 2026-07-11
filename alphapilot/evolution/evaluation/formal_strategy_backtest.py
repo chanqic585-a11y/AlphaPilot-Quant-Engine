@@ -25,6 +25,10 @@ from alphapilot.reports.generate_v13_5_23_alpha191_crypto_subset_replay_report i
 )
 
 from .fixed_r_path import FixedRPathConfig, evaluate_fixed_r_path
+from .short_cycle_signals import build_short_cycle_formal_signals
+
+
+_TIMEFRAME_MINUTES = {"5m": 5, "15m": 15, "1h": 60, "4h": 240, "1d": 1440}
 
 
 def _inside(path: Path, root: Path) -> bool:
@@ -191,6 +195,22 @@ def _split_for_signal(
     return "development", None
 
 
+def _execution_horizon(
+    *,
+    signal_timeframe: str,
+    execution_timeframe: str,
+    signal_bars: int,
+) -> int:
+    signal_minutes = _TIMEFRAME_MINUTES.get(signal_timeframe)
+    execution_minutes = _TIMEFRAME_MINUTES.get(execution_timeframe)
+    if signal_minutes is None or execution_minutes is None or signal_bars < 1:
+        raise ValueError("short_cycle_execution_horizon_invalid")
+    total_minutes = signal_minutes * signal_bars
+    if total_minutes % execution_minutes:
+        raise ValueError("short_cycle_execution_horizon_not_aligned")
+    return total_minutes // execution_minutes
+
+
 def run_formal_strategy_backtest(
     strategy_version: StrategyVersionRecord,
     evaluation_binding: EvaluationBindingRecord,
@@ -242,15 +262,38 @@ def run_formal_strategy_backtest(
         raise ValueError(
             f"formal_snapshot_timeframe_missing:{signal_timeframe}:{execution_timeframe}"
         )
-    panel = build_derivatives_feature_panel_from_frames(
-        signal_frames,
-        timeframe=signal_timeframe,
-        funding_frames=funding,
-    ).rows
-    overlay_id = str(strategy_version.parameters.get("overlayId") or "")
-    signals = build_alpha191_observer_signals(panel, overlay_id=overlay_id)
-    stop_loss_pct = float(strategy_version.parameters.get("stopLossPct") or 0)
-    horizon_bars = int(strategy_version.parameters.get("horizonBars") or 0)
+    signal_engine = str(
+        strategy_version.definition.get("signalEngine") or "alpha191_observer_v1"
+    )
+    overlay_id = ""
+    if signal_engine == "alpha191_observer_v1":
+        panel = build_derivatives_feature_panel_from_frames(
+            signal_frames,
+            timeframe=signal_timeframe,
+            funding_frames=funding,
+        ).rows
+        overlay_id = str(strategy_version.parameters.get("overlayId") or "")
+        signals = build_alpha191_observer_signals(panel, overlay_id=overlay_id)
+        stop_loss_pct = float(strategy_version.parameters.get("stopLossPct") or 0)
+        horizon_bars = int(strategy_version.parameters.get("horizonBars") or 0)
+    elif signal_engine == "short_cycle_v1":
+        signals = build_short_cycle_formal_signals(
+            signal_frames,
+            signal_timeframe=signal_timeframe,
+            family=str(strategy_version.definition.get("signalFamily") or ""),
+            expected_direction=str(
+                strategy_version.definition.get("direction") or ""
+            ),
+            parameters=strategy_version.parameters,
+        )
+        stop_loss_pct = 0.0
+        horizon_bars = _execution_horizon(
+            signal_timeframe=signal_timeframe,
+            execution_timeframe=execution_timeframe,
+            signal_bars=int(strategy_version.parameters.get("max_hold") or 0),
+        )
+    else:
+        raise ValueError(f"formal_signal_engine_not_supported:{signal_engine}")
     target_r = float(strategy_version.definition.get("targetR") or 0)
     cost = manifests["cost"]
     if target_r < 2 or float(cost.get("targetR") or 0) < 2:
@@ -267,6 +310,7 @@ def run_formal_strategy_backtest(
     trades: list[dict[str, Any]] = []
     stress_net: list[float] = []
     stress_missing_count = 0
+    short_cycle_last_exit: dict[str, int] = {}
     for _, signal in signals.iterrows():
         instrument = _pair_to_instrument(str(signal["pair"]))
         execution = execution_frames.get(instrument)
@@ -274,10 +318,17 @@ def run_formal_strategy_backtest(
         if execution is None or signal_source is None:
             continue
         timestamp = int(signal["signalTimestampMs"])
-        ordered_timestamps = pd.to_numeric(
-            signal_source.sort_values("timestamp_ms")["timestamp_ms"]
-        ).astype("int64").tolist()
-        signal_index = int(pd.Series(ordered_timestamps).searchsorted(timestamp))
+        if signal_engine == "short_cycle_v1":
+            signal_index = int(signal["signalIndex"])
+            if timestamp <= short_cycle_last_exit.get(instrument, -1):
+                continue
+            row_stop_loss_pct = float(signal["stopLossPct"])
+        else:
+            ordered_timestamps = pd.to_numeric(
+                signal_source.sort_values("timestamp_ms")["timestamp_ms"]
+            ).astype("int64").tolist()
+            signal_index = int(pd.Series(ordered_timestamps).searchsorted(timestamp))
+            row_stop_loss_pct = stop_loss_pct
         split, fold = _split_for_signal(
             instrument=instrument,
             timestamp=timestamp,
@@ -285,7 +336,7 @@ def run_formal_strategy_backtest(
             manifests=manifests,
         )
         base_config = FixedRPathConfig(
-            stopLossPct=stop_loss_pct,
+            stopLossPct=row_stop_loss_pct,
             targetR=target_r,
             horizonBars=horizon_bars,
             feeRate=fee_rate,
@@ -316,13 +367,15 @@ def run_formal_strategy_backtest(
             "regime": _regime_at(regime_lookup, timestamp),
         }
         trades.append(row)
+        if signal_engine == "short_cycle_v1":
+            short_cycle_last_exit[instrument] = int(outcome.exitTimestampMs)
         try:
             stressed = evaluate_fixed_r_path(
                 signalTimestampMs=timestamp,
                 direction=str(signal["direction"]),
                 executionFrame=execution,
                 config=FixedRPathConfig(
-                    stopLossPct=stop_loss_pct,
+                    stopLossPct=row_stop_loss_pct,
                     targetR=target_r,
                     horizonBars=horizon_bars,
                     feeRate=fee_rate,
