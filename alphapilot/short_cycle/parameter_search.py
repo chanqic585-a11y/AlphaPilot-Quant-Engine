@@ -133,7 +133,7 @@ def add_indicators(frame: pd.DataFrame) -> pd.DataFrame:
     return output
 
 
-def _merge_btc_context(frame: pd.DataFrame, btc: pd.DataFrame | None) -> pd.DataFrame:
+def merge_btc_context(frame: pd.DataFrame, btc: pd.DataFrame | None) -> pd.DataFrame:
     output = frame.copy()
     if btc is None or btc.empty:
         output["btc_ret_3"] = np.nan
@@ -146,6 +146,9 @@ def _merge_btc_context(frame: pd.DataFrame, btc: pd.DataFrame | None) -> pd.Data
     output["btc_long_block"] = output["btc_ret_3"].isna() | (output["btc_ret_3"] <= -0.012)
     output["btc_short_block"] = output["btc_ret_3"].isna() | (output["btc_ret_3"] >= 0.012)
     return output
+
+
+_merge_btc_context = merge_btc_context
 
 
 def _base_ready(frame: pd.DataFrame) -> pd.Series:
@@ -818,7 +821,7 @@ def run_short_cycle_parameter_search(config: SearchConfig) -> dict[str, Any]:
             try:
                 raw = _read_ohlcv_file(discovered[pair])
                 frame = add_indicators(_normalise_ohlcv(raw, pair, config.timerange))
-                frame = _merge_btc_context(frame, btc_frame)
+                frame = merge_btc_context(frame, btc_frame)
                 if len(frame) < 260:
                     warnings.append(f"{timeframe}:{pair}: too few candles after timerange")
                     continue
