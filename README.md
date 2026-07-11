@@ -4701,6 +4701,24 @@ Omit `-SmokeOnly` only when the strategy's complete official-data contract is
 ready. No API key, private exchange endpoint, account state, position state,
 order creation, Demo transition, or Live activation is used by this workflow.
 
+## V13.27.1.2 Targeted Strategy Optimization Boundary
+
+V13.27.1.2 adds the immutable data boundary required by the Control Console's
+targeted optimization action.
+
+- Workflow projections expose the current strategy definition and parameters
+  in a local-only `optimizationContext`.
+- A changed canonical strategy creates a child `StrategyVersion`; an optimized
+  legacy research strategy is imported with explicit legacy lineage.
+- Unchanged parameter sets are rejected. Any `targetR`,
+  `targetRMultiple`, or `targetRewardRiskRatio` below `2.0` is rejected.
+- Every optimized version starts again at the backtest stage. Existing
+  backtest, Local Forward, Demo, and archive evidence remains immutable.
+
+This boundary does not select profitable parameters, mark a strategy passed,
+create a Demo release, place an order, store an API key, or enable Live
+execution.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

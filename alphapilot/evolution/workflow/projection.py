@@ -155,7 +155,7 @@ def build_workflow_projection(repository: WorkflowRepository) -> dict[str, Any]:
     page_counts = Counter(str(item["page"]) for item in items)
     status_counts = Counter(str(item["status"]) for item in items)
     return {
-        "version": "V13.27.1.1",
+        "version": "V13.27.1.2",
         "source": "workflow_orchestrator_projection_v2",
         "generatedAt": utc_now(),
         "summary": {
