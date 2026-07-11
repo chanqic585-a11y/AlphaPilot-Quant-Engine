@@ -247,8 +247,14 @@ class WorkflowCliTests(unittest.TestCase):
         ][:2]
         requested_ids = [item["workflowRunId"] for item in awaiting]
         observed: list[str] = []
+        statuses_when_first_worker_started: list[str] = []
 
         def fake_worker(workflow, _registry, workflow_run_id, **_kwargs):
+            if not observed:
+                statuses_when_first_worker_started.extend(
+                    workflow.get_workflow_run(run_id).status
+                    for run_id in requested_ids
+                )
             observed.append(workflow_run_id)
             return workflow.get_workflow_run(workflow_run_id)
 
@@ -265,6 +271,7 @@ class WorkflowCliTests(unittest.TestCase):
             )
 
         self.assertEqual(observed, requested_ids)
+        self.assertEqual(statuses_when_first_worker_started, ["queued", "queued"])
         self.assertEqual(result["processedCount"], 2)
         self.assertEqual(result["workflowRunIds"], requested_ids)
         self.assertEqual(

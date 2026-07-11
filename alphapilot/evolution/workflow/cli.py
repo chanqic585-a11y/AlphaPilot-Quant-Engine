@@ -111,9 +111,11 @@ def _run_selected_backtests(
                 f"selected_backtest_run_not_eligible:{run_id}:{run.stage}:{run.status}"
             )
 
+    queued_runs = [
+        queue_workflow_run(workflow, run_id, actor="user") for run_id in run_ids
+    ]
     completed: list[dict[str, Any]] = []
-    for run_id in run_ids:
-        queued = queue_workflow_run(workflow, run_id, actor="user")
+    for queued in queued_runs:
         completed.append(
             asdict(
                 _run_dual_layer_once(
