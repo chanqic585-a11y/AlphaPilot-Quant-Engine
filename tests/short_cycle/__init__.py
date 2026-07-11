@@ -1,0 +1,1 @@
+"""Short-cycle strategy tests."""
