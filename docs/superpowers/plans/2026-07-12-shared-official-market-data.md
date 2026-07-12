@@ -28,11 +28,11 @@
 - Produces: `_shared_partition_base(instrument_id, timeframe, endpoint) -> OfficialPartition | None`
 - Validates: manifest identity, canonical-root containment, file existence, and SHA-256.
 
-- [ ] Write tests for valid reuse and rejection of hash-mismatched manifests.
-- [ ] Run the tests and observe the expected failure.
-- [ ] Implement minimal manifest discovery and deterministic newest-valid selection.
-- [ ] Run the targeted tests and confirm they pass.
-- [ ] Commit the resolver.
+- [x] Write tests for valid reuse and rejection of hash-mismatched manifests.
+- [x] Run the tests and observe the expected failure.
+- [x] Implement minimal manifest discovery and deterministic newest-valid selection.
+- [x] Run the targeted tests and confirm they pass.
+- [x] Commit the resolver and incremental reuse together.
 
 ### Task 2: Download only the missing tail
 
@@ -44,12 +44,12 @@
 - Consumes: the verified shared canonical base from Task 1.
 - Produces: a full validated partition made from base plus confirmed incremental rows, or an unchanged reused partition when the tail is empty.
 
-- [ ] Write a test proving `history_candles` receives the base last timestamp instead of the contract start.
-- [ ] Write a test proving an empty tail reuses the original output hash.
-- [ ] Run both tests and observe the expected failures.
-- [ ] Implement base-frame loading, tail merge, reduced page budget, and unchanged-file reuse.
-- [ ] Run official-history and workflow projection tests.
-- [ ] Commit incremental reuse.
+- [x] Write a test proving `history_candles` receives the base last timestamp instead of the contract start.
+- [x] Write a test proving an empty tail reuses the original output hash.
+- [x] Run both tests and observe the expected failures.
+- [x] Implement base-frame loading, tail merge, reduced page budget, and unchanged-file reuse.
+- [x] Run official-history and full Quant tests.
+- [x] Commit incremental reuse.
 
 ### Task 3: Document, validate, and deploy
 
@@ -60,8 +60,8 @@
 **Interfaces:**
 - Reports the shared-data boundary and selected workflow order.
 
-- [ ] Update version documentation without changing strategy definitions.
-- [ ] Run all Quant unit tests.
-- [ ] Run compileall, diff check, and changed-line safety scan.
+- [x] Update version documentation without changing strategy definitions.
+- [x] Run all Quant unit tests.
+- [x] Run compileall, diff check, and changed-line safety scan.
 - [ ] Fast-forward `main`, push, and verify only one logical workflow worker.
 - [ ] Confirm selected queue contains only the 5m strategy, 15m strategy, and Alpha191.

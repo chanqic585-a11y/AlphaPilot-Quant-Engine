@@ -1,5 +1,27 @@
 # AlphaPilot Quant Engine
 
+## V13.27.8 Shared Official Market Data
+
+V13.27.8 makes verified OKX public OHLCV a shared warehouse asset instead of
+downloading the same instrument and timeframe again for every strategy data
+contract. A new contract first runs its existing local-data research smoke,
+then resolves the newest canonical partition whose manifest identity, path,
+file and SHA-256 all pass validation.
+
+When a verified base exists, the collector requests only confirmed candles
+newer than the base cutoff. An empty tail reuses the original immutable file;
+a non-empty tail is merged with the base and written as a new validated
+canonical snapshot. Invalid manifests and partial page checkpoints are never
+reused as formal evidence.
+
+The rule applies uniformly to `5m`, `15m`, `1h`, `4h`, `1d` and future
+supported periods. Strategy workflows may wait in the durable queue together,
+while one physical downloader remains serial to avoid OKX rate-limit
+contention. Strategy definitions, target R, promotion gates and trading
+permissions are unchanged.
+
+See `docs/V13.27.8-shared-official-market-data.md`.
+
 ## V13.27.6 Demo Runtime Resume and Official Data Progress
 
 V13.27.6 adds persisted page-level telemetry for long OKX official-data
@@ -87,7 +109,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.27.5 - Cancelled Attempt Resume and Serial Queue Lock
+AlphaPilot V13.27.8 - Shared Official Market Data
 ```
 
 ## Positioning

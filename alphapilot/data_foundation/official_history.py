@@ -207,6 +207,70 @@ class OkxOfficialHistoryCollector:
             reused=True,
         )
 
+    def _shared_partition_base(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        endpoint: str,
+    ) -> OfficialPartition | None:
+        manifest_root = self.layout.officialRawRoot / "manifests"
+        canonical_root = self.layout.canonicalRoot.resolve()
+        candidates: list[OfficialPartition] = []
+        manifest_pattern = f"{instrument_id}-{timeframe}-*.json"
+        for manifest_path in manifest_root.glob(manifest_pattern):
+            try:
+                row = load_json(manifest_path)
+            except (OSError, ValueError):
+                continue
+            if (
+                row.get("schemaVersion") != "okx_official_partition_manifest_v1"
+                or row.get("instrumentId") != instrument_id
+                or row.get("timeframe") != timeframe
+                or row.get("sourceEndpoint") != endpoint
+            ):
+                continue
+            output = Path(str(row.get("outputPath") or ""))
+            expected = str(row.get("outputSha256") or "")
+            try:
+                resolved_output = output.resolve()
+                inside_canonical_root = resolved_output.is_relative_to(canonical_root)
+            except (OSError, ValueError):
+                inside_canonical_root = False
+            if (
+                not inside_canonical_root
+                or not output.is_file()
+                or not expected
+                or sha256_file(output) != expected
+                or not row.get("endTime")
+            ):
+                continue
+            candidates.append(
+                OfficialPartition(
+                    instrumentId=instrument_id,
+                    timeframe=timeframe,
+                    status="reused",
+                    rows=int(row.get("rows") or 0),
+                    startTime=row.get("startTime"),
+                    endTime=row.get("endTime"),
+                    outputPath=str(output),
+                    outputSha256=expected,
+                    sourceEndpoint=endpoint,
+                    requestCount=0,
+                    provenanceStatus="official_okx_public",
+                    reused=True,
+                )
+            )
+        if not candidates:
+            return None
+        return max(
+            candidates,
+            key=lambda item: (
+                _timestamp_ms(str(item.endTime)),
+                item.outputSha256 or "",
+            ),
+        )
+
     def _write_partition(
         self,
         *,
@@ -415,9 +479,26 @@ class OkxOfficialHistoryCollector:
                         write_json_atomic(checkpoint_path, checkpoint)
                     partitions.append(reused)
                     continue
+                shared_base = self._shared_partition_base(
+                    instrument_id=instrument_id,
+                    timeframe=timeframe,
+                    endpoint=endpoint,
+                )
+                collection_start_ms = start_ms
+                if shared_base is not None and shared_base.endTime:
+                    collection_start_ms = max(
+                        start_ms,
+                        _timestamp_ms(shared_base.endTime),
+                    )
                 interval = TIMEFRAME_MILLISECONDS[timeframe]
-                elapsed_ms = max(0, int(datetime.now(UTC).timestamp() * 1000) - start_ms)
-                max_pages = min(10_000, max(1, math.ceil(elapsed_ms / interval / 100) + 2))
+                elapsed_ms = max(
+                    0,
+                    int(datetime.now(UTC).timestamp() * 1000) - collection_start_ms,
+                )
+                max_pages = min(
+                    10_000,
+                    max(1, math.ceil(elapsed_ms / interval / 100) + 2),
+                )
 
                 def persist_page_progress(progress: dict[str, Any]) -> None:
                     request_count = int(progress.get("requestCount") or 0)
@@ -440,19 +521,35 @@ class OkxOfficialHistoryCollector:
                     frame, request_count = self.client.history_candles(
                         instrument_id=instrument_id,
                         timeframe=timeframe,
-                        start_exclusive_ms=start_ms,
+                        start_exclusive_ms=collection_start_ms,
                         max_pages=max_pages,
                         stop_requested=self._should_stop,
                         page_progress=persist_page_progress,
                     )
-                    partition = self._write_partition(
-                        instrument_id=instrument_id,
-                        timeframe=timeframe,
-                        frame=frame,
-                        request_count=request_count,
-                        endpoint=endpoint,
-                        collected_at=collected_at,
-                    )
+                    if shared_base is not None and frame.empty:
+                        partition = shared_base
+                    else:
+                        if shared_base is not None and shared_base.outputPath:
+                            columns = [
+                                "timestamp_ms",
+                                "date",
+                                "open",
+                                "high",
+                                "low",
+                                "close",
+                                "volume",
+                                "confirmed",
+                            ]
+                            base_frame = pd.read_parquet(shared_base.outputPath)[columns]
+                            frame = pd.concat([base_frame, frame], ignore_index=True)
+                        partition = self._write_partition(
+                            instrument_id=instrument_id,
+                            timeframe=timeframe,
+                            frame=frame,
+                            request_count=request_count,
+                            endpoint=endpoint,
+                            collected_at=collected_at,
+                        )
                 except OkxHistoryCollectionStopped:
                     paused = True
                     break

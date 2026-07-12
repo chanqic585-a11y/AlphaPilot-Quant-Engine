@@ -43,6 +43,28 @@ def _contract() -> StrategyDataContractRecord:
     )
 
 
+def _single_partition_contract(contract_id: str) -> StrategyDataContractRecord:
+    payload = {
+        **_contract().contract,
+        "strategyVersionId": f"strategy_version_{contract_id}",
+        "signalTimeframe": "15m",
+        "executionTimeframe": "15m",
+        "universePolicy": {
+            "type": "point_in_time_dynamic_liquid_usdt_swap",
+            "minimumMembers": 1,
+            "targetMembers": 1,
+            "candidateDiscovery": ["okx_public_instruments"],
+        },
+    }
+    return StrategyDataContractRecord(
+        strategyDataContractId=contract_id,
+        strategyVersionId=str(payload["strategyVersionId"]),
+        schemaVersion="strategy_data_contract_v1",
+        contract=payload,
+        contentHash=contract_id,
+    )
+
+
 def _frame(timeframe: str) -> pd.DataFrame:
     frequency = {"15m": "15min", "4h": "4h"}[timeframe]
     timestamps = pd.date_range("2026-01-01", periods=240, freq=frequency, tz="UTC")
@@ -151,7 +173,128 @@ class CheckpointInspectingOkxClient(FakeOkxClient):
         return _frame(timeframe), 3
 
 
+class TailRecordingOkxClient(FakeOkxClient):
+    def __init__(self, *, return_tail: bool = False) -> None:
+        super().__init__()
+        self.return_tail = return_tail
+        self.start_exclusive_values: list[int] = []
+
+    def history_candles(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        start_exclusive_ms: int,
+        **_kwargs,
+    ):
+        self.history_calls.append((instrument_id, timeframe))
+        self.start_exclusive_values.append(start_exclusive_ms)
+        if not self.return_tail:
+            return _frame(timeframe).iloc[0:0].copy(), 1
+        tail = _frame(timeframe).tail(1).copy()
+        tail["timestamp_ms"] = tail["timestamp_ms"] + 15 * 60 * 1000
+        tail["date"] = pd.to_datetime(tail["timestamp_ms"], unit="ms", utc=True)
+        return tail, 1
+
+
 class OfficialHistoryCollectorTests(unittest.TestCase):
+    def test_different_contract_reuses_verified_shared_partition_and_checks_tail(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            first_client = FakeOkxClient()
+            first = OkxOfficialHistoryCollector(
+                client=first_client,
+                layout=layout,
+            ).collect(_single_partition_contract("contract_a"))
+            first_end_ms = int(
+                pd.Timestamp(first.partitions[0].endTime).timestamp() * 1000
+            )
+            tail_client = TailRecordingOkxClient()
+
+            second = OkxOfficialHistoryCollector(
+                client=tail_client,
+                layout=layout,
+            ).collect(_single_partition_contract("contract_b"))
+
+            self.assertEqual(second.status, "completed")
+            self.assertEqual(second.reusedPartitionCount, 1)
+            self.assertEqual(tail_client.start_exclusive_values, [first_end_ms])
+            self.assertEqual(
+                second.partitions[0].outputSha256,
+                first.partitions[0].outputSha256,
+            )
+
+    def test_shared_partition_with_wrong_hash_is_not_reused(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            OkxOfficialHistoryCollector(
+                client=FakeOkxClient(),
+                layout=layout,
+            ).collect(_single_partition_contract("contract_a"))
+            manifest = next((layout.officialRawRoot / "manifests").glob("*.json"))
+            payload = json.loads(manifest.read_text(encoding="utf-8"))
+            payload["outputSha256"] = "invalid"
+            manifest.write_text(json.dumps(payload), encoding="utf-8")
+            client = TailRecordingOkxClient()
+
+            OkxOfficialHistoryCollector(
+                client=client,
+                layout=layout,
+            ).collect(_single_partition_contract("contract_b"))
+
+            expected_start = int(
+                pd.Timestamp("2020-01-01T00:00:00+00:00").timestamp() * 1000
+            ) - 1
+            self.assertEqual(client.start_exclusive_values, [expected_start])
+
+    def test_malformed_shared_manifest_falls_back_to_official_collection(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            OkxOfficialHistoryCollector(
+                client=FakeOkxClient(),
+                layout=layout,
+            ).collect(_single_partition_contract("contract_a"))
+            manifest = next((layout.officialRawRoot / "manifests").glob("*.json"))
+            manifest.write_text("{malformed", encoding="utf-8")
+            client = TailRecordingOkxClient(return_tail=True)
+
+            result = OkxOfficialHistoryCollector(
+                client=client,
+                layout=layout,
+            ).collect(_single_partition_contract("contract_b"))
+
+            expected_start = int(
+                pd.Timestamp("2020-01-01T00:00:00+00:00").timestamp() * 1000
+            ) - 1
+            self.assertEqual(result.status, "completed")
+            self.assertEqual(client.start_exclusive_values, [expected_start])
+
+    def test_shared_partition_merges_new_confirmed_tail(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            first = OkxOfficialHistoryCollector(
+                client=FakeOkxClient(),
+                layout=layout,
+            ).collect(_single_partition_contract("contract_a"))
+            first_partition = first.partitions[0]
+            tail_client = TailRecordingOkxClient(return_tail=True)
+
+            second = OkxOfficialHistoryCollector(
+                client=tail_client,
+                layout=layout,
+            ).collect(_single_partition_contract("contract_b"))
+
+            second_partition = second.partitions[0]
+            merged = pd.read_parquet(second_partition.outputPath)
+            self.assertEqual(second.status, "completed")
+            self.assertEqual(second_partition.status, "collected")
+            self.assertEqual(second_partition.rows, first_partition.rows + 1)
+            self.assertEqual(len(merged), first_partition.rows + 1)
+            self.assertGreater(
+                pd.Timestamp(second_partition.endTime),
+                pd.Timestamp(first_partition.endTime),
+            )
+
     def test_page_progress_is_durable_but_not_a_completed_partition(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
