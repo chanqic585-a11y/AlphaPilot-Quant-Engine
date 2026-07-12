@@ -186,6 +186,7 @@ class OkxPublicClient:
         max_pages: int = 500,
         page_limit: int = 100,
         stop_requested: Callable[[], bool] | None = None,
+        page_progress: Callable[[dict[str, Any]], None] | None = None,
     ) -> tuple[pd.DataFrame, int]:
         if timeframe not in BAR_VALUES:
             raise ValueError(f"Unsupported OKX timeframe: {timeframe}")
@@ -208,9 +209,25 @@ class OkxPublicClient:
             data = self._get("/api/v5/market/history-candles", parameters)
             request_count += 1
             if not data:
+                if page_progress is not None:
+                    page_progress({
+                        "requestCount": request_count,
+                        "rowCount": len(rows),
+                        "oldestTimestampMs": None,
+                        "maxPages": max_pages,
+                        "isFinalPage": True,
+                    })
                 break
             parsed_timestamps = [int(item[0]) for item in data if isinstance(item, list) and item]
             if not parsed_timestamps:
+                if page_progress is not None:
+                    page_progress({
+                        "requestCount": request_count,
+                        "rowCount": len(rows),
+                        "oldestTimestampMs": None,
+                        "maxPages": max_pages,
+                        "isFinalPage": True,
+                    })
                 break
             for item in data:
                 if not isinstance(item, list) or len(item) < 9:
@@ -219,7 +236,20 @@ class OkxPublicClient:
                 if timestamp > start_exclusive_ms and str(item[8]) == "1":
                     rows.append(item)
             oldest = min(parsed_timestamps)
-            if oldest <= start_exclusive_ms or oldest in seen_cursors:
+            final_page = (
+                oldest <= start_exclusive_ms
+                or oldest in seen_cursors
+                or request_count >= max_pages
+            )
+            if page_progress is not None:
+                page_progress({
+                    "requestCount": request_count,
+                    "rowCount": len(rows),
+                    "oldestTimestampMs": oldest,
+                    "maxPages": max_pages,
+                    "isFinalPage": final_page,
+                })
+            if final_page:
                 break
             seen_cursors.add(oldest)
             cursor = oldest

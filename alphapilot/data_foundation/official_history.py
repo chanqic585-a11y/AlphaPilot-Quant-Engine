@@ -409,11 +409,33 @@ class OkxOfficialHistoryCollector:
                 key = f"{instrument_id}|{timeframe}"
                 reused = self._reuse_partition(checkpoint, key, endpoint)
                 if reused is not None:
+                    active = checkpoint.get("inProgress")
+                    if isinstance(active, dict) and active.get("key") == key:
+                        checkpoint.pop("inProgress", None)
+                        write_json_atomic(checkpoint_path, checkpoint)
                     partitions.append(reused)
                     continue
                 interval = TIMEFRAME_MILLISECONDS[timeframe]
                 elapsed_ms = max(0, int(datetime.now(UTC).timestamp() * 1000) - start_ms)
                 max_pages = min(10_000, max(1, math.ceil(elapsed_ms / interval / 100) + 2))
+
+                def persist_page_progress(progress: dict[str, Any]) -> None:
+                    request_count = int(progress.get("requestCount") or 0)
+                    final_page = bool(progress.get("isFinalPage"))
+                    if request_count != 1 and request_count % 25 != 0 and not final_page:
+                        return
+                    checkpoint["inProgress"] = {
+                        "key": key,
+                        "instrumentId": instrument_id,
+                        "timeframe": timeframe,
+                        "requestCount": request_count,
+                        "rowCount": int(progress.get("rowCount") or 0),
+                        "oldestTimestampMs": progress.get("oldestTimestampMs"),
+                        "maxPages": int(progress.get("maxPages") or max_pages),
+                        "updatedAt": _utc_now(),
+                    }
+                    write_json_atomic(checkpoint_path, checkpoint)
+
                 try:
                     frame, request_count = self.client.history_candles(
                         instrument_id=instrument_id,
@@ -421,6 +443,7 @@ class OkxOfficialHistoryCollector:
                         start_exclusive_ms=start_ms,
                         max_pages=max_pages,
                         stop_requested=self._should_stop,
+                        page_progress=persist_page_progress,
                     )
                     partition = self._write_partition(
                         instrument_id=instrument_id,
@@ -449,9 +472,10 @@ class OkxOfficialHistoryCollector:
                         error=f"{type(error).__name__}:{error}",
                     )
                 partitions.append(partition)
+                checkpoint.pop("inProgress", None)
                 if partition.outputPath and partition.outputSha256:
                     checkpoint["completed"][key] = asdict(partition)
-                    write_json_atomic(checkpoint_path, checkpoint)
+                write_json_atomic(checkpoint_path, checkpoint)
             if paused:
                 break
         funding_paths = (

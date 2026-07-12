@@ -32,6 +32,56 @@ class _Response:
 
 
 class OkxPublicTests(unittest.TestCase):
+    def test_history_candles_reports_page_level_progress(self) -> None:
+        pages = [
+            [
+                ["5000", "10", "12", "9", "11", "1", "1", "100", "1"],
+                ["4000", "9", "11", "8", "10", "1", "1", "90", "1"],
+            ],
+            [
+                ["3000", "8", "10", "7", "9", "1", "1", "80", "1"],
+                ["2000", "7", "9", "6", "8", "1", "1", "70", "1"],
+            ],
+        ]
+        progress: list[dict[str, object]] = []
+
+        def opener(_request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            return _Response({"code": "0", "msg": "", "data": pages.pop(0)})
+
+        frame, request_count = OkxPublicClient(
+            opener=opener,
+            throttle_seconds=0,
+        ).history_candles(
+            instrument_id="BTC-USDT-SWAP",
+            timeframe="5m",
+            start_exclusive_ms=2500,
+            max_pages=5,
+            page_progress=progress.append,
+        )
+
+        self.assertEqual(request_count, 2)
+        self.assertEqual(frame["timestamp_ms"].tolist(), [3000, 4000, 5000])
+        self.assertEqual(
+            progress,
+            [
+                {
+                    "requestCount": 1,
+                    "rowCount": 2,
+                    "oldestTimestampMs": 4000,
+                    "maxPages": 5,
+                    "isFinalPage": False,
+                },
+                {
+                    "requestCount": 2,
+                    "rowCount": 3,
+                    "oldestTimestampMs": 2000,
+                    "maxPages": 5,
+                    "isFinalPage": True,
+                },
+            ],
+        )
+
     def test_history_candles_stops_before_requesting_the_next_page(self) -> None:
         calls: list[str] = []
         stop_checks = 0

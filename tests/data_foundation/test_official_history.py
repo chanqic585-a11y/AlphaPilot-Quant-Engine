@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import inspect
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -118,7 +119,63 @@ class InterruptingOkxClient(FakeOkxClient):
         raise OkxHistoryCollectionStopped("official_history_collection_stopped")
 
 
+class CheckpointInspectingOkxClient(FakeOkxClient):
+    def __init__(self, checkpoint_path: Path) -> None:
+        super().__init__()
+        self.checkpoint_path = checkpoint_path
+        self.progress_snapshots: list[dict[str, object]] = []
+
+    def history_candles(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        page_progress=None,
+        **_kwargs,
+    ):
+        self.history_calls.append((instrument_id, timeframe))
+        if page_progress is None:
+            raise AssertionError("collector_did_not_forward_page_progress")
+        page_progress(
+            {
+                "requestCount": 1,
+                "rowCount": 100,
+                "oldestTimestampMs": 1_700_000_000_000,
+                "maxPages": 100,
+                "isFinalPage": False,
+            }
+        )
+        self.progress_snapshots.append(
+            json.loads(self.checkpoint_path.read_text(encoding="utf-8"))["inProgress"]
+        )
+        return _frame(timeframe), 3
+
+
 class OfficialHistoryCollectorTests(unittest.TestCase):
+    def test_page_progress_is_durable_but_not_a_completed_partition(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            checkpoint = (
+                layout.checkpointRoot
+                / "official-strategy_data_contract_official_test.json"
+            )
+            client = CheckpointInspectingOkxClient(checkpoint)
+
+            result = OkxOfficialHistoryCollector(
+                client=client,
+                layout=layout,
+            ).collect(_contract())
+
+            self.assertEqual(result.status, "completed")
+            first = client.progress_snapshots[0]
+            self.assertEqual(first["instrumentId"], "BTC-USDT-SWAP")
+            self.assertEqual(first["timeframe"], "15m")
+            self.assertEqual(first["requestCount"], 1)
+            self.assertEqual(first["rowCount"], 100)
+            final_checkpoint = json.loads(checkpoint.read_text(encoding="utf-8"))
+            self.assertNotIn("inProgress", final_checkpoint)
+            self.assertEqual(len(final_checkpoint["completed"]), 4)
+
     def test_collects_strategy_first_official_partitions_and_resumes(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
