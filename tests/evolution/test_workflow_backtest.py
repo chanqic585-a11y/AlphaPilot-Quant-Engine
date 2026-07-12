@@ -462,6 +462,16 @@ class WorkflowBacktestTests(unittest.TestCase):
                     "BTC-USDT-SWAP|4h": {"status": "collected"},
                     "ETH-USDT-SWAP|4h": {"status": "collected"},
                 },
+                "inProgress": {
+                    "key": "SOL-USDT-SWAP|5m",
+                    "instrumentId": "SOL-USDT-SWAP",
+                    "timeframe": "5m",
+                    "requestCount": 1250,
+                    "rowCount": 124972,
+                    "oldestTimestampMs": 1700000000000,
+                    "maxPages": 6800,
+                    "updatedAt": "2026-07-12T06:30:00+00:00",
+                },
             },
         )
 
@@ -472,7 +482,21 @@ class WorkflowBacktestTests(unittest.TestCase):
 
         self.assertEqual(
             projection["items"][0]["downloadProgress"],
-            {"completed": 2, "required": 150, "fundingFiles": 0},
+            {
+                "completed": 2,
+                "required": 150,
+                "fundingFiles": 0,
+                "active": {
+                    "instrumentId": "SOL-USDT-SWAP",
+                    "timeframe": "5m",
+                    "requestCount": 1250,
+                    "rowCount": 124972,
+                    "oldestTimestampMs": 1700000000000,
+                    "maxPages": 6800,
+                    "percent": 18.4,
+                    "updatedAt": "2026-07-12T06:30:00+00:00",
+                },
+            },
         )
 
 

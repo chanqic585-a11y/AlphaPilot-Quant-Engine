@@ -45,7 +45,7 @@ def _checkpoint_download_progress(
     warehouse_root: Path | str | None,
     *,
     funding_files: int,
-) -> dict[str, int] | None:
+) -> dict[str, Any] | None:
     if contract is None or warehouse_root is None:
         return None
     checkpoint_path = (
@@ -54,7 +54,8 @@ def _checkpoint_download_progress(
     )
     if not checkpoint_path.is_file():
         return None
-    completed = load_json(checkpoint_path).get("completed")
+    checkpoint = load_json(checkpoint_path)
+    completed = checkpoint.get("completed")
     if not isinstance(completed, dict):
         return None
     timeframes = {
@@ -70,11 +71,30 @@ def _checkpoint_download_progress(
         (contract.contract.get("universePolicy") or {}).get("targetMembers", 0)
     )
     required = target_members * len(timeframes)
-    return {
+    progress: dict[str, Any] = {
         "completed": len(completed),
         "required": max(len(completed), required),
         "fundingFiles": funding_files,
     }
+    active = checkpoint.get("inProgress")
+    if isinstance(active, dict):
+        instrument_id = str(active.get("instrumentId") or "")
+        timeframe = str(active.get("timeframe") or "")
+        request_count = max(0, int(active.get("requestCount") or 0))
+        row_count = max(0, int(active.get("rowCount") or 0))
+        max_pages = max(0, int(active.get("maxPages") or 0))
+        if instrument_id and timeframe and max_pages > 0:
+            progress["active"] = {
+                "instrumentId": instrument_id,
+                "timeframe": timeframe,
+                "requestCount": request_count,
+                "rowCount": row_count,
+                "oldestTimestampMs": active.get("oldestTimestampMs"),
+                "maxPages": max_pages,
+                "percent": round(min(100.0, request_count / max_pages * 100), 1),
+                "updatedAt": active.get("updatedAt"),
+            }
+    return progress
 
 
 def build_workflow_projection(
@@ -205,7 +225,7 @@ def build_workflow_projection(
     page_counts = Counter(str(item["page"]) for item in items)
     status_counts = Counter(str(item["status"]) for item in items)
     return {
-        "version": "V13.27.5",
+        "version": "V13.27.6",
         "source": "workflow_orchestrator_projection_v2",
         "generatedAt": utc_now(),
         "summary": {

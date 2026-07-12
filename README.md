@@ -1,5 +1,19 @@
 # AlphaPilot Quant Engine
 
+## V13.27.6 Demo Runtime Resume and Official Data Progress
+
+V13.27.6 adds persisted page-level telemetry for long OKX official-data
+downloads. Workflow projection now exposes the active instrument, timeframe,
+requested pages, collected K-lines, page budget, timestamp, and percentage
+while retaining the existing phase progress.
+
+The active page checkpoint is operational telemetry only. Partial rows are not
+registered as a completed partition and never count as formal backtest
+evidence. Demo ordinary-pause recovery is implemented in Control Console and
+does not change Quant strategy logic, target R, or execution permissions.
+
+See `docs/V13.27.6-official-data-progress.md`.
+
 ## V13.27.5 Cancelled Attempt Resume and Serial Queue Lock
 
 V13.27.5 separates a reversible pause from an irreversible cancellation.
