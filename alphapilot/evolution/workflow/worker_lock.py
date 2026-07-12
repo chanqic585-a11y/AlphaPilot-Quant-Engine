@@ -66,3 +66,11 @@ def workflow_worker_lock(
         if acquired:
             _unlock(handle)
         handle.close()
+
+
+@contextmanager
+def workflow_batch_lock(output_root: Path | str) -> Iterator[bool]:
+    """Yield ownership of the single process-wide serial backtest batch lock."""
+
+    with workflow_worker_lock(output_root, ".serial-backtest-batch") as acquired:
+        yield acquired

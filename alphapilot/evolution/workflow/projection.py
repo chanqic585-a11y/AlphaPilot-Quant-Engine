@@ -205,7 +205,7 @@ def build_workflow_projection(
     page_counts = Counter(str(item["page"]) for item in items)
     status_counts = Counter(str(item["status"]) for item in items)
     return {
-        "version": "V13.27.4",
+        "version": "V13.27.5",
         "source": "workflow_orchestrator_projection_v2",
         "generatedAt": utc_now(),
         "summary": {

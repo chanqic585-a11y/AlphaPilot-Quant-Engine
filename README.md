@@ -1,5 +1,19 @@
 # AlphaPilot Quant Engine
 
+## V13.27.5 Cancelled Attempt Resume and Serial Queue Lock
+
+V13.27.5 separates a reversible pause from an irreversible cancellation.
+Queued backtests can now be paused and resumed. A cancelled attempt can create
+one idempotent successor from the saved checkpoint while the cancelled attempt
+remains immutable in the audit history.
+
+One process-wide batch lock prevents duplicate serial workers from executing
+different runs at the same time. The active batch also drains newly queued
+backtests after each run, so a restarted attempt joins the durable queue
+without creating a competing worker.
+
+See docs/V13.27.5-cancelled-attempt-resume.md.
+
 ## V13.27.4 Workflow Recovery and Demo Release
 
 V13.27.4 makes workflow state match the real worker state. Official OKX history

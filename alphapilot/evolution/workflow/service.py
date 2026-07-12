@@ -321,7 +321,7 @@ def pause_workflow_run(
         raise WorkflowConflict(f"workflow_run_missing:{workflow_run_id}")
     if run.status == "paused":
         return run
-    if run.status != "running":
+    if run.status not in {"queued", "running"}:
         raise WorkflowTransitionError(f"workflow_run_not_pauseable:{run.status}")
     return _transition_run(
         repository,
@@ -503,6 +503,37 @@ def retry_workflow_run(
     source = repository.get_workflow_run(workflow_run_id)
     if source is None:
         raise WorkflowConflict(f"workflow_run_missing:{workflow_run_id}")
+    attempt_number = source.attemptNumber + 1
+    if source.status == "cancelled":
+        existing_operational_retry = repository.get_workflow_run_by_idempotency_key(
+            f"retry::{source.workflowRunId}::{attempt_number}"
+        )
+        if existing_operational_retry is not None:
+            return existing_operational_retry
+        retry_key = f"restart_cancelled::{source.workflowRunId}::{attempt_number}"
+        existing_retry = repository.get_workflow_run_by_idempotency_key(retry_key)
+        if existing_retry is not None:
+            return existing_retry
+        retry = repository.create_workflow_run(
+            strategy_version_id=source.strategyVersionId,
+            stage=source.stage,
+            status="queued",
+            attempt_number=attempt_number,
+            gate_profile_id=source.gateProfileId,
+            risk_profile_id=source.riskProfileId,
+            idempotency_key=retry_key,
+            progress=source.progress,
+            result={},
+        )
+        _record_initial_event(
+            repository,
+            retry,
+            previous_stage=source.stage,
+            previous_status=source.status,
+            reason_code="cancelled_attempt_restarted",
+            actor=actor,
+        )
+        return retry
     diagnosis = repository.get_latest_failure_diagnosis(source.workflowRunId)
     if diagnosis is None:
         raise WorkflowTransitionError("workflow_retry_requires_failure_diagnosis")
@@ -510,7 +541,6 @@ def retry_workflow_run(
         raise WorkflowTransitionError(
             f"workflow_retry_requires_new_version:{diagnosis.retryDisposition}"
         )
-    attempt_number = source.attemptNumber + 1
     retry_key = f"retry::{source.workflowRunId}::{attempt_number}"
     existing_retry = repository.get_workflow_run_by_idempotency_key(retry_key)
     if existing_retry is not None:

@@ -36,7 +36,7 @@ from .service import (
     retry_backtest_for_data_preparation,
 )
 from .states import WorkflowError
-from .worker_lock import workflow_worker_lock
+from .worker_lock import workflow_batch_lock, workflow_worker_lock
 
 
 APPROVED_WAREHOUSE_ROOT = Path(r"D:\Codex-Workspace\回测数据")
@@ -124,24 +124,54 @@ def _run_selected_backtests(
         else run
         for run in validated_runs
     ]
-    completed: list[dict[str, Any]] = []
-    for queued in queued_runs:
-        completed.append(
-            asdict(
-                _run_dual_layer_once(
-                    workflow,
-                    registry,
-                    queued.workflowRunId,
-                    warehouse_root=warehouse_root,
-                    output_root=output_root,
+    with workflow_batch_lock(output_root) as batch_acquired:
+        if not batch_acquired:
+            return {
+                "processedCount": 0,
+                "workflowRunIds": run_ids,
+                "runs": [],
+                "batchAlreadyRunning": True,
+            }
+        pending = list(queued_runs)
+        pending_ids = {run.workflowRunId for run in pending}
+        processed_ids: set[str] = set()
+        processed_order: list[str] = []
+        completed: list[dict[str, Any]] = []
+        while pending:
+            queued = pending.pop(0)
+            pending_ids.discard(queued.workflowRunId)
+            if queued.workflowRunId in processed_ids:
+                continue
+            processed_ids.add(queued.workflowRunId)
+            processed_order.append(queued.workflowRunId)
+            completed.append(
+                asdict(
+                    _run_dual_layer_once(
+                        workflow,
+                        registry,
+                        queued.workflowRunId,
+                        warehouse_root=warehouse_root,
+                        output_root=output_root,
+                    )
                 )
             )
-        )
-    return {
-        "processedCount": len(completed),
-        "workflowRunIds": run_ids,
-        "runs": completed,
-    }
+            for candidate in workflow.list_workflow_runs(
+                stage="backtest",
+                status="queued",
+            ):
+                if (
+                    candidate.workflowRunId not in processed_ids
+                    and candidate.workflowRunId not in pending_ids
+                ):
+                    pending.append(candidate)
+                    pending_ids.add(candidate.workflowRunId)
+        return {
+            "processedCount": len(completed),
+            "workflowRunIds": run_ids,
+            "drainedWorkflowRunIds": processed_order,
+            "runs": completed,
+            "batchAlreadyRunning": False,
+        }
 
 
 def _run_local_forward_once(

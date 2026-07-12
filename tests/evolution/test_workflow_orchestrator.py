@@ -147,6 +147,53 @@ class WorkflowOrchestratorTests(unittest.TestCase):
         self.assertEqual(cancelled.status, "cancelled")
         self.assertEqual(cancelled.strategyVersionId, version.strategyVersionId)
 
+    def test_queued_work_can_pause_and_resume_without_becoming_cancelled(self) -> None:
+        version = self.register()
+        awaiting = self.workflow.get_latest_workflow_run(version.strategyVersionId)
+        queued = queue_workflow_run(
+            self.workflow, awaiting.workflowRunId, actor="user"
+        )
+
+        paused = pause_workflow_run(
+            self.workflow, queued.workflowRunId, actor="user"
+        )
+        repeated_pause = pause_workflow_run(
+            self.workflow, queued.workflowRunId, actor="user"
+        )
+        resumed = queue_workflow_run(
+            self.workflow, queued.workflowRunId, actor="user"
+        )
+
+        self.assertEqual(paused.status, "paused")
+        self.assertEqual(repeated_pause, paused)
+        self.assertEqual(resumed.status, "queued")
+
+    def test_cancelled_work_can_restart_from_its_checkpoint_idempotently(self) -> None:
+        version, running = self.start_initial_run()
+        checkpointed = checkpoint_workflow_run(
+            self.workflow,
+            running.workflowRunId,
+            progress={"phase": "preparing_official_data", "completed": 67},
+            actor="worker",
+        )
+        cancelled = cancel_workflow_run(
+            self.workflow, checkpointed.workflowRunId, actor="user"
+        )
+
+        restarted = retry_workflow_run(
+            self.workflow, cancelled.workflowRunId, actor="user"
+        )
+        repeated = retry_workflow_run(
+            self.workflow, cancelled.workflowRunId, actor="user"
+        )
+
+        self.assertEqual(restarted, repeated)
+        self.assertEqual(restarted.strategyVersionId, version.strategyVersionId)
+        self.assertEqual(restarted.attemptNumber, 2)
+        self.assertEqual(restarted.status, "queued")
+        self.assertEqual(restarted.progress, checkpointed.progress)
+        self.assertEqual(cancelled.status, "cancelled")
+
     def test_archive_hides_version_from_active_page_without_deleting_history(self) -> None:
         version = self.register()
         archived = archive_strategy_version(

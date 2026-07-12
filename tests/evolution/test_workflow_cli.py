@@ -72,7 +72,7 @@ class WorkflowCliTests(unittest.TestCase):
         ]
 
         self.assertEqual(first, second)
-        self.assertEqual(projection["version"], "V13.27.4")
+        self.assertEqual(projection["version"], "V13.27.5")
         self.assertEqual(first["count"], 10)
         self.assertEqual(len(first["strategyVersionIds"]), 10)
         self.assertEqual(len(items), 10)
@@ -277,6 +277,54 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertEqual(
             [run["status"] for run in result["runs"]], ["queued", "queued"]
         )
+
+    def test_selected_backtests_exit_when_another_serial_batch_is_active(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
+
+        with patch(
+            "alphapilot.evolution.workflow.cli.workflow_batch_lock",
+            create=True,
+        ) as batch_lock, patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once"
+        ) as worker:
+            batch_lock.return_value.__enter__.return_value = False
+            batch_lock.return_value.__exit__.return_value = None
+            result = self.run_cli(
+                "run-selected-backtests",
+                "--run-id",
+                run_id,
+            )
+
+        worker.assert_not_called()
+        self.assertTrue(result["batchAlreadyRunning"])
+        self.assertEqual(result["processedCount"], 0)
+        self.assertEqual(result["workflowRunIds"], [run_id])
+
+    def test_active_serial_batch_drains_newly_queued_backtests(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        items = self.run_cli("projection")["items"][:2]
+        first_id, second_id = [item["workflowRunId"] for item in items]
+        observed: list[str] = []
+
+        def fake_worker(workflow, _registry, workflow_run_id, **_kwargs):
+            observed.append(workflow_run_id)
+            if workflow_run_id == first_id:
+                queue_workflow_run(workflow, second_id, actor="user")
+            return workflow.get_workflow_run(workflow_run_id)
+
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            side_effect=fake_worker,
+        ):
+            result = self.run_cli(
+                "run-selected-backtests",
+                "--run-id",
+                first_id,
+            )
+
+        self.assertEqual(observed, [first_id, second_id])
+        self.assertEqual(result["processedCount"], 2)
 
     def test_selected_backtests_recover_queued_and_running_runs_serially(self) -> None:
         self.run_cli("bootstrap-short-cycle")

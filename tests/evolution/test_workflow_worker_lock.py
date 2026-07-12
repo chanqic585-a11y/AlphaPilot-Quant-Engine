@@ -6,10 +6,21 @@ import threading
 import unittest
 from pathlib import Path
 
+import alphapilot.evolution.workflow.worker_lock as locks
 from alphapilot.evolution.workflow.worker_lock import workflow_worker_lock
 
 
 class WorkflowWorkerLockTests(unittest.TestCase):
+    def test_only_one_serial_batch_can_hold_the_global_batch_lock(self) -> None:
+        self.assertTrue(hasattr(locks, "workflow_batch_lock"))
+        with tempfile.TemporaryDirectory() as temp:
+            output_root = Path(temp)
+
+            with locks.workflow_batch_lock(output_root) as first:
+                with locks.workflow_batch_lock(output_root) as second:
+                    self.assertTrue(first)
+                    self.assertFalse(second)
+
     def test_waits_for_existing_worker_to_release_the_run_lock(self) -> None:
         self.assertIn(
             "wait_seconds",
