@@ -63,5 +63,5 @@
 - [x] Update version documentation without changing strategy definitions.
 - [x] Run all Quant unit tests.
 - [x] Run compileall, diff check, and changed-line safety scan.
-- [ ] Fast-forward `main`, push, and verify only one logical workflow worker.
-- [ ] Confirm selected queue contains only the 5m strategy, 15m strategy, and Alpha191.
+- [x] Fast-forward `main`, push, and verify only one logical workflow worker.
+- [x] Confirm selected queue contains only the 5m strategy, 15m strategy, and Alpha191.
