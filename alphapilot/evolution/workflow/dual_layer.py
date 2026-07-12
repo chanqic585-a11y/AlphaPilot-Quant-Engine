@@ -278,6 +278,13 @@ def run_dual_layer_backtest_workflow(
             return current()
         if "preparing_official_data" in completed and collection_path.is_file():
             collection = _collection_from_dict(load_json(collection_path))
+            if collection.status != "completed":
+                # V13.27.4 could mark a paused partial collection as complete.
+                # Re-enter collection so existing durable partition checkpoints
+                # are reused instead of validating the partial result.
+                completed.discard("preparing_official_data")
+                collection = deps.collectOfficialHistory(contract, layout)
+                write_json_atomic(collection_path, collection.to_dict())
         else:
             collection = deps.collectOfficialHistory(contract, layout)
             write_json_atomic(collection_path, collection.to_dict())

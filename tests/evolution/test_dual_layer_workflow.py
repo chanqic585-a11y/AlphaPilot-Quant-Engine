@@ -372,6 +372,65 @@ class DualLayerWorkflowTests(unittest.TestCase):
         self.assertEqual(self.calls, ["freeze", "pack", "backtest"])
         self.assertEqual(completed.progress["phaseHistory"], EXPECTED_PHASES)
 
+    def test_running_recovery_recollects_legacy_paused_completed_phase(self) -> None:
+        running = start_workflow_run(
+            self.workflow, self.run.workflowRunId, actor="worker"
+        )
+        contract = derive_strategy_data_contract(self.version, self.workflow)
+        run_root = self.root / "output" / running.workflowRunId
+        smoke_path = run_root / "research-smoke.json"
+        collection_path = run_root / "official-collection.json"
+        write_json_atomic(
+            smoke_path,
+            {
+                "status": "blocked",
+                "implementationValid": False,
+                "formalPromotionEligible": False,
+                "reportHash": "persisted_smoke_hash",
+                "blockers": [],
+            },
+        )
+        paused_collection = OfficialCollectionResult(
+            status="paused",
+            strategyDataContractId=contract.strategyDataContractId,
+            instrumentCount=20,
+            completedPartitionCount=12,
+            reusedPartitionCount=12,
+            failedPartitionCount=0,
+            fundingFileCount=0,
+            partitions=(),
+            checkpointPath=str(self.root / "official-checkpoint.json"),
+            generatedAt="2026-07-12T00:00:00+00:00",
+        )
+        write_json_atomic(collection_path, paused_collection.to_dict())
+        checkpoint_workflow_run(
+            self.workflow,
+            running.workflowRunId,
+            progress={
+                "phase": "preparing_official_data",
+                "phaseHistory": EXPECTED_PHASES[:3],
+                "completedPhases": EXPECTED_PHASES[:3],
+                "artifacts": {
+                    "strategyDataContractId": contract.strategyDataContractId,
+                    "researchSmokePath": str(smoke_path),
+                    "officialCollectionPath": str(collection_path),
+                },
+            },
+            actor="worker",
+        )
+
+        completed = run_dual_layer_backtest_workflow(
+            self.workflow,
+            self.registry,
+            running.workflowRunId,
+            warehouse_root=self.root / "warehouse",
+            output_root=self.root / "output",
+            dependencies=self.dependencies(),
+        )
+
+        self.assertEqual(completed.status, "passed")
+        self.assertEqual(self.calls, ["collect", "freeze", "pack", "backtest"])
+
 
 if __name__ == "__main__":
     unittest.main()
