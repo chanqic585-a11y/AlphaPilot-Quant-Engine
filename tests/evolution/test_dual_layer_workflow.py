@@ -259,6 +259,27 @@ class DualLayerWorkflowTests(unittest.TestCase):
             )
 
         self.assertEqual(paused.status, "paused")
+        self.assertNotIn(
+            "preparing_official_data",
+            paused.progress["completedPhases"],
+        )
+
+        queue_workflow_run(
+            self.workflow,
+            paused.workflowRunId,
+            actor="user",
+        )
+        resumed = run_dual_layer_backtest_workflow(
+            self.workflow,
+            self.registry,
+            paused.workflowRunId,
+            warehouse_root=self.root / "warehouse",
+            output_root=self.root / "output",
+            dependencies=self.dependencies(),
+        )
+
+        self.assertEqual(resumed.status, "passed")
+        self.assertEqual(self.calls.count("collect"), 2)
 
     def test_official_data_failure_blocks_and_data_retry_preserves_attempt(self) -> None:
         blocked = run_dual_layer_backtest_workflow(

@@ -301,6 +301,35 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertEqual(result["processedCount"], 0)
         self.assertEqual(result["workflowRunIds"], [run_id])
 
+    def test_one_click_backtest_queues_then_yields_to_an_active_serial_batch(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            current = workflow.get_workflow_run(run_id)
+        finally:
+            connection.close()
+        self.assertIsNotNone(current)
+
+        with patch(
+            "alphapilot.evolution.workflow.cli.workflow_batch_lock"
+        ) as batch_lock, patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            return_value=current,
+        ) as worker:
+            batch_lock.return_value.__enter__.return_value = False
+            batch_lock.return_value.__exit__.return_value = None
+            result = self.run_cli(
+                "one-click-backtest",
+                "--run-id",
+                run_id,
+            )
+
+        worker.assert_not_called()
+        self.assertTrue(result["batchAlreadyRunning"])
+        self.assertEqual(result["status"], "queued")
+
     def test_active_serial_batch_drains_newly_queued_backtests(self) -> None:
         self.run_cli("bootstrap-short-cycle")
         items = self.run_cli("projection")["items"][:2]
@@ -505,7 +534,7 @@ class WorkflowCliTests(unittest.TestCase):
         )
         self.assertEqual(Path(captured["output_root"]), self.output_root)
 
-    def test_one_click_does_not_queue_when_another_worker_holds_the_lock(self) -> None:
+    def test_one_click_keeps_a_durable_queue_when_another_worker_holds_the_lock(self) -> None:
         self.run_cli("bootstrap")
         run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
 
@@ -518,7 +547,7 @@ class WorkflowCliTests(unittest.TestCase):
             result = self.run_cli("one-click-backtest", "--run-id", run_id)
 
         worker.assert_not_called()
-        self.assertEqual(result["status"], "awaiting")
+        self.assertEqual(result["status"], "queued")
 
     def test_one_click_resume_waits_for_paused_worker_lock_handoff(self) -> None:
         self.run_cli("bootstrap")

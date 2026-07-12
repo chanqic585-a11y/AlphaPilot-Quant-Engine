@@ -12,6 +12,19 @@ different runs at the same time. The active batch also drains newly queued
 backtests after each run, so a restarted attempt joins the durable queue
 without creating a competing worker.
 
+Pausing during official-history collection no longer marks that phase as
+complete. Resume re-enters the same phase and continues from the persisted
+partition checkpoint instead of validating a paused partial result. One-click
+starts also obey the process-wide batch lock, so repeated clicks cannot create
+parallel OKX download workers.
+
+Formal data collection can still take a long time by design. Each strategy
+requests its declared timeframe plan across a point-in-time Top50 universe from
+2020 onward, while OKX history-candles returns at most 100 bars per request. A
+5-minute partition therefore needs thousands of public requests per symbol;
+the durable partition counter may remain unchanged until the current
+symbol/timeframe partition finishes.
+
 See docs/V13.27.5-cancelled-attempt-resume.md.
 
 ## V13.27.4 Workflow Recovery and Demo Release
@@ -60,7 +73,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.27.4 - Workflow Recovery and Demo Release
+AlphaPilot V13.27.5 - Cancelled Attempt Resume and Serial Queue Lock
 ```
 
 ## Positioning

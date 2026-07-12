@@ -281,14 +281,36 @@ def run_dual_layer_backtest_workflow(
         else:
             collection = deps.collectOfficialHistory(contract, layout)
             write_json_atomic(collection_path, collection.to_dict())
-        finish(
-            "preparing_official_data",
-            officialCollectionPath=str(collection_path),
-            downloadedPartitions=collection.completedPartitionCount,
-            requiredPartitions=(
+        collection_artifacts = {
+            "officialCollectionPath": str(collection_path),
+            "downloadedPartitions": collection.completedPartitionCount,
+            "requiredPartitions": (
                 collection.completedPartitionCount + collection.failedPartitionCount
             ),
-            downloadedFundingFiles=collection.fundingFileCount,
+            "downloadedFundingFiles": collection.fundingFileCount,
+        }
+        state_after_collection = current()
+        if (
+            collection.status == "paused"
+            or state_after_collection.status in {"paused", "cancelled"}
+        ):
+            artifacts.update(collection_artifacts)
+            if state_after_collection.status in {"running", "paused"}:
+                checkpoint_workflow_run(
+                    workflow,
+                    run.workflowRunId,
+                    progress={
+                        "phase": "preparing_official_data",
+                        "phaseHistory": list(history),
+                        "completedPhases": sorted(completed, key=PHASES.index),
+                        "artifacts": dict(artifacts),
+                    },
+                    actor="worker",
+                )
+            return current()
+        finish(
+            "preparing_official_data",
+            **collection_artifacts,
         )
 
         if not begin("validating_official_data"):

@@ -349,16 +349,31 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                 run = retry_backtest_for_data_preparation(
                     workflow, run.workflowRunId, actor="user"
                 )
-            return asdict(
-                _run_dual_layer_once(
+            elif queue_before_run:
+                run = queue_workflow_run(
                     workflow,
-                    registry,
                     run.workflowRunId,
-                    warehouse_root=args.warehouse_root,
-                    output_root=args.output_root,
-                    queue_before_run=queue_before_run,
+                    actor="user",
                 )
-            )
+            with workflow_batch_lock(args.output_root) as batch_acquired:
+                if not batch_acquired:
+                    return {
+                        **asdict(run),
+                        "batchAlreadyRunning": True,
+                    }
+                return {
+                    **asdict(
+                        _run_dual_layer_once(
+                            workflow,
+                            registry,
+                            run.workflowRunId,
+                            warehouse_root=args.warehouse_root,
+                            output_root=args.output_root,
+                            queue_before_run=queue_before_run,
+                        )
+                    ),
+                    "batchAlreadyRunning": False,
+                }
         if args.command == "research-smoke":
             run = workflow.get_workflow_run(args.run_id)
             if run is None:
