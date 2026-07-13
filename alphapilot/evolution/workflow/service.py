@@ -222,6 +222,10 @@ def create_challenger_version(
     )
     if stable_hash(challenger_content) == parent.contentHash:
         raise WorkflowConflict("challenger_content_unchanged")
+    parent_backtest = repository.get_latest_workflow_run(
+        parent.strategyVersionId,
+        stage="backtest",
+    )
     return register_strategy_version(
         repository,
         strategy_family_id=parent.strategyFamilyId,
@@ -231,6 +235,9 @@ def create_challenger_version(
         parameters=parameters,
         parent_strategy_version_id=parent.strategyVersionId,
         model_artifact_id=model_artifact_id,
+        initial_gate_profile_id=(
+            parent_backtest.gateProfileId if parent_backtest is not None else None
+        ),
     )
 
 

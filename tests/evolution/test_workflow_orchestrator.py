@@ -361,6 +361,46 @@ class WorkflowOrchestratorTests(unittest.TestCase):
         self.assertEqual(challenger_run.stage, "backtest")
         self.assertEqual(challenger_run.status, "awaiting")
 
+    def test_challenger_inherits_parent_backtest_gate_profile(self) -> None:
+        rules = {"minimumTargetR": 2.0, "minimumTradeCount": 30}
+        gate = self.workflow.create_gate_profile(
+            GateProfileRecord(
+                gateProfileId="gate_challenger_inheritance",
+                profileKey="challenger_inheritance",
+                version=1,
+                stage="backtest",
+                status="active",
+                rules=rules,
+                contentHash=stable_hash(rules),
+            )
+        )
+        parent = register_strategy_version(
+            self.workflow,
+            strategy_family_id=self.family.strategyFamilyId,
+            display_name="Gate inheritance parent",
+            source_type="test_fixture",
+            definition={"entry": "trend_pullback", "targetR": 2.0},
+            parameters={"threshold": 1.0},
+            initial_gate_profile_id=gate.gateProfileId,
+        )
+
+        challenger = create_challenger_version(
+            self.workflow,
+            parent_strategy_version_id=parent.strategyVersionId,
+            display_name="Gate inheritance challenger",
+            source_type="generated_challenger",
+            definition=parent.definition,
+            parameters={"threshold": 1.1},
+        )
+        challenger_run = self.workflow.get_latest_workflow_run(
+            challenger.strategyVersionId,
+            stage="backtest",
+        )
+
+        self.assertIsNotNone(challenger_run)
+        assert challenger_run is not None
+        self.assertEqual(challenger_run.gateProfileId, gate.gateProfileId)
+
     def test_checkpoint_survives_repository_reconnect(self) -> None:
         _, running = self.start_initial_run()
         checkpoint_workflow_run(
