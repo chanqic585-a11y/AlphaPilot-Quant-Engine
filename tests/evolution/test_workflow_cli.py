@@ -6,7 +6,9 @@ import tempfile
 import threading
 import unittest
 from contextlib import redirect_stdout
+from dataclasses import replace
 from pathlib import Path
+from types import SimpleNamespace
 from unittest.mock import Mock, patch
 
 from alphapilot.evolution.registry.database import connect_registry
@@ -885,6 +887,82 @@ class WorkflowCliTests(unittest.TestCase):
 
         self.assertEqual(observed, [first_id, second_id])
         self.assertEqual(result["processedCount"], 2)
+
+    def test_selected_backtests_recover_missed_structural_failures_before_drain(
+        self,
+    ) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
+
+        with patch(
+            "alphapilot.evolution.workflow.cli.recover_terminal_structural_redesigns"
+        ) as recover_structural, patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            side_effect=lambda workflow, _registry, workflow_run_id, **_kwargs: (
+                workflow.get_workflow_run(workflow_run_id)
+            ),
+        ):
+            self.run_cli("run-selected-backtests", "--run-id", run_id)
+
+        recover_structural.assert_called_once()
+        self.assertEqual(
+            Path(recover_structural.call_args.kwargs["registry_path"]),
+            self.registry,
+        )
+
+    def test_selected_backtests_auto_retry_operational_blocker(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
+
+        def blocked_worker(workflow, _registry, workflow_run_id, **_kwargs):
+            current = workflow.get_workflow_run(workflow_run_id)
+            return replace(current, status="blocked", attemptNumber=1)
+
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            side_effect=blocked_worker,
+        ), patch(
+            "alphapilot.evolution.workflow.cli.process_bounded_optimization_result",
+            return_value=SimpleNamespace(
+                decision=SimpleNamespace(terminalStatus="non_performance_failure")
+            ),
+        ), patch(
+            "alphapilot.evolution.workflow.cli.retry_backtest_for_data_preparation",
+            return_value=SimpleNamespace(workflowRunId=run_id, status="queued"),
+        ) as retry_blocked:
+            self.run_cli("run-selected-backtests", "--run-id", run_id)
+
+        retry_blocked.assert_called_once_with(
+            unittest.mock.ANY,
+            run_id,
+            actor="system",
+        )
+
+    def test_selected_backtests_stop_auto_retry_after_third_operational_attempt(
+        self,
+    ) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        run_id = self.run_cli("projection")["items"][0]["workflowRunId"]
+
+        def blocked_worker(workflow, _registry, workflow_run_id, **_kwargs):
+            current = workflow.get_workflow_run(workflow_run_id)
+            return replace(current, status="blocked", attemptNumber=3)
+
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            side_effect=blocked_worker,
+        ), patch(
+            "alphapilot.evolution.workflow.cli.process_bounded_optimization_result",
+            return_value=SimpleNamespace(
+                decision=SimpleNamespace(terminalStatus="non_performance_failure")
+            ),
+        ), patch(
+            "alphapilot.evolution.workflow.cli.retry_backtest_for_data_preparation",
+            return_value=SimpleNamespace(workflowRunId=run_id, status="queued"),
+        ) as retry_blocked:
+            self.run_cli("run-selected-backtests", "--run-id", run_id)
+
+        retry_blocked.assert_not_called()
 
     def test_selected_backtests_recover_queued_and_running_runs_serially(self) -> None:
         self.run_cli("bootstrap-short-cycle")

@@ -52,6 +52,7 @@ from .worker_lock import workflow_batch_lock, workflow_worker_lock
 
 
 APPROVED_WAREHOUSE_ROOT = Path(r"D:\Codex-Workspace\回测数据")
+MAX_AUTOMATIC_OPERATIONAL_ATTEMPTS = 3
 
 
 def _json_object(value: str, field_name: str) -> dict[str, Any]:
@@ -234,13 +235,27 @@ def _run_selected_backtests(
                 "runs": [],
                 "batchAlreadyRunning": True,
             }
+        registry_path = _registry_path(workflow)
+        recover_terminal_optimization_results(workflow, registry)
+        recover_terminal_structural_redesigns(
+            workflow,
+            registry,
+            registry_path=registry_path,
+        )
         pending = list(queued_runs)
         pending_ids = {run.workflowRunId for run in pending}
+        for candidate in workflow.list_workflow_runs(
+            stage="backtest",
+            status="queued",
+        ):
+            if candidate.workflowRunId not in pending_ids:
+                pending.append(candidate)
+                pending_ids.add(candidate.workflowRunId)
+        pending = _prioritize_backtest_runs(pending)
         processed_ids: set[str] = set()
         processed_order: list[str] = []
         completed: list[dict[str, Any]] = []
         prefetch_futures: dict[str, Future[None]] = {}
-        registry_path = _registry_path(workflow)
         with ThreadPoolExecutor(
             max_workers=1,
             thread_name_prefix="alphapilot-data-prefetch",
@@ -307,6 +322,25 @@ def _run_selected_backtests(
                             registry,
                             finished,
                         )
+                    if (
+                        finished.status == "blocked"
+                        and finished.attemptNumber < MAX_AUTOMATIC_OPERATIONAL_ATTEMPTS
+                    ):
+                        try:
+                            retry = retry_backtest_for_data_preparation(
+                                workflow,
+                                finished.workflowRunId,
+                                actor="system",
+                            )
+                        except WorkflowTransitionError:
+                            retry = None
+                        if (
+                            retry is not None
+                            and retry.workflowRunId not in processed_ids
+                            and retry.workflowRunId not in pending_ids
+                        ):
+                            pending.append(retry)
+                            pending_ids.add(retry.workflowRunId)
                 for candidate in workflow.list_workflow_runs(
                     stage="backtest",
                     status="queued",
