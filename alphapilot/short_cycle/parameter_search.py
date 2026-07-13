@@ -157,6 +157,84 @@ def _base_ready(frame: pd.DataFrame) -> pd.Series:
 
 def build_signal(frame: pd.DataFrame, family: str, params: dict[str, Any]) -> tuple[pd.Series, str]:
     ready = _base_ready(frame)
+    atr_pct = frame["atr14"] / frame["close"].replace(0, np.nan)
+    if family == "trend_pullback_confirmation_long":
+        pullback = frame["low"] <= frame["ema20"] * (1 + params["pullback_tolerance"])
+        recent_pullback = (
+            pullback.shift(1)
+            .rolling(params["pullback_lookback"], min_periods=params["pullback_lookback"])
+            .max()
+            .fillna(0)
+            .astype(bool)
+        )
+        signal = (
+            ready
+            & ~frame["btc_long_block"]
+            & recent_pullback
+            & (frame["ema20"] > frame["ema20"].shift(params["ema_slope_lookback"]))
+            & (frame["ema20"] >= frame["ema50"] * params["trend_tolerance"])
+            & (frame["ema50"] >= frame["ema200"] * params["trend_tolerance"])
+            & (frame["close"] > frame["ema20"] * (1 + params["reclaim_buffer"]))
+            & (frame["close"] > frame["open"])
+            & (frame["close"] > frame["high"].shift(1))
+            & frame["rsi14"].between(params["rsi_min"], params["rsi_max"])
+            & (frame["volume_ratio"] >= params["volume_min"])
+            & atr_pct.between(params["atr_pct_min"], params["atr_pct_max"])
+        )
+        return signal.fillna(False), "long"
+
+    if family == "compression_release_long":
+        lookback = params["lookback"]
+        prior_high = frame["high"].rolling(lookback, min_periods=lookback).max().shift(1)
+        squeeze_ref = frame["bb_width"].rolling(
+            params["squeeze_window"], min_periods=params["squeeze_window"]
+        ).median()
+        prior_squeeze = frame["bb_width"].shift(1) < (
+            squeeze_ref.shift(1) * params["squeeze_ratio"]
+        )
+        signal = (
+            ready
+            & ~frame["btc_long_block"]
+            & prior_squeeze
+            & (frame["bb_width"] >= frame["bb_width"].shift(1) * params["expansion_min"])
+            & (frame["ema20"] >= frame["ema50"] * params["trend_tolerance"])
+            & (frame["ema50"] >= frame["ema200"] * params["trend_tolerance"])
+            & (frame["close"] > prior_high)
+            & (frame["close"] > frame["open"])
+            & (frame["rsi14"] <= params["rsi_max"])
+            & (frame["volume_ratio"] >= params["volume_min"])
+            & (atr_pct <= params["atr_pct_max"])
+        )
+        return signal.fillna(False), "long"
+
+    if family == "failed_reclaim_short":
+        reclaim_attempt = frame["high"] >= frame["ema20"] * (
+            1 - params["reclaim_tolerance"]
+        )
+        recent_attempt = (
+            reclaim_attempt.shift(1)
+            .rolling(params["reclaim_lookback"], min_periods=params["reclaim_lookback"])
+            .max()
+            .fillna(0)
+            .astype(bool)
+        )
+        signal = (
+            ready
+            & ~frame["btc_short_block"]
+            & recent_attempt
+            & (frame["ema20"] < frame["ema20"].shift(params["ema_slope_lookback"]))
+            & (frame["ema20"] <= frame["ema50"] * params["trend_tolerance"])
+            & (frame["ema50"] <= frame["ema200"] * params["trend_tolerance"])
+            & (frame["close"] < frame["ema20"] * (1 - params["rejection_buffer"]))
+            & (frame["close"] < frame["open"])
+            & (frame["close"] < frame["low"].shift(1))
+            & (frame["macd_hist"] < 0)
+            & frame["rsi14"].between(params["rsi_min"], params["rsi_max"])
+            & (frame["volume_ratio"] >= params["volume_min"])
+            & atr_pct.between(params["atr_pct_min"], params["atr_pct_max"])
+        )
+        return signal.fillna(False), "short"
+
     if family == "volume_rebound_long":
         signal = (
             ready

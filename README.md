@@ -4882,6 +4882,18 @@ This boundary does not select profitable parameters, mark a strategy passed,
 create a Demo release, place an order, store an API key, or enable Live
 execution.
 
+## V13.27.13 Short-Cycle Structural Redesign
+
+V13.27.13 replaces eleven terminally weak research versions with six new,
+evidence-informed candidates: three on 5m and three on 15m. The redesign adds
+trend direction, completed-candle confirmation, volatility-range and volume
+filters while preserving the BTC shock guard, `targetR >= 2`, cost stress,
+walk-forward evidence, and the existing 2R half-exit plus ATR runner.
+
+The candidates are registered as `backtest / awaiting`; they are not marked as
+profitable and cannot bypass Local Forward, OKX Demo, or Live gates. See
+`docs/V13.27.13-short-cycle-structural-redesign.md`.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

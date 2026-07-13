@@ -21,6 +21,7 @@ from .bounded_optimization_service import (
     recover_terminal_optimization_results,
 )
 from .bootstrap import (
+    register_redesigned_short_cycle_candidate_pack,
     register_alpha191_observer,
     register_optimized_legacy_strategy,
     register_short_cycle_candidate_pack,
@@ -387,6 +388,7 @@ def build_parser() -> argparse.ArgumentParser:
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("bootstrap")
     commands.add_parser("bootstrap-short-cycle")
+    commands.add_parser("bootstrap-redesigned-short-cycle")
     commands.add_parser("projection")
     resolve_backtest = commands.add_parser("resolve-backtest-run")
     resolve_backtest.add_argument("--strategy-name")
@@ -443,6 +445,17 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
             return asdict(register_alpha191_observer(registry, workflow))
         if args.command == "bootstrap-short-cycle":
             versions = register_short_cycle_candidate_pack(registry, workflow)
+            return {
+                "count": len(versions),
+                "strategyVersionIds": [
+                    version.strategyVersionId for version in versions
+                ],
+                "displayNames": [version.displayName for version in versions],
+            }
+        if args.command == "bootstrap-redesigned-short-cycle":
+            versions = register_redesigned_short_cycle_candidate_pack(
+                registry, workflow
+            )
             return {
                 "count": len(versions),
                 "strategyVersionIds": [

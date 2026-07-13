@@ -225,6 +225,24 @@ class WorkflowCliTests(unittest.TestCase):
         finally:
             connection.close()
 
+    def test_redesigned_short_cycle_bootstrap_registers_six_awaiting_candidates(self) -> None:
+        first = self.run_cli("bootstrap-redesigned-short-cycle")
+        second = self.run_cli("bootstrap-redesigned-short-cycle")
+        projection = self.run_cli("projection")
+        items = [
+            item
+            for item in projection["items"]
+            if item["sourceType"] == "short_cycle_redesign_pack_v13_27_13"
+        ]
+
+        self.assertEqual(first, second)
+        self.assertEqual(first["count"], 6)
+        self.assertEqual(len(items), 6)
+        self.assertEqual(
+            {(item["stage"], item["status"]) for item in items},
+            {("backtest", "awaiting")},
+        )
+
     def test_failed_backtest_drains_three_bounded_challengers_in_same_batch(self) -> None:
         self.run_cli("bootstrap-short-cycle")
         projection = self.run_cli("projection")

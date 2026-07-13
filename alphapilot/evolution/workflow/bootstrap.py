@@ -7,6 +7,7 @@ from typing import Any
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.short_cycle.workflow_candidates import (
+    redesigned_short_cycle_workflow_candidates,
     short_cycle_workflow_candidates,
 )
 from alphapilot.evolution.strategies.family_registry import ensure_strategy_family
@@ -124,6 +125,40 @@ def register_short_cycle_candidate_pack(
                 strategy_family_id=family.strategyFamilyId,
                 display_name=item.displayName,
                 source_type="short_cycle_candidate_pack_v13_27_3",
+                definition=item.definition(),
+                parameters=item.parameters,
+                initial_gate_profile_id=gate.gateProfileId,
+            )
+        )
+    return tuple(versions)
+
+
+def register_redesigned_short_cycle_candidate_pack(
+    registry: RegistryRepository,
+    workflow: WorkflowRepository,
+) -> tuple[StrategyVersionRecord, ...]:
+    """Register six evidence-informed V13.27.13 candidates without running them."""
+
+    gate = ensure_default_backtest_gate_profile(workflow)
+    versions: list[StrategyVersionRecord] = []
+    for item in redesigned_short_cycle_workflow_candidates():
+        family = ensure_strategy_family(
+            repository=registry,
+            family_key=item.familyKey,
+            name=item.displayName,
+            metadata={
+                "candidatePack": "V13.27.13",
+                "direction": item.direction,
+                "timeframe": item.timeframe,
+                "redesignReason": "prior_pack_structurally_weak",
+            },
+        )
+        versions.append(
+            register_strategy_version(
+                workflow,
+                strategy_family_id=family.strategyFamilyId,
+                display_name=item.displayName,
+                source_type="short_cycle_redesign_pack_v13_27_13",
                 definition=item.definition(),
                 parameters=item.parameters,
                 initial_gate_profile_id=gate.gateProfileId,

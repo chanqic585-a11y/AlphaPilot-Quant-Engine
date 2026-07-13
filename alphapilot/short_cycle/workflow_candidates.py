@@ -51,6 +51,40 @@ _REQUIRED_PARAMETERS = {
         "squeeze_ratio",
         "volume_min",
     },
+    "trend_pullback_confirmation_long": {
+        "pullback_lookback",
+        "pullback_tolerance",
+        "ema_slope_lookback",
+        "trend_tolerance",
+        "reclaim_buffer",
+        "rsi_min",
+        "rsi_max",
+        "volume_min",
+        "atr_pct_min",
+        "atr_pct_max",
+    },
+    "compression_release_long": {
+        "lookback",
+        "squeeze_window",
+        "squeeze_ratio",
+        "expansion_min",
+        "trend_tolerance",
+        "rsi_max",
+        "volume_min",
+        "atr_pct_max",
+    },
+    "failed_reclaim_short": {
+        "reclaim_lookback",
+        "reclaim_tolerance",
+        "rejection_buffer",
+        "ema_slope_lookback",
+        "trend_tolerance",
+        "rsi_min",
+        "rsi_max",
+        "volume_min",
+        "atr_pct_min",
+        "atr_pct_max",
+    },
 }
 
 
@@ -62,6 +96,7 @@ class ShortCycleWorkflowCandidate:
     direction: str
     signalFamily: str
     parameters: dict[str, Any]
+    exitPolicy: str = "fixed_target_full_exit_v1"
 
     def definition(self) -> dict[str, Any]:
         parameters = dict(self.parameters)
@@ -76,6 +111,7 @@ class ShortCycleWorkflowCandidate:
             "timeframe": self.timeframe,
             "direction": self.direction,
             "targetR": 2.0,
+            "exitPolicy": self.exitPolicy,
             "researchOnly": True,
             "executionEnabled": False,
             "forwardSignalPolicy": {
@@ -98,6 +134,7 @@ def _candidate(
     timeframe: str,
     direction: str,
     signal_family: str,
+    exit_policy: str = "fixed_target_full_exit_v1",
     **parameters: Any,
 ) -> ShortCycleWorkflowCandidate:
     return ShortCycleWorkflowCandidate(
@@ -107,6 +144,7 @@ def _candidate(
         direction=direction,
         signalFamily=signal_family,
         parameters=parameters,
+        exitPolicy=exit_policy,
     )
 
 
@@ -248,11 +286,133 @@ _CANDIDATES = (
 )
 
 
+_REDESIGNED_CANDIDATES = (
+    _candidate(
+        "short_cycle_redesign_5m_trend_pullback_confirmation_long_v1",
+        "5m 顺势回踩确认 ATR1.0",
+        "5m",
+        "long",
+        "trend_pullback_confirmation_long",
+        exit_policy="two_r_half_atr_runner_v1",
+        pullback_lookback=6,
+        pullback_tolerance=0.0025,
+        ema_slope_lookback=6,
+        trend_tolerance=1.0,
+        reclaim_buffer=0.0005,
+        rsi_min=44,
+        rsi_max=64,
+        volume_min=1.15,
+        atr_pct_min=0.002,
+        atr_pct_max=0.018,
+        stop_atr=1.0,
+        max_hold=24,
+    ),
+    _candidate(
+        "short_cycle_redesign_5m_compression_release_long_v1",
+        "5m 压缩放量释放 ATR1.1",
+        "5m",
+        "long",
+        "compression_release_long",
+        exit_policy="two_r_half_atr_runner_v1",
+        lookback=36,
+        squeeze_window=96,
+        squeeze_ratio=0.72,
+        expansion_min=1.08,
+        trend_tolerance=1.0,
+        rsi_max=72,
+        volume_min=1.8,
+        atr_pct_max=0.022,
+        stop_atr=1.1,
+        max_hold=24,
+    ),
+    _candidate(
+        "short_cycle_redesign_5m_failed_reclaim_short_v1",
+        "5m 弱势反抽失败 ATR1.0",
+        "5m",
+        "short",
+        "failed_reclaim_short",
+        exit_policy="two_r_half_atr_runner_v1",
+        reclaim_lookback=6,
+        reclaim_tolerance=0.003,
+        rejection_buffer=0.0005,
+        ema_slope_lookback=6,
+        trend_tolerance=1.0,
+        rsi_min=36,
+        rsi_max=58,
+        volume_min=1.15,
+        atr_pct_min=0.002,
+        atr_pct_max=0.018,
+        stop_atr=1.0,
+        max_hold=24,
+    ),
+    _candidate(
+        "short_cycle_redesign_15m_trend_pullback_confirmation_long_v1",
+        "15m 顺势回踩确认 ATR1.2",
+        "15m",
+        "long",
+        "trend_pullback_confirmation_long",
+        exit_policy="two_r_half_atr_runner_v1",
+        pullback_lookback=5,
+        pullback_tolerance=0.004,
+        ema_slope_lookback=4,
+        trend_tolerance=1.0,
+        reclaim_buffer=0.0005,
+        rsi_min=42,
+        rsi_max=66,
+        volume_min=1.1,
+        atr_pct_min=0.003,
+        atr_pct_max=0.025,
+        stop_atr=1.2,
+        max_hold=16,
+    ),
+    _candidate(
+        "short_cycle_redesign_15m_compression_release_long_v1",
+        "15m 压缩放量释放 ATR1.3",
+        "15m",
+        "long",
+        "compression_release_long",
+        exit_policy="two_r_half_atr_runner_v1",
+        lookback=28,
+        squeeze_window=72,
+        squeeze_ratio=0.75,
+        expansion_min=1.08,
+        trend_tolerance=1.0,
+        rsi_max=74,
+        volume_min=1.6,
+        atr_pct_max=0.03,
+        stop_atr=1.3,
+        max_hold=16,
+    ),
+    _candidate(
+        "short_cycle_redesign_15m_failed_reclaim_short_v1",
+        "15m 弱势反抽失败 ATR1.2",
+        "15m",
+        "short",
+        "failed_reclaim_short",
+        exit_policy="two_r_half_atr_runner_v1",
+        reclaim_lookback=5,
+        reclaim_tolerance=0.005,
+        rejection_buffer=0.0005,
+        ema_slope_lookback=4,
+        trend_tolerance=1.0,
+        rsi_min=34,
+        rsi_max=60,
+        volume_min=1.1,
+        atr_pct_min=0.003,
+        atr_pct_max=0.025,
+        stop_atr=1.2,
+        max_hold=16,
+    ),
+)
+
+
 def _validate_candidates(
     candidates: tuple[ShortCycleWorkflowCandidate, ...],
+    *,
+    expected_count: int,
 ) -> None:
-    if len(candidates) != 10:
-        raise ValueError("short_cycle_candidate_count_must_equal_10")
+    if len(candidates) != expected_count:
+        raise ValueError(f"short_cycle_candidate_count_must_equal_{expected_count}")
     if len({item.familyKey for item in candidates}) != len(candidates):
         raise ValueError("short_cycle_family_keys_must_be_unique")
     if len({item.displayName for item in candidates}) != len(candidates):
@@ -276,8 +436,15 @@ def _validate_candidates(
             raise ValueError(f"short_cycle_max_hold_invalid:{item.familyKey}")
 
 
-_validate_candidates(_CANDIDATES)
+_validate_candidates(_CANDIDATES, expected_count=10)
+_validate_candidates(_REDESIGNED_CANDIDATES, expected_count=6)
 
 
 def short_cycle_workflow_candidates() -> tuple[ShortCycleWorkflowCandidate, ...]:
     return _CANDIDATES
+
+
+def redesigned_short_cycle_workflow_candidates() -> tuple[
+    ShortCycleWorkflowCandidate, ...
+]:
+    return _REDESIGNED_CANDIDATES
