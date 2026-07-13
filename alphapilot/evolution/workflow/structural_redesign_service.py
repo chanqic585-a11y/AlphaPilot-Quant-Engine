@@ -307,6 +307,7 @@ def _audit_event(
         "generation": decision.generation,
         "maxGenerations": decision.maxGenerations,
         "recipeId": decision.recipeId,
+        "recipeSummary": decision.recipeSummary,
         "grammarVersion": "structural_strategy_grammar_v1",
         "profile": _profile_summary(decision),
     }

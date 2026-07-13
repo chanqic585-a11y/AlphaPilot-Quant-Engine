@@ -10,6 +10,7 @@ from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.registry.types import StrategyFamilyRecord
 from alphapilot.evolution.workflow.bootstrap import ensure_default_backtest_gate_profile
+from alphapilot.evolution.workflow.projection import build_workflow_projection
 from alphapilot.evolution.workflow.repository import WorkflowRepository
 from alphapilot.evolution.workflow.service import (
     complete_workflow_run,
@@ -185,6 +186,20 @@ class StructuralRedesignIntegrationTests(unittest.TestCase):
         self.assertEqual(len(archived), 1)
         self.assertNotIn("holdout", repr(created[0].payload))
         self.assertNotIn("locked", repr(created[0].payload))
+        projected = next(
+            item
+            for item in build_workflow_projection(self.workflow)["items"]
+            if item["strategyVersionId"] == child.strategyVersionId
+        )
+        campaign = projected["structuralRedesignCampaign"]
+        self.assertEqual(campaign["generation"], 1)
+        self.assertEqual(campaign["maxGenerations"], 3)
+        self.assertEqual(campaign["parentStatus"], "archived")
+        self.assertEqual(campaign["childStatus"], "queued")
+        self.assertEqual(campaign["childWorkflowRunId"], child_run.workflowRunId)
+        self.assertTrue(campaign["recipeSummary"])
+        self.assertNotIn("holdout", repr(campaign))
+        self.assertNotIn("locked", repr(campaign))
 
     def test_repeated_processing_returns_same_child_without_duplicate_records(self) -> None:
         parent = self.register_version()
@@ -225,6 +240,24 @@ class StructuralRedesignIntegrationTests(unittest.TestCase):
         self.assertEqual(stored_parent.status, "active")
         self.assertEqual(self.workflow.count("StrategyVersions"), 1)
         self.assertEqual(self.connection.execute("SELECT COUNT(*) FROM AuditEvents").fetchone()[0], 0)
+
+    def test_projection_keeps_structural_campaign_empty_without_lineage_or_audit(self) -> None:
+        version = self.register_version()
+
+        projected = next(
+            item
+            for item in build_workflow_projection(self.workflow)["items"]
+            if item["strategyVersionId"] == version.strategyVersionId
+        )
+
+        campaign = projected["structuralRedesignCampaign"]
+        self.assertFalse(campaign["supported"])
+        self.assertIsNone(campaign["campaignId"])
+        self.assertEqual(campaign["generation"], 0)
+        self.assertIsNone(campaign["parentStrategyVersionId"])
+        self.assertIsNone(campaign["parentStatus"])
+        self.assertIsNone(campaign["childStrategyVersionId"])
+        self.assertIsNone(campaign["childStatus"])
 
     def test_mid_transaction_failure_rolls_back_child_audits_and_parent_archive(self) -> None:
         parent = self.register_version()

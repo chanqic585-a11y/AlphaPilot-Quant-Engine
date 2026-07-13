@@ -13,7 +13,7 @@ from alphapilot.evolution.registry.repositories import RegistryRepository
 
 from .repository import WorkflowRepository
 from .states import STAGE_LABELS, STAGE_ORDER, STAGE_PAGES, STATUS_LABELS
-from .types import StrategyDataContractRecord, WorkflowRunRecord
+from .types import StrategyDataContractRecord, StrategyVersionRecord, WorkflowRunRecord
 
 
 PHASE_LABELS = {
@@ -43,6 +43,112 @@ def _optimization_campaign_audit(
         return None
     latest = events[-1]
     return dict(latest.payload), latest.createdAt
+
+
+def _structural_redesign_campaign(
+    repository: WorkflowRepository,
+    *,
+    version: StrategyVersionRecord,
+    current: WorkflowRunRecord,
+) -> dict[str, Any]:
+    lineage_value = version.definition.get("structuralRedesignLineage")
+    lineage = lineage_value if isinstance(lineage_value, dict) else {}
+    parent_strategy_version_id = str(
+        lineage.get("parentStrategyVersionId")
+        or version.strategyVersionId
+    )
+    registry = RegistryRepository(repository.connection)
+    audit_records = []
+    for event_type in (
+        "structural_redesign_candidate_created",
+        "structural_redesign_parent_archived",
+        "structural_redesign_stopped",
+    ):
+        audit_records.extend(
+            registry.list_audit_events(
+                event_type=event_type,
+                entity_type="StrategyVersion",
+                entity_id=parent_strategy_version_id,
+            )
+        )
+    audit_records.sort(key=lambda event: (event.createdAt, event.auditEventId))
+    if not lineage and not audit_records:
+        return {
+            "supported": False,
+            "campaignId": None,
+            "generation": 0,
+            "maxGenerations": 3,
+            "recipeId": None,
+            "recipeSummary": None,
+            "parentStrategyVersionId": None,
+            "parentStatus": None,
+            "childStrategyVersionId": None,
+            "childWorkflowRunId": None,
+            "childStatus": None,
+            "stopReason": None,
+            "lastDecisionAt": None,
+        }
+    matching = [
+        event
+        for event in audit_records
+        if event.payload.get("childStrategyVersionId")
+        == version.strategyVersionId
+    ]
+    selected = matching[-1] if matching else (audit_records[-1] if audit_records else None)
+    payload = dict(selected.payload) if selected is not None else {}
+    parent = repository.get_strategy_version(parent_strategy_version_id)
+    child_strategy_version_id = str(
+        version.strategyVersionId
+        if lineage.get("parentStrategyVersionId")
+        else payload.get("childStrategyVersionId") or ""
+    )
+    child = (
+        repository.get_strategy_version(child_strategy_version_id)
+        if child_strategy_version_id
+        else None
+    )
+    child_run = (
+        current
+        if child is not None and child.strategyVersionId == version.strategyVersionId
+        else (
+            repository.get_latest_workflow_run(
+                child.strategyVersionId,
+                stage="backtest",
+            )
+            if child is not None
+            else None
+        )
+    )
+    return {
+        "supported": True,
+        "campaignId": lineage.get("campaignId") or payload.get("campaignId"),
+        "generation": int(
+            lineage.get("generation") or payload.get("generation") or 0
+        ),
+        "maxGenerations": int(
+            lineage.get("maxGenerations")
+            or payload.get("maxGenerations")
+            or 3
+        ),
+        "recipeId": lineage.get("recipeId") or payload.get("recipeId"),
+        "recipeSummary": payload.get("recipeSummary"),
+        "parentStrategyVersionId": parent_strategy_version_id,
+        "parentStatus": parent.status if parent is not None else None,
+        "childStrategyVersionId": (
+            child.strategyVersionId if child is not None else None
+        ),
+        "childWorkflowRunId": (
+            child_run.workflowRunId if child_run is not None else None
+        ),
+        "childStatus": child_run.status if child_run is not None else None,
+        "stopReason": (
+            payload.get("reasonCode")
+            if selected is not None
+            and selected.eventType == "structural_redesign_stopped"
+            else None
+        ),
+        "lastDecisionAt": selected.createdAt if selected is not None else None,
+    }
 
 
 def _current_run(runs: list[WorkflowRunRecord]) -> WorkflowRunRecord:
@@ -217,6 +323,11 @@ def build_workflow_projection(
                 else None
             ),
         }
+        structural_redesign_campaign = _structural_redesign_campaign(
+            repository,
+            version=version,
+            current=current,
+        )
         item = {
             "strategyVersionId": version.strategyVersionId,
             "strategyFamilyId": version.strategyFamilyId,
@@ -287,6 +398,7 @@ def build_workflow_projection(
                 "targetRFloor": 2.0,
             },
             "optimizationCampaign": optimization_campaign,
+            "structuralRedesignCampaign": structural_redesign_campaign,
             "historyEventCount": len(events),
             "archived": version.status == "archived",
         }
