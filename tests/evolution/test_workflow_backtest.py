@@ -471,7 +471,11 @@ class WorkflowBacktestTests(unittest.TestCase):
                     "oldestTimestampMs": 1700000000000,
                     "maxPages": 6800,
                     "updatedAt": "2026-07-12T06:30:00+00:00",
+                    "mode": "shared_incremental_refresh",
+                    "baseRows": 124000,
+                    "baseEndTime": "2026-07-12T06:25:00+00:00",
                 },
+                "preparationMode": "shared_incremental_refresh",
             },
         )
 
@@ -486,6 +490,7 @@ class WorkflowBacktestTests(unittest.TestCase):
                 "completed": 2,
                 "required": 150,
                 "fundingFiles": 0,
+                "mode": "shared_incremental_refresh",
                 "active": {
                     "instrumentId": "SOL-USDT-SWAP",
                     "timeframe": "5m",
@@ -495,6 +500,9 @@ class WorkflowBacktestTests(unittest.TestCase):
                     "maxPages": 6800,
                     "percent": 18.4,
                     "updatedAt": "2026-07-12T06:30:00+00:00",
+                    "mode": "shared_incremental_refresh",
+                    "baseRows": 124000,
+                    "baseEndTime": "2026-07-12T06:25:00+00:00",
                 },
             },
         )

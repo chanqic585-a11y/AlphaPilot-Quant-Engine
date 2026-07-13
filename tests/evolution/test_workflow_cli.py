@@ -3,6 +3,7 @@ from __future__ import annotations
 import io
 import json
 import tempfile
+import threading
 import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
@@ -10,7 +11,11 @@ from unittest.mock import Mock, patch
 
 from alphapilot.evolution.registry.database import connect_registry
 from alphapilot.evolution.registry.repositories import RegistryRepository
-from alphapilot.evolution.workflow.cli import _run_selected_forward_cycles, main
+from alphapilot.evolution.workflow.cli import (
+    _prepare_dual_layer_once,
+    _run_selected_forward_cycles,
+    main,
+)
 from alphapilot.evolution.workflow.repository import WorkflowRepository
 from alphapilot.evolution.workflow.service import (
     pause_workflow_run,
@@ -26,8 +31,24 @@ class WorkflowCliTests(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.registry = self.root / "registry.sqlite"
         self.output_root = self.root / "workflow"
+        self.prepare_patcher = patch(
+            "alphapilot.evolution.workflow.cli._prepare_dual_layer_once",
+            side_effect=lambda workflow, _registry, workflow_run_id, **_kwargs: (
+                workflow.get_workflow_run(workflow_run_id)
+            ),
+            create=True,
+        )
+        self.prefetch_patcher = patch(
+            "alphapilot.evolution.workflow.cli._prepare_backtest_in_fresh_connection",
+            return_value=None,
+            create=True,
+        )
+        self.prepare_worker = self.prepare_patcher.start()
+        self.prefetch_worker = self.prefetch_patcher.start()
 
     def tearDown(self) -> None:
+        self.prefetch_patcher.stop()
+        self.prepare_patcher.stop()
         self.temp.cleanup()
 
     def run_cli(self, *args: str) -> dict:
@@ -51,6 +72,25 @@ class WorkflowCliTests(unittest.TestCase):
         except SystemExit as error:
             self.fail(f"workflow CLI command is unavailable: {error}")
         return exit_code, json.loads(output.getvalue())
+
+    def test_data_prefetch_stops_before_memory_heavy_snapshot_freeze(self) -> None:
+        workflow = Mock()
+        registry = Mock()
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once"
+        ) as run_once:
+            _prepare_dual_layer_once(
+                workflow,
+                registry,
+                "workflow_run_1",
+                warehouse_root=self.root / "warehouse",
+                output_root=self.output_root,
+            )
+
+        self.assertEqual(
+            run_once.call_args.kwargs["stop_after_phase"],
+            "validating_official_data",
+        )
 
     def test_bootstrap_and_projection_are_idempotent(self) -> None:
         first = self.run_cli("bootstrap")
@@ -277,6 +317,64 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertEqual(
             [run["status"] for run in result["runs"]], ["queued", "queued"]
         )
+
+    def test_selected_backtests_prefetch_next_data_while_current_formal_runs(self) -> None:
+        self.prepare_patcher.stop()
+        self.prefetch_patcher.stop()
+        self.run_cli("bootstrap-short-cycle")
+        items = self.run_cli("projection")["items"][:2]
+        first_id, second_id = [item["workflowRunId"] for item in items]
+        prefetch_started = threading.Event()
+        formal_started = threading.Event()
+        observed: list[str] = []
+
+        def prepare_current(workflow, _registry, workflow_run_id, **_kwargs):
+            observed.append(f"prepare:{workflow_run_id}")
+            return workflow.get_workflow_run(workflow_run_id)
+
+        def prefetch_next(*_args, workflow_run_id, **_kwargs):
+            observed.append(f"prefetch:{workflow_run_id}")
+            prefetch_started.set()
+            self.assertTrue(formal_started.wait(timeout=2))
+
+        def run_formal(workflow, _registry, workflow_run_id, **_kwargs):
+            if workflow_run_id == first_id:
+                self.assertTrue(prefetch_started.wait(timeout=2))
+                formal_started.set()
+            observed.append(f"formal:{workflow_run_id}")
+            return workflow.get_workflow_run(workflow_run_id)
+
+        try:
+            with patch(
+                "alphapilot.evolution.workflow.cli._prepare_dual_layer_once",
+                side_effect=prepare_current,
+                create=True,
+            ), patch(
+                "alphapilot.evolution.workflow.cli._prepare_backtest_in_fresh_connection",
+                side_effect=prefetch_next,
+                create=True,
+            ), patch(
+                "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+                side_effect=run_formal,
+            ):
+                result = self.run_cli(
+                    "run-selected-backtests",
+                    "--run-id",
+                    first_id,
+                    "--run-id",
+                    second_id,
+                )
+        finally:
+            self.prepare_worker = self.prepare_patcher.start()
+            self.prefetch_worker = self.prefetch_patcher.start()
+
+        self.assertEqual(result["processedCount"], 2)
+        self.assertIn(f"prefetch:{second_id}", observed)
+        self.assertLess(
+            observed.index(f"prefetch:{second_id}"),
+            observed.index(f"formal:{first_id}"),
+        )
+        self.assertNotIn(f"prepare:{second_id}", observed)
 
     def test_selected_backtests_exit_when_another_serial_batch_is_active(self) -> None:
         self.run_cli("bootstrap-short-cycle")

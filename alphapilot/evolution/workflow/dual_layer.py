@@ -180,7 +180,10 @@ def run_dual_layer_backtest_workflow(
     warehouse_root: Path | str,
     output_root: Path | str,
     dependencies: DualLayerDependencies | None = None,
+    stop_after_phase: str | None = None,
 ) -> WorkflowRunRecord:
+    if stop_after_phase is not None and stop_after_phase not in PHASES:
+        raise ValueError(f"unsupported_stop_after_phase:{stop_after_phase}")
     run = workflow.get_workflow_run(workflow_run_id)
     if run is None:
         raise WorkflowConflict(f"workflow_run_missing:{workflow_run_id}")
@@ -250,6 +253,9 @@ def run_dual_layer_backtest_workflow(
             actor="worker",
         )
 
+    def reached_stop_phase(name: str) -> bool:
+        return stop_after_phase == name
+
     try:
         version = workflow.get_strategy_version(run.strategyVersionId)
         if version is None:
@@ -262,6 +268,8 @@ def run_dual_layer_backtest_workflow(
             "checking_local_data",
             strategyDataContractId=contract.strategyDataContractId,
         )
+        if reached_stop_phase("checking_local_data"):
+            return current()
 
         smoke_path = run_root / "research-smoke.json"
         if not begin("research_smoke_running"):
@@ -272,6 +280,8 @@ def run_dual_layer_backtest_workflow(
             smoke = deps.runResearchSmoke(contract, layout, smoke_path)
             write_json_atomic(smoke_path, smoke)
         finish("research_smoke_running", researchSmokePath=str(smoke_path))
+        if reached_stop_phase("research_smoke_running"):
+            return current()
 
         collection_path = run_root / "official-collection.json"
         if not begin("preparing_official_data"):
@@ -319,6 +329,8 @@ def run_dual_layer_backtest_workflow(
             "preparing_official_data",
             **collection_artifacts,
         )
+        if reached_stop_phase("preparing_official_data"):
+            return current()
 
         if not begin("validating_official_data"):
             return current()
@@ -335,6 +347,8 @@ def run_dual_layer_backtest_workflow(
                 blocker=f"official_collection_partition_failures:{collection.failedPartitionCount}",
             )
         finish("validating_official_data")
+        if reached_stop_phase("validating_official_data"):
+            return current()
 
         if not begin("freezing_data_snapshot"):
             return current()
@@ -345,6 +359,8 @@ def run_dual_layer_backtest_workflow(
                 collection, contract, layout, registry
             )
         finish("freezing_data_snapshot", dataSnapshotId=snapshot.dataSnapshotId)
+        if reached_stop_phase("freezing_data_snapshot"):
+            return current()
 
         pack_path = run_root / "validation-pack.json"
         if not begin("building_validation_manifests"):
@@ -373,6 +389,8 @@ def run_dual_layer_backtest_workflow(
             validationPackPath=str(pack_path),
             evaluationBindingId=binding.evaluationBindingId,
         )
+        if reached_stop_phase("building_validation_manifests"):
+            return current()
 
         adapter_path = run_root / "formal-adapter-result.json"
         if not begin("formal_backtest_running"):
@@ -385,6 +403,8 @@ def run_dual_layer_backtest_workflow(
             )
             write_json_atomic(adapter_path, asdict(adapter_result))
         finish("formal_backtest_running", formalAdapterResultPath=str(adapter_path))
+        if reached_stop_phase("formal_backtest_running"):
+            return current()
 
         if not begin("evaluating_gate"):
             return current()

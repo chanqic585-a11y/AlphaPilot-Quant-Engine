@@ -132,6 +132,20 @@ candles and 600 signals produced identical results and more than 70x speedup;
 actual end-to-end runtime also depends on strategy signal generation,
 snapshot loading, storage and machine load.
 
+Selected backtest batches use a bounded two-channel pipeline: one worker runs
+the memory-heavy snapshot freeze and formal backtest, while one independent
+worker prepares and validates public OKX data for the next queued strategy.
+This lets the next strategy reuse the canonical warehouse and fill only a
+missing or latest tail without waiting for the current formal calculation.
+Snapshot freezing remains on the formal worker so two large Parquet datasets
+are never loaded into memory at the same time.
+
+Official-data progress distinguishes `initial_download`,
+`shared_incremental_refresh`, `contract_checkpoint_reuse`, and
+`shared_cache_ready`. A strategy-specific progress counter therefore describes
+binding and validating its data contract; it does not imply that identical
+exchange/timeframe partitions are downloaded again.
+
 ## Positioning
 
 V13.4 prepares real Freqtrade smoke backtest execution and report export on top of the V13.3 strategy implementation.

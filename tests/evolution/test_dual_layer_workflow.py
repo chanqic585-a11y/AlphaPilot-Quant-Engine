@@ -205,6 +205,37 @@ class DualLayerWorkflowTests(unittest.TestCase):
         self.assertEqual(same.workflowRunId, completed.workflowRunId)
         self.assertEqual(self.calls, calls_before)
 
+    def test_data_preparation_can_stop_before_formal_backtest_and_resume(self) -> None:
+        dependencies = self.dependencies()
+
+        prepared = run_dual_layer_backtest_workflow(
+            self.workflow,
+            self.registry,
+            self.run.workflowRunId,
+            warehouse_root=self.root / "warehouse",
+            output_root=self.root / "output",
+            dependencies=dependencies,
+            stop_after_phase="building_validation_manifests",
+        )
+
+        self.assertEqual(prepared.status, "running")
+        self.assertEqual(
+            prepared.progress["completedPhases"], EXPECTED_PHASES[:6]
+        )
+        self.assertEqual(self.calls, ["smoke", "collect", "freeze", "pack"])
+
+        completed = run_dual_layer_backtest_workflow(
+            self.workflow,
+            self.registry,
+            self.run.workflowRunId,
+            warehouse_root=self.root / "warehouse",
+            output_root=self.root / "output",
+            dependencies=dependencies,
+        )
+
+        self.assertEqual(completed.status, "passed")
+        self.assertEqual(self.calls, ["smoke", "collect", "freeze", "pack", "backtest"])
+
     def test_default_workflow_dependencies_receive_live_pause_status_callback(self) -> None:
         self.assertIn(
             "stop_requested",

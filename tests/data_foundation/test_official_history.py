@@ -173,6 +173,33 @@ class CheckpointInspectingOkxClient(FakeOkxClient):
         return _frame(timeframe), 3
 
 
+class SharedTailCheckpointInspectingOkxClient(CheckpointInspectingOkxClient):
+    def history_candles(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        page_progress=None,
+        **_kwargs,
+    ):
+        self.history_calls.append((instrument_id, timeframe))
+        if page_progress is None:
+            raise AssertionError("collector_did_not_forward_page_progress")
+        page_progress(
+            {
+                "requestCount": 1,
+                "rowCount": 0,
+                "oldestTimestampMs": None,
+                "maxPages": 3,
+                "isFinalPage": True,
+            }
+        )
+        self.progress_snapshots.append(
+            json.loads(self.checkpoint_path.read_text(encoding="utf-8"))["inProgress"]
+        )
+        return _frame(timeframe).iloc[0:0].copy(), 1
+
+
 class TailRecordingOkxClient(FakeOkxClient):
     def __init__(self, *, return_tail: bool = False) -> None:
         super().__init__()
@@ -222,6 +249,31 @@ class OfficialHistoryCollectorTests(unittest.TestCase):
             self.assertEqual(
                 second.partitions[0].outputSha256,
                 first.partitions[0].outputSha256,
+            )
+
+    def test_shared_tail_progress_is_not_reported_as_a_full_download(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            first = OkxOfficialHistoryCollector(
+                client=FakeOkxClient(),
+                layout=layout,
+            ).collect(_single_partition_contract("contract_a"))
+            checkpoint = layout.checkpointRoot / "official-contract_b.json"
+            client = SharedTailCheckpointInspectingOkxClient(checkpoint)
+
+            second = OkxOfficialHistoryCollector(
+                client=client,
+                layout=layout,
+            ).collect(_single_partition_contract("contract_b"))
+
+            self.assertEqual(second.status, "completed")
+            self.assertEqual(client.progress_snapshots[0]["mode"], "shared_incremental_refresh")
+            self.assertEqual(
+                client.progress_snapshots[0]["baseRows"], first.partitions[0].rows
+            )
+            self.assertEqual(
+                client.progress_snapshots[0]["baseEndTime"],
+                first.partitions[0].endTime,
             )
 
     def test_shared_partition_with_wrong_hash_is_not_reused(self) -> None:
@@ -315,6 +367,9 @@ class OfficialHistoryCollectorTests(unittest.TestCase):
             self.assertEqual(first["timeframe"], "15m")
             self.assertEqual(first["requestCount"], 1)
             self.assertEqual(first["rowCount"], 100)
+            self.assertEqual(first["mode"], "initial_download")
+            self.assertEqual(first["baseRows"], 0)
+            self.assertIsNone(first["baseEndTime"])
             final_checkpoint = json.loads(checkpoint.read_text(encoding="utf-8"))
             self.assertNotIn("inProgress", final_checkpoint)
             self.assertEqual(len(final_checkpoint["completed"]), 4)

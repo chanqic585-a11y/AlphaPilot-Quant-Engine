@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+from concurrent.futures import Future, ThreadPoolExecutor
 import json
 from dataclasses import asdict
 from pathlib import Path
@@ -60,6 +61,7 @@ def _run_dual_layer_once(
     warehouse_root: Path | str,
     output_root: Path | str,
     queue_before_run: bool = False,
+    stop_after_phase: str | None = None,
 ):
     wait_seconds = 120.0 if queue_before_run else 0.0
     with workflow_worker_lock(
@@ -86,7 +88,53 @@ def _run_dual_layer_once(
             workflow_run_id,
             warehouse_root=warehouse_root,
             output_root=output_root,
+            stop_after_phase=stop_after_phase,
         )
+
+
+def _prepare_dual_layer_once(
+    workflow: WorkflowRepository,
+    registry: RegistryRepository,
+    workflow_run_id: str,
+    *,
+    warehouse_root: Path | str,
+    output_root: Path | str,
+):
+    return _run_dual_layer_once(
+        workflow,
+        registry,
+        workflow_run_id,
+        warehouse_root=warehouse_root,
+        output_root=output_root,
+        stop_after_phase="validating_official_data",
+    )
+
+
+def _registry_path(workflow: WorkflowRepository) -> Path:
+    for row in workflow.connection.execute("PRAGMA database_list").fetchall():
+        if str(row[1]) == "main" and str(row[2]).strip():
+            return Path(str(row[2])).resolve()
+    raise WorkflowError("workflow_registry_path_unavailable")
+
+
+def _prepare_backtest_in_fresh_connection(
+    *,
+    registry_path: Path | str,
+    workflow_run_id: str,
+    warehouse_root: Path | str,
+    output_root: Path | str,
+) -> None:
+    connection = connect_registry(registry_path, initialize=False)
+    try:
+        _prepare_dual_layer_once(
+            WorkflowRepository(connection),
+            RegistryRepository(connection),
+            workflow_run_id,
+            warehouse_root=warehouse_root,
+            output_root=output_root,
+        )
+    finally:
+        connection.close()
 
 
 def _run_selected_backtests(
@@ -137,40 +185,84 @@ def _run_selected_backtests(
         processed_ids: set[str] = set()
         processed_order: list[str] = []
         completed: list[dict[str, Any]] = []
-        while pending:
-            queued = pending.pop(0)
-            pending_ids.discard(queued.workflowRunId)
-            if queued.workflowRunId in processed_ids:
-                continue
-            processed_ids.add(queued.workflowRunId)
-            processed_order.append(queued.workflowRunId)
-            completed.append(
-                asdict(
-                    _run_dual_layer_once(
+        prefetch_future: Future[None] | None = None
+        prefetched_run_id: str | None = None
+        registry_path = _registry_path(workflow)
+        with ThreadPoolExecutor(
+            max_workers=1,
+            thread_name_prefix="alphapilot-data-prefetch",
+        ) as prefetch_executor:
+            while pending:
+                queued = pending.pop(0)
+                pending_ids.discard(queued.workflowRunId)
+                if queued.workflowRunId in processed_ids:
+                    continue
+                processed_ids.add(queued.workflowRunId)
+                processed_order.append(queued.workflowRunId)
+
+                if prefetched_run_id == queued.workflowRunId:
+                    assert prefetch_future is not None
+                    prefetch_future.result()
+                    prefetch_future = None
+                    prefetched_run_id = None
+                else:
+                    _prepare_dual_layer_once(
                         workflow,
                         registry,
                         queued.workflowRunId,
                         warehouse_root=warehouse_root,
                         output_root=output_root,
                     )
+
+                if prefetch_future is None:
+                    next_run = next(
+                        (
+                            candidate
+                            for candidate in pending
+                            if candidate.workflowRunId not in processed_ids
+                        ),
+                        None,
+                    )
+                    if next_run is not None:
+                        prefetched_run_id = next_run.workflowRunId
+                        prefetch_future = prefetch_executor.submit(
+                            _prepare_backtest_in_fresh_connection,
+                            registry_path=registry_path,
+                            workflow_run_id=next_run.workflowRunId,
+                            warehouse_root=warehouse_root,
+                            output_root=output_root,
+                        )
+
+                completed.append(
+                    asdict(
+                        _run_dual_layer_once(
+                            workflow,
+                            registry,
+                            queued.workflowRunId,
+                            warehouse_root=warehouse_root,
+                            output_root=output_root,
+                        )
+                    )
                 )
-            )
-            for candidate in workflow.list_workflow_runs(
-                stage="backtest",
-                status="queued",
-            ):
-                if (
-                    candidate.workflowRunId not in processed_ids
-                    and candidate.workflowRunId not in pending_ids
+                for candidate in workflow.list_workflow_runs(
+                    stage="backtest",
+                    status="queued",
                 ):
-                    pending.append(candidate)
-                    pending_ids.add(candidate.workflowRunId)
+                    if (
+                        candidate.workflowRunId not in processed_ids
+                        and candidate.workflowRunId not in pending_ids
+                    ):
+                        pending.append(candidate)
+                        pending_ids.add(candidate.workflowRunId)
         return {
             "processedCount": len(completed),
             "workflowRunIds": run_ids,
             "drainedWorkflowRunIds": processed_order,
             "runs": completed,
             "batchAlreadyRunning": False,
+            "dataPrefetchEnabled": True,
+            "formalWorkerCount": 1,
+            "dataPrefetchWorkerCount": 1,
         }
 
 

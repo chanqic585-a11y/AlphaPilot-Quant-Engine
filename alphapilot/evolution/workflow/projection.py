@@ -76,6 +76,9 @@ def _checkpoint_download_progress(
         "required": max(len(completed), required),
         "fundingFiles": funding_files,
     }
+    preparation_mode = str(checkpoint.get("preparationMode") or "").strip()
+    if preparation_mode:
+        progress["mode"] = preparation_mode
     active = checkpoint.get("inProgress")
     if isinstance(active, dict):
         instrument_id = str(active.get("instrumentId") or "")
@@ -84,6 +87,7 @@ def _checkpoint_download_progress(
         row_count = max(0, int(active.get("rowCount") or 0))
         max_pages = max(0, int(active.get("maxPages") or 0))
         if instrument_id and timeframe and max_pages > 0:
+            active_mode = str(active.get("mode") or preparation_mode).strip()
             progress["active"] = {
                 "instrumentId": instrument_id,
                 "timeframe": timeframe,
@@ -94,6 +98,15 @@ def _checkpoint_download_progress(
                 "percent": round(min(100.0, request_count / max_pages * 100), 1),
                 "updatedAt": active.get("updatedAt"),
             }
+            if active_mode:
+                progress["active"]["mode"] = active_mode
+                progress["mode"] = active_mode
+            if "baseRows" in active:
+                progress["active"]["baseRows"] = max(
+                    0, int(active.get("baseRows") or 0)
+                )
+            if "baseEndTime" in active:
+                progress["active"]["baseEndTime"] = active.get("baseEndTime")
     return progress
 
 

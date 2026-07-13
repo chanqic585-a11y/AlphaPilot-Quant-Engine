@@ -458,6 +458,7 @@ class OkxOfficialHistoryCollector:
         checkpoint = load_json(checkpoint_path)
         checkpoint.setdefault("schemaVersion", OFFICIAL_COLLECTION_SCHEMA_VERSION)
         checkpoint.setdefault("completed", {})
+        checkpoint.setdefault("preparationMode", "initial_download")
         instruments = self._candidate_instruments(contract.contract)
         timeframes = self._timeframes(contract.contract)
         partitions: list[OfficialPartition] = []
@@ -473,10 +474,11 @@ class OkxOfficialHistoryCollector:
                 key = f"{instrument_id}|{timeframe}"
                 reused = self._reuse_partition(checkpoint, key, endpoint)
                 if reused is not None:
+                    checkpoint["preparationMode"] = "contract_checkpoint_reuse"
                     active = checkpoint.get("inProgress")
                     if isinstance(active, dict) and active.get("key") == key:
                         checkpoint.pop("inProgress", None)
-                        write_json_atomic(checkpoint_path, checkpoint)
+                    write_json_atomic(checkpoint_path, checkpoint)
                     partitions.append(reused)
                     continue
                 shared_base = self._shared_partition_base(
@@ -490,6 +492,16 @@ class OkxOfficialHistoryCollector:
                         start_ms,
                         _timestamp_ms(shared_base.endTime),
                     )
+                preparation_mode = (
+                    "shared_incremental_refresh"
+                    if shared_base is not None
+                    else "initial_download"
+                )
+                checkpoint["preparationMode"] = preparation_mode
+                base_rows = shared_base.rows if shared_base is not None else 0
+                base_end_time = (
+                    shared_base.endTime if shared_base is not None else None
+                )
                 interval = TIMEFRAME_MILLISECONDS[timeframe]
                 elapsed_ms = max(
                     0,
@@ -514,6 +526,9 @@ class OkxOfficialHistoryCollector:
                         "oldestTimestampMs": progress.get("oldestTimestampMs"),
                         "maxPages": int(progress.get("maxPages") or max_pages),
                         "updatedAt": _utc_now(),
+                        "mode": preparation_mode,
+                        "baseRows": base_rows,
+                        "baseEndTime": base_end_time,
                     }
                     write_json_atomic(checkpoint_path, checkpoint)
 
@@ -598,6 +613,10 @@ class OkxOfficialHistoryCollector:
             status = "blocked"
         else:
             status = "completed"
+        if status == "completed":
+            checkpoint["preparationMode"] = "shared_cache_ready"
+            checkpoint.pop("inProgress", None)
+            write_json_atomic(checkpoint_path, checkpoint)
         result = OfficialCollectionResult(
             status=status,
             strategyDataContractId=contract.strategyDataContractId,
