@@ -405,6 +405,58 @@ class FormalStrategyBacktestTests(unittest.TestCase):
         self.assertEqual({config.stopLossPct for config in configs}, {0.0125})
         self.assertEqual({config.horizonBars for config in configs}, {48})
 
+    def test_opt_in_trend_runner_policy_is_passed_to_formal_execution_path(self) -> None:
+        version = StrategyVersionRecord(
+            **{
+                **self.version.__dict__,
+                "definition": {
+                    **self.version.definition,
+                    "exitPolicy": "two_r_half_atr_runner_v1",
+                },
+            }
+        )
+        captured = []
+
+        def fake_signals(panel: pd.DataFrame, *, overlay_id: str) -> pd.DataFrame:
+            row = panel.sort_values("date").iloc[60]
+            return pd.DataFrame([
+                {
+                    "pair": row["pair"],
+                    "timeframe": "4h",
+                    "signalDate": row["date"],
+                    "signalTimestampMs": int(row["date"].timestamp() * 1000),
+                    "direction": "long",
+                    "setupName": "fixture_signal",
+                    "overlayId": overlay_id,
+                }
+            ])
+
+        def capture_path(**kwargs):
+            captured.append(kwargs["config"])
+            return evaluate_prepared_fixed_r_path_real(**kwargs)
+
+        with patch(
+            "alphapilot.evolution.evaluation.formal_strategy_backtest.build_alpha191_observer_signals",
+            side_effect=fake_signals,
+        ), patch(
+            "alphapilot.evolution.evaluation.formal_strategy_backtest.evaluate_prepared_fixed_r_path",
+            side_effect=capture_path,
+        ):
+            result = run_formal_strategy_backtest(
+                strategy_version=version,
+                evaluation_binding=self.binding,
+                snapshot=self.snapshot,
+                manifest_root=self.manifests,
+            )
+
+        self.assertTrue(captured)
+        self.assertEqual({config.exitPolicy for config in captured}, {"two_r_half_atr_runner_v1"})
+        self.assertEqual(result.evidence["exitPolicy"], "two_r_half_atr_runner_v1")
+        self.assertEqual(result.evidence["plannedTargetR"], 2.0)
+        self.assertIn("averageGrossR", result.metrics)
+        self.assertIn("averageNetR", result.metrics)
+        self.assertIn("partialTargetCount", result.metrics)
+
     def test_unknown_signal_engine_fails_closed(self) -> None:
         version = StrategyVersionRecord(
             **{

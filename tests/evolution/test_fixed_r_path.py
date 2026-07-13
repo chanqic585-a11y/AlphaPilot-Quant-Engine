@@ -130,6 +130,85 @@ class FixedRPathTests(unittest.TestCase):
         self.assertGreater(stressed.slippageR, baseline.slippageR)
         self.assertLess(stressed.netR, baseline.netR)
 
+    def test_two_r_half_exit_leaves_runner_and_realizes_weighted_long_r(self) -> None:
+        result = evaluate_fixed_r_path(
+            signalTimestampMs=0,
+            direction="long",
+            executionFrame=bars(
+                [
+                    (1, 100, 111, 99, 109),
+                    (2, 109, 110, 104, 105),
+                ]
+            ),
+            config=self.config(
+                exitPolicy="two_r_half_atr_runner_v1",
+                partialTargetFraction=0.5,
+                runnerAtrMultiplier=2.5,
+                runnerLockR=1.0,
+            ),
+        )
+
+        self.assertEqual(result.exitPolicy, "two_r_half_atr_runner_v1")
+        self.assertEqual(result.partialExitTimestampMs, 1)
+        self.assertAlmostEqual(result.partialExitReferencePrice or 0, 110.0)
+        self.assertEqual(result.partialExitFraction, 0.5)
+        self.assertEqual(result.exitReason, "runner_stop")
+        self.assertAlmostEqual(result.runnerStopPrice or 0, 105.0)
+        self.assertAlmostEqual(result.grossR, 1.5)
+        self.assertAlmostEqual(result.netR, 1.5)
+
+    def test_two_r_half_exit_supports_short_and_preserves_target_floor(self) -> None:
+        result = evaluate_fixed_r_path(
+            signalTimestampMs=0,
+            direction="short",
+            executionFrame=bars(
+                [
+                    (1, 100, 101, 89, 91),
+                    (2, 91, 96, 90, 95),
+                ]
+            ),
+            config=self.config(exitPolicy="two_r_half_atr_runner_v1"),
+        )
+
+        self.assertEqual(result.exitReason, "runner_stop")
+        self.assertAlmostEqual(result.partialExitReferencePrice or 0, 90.0)
+        self.assertAlmostEqual(result.runnerStopPrice or 0, 95.0)
+        self.assertAlmostEqual(result.grossR, 1.5)
+
+    def test_two_r_runner_costs_are_weighted_by_remaining_position(self) -> None:
+        result = evaluate_fixed_r_path(
+            signalTimestampMs=0,
+            direction="long",
+            executionFrame=bars(
+                [
+                    (1, 100, 111, 99, 109),
+                    (2, 109, 110, 104, 105),
+                ]
+            ),
+            config=self.config(
+                exitPolicy="two_r_half_atr_runner_v1",
+                feeRate=0.001,
+                slippageRate=0.001,
+            ),
+            fundingFrame=pd.DataFrame(
+                {"timestamp_ms": [1, 2], "funding_rate": [0.001, 0.001]}
+            ),
+        )
+
+        self.assertGreater(result.feeR, 0)
+        self.assertGreater(result.slippageR, 0)
+        self.assertGreater(result.fundingR, 0)
+        self.assertLess(result.netR, result.grossR)
+
+    def test_unknown_exit_policy_fails_closed(self) -> None:
+        with self.assertRaisesRegex(ValueError, "fixed_r_exit_policy_invalid"):
+            evaluate_fixed_r_path(
+                signalTimestampMs=0,
+                direction="long",
+                executionFrame=bars([(1, 100, 101, 99, 100)]),
+                config=self.config(exitPolicy="unknown"),
+            )
+
     def test_prepared_path_preserves_golden_results_for_repeated_signals(self) -> None:
         frame = bars(
             [

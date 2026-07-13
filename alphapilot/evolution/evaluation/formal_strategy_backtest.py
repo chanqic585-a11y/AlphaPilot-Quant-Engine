@@ -148,6 +148,7 @@ def _regime_at(lookup: pd.Series, timestamp: int) -> str:
 
 def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
     net = [float(row["netR"]) for row in rows]
+    gross = [float(row["grossR"]) for row in rows]
     positives = sum(value for value in net if value > 0)
     negatives = abs(sum(value for value in net if value < 0))
     profit_factor = positives / negatives if negatives > 0 else (999.0 if positives else 0.0)
@@ -162,11 +163,15 @@ def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
         "tradeCount": len(rows),
         "profitFactor": round(profit_factor, 8),
         "averageNetR": round(sum(net) / len(net), 8) if net else 0.0,
+        "averageGrossR": round(sum(gross) / len(gross), 8) if gross else 0.0,
         "maximumDrawdownR": round(maximum_drawdown, 8),
         "winRate": round(sum(value > 0 for value in net) / len(net), 8)
         if net
         else 0.0,
         "ambiguousPathCount": sum(bool(row["ambiguousPath"]) for row in rows),
+        "partialTargetCount": sum(
+            float(row.get("partialExitFraction") or 0) > 0 for row in rows
+        ),
     }
 
 
@@ -300,6 +305,15 @@ def run_formal_strategy_backtest(
     else:
         raise ValueError(f"formal_signal_engine_not_supported:{signal_engine}")
     target_r = float(strategy_version.definition.get("targetR") or 0)
+    exit_policy = str(
+        strategy_version.definition.get("exitPolicy")
+        or "fixed_target_full_exit_v1"
+    )
+    if exit_policy not in {
+        "fixed_target_full_exit_v1",
+        "two_r_half_atr_runner_v1",
+    }:
+        raise ValueError(f"formal_exit_policy_not_supported:{exit_policy}")
     cost = manifests["cost"]
     if target_r < 2 or float(cost.get("targetR") or 0) < 2:
         raise ValueError("formal_target_r_below_2")
@@ -362,6 +376,7 @@ def run_formal_strategy_backtest(
             slippageRate=slippage_rate,
             latencyBars=baseline_latency,
             slippageMultiplier=baseline_stress,
+            exitPolicy=exit_policy,
         )
         try:
             outcome = evaluate_prepared_fixed_r_path(
@@ -400,6 +415,7 @@ def run_formal_strategy_backtest(
                     slippageRate=slippage_rate,
                     latencyBars=max(latency_values),
                     slippageMultiplier=max(stress_values),
+                    exitPolicy=exit_policy,
                 ),
             )
         except ValueError as exc:
@@ -462,11 +478,17 @@ def run_formal_strategy_backtest(
         "sourceFileHashes": source_hashes,
         "signalTimeframe": signal_timeframe,
         "executionTimeframe": execution_timeframe,
+        "exitPolicy": exit_policy,
+        "plannedTargetR": target_r,
         "formalResearchOnly": True,
         "orderCreation": False,
     }
     report_core = {
-        "schemaVersion": "formal_fixed_2r_backtest_v1",
+        "schemaVersion": (
+            "formal_fixed_2r_half_atr_runner_backtest_v1"
+            if exit_policy == "two_r_half_atr_runner_v1"
+            else "formal_fixed_2r_backtest_v1"
+        ),
         "metrics": metrics,
         "checks": checks,
         "evidence": evidence,
