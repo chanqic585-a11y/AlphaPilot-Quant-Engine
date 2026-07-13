@@ -22,7 +22,9 @@ from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.workflow.types import StrategyDataContractRecord
 
 
-def make_contract() -> StrategyDataContractRecord:
+def make_contract(
+    *, minimum_members: int = 2, target_members: int = 2
+) -> StrategyDataContractRecord:
     payload = {
         "schemaVersion": "strategy_data_contract_v1",
         "strategyVersionId": "strategy_version_snapshot_test",
@@ -34,7 +36,10 @@ def make_contract() -> StrategyDataContractRecord:
         "executionFallbackTimeframe": None,
         "requestedStart": "2020-01-01T00:00:00+00:00",
         "targetR": 2.0,
-        "universePolicy": {"minimumMembers": 2, "targetMembers": 2},
+        "universePolicy": {
+            "minimumMembers": minimum_members,
+            "targetMembers": target_members,
+        },
         "validationPolicy": {
             "purgedWalkForward": True,
             "unseenSymbolHoldout": True,
@@ -240,6 +245,58 @@ class FormalSnapshotTests(unittest.TestCase):
                     second_layout,
                     self.repository,
                 )
+
+    def test_excludes_gapped_instrument_when_dynamic_universe_stays_large_enough(
+        self,
+    ) -> None:
+        instruments = ("BTC-USDT-SWAP", "ETH-USDT-SWAP", "SOL-USDT-SWAP")
+        partitions = tuple(
+            write_ohlcv(
+                self.layout,
+                instrument,
+                timeframe,
+                gap=instrument == "SOL-USDT-SWAP",
+            )
+            for instrument in instruments
+            for timeframe in ("15m", "4h")
+        )
+        collection = OfficialCollectionResult(
+            status="completed",
+            strategyDataContractId="strategy_data_contract_snapshot_test",
+            instrumentCount=3,
+            completedPartitionCount=6,
+            reusedPartitionCount=0,
+            failedPartitionCount=0,
+            fundingFileCount=3,
+            partitions=partitions,
+            checkpointPath=str(self.layout.checkpointRoot / "fixture.json"),
+            generatedAt="2026-07-11T00:00:00+00:00",
+            fundingPaths=tuple(
+                str(write_funding(self.layout, instrument))
+                for instrument in instruments
+            ),
+        )
+
+        snapshot = freeze_formal_snapshot(
+            collection,
+            make_contract(minimum_members=2, target_members=3),
+            self.layout,
+            self.repository,
+        )
+
+        self.assertEqual(
+            snapshot.manifest["universeMembers"],
+            ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
+        )
+        self.assertEqual(len(snapshot.manifest["files"]), 6)
+        self.assertEqual(
+            snapshot.manifest["metadata"]["excludedInstruments"],
+            {
+                "SOL-USDT-SWAP": (
+                    "formal_partition_gap_detected:SOL-USDT-SWAP:15m"
+                )
+            },
+        )
 
 
 if __name__ == "__main__":

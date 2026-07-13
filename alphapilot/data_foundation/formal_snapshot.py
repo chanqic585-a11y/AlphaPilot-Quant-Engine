@@ -88,7 +88,9 @@ def _validate_partition(
     return frame
 
 
-def _validate_funding(path_value: str, layout: WarehouseLayout) -> Path:
+def _validate_funding(
+    path_value: str, layout: WarehouseLayout
+) -> tuple[Path, str]:
     path = Path(path_value)
     if not path.is_file() or not _inside(path, layout.canonicalRoot):
         raise FormalSnapshotError(f"formal_funding_path_invalid:{path}")
@@ -105,7 +107,10 @@ def _validate_funding(path_value: str, layout: WarehouseLayout) -> Path:
         raise FormalSnapshotError(
             f"formal_funding_invalid:{path}:{','.join(missing)}"
         )
-    return path
+    instruments = sorted(set(frame["instrument_id"].astype(str)))
+    if len(instruments) != 1:
+        raise FormalSnapshotError(f"formal_funding_instrument_invalid:{path}")
+    return path, instruments[0]
 
 
 def freeze_formal_snapshot(
@@ -118,15 +123,38 @@ def freeze_formal_snapshot(
         raise FormalSnapshotError(f"official_collection_not_complete:{collection.status}")
     if collection.strategyDataContractId != contract.strategyDataContractId:
         raise FormalSnapshotError("official_collection_contract_mismatch")
-    frames = [
-        (partition, _validate_partition(partition, layout))
-        for partition in collection.partitions
-    ]
+    partitions_by_instrument: dict[str, list[OfficialPartition]] = {}
+    for partition in collection.partitions:
+        partitions_by_instrument.setdefault(partition.instrumentId, []).append(
+            partition
+        )
+    frames: list[tuple[OfficialPartition, pd.DataFrame]] = []
+    excluded_instruments: dict[str, str] = {}
+    for instrument, partitions in sorted(partitions_by_instrument.items()):
+        validated: list[tuple[OfficialPartition, pd.DataFrame]] = []
+        try:
+            validated = [
+                (partition, _validate_partition(partition, layout))
+                for partition in partitions
+            ]
+        except FormalSnapshotError as error:
+            reason = str(error)
+            if reason.startswith("formal_partition_gap_detected:"):
+                excluded_instruments[instrument] = reason
+                continue
+            raise
+        frames.extend(validated)
     instruments = sorted({partition.instrumentId for partition, _ in frames})
     minimum_members = int(
         (contract.contract.get("universePolicy") or {}).get("minimumMembers", 1)
     )
     if len(instruments) < minimum_members:
+        if excluded_instruments:
+            first_reason = next(iter(excluded_instruments.values()))
+            raise FormalSnapshotError(
+                f"{first_reason}:formal_universe_too_small:"
+                f"{len(instruments)}:{minimum_members}"
+            )
         raise FormalSnapshotError(
             f"formal_universe_too_small:{len(instruments)}:{minimum_members}"
         )
@@ -156,12 +184,21 @@ def freeze_formal_snapshot(
         raise FormalSnapshotError(
             f"formal_universe_timeframes_missing:{','.join(incomplete)}"
         )
-    funding_paths = [
+    validated_funding = [
         _validate_funding(value, layout) for value in collection.fundingPaths
     ]
-    if len(funding_paths) < minimum_members:
+    funding_paths = [
+        path for path, instrument in validated_funding if instrument in instruments
+    ]
+    funding_instruments = {
+        instrument
+        for _, instrument in validated_funding
+        if instrument in instruments
+    }
+    if len(funding_instruments) < minimum_members:
         raise FormalSnapshotError(
-            f"formal_funding_coverage_too_small:{len(funding_paths)}:{minimum_members}"
+            "formal_funding_coverage_too_small:"
+            f"{len(funding_instruments)}:{minimum_members}"
         )
     all_paths = [Path(partition.outputPath) for partition, _ in frames if partition.outputPath]
     all_paths.extend(funding_paths)
@@ -184,6 +221,7 @@ def freeze_formal_snapshot(
             "formalResearchEligible": True,
             "formalPromotionEligible": True,
             "evidenceClass": "formal_backtest",
+            "excludedInstruments": excluded_instruments,
             "strategyDataContractId": contract.strategyDataContractId,
             "strategyDataContractHash": contract.contentHash,
             "universeManifestHash": stable_hash(
