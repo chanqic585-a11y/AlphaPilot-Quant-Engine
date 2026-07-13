@@ -403,6 +403,7 @@ def decide_bounded_optimization(value: OptimizationInput) -> OptimizationDecisio
     proposed_parameters, changed_parameter = mutation
     attempt_number = value.completedAttempts + 1
     proposed_definition = dict(value.definition)
+    proposed_definition["exitPolicy"] = "two_r_half_atr_runner_v1"
     proposed_definition["optimizationLineage"] = {
         "schemaVersion": "bounded_optimization_lineage_v1",
         "campaignId": stable_hash(

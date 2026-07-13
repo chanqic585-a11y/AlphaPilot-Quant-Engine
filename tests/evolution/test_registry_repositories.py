@@ -97,6 +97,14 @@ class RegistryRepositoryTests(unittest.TestCase):
         self.assertEqual(self.repository.get_factor_definition("factor_test"), factor)
         self.assertNotEqual(first_event.auditEventId, second_event.auditEventId)
         self.assertEqual(self.repository.count("AuditEvents"), 2)
+        self.assertEqual(
+            self.repository.list_audit_events(
+                event_type="factor_registered",
+                entity_type="FactorDefinition",
+                entity_id=factor.factorDefinitionId,
+            ),
+            [first_event],
+        )
 
     def test_outcome_ledger_is_immutable_and_filterable(self) -> None:
         snapshot = DataSnapshotRecord(

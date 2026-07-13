@@ -16,6 +16,7 @@ from alphapilot.data_foundation.research_smoke import run_research_smoke
 from alphapilot.data_foundation.warehouse import WarehouseLayout
 
 from .backtest import run_backtest_workflow
+from .bounded_optimization_service import process_bounded_optimization_result
 from .bootstrap import (
     register_alpha191_observer,
     register_optimized_legacy_strategy,
@@ -277,17 +278,20 @@ def _run_selected_backtests(
 
                 schedule_pending_prefetches()
 
-                completed.append(
-                    asdict(
-                        _run_dual_layer_once(
-                            workflow,
-                            registry,
-                            queued.workflowRunId,
-                            warehouse_root=warehouse_root,
-                            output_root=output_root,
-                        )
-                    )
+                finished = _run_dual_layer_once(
+                    workflow,
+                    registry,
+                    queued.workflowRunId,
+                    warehouse_root=warehouse_root,
+                    output_root=output_root,
                 )
+                completed.append(asdict(finished))
+                if finished.status in {"passed", "failed", "blocked"}:
+                    process_bounded_optimization_result(
+                        workflow,
+                        registry,
+                        finished,
+                    )
                 for candidate in workflow.list_workflow_runs(
                     stage="backtest",
                     status="queued",

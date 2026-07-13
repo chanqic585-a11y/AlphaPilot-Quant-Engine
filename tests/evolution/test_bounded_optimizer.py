@@ -152,6 +152,10 @@ class BoundedOptimizerTests(unittest.TestCase):
         self.assertEqual(first.proposedParameters["volume_min"], 1.2)
         self.assertEqual(first.proposedDefinition["targetR"], 2.0)
         self.assertEqual(
+            first.proposedDefinition["exitPolicy"],
+            "two_r_half_atr_runner_v1",
+        )
+        self.assertEqual(
             first.proposedDefinition["optimizationLineage"]["phase"],
             "selection",
         )

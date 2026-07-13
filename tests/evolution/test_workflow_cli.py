@@ -18,6 +18,7 @@ from alphapilot.evolution.workflow.cli import (
 )
 from alphapilot.evolution.workflow.repository import WorkflowRepository
 from alphapilot.evolution.workflow.service import (
+    complete_workflow_run,
     pause_workflow_run,
     queue_workflow_run,
     start_workflow_run,
@@ -223,6 +224,93 @@ class WorkflowCliTests(unittest.TestCase):
             self.assertEqual(repository.list_live_releases(), [])
         finally:
             connection.close()
+
+    def test_failed_backtest_drains_three_bounded_challengers_in_same_batch(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        projection = self.run_cli("projection")
+        root = next(
+            item
+            for item in projection["items"]
+            if item["optimizationContext"]["definition"]["signalFamily"]
+            == "ema_reclaim_long"
+        )
+        metrics = {
+            "bySplit": {
+                split: {
+                    "tradeCount": 40,
+                    "profitFactor": 1.0,
+                    "averageNetR": 0.02,
+                    "maximumDrawdownR": 8.0,
+                }
+                for split in ("development", "walk_forward")
+            },
+            "costStress": {
+                "bySplit": {
+                    split: {"tradeCount": 40, "averageNetR": 0.01}
+                    for split in ("development", "walk_forward")
+                }
+            },
+        }
+
+        def fail_run(workflow, _registry, workflow_run_id, **_kwargs):
+            current = workflow.get_workflow_run(workflow_run_id)
+            assert current is not None
+            if current.status == "queued":
+                current = start_workflow_run(
+                    workflow,
+                    current.workflowRunId,
+                    actor="worker",
+                )
+            return complete_workflow_run(
+                workflow,
+                current.workflowRunId,
+                status="failed",
+                actor="worker",
+                result={"metrics": metrics, "checks": {"minimumProfitFactor": False}},
+                evidence={"fixture": "bounded_campaign"},
+                failure={
+                    "category": "strategy_performance",
+                    "summary": "Selection profit factor is below the gate.",
+                    "retryDisposition": "new_version_required",
+                    "metrics": {"failedChecks": ["minimumProfitFactor"]},
+                    "suggestions": ["Run bounded optimization."],
+                },
+            )
+
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            side_effect=fail_run,
+        ):
+            result = self.run_cli(
+                "run-selected-backtests",
+                "--run-id",
+                root["workflowRunId"],
+            )
+
+        self.assertEqual(result["processedCount"], 4)
+        self.assertEqual(len(result["drainedWorkflowRunIds"]), 4)
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            registry = RegistryRepository(connection)
+            versions = [
+                version
+                for version in workflow.list_strategy_versions()
+                if (
+                    version.definition.get("optimizationLineage") or {}
+                ).get("rootStrategyVersionId")
+                == root["strategyVersionId"]
+            ]
+            events = registry.list_audit_events(
+                event_type="bounded_auto_optimization",
+                entity_type="StrategyVersion",
+                entity_id=root["strategyVersionId"],
+            )
+        finally:
+            connection.close()
+        self.assertEqual(len(versions), 3)
+        self.assertEqual(len(events), 4)
+        self.assertEqual(events[-1].payload["terminalStatus"], "budget_exhausted")
 
     def test_short_cycle_bootstrap_does_not_reset_an_existing_run(self) -> None:
         self.run_cli("bootstrap-short-cycle")

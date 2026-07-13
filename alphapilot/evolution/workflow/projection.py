@@ -146,6 +146,24 @@ def build_workflow_projection(
             "required": int(artifacts.get("requiredPartitions") or 0),
             "fundingFiles": funding_files,
         }
+        optimization_lineage = version.definition.get("optimizationLineage")
+        optimization_lineage = (
+            optimization_lineage if isinstance(optimization_lineage, dict) else {}
+        )
+        optimization_campaign = {
+            "rootStrategyVersionId": str(
+                optimization_lineage.get("rootStrategyVersionId")
+                or version.strategyVersionId
+            ),
+            "campaignId": optimization_lineage.get("campaignId"),
+            "phase": optimization_lineage.get("phase") or "root",
+            "attemptNumber": int(optimization_lineage.get("attemptNumber") or 0),
+            "maxAttempts": int(optimization_lineage.get("maxAttempts") or 3),
+            "changedParameter": optimization_lineage.get("changedParameter"),
+            "formalValidationConsumed": bool(
+                optimization_lineage.get("formalValidationConsumed")
+            ),
+        }
         item = {
             "strategyVersionId": version.strategyVersionId,
             "strategyFamilyId": version.strategyFamilyId,
@@ -215,6 +233,7 @@ def build_workflow_projection(
                 "failureSuggestions": list(diagnosis.suggestions) if diagnosis else [],
                 "targetRFloor": 2.0,
             },
+            "optimizationCampaign": optimization_campaign,
             "historyEventCount": len(events),
             "archived": version.status == "archived",
         }

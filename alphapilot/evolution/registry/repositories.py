@@ -1203,6 +1203,41 @@ class RegistryRepository:
             )
         return record
 
+    def list_audit_events(
+        self,
+        *,
+        event_type: str | None = None,
+        entity_type: str | None = None,
+        entity_id: str | None = None,
+    ) -> list[AuditEventRecord]:
+        clauses: list[str] = []
+        params: list[Any] = []
+        if event_type is not None:
+            clauses.append("eventType = ?")
+            params.append(event_type)
+        if entity_type is not None:
+            clauses.append("entityType = ?")
+            params.append(entity_type)
+        if entity_id is not None:
+            clauses.append("entityId = ?")
+            params.append(entity_id)
+        query = "SELECT * FROM AuditEvents"
+        if clauses:
+            query += " WHERE " + " AND ".join(clauses)
+        query += " ORDER BY createdAt, rowid"
+        rows = self.connection.execute(query, params).fetchall()
+        return [
+            AuditEventRecord(
+                auditEventId=row["auditEventId"],
+                eventType=row["eventType"],
+                entityType=row["entityType"],
+                entityId=row["entityId"],
+                payload=_decode_json(row["payloadJson"]),
+                createdAt=row["createdAt"],
+            )
+            for row in rows
+        ]
+
     @staticmethod
     def _assert_same_hash(record_id: str, existing_hash: str, incoming_hash: str) -> None:
         if existing_hash != incoming_hash:

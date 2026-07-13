@@ -1,5 +1,30 @@
 # AlphaPilot Quant Engine
 
+## Bounded Auto-Optimization and 2R Trend Runner
+
+Failed strategy-performance backtests can now enter one audited optimization
+campaign. The campaign creates immutable Challenger versions, changes one
+allowlisted parameter per attempt, and drains at most three attempts through
+the normal formal worker queue. Operational/data failures stop immediately;
+structurally weak candidates stop early; exhausted candidates remain failed.
+No result is force-passed.
+
+Parameter selection reads only development and walk-forward summaries. Holdout
+and locked-OOS values are excluded from the Challenger result payload and audit
+decision. A selected Challenger receives one formal locked validation; that
+formal result is not fed back into another tuning round.
+
+Automatically optimized Challengers use `two_r_half_atr_runner_v1`: close 50%
+at the first gross `+2R` target, then manage the remainder with a confirmed-bar
+ATR14 x2.5 trailing stop and a `+1R` floor. This can realize less or more than
+2R for the complete trade; for example, half at +2R and half at +1R is +1.5R
+gross before fees, slippage, and funding. Existing fixed-target strategy
+versions retain their original immutable behavior.
+
+This workflow creates no Demo/Live release, stores no credential, and grants no
+order permission. See
+`docs/superpowers/specs/2026-07-14-bounded-auto-optimization-trend-runner-demo-diagnostics-design.md`.
+
 ## V13.27.8 Shared Official Market Data
 
 V13.27.8 makes verified OKX public OHLCV a shared warehouse asset instead of
