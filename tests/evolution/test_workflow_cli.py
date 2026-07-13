@@ -92,6 +92,47 @@ class WorkflowCliTests(unittest.TestCase):
             "validating_official_data",
         )
 
+    def test_backtest_queue_prioritizes_runs_with_ready_official_data(self) -> None:
+        from alphapilot.evolution.workflow.cli import _prioritize_backtest_runs
+
+        waiting_for_data = Mock(
+            workflowRunId="waiting_for_data",
+            progress={"completedPhases": ["checking_local_data"]},
+        )
+        ready_for_formal = Mock(
+            workflowRunId="ready_for_formal",
+            progress={
+                "completedPhases": [
+                    "checking_local_data",
+                    "research_smoke_running",
+                    "preparing_official_data",
+                    "validating_official_data",
+                    "freezing_data_snapshot",
+                    "building_validation_manifests",
+                ]
+            },
+        )
+        validated_data = Mock(
+            workflowRunId="validated_data",
+            progress={
+                "completedPhases": [
+                    "checking_local_data",
+                    "research_smoke_running",
+                    "preparing_official_data",
+                    "validating_official_data",
+                ]
+            },
+        )
+
+        ordered = _prioritize_backtest_runs(
+            [waiting_for_data, ready_for_formal, validated_data]
+        )
+
+        self.assertEqual(
+            [run.workflowRunId for run in ordered],
+            ["ready_for_formal", "validated_data", "waiting_for_data"],
+        )
+
     def test_bootstrap_and_projection_are_idempotent(self) -> None:
         first = self.run_cli("bootstrap")
         second = self.run_cli("bootstrap")

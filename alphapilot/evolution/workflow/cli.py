@@ -137,6 +137,15 @@ def _prepare_backtest_in_fresh_connection(
         connection.close()
 
 
+def _prioritize_backtest_runs(runs: Sequence[Any]) -> list[Any]:
+    def completed_phase_count(run: Any) -> int:
+        progress = run.progress if isinstance(run.progress, dict) else {}
+        completed_phases = progress.get("completedPhases")
+        return len(completed_phases) if isinstance(completed_phases, list) else 0
+
+    return sorted(runs, key=completed_phase_count, reverse=True)
+
+
 def _run_selected_backtests(
     workflow: WorkflowRepository,
     registry: RegistryRepository,
@@ -166,12 +175,14 @@ def _run_selected_backtests(
             )
         validated_runs.append(run)
 
-    queued_runs = [
-        queue_workflow_run(workflow, run.workflowRunId, actor="user")
-        if run.status in {"awaiting", "paused"}
-        else run
-        for run in validated_runs
-    ]
+    queued_runs = _prioritize_backtest_runs(
+        [
+            queue_workflow_run(workflow, run.workflowRunId, actor="user")
+            if run.status in {"awaiting", "paused"}
+            else run
+            for run in validated_runs
+        ]
+    )
     with workflow_batch_lock(output_root) as batch_acquired:
         if not batch_acquired:
             return {
