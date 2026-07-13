@@ -9,7 +9,7 @@ from typing import Any
 
 from alphapilot.evolution.registry.hashing import canonical_json, stable_hash
 from alphapilot.evolution.registry.repositories import ImmutableRecordConflict
-from alphapilot.evolution.registry.types import utc_now
+from alphapilot.evolution.registry.types import AuditEventRecord, utc_now
 
 from .states import WorkflowConflict, validate_stage, validate_status
 from .types import (
@@ -150,6 +150,88 @@ class WorkflowRepository:
                 f"strategy_version_missing_after_update:{strategy_version_id}"
             )
         return replace(stored, status=next_status)
+
+    def commit_structural_redesign(
+        self,
+        *,
+        parent_strategy_version_id: str,
+        expected_parent_status: str,
+        child: StrategyVersionRecord,
+        child_run: WorkflowRunRecord,
+        child_event: StageEventRecord,
+        parent_event: StageEventRecord,
+        audit_events: tuple[AuditEventRecord, ...],
+    ) -> None:
+        """Persist a redesign child and retire its parent in one transaction."""
+
+        try:
+            with self.connection:
+                parent = self.connection.execute(
+                    "SELECT status FROM StrategyVersions WHERE strategyVersionId = ?",
+                    (parent_strategy_version_id,),
+                ).fetchone()
+                if parent is None:
+                    raise WorkflowConflict(
+                        f"strategy_version_missing:{parent_strategy_version_id}"
+                    )
+                if parent["status"] != expected_parent_status:
+                    raise WorkflowConflict(
+                        "strategy_version_status_changed:"
+                        f"{parent_strategy_version_id}:{expected_parent_status}"
+                    )
+                self._insert_strategy_version_record(child)
+                self._insert_workflow_run_record(child_run)
+                self._insert_stage_event(child_event)
+                for audit_event in audit_events:
+                    self._insert_audit_event_record(audit_event)
+                cursor = self.connection.execute(
+                    """
+                    UPDATE StrategyVersions SET status = 'archived'
+                    WHERE strategyVersionId = ? AND status = ?
+                    """,
+                    (parent_strategy_version_id, expected_parent_status),
+                )
+                if cursor.rowcount != 1:
+                    raise WorkflowConflict(
+                        "strategy_version_status_changed:"
+                        f"{parent_strategy_version_id}:{expected_parent_status}"
+                    )
+                self._insert_stage_event(parent_event)
+        except sqlite3.IntegrityError as error:
+            raise WorkflowConflict(
+                f"structural_redesign_transaction_conflict:{error}"
+            ) from error
+
+    def commit_structural_redesign_stop(
+        self,
+        *,
+        parent_strategy_version_id: str,
+        expected_parent_status: str,
+        parent_event: StageEventRecord,
+        audit_event: AuditEventRecord,
+    ) -> None:
+        """Archive a terminal structural campaign and record why it stopped."""
+
+        try:
+            with self.connection:
+                cursor = self.connection.execute(
+                    """
+                    UPDATE StrategyVersions SET status = 'archived'
+                    WHERE strategyVersionId = ? AND status = ?
+                    """,
+                    (parent_strategy_version_id, expected_parent_status),
+                )
+                if cursor.rowcount != 1:
+                    raise WorkflowConflict(
+                        "strategy_version_status_changed:"
+                        f"{parent_strategy_version_id}:{expected_parent_status}"
+                    )
+                self._insert_audit_event_record(audit_event)
+                self._insert_stage_event(parent_event)
+        except sqlite3.IntegrityError as error:
+            raise WorkflowConflict(
+                f"structural_redesign_stop_conflict:{error}"
+            ) from error
 
     def create_gate_profile(self, record: GateProfileRecord) -> GateProfileRecord:
         validate_stage(record.stage)
@@ -599,6 +681,78 @@ class WorkflowRepository:
                 record.actor,
                 canonical_json(record.evidence),
                 record.contentHash,
+                record.createdAt,
+            ),
+        )
+
+    def _insert_strategy_version_record(self, record: StrategyVersionRecord) -> None:
+        self.connection.execute(
+            """
+            INSERT INTO StrategyVersions(
+              strategyVersionId, strategyFamilyId, parentStrategyVersionId,
+              strategyCandidateId, displayName, sourceType, status,
+              definitionJson, parametersJson, modelArtifactId, contentHash, createdAt
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                record.strategyVersionId,
+                record.strategyFamilyId,
+                record.parentStrategyVersionId,
+                record.strategyCandidateId,
+                record.displayName,
+                record.sourceType,
+                record.status,
+                canonical_json(record.definition),
+                canonical_json(record.parameters),
+                record.modelArtifactId,
+                record.contentHash,
+                record.createdAt,
+            ),
+        )
+
+    def _insert_workflow_run_record(self, record: WorkflowRunRecord) -> None:
+        self.connection.execute(
+            """
+            INSERT INTO WorkflowRuns(
+              workflowRunId, strategyVersionId, stage, status, attemptNumber,
+              gateProfileId, riskProfileId, idempotencyKey, progressJson,
+              resultJson, startedAt, checkpointAt, completedAt, contentHash,
+              createdAt, updatedAt
+            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                record.workflowRunId,
+                record.strategyVersionId,
+                record.stage,
+                record.status,
+                record.attemptNumber,
+                record.gateProfileId,
+                record.riskProfileId,
+                record.idempotencyKey,
+                canonical_json(record.progress),
+                canonical_json(record.result),
+                record.startedAt,
+                record.checkpointAt,
+                record.completedAt,
+                record.contentHash,
+                record.createdAt,
+                record.updatedAt,
+            ),
+        )
+
+    def _insert_audit_event_record(self, record: AuditEventRecord) -> None:
+        self.connection.execute(
+            """
+            INSERT INTO AuditEvents(
+              auditEventId, eventType, entityType, entityId, payloadJson, createdAt
+            ) VALUES (?, ?, ?, ?, ?, ?)
+            """,
+            (
+                record.auditEventId,
+                record.eventType,
+                record.entityType,
+                record.entityId,
+                canonical_json(record.payload),
                 record.createdAt,
             ),
         )
