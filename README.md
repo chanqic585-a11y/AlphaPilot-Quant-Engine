@@ -1,5 +1,36 @@
 # AlphaPilot Quant Engine
 
+## Bounded Structural Redesign Loop
+
+When bounded parameter optimization classifies a formal research result as
+structurally weak, AlphaPilot may create one immutable child from a registered,
+deterministic strategy recipe. The failed parent is archived only in the same
+SQLite transaction that registers the child, queues its backtest, and appends
+the redesign audit records. A retry returns the same child instead of creating
+duplicates.
+
+Structural generations are limited to `1/3`, `2/3`, and `3/3`. This budget is
+separate from the existing three-attempt parameter-optimization budget. Recipe
+selection uses development and walk-forward evidence only; holdout and locked
+validation metrics are excluded. Missing data, network, and worker failures do
+not trigger redesign, and no strategy is forced through a failed gate.
+
+Recovery is explicit and idempotent:
+
+```powershell
+python -m alphapilot.evolution.workflow.cli `
+  --registry data/evolution_registry.sqlite `
+  recover-structural-redesigns
+```
+
+Before its first recovery mutation, the command creates an online SQLite backup
+under the registry's sibling `backups/` directory. Generated children remain in
+the existing serial formal-backtest queue; the feature does not add another
+formal worker. Every generated strategy remains research-only with
+`targetR >= 2R`. Backtest, Local Forward, immutable OKX Demo Release, Demo risk,
+and Live approval gates are unchanged. No API credential, Withdraw capability,
+or order permission is introduced.
+
 ## Bounded Auto-Optimization and 2R Trend Runner
 
 Failed strategy-performance backtests can now enter one audited optimization
