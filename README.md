@@ -109,8 +109,28 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.27.8 - Shared Official Market Data
+AlphaPilot V13.27.11 - Formal Backtest Performance and Reliability
 ```
+
+## V13.27.11 Formal Backtest Performance
+
+The fixed-2R evaluator now prepares each immutable execution and funding path
+once per instrument. Repeated signals use binary timestamp lookup and the same
+conservative stop-first candle rules, fees, slippage, funding, latency, MFE and
+MAE formulas. This is a calculation-path optimization only; formal evidence and
+gate semantics are unchanged.
+
+Run the deterministic parity and performance benchmark with:
+
+```powershell
+.venv\Scripts\python.exe scripts\benchmark_formal_fixed_r_path.py
+```
+
+The benchmark fails if result hashes differ or if the prepared path is less
+than 10x faster than repeated frame preparation. Local validation on 120,000
+candles and 600 signals produced identical results and more than 70x speedup;
+actual end-to-end runtime also depends on strategy signal generation,
+snapshot loading, storage and machine load.
 
 ## Positioning
 

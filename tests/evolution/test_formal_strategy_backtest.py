@@ -12,7 +12,8 @@ from alphapilot.evolution.evaluation.formal_strategy_backtest import (
     run_formal_strategy_backtest,
 )
 from alphapilot.evolution.evaluation.fixed_r_path import (
-    evaluate_fixed_r_path as evaluate_fixed_r_path_real,
+    evaluate_prepared_fixed_r_path as evaluate_prepared_fixed_r_path_real,
+    prepare_fixed_r_execution_path as prepare_fixed_r_execution_path_real,
 )
 from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
 from alphapilot.evolution.registry.types import DataSnapshotRecord
@@ -279,6 +280,50 @@ class FormalStrategyBacktestTests(unittest.TestCase):
                 manifest_root=self.manifests,
             )
 
+    def test_adapter_prepares_execution_path_once_per_instrument(self) -> None:
+        source = pd.Timestamp("2024-01-02 00:00", tz="UTC")
+        signals = pd.DataFrame(
+            [
+                {
+                    "pair": "ETH/USDT:USDT",
+                    "timeframe": "4h",
+                    "signalDate": source + pd.Timedelta(hours=offset),
+                    "signalTimestampMs": int(
+                        (source + pd.Timedelta(hours=offset)).timestamp() * 1000
+                    ),
+                    "direction": "long",
+                    "setupName": "fixture_signal",
+                    "overlayId": "a191_short_exhaustion_quality_v01",
+                }
+                for offset in (0, 4, 8)
+            ]
+        )
+        prepare_calls: list[int] = []
+
+        def capture_prepare(execution_frame, funding_frame=None):
+            prepare_calls.append(id(execution_frame))
+            return prepare_fixed_r_execution_path_real(
+                execution_frame, funding_frame
+            )
+
+        with patch(
+            "alphapilot.evolution.evaluation.formal_strategy_backtest.build_alpha191_observer_signals",
+            return_value=signals,
+        ), patch(
+            "alphapilot.evolution.evaluation.formal_strategy_backtest.prepare_fixed_r_execution_path",
+            side_effect=capture_prepare,
+            create=True,
+        ):
+            result = run_formal_strategy_backtest(
+                strategy_version=self.version,
+                evaluation_binding=self.binding,
+                snapshot=self.snapshot,
+                manifest_root=self.manifests,
+            )
+
+        self.assertGreater(result.metrics["tradeCount"], 0)
+        self.assertEqual(len(prepare_calls), 1)
+
     def test_short_cycle_dispatch_uses_signal_stop_and_converted_horizon(self) -> None:
         version = StrategyVersionRecord(
             **{
@@ -335,7 +380,7 @@ class FormalStrategyBacktestTests(unittest.TestCase):
 
         def capture_path(**kwargs):
             configs.append(kwargs["config"])
-            return evaluate_fixed_r_path_real(**kwargs)
+            return evaluate_prepared_fixed_r_path_real(**kwargs)
 
         with patch(
             "alphapilot.evolution.evaluation.formal_strategy_backtest.build_short_cycle_formal_signals",
@@ -343,7 +388,7 @@ class FormalStrategyBacktestTests(unittest.TestCase):
         ) as short_builder, patch(
             "alphapilot.evolution.evaluation.formal_strategy_backtest.build_alpha191_observer_signals"
         ) as alpha_builder, patch(
-            "alphapilot.evolution.evaluation.formal_strategy_backtest.evaluate_fixed_r_path",
+            "alphapilot.evolution.evaluation.formal_strategy_backtest.evaluate_prepared_fixed_r_path",
             side_effect=capture_path,
         ):
             result = run_formal_strategy_backtest(

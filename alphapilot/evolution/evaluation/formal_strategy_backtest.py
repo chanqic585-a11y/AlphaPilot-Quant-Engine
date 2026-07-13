@@ -24,7 +24,12 @@ from alphapilot.reports.generate_v13_5_23_alpha191_crypto_subset_replay_report i
     build_alpha191_observer_signals,
 )
 
-from .fixed_r_path import FixedRPathConfig, evaluate_fixed_r_path
+from .fixed_r_path import (
+    FixedRPathConfig,
+    PreparedFixedRExecutionPath,
+    evaluate_prepared_fixed_r_path,
+    prepare_fixed_r_execution_path,
+)
 from .short_cycle_signals import build_short_cycle_formal_signals
 
 
@@ -137,8 +142,8 @@ def _regime_lookup(signal_frames: dict[str, pd.DataFrame]) -> pd.Series:
 def _regime_at(lookup: pd.Series, timestamp: int) -> str:
     if lookup.empty:
         return "unknown"
-    eligible = lookup[lookup.index <= timestamp]
-    return str(eligible.iloc[-1]) if not eligible.empty else "unknown"
+    position = int(lookup.index.searchsorted(timestamp, side="right")) - 1
+    return str(lookup.iloc[position]) if position >= 0 else "unknown"
 
 
 def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
@@ -311,6 +316,8 @@ def run_formal_strategy_backtest(
     stress_net: list[float] = []
     stress_missing_count = 0
     short_cycle_last_exit: dict[str, int] = {}
+    prepared_execution_paths: dict[str, PreparedFixedRExecutionPath] = {}
+    signal_timestamp_indexes: dict[str, pd.Index] = {}
     for _, signal in signals.iterrows():
         instrument = _pair_to_instrument(str(signal["pair"]))
         execution = execution_frames.get(instrument)
@@ -318,16 +325,28 @@ def run_formal_strategy_backtest(
         if execution is None or signal_source is None:
             continue
         timestamp = int(signal["signalTimestampMs"])
+        prepared_path = prepared_execution_paths.get(instrument)
+        if prepared_path is None:
+            prepared_path = prepare_fixed_r_execution_path(
+                execution,
+                funding.get(instrument),
+            )
+            prepared_execution_paths[instrument] = prepared_path
         if signal_engine == "short_cycle_v1":
             signal_index = int(signal["signalIndex"])
             if timestamp <= short_cycle_last_exit.get(instrument, -1):
                 continue
             row_stop_loss_pct = float(signal["stopLossPct"])
         else:
-            ordered_timestamps = pd.to_numeric(
-                signal_source.sort_values("timestamp_ms")["timestamp_ms"]
-            ).astype("int64").tolist()
-            signal_index = int(pd.Series(ordered_timestamps).searchsorted(timestamp))
+            timestamp_index = signal_timestamp_indexes.get(instrument)
+            if timestamp_index is None:
+                timestamp_index = pd.Index(
+                    pd.to_numeric(
+                        signal_source.sort_values("timestamp_ms")["timestamp_ms"]
+                    ).astype("int64")
+                )
+                signal_timestamp_indexes[instrument] = timestamp_index
+            signal_index = int(timestamp_index.searchsorted(timestamp))
             row_stop_loss_pct = stop_loss_pct
         split, fold = _split_for_signal(
             instrument=instrument,
@@ -345,12 +364,11 @@ def run_formal_strategy_backtest(
             slippageMultiplier=baseline_stress,
         )
         try:
-            outcome = evaluate_fixed_r_path(
+            outcome = evaluate_prepared_fixed_r_path(
                 signalTimestampMs=timestamp,
                 direction=str(signal["direction"]),
-                executionFrame=execution,
+                preparedPath=prepared_path,
                 config=base_config,
-                fundingFrame=funding.get(instrument),
             )
         except ValueError as exc:
             if str(exc) == "fixed_r_entry_bar_missing":
@@ -370,10 +388,10 @@ def run_formal_strategy_backtest(
         if signal_engine == "short_cycle_v1":
             short_cycle_last_exit[instrument] = int(outcome.exitTimestampMs)
         try:
-            stressed = evaluate_fixed_r_path(
+            stressed = evaluate_prepared_fixed_r_path(
                 signalTimestampMs=timestamp,
                 direction=str(signal["direction"]),
-                executionFrame=execution,
+                preparedPath=prepared_path,
                 config=FixedRPathConfig(
                     stopLossPct=row_stop_loss_pct,
                     targetR=target_r,
@@ -383,7 +401,6 @@ def run_formal_strategy_backtest(
                     latencyBars=max(latency_values),
                     slippageMultiplier=max(stress_values),
                 ),
-                fundingFrame=funding.get(instrument),
             )
         except ValueError as exc:
             if str(exc) != "fixed_r_entry_bar_missing":

@@ -8,6 +8,8 @@ import pandas as pd
 from alphapilot.evolution.evaluation.fixed_r_path import (
     FixedRPathConfig,
     evaluate_fixed_r_path,
+    evaluate_prepared_fixed_r_path,
+    prepare_fixed_r_execution_path,
 )
 from alphapilot.reports.generate_v13_5_23_alpha191_crypto_subset_replay_report import (
     build_alpha191_observer_signals,
@@ -127,6 +129,56 @@ class FixedRPathTests(unittest.TestCase):
         self.assertGreater(baseline.fundingR, 0)
         self.assertGreater(stressed.slippageR, baseline.slippageR)
         self.assertLess(stressed.netR, baseline.netR)
+
+    def test_prepared_path_preserves_golden_results_for_repeated_signals(self) -> None:
+        frame = bars(
+            [
+                (50, 96.0, 98.0, 95.0, 97.0),
+                (10, 100.0, 103.0, 98.0, 101.0),
+                (20, 101.0, 104.0, 99.0, 102.0),
+                (30, 102.0, 113.0, 94.0, 105.0),
+                (40, 105.0, 107.0, 103.0, 106.0),
+            ]
+        )
+        funding = pd.DataFrame(
+            {
+                "timestamp_ms": [20, 30, 40],
+                "funding_rate": [0.0001, -0.0002, 0.0003],
+            }
+        )
+        prepared = prepare_fixed_r_execution_path(frame, funding)
+        cases = (
+            (0, "long", 0, 1.0),
+            (10, "short", 1, 1.5),
+            (20, "long", 0, 2.0),
+            (30, "short", 0, 1.0),
+        )
+        expected = (
+            (10, 30, "stop_both_hit", -1.0253000999999973, True),
+            (30, 30, "stop", -1.0368001499999964, False),
+            (30, 30, "stop_both_hit", -1.0311001999999962, True),
+            (40, 50, "time", 1.502876342857142, False),
+        )
+
+        for case, golden in zip(cases, expected, strict=True):
+            signal_timestamp, direction, latency, stress = case
+            result = evaluate_prepared_fixed_r_path(
+                signalTimestampMs=signal_timestamp,
+                direction=direction,
+                preparedPath=prepared,
+                config=self.config(
+                    feeRate=0.0005,
+                    slippageRate=0.0002,
+                    latencyBars=latency,
+                    slippageMultiplier=stress,
+                ),
+            )
+
+            self.assertEqual(result.entryTimestampMs, golden[0])
+            self.assertEqual(result.exitTimestampMs, golden[1])
+            self.assertEqual(result.exitReason, golden[2])
+            self.assertAlmostEqual(result.netR, golden[3], places=12)
+            self.assertEqual(result.ambiguousPath, golden[4])
 
     def test_public_signal_builder_has_no_label_or_future_path_dependency(self) -> None:
         frame = pd.DataFrame(
