@@ -16,7 +16,10 @@ from alphapilot.data_foundation.research_smoke import run_research_smoke
 from alphapilot.data_foundation.warehouse import WarehouseLayout
 
 from .backtest import run_backtest_workflow
-from .bounded_optimization_service import process_bounded_optimization_result
+from .bounded_optimization_service import (
+    process_bounded_optimization_result,
+    recover_terminal_optimization_results,
+)
 from .bootstrap import (
     register_alpha191_observer,
     register_optimized_legacy_strategy,
@@ -405,6 +408,13 @@ def build_parser() -> argparse.ArgumentParser:
     selected_backtests.add_argument("--run-id", action="append", required=True)
     selected_forward = commands.add_parser("run-selected-forward-cycles")
     selected_forward.add_argument("--run-id", action="append", required=True)
+    recover_optimizations = commands.add_parser(
+        "recover-bounded-optimizations"
+    )
+    recover_optimizations.add_argument(
+        "--strategy-version-id",
+        action="append",
+    )
 
     challenger = commands.add_parser("challenger")
     challenger.add_argument("--parent-version-id", required=True)
@@ -443,6 +453,14 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
         if args.command == "projection":
             return build_workflow_projection(
                 workflow, warehouse_root=args.warehouse_root
+            )
+        if args.command == "recover-bounded-optimizations":
+            return asdict(
+                recover_terminal_optimization_results(
+                    workflow,
+                    registry,
+                    strategy_version_ids=args.strategy_version_id,
+                )
             )
         if args.command == "resolve-backtest-run":
             projection = build_workflow_projection(

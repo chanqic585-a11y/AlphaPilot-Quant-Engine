@@ -25,6 +25,16 @@ class OptimizationProcessingResult:
     challengerWorkflowRunId: str | None
 
 
+@dataclass(frozen=True)
+class OptimizationRecoveryResult:
+    reviewedCount: int
+    alreadyReviewedCount: int
+    createdChallengerCount: int
+    stoppedCount: int
+    challengerWorkflowRunIds: list[str]
+    decisions: list[dict[str, Any]]
+
+
 def _lineage(version: StrategyVersionRecord) -> dict[str, Any]:
     value = version.definition.get("optimizationLineage")
     return value if isinstance(value, dict) else {}
@@ -219,4 +229,143 @@ def process_bounded_optimization_result(
         challengerWorkflowRunId=(
             challenger_run.workflowRunId if challenger_run is not None else None
         ),
+    )
+
+
+def _latest_campaign_leaf(
+    versions: list[StrategyVersionRecord],
+) -> StrategyVersionRecord | None:
+    parent_ids = {
+        version.parentStrategyVersionId
+        for version in versions
+        if version.parentStrategyVersionId is not None
+    }
+    leaves = [
+        version
+        for version in versions
+        if version.strategyVersionId not in parent_ids
+    ]
+    if not leaves:
+        return None
+    return max(
+        leaves,
+        key=lambda version: (
+            int(_lineage(version).get("attemptNumber") or 0),
+            version.createdAt,
+            version.strategyVersionId,
+        ),
+    )
+
+
+def _reviewed_workflow_run_ids(
+    registry: RegistryRepository,
+    root_strategy_version_id: str,
+) -> set[str]:
+    return {
+        str(event.payload.get("workflowRunId") or "")
+        for event in registry.list_audit_events(
+            event_type="bounded_auto_optimization",
+            entity_type="StrategyVersion",
+            entity_id=root_strategy_version_id,
+        )
+        if event.payload.get("workflowRunId")
+    }
+
+
+def recover_terminal_optimization_results(
+    repository: WorkflowRepository,
+    registry: RegistryRepository,
+    *,
+    strategy_version_ids: list[str] | None = None,
+) -> OptimizationRecoveryResult:
+    """Review terminal backtests that predate the bounded optimizer hook.
+
+    The recovery is idempotent by workflow run ID. It only reviews the latest
+    leaf in each immutable optimization campaign, so historical ancestors are
+    never optimized again after a challenger exists.
+    """
+
+    all_versions = repository.list_strategy_versions()
+    versions_by_id = {
+        version.strategyVersionId: version for version in all_versions
+    }
+    if strategy_version_ids is None:
+        requested_roots = [_root_id(version) for version in all_versions]
+    else:
+        requested_roots = []
+        for strategy_version_id in strategy_version_ids:
+            version = versions_by_id.get(strategy_version_id)
+            if version is None:
+                raise ValueError(
+                    f"strategy_version_missing:{strategy_version_id}"
+                )
+            requested_roots.append(_root_id(version))
+
+    roots = list(dict.fromkeys(requested_roots))
+    reviewed_count = 0
+    already_reviewed_count = 0
+    created_challenger_count = 0
+    stopped_count = 0
+    challenger_workflow_run_ids: list[str] = []
+    decisions: list[dict[str, Any]] = []
+
+    for root_strategy_version_id in roots:
+        campaign = [
+            version
+            for version in all_versions
+            if _root_id(version) == root_strategy_version_id
+        ]
+        leaf = _latest_campaign_leaf(campaign)
+        if leaf is None:
+            continue
+        run = repository.get_latest_workflow_run(
+            leaf.strategyVersionId,
+            stage="backtest",
+        )
+        if run is None or run.status not in {"passed", "failed", "blocked"}:
+            continue
+        if run.workflowRunId in _reviewed_workflow_run_ids(
+            registry,
+            root_strategy_version_id,
+        ):
+            already_reviewed_count += 1
+            continue
+
+        processed = process_bounded_optimization_result(
+            repository,
+            registry,
+            run,
+        )
+        reviewed_count += 1
+        if processed.challengerWorkflowRunId is not None:
+            created_challenger_count += 1
+            challenger_workflow_run_ids.append(
+                processed.challengerWorkflowRunId
+            )
+        if processed.decision.action == "stop":
+            stopped_count += 1
+        decisions.append(
+            {
+                "rootStrategyVersionId": root_strategy_version_id,
+                "strategyVersionId": leaf.strategyVersionId,
+                "workflowRunId": run.workflowRunId,
+                "action": processed.decision.action,
+                "reasonCode": processed.decision.reasonCode,
+                "terminalStatus": processed.decision.terminalStatus,
+                "challengerStrategyVersionId": (
+                    processed.challengerStrategyVersionId
+                ),
+                "challengerWorkflowRunId": (
+                    processed.challengerWorkflowRunId
+                ),
+            }
+        )
+
+    return OptimizationRecoveryResult(
+        reviewedCount=reviewed_count,
+        alreadyReviewedCount=already_reviewed_count,
+        createdChallengerCount=created_challenger_count,
+        stoppedCount=stopped_count,
+        challengerWorkflowRunIds=challenger_workflow_run_ids,
+        decisions=decisions,
     )

@@ -10,6 +10,7 @@ from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.registry.types import StrategyFamilyRecord
 from alphapilot.evolution.workflow.bounded_optimization_service import (
     process_bounded_optimization_result,
+    recover_terminal_optimization_results,
 )
 from alphapilot.evolution.workflow.bootstrap import ensure_default_backtest_gate_profile
 from alphapilot.evolution.workflow.projection import build_workflow_projection
@@ -188,6 +189,61 @@ class BoundedOptimizationIntegrationTests(unittest.TestCase):
         self.assertIsNone(result.challengerStrategyVersionId)
         self.assertEqual(result.decision.terminalStatus, "data_evidence_blocked")
         self.assertEqual(self.workflow.count("StrategyVersions"), 1)
+
+    def test_recovery_reviews_preexisting_terminal_result_once(self) -> None:
+        blocked = self.fail_initial(category="worker_operational")
+
+        first = recover_terminal_optimization_results(
+            self.workflow,
+            self.registry,
+            strategy_version_ids=[self.version.strategyVersionId],
+        )
+        repeated = recover_terminal_optimization_results(
+            self.workflow,
+            self.registry,
+            strategy_version_ids=[self.version.strategyVersionId],
+        )
+
+        self.assertEqual(first.reviewedCount, 1)
+        self.assertEqual(first.stoppedCount, 1)
+        self.assertEqual(first.challengerWorkflowRunIds, [])
+        self.assertEqual(repeated.reviewedCount, 0)
+        self.assertEqual(repeated.alreadyReviewedCount, 1)
+        item = next(
+            item
+            for item in build_workflow_projection(
+                self.workflow,
+                warehouse_root=self.root / "warehouse",
+            )["items"]
+            if item["strategyVersionId"] == self.version.strategyVersionId
+        )
+        self.assertTrue(item["optimizationCampaign"]["reviewed"])
+        self.assertEqual(
+            item["optimizationCampaign"]["status"],
+            "data_evidence_blocked",
+        )
+        self.assertEqual(
+            item["optimizationCampaign"]["reasonCode"],
+            "non_performance_failure",
+        )
+
+    def test_recovery_queues_a_challenger_for_an_eligible_old_failure(self) -> None:
+        self.fail_initial()
+
+        recovered = recover_terminal_optimization_results(
+            self.workflow,
+            self.registry,
+            strategy_version_ids=[self.version.strategyVersionId],
+        )
+
+        self.assertEqual(recovered.reviewedCount, 1)
+        self.assertEqual(recovered.createdChallengerCount, 1)
+        self.assertEqual(len(recovered.challengerWorkflowRunIds), 1)
+        queued = self.workflow.get_workflow_run(
+            recovered.challengerWorkflowRunIds[0]
+        )
+        assert queued is not None
+        self.assertEqual(queued.status, "queued")
 
 
 if __name__ == "__main__":

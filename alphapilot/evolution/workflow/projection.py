@@ -9,6 +9,7 @@ from typing import Any
 from alphapilot.data_foundation.checkpoint import load_json
 from alphapilot.data_foundation.warehouse import WarehouseLayout
 from alphapilot.evolution.registry.types import utc_now
+from alphapilot.evolution.registry.repositories import RegistryRepository
 
 from .repository import WorkflowRepository
 from .states import STAGE_LABELS, STAGE_ORDER, STAGE_PAGES, STATUS_LABELS
@@ -26,6 +27,22 @@ PHASE_LABELS = {
     "evaluating_gate": "评估回测门槛",
     "public_forward_observation": "本地前向运行中",
 }
+
+
+def _optimization_campaign_audit(
+    repository: WorkflowRepository,
+    root_strategy_version_id: str,
+) -> tuple[dict[str, Any], str] | None:
+    registry = RegistryRepository(repository.connection)
+    events = registry.list_audit_events(
+        event_type="bounded_auto_optimization",
+        entity_type="StrategyVersion",
+        entity_id=root_strategy_version_id,
+    )
+    if not events:
+        return None
+    latest = events[-1]
+    return dict(latest.payload), latest.createdAt
 
 
 def _current_run(runs: list[WorkflowRunRecord]) -> WorkflowRunRecord:
@@ -150,11 +167,21 @@ def build_workflow_projection(
         optimization_lineage = (
             optimization_lineage if isinstance(optimization_lineage, dict) else {}
         )
+        root_strategy_version_id = str(
+            optimization_lineage.get("rootStrategyVersionId")
+            or version.strategyVersionId
+        )
+        optimization_audit_record = _optimization_campaign_audit(
+            repository,
+            root_strategy_version_id,
+        )
+        optimization_audit = (
+            optimization_audit_record[0]
+            if optimization_audit_record is not None
+            else None
+        )
         optimization_campaign = {
-            "rootStrategyVersionId": str(
-                optimization_lineage.get("rootStrategyVersionId")
-                or version.strategyVersionId
-            ),
+            "rootStrategyVersionId": root_strategy_version_id,
             "campaignId": optimization_lineage.get("campaignId"),
             "phase": optimization_lineage.get("phase") or "root",
             "attemptNumber": int(optimization_lineage.get("attemptNumber") or 0),
@@ -162,6 +189,32 @@ def build_workflow_projection(
             "changedParameter": optimization_lineage.get("changedParameter"),
             "formalValidationConsumed": bool(
                 optimization_lineage.get("formalValidationConsumed")
+            ),
+            "reviewed": optimization_audit is not None,
+            "status": (
+                optimization_audit.get("terminalStatus")
+                or (
+                    "challenger_queued"
+                    if optimization_audit.get("challengerStrategyVersionId")
+                    else "reviewed"
+                )
+                if optimization_audit is not None
+                else "pending_review"
+            ),
+            "reasonCode": (
+                optimization_audit.get("reasonCode")
+                if optimization_audit is not None
+                else None
+            ),
+            "lastAction": (
+                optimization_audit.get("action")
+                if optimization_audit is not None
+                else None
+            ),
+            "lastDecisionAt": (
+                optimization_audit_record[1]
+                if optimization_audit_record is not None
+                else None
             ),
         }
         item = {

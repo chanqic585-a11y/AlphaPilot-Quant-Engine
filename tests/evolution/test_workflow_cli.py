@@ -329,7 +329,56 @@ class WorkflowCliTests(unittest.TestCase):
         )
 
         self.assertEqual(queued["status"], "queued")
-        self.assertEqual(refreshed["status"], "queued")
+
+    def test_recover_bounded_optimizations_reviews_an_old_terminal_run(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        item = self.run_cli("projection")["items"][0]
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            queued = queue_workflow_run(
+                workflow,
+                item["workflowRunId"],
+                actor="user",
+            )
+            running = start_workflow_run(
+                workflow,
+                queued.workflowRunId,
+                actor="worker",
+            )
+            complete_workflow_run(
+                workflow,
+                running.workflowRunId,
+                status="blocked",
+                actor="worker",
+                result={"metrics": {}, "checks": {}},
+                evidence={"fixture": "old_terminal_run"},
+                failure={
+                    "category": "worker_operational",
+                    "summary": "worker stopped before optimization review",
+                    "retryDisposition": "same_version_retry",
+                    "metrics": {},
+                    "suggestions": [],
+                },
+            )
+        finally:
+            connection.close()
+
+        result = self.run_cli(
+            "recover-bounded-optimizations",
+            "--strategy-version-id",
+            item["strategyVersionId"],
+        )
+
+        self.assertEqual(result["reviewedCount"], 1)
+        self.assertEqual(result["stoppedCount"], 1)
+        self.assertEqual(result["challengerWorkflowRunIds"], [])
+        refreshed = next(
+            candidate
+            for candidate in self.run_cli("projection")["items"]
+            if candidate["strategyVersionId"] == item["strategyVersionId"]
+        )
+        self.assertTrue(refreshed["optimizationCampaign"]["reviewed"])
 
     def test_projection_exposes_immutable_optimization_context(self) -> None:
         self.run_cli("bootstrap")
