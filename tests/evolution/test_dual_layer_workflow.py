@@ -24,6 +24,7 @@ from alphapilot.evolution.workflow.data_contract import derive_strategy_data_con
 from alphapilot.evolution.workflow.repository import WorkflowRepository
 from alphapilot.evolution.workflow.service import (
     checkpoint_workflow_run,
+    create_challenger_version,
     pause_workflow_run,
     queue_workflow_run,
     retry_backtest_for_data_preparation,
@@ -204,6 +205,91 @@ class DualLayerWorkflowTests(unittest.TestCase):
         )
         self.assertEqual(same.workflowRunId, completed.workflowRunId)
         self.assertEqual(self.calls, calls_before)
+
+    def test_selection_challenger_persists_only_development_and_walk_forward_metrics(self) -> None:
+        challenger = create_challenger_version(
+            self.workflow,
+            parent_strategy_version_id=self.version.strategyVersionId,
+            display_name="Selection challenger",
+            source_type="bounded_auto_optimization_selection",
+            definition={
+                **self.version.definition,
+                "optimizationLineage": {
+                    "phase": "selection",
+                    "rootStrategyVersionId": self.version.strategyVersionId,
+                    "attemptNumber": 1,
+                    "maxAttempts": 3,
+                },
+            },
+            parameters={**self.version.parameters, "stopLossPct": 0.055},
+        )
+        challenger_run = self.workflow.get_latest_workflow_run(
+            challenger.strategyVersionId,
+            stage="backtest",
+        )
+        assert challenger_run is not None
+        queued = queue_workflow_run(
+            self.workflow,
+            challenger_run.workflowRunId,
+            actor="system",
+        )
+        dependencies = self.dependencies()
+
+        def selection_backtest(*args, **kwargs):
+            split = {
+                "tradeCount": 40,
+                "profitFactor": 1.3,
+                "averageNetR": 0.1,
+                "maximumDrawdownR": 5.0,
+            }
+            stress = {"tradeCount": 40, "averageNetR": 0.05}
+            return BacktestAdapterResult(
+                metrics={
+                    "tradeCount": 160,
+                    "profitFactor": 0.2,
+                    "averageNetR": -5.0,
+                    "maximumDrawdownR": 999.0,
+                    "bySplit": {
+                        "development": dict(split),
+                        "walk_forward": dict(split),
+                        "holdout": {"profitFactor": 0.0, "averageNetR": -99.0},
+                        "locked_oos": {"profitFactor": 0.0, "averageNetR": -99.0},
+                    },
+                    "costStress": {
+                        "bySplit": {
+                            "development": dict(stress),
+                            "walk_forward": dict(stress),
+                            "holdout": {"averageNetR": -99.0},
+                            "locked_oos": {"averageNetR": -99.0},
+                        }
+                    },
+                },
+                checks={"lockedOos": False, "holdout": False},
+                evidence={"formalReportSha256": "selection_fixture"},
+            )
+
+        completed = run_dual_layer_backtest_workflow(
+            self.workflow,
+            self.registry,
+            queued.workflowRunId,
+            warehouse_root=self.root / "warehouse-selection",
+            output_root=self.root / "output-selection",
+            dependencies=DualLayerDependencies(
+                runResearchSmoke=dependencies.runResearchSmoke,
+                collectOfficialHistory=dependencies.collectOfficialHistory,
+                freezeFormalSnapshot=dependencies.freezeFormalSnapshot,
+                buildValidationPack=dependencies.buildValidationPack,
+                runFormalBacktest=selection_backtest,
+            ),
+        )
+
+        self.assertEqual(completed.status, "passed")
+        self.assertEqual(
+            set(completed.result["metrics"]["bySplit"]),
+            {"development", "walk_forward"},
+        )
+        self.assertNotIn("holdout", repr(completed.result["metrics"]))
+        self.assertNotIn("locked", repr(completed.result["metrics"]))
 
     def test_data_preparation_can_stop_before_formal_backtest_and_resume(self) -> None:
         dependencies = self.dependencies()

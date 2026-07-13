@@ -32,6 +32,10 @@ from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.evolution.registry.types import DataSnapshotRecord
 
 from .backtest import BacktestAdapterResult, _apply_gate_rules
+from .bounded_optimizer import (
+    evaluate_selection_gate,
+    sanitize_selection_metrics,
+)
 from .data_contract import derive_strategy_data_contract
 from .evaluation_binding import create_formal_evaluation_binding
 from .local_forward_bridge import start_local_forward_after_pass
@@ -417,14 +421,28 @@ def run_dual_layer_backtest_workflow(
             "targetR": contract.contract["targetR"],
             "costModel": binding.costModel,
         }
-        evaluated_checks = _apply_gate_rules(
-            adapter_result,
-            manifest=manifest,
-            gate_rules=gate.rules,
+        optimization_lineage = version.definition.get("optimizationLineage")
+        optimization_lineage = (
+            optimization_lineage if isinstance(optimization_lineage, dict) else {}
         )
+        selection_phase = optimization_lineage.get("phase") == "selection"
+        if selection_phase:
+            result_metrics = sanitize_selection_metrics(adapter_result.metrics)
+            evaluated_checks = evaluate_selection_gate(
+                result_metrics,
+                gate_rules=gate.rules,
+                target_r=float(contract.contract["targetR"]),
+            )
+        else:
+            result_metrics = adapter_result.metrics
+            evaluated_checks = _apply_gate_rules(
+                adapter_result,
+                manifest=manifest,
+                gate_rules=gate.rules,
+            )
         passed = bool(evaluated_checks) and all(evaluated_checks.values())
         result = {
-            "metrics": adapter_result.metrics,
+            "metrics": result_metrics,
             "checks": evaluated_checks,
             "researchSmoke": {
                 "status": smoke.get("status"),
@@ -448,7 +466,7 @@ def run_dual_layer_backtest_workflow(
                 result=result,
                 evidence=evidence,
             )
-            if deps.marketData is None:
+            if selection_phase or deps.marketData is None:
                 return passed_run
             return start_local_forward_after_pass(
                 workflow,

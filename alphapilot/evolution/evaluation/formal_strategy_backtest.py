@@ -175,6 +175,14 @@ def _summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
     }
 
 
+def _stress_summary(rows: list[dict[str, Any]]) -> dict[str, Any]:
+    values = [float(row["netR"]) for row in rows]
+    return {
+        "tradeCount": len(values),
+        "averageNetR": round(sum(values) / len(values), 8) if values else 0.0,
+    }
+
+
 def _group_metrics(
     rows: list[dict[str, Any]], key: str, required: tuple[str, ...] = ()
 ) -> dict[str, dict[str, Any]]:
@@ -327,7 +335,7 @@ def run_formal_strategy_backtest(
     baseline_stress = min(stress_values)
     regime_lookup = _regime_lookup(signal_frames)
     trades: list[dict[str, Any]] = []
-    stress_net: list[float] = []
+    stress_rows: list[dict[str, Any]] = []
     stress_missing_count = 0
     short_cycle_last_exit: dict[str, int] = {}
     prepared_execution_paths: dict[str, PreparedFixedRExecutionPath] = {}
@@ -423,7 +431,7 @@ def run_formal_strategy_backtest(
                 raise
             stress_missing_count += 1
         else:
-            stress_net.append(stressed.netR)
+            stress_rows.append({"netR": stressed.netR, "split": split})
 
     overall = _summary(trades)
     by_split = _group_metrics(
@@ -431,6 +439,13 @@ def run_formal_strategy_backtest(
         "split",
         required=("development", "walk_forward", "holdout", "locked_oos"),
     )
+    stress_by_split = {
+        split: _stress_summary(
+            [row for row in stress_rows if str(row["split"]) == split]
+        )
+        for split in ("development", "walk_forward", "holdout", "locked_oos")
+    }
+    stress_net = [float(row["netR"]) for row in stress_rows]
     metrics = {
         **overall,
         "holdoutTradeCount": by_split["holdout"]["tradeCount"],
@@ -444,6 +459,7 @@ def run_formal_strategy_backtest(
             "averageNetR": round(sum(stress_net) / len(stress_net), 8)
             if stress_net
             else 0.0,
+            "bySplit": stress_by_split,
             "latencyBars": max(latency_values),
             "slippageMultiplier": max(stress_values),
         },

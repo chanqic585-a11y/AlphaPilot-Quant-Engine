@@ -456,6 +456,10 @@ class FormalStrategyBacktestTests(unittest.TestCase):
         self.assertIn("averageGrossR", result.metrics)
         self.assertIn("averageNetR", result.metrics)
         self.assertIn("partialTargetCount", result.metrics)
+        self.assertEqual(
+            set(result.metrics["costStress"]["bySplit"]),
+            {"development", "walk_forward", "holdout", "locked_oos"},
+        )
 
     def test_unknown_signal_engine_fails_closed(self) -> None:
         version = StrategyVersionRecord(
