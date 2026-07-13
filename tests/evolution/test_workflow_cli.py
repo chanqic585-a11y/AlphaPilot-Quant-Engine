@@ -318,14 +318,13 @@ class WorkflowCliTests(unittest.TestCase):
             [run["status"] for run in result["runs"]], ["queued", "queued"]
         )
 
-    def test_selected_backtests_prefetch_next_data_while_current_formal_runs(self) -> None:
+    def test_selected_backtests_prefetch_queue_while_current_formal_runs(self) -> None:
         self.prepare_patcher.stop()
         self.prefetch_patcher.stop()
         self.run_cli("bootstrap-short-cycle")
-        items = self.run_cli("projection")["items"][:2]
-        first_id, second_id = [item["workflowRunId"] for item in items]
-        prefetch_started = threading.Event()
-        formal_started = threading.Event()
+        items = self.run_cli("projection")["items"][:3]
+        first_id, second_id, third_id = [item["workflowRunId"] for item in items]
+        third_prefetch_started = threading.Event()
         observed: list[str] = []
 
         def prepare_current(workflow, _registry, workflow_run_id, **_kwargs):
@@ -334,13 +333,12 @@ class WorkflowCliTests(unittest.TestCase):
 
         def prefetch_next(*_args, workflow_run_id, **_kwargs):
             observed.append(f"prefetch:{workflow_run_id}")
-            prefetch_started.set()
-            self.assertTrue(formal_started.wait(timeout=2))
+            if workflow_run_id == third_id:
+                third_prefetch_started.set()
 
         def run_formal(workflow, _registry, workflow_run_id, **_kwargs):
             if workflow_run_id == first_id:
-                self.assertTrue(prefetch_started.wait(timeout=2))
-                formal_started.set()
+                self.assertTrue(third_prefetch_started.wait(timeout=2))
             observed.append(f"formal:{workflow_run_id}")
             return workflow.get_workflow_run(workflow_run_id)
 
@@ -363,18 +361,22 @@ class WorkflowCliTests(unittest.TestCase):
                     first_id,
                     "--run-id",
                     second_id,
+                    "--run-id",
+                    third_id,
                 )
         finally:
             self.prepare_worker = self.prepare_patcher.start()
             self.prefetch_worker = self.prefetch_patcher.start()
 
-        self.assertEqual(result["processedCount"], 2)
+        self.assertEqual(result["processedCount"], 3)
         self.assertIn(f"prefetch:{second_id}", observed)
+        self.assertIn(f"prefetch:{third_id}", observed)
         self.assertLess(
-            observed.index(f"prefetch:{second_id}"),
+            observed.index(f"prefetch:{third_id}"),
             observed.index(f"formal:{first_id}"),
         )
         self.assertNotIn(f"prepare:{second_id}", observed)
+        self.assertNotIn(f"prepare:{third_id}", observed)
 
     def test_selected_backtests_exit_when_another_serial_batch_is_active(self) -> None:
         self.run_cli("bootstrap-short-cycle")

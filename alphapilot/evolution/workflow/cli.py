@@ -185,13 +185,28 @@ def _run_selected_backtests(
         processed_ids: set[str] = set()
         processed_order: list[str] = []
         completed: list[dict[str, Any]] = []
-        prefetch_future: Future[None] | None = None
-        prefetched_run_id: str | None = None
+        prefetch_futures: dict[str, Future[None]] = {}
         registry_path = _registry_path(workflow)
         with ThreadPoolExecutor(
             max_workers=1,
             thread_name_prefix="alphapilot-data-prefetch",
         ) as prefetch_executor:
+            def schedule_pending_prefetches() -> None:
+                for candidate in pending:
+                    candidate_id = candidate.workflowRunId
+                    if (
+                        candidate_id in processed_ids
+                        or candidate_id in prefetch_futures
+                    ):
+                        continue
+                    prefetch_futures[candidate_id] = prefetch_executor.submit(
+                        _prepare_backtest_in_fresh_connection,
+                        registry_path=registry_path,
+                        workflow_run_id=candidate_id,
+                        warehouse_root=warehouse_root,
+                        output_root=output_root,
+                    )
+
             while pending:
                 queued = pending.pop(0)
                 pending_ids.discard(queued.workflowRunId)
@@ -200,11 +215,12 @@ def _run_selected_backtests(
                 processed_ids.add(queued.workflowRunId)
                 processed_order.append(queued.workflowRunId)
 
-                if prefetched_run_id == queued.workflowRunId:
-                    assert prefetch_future is not None
+                prefetch_future = prefetch_futures.pop(
+                    queued.workflowRunId,
+                    None,
+                )
+                if prefetch_future is not None:
                     prefetch_future.result()
-                    prefetch_future = None
-                    prefetched_run_id = None
                 else:
                     _prepare_dual_layer_once(
                         workflow,
@@ -214,24 +230,7 @@ def _run_selected_backtests(
                         output_root=output_root,
                     )
 
-                if prefetch_future is None:
-                    next_run = next(
-                        (
-                            candidate
-                            for candidate in pending
-                            if candidate.workflowRunId not in processed_ids
-                        ),
-                        None,
-                    )
-                    if next_run is not None:
-                        prefetched_run_id = next_run.workflowRunId
-                        prefetch_future = prefetch_executor.submit(
-                            _prepare_backtest_in_fresh_connection,
-                            registry_path=registry_path,
-                            workflow_run_id=next_run.workflowRunId,
-                            warehouse_root=warehouse_root,
-                            output_root=output_root,
-                        )
+                schedule_pending_prefetches()
 
                 completed.append(
                     asdict(
@@ -254,6 +253,7 @@ def _run_selected_backtests(
                     ):
                         pending.append(candidate)
                         pending_ids.add(candidate.workflowRunId)
+                schedule_pending_prefetches()
         return {
             "processedCount": len(completed),
             "workflowRunIds": run_ids,
