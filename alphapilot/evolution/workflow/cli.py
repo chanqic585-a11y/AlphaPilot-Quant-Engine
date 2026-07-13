@@ -146,6 +146,12 @@ def _prioritize_backtest_runs(runs: Sequence[Any]) -> list[Any]:
     return sorted(runs, key=completed_phase_count, reverse=True)
 
 
+def _requires_data_prefetch(run: Any) -> bool:
+    progress = run.progress if isinstance(run.progress, dict) else {}
+    completed_phases = set(progress.get("completedPhases") or [])
+    return "validating_official_data" not in completed_phases
+
+
 def _run_selected_backtests(
     workflow: WorkflowRepository,
     registry: RegistryRepository,
@@ -208,6 +214,7 @@ def _run_selected_backtests(
                     if (
                         candidate_id in processed_ids
                         or candidate_id in prefetch_futures
+                        or not _requires_data_prefetch(candidate)
                     ):
                         continue
                     prefetch_futures[candidate_id] = prefetch_executor.submit(

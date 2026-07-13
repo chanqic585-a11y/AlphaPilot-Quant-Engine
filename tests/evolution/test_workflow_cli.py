@@ -133,6 +133,31 @@ class WorkflowCliTests(unittest.TestCase):
             ["ready_for_formal", "validated_data", "waiting_for_data"],
         )
 
+    def test_data_ready_backtest_does_not_consume_prefetch_slot(self) -> None:
+        from alphapilot.evolution.workflow.cli import _requires_data_prefetch
+
+        ready = Mock(
+            progress={
+                "completedPhases": [
+                    "checking_local_data",
+                    "research_smoke_running",
+                    "preparing_official_data",
+                    "validating_official_data",
+                ]
+            }
+        )
+        waiting = Mock(
+            progress={
+                "completedPhases": [
+                    "checking_local_data",
+                    "research_smoke_running",
+                ]
+            }
+        )
+
+        self.assertFalse(_requires_data_prefetch(ready))
+        self.assertTrue(_requires_data_prefetch(waiting))
+
     def test_bootstrap_and_projection_are_idempotent(self) -> None:
         first = self.run_cli("bootstrap")
         second = self.run_cli("bootstrap")
