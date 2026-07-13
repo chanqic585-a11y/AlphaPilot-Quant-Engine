@@ -563,6 +563,8 @@ def recover_terminal_structural_redesigns(
         if run.workflowRunId in reviewed_ids:
             already_reviewed_count += 1
             continue
+        if version.status != "active":
+            continue
         decision, existing_child = _decision_for_run(repository, version, run)
         if existing_child is not None:
             already_reviewed_count += 1

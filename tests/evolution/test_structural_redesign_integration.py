@@ -369,6 +369,31 @@ class StructuralRedesignIntegrationTests(unittest.TestCase):
         assert stored_parent is not None
         self.assertEqual(stored_parent.status, "active")
 
+    def test_recovery_ignores_previously_archived_structural_failure(self) -> None:
+        parent = self.register_version()
+        self.fail_version(parent)
+        with self.connection:
+            self.connection.execute(
+                "UPDATE StrategyVersions SET status = 'archived' WHERE strategyVersionId = ?",
+                (parent.strategyVersionId,),
+            )
+
+        result = recover_terminal_structural_redesigns(
+            self.workflow,
+            self.registry,
+            registry_path=self.root / "registry.sqlite",
+            strategy_version_ids=[parent.strategyVersionId],
+        )
+
+        self.assertEqual(result.reviewedCount, 0)
+        self.assertEqual(result.createdChildCount, 0)
+        self.assertEqual(result.stoppedCount, 0)
+        self.assertIsNone(result.backupPath)
+        self.assertEqual(self.workflow.count("StrategyVersions"), 1)
+        stored_parent = self.workflow.get_strategy_version(parent.strategyVersionId)
+        assert stored_parent is not None
+        self.assertEqual(stored_parent.status, "archived")
+
 
 if __name__ == "__main__":
     unittest.main()
