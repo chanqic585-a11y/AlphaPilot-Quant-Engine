@@ -330,6 +330,171 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertEqual(len(events), 4)
         self.assertEqual(events[-1].payload["terminalStatus"], "budget_exhausted")
 
+    def test_structurally_weak_backtest_queues_and_drains_one_structural_child(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        root = next(
+            item
+            for item in self.run_cli("projection")["items"]
+            if item["optimizationContext"]["definition"]["signalFamily"]
+            == "ema_reclaim_long"
+        )
+        weak = {
+            "bySplit": {
+                split: {
+                    "tradeCount": 100,
+                    "profitFactor": 0.5,
+                    "averageNetR": -0.35,
+                    "maximumDrawdownR": 30.0,
+                }
+                for split in ("development", "walk_forward")
+            },
+            "costStress": {
+                "bySplit": {
+                    split: {"tradeCount": 100, "averageNetR": -0.5}
+                    for split in ("development", "walk_forward")
+                }
+            },
+        }
+
+        def finish_run(workflow, _registry, workflow_run_id, **_kwargs):
+            current = workflow.get_workflow_run(workflow_run_id)
+            assert current is not None
+            if current.status == "queued":
+                current = start_workflow_run(
+                    workflow,
+                    current.workflowRunId,
+                    actor="worker",
+                )
+            version = workflow.get_strategy_version(current.strategyVersionId)
+            assert version is not None
+            is_structural_child = bool(
+                version.definition.get("structuralRedesignLineage")
+            )
+            return complete_workflow_run(
+                workflow,
+                current.workflowRunId,
+                status="passed" if is_structural_child else "failed",
+                actor="worker",
+                result={"metrics": weak, "checks": {}},
+                evidence={"fixture": "structural_worker_hook"},
+                failure=(
+                    None
+                    if is_structural_child
+                    else {
+                        "category": "strategy_performance",
+                        "summary": "fixture structural weakness",
+                        "retryDisposition": "new_version_required",
+                        "metrics": {},
+                        "suggestions": [],
+                    }
+                ),
+            )
+
+        with patch(
+            "alphapilot.evolution.workflow.cli._run_dual_layer_once",
+            side_effect=finish_run,
+        ):
+            result = self.run_cli(
+                "run-selected-backtests",
+                "--run-id",
+                root["workflowRunId"],
+            )
+
+        self.assertEqual(result["processedCount"], 2)
+        self.assertEqual(len(result["drainedWorkflowRunIds"]), 2)
+        self.assertEqual(result["formalWorkerCount"], 1)
+        self.assertEqual(result["dataPrefetchWorkerCount"], 1)
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            parent = workflow.get_strategy_version(root["strategyVersionId"])
+            assert parent is not None
+            children = [
+                version
+                for version in workflow.list_strategy_versions()
+                if version.parentStrategyVersionId == parent.strategyVersionId
+                and version.definition.get("structuralRedesignLineage")
+            ]
+            self.assertEqual(len(children), 1)
+            child_run = workflow.get_latest_workflow_run(
+                children[0].strategyVersionId,
+                stage="backtest",
+            )
+            assert child_run is not None
+        finally:
+            connection.close()
+        self.assertEqual(parent.status, "archived")
+        self.assertIn(child_run.workflowRunId, result["drainedWorkflowRunIds"])
+
+    def test_recover_structural_redesigns_creates_online_backup(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        item = self.run_cli("projection")["items"][0]
+        weak = {
+            "bySplit": {
+                split: {
+                    "tradeCount": 100,
+                    "profitFactor": 0.5,
+                    "averageNetR": -0.35,
+                    "maximumDrawdownR": 30.0,
+                }
+                for split in ("development", "walk_forward")
+            },
+            "costStress": {
+                "bySplit": {
+                    split: {"tradeCount": 100, "averageNetR": -0.5}
+                    for split in ("development", "walk_forward")
+                }
+            },
+        }
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            queued = queue_workflow_run(
+                workflow,
+                item["workflowRunId"],
+                actor="user",
+            )
+            running = start_workflow_run(
+                workflow,
+                queued.workflowRunId,
+                actor="worker",
+            )
+            complete_workflow_run(
+                workflow,
+                running.workflowRunId,
+                status="failed",
+                actor="worker",
+                result={"metrics": weak, "checks": {}},
+                evidence={"fixture": "structural_recovery"},
+                failure={
+                    "category": "strategy_performance",
+                    "summary": "old structural failure",
+                    "retryDisposition": "new_version_required",
+                    "metrics": {},
+                    "suggestions": [],
+                },
+            )
+        finally:
+            connection.close()
+
+        first = self.run_cli(
+            "recover-structural-redesigns",
+            "--strategy-version-id",
+            item["strategyVersionId"],
+        )
+        repeated = self.run_cli(
+            "recover-structural-redesigns",
+            "--strategy-version-id",
+            item["strategyVersionId"],
+        )
+
+        self.assertEqual(first["reviewedCount"], 1)
+        self.assertEqual(first["createdChildCount"], 1)
+        self.assertTrue(Path(first["backupPath"]).is_file())
+        self.assertEqual(repeated["reviewedCount"], 0)
+        self.assertEqual(repeated["alreadyReviewedCount"], 1)
+        self.assertIsNone(repeated["backupPath"])
+
     def test_short_cycle_bootstrap_does_not_reset_an_existing_run(self) -> None:
         self.run_cli("bootstrap-short-cycle")
         item = next(

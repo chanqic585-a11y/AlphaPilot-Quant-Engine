@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+from datetime import datetime, timezone
+from pathlib import Path
+import sqlite3
 from typing import Any
 
 from alphapilot.evolution.registry.hashing import stable_hash
@@ -35,6 +38,17 @@ class StructuralRedesignProcessingResult:
     parentStrategyVersionId: str
     childStrategyVersionId: str | None
     childWorkflowRunId: str | None
+
+
+@dataclass(frozen=True)
+class StructuralRedesignRecoveryResult:
+    backupPath: str | None
+    reviewedCount: int
+    alreadyReviewedCount: int
+    createdChildCount: int
+    stoppedCount: int
+    childWorkflowRunIds: list[str]
+    decisions: list[dict[str, Any]]
 
 
 def _structural_lineage(version: StrategyVersionRecord) -> dict[str, Any]:
@@ -309,20 +323,14 @@ def _audit_event(
     )
 
 
-def process_structural_redesign_result(
+def _decision_for_run(
     repository: WorkflowRepository,
-    registry: RegistryRepository,
-    run: WorkflowRunRecord,
-) -> StructuralRedesignProcessingResult:
-    """Create at most one structural child after a terminal weak backtest."""
-
-    del registry  # The atomic repository transaction owns cross-table persistence.
-    stored_run = repository.get_workflow_run(run.workflowRunId)
-    if stored_run is None:
-        raise ValueError(f"workflow_run_missing:{run.workflowRunId}")
-    version = repository.get_strategy_version(stored_run.strategyVersionId)
-    if version is None:
-        raise ValueError(f"strategy_version_missing:{stored_run.strategyVersionId}")
+    version: StrategyVersionRecord,
+    stored_run: WorkflowRunRecord,
+) -> tuple[
+    StructuralRedesignDecision,
+    tuple[StrategyVersionRecord, WorkflowRunRecord] | None,
+]:
     root_strategy_version_id = _root_id(version)
     versions = _campaign_versions(repository, root_strategy_version_id)
     existing_child = _direct_structural_child(
@@ -341,24 +349,46 @@ def process_structural_redesign_result(
         if isinstance(stored_run.result, dict)
         else None
     )
-    decision = decide_structural_redesign(
-        StructuralRedesignInput(
-            rootStrategyVersionId=root_strategy_version_id,
-            currentStrategyVersionId=version.strategyVersionId,
-            displayName=version.displayName,
-            definition=version.definition,
-            parameters=version.parameters,
-            metrics=metrics if isinstance(metrics, dict) else {},
-            gateRules=gate.rules if gate is not None else {},
-            failureCategory=diagnosis.category if diagnosis is not None else None,
-            runStatus=stored_run.status,
-            usedRecipeIds=_used_recipe_ids(versions),
-            activeStructuralChildExists=(
-                existing_child is not None
-                and existing_child[1].status in _ACTIVE_RUN_STATUSES
-            ),
-        )
+    return (
+        decide_structural_redesign(
+            StructuralRedesignInput(
+                rootStrategyVersionId=root_strategy_version_id,
+                currentStrategyVersionId=version.strategyVersionId,
+                displayName=version.displayName,
+                definition=version.definition,
+                parameters=version.parameters,
+                metrics=metrics if isinstance(metrics, dict) else {},
+                gateRules=gate.rules if gate is not None else {},
+                failureCategory=(
+                    diagnosis.category if diagnosis is not None else None
+                ),
+                runStatus=stored_run.status,
+                usedRecipeIds=_used_recipe_ids(versions),
+                activeStructuralChildExists=(
+                    existing_child is not None
+                    and existing_child[1].status in _ACTIVE_RUN_STATUSES
+                ),
+            )
+        ),
+        existing_child,
     )
+
+
+def process_structural_redesign_result(
+    repository: WorkflowRepository,
+    registry: RegistryRepository,
+    run: WorkflowRunRecord,
+) -> StructuralRedesignProcessingResult:
+    """Create at most one structural child after a terminal weak backtest."""
+
+    del registry  # The atomic repository transaction owns cross-table persistence.
+    stored_run = repository.get_workflow_run(run.workflowRunId)
+    if stored_run is None:
+        raise ValueError(f"workflow_run_missing:{run.workflowRunId}")
+    version = repository.get_strategy_version(stored_run.strategyVersionId)
+    if version is None:
+        raise ValueError(f"strategy_version_missing:{stored_run.strategyVersionId}")
+    decision, existing_child = _decision_for_run(repository, version, stored_run)
     if existing_child is not None:
         child, child_run = existing_child
         return _result(
@@ -456,3 +486,130 @@ def process_structural_redesign_result(
             ),
         )
     return _result(decision)
+
+
+def _reviewed_workflow_run_ids(registry: RegistryRepository) -> set[str]:
+    reviewed: set[str] = set()
+    for event_type in (
+        "structural_redesign_candidate_created",
+        "structural_redesign_parent_archived",
+        "structural_redesign_stopped",
+    ):
+        reviewed.update(
+            str(event.payload.get("workflowRunId"))
+            for event in registry.list_audit_events(event_type=event_type)
+            if event.payload.get("workflowRunId")
+        )
+    return reviewed
+
+
+def _backup_registry(
+    connection: sqlite3.Connection,
+    registry_path: Path,
+) -> str:
+    backup_root = registry_path.parent / "backups"
+    backup_root.mkdir(parents=True, exist_ok=True)
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+    backup_path = backup_root / (
+        f"{registry_path.stem}.before-structural-redesign-{stamp}.sqlite"
+    )
+    destination = sqlite3.connect(backup_path)
+    try:
+        connection.backup(destination)
+    finally:
+        destination.close()
+    return str(backup_path)
+
+
+def recover_terminal_structural_redesigns(
+    repository: WorkflowRepository,
+    registry: RegistryRepository,
+    *,
+    registry_path: Path | str,
+    strategy_version_ids: list[str] | None = None,
+) -> StructuralRedesignRecoveryResult:
+    """Recover eligible old structural failures after an online SQLite backup."""
+
+    all_versions = repository.list_strategy_versions()
+    versions_by_id = {
+        version.strategyVersionId: version for version in all_versions
+    }
+    if strategy_version_ids is None:
+        requested = all_versions
+    else:
+        requested = []
+        for strategy_version_id in dict.fromkeys(strategy_version_ids):
+            version = versions_by_id.get(strategy_version_id)
+            if version is None:
+                raise ValueError(f"strategy_version_missing:{strategy_version_id}")
+            requested.append(version)
+
+    reviewed_ids = _reviewed_workflow_run_ids(registry)
+    already_reviewed_count = 0
+    eligible: list[
+        tuple[StrategyVersionRecord, WorkflowRunRecord, StructuralRedesignDecision]
+    ] = []
+    for version in requested:
+        run = repository.get_latest_workflow_run(
+            version.strategyVersionId,
+            stage="backtest",
+        )
+        if run is None or run.status != "failed":
+            continue
+        diagnosis = repository.get_latest_failure_diagnosis(run.workflowRunId)
+        if diagnosis is None or diagnosis.category != "strategy_performance":
+            continue
+        if run.workflowRunId in reviewed_ids:
+            already_reviewed_count += 1
+            continue
+        decision, existing_child = _decision_for_run(repository, version, run)
+        if existing_child is not None:
+            already_reviewed_count += 1
+            continue
+        if decision.action == "create_child" or (
+            decision.action == "stop"
+            and decision.reasonCode in _ARCHIVABLE_STOP_REASONS
+        ):
+            eligible.append((version, run, decision))
+
+    backup_path = (
+        _backup_registry(repository.connection, Path(registry_path))
+        if eligible
+        else None
+    )
+    reviewed_count = 0
+    created_child_count = 0
+    stopped_count = 0
+    child_workflow_run_ids: list[str] = []
+    decisions: list[dict[str, Any]] = []
+    for version, run, _preview in eligible:
+        processed = process_structural_redesign_result(repository, registry, run)
+        reviewed_count += 1
+        if processed.childWorkflowRunId is not None:
+            created_child_count += 1
+            child_workflow_run_ids.append(processed.childWorkflowRunId)
+        if processed.action == "stop":
+            stopped_count += 1
+        decisions.append(
+            {
+                "strategyVersionId": version.strategyVersionId,
+                "workflowRunId": run.workflowRunId,
+                "action": processed.action,
+                "reasonCode": processed.reasonCode,
+                "decisionKey": processed.decisionKey,
+                "generation": processed.generation,
+                "recipeId": processed.recipeId,
+                "childStrategyVersionId": processed.childStrategyVersionId,
+                "childWorkflowRunId": processed.childWorkflowRunId,
+            }
+        )
+
+    return StructuralRedesignRecoveryResult(
+        backupPath=backup_path,
+        reviewedCount=reviewed_count,
+        alreadyReviewedCount=already_reviewed_count,
+        createdChildCount=created_child_count,
+        stoppedCount=stopped_count,
+        childWorkflowRunIds=child_workflow_run_ids,
+        decisions=decisions,
+    )

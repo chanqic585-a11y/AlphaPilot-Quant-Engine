@@ -42,6 +42,10 @@ from .service import (
     retry_backtest_for_data_preparation,
     yield_workflow_run,
 )
+from .structural_redesign_service import (
+    process_structural_redesign_result,
+    recover_terminal_structural_redesigns,
+)
 from .states import WorkflowConflict, WorkflowError, WorkflowTransitionError
 from .worker_lock import workflow_batch_lock, workflow_worker_lock
 
@@ -291,11 +295,17 @@ def _run_selected_backtests(
                 )
                 completed.append(asdict(finished))
                 if finished.status in {"passed", "failed", "blocked"}:
-                    process_bounded_optimization_result(
+                    bounded = process_bounded_optimization_result(
                         workflow,
                         registry,
                         finished,
                     )
+                    if bounded.decision.terminalStatus == "structural_redesign_required":
+                        process_structural_redesign_result(
+                            workflow,
+                            registry,
+                            finished,
+                        )
                 for candidate in workflow.list_workflow_runs(
                     stage="backtest",
                     status="queued",
@@ -417,6 +427,13 @@ def build_parser() -> argparse.ArgumentParser:
         "--strategy-version-id",
         action="append",
     )
+    recover_structural = commands.add_parser(
+        "recover-structural-redesigns"
+    )
+    recover_structural.add_argument(
+        "--strategy-version-id",
+        action="append",
+    )
 
     challenger = commands.add_parser("challenger")
     challenger.add_argument("--parent-version-id", required=True)
@@ -472,6 +489,15 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
                 recover_terminal_optimization_results(
                     workflow,
                     registry,
+                    strategy_version_ids=args.strategy_version_id,
+                )
+            )
+        if args.command == "recover-structural-redesigns":
+            return asdict(
+                recover_terminal_structural_redesigns(
+                    workflow,
+                    registry,
+                    registry_path=Path(args.registry),
                     strategy_version_ids=args.strategy_version_id,
                 )
             )

@@ -19,6 +19,7 @@ from alphapilot.evolution.workflow.service import (
 )
 from alphapilot.evolution.workflow.structural_redesign_service import (
     process_structural_redesign_result,
+    recover_terminal_structural_redesigns,
 )
 
 
@@ -280,6 +281,60 @@ class StructuralRedesignIntegrationTests(unittest.TestCase):
         )
         self.assertEqual(len(audits), 1)
         self.assertEqual(audits[0].payload["reasonCode"], result.reasonCode)
+
+    def test_recovery_backs_up_before_mutation_and_is_idempotent(self) -> None:
+        parent = self.register_version()
+        self.fail_version(parent)
+
+        first = recover_terminal_structural_redesigns(
+            self.workflow,
+            self.registry,
+            registry_path=self.root / "registry.sqlite",
+            strategy_version_ids=[parent.strategyVersionId],
+        )
+        repeated = recover_terminal_structural_redesigns(
+            self.workflow,
+            self.registry,
+            registry_path=self.root / "registry.sqlite",
+            strategy_version_ids=[parent.strategyVersionId],
+        )
+
+        self.assertEqual(first.reviewedCount, 1)
+        self.assertEqual(first.createdChildCount, 1)
+        self.assertEqual(len(first.childWorkflowRunIds), 1)
+        self.assertIsNotNone(first.backupPath)
+        self.assertTrue(Path(str(first.backupPath)).is_file())
+        backup_connection = connect_registry(Path(str(first.backupPath)))
+        try:
+            backed_up_parent = WorkflowRepository(
+                backup_connection
+            ).get_strategy_version(parent.strategyVersionId)
+            assert backed_up_parent is not None
+            self.assertEqual(backed_up_parent.status, "active")
+        finally:
+            backup_connection.close()
+        self.assertEqual(repeated.reviewedCount, 0)
+        self.assertEqual(repeated.alreadyReviewedCount, 1)
+        self.assertIsNone(repeated.backupPath)
+        self.assertEqual(self.workflow.count("StrategyVersions"), 2)
+
+    def test_recovery_ignores_data_or_worker_failures_without_backup(self) -> None:
+        parent = self.register_version()
+        self.fail_version(parent, category="worker_operational")
+
+        result = recover_terminal_structural_redesigns(
+            self.workflow,
+            self.registry,
+            registry_path=self.root / "registry.sqlite",
+            strategy_version_ids=[parent.strategyVersionId],
+        )
+
+        self.assertEqual(result.reviewedCount, 0)
+        self.assertEqual(result.createdChildCount, 0)
+        self.assertIsNone(result.backupPath)
+        stored_parent = self.workflow.get_strategy_version(parent.strategyVersionId)
+        assert stored_parent is not None
+        self.assertEqual(stored_parent.status, "active")
 
 
 if __name__ == "__main__":
