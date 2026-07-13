@@ -85,6 +85,41 @@ _REQUIRED_PARAMETERS = {
         "atr_pct_min",
         "atr_pct_max",
     },
+    "liquidity_sweep_reclaim_long": {
+        "lookback",
+        "sweep_buffer",
+        "reclaim_buffer",
+        "trend_floor",
+        "rsi_oversold",
+        "rsi_recovery_min",
+        "volume_min",
+        "atr_pct_min",
+        "atr_pct_max",
+    },
+    "breakout_retest_continuation_long": {
+        "lookback",
+        "breakout_buffer",
+        "retest_tolerance",
+        "reclaim_buffer",
+        "trend_tolerance",
+        "rsi_min",
+        "rsi_max",
+        "breakout_volume_min",
+        "confirmation_volume_min",
+        "retest_volume_ratio_max",
+        "atr_pct_min",
+        "atr_pct_max",
+    },
+    "failed_breakout_reversal_short": {
+        "lookback",
+        "sweep_buffer",
+        "rejection_buffer",
+        "trend_ceiling",
+        "rsi_high",
+        "volume_min",
+        "atr_pct_min",
+        "atr_pct_max",
+    },
 }
 
 
@@ -406,6 +441,128 @@ _REDESIGNED_CANDIDATES = (
 )
 
 
+_EVIDENCE_REDESIGNED_CANDIDATES = (
+    _candidate(
+        "short_cycle_evidence_5m_liquidity_sweep_reclaim_long_v1",
+        "5m 流动性扫低收回 ATR1.0",
+        "5m",
+        "long",
+        "liquidity_sweep_reclaim_long",
+        exit_policy="two_r_half_atr_runner_v1",
+        lookback=96,
+        sweep_buffer=0.0015,
+        reclaim_buffer=0.0005,
+        trend_floor=0.965,
+        rsi_oversold=38,
+        rsi_recovery_min=36,
+        volume_min=1.4,
+        atr_pct_min=0.002,
+        atr_pct_max=0.025,
+        stop_atr=1.0,
+        max_hold=36,
+    ),
+    _candidate(
+        "short_cycle_evidence_5m_breakout_retest_continuation_long_v1",
+        "5m 突破回踩确认 ATR1.0",
+        "5m",
+        "long",
+        "breakout_retest_continuation_long",
+        exit_policy="two_r_half_atr_runner_v1",
+        lookback=96,
+        breakout_buffer=0.001,
+        retest_tolerance=0.003,
+        reclaim_buffer=0.0003,
+        trend_tolerance=1.0,
+        rsi_min=48,
+        rsi_max=70,
+        breakout_volume_min=1.8,
+        confirmation_volume_min=0.8,
+        retest_volume_ratio_max=0.8,
+        atr_pct_min=0.002,
+        atr_pct_max=0.022,
+        stop_atr=1.0,
+        max_hold=36,
+    ),
+    _candidate(
+        "short_cycle_evidence_5m_failed_breakout_reversal_short_v1",
+        "5m 假突破反转 ATR1.0",
+        "5m",
+        "short",
+        "failed_breakout_reversal_short",
+        exit_policy="two_r_half_atr_runner_v1",
+        lookback=96,
+        sweep_buffer=0.0015,
+        rejection_buffer=0.0005,
+        trend_ceiling=1.02,
+        rsi_high=65,
+        volume_min=1.4,
+        atr_pct_min=0.002,
+        atr_pct_max=0.025,
+        stop_atr=1.0,
+        max_hold=36,
+    ),
+    _candidate(
+        "short_cycle_evidence_15m_liquidity_sweep_reclaim_long_v1",
+        "15m 流动性扫低收回 ATR1.2",
+        "15m",
+        "long",
+        "liquidity_sweep_reclaim_long",
+        exit_policy="two_r_half_atr_runner_v1",
+        lookback=64,
+        sweep_buffer=0.002,
+        reclaim_buffer=0.0005,
+        trend_floor=0.96,
+        rsi_oversold=40,
+        rsi_recovery_min=38,
+        volume_min=1.3,
+        atr_pct_min=0.003,
+        atr_pct_max=0.032,
+        stop_atr=1.2,
+        max_hold=24,
+    ),
+    _candidate(
+        "short_cycle_evidence_15m_breakout_retest_continuation_long_v1",
+        "15m 突破回踩确认 ATR1.2",
+        "15m",
+        "long",
+        "breakout_retest_continuation_long",
+        exit_policy="two_r_half_atr_runner_v1",
+        lookback=64,
+        breakout_buffer=0.0015,
+        retest_tolerance=0.0045,
+        reclaim_buffer=0.0005,
+        trend_tolerance=1.0,
+        rsi_min=46,
+        rsi_max=72,
+        breakout_volume_min=1.6,
+        confirmation_volume_min=0.75,
+        retest_volume_ratio_max=0.85,
+        atr_pct_min=0.003,
+        atr_pct_max=0.03,
+        stop_atr=1.2,
+        max_hold=24,
+    ),
+    _candidate(
+        "short_cycle_evidence_15m_failed_breakout_reversal_short_v1",
+        "15m 假突破反转 ATR1.2",
+        "15m",
+        "short",
+        "failed_breakout_reversal_short",
+        exit_policy="two_r_half_atr_runner_v1",
+        lookback=64,
+        sweep_buffer=0.002,
+        rejection_buffer=0.0008,
+        trend_ceiling=1.025,
+        rsi_high=63,
+        volume_min=1.3,
+        atr_pct_min=0.003,
+        atr_pct_max=0.032,
+        stop_atr=1.2,
+        max_hold=24,
+    ),
+)
+
+
 def _validate_candidates(
     candidates: tuple[ShortCycleWorkflowCandidate, ...],
     *,
@@ -438,6 +595,7 @@ def _validate_candidates(
 
 _validate_candidates(_CANDIDATES, expected_count=10)
 _validate_candidates(_REDESIGNED_CANDIDATES, expected_count=6)
+_validate_candidates(_EVIDENCE_REDESIGNED_CANDIDATES, expected_count=6)
 
 
 def short_cycle_workflow_candidates() -> tuple[ShortCycleWorkflowCandidate, ...]:
@@ -448,3 +606,9 @@ def redesigned_short_cycle_workflow_candidates() -> tuple[
     ShortCycleWorkflowCandidate, ...
 ]:
     return _REDESIGNED_CANDIDATES
+
+
+def evidence_redesigned_short_cycle_workflow_candidates() -> tuple[
+    ShortCycleWorkflowCandidate, ...
+]:
+    return _EVIDENCE_REDESIGNED_CANDIDATES

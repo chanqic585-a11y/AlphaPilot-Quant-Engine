@@ -158,6 +158,75 @@ def _base_ready(frame: pd.DataFrame) -> pd.Series:
 def build_signal(frame: pd.DataFrame, family: str, params: dict[str, Any]) -> tuple[pd.Series, str]:
     ready = _base_ready(frame)
     atr_pct = frame["atr14"] / frame["close"].replace(0, np.nan)
+    if family == "liquidity_sweep_reclaim_long":
+        lookback = params["lookback"]
+        prior_floor = frame["low"].rolling(lookback, min_periods=lookback).min().shift(2)
+        prior_sweep = frame["low"].shift(1) <= (
+            prior_floor * (1 - params["sweep_buffer"])
+        )
+        signal = (
+            ready
+            & ~frame["btc_long_block"]
+            & prior_sweep
+            & (frame["close"] >= prior_floor * (1 + params["reclaim_buffer"]))
+            & (frame["close"] > frame["open"])
+            & (frame["close"] > frame["high"].shift(1))
+            & (frame["close"] >= frame["ema200"] * params["trend_floor"])
+            & (frame["rsi14"].shift(1) <= params["rsi_oversold"])
+            & (frame["rsi14"] >= params["rsi_recovery_min"])
+            & (frame["rsi14"] > frame["rsi14"].shift(1))
+            & (frame["volume_ratio"] >= params["volume_min"])
+            & atr_pct.between(params["atr_pct_min"], params["atr_pct_max"])
+        )
+        return signal.fillna(False), "long"
+
+    if family == "breakout_retest_continuation_long":
+        lookback = params["lookback"]
+        prior_ceiling = frame["high"].rolling(lookback, min_periods=lookback).max().shift(2)
+        prior_breakout = (
+            (frame["close"].shift(1) > prior_ceiling * (1 + params["breakout_buffer"]))
+            & (frame["volume_ratio"].shift(1) >= params["breakout_volume_min"])
+        )
+        signal = (
+            ready
+            & ~frame["btc_long_block"]
+            & prior_breakout
+            & (frame["low"] <= prior_ceiling * (1 + params["retest_tolerance"]))
+            & (frame["close"] >= prior_ceiling * (1 + params["reclaim_buffer"]))
+            & (frame["close"] > frame["open"])
+            & (frame["ema20"] >= frame["ema50"] * params["trend_tolerance"])
+            & (frame["ema50"] >= frame["ema200"] * params["trend_tolerance"])
+            & frame["rsi14"].between(params["rsi_min"], params["rsi_max"])
+            & (frame["volume_ratio"] >= params["confirmation_volume_min"])
+            & (
+                frame["volume_ratio"]
+                <= frame["volume_ratio"].shift(1) * params["retest_volume_ratio_max"]
+            )
+            & atr_pct.between(params["atr_pct_min"], params["atr_pct_max"])
+        )
+        return signal.fillna(False), "long"
+
+    if family == "failed_breakout_reversal_short":
+        lookback = params["lookback"]
+        prior_ceiling = frame["high"].rolling(lookback, min_periods=lookback).max().shift(2)
+        prior_sweep = frame["high"].shift(1) >= (
+            prior_ceiling * (1 + params["sweep_buffer"])
+        )
+        signal = (
+            ready
+            & ~frame["btc_short_block"]
+            & prior_sweep
+            & (frame["close"] <= prior_ceiling * (1 - params["rejection_buffer"]))
+            & (frame["close"] < frame["open"])
+            & (frame["low"] < frame["low"].shift(1))
+            & (frame["close"] <= frame["ema200"] * params["trend_ceiling"])
+            & (frame["rsi14"].shift(1) >= params["rsi_high"])
+            & (frame["rsi14"] < frame["rsi14"].shift(1))
+            & (frame["volume_ratio"] >= params["volume_min"])
+            & atr_pct.between(params["atr_pct_min"], params["atr_pct_max"])
+        )
+        return signal.fillna(False), "short"
+
     if family == "trend_pullback_confirmation_long":
         pullback = frame["low"] <= frame["ema20"] * (1 + params["pullback_tolerance"])
         recent_pullback = (

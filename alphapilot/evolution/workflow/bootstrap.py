@@ -7,6 +7,7 @@ from typing import Any
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.evolution.registry.repositories import RegistryRepository
 from alphapilot.short_cycle.workflow_candidates import (
+    evidence_redesigned_short_cycle_workflow_candidates,
     redesigned_short_cycle_workflow_candidates,
     short_cycle_workflow_candidates,
 )
@@ -159,6 +160,41 @@ def register_redesigned_short_cycle_candidate_pack(
                 strategy_family_id=family.strategyFamilyId,
                 display_name=item.displayName,
                 source_type="short_cycle_redesign_pack_v13_27_13",
+                definition=item.definition(),
+                parameters=item.parameters,
+                initial_gate_profile_id=gate.gateProfileId,
+            )
+        )
+    return tuple(versions)
+
+
+def register_evidence_redesigned_short_cycle_candidate_pack(
+    registry: RegistryRepository,
+    workflow: WorkflowRepository,
+) -> tuple[StrategyVersionRecord, ...]:
+    """Register six event-driven successors learned from archived weak packs."""
+
+    gate = ensure_default_backtest_gate_profile(workflow)
+    versions: list[StrategyVersionRecord] = []
+    for item in evidence_redesigned_short_cycle_workflow_candidates():
+        family = ensure_strategy_family(
+            repository=registry,
+            family_key=item.familyKey,
+            name=item.displayName,
+            metadata={
+                "candidatePack": "V13.27.15",
+                "direction": item.direction,
+                "timeframe": item.timeframe,
+                "redesignReason": "archived_packs_overtraded_after_costs",
+                "eventDrivenEntry": True,
+            },
+        )
+        versions.append(
+            register_strategy_version(
+                workflow,
+                strategy_family_id=family.strategyFamilyId,
+                display_name=item.displayName,
+                source_type="short_cycle_evidence_redesign_pack_v13_27_15",
                 definition=item.definition(),
                 parameters=item.parameters,
                 initial_gate_profile_id=gate.gateProfileId,
