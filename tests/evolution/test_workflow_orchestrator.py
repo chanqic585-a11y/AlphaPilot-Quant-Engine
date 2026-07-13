@@ -28,6 +28,7 @@ from alphapilot.evolution.workflow import (
     register_strategy_version,
     retry_workflow_run,
     start_workflow_run,
+    yield_workflow_run,
 )
 
 
@@ -167,6 +168,24 @@ class WorkflowOrchestratorTests(unittest.TestCase):
         self.assertEqual(paused.status, "paused")
         self.assertEqual(repeated_pause, paused)
         self.assertEqual(resumed.status, "queued")
+
+    def test_worker_can_yield_prefetched_work_back_to_queue(self) -> None:
+        version, running = self.start_initial_run()
+
+        yielded = yield_workflow_run(
+            self.workflow,
+            running.workflowRunId,
+            actor="worker",
+        )
+
+        self.assertEqual(yielded.status, "queued")
+        self.assertEqual(yielded.strategyVersionId, version.strategyVersionId)
+        with self.assertRaises(WorkflowTransitionError):
+            yield_workflow_run(
+                self.workflow,
+                yielded.workflowRunId,
+                actor="user",
+            )
 
     def test_cancelled_work_can_restart_from_its_checkpoint_idempotently(self) -> None:
         version, running = self.start_initial_run()

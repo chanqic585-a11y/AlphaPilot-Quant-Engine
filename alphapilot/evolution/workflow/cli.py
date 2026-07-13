@@ -35,8 +35,9 @@ from .service import (
     queue_workflow_run,
     retry_workflow_run,
     retry_backtest_for_data_preparation,
+    yield_workflow_run,
 )
-from .states import WorkflowError
+from .states import WorkflowConflict, WorkflowError, WorkflowTransitionError
 from .worker_lock import workflow_batch_lock, workflow_worker_lock
 
 
@@ -133,6 +134,10 @@ def _prepare_backtest_in_fresh_connection(
             warehouse_root=warehouse_root,
             output_root=output_root,
         )
+        _return_prefetched_run_to_queue(
+            WorkflowRepository(connection),
+            workflow_run_id,
+        )
     finally:
         connection.close()
 
@@ -150,6 +155,28 @@ def _requires_data_prefetch(run: Any) -> bool:
     progress = run.progress if isinstance(run.progress, dict) else {}
     completed_phases = set(progress.get("completedPhases") or [])
     return "validating_official_data" not in completed_phases
+
+
+def _return_prefetched_run_to_queue(
+    workflow: WorkflowRepository,
+    workflow_run_id: str,
+):
+    current = workflow.get_workflow_run(workflow_run_id)
+    if current is None:
+        raise WorkflowError(f"workflow_run_missing:{workflow_run_id}")
+    completed_phases = set((current.progress or {}).get("completedPhases") or [])
+    if (
+        current.status != "running"
+        or "validating_official_data" not in completed_phases
+    ):
+        return current
+    try:
+        return yield_workflow_run(workflow, workflow_run_id, actor="worker")
+    except (WorkflowConflict, WorkflowTransitionError):
+        latest = workflow.get_workflow_run(workflow_run_id)
+        if latest is not None and latest.status in {"paused", "cancelled", "queued"}:
+            return latest
+        raise
 
 
 def _run_selected_backtests(

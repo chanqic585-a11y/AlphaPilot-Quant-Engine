@@ -313,6 +313,26 @@ def start_workflow_run(
     )
 
 
+def yield_workflow_run(
+    repository: WorkflowRepository, workflow_run_id: str, *, actor: str
+) -> WorkflowRunRecord:
+    validate_actor(actor)
+    if actor not in WORKER_RESULT_ACTORS:
+        raise WorkflowTransitionError("workflow_yield_requires_worker_actor")
+    run = repository.get_workflow_run(workflow_run_id)
+    if run is None:
+        raise WorkflowConflict(f"workflow_run_missing:{workflow_run_id}")
+    if run.status != "running":
+        raise WorkflowTransitionError(f"workflow_run_not_yieldable:{run.status}")
+    return _transition_run(
+        repository,
+        run,
+        next_status="queued",
+        actor=actor,
+        reason_code="workflow_run_yielded_after_prefetch",
+    )
+
+
 def pause_workflow_run(
     repository: WorkflowRepository, workflow_run_id: str, *, actor: str
 ) -> WorkflowRunRecord:

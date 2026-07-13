@@ -71,7 +71,7 @@ WORKER_RESULT_ACTORS = {"worker", "system", "recovery"}
 ALLOWED_TRANSITIONS = {
     "awaiting": {"queued", "cancelled"},
     "queued": {"running", "blocked", "paused", "cancelled"},
-    "running": {"passed", "failed", "blocked", "paused", "cancelled"},
+    "running": {"queued", "passed", "failed", "blocked", "paused", "cancelled"},
     "paused": {"queued", "cancelled"},
     "blocked": {"queued", "cancelled"},
     "passed": set(),

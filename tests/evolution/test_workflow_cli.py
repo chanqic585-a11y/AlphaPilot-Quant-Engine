@@ -158,6 +158,33 @@ class WorkflowCliTests(unittest.TestCase):
         self.assertFalse(_requires_data_prefetch(ready))
         self.assertTrue(_requires_data_prefetch(waiting))
 
+    def test_completed_prefetch_returns_run_to_queue(self) -> None:
+        from alphapilot.evolution.workflow.cli import (
+            _return_prefetched_run_to_queue,
+        )
+
+        workflow = Mock()
+        workflow.get_workflow_run.return_value = Mock(
+            status="running",
+            progress={
+                "completedPhases": [
+                    "checking_local_data",
+                    "research_smoke_running",
+                    "preparing_official_data",
+                    "validating_official_data",
+                ]
+            },
+        )
+
+        with patch(
+            "alphapilot.evolution.workflow.cli.yield_workflow_run",
+            return_value=Mock(status="queued"),
+        ) as yield_run:
+            result = _return_prefetched_run_to_queue(workflow, "run-ready")
+
+        yield_run.assert_called_once_with(workflow, "run-ready", actor="worker")
+        self.assertEqual(result.status, "queued")
+
     def test_bootstrap_and_projection_are_idempotent(self) -> None:
         first = self.run_cli("bootstrap")
         second = self.run_cli("bootstrap")

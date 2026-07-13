@@ -27,6 +27,7 @@ from .service import (
     retry_workflow_run,
     retry_backtest_for_data_preparation,
     start_workflow_run,
+    yield_workflow_run,
 )
 from .states import WorkflowConflict, WorkflowError, WorkflowTransitionError
 from .types import (
@@ -73,4 +74,5 @@ __all__ = [
     "run_backtest_workflow",
     "start_workflow_run",
     "timeframe_plan",
+    "yield_workflow_run",
 ]
