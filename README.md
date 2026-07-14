@@ -56,6 +56,21 @@ This workflow creates no Demo/Live release, stores no credential, and grants no
 order permission. See
 `docs/superpowers/specs/2026-07-14-bounded-auto-optimization-trend-runner-demo-diagnostics-design.md`.
 
+## V13.27.19 Official History Cache Resume
+
+Formal data preparation now builds one warehouse manifest index before it
+processes the strategy's `5m`, `15m`, `1h`, `4h`, or `1d` partitions. Every
+compatible hash-verified OKX official canonical partition is reused across
+strategies; the collector requests only a missing history range or newly closed
+tail.
+
+An unfinished partition also keeps validated temporary Parquet chunks and its
+oldest OKX cursor. A normal pause or restart continues from those durable rows
+instead of paging backwards from the newest candle again. Temporary chunks do
+not count as formal evidence and are removed only after the complete partition
+passes validation and is written to the immutable canonical warehouse. Local
+or third-party research data is never relabeled as OKX official evidence.
+
 ## V13.27.8 Shared Official Market Data
 
 V13.27.8 makes verified OKX public OHLCV a shared warehouse asset instead of
@@ -67,8 +82,9 @@ file and SHA-256 all pass validation.
 When a verified base exists, the collector requests only confirmed candles
 newer than the base cutoff. An empty tail reuses the original immutable file;
 a non-empty tail is merged with the base and written as a new validated
-canonical snapshot. Invalid manifests and partial page checkpoints are never
-reused as formal evidence.
+canonical snapshot. Invalid manifests are never reused. Durable partial chunks
+can resume an unfinished download, but they do not become formal evidence until
+the completed partition passes validation and receives an official manifest.
 
 The rule applies uniformly to `5m`, `15m`, `1h`, `4h`, `1d` and future
 supported periods. Strategy workflows may wait in the durable queue together,
@@ -85,10 +101,12 @@ downloads. Workflow projection now exposes the active instrument, timeframe,
 requested pages, collected K-lines, page budget, timestamp, and percentage
 while retaining the existing phase progress.
 
-The active page checkpoint is operational telemetry only. Partial rows are not
+The active page checkpoint is operational telemetry. Partial rows are not
 registered as a completed partition and never count as formal backtest
-evidence. Demo ordinary-pause recovery is implemented in Control Console and
-does not change Quant strategy logic, target R, or execution permissions.
+evidence. V13.27.19 additionally persists those rows as temporary, validated
+resume chunks so a normal pause does not redownload them. Demo ordinary-pause
+recovery is implemented in Control Console and does not change Quant strategy
+logic, target R, or execution permissions.
 
 See `docs/V13.27.6-official-data-progress.md`.
 
@@ -167,7 +185,7 @@ AlphaPilot Quant Engine is the future backend research and execution-control lay
 Current version:
 
 ```text
-AlphaPilot V13.27.11 - Formal Backtest Performance and Reliability
+AlphaPilot V13.27.19 - Official History Cache Resume
 ```
 
 ## V13.27.11 Formal Backtest Performance
@@ -200,9 +218,10 @@ are never loaded into memory at the same time.
 
 Official-data progress distinguishes `initial_download`,
 `shared_incremental_refresh`, `contract_checkpoint_reuse`, and
-`shared_cache_ready`. A strategy-specific progress counter therefore describes
-binding and validating its data contract; it does not imply that identical
-exchange/timeframe partitions are downloaded again.
+`resuming_partial_download`, and `shared_cache_ready`. A strategy-specific
+progress counter therefore describes binding and validating its data contract;
+it does not imply that identical exchange/timeframe partitions are downloaded
+again.
 
 ## Positioning
 
