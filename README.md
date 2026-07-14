@@ -111,8 +111,9 @@ starts also obey the process-wide batch lock, so repeated clicks cannot create
 parallel OKX download workers.
 
 Formal data collection can still take a long time by design. Each strategy
-requests its declared timeframe plan across a point-in-time Top50 universe from
-2020 onward, while OKX history-candles returns at most 100 bars per request. A
+requests its declared timeframe plan across the collection-time, public
+liquidity-ranked Top50 crypto USDT-swap universe from 2020 onward, while OKX
+history-candles returns at most 100 bars per request. A
 5-minute partition therefore needs thousands of public requests per symbol;
 the durable partition counter may remain unchanged until the current
 symbol/timeframe partition finishes.
@@ -139,8 +140,9 @@ V13.27.3 registers ten executable research candidates: five 5-minute and five
 15-minute strategies. Registration is idempotent and creates only immutable
 StrategyVersion records plus awaiting backtest runs.
 
-Formal backtests use historical point-in-time dynamic Top50 OKX USDT perpetual
-universes. Single-symbol runs are smoke/debug only. Promotion still requires
+Formal backtests use the collection-time, public liquidity-ranked Top50 OKX
+crypto USDT perpetual universe. This is not a reconstructed historical
+point-in-time universe; single-symbol runs are smoke/debug only. Promotion still requires
 `targetR >= 2`, fees, slippage, funding, delay, purged walk-forward, locked OOS,
 and unseen-symbol evidence.
 
@@ -4980,6 +4982,43 @@ then stopped at the configured generation boundary. The closest original run,
 `15m 假突破弱趋势反转 因子后继 ATR1.2`, retained positive average net R but
 still failed profit-factor, drawdown, and cost-stress gates. No version was
 forced through, and no Demo or Live release was created.
+
+## V13.27.18 Cross-Timeframe Executable Candidate Pack
+
+V13.27.18 registers an auditable five-candidate research inventory for each of
+`5m`, `15m`, `1h`, `4h`, and `1d`. The 25 candidates are executable workflow
+definitions, not 25 formal passes.
+
+- Long-horizon signals use event windows and staged confirmation so every
+  indicator is not forced to agree on one candle.
+- Current development evidence marks 13 definitions research-eligible and 12
+  shadow-only. Shadow-only candidates remain comparison records and are not
+  promoted by registration.
+- `4h` formal validation reuses `15m` execution and `1h` fallback data; `1d`
+  reuses `1h` execution and `4h` fallback data.
+- The new formal data-plan override is allowlisted and fail-closed. Invalid
+  timeframe combinations are rejected.
+- Formal public collection now filters OKX `instCategory=1` crypto swaps and
+  ranks them by 24-hour quote notional (`last * volCcy24h`). It no longer uses
+  an alphabetical pseudo-Top50 or mixes equity/ETF perpetuals into crypto
+  research.
+- The ranked universe is a collection-time snapshot, not a reconstructed
+  historical point-in-time universe. That limitation remains explicit and
+  must be covered by separate historical-universe robustness evidence before
+  any Live decision.
+- `targetR >= 2R`, cost stress, walk-forward, symbol holdback, immutable
+  snapshots, and locked-data isolation remain unchanged.
+- Research screening creates no Demo or Live release and makes no order.
+
+Generate and register the pack with:
+
+```powershell
+.venv\Scripts\python.exe -m alphapilot.reports.generate_v13_27_18_cross_timeframe_candidate_pack
+.venv\Scripts\python.exe -m alphapilot.evolution.workflow.cli bootstrap-v13-27-18-cross-timeframe
+```
+
+See `docs/V13.27.18-cross-timeframe-executable-candidate-pack.md` and
+`reports/v13_27_18_cross_timeframe_candidate_pack_summary.md`.
 
 ## Next Versions
 

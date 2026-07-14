@@ -133,6 +133,7 @@ class ShortCycleWorkflowCandidate:
     parameters: dict[str, Any]
     exitPolicy: str = "fixed_target_full_exit_v1"
     researchMetadata: dict[str, Any] | None = None
+    formalDataPlan: dict[str, str | None] | None = None
 
     def definition(self) -> dict[str, Any]:
         parameters = dict(self.parameters)
@@ -164,6 +165,8 @@ class ShortCycleWorkflowCandidate:
         }
         if self.researchMetadata:
             definition["researchMetadata"] = dict(self.researchMetadata)
+        if self.formalDataPlan:
+            definition["formalDataPlan"] = dict(self.formalDataPlan)
         return definition
 
 

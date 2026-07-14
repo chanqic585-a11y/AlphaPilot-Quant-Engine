@@ -126,6 +126,43 @@ class FakeOkxClient:
         ]
 
 
+class LiquidityRankedOkxClient(FakeOkxClient):
+    def public_instruments(self, *, instrument_type: str = "SWAP"):
+        if instrument_type != "SWAP":
+            raise AssertionError(instrument_type)
+        return [
+            {
+                "instId": symbol,
+                "instType": "SWAP",
+                "settleCcy": "USDT",
+                "state": "live",
+                "instCategory": "3" if symbol == "EQUITY-USDT-SWAP" else "1",
+            }
+            for symbol in (
+                "AAA-USDT-SWAP",
+                "BTC-USDT-SWAP",
+                "EQUITY-USDT-SWAP",
+                "ETH-USDT-SWAP",
+                "ZZZ-USDT-SWAP",
+            )
+        ]
+
+    def public_tickers(self, *, instrument_type: str = "SWAP"):
+        if instrument_type != "SWAP":
+            raise AssertionError(instrument_type)
+        return [
+            {"instId": "AAA-USDT-SWAP", "last": "1", "volCcy24h": "100"},
+            {"instId": "BTC-USDT-SWAP", "last": "50000", "volCcy24h": "2"},
+            {
+                "instId": "EQUITY-USDT-SWAP",
+                "last": "1000",
+                "volCcy24h": "1000000",
+            },
+            {"instId": "ETH-USDT-SWAP", "last": "2500", "volCcy24h": "20"},
+            {"instId": "ZZZ-USDT-SWAP", "last": "10", "volCcy24h": "20000"},
+        ]
+
+
 class InterruptingOkxClient(FakeOkxClient):
     def history_candles(
         self,
@@ -225,6 +262,21 @@ class TailRecordingOkxClient(FakeOkxClient):
 
 
 class OfficialHistoryCollectorTests(unittest.TestCase):
+    def test_candidate_instruments_rank_by_public_quote_notional(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            collector = OkxOfficialHistoryCollector(
+                client=LiquidityRankedOkxClient(),
+                layout=layout,
+            )
+
+            instruments = collector._candidate_instruments(_contract().contract)
+
+            self.assertEqual(
+                instruments,
+                ["ZZZ-USDT-SWAP", "BTC-USDT-SWAP"],
+            )
+
     def test_different_contract_reuses_verified_shared_partition_and_checks_tail(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             layout = WarehouseLayout.from_root(Path(directory) / "回测数据")

@@ -8,8 +8,11 @@ from .backtest import (
 )
 from .bootstrap import (
     DEFAULT_BACKTEST_GATE_RULES,
+    DAILY_BACKTEST_GATE_RULES,
+    ensure_daily_backtest_gate_profile,
     ensure_default_backtest_gate_profile,
     register_alpha191_observer,
+    register_v13_27_18_cross_timeframe_candidate_pack,
 )
 from .data_contract import derive_strategy_data_contract, timeframe_plan
 from .projection import build_workflow_projection
@@ -44,6 +47,7 @@ __all__ = [
     "BacktestAdapterError",
     "BacktestAdapterResult",
     "DEFAULT_BACKTEST_GATE_RULES",
+    "DAILY_BACKTEST_GATE_RULES",
     "FailureDiagnosisRecord",
     "EvaluationBindingRecord",
     "GateProfileRecord",
@@ -64,10 +68,12 @@ __all__ = [
     "create_next_stage_run",
     "derive_strategy_data_contract",
     "ensure_default_backtest_gate_profile",
+    "ensure_daily_backtest_gate_profile",
     "execute_registered_adapter",
     "pause_workflow_run",
     "queue_workflow_run",
     "register_alpha191_observer",
+    "register_v13_27_18_cross_timeframe_candidate_pack",
     "register_strategy_version",
     "retry_workflow_run",
     "retry_backtest_for_data_preparation",

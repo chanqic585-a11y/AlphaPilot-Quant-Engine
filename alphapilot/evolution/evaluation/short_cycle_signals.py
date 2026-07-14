@@ -14,7 +14,13 @@ from alphapilot.short_cycle.parameter_search import (
 )
 
 
-_INTERVAL_MS = {"5m": 300_000, "15m": 900_000}
+_INTERVAL_MS = {
+    "5m": 300_000,
+    "15m": 900_000,
+    "1h": 3_600_000,
+    "4h": 14_400_000,
+    "1d": 86_400_000,
+}
 _OUTPUT_COLUMNS = [
     "pair",
     "timeframe",

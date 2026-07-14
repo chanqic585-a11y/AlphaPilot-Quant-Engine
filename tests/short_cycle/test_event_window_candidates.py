@@ -4,6 +4,7 @@ import unittest
 from collections import Counter
 
 from alphapilot.short_cycle.event_window_candidates import (
+    cross_timeframe_workflow_candidate_pool,
     event_window_candidate_pool,
     event_window_factor_successor_candidate_pool,
     event_window_learned_candidate_pool,
@@ -158,6 +159,89 @@ class EventWindowCandidateTests(unittest.TestCase):
                 self.assertFalse(
                     definition["researchMetadata"]["lockedOrHoldoutUsedForSelection"]
                 )
+
+    def test_cross_timeframe_pack_has_five_executable_research_candidates_each(self) -> None:
+        candidates = cross_timeframe_workflow_candidate_pool()
+
+        self.assertEqual(len(candidates), 25)
+        self.assertEqual(
+            Counter(item.timeframe for item in candidates),
+            {"5m": 5, "15m": 5, "1h": 5, "4h": 5, "1d": 5},
+        )
+        self.assertEqual(len(candidates), len({item.familyKey for item in candidates}))
+        for item in candidates:
+            with self.subTest(candidate=item.familyKey):
+                definition = item.definition()
+                metadata = definition["researchMetadata"]
+                self.assertEqual(definition["targetR"], 2.0)
+                self.assertTrue(definition["researchOnly"])
+                self.assertFalse(definition["executionEnabled"])
+                self.assertFalse(metadata["lockedOrHoldoutUsedForSelection"])
+                self.assertIn(metadata["selectionTier"], {"research_eligible", "shadow_only"})
+                if item.timeframe in {"1h", "4h", "1d"}:
+                    self.assertIn(item.parameters["event_window"], (3, 4, 5))
+                    self.assertLessEqual(item.parameters["minimum_optional_checks"], 4)
+
+        four_hour_plans = {
+            tuple(sorted(item.definition()["formalDataPlan"].items()))
+            for item in candidates
+            if item.timeframe == "4h"
+        }
+        self.assertEqual(
+            four_hour_plans,
+            {
+                tuple(
+                    sorted(
+                        {
+                            "signal": "4h",
+                            "execution": "15m",
+                            "fallback": "1h",
+                        }.items()
+                    )
+                )
+            },
+        )
+        self.assertTrue(
+            all(
+                item.definition()["formalDataPlan"]
+                == {"signal": "1d", "execution": "1h", "fallback": "4h"}
+                for item in candidates
+                if item.timeframe == "1d"
+            )
+        )
+
+    def test_four_hour_pack_uses_bull_recovery_evidence(self) -> None:
+        candidates = [
+            item
+            for item in cross_timeframe_workflow_candidate_pool()
+            if item.timeframe == "4h"
+        ]
+
+        self.assertEqual({item.signalFamily for item in candidates}, {"windowed_recovery_reclaim_long"})
+        for item in candidates:
+            metadata = item.definition()["researchMetadata"]
+            self.assertEqual(metadata["selectionTier"], "research_eligible")
+            self.assertIn("v13_7_20_factory_failure_attribution", metadata["evidenceLineage"])
+
+    def test_one_day_pack_preserves_sparse_candidates_as_shadow_only(self) -> None:
+        candidates = [
+            item
+            for item in cross_timeframe_workflow_candidate_pool()
+            if item.timeframe == "1d"
+        ]
+
+        self.assertEqual(
+            Counter(item.definition()["researchMetadata"]["selectionTier"] for item in candidates),
+            {"research_eligible": 3, "shadow_only": 2},
+        )
+        self.assertEqual(
+            Counter(item.signalFamily for item in candidates),
+            {
+                "windowed_breakout_retest_long": 1,
+                "windowed_squeeze_breakout_long": 2,
+                "windowed_liquidity_sweep_reclaim_long": 2,
+            },
+        )
 
 
 if __name__ == "__main__":

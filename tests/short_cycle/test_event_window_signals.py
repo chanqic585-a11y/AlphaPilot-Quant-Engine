@@ -183,6 +183,73 @@ class EventWindowSignalTests(unittest.TestCase):
         self.assertTrue(bool(evaluation.signal.iloc[-1]))
         self.assertEqual(float(evaluation.eventAge.iloc[-1]), 4.0)
 
+    def test_recovery_reclaim_scores_optional_confirmation_without_same_bar_lock(self) -> None:
+        frame = self._frame()
+        frame["btc_ret_3"] = 0.01
+        frame["btc_trend20_50"] = 0.02
+        frame["btc_trend50_200"] = 0.03
+        event_index = frame.index[-3]
+        frame.loc[event_index, "close"] = frame.loc[event_index, "ema20"] * 0.995
+        frame.loc[frame.index[-1], "open"] = frame.loc[frame.index[-1], "close"] + 0.2
+        parameters = {
+            "event_window": 4,
+            "minimum_optional_checks": 3,
+            "trend_floor": 0.88,
+            "rsi_min": 36,
+            "rsi_max": 68,
+            "volume_min": 0.85,
+            "volume_max": 4.0,
+            "atr_pct_min": 0.005,
+            "atr_pct_max": 0.15,
+            "btc_shock_threshold": 0.06,
+            "stop_atr": 1.8,
+            "max_hold": 24,
+        }
+
+        evaluation = evaluate_event_window_signal(
+            frame, "windowed_recovery_reclaim_long", parameters
+        )
+
+        self.assertTrue(bool(evaluation.signal.iloc[-1]))
+        self.assertIn("confirmation_candle", evaluation.failed_checks(-1))
+
+    def test_squeeze_breakout_uses_prior_compression_and_scored_confirmation(self) -> None:
+        frame = self._frame()
+        frame["btc_ret_3"] = 0.01
+        frame.loc[frame.index[-5:-1], "bb_width"] = 0.012
+        frame.loc[frame.index[-30:-5], "bb_width"] = 0.05
+        prior_ceiling = float(frame.loc[frame.index[-21:-1], "high"].max())
+        frame.loc[frame.index[-1], "close"] = prior_ceiling * 1.003
+        frame.loc[frame.index[-1], "high"] = prior_ceiling * 1.006
+        frame.loc[frame.index[-1], "open"] = prior_ceiling * 1.004
+        frame.loc[frame.index[-1], "volume_ratio"] = 1.3
+        frame.loc[frame.index[-1], "atr14"] = 1.0
+        parameters = {
+            "event_window": 4,
+            "minimum_optional_checks": 3,
+            "lookback": 20,
+            "squeeze_window": 20,
+            "squeeze_ratio": 0.55,
+            "breakout_buffer": 0.001,
+            "trend_tolerance": 0.98,
+            "rsi_min": 42,
+            "rsi_max": 76,
+            "volume_min": 1.0,
+            "volume_max": 4.0,
+            "atr_pct_min": 0.008,
+            "atr_pct_max": 0.25,
+            "btc_shock_threshold": 0.12,
+            "stop_atr": 2.0,
+            "max_hold": 20,
+        }
+
+        evaluation = evaluate_event_window_signal(
+            frame, "windowed_squeeze_breakout_long", parameters
+        )
+
+        self.assertTrue(bool(evaluation.signal.iloc[-1]))
+        self.assertIn("confirmation_candle", evaluation.failed_checks(-1))
+
     def test_upper_band_rejection_ignores_stale_setup(self) -> None:
         frame = self._frame(descending=True)
         frame["btc_ret_3"] = 0.0

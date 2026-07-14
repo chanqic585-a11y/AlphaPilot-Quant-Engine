@@ -5,6 +5,7 @@ import json
 import tempfile
 import threading
 import unittest
+from collections import Counter
 from contextlib import redirect_stdout
 from dataclasses import replace
 from pathlib import Path
@@ -281,6 +282,56 @@ class WorkflowCliTests(unittest.TestCase):
             {(item["stage"], item["status"]) for item in items},
             {("backtest", "awaiting")},
         )
+
+    def test_v13_27_18_cross_timeframe_bootstrap_registers_five_per_timeframe(self) -> None:
+        first = self.run_cli("bootstrap-v13-27-18-cross-timeframe")
+        second = self.run_cli("bootstrap-v13-27-18-cross-timeframe")
+        projection = self.run_cli("projection")
+        items = [
+            item
+            for item in projection["items"]
+            if item["sourceType"] == "cross_timeframe_research_pack_v13_27_18"
+        ]
+
+        self.assertEqual(first, second)
+        self.assertEqual(first["count"], 25)
+        self.assertEqual(len(items), 25)
+        self.assertEqual(
+            Counter(
+                item["optimizationContext"]["definition"]["timeframe"]
+                for item in items
+            ),
+            {"5m": 5, "15m": 5, "1h": 5, "4h": 5, "1d": 5},
+        )
+        self.assertEqual(
+            {(item["stage"], item["status"]) for item in items},
+            {("backtest", "awaiting")},
+        )
+
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            versions = {
+                version.strategyVersionId: version
+                for version in workflow.list_strategy_versions()
+                if version.sourceType == "cross_timeframe_research_pack_v13_27_18"
+            }
+            for run in workflow.list_workflow_runs():
+                version = versions.get(run.strategyVersionId)
+                if version is None:
+                    continue
+                profile = workflow.get_gate_profile(str(run.gateProfileId))
+                self.assertIsNotNone(profile)
+                expected_minimum = (
+                    12 if version.definition["timeframe"] == "1d" else 30
+                )
+                self.assertEqual(profile.rules["minimumTradeCount"], expected_minimum)
+                self.assertEqual(profile.rules["minimumTargetR"], 2.0)
+                self.assertEqual(profile.rules["minimumProfitFactor"], 1.1)
+                self.assertTrue(profile.rules["requiresCostStress"])
+                self.assertTrue(profile.rules["requiresLockedOos"])
+        finally:
+            connection.close()
 
     def test_failed_backtest_drains_three_bounded_challengers_in_same_batch(self) -> None:
         self.run_cli("bootstrap-short-cycle")

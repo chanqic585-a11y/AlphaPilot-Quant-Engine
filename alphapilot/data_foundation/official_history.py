@@ -101,8 +101,43 @@ class OkxOfficialHistoryCollector:
             for item in official_rows
             if str(item.get("settleCcy") or "").upper() == "USDT"
             and str(item.get("state") or "").lower() in {"live", "suspend", "preopen"}
+            and str(item.get("instCategory") or "1") == "1"
             and str(item.get("instId") or "").upper().endswith("-USDT-SWAP")
         }
+        target = int((contract.get("universePolicy") or {}).get("targetMembers", 50))
+        target = max(1, target)
+        ticker_loader = getattr(self.client, "public_tickers", None)
+        ranked: list[str] = []
+        if callable(ticker_loader):
+            scores: dict[str, float] = {}
+            ticker_rows = ticker_loader(instrument_type="SWAP")
+            for item in ticker_rows:
+                instrument_id = str(item.get("instId") or "").upper()
+                if instrument_id not in official:
+                    continue
+                try:
+                    last = float(item.get("last") or 0.0)
+                    base_volume = float(item.get("volCcy24h") or 0.0)
+                    quote_notional = last * base_volume
+                except (TypeError, ValueError, OverflowError):
+                    continue
+                if (
+                    math.isfinite(quote_notional)
+                    and last > 0.0
+                    and base_volume > 0.0
+                    and quote_notional > 0.0
+                ):
+                    scores[instrument_id] = quote_notional
+            ranked = sorted(scores, key=lambda value: (-scores[value], value))
+            if not ranked:
+                raise RuntimeError("okx_public_ticker_ranking_unavailable")
+
+        # Legacy test clients may not expose tickers. Production clients do, and
+        # therefore fail closed instead of silently reverting to alphabetical Top N.
+        ordered_official = ranked + sorted(official - set(ranked))
+        if len(ordered_official) >= target or not self.layout.rawRoot.exists():
+            return ordered_official[:target]
+
         local = {
             str(asset.instrumentId).upper()
             for asset in discover_raw_assets(self.layout.rawRoot)
@@ -110,16 +145,8 @@ class OkxOfficialHistoryCollector:
             and asset.marketType == "swap"
             and str(asset.instrumentId).upper().endswith("-USDT-SWAP")
         }
-        target = int((contract.get("universePolicy") or {}).get("targetMembers", 50))
-        ordered = sorted(official | local)
-        preferred = [
-            value
-            for symbol in ("BTC-USDT-SWAP", "ETH-USDT-SWAP", "SOL-USDT-SWAP")
-            for value in ordered
-            if value == symbol
-        ]
-        remaining = [value for value in ordered if value not in preferred]
-        return (preferred + remaining)[: max(1, target)]
+        local_fallback = sorted(local - set(ordered_official))
+        return (ordered_official + local_fallback)[:target]
 
     @staticmethod
     def _timeframes(contract: dict[str, Any]) -> list[str]:

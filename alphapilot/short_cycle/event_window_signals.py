@@ -14,6 +14,8 @@ EVENT_WINDOW_SIGNAL_FAMILIES = frozenset(
         "windowed_trend_reclaim_long",
         "windowed_breakout_retest_long",
         "windowed_liquidity_sweep_reclaim_long",
+        "windowed_recovery_reclaim_long",
+        "windowed_squeeze_breakout_long",
         "windowed_upper_band_rejection_short",
         "windowed_failed_breakout_short",
         "windowed_failed_reclaim_short",
@@ -310,6 +312,82 @@ def evaluate_event_window_signal(
             "momentum_guard": (frame["rsi14"] >= params["rsi_recovery_min"])
             & (frame["rsi14"] > frame["rsi14"].shift(1)),
             "volume_guard": _volume_guard(frame, params),
+            "volatility_guard": volatility,
+            "learned_factor_guard": _learned_factor_guard(
+                frame, params, direction="long"
+            ),
+        }
+        return _evaluation(
+            checks=checks,
+            direction="long",
+            event_age=age,
+            max_shadow_failures=max_shadow_failures,
+            required_check_names=required_check_names,
+            minimum_optional_checks=minimum_optional_checks,
+        )
+
+    if family == "windowed_recovery_reclaim_long":
+        events = [
+            frame["close"].shift(lag) <= frame["ema20"].shift(lag)
+            for lag in range(1, window + 1)
+        ]
+        event, age = _or_window(events, frame.index)
+        checks = {
+            "data_ready": ready,
+            "btc_guard": _btc_guard(frame, params, direction="long"),
+            "event_window": event,
+            "btc_bull_regime": (frame["btc_trend20_50"] > 0)
+            & (frame["btc_trend50_200"] > -0.01),
+            "trend_regime": frame["close"] >= frame["ema200"] * params["trend_floor"],
+            "level_reclaim": frame["close"] > frame["ema20"],
+            "confirmation_candle": (frame["close"] > frame["open"])
+            | (frame["macd_hist"] > frame["macd_hist"].shift(1)),
+            "momentum_guard": frame["rsi14"].between(
+                params["rsi_min"], params["rsi_max"]
+            ),
+            "volume_guard": _volume_guard(frame, params),
+            "volatility_guard": volatility,
+            "learned_factor_guard": _learned_factor_guard(
+                frame, params, direction="long"
+            ),
+        }
+        return _evaluation(
+            checks=checks,
+            direction="long",
+            event_age=age,
+            max_shadow_failures=max_shadow_failures,
+            required_check_names=required_check_names,
+            minimum_optional_checks=minimum_optional_checks,
+        )
+
+    if family == "windowed_squeeze_breakout_long":
+        squeeze_window = int(params["squeeze_window"])
+        squeeze_baseline = frame["bb_width"].rolling(
+            squeeze_window, min_periods=squeeze_window
+        ).median()
+        events = [
+            frame["bb_width"].shift(lag)
+            <= squeeze_baseline.shift(lag + 1) * params["squeeze_ratio"]
+            for lag in range(1, window + 1)
+        ]
+        compression, age = _or_window(events, frame.index)
+        ceiling = frame["high"].rolling(
+            int(params["lookback"]), min_periods=int(params["lookback"])
+        ).max().shift(1)
+        breakout = frame["close"] > ceiling * (1 + params["breakout_buffer"])
+        checks = {
+            "data_ready": ready,
+            "btc_guard": _btc_guard(frame, params, direction="long"),
+            "event_window": compression & breakout,
+            "trend_regime": frame["close"]
+            >= frame["ema200"] * params["trend_tolerance"],
+            "confirmation_candle": frame["close"] > frame["open"],
+            "momentum_guard": frame["rsi14"].between(
+                params["rsi_min"], params["rsi_max"]
+            ),
+            "volume_guard": _volume_guard(frame, params),
+            "volatility_expansion": frame["bb_width"]
+            > frame["bb_width"].shift(1),
             "volatility_guard": volatility,
             "learned_factor_guard": _learned_factor_guard(
                 frame, params, direction="long"

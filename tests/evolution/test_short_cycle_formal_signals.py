@@ -16,7 +16,13 @@ def make_frame(
     timeframe: str = "5m",
     crash_final: bool = False,
 ) -> pd.DataFrame:
-    interval = 300_000 if timeframe == "5m" else 900_000
+    interval = {
+        "5m": 300_000,
+        "15m": 900_000,
+        "1h": 3_600_000,
+        "4h": 14_400_000,
+        "1d": 86_400_000,
+    }[timeframe]
     timestamps = np.arange(260, dtype="int64") * interval + 1_700_000_000_000
     close = 100.0 + np.sin(np.arange(260) / 6.0) * 0.1
     close[-1] = 94.0 if crash_final else 102.0
@@ -86,6 +92,30 @@ class ShortCycleFormalSignalTests(unittest.TestCase):
             int(row["signalTimestampMs"]),
             int(row["sourceTimestampMs"]) + 900_000 - 1,
         )
+
+    def test_long_horizon_signals_use_their_completed_candle_boundaries(self) -> None:
+        intervals = {
+            "1h": 3_600_000,
+            "4h": 14_400_000,
+            "1d": 86_400_000,
+        }
+        for timeframe, interval in intervals.items():
+            with self.subTest(timeframe=timeframe):
+                btc = make_frame("BTC-USDT-SWAP", timeframe=timeframe)
+                eth = make_frame("ETH-USDT-SWAP", timeframe=timeframe)
+                signals = build_short_cycle_formal_signals(
+                    {"BTC-USDT-SWAP": btc, "ETH-USDT-SWAP": eth},
+                    signal_timeframe=timeframe,
+                    family="breakout_volume_long",
+                    expected_direction="long",
+                    parameters=self.parameters(),
+                )
+
+                row = signals.loc[signals["pair"] == "ETH/USDT:USDT"].iloc[-1]
+                self.assertEqual(
+                    int(row["signalTimestampMs"]),
+                    int(row["sourceTimestampMs"]) + interval - 1,
+                )
 
     def test_btc_crash_blocks_long_signal(self) -> None:
         signals = build_short_cycle_formal_signals(

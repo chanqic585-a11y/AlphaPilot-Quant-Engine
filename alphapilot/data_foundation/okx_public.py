@@ -130,6 +130,18 @@ class OkxPublicClient:
             if isinstance(item, dict)
         ]
 
+    def public_tickers(
+        self, *, instrument_type: str = "SWAP"
+    ) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/market/tickers",
+                {"instType": instrument_type},
+            )
+            if isinstance(item, dict)
+        ]
+
     def funding_rate_history(
         self,
         *,

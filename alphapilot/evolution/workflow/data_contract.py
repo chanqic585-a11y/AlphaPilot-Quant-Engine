@@ -17,6 +17,12 @@ SUPPORTED_TIMEFRAME_PLANS: dict[str, dict[str, str | None]] = {
     "15m": {"signal": "15m", "execution": "5m", "fallback": None},
     "1h": {"signal": "1h", "execution": "5m", "fallback": "15m"},
     "4h": {"signal": "4h", "execution": "5m", "fallback": "15m"},
+    "1d": {"signal": "1d", "execution": "1h", "fallback": "4h"},
+}
+ALLOWLISTED_FORMAL_DATA_PLAN_OVERRIDES: dict[
+    str, tuple[dict[str, str | None], ...]
+] = {
+    "4h": ({"signal": "4h", "execution": "15m", "fallback": "1h"},),
 }
 
 
@@ -26,6 +32,36 @@ def timeframe_plan(primary_timeframe: str) -> dict[str, str | None]:
     if plan is None:
         raise ValueError(f"unsupported_strategy_timeframe:{normalized or 'missing'}")
     return dict(plan)
+
+
+def _formal_data_plan(definition: dict[str, Any]) -> dict[str, str | None]:
+    primary_timeframe = str(definition.get("timeframe") or "").strip().lower()
+    default = timeframe_plan(primary_timeframe)
+    requested = definition.get("formalDataPlan")
+    if requested is None:
+        return default
+    if not isinstance(requested, dict) or set(requested) != {
+        "signal",
+        "execution",
+        "fallback",
+    }:
+        raise ValueError("unsupported_formal_data_plan:invalid_shape")
+
+    normalized = {
+        "signal": str(requested.get("signal") or "").strip().lower(),
+        "execution": str(requested.get("execution") or "").strip().lower(),
+        "fallback": (
+            str(requested["fallback"]).strip().lower()
+            if requested.get("fallback") is not None
+            else None
+        ),
+    }
+    allowed = (default, *ALLOWLISTED_FORMAL_DATA_PLAN_OVERRIDES.get(primary_timeframe, ()))
+    if normalized not in allowed:
+        raise ValueError(
+            f"unsupported_formal_data_plan:{primary_timeframe or 'missing'}"
+        )
+    return normalized
 
 
 def _strategy_content_hash(version: StrategyVersionRecord) -> str:
@@ -90,7 +126,7 @@ def derive_strategy_data_contract(
         )
 
     definition = version.definition
-    plan = timeframe_plan(str(definition.get("timeframe") or ""))
+    plan = _formal_data_plan(definition)
     target_r = _target_r(version)
     direction = str(definition.get("direction") or "").strip().lower()
     if direction not in {"long", "short", "both"}:
@@ -110,10 +146,16 @@ def derive_strategy_data_contract(
         "targetR": target_r,
         "requiredDataKinds": ["ohlcv", "funding", "instrument_metadata"],
         "universePolicy": {
-            "type": "point_in_time_dynamic_liquid_usdt_swap",
+            "type": "current_snapshot_liquidity_ranked_crypto_usdt_swap",
+            "instrumentCategory": "1",
             "minimumMembers": 20,
             "targetMembers": 50,
-            "candidateDiscovery": ["local_catalog", "okx_public_instruments"],
+            "candidateDiscovery": [
+                "okx_public_instruments",
+                "okx_public_tickers",
+            ],
+            "ranking": "okx_public_24h_quote_notional_v1",
+            "historicalPointInTime": False,
         },
         "validationPolicy": {
             "purgedWalkForward": True,

@@ -12,6 +12,7 @@ from alphapilot.short_cycle.workflow_candidates import (
     short_cycle_workflow_candidates,
 )
 from alphapilot.short_cycle.event_window_candidates import (
+    cross_timeframe_workflow_candidate_pool,
     research_eligible_event_window_workflow_candidates,
 )
 from alphapilot.evolution.strategies.family_registry import ensure_strategy_family
@@ -37,6 +38,12 @@ DEFAULT_BACKTEST_GATE_RULES = {
     "requiresStability": True,
 }
 
+DAILY_BACKTEST_GATE_RULES = {
+    **DEFAULT_BACKTEST_GATE_RULES,
+    "schemaVersion": "workflow_backtest_gate_daily_v1",
+    "minimumTradeCount": 12,
+}
+
 
 def ensure_default_backtest_gate_profile(
     repository: WorkflowRepository,
@@ -46,6 +53,25 @@ def ensure_default_backtest_gate_profile(
         GateProfileRecord(
             gateProfileId="gate_profile_backtest_default_v1",
             profileKey="default_backtest",
+            version=1,
+            stage="backtest",
+            status="active",
+            rules=rules,
+            contentHash=stable_hash(rules),
+        )
+    )
+
+
+def ensure_daily_backtest_gate_profile(
+    repository: WorkflowRepository,
+) -> GateProfileRecord:
+    """Keep every quality gate while acknowledging sparse completed daily bars."""
+
+    rules = DAILY_BACKTEST_GATE_RULES
+    return repository.create_gate_profile(
+        GateProfileRecord(
+            gateProfileId="gate_profile_backtest_daily_v1",
+            profileKey="daily_backtest",
             version=1,
             stage="backtest",
             status="active",
@@ -232,6 +258,44 @@ def register_v13_27_17_event_window_candidate_pack(
                 strategy_family_id=family.strategyFamilyId,
                 display_name=item.displayName,
                 source_type="event_window_research_eligible_pack_v13_27_17",
+                definition=item.definition(),
+                parameters=item.parameters,
+                initial_gate_profile_id=gate.gateProfileId,
+            )
+        )
+    return tuple(versions)
+
+
+def register_v13_27_18_cross_timeframe_candidate_pack(
+    registry: RegistryRepository,
+    workflow: WorkflowRepository,
+) -> tuple[StrategyVersionRecord, ...]:
+    """Register five research-only definitions per supported timeframe."""
+
+    default_gate = ensure_default_backtest_gate_profile(workflow)
+    daily_gate = ensure_daily_backtest_gate_profile(workflow)
+    versions: list[StrategyVersionRecord] = []
+    for item in cross_timeframe_workflow_candidate_pool():
+        metadata = dict(item.researchMetadata or {})
+        family = ensure_strategy_family(
+            repository=registry,
+            family_key=item.familyKey,
+            name=item.displayName,
+            metadata={
+                "candidatePack": "V13.27.18",
+                "direction": item.direction,
+                "timeframe": item.timeframe,
+                "selectionTier": metadata.get("selectionTier"),
+                "formalPromotionEvidence": False,
+            },
+        )
+        gate = daily_gate if item.timeframe == "1d" else default_gate
+        versions.append(
+            register_strategy_version(
+                workflow,
+                strategy_family_id=family.strategyFamilyId,
+                display_name=item.displayName,
+                source_type="cross_timeframe_research_pack_v13_27_18",
                 definition=item.definition(),
                 parameters=item.parameters,
                 initial_gate_profile_id=gate.gateProfileId,

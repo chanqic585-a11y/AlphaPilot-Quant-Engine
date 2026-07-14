@@ -47,28 +47,38 @@ class StrategyDataContractTests(unittest.TestCase):
         self.connection.close()
         self.temp.cleanup()
 
-    def register_version(self, timeframe: str, *, target_r: float = 2.0):
+    def register_version(
+        self,
+        timeframe: str,
+        *,
+        target_r: float = 2.0,
+        formal_data_plan: dict[str, str | None] | None = None,
+    ):
+        definition = {
+            "direction": "both",
+            "market": "crypto_usdt_swap",
+            "timeframe": timeframe,
+            "targetR": target_r,
+        }
+        if formal_data_plan is not None:
+            definition["formalDataPlan"] = formal_data_plan
         return register_strategy_version(
             self.workflow,
             strategy_family_id=self.family.strategyFamilyId,
             display_name=f"Contract {timeframe} {target_r}",
             source_type="test",
-            definition={
-                "direction": "both",
-                "market": "crypto_usdt_swap",
-                "timeframe": timeframe,
-                "targetR": target_r,
-            },
+            definition=definition,
             parameters={"timeframe": timeframe, "targetR": target_r},
             initial_gate_profile_id=self.gate.gateProfileId,
         )
 
-    def test_timeframe_plan_supports_four_declared_strategy_classes(self) -> None:
+    def test_timeframe_plan_supports_five_declared_strategy_classes(self) -> None:
         expected = {
             "5m": {"signal": "5m", "execution": "5m", "fallback": None},
             "15m": {"signal": "15m", "execution": "5m", "fallback": None},
             "1h": {"signal": "1h", "execution": "5m", "fallback": "15m"},
             "4h": {"signal": "4h", "execution": "5m", "fallback": "15m"},
+            "1d": {"signal": "1d", "execution": "1h", "fallback": "4h"},
         }
 
         self.assertEqual(
@@ -77,7 +87,7 @@ class StrategyDataContractTests(unittest.TestCase):
         )
 
     def test_contract_is_complete_and_idempotent_for_each_timeframe(self) -> None:
-        for timeframe in ("5m", "15m", "1h", "4h"):
+        for timeframe in ("5m", "15m", "1h", "4h", "1d"):
             with self.subTest(timeframe=timeframe):
                 version = self.register_version(timeframe)
                 first = derive_strategy_data_contract(version, self.workflow)
@@ -102,6 +112,25 @@ class StrategyDataContractTests(unittest.TestCase):
                     first.contract["validationPolicy"]["sameBarAmbiguity"],
                     "stop_first",
                 )
+                self.assertEqual(
+                    first.contract["universePolicy"]["ranking"],
+                    "okx_public_24h_quote_notional_v1",
+                )
+                self.assertEqual(
+                    first.contract["universePolicy"]["instrumentCategory"],
+                    "1",
+                )
+                self.assertEqual(
+                    first.contract["universePolicy"]["type"],
+                    "current_snapshot_liquidity_ranked_crypto_usdt_swap",
+                )
+                self.assertFalse(
+                    first.contract["universePolicy"]["historicalPointInTime"]
+                )
+                self.assertEqual(
+                    first.contract["universePolicy"]["candidateDiscovery"],
+                    ["okx_public_instruments", "okx_public_tickers"],
+                )
 
     def test_invalid_timeframe_target_and_content_hash_fail_closed(self) -> None:
         with self.assertRaisesRegex(ValueError, "unsupported_strategy_timeframe"):
@@ -115,6 +144,37 @@ class StrategyDataContractTests(unittest.TestCase):
         corrupted = replace(valid, contentHash="corrupted")
         with self.assertRaisesRegex(WorkflowConflict, "strategy_content_hash_mismatch"):
             derive_strategy_data_contract(corrupted, self.workflow)
+
+    def test_allowlisted_four_hour_data_plan_reuses_fifteen_minute_store(self) -> None:
+        version = self.register_version(
+            "4h",
+            formal_data_plan={
+                "signal": "4h",
+                "execution": "15m",
+                "fallback": "1h",
+            },
+        )
+
+        contract = derive_strategy_data_contract(version, self.workflow).contract
+
+        self.assertEqual(contract["signalTimeframe"], "4h")
+        self.assertEqual(contract["executionTimeframe"], "15m")
+        self.assertEqual(contract["executionFallbackTimeframe"], "1h")
+
+    def test_unapproved_or_mismatched_data_plan_fails_closed(self) -> None:
+        invalid_plans = (
+            {"signal": "4h", "execution": "1m", "fallback": "5m"},
+            {"signal": "1h", "execution": "15m", "fallback": "1h"},
+            {"signal": "1d", "execution": "4h", "fallback": None},
+        )
+        for plan in invalid_plans:
+            with self.subTest(plan=plan):
+                version = self.register_version(
+                    str(plan["signal"]),
+                    formal_data_plan=plan,
+                )
+                with self.assertRaisesRegex(ValueError, "unsupported_formal_data_plan"):
+                    derive_strategy_data_contract(version, self.workflow)
 
 
 if __name__ == "__main__":

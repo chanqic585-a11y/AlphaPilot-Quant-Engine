@@ -721,6 +721,232 @@ _ONE_HOUR_FACTOR_SUCCESSOR_POOL = (
     ),
 )
 
+
+def _tiered_candidate(
+    item: ShortCycleWorkflowCandidate,
+    *,
+    selection_tier: str,
+    evidence_lineage: tuple[str, ...],
+    evidence_status: str,
+) -> ShortCycleWorkflowCandidate:
+    metadata = dict(item.researchMetadata or {})
+    metadata.update(
+        {
+            "candidatePack": "V13.27.18",
+            "selectionTier": selection_tier,
+            "evidenceLineage": list(evidence_lineage),
+            "evidenceStatus": evidence_status,
+            "formalPromotionEvidence": False,
+            "lockedOrHoldoutUsedForSelection": False,
+        }
+    )
+    formal_data_plan = None
+    if item.timeframe == "4h":
+        formal_data_plan = {"signal": "4h", "execution": "15m", "fallback": "1h"}
+    elif item.timeframe == "1d":
+        formal_data_plan = {"signal": "1d", "execution": "1h", "fallback": "4h"}
+    return replace(
+        item,
+        researchMetadata=metadata,
+        formalDataPlan=formal_data_plan,
+    )
+
+
+_FOUR_HOUR_RECOVERY_POOL = tuple(
+    _candidate(
+        key,
+        name,
+        "4h",
+        "long",
+        "windowed_recovery_reclaim_long",
+        variant=variant,
+        selection_method="declared_4h_btc_bull_recovery_evidence_v1",
+        prescreen_status="research_eligible_recheck_required",
+        event_window=4,
+        minimum_optional_checks=3,
+        trend_floor=0.88,
+        rsi_min=36,
+        rsi_max=68,
+        volume_min=0.85,
+        volume_max=4.0,
+        atr_pct_min=0.005,
+        atr_pct_max=0.15,
+        btc_shock_threshold=0.06,
+        stop_atr=stop_atr,
+        max_hold=max_hold,
+    )
+    for key, name, variant, stop_atr, max_hold in (
+        (
+            "event_4h_bull_recovery_atr15_h24_v1",
+            "4H 牛市恢复收回 ATR1.5 持有24",
+            "atr15_h24",
+            1.5,
+            24,
+        ),
+        (
+            "event_4h_bull_recovery_atr18_h24_v1",
+            "4H 牛市恢复收回 ATR1.8 持有24",
+            "atr18_h24",
+            1.8,
+            24,
+        ),
+        (
+            "event_4h_bull_recovery_atr20_h24_v1",
+            "4H 牛市恢复收回 ATR2.0 持有24",
+            "atr20_h24",
+            2.0,
+            24,
+        ),
+        (
+            "event_4h_bull_recovery_atr20_h30_v1",
+            "4H 牛市恢复收回 ATR2.0 持有30",
+            "atr20_h30",
+            2.0,
+            30,
+        ),
+        (
+            "event_4h_bull_recovery_atr20_h36_v1",
+            "4H 牛市恢复收回 ATR2.0 持有36",
+            "atr20_h36",
+            2.0,
+            36,
+        ),
+    )
+)
+
+
+_ONE_DAY_EVENT_POOL = (
+    _candidate(
+        "event_1d_breakout_retest_atr20_v1",
+        "1D 趋势突破回踩 ATR2.0",
+        "1d",
+        "long",
+        "windowed_breakout_retest_long",
+        variant="legacy_breakout_successor",
+        selection_method="declared_1d_low_frequency_evidence_v1",
+        prescreen_status="research_eligible_recheck_required",
+        event_window=5,
+        minimum_optional_checks=3,
+        lookback=30,
+        breakout_buffer=0.001,
+        retest_tolerance=0.015,
+        reclaim_buffer=0.0,
+        trend_tolerance=0.98,
+        rsi_min=42,
+        rsi_max=78,
+        breakout_volume_min=1.1,
+        confirmation_volume_min=0.75,
+        confirmation_volume_max=4.0,
+        atr_pct_min=0.008,
+        atr_pct_max=0.25,
+        btc_shock_threshold=0.12,
+        stop_atr=2.0,
+        max_hold=20,
+    ),
+    _candidate(
+        "event_1d_squeeze_breakout_atr20_v1",
+        "1D 趋势压缩释放 ATR2.0",
+        "1d",
+        "long",
+        "windowed_squeeze_breakout_long",
+        variant="legacy_squeeze_successor",
+        selection_method="declared_1d_low_frequency_evidence_v1",
+        prescreen_status="research_eligible_recheck_required",
+        event_window=4,
+        minimum_optional_checks=3,
+        lookback=30,
+        squeeze_window=30,
+        squeeze_ratio=0.65,
+        breakout_buffer=0.001,
+        trend_tolerance=0.98,
+        rsi_min=42,
+        rsi_max=78,
+        volume_min=1.0,
+        volume_max=4.0,
+        atr_pct_min=0.008,
+        atr_pct_max=0.25,
+        btc_shock_threshold=0.12,
+        stop_atr=2.0,
+        max_hold=20,
+    ),
+    _candidate(
+        "event_1d_broad_squeeze_breakout_atr20_v1",
+        "1D 广谱压缩释放 ATR2.0",
+        "1d",
+        "long",
+        "windowed_squeeze_breakout_long",
+        variant="legacy_broad_squeeze_successor",
+        selection_method="declared_1d_low_frequency_evidence_v1",
+        prescreen_status="research_eligible_recheck_required",
+        event_window=5,
+        minimum_optional_checks=2,
+        lookback=24,
+        squeeze_window=30,
+        squeeze_ratio=0.8,
+        breakout_buffer=0.0005,
+        trend_tolerance=0.95,
+        rsi_min=40,
+        rsi_max=80,
+        volume_min=0.85,
+        volume_max=4.0,
+        atr_pct_min=0.008,
+        atr_pct_max=0.25,
+        btc_shock_threshold=0.12,
+        stop_atr=2.0,
+        max_hold=24,
+    ),
+    _candidate(
+        "event_1d_oversold_sweep_reclaim_atr12_v1",
+        "1D 超卖扫低收回 ATR1.2 影子",
+        "1d",
+        "long",
+        "windowed_liquidity_sweep_reclaim_long",
+        variant="legacy_oversold_reclaim_atr12_shadow",
+        selection_method="declared_1d_low_frequency_evidence_v1",
+        prescreen_status="sparse_positive_shadow_recheck_required",
+        event_window=5,
+        minimum_optional_checks=2,
+        lookback=30,
+        sweep_buffer=0.002,
+        reclaim_buffer=0.001,
+        trend_floor=0.85,
+        rsi_oversold=40,
+        rsi_recovery_min=36,
+        volume_min=0.8,
+        volume_max=4.0,
+        atr_pct_min=0.008,
+        atr_pct_max=0.25,
+        btc_shock_threshold=0.12,
+        stop_atr=1.2,
+        max_hold=20,
+    ),
+    _candidate(
+        "event_1d_oversold_sweep_reclaim_atr10_v1",
+        "1D 超卖扫低收回 ATR1.0 影子",
+        "1d",
+        "long",
+        "windowed_liquidity_sweep_reclaim_long",
+        variant="legacy_oversold_reclaim_atr10_shadow",
+        selection_method="declared_1d_low_frequency_evidence_v1",
+        prescreen_status="sparse_positive_shadow_recheck_required",
+        event_window=5,
+        minimum_optional_checks=2,
+        lookback=30,
+        sweep_buffer=0.001,
+        reclaim_buffer=0.0005,
+        trend_floor=0.82,
+        rsi_oversold=42,
+        rsi_recovery_min=36,
+        volume_min=0.75,
+        volume_max=4.0,
+        atr_pct_min=0.008,
+        atr_pct_max=0.25,
+        btc_shock_threshold=0.12,
+        stop_atr=1.0,
+        max_hold=20,
+    ),
+)
+
 _POOL = _BASE_POOL + _LEARNED_POOL
 
 # These keys are replaced only after a deterministic development pre-screen.
@@ -809,6 +1035,111 @@ def long_horizon_event_candidate_pool() -> tuple[
     ShortCycleWorkflowCandidate, ...
 ]:
     return _LONG_HORIZON_POOL
+
+
+def cross_timeframe_workflow_candidate_pool() -> tuple[
+    ShortCycleWorkflowCandidate, ...
+]:
+    """Return five auditable, executable research definitions per timeframe.
+
+    Selection tier records evidence strength only. Every definition remains
+    research-only and must pass the formal workflow before promotion.
+    """
+
+    five_minute = tuple(item for item in _LEARNED_POOL if item.timeframe == "5m")
+    fifteen_minute = _FACTOR_SUCCESSOR_POOL
+    one_hour = _ONE_HOUR_FACTOR_SUCCESSOR_POOL
+
+    result: list[ShortCycleWorkflowCandidate] = []
+    for item in five_minute:
+        result.append(
+            _tiered_candidate(
+                item,
+                selection_tier="shadow_only",
+                evidence_lineage=(
+                    "v13_27_16_failure_attribution",
+                    "formal_recheck_required_after_archived_failures",
+                ),
+                evidence_status="positive_development_segments_but_formal_recheck_required",
+            )
+        )
+    for item in fifteen_minute:
+        robust = item.researchMetadata is not None and item.researchMetadata.get(
+            "prescreenStatus"
+        ) == "robust_factor_successor_pending_recheck"
+        result.append(
+            _tiered_candidate(
+                item,
+                selection_tier="research_eligible" if robust else "shadow_only",
+                evidence_lineage=(
+                    "v13_27_17_event_window_factor_discovery_expanded",
+                    "formal_recheck_required_after_archived_failures",
+                ),
+                evidence_status=(
+                    "robust_development_validation_holdback_factor"
+                    if robust
+                    else "no_robust_factor_guard_shadow_only"
+                ),
+            )
+        )
+    for item in one_hour:
+        tier = (
+            "research_eligible"
+            if item.familyKey == "short_cycle_event_1h_sweep_reclaim_factor_v2"
+            else "shadow_only"
+        )
+        result.append(
+            _tiered_candidate(
+                item,
+                selection_tier=tier,
+                evidence_lineage=(
+                    "v13_27_17_long_horizon_1h_factor_discovery",
+                    "v13_27_17_long_horizon_candidate_pack",
+                ),
+                evidence_status=(
+                    "direct_positive_three_segment_factor_evidence"
+                    if tier == "research_eligible"
+                    else "shadow_retest_required_no_forced_promotion"
+                ),
+            )
+        )
+    for item in _FOUR_HOUR_RECOVERY_POOL:
+        result.append(
+            _tiered_candidate(
+                item,
+                selection_tier="research_eligible",
+                evidence_lineage=(
+                    "v13_7_20_factory_failure_attribution",
+                    "v13_27_17_long_horizon_candidate_pack",
+                ),
+                evidence_status="direct_btc_bull_recovery_reclaim_evidence",
+            )
+        )
+    for index, item in enumerate(_ONE_DAY_EVENT_POOL):
+        eligible = index < 3
+        result.append(
+            _tiered_candidate(
+                item,
+                selection_tier="research_eligible" if eligible else "shadow_only",
+                evidence_lineage=(
+                    "v13_7_20_five_strategy_candidate_factory",
+                    "v13_27_17_long_horizon_candidate_pack",
+                ),
+                evidence_status=(
+                    "direct_positive_low_frequency_evidence"
+                    if eligible
+                    else "positive_but_sparse_shadow_evidence"
+                ),
+            )
+        )
+
+    candidates = tuple(result)
+    expected = {"5m": 5, "15m": 5, "1h": 5, "4h": 5, "1d": 5}
+    if Counter(item.timeframe for item in candidates) != expected:
+        raise ValueError("cross_timeframe_workflow_pack_shape_invalid")
+    if len({item.familyKey for item in candidates}) != len(candidates):
+        raise ValueError("cross_timeframe_workflow_pack_keys_not_unique")
+    return candidates
 
 
 def event_window_short_cycle_workflow_candidates() -> tuple[

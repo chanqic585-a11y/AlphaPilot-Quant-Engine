@@ -164,6 +164,42 @@ class OkxPublicTests(unittest.TestCase):
         self.assertEqual(parsed[2][1]["after"], ["3000"])
         self.assertTrue(all("OK-ACCESS" not in url for url in calls))
 
+    def test_public_tickers_uses_unauthenticated_swap_market_endpoint(self) -> None:
+        calls: list[object] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(request)
+            return _Response(
+                {
+                    "code": "0",
+                    "msg": "",
+                    "data": [
+                        {
+                            "instId": "BTC-USDT-SWAP",
+                            "last": "60000",
+                            "volCcy24h": "1000",
+                        }
+                    ],
+                }
+            )
+
+        tickers = OkxPublicClient(
+            opener=opener,
+            throttle_seconds=0,
+        ).public_tickers(instrument_type="SWAP")
+
+        self.assertEqual(tickers[0]["instId"], "BTC-USDT-SWAP")
+        request = calls[0]
+        parsed = urlparse(str(getattr(request, "full_url")))
+        self.assertEqual(parsed.path, "/api/v5/market/tickers")
+        self.assertEqual(parse_qs(parsed.query)["instType"], ["SWAP"])
+        headers = {
+            str(key).upper(): str(value)
+            for key, value in getattr(request, "headers", {}).items()
+        }
+        self.assertFalse(any(key.startswith("OK-ACCESS") for key in headers))
+
     def test_latest_completed_candles_excludes_open_exchange_bar(self) -> None:
         def opener(_request: object, timeout: int) -> _Response:
             self.assertEqual(timeout, 30)
