@@ -1,0 +1,5805 @@
+{
+  "reportId": "archived_failed_strategy_failure_analysis_v1_inventory",
+  "generatedAt": "2026-07-14T23:36:19.048078+00:00",
+  "summary": {
+    "strategyCount": 13,
+    "familyCount": 3,
+    "timeframeCount": 2,
+    "evidenceLevelCounts": {
+      "1": 11,
+      "2": 2
+    },
+    "primaryFailureCounts": {
+      "rejected_risk_design": 1,
+      "signal_edge_failure": 12
+    },
+    "dryRunApprovedCount": 0,
+    "liveTradingApprovedCount": 0,
+    "completeMetricEvidenceCount": 12,
+    "missingMetricEvidenceCount": 1
+  },
+  "records": [
+    {
+      "strategyId": "alpha_short_rejection_1h_v01",
+      "strategyName": "AlphaPilot Short Rejection 1H V0.1",
+      "strategyClass": "AlphaPilotShortRejection1HV01",
+      "strategyVersion": "0.1-v13.4.29",
+      "strategyFamily": "short_rejection",
+      "strategyFile": "user_data/strategies/AlphaPilotShortRejection1HV01.py",
+      "direction": "short",
+      "timeframe": "1h",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 28,
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "XRP/USDT:USDT",
+          "ADA/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SUI/USDT:USDT",
+          "APT/USDT:USDT",
+          "OP/USDT:USDT",
+          "ARB/USDT:USDT",
+          "LTC/USDT:USDT",
+          "BCH/USDT:USDT",
+          "DOT/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "PEPE/USDT:USDT",
+          "WIF/USDT:USDT",
+          "ORDI/USDT:USDT",
+          "INJ/USDT:USDT",
+          "FIL/USDT:USDT",
+          "ETC/USDT:USDT",
+          "TRX/USDT:USDT",
+          "UNI/USDT:USDT",
+          "AAVE/USDT:USDT",
+          "ATOM/USDT:USDT",
+          "SEI/USDT:USDT",
+          "TIA/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "failed_research_current_sample",
+      "reason": "Expanded short-only backtest suffered near-total loss with excessive trade count.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_30_short_strategy_status_archive.json",
+      "sourceReport": "reports\\v13_4_29_short_rejection_1h_report.json",
+      "sourceArtifact": null,
+      "sourceArtifactAvailable": false,
+      "evidenceLevel": 2,
+      "evidenceLevelLabel": "structured_json_report",
+      "evidenceFiles": [
+        "reports/v13_4_30_short_strategy_status_archive.json",
+        "reports/v13_4_29_short_rejection_1h_report.json",
+        "reports/v13_4_30_short_rejection_failure_review.json",
+        "reports\\v13_4_29_short_rejection_1h_report.json"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageHoldingMinutes",
+        "feesPaid",
+        "slippageCost",
+        "averageNetR",
+        "grossRewardRiskR",
+        "perTradeRegimeAttribution"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 5052,
+        "totalReturnPct": -99.9966,
+        "slippageAdjustedTotalReturnPct": -217.1225,
+        "winRatePct": 29.711,
+        "profitFactor": 0.782,
+        "slippageAdjustedProfitFactor": 0.5966,
+        "maxDrawdownPct": 99.9966,
+        "maxConsecutiveLosses": 77,
+        "averageHoldingMinutes": null,
+        "feesPaid": null,
+        "slippageCost": null,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": 28,
+        "monthCount": 6
+      },
+      "breakdowns": {
+        "pairs": [
+          {
+            "key": "SOL/USDT:USDT",
+            "trades": 171,
+            "profit_mean": -0.0033482004720116823,
+            "profit_mean_pct": -0.33,
+            "profit_total_abs": 1.3184322499999985,
+            "profit_total": 0.0013184322499999986,
+            "profit_total_pct": 0.13,
+            "duration_avg": "0:38:00",
+            "wins": 59,
+            "draws": 0,
+            "losses": 112,
+            "winrate": 0.34502923976608185,
+            "cagr": 0.0027836986241336348,
+            "expectancy": 0.007710130116958758,
+            "expectancy_ratio": 0.005671159781578616,
+            "sortino": 0.08118155783094672,
+            "sharpe": 0.05089025743449867,
+            "calmar": 0.6623128081323901,
+            "sqn": 0.0351,
+            "p_value": 0.9720118505254219,
+            "profit_factor": 1.008658645737946,
+            "max_drawdown_account": 0.021983406624541443,
+            "max_drawdown_abs": 22.5070962
+          },
+          {
+            "key": "AVAX/USDT:USDT",
+            "trades": 174,
+            "profit_mean": -0.0024875821560974417,
+            "profit_mean_pct": -0.25,
+            "profit_total_abs": 0.9852965499999893,
+            "profit_total": 0.0009852965499999892,
+            "profit_total_pct": 0.1,
+            "duration_avg": "0:23:00",
+            "wins": 61,
+            "draws": 0,
+            "losses": 113,
+            "winrate": 0.3505747126436782,
+            "cagr": 0.002079941496009985,
+            "expectancy": 0.005662623850574922,
+            "expectancy_ratio": 0.003703082549912695,
+            "sortino": 0.0586194278014307,
+            "sharpe": 0.03321285213975019,
+            "calmar": 0.3618219067106065,
+            "sqn": 0.0227,
+            "p_value": 0.9818884969755651,
+            "profit_factor": 1.0057020917140247,
+            "max_drawdown_account": 0.030072700791450566,
+            "max_drawdown_abs": 31.0257572
+          },
+          {
+            "key": "AAVE/USDT:USDT",
+            "trades": 121,
+            "profit_mean": -0.008727599112824268,
+            "profit_mean_pct": -0.87,
+            "profit_total_abs": -3.386068599999994,
+            "profit_total": -0.003386068599999994,
+            "profit_total_pct": -0.34,
+            "duration_avg": "0:02:00",
+            "wins": 32,
+            "draws": 0,
+            "losses": 89,
+            "winrate": 0.2644628099173554,
+            "cagr": -0.007130595804983875,
+            "expectancy": -0.027984038016528823,
+            "expectancy_ratio": -0.019426830713320853,
+            "sortino": -0.19028028001873099,
+            "sharpe": -0.10977693750288205,
+            "calmar": -1.377427937795222,
+            "sqn": -0.09,
+            "p_value": 0.9284416119891012,
+            "profit_factor": 0.9735882413897546,
+            "max_drawdown_account": 0.027147334499999943,
+            "max_drawdown_abs": 27.1473345
+          },
+          {
+            "key": "TRX/USDT:USDT",
+            "trades": 68,
+            "profit_mean": -0.0011064997550679764,
+            "profit_mean_pct": -0.11,
+            "profit_total_abs": -5.073497,
+            "profit_total": -0.005073497,
+            "profit_total_pct": -0.51,
+            "duration_avg": "4:44:00",
+            "wins": 32,
+            "draws": 0,
+            "losses": 36,
+            "winrate": 0.47058823529411764,
+            "cagr": -0.010674068400166825,
+            "expectancy": -0.0746102500000001,
+            "expectancy_ratio": -0.035444968055098,
+            "sortino": -0.33985514005638695,
+            "sharpe": -0.18023233073738015,
+            "calmar": -2.6533713425668695,
+            "sqn": -0.1965,
+            "p_value": 0.8448495193975579,
+            "profit_factor": 0.9330483936737037,
+            "max_drawdown_account": 0.021115905159296268,
+            "max_drawdown_abs": 21.125743749999998
+          },
+          {
+            "key": "UNI/USDT:USDT",
+            "trades": 95,
+            "profit_mean": -0.004868388287079122,
+            "profit_mean_pct": -0.49,
+            "profit_total_abs": -7.662818499999991,
+            "profit_total": -0.007662818499999991,
+            "profit_total_pct": -0.77,
+            "duration_avg": "0:03:00",
+            "wins": 30,
+            "draws": 0,
+            "losses": 65,
+            "winrate": 0.3157894736842105,
+            "cagr": -0.016098491297625417,
+            "expectancy": -0.0806612473684214,
+            "expectancy_ratio": -0.03604036293901991,
+            "sortino": -0.47564795113820546,
+            "sharpe": -0.21701141547529845,
+            "calmar": -2.646209575589684,
+            "sqn": -0.2005,
+            "p_value": 0.8414837673141946,
+            "profit_factor": 0.947325623396817,
+            "max_drawdown_account": 0.03197898177633895,
+            "max_drawdown_abs": 32.4601195
+          },
+          {
+            "key": "ATOM/USDT:USDT",
+            "trades": 125,
+            "profit_mean": -0.008206575897250623,
+            "profit_mean_pct": -0.82,
+            "profit_total_abs": -11.840366999999985,
+            "profit_total": -0.011840366999999985,
+            "profit_total_pct": -1.18,
+            "duration_avg": "0:09:00",
+            "wins": 33,
+            "draws": 0,
+            "losses": 92,
+            "winrate": 0.264,
+            "cagr": -0.024817057076719773,
+            "expectancy": -0.09472293599999992,
+            "expectancy_ratio": -0.05570091553228185,
+            "sortino": -0.6939819769636592,
+            "sharpe": -0.3557874732971998,
+            "calmar": -3.479616984519828,
+            "sqn": -0.287,
+            "p_value": 0.7745866728389423,
+            "profit_factor": 0.9243194082441822,
+            "max_drawdown_account": 0.03757803364351527,
+            "max_drawdown_abs": 38.5781055
+          },
+          {
+            "key": "ORDI/USDT:USDT",
+            "trades": 244,
+            "profit_mean": -0.004629623080797772,
+            "profit_mean_pct": -0.46,
+            "profit_total_abs": -15.456490289999993,
+            "profit_total": -0.015456490289999993,
+            "profit_total_pct": -1.55,
+            "duration_avg": "0:17:00",
+            "wins": 76,
+            "draws": 0,
+            "losses": 168,
+            "winrate": 0.3114754098360656,
+            "cagr": -0.0323309722403764,
+            "expectancy": -0.06334627168032791,
+            "expectancy_ratio": -0.0733657220777284,
+            "sortino": -1.0597322365515875,
+            "sharpe": -0.7222888115135452,
+            "calmar": -4.003765670048109,
+            "sqn": -0.4179,
+            "p_value": 0.6764233457318376,
+            "profit_factor": 0.8934450226966325,
+            "max_drawdown_account": 0.042632672999999954,
+            "max_drawdown_abs": 42.632673000000004
+          },
+          {
+            "key": "LTC/USDT:USDT",
+            "trades": 111,
+            "profit_mean": -0.005229335935852758,
+            "profit_mean_pct": -0.52,
+            "profit_total_abs": -16.376021000000005,
+            "profit_total": -0.016376021000000004,
+            "profit_total_pct": -1.64,
+            "duration_avg": "0:15:00",
+            "wins": 34,
+            "draws": 0,
+            "losses": 77,
+            "winrate": 0.3063063063063063,
+            "cagr": -0.034236783085702105,
+            "expectancy": -0.14753172072072052,
+            "expectancy_ratio": -0.06673807517549057,
+            "sortino": -0.8847937408362456,
+            "sharpe": -0.4527314102857526,
+            "calmar": -5.004030249943284,
+            "sqn": -0.3874,
+            "p_value": 0.6992389104605731,
+            "profit_factor": 0.9037931643574096,
+            "max_drawdown_account": 0.036140053346334945,
+            "max_drawdown_abs": 36.5122335
+          },
+          {
+            "key": "SEI/USDT:USDT",
+            "trades": 154,
+            "profit_mean": -0.0043992197920657665,
+            "profit_mean_pct": -0.44,
+            "profit_total_abs": -17.301709250000002,
+            "profit_total": -0.017301709250000002,
+            "profit_total_pct": -1.73,
+            "duration_avg": "0:24:00",
+            "wins": 48,
+            "draws": 0,
+            "losses": 106,
+            "winrate": 0.3116883116883117,
+            "cagr": -0.03615335982438406,
+            "expectancy": -0.11234876136363636,
+            "expectancy_ratio": -0.09792444445800563,
+            "sortino": -1.1981075334246105,
+            "sharpe": -0.7282392072765219,
+            "calmar": -4.288254919442867,
+            "sqn": -0.5297,
+            "p_value": 0.597114108003539,
+            "profit_factor": 0.8577324108817656,
+            "max_drawdown_account": 0.044556261500000006,
+            "max_drawdown_abs": 44.556261500000005
+          },
+          {
+            "key": "XRP/USDT:USDT",
+            "trades": 180,
+            "profit_mean": -0.001961853992102332,
+            "profit_mean_pct": -0.2,
+            "profit_total_abs": -18.96635994999999,
+            "profit_total": -0.01896635994999999,
+            "profit_total_pct": -1.9,
+            "duration_avg": "0:40:00",
+            "wins": 66,
+            "draws": 0,
+            "losses": 114,
+            "winrate": 0.36666666666666664,
+            "cagr": -0.03959487122509375,
+            "expectancy": -0.10536866638888887,
+            "expectancy_ratio": -0.061058895552531744,
+            "sortino": -1.007501666950023,
+            "sharpe": -0.6368988980765892,
+            "calmar": -8.268790708461648,
+            "sqn": -0.4287,
+            "p_value": 0.6686780286238847,
+            "profit_factor": 0.9035912175486343,
+            "max_drawdown_account": 0.025330415750000043,
+            "max_drawdown_abs": 25.33041575
+          },
+          {
+            "key": "LINK/USDT:USDT",
+            "trades": 162,
+            "profit_mean": -0.005720869576171931,
+            "profit_mean_pct": -0.57,
+            "profit_total_abs": -20.3993917,
+            "profit_total": -0.0203993917,
+            "profit_total_pct": -2.04,
+            "duration_avg": "0:20:00",
+            "wins": 51,
+            "draws": 0,
+            "losses": 111,
+            "winrate": 0.3148148148148148,
+            "cagr": -0.04255234559455712,
+            "expectancy": -0.12592217098765435,
+            "expectancy_ratio": -0.08563948190356885,
+            "sortino": -1.233465271917702,
+            "sharpe": -0.7321944701304522,
+            "calmar": -6.664007520140272,
+            "sqn": -0.5193,
+            "p_value": 0.6042599445219878,
+            "profit_factor": 0.875012648032629,
+            "max_drawdown_account": 0.033805087764003094,
+            "max_drawdown_abs": 34.27405834999999
+          },
+          {
+            "key": "WIF/USDT:USDT",
+            "trades": 288,
+            "profit_mean": -0.006732772820412604,
+            "profit_mean_pct": -0.67,
+            "profit_total_abs": -23.06516665999999,
+            "profit_total": -0.02306516665999999,
+            "profit_total_pct": -2.31,
+            "duration_avg": "0:17:00",
+            "wins": 81,
+            "draws": 0,
+            "losses": 207,
+            "winrate": 0.28125,
+            "cagr": -0.048041178247829164,
+            "expectancy": -0.08008738423611111,
+            "expectancy_ratio": -0.10365193425844144,
+            "sortino": -1.7367547800240055,
+            "sharpe": -1.1705614279242826,
+            "calmar": -6.391056642531404,
+            "sqn": -0.6235,
+            "p_value": 0.5334456584117577,
+            "profit_factor": 0.8557886132056468,
+            "max_drawdown_account": 0.03985513270000001,
+            "max_drawdown_abs": 39.85513269999999
+          },
+          {
+            "key": "INJ/USDT:USDT",
+            "trades": 201,
+            "profit_mean": -0.008542271785550235,
+            "profit_mean_pct": -0.85,
+            "profit_total_abs": -30.36704822,
+            "profit_total": -0.03036704822,
+            "profit_total_pct": -3.04,
+            "duration_avg": "0:16:00",
+            "wins": 54,
+            "draws": 0,
+            "losses": 147,
+            "winrate": 0.26865671641791045,
+            "cagr": -0.06299077898752214,
+            "expectancy": -0.15107984189054713,
+            "expectancy_ratio": -0.14598261146639824,
+            "sortino": -1.9125343623158635,
+            "sharpe": -1.2771210985225416,
+            "calmar": -10.257561337482592,
+            "sqn": -0.8137,
+            "p_value": 0.41679911355588456,
+            "profit_factor": 0.8003911230969658,
+            "max_drawdown_account": 0.032693301949999976,
+            "max_drawdown_abs": 32.69330195
+          },
+          {
+            "key": "ETH/USDT:USDT",
+            "trades": 167,
+            "profit_mean": -0.00369912856087309,
+            "profit_mean_pct": -0.37,
+            "profit_total_abs": -31.281896040000007,
+            "profit_total": -0.03128189604000001,
+            "profit_total_pct": -3.13,
+            "duration_avg": "0:56:00",
+            "wins": 59,
+            "draws": 0,
+            "losses": 108,
+            "winrate": 0.3532934131736527,
+            "cagr": -0.0648550312833217,
+            "expectancy": -0.18731674275449106,
+            "expectancy_ratio": -0.10605553374776666,
+            "sortino": -1.7373104961052568,
+            "sharpe": -1.0636590108122306,
+            "calmar": -6.3881275122615495,
+            "sqn": -0.7431,
+            "p_value": 0.4584793424355329,
+            "profit_factor": 0.8360067209641017,
+            "max_drawdown_account": 0.05407790033634629,
+            "max_drawdown_abs": 55.21908884
+          },
+          {
+            "key": "TIA/USDT:USDT",
+            "trades": 151,
+            "profit_mean": -0.013536082667106375,
+            "profit_mean_pct": -1.35,
+            "profit_total_abs": -41.85035095,
+            "profit_total": -0.04185035095,
+            "profit_total_pct": -4.19,
+            "duration_avg": "0:10:00",
+            "wins": 31,
+            "draws": 0,
+            "losses": 120,
+            "winrate": 0.2052980132450331,
+            "cagr": -0.08624960582834384,
+            "expectancy": -0.27715464205298046,
+            "expectancy_ratio": -0.2527953473698884,
+            "sortino": -2.6341324975360396,
+            "sharpe": -1.7076738839829602,
+            "calmar": -11.043337095111443,
+            "sqn": -1.2542,
+            "p_value": 0.21171347662119752,
+            "profit_factor": 0.6818991878928904,
+            "max_drawdown_account": 0.041850350950000004,
+            "max_drawdown_abs": 41.85035094999996
+          },
+          {
+            "key": "BCH/USDT:USDT",
+            "trades": 113,
+            "profit_mean": -0.0031048277059098957,
+            "profit_mean_pct": -0.31,
+            "profit_total_abs": -43.8628595,
+            "profit_total": -0.0438628595,
+            "profit_total_pct": -4.39,
+            "duration_avg": "0:49:00",
+            "wins": 39,
+            "draws": 0,
+            "losses": 74,
+            "winrate": 0.34513274336283184,
+            "cagr": -0.09029417513098181,
+            "expectancy": -0.38816689823008876,
+            "expectancy_ratio": -0.1599931609329649,
+            "sortino": -2.2823821854679047,
+            "sharpe": -1.2613145008273927,
+            "calmar": -9.414891120288992,
+            "sqn": -1.0697,
+            "p_value": 0.2870635503995183,
+            "profit_factor": 0.7556861191158779,
+            "max_drawdown_account": 0.05144959588222438,
+            "max_drawdown_abs": 51.84106850000001
+          },
+          {
+            "key": "NEAR/USDT:USDT",
+            "trades": 162,
+            "profit_mean": -0.010598800827136295,
+            "profit_mean_pct": -1.06,
+            "profit_total_abs": -44.23761799999998,
+            "profit_total": -0.044237617999999986,
+            "profit_total_pct": -4.42,
+            "duration_avg": "0:09:00",
+            "wins": 40,
+            "draws": 0,
+            "losses": 122,
+            "winrate": 0.24691358024691357,
+            "cagr": -0.09104629069010017,
+            "expectancy": -0.27307171604938274,
+            "expectancy_ratio": -0.19920790221079931,
+            "sortino": -2.8864081486567974,
+            "sharpe": -1.6793773829521141,
+            "calmar": -8.615466499206285,
+            "sqn": -1.1911,
+            "p_value": 0.23536986484398068,
+            "profit_factor": 0.735478031490578,
+            "max_drawdown_account": 0.05670394376250855,
+            "max_drawdown_abs": 57.45304655000004
+          },
+          {
+            "key": "FIL/USDT:USDT",
+            "trades": 455,
+            "profit_mean": -0.008563864304137194,
+            "profit_mean_pct": -0.86,
+            "profit_total_abs": -44.90274437,
+            "profit_total": -0.04490274437,
+            "profit_total_pct": -4.49,
+            "duration_avg": "0:27:00",
+            "wins": 124,
+            "draws": 0,
+            "losses": 331,
+            "winrate": 0.2725274725274725,
+            "cagr": -0.09238034964096142,
+            "expectancy": -0.09868735026373615,
+            "expectancy_ratio": -0.19598217548028674,
+            "sortino": -3.877878487255835,
+            "sharpe": -2.868502620705829,
+            "calmar": -8.673386224531246,
+            "sqn": -1.2164,
+            "p_value": 0.2244698907028037,
+            "profit_factor": 0.7305985201101798,
+            "max_drawdown_account": 0.057172150500000046,
+            "max_drawdown_abs": 57.1721505
+          },
+          {
+            "key": "SUI/USDT:USDT",
+            "trades": 168,
+            "profit_mean": -0.007710012796453921,
+            "profit_mean_pct": -0.77,
+            "profit_total_abs": -47.55551695,
+            "profit_total": -0.047555516949999994,
+            "profit_total_pct": -4.76,
+            "duration_avg": "0:16:00",
+            "wins": 47,
+            "draws": 0,
+            "losses": 121,
+            "winrate": 0.27976190476190477,
+            "cagr": -0.09769082334411905,
+            "expectancy": -0.28306855327380953,
+            "expectancy_ratio": -0.18941328781585187,
+            "sortino": -2.683233672141395,
+            "sharpe": -1.774102249081334,
+            "calmar": -11.04333709511145,
+            "sqn": -1.2357,
+            "p_value": 0.21829049298397657,
+            "profit_factor": 0.737012955759809,
+            "max_drawdown_account": 0.04755551694999997,
+            "max_drawdown_abs": 47.55551695
+          },
+          {
+            "key": "BTC/USDT:USDT",
+            "trades": 120,
+            "profit_mean": -0.004831891528986631,
+            "profit_mean_pct": -0.48,
+            "profit_total_abs": -49.79192752,
+            "profit_total": -0.04979192752,
+            "profit_total_pct": -4.98,
+            "duration_avg": "1:17:00",
+            "wins": 43,
+            "draws": 0,
+            "losses": 77,
+            "winrate": 0.35833333333333334,
+            "cagr": -0.10215506612455949,
+            "expectancy": -0.4149327293333338,
+            "expectancy_ratio": -0.1808166522406519,
+            "sortino": -2.7835813294159424,
+            "sharpe": -1.6527150654997724,
+            "calmar": -10.264165313942339,
+            "sqn": -1.3605,
+            "p_value": 0.17625171037312282,
+            "profit_factor": 0.718207814689893,
+            "max_drawdown_account": 0.053571724870000025,
+            "max_drawdown_abs": 53.571724870000004
+          },
+          {
+            "key": "DOT/USDT:USDT",
+            "trades": 131,
+            "profit_mean": -0.006191164157298618,
+            "profit_mean_pct": -0.62,
+            "profit_total_abs": -50.648985,
+            "profit_total": -0.050648985,
+            "profit_total_pct": -5.06,
+            "duration_avg": "0:12:00",
+            "wins": 38,
+            "draws": 0,
+            "losses": 93,
+            "winrate": 0.2900763358778626,
+            "cagr": -0.10386280676573056,
+            "expectancy": -0.3866334732824426,
+            "expectancy_ratio": -0.2297344878955273,
+            "sortino": -2.9239758534025295,
+            "sharpe": -1.8577135064503618,
+            "calmar": -8.786773773266134,
+            "sqn": -1.4641,
+            "p_value": 0.14557319106285935,
+            "profit_factor": 0.6763955062976981,
+            "max_drawdown_account": 0.06365633500000001,
+            "max_drawdown_abs": 63.65633499999997
+          },
+          {
+            "key": "ETC/USDT:USDT",
+            "trades": 135,
+            "profit_mean": -0.009165285613395462,
+            "profit_mean_pct": -0.92,
+            "profit_total_abs": -54.00054645,
+            "profit_total": -0.05400054645,
+            "profit_total_pct": -5.4,
+            "duration_avg": "0:10:00",
+            "wins": 35,
+            "draws": 0,
+            "losses": 100,
+            "winrate": 0.25925925925925924,
+            "cagr": -0.1105245839471547,
+            "expectancy": -0.40000404777777765,
+            "expectancy_ratio": -0.2586405162691907,
+            "sortino": -3.254406612286973,
+            "sharpe": -2.0284026137290847,
+            "calmar": -10.868401566845266,
+            "sqn": -1.575,
+            "p_value": 0.11762127316872678,
+            "profit_factor": 0.6508353030365924,
+            "max_drawdown_account": 0.054869728000000006,
+            "max_drawdown_abs": 54.869728
+          },
+          {
+            "key": "ARB/USDT:USDT",
+            "trades": 408,
+            "profit_mean": -0.005751836584347534,
+            "profit_mean_pct": -0.58,
+            "profit_total_abs": -57.39995380999999,
+            "profit_total": -0.057399953809999994,
+            "profit_total_pct": -5.74,
+            "duration_avg": "0:33:00",
+            "wins": 127,
+            "draws": 0,
+            "losses": 281,
+            "winrate": 0.3112745098039216,
+            "cagr": -0.11725475771229199,
+            "expectancy": -0.14068616129901956,
+            "expectancy_ratio": -0.2070808612563202,
+            "sortino": -4.20825077295468,
+            "sharpe": -3.3186318538280513,
+            "calmar": -10.578503732466332,
+            "sqn": -1.4859,
+            "p_value": 0.13807412721033552,
+            "profit_factor": 0.6993274327666241,
+            "max_drawdown_account": 0.05992218324999999,
+            "max_drawdown_abs": 59.922183249999975
+          },
+          {
+            "key": "DOGE/USDT:USDT",
+            "trades": 175,
+            "profit_mean": -0.005029098229784256,
+            "profit_mean_pct": -0.5,
+            "profit_total_abs": -63.46956135,
+            "profit_total": -0.06346956135,
+            "profit_total_pct": -6.35,
+            "duration_avg": "0:28:00",
+            "wins": 55,
+            "draws": 0,
+            "losses": 120,
+            "winrate": 0.3142857142857143,
+            "cagr": -0.12920456949138026,
+            "expectancy": -0.36268320771428575,
+            "expectancy_ratio": -0.20753639681770442,
+            "sortino": -3.394390333693372,
+            "sharpe": -2.2829117333527313,
+            "calmar": -11.042480344425737,
+            "sqn": -1.5582,
+            "p_value": 0.12100098270315138,
+            "profit_factor": 0.6973427546408477,
+            "max_drawdown_account": 0.06347448574999999,
+            "max_drawdown_abs": 63.47448574999996
+          },
+          {
+            "key": "ADA/USDT:USDT",
+            "trades": 139,
+            "profit_mean": -0.008459688138454423,
+            "profit_mean_pct": -0.85,
+            "profit_total_abs": -69.71134850000001,
+            "profit_total": -0.06971134850000002,
+            "profit_total_pct": -6.97,
+            "duration_avg": "0:17:00",
+            "wins": 37,
+            "draws": 0,
+            "losses": 102,
+            "winrate": 0.26618705035971224,
+            "cagr": -0.14140404581123378,
+            "expectancy": -0.5015204928057554,
+            "expectancy_ratio": -0.2571611927055605,
+            "sortino": -3.5799154440975753,
+            "sharpe": -2.3050777230915953,
+            "calmar": -11.04333709511145,
+            "sqn": -1.764,
+            "p_value": 0.07993692074227907,
+            "profit_factor": 0.6495548452345794,
+            "max_drawdown_account": 0.06971134849999999,
+            "max_drawdown_abs": 69.71134849999997
+          },
+          {
+            "key": "PEPE/USDT:USDT",
+            "trades": 103,
+            "profit_mean": -0.01018815007964051,
+            "profit_mean_pct": -1.02,
+            "profit_total_abs": -70.47659549999997,
+            "profit_total": -0.07047659549999997,
+            "profit_total_pct": -7.05,
+            "duration_avg": "0:02:00",
+            "wins": 25,
+            "draws": 0,
+            "losses": 78,
+            "winrate": 0.24271844660194175,
+            "cagr": -0.14289347970138488,
+            "expectancy": -0.6842387912621364,
+            "expectancy_ratio": -0.3036326182743653,
+            "sortino": -4.036443741307912,
+            "sharpe": -2.2343995856309418,
+            "calmar": -11.0412528169701,
+            "sqn": -1.9839,
+            "p_value": 0.049952280868543766,
+            "profit_factor": 0.5990492348428254,
+            "max_drawdown_account": 0.07048989949999998,
+            "max_drawdown_abs": 70.48989949999998
+          },
+          {
+            "key": "OP/USDT:USDT",
+            "trades": 378,
+            "profit_mean": -0.007201909260270188,
+            "profit_mean_pct": -0.72,
+            "profit_total_abs": -81.16710859999999,
+            "profit_total": -0.0811671086,
+            "profit_total_pct": -8.12,
+            "duration_avg": "0:19:00",
+            "wins": 104,
+            "draws": 0,
+            "losses": 274,
+            "winrate": 0.2751322751322751,
+            "cagr": -0.16355871557966806,
+            "expectancy": -0.21472780052910045,
+            "expectancy_ratio": -0.30683638035683203,
+            "sortino": -5.908767585450089,
+            "sharpe": -4.6911328385558155,
+            "calmar": -10.975224046882538,
+            "sqn": -2.182,
+            "p_value": 0.029725807905012856,
+            "profit_factor": 0.5767001760040785,
+            "max_drawdown_account": 0.08167083764999995,
+            "max_drawdown_abs": 81.67083764999998
+          },
+          {
+            "key": "APT/USDT:USDT",
+            "trades": 153,
+            "profit_mean": -0.009362300978529461,
+            "profit_mean_pct": -0.94,
+            "profit_total_abs": -82.01753955,
+            "profit_total": -0.08201753954999999,
+            "profit_total_pct": -8.2,
+            "duration_avg": "0:10:00",
+            "wins": 40,
+            "draws": 0,
+            "losses": 113,
+            "winrate": 0.26143790849673204,
+            "cagr": -0.16519124734663237,
+            "expectancy": -0.5360623499999998,
+            "expectancy_ratio": -0.343664102902805,
+            "sortino": -4.591383492984984,
+            "sharpe": -3.250325110771646,
+            "calmar": -11.042800213387933,
+            "sqn": -2.3717,
+            "p_value": 0.018959760079464698,
+            "profit_factor": 0.5346848872200958,
+            "max_drawdown_account": 0.08202152710000007,
+            "max_drawdown_abs": 82.02152710000003
+          },
+          {
+            "key": "TOTAL",
+            "trades": 5052,
+            "profit_mean": -0.00655283945632996,
+            "profit_mean_pct": -0.66,
+            "profit_total_abs": -999.9657614600001,
+            "profit_total": -0.99996576146,
+            "profit_total_pct": -100.0,
+            "duration_avg": "0:27:00",
+            "wins": 1501,
+            "draws": 0,
+            "losses": 3551,
+            "winrate": 0.29711005542359464,
+            "cagr": -0.9999999996210329,
+            "expectancy": -0.19793463211797313,
+            "expectancy_ratio": -0.15320825407253436,
+            "sortino": -59.99222051209361,
+            "sharpe": -39.27772715292441,
+            "calmar": -11.04333709511143,
+            "sqn": -5.0035,
+            "p_value": 5.821691053565907e-07,
+            "profit_factor": 0.782030949148284,
+            "max_drawdown_account": 0.9999657614600014,
+            "max_drawdown_abs": 999.9657614600014
+          }
+        ],
+        "months": [
+          {
+            "date": "31/01/2026",
+            "date_ts": 1769817600000,
+            "profit_abs": -593.49271282,
+            "wins": 514,
+            "draws": 0,
+            "losses": 916,
+            "trades": 1430,
+            "profit_factor": 0.82462836
+          },
+          {
+            "date": "28/02/2026",
+            "date_ts": 1772236800000,
+            "profit_abs": -405.6711446,
+            "wins": 633,
+            "draws": 0,
+            "losses": 1694,
+            "trades": 2327,
+            "profit_factor": 0.66239165
+          },
+          {
+            "date": "31/03/2026",
+            "date_ts": 1774915200000,
+            "profit_abs": -0.72650059,
+            "wins": 223,
+            "draws": 0,
+            "losses": 609,
+            "trades": 832,
+            "profit_factor": 0.55757741
+          },
+          {
+            "date": "30/04/2026",
+            "date_ts": 1777507200000,
+            "profit_abs": -0.05434228,
+            "wins": 88,
+            "draws": 0,
+            "losses": 219,
+            "trades": 307,
+            "profit_factor": 0.63411763
+          },
+          {
+            "date": "31/05/2026",
+            "date_ts": 1780185600000,
+            "profit_abs": -0.00863398,
+            "wins": 10,
+            "draws": 0,
+            "losses": 31,
+            "trades": 41,
+            "profit_factor": 0.50541445
+          },
+          {
+            "date": "30/06/2026",
+            "date_ts": 1782777600000,
+            "profit_abs": -0.01242719,
+            "wins": 33,
+            "draws": 0,
+            "losses": 82,
+            "trades": 115,
+            "profit_factor": 0.68422266
+          }
+        ],
+        "exits": [
+          {
+            "key": "roi",
+            "trades": 1395,
+            "profit_mean": 0.04998941440964617,
+            "profit_mean_pct": 5.0,
+            "profit_total_abs": 3536.55046689,
+            "profit_total": 3.5365504668899996,
+            "profit_total_pct": 353.66,
+            "duration_avg": "0:32:00",
+            "wins": 1395,
+            "draws": 0,
+            "losses": 0,
+            "winrate": 1.0,
+            "cagr": 23.298386852671094,
+            "expectancy": 2.5351616250107525,
+            "expectancy_ratio": 100.0,
+            "sortino": -100.0,
+            "sharpe": 127.40407091195594,
+            "calmar": -100.0,
+            "sqn": 30.8774,
+            "p_value": 5.962307920968985e-160,
+            "profit_factor": 0.0,
+            "max_drawdown_account": 0.0,
+            "max_drawdown_abs": 0.0
+          },
+          {
+            "key": "profitable_short_momentum_exit",
+            "trades": 106,
+            "profit_mean": 0.009787117357587293,
+            "profit_mean_pct": 0.98,
+            "profit_total_abs": 51.13397957,
+            "profit_total": 0.05113397957,
+            "profit_total_pct": 5.11,
+            "duration_avg": "4:13:00",
+            "wins": 106,
+            "draws": 0,
+            "losses": 0,
+            "winrate": 1.0,
+            "cagr": 0.11095069176131189,
+            "expectancy": 0.4823960336792453,
+            "expectancy_ratio": 100.0,
+            "sortino": -100.0,
+            "sharpe": 6.771988576514515,
+            "calmar": -100.0,
+            "sqn": 5.928,
+            "p_value": 3.95479188008456e-08,
+            "profit_factor": 0.0,
+            "max_drawdown_account": 0.0,
+            "max_drawdown_abs": 0.0
+          },
+          {
+            "key": "short_time_stop_8h_not_profitable",
+            "trades": 19,
+            "profit_mean": -0.011572535706862414,
+            "profit_mean_pct": -1.16,
+            "profit_total_abs": -19.847130049999997,
+            "profit_total": -0.019847130049999998,
+            "profit_total_pct": -1.98,
+            "duration_avg": "8:13:00",
+            "wins": 0,
+            "draws": 0,
+            "losses": 19,
+            "winrate": 0.0,
+            "cagr": -0.04141316261738426,
+            "expectancy": -1.044585792105263,
+            "expectancy_ratio": -1.0,
+            "sortino": -2.7321139986012697,
+            "sharpe": -2.7321139986012697,
+            "calmar": -11.043337095111424,
+            "sqn": -5.5243,
+            "p_value": 3.0282095661004646e-05,
+            "profit_factor": 0.0,
+            "max_drawdown_account": 0.019847130050000033,
+            "max_drawdown_abs": 19.847130049999997
+          },
+          {
+            "key": "stop_loss",
+            "trades": 3532,
+            "profit_mean": -0.02934816939306603,
+            "profit_mean_pct": -2.93,
+            "profit_total_abs": -4567.80307787,
+            "profit_total": -4.567803077870001,
+            "profit_total_pct": -456.78,
+            "duration_avg": "0:15:00",
+            "wins": 0,
+            "draws": 0,
+            "losses": 3532,
+            "winrate": 0.0,
+            "cagr": 0,
+            "expectancy": -1.2932624795781429,
+            "expectancy_ratio": -1.0,
+            "sortino": -273.46018512458545,
+            "sharpe": -273.46018512458545,
+            "calmar": -11.043337095111497,
+            "sqn": -41.6603,
+            "p_value": 6.66379171551717e-309,
+            "profit_factor": 0.0,
+            "max_drawdown_account": 4.567803077869979,
+            "max_drawdown_abs": 4567.8030778699795
+          },
+          {
+            "key": "TOTAL",
+            "trades": 5052,
+            "profit_mean": -0.00655283945632996,
+            "profit_mean_pct": -0.66,
+            "profit_total_abs": -999.9657614600001,
+            "profit_total": -0.99996576146,
+            "profit_total_pct": -100.0,
+            "duration_avg": "0:27:00",
+            "wins": 1501,
+            "draws": 0,
+            "losses": 3551,
+            "winrate": 0.29711005542359464,
+            "cagr": -0.9999999996210329,
+            "expectancy": -0.19793463211797313,
+            "expectancy_ratio": -0.15320825407253436,
+            "sortino": -59.99222051209361,
+            "sharpe": -39.27772715292441,
+            "calmar": -11.04333709511143,
+            "sqn": -5.0035,
+            "p_value": 5.821691053565907e-07,
+            "profit_factor": 0.782030949148284,
+            "max_drawdown_account": 0.9999657614600014,
+            "max_drawdown_abs": 999.9657614600014
+          }
+        ],
+        "regimes": {
+          "status": "available",
+          "source": "reports/v13_4_28_post_repair_market_regime_data_integrity_report.json",
+          "dominantRegimes": [
+            "bear",
+            "sideways",
+            "bull"
+          ],
+          "regimeDistribution": {
+            "bear": 521,
+            "sideways": 411,
+            "bull": 266,
+            "high_volatility": 217,
+            "unknown": 193,
+            "crash": 29,
+            "recovery": 2
+          },
+          "dataIntegrityStatus": "warning",
+          "missingFileCount": 4,
+          "notes": "Regime background is not used as a hard entry gate in V13.4.29."
+        }
+      }
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v01",
+      "strategyName": "AlphaPilotVolumeReboundV01",
+      "strategyClass": "AlphaPilotVolumeReboundV01",
+      "strategyVersion": "V01",
+      "strategyFamily": "volume_rebound",
+      "strategyFile": "user_data/strategies/AlphaPilotVolumeReboundV01.py",
+      "direction": "long",
+      "timeframe": "15m",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 28,
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "XRP/USDT:USDT",
+          "ADA/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SUI/USDT:USDT",
+          "APT/USDT:USDT",
+          "OP/USDT:USDT",
+          "ARB/USDT:USDT",
+          "LTC/USDT:USDT",
+          "BCH/USDT:USDT",
+          "DOT/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "PEPE/USDT:USDT",
+          "WIF/USDT:USDT",
+          "ORDI/USDT:USDT",
+          "INJ/USDT:USDT",
+          "FIL/USDT:USDT",
+          "ETC/USDT:USDT",
+          "TRX/USDT:USDT",
+          "UNI/USDT:USDT",
+          "AAVE/USDT:USDT",
+          "ATOM/USDT:USDT",
+          "SEI/USDT:USDT",
+          "TIA/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "rejected_for_dry_run",
+      "reason": "Expanded validation remains negative after slippage adjustment; rejected for Dry-run.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_6_strategy_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV01.zip",
+      "sourceArtifact": "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV01.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_6_strategy_status_archive.json",
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json",
+        "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV01.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 2701,
+        "totalReturnPct": -99.2732,
+        "slippageAdjustedTotalReturnPct": -193.4577,
+        "winRatePct": 37.2825,
+        "profitFactor": 0.6689,
+        "slippageAdjustedProfitFactor": 0.4603,
+        "maxDrawdownPct": 99.3724,
+        "maxConsecutiveLosses": 28,
+        "averageHoldingMinutes": 49.615,
+        "feesPaid": 941.84466739,
+        "slippageCost": 941.84466739,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": 28,
+        "monthCount": 14
+      },
+      "breakdowns": {
+        "pairs": [
+          {
+            "raw": {
+              "pair": "ARB/USDT:USDT",
+              "tradeCount": 76,
+              "totalProfit": 51.69725135,
+              "totalReturnPct": 5.17,
+              "profitFactor": 1.7534,
+              "winRate": 47.3684,
+              "maxDrawdownPct": 1.8351
+            }
+          },
+          {
+            "raw": {
+              "pair": "ORDI/USDT:USDT",
+              "tradeCount": 60,
+              "totalProfit": 35.44221856,
+              "totalReturnPct": 3.54,
+              "profitFactor": 1.8936,
+              "winRate": 43.3333,
+              "maxDrawdownPct": 1.2484
+            }
+          },
+          {
+            "raw": {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 89,
+              "totalProfit": 21.06161469,
+              "totalReturnPct": 2.11,
+              "profitFactor": 1.2325,
+              "winRate": 39.3258,
+              "maxDrawdownPct": 3.4303
+            }
+          },
+          {
+            "raw": {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 77,
+              "totalProfit": 7.99836998,
+              "totalReturnPct": 0.8,
+              "profitFactor": 1.0861,
+              "winRate": 36.3636,
+              "maxDrawdownPct": 3.4336
+            }
+          },
+          {
+            "raw": {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 96,
+              "totalProfit": 3.03331877,
+              "totalReturnPct": 0.3,
+              "profitFactor": 1.0356,
+              "winRate": 41.6667,
+              "maxDrawdownPct": 2.2592
+            }
+          },
+          {
+            "raw": {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 108,
+              "totalProfit": -9.1566286,
+              "totalReturnPct": -0.92,
+              "profitFactor": 0.8936,
+              "winRate": 41.6667,
+              "maxDrawdownPct": 2.8906
+            }
+          },
+          {
+            "raw": {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 91,
+              "totalProfit": -10.41215317,
+              "totalReturnPct": -1.04,
+              "profitFactor": 0.8707,
+              "winRate": 38.4615,
+              "maxDrawdownPct": 4.7798
+            }
+          },
+          {
+            "raw": {
+              "pair": "ATOM/USDT:USDT",
+              "tradeCount": 156,
+              "totalProfit": -14.29682521,
+              "totalReturnPct": -1.43,
+              "profitFactor": 0.9124,
+              "winRate": 38.4615,
+              "maxDrawdownPct": 6.6582
+            }
+          },
+          {
+            "raw": {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 118,
+              "totalProfit": -15.31716884,
+              "totalReturnPct": -1.53,
+              "profitFactor": 0.8401,
+              "winRate": 47.4576,
+              "maxDrawdownPct": 4.2906
+            }
+          },
+          {
+            "raw": {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 93,
+              "totalProfit": -21.48098787,
+              "totalReturnPct": -2.15,
+              "profitFactor": 0.7637,
+              "winRate": 38.7097,
+              "maxDrawdownPct": 4.1051
+            }
+          },
+          {
+            "raw": {
+              "pair": "NEAR/USDT:USDT",
+              "tradeCount": 143,
+              "totalProfit": -37.839163,
+              "totalReturnPct": -3.78,
+              "profitFactor": 0.6947,
+              "winRate": 41.2587,
+              "maxDrawdownPct": 5.1359
+            }
+          },
+          {
+            "raw": {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 64,
+              "totalProfit": -38.31092414,
+              "totalReturnPct": -3.83,
+              "profitFactor": 0.6111,
+              "winRate": 35.9375,
+              "maxDrawdownPct": 4.7945
+            }
+          },
+          {
+            "raw": {
+              "pair": "ETC/USDT:USDT",
+              "tradeCount": 103,
+              "totalProfit": -39.76654447,
+              "totalReturnPct": -3.98,
+              "profitFactor": 0.5559,
+              "winRate": 40.7767,
+              "maxDrawdownPct": 5.3429
+            }
+          },
+          {
+            "raw": {
+              "pair": "UNI/USDT:USDT",
+              "tradeCount": 73,
+              "totalProfit": -41.95843679,
+              "totalReturnPct": -4.2,
+              "profitFactor": 0.4845,
+              "winRate": 38.3562,
+              "maxDrawdownPct": 4.2082
+            }
+          },
+          {
+            "raw": {
+              "pair": "INJ/USDT:USDT",
+              "tradeCount": 98,
+              "totalProfit": -43.56003506,
+              "totalReturnPct": -4.36,
+              "profitFactor": 0.5546,
+              "winRate": 45.9184,
+              "maxDrawdownPct": 5.4626
+            }
+          },
+          {
+            "raw": {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 72,
+              "totalProfit": -44.4723016,
+              "totalReturnPct": -4.45,
+              "profitFactor": 0.6938,
+              "winRate": 40.2778,
+              "maxDrawdownPct": 5.4295
+            }
+          },
+          {
+            "raw": {
+              "pair": "FIL/USDT:USDT",
+              "tradeCount": 50,
+              "totalProfit": -45.38726981,
+              "totalReturnPct": -4.54,
+              "profitFactor": 0.3255,
+              "winRate": 42.0,
+              "maxDrawdownPct": 4.7742
+            }
+          },
+          {
+            "raw": {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 122,
+              "totalProfit": -48.76949429,
+              "totalReturnPct": -4.88,
+              "profitFactor": 0.4899,
+              "winRate": 31.1475,
+              "maxDrawdownPct": 5.5264
+            }
+          },
+          {
+            "raw": {
+              "pair": "WIF/USDT:USDT",
+              "tradeCount": 60,
+              "totalProfit": -52.34652572,
+              "totalReturnPct": -5.23,
+              "profitFactor": 0.4627,
+              "winRate": 40.0,
+              "maxDrawdownPct": 5.3029
+            }
+          },
+          {
+            "raw": {
+              "pair": "LTC/USDT:USDT",
+              "tradeCount": 104,
+              "totalProfit": -54.48634046,
+              "totalReturnPct": -5.45,
+              "profitFactor": 0.4567,
+              "winRate": 30.7692,
+              "maxDrawdownPct": 6.3868
+            }
+          },
+          {
+            "raw": {
+              "pair": "PEPE/USDT:USDT",
+              "tradeCount": 59,
+              "totalProfit": -62.32621135,
+              "totalReturnPct": -6.23,
+              "profitFactor": 0.4927,
+              "winRate": 37.2881,
+              "maxDrawdownPct": 6.2645
+            }
+          },
+          {
+            "raw": {
+              "pair": "TIA/USDT:USDT",
+              "tradeCount": 94,
+              "totalProfit": -62.45045792,
+              "totalReturnPct": -6.25,
+              "profitFactor": 0.3804,
+              "winRate": 37.234,
+              "maxDrawdownPct": 6.245
+            }
+          },
+          {
+            "raw": {
+              "pair": "BCH/USDT:USDT",
+              "tradeCount": 105,
+              "totalProfit": -62.52803682,
+              "totalReturnPct": -6.25,
+              "profitFactor": 0.4846,
+              "winRate": 24.7619,
+              "maxDrawdownPct": 6.2532
+            }
+          },
+          {
+            "raw": {
+              "pair": "OP/USDT:USDT",
+              "tradeCount": 83,
+              "totalProfit": -68.66886944,
+              "totalReturnPct": -6.87,
+              "profitFactor": 0.5727,
+              "winRate": 39.759,
+              "maxDrawdownPct": 9.2906
+            }
+          },
+          {
+            "raw": {
+              "pair": "AAVE/USDT:USDT",
+              "tradeCount": 73,
+              "totalProfit": -73.26911127,
+              "totalReturnPct": -7.33,
+              "profitFactor": 0.4377,
+              "winRate": 32.8767,
+              "maxDrawdownPct": 8.0841
+            }
+          },
+          {
+            "raw": {
+              "pair": "DOT/USDT:USDT",
+              "tradeCount": 77,
+              "totalProfit": -85.4594659,
+              "totalReturnPct": -8.55,
+              "profitFactor": 0.5109,
+              "winRate": 29.8701,
+              "maxDrawdownPct": 8.5521
+            }
+          },
+          {
+            "raw": {
+              "pair": "TRX/USDT:USDT",
+              "tradeCount": 278,
+              "totalProfit": -88.87402968,
+              "totalReturnPct": -8.89,
+              "profitFactor": 0.3854,
+              "winRate": 27.6978,
+              "maxDrawdownPct": 8.8896
+            }
+          },
+          {
+            "raw": {
+              "pair": "SEI/USDT:USDT",
+              "tradeCount": 79,
+              "totalProfit": -90.82825055,
+              "totalReturnPct": -9.08,
+              "profitFactor": 0.4047,
+              "winRate": 36.7089,
+              "maxDrawdownPct": 9.1505
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "AAVE/USDT:USDT",
+              "tradeCount": 73,
+              "slippageAdjustedProfitAbs": -107.83671053,
+              "slippageAdjustedReturnPct": -10.7837,
+              "slippageAdjustedProfitFactor": 0.3026,
+              "slippageAdjustedWinRate": 31.5068,
+              "slippageCost": 34.56759926
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 77,
+              "slippageAdjustedProfitAbs": -26.42714818,
+              "slippageAdjustedReturnPct": -2.6427,
+              "slippageAdjustedProfitFactor": 0.7606,
+              "slippageAdjustedWinRate": 35.0649,
+              "slippageCost": 34.42551816
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 72,
+              "slippageAdjustedProfitAbs": -85.3407298,
+              "slippageAdjustedReturnPct": -8.5341,
+              "slippageAdjustedProfitFactor": 0.4921,
+              "slippageAdjustedWinRate": 36.1111,
+              "slippageCost": 40.8684282
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ARB/USDT:USDT",
+              "tradeCount": 76,
+              "slippageAdjustedProfitAbs": 18.8026629,
+              "slippageAdjustedReturnPct": 1.8803,
+              "slippageAdjustedProfitFactor": 1.2305,
+              "slippageAdjustedWinRate": 47.3684,
+              "slippageCost": 32.89458845
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ATOM/USDT:USDT",
+              "tradeCount": 156,
+              "slippageAdjustedProfitAbs": -69.29106509,
+              "slippageAdjustedReturnPct": -6.9291,
+              "slippageAdjustedProfitFactor": 0.6406,
+              "slippageAdjustedWinRate": 37.1795,
+              "slippageCost": 54.99423988
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 89,
+              "slippageAdjustedProfitAbs": -14.24662511,
+              "slippageAdjustedReturnPct": -1.4247,
+              "slippageAdjustedProfitFactor": 0.8669,
+              "slippageAdjustedWinRate": 39.3258,
+              "slippageCost": 35.3082398
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "BCH/USDT:USDT",
+              "tradeCount": 105,
+              "slippageAdjustedProfitAbs": -101.62657782,
+              "slippageAdjustedReturnPct": -10.1627,
+              "slippageAdjustedProfitFactor": 0.3222,
+              "slippageAdjustedWinRate": 20.9524,
+              "slippageCost": 39.098541
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 122,
+              "slippageAdjustedProfitAbs": -83.81716216,
+              "slippageAdjustedReturnPct": -8.3817,
+              "slippageAdjustedProfitFactor": 0.3107,
+              "slippageAdjustedWinRate": 27.0492,
+              "slippageCost": 35.04766787
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 91,
+              "slippageAdjustedProfitAbs": -39.38386974,
+              "slippageAdjustedReturnPct": -3.9384,
+              "slippageAdjustedProfitFactor": 0.5966,
+              "slippageAdjustedWinRate": 36.2637,
+              "slippageCost": 28.97171657
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "DOT/USDT:USDT",
+              "tradeCount": 77,
+              "slippageAdjustedProfitAbs": -130.83988527,
+              "slippageAdjustedReturnPct": -13.084,
+              "slippageAdjustedProfitFactor": 0.3618,
+              "slippageAdjustedWinRate": 28.5714,
+              "slippageCost": 45.38041937
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ETC/USDT:USDT",
+              "tradeCount": 103,
+              "slippageAdjustedProfitAbs": -65.42039163,
+              "slippageAdjustedReturnPct": -6.542,
+              "slippageAdjustedProfitFactor": 0.3876,
+              "slippageAdjustedWinRate": 38.835,
+              "slippageCost": 25.65384716
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 96,
+              "slippageAdjustedProfitAbs": -32.36368998,
+              "slippageAdjustedReturnPct": -3.2364,
+              "slippageAdjustedProfitFactor": 0.6927,
+              "slippageAdjustedWinRate": 38.5417,
+              "slippageCost": 35.39700875
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "FIL/USDT:USDT",
+              "tradeCount": 50,
+              "slippageAdjustedProfitAbs": -60.77058316,
+              "slippageAdjustedReturnPct": -6.0771,
+              "slippageAdjustedProfitFactor": 0.2291,
+              "slippageAdjustedWinRate": 42.0,
+              "slippageCost": 15.38331335
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "INJ/USDT:USDT",
+              "tradeCount": 98,
+              "slippageAdjustedProfitAbs": -68.04505625,
+              "slippageAdjustedReturnPct": -6.8045,
+              "slippageAdjustedProfitFactor": 0.3988,
+              "slippageAdjustedWinRate": 44.898,
+              "slippageCost": 24.48502119
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 108,
+              "slippageAdjustedProfitAbs": -39.3265984,
+              "slippageAdjustedReturnPct": -3.9327,
+              "slippageAdjustedProfitFactor": 0.615,
+              "slippageAdjustedWinRate": 38.8889,
+              "slippageCost": 30.1699698
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "LTC/USDT:USDT",
+              "tradeCount": 104,
+              "slippageAdjustedProfitAbs": -81.42625469,
+              "slippageAdjustedReturnPct": -8.1426,
+              "slippageAdjustedProfitFactor": 0.3157,
+              "slippageAdjustedWinRate": 25.9615,
+              "slippageCost": 26.93991423
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "NEAR/USDT:USDT",
+              "tradeCount": 143,
+              "slippageAdjustedProfitAbs": -74.03066426,
+              "slippageAdjustedReturnPct": -7.4031,
+              "slippageAdjustedProfitFactor": 0.4905,
+              "slippageAdjustedWinRate": 39.8601,
+              "slippageCost": 36.19150126
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "OP/USDT:USDT",
+              "tradeCount": 83,
+              "slippageAdjustedProfitAbs": -109.19350953,
+              "slippageAdjustedReturnPct": -10.9194,
+              "slippageAdjustedProfitFactor": 0.4122,
+              "slippageAdjustedWinRate": 39.759,
+              "slippageCost": 40.52464009
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ORDI/USDT:USDT",
+              "tradeCount": 60,
+              "slippageAdjustedProfitAbs": 16.52783399,
+              "slippageAdjustedReturnPct": 1.6528,
+              "slippageAdjustedProfitFactor": 1.3602,
+              "slippageAdjustedWinRate": 41.6667,
+              "slippageCost": 18.91438457
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "PEPE/USDT:USDT",
+              "tradeCount": 59,
+              "slippageAdjustedProfitAbs": -91.44792693,
+              "slippageAdjustedReturnPct": -9.1448,
+              "slippageAdjustedProfitFactor": 0.3554,
+              "slippageAdjustedWinRate": 37.2881,
+              "slippageCost": 29.12171558
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SEI/USDT:USDT",
+              "tradeCount": 79,
+              "slippageAdjustedProfitAbs": -129.12573637,
+              "slippageAdjustedReturnPct": -12.9126,
+              "slippageAdjustedProfitFactor": 0.2851,
+              "slippageAdjustedWinRate": 36.7089,
+              "slippageCost": 38.29748582
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 118,
+              "slippageAdjustedProfitAbs": -51.4579519,
+              "slippageAdjustedReturnPct": -5.1458,
+              "slippageAdjustedProfitFactor": 0.5552,
+              "slippageAdjustedWinRate": 39.8305,
+              "slippageCost": 36.14078306
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 64,
+              "slippageAdjustedProfitAbs": -64.69983745,
+              "slippageAdjustedReturnPct": -6.47,
+              "slippageAdjustedProfitFactor": 0.4355,
+              "slippageAdjustedWinRate": 34.375,
+              "slippageCost": 26.38891331
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "TIA/USDT:USDT",
+              "tradeCount": 94,
+              "slippageAdjustedProfitAbs": -84.37048195,
+              "slippageAdjustedReturnPct": -8.437,
+              "slippageAdjustedProfitFactor": 0.2746,
+              "slippageAdjustedWinRate": 37.234,
+              "slippageCost": 21.92002403
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "TRX/USDT:USDT",
+              "tradeCount": 278,
+              "slippageAdjustedProfitAbs": -169.68288562,
+              "slippageAdjustedReturnPct": -16.9683,
+              "slippageAdjustedProfitFactor": 0.1833,
+              "slippageAdjustedWinRate": 20.8633,
+              "slippageCost": 80.80885594
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "UNI/USDT:USDT",
+              "tradeCount": 73,
+              "slippageAdjustedProfitAbs": -60.93044705,
+              "slippageAdjustedReturnPct": -6.093,
+              "slippageAdjustedProfitFactor": 0.349,
+              "slippageAdjustedWinRate": 38.3562,
+              "slippageCost": 18.97201026
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "WIF/USDT:USDT",
+              "tradeCount": 60,
+              "slippageAdjustedProfitAbs": -76.17103037,
+              "slippageAdjustedReturnPct": -7.6171,
+              "slippageAdjustedProfitFactor": 0.33,
+              "slippageAdjustedWinRate": 38.3333,
+              "slippageCost": 23.82450465
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 93,
+              "slippageAdjustedProfitAbs": -52.63480364,
+              "slippageAdjustedReturnPct": -5.2635,
+              "slippageAdjustedProfitFactor": 0.5197,
+              "slippageAdjustedWinRate": 34.4086,
+              "slippageCost": 31.15381577
+            }
+          }
+        ],
+        "months": [
+          {
+            "raw": {
+              "date": "31/01/2026",
+              "date_ts": 1769817600000,
+              "profit_abs": -733.54656713,
+              "wins": 253,
+              "draws": 0,
+              "losses": 424,
+              "trades": 677,
+              "profit_factor": 0.69270263
+            }
+          },
+          {
+            "raw": {
+              "date": "28/02/2026",
+              "date_ts": 1772236800000,
+              "profit_abs": -54.0725256,
+              "wins": 31,
+              "draws": 0,
+              "losses": 65,
+              "trades": 96,
+              "profit_factor": 0.52907711
+            }
+          },
+          {
+            "raw": {
+              "date": "31/03/2026",
+              "date_ts": 1774915200000,
+              "profit_abs": -139.50265778,
+              "wins": 124,
+              "draws": 0,
+              "losses": 248,
+              "trades": 372,
+              "profit_factor": 0.5097567
+            }
+          },
+          {
+            "raw": {
+              "date": "30/04/2026",
+              "date_ts": 1777507200000,
+              "profit_abs": -49.25762368,
+              "wins": 246,
+              "draws": 0,
+              "losses": 425,
+              "trades": 671,
+              "profit_factor": 0.6544492
+            }
+          },
+          {
+            "raw": {
+              "date": "31/05/2026",
+              "date_ts": 1780185600000,
+              "profit_abs": -12.02679566,
+              "wins": 270,
+              "draws": 0,
+              "losses": 403,
+              "trades": 673,
+              "profit_factor": 0.79331949
+            }
+          },
+          {
+            "raw": {
+              "date": "30/06/2026",
+              "date_ts": 1782777600000,
+              "profit_abs": -3.6806218,
+              "wins": 57,
+              "draws": 0,
+              "losses": 96,
+              "trades": 153,
+              "profit_factor": 0.57638487
+            }
+          },
+          {
+            "raw": {
+              "date": "31/07/2026",
+              "date_ts": 1785456000000,
+              "profit_abs": -0.64566696,
+              "wins": 26,
+              "draws": 0,
+              "losses": 33,
+              "trades": 59,
+              "profit_factor": 0.72806126
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-01",
+              "tradeCount": 677,
+              "slippageAdjustedProfitAbs": -1480.50003434,
+              "slippageAdjustedReturnPct": -148.05,
+              "slippageAdjustedWinRate": 35.3028,
+              "slippageCost": 746.95346721
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-02",
+              "tradeCount": 96,
+              "slippageAdjustedProfitAbs": -92.31996536,
+              "slippageAdjustedReturnPct": -9.232,
+              "slippageAdjustedWinRate": 30.2083,
+              "slippageCost": 38.24743976
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-03",
+              "tradeCount": 372,
+              "slippageAdjustedProfitAbs": -221.65916619,
+              "slippageAdjustedReturnPct": -22.1659,
+              "slippageAdjustedWinRate": 30.914,
+              "slippageCost": 82.15650841
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-04",
+              "tradeCount": 671,
+              "slippageAdjustedProfitAbs": -99.36256627,
+              "slippageAdjustedReturnPct": -9.9363,
+              "slippageAdjustedWinRate": 32.9359,
+              "slippageCost": 50.10494259
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-05",
+              "tradeCount": 673,
+              "slippageAdjustedProfitAbs": -33.38419408,
+              "slippageAdjustedReturnPct": -3.3384,
+              "slippageAdjustedWinRate": 37.4443,
+              "slippageCost": 21.35739842
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-06",
+              "tradeCount": 153,
+              "slippageAdjustedProfitAbs": -6.00317975,
+              "slippageAdjustedReturnPct": -0.6003,
+              "slippageAdjustedWinRate": 36.6013,
+              "slippageCost": 2.32255795
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-07",
+              "tradeCount": 59,
+              "slippageAdjustedProfitAbs": -1.34802001,
+              "slippageAdjustedReturnPct": -0.1348,
+              "slippageAdjustedWinRate": 42.3729,
+              "slippageCost": 0.70235305
+            }
+          }
+        ],
+        "exits": null,
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_a_trend_strict",
+      "strategyName": "AlphaPilotVolumeReboundV02A",
+      "strategyClass": "AlphaPilotVolumeReboundV02ATrendStrict",
+      "strategyVersion": "V02",
+      "strategyFamily": "volume_rebound",
+      "strategyFile": "user_data/strategies/AlphaPilotVolumeReboundV02Candidates.py",
+      "direction": "long",
+      "timeframe": "15m",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 28,
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "XRP/USDT:USDT",
+          "ADA/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SUI/USDT:USDT",
+          "APT/USDT:USDT",
+          "OP/USDT:USDT",
+          "ARB/USDT:USDT",
+          "LTC/USDT:USDT",
+          "BCH/USDT:USDT",
+          "DOT/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "PEPE/USDT:USDT",
+          "WIF/USDT:USDT",
+          "ORDI/USDT:USDT",
+          "INJ/USDT:USDT",
+          "FIL/USDT:USDT",
+          "ETC/USDT:USDT",
+          "TRX/USDT:USDT",
+          "UNI/USDT:USDT",
+          "AAVE/USDT:USDT",
+          "ATOM/USDT:USDT",
+          "SEI/USDT:USDT",
+          "TIA/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "rejected_for_dry_run",
+      "reason": "Smoke comparison improved relatively, but the candidate was not included in the successful expanded validation set and is not approved.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_6_strategy_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02ATrendStrict.zip",
+      "sourceArtifact": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02ATrendStrict.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_6_strategy_status_archive.json",
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json",
+        "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02ATrendStrict.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "slippageAdjustedTotalReturnPct",
+        "slippageAdjustedProfitFactor",
+        "slippageCost",
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 179,
+        "totalReturnPct": -11.6607,
+        "slippageAdjustedTotalReturnPct": null,
+        "winRatePct": 41.3408,
+        "profitFactor": 0.8251,
+        "slippageAdjustedProfitFactor": null,
+        "maxDrawdownPct": 21.0664,
+        "maxConsecutiveLosses": 10,
+        "averageHoldingMinutes": 66.0,
+        "feesPaid": 274.57577641,
+        "slippageCost": null,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": 28,
+        "monthCount": 4
+      },
+      "breakdowns": {
+        "pairs": [
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 50,
+            "totalProfit": -7.60868177,
+            "totalReturnPct": -0.76,
+            "profitFactor": 0.9595,
+            "winRate": 44.0,
+            "maxDrawdownPct": 7.7076
+          },
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 63,
+            "totalProfit": -28.35875342,
+            "totalReturnPct": -2.84,
+            "profitFactor": 0.8471,
+            "winRate": 36.5079,
+            "maxDrawdownPct": 7.3828
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 66,
+            "totalProfit": -80.63955796,
+            "totalReturnPct": -8.06,
+            "profitFactor": 0.725,
+            "winRate": 43.9394,
+            "maxDrawdownPct": 13.6897
+          }
+        ],
+        "months": [
+          {
+            "date": "30/04/2026",
+            "date_ts": 1777507200000,
+            "profit_abs": -119.35956737,
+            "wins": 44,
+            "draws": 0,
+            "losses": 63,
+            "trades": 107,
+            "profit_factor": 0.73845493
+          },
+          {
+            "date": "31/05/2026",
+            "date_ts": 1780185600000,
+            "profit_abs": -43.50903103,
+            "wins": 22,
+            "draws": 0,
+            "losses": 39,
+            "trades": 61,
+            "profit_factor": 0.76968934
+          },
+          {
+            "date": "30/06/2026",
+            "date_ts": 1782777600000,
+            "profit_abs": 6.8293879,
+            "wins": 2,
+            "draws": 0,
+            "losses": 1,
+            "trades": 3,
+            "profit_factor": 1.71725635
+          },
+          {
+            "date": "31/07/2026",
+            "date_ts": 1785456000000,
+            "profit_abs": 39.43221735,
+            "wins": 6,
+            "draws": 0,
+            "losses": 2,
+            "trades": 8,
+            "profit_factor": 4.33777983
+          }
+        ],
+        "exits": null,
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_b_volume_quality",
+      "strategyName": "AlphaPilotVolumeReboundV02B",
+      "strategyClass": "AlphaPilotVolumeReboundV02BVolumeQuality",
+      "strategyVersion": "V02",
+      "strategyFamily": "volume_rebound",
+      "strategyFile": "user_data/strategies/AlphaPilotVolumeReboundV02Candidates.py",
+      "direction": "long",
+      "timeframe": "15m",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 28,
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "XRP/USDT:USDT",
+          "ADA/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SUI/USDT:USDT",
+          "APT/USDT:USDT",
+          "OP/USDT:USDT",
+          "ARB/USDT:USDT",
+          "LTC/USDT:USDT",
+          "BCH/USDT:USDT",
+          "DOT/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "PEPE/USDT:USDT",
+          "WIF/USDT:USDT",
+          "ORDI/USDT:USDT",
+          "INJ/USDT:USDT",
+          "FIL/USDT:USDT",
+          "ETC/USDT:USDT",
+          "TRX/USDT:USDT",
+          "UNI/USDT:USDT",
+          "AAVE/USDT:USDT",
+          "ATOM/USDT:USDT",
+          "SEI/USDT:USDT",
+          "TIA/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "rejected_for_dry_run",
+      "reason": "Expanded validation reduced trade count but remained deeply negative after slippage.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_6_strategy_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02BVolumeQuality.zip",
+      "sourceArtifact": "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02BVolumeQuality.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_6_strategy_status_archive.json",
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json",
+        "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02BVolumeQuality.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 1515,
+        "totalReturnPct": -94.171,
+        "slippageAdjustedTotalReturnPct": -168.5489,
+        "winRatePct": 36.9637,
+        "profitFactor": 0.6152,
+        "slippageAdjustedProfitFactor": 0.4225,
+        "maxDrawdownPct": 94.7185,
+        "maxConsecutiveLosses": 19,
+        "averageHoldingMinutes": 49.3861,
+        "feesPaid": 743.77896729,
+        "slippageCost": 743.77896729,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": 28,
+        "monthCount": 14
+      },
+      "breakdowns": {
+        "pairs": [
+          {
+            "raw": {
+              "pair": "ARB/USDT:USDT",
+              "tradeCount": 41,
+              "totalProfit": 21.65036156,
+              "totalReturnPct": 2.17,
+              "profitFactor": 1.3223,
+              "winRate": 51.2195,
+              "maxDrawdownPct": 2.5814
+            }
+          },
+          {
+            "raw": {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 51,
+              "totalProfit": 21.26348411,
+              "totalReturnPct": 2.13,
+              "profitFactor": 1.3769,
+              "winRate": 49.0196,
+              "maxDrawdownPct": 1.1858
+            }
+          },
+          {
+            "raw": {
+              "pair": "TIA/USDT:USDT",
+              "tradeCount": 47,
+              "totalProfit": 5.27229902,
+              "totalReturnPct": 0.53,
+              "profitFactor": 1.0859,
+              "winRate": 48.9362,
+              "maxDrawdownPct": 2.313
+            }
+          },
+          {
+            "raw": {
+              "pair": "ORDI/USDT:USDT",
+              "tradeCount": 22,
+              "totalProfit": 2.10071955,
+              "totalReturnPct": 0.21,
+              "profitFactor": 1.0546,
+              "winRate": 40.9091,
+              "maxDrawdownPct": 1.9596
+            }
+          },
+          {
+            "raw": {
+              "pair": "ATOM/USDT:USDT",
+              "tradeCount": 100,
+              "totalProfit": -2.34012953,
+              "totalReturnPct": -0.23,
+              "profitFactor": 0.9829,
+              "winRate": 40.0,
+              "maxDrawdownPct": 5.1132
+            }
+          },
+          {
+            "raw": {
+              "pair": "FIL/USDT:USDT",
+              "tradeCount": 27,
+              "totalProfit": -3.6009632,
+              "totalReturnPct": -0.36,
+              "profitFactor": 0.8698,
+              "winRate": 44.4444,
+              "maxDrawdownPct": 0.9994
+            }
+          },
+          {
+            "raw": {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 59,
+              "totalProfit": -5.26775224,
+              "totalReturnPct": -0.53,
+              "profitFactor": 0.9217,
+              "winRate": 42.3729,
+              "maxDrawdownPct": 2.439
+            }
+          },
+          {
+            "raw": {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 58,
+              "totalProfit": -17.86594345,
+              "totalReturnPct": -1.79,
+              "profitFactor": 0.719,
+              "winRate": 44.8276,
+              "maxDrawdownPct": 3.0047
+            }
+          },
+          {
+            "raw": {
+              "pair": "INJ/USDT:USDT",
+              "tradeCount": 47,
+              "totalProfit": -18.69489219,
+              "totalReturnPct": -1.87,
+              "profitFactor": 0.6717,
+              "winRate": 57.4468,
+              "maxDrawdownPct": 3.0318
+            }
+          },
+          {
+            "raw": {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 41,
+              "totalProfit": -21.4115136,
+              "totalReturnPct": -2.14,
+              "profitFactor": 0.8088,
+              "winRate": 46.3415,
+              "maxDrawdownPct": 5.4823
+            }
+          },
+          {
+            "raw": {
+              "pair": "WIF/USDT:USDT",
+              "tradeCount": 39,
+              "totalProfit": -22.78601447,
+              "totalReturnPct": -2.28,
+              "profitFactor": 0.6877,
+              "winRate": 43.5897,
+              "maxDrawdownPct": 3.2018
+            }
+          },
+          {
+            "raw": {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 52,
+              "totalProfit": -23.32375608,
+              "totalReturnPct": -2.33,
+              "profitFactor": 0.7204,
+              "winRate": 34.6154,
+              "maxDrawdownPct": 5.2279
+            }
+          },
+          {
+            "raw": {
+              "pair": "ETC/USDT:USDT",
+              "tradeCount": 66,
+              "totalProfit": -30.27910037,
+              "totalReturnPct": -3.03,
+              "profitFactor": 0.6356,
+              "winRate": 40.9091,
+              "maxDrawdownPct": 4.2629
+            }
+          },
+          {
+            "raw": {
+              "pair": "LTC/USDT:USDT",
+              "tradeCount": 66,
+              "totalProfit": -30.42257594,
+              "totalReturnPct": -3.04,
+              "profitFactor": 0.6078,
+              "winRate": 36.3636,
+              "maxDrawdownPct": 3.2567
+            }
+          },
+          {
+            "raw": {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 51,
+              "totalProfit": -31.47076691,
+              "totalReturnPct": -3.15,
+              "profitFactor": 0.7065,
+              "winRate": 33.3333,
+              "maxDrawdownPct": 4.1761
+            }
+          },
+          {
+            "raw": {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 62,
+              "totalProfit": -35.28042688,
+              "totalReturnPct": -3.53,
+              "profitFactor": 0.5356,
+              "winRate": 30.6452,
+              "maxDrawdownPct": 3.9748
+            }
+          },
+          {
+            "raw": {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 58,
+              "totalProfit": -36.96946589,
+              "totalReturnPct": -3.7,
+              "profitFactor": 0.6051,
+              "winRate": 39.6552,
+              "maxDrawdownPct": 3.8204
+            }
+          },
+          {
+            "raw": {
+              "pair": "UNI/USDT:USDT",
+              "tradeCount": 41,
+              "totalProfit": -45.12456,
+              "totalReturnPct": -4.51,
+              "profitFactor": 0.4262,
+              "winRate": 31.7073,
+              "maxDrawdownPct": 5.7257
+            }
+          },
+          {
+            "raw": {
+              "pair": "BCH/USDT:USDT",
+              "tradeCount": 57,
+              "totalProfit": -48.1160657,
+              "totalReturnPct": -4.81,
+              "profitFactor": 0.3899,
+              "winRate": 17.5439,
+              "maxDrawdownPct": 5.0965
+            }
+          },
+          {
+            "raw": {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 35,
+              "totalProfit": -48.28338418,
+              "totalReturnPct": -4.83,
+              "profitFactor": 0.4615,
+              "winRate": 42.8571,
+              "maxDrawdownPct": 5.523
+            }
+          },
+          {
+            "raw": {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 54,
+              "totalProfit": -48.38706165,
+              "totalReturnPct": -4.84,
+              "profitFactor": 0.4429,
+              "winRate": 31.4815,
+              "maxDrawdownPct": 5.9803
+            }
+          },
+          {
+            "raw": {
+              "pair": "PEPE/USDT:USDT",
+              "tradeCount": 31,
+              "totalProfit": -58.5354536,
+              "totalReturnPct": -5.85,
+              "profitFactor": 0.3107,
+              "winRate": 25.8065,
+              "maxDrawdownPct": 5.8535
+            }
+          },
+          {
+            "raw": {
+              "pair": "NEAR/USDT:USDT",
+              "tradeCount": 69,
+              "totalProfit": -60.92227505,
+              "totalReturnPct": -6.09,
+              "profitFactor": 0.4586,
+              "winRate": 37.6812,
+              "maxDrawdownPct": 7.2309
+            }
+          },
+          {
+            "raw": {
+              "pair": "TRX/USDT:USDT",
+              "tradeCount": 160,
+              "totalProfit": -61.44036073,
+              "totalReturnPct": -6.14,
+              "profitFactor": 0.4492,
+              "winRate": 28.125,
+              "maxDrawdownPct": 6.165
+            }
+          },
+          {
+            "raw": {
+              "pair": "AAVE/USDT:USDT",
+              "tradeCount": 42,
+              "totalProfit": -72.14080513,
+              "totalReturnPct": -7.21,
+              "profitFactor": 0.3026,
+              "winRate": 28.5714,
+              "maxDrawdownPct": 7.2141
+            }
+          },
+          {
+            "raw": {
+              "pair": "SEI/USDT:USDT",
+              "tradeCount": 48,
+              "totalProfit": -73.02128553,
+              "totalReturnPct": -7.3,
+              "profitFactor": 0.4622,
+              "winRate": 35.4167,
+              "maxDrawdownPct": 8.4113
+            }
+          },
+          {
+            "raw": {
+              "pair": "DOT/USDT:USDT",
+              "tradeCount": 38,
+              "totalProfit": -86.9532115,
+              "totalReturnPct": -8.7,
+              "profitFactor": 0.301,
+              "winRate": 28.9474,
+              "maxDrawdownPct": 8.7459
+            }
+          },
+          {
+            "raw": {
+              "pair": "OP/USDT:USDT",
+              "tradeCount": 53,
+              "totalProfit": -109.35874909,
+              "totalReturnPct": -10.94,
+              "profitFactor": 0.3137,
+              "winRate": 26.4151,
+              "maxDrawdownPct": 12.1507
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "AAVE/USDT:USDT",
+              "tradeCount": 42,
+              "slippageAdjustedProfitAbs": -95.98718506,
+              "slippageAdjustedReturnPct": -9.5987,
+              "slippageAdjustedProfitFactor": 0.2108,
+              "slippageAdjustedWinRate": 28.5714,
+              "slippageCost": 23.84637993
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 51,
+              "slippageAdjustedProfitAbs": -63.19304212,
+              "slippageAdjustedReturnPct": -6.3193,
+              "slippageAdjustedProfitFactor": 0.4996,
+              "slippageAdjustedWinRate": 33.3333,
+              "slippageCost": 31.72227521
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 41,
+              "slippageAdjustedProfitAbs": -54.84473546,
+              "slippageAdjustedReturnPct": -5.4845,
+              "slippageAdjustedProfitFactor": 0.5753,
+              "slippageAdjustedWinRate": 46.3415,
+              "slippageCost": 33.43322186
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ARB/USDT:USDT",
+              "tradeCount": 41,
+              "slippageAdjustedProfitAbs": -6.33084692,
+              "slippageAdjustedReturnPct": -0.6331,
+              "slippageAdjustedProfitFactor": 0.9203,
+              "slippageAdjustedWinRate": 48.7805,
+              "slippageCost": 27.98120848
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ATOM/USDT:USDT",
+              "tradeCount": 100,
+              "slippageAdjustedProfitAbs": -49.71232629,
+              "slippageAdjustedReturnPct": -4.9712,
+              "slippageAdjustedProfitFactor": 0.6914,
+              "slippageAdjustedWinRate": 40.0,
+              "slippageCost": 47.37219676
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 58,
+              "slippageAdjustedProfitAbs": -63.63306318,
+              "slippageAdjustedReturnPct": -6.3633,
+              "slippageAdjustedProfitFactor": 0.4235,
+              "slippageAdjustedWinRate": 39.6552,
+              "slippageCost": 26.66359729
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "BCH/USDT:USDT",
+              "tradeCount": 57,
+              "slippageAdjustedProfitAbs": -73.47341354,
+              "slippageAdjustedReturnPct": -7.3473,
+              "slippageAdjustedProfitFactor": 0.2502,
+              "slippageAdjustedWinRate": 15.7895,
+              "slippageCost": 25.35734784
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 62,
+              "slippageAdjustedProfitAbs": -62.32950825,
+              "slippageAdjustedReturnPct": -6.233,
+              "slippageAdjustedProfitFactor": 0.3503,
+              "slippageAdjustedWinRate": 27.4194,
+              "slippageCost": 27.04908137
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 52,
+              "slippageAdjustedProfitAbs": -49.65785435,
+              "slippageAdjustedReturnPct": -4.9658,
+              "slippageAdjustedProfitFactor": 0.5013,
+              "slippageAdjustedWinRate": 32.6923,
+              "slippageCost": 26.33409827
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "DOT/USDT:USDT",
+              "tradeCount": 38,
+              "slippageAdjustedProfitAbs": -113.11074823,
+              "slippageAdjustedReturnPct": -11.3111,
+              "slippageAdjustedProfitFactor": 0.2138,
+              "slippageAdjustedWinRate": 26.3158,
+              "slippageCost": 26.15753673
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ETC/USDT:USDT",
+              "tradeCount": 66,
+              "slippageAdjustedProfitAbs": -56.79990104,
+              "slippageAdjustedReturnPct": -5.68,
+              "slippageAdjustedProfitFactor": 0.427,
+              "slippageAdjustedWinRate": 37.8788,
+              "slippageCost": 26.52080067
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 51,
+              "slippageAdjustedProfitAbs": -4.35936325,
+              "slippageAdjustedReturnPct": -0.4359,
+              "slippageAdjustedProfitFactor": 0.9368,
+              "slippageAdjustedWinRate": 47.0588,
+              "slippageCost": 25.62284736
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "FIL/USDT:USDT",
+              "tradeCount": 27,
+              "slippageAdjustedProfitAbs": -13.44713232,
+              "slippageAdjustedReturnPct": -1.3447,
+              "slippageAdjustedProfitFactor": 0.5979,
+              "slippageAdjustedWinRate": 44.4444,
+              "slippageCost": 9.84616912
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "INJ/USDT:USDT",
+              "tradeCount": 47,
+              "slippageAdjustedProfitAbs": -33.94215436,
+              "slippageAdjustedReturnPct": -3.3942,
+              "slippageAdjustedProfitFactor": 0.4839,
+              "slippageAdjustedWinRate": 57.4468,
+              "slippageCost": 15.24726217
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 59,
+              "slippageAdjustedProfitAbs": -29.86440902,
+              "slippageAdjustedReturnPct": -2.9864,
+              "slippageAdjustedProfitFactor": 0.6294,
+              "slippageAdjustedWinRate": 42.3729,
+              "slippageCost": 24.59665678
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "LTC/USDT:USDT",
+              "tradeCount": 66,
+              "slippageAdjustedProfitAbs": -58.91170138,
+              "slippageAdjustedReturnPct": -5.8912,
+              "slippageAdjustedProfitFactor": 0.3884,
+              "slippageAdjustedWinRate": 28.7879,
+              "slippageCost": 28.48912544
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "NEAR/USDT:USDT",
+              "tradeCount": 69,
+              "slippageAdjustedProfitAbs": -88.33232858,
+              "slippageAdjustedReturnPct": -8.8332,
+              "slippageAdjustedProfitFactor": 0.3225,
+              "slippageAdjustedWinRate": 36.2319,
+              "slippageCost": 27.41005353
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "OP/USDT:USDT",
+              "tradeCount": 53,
+              "slippageAdjustedProfitAbs": -143.31367349,
+              "slippageAdjustedReturnPct": -14.3314,
+              "slippageAdjustedProfitFactor": 0.2249,
+              "slippageAdjustedWinRate": 26.4151,
+              "slippageCost": 33.9549244
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ORDI/USDT:USDT",
+              "tradeCount": 22,
+              "slippageAdjustedProfitAbs": -12.01082355,
+              "slippageAdjustedReturnPct": -1.2011,
+              "slippageAdjustedProfitFactor": 0.7373,
+              "slippageAdjustedWinRate": 36.3636,
+              "slippageCost": 14.1115431
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "PEPE/USDT:USDT",
+              "tradeCount": 31,
+              "slippageAdjustedProfitAbs": -76.54888381,
+              "slippageAdjustedReturnPct": -7.6549,
+              "slippageAdjustedProfitFactor": 0.223,
+              "slippageAdjustedWinRate": 25.8065,
+              "slippageCost": 18.01343021
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SEI/USDT:USDT",
+              "tradeCount": 48,
+              "slippageAdjustedProfitAbs": -105.27909372,
+              "slippageAdjustedReturnPct": -10.5279,
+              "slippageAdjustedProfitFactor": 0.3318,
+              "slippageAdjustedWinRate": 35.4167,
+              "slippageCost": 32.25780819
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 58,
+              "slippageAdjustedProfitAbs": -39.11086035,
+              "slippageAdjustedReturnPct": -3.9111,
+              "slippageAdjustedProfitFactor": 0.4863,
+              "slippageAdjustedWinRate": 37.931,
+              "slippageCost": 21.2449169
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 35,
+              "slippageAdjustedProfitAbs": -69.73229383,
+              "slippageAdjustedReturnPct": -6.9732,
+              "slippageAdjustedProfitFactor": 0.329,
+              "slippageAdjustedWinRate": 40.0,
+              "slippageCost": 21.44890965
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "TIA/USDT:USDT",
+              "tradeCount": 47,
+              "slippageAdjustedProfitAbs": -15.65817088,
+              "slippageAdjustedReturnPct": -1.5658,
+              "slippageAdjustedProfitFactor": 0.7801,
+              "slippageAdjustedWinRate": 48.9362,
+              "slippageCost": 20.9304699
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "TRX/USDT:USDT",
+              "tradeCount": 160,
+              "slippageAdjustedProfitAbs": -126.81503878,
+              "slippageAdjustedReturnPct": -12.6815,
+              "slippageAdjustedProfitFactor": 0.2123,
+              "slippageAdjustedWinRate": 22.5,
+              "slippageCost": 65.37467805
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "UNI/USDT:USDT",
+              "tradeCount": 41,
+              "slippageAdjustedProfitAbs": -62.77285424,
+              "slippageAdjustedReturnPct": -6.2773,
+              "slippageAdjustedProfitFactor": 0.3075,
+              "slippageAdjustedWinRate": 31.7073,
+              "slippageCost": 17.64829424
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "WIF/USDT:USDT",
+              "tradeCount": 39,
+              "slippageAdjustedProfitAbs": -42.58326555,
+              "slippageAdjustedReturnPct": -4.2583,
+              "slippageAdjustedProfitFactor": 0.4952,
+              "slippageAdjustedWinRate": 43.5897,
+              "slippageCost": 19.79725108
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 54,
+              "slippageAdjustedProfitAbs": -73.73394441,
+              "slippageAdjustedReturnPct": -7.3734,
+              "slippageAdjustedProfitFactor": 0.2971,
+              "slippageAdjustedWinRate": 24.0741,
+              "slippageCost": 25.34688276
+            }
+          }
+        ],
+        "months": [
+          {
+            "raw": {
+              "date": "31/01/2026",
+              "date_ts": 1769817600000,
+              "profit_abs": -630.93847328,
+              "wins": 145,
+              "draws": 0,
+              "losses": 249,
+              "trades": 394,
+              "profit_factor": 0.60945825
+            }
+          },
+          {
+            "raw": {
+              "date": "28/02/2026",
+              "date_ts": 1772236800000,
+              "profit_abs": -35.0857372,
+              "wins": 13,
+              "draws": 0,
+              "losses": 28,
+              "trades": 41,
+              "profit_factor": 0.5032693
+            }
+          },
+          {
+            "raw": {
+              "date": "31/03/2026",
+              "date_ts": 1774915200000,
+              "profit_abs": -129.70109686,
+              "wins": 63,
+              "draws": 0,
+              "losses": 120,
+              "trades": 183,
+              "profit_factor": 0.50274484
+            }
+          },
+          {
+            "raw": {
+              "date": "30/04/2026",
+              "date_ts": 1777507200000,
+              "profit_abs": -96.06146201,
+              "wins": 137,
+              "draws": 0,
+              "losses": 259,
+              "trades": 396,
+              "profit_factor": 0.66433001
+            }
+          },
+          {
+            "raw": {
+              "date": "31/05/2026",
+              "date_ts": 1780185600000,
+              "profit_abs": -39.0508779,
+              "wins": 161,
+              "draws": 0,
+              "losses": 243,
+              "trades": 404,
+              "profit_factor": 0.78266396
+            }
+          },
+          {
+            "raw": {
+              "date": "30/06/2026",
+              "date_ts": 1782777600000,
+              "profit_abs": -10.16198832,
+              "wins": 29,
+              "draws": 0,
+              "losses": 44,
+              "trades": 73,
+              "profit_factor": 0.6271315
+            }
+          },
+          {
+            "raw": {
+              "date": "31/07/2026",
+              "date_ts": 1785456000000,
+              "profit_abs": -0.7100131,
+              "wins": 12,
+              "draws": 0,
+              "losses": 12,
+              "trades": 24,
+              "profit_factor": 0.90179784
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-01",
+              "tradeCount": 394,
+              "slippageAdjustedProfitAbs": -1093.70849595,
+              "slippageAdjustedReturnPct": -109.3708,
+              "slippageAdjustedWinRate": 34.5178,
+              "slippageCost": 462.77002267
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-02",
+              "tradeCount": 41,
+              "slippageAdjustedProfitAbs": -59.00482797,
+              "slippageAdjustedReturnPct": -5.9005,
+              "slippageAdjustedWinRate": 29.2683,
+              "slippageCost": 23.91909077
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-03",
+              "tradeCount": 183,
+              "slippageAdjustedProfitAbs": -209.32668217,
+              "slippageAdjustedReturnPct": -20.9327,
+              "slippageAdjustedWinRate": 30.0546,
+              "slippageCost": 79.62558531
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-04",
+              "tradeCount": 396,
+              "slippageAdjustedProfitAbs": -199.06295806,
+              "slippageAdjustedReturnPct": -19.9063,
+              "slippageAdjustedWinRate": 32.8283,
+              "slippageCost": 103.00149605
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-05",
+              "tradeCount": 404,
+              "slippageAdjustedProfitAbs": -103.51537172,
+              "slippageAdjustedReturnPct": -10.3515,
+              "slippageAdjustedWinRate": 37.8713,
+              "slippageCost": 64.46449382
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-06",
+              "tradeCount": 73,
+              "slippageAdjustedProfitAbs": -17.84246884,
+              "slippageAdjustedReturnPct": -1.7842,
+              "slippageAdjustedWinRate": 38.3562,
+              "slippageCost": 7.68048052
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-07",
+              "tradeCount": 24,
+              "slippageAdjustedProfitAbs": -3.02781126,
+              "slippageAdjustedReturnPct": -0.3028,
+              "slippageAdjustedWinRate": 50.0,
+              "slippageCost": 2.31779816
+            }
+          }
+        ],
+        "exits": null,
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_c_exit_cleanup",
+      "strategyName": "AlphaPilotVolumeReboundV02C",
+      "strategyClass": "AlphaPilotVolumeReboundV02CExitCleanup",
+      "strategyVersion": "V02",
+      "strategyFamily": "volume_rebound",
+      "strategyFile": "user_data/strategies/AlphaPilotVolumeReboundV02Candidates.py",
+      "direction": "long",
+      "timeframe": "15m",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 28,
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "XRP/USDT:USDT",
+          "ADA/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SUI/USDT:USDT",
+          "APT/USDT:USDT",
+          "OP/USDT:USDT",
+          "ARB/USDT:USDT",
+          "LTC/USDT:USDT",
+          "BCH/USDT:USDT",
+          "DOT/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "PEPE/USDT:USDT",
+          "WIF/USDT:USDT",
+          "ORDI/USDT:USDT",
+          "INJ/USDT:USDT",
+          "FIL/USDT:USDT",
+          "ETC/USDT:USDT",
+          "TRX/USDT:USDT",
+          "UNI/USDT:USDT",
+          "AAVE/USDT:USDT",
+          "ATOM/USDT:USDT",
+          "SEI/USDT:USDT",
+          "TIA/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "rejected_for_dry_run",
+      "reason": "Best relative expanded candidate, but still deeply negative after slippage and not usable for Dry-run.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_6_strategy_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02CExitCleanup.zip",
+      "sourceArtifact": "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02CExitCleanup.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_6_strategy_status_archive.json",
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json",
+        "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02CExitCleanup.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 2496,
+        "totalReturnPct": -99.1303,
+        "slippageAdjustedTotalReturnPct": -187.2377,
+        "winRatePct": 43.4295,
+        "profitFactor": 0.6739,
+        "slippageAdjustedProfitFactor": 0.4726,
+        "maxDrawdownPct": 99.2719,
+        "maxConsecutiveLosses": 25,
+        "averageHoldingMinutes": 66.5144,
+        "feesPaid": 881.07407065,
+        "slippageCost": 881.07407065,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": 28,
+        "monthCount": 14
+      },
+      "breakdowns": {
+        "pairs": [
+          {
+            "raw": {
+              "pair": "ARB/USDT:USDT",
+              "tradeCount": 67,
+              "totalProfit": 44.28481833,
+              "totalReturnPct": 4.43,
+              "profitFactor": 1.6873,
+              "winRate": 49.2537,
+              "maxDrawdownPct": 2.395
+            }
+          },
+          {
+            "raw": {
+              "pair": "ORDI/USDT:USDT",
+              "tradeCount": 57,
+              "totalProfit": 32.08262954,
+              "totalReturnPct": 3.21,
+              "profitFactor": 1.7443,
+              "winRate": 43.8596,
+              "maxDrawdownPct": 1.5375
+            }
+          },
+          {
+            "raw": {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 73,
+              "totalProfit": 13.48567684,
+              "totalReturnPct": 1.35,
+              "profitFactor": 1.1373,
+              "winRate": 46.5753,
+              "maxDrawdownPct": 3.238
+            }
+          },
+          {
+            "raw": {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 80,
+              "totalProfit": 12.00291597,
+              "totalReturnPct": 1.2,
+              "profitFactor": 1.1252,
+              "winRate": 43.75,
+              "maxDrawdownPct": 3.2959
+            }
+          },
+          {
+            "raw": {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 95,
+              "totalProfit": 6.64165581,
+              "totalReturnPct": 0.66,
+              "profitFactor": 1.072,
+              "winRate": 49.4737,
+              "maxDrawdownPct": 2.4672
+            }
+          },
+          {
+            "raw": {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 110,
+              "totalProfit": -9.51431348,
+              "totalReturnPct": -0.95,
+              "profitFactor": 0.8943,
+              "winRate": 52.7273,
+              "maxDrawdownPct": 4.0459
+            }
+          },
+          {
+            "raw": {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 79,
+              "totalProfit": -13.46155591,
+              "totalReturnPct": -1.35,
+              "profitFactor": 0.8458,
+              "winRate": 41.7722,
+              "maxDrawdownPct": 5.1032
+            }
+          },
+          {
+            "raw": {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 104,
+              "totalProfit": -17.96982959,
+              "totalReturnPct": -1.8,
+              "profitFactor": 0.8141,
+              "winRate": 50.0,
+              "maxDrawdownPct": 3.5076
+            }
+          },
+          {
+            "raw": {
+              "pair": "ATOM/USDT:USDT",
+              "tradeCount": 147,
+              "totalProfit": -18.05182384,
+              "totalReturnPct": -1.81,
+              "profitFactor": 0.8937,
+              "winRate": 44.2177,
+              "maxDrawdownPct": 6.1535
+            }
+          },
+          {
+            "raw": {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 82,
+              "totalProfit": -21.78158515,
+              "totalReturnPct": -2.18,
+              "profitFactor": 0.7505,
+              "winRate": 46.3415,
+              "maxDrawdownPct": 3.9311
+            }
+          },
+          {
+            "raw": {
+              "pair": "FIL/USDT:USDT",
+              "tradeCount": 47,
+              "totalProfit": -29.76560112,
+              "totalReturnPct": -2.98,
+              "profitFactor": 0.506,
+              "winRate": 51.0638,
+              "maxDrawdownPct": 4.1386
+            }
+          },
+          {
+            "raw": {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 62,
+              "totalProfit": -32.39954304,
+              "totalReturnPct": -3.24,
+              "profitFactor": 0.6634,
+              "winRate": 45.1613,
+              "maxDrawdownPct": 4.5779
+            }
+          },
+          {
+            "raw": {
+              "pair": "AAVE/USDT:USDT",
+              "tradeCount": 72,
+              "totalProfit": -37.29964331,
+              "totalReturnPct": -3.73,
+              "profitFactor": 0.687,
+              "winRate": 43.0556,
+              "maxDrawdownPct": 7.5002
+            }
+          },
+          {
+            "raw": {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 113,
+              "totalProfit": -39.0347748,
+              "totalReturnPct": -3.9,
+              "profitFactor": 0.5929,
+              "winRate": 41.5929,
+              "maxDrawdownPct": 5.1363
+            }
+          },
+          {
+            "raw": {
+              "pair": "UNI/USDT:USDT",
+              "tradeCount": 72,
+              "totalProfit": -41.8421362,
+              "totalReturnPct": -4.18,
+              "profitFactor": 0.5,
+              "winRate": 41.6667,
+              "maxDrawdownPct": 4.2079
+            }
+          },
+          {
+            "raw": {
+              "pair": "ETC/USDT:USDT",
+              "tradeCount": 93,
+              "totalProfit": -43.77436113,
+              "totalReturnPct": -4.38,
+              "profitFactor": 0.5452,
+              "winRate": 51.6129,
+              "maxDrawdownPct": 5.8567
+            }
+          },
+          {
+            "raw": {
+              "pair": "SEI/USDT:USDT",
+              "tradeCount": 69,
+              "totalProfit": -51.30352989,
+              "totalReturnPct": -5.13,
+              "profitFactor": 0.5852,
+              "winRate": 49.2754,
+              "maxDrawdownPct": 6.1839
+            }
+          },
+          {
+            "raw": {
+              "pair": "LTC/USDT:USDT",
+              "tradeCount": 95,
+              "totalProfit": -53.45378167,
+              "totalReturnPct": -5.35,
+              "profitFactor": 0.4786,
+              "winRate": 40.0,
+              "maxDrawdownPct": 6.3823
+            }
+          },
+          {
+            "raw": {
+              "pair": "NEAR/USDT:USDT",
+              "tradeCount": 134,
+              "totalProfit": -55.6998754,
+              "totalReturnPct": -5.57,
+              "profitFactor": 0.5832,
+              "winRate": 42.5373,
+              "maxDrawdownPct": 6.3469
+            }
+          },
+          {
+            "raw": {
+              "pair": "INJ/USDT:USDT",
+              "tradeCount": 90,
+              "totalProfit": -56.70202261,
+              "totalReturnPct": -5.67,
+              "profitFactor": 0.4497,
+              "winRate": 47.7778,
+              "maxDrawdownPct": 6.7932
+            }
+          },
+          {
+            "raw": {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 65,
+              "totalProfit": -57.27815505,
+              "totalReturnPct": -5.73,
+              "profitFactor": 0.5916,
+              "winRate": 44.6154,
+              "maxDrawdownPct": 5.9399
+            }
+          },
+          {
+            "raw": {
+              "pair": "BCH/USDT:USDT",
+              "tradeCount": 94,
+              "totalProfit": -57.87594811,
+              "totalReturnPct": -5.79,
+              "profitFactor": 0.5605,
+              "winRate": 37.234,
+              "maxDrawdownPct": 6.0926
+            }
+          },
+          {
+            "raw": {
+              "pair": "WIF/USDT:USDT",
+              "tradeCount": 55,
+              "totalProfit": -61.57831416,
+              "totalReturnPct": -6.16,
+              "profitFactor": 0.3866,
+              "winRate": 38.1818,
+              "maxDrawdownPct": 6.2417
+            }
+          },
+          {
+            "raw": {
+              "pair": "TIA/USDT:USDT",
+              "tradeCount": 92,
+              "totalProfit": -63.92345802,
+              "totalReturnPct": -6.39,
+              "profitFactor": 0.3369,
+              "winRate": 38.0435,
+              "maxDrawdownPct": 6.3923
+            }
+          },
+          {
+            "raw": {
+              "pair": "OP/USDT:USDT",
+              "tradeCount": 75,
+              "totalProfit": -67.9314242,
+              "totalReturnPct": -6.79,
+              "profitFactor": 0.5322,
+              "winRate": 44.0,
+              "maxDrawdownPct": 8.3747
+            }
+          },
+          {
+            "raw": {
+              "pair": "PEPE/USDT:USDT",
+              "tradeCount": 53,
+              "totalProfit": -72.45722378,
+              "totalReturnPct": -7.25,
+              "profitFactor": 0.396,
+              "winRate": 37.7358,
+              "maxDrawdownPct": 7.2533
+            }
+          },
+          {
+            "raw": {
+              "pair": "TRX/USDT:USDT",
+              "tradeCount": 246,
+              "totalProfit": -90.51565917,
+              "totalReturnPct": -9.05,
+              "profitFactor": 0.4773,
+              "winRate": 35.3659,
+              "maxDrawdownPct": 9.0545
+            }
+          },
+          {
+            "raw": {
+              "pair": "DOT/USDT:USDT",
+              "tradeCount": 75,
+              "totalProfit": -106.1858681,
+              "totalReturnPct": -10.62,
+              "profitFactor": 0.4519,
+              "winRate": 32.0,
+              "maxDrawdownPct": 11.4698
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "AAVE/USDT:USDT",
+              "tradeCount": 72,
+              "slippageAdjustedProfitAbs": -70.59418126,
+              "slippageAdjustedReturnPct": -7.0594,
+              "slippageAdjustedProfitFactor": 0.4869,
+              "slippageAdjustedWinRate": 38.8889,
+              "slippageCost": 33.29453795
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 73,
+              "slippageAdjustedProfitAbs": -20.19710313,
+              "slippageAdjustedReturnPct": -2.0197,
+              "slippageAdjustedProfitFactor": 0.8215,
+              "slippageAdjustedWinRate": 43.8356,
+              "slippageCost": 33.68277997
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 65,
+              "slippageAdjustedProfitAbs": -93.33719891,
+              "slippageAdjustedReturnPct": -9.3337,
+              "slippageAdjustedProfitFactor": 0.4211,
+              "slippageAdjustedWinRate": 40.0,
+              "slippageCost": 36.05904386
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ARB/USDT:USDT",
+              "tradeCount": 67,
+              "slippageAdjustedProfitAbs": 16.7389943,
+              "slippageAdjustedReturnPct": 1.6739,
+              "slippageAdjustedProfitFactor": 1.2265,
+              "slippageAdjustedWinRate": 49.2537,
+              "slippageCost": 27.54582403
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ATOM/USDT:USDT",
+              "tradeCount": 147,
+              "slippageAdjustedProfitAbs": -70.62645102,
+              "slippageAdjustedReturnPct": -7.0626,
+              "slippageAdjustedProfitFactor": 0.6401,
+              "slippageAdjustedWinRate": 42.1769,
+              "slippageCost": 52.57462718
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 80,
+              "slippageAdjustedProfitAbs": -20.36336413,
+              "slippageAdjustedReturnPct": -2.0363,
+              "slippageAdjustedProfitFactor": 0.8149,
+              "slippageAdjustedWinRate": 43.75,
+              "slippageCost": 32.3662801
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "BCH/USDT:USDT",
+              "tradeCount": 94,
+              "slippageAdjustedProfitAbs": -95.62168255,
+              "slippageAdjustedReturnPct": -9.5622,
+              "slippageAdjustedProfitFactor": 0.384,
+              "slippageAdjustedWinRate": 30.8511,
+              "slippageCost": 37.74573444
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 113,
+              "slippageAdjustedProfitAbs": -73.4515439,
+              "slippageAdjustedReturnPct": -7.3452,
+              "slippageAdjustedProfitFactor": 0.3834,
+              "slippageAdjustedWinRate": 35.3982,
+              "slippageCost": 34.4167691
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 79,
+              "slippageAdjustedProfitAbs": -40.18516564,
+              "slippageAdjustedReturnPct": -4.0185,
+              "slippageAdjustedProfitFactor": 0.6029,
+              "slippageAdjustedWinRate": 40.5063,
+              "slippageCost": 26.72360973
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "DOT/USDT:USDT",
+              "tradeCount": 75,
+              "slippageAdjustedProfitAbs": -151.07628959,
+              "slippageAdjustedReturnPct": -15.1076,
+              "slippageAdjustedProfitFactor": 0.3244,
+              "slippageAdjustedWinRate": 28.0,
+              "slippageCost": 44.89042149
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ETC/USDT:USDT",
+              "tradeCount": 93,
+              "slippageAdjustedProfitAbs": -68.3011571,
+              "slippageAdjustedReturnPct": -6.8301,
+              "slippageAdjustedProfitFactor": 0.3892,
+              "slippageAdjustedWinRate": 46.2366,
+              "slippageCost": 24.52679597
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 95,
+              "slippageAdjustedProfitAbs": -29.75988104,
+              "slippageAdjustedReturnPct": -2.976,
+              "slippageAdjustedProfitFactor": 0.7316,
+              "slippageAdjustedWinRate": 45.2632,
+              "slippageCost": 36.40153685
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "FIL/USDT:USDT",
+              "tradeCount": 47,
+              "slippageAdjustedProfitAbs": -44.13542573,
+              "slippageAdjustedReturnPct": -4.4135,
+              "slippageAdjustedProfitFactor": 0.3639,
+              "slippageAdjustedWinRate": 44.6809,
+              "slippageCost": 14.36982461
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "INJ/USDT:USDT",
+              "tradeCount": 90,
+              "slippageAdjustedProfitAbs": -79.37700679,
+              "slippageAdjustedReturnPct": -7.9377,
+              "slippageAdjustedProfitFactor": 0.3269,
+              "slippageAdjustedWinRate": 46.6667,
+              "slippageCost": 22.67498418
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 104,
+              "slippageAdjustedProfitAbs": -47.42900392,
+              "slippageAdjustedReturnPct": -4.7429,
+              "slippageAdjustedProfitFactor": 0.5754,
+              "slippageAdjustedWinRate": 46.1538,
+              "slippageCost": 29.45917433
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "LTC/USDT:USDT",
+              "tradeCount": 95,
+              "slippageAdjustedProfitAbs": -80.04819023,
+              "slippageAdjustedReturnPct": -8.0048,
+              "slippageAdjustedProfitFactor": 0.3304,
+              "slippageAdjustedWinRate": 32.6316,
+              "slippageCost": 26.59440856
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "NEAR/USDT:USDT",
+              "tradeCount": 134,
+              "slippageAdjustedProfitAbs": -88.87202744,
+              "slippageAdjustedReturnPct": -8.8872,
+              "slippageAdjustedProfitFactor": 0.4212,
+              "slippageAdjustedWinRate": 41.791,
+              "slippageCost": 33.17215204
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "OP/USDT:USDT",
+              "tradeCount": 75,
+              "slippageAdjustedProfitAbs": -102.07062074,
+              "slippageAdjustedReturnPct": -10.2071,
+              "slippageAdjustedProfitFactor": 0.3866,
+              "slippageAdjustedWinRate": 44.0,
+              "slippageCost": 34.13919654
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ORDI/USDT:USDT",
+              "tradeCount": 57,
+              "slippageAdjustedProfitAbs": 12.92045669,
+              "slippageAdjustedReturnPct": 1.292,
+              "slippageAdjustedProfitFactor": 1.2607,
+              "slippageAdjustedWinRate": 42.1053,
+              "slippageCost": 19.16217285
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "PEPE/USDT:USDT",
+              "tradeCount": 53,
+              "slippageAdjustedProfitAbs": -98.09710681,
+              "slippageAdjustedReturnPct": -9.8097,
+              "slippageAdjustedProfitFactor": 0.2875,
+              "slippageAdjustedWinRate": 37.7358,
+              "slippageCost": 25.63988303
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SEI/USDT:USDT",
+              "tradeCount": 69,
+              "slippageAdjustedProfitAbs": -82.46930514,
+              "slippageAdjustedReturnPct": -8.2469,
+              "slippageAdjustedProfitFactor": 0.4199,
+              "slippageAdjustedWinRate": 47.8261,
+              "slippageCost": 31.16577525
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 110,
+              "slippageAdjustedProfitAbs": -42.85868158,
+              "slippageAdjustedReturnPct": -4.2859,
+              "slippageAdjustedProfitFactor": 0.5987,
+              "slippageAdjustedWinRate": 44.5455,
+              "slippageCost": 33.3443681
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 62,
+              "slippageAdjustedProfitAbs": -58.6117689,
+              "slippageAdjustedReturnPct": -5.8612,
+              "slippageAdjustedProfitFactor": 0.4724,
+              "slippageAdjustedWinRate": 41.9355,
+              "slippageCost": 26.21222586
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "TIA/USDT:USDT",
+              "tradeCount": 92,
+              "slippageAdjustedProfitAbs": -83.29510765,
+              "slippageAdjustedReturnPct": -8.3295,
+              "slippageAdjustedProfitFactor": 0.245,
+              "slippageAdjustedWinRate": 38.0435,
+              "slippageCost": 19.37164963
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "TRX/USDT:USDT",
+              "tradeCount": 246,
+              "slippageAdjustedProfitAbs": -166.84213794,
+              "slippageAdjustedReturnPct": -16.6842,
+              "slippageAdjustedProfitFactor": 0.2603,
+              "slippageAdjustedWinRate": 26.8293,
+              "slippageCost": 76.32647877
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "UNI/USDT:USDT",
+              "tradeCount": 72,
+              "slippageAdjustedProfitAbs": -61.33885869,
+              "slippageAdjustedReturnPct": -6.1339,
+              "slippageAdjustedProfitFactor": 0.3609,
+              "slippageAdjustedWinRate": 41.6667,
+              "slippageCost": 19.49672249
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "WIF/USDT:USDT",
+              "tradeCount": 55,
+              "slippageAdjustedProfitAbs": -83.31567321,
+              "slippageAdjustedReturnPct": -8.3316,
+              "slippageAdjustedProfitFactor": 0.2763,
+              "slippageAdjustedWinRate": 36.3636,
+              "slippageCost": 21.73735905
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 82,
+              "slippageAdjustedProfitAbs": -49.76131983,
+              "slippageAdjustedReturnPct": -4.9761,
+              "slippageAdjustedProfitFactor": 0.5191,
+              "slippageAdjustedWinRate": 41.4634,
+              "slippageCost": 27.97973468
+            }
+          }
+        ],
+        "months": [
+          {
+            "raw": {
+              "date": "31/01/2026",
+              "date_ts": 1769817600000,
+              "profit_abs": -729.19004298,
+              "wins": 264,
+              "draws": 0,
+              "losses": 356,
+              "trades": 620,
+              "profit_factor": 0.69073452
+            }
+          },
+          {
+            "raw": {
+              "date": "28/02/2026",
+              "date_ts": 1772236800000,
+              "profit_abs": -32.88689915,
+              "wins": 39,
+              "draws": 0,
+              "losses": 50,
+              "trades": 89,
+              "profit_factor": 0.71137528
+            }
+          },
+          {
+            "raw": {
+              "date": "31/03/2026",
+              "date_ts": 1774915200000,
+              "profit_abs": -159.81770429,
+              "wins": 136,
+              "draws": 0,
+              "losses": 222,
+              "trades": 358,
+              "profit_factor": 0.51815716
+            }
+          },
+          {
+            "raw": {
+              "date": "30/04/2026",
+              "date_ts": 1777507200000,
+              "profit_abs": -50.92315299,
+              "wins": 263,
+              "draws": 0,
+              "losses": 334,
+              "trades": 597,
+              "profit_factor": 0.66305042
+            }
+          },
+          {
+            "raw": {
+              "date": "31/05/2026",
+              "date_ts": 1780185600000,
+              "profit_abs": -13.78368306,
+              "wins": 292,
+              "draws": 0,
+              "losses": 331,
+              "trades": 623,
+              "profit_factor": 0.8093219
+            }
+          },
+          {
+            "raw": {
+              "date": "30/06/2026",
+              "date_ts": 1782777600000,
+              "profit_abs": -4.17366549,
+              "wins": 60,
+              "draws": 0,
+              "losses": 89,
+              "trades": 149,
+              "profit_factor": 0.59683508
+            }
+          },
+          {
+            "raw": {
+              "date": "31/07/2026",
+              "date_ts": 1785456000000,
+              "profit_abs": -0.52758328,
+              "wins": 30,
+              "draws": 0,
+              "losses": 30,
+              "trades": 60,
+              "profit_factor": 0.82029661
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-01",
+              "tradeCount": 620,
+              "slippageAdjustedProfitAbs": -1410.46116129,
+              "slippageAdjustedReturnPct": -141.0461,
+              "slippageAdjustedWinRate": 39.5161,
+              "slippageCost": 681.27111831
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-02",
+              "tradeCount": 89,
+              "slippageAdjustedProfitAbs": -71.1922414,
+              "slippageAdjustedReturnPct": -7.1192,
+              "slippageAdjustedWinRate": 40.4494,
+              "slippageCost": 38.30534225
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-03",
+              "tradeCount": 358,
+              "slippageAdjustedProfitAbs": -248.08377736,
+              "slippageAdjustedReturnPct": -24.8084,
+              "slippageAdjustedWinRate": 34.3575,
+              "slippageCost": 88.26607307
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-04",
+              "tradeCount": 597,
+              "slippageAdjustedProfitAbs": -96.92529674,
+              "slippageAdjustedReturnPct": -9.6925,
+              "slippageAdjustedWinRate": 39.196,
+              "slippageCost": 46.00214375
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-05",
+              "tradeCount": 623,
+              "slippageAdjustedProfitAbs": -37.50976099,
+              "slippageAdjustedReturnPct": -3.751,
+              "slippageAdjustedWinRate": 42.6966,
+              "slippageCost": 23.72607793
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-06",
+              "tradeCount": 149,
+              "slippageAdjustedProfitAbs": -6.82155202,
+              "slippageAdjustedReturnPct": -0.6822,
+              "slippageAdjustedWinRate": 39.5973,
+              "slippageCost": 2.64788653
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-07",
+              "tradeCount": 60,
+              "slippageAdjustedProfitAbs": -1.38301209,
+              "slippageAdjustedReturnPct": -0.1383,
+              "slippageAdjustedWinRate": 48.3333,
+              "slippageCost": 0.85542881
+            }
+          }
+        ],
+        "exits": null,
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_d_early_failure_exit",
+      "strategyName": "AlphaPilotVolumeReboundV02D",
+      "strategyClass": "AlphaPilotVolumeReboundV02DEarlyFailureExit",
+      "strategyVersion": "V02",
+      "strategyFamily": "volume_rebound",
+      "strategyFile": "user_data/strategies/AlphaPilotVolumeReboundV02Candidates.py",
+      "direction": "long",
+      "timeframe": "15m",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 28,
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "XRP/USDT:USDT",
+          "ADA/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SUI/USDT:USDT",
+          "APT/USDT:USDT",
+          "OP/USDT:USDT",
+          "ARB/USDT:USDT",
+          "LTC/USDT:USDT",
+          "BCH/USDT:USDT",
+          "DOT/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "PEPE/USDT:USDT",
+          "WIF/USDT:USDT",
+          "ORDI/USDT:USDT",
+          "INJ/USDT:USDT",
+          "FIL/USDT:USDT",
+          "ETC/USDT:USDT",
+          "TRX/USDT:USDT",
+          "UNI/USDT:USDT",
+          "AAVE/USDT:USDT",
+          "ATOM/USDT:USDT",
+          "SEI/USDT:USDT",
+          "TIA/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "rejected_for_dry_run",
+      "reason": "Failed the V13.4.4 smoke comparison gate and was eliminated before expanded validation.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_6_strategy_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02DEarlyFailureExit.zip",
+      "sourceArtifact": "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02DEarlyFailureExit.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_6_strategy_status_archive.json",
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json",
+        "user_data/backtest_results/v13_4_4_AlphaPilotVolumeReboundV02DEarlyFailureExit.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "slippageAdjustedTotalReturnPct",
+        "slippageAdjustedProfitFactor",
+        "slippageCost",
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 231,
+        "totalReturnPct": -15.6258,
+        "slippageAdjustedTotalReturnPct": null,
+        "winRatePct": 36.7965,
+        "profitFactor": 0.7979,
+        "slippageAdjustedProfitFactor": null,
+        "maxDrawdownPct": 24.3002,
+        "maxConsecutiveLosses": 13,
+        "averageHoldingMinutes": 61.0,
+        "feesPaid": 339.7125722,
+        "slippageCost": null,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": 28,
+        "monthCount": 4
+      },
+      "breakdowns": {
+        "pairs": [
+          {
+            "pair": "BTC/USDT:USDT",
+            "tradeCount": 73,
+            "totalProfit": -9.78947184,
+            "totalReturnPct": -0.98,
+            "profitFactor": 0.9421,
+            "winRate": 32.8767,
+            "maxDrawdownPct": 5.885
+          },
+          {
+            "pair": "ETH/USDT:USDT",
+            "tradeCount": 59,
+            "totalProfit": -16.39569187,
+            "totalReturnPct": -1.64,
+            "profitFactor": 0.9213,
+            "winRate": 38.9831,
+            "maxDrawdownPct": 6.2801
+          },
+          {
+            "pair": "SOL/USDT:USDT",
+            "tradeCount": 99,
+            "totalProfit": -130.07273662,
+            "totalReturnPct": -13.01,
+            "profitFactor": 0.6712,
+            "winRate": 38.3838,
+            "maxDrawdownPct": 19.1369
+          }
+        ],
+        "months": [
+          {
+            "date": "30/04/2026",
+            "date_ts": 1777507200000,
+            "profit_abs": -163.92653515,
+            "wins": 38,
+            "draws": 0,
+            "losses": 81,
+            "trades": 119,
+            "profit_factor": 0.65132729
+          },
+          {
+            "date": "31/05/2026",
+            "date_ts": 1780185600000,
+            "profit_abs": -31.10921092,
+            "wins": 36,
+            "draws": 0,
+            "losses": 58,
+            "trades": 94,
+            "profit_factor": 0.87727902
+          },
+          {
+            "date": "30/06/2026",
+            "date_ts": 1782777600000,
+            "profit_abs": 1.12037519,
+            "wins": 5,
+            "draws": 0,
+            "losses": 5,
+            "trades": 10,
+            "profit_factor": 1.02927646
+          },
+          {
+            "date": "31/07/2026",
+            "date_ts": 1785456000000,
+            "profit_abs": 37.65747055,
+            "wins": 6,
+            "draws": 0,
+            "losses": 2,
+            "trades": 8,
+            "profit_factor": 4.33712102
+          }
+        ],
+        "exits": null,
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_e_pair_risk_watchlist",
+      "strategyName": "AlphaPilotVolumeReboundV02E",
+      "strategyClass": "AlphaPilotVolumeReboundV02EPairRiskWatchlist",
+      "strategyVersion": "V02",
+      "strategyFamily": "volume_rebound",
+      "strategyFile": "user_data/strategies/AlphaPilotVolumeReboundV02Candidates.py",
+      "direction": "long",
+      "timeframe": "15m",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 28,
+        "pairs": [
+          "BTC/USDT:USDT",
+          "ETH/USDT:USDT",
+          "SOL/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "XRP/USDT:USDT",
+          "ADA/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SUI/USDT:USDT",
+          "APT/USDT:USDT",
+          "OP/USDT:USDT",
+          "ARB/USDT:USDT",
+          "LTC/USDT:USDT",
+          "BCH/USDT:USDT",
+          "DOT/USDT:USDT",
+          "NEAR/USDT:USDT",
+          "PEPE/USDT:USDT",
+          "WIF/USDT:USDT",
+          "ORDI/USDT:USDT",
+          "INJ/USDT:USDT",
+          "FIL/USDT:USDT",
+          "ETC/USDT:USDT",
+          "TRX/USDT:USDT",
+          "UNI/USDT:USDT",
+          "AAVE/USDT:USDT",
+          "ATOM/USDT:USDT",
+          "SEI/USDT:USDT",
+          "TIA/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "rejected_for_dry_run",
+      "reason": "Pair-risk changes did not improve enough in expanded validation and remain negative after slippage.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_6_strategy_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02EPairRiskWatchlist.zip",
+      "sourceArtifact": "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02EPairRiskWatchlist.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_6_strategy_status_archive.json",
+        "reports/v13_4_1_diagnosis_report.json",
+        "reports/v13_4_2_signal_audit_report.json",
+        "reports/v13_4_3_v02_candidate_matrix.json",
+        "reports/v13_4_4_comparative_backtest_report.json",
+        "reports/v13_4_5_expanded_validation_report.json",
+        "user_data/backtest_results/v13_4_5_AlphaPilotVolumeReboundV02EPairRiskWatchlist.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 2671,
+        "totalReturnPct": -99.3093,
+        "slippageAdjustedTotalReturnPct": -191.7425,
+        "winRatePct": 37.0273,
+        "profitFactor": 0.6637,
+        "slippageAdjustedProfitFactor": 0.4569,
+        "maxDrawdownPct": 99.3953,
+        "maxConsecutiveLosses": 20,
+        "averageHoldingMinutes": 49.6949,
+        "feesPaid": 924.33185017,
+        "slippageCost": 924.33185017,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": 28,
+        "monthCount": 14
+      },
+      "breakdowns": {
+        "pairs": [
+          {
+            "raw": {
+              "pair": "ARB/USDT:USDT",
+              "tradeCount": 79,
+              "totalProfit": 49.05767219,
+              "totalReturnPct": 4.91,
+              "profitFactor": 1.6916,
+              "winRate": 45.5696,
+              "maxDrawdownPct": 1.9716
+            }
+          },
+          {
+            "raw": {
+              "pair": "ORDI/USDT:USDT",
+              "tradeCount": 60,
+              "totalProfit": 36.14728737,
+              "totalReturnPct": 3.61,
+              "profitFactor": 1.919,
+              "winRate": 43.3333,
+              "maxDrawdownPct": 1.2219
+            }
+          },
+          {
+            "raw": {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 91,
+              "totalProfit": 12.88266692,
+              "totalReturnPct": 1.29,
+              "profitFactor": 1.131,
+              "winRate": 38.4615,
+              "maxDrawdownPct": 3.4364
+            }
+          },
+          {
+            "raw": {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 97,
+              "totalProfit": 3.54741828,
+              "totalReturnPct": 0.35,
+              "profitFactor": 1.042,
+              "winRate": 42.268,
+              "maxDrawdownPct": 2.2757
+            }
+          },
+          {
+            "raw": {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 78,
+              "totalProfit": 0.11966378,
+              "totalReturnPct": 0.01,
+              "profitFactor": 1.0013,
+              "winRate": 34.6154,
+              "maxDrawdownPct": 3.5502
+            }
+          },
+          {
+            "raw": {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 93,
+              "totalProfit": -10.72310727,
+              "totalReturnPct": -1.07,
+              "profitFactor": 0.867,
+              "winRate": 37.6344,
+              "maxDrawdownPct": 4.8141
+            }
+          },
+          {
+            "raw": {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 54,
+              "totalProfit": -14.40319891,
+              "totalReturnPct": -1.44,
+              "profitFactor": 0.6336,
+              "winRate": 44.4444,
+              "maxDrawdownPct": 2.7681
+            }
+          },
+          {
+            "raw": {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 110,
+              "totalProfit": -16.01538424,
+              "totalReturnPct": -1.6,
+              "profitFactor": 0.8161,
+              "winRate": 41.8182,
+              "maxDrawdownPct": 2.8952
+            }
+          },
+          {
+            "raw": {
+              "pair": "ATOM/USDT:USDT",
+              "tradeCount": 157,
+              "totalProfit": -22.36887331,
+              "totalReturnPct": -2.24,
+              "profitFactor": 0.8692,
+              "winRate": 38.2166,
+              "maxDrawdownPct": 7.4434
+            }
+          },
+          {
+            "raw": {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 97,
+              "totalProfit": -28.50488048,
+              "totalReturnPct": -2.85,
+              "profitFactor": 0.7086,
+              "winRate": 38.1443,
+              "maxDrawdownPct": 4.7944
+            }
+          },
+          {
+            "raw": {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 73,
+              "totalProfit": -29.77559272,
+              "totalReturnPct": -2.98,
+              "profitFactor": 0.7834,
+              "winRate": 42.4658,
+              "maxDrawdownPct": 4.2945
+            }
+          },
+          {
+            "raw": {
+              "pair": "NEAR/USDT:USDT",
+              "tradeCount": 144,
+              "totalProfit": -36.65925294,
+              "totalReturnPct": -3.67,
+              "profitFactor": 0.7013,
+              "winRate": 41.6667,
+              "maxDrawdownPct": 5.0376
+            }
+          },
+          {
+            "raw": {
+              "pair": "INJ/USDT:USDT",
+              "tradeCount": 99,
+              "totalProfit": -38.39132914,
+              "totalReturnPct": -3.84,
+              "profitFactor": 0.6039,
+              "winRate": 46.4646,
+              "maxDrawdownPct": 4.9582
+            }
+          },
+          {
+            "raw": {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 65,
+              "totalProfit": -39.42195795,
+              "totalReturnPct": -3.94,
+              "profitFactor": 0.6045,
+              "winRate": 35.3846,
+              "maxDrawdownPct": 4.8649
+            }
+          },
+          {
+            "raw": {
+              "pair": "ETC/USDT:USDT",
+              "tradeCount": 103,
+              "totalProfit": -39.94117971,
+              "totalReturnPct": -3.99,
+              "profitFactor": 0.5523,
+              "winRate": 40.7767,
+              "maxDrawdownPct": 5.3578
+            }
+          },
+          {
+            "raw": {
+              "pair": "UNI/USDT:USDT",
+              "tradeCount": 73,
+              "totalProfit": -41.88495329,
+              "totalReturnPct": -4.19,
+              "profitFactor": 0.4824,
+              "winRate": 38.3562,
+              "maxDrawdownPct": 4.2008
+            }
+          },
+          {
+            "raw": {
+              "pair": "FIL/USDT:USDT",
+              "tradeCount": 51,
+              "totalProfit": -45.25016901,
+              "totalReturnPct": -4.53,
+              "profitFactor": 0.3268,
+              "winRate": 41.1765,
+              "maxDrawdownPct": 4.7386
+            }
+          },
+          {
+            "raw": {
+              "pair": "LTC/USDT:USDT",
+              "tradeCount": 106,
+              "totalProfit": -47.73113167,
+              "totalReturnPct": -4.77,
+              "profitFactor": 0.5263,
+              "winRate": 32.0755,
+              "maxDrawdownPct": 5.7133
+            }
+          },
+          {
+            "raw": {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 123,
+              "totalProfit": -48.62303905,
+              "totalReturnPct": -4.86,
+              "profitFactor": 0.4924,
+              "winRate": 31.7073,
+              "maxDrawdownPct": 5.5232
+            }
+          },
+          {
+            "raw": {
+              "pair": "WIF/USDT:USDT",
+              "tradeCount": 61,
+              "totalProfit": -52.32489012,
+              "totalReturnPct": -5.23,
+              "profitFactor": 0.4618,
+              "winRate": 39.3443,
+              "maxDrawdownPct": 5.2994
+            }
+          },
+          {
+            "raw": {
+              "pair": "TIA/USDT:USDT",
+              "tradeCount": 94,
+              "totalProfit": -62.00878983,
+              "totalReturnPct": -6.2,
+              "profitFactor": 0.3788,
+              "winRate": 37.234,
+              "maxDrawdownPct": 6.2009
+            }
+          },
+          {
+            "raw": {
+              "pair": "PEPE/USDT:USDT",
+              "tradeCount": 60,
+              "totalProfit": -62.15442041,
+              "totalReturnPct": -6.22,
+              "profitFactor": 0.493,
+              "winRate": 36.6667,
+              "maxDrawdownPct": 6.2437
+            }
+          },
+          {
+            "raw": {
+              "pair": "BCH/USDT:USDT",
+              "tradeCount": 109,
+              "totalProfit": -62.24486847,
+              "totalReturnPct": -6.22,
+              "profitFactor": 0.4865,
+              "winRate": 25.6881,
+              "maxDrawdownPct": 6.2249
+            }
+          },
+          {
+            "raw": {
+              "pair": "OP/USDT:USDT",
+              "tradeCount": 83,
+              "totalProfit": -66.95934132,
+              "totalReturnPct": -6.7,
+              "profitFactor": 0.5796,
+              "winRate": 39.759,
+              "maxDrawdownPct": 9.1279
+            }
+          },
+          {
+            "raw": {
+              "pair": "AAVE/USDT:USDT",
+              "tradeCount": 74,
+              "totalProfit": -71.83698197,
+              "totalReturnPct": -7.18,
+              "profitFactor": 0.446,
+              "winRate": 33.7838,
+              "maxDrawdownPct": 7.9324
+            }
+          },
+          {
+            "raw": {
+              "pair": "SEI/USDT:USDT",
+              "tradeCount": 82,
+              "totalProfit": -83.89876379,
+              "totalReturnPct": -8.39,
+              "profitFactor": 0.4481,
+              "winRate": 37.8049,
+              "maxDrawdownPct": 8.4501
+            }
+          },
+          {
+            "raw": {
+              "pair": "DOT/USDT:USDT",
+              "tradeCount": 77,
+              "totalProfit": -85.0826021,
+              "totalReturnPct": -8.51,
+              "profitFactor": 0.5125,
+              "winRate": 29.8701,
+              "maxDrawdownPct": 8.5137
+            }
+          },
+          {
+            "raw": {
+              "pair": "TRX/USDT:USDT",
+              "tradeCount": 278,
+              "totalProfit": -88.64317516,
+              "totalReturnPct": -8.86,
+              "profitFactor": 0.3826,
+              "winRate": 27.6978,
+              "maxDrawdownPct": 8.8665
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "AAVE/USDT:USDT",
+              "tradeCount": 74,
+              "slippageAdjustedProfitAbs": -107.01275587,
+              "slippageAdjustedReturnPct": -10.7013,
+              "slippageAdjustedProfitFactor": 0.3046,
+              "slippageAdjustedWinRate": 32.4324,
+              "slippageCost": 35.1757739
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 78,
+              "slippageAdjustedProfitAbs": -33.15725687,
+              "slippageAdjustedReturnPct": -3.3157,
+              "slippageAdjustedProfitFactor": 0.701,
+              "slippageAdjustedWinRate": 32.0513,
+              "slippageCost": 33.27692065
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 73,
+              "slippageAdjustedProfitAbs": -70.58626151,
+              "slippageAdjustedReturnPct": -7.0586,
+              "slippageAdjustedProfitFactor": 0.5563,
+              "slippageAdjustedWinRate": 38.3562,
+              "slippageCost": 40.81066879
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ARB/USDT:USDT",
+              "tradeCount": 79,
+              "slippageAdjustedProfitAbs": 15.1270685,
+              "slippageAdjustedReturnPct": 1.5127,
+              "slippageAdjustedProfitFactor": 1.178,
+              "slippageAdjustedWinRate": 45.5696,
+              "slippageCost": 33.93060369
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ATOM/USDT:USDT",
+              "tradeCount": 157,
+              "slippageAdjustedProfitAbs": -78.44893733,
+              "slippageAdjustedReturnPct": -7.8449,
+              "slippageAdjustedProfitFactor": 0.6112,
+              "slippageAdjustedWinRate": 36.9427,
+              "slippageCost": 56.08006402
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 91,
+              "slippageAdjustedProfitAbs": -23.51294574,
+              "slippageAdjustedReturnPct": -2.3513,
+              "slippageAdjustedProfitFactor": 0.7972,
+              "slippageAdjustedWinRate": 38.4615,
+              "slippageCost": 36.39561266
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "BCH/USDT:USDT",
+              "tradeCount": 109,
+              "slippageAdjustedProfitAbs": -101.39781216,
+              "slippageAdjustedReturnPct": -10.1398,
+              "slippageAdjustedProfitFactor": 0.3233,
+              "slippageAdjustedWinRate": 22.0183,
+              "slippageCost": 39.15294369
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 123,
+              "slippageAdjustedProfitAbs": -84.07978482,
+              "slippageAdjustedReturnPct": -8.408,
+              "slippageAdjustedProfitFactor": 0.3117,
+              "slippageAdjustedWinRate": 27.6423,
+              "slippageCost": 35.45674577
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 93,
+              "slippageAdjustedProfitAbs": -39.67391159,
+              "slippageAdjustedReturnPct": -3.9674,
+              "slippageAdjustedProfitFactor": 0.594,
+              "slippageAdjustedWinRate": 35.4839,
+              "slippageCost": 28.95080432
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "DOT/USDT:USDT",
+              "tradeCount": 77,
+              "slippageAdjustedProfitAbs": -130.47046619,
+              "slippageAdjustedReturnPct": -13.047,
+              "slippageAdjustedProfitFactor": 0.3629,
+              "slippageAdjustedWinRate": 28.5714,
+              "slippageCost": 45.38786409
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ETC/USDT:USDT",
+              "tradeCount": 103,
+              "slippageAdjustedProfitAbs": -65.45832436,
+              "slippageAdjustedReturnPct": -6.5458,
+              "slippageAdjustedProfitFactor": 0.3851,
+              "slippageAdjustedWinRate": 38.835,
+              "slippageCost": 25.51714465
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 97,
+              "slippageAdjustedProfitAbs": -31.7105231,
+              "slippageAdjustedReturnPct": -3.1711,
+              "slippageAdjustedProfitFactor": 0.6966,
+              "slippageAdjustedWinRate": 38.1443,
+              "slippageCost": 35.25794138
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "FIL/USDT:USDT",
+              "tradeCount": 51,
+              "slippageAdjustedProfitAbs": -60.61779506,
+              "slippageAdjustedReturnPct": -6.0618,
+              "slippageAdjustedProfitFactor": 0.2301,
+              "slippageAdjustedWinRate": 41.1765,
+              "slippageCost": 15.36762605
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "INJ/USDT:USDT",
+              "tradeCount": 99,
+              "slippageAdjustedProfitAbs": -63.43404569,
+              "slippageAdjustedReturnPct": -6.3434,
+              "slippageAdjustedProfitFactor": 0.4343,
+              "slippageAdjustedWinRate": 45.4545,
+              "slippageCost": 25.04271655
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 110,
+              "slippageAdjustedProfitAbs": -45.30112774,
+              "slippageAdjustedReturnPct": -4.5301,
+              "slippageAdjustedProfitFactor": 0.5614,
+              "slippageAdjustedWinRate": 39.0909,
+              "slippageCost": 29.2857435
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "LTC/USDT:USDT",
+              "tradeCount": 106,
+              "slippageAdjustedProfitAbs": -75.89996855,
+              "slippageAdjustedReturnPct": -7.59,
+              "slippageAdjustedProfitFactor": 0.3648,
+              "slippageAdjustedWinRate": 27.3585,
+              "slippageCost": 28.16883688
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "NEAR/USDT:USDT",
+              "tradeCount": 144,
+              "slippageAdjustedProfitAbs": -72.63699847,
+              "slippageAdjustedReturnPct": -7.2637,
+              "slippageAdjustedProfitFactor": 0.4952,
+              "slippageAdjustedWinRate": 40.2778,
+              "slippageCost": 35.97774553
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "OP/USDT:USDT",
+              "tradeCount": 83,
+              "slippageAdjustedProfitAbs": -107.31927175,
+              "slippageAdjustedReturnPct": -10.7319,
+              "slippageAdjustedProfitFactor": 0.4172,
+              "slippageAdjustedWinRate": 39.759,
+              "slippageCost": 40.35993043
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "ORDI/USDT:USDT",
+              "tradeCount": 60,
+              "slippageAdjustedProfitAbs": 17.23831276,
+              "slippageAdjustedReturnPct": 1.7238,
+              "slippageAdjustedProfitFactor": 1.3789,
+              "slippageAdjustedWinRate": 41.6667,
+              "slippageCost": 18.90897461
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "PEPE/USDT:USDT",
+              "tradeCount": 60,
+              "slippageAdjustedProfitAbs": -91.23042715,
+              "slippageAdjustedReturnPct": -9.123,
+              "slippageAdjustedProfitFactor": 0.3556,
+              "slippageAdjustedWinRate": 36.6667,
+              "slippageCost": 29.07600674
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SEI/USDT:USDT",
+              "tradeCount": 82,
+              "slippageAdjustedProfitAbs": -123.28783358,
+              "slippageAdjustedReturnPct": -12.3288,
+              "slippageAdjustedProfitFactor": 0.3152,
+              "slippageAdjustedWinRate": 37.8049,
+              "slippageCost": 39.38906979
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 54,
+              "slippageAdjustedProfitAbs": -28.623877,
+              "slippageAdjustedReturnPct": -2.8624,
+              "slippageAdjustedProfitFactor": 0.4086,
+              "slippageAdjustedWinRate": 31.4815,
+              "slippageCost": 14.22067809
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 65,
+              "slippageAdjustedProfitAbs": -65.93503596,
+              "slippageAdjustedReturnPct": -6.5935,
+              "slippageAdjustedProfitFactor": 0.4312,
+              "slippageAdjustedWinRate": 33.8462,
+              "slippageCost": 26.51307801
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "TIA/USDT:USDT",
+              "tradeCount": 94,
+              "slippageAdjustedProfitAbs": -83.68453629,
+              "slippageAdjustedReturnPct": -8.3685,
+              "slippageAdjustedProfitFactor": 0.2735,
+              "slippageAdjustedWinRate": 37.234,
+              "slippageCost": 21.67574646
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "TRX/USDT:USDT",
+              "tradeCount": 278,
+              "slippageAdjustedProfitAbs": -168.83359098,
+              "slippageAdjustedReturnPct": -16.8834,
+              "slippageAdjustedProfitFactor": 0.1816,
+              "slippageAdjustedWinRate": 20.8633,
+              "slippageCost": 80.19041582
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "UNI/USDT:USDT",
+              "tradeCount": 73,
+              "slippageAdjustedProfitAbs": -60.70440381,
+              "slippageAdjustedReturnPct": -6.0704,
+              "slippageAdjustedProfitFactor": 0.3476,
+              "slippageAdjustedWinRate": 38.3562,
+              "slippageCost": 18.81945052
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "WIF/USDT:USDT",
+              "tradeCount": 61,
+              "slippageAdjustedProfitAbs": -76.11369813,
+              "slippageAdjustedReturnPct": -7.6114,
+              "slippageAdjustedProfitFactor": 0.3293,
+              "slippageAdjustedWinRate": 37.7049,
+              "slippageCost": 23.78880801
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 97,
+              "slippageAdjustedProfitAbs": -60.65881606,
+              "slippageAdjustedReturnPct": -6.0659,
+              "slippageAdjustedProfitFactor": 0.4838,
+              "slippageAdjustedWinRate": 34.0206,
+              "slippageCost": 32.15393558
+            }
+          }
+        ],
+        "months": [
+          {
+            "raw": {
+              "date": "31/01/2026",
+              "date_ts": 1769817600000,
+              "profit_abs": -736.3969995,
+              "wins": 248,
+              "draws": 0,
+              "losses": 420,
+              "trades": 668,
+              "profit_factor": 0.68727797
+            }
+          },
+          {
+            "raw": {
+              "date": "28/02/2026",
+              "date_ts": 1772236800000,
+              "profit_abs": -53.5057604,
+              "wins": 31,
+              "draws": 0,
+              "losses": 65,
+              "trades": 96,
+              "profit_factor": 0.52884195
+            }
+          },
+          {
+            "raw": {
+              "date": "31/03/2026",
+              "date_ts": 1774915200000,
+              "profit_abs": -138.97654035,
+              "wins": 122,
+              "draws": 0,
+              "losses": 246,
+              "trades": 368,
+              "profit_factor": 0.50029692
+            }
+          },
+          {
+            "raw": {
+              "date": "30/04/2026",
+              "date_ts": 1777507200000,
+              "profit_abs": -47.78587486,
+              "wins": 244,
+              "draws": 0,
+              "losses": 423,
+              "trades": 667,
+              "profit_factor": 0.65437124
+            }
+          },
+          {
+            "raw": {
+              "date": "31/05/2026",
+              "date_ts": 1780185600000,
+              "profit_abs": -11.70432533,
+              "wins": 268,
+              "draws": 0,
+              "losses": 401,
+              "trades": 669,
+              "profit_factor": 0.79583668
+            }
+          },
+          {
+            "raw": {
+              "date": "30/06/2026",
+              "date_ts": 1782777600000,
+              "profit_abs": -3.90660299,
+              "wins": 53,
+              "draws": 0,
+              "losses": 95,
+              "trades": 148,
+              "profit_factor": 0.54504554
+            }
+          },
+          {
+            "raw": {
+              "date": "31/07/2026",
+              "date_ts": 1785456000000,
+              "profit_abs": -0.81707089,
+              "wins": 23,
+              "draws": 0,
+              "losses": 32,
+              "trades": 55,
+              "profit_factor": 0.63839429
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-01",
+              "tradeCount": 668,
+              "slippageAdjustedProfitAbs": -1470.55332373,
+              "slippageAdjustedReturnPct": -147.0553,
+              "slippageAdjustedWinRate": 35.0299,
+              "slippageCost": 734.15632423
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-02",
+              "tradeCount": 96,
+              "slippageAdjustedProfitAbs": -91.32121908,
+              "slippageAdjustedReturnPct": -9.1321,
+              "slippageAdjustedWinRate": 30.2083,
+              "slippageCost": 37.81545868
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-03",
+              "tradeCount": 368,
+              "slippageAdjustedProfitAbs": -218.59638988,
+              "slippageAdjustedReturnPct": -21.8596,
+              "slippageAdjustedWinRate": 30.7065,
+              "slippageCost": 79.61984953
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-04",
+              "tradeCount": 667,
+              "slippageAdjustedProfitAbs": -96.56349123,
+              "slippageAdjustedReturnPct": -9.6563,
+              "slippageAdjustedWinRate": 32.8336,
+              "slippageCost": 48.77761637
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-05",
+              "tradeCount": 669,
+              "slippageAdjustedProfitAbs": -32.78716185,
+              "slippageAdjustedReturnPct": -3.2787,
+              "slippageAdjustedWinRate": 37.3692,
+              "slippageCost": 21.08283652
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-06",
+              "tradeCount": 148,
+              "slippageAdjustedProfitAbs": -6.15942304,
+              "slippageAdjustedReturnPct": -0.6159,
+              "slippageAdjustedWinRate": 35.1351,
+              "slippageCost": 2.25282005
+            }
+          },
+          {
+            "slippageAdjusted": {
+              "month": "2026-07",
+              "tradeCount": 55,
+              "slippageAdjustedProfitAbs": -1.44401568,
+              "slippageAdjustedReturnPct": -0.1444,
+              "slippageAdjustedWinRate": 40.0,
+              "slippageCost": 0.62694479
+            }
+          }
+        ],
+        "exits": null,
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "benchmark_bollinger_rebound",
+      "strategyName": "Benchmark Bollinger Rebound",
+      "strategyClass": "BenchmarkBollingerRebound",
+      "strategyVersion": "V13.4.23",
+      "strategyFamily": "benchmark_suite",
+      "strategyFile": "user_data/strategies/AlphaPilotBenchmarkStrategies.py",
+      "direction": "long_only",
+      "timeframe": "1h",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 10,
+        "pairs": [
+          "ADA/USDT:USDT",
+          "APT/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "BTC/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "ETH/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SOL/USDT:USDT",
+          "SUI/USDT:USDT",
+          "XRP/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "research_reference",
+      "reason": "Relative best, but still negative with high drawdown and profit factor below 1.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_24_benchmark_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_23_BenchmarkBollingerRebound.zip",
+      "sourceArtifact": "user_data\\backtest_results\\v13_4_23_BenchmarkBollingerRebound.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_24_benchmark_status_archive.json",
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "user_data/backtest_results/v13_4_23_BenchmarkBollingerRebound.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 816,
+        "totalReturnPct": -87.6274,
+        "slippageAdjustedTotalReturnPct": -181.9728,
+        "winRatePct": 34.5588,
+        "profitFactor": 0.4513,
+        "slippageAdjustedProfitFactor": 0.1895,
+        "maxDrawdownPct": 87.6274,
+        "maxConsecutiveLosses": 31,
+        "averageHoldingMinutes": 35.0,
+        "feesPaid": 471.72698649,
+        "slippageCost": 943.45397297,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": null,
+        "monthCount": null
+      },
+      "breakdowns": {
+        "pairs": {
+          "pairs": [
+            {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 81,
+              "profitAbs": -99.06017588
+            },
+            {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 78,
+              "profitAbs": -93.09971388
+            },
+            {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 71,
+              "profitAbs": -62.1100447
+            },
+            {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 94,
+              "profitAbs": -67.52898638
+            },
+            {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 78,
+              "profitAbs": -112.27657245
+            },
+            {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 87,
+              "profitAbs": -105.82566207
+            },
+            {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 74,
+              "profitAbs": -88.84561457
+            },
+            {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 86,
+              "profitAbs": -75.46752373
+            },
+            {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 76,
+              "profitAbs": -91.15450207
+            },
+            {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 91,
+              "profitAbs": -80.90508588
+            }
+          ],
+          "positivePairRatio": 0.0,
+          "stable": false
+        },
+        "months": {
+          "months": [
+            {
+              "month": "2026-01",
+              "tradeCount": 107,
+              "profitAbs": -420.38036506
+            },
+            {
+              "month": "2026-02",
+              "tradeCount": 190,
+              "profitAbs": -212.89042871
+            },
+            {
+              "month": "2026-03",
+              "tradeCount": 130,
+              "profitAbs": -79.69858901
+            },
+            {
+              "month": "2026-04",
+              "tradeCount": 98,
+              "profitAbs": -62.01982116
+            },
+            {
+              "month": "2026-05",
+              "tradeCount": 106,
+              "profitAbs": -20.66842164
+            },
+            {
+              "month": "2026-06",
+              "tradeCount": 185,
+              "profitAbs": -80.61625603
+            }
+          ],
+          "positiveMonthRatio": 0.0,
+          "stable": false
+        },
+        "exits": "unavailable",
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "benchmark_ema_trend",
+      "strategyName": "Benchmark EMA Trend",
+      "strategyClass": "BenchmarkEMATrend",
+      "strategyVersion": "V13.4.23",
+      "strategyFamily": "benchmark_suite",
+      "strategyFile": "user_data/strategies/AlphaPilotBenchmarkStrategies.py",
+      "direction": "long_only",
+      "timeframe": "1h",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 10,
+        "pairs": [
+          "ADA/USDT:USDT",
+          "APT/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "BTC/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "ETH/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SOL/USDT:USDT",
+          "SUI/USDT:USDT",
+          "XRP/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "failed_benchmark",
+      "reason": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_24_benchmark_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_23_BenchmarkEMATrend.zip",
+      "sourceArtifact": "user_data\\backtest_results\\v13_4_23_BenchmarkEMATrend.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_24_benchmark_status_archive.json",
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "user_data/backtest_results/v13_4_23_BenchmarkEMATrend.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 2723,
+        "totalReturnPct": -99.971,
+        "slippageAdjustedTotalReturnPct": -204.7794,
+        "winRatePct": 25.2663,
+        "profitFactor": 0.5658,
+        "slippageAdjustedProfitFactor": 0.3369,
+        "maxDrawdownPct": 99.9714,
+        "maxConsecutiveLosses": 54,
+        "averageHoldingMinutes": 47.8149,
+        "feesPaid": 524.04210685,
+        "slippageCost": 1048.08421371,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": null,
+        "monthCount": null
+      },
+      "breakdowns": {
+        "pairs": {
+          "pairs": [
+            {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 242,
+              "profitAbs": -144.7689032
+            },
+            {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 301,
+              "profitAbs": -32.4497509
+            },
+            {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 303,
+              "profitAbs": -74.85932861
+            },
+            {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 187,
+              "profitAbs": -50.08776009
+            },
+            {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 324,
+              "profitAbs": -132.6309652
+            },
+            {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 267,
+              "profitAbs": -124.1212684
+            },
+            {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 268,
+              "profitAbs": -62.20913222
+            },
+            {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 314,
+              "profitAbs": -165.08878219
+            },
+            {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 258,
+              "profitAbs": -92.88239796
+            },
+            {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 259,
+              "profitAbs": -120.61122453
+            }
+          ],
+          "positivePairRatio": 0.0,
+          "stable": false
+        },
+        "months": {
+          "months": [
+            {
+              "month": "2026-01",
+              "tradeCount": 174,
+              "profitAbs": -450.11245466
+            },
+            {
+              "month": "2026-02",
+              "tradeCount": 490,
+              "profitAbs": -366.72849656
+            },
+            {
+              "month": "2026-03",
+              "tradeCount": 922,
+              "profitAbs": -177.60672967
+            },
+            {
+              "month": "2026-04",
+              "tradeCount": 634,
+              "profitAbs": -3.75037879
+            },
+            {
+              "month": "2026-05",
+              "tradeCount": 444,
+              "profitAbs": -1.35983858
+            },
+            {
+              "month": "2026-06",
+              "tradeCount": 47,
+              "profitAbs": -0.13786866
+            },
+            {
+              "month": "2026-07",
+              "tradeCount": 12,
+              "profitAbs": -0.01374638
+            }
+          ],
+          "positiveMonthRatio": 0.0,
+          "stable": false
+        },
+        "exits": "unavailable",
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "benchmark_macd_volume",
+      "strategyName": "Benchmark MACD Volume",
+      "strategyClass": "BenchmarkMACDVolume",
+      "strategyVersion": "V13.4.23",
+      "strategyFamily": "benchmark_suite",
+      "strategyFile": "user_data/strategies/AlphaPilotBenchmarkStrategies.py",
+      "direction": "long_only",
+      "timeframe": "1h",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 10,
+        "pairs": [
+          "ADA/USDT:USDT",
+          "APT/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "BTC/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "ETH/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SOL/USDT:USDT",
+          "SUI/USDT:USDT",
+          "XRP/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "failed_benchmark",
+      "reason": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_24_benchmark_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_23_BenchmarkMACDVolume.zip",
+      "sourceArtifact": "user_data\\backtest_results\\v13_4_23_BenchmarkMACDVolume.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_24_benchmark_status_archive.json",
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "user_data/backtest_results/v13_4_23_BenchmarkMACDVolume.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 2141,
+        "totalReturnPct": -99.6544,
+        "slippageAdjustedTotalReturnPct": -229.9537,
+        "winRatePct": 30.78,
+        "profitFactor": 0.6115,
+        "slippageAdjustedProfitFactor": 0.3365,
+        "maxDrawdownPct": 99.6755,
+        "maxConsecutiveLosses": 34,
+        "averageHoldingMinutes": 32.4521,
+        "feesPaid": 651.49685224,
+        "slippageCost": 1302.99370448,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": null,
+        "monthCount": null
+      },
+      "breakdowns": {
+        "pairs": {
+          "pairs": [
+            {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 221,
+              "profitAbs": -130.84578362
+            },
+            {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 217,
+              "profitAbs": -108.28400207
+            },
+            {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 209,
+              "profitAbs": -55.12862312
+            },
+            {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 216,
+              "profitAbs": -79.43350659
+            },
+            {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 245,
+              "profitAbs": -117.75393839
+            },
+            {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 222,
+              "profitAbs": -48.93788847
+            },
+            {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 183,
+              "profitAbs": -52.84978808
+            },
+            {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 236,
+              "profitAbs": -126.75197862
+            },
+            {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 179,
+              "profitAbs": -136.67104689
+            },
+            {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 213,
+              "profitAbs": -139.88700876
+            }
+          ],
+          "positivePairRatio": 0.0,
+          "stable": false
+        },
+        "months": {
+          "months": [
+            {
+              "month": "2026-01",
+              "tradeCount": 174,
+              "profitAbs": -500.15619841
+            },
+            {
+              "month": "2026-02",
+              "tradeCount": 299,
+              "profitAbs": -169.8874182
+            },
+            {
+              "month": "2026-03",
+              "tradeCount": 438,
+              "profitAbs": -197.54751656
+            },
+            {
+              "month": "2026-04",
+              "tradeCount": 444,
+              "profitAbs": -78.39043798
+            },
+            {
+              "month": "2026-05",
+              "tradeCount": 392,
+              "profitAbs": -41.55796508
+            },
+            {
+              "month": "2026-06",
+              "tradeCount": 279,
+              "profitAbs": -9.03511066
+            },
+            {
+              "month": "2026-07",
+              "tradeCount": 115,
+              "profitAbs": 0.03108228
+            }
+          ],
+          "positiveMonthRatio": 0.1429,
+          "stable": false
+        },
+        "exits": "unavailable",
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "benchmark_rsi_mean_reversion",
+      "strategyName": "Benchmark RSI Mean Reversion",
+      "strategyClass": "BenchmarkRSIMeanReversion",
+      "strategyVersion": "V13.4.23",
+      "strategyFamily": "benchmark_suite",
+      "strategyFile": "user_data/strategies/AlphaPilotBenchmarkStrategies.py",
+      "direction": "long_only",
+      "timeframe": "1h",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 10,
+        "pairs": [
+          "ADA/USDT:USDT",
+          "APT/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "BTC/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "ETH/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SOL/USDT:USDT",
+          "SUI/USDT:USDT",
+          "XRP/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "failed_benchmark",
+      "reason": "Excessive trade frequency and repeated losses overwhelm any simple rule edge.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_24_benchmark_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_23_BenchmarkRSIMeanReversion.zip",
+      "sourceArtifact": "user_data\\backtest_results\\v13_4_23_BenchmarkRSIMeanReversion.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_24_benchmark_status_archive.json",
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "user_data/backtest_results/v13_4_23_BenchmarkRSIMeanReversion.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 2190,
+        "totalReturnPct": -99.831,
+        "slippageAdjustedTotalReturnPct": -195.5122,
+        "winRatePct": 31.5525,
+        "profitFactor": 0.404,
+        "slippageAdjustedProfitFactor": 0.1709,
+        "maxDrawdownPct": 99.8411,
+        "maxConsecutiveLosses": 45,
+        "averageHoldingMinutes": 31.3973,
+        "feesPaid": 478.40590416,
+        "slippageCost": 956.81180832,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": null,
+        "monthCount": null
+      },
+      "breakdowns": {
+        "pairs": {
+          "pairs": [
+            {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 251,
+              "profitAbs": -101.47131691
+            },
+            {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 201,
+              "profitAbs": -91.68263471
+            },
+            {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 228,
+              "profitAbs": -124.86856896
+            },
+            {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 165,
+              "profitAbs": -73.71408696
+            },
+            {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 236,
+              "profitAbs": -155.96453592
+            },
+            {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 237,
+              "profitAbs": -141.67760378
+            },
+            {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 202,
+              "profitAbs": -63.80237635
+            },
+            {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 236,
+              "profitAbs": -112.15287667
+            },
+            {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 182,
+              "profitAbs": -79.43749195
+            },
+            {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 252,
+              "profitAbs": -53.53822198
+            }
+          ],
+          "positivePairRatio": 0.0,
+          "stable": false
+        },
+        "months": {
+          "months": [
+            {
+              "month": "2026-01",
+              "tradeCount": 336,
+              "profitAbs": -729.65487898
+            },
+            {
+              "month": "2026-02",
+              "tradeCount": 381,
+              "profitAbs": -197.39260423
+            },
+            {
+              "month": "2026-03",
+              "tradeCount": 457,
+              "profitAbs": -50.24565116
+            },
+            {
+              "month": "2026-04",
+              "tradeCount": 325,
+              "profitAbs": -13.56681267
+            },
+            {
+              "month": "2026-05",
+              "tradeCount": 368,
+              "profitAbs": -5.5915229
+            },
+            {
+              "month": "2026-06",
+              "tradeCount": 321,
+              "profitAbs": -1.8831336
+            },
+            {
+              "month": "2026-07",
+              "tradeCount": 2,
+              "profitAbs": 0.02488935
+            }
+          ],
+          "positiveMonthRatio": 0.1429,
+          "stable": false
+        },
+        "exits": "unavailable",
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "benchmark_td9_exhaustion",
+      "strategyName": "Benchmark TD9 Exhaustion",
+      "strategyClass": "BenchmarkTD9Exhaustion",
+      "strategyVersion": "V13.4.23",
+      "strategyFamily": "benchmark_suite",
+      "strategyFile": "user_data/strategies/AlphaPilotBenchmarkStrategies.py",
+      "direction": "long_only",
+      "timeframe": "1h",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 10,
+        "pairs": [
+          "ADA/USDT:USDT",
+          "APT/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "BTC/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "ETH/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SOL/USDT:USDT",
+          "SUI/USDT:USDT",
+          "XRP/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": false,
+      "realDataConfirmed": true,
+      "status": "failed_benchmark",
+      "reason": "Very high cost sensitivity after slippage stress.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_24_benchmark_status_archive.json",
+      "sourceReport": "user_data/backtest_results/v13_4_23_BenchmarkTD9Exhaustion.zip",
+      "sourceArtifact": "user_data\\backtest_results\\v13_4_23_BenchmarkTD9Exhaustion.zip",
+      "sourceArtifactAvailable": true,
+      "evidenceLevel": 1,
+      "evidenceLevelLabel": "raw_backtest_artifact",
+      "evidenceFiles": [
+        "reports/v13_4_24_benchmark_status_archive.json",
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json",
+        "user_data/backtest_results/v13_4_23_BenchmarkTD9Exhaustion.zip"
+      ],
+      "evidenceComplete": true,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": 1333,
+        "totalReturnPct": -96.7071,
+        "slippageAdjustedTotalReturnPct": -223.5336,
+        "winRatePct": 31.2078,
+        "profitFactor": 0.5499,
+        "slippageAdjustedProfitFactor": 0.2596,
+        "maxDrawdownPct": 96.9997,
+        "maxConsecutiveLosses": 31,
+        "averageHoldingMinutes": 36.8192,
+        "feesPaid": 634.13238783,
+        "slippageCost": 1268.26477566,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": null,
+        "monthCount": null
+      },
+      "breakdowns": {
+        "pairs": {
+          "pairs": [
+            {
+              "pair": "ADA/USDT:USDT",
+              "tradeCount": 165,
+              "profitAbs": -67.99812724
+            },
+            {
+              "pair": "APT/USDT:USDT",
+              "tradeCount": 159,
+              "profitAbs": -156.42022381
+            },
+            {
+              "pair": "AVAX/USDT:USDT",
+              "tradeCount": 131,
+              "profitAbs": -89.17672356
+            },
+            {
+              "pair": "BTC/USDT:USDT",
+              "tradeCount": 112,
+              "profitAbs": -112.56593131
+            },
+            {
+              "pair": "DOGE/USDT:USDT",
+              "tradeCount": 159,
+              "profitAbs": -191.99765577
+            },
+            {
+              "pair": "ETH/USDT:USDT",
+              "tradeCount": 104,
+              "profitAbs": -98.41290923
+            },
+            {
+              "pair": "LINK/USDT:USDT",
+              "tradeCount": 125,
+              "profitAbs": -50.5662185
+            },
+            {
+              "pair": "SOL/USDT:USDT",
+              "tradeCount": 109,
+              "profitAbs": -55.55331845
+            },
+            {
+              "pair": "SUI/USDT:USDT",
+              "tradeCount": 153,
+              "profitAbs": -72.01648074
+            },
+            {
+              "pair": "XRP/USDT:USDT",
+              "tradeCount": 116,
+              "profitAbs": -72.3638647
+            }
+          ],
+          "positivePairRatio": 0.0,
+          "stable": false
+        },
+        "months": {
+          "months": [
+            {
+              "month": "2026-01",
+              "tradeCount": 208,
+              "profitAbs": -425.5482113
+            },
+            {
+              "month": "2026-02",
+              "tradeCount": 215,
+              "profitAbs": -265.93726889
+            },
+            {
+              "month": "2026-03",
+              "tradeCount": 223,
+              "profitAbs": -65.75258545
+            },
+            {
+              "month": "2026-04",
+              "tradeCount": 229,
+              "profitAbs": -126.6554171
+            },
+            {
+              "month": "2026-05",
+              "tradeCount": 193,
+              "profitAbs": -42.89548347
+            },
+            {
+              "month": "2026-06",
+              "tradeCount": 261,
+              "profitAbs": -40.9730406
+            },
+            {
+              "month": "2026-07",
+              "tradeCount": 4,
+              "profitAbs": 0.6905535
+            }
+          ],
+          "positiveMonthRatio": 0.1429,
+          "stable": false
+        },
+        "exits": "unavailable",
+        "regimes": null
+      }
+    },
+    {
+      "strategyId": "rejected_benchmark_martingale",
+      "strategyName": "Rejected Benchmark Martingale",
+      "strategyClass": null,
+      "strategyVersion": "V13.4.23",
+      "strategyFamily": "benchmark_suite",
+      "strategyFile": null,
+      "direction": null,
+      "timeframe": "1h",
+      "pairScope": {
+        "mode": "explicit_pairs",
+        "pairCount": 10,
+        "pairs": [
+          "ADA/USDT:USDT",
+          "APT/USDT:USDT",
+          "AVAX/USDT:USDT",
+          "BTC/USDT:USDT",
+          "DOGE/USDT:USDT",
+          "ETH/USDT:USDT",
+          "LINK/USDT:USDT",
+          "SOL/USDT:USDT",
+          "SUI/USDT:USDT",
+          "XRP/USDT:USDT"
+        ]
+      },
+      "timerange": "20260101-",
+      "isMock": null,
+      "realDataConfirmed": false,
+      "status": "rejected",
+      "reason": "Martingale or inverse averaging creates unacceptable tail risk and conflicts with AlphaPilot risk-first principles.",
+      "source": "local_status_archive",
+      "sourceArchive": "reports/v13_4_24_benchmark_status_archive.json",
+      "sourceReport": "reports/v13_4_24_benchmark_result_review.json",
+      "sourceArtifact": null,
+      "sourceArtifactAvailable": false,
+      "evidenceLevel": 2,
+      "evidenceLevelLabel": "structured_json_report",
+      "evidenceFiles": [
+        "reports/v13_4_24_benchmark_status_archive.json",
+        "reports/v13_4_23_benchmark_suite_report.json",
+        "reports/v13_4_24_benchmark_result_review.json"
+      ],
+      "evidenceComplete": false,
+      "missingEvidenceFields": [
+        "tradeCount",
+        "totalReturnPct",
+        "slippageAdjustedTotalReturnPct",
+        "winRatePct",
+        "profitFactor",
+        "slippageAdjustedProfitFactor",
+        "maxDrawdownPct",
+        "maxConsecutiveLosses",
+        "averageHoldingMinutes",
+        "feesPaid",
+        "slippageCost",
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount",
+        "strategyFile"
+      ],
+      "dryRunApproved": false,
+      "liveTradingApproved": false,
+      "metrics": {
+        "tradeCount": null,
+        "totalReturnPct": null,
+        "slippageAdjustedTotalReturnPct": null,
+        "winRatePct": null,
+        "profitFactor": null,
+        "slippageAdjustedProfitFactor": null,
+        "maxDrawdownPct": null,
+        "maxConsecutiveLosses": null,
+        "averageHoldingMinutes": null,
+        "feesPaid": null,
+        "slippageCost": null,
+        "averageNetR": null,
+        "grossRewardRiskR": null,
+        "pairCount": null,
+        "monthCount": null
+      },
+      "breakdowns": {
+        "pairs": null,
+        "months": null,
+        "exits": null,
+        "regimes": null
+      }
+    }
+  ],
+  "safetyBoundary": {
+    "reportOnly": true,
+    "strategyModified": false,
+    "parameterTuned": false,
+    "backtestExecuted": false,
+    "exchangeApiCalled": false,
+    "apiKeyReadOrStored": false,
+    "accountRead": false,
+    "positionRead": false,
+    "orderCreated": false,
+    "demoStateChanged": false,
+    "liveStateChanged": false,
+    "autoTradingUsed": false
+  }
+}

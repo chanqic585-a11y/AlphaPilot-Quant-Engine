@@ -1,0 +1,14 @@
+﻿strategyId,strategyName,strategyFamily,timeframe,direction,status,evidenceLevel,tradeCount,totalReturnPct,slippageAdjustedTotalReturnPct,winRatePct,profitFactor,slippageAdjustedProfitFactor,maxDrawdownPct,maxConsecutiveLosses,averageHoldingMinutes,feesPaid,slippageCost,averageNetR,grossRewardRiskR,pairCount,monthCount
+alpha_short_rejection_1h_v01,AlphaPilot Short Rejection 1H V0.1,short_rejection,1h,short,failed_research_current_sample,2,5052,-99.9966,-217.1225,29.711,0.782,0.5966,99.9966,77,,,,,,28,6
+alpha_volume_rebound_v01,AlphaPilotVolumeReboundV01,volume_rebound,15m,long,rejected_for_dry_run,1,2701,-99.2732,-193.4577,37.2825,0.6689,0.4603,99.3724,28,49.615,941.84466739,941.84466739,,,28,14
+alpha_volume_rebound_v02_a_trend_strict,AlphaPilotVolumeReboundV02A,volume_rebound,15m,long,rejected_for_dry_run,1,179,-11.6607,,41.3408,0.8251,,21.0664,10,66.0,274.57577641,,,,28,4
+alpha_volume_rebound_v02_b_volume_quality,AlphaPilotVolumeReboundV02B,volume_rebound,15m,long,rejected_for_dry_run,1,1515,-94.171,-168.5489,36.9637,0.6152,0.4225,94.7185,19,49.3861,743.77896729,743.77896729,,,28,14
+alpha_volume_rebound_v02_c_exit_cleanup,AlphaPilotVolumeReboundV02C,volume_rebound,15m,long,rejected_for_dry_run,1,2496,-99.1303,-187.2377,43.4295,0.6739,0.4726,99.2719,25,66.5144,881.07407065,881.07407065,,,28,14
+alpha_volume_rebound_v02_d_early_failure_exit,AlphaPilotVolumeReboundV02D,volume_rebound,15m,long,rejected_for_dry_run,1,231,-15.6258,,36.7965,0.7979,,24.3002,13,61.0,339.7125722,,,,28,4
+alpha_volume_rebound_v02_e_pair_risk_watchlist,AlphaPilotVolumeReboundV02E,volume_rebound,15m,long,rejected_for_dry_run,1,2671,-99.3093,-191.7425,37.0273,0.6637,0.4569,99.3953,20,49.6949,924.33185017,924.33185017,,,28,14
+benchmark_bollinger_rebound,Benchmark Bollinger Rebound,benchmark_suite,1h,long_only,research_reference,1,816,-87.6274,-181.9728,34.5588,0.4513,0.1895,87.6274,31,35.0,471.72698649,943.45397297,,,,
+benchmark_ema_trend,Benchmark EMA Trend,benchmark_suite,1h,long_only,failed_benchmark,1,2723,-99.971,-204.7794,25.2663,0.5658,0.3369,99.9714,54,47.8149,524.04210685,1048.08421371,,,,
+benchmark_macd_volume,Benchmark MACD Volume,benchmark_suite,1h,long_only,failed_benchmark,1,2141,-99.6544,-229.9537,30.78,0.6115,0.3365,99.6755,34,32.4521,651.49685224,1302.99370448,,,,
+benchmark_rsi_mean_reversion,Benchmark RSI Mean Reversion,benchmark_suite,1h,long_only,failed_benchmark,1,2190,-99.831,-195.5122,31.5525,0.404,0.1709,99.8411,45,31.3973,478.40590416,956.81180832,,,,
+benchmark_td9_exhaustion,Benchmark TD9 Exhaustion,benchmark_suite,1h,long_only,failed_benchmark,1,1333,-96.7071,-223.5336,31.2078,0.5499,0.2596,96.9997,31,36.8192,634.13238783,1268.26477566,,,,
+rejected_benchmark_martingale,Rejected Benchmark Martingale,benchmark_suite,1h,,rejected,2,,,,,,,,,,,,,,,

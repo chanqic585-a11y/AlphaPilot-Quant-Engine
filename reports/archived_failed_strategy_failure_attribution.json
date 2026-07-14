@@ -1,0 +1,774 @@
+{
+  "reportId": "archived_failed_strategy_failure_analysis_v1_attribution",
+  "generatedAt": "2026-07-14T23:36:19.048078+00:00",
+  "summary": {
+    "strategyCount": 13,
+    "familyCount": 3,
+    "timeframeCount": 2,
+    "evidenceLevelCounts": {
+      "1": 11,
+      "2": 2
+    },
+    "primaryFailureCounts": {
+      "rejected_risk_design": 1,
+      "signal_edge_failure": 12
+    },
+    "dryRunApprovedCount": 0,
+    "liveTradingApprovedCount": 0,
+    "completeMetricEvidenceCount": 12,
+    "missingMetricEvidenceCount": 1
+  },
+  "rows": [
+    {
+      "strategyId": "alpha_short_rejection_1h_v01",
+      "strategyName": "AlphaPilot Short Rejection 1H V0.1",
+      "strategyFamily": "short_rejection",
+      "timeframe": "1h",
+      "direction": "short",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "direction_regime_mismatch",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-117.1259"
+      ],
+      "evidenceLevel": 2,
+      "missingEvidenceFields": [
+        "averageHoldingMinutes",
+        "feesPaid",
+        "slippageCost",
+        "averageNetR",
+        "grossRewardRiskR",
+        "perTradeRegimeAttribution"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v01",
+      "strategyName": "AlphaPilotVolumeReboundV01",
+      "strategyFamily": "volume_rebound",
+      "timeframe": "15m",
+      "direction": "long",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-94.1845"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_a_trend_strict",
+      "strategyName": "AlphaPilotVolumeReboundV02A",
+      "strategyFamily": "volume_rebound",
+      "timeframe": "15m",
+      "direction": "long",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "data_evidence_gap"
+      ],
+      "severity": "high",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "not_failed_on_available_metrics",
+        "failedChecks": [],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Account-path evidence is incomplete or below the descriptive failure thresholds."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=not_failed_on_available_metrics"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "slippageAdjustedTotalReturnPct",
+        "slippageAdjustedProfitFactor",
+        "slippageCost",
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_b_volume_quality",
+      "strategyName": "AlphaPilotVolumeReboundV02B",
+      "strategyFamily": "volume_rebound",
+      "timeframe": "15m",
+      "direction": "long",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-74.3779"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_c_exit_cleanup",
+      "strategyName": "AlphaPilotVolumeReboundV02C",
+      "strategyFamily": "volume_rebound",
+      "timeframe": "15m",
+      "direction": "long",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-88.1074"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_d_early_failure_exit",
+      "strategyName": "AlphaPilotVolumeReboundV02D",
+      "strategyFamily": "volume_rebound",
+      "timeframe": "15m",
+      "direction": "long",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "data_evidence_gap"
+      ],
+      "severity": "high",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "not_failed_on_available_metrics",
+        "failedChecks": [],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Account-path evidence is incomplete or below the descriptive failure thresholds."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=not_failed_on_available_metrics"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "slippageAdjustedTotalReturnPct",
+        "slippageAdjustedProfitFactor",
+        "slippageCost",
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_e_pair_risk_watchlist",
+      "strategyName": "AlphaPilotVolumeReboundV02E",
+      "strategyFamily": "volume_rebound",
+      "timeframe": "15m",
+      "direction": "long",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "pair_concentration",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-92.4332"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "benchmark_bollinger_rebound",
+      "strategyName": "Benchmark Bollinger Rebound",
+      "strategyFamily": "benchmark_suite",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-94.3454"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "benchmark_ema_trend",
+      "strategyName": "Benchmark EMA Trend",
+      "strategyFamily": "benchmark_suite",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-104.8084"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "benchmark_macd_volume",
+      "strategyName": "Benchmark MACD Volume",
+      "strategyFamily": "benchmark_suite",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-130.2993"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "benchmark_rsi_mean_reversion",
+      "strategyName": "Benchmark RSI Mean Reversion",
+      "strategyFamily": "benchmark_suite",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-95.6812"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "benchmark_td9_exhaustion",
+      "strategyName": "Benchmark TD9 Exhaustion",
+      "strategyFamily": "benchmark_suite",
+      "timeframe": "1h",
+      "direction": "long_only",
+      "primaryFailureType": "signal_edge_failure",
+      "secondaryFailureTypes": [
+        "cost_amplification",
+        "risk_model_failure",
+        "overtrading",
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "profitFactorBelowOne",
+          "negativeTotalReturn"
+        ],
+        "observedChecks": [
+          "profitFactor",
+          "totalReturnPct"
+        ],
+        "interpretation": "Available trade-level aggregates do not support a positive signal edge."
+      },
+      "accountRiskLayer": {
+        "assessment": "failed",
+        "failedChecks": [
+          "maxDrawdownAtLeastThirtyPct",
+          "longConsecutiveLossSequence"
+        ],
+        "observedChecks": [
+          "maxDrawdownPct",
+          "maxConsecutiveLosses"
+        ],
+        "interpretation": "Observed account-path risk is unacceptable for promotion."
+      },
+      "observations": [
+        "primary=signal_edge_failure",
+        "signalLayer=failed",
+        "accountRiskLayer=failed",
+        "slippageReturnDeltaPct=-126.8265"
+      ],
+      "evidenceLevel": 1,
+      "missingEvidenceFields": [
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    },
+    {
+      "strategyId": "rejected_benchmark_martingale",
+      "strategyName": "Rejected Benchmark Martingale",
+      "strategyFamily": "benchmark_suite",
+      "timeframe": "1h",
+      "direction": null,
+      "primaryFailureType": "rejected_risk_design",
+      "secondaryFailureTypes": [
+        "data_evidence_gap"
+      ],
+      "severity": "critical",
+      "signalLayer": {
+        "assessment": "inconclusive_missing_evidence",
+        "failedChecks": [],
+        "observedChecks": [],
+        "interpretation": "Signal-edge evidence is incomplete or not negative on available metrics."
+      },
+      "accountRiskLayer": {
+        "assessment": "inconclusive_missing_evidence",
+        "failedChecks": [],
+        "observedChecks": [],
+        "interpretation": "Account-path evidence is incomplete or below the descriptive failure thresholds."
+      },
+      "observations": [
+        "primary=rejected_risk_design",
+        "signalLayer=inconclusive_missing_evidence",
+        "accountRiskLayer=inconclusive_missing_evidence"
+      ],
+      "evidenceLevel": 2,
+      "missingEvidenceFields": [
+        "tradeCount",
+        "totalReturnPct",
+        "slippageAdjustedTotalReturnPct",
+        "winRatePct",
+        "profitFactor",
+        "slippageAdjustedProfitFactor",
+        "maxDrawdownPct",
+        "maxConsecutiveLosses",
+        "averageHoldingMinutes",
+        "feesPaid",
+        "slippageCost",
+        "averageNetR",
+        "grossRewardRiskR",
+        "pairCount",
+        "monthCount",
+        "strategyFile"
+      ],
+      "causalityProven": false,
+      "attributionLimit": "Classification describes observed associations in existing evidence; it does not prove a single causal mechanism."
+    }
+  ],
+  "crossStrategyPatterns": [
+    {
+      "patternId": "primary_signal_edge_failure",
+      "failureType": "signal_edge_failure",
+      "role": "primary",
+      "strategyCount": 12,
+      "interpretation": "Observed repeatedly across archived strategy records.",
+      "causalityProven": false
+    },
+    {
+      "patternId": "primary_rejected_risk_design",
+      "failureType": "rejected_risk_design",
+      "role": "primary",
+      "strategyCount": 1,
+      "interpretation": "Observed repeatedly across archived strategy records.",
+      "causalityProven": false
+    },
+    {
+      "patternId": "secondary_data_evidence_gap",
+      "failureType": "data_evidence_gap",
+      "role": "secondary",
+      "strategyCount": 13,
+      "interpretation": "Recurring secondary weakness in available evidence.",
+      "causalityProven": false
+    },
+    {
+      "patternId": "secondary_cost_amplification",
+      "failureType": "cost_amplification",
+      "role": "secondary",
+      "strategyCount": 10,
+      "interpretation": "Recurring secondary weakness in available evidence.",
+      "causalityProven": false
+    },
+    {
+      "patternId": "secondary_risk_model_failure",
+      "failureType": "risk_model_failure",
+      "role": "secondary",
+      "strategyCount": 10,
+      "interpretation": "Recurring secondary weakness in available evidence.",
+      "causalityProven": false
+    },
+    {
+      "patternId": "secondary_overtrading",
+      "failureType": "overtrading",
+      "role": "secondary",
+      "strategyCount": 9,
+      "interpretation": "Recurring secondary weakness in available evidence.",
+      "causalityProven": false
+    }
+  ],
+  "methodologyLimits": [
+    "Existing evidence is heterogeneous and not every strategy has trade-level rows.",
+    "Missing values remain null and are never interpreted as zero or success.",
+    "Failure labels are descriptive associations, not proof of a single causal mechanism.",
+    "No archived record is promoted, modified, or executed by this report."
+  ],
+  "safetyBoundary": {
+    "reportOnly": true,
+    "strategyModified": false,
+    "parameterTuned": false,
+    "backtestExecuted": false,
+    "exchangeApiCalled": false,
+    "apiKeyReadOrStored": false,
+    "accountRead": false,
+    "positionRead": false,
+    "orderCreated": false,
+    "demoStateChanged": false,
+    "liveStateChanged": false,
+    "autoTradingUsed": false
+  }
+}

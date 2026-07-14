@@ -1,0 +1,53 @@
+{
+  "reportId": "archived_failed_strategy_failure_analysis_v1_negative_rules",
+  "rules": [
+    {
+      "ruleId": "AFS_NEG_001",
+      "rule": "Do not promote a strategy whose available profit factor is below 1 or whose average net R is non-positive.",
+      "evidenceStrategyCount": 12,
+      "scope": "promotion_gate"
+    },
+    {
+      "ruleId": "AFS_NEG_002",
+      "rule": "Do not rescue a structurally negative strategy family with small threshold changes alone.",
+      "evidenceStrategyCount": 12,
+      "scope": "redesign_required"
+    },
+    {
+      "ruleId": "AFS_NEG_003",
+      "rule": "Always review fee and slippage stress before interpreting raw return.",
+      "evidenceStrategyCount": 10,
+      "scope": "cost_model"
+    },
+    {
+      "ruleId": "AFS_NEG_004",
+      "rule": "High trade count without positive per-trade edge is evidence of noise amplification, not diversification.",
+      "evidenceStrategyCount": 9,
+      "scope": "frequency"
+    },
+    {
+      "ruleId": "AFS_NEG_005",
+      "rule": "Never treat missing metrics as zero or as passing evidence.",
+      "evidenceStrategyCount": 13,
+      "scope": "data_integrity"
+    },
+    {
+      "ruleId": "AFS_NEG_006",
+      "rule": "Signal edge and account-path risk must pass independently; one layer cannot hide failure in the other.",
+      "evidenceStrategyCount": 13,
+      "scope": "attribution"
+    },
+    {
+      "ruleId": "AFS_NEG_007",
+      "rule": "Martingale and inverse-averaging designs remain rejected regardless of short-sample headline return.",
+      "evidenceStrategyCount": 1,
+      "scope": "risk_boundary"
+    },
+    {
+      "ruleId": "AFS_NEG_008",
+      "rule": "Archived strategies are negative research assets and cannot become executable without a new version and fresh evidence.",
+      "evidenceStrategyCount": 13,
+      "scope": "versioning"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "reportId": "archived_failed_strategy_failure_analysis_v1_reusable_components",
+  "components": [
+    {
+      "componentId": "slippage_stress_review",
+      "name": "Slippage and fee stress review",
+      "researchUse": "Retain as a mandatory comparison layer for every future candidate.",
+      "executionEligible": false
+    },
+    {
+      "componentId": "signal_audit_counters",
+      "name": "Signal audit and skip-reason counters",
+      "researchUse": "Retain instrumentation while redesigning entry logic.",
+      "executionEligible": false
+    },
+    {
+      "componentId": "pair_exposure_diagnostics",
+      "name": "Pair contribution and concentration diagnostics",
+      "researchUse": "Retain for detecting single-pair dominance without hard-coding exclusions from one sample.",
+      "executionEligible": false
+    },
+    {
+      "componentId": "regime_attribution_contract",
+      "name": "Per-trade regime attribution contract",
+      "researchUse": "Require before reviving directional candidates where market state may dominate results.",
+      "executionEligible": false
+    },
+    {
+      "componentId": "immutable_failure_archive",
+      "name": "Immutable failed-strategy archive",
+      "researchUse": "Use archived evidence to prevent repeated hypotheses and silent metric resets.",
+      "executionEligible": false
+    },
+    {
+      "componentId": "separate_signal_and_risk_layers",
+      "name": "Separate signal-edge and account-risk review",
+      "researchUse": "Applied to 13 archived records so future candidates cannot pass on one layer alone.",
+      "executionEligible": false
+    }
+  ]
+}

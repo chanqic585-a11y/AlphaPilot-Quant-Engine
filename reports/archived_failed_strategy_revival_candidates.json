@@ -1,0 +1,181 @@
+{
+  "reportId": "archived_failed_strategy_failure_analysis_v1_revival_candidates",
+  "records": [
+    {
+      "strategyId": "alpha_short_rejection_1h_v01",
+      "strategyName": "AlphaPilot Short Rejection 1H V0.1",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v01",
+      "strategyName": "AlphaPilotVolumeReboundV01",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_a_trend_strict",
+      "strategyName": "AlphaPilotVolumeReboundV02A",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_b_volume_quality",
+      "strategyName": "AlphaPilotVolumeReboundV02B",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_c_exit_cleanup",
+      "strategyName": "AlphaPilotVolumeReboundV02C",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_d_early_failure_exit",
+      "strategyName": "AlphaPilotVolumeReboundV02D",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "alpha_volume_rebound_v02_e_pair_risk_watchlist",
+      "strategyName": "AlphaPilotVolumeReboundV02E",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "benchmark_bollinger_rebound",
+      "strategyName": "Benchmark Bollinger Rebound",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "benchmark_ema_trend",
+      "strategyName": "Benchmark EMA Trend",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "benchmark_macd_volume",
+      "strategyName": "Benchmark MACD Volume",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "benchmark_rsi_mean_reversion",
+      "strategyName": "Benchmark RSI Mean Reversion",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "benchmark_td9_exhaustion",
+      "strategyName": "Benchmark TD9 Exhaustion",
+      "revivalEligible": true,
+      "revivalMode": "new_version_only",
+      "conditions": [
+        "Create a new strategy version with a materially different signal thesis.",
+        "Show positive average net R and profit factor above 1 on development evidence.",
+        "Pass cost stress, holdout, and walk-forward review without using locked data for selection.",
+        "Demonstrate bounded drawdown and loss-sequence behavior under the new risk model.",
+        "Fill the listed evidence gaps; missing values cannot be treated as passing evidence."
+      ],
+      "currentExecutionEligibility": "none"
+    },
+    {
+      "strategyId": "rejected_benchmark_martingale",
+      "strategyName": "Rejected Benchmark Martingale",
+      "revivalEligible": false,
+      "revivalMode": "prohibited_risk_design",
+      "conditions": [
+        "This risk design conflicts with the AlphaPilot risk boundary and must not be revived."
+      ],
+      "currentExecutionEligibility": "none"
+    }
+  ]
+}

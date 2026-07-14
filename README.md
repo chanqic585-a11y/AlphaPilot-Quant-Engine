@@ -5078,6 +5078,29 @@ Generate and register the pack with:
 See `docs/V13.27.18-cross-timeframe-executable-candidate-pack.md` and
 `reports/v13_27_18_cross_timeframe_candidate_pack_summary.md`.
 
+## Archived Failed Strategy Analysis
+
+The report-only archived strategy analysis converts existing failed and
+rejected research evidence into an auditable inventory, null-preserving metrics
+matrix, signal-vs-risk attribution, negative rules, reusable components, and
+bounded revival criteria.
+
+```powershell
+.venv\Scripts\python.exe -m alphapilot.reports.generate_archived_strategy_failure_analysis
+```
+
+Key paths:
+
+- Generator: `alphapilot/reports/generate_archived_strategy_failure_analysis.py`
+- Inventory: `alphapilot/reports/archived_strategy_inventory.py`
+- Attribution: `alphapilot/reports/signal_level_failure_attribution.py`
+- Summary: `reports/archived_failed_strategy_failure_attribution_summary.md`
+- Methodology: `docs/failure-attribution-methodology.md`
+- Revival boundary: `docs/strategy-revival-policy.md`
+
+This layer does not modify strategies, tune parameters, run backtests, call an
+exchange, or promote any archived record to Demo or Live.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.
