@@ -123,6 +123,42 @@ class BoundedOptimizationIntegrationTests(unittest.TestCase):
             },
         )
 
+    def fail_queued_run(self, workflow_run_id: str):
+        queued = self.workflow.get_workflow_run(workflow_run_id)
+        assert queued is not None
+        running = start_workflow_run(
+            self.workflow,
+            queued.workflowRunId,
+            actor="worker",
+        )
+        return complete_workflow_run(
+            self.workflow,
+            running.workflowRunId,
+            status="failed",
+            actor="worker",
+            result={"metrics": self.metrics(), "checks": {}},
+            evidence={"fixture": True},
+            failure={
+                "category": "strategy_performance",
+                "summary": "fixture failure",
+                "retryDisposition": "new_version_required",
+                "metrics": {},
+                "suggestions": [],
+            },
+        )
+
+    def exhaust_campaign(self):
+        terminal = self.fail_initial()
+        for _ in range(3):
+            processed = process_bounded_optimization_result(
+                self.workflow,
+                self.registry,
+                terminal,
+            )
+            assert processed.challengerWorkflowRunId is not None
+            terminal = self.fail_queued_run(processed.challengerWorkflowRunId)
+        return terminal
+
     def test_failure_creates_one_queued_immutable_challenger_and_one_audit(self) -> None:
         failed = self.fail_initial()
 
@@ -269,6 +305,83 @@ class BoundedOptimizationIntegrationTests(unittest.TestCase):
         self.assertEqual(recovered.reviewedCount, 1)
         self.assertEqual(recovered.createdChallengerCount, 1)
         self.assertEqual(len(recovered.challengerWorkflowRunIds), 1)
+
+    def test_budget_exhaustion_archives_the_entire_optimization_campaign(
+        self,
+    ) -> None:
+        terminal = self.exhaust_campaign()
+
+        processed = process_bounded_optimization_result(
+            self.workflow,
+            self.registry,
+            terminal,
+        )
+
+        self.assertEqual(processed.decision.terminalStatus, "budget_exhausted")
+        self.assertEqual(
+            processed.decision.reasonCode,
+            "automatic_attempt_budget_exhausted",
+        )
+        versions = self.workflow.list_strategy_versions()
+        self.assertEqual(len(versions), 4)
+        self.assertTrue(all(version.status == "archived" for version in versions))
+        projection = build_workflow_projection(
+            self.workflow,
+            warehouse_root=self.root / "warehouse",
+        )
+        self.assertEqual(projection["currentFamilyItems"], [])
+        self.assertEqual(len(projection["archivedItems"]), 4)
+
+    def test_recovery_archives_an_already_reviewed_budget_exhausted_campaign(
+        self,
+    ) -> None:
+        terminal = self.exhaust_campaign()
+        latest = self.workflow.get_strategy_version(terminal.strategyVersionId)
+        assert latest is not None
+        lineage = latest.definition.get("optimizationLineage") or {}
+        self.registry.append_audit_event(
+            eventType="bounded_auto_optimization",
+            entityType="StrategyVersion",
+            entityId=self.version.strategyVersionId,
+            payload={
+                "schemaVersion": "bounded_optimization_audit_v1",
+                "decisionKey": "pre_fix_budget_exhausted_fixture",
+                "campaignId": lineage.get("campaignId"),
+                "rootStrategyVersionId": self.version.strategyVersionId,
+                "currentStrategyVersionId": latest.strategyVersionId,
+                "workflowRunId": terminal.workflowRunId,
+                "action": "stop",
+                "reasonCode": "automatic_attempt_budget_exhausted",
+                "terminalStatus": "budget_exhausted",
+                "attemptNumber": 3,
+                "maxAttempts": 3,
+                "changedParameter": None,
+                "selectionMetricsHash": "fixture",
+                "challengerStrategyVersionId": None,
+            },
+        )
+
+        recovered = recover_terminal_optimization_results(
+            self.workflow,
+            self.registry,
+            strategy_version_ids=[latest.strategyVersionId],
+        )
+        repeated = recover_terminal_optimization_results(
+            self.workflow,
+            self.registry,
+            strategy_version_ids=[latest.strategyVersionId],
+        )
+
+        self.assertEqual(recovered.reviewedCount, 0)
+        self.assertEqual(recovered.alreadyReviewedCount, 1)
+        self.assertTrue(
+            all(
+                version.status == "archived"
+                for version in self.workflow.list_strategy_versions()
+            )
+        )
+        self.assertEqual(repeated.reviewedCount, 0)
+        self.assertEqual(repeated.alreadyReviewedCount, 1)
 
 
 if __name__ == "__main__":

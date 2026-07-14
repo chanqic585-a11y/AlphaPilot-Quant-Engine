@@ -14,7 +14,11 @@ from .bounded_optimizer import (
     decide_bounded_optimization,
 )
 from .repository import WorkflowRepository
-from .service import create_challenger_version, queue_workflow_run
+from .service import (
+    archive_strategy_version,
+    create_challenger_version,
+    queue_workflow_run,
+)
 from .types import StrategyVersionRecord, WorkflowRunRecord
 
 
@@ -139,6 +143,41 @@ def _append_audit_once(
     )
 
 
+def _is_exhausted_terminal(payload: dict[str, Any]) -> bool:
+    return (
+        payload.get("reasonCode") == "automatic_attempt_budget_exhausted"
+        and payload.get("terminalStatus") == "budget_exhausted"
+    )
+
+
+def _archive_exhausted_campaign(
+    repository: WorkflowRepository,
+    root_strategy_version_id: str,
+) -> list[str]:
+    """Retire every active version after bounded optimization is exhausted."""
+
+    archived_ids: list[str] = []
+    versions = sorted(
+        _campaign_versions(repository, root_strategy_version_id),
+        key=lambda version: (
+            int(_lineage(version).get("attemptNumber") or 0),
+            version.createdAt,
+            version.strategyVersionId,
+        ),
+        reverse=True,
+    )
+    for version in versions:
+        if version.status != "active":
+            continue
+        archive_strategy_version(
+            repository,
+            version.strategyVersionId,
+            actor="system",
+        )
+        archived_ids.append(version.strategyVersionId)
+    return archived_ids
+
+
 def process_bounded_optimization_result(
     repository: WorkflowRepository,
     registry: RegistryRepository,
@@ -221,6 +260,8 @@ def process_bounded_optimization_result(
         root_strategy_version_id=root_strategy_version_id,
         payload=payload,
     )
+    if _is_exhausted_terminal(payload):
+        _archive_exhausted_campaign(repository, root_strategy_version_id)
     return OptimizationProcessingResult(
         decision=decision,
         challengerStrategyVersionId=(
@@ -257,15 +298,12 @@ def _latest_campaign_leaf(
     )
 
 
-def _reviewed_workflow_run_ids(
+def _reviewed_audit_payloads_by_run(
     registry: RegistryRepository,
     root_strategy_version_id: str,
-) -> set[str]:
-    # Older releases mislabeled an unsupported optimization family as a data
-    # blocker. Those audits are intentionally supersedable now that the
-    # family allowlist and structural fallback are available.
+) -> dict[str, dict[str, Any]]:
     return {
-        str(event.payload.get("workflowRunId") or "")
+        str(event.payload.get("workflowRunId")): event.payload
         for event in registry.list_audit_events(
             event_type="bounded_auto_optimization",
             entity_type="StrategyVersion",
@@ -331,10 +369,16 @@ def recover_terminal_optimization_results(
         )
         if run is None or run.status not in {"passed", "failed", "blocked"}:
             continue
-        if run.workflowRunId in _reviewed_workflow_run_ids(
+        reviewed_payloads = _reviewed_audit_payloads_by_run(
             registry,
             root_strategy_version_id,
-        ):
+        )
+        if run.workflowRunId in reviewed_payloads:
+            if _is_exhausted_terminal(reviewed_payloads[run.workflowRunId]):
+                _archive_exhausted_campaign(
+                    repository,
+                    root_strategy_version_id,
+                )
             already_reviewed_count += 1
             continue
 
