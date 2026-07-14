@@ -132,10 +132,11 @@ class ShortCycleWorkflowCandidate:
     signalFamily: str
     parameters: dict[str, Any]
     exitPolicy: str = "fixed_target_full_exit_v1"
+    researchMetadata: dict[str, Any] | None = None
 
     def definition(self) -> dict[str, Any]:
         parameters = dict(self.parameters)
-        return {
+        definition = {
             "schemaVersion": "short_cycle_strategy_definition_v1",
             "signalEngine": "short_cycle_v1",
             "signalFamily": self.signalFamily,
@@ -161,6 +162,9 @@ class ShortCycleWorkflowCandidate:
                 "costModel": {"feeRate": 0.0005, "slippageRate": 0.0005},
             },
         }
+        if self.researchMetadata:
+            definition["researchMetadata"] = dict(self.researchMetadata)
+        return definition
 
 
 def _candidate(

@@ -26,6 +26,7 @@ from .bootstrap import (
     register_alpha191_observer,
     register_optimized_legacy_strategy,
     register_short_cycle_candidate_pack,
+    register_v13_27_17_event_window_candidate_pack,
 )
 from .dual_layer import resolve_code_commit, run_dual_layer_backtest_workflow
 from .local_forward_bridge import run_local_forward_cycle
@@ -435,6 +436,7 @@ def build_parser() -> argparse.ArgumentParser:
     commands.add_parser("bootstrap-short-cycle")
     commands.add_parser("bootstrap-redesigned-short-cycle")
     commands.add_parser("bootstrap-evidence-redesigned-short-cycle")
+    commands.add_parser("bootstrap-v13-27-17-event-window")
     commands.add_parser("projection")
     resolve_backtest = commands.add_parser("resolve-backtest-run")
     resolve_backtest.add_argument("--strategy-name")
@@ -518,6 +520,17 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
             }
         if args.command == "bootstrap-evidence-redesigned-short-cycle":
             versions = register_evidence_redesigned_short_cycle_candidate_pack(
+                registry, workflow
+            )
+            return {
+                "count": len(versions),
+                "strategyVersionIds": [
+                    version.strategyVersionId for version in versions
+                ],
+                "displayNames": [version.displayName for version in versions],
+            }
+        if args.command == "bootstrap-v13-27-17-event-window":
+            versions = register_v13_27_17_event_window_candidate_pack(
                 registry, workflow
             )
             return {

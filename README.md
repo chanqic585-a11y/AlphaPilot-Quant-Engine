@@ -4925,6 +4925,62 @@ The candidates are registered as `backtest / awaiting`; they are not marked as
 profitable and cannot bypass Local Forward, OKX Demo, or Live gates. See
 `docs/V13.27.13-short-cycle-structural-redesign.md`.
 
+## V13.27.17 Long-Horizon Candidate Pack
+
+V13.27.17 selects five auditable research candidates each for `1h`, `4h`, and
+`1d`, while keeping candidate count separate from promotion eligibility.
+
+- `1h`: five lower-rigidity event-window successors use two-of-four optional
+  confirmation scoring instead of forcing every RSI, volume, candle, and trend
+  check onto the same bar. Direct train, temporal-validation, and symbol-
+  holdback evidence currently classifies one as research-eligible, one as
+  shadow-only, and three as rejected.
+- `4h`: five BTC-bull recovery-reclaim variants pass the current development,
+  temporal-validation, and deterministic symbol-holdback research checks. They
+  share one correlation group and are not five independent risk sources.
+- `1d`: three breakout candidates pass the current research checks; two
+  oversold-reclaim variants remain shadow-only because the pre-2025 selection
+  sample is too small.
+- Every candidate keeps `targetR >= 2R`. Data after 2025-01-01 is reported as
+  locked evidence and is not used to select parameters or promotion status.
+- The report itself creates no StrategyVersion, Demo Release, Live Release,
+  API-key storage, account read, position read, or order.
+- A separate idempotent registration command is available only for the seven
+  research-eligible event-window definitions whose formal-backtest and frozen-
+  forward engines are implemented (`5m`: 2, `15m`: 4, `1h`: 1). The `4h` and
+  `1d` research packs remain report-only until a matching low-frequency formal
+  workflow adapter exists; they are not mislabeled as executable versions.
+
+Run the reproducible report with:
+
+```powershell
+.venv\Scripts\python.exe -m alphapilot.reports.generate_v13_27_17_long_horizon_candidate_pack
+.venv\Scripts\python.exe -m alphapilot.reports.generate_v13_27_17_cross_timeframe_candidate_inventory
+```
+
+See `docs/V13.27.17-long-horizon-candidate-pack.md` and
+`reports/v13_27_17_long_horizon_candidate_pack_summary.md`.
+
+The unified inventory contains exactly five candidates per timeframe across
+`5m`, `15m`, `1h`, `4h`, and `1d`: 25 candidates in total, 15 currently
+research-eligible, 3 shadow-only, and 7 rejected. Candidate count is not a pass
+count. To register only the seven executable research-eligible event-window
+versions as immutable `backtest / awaiting` records, run:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\register_v13_27_17_event_window_candidates.ps1
+```
+
+Formal workflow verification was also run for the seven executable definitions.
+Six short-cycle runs completed and failed the unchanged formal gates; the `1h`
+run was checkpoint-paused while building its first 50-member public-data
+contract (`1h` signal plus `15m` and `5m` execution data). Four bounded
+structural-redesign successors were generated from the failures and also failed,
+then stopped at the configured generation boundary. The closest original run,
+`15m 假突破弱趋势反转 因子后继 ATR1.2`, retained positive average net R but
+still failed profit-factor, drawdown, and cost-stress gates. No version was
+forced through, and no Demo or Live release was created.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

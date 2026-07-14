@@ -18,6 +18,10 @@ import numpy as np
 import pandas as pd
 
 from alphapilot.factors.ohlcv_loader import _read_ohlcv_file, discover_ohlcv_files
+from alphapilot.short_cycle.event_window_signals import (
+    EVENT_WINDOW_SIGNAL_FAMILIES,
+    evaluate_event_window_signal,
+)
 
 
 VERSION = "V13.7.40"
@@ -136,13 +140,37 @@ def add_indicators(frame: pd.DataFrame) -> pd.DataFrame:
 def merge_btc_context(frame: pd.DataFrame, btc: pd.DataFrame | None) -> pd.DataFrame:
     output = frame.copy()
     if btc is None or btc.empty:
-        output["btc_ret_3"] = np.nan
+        for column in (
+            "btc_ret_3",
+            "btc_trend20_50",
+            "btc_trend50_200",
+            "btc_slope20_12",
+        ):
+            output[column] = np.nan
         output["btc_long_block"] = True
         output["btc_short_block"] = True
         return output
     context = btc[["date", "close"]].copy()
+    ema20 = context["close"].ewm(span=20, adjust=False).mean()
+    ema50 = context["close"].ewm(span=50, adjust=False).mean()
+    ema200 = context["close"].ewm(span=200, adjust=False).mean()
     context["btc_ret_3"] = context["close"] / context["close"].shift(3) - 1
-    output = output.merge(context[["date", "btc_ret_3"]], on="date", how="left")
+    context["btc_trend20_50"] = ema20 / ema50 - 1
+    context["btc_trend50_200"] = ema50 / ema200 - 1
+    context["btc_slope20_12"] = ema20 / ema20.shift(12) - 1
+    output = output.merge(
+        context[
+            [
+                "date",
+                "btc_ret_3",
+                "btc_trend20_50",
+                "btc_trend50_200",
+                "btc_slope20_12",
+            ]
+        ],
+        on="date",
+        how="left",
+    )
     output["btc_long_block"] = output["btc_ret_3"].isna() | (output["btc_ret_3"] <= -0.012)
     output["btc_short_block"] = output["btc_ret_3"].isna() | (output["btc_ret_3"] >= 0.012)
     return output
@@ -156,6 +184,9 @@ def _base_ready(frame: pd.DataFrame) -> pd.Series:
 
 
 def build_signal(frame: pd.DataFrame, family: str, params: dict[str, Any]) -> tuple[pd.Series, str]:
+    if family in EVENT_WINDOW_SIGNAL_FAMILIES:
+        evaluation = evaluate_event_window_signal(frame, family, params)
+        return evaluation.signal, evaluation.direction
     ready = _base_ready(frame)
     atr_pct = frame["atr14"] / frame["close"].replace(0, np.nan)
     if family == "liquidity_sweep_reclaim_long":

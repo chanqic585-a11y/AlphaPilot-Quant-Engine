@@ -1,0 +1,633 @@
+{
+  "candidateWithRobustGuardCount": 4,
+  "config": {
+    "canonicalRoot": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv",
+    "derivationSymbols": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "SOL-USDT-SWAP",
+      "ADA-USDT-SWAP",
+      "AAVE-USDT-SWAP",
+      "AVAX-USDT-SWAP"
+    ],
+    "feeRate": 0.0005,
+    "holdbackSymbols": [
+      "ALGO-USDT-SWAP",
+      "ATOM-USDT-SWAP",
+      "AXS-USDT-SWAP",
+      "1INCH-USDT-SWAP"
+    ],
+    "slippageRate": 0.0005,
+    "targetR": 2.0,
+    "trainEnd": "2024-01-01",
+    "trainStart": "2022-01-01",
+    "validationEnd": "2025-01-01"
+  },
+  "generatedAt": "2026-07-14T08:03:03.589485Z",
+  "lockedOrFormalHoldoutUsedForSelection": false,
+  "reportHash": "event-window-factor-discovery_13c473b0765083be583083df1c6eb342e79d693eaf190fbbced555874bfe3683",
+  "results": [
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 106,
+        "derivationValidation": 63,
+        "symbolHoldback": 162
+      },
+      "candidateKey": "short_cycle_event_15m_trend_reclaim_regime_learned_v1",
+      "direction": "long",
+      "displayName": "15m 趋势回踩高波确认 学习版 ATR1.2",
+      "robustGuardCount": 5,
+      "robustGuards": [
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_slope20_min": 0.011184064132,
+            "aligned_trend20_50_min": 0.00995571286
+          },
+          "score": [
+            0.12445678,
+            1.20457862,
+            132
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.2073139,
+              "largestPairShare": 0.35714286,
+              "profitFactor": 1.34721937,
+              "tradeCount": 42
+            },
+            "derivationValidation": {
+              "expectancyR": 0.2080619,
+              "largestPairShare": 0.4,
+              "profitFactor": 1.33539628,
+              "tradeCount": 30
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.12445678,
+              "largestPairShare": 0.26666667,
+              "profitFactor": 1.20457862,
+              "tradeCount": 60
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_trend20_50_min": 0.007388908684,
+            "atr_pct_min": 0.011660621955
+          },
+          "score": [
+            0.10228861,
+            1.16328014,
+            162
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.21012117,
+              "largestPairShare": 0.37931034,
+              "profitFactor": 1.3621395,
+              "tradeCount": 58
+            },
+            "derivationValidation": {
+              "expectancyR": 0.18651594,
+              "largestPairShare": 0.36363636,
+              "profitFactor": 1.29836098,
+              "tradeCount": 33
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.10228861,
+              "largestPairShare": 0.29577465,
+              "profitFactor": 1.16328014,
+              "tradeCount": 71
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_slope20_min": 0.011184064132,
+            "aligned_trend20_50_min": 0.007388908684
+          },
+          "score": [
+            0.09238741,
+            1.14823687,
+            153
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.23766342,
+              "largestPairShare": 0.36,
+              "profitFactor": 1.40312346,
+              "tradeCount": 50
+            },
+            "derivationValidation": {
+              "expectancyR": 0.12632234,
+              "largestPairShare": 0.375,
+              "profitFactor": 1.19424928,
+              "tradeCount": 32
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.09238741,
+              "largestPairShare": 0.28169014,
+              "profitFactor": 1.14823687,
+              "tradeCount": 71
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_slope20_min": 0.012845734011,
+            "aligned_trend20_50_min": 0.00995571286
+          },
+          "score": [
+            0.09006245,
+            1.14255867,
+            102
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.09006245,
+              "largestPairShare": 0.35483871,
+              "profitFactor": 1.14255867,
+              "tradeCount": 31
+            },
+            "derivationValidation": {
+              "expectancyR": 0.2282628,
+              "largestPairShare": 0.4,
+              "profitFactor": 1.37263602,
+              "tradeCount": 25
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.15397398,
+              "largestPairShare": 0.30434783,
+              "profitFactor": 1.2586539,
+              "tradeCount": 46
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_trend20_50_min": 0.00995571286,
+            "atr_pct_min": 0.011660621955
+          },
+          "score": [
+            0.08265644,
+            1.13141755,
+            140
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.14988741,
+              "largestPairShare": 0.34693878,
+              "profitFactor": 1.24175805,
+              "tradeCount": 49
+            },
+            "derivationValidation": {
+              "expectancyR": 0.25920786,
+              "largestPairShare": 0.4137931,
+              "profitFactor": 1.43296977,
+              "tradeCount": 29
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.08265644,
+              "largestPairShare": 0.27419355,
+              "profitFactor": 1.13141755,
+              "tradeCount": 62
+            }
+          }
+        }
+      ],
+      "signalFamily": "windowed_trend_reclaim_long",
+      "timeframe": "15m"
+    },
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 59,
+        "derivationValidation": 38,
+        "symbolHoldback": 75
+      },
+      "candidateKey": "short_cycle_event_15m_trend_reclaim_momentum_learned_v1",
+      "direction": "long",
+      "displayName": "15m 趋势回踩动量环境 学习版 ATR1.2",
+      "robustGuardCount": 1,
+      "robustGuards": [
+        {
+          "eligible": true,
+          "factorGuards": {
+            "atr_pct_min": 0.008246231491,
+            "btc_trend50_200_min": 0.006198866973
+          },
+          "score": [
+            0.03006043,
+            1.04384523,
+            95
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.43298632,
+              "largestPairShare": 0.2972973,
+              "profitFactor": 1.85393293,
+              "tradeCount": 37
+            },
+            "derivationValidation": {
+              "expectancyR": 0.45762681,
+              "largestPairShare": 0.28571429,
+              "profitFactor": 1.86195794,
+              "tradeCount": 21
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.03006043,
+              "largestPairShare": 0.35135135,
+              "profitFactor": 1.04384523,
+              "tradeCount": 37
+            }
+          }
+        }
+      ],
+      "signalFamily": "windowed_trend_reclaim_long",
+      "timeframe": "15m"
+    },
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 77,
+        "derivationValidation": 46,
+        "symbolHoldback": 112
+      },
+      "candidateKey": "short_cycle_event_15m_failed_breakout_regime_learned_v1",
+      "direction": "short",
+      "displayName": "15m 假突破逆势衰竭 学习版 ATR1.2",
+      "robustGuardCount": 5,
+      "robustGuards": [
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_slope20_min": -0.022922970969,
+            "aligned_trend20_50_max": -0.006267491756
+          },
+          "score": [
+            0.25429594,
+            1.42116215,
+            108
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.38506146,
+              "largestPairShare": 0.37837838,
+              "profitFactor": 1.73433625,
+              "tradeCount": 37
+            },
+            "derivationValidation": {
+              "expectancyR": 0.2681257,
+              "largestPairShare": 0.35,
+              "profitFactor": 1.47850238,
+              "tradeCount": 20
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.25429594,
+              "largestPairShare": 0.31372549,
+              "profitFactor": 1.42116215,
+              "tradeCount": 51
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_slope20_min": -0.026274203636,
+            "aligned_trend20_50_max": -0.006267491756
+          },
+          "score": [
+            0.12732048,
+            1.195705,
+            139
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.35368035,
+              "largestPairShare": 0.35416667,
+              "profitFactor": 1.64977962,
+              "tradeCount": 48
+            },
+            "derivationValidation": {
+              "expectancyR": 0.1403018,
+              "largestPairShare": 0.28,
+              "profitFactor": 1.23486012,
+              "tradeCount": 25
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.12732048,
+              "largestPairShare": 0.27272727,
+              "profitFactor": 1.195705,
+              "tradeCount": 66
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_return_min": -0.021955044433,
+            "aligned_trend20_50_max": -0.006267491756
+          },
+          "score": [
+            0.1027978,
+            1.15617466,
+            98
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.47237206,
+              "largestPairShare": 0.34285714,
+              "profitFactor": 1.9658945,
+              "tradeCount": 35
+            },
+            "derivationValidation": {
+              "expectancyR": 0.10317548,
+              "largestPairShare": 0.34782609,
+              "profitFactor": 1.16670375,
+              "tradeCount": 23
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.1027978,
+              "largestPairShare": 0.375,
+              "profitFactor": 1.15617466,
+              "tradeCount": 40
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_slope20_min": -0.022922970969,
+            "aligned_trend50_200_min": 0.00996378788
+          },
+          "score": [
+            0.08685334,
+            1.13234816,
+            129
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.29890954,
+              "largestPairShare": 0.33333333,
+              "profitFactor": 1.5545058,
+              "tradeCount": 39
+            },
+            "derivationValidation": {
+              "expectancyR": 0.14381632,
+              "largestPairShare": 0.48,
+              "profitFactor": 1.2410075,
+              "tradeCount": 25
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.08685334,
+              "largestPairShare": 0.29230769,
+              "profitFactor": 1.13234816,
+              "tradeCount": 65
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_trend20_50_max": -0.006267491756,
+            "btc_slope20_12_min": -0.009047044207
+          },
+          "score": [
+            0.07442732,
+            1.11175639,
+            106
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.24425955,
+              "largestPairShare": 0.38095238,
+              "profitFactor": 1.4146555,
+              "tradeCount": 42
+            },
+            "derivationValidation": {
+              "expectancyR": 0.07826565,
+              "largestPairShare": 0.4,
+              "profitFactor": 1.11832155,
+              "tradeCount": 20
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.07442732,
+              "largestPairShare": 0.29545455,
+              "profitFactor": 1.11175639,
+              "tradeCount": 44
+            }
+          }
+        }
+      ],
+      "signalFamily": "windowed_failed_breakout_short",
+      "timeframe": "15m"
+    },
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 60,
+        "derivationValidation": 42,
+        "symbolHoldback": 73
+      },
+      "candidateKey": "short_cycle_event_15m_failed_reclaim_pullback_learned_v1",
+      "direction": "short",
+      "displayName": "15m 弱势回抽衰竭 学习版 ATR1.2",
+      "robustGuardCount": 5,
+      "robustGuards": [
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_trend50_200_max": 0.051430504647,
+            "btc_slope20_12_max": -0.000555627867
+          },
+          "score": [
+            0.25848094,
+            1.42521849,
+            101
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.25848094,
+              "largestPairShare": 0.24242424,
+              "profitFactor": 1.42521849,
+              "tradeCount": 33
+            },
+            "derivationValidation": {
+              "expectancyR": 0.33350611,
+              "largestPairShare": 0.32142857,
+              "profitFactor": 1.57213394,
+              "tradeCount": 28
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.2784038,
+              "largestPairShare": 0.35,
+              "profitFactor": 1.46560104,
+              "tradeCount": 40
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "btc_aligned_min": 0.001981748695,
+            "btc_slope20_12_max": 0.000494417683
+          },
+          "score": [
+            0.21079043,
+            1.33657653,
+            101
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.24920789,
+              "largestPairShare": 0.25,
+              "profitFactor": 1.41362605,
+              "tradeCount": 36
+            },
+            "derivationValidation": {
+              "expectancyR": 0.28575616,
+              "largestPairShare": 0.28,
+              "profitFactor": 1.4790472,
+              "tradeCount": 25
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.21079043,
+              "largestPairShare": 0.4,
+              "profitFactor": 1.33657653,
+              "tradeCount": 40
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "btc_slope20_12_max": -0.000973950624
+          },
+          "score": [
+            0.18200573,
+            1.2893924,
+            102
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.22208703,
+              "largestPairShare": 0.23333333,
+              "profitFactor": 1.36228928,
+              "tradeCount": 30
+            },
+            "derivationValidation": {
+              "expectancyR": 0.19585581,
+              "largestPairShare": 0.32258065,
+              "profitFactor": 1.30899131,
+              "tradeCount": 31
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.18200573,
+              "largestPairShare": 0.36585366,
+              "profitFactor": 1.2893924,
+              "tradeCount": 41
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "btc_slope20_12_max": -0.000555627867,
+            "btc_trend50_200_max": 0.040288240383
+          },
+          "score": [
+            0.16262439,
+            1.25410472,
+            110
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.34637547,
+              "largestPairShare": 0.26666667,
+              "profitFactor": 1.58436321,
+              "tradeCount": 30
+            },
+            "derivationValidation": {
+              "expectancyR": 0.16472206,
+              "largestPairShare": 0.29411765,
+              "profitFactor": 1.25529306,
+              "tradeCount": 34
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.16262439,
+              "largestPairShare": 0.36956522,
+              "profitFactor": 1.25410472,
+              "tradeCount": 46
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_slope20_max": -0.001651242826,
+            "aligned_trend50_200_max": 0.043501807584
+          },
+          "score": [
+            0.15201138,
+            1.23649223,
+            94
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.4576701,
+              "largestPairShare": 0.26666667,
+              "profitFactor": 1.84899797,
+              "tradeCount": 30
+            },
+            "derivationValidation": {
+              "expectancyR": 0.16702364,
+              "largestPairShare": 0.32,
+              "profitFactor": 1.26063821,
+              "tradeCount": 25
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.15201138,
+              "largestPairShare": 0.30769231,
+              "profitFactor": 1.23649223,
+              "tradeCount": 39
+            }
+          }
+        }
+      ],
+      "signalFamily": "windowed_failed_reclaim_short",
+      "timeframe": "15m"
+    },
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 76,
+        "derivationValidation": 61,
+        "symbolHoldback": 106
+      },
+      "candidateKey": "short_cycle_event_15m_failed_reclaim_range_learned_v1",
+      "direction": "short",
+      "displayName": "15m 弱势回抽区间衰竭 学习版 ATR1.2",
+      "robustGuardCount": 0,
+      "robustGuards": [],
+      "signalFamily": "windowed_failed_reclaim_short",
+      "timeframe": "15m"
+    }
+  ],
+  "schemaVersion": "event_window_factor_discovery_report_v1",
+  "selectionBoundary": "development_temporal_validation_and_symbol_holdback_only",
+  "sources": {
+    "15m": {
+      "1INCH-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/1INCH-USDT-SWAP/15m/1608864300000-1784003400000-b3e0242585750f09.parquet",
+      "AAVE-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/AAVE-USDT-SWAP/15m/1607572800000-1784003400000-04931645b903a225.parquet",
+      "ADA-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/ADA-USDT-SWAP/15m/1583831700000-1784003400000-d204dcc17376e55e.parquet",
+      "ALGO-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/ALGO-USDT-SWAP/15m/1589341500000-1784003400000-c75d6c8f63f85290.parquet",
+      "ATOM-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/ATOM-USDT-SWAP/15m/1588737600000-1784003400000-0e80303bfda4b5d2.parquet",
+      "AVAX-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/AVAX-USDT-SWAP/15m/1600833600000-1784003400000-c874c79f79d1914b.parquet",
+      "AXS-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/AXS-USDT-SWAP/15m/1627457400000-1784003400000-5772bc36444f0bc7.parquet",
+      "BTC-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/BTC-USDT-SWAP/15m/1577836800000-1784003400000-51201cb73b6fb5cf.parquet",
+      "ETH-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/ETH-USDT-SWAP/15m/1577836800000-1784003400000-b298777fd912b538.parquet",
+      "SOL-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/SOL-USDT-SWAP/15m/1611297900000-1784003400000-9383d9c381f08d6d.parquet"
+    }
+  },
+  "status": "completed"
+}

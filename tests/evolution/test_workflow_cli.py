@@ -263,6 +263,25 @@ class WorkflowCliTests(unittest.TestCase):
             {("backtest", "awaiting")},
         )
 
+    def test_v13_27_17_event_window_bootstrap_registers_only_eligible_versions(self) -> None:
+        first = self.run_cli("bootstrap-v13-27-17-event-window")
+        second = self.run_cli("bootstrap-v13-27-17-event-window")
+        projection = self.run_cli("projection")
+        items = [
+            item
+            for item in projection["items"]
+            if item["sourceType"]
+            == "event_window_research_eligible_pack_v13_27_17"
+        ]
+
+        self.assertEqual(first, second)
+        self.assertEqual(first["count"], 7)
+        self.assertEqual(len(items), 7)
+        self.assertEqual(
+            {(item["stage"], item["status"]) for item in items},
+            {("backtest", "awaiting")},
+        )
+
     def test_failed_backtest_drains_three_bounded_challengers_in_same_batch(self) -> None:
         self.run_cli("bootstrap-short-cycle")
         projection = self.run_cli("projection")

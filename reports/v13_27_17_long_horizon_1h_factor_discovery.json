@@ -1,0 +1,311 @@
+{
+  "candidateWithRobustGuardCount": 2,
+  "config": {
+    "canonicalRoot": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv",
+    "derivationSymbols": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "SOL-USDT-SWAP",
+      "ADA-USDT-SWAP",
+      "AAVE-USDT-SWAP",
+      "AVAX-USDT-SWAP"
+    ],
+    "feeRate": 0.0005,
+    "holdbackSymbols": [
+      "ALGO-USDT-SWAP",
+      "ATOM-USDT-SWAP",
+      "AXS-USDT-SWAP",
+      "1INCH-USDT-SWAP"
+    ],
+    "slippageRate": 0.0005,
+    "targetR": 2.0,
+    "trainEnd": "2024-01-01",
+    "trainStart": "2022-01-01",
+    "validationEnd": "2025-01-01"
+  },
+  "generatedAt": "2026-07-14T08:08:55.441752Z",
+  "lockedOrFormalHoldoutUsedForSelection": false,
+  "reportHash": "event-window-factor-discovery_7a2890a38c2bb375ba2848a0758669e38c262f6a8507aa2b0b9e31cc23417321",
+  "results": [
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 1575,
+        "derivationValidation": 994,
+        "symbolHoldback": 1854
+      },
+      "candidateKey": "short_cycle_event_1h_failed_breakout_balanced_v1",
+      "direction": "short",
+      "displayName": "1H 假突破窗口反转 ATR1.2",
+      "robustGuardCount": 0,
+      "robustGuards": [],
+      "signalFamily": "windowed_failed_breakout_short",
+      "timeframe": "1h"
+    },
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 7588,
+        "derivationValidation": 3927,
+        "symbolHoldback": 7693
+      },
+      "candidateKey": "short_cycle_event_1h_failed_reclaim_balanced_v1",
+      "direction": "short",
+      "displayName": "1H 弱势回抽窗口失败 ATR1.2",
+      "robustGuardCount": 0,
+      "robustGuards": [],
+      "signalFamily": "windowed_failed_reclaim_short",
+      "timeframe": "1h"
+    },
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 990,
+        "derivationValidation": 633,
+        "symbolHoldback": 1004
+      },
+      "candidateKey": "short_cycle_event_1h_breakout_retest_balanced_v1",
+      "direction": "long",
+      "displayName": "1H 突破回踩窗口确认 ATR1.2",
+      "robustGuardCount": 1,
+      "robustGuards": [
+        {
+          "eligible": true,
+          "factorGuards": {
+            "btc_aligned_min": 0.019947838608
+          },
+          "score": [
+            0.12493283,
+            1.19775138,
+            458
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.12623156,
+              "largestPairShare": 0.20707071,
+              "profitFactor": 1.19775138,
+              "tradeCount": 198
+            },
+            "derivationValidation": {
+              "expectancyR": 0.25650314,
+              "largestPairShare": 0.27586207,
+              "profitFactor": 1.45156884,
+              "tradeCount": 116
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.12493283,
+              "largestPairShare": 0.30555556,
+              "profitFactor": 1.19816771,
+              "tradeCount": 144
+            }
+          }
+        }
+      ],
+      "signalFamily": "windowed_breakout_retest_long",
+      "timeframe": "1h"
+    },
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 1490,
+        "derivationValidation": 884,
+        "symbolHoldback": 1530
+      },
+      "candidateKey": "short_cycle_event_1h_sweep_reclaim_balanced_v1",
+      "direction": "long",
+      "displayName": "1H 流动性扫低窗口收回 ATR1.2",
+      "robustGuardCount": 5,
+      "robustGuards": [
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_return_max": -0.033335144886,
+            "aligned_trend50_200_max": -0.038470501732
+          },
+          "score": [
+            0.23390462,
+            1.42009338,
+            244
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.29875696,
+              "largestPairShare": 0.22641509,
+              "profitFactor": 1.54827293,
+              "tradeCount": 106
+            },
+            "derivationValidation": {
+              "expectancyR": 0.59728337,
+              "largestPairShare": 0.34146341,
+              "profitFactor": 2.34725346,
+              "tradeCount": 41
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.23390462,
+              "largestPairShare": 0.29896907,
+              "profitFactor": 1.42009338,
+              "tradeCount": 97
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_trend50_200_max": -0.038470501732,
+            "atr_pct_min": 0.018178780219
+          },
+          "score": [
+            0.09391643,
+            1.16023057,
+            351
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.10491011,
+              "largestPairShare": 0.24342105,
+              "profitFactor": 1.17219338,
+              "tradeCount": 152
+            },
+            "derivationValidation": {
+              "expectancyR": 0.21298257,
+              "largestPairShare": 0.27777778,
+              "profitFactor": 1.3789919,
+              "tradeCount": 54
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.09391643,
+              "largestPairShare": 0.28275862,
+              "profitFactor": 1.16023057,
+              "tradeCount": 145
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_return_max": -0.033335144886,
+            "btc_aligned_min": 0.006081380882
+          },
+          "score": [
+            0.06732279,
+            1.10764058,
+            173
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.22518098,
+              "largestPairShare": 0.21212121,
+              "profitFactor": 1.39280487,
+              "tradeCount": 66
+            },
+            "derivationValidation": {
+              "expectancyR": 0.13978259,
+              "largestPairShare": 0.27272727,
+              "profitFactor": 1.25622803,
+              "tradeCount": 22
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.06732279,
+              "largestPairShare": 0.4,
+              "profitFactor": 1.10764058,
+              "tradeCount": 85
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_return_max": -0.033335144886,
+            "aligned_trend20_50_max": -0.019802812709
+          },
+          "score": [
+            0.05617966,
+            1.0895958,
+            308
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.32213816,
+              "largestPairShare": 0.24193548,
+              "profitFactor": 1.58004177,
+              "tradeCount": 124
+            },
+            "derivationValidation": {
+              "expectancyR": 0.08091197,
+              "largestPairShare": 0.25423729,
+              "profitFactor": 1.13147045,
+              "tradeCount": 59
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.05617966,
+              "largestPairShare": 0.304,
+              "profitFactor": 1.0895958,
+              "tradeCount": 125
+            }
+          }
+        },
+        {
+          "eligible": true,
+          "factorGuards": {
+            "aligned_trend50_200_max": -0.038470501732,
+            "atr_pct_min": 0.014715470535
+          },
+          "score": [
+            0.05265835,
+            1.08597074,
+            530
+          ],
+          "segmentMetrics": {
+            "derivationTrain": {
+              "expectancyR": 0.14331296,
+              "largestPairShare": 0.24413146,
+              "profitFactor": 1.23989884,
+              "tradeCount": 213
+            },
+            "derivationValidation": {
+              "expectancyR": 0.32820814,
+              "largestPairShare": 0.27472527,
+              "profitFactor": 1.63738078,
+              "tradeCount": 91
+            },
+            "symbolHoldback": {
+              "expectancyR": 0.05265835,
+              "largestPairShare": 0.29646018,
+              "profitFactor": 1.08597074,
+              "tradeCount": 226
+            }
+          }
+        }
+      ],
+      "signalFamily": "windowed_liquidity_sweep_reclaim_long",
+      "timeframe": "1h"
+    },
+    {
+      "baseTradeCountBySegment": {
+        "derivationTrain": 6436,
+        "derivationValidation": 3403,
+        "symbolHoldback": 6657
+      },
+      "candidateKey": "short_cycle_event_1h_trend_reclaim_balanced_v1",
+      "direction": "long",
+      "displayName": "1H 趋势回踩分步确认 ATR1.2",
+      "robustGuardCount": 0,
+      "robustGuards": [],
+      "signalFamily": "windowed_trend_reclaim_long",
+      "timeframe": "1h"
+    }
+  ],
+  "schemaVersion": "event_window_factor_discovery_report_v1",
+  "selectionBoundary": "development_temporal_validation_and_symbol_holdback_only",
+  "sources": {
+    "1h": {
+      "1INCH-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/1INCH-USDT-SWAP/15m/1608864300000-1784003400000-b3e0242585750f09.parquet",
+      "AAVE-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/AAVE-USDT-SWAP/15m/1607572800000-1784003400000-04931645b903a225.parquet",
+      "ADA-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/ADA-USDT-SWAP/15m/1583831700000-1784003400000-d204dcc17376e55e.parquet",
+      "ALGO-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/ALGO-USDT-SWAP/15m/1589341500000-1784003400000-c75d6c8f63f85290.parquet",
+      "ATOM-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/ATOM-USDT-SWAP/15m/1588737600000-1784003400000-0e80303bfda4b5d2.parquet",
+      "AVAX-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/AVAX-USDT-SWAP/15m/1600833600000-1784003400000-c874c79f79d1914b.parquet",
+      "AXS-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/AXS-USDT-SWAP/15m/1627457400000-1784003400000-5772bc36444f0bc7.parquet",
+      "BTC-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/BTC-USDT-SWAP/15m/1577836800000-1784003400000-51201cb73b6fb5cf.parquet",
+      "ETH-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/ETH-USDT-SWAP/15m/1577836800000-1784003400000-b298777fd912b538.parquet",
+      "SOL-USDT-SWAP": "D:/Codex-Workspace/回测数据/_alphapilot/canonical/okx/swap/ohlcv/SOL-USDT-SWAP/15m/1611297900000-1784003400000-9383d9c381f08d6d.parquet"
+    }
+  },
+  "status": "completed"
+}

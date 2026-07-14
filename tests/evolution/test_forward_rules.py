@@ -5,7 +5,10 @@ import unittest
 import numpy as np
 import pandas as pd
 
-from alphapilot.evolution.forward.rules import evaluate_frozen_policy
+from alphapilot.evolution.forward.rules import (
+    evaluate_frozen_policy,
+    is_supported_frozen_policy,
+)
 from alphapilot.short_cycle.parameter_search import add_indicators
 from alphapilot.short_cycle.workflow_candidates import (
     short_cycle_workflow_candidates,
@@ -92,6 +95,11 @@ class ForwardRuleTests(unittest.TestCase):
         self.assertEqual(blocked.status, "conditions_not_met")
         self.assertIsNone(invalid.decision)
         self.assertEqual(invalid.status, "invalid_frozen_policy")
+
+    def test_one_hour_short_cycle_policy_is_supported_for_local_forward(self) -> None:
+        policy = {**self.policy(), "timeframe": "1h"}
+
+        self.assertTrue(is_supported_frozen_policy(policy))
 
 
 if __name__ == "__main__":

@@ -1,0 +1,7 @@
+{
+  "generatedAt": "2026-07-14T05:32:00.858012Z",
+  "resultCount": 0,
+  "results": [],
+  "schemaVersion": "event_window_factor_search_v1",
+  "selectionBoundary": "development_temporal_and_consumed_symbol_holdback"
+}

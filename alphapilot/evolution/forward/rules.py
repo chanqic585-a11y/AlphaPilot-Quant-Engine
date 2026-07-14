@@ -43,7 +43,7 @@ def is_supported_frozen_policy(policy: dict[str, Any]) -> bool:
             policy.get("signalEngine") == "short_cycle_v1"
             and bool(str(policy.get("signalFamily") or ""))
             and policy.get("direction") in {"long", "short"}
-            and policy.get("timeframe") in {"5m", "15m"}
+            and policy.get("timeframe") in {"5m", "15m", "1h"}
             and isinstance(parameters, dict)
             and float(parameters.get("stop_atr") or 0) > 0
         )
