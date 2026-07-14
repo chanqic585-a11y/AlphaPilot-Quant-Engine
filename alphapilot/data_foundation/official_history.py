@@ -22,6 +22,8 @@ from .okx_public import (
     OkxHistoryCollectionStopped,
     OkxPublicClient,
 )
+from .official_partition_index import OfficialPartitionIndex
+from .official_resume import OfficialResumeStore, ResumeIdentity
 from .warehouse import WarehouseLayout, ensure_capacity
 
 
@@ -34,6 +36,47 @@ def _utc_now() -> str:
 
 def _timestamp_ms(value: str) -> int:
     return int(pd.Timestamp(value).timestamp() * 1000)
+
+
+def _frame_from_okx_rows(rows: list[list[Any]]) -> pd.DataFrame:
+    accepted = [item for item in rows if isinstance(item, list) and len(item) >= 9]
+    if not accepted:
+        return pd.DataFrame(
+            columns=[
+                "timestamp_ms",
+                "date",
+                "open",
+                "high",
+                "low",
+                "close",
+                "volume",
+                "confirmed",
+            ]
+        )
+    frame = pd.DataFrame(
+        {
+            "timestamp_ms": [int(item[0]) for item in accepted],
+            "open": [float(item[1]) for item in accepted],
+            "high": [float(item[2]) for item in accepted],
+            "low": [float(item[3]) for item in accepted],
+            "close": [float(item[4]) for item in accepted],
+            "volume": [float(item[7]) for item in accepted],
+            "confirmed": [int(item[8]) for item in accepted],
+        }
+    )
+    frame["date"] = pd.to_datetime(frame["timestamp_ms"], unit="ms", utc=True)
+    return frame[
+        [
+            "timestamp_ms",
+            "date",
+            "open",
+            "high",
+            "low",
+            "close",
+            "volume",
+            "confirmed",
+        ]
+    ]
 
 
 @dataclass(frozen=True)
@@ -240,62 +283,28 @@ class OkxOfficialHistoryCollector:
         instrument_id: str,
         timeframe: str,
         endpoint: str,
+        partition_index: OfficialPartitionIndex,
     ) -> OfficialPartition | None:
-        manifest_root = self.layout.officialRawRoot / "manifests"
-        canonical_root = self.layout.canonicalRoot.resolve()
-        candidates: list[OfficialPartition] = []
-        manifest_pattern = f"{instrument_id}-{timeframe}-*.json"
-        for manifest_path in manifest_root.glob(manifest_pattern):
-            try:
-                row = load_json(manifest_path)
-            except (OSError, ValueError):
-                continue
-            if (
-                row.get("schemaVersion") != "okx_official_partition_manifest_v1"
-                or row.get("instrumentId") != instrument_id
-                or row.get("timeframe") != timeframe
-                or row.get("sourceEndpoint") != endpoint
-            ):
-                continue
-            output = Path(str(row.get("outputPath") or ""))
-            expected = str(row.get("outputSha256") or "")
-            try:
-                resolved_output = output.resolve()
-                inside_canonical_root = resolved_output.is_relative_to(canonical_root)
-            except (OSError, ValueError):
-                inside_canonical_root = False
-            if (
-                not inside_canonical_root
-                or not output.is_file()
-                or not expected
-                or sha256_file(output) != expected
-                or not row.get("endTime")
-            ):
-                continue
-            candidates.append(
-                OfficialPartition(
-                    instrumentId=instrument_id,
-                    timeframe=timeframe,
-                    status="reused",
-                    rows=int(row.get("rows") or 0),
-                    startTime=row.get("startTime"),
-                    endTime=row.get("endTime"),
-                    outputPath=str(output),
-                    outputSha256=expected,
-                    sourceEndpoint=endpoint,
-                    requestCount=0,
-                    provenanceStatus="official_okx_public",
-                    reused=True,
-                )
-            )
-        if not candidates:
+        candidate = partition_index.latest_valid(
+            instrument_id,
+            timeframe,
+            endpoint,
+        )
+        if candidate is None:
             return None
-        return max(
-            candidates,
-            key=lambda item: (
-                _timestamp_ms(str(item.endTime)),
-                item.outputSha256 or "",
-            ),
+        return OfficialPartition(
+            instrumentId=candidate.instrumentId,
+            timeframe=candidate.timeframe,
+            status="reused",
+            rows=candidate.rows,
+            startTime=candidate.startTime,
+            endTime=candidate.endTime,
+            outputPath=candidate.outputPath,
+            outputSha256=candidate.outputSha256,
+            sourceEndpoint=candidate.sourceEndpoint,
+            requestCount=0,
+            provenanceStatus="official_okx_public",
+            reused=True,
         )
 
     def _write_partition(
@@ -488,6 +497,13 @@ class OkxOfficialHistoryCollector:
         checkpoint.setdefault("preparationMode", "initial_download")
         instruments = self._candidate_instruments(contract.contract)
         timeframes = self._timeframes(contract.contract)
+        partition_index = OfficialPartitionIndex.from_manifests(
+            self.layout.officialRawRoot / "manifests",
+            self.layout.canonicalRoot,
+        )
+        resume_store = OfficialResumeStore(
+            self.layout.temporaryRoot / "official-resume"
+        )
         partitions: list[OfficialPartition] = []
         collected_at = _utc_now()
         endpoint = f"{self.client.base_url}/api/v5/market/history-candles"
@@ -512,6 +528,7 @@ class OkxOfficialHistoryCollector:
                     instrument_id=instrument_id,
                     timeframe=timeframe,
                     endpoint=endpoint,
+                    partition_index=partition_index,
                 )
                 collection_start_ms = start_ms
                 if shared_base is not None and shared_base.endTime:
@@ -538,24 +555,78 @@ class OkxOfficialHistoryCollector:
                     10_000,
                     max(1, math.ceil(elapsed_ms / interval / 100) + 2),
                 )
+                resume_identity = ResumeIdentity(
+                    strategyDataContractId=contract.strategyDataContractId,
+                    key=key,
+                    instrumentId=instrument_id,
+                    timeframe=timeframe,
+                    sourceEndpoint=endpoint,
+                    collectionStartMs=collection_start_ms,
+                    baseSha256=(
+                        shared_base.outputSha256 if shared_base is not None else None
+                    ),
+                )
+                resume = resume_store.load(resume_identity)
+                pending_page_rows: list[list[Any]] = []
+                latest_total_request_count = resume.requestCount
+                latest_oldest_timestamp_ms = resume.oldestTimestampMs
+                resume_chunk_count = resume.chunkCount
+
+                def flush_resume_rows() -> None:
+                    nonlocal resume_chunk_count
+                    if not pending_page_rows:
+                        return
+                    saved = resume_store.append(
+                        resume_identity,
+                        _frame_from_okx_rows(pending_page_rows),
+                        request_count=latest_total_request_count,
+                        oldest_timestamp_ms=latest_oldest_timestamp_ms,
+                    )
+                    pending_page_rows.clear()
+                    resume_chunk_count = saved.chunkCount
 
                 def persist_page_progress(progress: dict[str, Any]) -> None:
+                    nonlocal latest_total_request_count, latest_oldest_timestamp_ms
                     request_count = int(progress.get("requestCount") or 0)
+                    latest_total_request_count = resume.requestCount + request_count
+                    current_oldest = progress.get("oldestTimestampMs")
+                    if current_oldest is not None:
+                        latest_oldest_timestamp_ms = min(
+                            int(current_oldest),
+                            latest_oldest_timestamp_ms
+                            if latest_oldest_timestamp_ms is not None
+                            else int(current_oldest),
+                        )
+                    page_rows = progress.get("pageRows")
+                    if isinstance(page_rows, list):
+                        pending_page_rows.extend(
+                            item
+                            for item in page_rows
+                            if isinstance(item, list) and len(item) >= 9
+                        )
                     final_page = bool(progress.get("isFinalPage"))
+                    if request_count % 25 == 0 or final_page:
+                        flush_resume_rows()
                     if request_count != 1 and request_count % 25 != 0 and not final_page:
                         return
                     checkpoint["inProgress"] = {
                         "key": key,
                         "instrumentId": instrument_id,
                         "timeframe": timeframe,
-                        "requestCount": request_count,
-                        "rowCount": int(progress.get("rowCount") or 0),
-                        "oldestTimestampMs": progress.get("oldestTimestampMs"),
+                        "requestCount": latest_total_request_count,
+                        "rowCount": len(resume.frame)
+                        + int(progress.get("rowCount") or 0),
+                        "oldestTimestampMs": latest_oldest_timestamp_ms,
                         "maxPages": int(progress.get("maxPages") or max_pages),
                         "updatedAt": _utc_now(),
-                        "mode": preparation_mode,
+                        "mode": (
+                            "resuming_partial_download"
+                            if resume.chunkCount
+                            else preparation_mode
+                        ),
                         "baseRows": base_rows,
                         "baseEndTime": base_end_time,
+                        "resumeChunkCount": resume_chunk_count,
                     }
                     write_json_atomic(checkpoint_path, checkpoint)
 
@@ -564,11 +635,22 @@ class OkxOfficialHistoryCollector:
                         instrument_id=instrument_id,
                         timeframe=timeframe,
                         start_exclusive_ms=collection_start_ms,
-                        max_pages=max_pages,
+                        max_pages=max(1, max_pages - resume.requestCount),
+                        initial_after_ms=resume.oldestTimestampMs,
                         stop_requested=self._should_stop,
                         page_progress=persist_page_progress,
                     )
-                    if shared_base is not None and frame.empty:
+                    latest_total_request_count = resume.requestCount + request_count
+                    flush_resume_rows()
+                    incremental_frames = [
+                        item for item in (resume.frame, frame) if not item.empty
+                    ]
+                    incremental = (
+                        pd.concat(incremental_frames, ignore_index=True)
+                        if incremental_frames
+                        else frame
+                    )
+                    if shared_base is not None and incremental.empty:
                         partition = shared_base
                     else:
                         if shared_base is not None and shared_base.outputPath:
@@ -583,19 +665,31 @@ class OkxOfficialHistoryCollector:
                                 "confirmed",
                             ]
                             base_frame = pd.read_parquet(shared_base.outputPath)[columns]
-                            frame = pd.concat([base_frame, frame], ignore_index=True)
+                            incremental = pd.concat(
+                                [base_frame, incremental], ignore_index=True
+                            )
                         partition = self._write_partition(
                             instrument_id=instrument_id,
                             timeframe=timeframe,
-                            frame=frame,
-                            request_count=request_count,
+                            frame=incremental,
+                            request_count=latest_total_request_count,
                             endpoint=endpoint,
                             collected_at=collected_at,
                         )
                 except OkxHistoryCollectionStopped:
+                    flush_resume_rows()
+                    if isinstance(checkpoint.get("inProgress"), dict):
+                        checkpoint["inProgress"]["mode"] = (
+                            "resuming_partial_download"
+                        )
+                        checkpoint["inProgress"]["resumeChunkCount"] = (
+                            resume_chunk_count
+                        )
+                        write_json_atomic(checkpoint_path, checkpoint)
                     paused = True
                     break
                 except Exception as error:
+                    flush_resume_rows()
                     partition = OfficialPartition(
                         instrumentId=instrument_id,
                         timeframe=timeframe,
@@ -614,6 +708,7 @@ class OkxOfficialHistoryCollector:
                 checkpoint.pop("inProgress", None)
                 if partition.outputPath and partition.outputSha256:
                     checkpoint["completed"][key] = asdict(partition)
+                    resume_store.clear(resume_identity)
                 write_json_atomic(checkpoint_path, checkpoint)
             if paused:
                 break

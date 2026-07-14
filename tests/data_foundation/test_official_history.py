@@ -5,6 +5,7 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import pandas as pd
 
@@ -261,7 +262,141 @@ class TailRecordingOkxClient(FakeOkxClient):
         return tail, 1
 
 
+def _okx_page_rows(frame: pd.DataFrame) -> list[list[str]]:
+    return [
+        [
+            str(int(row.timestamp_ms)),
+            str(float(row.open)),
+            str(float(row.high)),
+            str(float(row.low)),
+            str(float(row.close)),
+            "0",
+            "0",
+            str(float(row.volume)),
+            str(int(row.confirmed)),
+        ]
+        for row in frame.itertuples(index=False)
+    ]
+
+
+class PagePersistingInterruptClient(FakeOkxClient):
+    def __init__(self) -> None:
+        super().__init__()
+        self.persisted_frame: pd.DataFrame | None = None
+
+    def history_candles(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        page_progress=None,
+        **_kwargs,
+    ):
+        self.history_calls.append((instrument_id, timeframe))
+        if page_progress is None:
+            raise AssertionError("collector_did_not_forward_page_progress")
+        self.persisted_frame = _frame(timeframe).tail(2).copy()
+        page_progress(
+            {
+                "requestCount": 1,
+                "rowCount": 2,
+                "oldestTimestampMs": int(self.persisted_frame["timestamp_ms"].min()),
+                "maxPages": 100,
+                "isFinalPage": False,
+                "pageRows": _okx_page_rows(self.persisted_frame),
+            }
+        )
+        raise OkxHistoryCollectionStopped("official_history_collection_stopped")
+
+
+class ResumeRecordingOkxClient(FakeOkxClient):
+    def __init__(self) -> None:
+        super().__init__()
+        self.initial_after_values: list[int | None] = []
+
+    def history_candles(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        initial_after_ms: int | None = None,
+        page_progress=None,
+        **_kwargs,
+    ):
+        self.history_calls.append((instrument_id, timeframe))
+        self.initial_after_values.append(initial_after_ms)
+        if page_progress is None:
+            raise AssertionError("collector_did_not_forward_page_progress")
+        older = _frame(timeframe).iloc[-4:-2].copy()
+        page_progress(
+            {
+                "requestCount": 1,
+                "rowCount": 2,
+                "oldestTimestampMs": int(older["timestamp_ms"].min()),
+                "maxPages": 100,
+                "isFinalPage": True,
+                "pageRows": _okx_page_rows(older),
+            }
+        )
+        return older, 1
+
+
 class OfficialHistoryCollectorTests(unittest.TestCase):
+    def test_builds_the_shared_manifest_index_once_for_all_partitions(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            from alphapilot.data_foundation import official_history
+
+            with patch.object(
+                official_history.OfficialPartitionIndex,
+                "from_manifests",
+                wraps=official_history.OfficialPartitionIndex.from_manifests,
+            ) as build_index:
+                result = OkxOfficialHistoryCollector(
+                    client=FakeOkxClient(),
+                    layout=layout,
+                ).collect(_contract())
+
+            self.assertEqual(result.status, "completed")
+            self.assertEqual(result.completedPartitionCount, 4)
+            self.assertEqual(build_index.call_count, 1)
+
+    def test_paused_partition_resumes_from_durable_oldest_cursor(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            layout = WarehouseLayout.from_root(Path(directory) / "回测数据")
+            contract = _single_partition_contract("resume_contract")
+            interrupted_client = PagePersistingInterruptClient()
+
+            first = OkxOfficialHistoryCollector(
+                client=interrupted_client,
+                layout=layout,
+            ).collect(contract)
+
+            self.assertEqual(first.status, "paused")
+            assert interrupted_client.persisted_frame is not None
+            durable_oldest = int(
+                interrupted_client.persisted_frame["timestamp_ms"].min()
+            )
+            self.assertTrue(
+                any((layout.temporaryRoot / "official-resume").rglob("chunk-*.parquet"))
+            )
+
+            resumed_client = ResumeRecordingOkxClient()
+            second = OkxOfficialHistoryCollector(
+                client=resumed_client,
+                layout=layout,
+            ).collect(contract)
+
+            self.assertEqual(second.status, "completed")
+            self.assertEqual(resumed_client.initial_after_values, [durable_oldest])
+            self.assertEqual(second.partitions[0].rows, 4)
+            merged = pd.read_parquet(second.partitions[0].outputPath)
+            self.assertEqual(len(merged), 4)
+            self.assertTrue(merged["timestamp_ms"].is_unique)
+            self.assertFalse(
+                any((layout.temporaryRoot / "official-resume").rglob("chunk-*.parquet"))
+            )
+
     def test_candidate_instruments_rank_by_public_quote_notional(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
             layout = WarehouseLayout.from_root(Path(directory) / "回测数据")

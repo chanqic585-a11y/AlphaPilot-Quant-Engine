@@ -190,7 +190,12 @@ class OfficialResumeStore:
                 "chunks": chunks,
             },
         )
-        return self.load(identity)
+        return ResumeSnapshot(
+            frame=_empty_frame(),
+            requestCount=max(0, int(request_count)),
+            oldestTimestampMs=oldest_timestamp_ms,
+            chunkCount=len(chunks),
+        )
 
     def clear(self, identity: ResumeIdentity) -> None:
         partition_root = self._partition_root(identity)

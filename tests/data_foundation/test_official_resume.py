@@ -4,6 +4,7 @@ import tempfile
 import unittest
 from dataclasses import replace
 from pathlib import Path
+from unittest.mock import patch
 
 import pandas as pd
 
@@ -87,6 +88,28 @@ class OfficialResumeStoreTests(unittest.TestCase):
             self.assertEqual(len(resumed.frame), 5)
             self.assertTrue(resumed.frame["timestamp_ms"].is_unique)
             self.assertEqual(resumed.chunkCount, 2)
+
+    def test_append_does_not_reload_all_previous_chunks(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory) / "official-resume"
+            identity = _identity()
+            frame = _frame("2026-07-14T00:00:00Z")
+            store = OfficialResumeStore(root)
+
+            with patch.object(
+                store,
+                "load",
+                side_effect=AssertionError("append_must_not_reload_chunks"),
+            ):
+                saved = store.append(
+                    identity,
+                    frame,
+                    request_count=25,
+                    oldest_timestamp_ms=int(frame["timestamp_ms"].min()),
+                )
+
+            self.assertEqual(saved.chunkCount, 1)
+            self.assertEqual(saved.requestCount, 25)
 
     def test_identity_mismatch_does_not_reuse_chunks(self) -> None:
         with tempfile.TemporaryDirectory() as directory:
