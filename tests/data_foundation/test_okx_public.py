@@ -43,6 +43,10 @@ class OkxPublicTests(unittest.TestCase):
                 ["2000", "7", "9", "6", "8", "1", "1", "70", "1"],
             ],
         ]
+        pages_for_progress = [
+            [list(item) for item in pages[0]],
+            [list(pages[1][0])],
+        ]
         progress: list[dict[str, object]] = []
 
         def opener(_request: object, timeout: int) -> _Response:
@@ -71,6 +75,7 @@ class OkxPublicTests(unittest.TestCase):
                     "oldestTimestampMs": 4000,
                     "maxPages": 5,
                     "isFinalPage": False,
+                    "pageRows": pages_for_progress[0],
                 },
                 {
                     "requestCount": 2,
@@ -78,9 +83,38 @@ class OkxPublicTests(unittest.TestCase):
                     "oldestTimestampMs": 2000,
                     "maxPages": 5,
                     "isFinalPage": True,
+                    "pageRows": pages_for_progress[1],
                 },
             ],
         )
+
+    def test_history_candles_starts_after_durable_resume_cursor(self) -> None:
+        calls: list[str] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(str(getattr(request, "full_url")))
+            return _Response(
+                {
+                    "code": "0",
+                    "msg": "",
+                    "data": [
+                        ["3000", "10", "12", "9", "11", "1", "1", "100", "1"],
+                        ["2000", "9", "11", "8", "10", "1", "1", "90", "1"],
+                    ],
+                }
+            )
+
+        OkxPublicClient(opener=opener, throttle_seconds=0).history_candles(
+            instrument_id="BTC-USDT-SWAP",
+            timeframe="5m",
+            start_exclusive_ms=2500,
+            initial_after_ms=4000,
+            max_pages=1,
+        )
+
+        query = parse_qs(urlparse(calls[0]).query)
+        self.assertEqual(query["after"], ["4000"])
 
     def test_history_candles_stops_before_requesting_the_next_page(self) -> None:
         calls: list[str] = []

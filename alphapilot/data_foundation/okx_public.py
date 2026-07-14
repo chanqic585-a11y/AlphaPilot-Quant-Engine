@@ -197,6 +197,7 @@ class OkxPublicClient:
         start_exclusive_ms: int,
         max_pages: int = 500,
         page_limit: int = 100,
+        initial_after_ms: int | None = None,
         stop_requested: Callable[[], bool] | None = None,
         page_progress: Callable[[dict[str, Any]], None] | None = None,
     ) -> tuple[pd.DataFrame, int]:
@@ -204,7 +205,9 @@ class OkxPublicClient:
             raise ValueError(f"Unsupported OKX timeframe: {timeframe}")
         if start_exclusive_ms < 0:
             raise ValueError("start_exclusive_ms must be non-negative")
-        cursor: int | None = None
+        if initial_after_ms is not None and initial_after_ms < 0:
+            raise ValueError("initial_after_ms must be non-negative")
+        cursor: int | None = initial_after_ms
         request_count = 0
         rows: list[list[Any]] = []
         seen_cursors: set[int] = set()
@@ -228,6 +231,7 @@ class OkxPublicClient:
                         "oldestTimestampMs": None,
                         "maxPages": max_pages,
                         "isFinalPage": True,
+                        "pageRows": [],
                     })
                 break
             parsed_timestamps = [int(item[0]) for item in data if isinstance(item, list) and item]
@@ -239,14 +243,17 @@ class OkxPublicClient:
                         "oldestTimestampMs": None,
                         "maxPages": max_pages,
                         "isFinalPage": True,
+                        "pageRows": [],
                     })
                 break
+            page_rows: list[list[Any]] = []
             for item in data:
                 if not isinstance(item, list) or len(item) < 9:
                     continue
                 timestamp = int(item[0])
                 if timestamp > start_exclusive_ms and str(item[8]) == "1":
                     rows.append(item)
+                    page_rows.append(item)
             oldest = min(parsed_timestamps)
             final_page = (
                 oldest <= start_exclusive_ms
@@ -260,6 +267,7 @@ class OkxPublicClient:
                     "oldestTimestampMs": oldest,
                     "maxPages": max_pages,
                     "isFinalPage": final_page,
+                    "pageRows": page_rows,
                 })
             if final_page:
                 break
