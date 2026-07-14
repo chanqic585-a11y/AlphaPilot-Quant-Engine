@@ -4880,6 +4880,14 @@ Operational failures may retry the same version; strategy-performance failures
 require a changed challenger. Checkpoints, idempotency keys, append-only stage
 events, and one-current-stage projections provide restart and audit support.
 
+The read model preserves every immutable version in `items` for workers and
+audit, and also exposes `currentFamilyItems` with one current user-facing item
+per strategy family. Superseded active attempts are returned in `historyItems`.
+Console terminal counts such as failed or blocked must use the family-current
+projection so bounded optimization does not make old failures accumulate as
+independent strategies. Queued and running counts continue to describe actual
+workflow tasks.
+
 This release is orchestration infrastructure only. It does not launch a real
 backtest worker, create an OKX Demo or Live release, store credentials, place
 orders, or enable automatic trading. See

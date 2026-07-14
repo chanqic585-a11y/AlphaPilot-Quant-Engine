@@ -1,8 +1,8 @@
-"""Build one current, page-specific workflow projection per strategy version."""
+"""Build immutable-version and current-family workflow projections."""
 
 from __future__ import annotations
 
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -163,6 +163,83 @@ def _current_run(runs: list[WorkflowRunRecord]) -> WorkflowRunRecord:
     )
 
 
+def _current_family_projection(
+    items: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    """Keep one user-facing current item per family without deleting evidence."""
+
+    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for item in items:
+        grouped[str(item["strategyFamilyId"])].append(item)
+
+    status_priority = {
+        "running": 7,
+        "queued": 6,
+        "awaiting": 5,
+        "paused": 4,
+        "passed": 3,
+        "blocked": 2,
+        "failed": 1,
+        "cancelled": 0,
+    }
+    current_items: list[dict[str, Any]] = []
+    history_items: list[dict[str, Any]] = []
+    for family_items in grouped.values():
+        furthest_stage = max(STAGE_ORDER[str(item["stage"])] for item in family_items)
+        candidates = [
+            item
+            for item in family_items
+            if STAGE_ORDER[str(item["stage"])] == furthest_stage
+        ]
+        candidate_parent_ids = {
+            str(item.get("parentStrategyVersionId") or "")
+            for item in candidates
+            if item.get("parentStrategyVersionId")
+        }
+        leaves = [
+            item
+            for item in candidates
+            if str(item["strategyVersionId"]) not in candidate_parent_ids
+        ] or candidates
+        current = max(
+            leaves,
+            key=lambda item: (
+                str(item.get("strategyVersionCreatedAt") or ""),
+                status_priority.get(str(item.get("status") or ""), -1),
+                int(item.get("attemptNumber") or 0),
+                str(item["strategyVersionId"]),
+            ),
+        )
+        current_items.append(
+            {
+                **current,
+                "familyCurrent": True,
+                "familyVersionCount": len(family_items),
+                "historicalAttemptCount": max(0, len(family_items) - 1),
+            }
+        )
+        for item in family_items:
+            if item["strategyVersionId"] == current["strategyVersionId"]:
+                continue
+            history_items.append(
+                {
+                    **item,
+                    "familyCurrent": False,
+                    "superseded": True,
+                    "supersededByStrategyVersionId": current["strategyVersionId"],
+                }
+            )
+
+    sort_key = lambda item: (
+        -STAGE_ORDER[str(item["stage"])],
+        str(item["displayName"]),
+        str(item["strategyVersionId"]),
+    )
+    current_items.sort(key=sort_key)
+    history_items.sort(key=sort_key)
+    return current_items, history_items
+
+
 def _checkpoint_download_progress(
     contract: StrategyDataContractRecord | None,
     warehouse_root: Path | str | None,
@@ -296,6 +373,7 @@ def build_workflow_projection(
         )
         item = {
             "strategyVersionId": version.strategyVersionId,
+            "strategyVersionCreatedAt": version.createdAt,
             "strategyFamilyId": version.strategyFamilyId,
             "parentStrategyVersionId": version.parentStrategyVersionId,
             "displayName": version.displayName,
@@ -385,8 +463,13 @@ def build_workflow_projection(
             str(item["strategyVersionId"]),
         )
     )
+    current_family_items, history_items = _current_family_projection(items)
     page_counts = Counter(str(item["page"]) for item in items)
     status_counts = Counter(str(item["status"]) for item in items)
+    current_page_counts = Counter(str(item["page"]) for item in current_family_items)
+    current_status_counts = Counter(
+        str(item["status"]) for item in current_family_items
+    )
     return {
         "version": "V13.27.6",
         "source": "workflow_orchestrator_projection_v2",
@@ -405,8 +488,26 @@ def build_workflow_projection(
             "blockedCount": status_counts["blocked"],
             "pausedCount": status_counts["paused"],
             "archivedCount": len(archived_items),
+            "activeStrategyFamilyCount": len(current_family_items),
+            "archivedStrategyFamilyCount": len(
+                {str(item["strategyFamilyId"]) for item in archived_items}
+            ),
+            "historicalAttemptCount": len(history_items),
+            "currentStrategyCount": current_page_counts["strategy"],
+            "currentLocalSimulationCount": current_page_counts["local_simulation"],
+            "currentDemoCount": current_page_counts["demo"],
+            "currentLiveCount": current_page_counts["live"],
+            "currentAwaitingCount": current_status_counts["awaiting"],
+            "currentQueuedCount": current_status_counts["queued"],
+            "currentRunningCount": current_status_counts["running"],
+            "currentPassedCount": current_status_counts["passed"],
+            "currentFailedCount": current_status_counts["failed"],
+            "currentBlockedCount": current_status_counts["blocked"],
+            "currentPausedCount": current_status_counts["paused"],
         },
         "items": items,
+        "currentFamilyItems": current_family_items,
+        "historyItems": history_items,
         "archivedItems": archived_items,
         "byPage": {
             page: [item for item in items if item["page"] == page]

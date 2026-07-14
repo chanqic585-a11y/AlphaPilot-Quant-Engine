@@ -234,6 +234,57 @@ class WorkflowOrchestratorTests(unittest.TestCase):
             projection["archivedItems"][0]["historyEventCount"], 2
         )
 
+    def test_projection_exposes_one_current_item_per_strategy_family(self) -> None:
+        parent, running = self.start_initial_run()
+        complete_workflow_run(
+            self.workflow,
+            running.workflowRunId,
+            status="failed",
+            actor="worker",
+            result={"profitFactor": 0.8, "targetR": 2.0},
+            evidence={"lockedOosHash": "oos_hash", "walkForwardHash": "wf_hash"},
+            failure={
+                "category": "strategy_performance",
+                "summary": "Profit factor below the formal gate.",
+                "retryDisposition": "new_version_required",
+                "metrics": {"profitFactor": 0.8},
+                "suggestions": ["Create a bounded challenger."],
+            },
+        )
+        challenger = create_challenger_version(
+            self.workflow,
+            parent_strategy_version_id=parent.strategyVersionId,
+            display_name="趋势回撤测试策略 Challenger",
+            source_type="bounded_optimization",
+            definition={"entry": "trend_pullback", "targetR": 2.0},
+            parameters={"threshold": 1.1},
+        )
+
+        projection = build_workflow_projection(self.workflow)
+
+        self.assertEqual(len(projection["items"]), 2)
+        self.assertEqual(len(projection["currentFamilyItems"]), 1)
+        self.assertEqual(
+            projection["currentFamilyItems"][0]["strategyVersionId"],
+            challenger.strategyVersionId,
+        )
+        self.assertEqual(projection["currentFamilyItems"][0]["status"], "awaiting")
+        self.assertEqual(projection["currentFamilyItems"][0]["familyVersionCount"], 2)
+        self.assertEqual(projection["currentFamilyItems"][0]["historicalAttemptCount"], 1)
+        self.assertEqual(len(projection["historyItems"]), 1)
+        self.assertEqual(
+            projection["historyItems"][0]["strategyVersionId"],
+            parent.strategyVersionId,
+        )
+        self.assertEqual(
+            projection["historyItems"][0]["supersededByStrategyVersionId"],
+            challenger.strategyVersionId,
+        )
+        self.assertEqual(projection["summary"]["activeStrategyFamilyCount"], 1)
+        self.assertEqual(projection["summary"]["historicalAttemptCount"], 1)
+        self.assertEqual(projection["summary"]["currentAwaitingCount"], 1)
+        self.assertEqual(projection["summary"]["currentFailedCount"], 0)
+
     def test_passed_backtest_can_create_one_local_forward_run(self) -> None:
         version, running = self.start_initial_run()
         passed = complete_workflow_run(
