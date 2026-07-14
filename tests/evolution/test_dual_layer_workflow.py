@@ -8,6 +8,7 @@ from unittest.mock import patch
 
 from alphapilot.data_foundation.checkpoint import write_json_atomic
 from alphapilot.data_foundation.official_history import OfficialCollectionResult
+from alphapilot.data_foundation.warehouse import WarehouseLayout
 from alphapilot.evolution.evaluation.validation_pack import FormalValidationPack
 from alphapilot.evolution.registry.database import connect_registry
 from alphapilot.evolution.registry.hashing import stable_hash
@@ -17,6 +18,7 @@ from alphapilot.evolution.workflow.backtest import BacktestAdapterResult
 from alphapilot.evolution.workflow.bootstrap import register_alpha191_observer
 from alphapilot.evolution.workflow.dual_layer import (
     DualLayerDependencies,
+    _default_dependencies,
     run_dual_layer_backtest_workflow,
 )
 from alphapilot.evolution.workflow import dual_layer as dual_layer_module
@@ -62,6 +64,35 @@ class DualLayerWorkflowTests(unittest.TestCase):
     def tearDown(self) -> None:
         self.connection.close()
         self.temp.cleanup()
+
+    def test_default_dependencies_use_offline_local_formal_collector(self) -> None:
+        with patch(
+            "alphapilot.data_foundation.okx_public.OkxPublicClient",
+            side_effect=AssertionError("network client must not be constructed"),
+        ), patch(
+            "alphapilot.evolution.workflow.dual_layer.LocalFormalHistoryCollector.collect",
+            return_value=OfficialCollectionResult(
+                status="blocked",
+                strategyDataContractId="strategy_data_contract_local_test",
+                instrumentCount=0,
+                completedPartitionCount=0,
+                reusedPartitionCount=0,
+                failedPartitionCount=1,
+                fundingFileCount=0,
+                partitions=(),
+                checkpointPath="local-checkpoint.json",
+                generatedAt="2026-07-15T00:00:00+00:00",
+            ),
+        ) as collect:
+            dependencies = _default_dependencies()
+            contract = derive_strategy_data_contract(self.version, self.workflow)
+            result = dependencies.collectOfficialHistory(
+                contract,
+                WarehouseLayout.from_root(self.root / "warehouse"),
+            )
+
+        self.assertEqual(result.status, "blocked")
+        collect.assert_called_once()
 
     def snapshot(self) -> DataSnapshotRecord:
         manifest = {
@@ -409,7 +440,7 @@ class DualLayerWorkflowTests(unittest.TestCase):
         )
 
         self.assertEqual(blocked.status, "blocked")
-        self.assertIn("official_collection_not_complete", blocked.result["blocker"])
+        self.assertIn("formal_collection_not_complete", blocked.result["blocker"])
         self.assertEqual(self.calls, ["smoke", "collect"])
         retry = retry_backtest_for_data_preparation(
             self.workflow, blocked.workflowRunId, actor="user"

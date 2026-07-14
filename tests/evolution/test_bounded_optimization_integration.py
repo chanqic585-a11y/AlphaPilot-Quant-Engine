@@ -245,6 +245,31 @@ class BoundedOptimizationIntegrationTests(unittest.TestCase):
         assert queued is not None
         self.assertEqual(queued.status, "queued")
 
+    def test_recovery_supersedes_old_parameter_allowlist_blocker(self) -> None:
+        failed = self.fail_initial()
+        self.registry.append_audit_event(
+            eventType="bounded_auto_optimization",
+            entityType="StrategyVersion",
+            entityId=self.version.strategyVersionId,
+            payload={
+                "workflowRunId": failed.workflowRunId,
+                "action": "stop",
+                "reasonCode": "parameter_allowlist_missing",
+                "terminalStatus": "data_evidence_blocked",
+                "attemptNumber": 1,
+            },
+        )
+
+        recovered = recover_terminal_optimization_results(
+            self.workflow,
+            self.registry,
+            strategy_version_ids=[self.version.strategyVersionId],
+        )
+
+        self.assertEqual(recovered.reviewedCount, 1)
+        self.assertEqual(recovered.createdChallengerCount, 1)
+        self.assertEqual(len(recovered.challengerWorkflowRunIds), 1)
+
 
 if __name__ == "__main__":
     unittest.main()

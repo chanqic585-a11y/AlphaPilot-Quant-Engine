@@ -31,6 +31,7 @@ from .bootstrap import (
 )
 from .dual_layer import resolve_code_commit, run_dual_layer_backtest_workflow
 from .local_forward_bridge import run_local_forward_cycle
+from .local_formal_migration import migrate_active_backtests_to_local_formal
 from .data_contract import derive_strategy_data_contract
 from .projection import build_workflow_projection
 from .repository import WorkflowRepository
@@ -474,6 +475,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--strategy-version-id",
         action="append",
     )
+    migrate_local_formal = commands.add_parser("migrate-local-formal")
+    migrate_local_formal.add_argument(
+        "--strategy-version-id",
+        action="append",
+    )
 
     challenger = commands.add_parser("challenger")
     challenger.add_argument("--parent-version-id", required=True)
@@ -568,6 +574,15 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
         if args.command == "recover-structural-redesigns":
             return asdict(
                 recover_terminal_structural_redesigns(
+                    workflow,
+                    registry,
+                    registry_path=Path(args.registry),
+                    strategy_version_ids=args.strategy_version_id,
+                )
+            )
+        if args.command == "migrate-local-formal":
+            return asdict(
+                migrate_active_backtests_to_local_formal(
                     workflow,
                     registry,
                     registry_path=Path(args.registry),

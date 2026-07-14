@@ -209,6 +209,41 @@ class FormalSnapshotTests(unittest.TestCase):
         self.assertEqual(snapshot.source, "okx_public_official")
         self.assertEqual(snapshot.exchange, "okx")
         self.assertTrue(snapshot.manifest["metadata"]["provenanceComplete"])
+
+    def test_freezes_user_approved_local_snapshot_without_claiming_official_source(self) -> None:
+        collection = make_collection(self.layout)
+        local_partitions = []
+        for partition in collection.partitions:
+            path = Path(str(partition.outputPath))
+            frame = pd.read_parquet(path)
+            frame["exchange"] = "user_local"
+            frame["source_endpoint"] = "local://user-approved-history"
+            frame.to_parquet(path, index=False, compression="zstd")
+            local_partitions.append(
+                replace(
+                    partition,
+                    outputSha256=sha256_file(path),
+                    sourceEndpoint="local://user-approved-history",
+                    provenanceStatus="user_approved_local",
+                )
+            )
+        for funding_path in collection.fundingPaths:
+            path = Path(funding_path)
+            frame = pd.read_parquet(path)
+            frame["source_endpoint"] = "local://user-approved-history"
+            frame.to_parquet(path, index=False, compression="zstd")
+        collection = replace(collection, partitions=tuple(local_partitions))
+
+        snapshot = freeze_formal_snapshot(
+            collection,
+            make_contract(),
+            self.layout,
+            self.repository,
+        )
+
+        self.assertEqual(snapshot.source, "user_approved_local_market_data")
+        self.assertEqual(snapshot.exchange, "user_local")
+        self.assertTrue(snapshot.manifest["metadata"]["userApprovedLocalData"])
         self.assertTrue(snapshot.manifest["metadata"]["pointInTimeValidated"])
         self.assertTrue(snapshot.manifest["metadata"]["formalResearchEligible"])
         self.assertTrue(snapshot.manifest["metadata"]["formalPromotionEligible"])

@@ -10,12 +10,11 @@ from typing import Any, Callable
 
 from alphapilot.data_foundation.checkpoint import load_json, write_json_atomic
 from alphapilot.data_foundation.formal_snapshot import freeze_formal_snapshot
+from alphapilot.data_foundation.local_formal_history import LocalFormalHistoryCollector
 from alphapilot.data_foundation.official_history import (
     OfficialCollectionResult,
     OfficialPartition,
-    OkxOfficialHistoryCollector,
 )
-from alphapilot.data_foundation.okx_public import OkxPublicClient
 from alphapilot.data_foundation.research_smoke import run_research_smoke
 from alphapilot.data_foundation.warehouse import WarehouseLayout
 from alphapilot.evolution.evaluation.formal_strategy_backtest import (
@@ -93,8 +92,7 @@ def _default_dependencies(
     *, stop_requested: Callable[[], bool] | None = None
 ) -> DualLayerDependencies:
     def collect(contract: StrategyDataContractRecord, layout: WarehouseLayout):
-        return OkxOfficialHistoryCollector(
-            client=OkxPublicClient(),
+        return LocalFormalHistoryCollector(
             layout=layout,
             stop_requested=stop_requested,
         ).collect(contract)
@@ -172,7 +170,7 @@ def _block(
             "summary": blocker,
             "retryDisposition": "same_version_retry",
             "metrics": {"blocker": blocker},
-            "suggestions": ["Resume official data preparation from its checkpoint."],
+            "suggestions": ["Add the missing local data and retry from the saved checkpoint."],
         },
     )
 
@@ -342,13 +340,13 @@ def run_dual_layer_backtest_workflow(
             return _block(
                 workflow,
                 run.workflowRunId,
-                blocker=f"official_collection_not_complete:{collection.status}",
+                blocker=f"formal_collection_not_complete:{collection.status}",
             )
         if collection.failedPartitionCount:
             return _block(
                 workflow,
                 run.workflowRunId,
-                blocker=f"official_collection_partition_failures:{collection.failedPartitionCount}",
+                blocker=f"formal_collection_partition_failures:{collection.failedPartitionCount}",
             )
         finish("validating_official_data")
         if reached_stop_phase("validating_official_data"):

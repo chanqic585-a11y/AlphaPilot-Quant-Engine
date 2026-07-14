@@ -106,6 +106,41 @@ _FAMILY_STEPS: dict[str, tuple[_MutationStep, ...]] = {
         _MutationStep("squeeze_ratio", -0.05, 0.4, 1.0),
         _MutationStep("lookback", 8, 12, 96, True),
     ),
+    "windowed_breakout_retest_long": (
+        _MutationStep("breakout_volume_min", 0.15, 0.8, 3.0),
+        _MutationStep("confirmation_volume_min", 0.1, 0.6, 2.5),
+        _MutationStep("reclaim_buffer", 0.0002, 0.0, 0.01),
+    ),
+    "windowed_failed_breakout_short": (
+        _MutationStep("volume_min", 0.15, 0.8, 3.0),
+        _MutationStep("rsi_high", 2, 45, 85, True),
+        _MutationStep("rejection_buffer", 0.0002, 0.0, 0.01),
+    ),
+    "windowed_failed_reclaim_short": (
+        _MutationStep("volume_min", 0.15, 0.8, 3.0),
+        _MutationStep("rsi_max", -2, 35, 75, True),
+        _MutationStep("rejection_buffer", 0.0002, 0.0, 0.01),
+    ),
+    "windowed_liquidity_sweep_reclaim_long": (
+        _MutationStep("volume_min", 0.15, 0.8, 3.0),
+        _MutationStep("rsi_oversold", -2, 15, 40, True),
+        _MutationStep("reclaim_buffer", 0.0002, 0.0, 0.01),
+    ),
+    "windowed_recovery_reclaim_long": (
+        _MutationStep("volume_min", 0.15, 0.8, 3.0),
+        _MutationStep("rsi_min", 2, 25, 65, True),
+        _MutationStep("trend_floor", 0.002, 0.9, 1.1),
+    ),
+    "windowed_squeeze_breakout_long": (
+        _MutationStep("volume_min", 0.15, 0.8, 3.0),
+        _MutationStep("squeeze_ratio", -0.03, 0.4, 1.0),
+        _MutationStep("breakout_buffer", 0.0002, 0.0, 0.01),
+    ),
+    "windowed_trend_reclaim_long": (
+        _MutationStep("volume_min", 0.15, 0.8, 3.0),
+        _MutationStep("rsi_min", 2, 25, 65, True),
+        _MutationStep("reclaim_buffer", 0.0002, 0.0, 0.01),
+    ),
 }
 
 
@@ -397,7 +432,7 @@ def decide_bounded_optimization(value: OptimizationInput) -> OptimizationDecisio
             value,
             action="stop",
             reason_code="parameter_allowlist_missing",
-            terminal_status="data_evidence_blocked",
+            terminal_status="structural_redesign_required",
             selection_metrics=sanitized,
         )
     proposed_parameters, changed_parameter = mutation

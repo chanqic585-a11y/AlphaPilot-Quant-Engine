@@ -1,5 +1,36 @@
 # AlphaPilot Quant Engine
 
+## Local Formal Backtests and Repaired Auto-Optimization
+
+Formal research now reads only the user-approved historical warehouse at
+`D:\Codex-Workspace\回测数据`. It discovers complete local OHLCV and funding
+coverage, converts each unchanged source file once into an immutable canonical
+partition, and reuses that partition across every compatible strategy. Missing
+coverage blocks with an explicit local-data gap; the workflow does not start an
+OKX history download or construct an exchange history client.
+
+Existing active backtests can be migrated without deleting attempts or
+research evidence. The command creates an online SQLite backup, clears only
+obsolete downloader progress, and requeues eligible runs:
+
+```powershell
+python -m alphapilot.evolution.workflow.cli `
+  --registry data/evolution_registry.sqlite `
+  migrate-local-formal
+```
+
+The bounded optimizer also recognizes the current event-window strategy
+families. A performance failure creates at most one immutable, allowlisted
+Challenger and queues its formal backtest automatically. After the bounded
+attempt budget, structurally weak strategies remain failed and enter the
+existing redesign/archive lifecycle; no strategy is force-passed. Older audit
+records that incorrectly classified a missing family allowlist as a data
+blocker are recoverable through `recover-bounded-optimizations`.
+
+The older Official History sections below document previous releases. They are
+retained as historical notes, but automatic exchange-history collection is no
+longer the default formal-backtest path.
+
 ## Bounded Structural Redesign Loop
 
 When bounded parameter optimization classifies a formal research result as

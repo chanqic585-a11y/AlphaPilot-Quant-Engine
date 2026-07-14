@@ -39,7 +39,10 @@ def _validate_partition(
     partition: OfficialPartition,
     layout: WarehouseLayout,
 ) -> pd.DataFrame:
-    if partition.provenanceStatus != "official_okx_public":
+    if partition.provenanceStatus not in {
+        "official_okx_public",
+        "user_approved_local",
+    }:
         raise FormalSnapshotError(
             f"formal_partition_provenance_invalid:{partition.instrumentId}:{partition.timeframe}"
         )
@@ -72,7 +75,12 @@ def _validate_partition(
         )
     if frame.empty or (frame["confirmed"] != 1).any():
         raise FormalSnapshotError(f"formal_partition_unconfirmed:{path}")
-    if set(frame["exchange"].astype(str).str.lower()) != {"okx"}:
+    expected_exchange = (
+        "okx"
+        if partition.provenanceStatus == "official_okx_public"
+        else "user_local"
+    )
+    if set(frame["exchange"].astype(str).str.lower()) != {expected_exchange}:
         raise FormalSnapshotError(f"formal_partition_exchange_invalid:{path}")
     timestamps = pd.to_numeric(frame["timestamp_ms"], errors="coerce")
     differences = timestamps.sort_values().diff().dropna()
@@ -120,9 +128,29 @@ def freeze_formal_snapshot(
     repository: RegistryRepository,
 ) -> DataSnapshotRecord:
     if collection.status != "completed":
-        raise FormalSnapshotError(f"official_collection_not_complete:{collection.status}")
+        raise FormalSnapshotError(f"formal_collection_not_complete:{collection.status}")
     if collection.strategyDataContractId != contract.strategyDataContractId:
-        raise FormalSnapshotError("official_collection_contract_mismatch")
+        raise FormalSnapshotError("formal_collection_contract_mismatch")
+    provenance_statuses = {
+        partition.provenanceStatus for partition in collection.partitions
+    }
+    unsupported_provenance = provenance_statuses - {
+        "official_okx_public",
+        "user_approved_local",
+    }
+    if unsupported_provenance:
+        raise FormalSnapshotError("formal_partition_provenance_invalid:collection")
+    if len(provenance_statuses) != 1:
+        raise FormalSnapshotError("formal_collection_mixed_provenance")
+    provenance_status = next(iter(provenance_statuses), None)
+    if provenance_status == "official_okx_public":
+        snapshot_source = "okx_public_official"
+        snapshot_exchange = "okx"
+    elif provenance_status == "user_approved_local":
+        snapshot_source = "user_approved_local_market_data"
+        snapshot_exchange = "user_local"
+    else:
+        raise FormalSnapshotError("formal_collection_provenance_missing")
     partitions_by_instrument: dict[str, list[OfficialPartition]] = {}
     for partition in collection.partitions:
         partitions_by_instrument.setdefault(partition.instrumentId, []).append(
@@ -207,8 +235,8 @@ def freeze_formal_snapshot(
     manifest = build_data_snapshot_manifest(
         files=all_paths,
         root=layout.canonicalRoot,
-        source="okx_public_official",
-        exchange="okx",
+        source=snapshot_source,
+        exchange=snapshot_exchange,
         market_type=str(contract.contract["marketType"]),
         timeframe="multi",
         start_time=min(starts),
@@ -220,6 +248,7 @@ def freeze_formal_snapshot(
             "pointInTimeValidated": True,
             "formalResearchEligible": True,
             "formalPromotionEligible": True,
+            "userApprovedLocalData": provenance_status == "user_approved_local",
             "evidenceClass": "formal_backtest",
             "excludedInstruments": excluded_instruments,
             "strategyDataContractId": contract.strategyDataContractId,

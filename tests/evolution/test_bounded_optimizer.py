@@ -183,8 +183,64 @@ class BoundedOptimizerTests(unittest.TestCase):
         )
 
         self.assertEqual(decision.action, "stop")
-        self.assertEqual(decision.terminalStatus, "data_evidence_blocked")
+        self.assertEqual(
+            decision.terminalStatus, "structural_redesign_required"
+        )
         self.assertEqual(decision.reasonCode, "parameter_allowlist_missing")
+
+    def test_all_windowed_families_have_bounded_parameter_mutations(self) -> None:
+        fixtures = {
+            "windowed_breakout_retest_long": {
+                "breakout_volume_min": 1.0,
+                "confirmation_volume_min": 0.9,
+                "reclaim_buffer": 0.001,
+            },
+            "windowed_failed_breakout_short": {
+                "volume_min": 1.0,
+                "rsi_high": 62,
+                "rejection_buffer": 0.0003,
+            },
+            "windowed_failed_reclaim_short": {
+                "volume_min": 1.0,
+                "rsi_max": 62,
+                "rejection_buffer": 0.0003,
+            },
+            "windowed_liquidity_sweep_reclaim_long": {
+                "volume_min": 1.0,
+                "rsi_oversold": 30,
+                "reclaim_buffer": 0.0003,
+            },
+            "windowed_recovery_reclaim_long": {
+                "volume_min": 1.0,
+                "rsi_min": 42,
+                "trend_floor": 0.98,
+            },
+            "windowed_squeeze_breakout_long": {
+                "volume_min": 1.0,
+                "squeeze_ratio": 0.8,
+                "breakout_buffer": 0.0003,
+            },
+            "windowed_trend_reclaim_long": {
+                "volume_min": 1.0,
+                "rsi_min": 42,
+                "reclaim_buffer": 0.0003,
+            },
+        }
+
+        for family, parameters in fixtures.items():
+            with self.subTest(family=family):
+                decision = decide_bounded_optimization(
+                    input_for(
+                        definition={"signalFamily": family, "targetR": 2.0},
+                        parameters=parameters,
+                    )
+                )
+
+                self.assertEqual(decision.action, "create_challenger")
+                self.assertEqual(decision.terminalStatus, None)
+                self.assertEqual(decision.attemptNumber, 1)
+                self.assertEqual(decision.proposedDefinition["targetR"], 2.0)
+                self.assertNotEqual(decision.proposedParameters, parameters)
 
     def test_passed_selection_creates_one_formal_validation_version(self) -> None:
         definition = dict(input_for().definition)

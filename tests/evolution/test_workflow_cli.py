@@ -21,6 +21,7 @@ from alphapilot.evolution.workflow.cli import (
 )
 from alphapilot.evolution.workflow.repository import WorkflowRepository
 from alphapilot.evolution.workflow.service import (
+    checkpoint_workflow_run,
     complete_workflow_run,
     pause_workflow_run,
     queue_workflow_run,
@@ -652,6 +653,64 @@ class WorkflowCliTests(unittest.TestCase):
             if candidate["strategyVersionId"] == item["strategyVersionId"]
         )
         self.assertTrue(refreshed["optimizationCampaign"]["reviewed"])
+
+    def test_migrate_local_formal_resets_obsolete_active_progress(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        item = self.run_cli("projection")["items"][0]
+        connection = connect_registry(self.registry)
+        try:
+            workflow = WorkflowRepository(connection)
+            queued = queue_workflow_run(
+                workflow,
+                item["workflowRunId"],
+                actor="user",
+            )
+            running = start_workflow_run(
+                workflow,
+                queued.workflowRunId,
+                actor="worker",
+            )
+            checkpoint_workflow_run(
+                workflow,
+                running.workflowRunId,
+                progress={
+                    "phase": "preparing_official_data",
+                    "completedPhases": [
+                        "checking_local_data",
+                        "research_smoke_running",
+                        "preparing_official_data",
+                    ],
+                    "artifacts": {
+                        "strategyDataContractId": "contract-1",
+                        "researchSmokePath": "smoke.json",
+                        "officialCollectionPath": "old-official.json",
+                    },
+                },
+                actor="worker",
+            )
+        finally:
+            connection.close()
+
+        result = self.run_cli(
+            "migrate-local-formal",
+            "--strategy-version-id",
+            item["strategyVersionId"],
+        )
+        repeated = self.run_cli(
+            "migrate-local-formal",
+            "--strategy-version-id",
+            item["strategyVersionId"],
+        )
+
+        self.assertEqual(result["migratedCount"], 1)
+        self.assertTrue(Path(result["backupPath"]).is_file())
+        self.assertEqual(repeated["migratedCount"], 0)
+        refreshed = next(
+            candidate
+            for candidate in self.run_cli("projection")["items"]
+            if candidate["strategyVersionId"] == item["strategyVersionId"]
+        )
+        self.assertEqual(refreshed["status"], "queued")
 
     def test_projection_exposes_immutable_optimization_context(self) -> None:
         self.run_cli("bootstrap")

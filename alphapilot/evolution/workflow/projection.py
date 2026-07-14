@@ -19,8 +19,8 @@ from .types import StrategyDataContractRecord, StrategyVersionRecord, WorkflowRu
 PHASE_LABELS = {
     "checking_local_data": "检查本地数据",
     "research_smoke_running": "本地研究烟测",
-    "preparing_official_data": "准备官方数据",
-    "validating_official_data": "校验正式数据",
+    "preparing_official_data": "准备本地正式数据",
+    "validating_official_data": "校验本地正式数据",
     "freezing_data_snapshot": "冻结正式快照",
     "building_validation_manifests": "构建正式验证集",
     "formal_backtest_running": "正式回测中",
@@ -173,63 +173,29 @@ def _checkpoint_download_progress(
         return None
     checkpoint_path = (
         WarehouseLayout.from_root(warehouse_root).checkpointRoot
-        / f"official-{contract.strategyDataContractId}.json"
+        / "local-formal"
+        / f"{contract.strategyDataContractId}.json"
     )
     if not checkpoint_path.is_file():
         return None
     checkpoint = load_json(checkpoint_path)
-    completed = checkpoint.get("completed")
-    if not isinstance(completed, dict):
-        return None
-    timeframes = {
-        str(value)
-        for value in (
-            contract.contract.get("signalTimeframe"),
-            contract.contract.get("executionTimeframe"),
-            contract.contract.get("executionFallbackTimeframe"),
-        )
-        if value
-    }
+    selected = checkpoint.get("selectedInstruments") or []
+    if not isinstance(selected, list):
+        selected = []
+    timeframes = checkpoint.get("requiredTimeframes") or []
+    if not isinstance(timeframes, list):
+        timeframes = []
     target_members = int(
         (contract.contract.get("universePolicy") or {}).get("targetMembers", 0)
     )
     required = target_members * len(timeframes)
     progress: dict[str, Any] = {
-        "completed": len(completed),
-        "required": max(len(completed), required),
-        "fundingFiles": funding_files,
+        "completed": len(selected) * len(timeframes),
+        "required": required,
+        "fundingFiles": max(funding_files, len(selected)),
+        "mode": "user_approved_local",
+        "status": str(checkpoint.get("status") or "unknown"),
     }
-    preparation_mode = str(checkpoint.get("preparationMode") or "").strip()
-    if preparation_mode:
-        progress["mode"] = preparation_mode
-    active = checkpoint.get("inProgress")
-    if isinstance(active, dict):
-        instrument_id = str(active.get("instrumentId") or "")
-        timeframe = str(active.get("timeframe") or "")
-        request_count = max(0, int(active.get("requestCount") or 0))
-        row_count = max(0, int(active.get("rowCount") or 0))
-        max_pages = max(0, int(active.get("maxPages") or 0))
-        if instrument_id and timeframe and max_pages > 0:
-            active_mode = str(active.get("mode") or preparation_mode).strip()
-            progress["active"] = {
-                "instrumentId": instrument_id,
-                "timeframe": timeframe,
-                "requestCount": request_count,
-                "rowCount": row_count,
-                "oldestTimestampMs": active.get("oldestTimestampMs"),
-                "maxPages": max_pages,
-                "percent": round(min(100.0, request_count / max_pages * 100), 1),
-                "updatedAt": active.get("updatedAt"),
-            }
-            if active_mode:
-                progress["active"]["mode"] = active_mode
-                progress["mode"] = active_mode
-            if "baseRows" in active:
-                progress["active"]["baseRows"] = max(
-                    0, int(active.get("baseRows") or 0)
-                )
-            if "baseEndTime" in active:
-                progress["active"]["baseEndTime"] = active.get("baseEndTime")
     return progress
 
 

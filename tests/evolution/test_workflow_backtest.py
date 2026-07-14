@@ -448,34 +448,21 @@ class WorkflowBacktestTests(unittest.TestCase):
         self.assertEqual(projection["items"][0]["stage"], "backtest")
         self.assertEqual(projection["items"][0]["status"], "awaiting")
 
-    def test_projection_reads_incremental_official_collection_checkpoint(self) -> None:
+    def test_projection_reads_local_formal_collection_checkpoint(self) -> None:
         version = register_alpha191_observer(self.registry, self.workflow)
         contract = derive_strategy_data_contract(version, self.workflow)
         warehouse_root = self.root / "warehouse"
         layout = WarehouseLayout.from_root(warehouse_root)
         layout.ensure_directories()
         write_json_atomic(
-            layout.checkpointRoot / f"official-{contract.strategyDataContractId}.json",
+            layout.checkpointRoot
+            / "local-formal"
+            / f"{contract.strategyDataContractId}.json",
             {
-                "schemaVersion": "okx_official_history_collection_v1",
-                "completed": {
-                    "BTC-USDT-SWAP|4h": {"status": "collected"},
-                    "ETH-USDT-SWAP|4h": {"status": "collected"},
-                },
-                "inProgress": {
-                    "key": "SOL-USDT-SWAP|5m",
-                    "instrumentId": "SOL-USDT-SWAP",
-                    "timeframe": "5m",
-                    "requestCount": 1250,
-                    "rowCount": 124972,
-                    "oldestTimestampMs": 1700000000000,
-                    "maxPages": 6800,
-                    "updatedAt": "2026-07-12T06:30:00+00:00",
-                    "mode": "shared_incremental_refresh",
-                    "baseRows": 124000,
-                    "baseEndTime": "2026-07-12T06:25:00+00:00",
-                },
-                "preparationMode": "shared_incremental_refresh",
+                "status": "completed",
+                "source": "user_approved_local_market_data",
+                "selectedInstruments": ["BTC-USDT-SWAP", "ETH-USDT-SWAP"],
+                "requiredTimeframes": ["4h", "5m", "15m"],
             },
         )
 
@@ -487,23 +474,11 @@ class WorkflowBacktestTests(unittest.TestCase):
         self.assertEqual(
             projection["items"][0]["downloadProgress"],
             {
-                "completed": 2,
+                "completed": 6,
                 "required": 150,
-                "fundingFiles": 0,
-                "mode": "shared_incremental_refresh",
-                "active": {
-                    "instrumentId": "SOL-USDT-SWAP",
-                    "timeframe": "5m",
-                    "requestCount": 1250,
-                    "rowCount": 124972,
-                    "oldestTimestampMs": 1700000000000,
-                    "maxPages": 6800,
-                    "percent": 18.4,
-                    "updatedAt": "2026-07-12T06:30:00+00:00",
-                    "mode": "shared_incremental_refresh",
-                    "baseRows": 124000,
-                    "baseEndTime": "2026-07-12T06:25:00+00:00",
-                },
+                "fundingFiles": 2,
+                "mode": "user_approved_local",
+                "status": "completed",
             },
         )
 

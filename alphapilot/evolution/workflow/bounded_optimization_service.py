@@ -261,6 +261,9 @@ def _reviewed_workflow_run_ids(
     registry: RegistryRepository,
     root_strategy_version_id: str,
 ) -> set[str]:
+    # Older releases mislabeled an unsupported optimization family as a data
+    # blocker. Those audits are intentionally supersedable now that the
+    # family allowlist and structural fallback are available.
     return {
         str(event.payload.get("workflowRunId") or "")
         for event in registry.list_audit_events(
@@ -269,6 +272,10 @@ def _reviewed_workflow_run_ids(
             entity_id=root_strategy_version_id,
         )
         if event.payload.get("workflowRunId")
+        and not (
+            event.payload.get("reasonCode") == "parameter_allowlist_missing"
+            and event.payload.get("terminalStatus") == "data_evidence_blocked"
+        )
     }
 
 
