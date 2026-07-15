@@ -1,0 +1,32 @@
+{
+  "compatibilityPolicy": "historical artifacts remain readable but cannot claim V2 formal status",
+  "deprecatedFields": [
+    "basePassed",
+    "formalPassed",
+    "oosMetrics",
+    "fullBacktestExecuted"
+  ],
+  "eventGateModule": "alphapilot.research_screening.event_strategy_gates",
+  "executionFactFields": [
+    "eventReplayExecuted",
+    "freqtradeBacktestExecuted",
+    "portfolioBacktestExecuted",
+    "translationParityPassed"
+  ],
+  "portfolioGateModule": "alphapilot.research_screening.portfolio_strategy_gates",
+  "replacementFields": [
+    "developmentPrefilterPassed",
+    "walkForwardNumericPassed",
+    "simpleBenchmarkPassed",
+    "uncertaintyPassed",
+    "capitalCompetitionPassed",
+    "implementationParityPassed",
+    "formalDataProvenancePassed",
+    "cleanHoldoutPassed",
+    "overallBasicPassed",
+    "overallFormalPassed"
+  ],
+  "reportHash": "gate_migration_c6f65226cfa5930b8597593e8b7322c6de3d31d3c309dffc5be1ab0bc89faae8",
+  "schemaVersion": "gate_migration_report_v2",
+  "status": "active"
+}
