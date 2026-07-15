@@ -14,6 +14,11 @@ def test_methodology_reports_publish_explicit_v2_contract(tmp_path: Path) -> Non
 
     migration = json.loads(paths["gateMigration"].read_text(encoding="utf-8"))
     causality = json.loads(paths["causalityPolicy"].read_text(encoding="utf-8"))
+    parity = json.loads(paths["translationParity"].read_text(encoding="utf-8"))
+    benchmarks = json.loads(paths["benchmarkRegistry"].read_text(encoding="utf-8"))
+    bootstrap = json.loads(paths["bootstrapPolicy"].read_text(encoding="utf-8"))
+    holdout = json.loads(paths["holdoutPolicy"].read_text(encoding="utf-8"))
+    exits = json.loads(paths["exitGeometry"].read_text(encoding="utf-8"))
 
     assert migration["status"] == "active"
     assert migration["replacementFields"] == list(PUBLIC_GATE_FIELDS)
@@ -34,3 +39,14 @@ def test_methodology_reports_publish_explicit_v2_contract(tmp_path: Path) -> Non
         "ageSeconds",
         "publicationLagSeconds",
     ]
+    assert parity["identityMatchRequired"] == 1.0
+    assert parity["minimumNumericMatchRate"] == 0.99
+    assert benchmarks["eventBaselineMatching"]["sameExitGeometry"] is True
+    assert benchmarks["portfolioMomentumBaseline"]["samePitUniverse"] is True
+    assert bootstrap["minimumDraws"] == 5000
+    assert bootstrap["clusterKeys"] == ["symbol", "eventMonth"]
+    assert holdout["allowedAccessTransition"] == "0_to_1_once"
+    assert holdout["failedCampaignAction"] == "close_permanently"
+    assert exits["initialStopMayWiden"] is False
+    assert exits["eventRemainingTargetMinimumR"] == 2.0
+    assert exits["portfolioPerSymbolRTarget"] is None

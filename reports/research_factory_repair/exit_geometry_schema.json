@@ -1,0 +1,9 @@
+{
+  "eventRemainingTargetMinimumR": 2.0,
+  "initialStopMayWiden": false,
+  "optionalPartialAtR": 1.0,
+  "portfolioPerSymbolRTarget": null,
+  "positionSizing": "risk_amount_divided_by_initial_stop_distance",
+  "schemaHash": "exit_geometry_4fd3cc3a827e8af115829765111a6afe84810bcc9d3cc0dcd320a5567d4244e9",
+  "schemaVersion": "exit_geometry_schema_v2"
+}

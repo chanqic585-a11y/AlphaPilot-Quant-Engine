@@ -1,0 +1,20 @@
+{
+  "eventBaselineMatching": {
+    "sameCostScenario": true,
+    "sameEventCount": true,
+    "sameExitGeometry": true,
+    "sameHoldingHorizon": true,
+    "sameMonths": true,
+    "sameSymbols": true
+  },
+  "portfolioMomentumBaseline": {
+    "lookbackDays": 20,
+    "sameBetaPolicy": true,
+    "sameCosts": true,
+    "sameGrossExposure": true,
+    "samePitUniverse": true,
+    "sameRebalanceSchedule": true
+  },
+  "registryHash": "benchmark_registry_a56a794cc2904ed3bc95fc50da299dad47e684272e7396524a774a3dfca58134",
+  "schemaVersion": "benchmark_registry_v2"
+}

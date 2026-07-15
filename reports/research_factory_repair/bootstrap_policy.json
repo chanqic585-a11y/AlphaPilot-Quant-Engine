@@ -1,0 +1,19 @@
+{
+  "clusterKeys": [
+    "symbol",
+    "eventMonth"
+  ],
+  "confidenceLevels": [
+    0.8,
+    0.9,
+    0.95
+  ],
+  "formalEventBounds": [
+    "profitFactorLower90",
+    "averageNetRLower90"
+  ],
+  "minimumDraws": 5000,
+  "policyHash": "bootstrap_policy_50bed92457d6956aee1c0b8e0e4ef9aadc610127e0241877b54b6bebb7ce90ce",
+  "schemaVersion": "cluster_bootstrap_policy_v2",
+  "seedPolicy": "frozen_in_preregistration"
+}
