@@ -15,7 +15,7 @@ from .bounded_optimizer import (
 )
 from .repository import WorkflowRepository
 from .service import (
-    archive_strategy_version,
+    archive_strategy_campaign,
     create_challenger_version,
     queue_workflow_run,
 )
@@ -156,26 +156,12 @@ def _archive_exhausted_campaign(
 ) -> list[str]:
     """Retire every active version after bounded optimization is exhausted."""
 
-    archived_ids: list[str] = []
-    versions = sorted(
-        _campaign_versions(repository, root_strategy_version_id),
-        key=lambda version: (
-            int(_lineage(version).get("attemptNumber") or 0),
-            version.createdAt,
-            version.strategyVersionId,
-        ),
-        reverse=True,
+    result = archive_strategy_campaign(
+        repository,
+        root_strategy_version_id,
+        actor="system",
     )
-    for version in versions:
-        if version.status != "active":
-            continue
-        archive_strategy_version(
-            repository,
-            version.strategyVersionId,
-            actor="system",
-        )
-        archived_ids.append(version.strategyVersionId)
-    return archived_ids
+    return list(result.archivedStrategyVersionIds)
 
 
 def process_bounded_optimization_result(

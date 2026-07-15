@@ -16,6 +16,7 @@ from alphapilot.evolution.workflow import (
     WorkflowConflict,
     WorkflowRepository,
     WorkflowTransitionError,
+    archive_strategy_campaign,
     archive_strategy_version,
     build_workflow_projection,
     cancel_workflow_run,
@@ -233,6 +234,91 @@ class WorkflowOrchestratorTests(unittest.TestCase):
         self.assertGreaterEqual(
             projection["archivedItems"][0]["historyEventCount"], 2
         )
+
+    def test_archive_campaign_from_latest_attempt_archives_the_whole_chain_once(self) -> None:
+        root = self.register()
+        attempt_one = create_challenger_version(
+            self.workflow,
+            parent_strategy_version_id=root.strategyVersionId,
+            display_name="Optimization attempt 1",
+            source_type="bounded_optimization",
+            definition={
+                "entry": "trend_pullback",
+                "targetR": 2.0,
+                "optimizationLineage": {
+                    "rootStrategyVersionId": root.strategyVersionId,
+                    "attemptNumber": 1,
+                },
+            },
+            parameters={"threshold": 1.1},
+        )
+        attempt_two = create_challenger_version(
+            self.workflow,
+            parent_strategy_version_id=attempt_one.strategyVersionId,
+            display_name="Optimization attempt 2",
+            source_type="bounded_optimization",
+            definition={
+                "entry": "trend_pullback",
+                "targetR": 2.0,
+                "optimizationLineage": {
+                    "rootStrategyVersionId": root.strategyVersionId,
+                    "attemptNumber": 2,
+                },
+            },
+            parameters={"threshold": 1.2},
+        )
+        attempt_three = create_challenger_version(
+            self.workflow,
+            parent_strategy_version_id=attempt_two.strategyVersionId,
+            display_name="Optimization attempt 3",
+            source_type="bounded_optimization",
+            definition={
+                "entry": "trend_pullback",
+                "targetR": 2.0,
+                "optimizationLineage": {
+                    "rootStrategyVersionId": root.strategyVersionId,
+                    "attemptNumber": 3,
+                },
+            },
+            parameters={"threshold": 1.3},
+        )
+
+        archived = archive_strategy_campaign(
+            self.workflow,
+            attempt_three.strategyVersionId,
+            actor="user",
+        )
+        repeated = archive_strategy_campaign(
+            self.workflow,
+            attempt_three.strategyVersionId,
+            actor="user",
+        )
+
+        expected_ids = {
+            root.strategyVersionId,
+            attempt_one.strategyVersionId,
+            attempt_two.strategyVersionId,
+            attempt_three.strategyVersionId,
+        }
+        self.assertEqual(set(archived.campaignStrategyVersionIds), expected_ids)
+        self.assertEqual(set(archived.archivedStrategyVersionIds), expected_ids)
+        self.assertEqual(repeated.archivedStrategyVersionIds, ())
+        self.assertEqual(set(repeated.alreadyArchivedStrategyVersionIds), expected_ids)
+        self.assertTrue(
+            all(
+                version.status == "archived"
+                for version in self.workflow.list_strategy_versions()
+            )
+        )
+        self.assertTrue(
+            all(
+                self.workflow.get_latest_workflow_run(version_id).status == "cancelled"
+                for version_id in expected_ids
+            )
+        )
+        projection = build_workflow_projection(self.workflow)
+        self.assertEqual(projection["items"], [])
+        self.assertEqual(len(projection["archivedItems"]), 4)
 
     def test_projection_exposes_one_current_item_per_strategy_family(self) -> None:
         parent, running = self.start_initial_run()

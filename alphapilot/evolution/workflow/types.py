@@ -25,6 +25,15 @@ class StrategyVersionRecord:
 
 
 @dataclass(frozen=True)
+class StrategyCampaignArchiveResult:
+    requestedStrategyVersionId: str
+    rootStrategyVersionId: str
+    campaignStrategyVersionIds: tuple[str, ...]
+    archivedStrategyVersionIds: tuple[str, ...]
+    alreadyArchivedStrategyVersionIds: tuple[str, ...]
+
+
+@dataclass(frozen=True)
 class GateProfileRecord:
     gateProfileId: str
     profileKey: str

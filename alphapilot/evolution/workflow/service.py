@@ -24,6 +24,7 @@ from .states import (
 from .types import (
     FailureDiagnosisRecord,
     StageEventRecord,
+    StrategyCampaignArchiveResult,
     StrategyVersionRecord,
     WorkflowRunRecord,
 )
@@ -413,6 +414,133 @@ def archive_strategy_version(
         expected_status=version.status,
         next_status="archived",
         event=event,
+    )
+
+
+def _campaign_root_strategy_version_id(
+    repository: WorkflowRepository,
+    version: StrategyVersionRecord,
+) -> str:
+    lineage = version.definition.get("optimizationLineage")
+    explicit_root_id = (
+        str(lineage.get("rootStrategyVersionId") or "").strip()
+        if isinstance(lineage, dict)
+        else ""
+    )
+    current = version
+    seen: set[str] = set()
+    if explicit_root_id:
+        root = repository.get_strategy_version(explicit_root_id)
+        if root is None:
+            raise WorkflowConflict(
+                f"strategy_campaign_root_missing:{explicit_root_id}"
+            )
+        if root.strategyFamilyId != version.strategyFamilyId:
+            raise WorkflowConflict(
+                f"strategy_campaign_family_mismatch:{explicit_root_id}"
+            )
+        return root.strategyVersionId
+    while current.parentStrategyVersionId:
+        if current.strategyVersionId in seen:
+            raise WorkflowConflict(
+                f"strategy_campaign_parent_cycle:{current.strategyVersionId}"
+            )
+        seen.add(current.strategyVersionId)
+        parent = repository.get_strategy_version(current.parentStrategyVersionId)
+        if parent is None:
+            raise WorkflowConflict(
+                f"strategy_campaign_parent_missing:{current.parentStrategyVersionId}"
+            )
+        if parent.strategyFamilyId != version.strategyFamilyId:
+            raise WorkflowConflict(
+                f"strategy_campaign_family_mismatch:{parent.strategyVersionId}"
+            )
+        current = parent
+    return current.strategyVersionId
+
+
+def _strategy_campaign_versions(
+    repository: WorkflowRepository,
+    *,
+    root_strategy_version_id: str,
+    strategy_family_id: str,
+) -> list[StrategyVersionRecord]:
+    family_versions = [
+        version
+        for version in repository.list_strategy_versions()
+        if version.strategyFamilyId == strategy_family_id
+    ]
+    included_ids = {root_strategy_version_id}
+    changed = True
+    while changed:
+        changed = False
+        for version in family_versions:
+            lineage = version.definition.get("optimizationLineage")
+            lineage_root_id = (
+                str(lineage.get("rootStrategyVersionId") or "").strip()
+                if isinstance(lineage, dict)
+                else ""
+            )
+            belongs_to_campaign = (
+                version.strategyVersionId in included_ids
+                or lineage_root_id == root_strategy_version_id
+                or version.parentStrategyVersionId in included_ids
+            )
+            if belongs_to_campaign and version.strategyVersionId not in included_ids:
+                included_ids.add(version.strategyVersionId)
+                changed = True
+    return sorted(
+        (
+            version
+            for version in family_versions
+            if version.strategyVersionId in included_ids
+        ),
+        key=lambda version: (version.createdAt, version.strategyVersionId),
+        reverse=True,
+    )
+
+
+def archive_strategy_campaign(
+    repository: WorkflowRepository,
+    strategy_version_id: str,
+    *,
+    actor: str,
+) -> StrategyCampaignArchiveResult:
+    """Archive an optimization root and every descendant with one idempotent command."""
+
+    validate_actor(actor)
+    requested = repository.get_strategy_version(strategy_version_id)
+    if requested is None:
+        raise WorkflowConflict(f"strategy_version_missing:{strategy_version_id}")
+    root_strategy_version_id = _campaign_root_strategy_version_id(
+        repository,
+        requested,
+    )
+    campaign = _strategy_campaign_versions(
+        repository,
+        root_strategy_version_id=root_strategy_version_id,
+        strategy_family_id=requested.strategyFamilyId,
+    )
+    archived_ids: list[str] = []
+    already_archived_ids: list[str] = []
+    for version in campaign:
+        if version.status == "archived":
+            already_archived_ids.append(version.strategyVersionId)
+            continue
+        archive_strategy_version(
+            repository,
+            version.strategyVersionId,
+            actor=actor,
+        )
+        archived_ids.append(version.strategyVersionId)
+    return StrategyCampaignArchiveResult(
+        requestedStrategyVersionId=requested.strategyVersionId,
+        rootStrategyVersionId=root_strategy_version_id,
+        campaignStrategyVersionIds=tuple(
+            version.strategyVersionId for version in campaign
+        ),
+        archivedStrategyVersionIds=tuple(archived_ids),
+        alreadyArchivedStrategyVersionIds=tuple(already_archived_ids),
     )
 
 

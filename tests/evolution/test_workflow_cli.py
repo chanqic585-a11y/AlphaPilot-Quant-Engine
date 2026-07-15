@@ -78,6 +78,35 @@ class WorkflowCliTests(unittest.TestCase):
             self.fail(f"workflow CLI command is unavailable: {error}")
         return exit_code, json.loads(output.getvalue())
 
+    def test_archive_campaign_command_is_available_and_idempotent(self) -> None:
+        self.run_cli("bootstrap-short-cycle")
+        item = self.run_cli("projection")["items"][0]
+
+        archived = self.run_cli(
+            "archive-campaign",
+            "--strategy-version-id",
+            item["strategyVersionId"],
+        )
+        repeated = self.run_cli(
+            "archive-campaign",
+            "--strategy-version-id",
+            item["strategyVersionId"],
+        )
+
+        self.assertEqual(
+            archived["rootStrategyVersionId"],
+            item["strategyVersionId"],
+        )
+        self.assertEqual(
+            archived["archivedStrategyVersionIds"],
+            [item["strategyVersionId"]],
+        )
+        self.assertEqual(repeated["archivedStrategyVersionIds"], [])
+        self.assertEqual(
+            repeated["alreadyArchivedStrategyVersionIds"],
+            [item["strategyVersionId"]],
+        )
+
     def test_data_prefetch_stops_before_memory_heavy_snapshot_freeze(self) -> None:
         workflow = Mock()
         registry = Mock()

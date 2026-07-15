@@ -36,6 +36,7 @@ from .data_contract import derive_strategy_data_contract
 from .projection import build_workflow_projection
 from .repository import WorkflowRepository
 from .service import (
+    archive_strategy_campaign,
     archive_strategy_version,
     cancel_workflow_run,
     create_challenger_version,
@@ -454,6 +455,8 @@ def build_parser() -> argparse.ArgumentParser:
 
     archive = commands.add_parser("archive")
     archive.add_argument("--strategy-version-id", required=True)
+    archive_campaign = commands.add_parser("archive-campaign")
+    archive_campaign.add_argument("--strategy-version-id", required=True)
     advance = commands.add_parser("advance")
     advance.add_argument("--strategy-version-id", required=True)
     commands.add_parser("run-all-awaiting")
@@ -685,6 +688,12 @@ def _execute(args: argparse.Namespace) -> dict[str, Any]:
         if args.command == "archive":
             return asdict(
                 archive_strategy_version(
+                    workflow, args.strategy_version_id, actor="user"
+                )
+            )
+        if args.command == "archive-campaign":
+            return asdict(
+                archive_strategy_campaign(
                     workflow, args.strategy_version_id, actor="user"
                 )
             )

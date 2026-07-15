@@ -18,6 +18,7 @@ from .data_contract import derive_strategy_data_contract, timeframe_plan
 from .projection import build_workflow_projection
 from .repository import WorkflowRepository
 from .service import (
+    archive_strategy_campaign,
     archive_strategy_version,
     cancel_workflow_run,
     checkpoint_workflow_run,
@@ -38,6 +39,7 @@ from .types import (
     GateProfileRecord,
     EvaluationBindingRecord,
     StageEventRecord,
+    StrategyCampaignArchiveResult,
     StrategyVersionRecord,
     StrategyDataContractRecord,
     WorkflowRunRecord,
@@ -52,6 +54,7 @@ __all__ = [
     "EvaluationBindingRecord",
     "GateProfileRecord",
     "StageEventRecord",
+    "StrategyCampaignArchiveResult",
     "StrategyDataContractRecord",
     "StrategyVersionRecord",
     "WorkflowConflict",
@@ -59,6 +62,7 @@ __all__ = [
     "WorkflowRepository",
     "WorkflowRunRecord",
     "WorkflowTransitionError",
+    "archive_strategy_campaign",
     "archive_strategy_version",
     "build_workflow_projection",
     "cancel_workflow_run",
