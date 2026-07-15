@@ -1,0 +1,301 @@
+{
+  "auditHash": "api_capability_audit_3b96eace89e89edc576887b3017ed233cfc7968f819e2e2515895bbd0f4eb98a",
+  "capabilities": [
+    {
+      "capabilityId": "okx_history_candles",
+      "dataType": "ohlcv",
+      "documentationUrl": "https://www.okx.com/docs-v5/en/",
+      "earliestAvailable": null,
+      "endpoint": "GET /api/v5/market/history-candles",
+      "exchange": "OKX",
+      "formalHistoricalEligible": true,
+      "historicalDepth": "recent_years",
+      "knownLimitations": [
+        "API documentation does not promise a fixed earliest date per instrument"
+      ],
+      "latestAvailable": "current",
+      "pagination": "after/before timestamp; maximum 300 rows",
+      "publicOnly": true,
+      "rateLimit": "20 requests per 2 seconds per IP",
+      "requiresAuth": false,
+      "symbolCoverage": "active OKX spot/futures/swap instruments"
+    },
+    {
+      "capabilityId": "okx_historical_download_ohlc",
+      "dataType": "ohlcv_bulk",
+      "documentationUrl": "https://www.okx.com/en-gb/historical-data",
+      "earliestAvailable": "2023-07",
+      "endpoint": "Historical Market Data / Candlestick download",
+      "exchange": "OKX",
+      "formalHistoricalEligible": true,
+      "historicalDepth": "from_2023_07",
+      "knownLimitations": [
+        "archive coverage must be verified per instrument and partition"
+      ],
+      "latestAvailable": "published_archives",
+      "pagination": "download partitions",
+      "publicOnly": true,
+      "rateLimit": "website download service; no REST limit published",
+      "requiresAuth": false,
+      "symbolCoverage": "published OKX archive coverage"
+    },
+    {
+      "capabilityId": "okx_historical_download_funding",
+      "dataType": "funding",
+      "documentationUrl": "https://www.okx.com/en-gb/historical-data",
+      "earliestAvailable": "2022-03",
+      "endpoint": "Historical Market Data / Funding rate download",
+      "exchange": "OKX",
+      "formalHistoricalEligible": true,
+      "historicalDepth": "from_2022_03",
+      "knownLimitations": [
+        "archive coverage must be verified per instrument and partition"
+      ],
+      "latestAvailable": "published_archives",
+      "pagination": "download partitions",
+      "publicOnly": true,
+      "rateLimit": "website download service; no REST limit published",
+      "requiresAuth": false,
+      "symbolCoverage": "published OKX perpetual instruments"
+    },
+    {
+      "capabilityId": "okx_open_interest_current",
+      "dataType": "open_interest",
+      "documentationUrl": "https://www.okx.com/docs-v5/en/",
+      "earliestAvailable": null,
+      "endpoint": "GET /api/v5/public/open-interest",
+      "exchange": "OKX",
+      "formalHistoricalEligible": false,
+      "historicalDepth": "current_snapshot",
+      "knownLimitations": [
+        "public endpoint exposes current open interest, not long historical series"
+      ],
+      "latestAvailable": "current",
+      "pagination": "none; current snapshot",
+      "publicOnly": true,
+      "rateLimit": "20 requests per 2 seconds per IP",
+      "requiresAuth": false,
+      "symbolCoverage": "active OKX futures/swap/option instruments"
+    },
+    {
+      "capabilityId": "okx_liquidation_orders_recent",
+      "dataType": "liquidation",
+      "documentationUrl": "https://www.okx.com/docs-v5/en/",
+      "earliestAvailable": null,
+      "endpoint": "GET /api/v5/public/liquidation-orders",
+      "exchange": "OKX",
+      "formalHistoricalEligible": false,
+      "historicalDepth": "recent_only",
+      "knownLimitations": [
+        "insufficient documented depth for multi-year formal validation"
+      ],
+      "latestAvailable": "recent",
+      "pagination": "before/after timestamp",
+      "publicOnly": true,
+      "rateLimit": "20 requests per 2 seconds per IP",
+      "requiresAuth": false,
+      "symbolCoverage": "supported OKX derivatives instruments"
+    },
+    {
+      "capabilityId": "okx_instruments_current",
+      "dataType": "instrument_lifecycle",
+      "documentationUrl": "https://www.okx.com/docs-v5/en/",
+      "earliestAvailable": null,
+      "endpoint": "GET /api/v5/public/instruments",
+      "exchange": "OKX",
+      "formalHistoricalEligible": false,
+      "historicalDepth": "current_snapshot",
+      "knownLimitations": [
+        "does not reconstruct historical point-in-time tradable universe"
+      ],
+      "latestAvailable": "current",
+      "pagination": "instrument type query",
+      "publicOnly": true,
+      "rateLimit": "20 requests per 2 seconds per IP",
+      "requiresAuth": false,
+      "symbolCoverage": "current OKX instruments"
+    },
+    {
+      "capabilityId": "binance_continuous_klines",
+      "dataType": "ohlcv",
+      "documentationUrl": "https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/market-data",
+      "earliestAvailable": null,
+      "endpoint": "GET /fapi/v1/continuousKlines",
+      "exchange": "Binance",
+      "formalHistoricalEligible": true,
+      "historicalDepth": "exchange_retained_history",
+      "knownLimitations": [
+        "earliest coverage varies by contract"
+      ],
+      "latestAvailable": "current",
+      "pagination": "startTime/endTime; maximum 1500 rows",
+      "publicOnly": true,
+      "rateLimit": "IP request weight based on limit",
+      "requiresAuth": false,
+      "symbolCoverage": "Binance USD-M continuous contracts"
+    },
+    {
+      "capabilityId": "binance_funding_history",
+      "dataType": "funding",
+      "documentationUrl": "https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/market-data",
+      "earliestAvailable": null,
+      "endpoint": "GET /fapi/v1/fundingRate",
+      "exchange": "Binance",
+      "formalHistoricalEligible": true,
+      "historicalDepth": "exchange_retained_history",
+      "knownLimitations": [
+        "coverage begins at each instrument's own funding history"
+      ],
+      "latestAvailable": "current",
+      "pagination": "startTime/endTime; maximum 1000 rows",
+      "publicOnly": true,
+      "rateLimit": "shared 500 requests per 5 minutes per IP",
+      "requiresAuth": false,
+      "symbolCoverage": "Binance USD-M perpetual instruments"
+    },
+    {
+      "capabilityId": "binance_open_interest_history",
+      "dataType": "open_interest",
+      "documentationUrl": "https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/market-data",
+      "earliestAvailable": "rolling_1_month",
+      "endpoint": "GET /futures/data/openInterestHist",
+      "exchange": "Binance",
+      "formalHistoricalEligible": false,
+      "historicalDepth": "latest_1_month",
+      "knownLimitations": [
+        "official endpoint limits history to the latest one month"
+      ],
+      "latestAvailable": "current",
+      "pagination": "startTime/endTime; maximum 500 rows",
+      "publicOnly": true,
+      "rateLimit": "1000 requests per 5 minutes per IP",
+      "requiresAuth": false,
+      "symbolCoverage": "Binance USD-M instruments with statistics"
+    },
+    {
+      "capabilityId": "binance_basis_history",
+      "dataType": "basis",
+      "documentationUrl": "https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/market-data",
+      "earliestAvailable": "rolling_30_days",
+      "endpoint": "GET /futures/data/basis",
+      "exchange": "Binance",
+      "formalHistoricalEligible": false,
+      "historicalDepth": "latest_30_days",
+      "knownLimitations": [
+        "official endpoint limits history to the latest 30 days"
+      ],
+      "latestAvailable": "current",
+      "pagination": "startTime/endTime; maximum 500 rows",
+      "publicOnly": true,
+      "rateLimit": "IP request weight 0, subject to general limits",
+      "requiresAuth": false,
+      "symbolCoverage": "Binance USD-M pairs and contract types"
+    },
+    {
+      "capabilityId": "binance_exchange_info_current",
+      "dataType": "instrument_lifecycle",
+      "documentationUrl": "https://developers.binance.com/en/docs/catalog/core-trading-derivatives-trading-usd-s-m-futures/api/rest-api/market-data",
+      "earliestAvailable": null,
+      "endpoint": "GET /fapi/v1/exchangeInfo",
+      "exchange": "Binance",
+      "formalHistoricalEligible": false,
+      "historicalDepth": "current_snapshot",
+      "knownLimitations": [
+        "current rules do not reconstruct historical PIT membership or delist state"
+      ],
+      "latestAvailable": "current",
+      "pagination": "none",
+      "publicOnly": true,
+      "rateLimit": "IP weight 1",
+      "requiresAuth": false,
+      "symbolCoverage": "current Binance USD-M instruments"
+    }
+  ],
+  "checkedAt": "2026-07-15T23:41:36Z",
+  "exchangeDecision": {
+    "binanceFormalHistoricalCorePassed": false,
+    "crossExchangeCoreFieldSplicingAllowed": false,
+    "fallbackExchangeBeforePreregistration": "Binance",
+    "okxFormalHistoricalCorePassed": false,
+    "preferredExchange": "OKX",
+    "reason": "OKX and Binance both expose useful public derivatives data, but neither documented public stack supplies the long historical OI, liquidation and PIT universe evidence needed by at least two V2 directions.",
+    "sameExchangeCoreDataRequired": true
+  },
+  "livePublicProbes": [
+    {
+      "ok": true,
+      "responseBytes": 53,
+      "responseSha256": "5f2ed95c8161cd101f55e122d05cf09abf011cb0950ea5c92c9d77489392802d",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "topLevelType": "dict",
+      "url": "https://www.okx.com/api/v5/public/time"
+    },
+    {
+      "ok": true,
+      "responseBytes": 189,
+      "responseSha256": "8e314e9c110dd79f9c054c4b63fa4954d2bc6233d7da26fb896c6248717f462a",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "topLevelType": "dict",
+      "url": "https://www.okx.com/api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP"
+    },
+    {
+      "ok": true,
+      "responseBytes": 227,
+      "responseSha256": "f6d391dc62357d4e921c0e15f278d9a5060be54567cc782c0cbb7cb6ab1ea60d",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "topLevelType": "dict",
+      "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=BTC-USDT-SWAP&limit=1"
+    },
+    {
+      "ok": true,
+      "responseBytes": 131,
+      "responseSha256": "aa8e0451a1881533d2b627f6e372e3a62c6033f06086a7ebce2ba52face7e98b",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "topLevelType": "dict",
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1"
+    },
+    {
+      "ok": true,
+      "responseBytes": 28,
+      "responseSha256": "3e5802c81f2301d46fb8a778435afc7569780ff0cfb81dc1e64aa9d8c8c037b4",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "serverTime"
+      ],
+      "topLevelType": "dict",
+      "url": "https://fapi.binance.com/fapi/v1/time"
+    },
+    {
+      "ok": true,
+      "responseBytes": 172,
+      "responseSha256": "42f53c83c2825dd58ec721561d1c68e16657d3bae6a0884ad5a75aeaf363fffb",
+      "statusCode": 200,
+      "topLevelKeys": [],
+      "topLevelType": "list",
+      "url": "https://fapi.binance.com/futures/data/openInterestHist?symbol=BTCUSDT&period=1h&limit=1"
+    }
+  ],
+  "publicDataOnly": true,
+  "schemaVersion": "derivatives_api_capability_audit_v2",
+  "status": "completed"
+}

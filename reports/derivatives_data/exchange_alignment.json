@@ -1,0 +1,54 @@
+{
+  "alignmentHash": "exchange_alignment_5dc7da13d4e69cc21242a83a7282bf7346b59e4d3a277f7aae2a1c30e1c11a80",
+  "checkedAt": "2026-07-15T23:41:36Z",
+  "crossExchangeCoreFieldSplicingAllowed": false,
+  "decision": "no_exchange_selected_fewer_than_two_formal_directions",
+  "directions": {
+    "A1": {
+      "formalReady": false,
+      "missing": [
+        "verifiedSameExchangeOhlcv",
+        "historicalOpenInterest",
+        "realLiquidation",
+        "sameExchangeCoreFields"
+      ],
+      "sameExchangeCandidates": []
+    },
+    "A2": {
+      "formalReady": false,
+      "missing": [
+        "verifiedSameExchangeOhlcv",
+        "historicalOpenInterest",
+        "sameExchangeCoreFields",
+        "realLiquidation"
+      ],
+      "sameExchangeCandidates": []
+    },
+    "B": {
+      "formalReady": false,
+      "missing": [
+        "sameExchangeVerifiedPerpetualOhlcv",
+        "sameExchangeHistoricalFunding",
+        "sameExchangeHistoricalOpenInterest",
+        "sameExchangeHistoricalSpotPerpetualBasis"
+      ],
+      "sameExchangeCandidates": []
+    },
+    "C": {
+      "formalReady": false,
+      "missing": [
+        "pitTradability",
+        "pitLiquidity",
+        "listingDelisting",
+        "historicalContractUniverse"
+      ],
+      "sameExchangeCandidates": []
+    }
+  },
+  "fallbackExchangeBeforePreregistration": "Binance",
+  "formalAlignmentPassed": false,
+  "preferredExchange": "OKX",
+  "sameExchangeCoreDataRequired": true,
+  "schemaVersion": "derivatives_exchange_alignment_v2",
+  "selectedFormalExchange": null
+}

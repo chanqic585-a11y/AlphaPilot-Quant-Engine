@@ -1,0 +1,18 @@
+{
+  "campaignStarted": false,
+  "checkedAt": "2026-07-15T23:41:36Z",
+  "consoleImported": false,
+  "decisionHash": "campaign_stop_decision_1bd1043fc3e3348273f4b51842d571f078d8007946d027916bd9285f64eab9dd",
+  "demoArmed": false,
+  "formalPassEvidenceCreated": false,
+  "formalReadyDirectionCount": 0,
+  "formalTrialsRun": 0,
+  "holdoutUnlocked": false,
+  "minimumFormalDirectionCount": 2,
+  "nextAction": "obtain_same_exchange_historical_derivatives_and_pit_universe_evidence",
+  "ordersCreated": false,
+  "preregistrationCreated": false,
+  "reason": "fewer_than_two_formal_data_ready_directions",
+  "schemaVersion": "v13_27_1_11_campaign_stop_decision_v2",
+  "status": "data_not_ready"
+}

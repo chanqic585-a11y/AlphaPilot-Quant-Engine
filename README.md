@@ -5139,6 +5139,20 @@ A formal backtest pass ends at the applicable backtest state. It does not
 create local-forward evidence and does not grant Demo or Live execution
 permission. No historical rows or migrations are deleted or rewritten.
 
+## V13.27.1.11 Research Factory Repair V2
+
+V13.27.1.11 repairs causal clocks, typed event/portfolio gates, translation
+parity, hierarchical testing, capital competition, cluster bootstrap, and the
+one-shot clean-holdout contract. It also adds a resumable public-data collector
+and a reproducible derivatives-data readiness audit.
+
+The 2026-07-16 audit verified all 32 registered source files without a hash
+mismatch and reached an honest `data_not_ready` result: zero top-level
+directions met the requirement for same-exchange formal historical evidence.
+The run therefore stopped before preregistration, backtesting, or holdout access.
+No Console import, Demo/Live ARM, order, credential, or private exchange API was
+used. See `docs/V13.27.1.11-research-factory-data-readiness-closeout.md`.
+
 ## Historical Next Versions (Superseded)
 
 The entries below are retained as historical roadmap notes. Any Local Forward

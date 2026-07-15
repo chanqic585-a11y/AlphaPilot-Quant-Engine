@@ -1,0 +1,75 @@
+{
+  "schemaVersion": "v13.27.1.11-baseline-closeout-v1",
+  "status": "baseline_closeout_complete",
+  "recordedAtUtc": "2026-07-15T22:44:17.8423746Z",
+  "consoleLocalMain": "1f4b8651b66d46087cf42e1cca4764f818f30f69",
+  "consoleOriginMainBefore": "1f4b8651b66d46087cf42e1cca4764f818f30f69",
+  "consoleOriginMainAfter": "1f4b8651b66d46087cf42e1cca4764f818f30f69",
+  "consolePushed": true,
+  "consoleTag": "v13.27.1.10",
+  "quantFeatureBranch": "feature/revised-demo-backtest-first",
+  "quantFeatureHead": "413b8dc59e7064ce29af3d1bc40bc1dafa61b5f5",
+  "quantMainBefore": "13b7557",
+  "quantMainAfter": "e6855f44dee40272657676cfdb83d566854a3cd9",
+  "quantMerged": true,
+  "quantOriginalDirtyWorktreePreserved": true,
+  "quantTag": "v13.27.1.10",
+  "docsHeadBefore": "037c6f044fc59e2888e8c293f0496e9ccf73e915",
+  "docsHeadAfter": "7ac61814e61d29df64e164055e4c81d30d274494",
+  "docsTag": "v13.27.1.10-docs",
+  "preExistingChanges": [
+    {
+      "repository": "AlphaPilot-Quant-Engine",
+      "path": "reports/archived_failed_strategy_failure_attribution_summary.md",
+      "state": "modified",
+      "preserved": true
+    },
+    {
+      "repository": "AlphaPilot-Control-Console",
+      "path": "backups/",
+      "state": "untracked_runtime_backup",
+      "preserved": true
+    }
+  ],
+  "acceptanceCommands": {
+    "quant": [
+      "python -m pytest tests -q --import-mode=importlib",
+      "python -m compileall alphapilot",
+      "python -m alphapilot.scripts.validate_config",
+      "powershell -ExecutionPolicy Bypass -File scripts\\check_safety.ps1",
+      "git diff --check"
+    ],
+    "console": [
+      "python -m unittest discover -s tests -v",
+      "python -m compileall alphapilot_control_console",
+      "node --check web/app.js",
+      "python -m alphapilot_control_console.http_app --smoke",
+      "git diff --check"
+    ],
+    "docs": [
+      "git diff --check"
+    ]
+  },
+  "acceptanceResults": {
+    "quant": {
+      "pytest": "passed: 530 tests and 157 subtests",
+      "compileall": "passed",
+      "validateConfig": "passed",
+      "safetyScan": "passed; no enabled live, trade, or withdraw integration",
+      "diffCheck": "passed"
+    },
+    "console": {
+      "unittest": "passed: 417 tests and 66 subtests",
+      "compileall": "passed",
+      "javascriptSyntax": "passed",
+      "httpSmoke": "passed",
+      "diffCheck": "passed"
+    },
+    "docs": {
+      "phase3PlanArchived": true,
+      "phase4PlanArchived": true,
+      "canonicalV2PromptArchived": true,
+      "diffCheck": "passed"
+    }
+  }
+}

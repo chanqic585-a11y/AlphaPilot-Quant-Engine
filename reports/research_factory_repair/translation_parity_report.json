@@ -1,0 +1,25 @@
+{
+  "identityFields": [
+    "signalId",
+    "symbol",
+    "direction",
+    "decisionBar",
+    "entryBar",
+    "exitTimestamp",
+    "exitReasonClass"
+  ],
+  "identityMatchRequired": 1.0,
+  "minimumNumericMatchRate": 0.99,
+  "numericFields": [
+    "entryPrice",
+    "exitPrice",
+    "grossR",
+    "feesR",
+    "fundingR",
+    "slippageR",
+    "netR"
+  ],
+  "outsideTolerancePolicy": "every_remainder_requires_explicit_explanation",
+  "policyHash": "translation_parity_policy_5574f9f5dc25b35a7424aa478eea673632fdb31945f59b91c065381a8219686f",
+  "schemaVersion": "translation_parity_policy_v2"
+}

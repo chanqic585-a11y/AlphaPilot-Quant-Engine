@@ -1,0 +1,15 @@
+{
+  "datasetCount": 32,
+  "duplicateDatasetIds": [],
+  "duplicateSourcePaths": [],
+  "primaryKey": [
+    "exchange",
+    "instrumentId",
+    "dataType",
+    "timestampUtc"
+  ],
+  "rowLevelDeduplicationStatus": "not_applicable_no_new_rows_staged",
+  "schemaVersion": "derivatives_deduplication_report_v2",
+  "status": "scanned_existing_manifest_no_new_collection",
+  "userDataModified": false
+}

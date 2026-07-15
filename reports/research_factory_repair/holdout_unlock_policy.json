@@ -1,0 +1,19 @@
+{
+  "allowedAccessTransition": "0_to_1_once",
+  "failedCampaignAction": "close_permanently",
+  "policyHash": "holdout_policy_78badc0b8c31e5df417dc1c07c45ce770e8b1334613144ddedf3f189e0f389ee",
+  "recommendedHoldoutSymbolShare": 0.3,
+  "recommendedResearchSymbolShare": 0.7,
+  "requiredFrozenHashes": [
+    "codeCommit",
+    "dataSnapshotHash",
+    "preregistrationHash",
+    "strategyDefinitionHash",
+    "exitModelHash",
+    "benchmarkHash",
+    "riskCapitalHash",
+    "environmentManifestHash"
+  ],
+  "schemaVersion": "clean_holdout_policy_v2",
+  "technicalReplay": "pre_metric_incident_and_byte_identical_frozen_hashes_only"
+}

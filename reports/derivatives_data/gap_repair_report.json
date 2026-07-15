@@ -1,0 +1,34 @@
+{
+  "reason": "no single public exchange source can fill the formal historical evidence gaps",
+  "repairAttempted": false,
+  "repairPolicy": "scan_existing_then_repair_explicit_gaps_only",
+  "schemaVersion": "derivatives_gap_repair_report_v2",
+  "status": "not_started_data_capability_stop",
+  "unresolvedFormalEvidence": {
+    "A1": [
+      "verifiedSameExchangeOhlcv",
+      "historicalOpenInterest",
+      "realLiquidation",
+      "sameExchangeCoreFields"
+    ],
+    "A2": [
+      "verifiedSameExchangeOhlcv",
+      "historicalOpenInterest",
+      "sameExchangeCoreFields",
+      "realLiquidation"
+    ],
+    "B": [
+      "sameExchangeVerifiedPerpetualOhlcv",
+      "sameExchangeHistoricalFunding",
+      "sameExchangeHistoricalOpenInterest",
+      "sameExchangeHistoricalSpotPerpetualBasis"
+    ],
+    "C": [
+      "pitTradability",
+      "pitLiquidity",
+      "listingDelisting",
+      "historicalContractUniverse"
+    ]
+  },
+  "userDataModified": false
+}

@@ -1,0 +1,21 @@
+{
+  "availableAtRule": "availableAt <= signalDecisionTime",
+  "boundaryCrossingEvents": "drop_not_truncate",
+  "embargoPolicy": "frozen_in_preregistration",
+  "fundingPolicy": "settled_after_publication; predicted_requires_contemporaneous_public_proof",
+  "nextBarExecution": true,
+  "openInterestPolicy": "delay_one_source_period_when_publication_latency_is_unproven",
+  "pitUniversePolicy": "completed_source_bar_only",
+  "policyHash": "causality_policy_82b9d9b40c6120ebd0bc46b4ea3a9ab3e88121401b4b2e8fd7dceb30ba2ee685",
+  "purgePolicy": "at_least_maximum_holding_horizon",
+  "requiredObservationTimestamps": [
+    "eventTimestamp",
+    "observedAt",
+    "publishedAt",
+    "availableAt",
+    "sourceTimestamp",
+    "ageSeconds",
+    "publicationLagSeconds"
+  ],
+  "schemaVersion": "causality_policy_v2"
+}

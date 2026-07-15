@@ -1,0 +1,14 @@
+{
+  "apiCapabilityAuditHash": "api_capability_audit_3b96eace89e89edc576887b3017ed233cfc7968f819e2e2515895bbd0f4eb98a",
+  "campaignEligible": false,
+  "createdAt": "2026-07-15T23:41:36Z",
+  "dataManifestHash": "data_manifest_2b9f8cc463bc49e3cfbe87546ca528a697fe9e1a9a7f5003b89714e36e6862fa",
+  "environmentHash": "environment_manifest_bf83cb7cb17360e0510f94d8acf90c206241377ce3229f87ea81cab814ba5b32",
+  "formalReadyDirectionCount": 0,
+  "immutable": true,
+  "readinessHash": "data_readiness_v2_3e6c40410d985d63d72198f864f08378c1701f563cb5fc89fc3f6fc05f57ed44",
+  "schemaVersion": "v13_27_1_11_data_snapshot_descriptor_v2",
+  "snapshotId": "data_snapshot_61254838e8e750d0374632c752fdaa8169eedb9c8240e8a5da912ada521f6562",
+  "sourceCatalogHash": "74ca388b82dc6f0613e8c1738904b78d2347afe81e9f2ccda07b0174225458c7",
+  "status": "data_not_ready"
+}

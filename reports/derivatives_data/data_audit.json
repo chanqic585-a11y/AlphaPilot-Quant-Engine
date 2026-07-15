@@ -1,0 +1,44 @@
+{
+  "auditHash": "data_audit_b610f5b9679b90630a6720fb22f20b18266860a6cc265319ca46b64744be5383",
+  "dataTypeCounts": {
+    "funding": 8,
+    "ohlcv": 24
+  },
+  "exchangeCounts": {
+    "binance": 8,
+    "unverified_local_exchange": 24
+  },
+  "formalReadyDirectionCount": 0,
+  "knownBlockingEvidence": {
+    "A1": [
+      "verifiedSameExchangeOhlcv",
+      "historicalOpenInterest",
+      "realLiquidation",
+      "sameExchangeCoreFields"
+    ],
+    "A2": [
+      "verifiedSameExchangeOhlcv",
+      "historicalOpenInterest",
+      "sameExchangeCoreFields",
+      "realLiquidation"
+    ],
+    "B": [
+      "sameExchangeVerifiedPerpetualOhlcv",
+      "sameExchangeHistoricalFunding",
+      "sameExchangeHistoricalOpenInterest",
+      "sameExchangeHistoricalSpotPerpetualBasis"
+    ],
+    "C": [
+      "pitTradability",
+      "pitLiquidity",
+      "listingDelisting",
+      "historicalContractUniverse"
+    ]
+  },
+  "proxyFieldsNeverPromotedToFormal": true,
+  "sameExchangeCoreDataPassed": false,
+  "schemaVersion": "v13_27_1_11_data_audit_v2",
+  "sourceFileCount": 32,
+  "sourceHashMismatchCount": 0,
+  "status": "data_not_ready"
+}

@@ -1,0 +1,75 @@
+{
+  "artifacts": {
+    "apiCapabilityAudit": {
+      "csv": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\api_capability_audit.csv",
+      "csvSha256": "c96f88af57aad02147be47cf11ea9223b9137609071874dbc0d038dcc05bc961",
+      "parquet": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\api_capability_audit.parquet",
+      "parquetSha256": "9f98678b59cdbdb7b077e85d7b67d7e8806015fa8bdf8e06ffdea08dfa843f9e"
+    },
+    "campaignStopDecision": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\research_factory_repair\\campaign_stop_decision.json",
+      "jsonSha256": "532d81432f92fad8e4d199e2d81375a91aba603ef187f6d8aeecb9b6c4b92e17"
+    },
+    "dataAudit": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_audit.json",
+      "jsonSha256": "0ff4b0e47e89b38c8ba6a1ff79d75039e9c4e4298065208b56e4bf525dc5247d"
+    },
+    "dataManifest": {
+      "csv": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_manifest.csv",
+      "csvSha256": "b33366cb68e054a1ed8c9e5c995e9aa32bda8aef6ba7d0d7fe205998fba8e312",
+      "parquet": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_manifest.parquet",
+      "parquetSha256": "4f1f8f57f0e2dc56c3234ee201d447f2f5cb88c78684ca22635ab38570ade6c3"
+    },
+    "dataReadiness": {
+      "csv": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_readiness.csv",
+      "csvSha256": "ec208ca99a2ae983c946061f9d2a1e7fa1f51c6cd5b4a149cd4cd35a2bb955ce",
+      "parquet": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_readiness.parquet",
+      "parquetSha256": "7cfe8bf5d9af62215ad46e18a10a0191993509f3b7e9a264efb8e72e29f11bb5"
+    },
+    "dataReadinessSummary": {
+      "markdown": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_readiness.md",
+      "markdownSha256": "e1e6bdb52242f0aa404ab7bc5c0ca7b0afbccb71041c6e11fb68ebe42df6133b"
+    },
+    "dataSnapshot": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\research\\data_snapshots\\data_snapshot_61254838e8e750d0374632c752fdaa8169eedb9c8240e8a5da912ada521f6562.json",
+      "jsonSha256": "fbbd96a6f3d66ed7dd21bbfee49100877c3cd3158cfaf8054f9f060d46f44909"
+    },
+    "dataSourceRegistry": {
+      "csv": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_source_registry.csv",
+      "csvSha256": "b33366cb68e054a1ed8c9e5c995e9aa32bda8aef6ba7d0d7fe205998fba8e312",
+      "parquet": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_source_registry.parquet",
+      "parquetSha256": "4f1f8f57f0e2dc56c3234ee201d447f2f5cb88c78684ca22635ab38570ade6c3"
+    },
+    "deduplicationReport": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\deduplication_report.json",
+      "jsonSha256": "37848f9270f311aebd2cabad4f4c3e8e673b395f85480b05fbf9a1db5080ca94"
+    },
+    "downloadResumeManifest": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\download_resume_manifest.json",
+      "jsonSha256": "3be2276bf20086816514792287d9400180b4b02bfed1a86d9b106a9b68a90fba"
+    },
+    "environmentLimitAudit": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\environment_limit_audit.json",
+      "jsonSha256": "6465926f3aae16746289ce2790609b62d3d49ebe06cacc4e8ab255d5f833dbc2"
+    },
+    "environmentManifest": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\reproducibility\\environment_manifest.json",
+      "jsonSha256": "18f37e104f1fc79034eef84fdbe3f2dd6c4972d3e065c1239099c5e479d59f19"
+    },
+    "exchangeAlignment": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\exchange_alignment.json",
+      "jsonSha256": "4a92a3d5c9a72587e2b12fd892e61beae05bf8d66e526e3d57e4b0f1dd1c250c"
+    },
+    "gapRepairReport": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\gap_repair_report.json",
+      "jsonSha256": "c42e268ac0dd151290f91b23c860e5ce27149e29dc9c4e96be3be20ca68d5b56"
+    },
+    "pitUniverseManifest": {
+      "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\pit_universe_manifest.json",
+      "jsonSha256": "a0a9ab6d732c5760198f7cf3b502ebcc28f75d52c76c9a3bd8119b85b5c16469"
+    }
+  },
+  "manifestHash": "derivatives_data_artifact_manifest_40aef9abdac5519c213603f2f2ef4d1558a78d3e53e49a671645e992f4e394da",
+  "schemaVersion": "derivatives_data_artifact_manifest_v2",
+  "status": "data_not_ready"
+}
