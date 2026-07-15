@@ -1,0 +1,33 @@
+{
+  "basePassCount": 0,
+  "bestCandidate": "idiosyncratic_shock_reversion_4h_long_v1",
+  "budgetExceeded": false,
+  "campaignId": "phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50",
+  "candidateCount": 6,
+  "costScenarios": {
+    "base": {
+      "feeBpsPerSide": 5.0,
+      "multiplier": 1.0,
+      "slippageBpsPerSide": 3.0,
+      "spreadProxyBpsPerSide": 2.0
+    },
+    "stress_1_5x": {
+      "multiplier": 1.5
+    },
+    "stress_2x": {
+      "multiplier": 2.0
+    }
+  },
+  "dataSnapshotHash": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "embargoApplied": true,
+  "formalPassCount": 0,
+  "fullBacktestCount": 1,
+  "holdoutAccessCountBeforeFinalEvaluation": 0,
+  "holdoutFinalEvaluationCount": 1,
+  "preregistrationHash": "campaign_preregistration_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50",
+  "prescreenPassCount": 1,
+  "resultRunNetworkPolicy": "offline_enforced",
+  "schemaVersion": "phase3c_campaign_summary_v1",
+  "status": "completed",
+  "walkForwardFoldCount": 5
+}
