@@ -1,8 +1,8 @@
 # AlphaPilot 第三阶段更新版：外部研究资产、加密因子实验室与回测优先工厂
 
-> **执行状态前提**：阶段 1「OKX Demo 可交易币池与工程烟测」和阶段 2「完整本地模拟退役与无盈亏影子观察」已经完成、提交、推送并通过各自退出门。  
-> **本文件替代**：`docs/superpowers/plans/2026-07-15-backtest-first-research-factory.md`。旧文件保留为历史记录，在文件头部标记 `supersededBy`，不得删除。  
-> **执行方式**：建议使用 `superpowers:subagent-driven-development` 或 `superpowers:executing-plans`，按复选框逐项完成。  
+> **执行状态前提**：阶段 1「OKX Demo 可交易币池与工程烟测」和阶段 2「完整本地模拟退役与无盈亏影子观察」已经完成、提交、推送并通过各自退出门。
+> **本文件替代**：`docs/superpowers/plans/2026-07-15-backtest-first-research-factory.md`。旧文件保留为历史记录，在文件头部标记 `supersededBy`，不得删除。
+> **执行方式**：建议使用 `superpowers:subagent-driven-development` 或 `superpowers:executing-plans`，按复选框逐项完成。
 > **核心目标**：把 Vibe-Trading、Alpha191 因子手册、`yydhYYDH/alpha101` 的可复用研究思想，与 AlphaPilot 自己的 Funding、Open Interest、Basis、清算、Point-in-Time 币池、真实成本、预注册、Purged Walk-forward 和锁定留出体系结合，完成一次有限预算、可复现、不会强制制造赢家的正式研究 Campaign。
 
 ---
