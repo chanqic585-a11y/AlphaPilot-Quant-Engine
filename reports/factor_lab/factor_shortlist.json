@@ -1,0 +1,34 @@
+{
+  "controlsExcluded": true,
+  "dataManifestHash": "data_manifest_4a178c9ef2b42a68bf551137358b908779863fb3f50267d83b56bf68d35fdf61",
+  "dataSnapshotHash": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "eligibleFactors": [],
+  "externalReferenceManifestHash": "external_references_734c0e139fd68ae4579f49526fb32c879b3bd07f68743281564ce71e208d4187",
+  "factorClusterHash": "factor_clusters_41ed471720b9600ae56a05df5f6779c48bff3d4624e55bfb3329e2d8c67fb551",
+  "factorImplementationHashes": [
+    "factor_impl_0b670000698650f9b4facd2e668c75f0351b87694e2192d8852d03986443e0f6",
+    "factor_impl_104e5566719b3d5cf45c40d0ce4b20bbbbcf834eb2559c7fff699c1dd13e7d2d",
+    "factor_impl_13450e4125d37fbe0edd0fbd407982f3266f709542cfa22a1ac22f7d1b99c2ab",
+    "factor_impl_7665e24bd9f597af488a053f623f5162308ab1528e40c4b9f61d045eb336a0ce",
+    "factor_impl_7c307bc03d4d8b23f50512c8ca0f2ce03b5eb6adae4d924e3b8c5e55838fe843",
+    "factor_impl_a2eddc7496a9097f10a2c66a3c07103cb3b19553226b0fe9708711fff39b6839",
+    "factor_impl_da82bf53068f8050b7b3f7089d5299a1dd92f4f3f20c5537c164d9a4263e4cda",
+    "factor_impl_f221af07af70b137ae22a3696130d9178b796af921205a7827178e42802f2e96"
+  ],
+  "factorRegistryHash": "b01935325a3253051d6c419f1d44316d950d3a09daecc23328ca6140221adb0e",
+  "factorShortlistId": "factor_shortlist_5bdaeea71852321b56ba85c3890e4a497dccb5002c0ea4fd0b7d04e3be77a416",
+  "factorTrialLedgerHash": "factor_trial_ledger_a3bb433fbce3f0ab1e0ffd5fcede5fa99f02508c1af99b5c4e332683b29a0ecf",
+  "gitCommit": "545b52c9ec4dbb5ba24489c93dd602010a19e6c2",
+  "rejectedFactors": [
+    "alpha191_014",
+    "alpha191_015",
+    "alpha191_018",
+    "alpha191_020",
+    "alpha191_058",
+    "alpha191_088",
+    "alpha191_145",
+    "alpha191_191"
+  ],
+  "schemaVersion": "factor_shortlist_v1",
+  "selectionUsedHoldout": false
+}

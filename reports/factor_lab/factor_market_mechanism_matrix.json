@@ -1,0 +1,54 @@
+{
+  "allowedFactorRoles": [
+    "confirmation",
+    "ranking",
+    "veto",
+    "risk_context"
+  ],
+  "factorRoleLimit": 2,
+  "mechanisms": [
+    {
+      "formalUse": "time_series",
+      "mechanismId": "volatility_compression_breakout",
+      "ready": true,
+      "usesNonOhlcv": false
+    },
+    {
+      "formalUse": "time_series",
+      "mechanismId": "idiosyncratic_shock_reversion",
+      "ready": true,
+      "usesNonOhlcv": false
+    },
+    {
+      "formalUse": "time_series_cross_exchange_proxy",
+      "mechanismId": "funding_crowding_reversal",
+      "minimumFundingYears": 6.485968514715948,
+      "ready": true,
+      "usesNonOhlcv": true
+    },
+    {
+      "formalUse": "diagnostic_only",
+      "mechanismId": "high_liquidity_cross_sectional_momentum",
+      "ready": false,
+      "reason": "historical PIT listing and liquidity snapshots incomplete",
+      "usesNonOhlcv": false
+    }
+  ],
+  "pitStatus": "diagnostic_proxy",
+  "schemaVersion": "factor_market_mechanism_matrix_v1",
+  "universeSplits": {
+    "split_1": [
+      "XRP-USDT-SWAP",
+      "LTC-USDT-SWAP",
+      "ETC-USDT-SWAP"
+    ],
+    "split_2": [],
+    "split_3": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "BCH-USDT-SWAP",
+      "ADA-USDT-SWAP",
+      "LINK-USDT-SWAP"
+    ]
+  }
+}

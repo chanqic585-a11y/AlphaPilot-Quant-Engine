@@ -1,0 +1,214 @@
+{
+  "clusters": [
+    {
+      "alternateRepresentative": null,
+      "clusterId": "factor_cluster_001",
+      "factorIds": [
+        "alpha191_014"
+      ],
+      "primaryRepresentative": "alpha191_014"
+    },
+    {
+      "alternateRepresentative": null,
+      "clusterId": "factor_cluster_002",
+      "factorIds": [
+        "alpha191_015"
+      ],
+      "primaryRepresentative": "alpha191_015"
+    },
+    {
+      "alternateRepresentative": null,
+      "clusterId": "factor_cluster_003",
+      "factorIds": [
+        "alpha191_018"
+      ],
+      "primaryRepresentative": "alpha191_018"
+    },
+    {
+      "alternateRepresentative": null,
+      "clusterId": "factor_cluster_004",
+      "factorIds": [
+        "alpha191_020"
+      ],
+      "primaryRepresentative": "alpha191_020"
+    },
+    {
+      "alternateRepresentative": null,
+      "clusterId": "factor_cluster_005",
+      "factorIds": [
+        "alpha191_058"
+      ],
+      "primaryRepresentative": "alpha191_058"
+    },
+    {
+      "alternateRepresentative": null,
+      "clusterId": "factor_cluster_006",
+      "factorIds": [
+        "alpha191_088"
+      ],
+      "primaryRepresentative": "alpha191_088"
+    },
+    {
+      "alternateRepresentative": null,
+      "clusterId": "factor_cluster_007",
+      "factorIds": [
+        "alpha191_145"
+      ],
+      "primaryRepresentative": "alpha191_145"
+    },
+    {
+      "alternateRepresentative": null,
+      "clusterId": "factor_cluster_008",
+      "factorIds": [
+        "alpha191_191"
+      ],
+      "primaryRepresentative": "alpha191_191"
+    }
+  ],
+  "correlationThreshold": 0.9,
+  "highlyDuplicatePairs": [],
+  "highlyDuplicateThreshold": 0.97,
+  "pairs": [
+    {
+      "factorValueSpearman": 0.02061634001807477,
+      "left": "alpha191_014",
+      "right": "alpha191_015"
+    },
+    {
+      "factorValueSpearman": 0.8061520101661002,
+      "left": "alpha191_014",
+      "right": "alpha191_018"
+    },
+    {
+      "factorValueSpearman": 0.693876407488971,
+      "left": "alpha191_014",
+      "right": "alpha191_020"
+    },
+    {
+      "factorValueSpearman": 0.27389637071970674,
+      "left": "alpha191_014",
+      "right": "alpha191_058"
+    },
+    {
+      "factorValueSpearman": 0.32369146485766176,
+      "left": "alpha191_014",
+      "right": "alpha191_088"
+    },
+    {
+      "factorValueSpearman": 0.06290759775348036,
+      "left": "alpha191_014",
+      "right": "alpha191_145"
+    },
+    {
+      "factorValueSpearman": -0.14037689126198954,
+      "left": "alpha191_014",
+      "right": "alpha191_191"
+    },
+    {
+      "factorValueSpearman": 0.038518737413469256,
+      "left": "alpha191_015",
+      "right": "alpha191_018"
+    },
+    {
+      "factorValueSpearman": 0.03535117817833316,
+      "left": "alpha191_015",
+      "right": "alpha191_020"
+    },
+    {
+      "factorValueSpearman": 0.03894762120430948,
+      "left": "alpha191_015",
+      "right": "alpha191_058"
+    },
+    {
+      "factorValueSpearman": 0.04596628310257968,
+      "left": "alpha191_015",
+      "right": "alpha191_088"
+    },
+    {
+      "factorValueSpearman": 0.011796930096735558,
+      "left": "alpha191_015",
+      "right": "alpha191_145"
+    },
+    {
+      "factorValueSpearman": 0.011834912060056157,
+      "left": "alpha191_015",
+      "right": "alpha191_191"
+    },
+    {
+      "factorValueSpearman": 0.8771330134069555,
+      "left": "alpha191_018",
+      "right": "alpha191_020"
+    },
+    {
+      "factorValueSpearman": 0.34170298484544515,
+      "left": "alpha191_018",
+      "right": "alpha191_058"
+    },
+    {
+      "factorValueSpearman": 0.42818950312823356,
+      "left": "alpha191_018",
+      "right": "alpha191_088"
+    },
+    {
+      "factorValueSpearman": 0.10526097764649756,
+      "left": "alpha191_018",
+      "right": "alpha191_145"
+    },
+    {
+      "factorValueSpearman": -0.07997029075662913,
+      "left": "alpha191_018",
+      "right": "alpha191_191"
+    },
+    {
+      "factorValueSpearman": 0.375913294880811,
+      "left": "alpha191_020",
+      "right": "alpha191_058"
+    },
+    {
+      "factorValueSpearman": 0.4767471012612547,
+      "left": "alpha191_020",
+      "right": "alpha191_088"
+    },
+    {
+      "factorValueSpearman": 0.1316685271672435,
+      "left": "alpha191_020",
+      "right": "alpha191_145"
+    },
+    {
+      "factorValueSpearman": -0.0590574093758492,
+      "left": "alpha191_020",
+      "right": "alpha191_191"
+    },
+    {
+      "factorValueSpearman": 0.6527927272143742,
+      "left": "alpha191_058",
+      "right": "alpha191_088"
+    },
+    {
+      "factorValueSpearman": 0.2524634985734703,
+      "left": "alpha191_058",
+      "right": "alpha191_145"
+    },
+    {
+      "factorValueSpearman": -0.04400795536972252,
+      "left": "alpha191_058",
+      "right": "alpha191_191"
+    },
+    {
+      "factorValueSpearman": 0.37559075553226395,
+      "left": "alpha191_088",
+      "right": "alpha191_145"
+    },
+    {
+      "factorValueSpearman": -0.008626444227249603,
+      "left": "alpha191_088",
+      "right": "alpha191_191"
+    },
+    {
+      "factorValueSpearman": 0.03717532476433752,
+      "left": "alpha191_145",
+      "right": "alpha191_191"
+    }
+  ],
+  "schemaVersion": "factor_clusters_v1"
+}

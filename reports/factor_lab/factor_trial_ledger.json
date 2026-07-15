@@ -1,0 +1,2475 @@
+{
+  "factorTrialLedgerHash": "factor_trial_ledger_a3bb433fbce3f0ab1e0ffd5fcede5fa99f02508c1af99b5c4e332683b29a0ecf",
+  "fdrCompleted": true,
+  "fdrQ": 0.1,
+  "formalTrialCount": 32,
+  "maximumFormalTrials": 192,
+  "preregistrationHash": "factor_seed_a1edc4690ad1f79c531f63758bea7ec3a26899e925856c1177faf4cb38c9d80e",
+  "schemaVersion": "factor_trial_ledger_v1",
+  "trials": [
+    {
+      "baseCostSpread": -0.0006161292041494612,
+      "clusterId": "factor_cluster_001",
+      "coverage": 0.9883147512864494,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_014",
+      "fdrAdjustedPValue": 0.6048046506496974,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.00232307844403748,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.0016865033091058696,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": 9.83583470765537e-05,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.002829415916430554,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.0009760187613002976,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": -0.00023633601156005952,
+      "implementationHash": "factor_impl_da82bf53068f8050b7b3f7089d5299a1dd92f4f3f20c5537c164d9a4263e4cda",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -0.9339849473289226,
+        "BCH-USDT-SWAP": -0.10255602158675858,
+        "BTC-USDT-SWAP": 1.6937936058641156,
+        "ETC-USDT-SWAP": 0.8050658687854648,
+        "ETH-USDT-SWAP": -0.7574725881889431,
+        "LINK-USDT-SWAP": 0.9261592414322629,
+        "LTC-USDT-SWAP": -0.4808820496040036,
+        "XRP-USDT-SWAP": -1.6986589922041104
+      },
+      "missingRate": 0.011685248713550589,
+      "pValue": 0.447585902126062,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.01575356120089295,
+      "rankICMean": -0.006623969076597667,
+      "rankICPositiveRatio": 0.48407917383821,
+      "rankICStd": 0.42047439255970925,
+      "singleInstrumentPositiveContribution": 0.4945355766703031,
+      "singleMonthPositiveContribution": 0.0917648998889911,
+      "stress1_5xSpread": -0.000806025800444162,
+      "timeframe": "1d",
+      "trialId": "alpha191_014_1d_h1_original",
+      "turnover": 0.3800602928509905
+    },
+    {
+      "baseCostSpread": -0.00014364200772257836,
+      "clusterId": "factor_cluster_001",
+      "coverage": 0.9883147512864494,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_014",
+      "fdrAdjustedPValue": 0.6048046506496974,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.003007061128020164,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.0009075333520243239,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.0008704013578292428,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.0020380180669681875,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.00020166367904539176,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": 0.00023615118486682322,
+      "implementationHash": "factor_impl_da82bf53068f8050b7b3f7089d5299a1dd92f4f3f20c5537c164d9a4263e4cda",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 0.8971560758602051,
+        "BCH-USDT-SWAP": 0.10255602158675858,
+        "BTC-USDT-SWAP": -1.6937936058641156,
+        "ETC-USDT-SWAP": -0.8050658687854648,
+        "ETH-USDT-SWAP": 0.7574725881889431,
+        "LINK-USDT-SWAP": -0.9261592414322629,
+        "LTC-USDT-SWAP": 0.4808820496040036,
+        "XRP-USDT-SWAP": 1.7350588809178267
+      },
+      "missingRate": 0.011685248713550589,
+      "pValue": 0.447585902126062,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.015753561200892947,
+      "rankICMean": 0.006623969076597666,
+      "rankICPositiveRatio": 0.5008605851979346,
+      "rankICStd": 0.42047439255970925,
+      "singleInstrumentPositiveContribution": 0.43669872250244585,
+      "singleMonthPositiveContribution": 0.09587312789927889,
+      "stress1_5xSpread": -0.000333538604017279,
+      "timeframe": "1d",
+      "trialId": "alpha191_014_1d_h1_inverse",
+      "turnover": 0.3800602928509905
+    },
+    {
+      "baseCostSpread": -0.0016629550884152665,
+      "clusterId": "factor_cluster_001",
+      "coverage": 0.9865994854202401,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_014",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.001535259091772718,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.0038672910633630667,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.0024835977287815092,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.004046932438108994,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0027946257868946773,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": -0.0012840168061537217,
+      "implementationHash": "factor_impl_da82bf53068f8050b7b3f7089d5299a1dd92f4f3f20c5537c164d9a4263e4cda",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -2.130325082263851,
+        "BCH-USDT-SWAP": 0.1503086843980066,
+        "BTC-USDT-SWAP": 3.9602438104840276,
+        "ETC-USDT-SWAP": 1.2058027382851864,
+        "ETH-USDT-SWAP": 1.3481904205382893,
+        "LINK-USDT-SWAP": 1.0899316418893465,
+        "LTC-USDT-SWAP": -1.5132401233479849,
+        "XRP-USDT-SWAP": -7.085979029841192
+      },
+      "missingRate": 0.013400514579759881,
+      "pValue": 0.05264011123565515,
+      "positiveFoldCount": 1,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.04023266139843792,
+      "rankICMean": -0.016700793889587583,
+      "rankICPositiveRatio": 0.47543103448275864,
+      "rankICStd": 0.4151053723290603,
+      "singleInstrumentPositiveContribution": 0.5107041596128926,
+      "singleMonthPositiveContribution": 0.07314457428964043,
+      "stress1_5xSpread": -0.00185242422954604,
+      "timeframe": "1d",
+      "trialId": "alpha191_014_1d_h5_original",
+      "turnover": 0.37920621225194134
+    },
+    {
+      "baseCostSpread": 0.0009083665256215484,
+      "clusterId": "factor_cluster_001",
+      "coverage": 0.9865994854202401,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_014",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.0008512764077900383,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.00308374127981328,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.003253662804703418,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.003250836993423529,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.0020465510640719628,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": 0.001287304807883094,
+      "implementationHash": "factor_impl_da82bf53068f8050b7b3f7089d5299a1dd92f4f3f20c5537c164d9a4263e4cda",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 2.1578358055296407,
+        "BCH-USDT-SWAP": -0.1503086843980066,
+        "BTC-USDT-SWAP": -3.9602438104840276,
+        "ETC-USDT-SWAP": -1.2058027382851864,
+        "ETH-USDT-SWAP": -1.3481904205382893,
+        "LINK-USDT-SWAP": -1.0899316418893465,
+        "LTC-USDT-SWAP": 1.5132401233479849,
+        "XRP-USDT-SWAP": 7.066086606582359
+      },
+      "missingRate": 0.013400514579759881,
+      "pValue": 0.05264011123565515,
+      "positiveFoldCount": 4,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": 0.04023266139843792,
+      "rankICMean": 0.016700793889587583,
+      "rankICPositiveRatio": 0.5051724137931034,
+      "rankICStd": 0.4151053723290603,
+      "singleInstrumentPositiveContribution": 0.6580962692188254,
+      "singleMonthPositiveContribution": 0.1359457394029717,
+      "stress1_5xSpread": 0.0007188973844907755,
+      "timeframe": "1d",
+      "trialId": "alpha191_014_1d_h5_inverse",
+      "turnover": 0.37920621225194134
+    },
+    {
+      "baseCostSpread": -0.0006732850544022909,
+      "clusterId": "factor_cluster_002",
+      "coverage": 0.9900300171526587,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_015",
+      "fdrAdjustedPValue": 0.6408431646199733,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.000946429003062965,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.0009155079609832403,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.0003836371773977116,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.002532898930826784,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.001067845393063814,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": 0.00017252139721061309,
+      "implementationHash": "factor_impl_7665e24bd9f597af488a053f623f5162308ab1528e40c4b9f61d045eb336a0ce",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -3.188319714120812,
+        "BCH-USDT-SWAP": -1.0099424840166245,
+        "BTC-USDT-SWAP": 0.9020265377837298,
+        "ETC-USDT-SWAP": 0.2964548714147103,
+        "ETH-USDT-SWAP": -0.04583469744505886,
+        "LINK-USDT-SWAP": 0.09623874552674061,
+        "LTC-USDT-SWAP": 0.3084741724200457,
+        "XRP-USDT-SWAP": 3.0420148169519434
+      },
+      "missingRate": 0.009969982847341297,
+      "pValue": 0.5206850712537281,
+      "positiveFoldCount": 1,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.0133176051064879,
+      "rankICMean": -0.005206284164420866,
+      "rankICPositiveRatio": 0.4922613929492691,
+      "rankICStd": 0.3909324629159139,
+      "singleInstrumentPositiveContribution": 0.6548714433703244,
+      "singleMonthPositiveContribution": 0.1435994972143132,
+      "stress1_5xSpread": -0.0010961882802087426,
+      "timeframe": "1d",
+      "trialId": "alpha191_015_1d_h1_original",
+      "turnover": 0.8458727429062769
+    },
+    {
+      "baseCostSpread": -0.0019511046809809808,
+      "clusterId": "factor_cluster_002",
+      "coverage": 0.9900300171526587,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_015",
+      "fdrAdjustedPValue": 0.6408431646199733,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.0035020381853067945,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.0011893342261348812,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.0002717938518431918,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.000910830420916714,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.003532437394091804,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": -0.0011065885519487217,
+      "implementationHash": "factor_impl_7665e24bd9f597af488a053f623f5162308ab1528e40c4b9f61d045eb336a0ce",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 1.0093600671836813,
+        "BCH-USDT-SWAP": 1.1778446427550198,
+        "BTC-USDT-SWAP": -0.8380687659161912,
+        "ETC-USDT-SWAP": -0.5803319217751985,
+        "ETH-USDT-SWAP": 0.020172050232637573,
+        "LINK-USDT-SWAP": 0.24262989077358577,
+        "LTC-USDT-SWAP": -0.5011562782722944,
+        "XRP-USDT-SWAP": -3.10326806826202
+      },
+      "missingRate": 0.009969982847341297,
+      "pValue": 0.5206850712537283,
+      "positiveFoldCount": 0,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.013317605106487895,
+      "rankICMean": 0.005206284164420864,
+      "rankICPositiveRatio": 0.49484092863284607,
+      "rankICStd": 0.3909324629159139,
+      "singleInstrumentPositiveContribution": 0.4807516103275662,
+      "singleMonthPositiveContribution": 0.08265768598526427,
+      "stress1_5xSpread": -0.00237336274549711,
+      "timeframe": "1d",
+      "trialId": "alpha191_015_1d_h1_inverse",
+      "turnover": 0.8445829750644884
+    },
+    {
+      "baseCostSpread": -0.0016999333440740083,
+      "clusterId": "factor_cluster_002",
+      "coverage": 0.9883147512864494,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_015",
+      "fdrAdjustedPValue": 0.8269173799631198,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.004604057288526157,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": 0.004448497737459701,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.0030989840896763245,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.010390155889104606,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0032623613933717476,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": -0.0008543926288650457,
+      "implementationHash": "factor_impl_7665e24bd9f597af488a053f623f5162308ab1528e40c4b9f61d045eb336a0ce",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 1.3373470145249995,
+        "BCH-USDT-SWAP": -3.501006106999389,
+        "BTC-USDT-SWAP": -0.9938502329630312,
+        "ETC-USDT-SWAP": -3.142118050006454,
+        "ETH-USDT-SWAP": -1.9770346495878837,
+        "LINK-USDT-SWAP": -1.5642905344783107,
+        "LTC-USDT-SWAP": 5.791154699954977,
+        "XRP-USDT-SWAP": 2.0667525679593064
+      },
+      "missingRate": 0.011685248713550589,
+      "pValue": 0.7752350437154247,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.005926800258004653,
+      "rankICMean": -0.0022765813371031086,
+      "rankICPositiveRatio": 0.4911676001723395,
+      "rankICStd": 0.384116426739435,
+      "singleInstrumentPositiveContribution": 0.6297982113463338,
+      "singleMonthPositiveContribution": 0.13933157649364936,
+      "stress1_5xSpread": -0.0021227037016784893,
+      "timeframe": "1d",
+      "trialId": "alpha191_015_1d_h5_original",
+      "turnover": 0.8456072351421189
+    },
+    {
+      "baseCostSpread": -0.0020218615774468527,
+      "clusterId": "factor_cluster_002",
+      "coverage": 0.9883147512864494,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_015",
+      "fdrAdjustedPValue": 0.8269173799631198,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.002318877506211052,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.007366842447116916,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.005198871247201503,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.0057540753354047075,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.0006558890232323128,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": -0.0011773979841680925,
+      "implementationHash": "factor_impl_7665e24bd9f597af488a053f623f5162308ab1528e40c4b9f61d045eb336a0ce",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -6.086012566732858,
+        "BCH-USDT-SWAP": 2.9455209645706413,
+        "BTC-USDT-SWAP": 0.8206063489833135,
+        "ETC-USDT-SWAP": 2.217775084207354,
+        "ETH-USDT-SWAP": 1.5950325202517148,
+        "LINK-USDT-SWAP": 2.6363571624430544,
+        "LTC-USDT-SWAP": -6.879965294584117,
+        "XRP-USDT-SWAP": 0.017945059606758296
+      },
+      "missingRate": 0.011685248713550589,
+      "pValue": 0.7752350437154247,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": true,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.005926800258004653,
+      "rankICMean": 0.0022765813371031086,
+      "rankICPositiveRatio": 0.4954760878931495,
+      "rankICStd": 0.384116426739435,
+      "singleInstrumentPositiveContribution": 0.2878386305579697,
+      "singleMonthPositiveContribution": 0.08969118669592663,
+      "stress1_5xSpread": -0.0024440933740862334,
+      "timeframe": "1d",
+      "trialId": "alpha191_015_1d_h5_inverse",
+      "turnover": 0.8445305770887166
+    },
+    {
+      "baseCostSpread": 0.0020153301142163066,
+      "clusterId": "factor_cluster_003",
+      "coverage": 0.9883147512864494,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_018",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.00968662515308876,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.002173284149405701,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": 0.003030123999579111,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.0016074294835890014,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.002747460694468771,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": 0.002457811803143494,
+      "implementationHash": "factor_impl_104e5566719b3d5cf45c40d0ce4b20bbbbcf834eb2559c7fff699c1dd13e7d2d",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 0.3963911575974265,
+        "BCH-USDT-SWAP": 1.00707935320896,
+        "BTC-USDT-SWAP": 0.2265843782879211,
+        "ETC-USDT-SWAP": 4.443901649861344,
+        "ETH-USDT-SWAP": -0.1762327983634301,
+        "LINK-USDT-SWAP": 0.02380557691717855,
+        "LTC-USDT-SWAP": -2.317460279532891,
+        "XRP-USDT-SWAP": 2.100512157119542
+      },
+      "missingRate": 0.011685248713550589,
+      "pValue": 0.024872487991110415,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": -0.04653548864763274,
+      "rankICMean": -0.020431762727565497,
+      "rankICPositiveRatio": 0.47676419965576594,
+      "rankICStd": 0.43905765946233083,
+      "singleInstrumentPositiveContribution": 0.5420533031568507,
+      "singleMonthPositiveContribution": 0.09955019240880833,
+      "stress1_5xSpread": 0.0017940892697527135,
+      "timeframe": "1d",
+      "trialId": "alpha191_018_1d_h1_original",
+      "turnover": 0.4427217915590009
+    },
+    {
+      "baseCostSpread": -0.002900293492070681,
+      "clusterId": "factor_cluster_003",
+      "coverage": 0.9883147512864494,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_018",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.010472339438803045,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.0030659880120666454,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.003916145504955455,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.0007085047524062044,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.00178667638074328,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": -0.002457811803143494,
+      "implementationHash": "factor_impl_104e5566719b3d5cf45c40d0ce4b20bbbbcf834eb2559c7fff699c1dd13e7d2d",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -0.3963911575974265,
+        "BCH-USDT-SWAP": -1.00707935320896,
+        "BTC-USDT-SWAP": -0.2265843782879211,
+        "ETC-USDT-SWAP": -4.443901649861344,
+        "ETH-USDT-SWAP": 0.1762327983634301,
+        "LINK-USDT-SWAP": -0.02380557691717855,
+        "LTC-USDT-SWAP": 2.317460279532891,
+        "XRP-USDT-SWAP": -2.100512157119542
+      },
+      "missingRate": 0.011685248713550589,
+      "pValue": 0.024872487991110415,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.04653548864763273,
+      "rankICMean": 0.020431762727565493,
+      "rankICPositiveRatio": 0.504302925989673,
+      "rankICStd": 0.43905765946233083,
+      "singleInstrumentPositiveContribution": 0.9293285930311439,
+      "singleMonthPositiveContribution": 0.08974699726203132,
+      "stress1_5xSpread": -0.003121534336534274,
+      "timeframe": "1d",
+      "trialId": "alpha191_018_1d_h1_inverse",
+      "turnover": 0.4427217915590009
+    },
+    {
+      "baseCostSpread": 0.009889942072767425,
+      "clusterId": "factor_cluster_003",
+      "coverage": 0.9865994854202401,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_018",
+      "fdrAdjustedPValue": 0.2649007678981588,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.027683958575278875,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.009325166976476302,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.016346036708071516,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.005069096608896395,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0006464761734794093,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": 0.010332108667501996,
+      "implementationHash": "factor_impl_104e5566719b3d5cf45c40d0ce4b20bbbbcf834eb2559c7fff699c1dd13e7d2d",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 0.457285392267084,
+        "BCH-USDT-SWAP": 2.3475045649163224,
+        "BTC-USDT-SWAP": 3.456708328540887,
+        "ETC-USDT-SWAP": 15.47620762010065,
+        "ETH-USDT-SWAP": 0.5549215681780937,
+        "LINK-USDT-SWAP": -1.6246046621348103,
+        "LTC-USDT-SWAP": -6.125486334240203,
+        "XRP-USDT-SWAP": 9.396959304974104
+      },
+      "missingRate": 0.013400514579759881,
+      "pValue": 0.11589408595544448,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": -0.032641929397849226,
+      "rankICMean": -0.014010156954307736,
+      "rankICPositiveRatio": 0.4676724137931034,
+      "rankICStd": 0.4292073787535018,
+      "singleInstrumentPositiveContribution": 0.488368867919968,
+      "singleMonthPositiveContribution": 0.10078117589347214,
+      "stress1_5xSpread": 0.009668858775400137,
+      "timeframe": "1d",
+      "trialId": "alpha191_018_1d_h5_original",
+      "turnover": 0.4424072476272649
+    },
+    {
+      "baseCostSpread": -0.010774275262236564,
+      "clusterId": "factor_cluster_003",
+      "coverage": 0.9865994854202401,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_018",
+      "fdrAdjustedPValue": 0.2649007678981588,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.028469672860993164,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.010219106370415695,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.01723323844342943,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.004164541294362773,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.00031361251831660075,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": -0.010332108667501996,
+      "implementationHash": "factor_impl_104e5566719b3d5cf45c40d0ce4b20bbbbcf834eb2559c7fff699c1dd13e7d2d",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -0.457285392267084,
+        "BCH-USDT-SWAP": -2.3475045649163224,
+        "BTC-USDT-SWAP": -3.456708328540887,
+        "ETC-USDT-SWAP": -15.47620762010065,
+        "ETH-USDT-SWAP": -0.5549215681780937,
+        "LINK-USDT-SWAP": 1.6246046621348103,
+        "LTC-USDT-SWAP": 6.125486334240203,
+        "XRP-USDT-SWAP": -9.396959304974104
+      },
+      "missingRate": 0.013400514579759881,
+      "pValue": 0.11589408595544448,
+      "positiveFoldCount": 1,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.032641929397849226,
+      "rankICMean": 0.014010156954307736,
+      "rankICPositiveRatio": 0.5116379310344827,
+      "rankICStd": 0.4292073787535018,
+      "singleInstrumentPositiveContribution": 0.7903760532754139,
+      "singleMonthPositiveContribution": 0.11115079820050094,
+      "stress1_5xSpread": -0.010995358559603853,
+      "timeframe": "1d",
+      "trialId": "alpha191_018_1d_h5_inverse",
+      "turnover": 0.4424072476272649
+    },
+    {
+      "baseCostSpread": 0.0019354523107013978,
+      "clusterId": "factor_cluster_004",
+      "coverage": 0.9878859348198971,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_020",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.00937158678856807,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.002175491446420059,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": 0.0019445243777641333,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.001384352309546478,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.002328568961927013,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": 0.0023498919658738117,
+      "implementationHash": "factor_impl_7c307bc03d4d8b23f50512c8ca0f2ce03b5eb6adae4d924e3b8c5e55838fe843",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -0.7170974581714132,
+        "BCH-USDT-SWAP": 1.237081231593504,
+        "BTC-USDT-SWAP": 0.7196323013077646,
+        "ETC-USDT-SWAP": 3.429615668149406,
+        "ETH-USDT-SWAP": 0.6526056534670603,
+        "LINK-USDT-SWAP": -1.2304876278608268,
+        "LTC-USDT-SWAP": -1.725840268923816,
+        "XRP-USDT-SWAP": 3.0862398612655686
+      },
+      "missingRate": 0.01211406518010294,
+      "pValue": 0.05595518672864941,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": -0.039657328578528606,
+      "rankICMean": -0.01715577907486344,
+      "rankICPositiveRatio": 0.46792940163581576,
+      "rankICStd": 0.4326004723412453,
+      "singleInstrumentPositiveContribution": 0.3758410961948369,
+      "singleMonthPositiveContribution": 0.08507403668967409,
+      "stress1_5xSpread": 0.0017282324831151908,
+      "timeframe": "1d",
+      "trialId": "alpha191_020_1d_h1_original",
+      "turnover": 0.4146919431279621
+    },
+    {
+      "baseCostSpread": -0.0027643316210462262,
+      "clusterId": "factor_cluster_004",
+      "coverage": 0.9878859348198971,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_020",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.010085252732168938,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0029909420901968833,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.0028305458831404786,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.000515535105245402,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.0014658238638877966,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": -0.0023498919658738117,
+      "implementationHash": "factor_impl_7c307bc03d4d8b23f50512c8ca0f2ce03b5eb6adae4d924e3b8c5e55838fe843",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 0.7170974581714132,
+        "BCH-USDT-SWAP": -1.237081231593504,
+        "BTC-USDT-SWAP": -0.7196323013077646,
+        "ETC-USDT-SWAP": -3.429615668149406,
+        "ETH-USDT-SWAP": -0.6526056534670603,
+        "LINK-USDT-SWAP": 1.2304876278608268,
+        "LTC-USDT-SWAP": 1.725840268923816,
+        "XRP-USDT-SWAP": -3.0862398612655686
+      },
+      "missingRate": 0.01211406518010294,
+      "pValue": 0.05595518672864941,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.039657328578528606,
+      "rankICMean": 0.01715577907486344,
+      "rankICPositiveRatio": 0.5122686181661644,
+      "rankICStd": 0.4326004723412453,
+      "singleInstrumentPositiveContribution": 0.4698177047739307,
+      "singleMonthPositiveContribution": 0.08019122488489928,
+      "stress1_5xSpread": -0.002971551448632433,
+      "timeframe": "1d",
+      "trialId": "alpha191_020_1d_h1_inverse",
+      "turnover": 0.4146919431279621
+    },
+    {
+      "baseCostSpread": 0.008159366463635737,
+      "clusterId": "factor_cluster_004",
+      "coverage": 0.9861706689536878,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_020",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.02762132830552721,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.002780269228613234,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.012948426408803598,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0016733066391862947,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0014666831049616456,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": 0.008573658346191866,
+      "implementationHash": "factor_impl_7c307bc03d4d8b23f50512c8ca0f2ce03b5eb6adae4d924e3b8c5e55838fe843",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -0.22467670155989028,
+        "BCH-USDT-SWAP": 3.3570651378153595,
+        "BTC-USDT-SWAP": 3.172046479783771,
+        "ETC-USDT-SWAP": 11.500098199333445,
+        "ETH-USDT-SWAP": 3.2749900571485706,
+        "LINK-USDT-SWAP": -5.307858183792779,
+        "LTC-USDT-SWAP": -6.662757310477738,
+        "XRP-USDT-SWAP": 10.747685051529661
+      },
+      "missingRate": 0.013829331046312232,
+      "pValue": 0.05871475732783127,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": -0.03925415868677756,
+      "rankICMean": -0.016583633875558806,
+      "rankICPositiveRatio": 0.4721862871927555,
+      "rankICStd": 0.42246820286954373,
+      "singleInstrumentPositiveContribution": 0.3587963149756719,
+      "singleMonthPositiveContribution": 0.11512040839212298,
+      "stress1_5xSpread": 0.007952220522357669,
+      "timeframe": "1d",
+      "trialId": "alpha191_020_1d_h5_original",
+      "turnover": 0.41454466983167887
+    },
+    {
+      "baseCostSpread": -0.008987950228747998,
+      "clusterId": "factor_cluster_004",
+      "coverage": 0.9861706689536878,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_020",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.02833499424912808,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0035984510467950517,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.013831289749367587,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.0007991200882101544,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.0006041553887753934,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": -0.008573658346191866,
+      "implementationHash": "factor_impl_7c307bc03d4d8b23f50512c8ca0f2ce03b5eb6adae4d924e3b8c5e55838fe843",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 0.22467670155989028,
+        "BCH-USDT-SWAP": -3.3570651378153595,
+        "BTC-USDT-SWAP": -3.172046479783771,
+        "ETC-USDT-SWAP": -11.500098199333445,
+        "ETH-USDT-SWAP": -3.2749900571485706,
+        "LINK-USDT-SWAP": 5.307858183792779,
+        "LTC-USDT-SWAP": 6.662757310477738,
+        "XRP-USDT-SWAP": -10.747685051529661
+      },
+      "missingRate": 0.013829331046312232,
+      "pValue": 0.05871475732783127,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.03925415868677756,
+      "rankICMean": 0.016583633875558806,
+      "rankICPositiveRatio": 0.5079775765416128,
+      "rankICStd": 0.42246820286954373,
+      "singleInstrumentPositiveContribution": 0.5463384725423592,
+      "singleMonthPositiveContribution": 0.07999574980741195,
+      "stress1_5xSpread": -0.009195096170026064,
+      "timeframe": "1d",
+      "trialId": "alpha191_020_1d_h5_inverse",
+      "turnover": 0.41454466983167887
+    },
+    {
+      "baseCostSpread": 0.0004984349344018533,
+      "clusterId": "factor_cluster_005",
+      "coverage": 0.9843481989708405,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_058",
+      "fdrAdjustedPValue": 0.6048046506496974,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.00030863528567263564,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 448
+        },
+        {
+          "averageNetSpread": 0.0029526225896483313,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": 0.002735713005376361,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.0016493042275033286,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.0013418643106434737,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": 0.0006742043318877662,
+      "implementationHash": "factor_impl_a2eddc7496a9097f10a2c66a3c07103cb3b19553226b0fe9708711fff39b6839",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -0.5491032173816937,
+        "BCH-USDT-SWAP": 1.0855783668200278,
+        "BTC-USDT-SWAP": 0.8830390892197232,
+        "ETC-USDT-SWAP": 1.889485685436865,
+        "ETH-USDT-SWAP": -1.2525140347843267,
+        "LINK-USDT-SWAP": -0.5338439635476764,
+        "LTC-USDT-SWAP": -1.2882226668674575,
+        "XRP-USDT-SWAP": 1.3209701347696114
+      },
+      "missingRate": 0.01565180102915953,
+      "pValue": 0.453603487987273,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": 0.015592648106254008,
+      "rankICMean": 0.006283159253952983,
+      "rankICPositiveRatio": 0.4909090909090909,
+      "rankICStd": 0.40295652227493606,
+      "singleInstrumentPositiveContribution": 0.3648308461096648,
+      "singleMonthPositiveContribution": 0.13609684479352024,
+      "stress1_5xSpread": 0.000410550235658897,
+      "timeframe": "1d",
+      "trialId": "alpha191_058_1d_h1_original",
+      "turnover": 0.17612651646447142
+    },
+    {
+      "baseCostSpread": -0.00022467937343907465,
+      "clusterId": "factor_cluster_005",
+      "coverage": 0.9843481989708405,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_058",
+      "fdrAdjustedPValue": 0.6048046506496974,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.0016338649859852317,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 448
+        },
+        {
+          "averageNetSpread": -0.0004356891733908705,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.003240962384586989,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 7.063005750875352e-05,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.0012961162033063233,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": -4.5875732346746814e-05,
+      "implementationHash": "factor_impl_a2eddc7496a9097f10a2c66a3c07103cb3b19553226b0fe9708711fff39b6839",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -1.2017048764587743,
+        "BCH-USDT-SWAP": -0.7061671099584551,
+        "BTC-USDT-SWAP": -1.020025789233427,
+        "ETC-USDT-SWAP": -1.535365044258515,
+        "ETH-USDT-SWAP": 0.6689282448607767,
+        "LINK-USDT-SWAP": 0.5428034771130158,
+        "LTC-USDT-SWAP": 1.66323418891721,
+        "XRP-USDT-SWAP": 1.4824615944942239
+      },
+      "missingRate": 0.01565180102915953,
+      "pValue": 0.453603487987273,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.015592648106254008,
+      "rankICMean": -0.006283159253952983,
+      "rankICPositiveRatio": 0.4987012987012987,
+      "rankICStd": 0.40295652227493606,
+      "singleInstrumentPositiveContribution": 0.38170094324269627,
+      "singleMonthPositiveContribution": 0.09447265082827476,
+      "stress1_5xSpread": -0.0003140811939852386,
+      "timeframe": "1d",
+      "trialId": "alpha191_058_1d_h1_inverse",
+      "turnover": 0.17915944540727902
+    },
+    {
+      "baseCostSpread": 0.002979401580624446,
+      "clusterId": "factor_cluster_005",
+      "coverage": 0.9826329331046312,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_058",
+      "fdrAdjustedPValue": 0.8248954163842964,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.007167079106188642,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 448
+        },
+        {
+          "averageNetSpread": 0.0132905998753475,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.011889057900298483,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.003384455214960835,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.002680667635321576,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": 0.0031554762658176725,
+      "implementationHash": "factor_impl_a2eddc7496a9097f10a2c66a3c07103cb3b19553226b0fe9708711fff39b6839",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -6.388214612045942,
+        "BCH-USDT-SWAP": 2.796804954361502,
+        "BTC-USDT-SWAP": 7.5968444669935,
+        "ETC-USDT-SWAP": 13.439667977943856,
+        "ETH-USDT-SWAP": -6.1924800816260355,
+        "LINK-USDT-SWAP": -0.271888787889611,
+        "LTC-USDT-SWAP": -4.116288440750991,
+        "XRP-USDT-SWAP": 0.4026163631918064
+      },
+      "missingRate": 0.01736706689536882,
+      "pValue": 0.7217834893362594,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": 0.007415036838365944,
+      "rankICMean": 0.002953778935848297,
+      "rankICPositiveRatio": 0.49609713790112747,
+      "rankICStd": 0.3983498666608409,
+      "singleInstrumentPositiveContribution": 0.5545347709583234,
+      "singleMonthPositiveContribution": 0.10449454277030863,
+      "stress1_5xSpread": 0.0028913642380278336,
+      "timeframe": "1d",
+      "trialId": "alpha191_058_1d_h5_original",
+      "turnover": 0.17643229166666666
+    },
+    {
+      "baseCostSpread": 0.00045391853859132734,
+      "clusterId": "factor_cluster_005",
+      "coverage": 0.9826329331046312,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_058",
+      "fdrAdjustedPValue": 0.8248954163842964,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.0008792330593276509,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 448
+        },
+        {
+          "averageNetSpread": 0.0009500294780015987,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.007515657889571756,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.004603575733996437,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.004517392762914579,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": 0.0006328156293425218,
+      "implementationHash": "factor_impl_a2eddc7496a9097f10a2c66a3c07103cb3b19553226b0fe9708711fff39b6839",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -5.198098076636332,
+        "BCH-USDT-SWAP": -2.8459873826906334,
+        "BTC-USDT-SWAP": -6.761258084716604,
+        "ETC-USDT-SWAP": -8.162260999532032,
+        "ETH-USDT-SWAP": 4.431185687420607,
+        "LINK-USDT-SWAP": 7.921821919775427,
+        "LTC-USDT-SWAP": 4.621996573805007,
+        "XRP-USDT-SWAP": 7.449974756950388
+      },
+      "missingRate": 0.01736706689536882,
+      "pValue": 0.7217834893362594,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": true,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": -0.007415036838365944,
+      "rankICMean": -0.002953778935848297,
+      "rankICPositiveRatio": 0.4900260190806591,
+      "rankICStd": 0.3983498666608409,
+      "singleInstrumentPositiveContribution": 0.3243328045399676,
+      "singleMonthPositiveContribution": 0.09900569833545465,
+      "stress1_5xSpread": 0.000364469993215729,
+      "timeframe": "1d",
+      "trialId": "alpha191_058_1d_h5_inverse",
+      "turnover": 0.1792534722222222
+    },
+    {
+      "baseCostSpread": 0.0018664282273724516,
+      "clusterId": "factor_cluster_006",
+      "coverage": 0.9818825042881647,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_088",
+      "fdrAdjustedPValue": 0.9682282050959101,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.00559493696916374,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 447
+        },
+        {
+          "averageNetSpread": 0.0010342526792778551,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": 0.0013697451085029658,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.0023170858312892085,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.0006666864727396127,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": 0.0021094898058633457,
+      "implementationHash": "factor_impl_0b670000698650f9b4facd2e668c75f0351b87694e2192d8852d03986443e0f6",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 3.1616764107698074,
+        "BCH-USDT-SWAP": 0.07020796155402775,
+        "BTC-USDT-SWAP": 1.4780801004221111,
+        "ETC-USDT-SWAP": 1.1664898214101198,
+        "ETH-USDT-SWAP": -0.6414396726619229,
+        "LINK-USDT-SWAP": -1.7515791530276639,
+        "LTC-USDT-SWAP": -0.13131897334671028,
+        "XRP-USDT-SWAP": 1.5123669972011022
+      },
+      "missingRate": 0.018117495711835296,
+      "pValue": 0.9682282050959099,
+      "positiveFoldCount": 4,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": -0.0008289045873667887,
+      "rankICMean": -0.00035504431927091304,
+      "rankICPositiveRatio": 0.4798614118666089,
+      "rankICStd": 0.42832953838365795,
+      "singleInstrumentPositiveContribution": 0.4278999702520989,
+      "singleMonthPositiveContribution": 0.10474397762790759,
+      "stress1_5xSpread": 0.0017448974381270048,
+      "timeframe": "1d",
+      "trialId": "alpha191_088_1d_h1_original",
+      "turnover": 0.24338968357173818
+    },
+    {
+      "baseCostSpread": -0.002352551384354239,
+      "clusterId": "factor_cluster_006",
+      "coverage": 0.9818825042881647,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_088",
+      "fdrAdjustedPValue": 0.9682282050959101,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.006033415716367318,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 447
+        },
+        {
+          "averageNetSpread": -0.0015278149110375119,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.001842863388072858,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.0028439675517193163,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.00017213309583329422,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": -0.0021094898058633457,
+      "implementationHash": "factor_impl_0b670000698650f9b4facd2e668c75f0351b87694e2192d8852d03986443e0f6",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -3.1616764107698074,
+        "BCH-USDT-SWAP": -0.07020796155402775,
+        "BTC-USDT-SWAP": -1.4780801004221111,
+        "ETC-USDT-SWAP": -1.1664898214101198,
+        "ETH-USDT-SWAP": 0.6414396726619229,
+        "LINK-USDT-SWAP": 1.7515791530276639,
+        "LTC-USDT-SWAP": 0.13131897334671028,
+        "XRP-USDT-SWAP": -1.5123669972011022
+      },
+      "missingRate": 0.018117495711835296,
+      "pValue": 0.9682282050959101,
+      "positiveFoldCount": 1,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.0008289045873667851,
+      "rankICMean": 0.0003550443192709115,
+      "rankICPositiveRatio": 0.4997834560415764,
+      "rankICStd": 0.42832953838365795,
+      "singleInstrumentPositiveContribution": 0.6938766886493379,
+      "singleMonthPositiveContribution": 0.12245732068802481,
+      "stress1_5xSpread": -0.0024740821735996857,
+      "timeframe": "1d",
+      "trialId": "alpha191_088_1d_h1_inverse",
+      "turnover": 0.24338968357173818
+    },
+    {
+      "baseCostSpread": 0.010996086654676388,
+      "clusterId": "factor_cluster_006",
+      "coverage": 0.9801672384219554,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_088",
+      "fdrAdjustedPValue": 0.439304858893653,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.029396542363359326,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 447
+        },
+        {
+          "averageNetSpread": 0.01662712454039642,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.0009887304884990031,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.006987962518883085,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0016402741515007702,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": 0.01123891897439837,
+      "implementationHash": "factor_impl_0b670000698650f9b4facd2e668c75f0351b87694e2192d8852d03986443e0f6",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 8.848144131304341,
+        "BCH-USDT-SWAP": -1.3085940635031035,
+        "BTC-USDT-SWAP": 5.64467293119239,
+        "ETC-USDT-SWAP": 11.983539103128168,
+        "ETH-USDT-SWAP": -0.6359774301714647,
+        "LINK-USDT-SWAP": -7.780661762002622,
+        "LTC-USDT-SWAP": 0.7844065790144132,
+        "XRP-USDT-SWAP": 8.33646199010296
+      },
+      "missingRate": 0.01983276157804459,
+      "pValue": 0.2736330927499897,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": true,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": 0.022802015070341505,
+      "rankICMean": 0.009662561388173426,
+      "rankICPositiveRatio": 0.49544468546637743,
+      "rankICStd": 0.42375910016573415,
+      "singleInstrumentPositiveContribution": 0.3366425105447179,
+      "singleMonthPositiveContribution": 0.18895503017029516,
+      "stress1_5xSpread": 0.010874670494815396,
+      "timeframe": "1d",
+      "trialId": "alpha191_088_1d_h5_original",
+      "turnover": 0.24316109422492402
+    },
+    {
+      "baseCostSpread": -0.011481751294120348,
+      "clusterId": "factor_cluster_006",
+      "coverage": 0.9801672384219554,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_088",
+      "fdrAdjustedPValue": 0.439304858893653,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.02983502111056291,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 447
+        },
+        {
+          "averageNetSpread": -0.01712279553606741,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.0005158454559610454,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.0075194158811390495,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.0011458173887513253,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": -0.01123891897439837,
+      "implementationHash": "factor_impl_0b670000698650f9b4facd2e668c75f0351b87694e2192d8852d03986443e0f6",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -8.848144131304341,
+        "BCH-USDT-SWAP": 1.3085940635031035,
+        "BTC-USDT-SWAP": -5.64467293119239,
+        "ETC-USDT-SWAP": -11.983539103128168,
+        "ETH-USDT-SWAP": 0.6359774301714647,
+        "LINK-USDT-SWAP": 7.780661762002622,
+        "LTC-USDT-SWAP": -0.7844065790144132,
+        "XRP-USDT-SWAP": -8.33646199010296
+      },
+      "missingRate": 0.01983276157804459,
+      "pValue": 0.2736330927499899,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.02280201507034151,
+      "rankICMean": -0.009662561388173427,
+      "rankICPositiveRatio": 0.4811279826464208,
+      "rankICStd": 0.42375910016573415,
+      "singleInstrumentPositiveContribution": 0.8000488582071378,
+      "singleMonthPositiveContribution": 0.13690525517940064,
+      "stress1_5xSpread": -0.011603167453981341,
+      "timeframe": "1d",
+      "trialId": "alpha191_088_1d_h5_inverse",
+      "turnover": 0.24316109422492402
+    },
+    {
+      "baseCostSpread": 0.000778650313707502,
+      "clusterId": "factor_cluster_007",
+      "coverage": 0.9783983704974271,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_145",
+      "fdrAdjustedPValue": 0.439304858893653,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.0035064617407910793,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 442
+        },
+        {
+          "averageNetSpread": -0.0019300011226233177,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": 0.00291330831287385,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.0015788469797675731,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.002019689607138857,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": 0.0009483591359586972,
+      "implementationHash": "factor_impl_f221af07af70b137ae22a3696130d9178b796af921205a7827178e42802f2e96",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 1.1608142089935023,
+        "BCH-USDT-SWAP": -1.0895566152027985,
+        "BTC-USDT-SWAP": -0.40083708633504966,
+        "ETC-USDT-SWAP": 0.24746071636269762,
+        "ETH-USDT-SWAP": 0.07472346566793853,
+        "LINK-USDT-SWAP": -0.6267321591781431,
+        "LTC-USDT-SWAP": -0.3596618090801458,
+        "XRP-USDT-SWAP": 3.1759636506129554
+      },
+      "missingRate": 0.02160162950257294,
+      "pValue": 0.27456553680853313,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": -0.02276268620321721,
+      "rankICMean": -0.009253146797665139,
+      "rankICPositiveRatio": 0.4730902777777778,
+      "rankICStd": 0.4065050458041866,
+      "singleInstrumentPositiveContribution": 0.6816891020423439,
+      "singleMonthPositiveContribution": 0.18607805259841,
+      "stress1_5xSpread": 0.0006937959025819044,
+      "timeframe": "1d",
+      "trialId": "alpha191_145_1d_h1_original",
+      "turnover": 0.1700695047784535
+    },
+    {
+      "baseCostSpread": -0.0011180679582098924,
+      "clusterId": "factor_cluster_007",
+      "coverage": 0.9783983704974271,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_145",
+      "fdrAdjustedPValue": 0.439304858893653,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.0038073667181666455,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 442
+        },
+        {
+          "averageNetSpread": 0.0016016749423658065,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.0032595448720136354,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.001942287839982626,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.0016602124829558503,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": -0.0009483591359586972,
+      "implementationHash": "factor_impl_f221af07af70b137ae22a3696130d9178b796af921205a7827178e42802f2e96",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -1.1608142089935023,
+        "BCH-USDT-SWAP": 1.0895566152027985,
+        "BTC-USDT-SWAP": 0.40083708633504966,
+        "ETC-USDT-SWAP": -0.24746071636269762,
+        "ETH-USDT-SWAP": -0.07472346566793853,
+        "LINK-USDT-SWAP": 0.6267321591781431,
+        "LTC-USDT-SWAP": 0.3596618090801458,
+        "XRP-USDT-SWAP": -3.1759636506129554
+      },
+      "missingRate": 0.02160162950257294,
+      "pValue": 0.27456553680853313,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.02276268620321721,
+      "rankICMean": 0.009253146797665139,
+      "rankICPositiveRatio": 0.5043402777777778,
+      "rankICStd": 0.4065050458041866,
+      "singleInstrumentPositiveContribution": 0.4399071541293966,
+      "singleMonthPositiveContribution": 0.09377749515360152,
+      "stress1_5xSpread": -0.00120292236933549,
+      "timeframe": "1d",
+      "trialId": "alpha191_145_1d_h1_inverse",
+      "turnover": 0.1700695047784535
+    },
+    {
+      "baseCostSpread": -0.001928765000683915,
+      "clusterId": "factor_cluster_007",
+      "coverage": 0.9766831046312179,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_145",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.006593021558968033,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 442
+        },
+        {
+          "averageNetSpread": -0.022517761889034704,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.007967525165679197,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.005695064089714262,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.010411393701988552,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": -0.001758978322407903,
+      "implementationHash": "factor_impl_f221af07af70b137ae22a3696130d9178b796af921205a7827178e42802f2e96",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 4.274880385653244,
+        "BCH-USDT-SWAP": -4.442121455922295,
+        "BTC-USDT-SWAP": 1.2063936315805317,
+        "ETC-USDT-SWAP": -8.912810365165257,
+        "ETH-USDT-SWAP": -0.606662812175944,
+        "LINK-USDT-SWAP": -6.509433059853185,
+        "LTC-USDT-SWAP": -3.6388662246384214,
+        "XRP-USDT-SWAP": 14.588246693950364
+      },
+      "missingRate": 0.02331689536878212,
+      "pValue": 0.04485243010715356,
+      "positiveFoldCount": 3,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.0418287376394417,
+      "rankICMean": -0.017054878199506938,
+      "rankICPositiveRatio": 0.4708695652173913,
+      "rankICStd": 0.4077311236719066,
+      "singleInstrumentPositiveContribution": 0.7268856543156396,
+      "singleMonthPositiveContribution": 0.18724542789743656,
+      "stress1_5xSpread": -0.002013658339821921,
+      "timeframe": "1d",
+      "trialId": "alpha191_145_1d_h5_original",
+      "turnover": 0.170147954743255
+    },
+    {
+      "baseCostSpread": 0.0015891916441318904,
+      "clusterId": "factor_cluster_007",
+      "coverage": 0.9766831046312179,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_145",
+      "fdrAdjustedPValue": 0.15657268620755005,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.006893926536343596,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 442
+        },
+        {
+          "averageNetSpread": 0.022188757560030373,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.008312427551796337,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.006059489252404065,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.010054409223052856,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": 0.001758978322407903,
+      "implementationHash": "factor_impl_f221af07af70b137ae22a3696130d9178b796af921205a7827178e42802f2e96",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -4.274880385653244,
+        "BCH-USDT-SWAP": 4.442121455922295,
+        "BTC-USDT-SWAP": -1.2063936315805317,
+        "ETC-USDT-SWAP": 8.912810365165257,
+        "ETH-USDT-SWAP": 0.606662812175944,
+        "LINK-USDT-SWAP": 6.509433059853185,
+        "LTC-USDT-SWAP": 3.6388662246384214,
+        "XRP-USDT-SWAP": -14.588246693950364
+      },
+      "missingRate": 0.02331689536878212,
+      "pValue": 0.04485243010715356,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": true
+      },
+      "rankICIR": 0.0418287376394417,
+      "rankICMean": 0.017054878199506938,
+      "rankICPositiveRatio": 0.5147826086956522,
+      "rankICStd": 0.4077311236719066,
+      "singleInstrumentPositiveContribution": 0.36967439158252163,
+      "singleMonthPositiveContribution": 0.06891918403123183,
+      "stress1_5xSpread": 0.0015042983049938844,
+      "timeframe": "1d",
+      "trialId": "alpha191_145_1d_h5_inverse",
+      "turnover": 0.170147954743255
+    },
+    {
+      "baseCostSpread": -0.0015721417080935749,
+      "clusterId": "factor_cluster_008",
+      "coverage": 0.9791487993138936,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_191",
+      "fdrAdjustedPValue": 0.00492572577788053,
+      "fdrSignificant": true,
+      "folds": [
+        {
+          "averageNetSpread": -0.0023554295675740525,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 444
+        },
+        {
+          "averageNetSpread": -0.0026318192578090455,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": -0.0021436811040930447,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.0017722902630963268,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.0028947085058673664,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": -0.000860678399365828,
+      "implementationHash": "factor_impl_13450e4125d37fbe0edd0fbd407982f3266f709542cfa22a1ac22f7d1b99c2ab",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -1.8926115524731535,
+        "BCH-USDT-SWAP": 0.2120672811929929,
+        "BTC-USDT-SWAP": -0.11146435962568657,
+        "ETC-USDT-SWAP": -0.7369751130534937,
+        "ETH-USDT-SWAP": -0.3622516927034809,
+        "LINK-USDT-SWAP": -1.0366620455778026,
+        "LTC-USDT-SWAP": 1.1390341281734575,
+        "XRP-USDT-SWAP": 0.8067210003276672
+      },
+      "missingRate": 0.020851200686106353,
+      "pValue": 0.0003078578611175331,
+      "positiveFoldCount": 1,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": true,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.07514648761140548,
+      "rankICMean": -0.03178021219642184,
+      "rankICPositiveRatio": 0.4657415437987858,
+      "rankICStd": 0.42291014798672166,
+      "singleInstrumentPositiveContribution": 0.5278627764065725,
+      "singleMonthPositiveContribution": 0.1383416085450926,
+      "stress1_5xSpread": -0.0019278733624574485,
+      "timeframe": "1d",
+      "trialId": "alpha191_191_1d_h1_original",
+      "turnover": 0.7115885416666666
+    },
+    {
+      "baseCostSpread": 0.00014921509063808074,
+      "clusterId": "factor_cluster_008",
+      "coverage": 0.9791487993138936,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_191",
+      "fdrAdjustedPValue": 0.00492572577788053,
+      "fdrSignificant": true,
+      "folds": [
+        {
+          "averageNetSpread": 0.0009838079459524296,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 444
+        },
+        {
+          "averageNetSpread": 0.0011833214037317915,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 466
+        },
+        {
+          "averageNetSpread": 0.0007221757277489577,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": -0.0032109999405156827,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 465
+        },
+        {
+          "averageNetSpread": 0.001465514606085229,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 459
+        }
+      ],
+      "forwardHorizon": 1,
+      "grossSpread": 0.000860678399365828,
+      "implementationHash": "factor_impl_13450e4125d37fbe0edd0fbd407982f3266f709542cfa22a1ac22f7d1b99c2ab",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 1.8926115524731535,
+        "BCH-USDT-SWAP": -0.2120672811929929,
+        "BTC-USDT-SWAP": 0.11146435962568657,
+        "ETC-USDT-SWAP": 0.7369751130534937,
+        "ETH-USDT-SWAP": 0.3622516927034809,
+        "LINK-USDT-SWAP": 1.0366620455778026,
+        "LTC-USDT-SWAP": -1.1390341281734575,
+        "XRP-USDT-SWAP": -0.8067210003276672
+      },
+      "missingRate": 0.020851200686106353,
+      "pValue": 0.0003078578611175331,
+      "positiveFoldCount": 4,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": true,
+        "foldConsistency": true,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.07514648761140548,
+      "rankICMean": 0.03178021219642184,
+      "rankICPositiveRatio": 0.5164787510841283,
+      "rankICStd": 0.42291014798672166,
+      "singleInstrumentPositiveContribution": 0.45715643987835614,
+      "singleMonthPositiveContribution": 0.07671327244877885,
+      "stress1_5xSpread": -0.00020651656372579249,
+      "timeframe": "1d",
+      "trialId": "alpha191_191_1d_h1_inverse",
+      "turnover": 0.7115885416666666
+    },
+    {
+      "baseCostSpread": 0.00017018379867095925,
+      "clusterId": "factor_cluster_008",
+      "coverage": 0.9774335334476844,
+      "direction": 1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_191",
+      "fdrAdjustedPValue": 0.4189293070052429,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": 0.008629258116561702,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 444
+        },
+        {
+          "averageNetSpread": -0.001018026264469097,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": -0.003228076784993984,
+          "foldId": "fold_003",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.003796960860183868,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.006398077793270793,
+          "foldId": "fold_005",
+          "positive": false,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": 0.000881145086187271,
+      "implementationHash": "factor_impl_13450e4125d37fbe0edd0fbd407982f3266f709542cfa22a1ac22f7d1b99c2ab",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": 2.1455240436288436,
+        "BCH-USDT-SWAP": 1.0449283376487122,
+        "BTC-USDT-SWAP": -3.700537446988882,
+        "ETC-USDT-SWAP": -2.047136124224985,
+        "ETH-USDT-SWAP": -1.0561348032090292,
+        "LINK-USDT-SWAP": -1.393834341981593,
+        "LTC-USDT-SWAP": 1.8253319431151644,
+        "XRP-USDT-SWAP": 5.207610945156289
+      },
+      "missingRate": 0.022566466552315645,
+      "pValue": 0.20946465350262145,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": true,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": -0.026157998676253267,
+      "rankICMean": -0.011098385010884842,
+      "rankICPositiveRatio": 0.47567332754126845,
+      "rankICStd": 0.42428265052861897,
+      "singleInstrumentPositiveContribution": 0.5093817472427646,
+      "singleMonthPositiveContribution": 0.13209023465196187,
+      "stress1_5xSpread": -0.0001852968450871969,
+      "timeframe": "1d",
+      "trialId": "alpha191_191_1d_h5_original",
+      "turnover": 0.7110869565217391
+    },
+    {
+      "baseCostSpread": -0.0015921063737035827,
+      "clusterId": "factor_cluster_008",
+      "coverage": 0.9774335334476844,
+      "direction": -1,
+      "eligibleResearchFeature": false,
+      "factorId": "alpha191_191",
+      "fdrAdjustedPValue": 0.4189293070052429,
+      "fdrSignificant": false,
+      "folds": [
+        {
+          "averageNetSpread": -0.010000879738183326,
+          "foldId": "fold_001",
+          "positive": false,
+          "sampleCount": 444
+        },
+        {
+          "averageNetSpread": -0.0004278611814183503,
+          "foldId": "fold_002",
+          "positive": false,
+          "sampleCount": 462
+        },
+        {
+          "averageNetSpread": 0.0018072524899831364,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": -0.005232969536973456,
+          "foldId": "fold_004",
+          "positive": false,
+          "sampleCount": 461
+        },
+        {
+          "averageNetSpread": 0.0049790090571288845,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 451
+        }
+      ],
+      "forwardHorizon": 5,
+      "grossSpread": -0.000881145086187271,
+      "implementationHash": "factor_impl_13450e4125d37fbe0edd0fbd407982f3266f709542cfa22a1ac22f7d1b99c2ab",
+      "instrumentContributions": {
+        "ADA-USDT-SWAP": -2.1455240436288436,
+        "BCH-USDT-SWAP": -1.0449283376487122,
+        "BTC-USDT-SWAP": 3.700537446988882,
+        "ETC-USDT-SWAP": 2.047136124224985,
+        "ETH-USDT-SWAP": 1.0561348032090292,
+        "LINK-USDT-SWAP": 1.393834341981593,
+        "LTC-USDT-SWAP": -1.8253319431151644,
+        "XRP-USDT-SWAP": -5.207610945156289
+      },
+      "missingRate": 0.022566466552315645,
+      "pValue": 0.20946465350262145,
+      "positiveFoldCount": 2,
+      "qualificationGates": {
+        "baseCostPositive": false,
+        "coverage": true,
+        "fdr": false,
+        "foldConsistency": false,
+        "instrumentConcentration": false,
+        "monthConcentration": true,
+        "stress1_5xNonNegative": false
+      },
+      "rankICIR": 0.026157998676253267,
+      "rankICMean": 0.011098385010884842,
+      "rankICPositiveRatio": 0.5039096437880104,
+      "rankICStd": 0.42428265052861897,
+      "singleInstrumentPositiveContribution": 0.4514148243596482,
+      "singleMonthPositiveContribution": 0.1163445779150636,
+      "stress1_5xSpread": -0.0019475870174617388,
+      "timeframe": "1d",
+      "trialId": "alpha191_191_1d_h5_inverse",
+      "turnover": 0.7110869565217391
+    }
+  ]
+}

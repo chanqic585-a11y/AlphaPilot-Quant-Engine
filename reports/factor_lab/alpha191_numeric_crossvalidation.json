@@ -1,0 +1,131 @@
+{
+  "formulaConflictCount": 0,
+  "preregistrationCommit": "8eb758e77572627f32a3c461dd005e7a96daa0fd",
+  "preregistrationHash": "factor_seed_a1edc4690ad1f79c531f63758bea7ec3a26899e925856c1177faf4cb38c9d80e",
+  "reportHash": "numeric_crosscheck_47b807d32c4be31922b31b3c0cbcb0402e09bb696c25fbe2286cb3bfe0007b40",
+  "results": [
+    {
+      "containsInfinity": false,
+      "factorId": "alpha191_014",
+      "fixtureCases": [
+        "nan",
+        "zero_denominator",
+        "short_window",
+        "full_window",
+        "constant_segment",
+        "extreme_value"
+      ],
+      "fixtureRows": 72,
+      "maxAbsoluteError": 0.0,
+      "status": "exact_match"
+    },
+    {
+      "containsInfinity": false,
+      "factorId": "alpha191_015",
+      "fixtureCases": [
+        "nan",
+        "zero_denominator",
+        "short_window",
+        "full_window",
+        "constant_segment",
+        "extreme_value"
+      ],
+      "fixtureRows": 72,
+      "maxAbsoluteError": 0.0,
+      "status": "exact_match"
+    },
+    {
+      "containsInfinity": false,
+      "factorId": "alpha191_018",
+      "fixtureCases": [
+        "nan",
+        "zero_denominator",
+        "short_window",
+        "full_window",
+        "constant_segment",
+        "extreme_value"
+      ],
+      "fixtureRows": 72,
+      "maxAbsoluteError": 0.0,
+      "status": "exact_match"
+    },
+    {
+      "containsInfinity": false,
+      "factorId": "alpha191_020",
+      "fixtureCases": [
+        "nan",
+        "zero_denominator",
+        "short_window",
+        "full_window",
+        "constant_segment",
+        "extreme_value"
+      ],
+      "fixtureRows": 72,
+      "maxAbsoluteError": 0.0,
+      "status": "exact_match"
+    },
+    {
+      "containsInfinity": false,
+      "factorId": "alpha191_058",
+      "fixtureCases": [
+        "nan",
+        "zero_denominator",
+        "short_window",
+        "full_window",
+        "constant_segment",
+        "extreme_value"
+      ],
+      "fixtureRows": 72,
+      "maxAbsoluteError": 0.0,
+      "status": "exact_match"
+    },
+    {
+      "containsInfinity": false,
+      "factorId": "alpha191_088",
+      "fixtureCases": [
+        "nan",
+        "zero_denominator",
+        "short_window",
+        "full_window",
+        "constant_segment",
+        "extreme_value"
+      ],
+      "fixtureRows": 72,
+      "maxAbsoluteError": 0.0,
+      "status": "exact_match"
+    },
+    {
+      "containsInfinity": false,
+      "factorId": "alpha191_145",
+      "fixtureCases": [
+        "nan",
+        "zero_denominator",
+        "short_window",
+        "full_window",
+        "constant_segment",
+        "extreme_value"
+      ],
+      "fixtureRows": 72,
+      "maxAbsoluteError": 0.0,
+      "status": "exact_match"
+    },
+    {
+      "containsInfinity": false,
+      "factorId": "alpha191_191",
+      "fixtureCases": [
+        "nan",
+        "zero_denominator",
+        "short_window",
+        "full_window",
+        "constant_segment",
+        "extreme_value"
+      ],
+      "fixtureRows": 72,
+      "maxAbsoluteError": 0.0,
+      "status": "exact_match"
+    }
+  ],
+  "schemaVersion": "alpha191_numeric_crossvalidation_v1",
+  "seedCount": 8,
+  "unexpectedMismatchCount": 0
+}

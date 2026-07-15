@@ -5123,7 +5123,27 @@ See `docs/candidate-evidence-closure-methodology.md`,
 `docs/signal-vs-risk-model-validation.md`, and
 `docs/candidate-validation-results.md`.
 
-## Next Versions
+## Backtest-First Workflow After Local Simulation Retirement
+
+Local Forward and Local Simulation are retired as active transition targets.
+Existing historical values and evidence remain readable, but no new workflow
+run can enter a retired local state.
+
+The active lifecycle is:
+
+```text
+formal backtest -> immutable Demo Release -> OKX Demo validation -> Live Candidate
+```
+
+A formal backtest pass ends at the applicable backtest state. It does not
+create local-forward evidence and does not grant Demo or Live execution
+permission. No historical rows or migrations are deleted or rewritten.
+
+## Historical Next Versions (Superseded)
+
+The entries below are retained as historical roadmap notes. Any Local Forward
+or Local Simulation step in them is superseded by the active backtest-first
+workflow above.
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.
 - V13.4.28 follow-up: resolve remaining FET/TON OHLCV coverage policy before strategy specification.

@@ -1,0 +1,28 @@
+{
+  "blockers": [],
+  "checks": {
+    "clusters_complete": true,
+    "controls_verified": true,
+    "fdr_complete": true,
+    "manifest_verified": true,
+    "minimum_mechanism_families": true,
+    "non_ohlcv_mechanism_ready": true,
+    "pit_status_explicit": true,
+    "shortlist_frozen": true,
+    "trial_ledger_complete": true
+  },
+  "controlsVerified": true,
+  "dataSnapshotId": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "eligibleFactorCount": 0,
+  "factorShortlistId": "factor_shortlist_5bdaeea71852321b56ba85c3890e4a497dccb5002c0ea4fd0b7d04e3be77a416",
+  "formalTrialCount": 32,
+  "passed": true,
+  "pitStatus": "diagnostic_proxy",
+  "readyMechanismCount": 3,
+  "readyMechanisms": [
+    "volatility_compression_breakout",
+    "idiosyncratic_shock_reversion",
+    "funding_crowding_reversal"
+  ],
+  "schemaVersion": "phase3b_data_readiness_gate_v1"
+}

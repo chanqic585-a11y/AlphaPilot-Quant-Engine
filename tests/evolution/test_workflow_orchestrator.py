@@ -371,7 +371,7 @@ class WorkflowOrchestratorTests(unittest.TestCase):
         self.assertEqual(projection["summary"]["currentAwaitingCount"], 1)
         self.assertEqual(projection["summary"]["currentFailedCount"], 0)
 
-    def test_passed_backtest_can_create_one_local_forward_run(self) -> None:
+    def test_passed_backtest_can_create_one_demo_admission_run(self) -> None:
         version, running = self.start_initial_run()
         passed = complete_workflow_run(
             self.workflow,
@@ -391,11 +391,12 @@ class WorkflowOrchestratorTests(unittest.TestCase):
 
         self.assertEqual(passed.status, "passed")
         self.assertEqual(forward, repeated)
-        self.assertEqual(forward.stage, "local_forward")
+        self.assertEqual(forward.stage, "demo")
         self.assertEqual(forward.status, "awaiting")
-        self.assertEqual(projection["summary"]["localSimulationCount"], 1)
+        self.assertEqual(projection["summary"]["localSimulationCount"], 0)
+        self.assertEqual(projection["summary"]["demoCount"], 1)
         self.assertEqual(projection["summary"]["strategyCount"], 0)
-        self.assertEqual(projection["items"][0]["page"], "local_simulation")
+        self.assertEqual(projection["items"][0]["page"], "demo")
 
     def test_operational_failure_can_retry_same_version(self) -> None:
         version, running = self.start_initial_run()

@@ -1,0 +1,73 @@
+{
+  "candidates": [
+    {
+      "candidateId": "volatility_compression_breakout_1h_long_v1",
+      "expectedFailureRegimes": [
+        "false_breakout",
+        "illiquid_gap",
+        "range_reentry"
+      ],
+      "labels": [
+        "market_mechanism_prescreen_failed"
+      ]
+    },
+    {
+      "candidateId": "volatility_compression_breakout_1h_short_v1",
+      "expectedFailureRegimes": [
+        "false_breakout",
+        "illiquid_gap",
+        "range_reentry"
+      ],
+      "labels": [
+        "market_mechanism_prescreen_failed"
+      ]
+    },
+    {
+      "candidateId": "idiosyncratic_shock_reversion_4h_long_v1",
+      "expectedFailureRegimes": [
+        "persistent_idiosyncratic_trend",
+        "listing_event",
+        "liquidity_shock"
+      ],
+      "labels": [
+        "freqtrade_translation_not_executed",
+        "formal_gate_failed:oosProfitFactor",
+        "formal_gate_failed:positiveFoldCount",
+        "formal_gate_failed:stress1_5xProfitFactor"
+      ]
+    },
+    {
+      "candidateId": "idiosyncratic_shock_reversion_4h_short_v1",
+      "expectedFailureRegimes": [
+        "persistent_idiosyncratic_trend",
+        "listing_event",
+        "liquidity_shock"
+      ],
+      "labels": [
+        "market_mechanism_prescreen_failed"
+      ]
+    },
+    {
+      "candidateId": "funding_crowding_reversal_4h_long_v1",
+      "expectedFailureRegimes": [
+        "persistent_trend",
+        "funding_basis_shift",
+        "cross_exchange_proxy_divergence"
+      ],
+      "labels": [
+        "market_mechanism_prescreen_failed"
+      ]
+    },
+    {
+      "candidateId": "funding_crowding_reversal_4h_short_v1",
+      "expectedFailureRegimes": [
+        "persistent_trend",
+        "funding_basis_shift",
+        "cross_exchange_proxy_divergence"
+      ],
+      "labels": [
+        "market_mechanism_prescreen_failed"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,510 @@
+{
+  "baseGates": {
+    "maximumDrawdownPct": {
+      "operator": "<=",
+      "required": 25.0
+    },
+    "oosAverageNetR": {
+      "operator": ">",
+      "required": 0.0
+    },
+    "oosProfitFactor": {
+      "operator": ">=",
+      "required": 1.05
+    },
+    "oosTotalNetR": {
+      "operator": ">",
+      "required": 0.0
+    },
+    "positiveFoldCount": {
+      "operator": ">=",
+      "required": 3
+    }
+  },
+  "campaignId": "phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50",
+  "candidates": [
+    {
+      "candidateId": "volatility_compression_breakout_1h_long_v1",
+      "causalRationale": "A low-volatility state can precede directional range expansion when price and volume confirm the break.",
+      "definitionHash": "candidate_definition_923f2f3995b806956ebee00ad6cdf1c45b5481415e662a8ccea40415b217cfdc",
+      "direction": "long",
+      "eventDefinition": {
+        "breakoutBars": 20,
+        "compressionQuantile": 0.25,
+        "minimumVolumeRatio": 1.05,
+        "quantileWindow": 720
+      },
+      "expectedFailureRegimes": [
+        "false_breakout",
+        "illiquid_gap",
+        "range_reentry"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "volatility_compression_breakout_1h",
+      "invalidation": "Price reaches the fixed initial ATR stop before the target.",
+      "marketMechanismId": "volatility_compression_breakout",
+      "maximumHoldBars": 48,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "stopAtr": 1.5,
+      "targetR": 2.2,
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "volatility_compression_breakout_1h_short_v1",
+      "causalRationale": "A low-volatility state can precede directional range expansion when price and volume confirm the break.",
+      "definitionHash": "candidate_definition_67e47a9bb211099998a784ab1325a8dc5f170dec171453ad047061009b0c9a6f",
+      "direction": "short",
+      "eventDefinition": {
+        "breakoutBars": 20,
+        "compressionQuantile": 0.25,
+        "minimumVolumeRatio": 1.05,
+        "quantileWindow": 720
+      },
+      "expectedFailureRegimes": [
+        "false_breakout",
+        "illiquid_gap",
+        "range_reentry"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "volatility_compression_breakout_1h",
+      "invalidation": "Price reaches the fixed initial ATR stop before the target.",
+      "marketMechanismId": "volatility_compression_breakout",
+      "maximumHoldBars": 48,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "stopAtr": 1.5,
+      "targetR": 2.2,
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "idiosyncratic_shock_reversion_4h_long_v1",
+      "causalRationale": "A large asset-specific return residual may mean-revert after a same-direction exhaustion candle.",
+      "definitionHash": "candidate_definition_6df442b07fa2a80d57aa62281b228c0ab556e3dcd0c0169385c592d5e060fcf7",
+      "direction": "long",
+      "eventDefinition": {
+        "shockBars": 3,
+        "zscoreThreshold": 2.0,
+        "zscoreWindow": 180
+      },
+      "expectedFailureRegimes": [
+        "persistent_idiosyncratic_trend",
+        "listing_event",
+        "liquidity_shock"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "idiosyncratic_shock_reversion_4h",
+      "invalidation": "The asset-specific move continues through the fixed initial ATR stop.",
+      "marketMechanismId": "idiosyncratic_shock_reversion",
+      "maximumHoldBars": 18,
+      "requiredData": [
+        "ohlcv",
+        "btc_benchmark_ohlcv"
+      ],
+      "stopAtr": 1.25,
+      "targetR": 2.0,
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "idiosyncratic_shock_reversion_4h_short_v1",
+      "causalRationale": "A large asset-specific return residual may mean-revert after a same-direction exhaustion candle.",
+      "definitionHash": "candidate_definition_fd5abbc0ee459051819954a62716e4a3170eb2271dfe7825f9ba756c47eb014f",
+      "direction": "short",
+      "eventDefinition": {
+        "shockBars": 3,
+        "zscoreThreshold": 2.0,
+        "zscoreWindow": 180
+      },
+      "expectedFailureRegimes": [
+        "persistent_idiosyncratic_trend",
+        "listing_event",
+        "liquidity_shock"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "idiosyncratic_shock_reversion_4h",
+      "invalidation": "The asset-specific move continues through the fixed initial ATR stop.",
+      "marketMechanismId": "idiosyncratic_shock_reversion",
+      "maximumHoldBars": 18,
+      "requiredData": [
+        "ohlcv",
+        "btc_benchmark_ohlcv"
+      ],
+      "stopAtr": 1.25,
+      "targetR": 2.0,
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "funding_crowding_reversal_4h_long_v1",
+      "causalRationale": "Extreme perpetual funding can identify crowded positioning that may reverse after price exhaustion.",
+      "definitionHash": "candidate_definition_0f0c0fd53774ab600d2738a5de91eea80a1ec83f92be227072816813ca5ae8df",
+      "direction": "long",
+      "eventDefinition": {
+        "confirmationBars": 3,
+        "fundingWindow": 180,
+        "fundingZscore": 1.75
+      },
+      "expectedFailureRegimes": [
+        "persistent_trend",
+        "funding_basis_shift",
+        "cross_exchange_proxy_divergence"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "funding_crowding_reversal_4h",
+      "invalidation": "Crowding persists and price reaches the fixed initial ATR stop.",
+      "marketMechanismId": "funding_crowding_reversal",
+      "maximumHoldBars": 24,
+      "requiredData": [
+        "ohlcv",
+        "funding"
+      ],
+      "stopAtr": 1.25,
+      "targetR": 2.0,
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "funding_crowding_reversal_4h_short_v1",
+      "causalRationale": "Extreme perpetual funding can identify crowded positioning that may reverse after price exhaustion.",
+      "definitionHash": "candidate_definition_bef5fde3080f6f773b8995eabe0339c0ae6c62a2ecb55425ad22648ae71c3bc5",
+      "direction": "short",
+      "eventDefinition": {
+        "confirmationBars": 3,
+        "fundingWindow": 180,
+        "fundingZscore": 1.75
+      },
+      "expectedFailureRegimes": [
+        "persistent_trend",
+        "funding_basis_shift",
+        "cross_exchange_proxy_divergence"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "funding_crowding_reversal_4h",
+      "invalidation": "Crowding persists and price reaches the fixed initial ATR stop.",
+      "marketMechanismId": "funding_crowding_reversal",
+      "maximumHoldBars": 24,
+      "requiredData": [
+        "ohlcv",
+        "funding"
+      ],
+      "stopAtr": 1.25,
+      "targetR": 2.0,
+      "timeframe": "4h"
+    }
+  ],
+  "codeCommit": "e6a60297e3fc15968f886fcdb3f373e173af1089",
+  "costScenarios": {
+    "base": {
+      "feeBpsPerSide": 5.0,
+      "multiplier": 1.0,
+      "slippageBpsPerSide": 3.0,
+      "spreadProxyBpsPerSide": 2.0
+    },
+    "stress_1_5x": {
+      "multiplier": 1.5
+    },
+    "stress_2x": {
+      "multiplier": 2.0
+    }
+  },
+  "dataSnapshotHash": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "experimentBudget": {
+    "maximumFamilies": 8,
+    "maximumFullBacktests": 48,
+    "maximumInitialCandidates": 16,
+    "maximumInitialVariantsPerFamily": 2,
+    "maximumStructuralRevisionsPerFamily": 1
+  },
+  "externalReferenceManifestHash": "external_references_734c0e139fd68ae4579f49526fb32c879b3bd07f68743281564ce71e208d4187",
+  "factorDiscoveryBranch": {
+    "enabled": false
+  },
+  "factorRegistryHash": "b01935325a3253051d6c419f1d44316d950d3a09daecc23328ca6140221adb0e",
+  "factorShortlistHash": "factor_shortlist_5bdaeea71852321b56ba85c3890e4a497dccb5002c0ea4fd0b7d04e3be77a416",
+  "formalGates": {
+    "holdoutAccessBeforeFinalEvaluation": {
+      "operator": "==",
+      "required": 0
+    },
+    "maximumDrawdownPct": {
+      "operator": "<=",
+      "required": 20.0
+    },
+    "oosAverageNetR": {
+      "operator": ">=",
+      "required": 0.05
+    },
+    "oosProfitFactor": {
+      "operator": ">=",
+      "required": 1.15
+    },
+    "oosTotalNetR": {
+      "operator": ">",
+      "required": 0.0
+    },
+    "positiveFoldCount": {
+      "operator": ">=",
+      "required": 4
+    },
+    "singleInstrumentPositiveContribution": {
+      "operator": "<=",
+      "required": 0.35
+    },
+    "singleMonthPositiveContribution": {
+      "operator": "<=",
+      "required": 0.35
+    },
+    "stress1_5xAverageNetR": {
+      "operator": ">",
+      "required": 0.0
+    },
+    "stress1_5xProfitFactor": {
+      "operator": ">=",
+      "required": 1.05
+    }
+  },
+  "holdout": {
+    "accessCountBeforeFinalEvaluation": 0,
+    "dataSnapshotHash": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+    "hash": "holdout_a832347244e40d5976aed65b86303e08f4e63a4631d520b0997decf7b714dcb2",
+    "ratio": 0.2,
+    "selectionAccessPolicy": "locked_until_final_evaluation",
+    "timeBoundaries": {
+      "1h": {
+        "coveragePolicy": "intersection_of_frozen_instrument_histories",
+        "developmentEnd": "2023-08-01T13:42:00+00:00",
+        "developmentStart": "2020-03-10T09:00:00+00:00",
+        "holdoutEnd": "2026-05-11T11:00:00+00:00",
+        "holdoutStart": "2025-02-14T20:12:00+00:00",
+        "walkForwardEnd": "2025-02-14T20:12:00+00:00",
+        "walkForwardFolds": [
+          {
+            "end": "2023-11-22T05:24:00+00:00",
+            "foldId": "fold_001",
+            "start": "2023-08-01T13:42:00+00:00"
+          },
+          {
+            "end": "2024-03-13T21:06:00+00:00",
+            "foldId": "fold_002",
+            "start": "2023-11-22T05:24:00+00:00"
+          },
+          {
+            "end": "2024-07-04T12:48:00+00:00",
+            "foldId": "fold_003",
+            "start": "2024-03-13T21:06:00+00:00"
+          },
+          {
+            "end": "2024-10-25T04:30:00+00:00",
+            "foldId": "fold_004",
+            "start": "2024-07-04T12:48:00+00:00"
+          },
+          {
+            "end": "2025-02-14T20:12:00+00:00",
+            "foldId": "fold_005",
+            "start": "2024-10-25T04:30:00+00:00"
+          }
+        ],
+        "walkForwardStart": "2023-08-01T13:42:00+00:00"
+      },
+      "4h": {
+        "coveragePolicy": "intersection_of_frozen_instrument_histories",
+        "developmentEnd": "2023-08-01T11:36:00+00:00",
+        "developmentStart": "2020-03-10T08:00:00+00:00",
+        "holdoutEnd": "2026-05-11T08:00:00+00:00",
+        "holdoutStart": "2025-02-14T17:36:00+00:00",
+        "walkForwardEnd": "2025-02-14T17:36:00+00:00",
+        "walkForwardFolds": [
+          {
+            "end": "2023-11-22T03:12:00+00:00",
+            "foldId": "fold_001",
+            "start": "2023-08-01T11:36:00+00:00"
+          },
+          {
+            "end": "2024-03-13T18:48:00+00:00",
+            "foldId": "fold_002",
+            "start": "2023-11-22T03:12:00+00:00"
+          },
+          {
+            "end": "2024-07-04T10:24:00+00:00",
+            "foldId": "fold_003",
+            "start": "2024-03-13T18:48:00+00:00"
+          },
+          {
+            "end": "2024-10-25T02:00:00+00:00",
+            "foldId": "fold_004",
+            "start": "2024-07-04T10:24:00+00:00"
+          },
+          {
+            "end": "2025-02-14T17:36:00+00:00",
+            "foldId": "fold_005",
+            "start": "2024-10-25T02:00:00+00:00"
+          }
+        ],
+        "walkForwardStart": "2023-08-01T11:36:00+00:00"
+      }
+    }
+  },
+  "implementationSourceHashes": {
+    "campaign_contract.py": "6b3adf8303e28757cb8e6ca72853a3919a8c8042faeafbeef0b17d2d52af7b75",
+    "campaign_metrics.py": "1bd400b37ee23974a9b633246aa06e3c20b7d7be54d92db66d3a23cadd9aa84f",
+    "campaign_preregistration.py": "90f7e0ec60c6f87b3c0f22c6a44282ed494c36949e2694a5c4d4712bd63dd954",
+    "campaign_runner.py": "8dcb8aa8322ffad88f9911e480c8b41e9e288c4ad75b454e622d95dee1b6e99c",
+    "campaign_signals.py": "1c64dc795630c6f67c0ce442df73df029a3361ec23a69fa21ce1800e4ef7ade0"
+  },
+  "preregistrationHash": "campaign_preregistration_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50",
+  "prescreenGates": {
+    "developmentAverageNetR": {
+      "operator": ">=",
+      "required": 0.03
+    },
+    "developmentProfitFactor": {
+      "operator": ">=",
+      "required": 1.08
+    },
+    "positiveDevelopmentMonthRatio": {
+      "operator": ">=",
+      "required": 0.6
+    }
+  },
+  "riskPolicy": {
+    "initialStopMayWiden": false,
+    "minimumTargetR": 2.0,
+    "riskFractionPerEvent": 0.01
+  },
+  "sameBarRule": "stop_first_conservative",
+  "sampleGates": {
+    "15m": {
+      "minimumEvents": 300,
+      "minimumMonths": 12
+    },
+    "1d": {
+      "minimumEvents": 40,
+      "minimumMonths": 24
+    },
+    "1h": {
+      "minimumEvents": 150,
+      "minimumMonths": 12
+    },
+    "4h": {
+      "minimumEvents": 80,
+      "minimumMonths": 18
+    }
+  },
+  "schemaVersion": "phase3c_campaign_preregistration_v1",
+  "splitPolicy": {
+    "embargoPolicy": "candidate_maximum_hold_bars",
+    "purged": true,
+    "ratios": {
+      "development": 0.55,
+      "holdout": 0.2,
+      "walkForward": 0.25
+    },
+    "timeBoundaries": {
+      "1h": {
+        "coveragePolicy": "intersection_of_frozen_instrument_histories",
+        "developmentEnd": "2023-08-01T13:42:00+00:00",
+        "developmentStart": "2020-03-10T09:00:00+00:00",
+        "holdoutEnd": "2026-05-11T11:00:00+00:00",
+        "holdoutStart": "2025-02-14T20:12:00+00:00",
+        "walkForwardEnd": "2025-02-14T20:12:00+00:00",
+        "walkForwardFolds": [
+          {
+            "end": "2023-11-22T05:24:00+00:00",
+            "foldId": "fold_001",
+            "start": "2023-08-01T13:42:00+00:00"
+          },
+          {
+            "end": "2024-03-13T21:06:00+00:00",
+            "foldId": "fold_002",
+            "start": "2023-11-22T05:24:00+00:00"
+          },
+          {
+            "end": "2024-07-04T12:48:00+00:00",
+            "foldId": "fold_003",
+            "start": "2024-03-13T21:06:00+00:00"
+          },
+          {
+            "end": "2024-10-25T04:30:00+00:00",
+            "foldId": "fold_004",
+            "start": "2024-07-04T12:48:00+00:00"
+          },
+          {
+            "end": "2025-02-14T20:12:00+00:00",
+            "foldId": "fold_005",
+            "start": "2024-10-25T04:30:00+00:00"
+          }
+        ],
+        "walkForwardStart": "2023-08-01T13:42:00+00:00"
+      },
+      "4h": {
+        "coveragePolicy": "intersection_of_frozen_instrument_histories",
+        "developmentEnd": "2023-08-01T11:36:00+00:00",
+        "developmentStart": "2020-03-10T08:00:00+00:00",
+        "holdoutEnd": "2026-05-11T08:00:00+00:00",
+        "holdoutStart": "2025-02-14T17:36:00+00:00",
+        "walkForwardEnd": "2025-02-14T17:36:00+00:00",
+        "walkForwardFolds": [
+          {
+            "end": "2023-11-22T03:12:00+00:00",
+            "foldId": "fold_001",
+            "start": "2023-08-01T11:36:00+00:00"
+          },
+          {
+            "end": "2024-03-13T18:48:00+00:00",
+            "foldId": "fold_002",
+            "start": "2023-11-22T03:12:00+00:00"
+          },
+          {
+            "end": "2024-07-04T10:24:00+00:00",
+            "foldId": "fold_003",
+            "start": "2024-03-13T18:48:00+00:00"
+          },
+          {
+            "end": "2024-10-25T02:00:00+00:00",
+            "foldId": "fold_004",
+            "start": "2024-07-04T10:24:00+00:00"
+          },
+          {
+            "end": "2025-02-14T17:36:00+00:00",
+            "foldId": "fold_005",
+            "start": "2024-10-25T02:00:00+00:00"
+          }
+        ],
+        "walkForwardStart": "2023-08-01T11:36:00+00:00"
+      }
+    },
+    "walkForwardFolds": 5
+  },
+  "stopRules": {
+    "formalFailure": "retain_failed_evidence_without_release",
+    "noForcedWinner": true,
+    "prescreenFailure": "stop_candidate_before_full_backtest"
+  },
+  "universePolicy": {
+    "crossSectionalUse": "disabled",
+    "instruments": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "XRP-USDT-SWAP",
+      "LTC-USDT-SWAP",
+      "BCH-USDT-SWAP",
+      "ETC-USDT-SWAP",
+      "ADA-USDT-SWAP",
+      "LINK-USDT-SWAP"
+    ],
+    "mode": "frozen_time_series_instruments",
+    "pitStatus": "diagnostic_proxy"
+  }
+}
