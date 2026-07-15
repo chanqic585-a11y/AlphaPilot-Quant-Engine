@@ -1,0 +1,161 @@
+{
+  "campaignMayRun": false,
+  "checkedAt": "2026-07-15T23:41:36Z",
+  "directions": {
+    "A1": {
+      "formalReady": false,
+      "maximumOutcome": "formal_research_pass",
+      "missing": [
+        "verifiedSameExchangeOhlcv",
+        "historicalOpenInterest",
+        "realLiquidation",
+        "sameExchangeCoreFields"
+      ],
+      "provisionalReady": false,
+      "sameExchangeCandidates": []
+    },
+    "A2": {
+      "diagnosticReady": true,
+      "formalReady": false,
+      "maximumOutcome": "provisional_research_pass",
+      "missing": [
+        "verifiedSameExchangeOhlcv",
+        "historicalOpenInterest",
+        "sameExchangeCoreFields",
+        "realLiquidation"
+      ],
+      "provisionalReady": false,
+      "sameExchangeCandidates": []
+    },
+    "B": {
+      "formalReady": false,
+      "maximumOutcome": "formal_research_pass",
+      "missing": [
+        "sameExchangeVerifiedPerpetualOhlcv",
+        "sameExchangeHistoricalFunding",
+        "sameExchangeHistoricalOpenInterest",
+        "sameExchangeHistoricalSpotPerpetualBasis"
+      ],
+      "provisionalReady": false,
+      "sameExchangeCandidates": []
+    },
+    "C": {
+      "diagnosticReady": true,
+      "formalReady": false,
+      "maximumOutcome": "formal_research_pass",
+      "missing": [
+        "pitTradability",
+        "pitLiquidity",
+        "listingDelisting",
+        "historicalContractUniverse"
+      ],
+      "provisionalReady": false
+    }
+  },
+  "exchangeChoiceReason": "OKX and Binance both expose useful public derivatives data, but neither documented public stack supplies the long historical OI, liquidation and PIT universe evidence needed by at least two V2 directions.",
+  "failClosedAction": "commit_evidence_and_do_not_run_campaign",
+  "formalReadyDirectionCount": 0,
+  "formalReadyDirections": [],
+  "minimumFormalDirectionCount": 2,
+  "provisionalReadyDirections": [],
+  "readinessHash": "data_readiness_v2_3e6c40410d985d63d72198f864f08378c1701f563cb5fc89fc3f6fc05f57ed44",
+  "sameExchangeCoreDataPassed": false,
+  "schemaVersion": "v13_27_1_11_data_readiness_v2",
+  "sourceAudit": {
+    "schemaVersion": "phase3b_data_source_audit_v1",
+    "sources": [
+      {
+        "dataType": "OHLCV",
+        "realOrProxy": "proxy",
+        "reason": "local history exchange provenance unverified",
+        "status": "ready_proxy"
+      },
+      {
+        "dataType": "VWAP / Amount",
+        "realOrProxy": "proxy",
+        "reason": "derived from OHLCV",
+        "status": "derived"
+      },
+      {
+        "dataType": "perpetual volume",
+        "realOrProxy": "proxy",
+        "reason": "local swap OHLCV volume",
+        "status": "ready_proxy"
+      },
+      {
+        "dataType": "Funding",
+        "realOrProxy": "real",
+        "reason": "Binance public funding history",
+        "status": "ready"
+      },
+      {
+        "dataType": "Open Interest",
+        "realOrProxy": "unavailable",
+        "reason": "not present in frozen snapshot",
+        "status": "unavailable"
+      },
+      {
+        "dataType": "spot price",
+        "realOrProxy": "proxy",
+        "reason": "local spot files exist but are not used in first campaign",
+        "status": "available_not_selected"
+      },
+      {
+        "dataType": "perpetual price",
+        "realOrProxy": "proxy",
+        "reason": "local swap close",
+        "status": "ready_proxy"
+      },
+      {
+        "dataType": "Basis",
+        "realOrProxy": "unavailable",
+        "reason": "synchronized spot/perpetual basis not frozen",
+        "status": "unavailable"
+      },
+      {
+        "dataType": "liquidation",
+        "realOrProxy": "unavailable",
+        "reason": "no real liquidation series",
+        "status": "unavailable"
+      },
+      {
+        "dataType": "liquidation proxy",
+        "realOrProxy": "proxy",
+        "reason": "range-volume shock only; not real liquidation",
+        "status": "available_diagnostic"
+      },
+      {
+        "dataType": "spread / slippage / depth",
+        "realOrProxy": "proxy",
+        "reason": "OHLCV range proxy; no historical L2",
+        "status": "available_diagnostic"
+      },
+      {
+        "dataType": "Point-in-Time universe",
+        "realOrProxy": "proxy",
+        "reason": "fixed continuously covered instruments; listing-state history incomplete",
+        "status": "diagnostic_proxy"
+      },
+      {
+        "dataType": "market breadth",
+        "realOrProxy": "proxy",
+        "reason": "derived from frozen universe returns",
+        "status": "derived"
+      },
+      {
+        "dataType": "BTC / ETH benchmark",
+        "realOrProxy": "proxy",
+        "reason": "local BTC and ETH OHLCV",
+        "status": "ready_proxy"
+      },
+      {
+        "dataType": "category / correlation cluster",
+        "realOrProxy": "proxy",
+        "reason": "deterministic return-correlation clusters",
+        "status": "derived"
+      }
+    ]
+  },
+  "sourceCatalogVerified": true,
+  "status": "data_not_ready"
+}

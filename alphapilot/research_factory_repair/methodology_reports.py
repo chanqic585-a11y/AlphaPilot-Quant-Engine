@@ -132,13 +132,18 @@ def write_methodology_reports(output_dir: Path) -> dict[str, Path]:
         "eventRemainingTargetMinimumR": 2.0,
         "portfolioPerSymbolRTarget": None,
     }
+    parity = _with_hash(
+        parity_core, prefix="translation_parity_policy", field="policyHash"
+    )
+    holdout = _with_hash(holdout_core, prefix="holdout_policy", field="policyHash")
+    parity_path = _write(output_dir / "translation_parity_policy.json", parity)
+    holdout_path = _write(output_dir / "holdout_policy.json", holdout)
+    _write(output_dir / "translation_parity_report.json", parity)
+    _write(output_dir / "holdout_unlock_policy.json", holdout)
     return {
         "gateMigration": _write(output_dir / "gate_migration_report.json", gate),
         "causalityPolicy": _write(output_dir / "causality_policy.json", causality),
-        "translationParity": _write(
-            output_dir / "translation_parity_policy.json",
-            _with_hash(parity_core, prefix="translation_parity_policy", field="policyHash"),
-        ),
+        "translationParity": parity_path,
         "benchmarkRegistry": _write(
             output_dir / "benchmark_registry.json",
             _with_hash(benchmark_core, prefix="benchmark_registry", field="registryHash"),
@@ -147,10 +152,7 @@ def write_methodology_reports(output_dir: Path) -> dict[str, Path]:
             output_dir / "bootstrap_policy.json",
             _with_hash(bootstrap_core, prefix="bootstrap_policy", field="policyHash"),
         ),
-        "holdoutPolicy": _write(
-            output_dir / "holdout_policy.json",
-            _with_hash(holdout_core, prefix="holdout_policy", field="policyHash"),
-        ),
+        "holdoutPolicy": holdout_path,
         "exitGeometry": _write(
             output_dir / "exit_geometry_schema.json",
             _with_hash(exit_core, prefix="exit_geometry", field="schemaHash"),

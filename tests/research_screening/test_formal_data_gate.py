@@ -14,6 +14,21 @@ def test_proxy_liquidation_variant_is_permanently_provisional() -> None:
     assert "realLiquidation" in result["missingEvidence"]
 
 
+def test_real_liquidation_direction_rejects_cross_exchange_core_data() -> None:
+    result = evaluate_formal_data_gate(
+        direction="A1",
+        evidence={
+            "perpetualPrice": {"exchange": "OKX", "provenanceHash": "price"},
+            "funding": {"exchange": "OKX", "provenanceHash": "funding"},
+            "openInterest": {"exchange": "Binance", "provenanceHash": "oi"},
+            "realLiquidation": {"exchange": "OKX", "provenanceHash": "liquidation"},
+        },
+    )
+
+    assert result["formalDataProvenancePassed"] is False
+    assert "sameExchangeCoreFields" in result["missingEvidence"]
+
+
 def test_short_crowding_requires_same_exchange_core_fields() -> None:
     incomplete = evaluate_formal_data_gate(
         direction="B",

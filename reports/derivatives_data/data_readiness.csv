@@ -1,0 +1,5 @@
+diagnosticReady,direction,formalReady,maximumOutcome,missing,provisionalReady,sameExchangeCandidates
+,A1,False,formal_research_pass,"[""verifiedSameExchangeOhlcv"", ""historicalOpenInterest"", ""realLiquidation"", ""sameExchangeCoreFields""]",False,[]
+True,A2,False,provisional_research_pass,"[""verifiedSameExchangeOhlcv"", ""historicalOpenInterest"", ""sameExchangeCoreFields"", ""realLiquidation""]",False,[]
+,B,False,formal_research_pass,"[""sameExchangeVerifiedPerpetualOhlcv"", ""sameExchangeHistoricalFunding"", ""sameExchangeHistoricalOpenInterest"", ""sameExchangeHistoricalSpotPerpetualBasis""]",False,[]
+True,C,False,formal_research_pass,"[""pitTradability"", ""pitLiquidity"", ""listingDelisting"", ""historicalContractUniverse""]",False,

@@ -1,0 +1,11 @@
+{
+  "campaignBlockedByDataReadiness": true,
+  "checkedAt": "2026-07-15T23:41:36Z",
+  "dockerCliAvailable": true,
+  "dockerImageAvailable": false,
+  "freeDiskBytes": 41253322752,
+  "minimumFreeDiskBytes": 20000000000,
+  "minimumFreeDiskPassed": true,
+  "pyarrowLocked": true,
+  "schemaVersion": "environment_limit_audit_v2"
+}

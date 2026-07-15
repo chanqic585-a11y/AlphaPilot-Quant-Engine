@@ -50,3 +50,5 @@ def test_methodology_reports_publish_explicit_v2_contract(tmp_path: Path) -> Non
     assert exits["initialStopMayWiden"] is False
     assert exits["eventRemainingTargetMinimumR"] == 2.0
     assert exits["portfolioPerSymbolRTarget"] is None
+    assert (tmp_path / "translation_parity_report.json").exists()
+    assert (tmp_path / "holdout_unlock_policy.json").exists()

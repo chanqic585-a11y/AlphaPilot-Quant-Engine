@@ -1,0 +1,23 @@
+{
+  "availableFields": [],
+  "checkedAt": "2026-07-15T23:41:36Z",
+  "currentTopNBackfillAllowedForFormal": false,
+  "formalEligible": false,
+  "manifestHash": "pit_universe_manifest_4ded08f4b520b3dd3931e64f764062a292125eefb4ae1eeda6cc52004244d551",
+  "maximumOutcome": "diagnostic_only",
+  "missingFields": [
+    "pitTradability",
+    "pitLiquidity",
+    "listingDelisting",
+    "historicalContractUniverse"
+  ],
+  "reason": "The frozen catalog has no historical point-in-time membership, listing, delisting and liquidity-state evidence.",
+  "requiredFields": [
+    "pitTradability",
+    "pitLiquidity",
+    "listingDelisting",
+    "historicalContractUniverse"
+  ],
+  "schemaVersion": "pit_universe_manifest_v2",
+  "status": "unavailable_for_formal_research"
+}

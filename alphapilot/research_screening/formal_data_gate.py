@@ -35,13 +35,12 @@ def evaluate_formal_data_gate(
     exchange: str | None = None
 
     if normalized in {"A", "A1"}:
-        real = evidence.get("realLiquidation")
-        if not isinstance(real, Mapping) or not real.get("provenanceHash"):
-            missing.append("realLiquidation")
-        else:
-            exchange = str(real.get("exchange") or "") or None
-            if exchange is None:
-                missing.append("realLiquidation")
+        required = ("perpetualPrice", "funding", "openInterest", "realLiquidation")
+        missing, exchanges = _same_exchange_fields(evidence, required)
+        if len(exchanges) > 1:
+            missing.append("sameExchangeCoreFields")
+        elif exchanges:
+            exchange = next(iter(exchanges))
     elif normalized == "A2":
         missing.append("realLiquidation")
         maximum_outcome = "provisional_research_pass"
