@@ -1,0 +1,153 @@
+{
+  "generatedAt": "2026-07-15T04:21:15.263343+00:00",
+  "preRegistrationHash": "f869efb60ec4aedd20777b3dd3939b03aec10d8232c2220cf78a96d69c956f9b",
+  "rows": [
+    {
+      "action": "continue_archive",
+      "archivedVersionRestored": false,
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 10.7427373841,
+            "monteCarlo95MaximumDrawdownPct": 15.412128597916182
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 2.8629626372,
+            "monteCarlo95MaximumDrawdownPct": 43.21579968879626
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1H 深弱势扫低收回，因子后继 ATR1.2",
+      "strategyVersionId": "strategy_version_05c158de451321444bd1ef4485305b239a0d1bdb67b369f08f95a53295bd4d8e"
+    },
+    {
+      "action": "continue_archive",
+      "archivedVersionRestored": false,
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 7.8227848662,
+            "monteCarlo95MaximumDrawdownPct": 15.406364285602368
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 2.2287301503,
+            "monteCarlo95MaximumDrawdownPct": 33.988697120261776
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 广谱压缩释放 ATR2.0",
+      "strategyVersionId": "strategy_version_0dc7701b4b48a6d2d3eaf727bfec274b5ca93016a5ea9aa862ffcc7f3ebe9b1b"
+    },
+    {
+      "action": "continue_archive",
+      "archivedVersionRestored": false,
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.1665954441,
+            "monteCarlo95MaximumDrawdownPct": 15.381209092225221
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 1.3091765188,
+            "monteCarlo95MaximumDrawdownPct": 15.011438997936477
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 趋势压缩释放 ATR2.0",
+      "strategyVersionId": "strategy_version_a80c785eebf379a311de35b1697e39956849177a157f2d789aaeed433f3a80e3"
+    },
+    {
+      "action": "continue_archive",
+      "archivedVersionRestored": false,
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.0439577926,
+            "monteCarlo95MaximumDrawdownPct": 15.406535080110075
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 1.0885432134,
+            "monteCarlo95MaximumDrawdownPct": 33.494929197577434
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 趋势突破回踩 ATR2.0",
+      "strategyVersionId": "strategy_version_c0afa97d531616a24d020e2aad5acd5df1168b41e7acbccab330549821aaa7d8"
+    },
+    {
+      "action": "continue_archive",
+      "archivedVersionRestored": false,
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 14.7286419702,
+            "monteCarlo95MaximumDrawdownPct": 15.45758221870601
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.8909664604,
+            "monteCarlo95MaximumDrawdownPct": 60.01029929847771
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1H 突破回踩 BTC 顺势确认，因子后继 ATR1.2",
+      "strategyVersionId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778"
+    },
+    {
+      "action": "continue_archive",
+      "archivedVersionRestored": false,
+      "decision": {
+        "displayStatusZh": "预筛选停止",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {},
+        "status": "prefilter_stopped"
+      },
+      "displayLabelZh": "15m 假突破弱趋势反转，因子后继 ATR1.2",
+      "strategyVersionId": "strategy_version_5f27f24019c5fff46eaf083dc5a57c78029afb8f3c8fe3bab4f3dbe3093a8785"
+    },
+    {
+      "action": "continue_archive",
+      "archivedVersionRestored": false,
+      "decision": {
+        "displayStatusZh": "预筛选停止",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {},
+        "status": "prefilter_stopped"
+      },
+      "displayLabelZh": "1D 超卖扫低收回 ATR1.2 影子",
+      "strategyVersionId": "strategy_version_c308c66aeb070009e17ff1eaeb63177d4c17647c6679ca13d8dd49a011d84085"
+    }
+  ],
+  "schemaVersion": "candidate_validation_layer_v1"
+}

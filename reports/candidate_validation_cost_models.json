@@ -1,0 +1,388 @@
+{
+  "candidates": [
+    {
+      "costStress": {
+        "breakEvenCostMultiplier": 3.888128752133,
+        "fundingLimitation": "zero funding rows cannot prove complete historical funding coverage",
+        "fundingStatus": "recorded_zero_or_unavailable",
+        "scenarios": {
+          "1.0": {
+            "averageNetR": 0.201212047993,
+            "costShareOfGrossProfit": 0.25719312907303227,
+            "feeR": 92.380547819043,
+            "fundingR": 0.0,
+            "multiplier": 1.0,
+            "profitFactor": 1.347704926117,
+            "profitFactorUnbounded": false,
+            "slippageR": 92.38072741294,
+            "totalNetR": 533.614351278313,
+            "tradeCount": 2652
+          },
+          "1.5": {
+            "averageNetR": 0.166377720084,
+            "costShareOfGrossProfit": 0.3857896936095484,
+            "feeR": 138.570821728565,
+            "fundingR": 0.0,
+            "multiplier": 1.5,
+            "profitFactor": 1.278308962117,
+            "profitFactorUnbounded": false,
+            "slippageR": 138.571091119409,
+            "totalNetR": 441.233713662321,
+            "tradeCount": 2652
+          },
+          "2.0": {
+            "averageNetR": 0.131543392174,
+            "costShareOfGrossProfit": 0.5143862581460645,
+            "feeR": 184.761095638086,
+            "fundingR": 0.0,
+            "multiplier": 2.0,
+            "profitFactor": 1.213213531802,
+            "profitFactorUnbounded": false,
+            "slippageR": 184.761454825879,
+            "totalNetR": 348.85307604633,
+            "tradeCount": 2652
+          }
+        }
+      },
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 10.7427373841,
+            "monteCarlo95MaximumDrawdownPct": 15.412128597916182
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 2.8629626372,
+            "monteCarlo95MaximumDrawdownPct": 43.21579968879626
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1H 深弱势扫低收回，因子后继 ATR1.2",
+      "strategyVersionId": "strategy_version_05c158de451321444bd1ef4485305b239a0d1bdb67b369f08f95a53295bd4d8e",
+      "tier": "A",
+      "timeframe": "1h"
+    },
+    {
+      "costStress": {
+        "breakEvenCostMultiplier": 7.355259972794,
+        "fundingLimitation": null,
+        "fundingStatus": "recorded_actual",
+        "scenarios": {
+          "1.0": {
+            "averageNetR": 0.109176784697,
+            "costShareOfGrossProfit": 0.13665565897015264,
+            "feeR": 7.515783084831,
+            "fundingR": 0.089455388097,
+            "multiplier": 1.0,
+            "profitFactor": 1.184593180922,
+            "profitFactorUnbounded": false,
+            "slippageR": 7.515810747514,
+            "totalNetR": 95.529686610005,
+            "tradeCount": 875
+          },
+          "1.5": {
+            "averageNetR": 0.100587302507,
+            "costShareOfGrossProfit": 0.20457926435574236,
+            "feeR": 11.273674627246,
+            "fundingR": 0.089455388097,
+            "multiplier": 1.5,
+            "profitFactor": 1.168715436845,
+            "profitFactorUnbounded": false,
+            "slippageR": 11.273716121271,
+            "totalNetR": 88.013889693832,
+            "tradeCount": 875
+          },
+          "2.0": {
+            "averageNetR": 0.091997820317,
+            "costShareOfGrossProfit": 0.2725028697413321,
+            "feeR": 15.031566169662,
+            "fundingR": 0.089455388097,
+            "multiplier": 2.0,
+            "profitFactor": 1.153088675757,
+            "profitFactorUnbounded": false,
+            "slippageR": 15.031621495028,
+            "totalNetR": 80.49809277766,
+            "tradeCount": 875
+          }
+        }
+      },
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 7.8227848662,
+            "monteCarlo95MaximumDrawdownPct": 15.406364285602368
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 2.2287301503,
+            "monteCarlo95MaximumDrawdownPct": 33.988697120261776
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 广谱压缩释放 ATR2.0",
+      "strategyVersionId": "strategy_version_0dc7701b4b48a6d2d3eaf727bfec274b5ca93016a5ea9aa862ffcc7f3ebe9b1b",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "costStress": {
+        "breakEvenCostMultiplier": 9.494964598332,
+        "fundingLimitation": null,
+        "fundingStatus": "recorded_actual",
+        "scenarios": {
+          "1.0": {
+            "averageNetR": 0.146021197666,
+            "costShareOfGrossProfit": 0.10539392624777622,
+            "feeR": 3.497983168572,
+            "fundingR": 0.005564831078,
+            "multiplier": 1.0,
+            "profitFactor": 1.257174931224,
+            "profitFactorUnbounded": false,
+            "slippageR": 3.497999776616,
+            "totalNetR": 59.430627449904,
+            "tradeCount": 407
+          },
+          "1.5": {
+            "averageNetR": 0.137426624023,
+            "costShareOfGrossProfit": 0.1580490058185554,
+            "feeR": 5.246974752858,
+            "fundingR": 0.005564831078,
+            "multiplier": 1.5,
+            "profitFactor": 1.240050136461,
+            "profitFactorUnbounded": false,
+            "slippageR": 5.246999664923,
+            "totalNetR": 55.93263597731,
+            "tradeCount": 407
+          },
+          "2.0": {
+            "averageNetR": 0.12883205038,
+            "costShareOfGrossProfit": 0.21070408538933463,
+            "feeR": 6.995966337145,
+            "fundingR": 0.005564831078,
+            "multiplier": 2.0,
+            "profitFactor": 1.22320434663,
+            "profitFactorUnbounded": false,
+            "slippageR": 6.995999553231,
+            "totalNetR": 52.434644504716,
+            "tradeCount": 407
+          }
+        }
+      },
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.1665954441,
+            "monteCarlo95MaximumDrawdownPct": 15.381209092225221
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 1.3091765188,
+            "monteCarlo95MaximumDrawdownPct": 15.011438997936477
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 趋势压缩释放 ATR2.0",
+      "strategyVersionId": "strategy_version_a80c785eebf379a311de35b1697e39956849177a157f2d789aaeed433f3a80e3",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "costStress": {
+        "breakEvenCostMultiplier": 12.918013840314,
+        "fundingLimitation": null,
+        "fundingStatus": "recorded_actual",
+        "scenarios": {
+          "1.0": {
+            "averageNetR": 0.181220357636,
+            "costShareOfGrossProfit": 0.07768747893900241,
+            "feeR": 8.591127067819,
+            "fundingR": 0.066469060009,
+            "multiplier": 1.0,
+            "profitFactor": 1.335915107154,
+            "profitFactorUnbounded": false,
+            "slippageR": 8.591182574764,
+            "totalNetR": 204.779004128865,
+            "tradeCount": 1130
+          },
+          "1.5": {
+            "averageNetR": 0.173617565759,
+            "costShareOfGrossProfit": 0.11638153205132544,
+            "feeR": 12.886690601729,
+            "fundingR": 0.066469060009,
+            "multiplier": 1.5,
+            "profitFactor": 1.319539148727,
+            "profitFactorUnbounded": false,
+            "slippageR": 12.886773862146,
+            "totalNetR": 196.187849307574,
+            "tradeCount": 1130
+          },
+          "2.0": {
+            "averageNetR": 0.166014773882,
+            "costShareOfGrossProfit": 0.15507558516364847,
+            "feeR": 17.182254135639,
+            "fundingR": 0.066469060009,
+            "multiplier": 2.0,
+            "profitFactor": 1.303393916204,
+            "profitFactorUnbounded": false,
+            "slippageR": 17.182365149528,
+            "totalNetR": 187.596694486282,
+            "tradeCount": 1130
+          }
+        }
+      },
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.0439577926,
+            "monteCarlo95MaximumDrawdownPct": 15.406535080110075
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 1.0885432134,
+            "monteCarlo95MaximumDrawdownPct": 33.494929197577434
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 趋势突破回踩 ATR2.0",
+      "strategyVersionId": "strategy_version_c0afa97d531616a24d020e2aad5acd5df1168b41e7acbccab330549821aaa7d8",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "costStress": {
+        "breakEvenCostMultiplier": 1.48533548679,
+        "fundingLimitation": null,
+        "fundingStatus": "recorded_actual",
+        "scenarios": {
+          "1.0": {
+            "averageNetR": 0.063076977075,
+            "costShareOfGrossProfit": 0.6733415102370274,
+            "feeR": 223.021096545009,
+            "fundingR": 0.188489316321,
+            "multiplier": 1.0,
+            "profitFactor": 1.095858896184,
+            "profitFactorUnbounded": false,
+            "slippageR": 223.021262222743,
+            "totalNetR": 216.480185321535,
+            "tradeCount": 3432
+          },
+          "1.5": {
+            "averageNetR": -0.001905884051,
+            "costShareOfGrossProfit": 1.0098700545677166,
+            "feeR": 334.531644817514,
+            "fundingR": 0.188489316321,
+            "multiplier": 1.5,
+            "profitFactor": 0.997260974081,
+            "profitFactorUnbounded": false,
+            "slippageR": 334.531893334114,
+            "totalNetR": -6.540994062341,
+            "tradeCount": 3432
+          },
+          "2.0": {
+            "averageNetR": -0.066888745177,
+            "costShareOfGrossProfit": 1.3463985988984062,
+            "feeR": 446.042193090018,
+            "fundingR": 0.188489316321,
+            "multiplier": 2.0,
+            "profitFactor": 0.90882990283,
+            "profitFactorUnbounded": false,
+            "slippageR": 446.042524445485,
+            "totalNetR": -229.562173446217,
+            "tradeCount": 3432
+          }
+        }
+      },
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 14.7286419702,
+            "monteCarlo95MaximumDrawdownPct": 15.45758221870601
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.8909664604,
+            "monteCarlo95MaximumDrawdownPct": 60.01029929847771
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1H 突破回踩 BTC 顺势确认，因子后继 ATR1.2",
+      "strategyVersionId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778",
+      "tier": "B",
+      "timeframe": "1h"
+    },
+    {
+      "costStress": null,
+      "decision": {
+        "displayStatusZh": "预筛选停止",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {},
+        "status": "prefilter_stopped"
+      },
+      "displayLabelZh": "15m 假突破弱趋势反转，因子后继 ATR1.2",
+      "strategyVersionId": "strategy_version_5f27f24019c5fff46eaf083dc5a57c78029afb8f3c8fe3bab4f3dbe3093a8785",
+      "tier": "C",
+      "timeframe": "15m"
+    },
+    {
+      "costStress": null,
+      "decision": {
+        "displayStatusZh": "预筛选停止",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {},
+        "status": "prefilter_stopped"
+      },
+      "displayLabelZh": "1D 超卖扫低收回 ATR1.2 影子",
+      "strategyVersionId": "strategy_version_c308c66aeb070009e17ff1eaeb63177d4c17647c6679ca13d8dd49a011d84085",
+      "tier": "C",
+      "timeframe": "1d"
+    }
+  ],
+  "frozenCostModel": {
+    "costModelHash": "2bdb124c73a8235351abc0e8d89d10d537b0344d07e9b5a6bb34195cedd236a8",
+    "feeRatePerSide": 0.0005,
+    "fundingTreatment": "actual_when_present_otherwise_unavailable",
+    "id": "uniform_registered_swap_cost_v1",
+    "latencyBars": [
+      0,
+      1,
+      2
+    ],
+    "sameBarAmbiguity": "stop_first",
+    "slippageRatePerSide": 0.0005,
+    "stressMultipliers": [
+      1.0,
+      1.5,
+      2.0
+    ]
+  },
+  "generatedAt": "2026-07-15T04:21:15.263343+00:00",
+  "preRegistrationHash": "f869efb60ec4aedd20777b3dd3939b03aec10d8232c2220cf78a96d69c956f9b",
+  "schemaVersion": "candidate_validation_layer_v1"
+}

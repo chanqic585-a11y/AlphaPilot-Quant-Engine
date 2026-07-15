@@ -5101,6 +5101,28 @@ Key paths:
 This layer does not modify strategies, tune parameters, run backtests, call an
 exchange, or promote any archived record to Demo or Live.
 
+## Candidate Evidence Closure Locked Validation
+
+The archived risk-model candidates were deduplicated by family and evaluated
+under a preregistered, hash-locked protocol. Eight versions reduced to seven
+canonical families. The primary acceptance model risks 0.25% per trade; the
+other account models are sensitivity checks and cannot rescue a primary
+failure.
+
+The completed run produced zero hard passes. Five families lack a genuinely
+unseen, point-in-time locked sample, and two C-tier families stopped at the
+historical prefilter. All seven remain archived; no executable, Demo, or Live
+version was created.
+
+```powershell
+.venv\Scripts\python.exe -m alphapilot.reports.generate_candidate_evidence_closure_report --phase validate
+```
+
+See `docs/candidate-evidence-closure-methodology.md`,
+`docs/locked-sample-validation-policy.md`,
+`docs/signal-vs-risk-model-validation.md`, and
+`docs/candidate-validation-results.md`.
+
 ## Next Versions
 
 - V13.7.2: refresh the runtime contract from newly closed forward local paper samples when enough post-selection candles exist.

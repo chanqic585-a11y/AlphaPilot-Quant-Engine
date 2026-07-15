@@ -1,0 +1,338 @@
+{
+  "candidateFamilyCount": 7,
+  "candidateVersionCount": 8,
+  "candidates": [
+    {
+      "dataEndTime": "2026-05-22T11:00:00+00:00",
+      "dataSnapshotHash": "db2280187994b9541cd0349bbf32769e3a6dbc00983a8881e9999add68f519b2",
+      "dataSnapshotId": "data_snapshot_db2280187994b9541cd0349bbf32769e3a6dbc00983a8881e9999add68f519b2",
+      "dataStartTime": "2020-01-01T00:00:00+00:00",
+      "direction": "long",
+      "displayLabelZh": "1D 趋势突破回踩 ATR2.0",
+      "duplicateStrategyVersionIds": [
+        "strategy_version_c0afa97d531616a24d020e2aad5acd5df1168b41e7acbccab330549821aaa7d8"
+      ],
+      "historicalPointInTimeUniverse": false,
+      "historicalPrefilter": {
+        "averageNetR": 0.13930653,
+        "passed": false,
+        "profitFactor": 1.25225502,
+        "required": false,
+        "tradeCount": 1211
+      },
+      "holdoutManifestHash": "holdout_02567987905df107f6a623e399649c0a97ab9688eae59fd872c698177aa963c2",
+      "lockedOosManifestHash": "locked_oos_23dbd38533fb3b282a6256224dd70673c9e88c230efd94c6e1be6df9837442d8",
+      "pointInTimeCutoff": "2026-05-07T16:00:00+00:00",
+      "signalDefinitionHash": "1cca132f85cd89073b3ae0b6b3303cce009d3a47cf09781a3a2bc4fa07acd6a6",
+      "signalFrozen": true,
+      "signalUnreproducibleReason": null,
+      "splitManifestHash": "3236679c49c9be979ccea23df76cd27e42a5238e736a83c26113ab7dea559e0b",
+      "strategyDefinitionHash": "4d44a432f86bd11fb851ea8347e0f3dcf90613e8a0091dc5462cfc2b3e674d2d",
+      "strategyFamily": "event_1d_breakout_retest_atr20_v1",
+      "strategyFamilyId": "strategy_family_520759beac64460946c16a8c078d12bd319d0ec3f02e338714ce38e3cbaf7c44",
+      "strategyVersionId": "strategy_version_c0afa97d531616a24d020e2aad5acd5df1168b41e7acbccab330549821aaa7d8",
+      "survivorshipAuditStatus": "unavailable_current_snapshot_universe",
+      "tier": "A",
+      "timeframe": "1d",
+      "universePolicy": {
+        "candidateDiscovery": [
+          "okx_public_instruments",
+          "okx_public_tickers"
+        ],
+        "historicalPointInTime": false,
+        "instrumentCategory": "1",
+        "minimumMembers": 20,
+        "ranking": "okx_public_24h_quote_notional_v1",
+        "targetMembers": 50,
+        "type": "current_snapshot_liquidity_ranked_crypto_usdt_swap"
+      },
+      "validationIdentityHash": "bdd17d56638b4f35c6149407b551abdfb99f7428168f0ddb309d7ea4c85e5a3d",
+      "walkForwardManifestHash": "walk_forward_3ad881885520626686b2c6bebf4e21725848de97fddb7fa54b744dd7603ae81b"
+    },
+    {
+      "dataEndTime": "2026-05-22T11:00:00+00:00",
+      "dataSnapshotHash": "66e894297aa9b4f5f93a8edbd844e10f8eb7ca3ed5a01785addd8f920abdded5",
+      "dataSnapshotId": "data_snapshot_66e894297aa9b4f5f93a8edbd844e10f8eb7ca3ed5a01785addd8f920abdded5",
+      "dataStartTime": "2020-01-01T00:00:00+00:00",
+      "direction": "long",
+      "displayLabelZh": "1D 广谱压缩释放 ATR2.0",
+      "duplicateStrategyVersionIds": [
+        "strategy_version_0dc7701b4b48a6d2d3eaf727bfec274b5ca93016a5ea9aa862ffcc7f3ebe9b1b"
+      ],
+      "historicalPointInTimeUniverse": false,
+      "historicalPrefilter": {
+        "averageNetR": 0.10179918,
+        "passed": false,
+        "profitFactor": 1.17280778,
+        "required": false,
+        "tradeCount": 1001
+      },
+      "holdoutManifestHash": "holdout_9a8dfbf466148215892cdf095fb1f45820538814bf3027d7163e01b6c2851fab",
+      "lockedOosManifestHash": "locked_oos_9c8a499dab19f63be890eddd44cf3bddad87376947d323ef5092006abb04dfd3",
+      "pointInTimeCutoff": "2026-05-07T16:00:00+00:00",
+      "signalDefinitionHash": "c7b0e98690be12b0bc8fad92f74752aae10f7a1ac099c007ddcde33f9245c4e6",
+      "signalFrozen": true,
+      "signalUnreproducibleReason": null,
+      "splitManifestHash": "3ae12f45209abdae11f830a6713efb1c5bc43e13f76c7979c89a6d1a3e8d2c4d",
+      "strategyDefinitionHash": "86f3a844ff3b9cf353c7ee13696901bd2f170c26aa0a58d0e1901e0187fa1dfe",
+      "strategyFamily": "event_1d_broad_squeeze_breakout_atr20_v1",
+      "strategyFamilyId": "strategy_family_bd4385d53d9d2f7830f8b9d557477ea08eb512db7273aaf9997051bd1911f2ff",
+      "strategyVersionId": "strategy_version_0dc7701b4b48a6d2d3eaf727bfec274b5ca93016a5ea9aa862ffcc7f3ebe9b1b",
+      "survivorshipAuditStatus": "unavailable_current_snapshot_universe",
+      "tier": "A",
+      "timeframe": "1d",
+      "universePolicy": {
+        "candidateDiscovery": [
+          "okx_public_instruments",
+          "okx_public_tickers"
+        ],
+        "historicalPointInTime": false,
+        "instrumentCategory": "1",
+        "minimumMembers": 20,
+        "ranking": "okx_public_24h_quote_notional_v1",
+        "targetMembers": 50,
+        "type": "current_snapshot_liquidity_ranked_crypto_usdt_swap"
+      },
+      "validationIdentityHash": "7f39eb44219352e6e98cd6f7218c523c92a33f22dad30997fbcf64285402ba76",
+      "walkForwardManifestHash": "walk_forward_3ad881885520626686b2c6bebf4e21725848de97fddb7fa54b744dd7603ae81b"
+    },
+    {
+      "dataEndTime": "2026-05-22T11:00:00+00:00",
+      "dataSnapshotHash": "be5d0efdcfe9c43eea7fd6f9943a1ea42512244e19b82977390bdc2232f4d5cf",
+      "dataSnapshotId": "data_snapshot_be5d0efdcfe9c43eea7fd6f9943a1ea42512244e19b82977390bdc2232f4d5cf",
+      "dataStartTime": "2020-01-01T00:00:00+00:00",
+      "direction": "long",
+      "displayLabelZh": "1D 超卖扫低收回 ATR1.2 影子",
+      "duplicateStrategyVersionIds": [
+        "strategy_version_c308c66aeb070009e17ff1eaeb63177d4c17647c6679ca13d8dd49a011d84085"
+      ],
+      "historicalPointInTimeUniverse": false,
+      "historicalPrefilter": {
+        "averageNetR": 0.02377073,
+        "passed": false,
+        "profitFactor": 1.04154194,
+        "required": true,
+        "tradeCount": 2037
+      },
+      "holdoutManifestHash": "holdout_280b9fc0eefcb2863a037d15784b7dbd8ffde11342b8ae105f36eb4774a410fd",
+      "lockedOosManifestHash": "locked_oos_3ef2d011d209c14729cc2f7771764a90815b33df6efeda839d9dcf3a3c55f835",
+      "pointInTimeCutoff": "2026-05-07T16:00:00+00:00",
+      "signalDefinitionHash": "7a892bb3cb7a8af35484a5a8fbcd5f382418d1df5b32ec7f7a848bf19da8fcb0",
+      "signalFrozen": true,
+      "signalUnreproducibleReason": null,
+      "splitManifestHash": "35b24c2b9ecb4dcb2155eaf84e8d8f514420890e39c837195013eb55349bda36",
+      "strategyDefinitionHash": "b154323e1edd6e6eb44352453b74e9c847525d4b7760a8088d6bd438b109b7a8",
+      "strategyFamily": "event_1d_oversold_sweep_reclaim_atr12_v1",
+      "strategyFamilyId": "strategy_family_727d97901c4b9a4bb19e2fdf332e6c59c360ec826ca435e452e89c714129f29a",
+      "strategyVersionId": "strategy_version_c308c66aeb070009e17ff1eaeb63177d4c17647c6679ca13d8dd49a011d84085",
+      "survivorshipAuditStatus": "unavailable_current_snapshot_universe",
+      "tier": "C",
+      "timeframe": "1d",
+      "universePolicy": {
+        "candidateDiscovery": [
+          "okx_public_instruments",
+          "okx_public_tickers"
+        ],
+        "historicalPointInTime": false,
+        "instrumentCategory": "1",
+        "minimumMembers": 20,
+        "ranking": "okx_public_24h_quote_notional_v1",
+        "targetMembers": 50,
+        "type": "current_snapshot_liquidity_ranked_crypto_usdt_swap"
+      },
+      "validationIdentityHash": "2345951e5504ae5a6a3d700dd0b3a73aff5e1d68bfba13452b396499b904afee",
+      "walkForwardManifestHash": "walk_forward_3ad881885520626686b2c6bebf4e21725848de97fddb7fa54b744dd7603ae81b"
+    },
+    {
+      "dataEndTime": "2026-05-22T11:00:00+00:00",
+      "dataSnapshotHash": "0d8b7b7cf8dbdfbe7ada6e223478b518a3ac12e0cee1b66fee7f29495b7e1372",
+      "dataSnapshotId": "data_snapshot_0d8b7b7cf8dbdfbe7ada6e223478b518a3ac12e0cee1b66fee7f29495b7e1372",
+      "dataStartTime": "2020-01-01T00:00:00+00:00",
+      "direction": "long",
+      "displayLabelZh": "1D 趋势压缩释放 ATR2.0",
+      "duplicateStrategyVersionIds": [
+        "strategy_version_a80c785eebf379a311de35b1697e39956849177a157f2d789aaeed433f3a80e3"
+      ],
+      "historicalPointInTimeUniverse": false,
+      "historicalPrefilter": {
+        "averageNetR": 0.12529251,
+        "passed": false,
+        "profitFactor": 1.21849701,
+        "required": false,
+        "tradeCount": 449
+      },
+      "holdoutManifestHash": "holdout_1793bcbc88ca6df08049272e0bee5e69c6288b05f6e909f4f51b7b795e17e6f2",
+      "lockedOosManifestHash": "locked_oos_5b8378fe11d4174cb0751bdd1229ebc4e840f1995b7555245e193285e8029786",
+      "pointInTimeCutoff": "2026-05-07T16:00:00+00:00",
+      "signalDefinitionHash": "9026cd91953dc681fa19d142629d3c5769cff39e223eeb0775f861cba92ecbd4",
+      "signalFrozen": true,
+      "signalUnreproducibleReason": null,
+      "splitManifestHash": "a3305863910ca008af3cdb9f988121d6d0776c85bb07087f17bafec7ab2cb39d",
+      "strategyDefinitionHash": "1a4bb28cd50b4a5bad8e493caad4bd767238b0f60ee9fbd2edc72f5c091ca7cc",
+      "strategyFamily": "event_1d_squeeze_breakout_atr20_v1",
+      "strategyFamilyId": "strategy_family_5278204b5deb04c71d19b4c5478b95d438c3c19d856478b3c45ac742896cdc4f",
+      "strategyVersionId": "strategy_version_a80c785eebf379a311de35b1697e39956849177a157f2d789aaeed433f3a80e3",
+      "survivorshipAuditStatus": "unavailable_current_snapshot_universe",
+      "tier": "A",
+      "timeframe": "1d",
+      "universePolicy": {
+        "candidateDiscovery": [
+          "okx_public_instruments",
+          "okx_public_tickers"
+        ],
+        "historicalPointInTime": false,
+        "instrumentCategory": "1",
+        "minimumMembers": 20,
+        "ranking": "okx_public_24h_quote_notional_v1",
+        "targetMembers": 50,
+        "type": "current_snapshot_liquidity_ranked_crypto_usdt_swap"
+      },
+      "validationIdentityHash": "7230359e5f7c6183c7ab65ae5bbafdfd7ee81fc366e7d5d261b47a18565632a1",
+      "walkForwardManifestHash": "walk_forward_3ad881885520626686b2c6bebf4e21725848de97fddb7fa54b744dd7603ae81b"
+    },
+    {
+      "dataEndTime": "2026-07-14T08:45:00+00:00",
+      "dataSnapshotHash": "4334fa93b76acf3fdba871ed8d968da1d2b75346f60e419a9e05eee470408d05",
+      "dataSnapshotId": "data_snapshot_4334fa93b76acf3fdba871ed8d968da1d2b75346f60e419a9e05eee470408d05",
+      "dataStartTime": "2020-01-01T00:00:00+00:00",
+      "direction": "short",
+      "displayLabelZh": "15m 假突破弱趋势反转，因子后继 ATR1.2",
+      "duplicateStrategyVersionIds": [
+        "strategy_version_5f27f24019c5fff46eaf083dc5a57c78029afb8f3c8fe3bab4f3dbe3093a8785"
+      ],
+      "historicalPointInTimeUniverse": null,
+      "historicalPrefilter": {
+        "averageNetR": 0.00640423,
+        "passed": false,
+        "profitFactor": 1.00940092,
+        "required": true,
+        "tradeCount": 626
+      },
+      "holdoutManifestHash": "holdout_185c5a47fbffb68f61da07e2ab6f0965b1af1ab55c0b968fd2eb445b76b03b50",
+      "lockedOosManifestHash": "locked_oos_3f97467d61828c23b33541628f74a33c8c62ab44b93493666ad0f295886c17d5",
+      "pointInTimeCutoff": "2026-07-14T08:30:00+00:00",
+      "signalDefinitionHash": "dc56843fd20c4ff686a4578e30b0efefc11d126cd03435aa760641b320fa2ceb",
+      "signalFrozen": true,
+      "signalUnreproducibleReason": null,
+      "splitManifestHash": "ee7dd053107335c6b258a01bf578b2681d61139f42e5f372a39ac49c79496310",
+      "strategyDefinitionHash": "19cd7e76408176710f5872659e2f72bd31edf2c6011dd6cbd2fa17af24b09ff3",
+      "strategyFamily": "short_cycle_event_15m_failed_breakout_factor_v2",
+      "strategyFamilyId": "strategy_family_fb39121fef83748c200ed4012e71486cc2276044823b7e9bfbd872004676b939",
+      "strategyVersionId": "strategy_version_5f27f24019c5fff46eaf083dc5a57c78029afb8f3c8fe3bab4f3dbe3093a8785",
+      "survivorshipAuditStatus": "unavailable_current_snapshot_universe",
+      "tier": "C",
+      "timeframe": "15m",
+      "universePolicy": {
+        "candidateDiscovery": [
+          "local_catalog",
+          "okx_public_instruments"
+        ],
+        "minimumMembers": 20,
+        "targetMembers": 50,
+        "type": "point_in_time_dynamic_liquid_usdt_swap"
+      },
+      "validationIdentityHash": "608de06548aca843da0eb4e9411e4256add1ea5a5d36d11a9684bde95b22539d",
+      "walkForwardManifestHash": "walk_forward_9137c8c699fc01e6950d3d6156010bf460e507856706e47aadbe5bcbc145fed6"
+    },
+    {
+      "dataEndTime": "2026-05-22T12:30:00+00:00",
+      "dataSnapshotHash": "9bb7a94dc5ffa0d0a9590cb5854ddb670232ce75d17603bd4fee0c59afb1e436",
+      "dataSnapshotId": "data_snapshot_9bb7a94dc5ffa0d0a9590cb5854ddb670232ce75d17603bd4fee0c59afb1e436",
+      "dataStartTime": "2018-01-11T11:10:00+00:00",
+      "direction": "long",
+      "displayLabelZh": "1H 突破回踩 BTC 顺势确认，因子后继 ATR1.2",
+      "duplicateStrategyVersionIds": [
+        "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778"
+      ],
+      "historicalPointInTimeUniverse": false,
+      "historicalPrefilter": {
+        "averageNetR": 0.04679832,
+        "passed": false,
+        "profitFactor": 1.07037278,
+        "required": false,
+        "tradeCount": 3716
+      },
+      "holdoutManifestHash": "holdout_fd53083c73bd7815e43a7e0ed6698469e506f4eae72022ec112256fb15488929",
+      "lockedOosManifestHash": "locked_oos_305ff2e4d5f9faca7306d59b626025487752c29c9bc66212a48133b618d3ff82",
+      "pointInTimeCutoff": "2026-05-09T05:00:00+00:00",
+      "signalDefinitionHash": "9d74176c6195643b1d3a0fe437ed0e805368b48230522907540bd1efbbc92c45",
+      "signalFrozen": true,
+      "signalUnreproducibleReason": null,
+      "splitManifestHash": "1f1408bff6a2ba91addd5f9387d21286295a9d9f82217aa6ec0db51981845380",
+      "strategyDefinitionHash": "98e6282b369610493121c8b7e8f1072d5101ee89232128759178c483b9385734",
+      "strategyFamily": "short_cycle_event_1h_breakout_retest_btc_factor_v2",
+      "strategyFamilyId": "strategy_family_863ee2fde9fece757b234a013f6e20dffd1cbde570cce46a1c63354a779315d7",
+      "strategyVersionId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778",
+      "survivorshipAuditStatus": "unavailable_current_snapshot_universe",
+      "tier": "B",
+      "timeframe": "1h",
+      "universePolicy": {
+        "candidateDiscovery": [
+          "okx_public_instruments",
+          "okx_public_tickers"
+        ],
+        "historicalPointInTime": false,
+        "instrumentCategory": "1",
+        "minimumMembers": 20,
+        "ranking": "okx_public_24h_quote_notional_v1",
+        "targetMembers": 50,
+        "type": "current_snapshot_liquidity_ranked_crypto_usdt_swap"
+      },
+      "validationIdentityHash": "a60d0f7a42664e19d7c8e91c516e394c55a0f67840698fa8b7371db6030d2020",
+      "walkForwardManifestHash": "walk_forward_27990aa76f6ef2ba6b2ae5255101a82cfab83d38cd7595468935765d11d27e05"
+    },
+    {
+      "dataEndTime": "2026-05-22T12:30:00+00:00",
+      "dataSnapshotHash": "161fca561f9cf2cbafa6a8e0b37de736c2f958cbdf96ac8b5521e0addf0b217f",
+      "dataSnapshotId": "data_snapshot_161fca561f9cf2cbafa6a8e0b37de736c2f958cbdf96ac8b5521e0addf0b217f",
+      "dataStartTime": "2018-01-11T11:10:00+00:00",
+      "direction": "long",
+      "displayLabelZh": "1H 深弱势扫低收回，因子后继 ATR1.2",
+      "duplicateStrategyVersionIds": [
+        "strategy_version_05c158de451321444bd1ef4485305b239a0d1bdb67b369f08f95a53295bd4d8e",
+        "strategy_version_54dc908bb921b1f0dd2a92a53f505dea54d895e7e27d998bb6b828f719489430"
+      ],
+      "historicalPointInTimeUniverse": false,
+      "historicalPrefilter": {
+        "averageNetR": 0.1869224,
+        "passed": false,
+        "profitFactor": 1.32132738,
+        "required": false,
+        "tradeCount": 2857
+      },
+      "holdoutManifestHash": "holdout_c6efa2aa08897a25bcaf1f8f5cb2fa9af2d576d518e73c407595df2993fb1a67",
+      "lockedOosManifestHash": "locked_oos_82a1bf46ae860d83750237898a9379fc09a05e1a06773579ead2d43d2db8a482",
+      "pointInTimeCutoff": "2026-05-09T05:00:00+00:00",
+      "signalDefinitionHash": "21eb14bd75a189222e0b8a6d24bb80faf7b3f44b4ee6102c6b01e7455df34460",
+      "signalFrozen": true,
+      "signalUnreproducibleReason": null,
+      "splitManifestHash": "5a95d231bca73e9445598a6ee4d8674663a00ca977be789d92f9f519b319192d",
+      "strategyDefinitionHash": "74b1b81b0f1267ca6b80b40220f465e0f6339be2fcd3fa34096a6f3c4ebf6634",
+      "strategyFamily": "short_cycle_event_1h_sweep_reclaim_factor_v2",
+      "strategyFamilyId": "strategy_family_88b29a855a1458209c9a66bfc8ba88e641a3fb30f13869d8da8510b999cfe5b6",
+      "strategyVersionId": "strategy_version_05c158de451321444bd1ef4485305b239a0d1bdb67b369f08f95a53295bd4d8e",
+      "survivorshipAuditStatus": "unavailable_current_snapshot_universe",
+      "tier": "A",
+      "timeframe": "1h",
+      "universePolicy": {
+        "candidateDiscovery": [
+          "okx_public_instruments",
+          "okx_public_tickers"
+        ],
+        "historicalPointInTime": false,
+        "instrumentCategory": "1",
+        "minimumMembers": 20,
+        "ranking": "okx_public_24h_quote_notional_v1",
+        "targetMembers": 50,
+        "type": "current_snapshot_liquidity_ranked_crypto_usdt_swap"
+      },
+      "validationIdentityHash": "d71282c5983721beb9213b6f87e9227f6bb22933ddef070ecccb444f4c8f6c5f",
+      "walkForwardManifestHash": "walk_forward_27990aa76f6ef2ba6b2ae5255101a82cfab83d38cd7595468935765d11d27e05"
+    }
+  ],
+  "canonicalRepresentativeCount": 7,
+  "diagnostics": {
+    "unreproducible": {}
+  },
+  "schemaVersion": "candidate_validation_queue_v1"
+}

@@ -1,0 +1,573 @@
+{
+  "candidates": [
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 10.7427373841,
+            "monteCarlo95MaximumDrawdownPct": 15.412128597916182
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 2.8629626372,
+            "monteCarlo95MaximumDrawdownPct": 43.21579968879626
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1H 深弱势扫低收回，因子后继 ATR1.2",
+      "riskModels": {
+        "model_1_low_risk_fixed_ratio": {
+          "acceptedTradeCount": 913,
+          "averagingDown": false,
+          "finalEquity": 109.9506224219,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 479.732639,
+          "lossTradeCount": 554,
+          "martingale": false,
+          "maximumConcurrentPositions": 2,
+          "maximumConsecutiveLosses": 13,
+          "maximumDailyLossPct": -1.7980027857,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 479.732639,
+          "maximumDrawdownPct": 8.5656847969,
+          "maximumDrawdownR": 34.2627391875,
+          "maximumMonthlyLossPct": -4.5443496512,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -3.0936461201,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "daily_new_risk_pause": 30,
+            "maximum_directional_cluster_risk": 1914
+          },
+          "skippedTradeCount": 1944,
+          "totalReturnPct": 9.9506224219
+        },
+        "model_2_standard_fixed_ratio": {
+          "acceptedTradeCount": 590,
+          "averagingDown": false,
+          "finalEquity": 113.4163129288,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 479.621528,
+          "lossTradeCount": 358,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 8,
+          "maximumDailyLossPct": -2.614374494,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 479.621528,
+          "maximumDrawdownPct": 10.7427373841,
+          "maximumDrawdownR": 21.4854747682,
+          "maximumMonthlyLossPct": -4.3795083892,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -3.8823142345,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "daily_new_risk_pause": 1,
+            "maximum_directional_cluster_risk": 2266
+          },
+          "skippedTradeCount": 2267,
+          "totalReturnPct": 13.4163129288
+        },
+        "model_3_correlation_constrained": {
+          "acceptedTradeCount": 590,
+          "averagingDown": false,
+          "finalEquity": 103.5284260224,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 479.621528,
+          "lossTradeCount": 358,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 8,
+          "maximumDailyLossPct": -0.5905561034,
+          "maximumDirectionalClusterRiskPct": 0.25,
+          "maximumDrawdownDurationDays": 479.621528,
+          "maximumDrawdownPct": 2.8629626372,
+          "maximumDrawdownR": 11.4518505487,
+          "maximumMonthlyLossPct": -1.3927434105,
+          "maximumOpenRiskPct": 0.25,
+          "maximumWeeklyLossPct": -0.86887576,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_concurrent_positions": 2267
+          },
+          "skippedTradeCount": 2267,
+          "totalReturnPct": 3.5284260224
+        }
+      },
+      "strategyVersionId": "strategy_version_05c158de451321444bd1ef4485305b239a0d1bdb67b369f08f95a53295bd4d8e",
+      "tier": "A",
+      "timeframe": "1h"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 7.8227848662,
+            "monteCarlo95MaximumDrawdownPct": 15.406364285602368
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 2.2287301503,
+            "monteCarlo95MaximumDrawdownPct": 33.988697120261776
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 广谱压缩释放 ATR2.0",
+      "riskModels": {
+        "model_1_low_risk_fixed_ratio": {
+          "acceptedTradeCount": 218,
+          "averagingDown": false,
+          "finalEquity": 112.7407269219,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 401.625,
+          "lossTradeCount": 128,
+          "martingale": false,
+          "maximumConcurrentPositions": 2,
+          "maximumConsecutiveLosses": 11,
+          "maximumDailyLossPct": -0.5828035916,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 401.625,
+          "maximumDrawdownPct": 3.8799327084,
+          "maximumDrawdownR": 17.1568607942,
+          "maximumMonthlyLossPct": -1.6970521962,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -0.826902713,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_directional_cluster_risk": 783
+          },
+          "skippedTradeCount": 783,
+          "totalReturnPct": 12.7407269219
+        },
+        "model_2_standard_fixed_ratio": {
+          "acceptedTradeCount": 131,
+          "averagingDown": false,
+          "finalEquity": 114.9707528569,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 860.333333,
+          "lossTradeCount": 76,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 8,
+          "maximumDailyLossPct": -0.5991856475,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 860.333333,
+          "maximumDrawdownPct": 7.8227848662,
+          "maximumDrawdownR": 18.3795803814,
+          "maximumMonthlyLossPct": -2.2689352862,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -1.1613300863,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_directional_cluster_risk": 870
+          },
+          "skippedTradeCount": 870,
+          "totalReturnPct": 14.9707528569
+        },
+        "model_3_correlation_constrained": {
+          "acceptedTradeCount": 131,
+          "averagingDown": false,
+          "finalEquity": 104.2464585269,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 708.291667,
+          "lossTradeCount": 76,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 8,
+          "maximumDailyLossPct": -0.2673470554,
+          "maximumDirectionalClusterRiskPct": 0.25,
+          "maximumDrawdownDurationDays": 708.291667,
+          "maximumDrawdownPct": 2.2287301503,
+          "maximumDrawdownR": 9.3438000613,
+          "maximumMonthlyLossPct": -0.6576814813,
+          "maximumOpenRiskPct": 0.25,
+          "maximumWeeklyLossPct": -0.3986543494,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_concurrent_positions": 870
+          },
+          "skippedTradeCount": 870,
+          "totalReturnPct": 4.2464585269
+        }
+      },
+      "strategyVersionId": "strategy_version_0dc7701b4b48a6d2d3eaf727bfec274b5ca93016a5ea9aa862ffcc7f3ebe9b1b",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.1665954441,
+            "monteCarlo95MaximumDrawdownPct": 15.381209092225221
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 1.3091765188,
+            "monteCarlo95MaximumDrawdownPct": 15.011438997936477
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 趋势压缩释放 ATR2.0",
+      "riskModels": {
+        "model_1_low_risk_fixed_ratio": {
+          "acceptedTradeCount": 166,
+          "averagingDown": false,
+          "finalEquity": 113.9083195773,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 334.166667,
+          "lossTradeCount": 92,
+          "martingale": false,
+          "maximumConcurrentPositions": 2,
+          "maximumConsecutiveLosses": 7,
+          "maximumDailyLossPct": -0.5740326803,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 334.166667,
+          "maximumDrawdownPct": 3.0828368754,
+          "maximumDrawdownR": 13.9973019942,
+          "maximumMonthlyLossPct": -0.8629628005,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -0.5740326803,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_directional_cluster_risk": 283
+          },
+          "skippedTradeCount": 283,
+          "totalReturnPct": 13.9083195773
+        },
+        "model_2_standard_fixed_ratio": {
+          "acceptedTradeCount": 96,
+          "averagingDown": false,
+          "finalEquity": 115.6639845063,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 607.791667,
+          "lossTradeCount": 56,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 8,
+          "maximumDailyLossPct": -0.5964250678,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 607.791667,
+          "maximumDrawdownPct": 4.1665954441,
+          "maximumDrawdownR": 9.7809152214,
+          "maximumMonthlyLossPct": -1.7708327626,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -1.1807946336,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_directional_cluster_risk": 353
+          },
+          "skippedTradeCount": 353,
+          "totalReturnPct": 15.6639845063
+        },
+        "model_3_correlation_constrained": {
+          "acceptedTradeCount": 96,
+          "averagingDown": false,
+          "finalEquity": 104.3338995598,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 334.083333,
+          "lossTradeCount": 56,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 8,
+          "maximumDailyLossPct": -0.2680604531,
+          "maximumDirectionalClusterRiskPct": 0.25,
+          "maximumDrawdownDurationDays": 334.083333,
+          "maximumDrawdownPct": 1.3091765188,
+          "maximumDrawdownR": 5.4972860802,
+          "maximumMonthlyLossPct": -0.6678586835,
+          "maximumOpenRiskPct": 0.25,
+          "maximumWeeklyLossPct": -0.4004298614,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_concurrent_positions": 353
+          },
+          "skippedTradeCount": 353,
+          "totalReturnPct": 4.3338995598
+        }
+      },
+      "strategyVersionId": "strategy_version_a80c785eebf379a311de35b1697e39956849177a157f2d789aaeed433f3a80e3",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.0439577926,
+            "monteCarlo95MaximumDrawdownPct": 15.406535080110075
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 1.0885432134,
+            "monteCarlo95MaximumDrawdownPct": 33.494929197577434
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 趋势突破回踩 ATR2.0",
+      "riskModels": {
+        "model_1_low_risk_fixed_ratio": {
+          "acceptedTradeCount": 237,
+          "averagingDown": false,
+          "finalEquity": 108.7579508275,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 608.0,
+          "lossTradeCount": 133,
+          "martingale": false,
+          "maximumConcurrentPositions": 2,
+          "maximumConsecutiveLosses": 11,
+          "maximumDailyLossPct": -0.5701376404,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 608.0,
+          "maximumDrawdownPct": 3.9637874711,
+          "maximumDrawdownR": 17.6605116626,
+          "maximumMonthlyLossPct": -1.4222967815,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -0.8631648436,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_directional_cluster_risk": 974
+          },
+          "skippedTradeCount": 974,
+          "totalReturnPct": 8.7579508275
+        },
+        "model_2_standard_fixed_ratio": {
+          "acceptedTradeCount": 125,
+          "averagingDown": false,
+          "finalEquity": 109.6404053561,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 722.625,
+          "lossTradeCount": 71,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 6,
+          "maximumDailyLossPct": -0.586064111,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 722.625,
+          "maximumDrawdownPct": 4.0439577926,
+          "maximumDrawdownR": 9.0052779272,
+          "maximumMonthlyLossPct": -1.7264983722,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -1.1563634133,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_directional_cluster_risk": 1086
+          },
+          "skippedTradeCount": 1086,
+          "totalReturnPct": 9.6404053561
+        },
+        "model_3_correlation_constrained": {
+          "acceptedTradeCount": 125,
+          "averagingDown": false,
+          "finalEquity": 103.7188429779,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 470.375,
+          "lossTradeCount": 71,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 6,
+          "maximumDailyLossPct": -0.2720906455,
+          "maximumDirectionalClusterRiskPct": 0.25,
+          "maximumDrawdownDurationDays": 470.375,
+          "maximumDrawdownPct": 1.0885432134,
+          "maximumDrawdownR": 4.525621363,
+          "maximumMonthlyLossPct": -0.398443082,
+          "maximumOpenRiskPct": 0.25,
+          "maximumWeeklyLossPct": -0.2720906455,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_concurrent_positions": 1086
+          },
+          "skippedTradeCount": 1086,
+          "totalReturnPct": 3.7188429779
+        }
+      },
+      "strategyVersionId": "strategy_version_c0afa97d531616a24d020e2aad5acd5df1168b41e7acbccab330549821aaa7d8",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 14.7286419702,
+            "monteCarlo95MaximumDrawdownPct": 15.45758221870601
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.8909664604,
+            "monteCarlo95MaximumDrawdownPct": 60.01029929847771
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1H 突破回踩 BTC 顺势确认，因子后继 ATR1.2",
+      "riskModels": {
+        "model_1_low_risk_fixed_ratio": {
+          "acceptedTradeCount": 745,
+          "averagingDown": false,
+          "finalEquity": 97.1578747679,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 1173.440972,
+          "lossTradeCount": 468,
+          "martingale": false,
+          "maximumConcurrentPositions": 2,
+          "maximumConsecutiveLosses": 15,
+          "maximumDailyLossPct": -1.6973712017,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 1173.440972,
+          "maximumDrawdownPct": 10.0569067294,
+          "maximumDrawdownR": 43.4544843429,
+          "maximumMonthlyLossPct": -3.9693956581,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -2.0547889994,
+          "riskStopTriggerCount": 1,
+          "skipReasons": {
+            "drawdown_research_stop": 1100,
+            "maximum_directional_cluster_risk": 1871
+          },
+          "skippedTradeCount": 2971,
+          "totalReturnPct": -2.8421252321
+        },
+        "model_2_standard_fixed_ratio": {
+          "acceptedTradeCount": 531,
+          "averagingDown": false,
+          "finalEquity": 100.4507270492,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 1146.482639,
+          "lossTradeCount": 326,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 18,
+          "maximumDailyLossPct": -1.9952214669,
+          "maximumDirectionalClusterRiskPct": 0.5,
+          "maximumDrawdownDurationDays": 1146.482639,
+          "maximumDrawdownPct": 14.7286419702,
+          "maximumDrawdownR": 34.7010491808,
+          "maximumMonthlyLossPct": -5.4032467334,
+          "maximumOpenRiskPct": 0.5,
+          "maximumWeeklyLossPct": -3.0063714438,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_directional_cluster_risk": 3185
+          },
+          "skippedTradeCount": 3185,
+          "totalReturnPct": 0.4507270492
+        },
+        "model_3_correlation_constrained": {
+          "acceptedTradeCount": 531,
+          "averagingDown": false,
+          "finalEquity": 98.994181986,
+          "grid": false,
+          "initialEquity": 100.0,
+          "leverageCanIncreaseAllowedLoss": false,
+          "longestRecoveryDays": 467.458333,
+          "lossTradeCount": 326,
+          "martingale": false,
+          "maximumConcurrentPositions": 1,
+          "maximumConsecutiveLosses": 18,
+          "maximumDailyLossPct": -0.7937949466,
+          "maximumDirectionalClusterRiskPct": 0.25,
+          "maximumDrawdownDurationDays": 467.458333,
+          "maximumDrawdownPct": 4.8909664604,
+          "maximumDrawdownR": 20.2812996762,
+          "maximumMonthlyLossPct": -2.2428007641,
+          "maximumOpenRiskPct": 0.25,
+          "maximumWeeklyLossPct": -0.8594962525,
+          "riskStopTriggerCount": 0,
+          "skipReasons": {
+            "maximum_concurrent_positions": 3185
+          },
+          "skippedTradeCount": 3185,
+          "totalReturnPct": -1.005818014
+        }
+      },
+      "strategyVersionId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778",
+      "tier": "B",
+      "timeframe": "1h"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "预筛选停止",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {},
+        "status": "prefilter_stopped"
+      },
+      "displayLabelZh": "15m 假突破弱趋势反转，因子后继 ATR1.2",
+      "riskModels": null,
+      "strategyVersionId": "strategy_version_5f27f24019c5fff46eaf083dc5a57c78029afb8f3c8fe3bab4f3dbe3093a8785",
+      "tier": "C",
+      "timeframe": "15m"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "预筛选停止",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {},
+        "status": "prefilter_stopped"
+      },
+      "displayLabelZh": "1D 超卖扫低收回 ATR1.2 影子",
+      "riskModels": null,
+      "strategyVersionId": "strategy_version_c308c66aeb070009e17ff1eaeb63177d4c17647c6679ca13d8dd49a011d84085",
+      "tier": "C",
+      "timeframe": "1d"
+    }
+  ],
+  "generatedAt": "2026-07-15T04:21:15.263343+00:00",
+  "preRegistrationHash": "f869efb60ec4aedd20777b3dd3939b03aec10d8232c2220cf78a96d69c956f9b",
+  "schemaVersion": "candidate_validation_layer_v1"
+}

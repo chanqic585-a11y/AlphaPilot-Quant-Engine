@@ -1,0 +1,49 @@
+{
+  "frozenRiskModels": {
+    "model_0_equal_r_signal": {
+      "compounding": false,
+      "modelHash": "54993fe06faeffe622b1e5c562a74adc63f8b5eaaf9a2df3faf4048d741fef1a",
+      "riskPerTradeR": 1.0,
+      "role": "signal_normalization_only"
+    },
+    "model_1_low_risk_fixed_ratio": {
+      "dailyNewRiskPausePct": -1.5,
+      "drawdownResearchStopPct": 10.0,
+      "maximumConcurrentPositions": 4,
+      "maximumDirectionalClusterRiskPct": 0.5,
+      "maximumOpenRiskPct": 1.0,
+      "maximumSymbolRiskPct": 0.5,
+      "modelHash": "cda91fcf138a3964e569d3d8b8204fca6546581b013b730ee16b964afa109b1f",
+      "riskPerTradePct": 0.25,
+      "role": "primary_acceptance"
+    },
+    "model_2_standard_fixed_ratio": {
+      "dailyNewRiskPausePct": -2.0,
+      "drawdownResearchStopPct": 15.0,
+      "maximumConcurrentPositions": 3,
+      "maximumDirectionalClusterRiskPct": 0.75,
+      "maximumOpenRiskPct": 1.5,
+      "maximumSymbolRiskPct": 0.75,
+      "modelHash": "9236261641d3734f7bcbc2bdcc50b01f840db1616e384e2c5d628a5be3cf2f86",
+      "riskPerTradePct": 0.5,
+      "role": "sensitivity_only"
+    },
+    "model_3_correlation_constrained": {
+      "highBetaRiskDiscount": true,
+      "leverageCannotIncreaseAllowedLoss": true,
+      "maximumDirectionalClusterRiskPct": 0.5,
+      "maximumOpenRiskPct": 1.0,
+      "modelHash": "aac46ba5b9f2274fb32f05c284d7dd1ac0d293d9a8c50862b75b29c28fd71e4f",
+      "riskPerTradePct": 0.25,
+      "role": "sensitivity_only"
+    }
+  },
+  "generatedAt": "2026-07-15T04:21:15.263343+00:00",
+  "preRegistrationHash": "f869efb60ec4aedd20777b3dd3939b03aec10d8232c2220cf78a96d69c956f9b",
+  "primaryRiskModelId": "model_1_low_risk_fixed_ratio",
+  "schemaVersion": "candidate_validation_layer_v1",
+  "sensitivityRiskModelIds": [
+    "model_2_standard_fixed_ratio",
+    "model_3_correlation_constrained"
+  ]
+}

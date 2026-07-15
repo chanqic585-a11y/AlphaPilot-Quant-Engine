@@ -1,0 +1,540 @@
+{
+  "candidates": [
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 10.7427373841,
+            "monteCarlo95MaximumDrawdownPct": 15.412128597916182
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 2.8629626372,
+            "monteCarlo95MaximumDrawdownPct": 43.21579968879626
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1H 深弱势扫低收回，因子后继 ATR1.2",
+      "monteCarlo": {
+        "model_1_low_risk_fixed_ratio": {
+          "blockLengthTrades": 53,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 108.43332470887208,
+            "p10": 90.07007956985558,
+            "p90": 171.54995587723826,
+            "p95": 211.19065781494558
+          },
+          "maximumConsecutiveLossesP95": 41.0,
+          "maximumDrawdownPct": {
+            "median": 10.123225967743036,
+            "p10": 10.025834329009836,
+            "p90": 10.217043660124276,
+            "p95": 10.228014134761697
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 1.0,
+          "probabilityDrawdownAtLeast15Pct": 0.0,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524288
+        },
+        "model_2_standard_fixed_ratio": {
+          "blockLengthTrades": 53,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 109.66571204617455,
+            "p10": 84.8997196244584,
+            "p90": 222.22182992742253,
+            "p95": 293.1738448483835
+          },
+          "maximumConsecutiveLossesP95": 32.0,
+          "maximumDrawdownPct": {
+            "median": 15.200302181188224,
+            "p10": 15.033374920426477,
+            "p90": 15.388922679674465,
+            "p95": 15.412128597916182
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 1.0,
+          "probabilityDrawdownAtLeast15Pct": 1.0,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524289
+        },
+        "model_3_correlation_constrained": {
+          "blockLengthTrades": 53,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 371.3683205162796,
+            "p10": 184.20629659011828,
+            "p90": 741.1835416791516,
+            "p95": 910.7190590431189
+          },
+          "maximumConsecutiveLossesP95": 81.0,
+          "maximumDrawdownPct": {
+            "median": 26.435602989506357,
+            "p10": 18.60272095923905,
+            "p90": 39.02257945359646,
+            "p95": 43.21579968879626
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 1.0,
+          "probabilityDrawdownAtLeast15Pct": 0.9844,
+          "probabilityDrawdownAtLeast20Pct": 0.8398,
+          "probabilityRuin": 0.0,
+          "seed": 524290
+        }
+      },
+      "strategyVersionId": "strategy_version_05c158de451321444bd1ef4485305b239a0d1bdb67b369f08f95a53295bd4d8e",
+      "tier": "A",
+      "timeframe": "1h"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 7.8227848662,
+            "monteCarlo95MaximumDrawdownPct": 15.406364285602368
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 2.2287301503,
+            "monteCarlo95MaximumDrawdownPct": 33.988697120261776
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 广谱压缩释放 ATR2.0",
+      "monteCarlo": {
+        "model_1_low_risk_fixed_ratio": {
+          "blockLengthTrades": 31,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 102.91436818785363,
+            "p10": 90.1021344062628,
+            "p90": 150.1341056009255,
+            "p95": 173.5060383932082
+          },
+          "maximumConsecutiveLossesP95": 29.0,
+          "maximumDrawdownPct": {
+            "median": 10.098432584588135,
+            "p10": 10.012122475040675,
+            "p90": 10.20014480882381,
+            "p95": 10.214679592179298
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 0.9606,
+          "probabilityDrawdownAtLeast15Pct": 0.0,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524289
+        },
+        "model_2_standard_fixed_ratio": {
+          "blockLengthTrades": 31,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 102.46816085580572,
+            "p10": 84.93154536034655,
+            "p90": 180.8711574832751,
+            "p95": 225.94722140317722
+          },
+          "maximumConsecutiveLossesP95": 27.0,
+          "maximumDrawdownPct": {
+            "median": 15.196979957846686,
+            "p10": 15.039427596926116,
+            "p90": 15.380477638525106,
+            "p95": 15.406364285602368
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 1.0,
+          "probabilityDrawdownAtLeast15Pct": 0.993,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524290
+        },
+        "model_3_correlation_constrained": {
+          "blockLengthTrades": 31,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 126.63198430866834,
+            "p10": 89.210575426287,
+            "p90": 184.47998530672277,
+            "p95": 207.66334443411415
+          },
+          "maximumConsecutiveLossesP95": 36.0,
+          "maximumDrawdownPct": {
+            "median": 18.57677126545159,
+            "p10": 11.702715683528423,
+            "p90": 29.618712632277276,
+            "p95": 33.988697120261776
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 0.9622,
+          "probabilityDrawdownAtLeast15Pct": 0.7204,
+          "probabilityDrawdownAtLeast20Pct": 0.4198,
+          "probabilityRuin": 0.0,
+          "seed": 524291
+        }
+      },
+      "strategyVersionId": "strategy_version_0dc7701b4b48a6d2d3eaf727bfec274b5ca93016a5ea9aa862ffcc7f3ebe9b1b",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.1665954441,
+            "monteCarlo95MaximumDrawdownPct": 15.381209092225221
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 1.3091765188,
+            "monteCarlo95MaximumDrawdownPct": 15.011438997936477
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 趋势压缩释放 ATR2.0",
+      "monteCarlo": {
+        "model_1_low_risk_fixed_ratio": {
+          "blockLengthTrades": 21,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 113.97205299148845,
+            "p10": 93.85365475770051,
+            "p90": 134.84186033283513,
+            "p95": 141.03590584733175
+          },
+          "maximumConsecutiveLossesP95": 22.0,
+          "maximumDrawdownPct": {
+            "median": 7.824127268358513,
+            "p10": 4.9547742439917934,
+            "p90": 10.131730956292989,
+            "p95": 10.182271389764086
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 0.2642,
+          "probabilityDrawdownAtLeast15Pct": 0.0,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524290
+        },
+        "model_2_standard_fixed_ratio": {
+          "blockLengthTrades": 21,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 119.94506633603704,
+            "p10": 87.92069676336114,
+            "p90": 175.67137847583226,
+            "p95": 195.09103257018435
+          },
+          "maximumConsecutiveLossesP95": 21.0,
+          "maximumDrawdownPct": {
+            "median": 15.02112366834346,
+            "p10": 9.840648299999152,
+            "p90": 15.333212051552634,
+            "p95": 15.381209092225221
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 0.8902,
+          "probabilityDrawdownAtLeast15Pct": 0.5272,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524291
+        },
+        "model_3_correlation_constrained": {
+          "blockLengthTrades": 21,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 114.98602527886194,
+            "p10": 98.52251240827835,
+            "p90": 134.22732271970403,
+            "p95": 140.16543068480988
+          },
+          "maximumConsecutiveLossesP95": 23.0,
+          "maximumDrawdownPct": {
+            "median": 7.892621244946952,
+            "p10": 4.981032685427636,
+            "p90": 12.976265686323252,
+            "p95": 15.011438997936477
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 0.2734,
+          "probabilityDrawdownAtLeast15Pct": 0.0506,
+          "probabilityDrawdownAtLeast20Pct": 0.0066,
+          "probabilityRuin": 0.0,
+          "seed": 524292
+        }
+      },
+      "strategyVersionId": "strategy_version_a80c785eebf379a311de35b1697e39956849177a157f2d789aaeed433f3a80e3",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.0439577926,
+            "monteCarlo95MaximumDrawdownPct": 15.406535080110075
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 1.0885432134,
+            "monteCarlo95MaximumDrawdownPct": 33.494929197577434
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1D 趋势突破回踩 ATR2.0",
+      "monteCarlo": {
+        "model_1_low_risk_fixed_ratio": {
+          "blockLengthTrades": 34,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 105.49104905796466,
+            "p10": 90.15419456307819,
+            "p90": 166.66307614221583,
+            "p95": 198.3729110105364
+          },
+          "maximumConsecutiveLossesP95": 26.0,
+          "maximumDrawdownPct": {
+            "median": 10.099075567792003,
+            "p10": 10.013968001903896,
+            "p90": 10.201824423687603,
+            "p95": 10.215086422962385
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 0.969,
+          "probabilityDrawdownAtLeast15Pct": 0.0,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524291
+        },
+        "model_2_standard_fixed_ratio": {
+          "blockLengthTrades": 34,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 107.22368985489214,
+            "p10": 84.98816195629328,
+            "p90": 204.80744957252392,
+            "p95": 274.70883929589513
+          },
+          "maximumConsecutiveLossesP95": 26.0,
+          "maximumDrawdownPct": {
+            "median": 15.19874975428285,
+            "p10": 15.032620246822027,
+            "p90": 15.381232259275123,
+            "p95": 15.406535080110075
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 1.0,
+          "probabilityDrawdownAtLeast15Pct": 0.9976,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524292
+        },
+        "model_3_correlation_constrained": {
+          "blockLengthTrades": 34,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 149.21641987012367,
+            "p10": 98.59380712528434,
+            "p90": 231.10077731516472,
+            "p95": 264.5517133399795
+          },
+          "maximumConsecutiveLossesP95": 33.0,
+          "maximumDrawdownPct": {
+            "median": 18.5488884297146,
+            "p10": 12.01987452274777,
+            "p90": 29.452634833317305,
+            "p95": 33.494929197577434
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 0.97,
+          "probabilityDrawdownAtLeast15Pct": 0.7312,
+          "probabilityDrawdownAtLeast20Pct": 0.4132,
+          "probabilityRuin": 0.0,
+          "seed": 524293
+        }
+      },
+      "strategyVersionId": "strategy_version_c0afa97d531616a24d020e2aad5acd5df1168b41e7acbccab330549821aaa7d8",
+      "tier": "A",
+      "timeframe": "1d"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "锁定样本不可用",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {
+          "model_2_standard_fixed_ratio": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 14.7286419702,
+            "monteCarlo95MaximumDrawdownPct": 15.45758221870601
+          },
+          "model_3_correlation_constrained": {
+            "diagnosticOnly": true,
+            "historicalMaximumDrawdownPct": 4.8909664604,
+            "monteCarlo95MaximumDrawdownPct": 60.01029929847771
+          }
+        },
+        "status": "locked_sample_unavailable"
+      },
+      "displayLabelZh": "1H 突破回踩 BTC 顺势确认，因子后继 ATR1.2",
+      "monteCarlo": {
+        "model_1_low_risk_fixed_ratio": {
+          "blockLengthTrades": 60,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 98.34113973748197,
+            "p10": 89.96765976779037,
+            "p90": 127.22557466735448,
+            "p95": 141.95063469631745
+          },
+          "maximumConsecutiveLossesP95": 31.0,
+          "maximumDrawdownPct": {
+            "median": 10.121840463300716,
+            "p10": 10.025880734696447,
+            "p90": 10.229114768109612,
+            "p95": 10.245235749833707
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 1.0,
+          "probabilityDrawdownAtLeast15Pct": 0.0,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524292
+        },
+        "model_2_standard_fixed_ratio": {
+          "blockLengthTrades": 60,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 97.38448484085183,
+            "p10": 84.85412498199646,
+            "p90": 148.63109606365123,
+            "p95": 182.9565068830325
+          },
+          "maximumConsecutiveLossesP95": 28.0,
+          "maximumDrawdownPct": {
+            "median": 15.251720493427117,
+            "p10": 15.048760222082096,
+            "p90": 15.428819676522043,
+            "p95": 15.45758221870601
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 1.0,
+          "probabilityDrawdownAtLeast15Pct": 1.0,
+          "probabilityDrawdownAtLeast20Pct": 0.0,
+          "probabilityRuin": 0.0,
+          "seed": 524293
+        },
+        "model_3_correlation_constrained": {
+          "blockLengthTrades": 60,
+          "blockMethod": "circular_block_bootstrap",
+          "draws": 5000,
+          "endingEquity": {
+            "median": 149.2130487114269,
+            "p10": 74.8534370403293,
+            "p90": 312.3114044088367,
+            "p95": 382.02316963545655
+          },
+          "maximumConsecutiveLossesP95": 41.0,
+          "maximumDrawdownPct": {
+            "median": 36.37454091334148,
+            "p10": 24.900206238185763,
+            "p90": 54.40002674973348,
+            "p95": 60.01029929847771
+          },
+          "overlapConstraintLimitation": "resampled sequence cannot preserve original concurrent-position timing",
+          "pathModel": "fixed_ratio_sequence_with_optional_research_stop",
+          "probabilityDrawdownAtLeast10Pct": 1.0,
+          "probabilityDrawdownAtLeast15Pct": 1.0,
+          "probabilityDrawdownAtLeast20Pct": 0.9836,
+          "probabilityRuin": 0.0,
+          "seed": 524294
+        }
+      },
+      "strategyVersionId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778",
+      "tier": "B",
+      "timeframe": "1h"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "预筛选停止",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {},
+        "status": "prefilter_stopped"
+      },
+      "displayLabelZh": "15m 假突破弱趋势反转，因子后继 ATR1.2",
+      "monteCarlo": null,
+      "strategyVersionId": "strategy_version_5f27f24019c5fff46eaf083dc5a57c78029afb8f3c8fe3bab4f3dbe3093a8785",
+      "tier": "C",
+      "timeframe": "15m"
+    },
+    {
+      "decision": {
+        "displayStatusZh": "预筛选停止",
+        "hardPass": false,
+        "sensitivityCanRescuePrimaryFailure": false,
+        "sensitivityResults": {},
+        "status": "prefilter_stopped"
+      },
+      "displayLabelZh": "1D 超卖扫低收回 ATR1.2 影子",
+      "monteCarlo": null,
+      "strategyVersionId": "strategy_version_c308c66aeb070009e17ff1eaeb63177d4c17647c6679ca13d8dd49a011d84085",
+      "tier": "C",
+      "timeframe": "1d"
+    }
+  ],
+  "generatedAt": "2026-07-15T04:21:15.263343+00:00",
+  "preRegistrationHash": "f869efb60ec4aedd20777b3dd3939b03aec10d8232c2220cf78a96d69c956f9b",
+  "schemaVersion": "candidate_validation_layer_v1"
+}
