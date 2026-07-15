@@ -1,0 +1,277 @@
+{
+  "controlsEligibleForShortlist": false,
+  "negativeControls": [
+    {
+      "controlId": "random",
+      "metrics": {
+        "baseCostSpread": 0.00017520292812461485,
+        "coverage": 1.0,
+        "direction": 1,
+        "folds": [
+          {
+            "averageNetSpread": 0.0011999576420676703,
+            "foldId": "fold_001",
+            "positive": true,
+            "sampleCount": 100
+          },
+          {
+            "averageNetSpread": -0.00045923174877235656,
+            "foldId": "fold_002",
+            "positive": false,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": 0.0016101441362495886,
+            "foldId": "fold_003",
+            "positive": true,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": 0.0008542920668952288,
+            "foldId": "fold_004",
+            "positive": true,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": -0.002647396988887378,
+            "foldId": "fold_005",
+            "positive": false,
+            "sampleCount": 98
+          }
+        ],
+        "grossSpread": 0.0005839529281246151,
+        "instrumentContributions": {
+          "asset_0": -0.09755964309610222,
+          "asset_1": 0.06612883151259029,
+          "asset_10": -0.1564441497113322,
+          "asset_11": 0.12874986016961196,
+          "asset_2": 0.04631589142822067,
+          "asset_3": -0.027037363435509564,
+          "asset_4": 0.13830726432388377,
+          "asset_5": 0.033636224833301635,
+          "asset_6": -0.020731198717971175,
+          "asset_7": 0.0738149902922045,
+          "asset_8": -0.01702753024018539,
+          "asset_9": 0.1238232867035954
+        },
+        "missingRate": 0.0,
+        "pValue": 0.5152691158951024,
+        "positiveFoldCount": 3,
+        "rankICIR": 0.029098183263507698,
+        "rankICMean": 0.008895104895104897,
+        "rankICPositiveRatio": 0.508,
+        "rankICStd": 0.30569279238337643,
+        "singleInstrumentPositiveContribution": 0.22644502278236758,
+        "singleMonthPositiveContribution": 0.2900056048874294,
+        "stress1_5xSpread": -2.9172071875385395e-05,
+        "trialId": "synthetic_negative_random",
+        "turnover": 0.8175
+      },
+      "passed": false
+    },
+    {
+      "controlId": "time_shuffled",
+      "metrics": {
+        "baseCostSpread": -0.0001802736373374272,
+        "coverage": 1.0,
+        "direction": 1,
+        "folds": [
+          {
+            "averageNetSpread": 0.0011168785898551185,
+            "foldId": "fold_001",
+            "positive": true,
+            "sampleCount": 100
+          },
+          {
+            "averageNetSpread": -0.0008011833917608818,
+            "foldId": "fold_002",
+            "positive": false,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": 0.00190488520895612,
+            "foldId": "fold_003",
+            "positive": true,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": -0.0018164856001264432,
+            "foldId": "fold_004",
+            "positive": false,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": -0.0013698703075302348,
+            "foldId": "fold_005",
+            "positive": false,
+            "sampleCount": 98
+          }
+        ],
+        "grossSpread": 0.00023972636266257302,
+        "instrumentContributions": {
+          "asset_0": 0.11033227703762312,
+          "asset_1": -0.07445891185975279,
+          "asset_10": 0.2406269717790736,
+          "asset_11": 0.06542021090383411,
+          "asset_2": -0.1330893588235505,
+          "asset_3": 0.04586221993281036,
+          "asset_4": -0.23439598260523015,
+          "asset_5": 0.15811886096451752,
+          "asset_6": -0.06955681513882594,
+          "asset_7": 0.09268353054325175,
+          "asset_8": -0.11232839600611594,
+          "asset_9": 0.030648574603651522
+        },
+        "missingRate": 0.0,
+        "pValue": 0.5064659168381773,
+        "positiveFoldCount": 2,
+        "rankICIR": 0.02971066384290055,
+        "rankICMean": 0.008951048951048953,
+        "rankICPositiveRatio": 0.528,
+        "rankICStd": 0.30127394656608564,
+        "singleInstrumentPositiveContribution": 0.3235570139753493,
+        "singleMonthPositiveContribution": 0.3527265455391187,
+        "stress1_5xSpread": -0.00039027363733742747,
+        "trialId": "synthetic_negative_time_shuffled",
+        "turnover": 0.84
+      },
+      "passed": false
+    },
+    {
+      "controlId": "random_direction",
+      "metrics": {
+        "baseCostSpread": -0.001136739013495304,
+        "coverage": 1.0,
+        "direction": 1,
+        "folds": [
+          {
+            "averageNetSpread": -0.003151380711406274,
+            "foldId": "fold_001",
+            "positive": false,
+            "sampleCount": 100
+          },
+          {
+            "averageNetSpread": -0.007742329770249419,
+            "foldId": "fold_002",
+            "positive": false,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": 0.00649079384580065,
+            "foldId": "fold_003",
+            "positive": true,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": 0.001599655887033974,
+            "foldId": "fold_004",
+            "positive": true,
+            "sampleCount": 98
+          },
+          {
+            "averageNetSpread": -0.0022227112124471615,
+            "foldId": "fold_005",
+            "positive": false,
+            "sampleCount": 98
+          }
+        ],
+        "grossSpread": -0.0007234890134953024,
+        "instrumentContributions": {
+          "asset_0": 0.008602392245016811,
+          "asset_1": 0.1440678915934693,
+          "asset_10": 0.24340691193282554,
+          "asset_11": -0.03595200834995031,
+          "asset_2": 0.03900477067423935,
+          "asset_3": 0.019147204838494435,
+          "asset_4": -0.03933828480944181,
+          "asset_5": -0.0613373775965039,
+          "asset_6": 0.012046793679553273,
+          "asset_7": -0.28578300082449515,
+          "asset_8": -0.11018892362838681,
+          "asset_9": -0.2954208765024725
+        },
+        "missingRate": 0.0,
+        "pValue": 0.8259117815613723,
+        "positiveFoldCount": 2,
+        "rankICIR": -0.00983636620378231,
+        "rankICMean": -0.009398601398601403,
+        "rankICPositiveRatio": 0.496,
+        "rankICStd": 0.9554952717180684,
+        "singleInstrumentPositiveContribution": 0.5220232871145907,
+        "singleMonthPositiveContribution": 0.2516681709190016,
+        "stress1_5xSpread": -0.0013433640134953037,
+        "trialId": "synthetic_negative_random_direction",
+        "turnover": 0.8265
+      },
+      "passed": false
+    }
+  ],
+  "positiveControl": {
+    "metrics": {
+      "baseCostSpread": 0.041599054194527495,
+      "coverage": 1.0,
+      "direction": 1,
+      "folds": [
+        {
+          "averageNetSpread": 0.041401020182277995,
+          "foldId": "fold_001",
+          "positive": true,
+          "sampleCount": 100
+        },
+        {
+          "averageNetSpread": 0.041596179470764064,
+          "foldId": "fold_002",
+          "positive": true,
+          "sampleCount": 98
+        },
+        {
+          "averageNetSpread": 0.04217587291103188,
+          "foldId": "fold_003",
+          "positive": true,
+          "sampleCount": 98
+        },
+        {
+          "averageNetSpread": 0.04144211628723801,
+          "foldId": "fold_004",
+          "positive": true,
+          "sampleCount": 98
+        },
+        {
+          "averageNetSpread": 0.041743594578365094,
+          "foldId": "fold_005",
+          "positive": true,
+          "sampleCount": 98
+        }
+      ],
+      "grossSpread": 0.042012804194527506,
+      "instrumentContributions": {
+        "asset_0": 2.016661378776624,
+        "asset_1": 1.6931730375867846,
+        "asset_10": 1.722713784162706,
+        "asset_11": 1.773266778264039,
+        "asset_2": 1.9289043329962117,
+        "asset_3": 1.5971657061792486,
+        "asset_4": 1.6410910212863452,
+        "asset_5": 1.5871180739012603,
+        "asset_6": 1.7164978314384174,
+        "asset_7": 1.6871542284298668,
+        "asset_8": 1.7919678341504186,
+        "asset_9": 1.8506880900918268
+      },
+      "missingRate": 0.0,
+      "pValue": 0.0,
+      "positiveFoldCount": 5,
+      "rankICIR": 24.899401567459158,
+      "rankICMean": 0.9538181818181819,
+      "rankICPositiveRatio": 1.0,
+      "rankICStd": 0.03830687172276139,
+      "singleInstrumentPositiveContribution": 0.09600222681823796,
+      "singleMonthPositiveContribution": 0.06546788803065468,
+      "stress1_5xSpread": 0.0413921791945275,
+      "trialId": "synthetic_positive_control",
+      "turnover": 0.8275
+    },
+    "passed": true
+  },
+  "schemaVersion": "factor_evaluator_controls_v1"
+}

@@ -1,0 +1,15 @@
+{
+  "controlStatus": "passed",
+  "dataSnapshotId": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "eligibleFactorCount": 0,
+  "factorShortlistId": "factor_shortlist_5bdaeea71852321b56ba85c3890e4a497dccb5002c0ea4fd0b7d04e3be77a416",
+  "fdrDiscoveryCount": 2,
+  "formalTrialCount": 32,
+  "pitStatus": "diagnostic_proxy",
+  "readinessBlockers": [],
+  "readinessPassed": true,
+  "resultRunNetworkPolicy": "offline_enforced",
+  "schemaVersion": "factor_benchmark_report_v1",
+  "seedFactorCount": 8,
+  "status": "completed"
+}
