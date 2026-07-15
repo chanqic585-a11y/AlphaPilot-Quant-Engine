@@ -1,0 +1,38 @@
+[
+  {
+    "License": "MIT",
+    "原模块": "factor research workflow and operator semantics",
+    "固定SHA": "531ee6b2a6a8ef1c5a4c067fce3d7a1b5d3d7722",
+    "拒绝理由": "",
+    "是否复制代码": false,
+    "来源": "HKUDS/Vibe-Trading",
+    "测试计划": "Independent fixtures, AST security tests, and numeric cross-checks.",
+    "状态": "参考后重写",
+    "目标AlphaPilot模块": "alphapilot.factor_lab and alphapilot.research_screening",
+    "采用理由": "Use audited concepts behind independent AlphaPilot contracts."
+  },
+  {
+    "License": "unverified_empty_license_file",
+    "原模块": "Alpha101 formula examples",
+    "固定SHA": "4089568f11436030168fc3014791c4cac800e635",
+    "拒绝理由": "The repository license file is empty; no code may be copied.",
+    "是否复制代码": false,
+    "来源": "yydhYYDH/alpha101",
+    "测试计划": "Reference identity only until a usable license is verified.",
+    "状态": "许可证阻塞",
+    "目标AlphaPilot模块": "alphapilot.factor_lab.alpha191.external_crosscheck",
+    "采用理由": ""
+  },
+  {
+    "License": "review_required",
+    "原模块": "formula descriptions and educational summaries",
+    "固定SHA": "45511e1c3f15ee2a5218dada230243202a5401921f37ae686c2815822ab906a9",
+    "拒绝理由": "",
+    "是否复制代码": false,
+    "来源": "Alpha191 因子公式小白学习手册",
+    "测试计划": "Manual formula provenance and ambiguity review per factor.",
+    "状态": "仅文档参考",
+    "目标AlphaPilot模块": "alphapilot.factor_lab.alpha191.manual_reference",
+    "采用理由": "Record concise formula metadata without reproducing long passages."
+  }
+]
