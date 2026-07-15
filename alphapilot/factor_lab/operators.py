@@ -211,7 +211,13 @@ def rolling_residual(
 
 def conditional_select(condition: Any, when_true: Any, when_false: Any) -> Any:
     if isinstance(condition, (pd.Series, pd.DataFrame)):
-        return _sanitize(when_true.where(condition, when_false))
+        if isinstance(when_true, (pd.Series, pd.DataFrame)):
+            return _sanitize(when_true.where(condition, when_false))
+        if isinstance(when_false, (pd.Series, pd.DataFrame)):
+            return _sanitize(when_false.where(~condition, when_true))
+        if isinstance(condition, pd.DataFrame):
+            return _sanitize(pd.DataFrame(np.where(condition, when_true, when_false), index=condition.index, columns=condition.columns))
+        return _sanitize(pd.Series(np.where(condition, when_true, when_false), index=condition.index))
     return when_true if condition else when_false
 
 
