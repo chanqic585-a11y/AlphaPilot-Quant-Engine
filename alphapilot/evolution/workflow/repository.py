@@ -11,7 +11,7 @@ from alphapilot.evolution.registry.hashing import canonical_json, stable_hash
 from alphapilot.evolution.registry.repositories import ImmutableRecordConflict
 from alphapilot.evolution.registry.types import AuditEventRecord, utc_now
 
-from .states import WorkflowConflict, validate_stage, validate_status
+from .states import WorkflowConflict, validate_active_stage, validate_stage, validate_status
 from .types import (
     EvaluationBindingRecord,
     FailureDiagnosisRecord,
@@ -234,7 +234,7 @@ class WorkflowRepository:
             ) from error
 
     def create_gate_profile(self, record: GateProfileRecord) -> GateProfileRecord:
-        validate_stage(record.stage)
+        validate_active_stage(record.stage)
         if record.version < 1:
             raise WorkflowConflict("gate_profile_version_must_be_positive")
         existing = self.get_gate_profile(record.gateProfileId)
@@ -430,7 +430,7 @@ class WorkflowRepository:
         progress: dict[str, Any],
         result: dict[str, Any],
     ) -> WorkflowRunRecord:
-        validate_stage(stage)
+        validate_active_stage(stage)
         validate_status(status)
         if attempt_number < 1:
             raise WorkflowConflict("workflow_attempt_number_must_be_positive")

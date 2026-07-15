@@ -22,6 +22,9 @@ STAGE_ORDER = {
     "live": 40,
 }
 
+ACTIVE_STAGES = frozenset({"backtest", "demo", "live"})
+RETIRED_STAGES = frozenset({"local_forward"})
+
 STAGE_PAGES = {
     "backtest": "strategy",
     "local_forward": "local_simulation",
@@ -86,6 +89,12 @@ TERMINAL_STATUSES = {"passed", "failed", "cancelled", "retired"}
 def validate_stage(stage: str) -> None:
     if stage not in STAGE_ORDER:
         raise WorkflowTransitionError(f"unsupported_workflow_stage:{stage}")
+
+
+def validate_active_stage(stage: str) -> None:
+    validate_stage(stage)
+    if stage in RETIRED_STAGES:
+        raise WorkflowTransitionError(f"retired_workflow_stage:{stage}")
 
 
 def validate_status(status: str) -> None:

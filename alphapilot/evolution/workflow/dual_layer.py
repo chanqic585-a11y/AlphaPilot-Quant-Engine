@@ -37,7 +37,6 @@ from .bounded_optimizer import (
 )
 from .data_contract import derive_strategy_data_contract
 from .evaluation_binding import create_formal_evaluation_binding
-from .local_forward_bridge import start_local_forward_after_pass
 from .repository import WorkflowRepository
 from .service import (
     checkpoint_workflow_run,
@@ -464,17 +463,7 @@ def run_dual_layer_backtest_workflow(
                 result=result,
                 evidence=evidence,
             )
-            if selection_phase or deps.marketData is None:
-                return passed_run
-            return start_local_forward_after_pass(
-                workflow,
-                registry,
-                version,
-                passed_run,
-                binding,
-                code_commit=deps.codeCommit or resolve_code_commit(),
-                market_data=deps.marketData,
-            )
+            return passed_run
         failed_checks = sorted(key for key, value in evaluated_checks.items() if not value)
         return complete_workflow_run(
             workflow,

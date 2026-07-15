@@ -31,8 +31,7 @@ from .types import (
 
 
 NEXT_STAGE = {
-    "backtest": "local_forward",
-    "local_forward": "demo",
+    "backtest": "demo",
     "demo": "live",
 }
 
