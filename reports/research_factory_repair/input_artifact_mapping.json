@@ -1,0 +1,238 @@
+{
+  "mappingHash": "64d8e9a0afa982ac629ccbbadf1f1c92d1d0173f9186068a444094d8abc5e15e",
+  "mappings": {
+    "phase3ArtifactManifest": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\artifact_manifest.json",
+      "ambiguousMatches": [],
+      "contentHash": "98797c565232c95e0a32466082fdf7c166324940a299c94cef55371cf22f8f2e",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3ArtifactManifest",
+      "schemaFingerprint": "json:phase3c_artifact_manifest_v1:artifacts,campaignId,manifestHash,schemaVersion",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3CampaignSummary": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\campaign_summary.json",
+      "ambiguousMatches": [],
+      "contentHash": "e495de1859cb1aee8cacb3e6cdef3d3d656163600461542acadad7ee10467df4",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3CampaignSummary",
+      "schemaFingerprint": "json:phase3c_campaign_summary_v1:basePassCount,bestCandidate,budgetExceeded,campaignId,candidateCount,costScenarios,dataSnapshotHash,embargoApplied,formalPassCount,fullBacktestCount,holdoutAccessCountBeforeFinalEvaluation,holdoutFinalEvaluationCount,preregistrationHash,prescreenPassCount,resultRunNetworkPolicy,schemaVersion,status,walkForwardFoldCount",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3CandidateResults": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\candidate_results.parquet",
+      "ambiguousMatches": [],
+      "contentHash": "82d35e0fa41454b6398c069abb2891581c237879b7af1f119c28efe59e3123cc",
+      "exists": true,
+      "fileType": "parquet",
+      "logicalRole": "phase3CandidateResults",
+      "schemaFingerprint": "parquet:magic:PAR1",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3DataAudit": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\data_readiness\\data_source_audit.json",
+      "ambiguousMatches": [],
+      "contentHash": "e83401435ed72e41db2ad0968cb5f8fd45f452982b708d9b4e9c146381ecd1cd",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3DataAudit",
+      "schemaFingerprint": "json:phase3b_data_source_audit_v1:schemaVersion,sources",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3DataManifest": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\data_readiness\\dataset_catalog.json",
+      "ambiguousMatches": [],
+      "contentHash": "74ca388b82dc6f0613e8c1738904b78d2347afe81e9f2ccda07b0174225458c7",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3DataManifest",
+      "schemaFingerprint": "json:phase3b_dataset_catalog_v1:dataManifestHash,datasets,formalResultRunsMustBeOffline,generatedAt,schemaVersion,verified",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3DataSnapshot": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\research\\data_snapshots\\data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a.json",
+      "ambiguousMatches": [],
+      "contentHash": "ff4a5a02adac7a62409de13a43d760312c9052d3429d897aedc000079daa5241",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3DataSnapshot",
+      "schemaFingerprint": "json:phase3b_data_snapshot_v1:createdAt,dataManifestHash,datasetContentHashes,instruments,pitReason,pitStatus,resultRunNetworkPolicy,schemaVersion,snapshotId,timeframes",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3ExperimentBudget": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\experiment_budget.json",
+      "ambiguousMatches": [],
+      "contentHash": "919849319aed4b7bca50ad497dc73ed09b6b8786bd498359d746c6e36b7a842f",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3ExperimentBudget",
+      "schemaFingerprint": "json:unknown:exceeded,fullBacktestCount,initialCandidateCount,maximumFamilies,maximumFullBacktests,maximumInitialCandidates,maximumInitialVariantsPerFamily,maximumStructuralRevisionsPerFamily,structuralRevisionCount",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3FactorBenchmark": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\factor_lab\\factor_benchmark_report.json",
+      "ambiguousMatches": [],
+      "contentHash": "421c6cd4b20c792d86023568d0627a67469313eb022405e9358bf33cf38a9998",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3FactorBenchmark",
+      "schemaFingerprint": "json:factor_benchmark_report_v1:controlStatus,dataSnapshotId,eligibleFactorCount,factorShortlistId,fdrDiscoveryCount,formalTrialCount,pitStatus,readinessBlockers,readinessPassed,resultRunNetworkPolicy,schemaVersion,seedFactorCount,status",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3FactorClusters": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\factor_lab\\factor_clusters.json",
+      "ambiguousMatches": [],
+      "contentHash": "b560d0d9ca7372b690065eaddf40e8bb8409498092cf2c7b85c1c4e9a7d06679",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3FactorClusters",
+      "schemaFingerprint": "json:factor_clusters_v1:clusters,correlationThreshold,highlyDuplicatePairs,highlyDuplicateThreshold,pairs,schemaVersion",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3FactorMechanismMatrix": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\factor_lab\\factor_market_mechanism_matrix.json",
+      "ambiguousMatches": [],
+      "contentHash": "282da656ee23483ff78d2d2772cd9ad80bf26513f1e388e267a40097e012011a",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3FactorMechanismMatrix",
+      "schemaFingerprint": "json:factor_market_mechanism_matrix_v1:allowedFactorRoles,factorRoleLimit,mechanisms,pitStatus,schemaVersion,universeSplits",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3FactorShortlist": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\research\\factor_shortlists\\factor_shortlist_5bdaeea71852321b56ba85c3890e4a497dccb5002c0ea4fd0b7d04e3be77a416.json",
+      "ambiguousMatches": [],
+      "contentHash": "04a089eb17f4932b316a0e14d74a3739be1477448e241f0579712f1d489fd526",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3FactorShortlist",
+      "schemaFingerprint": "json:factor_shortlist_v1:controlsExcluded,dataManifestHash,dataSnapshotHash,eligibleFactors,externalReferenceManifestHash,factorClusterHash,factorImplementationHashes,factorRegistryHash,factorShortlistId,factorTrialLedgerHash,gitCommit,rejectedFactors,schemaVersion,selectionUsedHoldout",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3FactorTrialLedger": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\factor_lab\\factor_trial_ledger.json",
+      "ambiguousMatches": [],
+      "contentHash": "8070026ba5699e15d09b59d99623f4f8f13f70781fba7d0deab4b9167f1cd093",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3FactorTrialLedger",
+      "schemaFingerprint": "json:factor_trial_ledger_v1:factorTrialLedgerHash,fdrCompleted,fdrQ,formalTrialCount,maximumFormalTrials,preregistrationHash,schemaVersion,trials",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3FailureAttribution": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\failure_attribution.json",
+      "ambiguousMatches": [],
+      "contentHash": "a8a7bec6a773f8ea80e32e83793fc62f6276f52379e680c835c69feceea5b213",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3FailureAttribution",
+      "schemaFingerprint": "json:unknown:candidates",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3FamilyEligibility": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\data_readiness\\phase3b_exit_gate.json",
+      "ambiguousMatches": [],
+      "contentHash": "e535cfb6c298113faf53cbee034581e8ba37986321e26a9ac014b501963c88b0",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3FamilyEligibility",
+      "schemaFingerprint": "json:phase3b_data_readiness_gate_v1:blockers,checks,controlsVerified,dataSnapshotId,eligibleFactorCount,factorShortlistId,formalTrialCount,passed,pitStatus,readyMechanismCount,readyMechanisms,schemaVersion",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3GateMatrix": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\gate_matrix.json",
+      "ambiguousMatches": [],
+      "contentHash": "de90400bf2357690fdd5b9a579fb0ff1e1c36908f5ffab450e0b0c87e7437c33",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3GateMatrix",
+      "schemaFingerprint": "json:unknown:candidates",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3Phase4AnalysisReport": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\research_factory_repair\\input_sources\\AlphaPilot_Phase3_Phase4_Evidence_Analysis_2026-07-16.md",
+      "ambiguousMatches": [],
+      "contentHash": "aeef8e3dc9c2275e699356ed94fae74c7acd7d83b5a34471827358557d85f059",
+      "exists": true,
+      "fileType": "markdown",
+      "logicalRole": "phase3Phase4AnalysisReport",
+      "schemaFingerprint": "markdown:headings:8558462b160e7098b9cfa23702016f8b9896fb311c8ae21637e9278fe69dacfd",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3Phase4EvidenceBundle": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\artifact_manifest.json",
+      "ambiguousMatches": [],
+      "contentHash": "98797c565232c95e0a32466082fdf7c166324940a299c94cef55371cf22f8f2e",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3Phase4EvidenceBundle",
+      "schemaFingerprint": "json:phase3c_artifact_manifest_v1:artifacts,campaignId,manifestHash,schemaVersion",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase3Preregistration": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\research\\preregistrations\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50.json",
+      "ambiguousMatches": [],
+      "contentHash": "c17315658de51f4dc865169d293731308e78f0f1680bf3afa8d945148a9e0262",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase3Preregistration",
+      "schemaFingerprint": "json:phase3c_campaign_preregistration_v1:baseGates,campaignId,candidates,codeCommit,costScenarios,dataSnapshotHash,experimentBudget,externalReferenceManifestHash,factorDiscoveryBranch,factorRegistryHash,factorShortlistHash,formalGates,holdout,implementationSourceHashes,preregistrationHash,prescreenGates,riskPolicy,sameBarRule,sampleGates,schemaVersion,splitPolicy,stopRules,universePolicy",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase4AcceptanceStatus": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\candidate_releases\\generation_summary.json",
+      "ambiguousMatches": [],
+      "contentHash": "cdeacb011daf4a09a743fd5bc6da7aceba25822239a0613b2a20b91698ab3fbf",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase4AcceptanceStatus",
+      "schemaFingerprint": "json:strategy_validation_release_generation_v1:approvalRecordsCreated,campaignId,formalPassCount,ordersCreated,releaseCount,releaseHashes,releasePaths,riskConfigHash,schemaVersion,status",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase4DemoStatus": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\console_projection.json",
+      "ambiguousMatches": [],
+      "contentHash": "611e5a483d88ddde6b18c020ce7ec4fb3b84d689dba78ae3bd0ee49203c702e5",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase4DemoStatus",
+      "schemaFingerprint": "json:phase3c_console_projection_v1:campaignId,demoReleaseCount,eligibleEvidencePaths,formalPassCount,ordersCreated,schemaVersion",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    },
+    "phase4ReleaseStatus": {
+      "actualPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\backtest_screening\\phase3c_campaign_dece86da86243317f47c517466acc1b9e901553fe80b802c8ce71d5c7e7cfc50\\candidate_releases\\generation_summary.json",
+      "ambiguousMatches": [],
+      "contentHash": "cdeacb011daf4a09a743fd5bc6da7aceba25822239a0613b2a20b91698ab3fbf",
+      "exists": true,
+      "fileType": "json",
+      "logicalRole": "phase4ReleaseStatus",
+      "schemaFingerprint": "json:strategy_validation_release_generation_v1:approvalRecordsCreated,campaignId,formalPassCount,ordersCreated,releaseCount,releaseHashes,releasePaths,riskConfigHash,schemaVersion,status",
+      "selectedBy": "explicit_user_path",
+      "selectionReason": "Selected from the ordered explicit user path list."
+    }
+  },
+  "schemaVersion": "research_factory_input_artifact_mapping_v1",
+  "status": "complete"
+}
