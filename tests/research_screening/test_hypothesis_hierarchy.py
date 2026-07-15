@@ -43,4 +43,3 @@ def test_highly_overlapping_a_b_share_one_risk_cluster_and_one_winner() -> None:
     assert overlap["maximumFormalEvidenceCount"] == 1
     assert winner["selectedCandidateId"] == "A1"
     assert winner["suppressedCandidateIds"] == ["B1"]
-

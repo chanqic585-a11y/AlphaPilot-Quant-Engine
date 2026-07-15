@@ -54,4 +54,3 @@ def test_numeric_tolerance_allows_only_explained_remainder_above_99_percent() ->
     assert unexplained["numericWithinToleranceRatio"] >= 0.99
     assert unexplained["translationParityPassed"] is False
     assert explained["translationParityPassed"] is True
-

@@ -50,4 +50,3 @@ def test_technical_replay_requires_byte_identical_hashes_and_pre_metric_incident
             incident_hash="incident-b",
             failure_before_metrics=True,
         )
-

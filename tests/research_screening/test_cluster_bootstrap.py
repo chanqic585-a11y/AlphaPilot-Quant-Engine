@@ -25,4 +25,3 @@ def test_cluster_bootstrap_is_seeded_and_emits_formal_lower_bounds() -> None:
     }
     assert first["formalLowerBounds"]["profitFactorLower90"] > 1.0
     assert first["formalLowerBounds"]["averageNetRLower90"] > 0
-
