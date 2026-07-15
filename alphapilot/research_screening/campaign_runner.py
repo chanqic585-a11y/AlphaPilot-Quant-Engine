@@ -393,6 +393,7 @@ def run_campaign(repo_root: Path | str, preregistration_path: Path | str) -> dic
                 formal_evidence.append(
                     {
                         "schemaVersion": "phase3c_formal_pass_evidence_v1",
+                        "formalPass": True,
                         "campaignId": prereg["campaignId"],
                         "candidateId": candidate.candidateId,
                         "candidateDefinitionHash": candidate_row["definitionHash"],
@@ -407,7 +408,9 @@ def run_campaign(repo_root: Path | str, preregistration_path: Path | str) -> dic
                         },
                         "marketMechanismId": candidate.marketMechanismId,
                         "dataSnapshotHash": prereg["dataSnapshotHash"],
+                        "preregistrationHash": prereg["preregistrationHash"],
                         "gateEvidence": gates,
+                        "formalGateHash": stable_hash(gates, prefix="formal_gate"),
                     }
                 )
     valid_pvalues = [row["rawPValue"] for row in candidates_results if row["rawPValue"] is not None]
