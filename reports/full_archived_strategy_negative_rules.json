@@ -1,0 +1,44 @@
+[
+  {
+    "ruleId": "NEG_001",
+    "rule": "净平均 R 不为正或利润因子低于 1 的策略不得晋级。",
+    "evidenceStrategyCount": 99,
+    "scope": "future_strategy_generation_and_promotion"
+  },
+  {
+    "ruleId": "NEG_002",
+    "rule": "结构性负边际不能靠微调阈值或增加指标强行修复。",
+    "evidenceStrategyCount": 99,
+    "scope": "future_strategy_generation_and_promotion"
+  },
+  {
+    "ruleId": "NEG_003",
+    "rule": "成本压力后失效的高频策略不得以毛收益解释为有效。",
+    "evidenceStrategyCount": 78,
+    "scope": "future_strategy_generation_and_promotion"
+  },
+  {
+    "ruleId": "NEG_004",
+    "rule": "大量交易但单笔边际为负属于噪声放大，不属于分散化。",
+    "evidenceStrategyCount": 50,
+    "scope": "future_strategy_generation_and_promotion"
+  },
+  {
+    "ruleId": "NEG_005",
+    "rule": "缺失指标、缺失逐笔或缺失锁定样本不能当作 0 或通过。",
+    "evidenceStrategyCount": 78,
+    "scope": "future_strategy_generation_and_promotion"
+  },
+  {
+    "ruleId": "NEG_006",
+    "rule": "信号层和账户风险层必须分别通过，不能互相遮盖。",
+    "evidenceStrategyCount": 85,
+    "scope": "future_strategy_generation_and_promotion"
+  },
+  {
+    "ruleId": "NEG_007",
+    "rule": "马丁格尔、逆势加仓和放宽止损不得进入复活路径。",
+    "evidenceStrategyCount": 1,
+    "scope": "future_strategy_generation_and_promotion"
+  }
+]

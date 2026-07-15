@@ -1,0 +1,68 @@
+[
+  {
+    "componentId": "data_gate",
+    "name": "数据质量与来源校验",
+    "researchUse": "在任何绩效判断前确认周期、币种、成本与时间范围。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "signal_audit",
+    "name": "信号漏斗和跳过原因",
+    "researchUse": "保留候选、过滤、拒绝和成交各层计数。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "multi_timeframe_context",
+    "name": "高周期环境与低周期触发",
+    "researchUse": "高周期只定义环境，低周期只负责入场触发。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "session_feature",
+    "name": "交易时段特征",
+    "researchUse": "作为可检验特征，不按截图经验硬编码时段胜负。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "portfolio_exposure",
+    "name": "相关性与同向暴露控制",
+    "researchUse": "按相关性、Beta 和方向管理组合风险。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "bounded_atr_risk",
+    "name": "有边界的 ATR 风险模型",
+    "researchUse": "允许按波动分位调整，但必须版本化并保持最大 R 风险。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "cost_stress",
+    "name": "手续费、资金费、滑点与延迟压力",
+    "researchUse": "统一比较毛边际和净边际。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "orderbook_quality",
+    "name": "盘口质量研究层",
+    "researchUse": "仅保留为流动性和执行质量特征，不直接当方向信号。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "cross_asset_lead_lag",
+    "name": "BTC 与山寨币传导研究",
+    "researchUse": "先做时间隔离的领先滞后检验，禁止凭叙事抢跑。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "ml_meta_label",
+    "name": "机器学习元标签与排序",
+    "researchUse": "只做排序、过滤或否决，并使用时间隔离验证。",
+    "executionEligible": false
+  },
+  {
+    "componentId": "multiple_testing",
+    "name": "多重试验与过拟合审计",
+    "researchUse": "记录试验次数并使用 PBO/Deflated Sharpe 等校正。",
+    "executionEligible": false
+  }
+]

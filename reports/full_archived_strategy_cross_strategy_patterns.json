@@ -1,0 +1,60 @@
+{
+  "primaryFailureCounts": {
+    "data_evidence_gap": 77,
+    "rejected_risk_design": 1,
+    "risk_model_failure": 8,
+    "signal_edge_failure": 99,
+    "zero_trade_or_blocked": 1
+  },
+  "secondaryFailureCounts": {
+    "cost_amplification": 78,
+    "data_evidence_gap": 1,
+    "direction_regime_mismatch": 28,
+    "exit_design_failure": 14,
+    "overtrading": 50,
+    "pair_concentration": 2,
+    "risk_model_failure": 77,
+    "time_regime_instability": 49
+  },
+  "uniqueFamilyCount": 72,
+  "dominantPrimaryFailureByFamilyCounts": {
+    "data_evidence_gap": 19,
+    "rejected_risk_design": 1,
+    "signal_edge_failure": 51,
+    "zero_trade_or_blocked": 1
+  },
+  "primaryFailureByTimeframe": {
+    "15m": {
+      "data_evidence_gap": 16,
+      "risk_model_failure": 1,
+      "signal_edge_failure": 43
+    },
+    "1d": {
+      "data_evidence_gap": 15,
+      "risk_model_failure": 4,
+      "signal_edge_failure": 1
+    },
+    "1h": {
+      "data_evidence_gap": 16,
+      "rejected_risk_design": 1,
+      "risk_model_failure": 3,
+      "signal_edge_failure": 4
+    },
+    "4h": {
+      "data_evidence_gap": 15,
+      "signal_edge_failure": 6
+    },
+    "5m": {
+      "data_evidence_gap": 15,
+      "signal_edge_failure": 29
+    },
+    "unknown": {
+      "signal_edge_failure": 16,
+      "zero_trade_or_blocked": 1
+    }
+  },
+  "interpretation": [
+    "共性模式只用于提出下一轮可证伪假设，不能自动生成可执行资格。",
+    "自动优化版本必须按家族和父子链去重后再解读，避免把同源失败误当独立证据。"
+  ]
+}

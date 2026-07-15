@@ -1,0 +1,30 @@
+[
+  {
+    "routeId": "PROHIBIT_001",
+    "route": "马丁格尔、逆势加仓或亏损后放大仓位"
+  },
+  {
+    "routeId": "PROHIBIT_002",
+    "route": "为了命中目标而随机移动或放宽止损"
+  },
+  {
+    "routeId": "PROHIBIT_003",
+    "route": "机器学习直接黑箱生成订单或动态杠杆"
+  },
+  {
+    "routeId": "PROHIBIT_004",
+    "route": "在锁定样本、Demo 或实盘结果上反向调参"
+  },
+  {
+    "routeId": "PROHIBIT_005",
+    "route": "达到自动优化上限后强制放行"
+  },
+  {
+    "routeId": "PROHIBIT_006",
+    "route": "堆叠多个同源指标制造虚假共振"
+  },
+  {
+    "routeId": "PROHIBIT_007",
+    "route": "把缺失证据、Mock 或摘要文案当成真实回测"
+  }
+]

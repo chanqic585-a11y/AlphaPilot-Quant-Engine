@@ -1,0 +1,29 @@
+{
+  "status": "completed_with_evidence_gaps",
+  "strategyIdentityCount": 186,
+  "strategyFamilyCount": 72,
+  "identitySourceCounts": {
+    "legacy_freqtrade_class": 23,
+    "legacy_status_archive": 1,
+    "registry_version": 162
+  },
+  "registryArchivedVersionCount": 162,
+  "legacyFreqtradeIdentityCount": 23,
+  "legacyStatusOnlyIdentityCount": 1,
+  "evidenceArtifactCount": 779,
+  "evidenceLevelCounts": {
+    "1": 399,
+    "2": 299,
+    "4": 81
+  },
+  "unresolvedEvidenceArtifactCount": 218,
+  "tradeEvidenceStrategyCount": 23,
+  "withoutTradeEvidenceCount": 163,
+  "primaryTradeArtifactCount": 42,
+  "extractedTradeRowCount": 123624,
+  "notes": [
+    "注册表版本是当前不可变身份主源。",
+    "旧 Freqtrade 类保留为独立历史身份；没有可靠映射时不强行合并。",
+    "逐笔提取只使用每个策略类和周期的最新主证据，避免重复试验放大样本。"
+  ]
+}

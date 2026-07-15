@@ -1,0 +1,15 @@
+# 1H 假突破事件窗口反转 影子候选 ATR1.2 · 自动优化 1/3 / structural redesign G1
+
+- 策略 ID：`strategy_version_f43f35d8b888e5ba4c4547c64ab694f05ae154efb87f4a1e54079acca262acd1`
+- 家族：`short_cycle_event_1h_failed_breakout_shadow_v2`
+- 周期：`1h`
+- 当前状态：`archived`
+- 证据等级：`2`
+- 逐笔证据：`无`
+- 交易数：`14365`
+- 利润因子：`0.92136317`
+- 平均净 R：`-0.04566877`
+- 主要失败：**信号边际为负**
+- 归因置信度：`high`
+
+> 本页只记录历史研究证据，不授予回测通过、Demo 或实盘资格。

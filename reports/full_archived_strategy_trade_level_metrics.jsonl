@@ -1,0 +1,1 @@
+{"recordType": "generated_file_manifest", "fullTradeFile": "reports/generated/full_archived_strategy_trade_level_metrics.jsonl", "trackedInGit": false, "primaryArtifactCount": 42, "tradeRowCount": 123624, "extractionErrorCount": 0, "extractionErrors": [], "method": "One latest primary artifact per legacy strategy and timeframe; repeated tuning runs are not pooled."}

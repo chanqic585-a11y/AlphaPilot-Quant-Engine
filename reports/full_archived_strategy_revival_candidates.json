@@ -1,0 +1,1426 @@
+[
+  {
+    "strategyId": "freqtrade::AlphaPilotBatchB_EMATrendShort4H",
+    "strategyName": "AlphaPilotBatchB_EMATrendShort4H",
+    "strategyFamily": "AlphaPilotBatchB_EMATrendShort4H",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.9276732538139775,
+    "averageNetR": -0.14048479925124474,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "freqtrade::AlphaPilotBatchD_BreakdownRetestShort4H",
+    "strategyName": "AlphaPilotBatchD_BreakdownRetestShort4H",
+    "strategyFamily": "AlphaPilotBatchD_BreakdownRetestShort4H",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.9167537385923381,
+    "averageNetR": -0.1598506697571131,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "freqtrade::AlphaPilotDynamicRegimeV01",
+    "strategyName": "AlphaPilotDynamicRegimeV01",
+    "strategyFamily": "AlphaPilotDynamicRegimeV01",
+    "primaryFailureType": "zero_trade_or_blocked",
+    "profitFactor": 0.0,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "freqtrade::AlphaPilotLowFrequencyDirectional4HV01",
+    "strategyName": "AlphaPilotLowFrequencyDirectional4HV01",
+    "strategyFamily": "AlphaPilotLowFrequencyDirectional4HV01",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.9736747950225069,
+    "averageNetR": -0.0771630774227649,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_2c62fea97eaaab20178814e83921e7bad9c869ba35b6a494548fc89be3a4d406",
+    "strategyName": "1D 趋势突破回踩 ATR2.0 · 自动优化 1/3",
+    "strategyFamily": "event_1d_breakout_retest_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_b854fd47e5a99350c6df96956a21f2030bb2250f8d8e7f10afb6306e6c6d0245",
+    "strategyName": "1D 趋势突破回踩 ATR2.0 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_1d_breakout_retest_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_ff1f066c0bc682663457e4e8ef7cc1d6e46331c29c00ffe56323177984dceb60",
+    "strategyName": "1D 趋势突破回踩 ATR2.0 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_1d_breakout_retest_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_aff7a9c0495d809daa6c0df66c7432e2a79bc6e9bfee1cf592b086c7d7e421c5",
+    "strategyName": "1D 广谱压缩释放 ATR2.0 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_1d_broad_squeeze_breakout_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f5f3ea08e1e34ad1297339ae7f219a26ec6e39566258d9e40df48a00a123401b",
+    "strategyName": "1D 广谱压缩释放 ATR2.0 · 自动优化 1/3",
+    "strategyFamily": "event_1d_broad_squeeze_breakout_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_ff49c87e1ec6c73b2560d6ca04dde48b5ebed7ed2c5feefc4cc8a99dd020d362",
+    "strategyName": "1D 广谱压缩释放 ATR2.0 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_1d_broad_squeeze_breakout_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_0dab3d1e18d9ca2b7e134d10b5da056adb0955d1ac6dfb018c287f926dbb9ce2",
+    "strategyName": "1D 超卖扫低收回 ATR1.0 影子 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_1d_oversold_sweep_reclaim_atr10_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_1373c55a0b9b420840b6d01374e174c021527f190c8a5b2ce53888996b3dd8bc",
+    "strategyName": "1D 超卖扫低收回 ATR1.0 影子 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_1d_oversold_sweep_reclaim_atr10_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_3b81321505e0f36008a1b3930cb7f73131dbea7bcc010bec1a9dcd0e08868343",
+    "strategyName": "1D 超卖扫低收回 ATR1.0 影子 · 自动优化 1/3",
+    "strategyFamily": "event_1d_oversold_sweep_reclaim_atr10_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_9177137252db0033a4ce8d84195f3eefa0eca2762d49257fed2cd35a6fad647d",
+    "strategyName": "1D 超卖扫低收回 ATR1.0 影子",
+    "strategyFamily": "event_1d_oversold_sweep_reclaim_atr10_v1",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.98062382,
+    "averageNetR": -0.01221261,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_161c4b3d866ad1cc7d500791a4d7d188f4a2371463ac05fcdad5ffd46c64cee6",
+    "strategyName": "1D 超卖扫低收回 ATR1.2 影子 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_1d_oversold_sweep_reclaim_atr12_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_24a8b0e0d1b5d871b487fa2827be138d5b1eb572ff76be176145368348d7f4ee",
+    "strategyName": "1D 超卖扫低收回 ATR1.2 影子 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_1d_oversold_sweep_reclaim_atr12_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_d60318ed12b046daf11532980d9ee32d351bf4768de70643064b4dfb1668da13",
+    "strategyName": "1D 超卖扫低收回 ATR1.2 影子 · 自动优化 1/3",
+    "strategyFamily": "event_1d_oversold_sweep_reclaim_atr12_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_50f9997f897aed3273c0ad22e23c1498919e1969e2d4c4b2717c9a77bb2dafdb",
+    "strategyName": "1D 趋势压缩释放 ATR2.0 · 自动优化 1/3",
+    "strategyFamily": "event_1d_squeeze_breakout_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_d4d841276584aca7194e5a5c2fa51377333218a9d6b0f69a0fee58c8207f9386",
+    "strategyName": "1D 趋势压缩释放 ATR2.0 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_1d_squeeze_breakout_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_def8b042c06cdf847dd71ca9be009465b18c1d281692f8a09cc06ab42d8c01ed",
+    "strategyName": "1D 趋势压缩释放 ATR2.0 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_1d_squeeze_breakout_atr20_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_b1f514eeea7d2a74d3600ac81e904cd4e856a069e022f2119ddd8e371105a890",
+    "strategyName": "4H 牛市恢复收回 ATR1.5 持有24",
+    "strategyFamily": "event_4h_bull_recovery_atr15_h24_v1",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.90363488,
+    "averageNetR": -0.06052029,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_b6d73bdeb0780cb33b6b5575ab274e073e904378053600657b59f3b4e92e3833",
+    "strategyName": "4H 牛市恢复收回 ATR1.5 持有24 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_4h_bull_recovery_atr15_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_cf8af866637ba9ab2ef5c9b5e1b02e8f867bd045c057f791ba5420ea1ba7001c",
+    "strategyName": "4H 牛市恢复收回 ATR1.5 持有24 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_4h_bull_recovery_atr15_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f1df88d2400a1323e843d328bab257b3f4b71638ed9cf56f0b71e38b2a984add",
+    "strategyName": "4H 牛市恢复收回 ATR1.5 持有24 · 自动优化 1/3",
+    "strategyFamily": "event_4h_bull_recovery_atr15_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_1fd24b16d5b80cefc1d5cd721feeb689d7cf7e7867164eaf88b5c9264dcf62ca",
+    "strategyName": "4H 牛市恢复收回 ATR1.8 持有24 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_4h_bull_recovery_atr18_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_6580234872b085574493975bce8f8b3e6b186f63b1e929de9052752a90d90ac5",
+    "strategyName": "4H 牛市恢复收回 ATR1.8 持有24",
+    "strategyFamily": "event_4h_bull_recovery_atr18_h24_v1",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.9194773,
+    "averageNetR": -0.04637506,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_93de266822ad32cff679d3b44838dc07cebe18524dcf481b3228e5f3ac678e01",
+    "strategyName": "4H 牛市恢复收回 ATR1.8 持有24 · 自动优化 1/3",
+    "strategyFamily": "event_4h_bull_recovery_atr18_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_a6d3d076adbf69cb4672db3369d7052a82def12b13b9f322201ece7473cc0e56",
+    "strategyName": "4H 牛市恢复收回 ATR1.8 持有24 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_4h_bull_recovery_atr18_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_215d29c941611ddf0d16158f24ba9aa417959f4b07eeef03efa913c061d1be86",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有24 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_3333d13e1341a84795ec19c8bd6ce8a08de5a06e5058e4623dce3bb4f05cd346",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有24 · 自动优化 1/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_ae40a1bece7e086d651b501745c96d2ce0c92d4764a8cdf3103b379c25a2ab0b",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有24 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h24_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_def3abcc430827e0b9a0b4d82354bd97b609a909ed9cfa566da832348a28c29d",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有24",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h24_v1",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.93025378,
+    "averageNetR": -0.03772102,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_07b1418e7bd677f369d4324107846eb7e89e37418259510f43c24b81264e2066",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有30 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h30_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_4bad11c8c9421bb6ad2e14dc21443f03ebc8e06de44e78ef66cb3dea203696d2",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有30 · 自动优化 1/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h30_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_6cf37c25ddfbeac31172f995d0f943d7ef1cf7412a6e142320aca30a813e6a9e",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有30 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h30_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_9d6fc684a332bf985f820e2bb9e36e55991300dc96fb3a6f4f448aa645e7f7bb",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有30",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h30_v1",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.9304659,
+    "averageNetR": -0.03974852,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_31987e8107f5a7abef67f3a6d124d5c391e84ca071f444bb89b1e7f8201c0ea3",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有36 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h36_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_e4ec831cb4a7746c8ca408759ee34911f495ac3d8001b1a9ca938c7afb9c72ab",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有36 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h36_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_efb4f03f80fe19c7c18f6eae171c99a2fc5aeb7928c771d0a406de74f8fe6599",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有36",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h36_v1",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.93162077,
+    "averageNetR": -0.04058977,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f8cc3b3443785f8ee518a1a2580d4ee8351a91a6cf3fb066154da5478aa3bae2",
+    "strategyName": "4H 牛市恢复收回 ATR2.0 持有36 · 自动优化 1/3",
+    "strategyFamily": "event_4h_bull_recovery_atr20_h36_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_051d770d30bfa1d65580a44b4dd73a6527e9ea681531c2449d9cc1f0bc7fd5a8",
+    "strategyName": "15m 假突破弱趋势反转 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_15m_failed_breakout_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_102767c170500ec47b51538c17deea4e3e96950cb8ebd47611079424e8a8d526",
+    "strategyName": "15m 假突破弱趋势反转 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_15m_failed_breakout_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_49287f463d315ea22e9c6636e0e9096169b01e5cbf9361a6befd7807a618d3d2",
+    "strategyName": "15m 假突破弱趋势反转 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_15m_failed_breakout_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_4b3df3cc6fd3deac9ab6c8031620c09adbf238f315b8a404eab50ab57ef32ed8",
+    "strategyName": "15m 假突破弱趋势反转 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_15m_failed_breakout_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_57dfa8d5b1d318e25add2c2e310435cc5bfd03aa8c574907a3c877f66ab41527",
+    "strategyName": "15m 假突破弱趋势反转 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_15m_failed_breakout_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_a92bde6bb51629d1f7c5d74017594a46e9ee593dbe525412b89e6c8be24147ec",
+    "strategyName": "15m 假突破弱趋势反转 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_15m_failed_breakout_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_5949f992c2c59cd58b8d2e8de59d0506a55dbb18170c583c77baa67e9f0f60c1",
+    "strategyName": "15m 弱势回抽市场斜率确认 因子后继 ATR1.2",
+    "strategyFamily": "short_cycle_event_15m_failed_reclaim_factor_v2",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.90229483,
+    "averageNetR": -0.07329969,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_8506420e16871fe6bb9802534a11ab73aed3ede36439f51647194c09be06f3d6",
+    "strategyName": "15m 弱势回抽市场斜率确认 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_15m_failed_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_66e6438416f92c8ffd1d81825ebc346cef2e2d1126c06aec40edcad669a48f82",
+    "strategyName": "15m 趋势回踩波动环境确认 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_btc_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_8a06606fc225797dae5372f3255dd523886318e34db2712f39be08eca5ebe7cb",
+    "strategyName": "15m 趋势回踩波动环境确认 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_btc_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f57167df0733f842693266e35e7e53a11a23481b210fc061dd09ab9b472a6cb6",
+    "strategyName": "15m 趋势回踩波动环境确认 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_btc_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_0f34034aa483a51e8661fc52f21b07fcdc66721ddf6e34ac71af1a5bc9defba8",
+    "strategyName": "15m 趋势回踩双趋势确认 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_6f3bb58158a5453e2783f0669fb58036e8f01c9092e0d7e2023488bd05f501dc",
+    "strategyName": "15m 趋势回踩双趋势确认 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_7b6b7d5a43b8eceb1b328d96d6ccb3463534000907ca38508204b0cabe283def",
+    "strategyName": "15m 趋势回踩双趋势确认 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_ba474ee29787b274e3061b23954bf9de5fb34559603cae672407e34e4cc7280b",
+    "strategyName": "15m 趋势回踩双趋势确认 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_ef3ff0b839aeab7c2337a19223bd80816791ce64a73414db41a1e4fe93fd1c32",
+    "strategyName": "15m 趋势回踩双趋势确认 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_fdac04218117704b3b58f5479d97e318a844460082ac08c96eddd464b99e5f9d",
+    "strategyName": "15m 趋势回踩双趋势确认 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_15m_trend_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_26aeb30fb49c410273164169fe7f3378df9b42ddcb63f32a84b8f22620b156aa",
+    "strategyName": "1H 突破回踩 BTC 顺势确认 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_1h_breakout_retest_btc_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_7f42ff1f4e210f740b33bbe8a2145650f7921e043bce5a49338038be7c7f22e5",
+    "strategyName": "1H 突破回踩 BTC 顺势确认 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_1h_breakout_retest_btc_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_912e6c76fd9be3a157110cfd841138b89e35bfdc02fb31fd88de5b0465dd52e3",
+    "strategyName": "1H 突破回踩 BTC 顺势确认 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_1h_breakout_retest_btc_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_90f1a74648f04518ca30c859e03df33eacc3319729dd57666d48ca0a98214635",
+    "strategyName": "1H 假突破事件窗口反转 影子候选 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_1h_failed_breakout_shadow_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f43f35d8b888e5ba4c4547c64ab694f05ae154efb87f4a1e54079acca262acd1",
+    "strategyName": "1H 假突破事件窗口反转 影子候选 ATR1.2 · 自动优化 1/3 / structural redesign G1",
+    "strategyFamily": "short_cycle_event_1h_failed_breakout_shadow_v2",
+    "primaryFailureType": "signal_edge_failure",
+    "profitFactor": 0.92136317,
+    "averageNetR": -0.04566877,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_88faec144670c4d2616165b38d49d69a719cf1786d79eecfc667655a014247e7",
+    "strategyName": "1H 弱势回抽窗口失败 影子候选 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_1h_failed_reclaim_shadow_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_95fc1bd06a2446a117a6c2bfc6cbd5dac189be5d736162f43dbd2141f5496a4c",
+    "strategyName": "1H 弱势回抽窗口失败 影子候选 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_1h_failed_reclaim_shadow_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f612a19affa1c180f37c0d19ef570f7df7faff0303aa28027d3bd7966fcc44f5",
+    "strategyName": "1H 弱势回抽窗口失败 影子候选 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_1h_failed_reclaim_shadow_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_008755a2a01fd04eff4ef5af84ad2aab605938a29f9d1d0da1f91ce4c6bc5743",
+    "strategyName": "1H 深弱势扫低收回 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_1h_sweep_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_070fe0786f96157c8b930e07762fe18a5901501669509245cabbb7546e84e3fa",
+    "strategyName": "1H 深弱势扫低收回 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_1h_sweep_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_08a6d7f0bf3b30686b3358f3d7c51648eb66211e47607041678b82e8d2fa03bf",
+    "strategyName": "1H 深弱势扫低收回 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_1h_sweep_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_3cd09d9ea9cb666713fde7e1a522c6cb7423b28603732ebadd6017fae4ca8bde",
+    "strategyName": "1H 深弱势扫低收回 因子后继 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_1h_sweep_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_5f8e3557f87886ff3f47b77423888c7122c41a1e8eda4be86fdc5a03850559ef",
+    "strategyName": "1H 深弱势扫低收回 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_1h_sweep_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_8e5ffdc72dad09b0da8b1fb7e31e77cea4db1f3a70a49a9886d2058393f30be1",
+    "strategyName": "1H 深弱势扫低收回 因子后继 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_1h_sweep_reclaim_factor_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_7117759988d7ddd9a56d6cef98ad471e762476b38f6ea6b1d81d38095b098578",
+    "strategyName": "1H 趋势回踩分步确认 影子候选 ATR1.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_1h_trend_reclaim_shadow_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_b08802981c5ca148ee8040064ee9f85956155192863c577d5aa715f51d2c4205",
+    "strategyName": "1H 趋势回踩分步确认 影子候选 ATR1.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_1h_trend_reclaim_shadow_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_cc56bf57787ceca514c9d47b8a09ed308ca773e0f59953f7a36d88d8f128b8c3",
+    "strategyName": "1H 趋势回踩分步确认 影子候选 ATR1.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_1h_trend_reclaim_shadow_v2",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_1a351293766540f261a4573759afb5ed1e953c8e130b54a3b08d096002e5acc2",
+    "strategyName": "5m 假突破反转环境确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_5m_failed_breakout_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_89e295379b1e3743c83c40cb3cf1de73fb105259560712ffe5d84155c2de721f",
+    "strategyName": "5m 假突破反转环境确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_5m_failed_breakout_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_91de4d170f88a7f3fa3bc2026037c0c7d7be1cf595f36a7d409169dd227232bd",
+    "strategyName": "5m 假突破反转环境确认 学习版 ATR2.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_5m_failed_breakout_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_d903737c250170c46357a04279cadcbb5861853a64be8d0846cffd92e730524a",
+    "strategyName": "5m 假突破反转环境确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_5m_failed_breakout_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f1f52f75fea323b6bb8158522bbbedfdace5528f193b4ca30d8422a065764827",
+    "strategyName": "5m 假突破反转环境确认 学习版 ATR2.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_5m_failed_breakout_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f8f0c0b9ebb3be2fc5ccfc38657004f689298bba4adbb18c6aacac6ccaac22bf",
+    "strategyName": "5m 假突破反转环境确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_5m_failed_breakout_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_0eb0679140d8d52240033238128b58b483932aa2cd9ea0d42b236c7544d23b04",
+    "strategyName": "5m 弱势回抽结构确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_5m_failed_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_4b162538a3bd3dfbcfd8a85d3bff37f615cdadab2f8b071e58f58c97415f3255",
+    "strategyName": "5m 弱势回抽结构确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_5m_failed_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_ddf1fe001b77c3656c6ecd6c5ec73332d4b8c1f96f31e522b68e07721ef32372",
+    "strategyName": "5m 弱势回抽结构确认 学习版 ATR2.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_5m_failed_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_5b4fccd17b795568fa47313a5a1ab4d4e6decbcf2d53e1ba9c5b5c25609da5fa",
+    "strategyName": "5m 扫低收回环境确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_5m_sweep_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_e6cb07d1ef5d7aab5aa754afc4271c3ebeb33286fe7eced01e57970fe70d99a8",
+    "strategyName": "5m 扫低收回环境确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_5m_sweep_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_f72a36958b84c96f46408cbfa33426e22520af1e4a1bce85bce7128761a18d49",
+    "strategyName": "5m 扫低收回环境确认 学习版 ATR2.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_5m_sweep_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_330fd45b57f0fb1563554a5a63d92df7e0861e641f64a7ce0f0ef4264c930465",
+    "strategyName": "5m 趋势回踩事件确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3 · 自动优化 3/3",
+    "strategyFamily": "short_cycle_event_5m_trend_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_b525a32c667f3053b47bea4718f54529a518aca69ce840806c3ff5cf60d2e70c",
+    "strategyName": "5m 趋势回踩事件确认 学习版 ATR2.2 · 自动优化 1/3 · 自动优化 2/3",
+    "strategyFamily": "short_cycle_event_5m_trend_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  },
+  {
+    "strategyId": "strategy_version_c42374d5557924f4d158a08fe251aafaf43065596bad5e5dfdccb85269724df0",
+    "strategyName": "5m 趋势回踩事件确认 学习版 ATR2.2 · 自动优化 1/3",
+    "strategyFamily": "short_cycle_event_5m_trend_reclaim_learned_v1",
+    "primaryFailureType": "data_evidence_gap",
+    "profitFactor": null,
+    "averageNetR": null,
+    "currentExecutionEligibility": "none",
+    "revivalEligible": true,
+    "revivalMode": "new_version_only",
+    "conditions": [
+      "先提出不同且可证伪的市场假设，禁止只微调旧阈值。",
+      "补齐逐笔、成本、锁定样本和市场状态证据。",
+      "新版本必须重新走时间隔离回测和不可变 Release。"
+    ]
+  }
+]
