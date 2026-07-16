@@ -1,0 +1,58 @@
+{
+  "credentialRequirement": "public_data_only",
+  "dataTypes": {
+    "Basis": {
+      "appendOnly": true,
+      "historicalValue": null,
+      "startAt": "2026-07-16T07:36:02.465695+00:00",
+      "status": "forward_only_missing_history"
+    },
+    "Funding": {
+      "appendOnly": false,
+      "historicalValue": "retained_existing",
+      "startAt": null,
+      "status": "available_existing"
+    },
+    "Instrument State": {
+      "appendOnly": true,
+      "historicalValue": null,
+      "startAt": "2026-07-16T07:36:02.465695+00:00",
+      "status": "forward_only_missing_history"
+    },
+    "Liquidation": {
+      "appendOnly": true,
+      "historicalValue": null,
+      "startAt": "2026-07-16T07:36:02.465695+00:00",
+      "status": "forward_only_missing_history"
+    },
+    "OHLCV": {
+      "appendOnly": false,
+      "historicalValue": "retained_existing",
+      "startAt": null,
+      "status": "available_existing"
+    },
+    "Open Interest": {
+      "appendOnly": true,
+      "historicalValue": null,
+      "startAt": "2026-07-16T07:36:02.465695+00:00",
+      "status": "forward_only_missing_history"
+    },
+    "PIT Liquidity": {
+      "appendOnly": true,
+      "historicalValue": null,
+      "startAt": "2026-07-16T07:36:02.465695+00:00",
+      "status": "forward_only_missing_history"
+    },
+    "Spread": {
+      "appendOnly": true,
+      "historicalValue": null,
+      "startAt": "2026-07-16T07:36:02.465695+00:00",
+      "status": "forward_only_missing_history"
+    }
+  },
+  "forwardDataCannotBackfillHistory": true,
+  "planHash": "forward_collection_plan_9940d7dc2ab9f38a6cb78332da162441e32be6fd996bbc8f646955379fae10ae",
+  "schemaVersion": "minimal_forward_collection_plan_v1",
+  "tradeApiEnabled": false,
+  "withdrawApiEnabled": false
+}

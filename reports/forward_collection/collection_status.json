@@ -1,0 +1,17 @@
+{
+  "collectorStarted": false,
+  "forwardDataCannotBackfillHistory": true,
+  "generatedAt": "2026-07-16T07:36:02.465695+00:00",
+  "networkRequestsMade": 0,
+  "schemaVersion": "minimal_forward_collection_status_v1",
+  "statusByDataType": {
+    "Basis": "forward_only_missing_history",
+    "Funding": "available_existing",
+    "Instrument State": "forward_only_missing_history",
+    "Liquidation": "forward_only_missing_history",
+    "OHLCV": "available_existing",
+    "Open Interest": "forward_only_missing_history",
+    "PIT Liquidity": "forward_only_missing_history",
+    "Spread": "forward_only_missing_history"
+  }
+}

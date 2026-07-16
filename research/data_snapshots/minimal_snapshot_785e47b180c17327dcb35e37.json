@@ -1,0 +1,540 @@
+{
+  "commonCutoffByTimeframe": {
+    "1h": "2026-05-15T09:00:00+00:00",
+    "4h": "2026-05-15T04:00:00+00:00"
+  },
+  "coreUniverseHash": "minimal_fixed_core_universe_c96658fbc82fbf43f396dab7857e8803ad73a7fc0eb45607b4b75ffcb53cee34",
+  "createdAt": "2026-07-16T07:36:02.465695+00:00",
+  "datasetReferences": [
+    {
+      "effectiveBacktestStart": "2020-12-10T06:00:00+00:00",
+      "instrumentId": "AAVE-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T10:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/AAVE-USDT-SWAP/1h/1607572800000-1784023200000-1eeeafa6b5fa5252.parquet",
+      "provider": "okx",
+      "rowCount": 49015,
+      "sha256": "1eeeafa6b5fa5252db00bfe363bcdbde84794e106bdbf7643f10604e85dda1e9",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-12-10T04:00:00+00:00",
+      "instrumentId": "AAVE-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T04:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/AAVE-USDT-SWAP/4h/1607572800000-1784001600000-28332920cd568a5b.parquet",
+      "provider": "okx",
+      "rowCount": 12253,
+      "sha256": "28332920cd568a5b70f8edeeb12d4d1941cace818ac6ea8b615c2848d5afd6aa",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-04-29T06:00:00+00:00",
+      "instrumentId": "ADA-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T10:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/ADA-USDT-SWAP/1h/1583830800000-1784023200000-432aad98de65b2d8.parquet",
+      "provider": "okx",
+      "rowCount": 55610,
+      "sha256": "432aad98de65b2d8c8ed031f5973c49ecb68bb8c7ebc41faa5a14a26cc072853",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-04-29T04:00:00+00:00",
+      "instrumentId": "ADA-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T04:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/ADA-USDT-SWAP/4h/1583827200000-1784001600000-9767cf028e402bc7.parquet",
+      "provider": "okx",
+      "rowCount": 13902,
+      "sha256": "9767cf028e402bc7482db4b7444ef4dd809fb26c4474f015095f26301b2d58aa",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-05-13T08:00:00+00:00",
+      "instrumentId": "ALGO-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T10:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/ALGO-USDT-SWAP/1h/1589338800000-1784023200000-6ca5b34ad1e48cf4.parquet",
+      "provider": "okx",
+      "rowCount": 54080,
+      "sha256": "6ca5b34ad1e48cf452f3d45bc69868f456199233bd3d0458ee8f07d507eb1539",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-05-13T08:00:00+00:00",
+      "instrumentId": "ALGO-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T04:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/ALGO-USDT-SWAP/4h/1589328000000-1784001600000-dc0c0af35e2714ba.parquet",
+      "provider": "okx",
+      "rowCount": 13520,
+      "sha256": "dc0c0af35e2714ba74699ad5a0ab09f4d74816708b8e81c4c864b2fe8f7be3f4",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-05-06T07:00:00+00:00",
+      "instrumentId": "ATOM-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T10:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/ATOM-USDT-SWAP/1h/1588737600000-1784023200000-2a7a0870517ce446.parquet",
+      "provider": "okx",
+      "rowCount": 54247,
+      "sha256": "2a7a0870517ce4464dafec41c7c9c53c0ea3bb487b44aec4ac6142c00d67819e",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-05-06T04:00:00+00:00",
+      "instrumentId": "ATOM-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T04:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/ATOM-USDT-SWAP/4h/1588737600000-1784001600000-56ad4628e0b1e70d.parquet",
+      "provider": "okx",
+      "rowCount": 13561,
+      "sha256": "56ad4628e0b1e70d53040a254b7275b869db84215b86fc2ac540227e94457dee",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-09-23T06:00:00+00:00",
+      "instrumentId": "AVAX-USDT-SWAP",
+      "latestConfirmed": "2026-05-15T09:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/AVAX-USDT-SWAP/1h/part-all-458ad9b22b48fe58.parquet",
+      "provider": "user_local",
+      "rowCount": 49446,
+      "sha256": "1dd7a47c573446e0fc83bfc807824a161ef364f66f3c773a448176af4d1468e9",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-09-23T04:00:00+00:00",
+      "instrumentId": "AVAX-USDT-SWAP",
+      "latestConfirmed": "2026-07-12T20:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/AVAX-USDT-SWAP/4h/1600833600000-1783886400000-1aa00c47a34a599d.parquet",
+      "provider": "okx",
+      "rowCount": 12713,
+      "sha256": "1aa00c47a34a599d12f8b5698affdb5d2a5a56198d1eb65f1aa49cafe45aca3f",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "BCH-USDT-SWAP",
+      "latestConfirmed": "2026-05-15T10:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/BCH-USDT-SWAP/1h/part-all-ff6d1f58c526a7f1.parquet",
+      "provider": "user_local",
+      "rowCount": 55835,
+      "sha256": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "BCH-USDT-SWAP",
+      "latestConfirmed": "2026-05-15T04:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/BCH-USDT-SWAP/4h/part-all-f2b779ba03dd6b13.parquet",
+      "provider": "user_local",
+      "rowCount": 13958,
+      "sha256": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "BTC-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T16:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/BTC-USDT-SWAP/1h/1577836800000-1784044800000-720e2aa19d32658a.parquet",
+      "provider": "okx",
+      "rowCount": 57281,
+      "sha256": "720e2aa19d32658a6cf9ac018e55ed3abcb06115c747b40eb14b82fc450efbe0",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "BTC-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T08:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/BTC-USDT-SWAP/4h/1577836800000-1784016000000-e8f6595d0f61eb74.parquet",
+      "provider": "okx",
+      "rowCount": 14319,
+      "sha256": "e8f6595d0f61eb74ac1543b40800c48e905e2d38e18db49a7c440343cfdb3758",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-07-01T09:00:00+00:00",
+      "instrumentId": "COMP-USDT-SWAP",
+      "latestConfirmed": "2026-05-17T02:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/COMP-USDT-SWAP/1h/part-all-a5c93b9f9b6c771e.parquet",
+      "provider": "user_local",
+      "rowCount": 51499,
+      "sha256": "5d456744eb786d1ccad9c1c1cc49dc397f0dc0a95179682a5ab4953190f88fb0",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-07-01T08:00:00+00:00",
+      "instrumentId": "COMP-USDT-SWAP",
+      "latestConfirmed": "2026-05-16T20:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/COMP-USDT-SWAP/4h/part-all-01c37d9b6e9baca6.parquet",
+      "provider": "user_local",
+      "rowCount": 12874,
+      "sha256": "280e0a5e779bf5c52557458d7060dc2f3ab1d4179dd1cd62fac921e73c28b35a",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-07-10T03:00:00+00:00",
+      "instrumentId": "DOGE-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T16:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/DOGE-USDT-SWAP/1h/1594350000000-1784044800000-62bf08864e2955b5.parquet",
+      "provider": "okx",
+      "rowCount": 52694,
+      "sha256": "62bf08864e2955b55af85c678a551f1e689e026150a7715b18d361598c5f9d56",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-07-10T00:00:00+00:00",
+      "instrumentId": "DOGE-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T08:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/DOGE-USDT-SWAP/4h/1594339200000-1784016000000-39c6057cc2ff26c2.parquet",
+      "provider": "okx",
+      "rowCount": 13173,
+      "sha256": "39c6057cc2ff26c2819de7fb64734235a8b3e35bb1c8fc6f57513e37e6681ea1",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "ETC-USDT-SWAP",
+      "latestConfirmed": "2026-05-17T13:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/ETC-USDT-SWAP/1h/part-all-6cbcdf14dc51c01d.parquet",
+      "provider": "user_local",
+      "rowCount": 55886,
+      "sha256": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "ETC-USDT-SWAP",
+      "latestConfirmed": "2026-05-17T08:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/ETC-USDT-SWAP/4h/part-all-8a30518646e19f75.parquet",
+      "provider": "user_local",
+      "rowCount": 13971,
+      "sha256": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "ETH-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T16:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/ETH-USDT-SWAP/1h/1577836800000-1784044800000-d63a700efdc78648.parquet",
+      "provider": "okx",
+      "rowCount": 57281,
+      "sha256": "d63a700efdc78648a568629e7ab37585e38bf2d963bbab8b13e96326416cf701",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "ETH-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T08:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/ETH-USDT-SWAP/4h/1577836800000-1784016000000-022a4f37a6dd49de.parquet",
+      "provider": "okx",
+      "rowCount": 14319,
+      "sha256": "022a4f37a6dd49de5154ac7059a049cd723a16697b44cc3ce9dd14c9f142a36b",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-07-22T07:00:00+00:00",
+      "instrumentId": "FIL-USDT-SWAP",
+      "latestConfirmed": "2026-05-17T14:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/FIL-USDT-SWAP/1h/part-all-afca1f770864ac8f.parquet",
+      "provider": "user_local",
+      "rowCount": 51030,
+      "sha256": "214c4b14b5e6e58a1e6f82f4557cef6023211c70e9285d248e6398d3a0ab3e28",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-07-22T04:00:00+00:00",
+      "instrumentId": "FIL-USDT-SWAP",
+      "latestConfirmed": "2026-05-17T08:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/FIL-USDT-SWAP/4h/part-all-8f4d1f6a5fddb32c.parquet",
+      "provider": "user_local",
+      "rowCount": 12757,
+      "sha256": "735be92aceb6dce6128ff4e52bb1c785e1952ce7b75c19b219ac054f854d878a",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-03-09T07:00:00+00:00",
+      "instrumentId": "LINK-USDT-SWAP",
+      "latestConfirmed": "2026-05-19T12:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/LINK-USDT-SWAP/1h/part-all-e1d5e7578e977e3e.parquet",
+      "provider": "user_local",
+      "rowCount": 54362,
+      "sha256": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-03-09T04:00:00+00:00",
+      "instrumentId": "LINK-USDT-SWAP",
+      "latestConfirmed": "2026-05-19T08:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/LINK-USDT-SWAP/4h/part-all-c5a7bbc43e2eaeaa.parquet",
+      "provider": "user_local",
+      "rowCount": 13591,
+      "sha256": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "LTC-USDT-SWAP",
+      "latestConfirmed": "2026-05-20T09:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/LTC-USDT-SWAP/1h/part-all-0b00b20e3d27bd85.parquet",
+      "provider": "user_local",
+      "rowCount": 55954,
+      "sha256": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "LTC-USDT-SWAP",
+      "latestConfirmed": "2026-05-20T04:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/LTC-USDT-SWAP/4h/part-all-ebd367bc06529c8c.parquet",
+      "provider": "user_local",
+      "rowCount": 13988,
+      "sha256": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-03-04T13:00:00+00:00",
+      "instrumentId": "NEO-USDT-SWAP",
+      "latestConfirmed": "2026-05-20T11:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/NEO-USDT-SWAP/1h/part-all-0c1b2fd2ba3a206f.parquet",
+      "provider": "user_local",
+      "rowCount": 54526,
+      "sha256": "4a6bdefc98531b3528c216a1a8a4959ce7a4f24220a49857851e3b2b36bad36c",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-03-04T12:00:00+00:00",
+      "instrumentId": "NEO-USDT-SWAP",
+      "latestConfirmed": "2026-05-20T08:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/NEO-USDT-SWAP/4h/part-all-a44df185d891046b.parquet",
+      "provider": "user_local",
+      "rowCount": 13632,
+      "sha256": "0cd155dcd25182f3fa540f71fa5a5a70055badde8870075a18c1a74f6a8a701f",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2021-01-22T07:00:00+00:00",
+      "instrumentId": "SOL-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T16:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/SOL-USDT-SWAP/1h/1611295200000-1784044800000-c35d834fe0c138db.parquet",
+      "provider": "okx",
+      "rowCount": 47987,
+      "sha256": "c35d834fe0c138db49b61772a66dfdedc12b3ea2e9b57d70743d533753d45514",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2021-01-22T04:00:00+00:00",
+      "instrumentId": "SOL-USDT-SWAP",
+      "latestConfirmed": "2026-07-14T08:00:00+00:00",
+      "path": "_alphapilot/canonical/okx/swap/ohlcv/SOL-USDT-SWAP/4h/1611288000000-1784016000000-fa9c9c5f3de74b7a.parquet",
+      "provider": "okx",
+      "rowCount": 11996,
+      "sha256": "fa9c9c5f3de74b7ab8bfbd282e58dbb1afd19793539cebd829f1fb25db7a3d0b",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "TRX-USDT-SWAP",
+      "latestConfirmed": "2026-05-22T09:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/TRX-USDT-SWAP/1h/part-all-1affd0d28c224e8a.parquet",
+      "provider": "user_local",
+      "rowCount": 56002,
+      "sha256": "67c41d442cfe6d57a66efdb681b70f27547cfdcb5059a8c2727dc6d9a3b1b865",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "TRX-USDT-SWAP",
+      "latestConfirmed": "2026-05-22T04:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/TRX-USDT-SWAP/4h/part-all-c38b9c26b6a18097.parquet",
+      "provider": "user_local",
+      "rowCount": 14000,
+      "sha256": "03b4ed55ff1f24e664dad1b597a360c187a8afe1b415349714d58d2d308c9f89",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "XRP-USDT-SWAP",
+      "latestConfirmed": "2026-05-22T11:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/XRP-USDT-SWAP/1h/part-all-468c07e30c4fe659.parquet",
+      "provider": "user_local",
+      "rowCount": 56004,
+      "sha256": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "XRP-USDT-SWAP",
+      "latestConfirmed": "2026-05-22T04:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/XRP-USDT-SWAP/4h/part-all-f94bdda800a3be0d.parquet",
+      "provider": "user_local",
+      "rowCount": 14000,
+      "sha256": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-04-23T06:00:00+00:00",
+      "instrumentId": "XTZ-USDT-SWAP",
+      "latestConfirmed": "2026-05-22T11:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/XTZ-USDT-SWAP/1h/part-all-c17a41497ddebd02.parquet",
+      "provider": "user_local",
+      "rowCount": 53311,
+      "sha256": "524ef2ce8fa62143fadd463a73cc54d46f87155c9c30d684364a21335dd68659",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-04-23T04:00:00+00:00",
+      "instrumentId": "XTZ-USDT-SWAP",
+      "latestConfirmed": "2026-05-22T08:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/XTZ-USDT-SWAP/4h/part-all-f287a802fb10a108.parquet",
+      "provider": "user_local",
+      "rowCount": 13328,
+      "sha256": "d200730127976d43e55928c31297768252753701d1dd2fedc9fbb95129e91c9f",
+      "timeframe": "4h"
+    },
+    {
+      "effectiveBacktestStart": "2020-09-02T08:00:00+00:00",
+      "instrumentId": "YFI-USDT-SWAP",
+      "latestConfirmed": "2026-05-22T11:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/YFI-USDT-SWAP/1h/part-all-f14322af3612fa8f.parquet",
+      "provider": "user_local",
+      "rowCount": 50118,
+      "sha256": "63f8bf0afff143d73fa2d41d58b2eca00c2872b93fb24f247cb988296a2136ec",
+      "timeframe": "1h"
+    },
+    {
+      "effectiveBacktestStart": "2020-09-02T04:00:00+00:00",
+      "instrumentId": "YFI-USDT-SWAP",
+      "latestConfirmed": "2026-05-22T08:00:00+00:00",
+      "path": "_alphapilot/canonical/user_local/swap/ohlcv/YFI-USDT-SWAP/4h/part-all-2105f66dd7e51aa2.parquet",
+      "provider": "user_local",
+      "rowCount": 12530,
+      "sha256": "9be923ffa8f4c855547a5d79d2ca9834ef6b0f64c4a75c26b117d039508bdd4e",
+      "timeframe": "4h"
+    }
+  ],
+  "effectiveStarts": {
+    "AAVE-USDT-SWAP": {
+      "1h": "2020-12-10T06:00:00+00:00",
+      "4h": "2020-12-10T04:00:00+00:00"
+    },
+    "ADA-USDT-SWAP": {
+      "1h": "2020-04-29T06:00:00+00:00",
+      "4h": "2020-04-29T04:00:00+00:00"
+    },
+    "ALGO-USDT-SWAP": {
+      "1h": "2020-05-13T08:00:00+00:00",
+      "4h": "2020-05-13T08:00:00+00:00"
+    },
+    "ATOM-USDT-SWAP": {
+      "1h": "2020-05-06T07:00:00+00:00",
+      "4h": "2020-05-06T04:00:00+00:00"
+    },
+    "AVAX-USDT-SWAP": {
+      "1h": "2020-09-23T06:00:00+00:00",
+      "4h": "2020-09-23T04:00:00+00:00"
+    },
+    "BCH-USDT-SWAP": {
+      "1h": "2020-01-01T00:00:00+00:00",
+      "4h": "2020-01-01T00:00:00+00:00"
+    },
+    "BTC-USDT-SWAP": {
+      "1h": "2020-01-01T00:00:00+00:00",
+      "4h": "2020-01-01T00:00:00+00:00"
+    },
+    "COMP-USDT-SWAP": {
+      "1h": "2020-07-01T09:00:00+00:00",
+      "4h": "2020-07-01T08:00:00+00:00"
+    },
+    "DOGE-USDT-SWAP": {
+      "1h": "2020-07-10T03:00:00+00:00",
+      "4h": "2020-07-10T00:00:00+00:00"
+    },
+    "ETC-USDT-SWAP": {
+      "1h": "2020-01-01T00:00:00+00:00",
+      "4h": "2020-01-01T00:00:00+00:00"
+    },
+    "ETH-USDT-SWAP": {
+      "1h": "2020-01-01T00:00:00+00:00",
+      "4h": "2020-01-01T00:00:00+00:00"
+    },
+    "FIL-USDT-SWAP": {
+      "1h": "2020-07-22T07:00:00+00:00",
+      "4h": "2020-07-22T04:00:00+00:00"
+    },
+    "LINK-USDT-SWAP": {
+      "1h": "2020-03-09T07:00:00+00:00",
+      "4h": "2020-03-09T04:00:00+00:00"
+    },
+    "LTC-USDT-SWAP": {
+      "1h": "2020-01-01T00:00:00+00:00",
+      "4h": "2020-01-01T00:00:00+00:00"
+    },
+    "NEO-USDT-SWAP": {
+      "1h": "2020-03-04T13:00:00+00:00",
+      "4h": "2020-03-04T12:00:00+00:00"
+    },
+    "SOL-USDT-SWAP": {
+      "1h": "2021-01-22T07:00:00+00:00",
+      "4h": "2021-01-22T04:00:00+00:00"
+    },
+    "TRX-USDT-SWAP": {
+      "1h": "2020-01-01T00:00:00+00:00",
+      "4h": "2020-01-01T00:00:00+00:00"
+    },
+    "XRP-USDT-SWAP": {
+      "1h": "2020-01-01T00:00:00+00:00",
+      "4h": "2020-01-01T00:00:00+00:00"
+    },
+    "XTZ-USDT-SWAP": {
+      "1h": "2020-04-23T06:00:00+00:00",
+      "4h": "2020-04-23T04:00:00+00:00"
+    },
+    "YFI-USDT-SWAP": {
+      "1h": "2020-09-02T08:00:00+00:00",
+      "4h": "2020-09-02T04:00:00+00:00"
+    }
+  },
+  "fileHashes": {
+    "_alphapilot/canonical/okx/swap/ohlcv/AAVE-USDT-SWAP/1h/1607572800000-1784023200000-1eeeafa6b5fa5252.parquet": "1eeeafa6b5fa5252db00bfe363bcdbde84794e106bdbf7643f10604e85dda1e9",
+    "_alphapilot/canonical/okx/swap/ohlcv/AAVE-USDT-SWAP/4h/1607572800000-1784001600000-28332920cd568a5b.parquet": "28332920cd568a5b70f8edeeb12d4d1941cace818ac6ea8b615c2848d5afd6aa",
+    "_alphapilot/canonical/okx/swap/ohlcv/ADA-USDT-SWAP/1h/1583830800000-1784023200000-432aad98de65b2d8.parquet": "432aad98de65b2d8c8ed031f5973c49ecb68bb8c7ebc41faa5a14a26cc072853",
+    "_alphapilot/canonical/okx/swap/ohlcv/ADA-USDT-SWAP/4h/1583827200000-1784001600000-9767cf028e402bc7.parquet": "9767cf028e402bc7482db4b7444ef4dd809fb26c4474f015095f26301b2d58aa",
+    "_alphapilot/canonical/okx/swap/ohlcv/ALGO-USDT-SWAP/1h/1589338800000-1784023200000-6ca5b34ad1e48cf4.parquet": "6ca5b34ad1e48cf452f3d45bc69868f456199233bd3d0458ee8f07d507eb1539",
+    "_alphapilot/canonical/okx/swap/ohlcv/ALGO-USDT-SWAP/4h/1589328000000-1784001600000-dc0c0af35e2714ba.parquet": "dc0c0af35e2714ba74699ad5a0ab09f4d74816708b8e81c4c864b2fe8f7be3f4",
+    "_alphapilot/canonical/okx/swap/ohlcv/ATOM-USDT-SWAP/1h/1588737600000-1784023200000-2a7a0870517ce446.parquet": "2a7a0870517ce4464dafec41c7c9c53c0ea3bb487b44aec4ac6142c00d67819e",
+    "_alphapilot/canonical/okx/swap/ohlcv/ATOM-USDT-SWAP/4h/1588737600000-1784001600000-56ad4628e0b1e70d.parquet": "56ad4628e0b1e70d53040a254b7275b869db84215b86fc2ac540227e94457dee",
+    "_alphapilot/canonical/okx/swap/ohlcv/AVAX-USDT-SWAP/4h/1600833600000-1783886400000-1aa00c47a34a599d.parquet": "1aa00c47a34a599d12f8b5698affdb5d2a5a56198d1eb65f1aa49cafe45aca3f",
+    "_alphapilot/canonical/okx/swap/ohlcv/BTC-USDT-SWAP/1h/1577836800000-1784044800000-720e2aa19d32658a.parquet": "720e2aa19d32658a6cf9ac018e55ed3abcb06115c747b40eb14b82fc450efbe0",
+    "_alphapilot/canonical/okx/swap/ohlcv/BTC-USDT-SWAP/4h/1577836800000-1784016000000-e8f6595d0f61eb74.parquet": "e8f6595d0f61eb74ac1543b40800c48e905e2d38e18db49a7c440343cfdb3758",
+    "_alphapilot/canonical/okx/swap/ohlcv/DOGE-USDT-SWAP/1h/1594350000000-1784044800000-62bf08864e2955b5.parquet": "62bf08864e2955b55af85c678a551f1e689e026150a7715b18d361598c5f9d56",
+    "_alphapilot/canonical/okx/swap/ohlcv/DOGE-USDT-SWAP/4h/1594339200000-1784016000000-39c6057cc2ff26c2.parquet": "39c6057cc2ff26c2819de7fb64734235a8b3e35bb1c8fc6f57513e37e6681ea1",
+    "_alphapilot/canonical/okx/swap/ohlcv/ETH-USDT-SWAP/1h/1577836800000-1784044800000-d63a700efdc78648.parquet": "d63a700efdc78648a568629e7ab37585e38bf2d963bbab8b13e96326416cf701",
+    "_alphapilot/canonical/okx/swap/ohlcv/ETH-USDT-SWAP/4h/1577836800000-1784016000000-022a4f37a6dd49de.parquet": "022a4f37a6dd49de5154ac7059a049cd723a16697b44cc3ce9dd14c9f142a36b",
+    "_alphapilot/canonical/okx/swap/ohlcv/SOL-USDT-SWAP/1h/1611295200000-1784044800000-c35d834fe0c138db.parquet": "c35d834fe0c138db49b61772a66dfdedc12b3ea2e9b57d70743d533753d45514",
+    "_alphapilot/canonical/okx/swap/ohlcv/SOL-USDT-SWAP/4h/1611288000000-1784016000000-fa9c9c5f3de74b7a.parquet": "fa9c9c5f3de74b7ab8bfbd282e58dbb1afd19793539cebd829f1fb25db7a3d0b",
+    "_alphapilot/canonical/user_local/swap/ohlcv/AVAX-USDT-SWAP/1h/part-all-458ad9b22b48fe58.parquet": "1dd7a47c573446e0fc83bfc807824a161ef364f66f3c773a448176af4d1468e9",
+    "_alphapilot/canonical/user_local/swap/ohlcv/BCH-USDT-SWAP/1h/part-all-ff6d1f58c526a7f1.parquet": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+    "_alphapilot/canonical/user_local/swap/ohlcv/BCH-USDT-SWAP/4h/part-all-f2b779ba03dd6b13.parquet": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+    "_alphapilot/canonical/user_local/swap/ohlcv/COMP-USDT-SWAP/1h/part-all-a5c93b9f9b6c771e.parquet": "5d456744eb786d1ccad9c1c1cc49dc397f0dc0a95179682a5ab4953190f88fb0",
+    "_alphapilot/canonical/user_local/swap/ohlcv/COMP-USDT-SWAP/4h/part-all-01c37d9b6e9baca6.parquet": "280e0a5e779bf5c52557458d7060dc2f3ab1d4179dd1cd62fac921e73c28b35a",
+    "_alphapilot/canonical/user_local/swap/ohlcv/ETC-USDT-SWAP/1h/part-all-6cbcdf14dc51c01d.parquet": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+    "_alphapilot/canonical/user_local/swap/ohlcv/ETC-USDT-SWAP/4h/part-all-8a30518646e19f75.parquet": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+    "_alphapilot/canonical/user_local/swap/ohlcv/FIL-USDT-SWAP/1h/part-all-afca1f770864ac8f.parquet": "214c4b14b5e6e58a1e6f82f4557cef6023211c70e9285d248e6398d3a0ab3e28",
+    "_alphapilot/canonical/user_local/swap/ohlcv/FIL-USDT-SWAP/4h/part-all-8f4d1f6a5fddb32c.parquet": "735be92aceb6dce6128ff4e52bb1c785e1952ce7b75c19b219ac054f854d878a",
+    "_alphapilot/canonical/user_local/swap/ohlcv/LINK-USDT-SWAP/1h/part-all-e1d5e7578e977e3e.parquet": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+    "_alphapilot/canonical/user_local/swap/ohlcv/LINK-USDT-SWAP/4h/part-all-c5a7bbc43e2eaeaa.parquet": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+    "_alphapilot/canonical/user_local/swap/ohlcv/LTC-USDT-SWAP/1h/part-all-0b00b20e3d27bd85.parquet": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+    "_alphapilot/canonical/user_local/swap/ohlcv/LTC-USDT-SWAP/4h/part-all-ebd367bc06529c8c.parquet": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+    "_alphapilot/canonical/user_local/swap/ohlcv/NEO-USDT-SWAP/1h/part-all-0c1b2fd2ba3a206f.parquet": "4a6bdefc98531b3528c216a1a8a4959ce7a4f24220a49857851e3b2b36bad36c",
+    "_alphapilot/canonical/user_local/swap/ohlcv/NEO-USDT-SWAP/4h/part-all-a44df185d891046b.parquet": "0cd155dcd25182f3fa540f71fa5a5a70055badde8870075a18c1a74f6a8a701f",
+    "_alphapilot/canonical/user_local/swap/ohlcv/TRX-USDT-SWAP/1h/part-all-1affd0d28c224e8a.parquet": "67c41d442cfe6d57a66efdb681b70f27547cfdcb5059a8c2727dc6d9a3b1b865",
+    "_alphapilot/canonical/user_local/swap/ohlcv/TRX-USDT-SWAP/4h/part-all-c38b9c26b6a18097.parquet": "03b4ed55ff1f24e664dad1b597a360c187a8afe1b415349714d58d2d308c9f89",
+    "_alphapilot/canonical/user_local/swap/ohlcv/XRP-USDT-SWAP/1h/part-all-468c07e30c4fe659.parquet": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+    "_alphapilot/canonical/user_local/swap/ohlcv/XRP-USDT-SWAP/4h/part-all-f94bdda800a3be0d.parquet": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+    "_alphapilot/canonical/user_local/swap/ohlcv/XTZ-USDT-SWAP/1h/part-all-c17a41497ddebd02.parquet": "524ef2ce8fa62143fadd463a73cc54d46f87155c9c30d684364a21335dd68659",
+    "_alphapilot/canonical/user_local/swap/ohlcv/XTZ-USDT-SWAP/4h/part-all-f287a802fb10a108.parquet": "d200730127976d43e55928c31297768252753701d1dd2fedc9fbb95129e91c9f",
+    "_alphapilot/canonical/user_local/swap/ohlcv/YFI-USDT-SWAP/1h/part-all-f14322af3612fa8f.parquet": "63f8bf0afff143d73fa2d41d58b2eca00c2872b93fb24f247cb988296a2136ec",
+    "_alphapilot/canonical/user_local/swap/ohlcv/YFI-USDT-SWAP/4h/part-all-2105f66dd7e51aa2.parquet": "9be923ffa8f4c855547a5d79d2ca9834ef6b0f64c4a75c26b117d039508bdd4e"
+  },
+  "gitCommit": "d79d0dcf381b87c9f5749ad7a3a0dfec3dc1a668",
+  "physicalCopiesCreated": 0,
+  "schemaVersion": "minimal_manifest_only_snapshot_v1",
+  "snapshotHash": "minimal_shared_snapshot_785e47b180c17327dcb35e37d9f12c22e86eae8150e0adf5e1b44fb298f89e3b",
+  "snapshotId": "minimal_snapshot_785e47b180c17327dcb35e37",
+  "storageMode": "manifest_only"
+}

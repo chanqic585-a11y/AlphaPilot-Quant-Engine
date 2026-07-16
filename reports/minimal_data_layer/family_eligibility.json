@@ -1,0 +1,17 @@
+{
+  "fiveMinuteResearchEnabled": false,
+  "fixedCoreCrossSectional1d": {
+    "diagnosticOnly": true,
+    "formalEligible": false,
+    "reason": "historical PIT membership is unavailable and 1d core coverage is incomplete"
+  },
+  "fixedCoreTimeSeries1h": {
+    "formalEligible": true,
+    "reason": "fixed core has sufficient 1h coverage; no 1h hypothesis is preregistered in this campaign"
+  },
+  "fixedCoreTimeSeries4h": {
+    "formalEligible": true,
+    "reason": "fixed core has sufficient 4h coverage; cohort limitation must be disclosed"
+  },
+  "schemaVersion": "minimal_family_eligibility_v1"
+}
