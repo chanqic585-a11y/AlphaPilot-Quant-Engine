@@ -1,6 +1,9 @@
 import pandas as pd
+import inspect
 
+import alphapilot.advisory_r_campaign.signals as campaign_signals
 from alphapilot.advisory_r_campaign.signals import replay_candidate
+from alphapilot.exit_policy import exit_policy_from_dict, exit_policy_hash
 
 
 def _frame() -> pd.DataFrame:
@@ -31,6 +34,7 @@ def test_replay_enters_on_next_bar_and_keeps_frozen_policy() -> None:
         "initialStopDefinition": {"kind": "atr", "multiple": 1.2, "mayWiden": False},
         "exitPolicyHash": "frozen_exit_hash",
         "exitPolicy": {
+            "version": "advisory_r_exit_policy_v1",
             "mode": "fixed_r",
             "maximumHoldBars": 4,
             "parameters": {"targetR": 1.2},
@@ -43,6 +47,9 @@ def test_replay_enters_on_next_bar_and_keeps_frozen_policy() -> None:
         },
         "entryDefinition": {"kind": "utc_session_transition", "directionFromPriorBars": 3},
     }
+    candidate["exitPolicyHash"] = exit_policy_hash(
+        exit_policy_from_dict(candidate["exitPolicy"])
+    )
 
     events = replay_candidate(
         candidate,
@@ -52,7 +59,7 @@ def test_replay_enters_on_next_bar_and_keeps_frozen_policy() -> None:
 
     assert events
     assert all(row["entryIndex"] == row["signalIndex"] + 1 for row in events)
-    assert all(row["exitPolicyHash"] == "frozen_exit_hash" for row in events)
+    assert all(row["exitPolicyHash"] == candidate["exitPolicyHash"] for row in events)
     assert all(row["initialStopMayWiden"] is False for row in events)
     assert all(row["targetR"] == 1.2 for row in events)
 
@@ -69,6 +76,7 @@ def test_replay_never_uses_unconfirmed_candles() -> None:
         "initialStopDefinition": {"kind": "atr", "multiple": 1.2, "mayWiden": False},
         "exitPolicyHash": "frozen_exit_hash",
         "exitPolicy": {
+            "version": "advisory_r_exit_policy_v1",
             "mode": "fixed_r",
             "maximumHoldBars": 4,
             "parameters": {"targetR": 1.2},
@@ -81,6 +89,9 @@ def test_replay_never_uses_unconfirmed_candles() -> None:
         },
         "entryDefinition": {"kind": "utc_session_transition", "directionFromPriorBars": 3},
     }
+    candidate["exitPolicyHash"] = exit_policy_hash(
+        exit_policy_from_dict(candidate["exitPolicy"])
+    )
 
     events = replay_candidate(
         candidate,
@@ -90,3 +101,8 @@ def test_replay_never_uses_unconfirmed_candles() -> None:
 
     last_confirmed = frame.loc[frame["confirmed"] == 1, "date"].max()
     assert all(pd.Timestamp(row["entryTimestamp"]) <= last_confirmed for row in events)
+
+
+def test_campaign_has_no_second_hand_written_exit_simulator() -> None:
+    assert not hasattr(campaign_signals, "_simulate_event")
+    assert "replay_exit_policy" in inspect.getsource(campaign_signals._replay_event)

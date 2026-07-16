@@ -7,6 +7,16 @@ from typing import Any, Mapping
 import numpy as np
 import pandas as pd
 
+from alphapilot.exit_policy import (
+    ExitCosts,
+    ExitPolicyMode,
+    exit_execution_to_dict,
+    exit_policy_from_dict,
+    replay_exit_policy,
+)
+
+from .conformance import ImplementationConformanceError
+
 
 def _ordered(frame: pd.DataFrame) -> pd.DataFrame:
     result = frame.copy()
@@ -166,17 +176,66 @@ def _signal_series(
     return direction.fillna(0).astype(int)
 
 
-def _structure_invalidated(
-    candidate: Mapping[str, Any], frame: pd.DataFrame, index: int, side: int
-) -> bool:
-    if index < 48:
-        return False
-    fast = float(frame["close"].iloc[index - 11 : index + 1].mean())
-    slow = float(frame["close"].iloc[index - 47 : index + 1].mean())
-    return fast <= slow if side > 0 else fast >= slow
+def _structure_exit_mask(
+    candidate: Mapping[str, Any],
+    frame: pd.DataFrame,
+    *,
+    side: int,
+    btc_close: pd.Series,
+    market_close: pd.Series,
+) -> pd.Series:
+    policy = exit_policy_from_dict(dict(candidate["exitPolicy"]))
+    rule = dict(policy.parameters.get("structureRule") or {})
+    kind = str(rule.get("kind") or "")
+    close = frame["close"]
+    open_ = frame["open"]
+    if kind == "trend_invalidation":
+        fast_window = int(rule["fastWindow"])
+        slow_window = int(rule["slowWindow"])
+        fast = close.rolling(fast_window, min_periods=fast_window).mean()
+        slow = close.rolling(slow_window, min_periods=slow_window).mean()
+        result = fast <= slow if side > 0 else fast >= slow
+    elif kind == "event_reversal":
+        confirmation = int(rule["confirmationBars"])
+        opposite = close < open_ if side > 0 else close > open_
+        result = opposite.rolling(confirmation, min_periods=confirmation).sum() == confirmation
+    elif kind == "residual_neutral_zone":
+        variant = str(candidate["variantId"])
+        if variant == "S01":
+            benchmark_returns = _aligned(market_close, frame["date"]).pct_change()
+            window = int(candidate["featureDefinition"]["residualWindow"])
+        else:
+            benchmark_returns = _aligned(btc_close, frame["date"]).pct_change()
+            window = int(candidate["featureDefinition"]["pairWindow"])
+        residual_z = _rolling_z(close.pct_change() - benchmark_returns, window)
+        result = residual_z.abs() <= float(rule["absoluteZscoreMaximum"])
+    elif kind == "correlation_recovery":
+        btc_returns = _aligned(btc_close, frame["date"]).pct_change()
+        window = int(candidate["featureDefinition"]["correlationWindow"])
+        result = close.pct_change().rolling(window, min_periods=window).corr(btc_returns) >= float(
+            rule["minimumCorrelation"]
+        )
+    elif kind == "beta_rank_exit":
+        if "betaRankPercentile" not in frame:
+            raise ValueError("beta_rank_exit requires cross-sectional betaRankPercentile")
+        result = pd.to_numeric(frame["betaRankPercentile"], errors="coerce") <= float(
+            rule["maximumRankPercentile"]
+        )
+    else:
+        raise ValueError(f"unsupported structure rule: {kind}")
+    return pd.Series(result, index=frame.index).fillna(False).astype(bool)
 
 
-def _simulate_event(
+def _formal_costs(round_trip_cost_rate: float) -> ExitCosts:
+    total_bps = round_trip_cost_rate * 10_000
+    return ExitCosts(
+        feeBpsPerSide=total_bps * 0.25,
+        slippageBpsPerSide=total_bps * 0.125,
+        spreadBpsPerSide=total_bps * 0.125,
+    )
+
+
+def _replay_event(
     candidate: Mapping[str, Any],
     frame: pd.DataFrame,
     atr: pd.Series,
@@ -185,132 +244,74 @@ def _simulate_event(
     side: int,
     symbol: str,
     round_trip_cost_rate: float,
+    btc_close: pd.Series,
+    market_close: pd.Series,
 ) -> dict[str, Any] | None:
-    entry_index = signal_index + 1
-    if entry_index >= len(frame) or pd.isna(atr.iloc[signal_index]):
+    if signal_index >= len(frame) - 1 or pd.isna(atr.iloc[signal_index]):
         return None
-    entry_price = float(frame.iloc[entry_index]["open"])
-    atr_value = float(atr.iloc[signal_index])
     stop_definition = dict(candidate["initialStopDefinition"])
-    stop_multiple = float(stop_definition.get("multiple") or 1.5)
-    risk = atr_value * stop_multiple
-    if not np.isfinite(risk) or risk <= 0:
+    if stop_definition.get("kind") != "atr":
+        raise ValueError(
+            f"{candidate['variantId']} requires a dedicated pair/portfolio replay adapter"
+        )
+    risk_distance = float(atr.iloc[signal_index]) * float(stop_definition["multiple"])
+    if not np.isfinite(risk_distance) or risk_distance <= 0:
         return None
-    stop_price = entry_price - side * risk
-    initial_stop_price = stop_price
-    policy = dict(candidate["exitPolicy"])
-    parameters = dict(policy.get("parameters") or {})
-    mode = str(policy["mode"])
-    maximum_hold = int(policy.get("maximumHoldBars") or candidate["maximumHold"])
-    target_r = float(parameters.get("targetR") or parameters.get("partialAtR") or 0.0)
-    partial_fraction = float(parameters.get("partialFraction") or 0.0)
-    trailing_multiple = float(parameters.get("trailingAtrMultiple") or 0.0)
-    remaining = 1.0
-    gross_r = 0.0
-    partial_taken = False
-    exit_reason = "time"
-    exit_index = min(len(frame) - 1, entry_index + maximum_hold)
-    exit_price = float(frame.iloc[exit_index]["close"])
-    highest = entry_price
-    lowest = entry_price
-    mfe_r = 0.0
-    mae_r = 0.0
-
-    for index in range(entry_index, exit_index + 1):
-        row = frame.iloc[index]
-        favorable = ((float(row["high"]) - entry_price) * side) / risk
-        adverse = ((float(row["low"]) - entry_price) * side) / risk
-        if side < 0:
-            favorable = ((entry_price - float(row["low"])) / risk)
-            adverse = ((entry_price - float(row["high"])) / risk)
-        mfe_r = max(mfe_r, favorable)
-        mae_r = min(mae_r, adverse)
-        highest = max(highest, float(row["high"]))
-        lowest = min(lowest, float(row["low"]))
-
-        stop_hit = float(row["low"]) <= stop_price if side > 0 else float(row["high"]) >= stop_price
-        if stop_hit:
-            gross_r += remaining * -1.0
-            exit_reason = "trailing" if partial_taken and stop_price != initial_stop_price else "stop"
-            exit_index = index
-            exit_price = stop_price
-            break
-
-        if mode == "fixed_r" and target_r > 0:
-            target_price = entry_price + side * target_r * risk
-            target_hit = float(row["high"]) >= target_price if side > 0 else float(row["low"]) <= target_price
-            if target_hit:
-                gross_r += remaining * target_r
-                exit_reason = "target"
-                exit_index = index
-                exit_price = target_price
-                remaining = 0.0
-                break
-
-        if mode in {"partial_then_trailing", "hybrid"} and not partial_taken:
-            partial_at_r = float(parameters.get("partialAtR") or 0.0)
-            partial_price = entry_price + side * partial_at_r * risk
-            partial_hit = float(row["high"]) >= partial_price if side > 0 else float(row["low"]) <= partial_price
-            if partial_hit:
-                gross_r += partial_fraction * partial_at_r
-                remaining -= partial_fraction
-                partial_taken = True
-
-        if partial_taken and trailing_multiple > 0 and not pd.isna(atr.iloc[index]):
-            trail_distance = trailing_multiple * float(atr.iloc[index])
-            if side > 0:
-                stop_price = max(stop_price, highest - trail_distance)
-            else:
-                stop_price = min(stop_price, lowest + trail_distance)
-
-        if mode in {"structure_or_time", "hybrid"} and _structure_invalidated(
-            candidate, frame, index, side
-        ):
-            exit_price = float(row["close"])
-            gross_r += remaining * ((exit_price - entry_price) * side / risk)
-            exit_reason = "structure"
-            exit_index = index
-            remaining = 0.0
-            break
-    if remaining > 0 and exit_reason == "time":
-        gross_r += remaining * ((exit_price - entry_price) * side / risk)
-    cost_r = round_trip_cost_rate * entry_price / risk
-    net_r = gross_r - cost_r
-    giveback = max(0.0, mfe_r - gross_r)
-    return {
-        "candidateId": candidate["candidateId"],
-        "familyId": candidate["familyId"],
-        "variantId": candidate["variantId"],
-        "symbol": symbol,
-        "signalIndex": signal_index,
-        "entryIndex": entry_index,
-        "exitIndex": exit_index,
-        "entryTimestamp": pd.Timestamp(frame.iloc[entry_index]["date"]).isoformat(),
-        "exitTimestamp": pd.Timestamp(frame.iloc[exit_index]["date"]).isoformat(),
-        "side": "long" if side > 0 else "short",
-        "entryPrice": entry_price,
-        "exitPrice": exit_price,
-        "initialStopPrice": initial_stop_price,
-        "initialStopMayWiden": False,
-        "targetR": float(parameters["targetR"]) if "targetR" in parameters else None,
-        "grossR": gross_r,
-        "feesR": cost_r * 0.5,
-        "spreadProxyR": cost_r * 0.25,
-        "slippageR": cost_r * 0.25,
-        "fundingR": None,
-        "costR": cost_r,
-        "netR": net_r,
-        "realizedGrossR": gross_r,
-        "realizedNetR": net_r,
-        "exitReason": exit_reason,
-        "partialExit": partial_taken,
-        "mfeR": mfe_r,
-        "maeR": mae_r,
-        "profitGivebackR": giveback,
-        "exitPolicyMode": mode,
-        "exitPolicyHash": candidate["exitPolicyHash"],
-        "maximumHold": maximum_hold,
-    }
+    policy = exit_policy_from_dict(dict(candidate["exitPolicy"]))
+    structure_mask = None
+    structure_mode = policy.mode is ExitPolicyMode.STRUCTURE_OR_TIME or (
+        policy.mode is ExitPolicyMode.HYBRID
+        and policy.parameters.get("remainderMode") == "structure"
+    )
+    if structure_mode:
+        structure_mask = _structure_exit_mask(
+            candidate,
+            frame,
+            side=side,
+            btc_close=btc_close,
+            market_close=market_close,
+        )
+    result = replay_exit_policy(
+        frame=frame,
+        signalPosition=signal_index,
+        direction="long" if side > 0 else "short",
+        riskDistance=risk_distance,
+        policy=policy,
+        costs=_formal_costs(round_trip_cost_rate),
+        atrValues=atr,
+        structureExitMask=structure_mask,
+        fundingRate=None,
+    )
+    if result.exitPolicyHash != str(candidate["exitPolicyHash"]):
+        raise ImplementationConformanceError(
+            f"exit-policy hash mismatch for {candidate['candidateId']}"
+        )
+    event = exit_execution_to_dict(result)
+    event.update(
+        {
+            "candidateId": candidate["candidateId"],
+            "familyId": candidate["familyId"],
+            "variantId": candidate["variantId"],
+            "symbol": symbol,
+            "signalIndex": result.signalPosition,
+            "entryIndex": result.entryPosition,
+            "exitIndex": result.exitPosition,
+            "side": result.direction,
+            "exitPrice": result.legs[-1].price,
+            "targetR": policy.parameters.get("targetR"),
+            "costR": result.feesR + result.slippageR + result.spreadProxyR,
+            "realizedGrossR": result.grossR,
+            "realizedNetR": result.netR,
+            "exitReason": result.legs[-1].reason,
+            "partialExit": len(result.legs) > 1,
+            "profitGivebackR": result.givebackR,
+            "exitPolicyMode": policy.mode.value,
+            "maximumHold": policy.maximumHoldBars,
+            "initialStopMayWiden": policy.initialStopMayWiden,
+            "fundingR": None,
+        }
+    )
+    return event
 
 
 def replay_candidate(
@@ -344,7 +345,7 @@ def replay_candidate(
         for signal_index in np.flatnonzero(signal.to_numpy()):
             if signal_index < next_available or signal_index >= len(frame) - 1:
                 continue
-            event = _simulate_event(
+            event = _replay_event(
                 candidate,
                 frame,
                 atr,
@@ -352,6 +353,8 @@ def replay_candidate(
                 side=int(signal.iloc[signal_index]),
                 symbol=symbol,
                 round_trip_cost_rate=round_trip_cost_rate,
+                btc_close=btc_close,
+                market_close=market_close,
             )
             if event is None:
                 continue

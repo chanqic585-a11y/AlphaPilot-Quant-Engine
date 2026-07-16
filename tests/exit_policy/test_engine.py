@@ -230,6 +230,105 @@ def test_adverse_gap_through_stop_fills_at_open() -> None:
     assert result.grossR == pytest.approx(-1.5)
 
 
+def test_favorable_gap_through_fixed_target_uses_preregistered_target_price() -> None:
+    frame = _frame(
+        [
+            (99, 100, 98, 99),
+            (100, 105, 95, 100),
+            (115, 118, 112, 116),
+        ]
+    )
+    policy = ExitPolicy(
+        mode=ExitPolicyMode.FIXED_R,
+        maximumHoldBars=3,
+        parameters={"targetR": 1.0},
+    )
+
+    result = replay_exit_policy(
+        frame=frame,
+        signalPosition=0,
+        direction="long",
+        riskDistance=10,
+        policy=policy,
+        costs=ZERO_COSTS,
+    )
+
+    assert result.legs[0].reason == "target_gap"
+    assert result.legs[0].price == 110
+    assert result.legs[0].isGapFill is True
+    assert result.grossR == pytest.approx(1.0)
+
+
+def test_gap_through_partial_target_records_partial_gap_before_intrabar_path() -> None:
+    frame = _frame(
+        [
+            (99, 100, 98, 99),
+            (100, 104, 96, 101),
+            (112, 114, 103, 105),
+            (105, 106, 99, 100),
+        ]
+    )
+    policy = ExitPolicy(
+        mode=ExitPolicyMode.PARTIAL_THEN_TRAILING,
+        maximumHoldBars=4,
+        parameters={
+            "partialAtR": 1.0,
+            "partialFraction": 0.4,
+            "trailingAtrMultiple": 1.0,
+        },
+    )
+
+    result = replay_exit_policy(
+        frame=frame,
+        signalPosition=0,
+        direction="long",
+        riskDistance=10,
+        policy=policy,
+        costs=ZERO_COSTS,
+        atrValues=pd.Series([5.0, 5.0, 5.0, 5.0]),
+    )
+
+    assert result.legs[0].reason == "partial_gap"
+    assert result.legs[0].price == 110
+    assert result.legs[0].fraction == pytest.approx(0.4)
+    assert result.legs[0].isGapFill is True
+
+
+def test_gap_through_active_trailing_stop_uses_open_and_actual_weighted_r() -> None:
+    frame = _frame(
+        [
+            (99, 100, 98, 99),
+            (100, 112, 99, 111),
+            (112, 114, 108, 113),
+            (98, 101, 95, 99),
+        ]
+    )
+    policy = ExitPolicy(
+        mode=ExitPolicyMode.PARTIAL_THEN_TRAILING,
+        maximumHoldBars=5,
+        parameters={
+            "partialAtR": 1.0,
+            "partialFraction": 0.5,
+            "trailingAtrMultiple": 1.0,
+        },
+    )
+
+    result = replay_exit_policy(
+        frame=frame,
+        signalPosition=0,
+        direction="long",
+        riskDistance=10,
+        policy=policy,
+        costs=ZERO_COSTS,
+        atrValues=pd.Series([5.0, 5.0, 5.0, 5.0]),
+    )
+
+    assert result.legs[-1].reason == "trailing_gap"
+    assert result.legs[-1].price == 98
+    assert result.legs[-1].grossR == pytest.approx(-0.1)
+    assert result.grossR == pytest.approx(0.4)
+
+
 def test_result_reports_path_excursions_and_giveback() -> None:
     frame = _frame(
         [

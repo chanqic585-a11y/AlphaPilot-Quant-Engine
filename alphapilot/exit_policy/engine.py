@@ -220,6 +220,7 @@ def replay_exit_policy(
 
         stop_gap = open_price <= active_stop if direction_sign == 1 else open_price >= active_stop
         if stop_gap:
+            trailing_gap = position > entry_position and active_stop != initial_stop
             legs.append(
                 _leg(
                     frame=ordered,
@@ -228,7 +229,11 @@ def replay_exit_policy(
                     risk_distance=riskDistance,
                     direction_sign=direction_sign,
                     fraction=remaining,
-                    reason="stop_gap" if position > entry_position else "stop_loss",
+                    reason=(
+                        "trailing_gap"
+                        if trailing_gap
+                        else "stop_gap" if position > entry_position else "stop_loss"
+                    ),
                     trigger_position=position,
                     execution_position=position,
                     price=open_price,
@@ -239,6 +244,58 @@ def replay_exit_policy(
             )
             remaining = 0.0
             break
+
+        fixed_target_gap = fixed_target is not None and (
+            open_price >= fixed_target if direction_sign == 1 else open_price <= fixed_target
+        )
+        if fixed_target_gap:
+            legs.append(
+                _leg(
+                    frame=ordered,
+                    entry_position=entry_position,
+                    entry_price=entry_price,
+                    risk_distance=riskDistance,
+                    direction_sign=direction_sign,
+                    fraction=remaining,
+                    reason="target_gap",
+                    trigger_position=position,
+                    execution_position=position,
+                    price=float(fixed_target),
+                    costs=costs,
+                    funding_rate=funding,
+                    is_gap_fill=True,
+                )
+            )
+            remaining = 0.0
+            break
+
+        partial_target_gap = (
+            has_partial
+            and not partial_taken
+            and partial_target is not None
+            and (open_price >= partial_target if direction_sign == 1 else open_price <= partial_target)
+        )
+        if partial_target_gap:
+            fraction = float(parameters["partialFraction"])
+            legs.append(
+                _leg(
+                    frame=ordered,
+                    entry_position=entry_position,
+                    entry_price=entry_price,
+                    risk_distance=riskDistance,
+                    direction_sign=direction_sign,
+                    fraction=fraction,
+                    reason="partial_gap",
+                    trigger_position=position,
+                    execution_position=position,
+                    price=float(partial_target),
+                    costs=costs,
+                    funding_rate=funding,
+                    is_gap_fill=True,
+                )
+            )
+            remaining -= fraction
+            partial_taken = True
 
         stop_hit = low <= active_stop if direction_sign == 1 else high >= active_stop
         target = fixed_target if fixed_target is not None else (
@@ -427,4 +484,3 @@ def replay_exit_policy(
         maeR=float(mae_r),
         givebackR=float(max(0.0, mfe_r - gross_r)),
     )
-
