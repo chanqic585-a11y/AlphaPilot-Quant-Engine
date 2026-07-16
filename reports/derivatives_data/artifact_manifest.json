@@ -32,7 +32,7 @@
     },
     "dataSnapshot": {
       "json": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\research\\data_snapshots\\data_snapshot_61254838e8e750d0374632c752fdaa8169eedb9c8240e8a5da912ada521f6562.json",
-      "jsonSha256": "fbbd96a6f3d66ed7dd21bbfee49100877c3cd3158cfaf8054f9f060d46f44909"
+      "jsonSha256": "56a09c1148ce4361b37d877c00ca79e1b34d9055314e84766f157aa6a7b5422f"
     },
     "dataSourceRegistry": {
       "csv": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\reports\\derivatives_data\\data_source_registry.csv",
@@ -69,7 +69,7 @@
       "jsonSha256": "a0a9ab6d732c5760198f7cf3b502ebcc28f75d52c76c9a3bd8119b85b5c16469"
     }
   },
-  "manifestHash": "derivatives_data_artifact_manifest_40aef9abdac5519c213603f2f2ef4d1558a78d3e53e49a671645e992f4e394da",
+  "manifestHash": "derivatives_data_artifact_manifest_8fe9185351faef04e8b48581e8c637c8fe3d709125a051f05c9ecf9dc192872a",
   "schemaVersion": "derivatives_data_artifact_manifest_v2",
   "status": "data_not_ready"
 }

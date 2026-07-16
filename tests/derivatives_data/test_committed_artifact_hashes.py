@@ -11,9 +11,13 @@ def test_committed_evidence_sidecars_survive_git_checkout() -> None:
     assert attributes.exists()
     attribute_text = attributes.read_text(encoding="utf-8")
     assert "reports/derivatives_data/*.csv text eol=lf" in attribute_text
+    assert "reports/derivatives_data/*.json text eol=lf" in attribute_text
+    assert "reports/derivatives_data/*.sha256 text eol=lf" in attribute_text
     assert "reports/v13_27_1_12/*.csv text eol=lf" in attribute_text
     assert "reports/v13_27_1_12/*.json text eol=lf" in attribute_text
     assert "reports/v13_27_1_12/*.md text eol=lf" in attribute_text
+    assert "research/data_snapshots/*.json text eol=lf" in attribute_text
+    assert "research/data_snapshots/*.sha256 text eol=lf" in attribute_text
 
     roots = (
         repo_root / "reports" / "derivatives_data",
