@@ -45,4 +45,3 @@ def test_selloff_recovery_replays_only_on_next_bar_with_frozen_stop() -> None:
     assert all(row["initialStopMayWiden"] is False for row in events)
     assert all(row["targetR"] >= 2 for row in events)
     assert all(row["costR"] > 0 for row in events)
-

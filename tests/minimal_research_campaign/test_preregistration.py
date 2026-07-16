@@ -99,4 +99,3 @@ def test_formal_preregistration_accepts_only_prefilter_survivors() -> None:
     assert formal["walkForward"]["foldCount"] == 5
     assert formal["campaignLockedOos"]["maximumUnlockCount"] == 1
     assert formal["safetyBoundary"]["demoArm"] is False
-

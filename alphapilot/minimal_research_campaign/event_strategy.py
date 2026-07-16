@@ -128,4 +128,3 @@ def replay_selloff_recovery_events(
         )
         next_available_index = int(trade["exitIndex"]) + 1
     return events
-

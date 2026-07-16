@@ -37,4 +37,3 @@ def test_implementation_freeze_rejects_changed_source(tmp_path: Path) -> None:
             preregistration,
             source_root=tmp_path,
         )
-

@@ -134,7 +134,6 @@ def build_prefilter_preregistration(
     )
     return payload
 
-
 def build_formal_preregistration(
     prefilter_preregistration: Mapping[str, Any],
     *,
@@ -216,4 +215,3 @@ def build_formal_preregistration(
         payload, prefix="minimal_formal_preregistration"
     )
     return payload
-
