@@ -1,0 +1,38 @@
+{
+  "byTimeframe": {
+    "1h": {
+      "equalWeightRepresentativeReturn": 6.705170186045924,
+      "instrumentReturns": {
+        "ADA-USDT-SWAP": 5.5024390243902435,
+        "ALGO-USDT-SWAP": -0.42190000000000005,
+        "AVAX-USDT-SWAP": 1.1184782608695651,
+        "BCH-USDT-SWAP": 1.1010819768008577,
+        "BTC-USDT-SWAP": 10.210929662245013,
+        "DOGE-USDT-SWAP": 26.974064105701,
+        "ETH-USDT-SWAP": 16.48417132216015,
+        "FIL-USDT-SWAP": -0.9367876923076923,
+        "LTC-USDT-SWAP": 0.40736255751998063,
+        "XRP-USDT-SWAP": 6.611862643080125
+      },
+      "noTradeReturn": 0.0
+    },
+    "4h": {
+      "equalWeightRepresentativeReturn": 6.738027747593402,
+      "instrumentReturns": {
+        "ADA-USDT-SWAP": 5.5390243902439025,
+        "ALGO-USDT-SWAP": -0.41910000000000003,
+        "AVAX-USDT-SWAP": 1.4429780876494025,
+        "BCH-USDT-SWAP": 1.1113486202876022,
+        "BTC-USDT-SWAP": 10.181774142202661,
+        "DOGE-USDT-SWAP": 27.091509664790795,
+        "ETH-USDT-SWAP": 16.3992468490624,
+        "FIL-USDT-SWAP": -0.9364061538461539,
+        "LTC-USDT-SWAP": 0.4028915662650603,
+        "XRP-USDT-SWAP": 6.56701030927835
+      },
+      "noTradeReturn": 0.0
+    }
+  },
+  "note": "Context only; candidate gates use realized cost-net R, not holding return.",
+  "schemaVersion": "advisory_r_simple_benchmarks_v1"
+}

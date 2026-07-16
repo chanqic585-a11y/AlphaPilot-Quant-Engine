@@ -1,0 +1,76 @@
+{
+  "candidates": [
+    {
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "familyId": "idiosyncratic_selloff_recovery",
+      "novelTrial": true,
+      "originLineage": "v13.27.1.13_bear_regime_posthoc_clue_new_trial",
+      "semanticFingerprint": "advisory_r_semantic_e5ee388e5f99ba3cacf9cc75f4052538cc9baa910f69ccd18739e988589cbd14"
+    },
+    {
+      "candidateId": "s02_btc_lead_lag_continuation_1h",
+      "familyId": "btc_lead_lag",
+      "novelTrial": true,
+      "originLineage": "new_btc_lead_lag_trial",
+      "semanticFingerprint": "advisory_r_semantic_40e390382f9dd288c22ae564890065f2c5a075a4e2ebda71c7a9d9ba5d292350"
+    },
+    {
+      "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+      "familyId": "btc_lead_lag",
+      "novelTrial": true,
+      "originLineage": "new_btc_lead_lag_trial",
+      "semanticFingerprint": "advisory_r_semantic_d5115dd002dc5ffc9efb29d9bc23c915c89d5f91cb338bb7b536c3a7ac332238"
+    },
+    {
+      "candidateId": "s04_pair_residual_mean_reversion_1h",
+      "familyId": "pair_residual_mean_reversion",
+      "novelTrial": true,
+      "originLineage": "new_pair_relationship_trial",
+      "semanticFingerprint": "advisory_r_semantic_c1ab9f453481627ae77d394883a2f7e926b1362d642f353f3a4816e47b5c2612"
+    },
+    {
+      "candidateId": "s05_correlation_break_recovery_4h",
+      "familyId": "correlation_break",
+      "novelTrial": true,
+      "originLineage": "new_pair_relationship_trial",
+      "semanticFingerprint": "advisory_r_semantic_e12fa71996835d5380f0d6a34b7c7248fefa1abe4ead414e99fbe5af49f80e20"
+    },
+    {
+      "candidateId": "s06_correlation_break_decoupling_4h",
+      "familyId": "correlation_break",
+      "novelTrial": true,
+      "originLineage": "new_pair_relationship_trial",
+      "semanticFingerprint": "advisory_r_semantic_60503de3ad4dc8bd41c1bff039d1178b3d8a7071d1dbc9843183dbc3cc183962"
+    },
+    {
+      "candidateId": "s07_volatility_shock_asymmetry_4h",
+      "familyId": "volatility_shock_asymmetry",
+      "novelTrial": true,
+      "originLineage": "new_volatility_asymmetry_trial",
+      "semanticFingerprint": "advisory_r_semantic_b3427e310ade5ca39be411e18b502d0b82e648187f51e50715df2149e3eeca7f"
+    },
+    {
+      "candidateId": "s08_utc_session_transition_1h",
+      "familyId": "utc_session_transition",
+      "novelTrial": true,
+      "originLineage": "new_session_microstructure_trial",
+      "semanticFingerprint": "advisory_r_semantic_d7f73900bd6b49f060643858b093a01dee8df62c34d2e16c34faa17dee23d430"
+    },
+    {
+      "candidateId": "s09_beta_defensive_rotation_4h",
+      "familyId": "beta_defensive_rotation",
+      "novelTrial": true,
+      "originLineage": "new_cross_sectional_rotation_trial",
+      "semanticFingerprint": "advisory_r_semantic_8934ab95bbb00ff9f7062cdb8fc13b677f0d167bb189363eb18eaca9181b37a3"
+    },
+    {
+      "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+      "familyId": "orthogonal_weak_signal_matrix",
+      "novelTrial": true,
+      "originLineage": "new_orthogonal_diagnostic_trial",
+      "semanticFingerprint": "advisory_r_semantic_b2070b5f9b7f8f19c68d2e30777e4b82cf2d7c71a7faabf256ab1f0d075bf264"
+    }
+  ],
+  "postResultReplacementAllowed": false,
+  "schemaVersion": "advisory_r_novelty_audit_v1"
+}

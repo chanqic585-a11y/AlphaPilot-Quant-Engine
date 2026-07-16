@@ -1,0 +1,220 @@
+{
+  "availability": [
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-04-29T06:00:00+00:00",
+      "instrumentId": "ADA-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 54169,
+      "sha256": "432aad98de65b2d8c8ed031f5973c49ecb68bb8c7ebc41faa5a14a26cc072853",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-05-13T08:00:00+00:00",
+      "instrumentId": "ALGO-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 52639,
+      "sha256": "6ca5b34ad1e48cf452f3d45bc69868f456199233bd3d0458ee8f07d507eb1539",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-09-23T06:00:00+00:00",
+      "instrumentId": "AVAX-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 49446,
+      "sha256": "1dd7a47c573446e0fc83bfc807824a161ef364f66f3c773a448176af4d1468e9",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "BCH-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 55834,
+      "sha256": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "BTC-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 55834,
+      "sha256": "720e2aa19d32658a6cf9ac018e55ed3abcb06115c747b40eb14b82fc450efbe0",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-07-10T03:00:00+00:00",
+      "instrumentId": "DOGE-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 51247,
+      "sha256": "62bf08864e2955b55af85c678a551f1e689e026150a7715b18d361598c5f9d56",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "ETH-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 55834,
+      "sha256": "d63a700efdc78648a568629e7ab37585e38bf2d963bbab8b13e96326416cf701",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-07-22T07:00:00+00:00",
+      "instrumentId": "FIL-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 50977,
+      "sha256": "214c4b14b5e6e58a1e6f82f4557cef6023211c70e9285d248e6398d3a0ab3e28",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "LTC-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 55834,
+      "sha256": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T09:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "XRP-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 55834,
+      "sha256": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+      "timeframe": "1h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-04-29T04:00:00+00:00",
+      "instrumentId": "ADA-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 13542,
+      "sha256": "9767cf028e402bc7482db4b7444ef4dd809fb26c4474f015095f26301b2d58aa",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-05-13T08:00:00+00:00",
+      "instrumentId": "ALGO-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 13160,
+      "sha256": "dc0c0af35e2714ba74699ad5a0ab09f4d74816708b8e81c4c864b2fe8f7be3f4",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-09-23T04:00:00+00:00",
+      "instrumentId": "AVAX-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 12361,
+      "sha256": "1aa00c47a34a599d12f8b5698affdb5d2a5a56198d1eb65f1aa49cafe45aca3f",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "BCH-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 13958,
+      "sha256": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "BTC-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 13958,
+      "sha256": "e8f6595d0f61eb74ac1543b40800c48e905e2d38e18db49a7c440343cfdb3758",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-07-10T00:00:00+00:00",
+      "instrumentId": "DOGE-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 12812,
+      "sha256": "39c6057cc2ff26c2819de7fb64734235a8b3e35bb1c8fc6f57513e37e6681ea1",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "ETH-USDT-SWAP",
+      "provider": "okx",
+      "rowCount": 13958,
+      "sha256": "022a4f37a6dd49de5154ac7059a049cd723a16697b44cc3ce9dd14c9f142a36b",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-07-22T04:00:00+00:00",
+      "instrumentId": "FIL-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 12744,
+      "sha256": "735be92aceb6dce6128ff4e52bb1c785e1952ce7b75c19b219ac054f854d878a",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "LTC-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 13958,
+      "sha256": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+      "timeframe": "4h"
+    },
+    {
+      "available": true,
+      "cutoff": "2026-05-15T04:00:00+00:00",
+      "effectiveBacktestStart": "2020-01-01T00:00:00+00:00",
+      "instrumentId": "XRP-USDT-SWAP",
+      "provider": "user_local",
+      "rowCount": 13958,
+      "sha256": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+      "timeframe": "4h"
+    }
+  ],
+  "instrumentIds": [
+    "ADA-USDT-SWAP",
+    "ALGO-USDT-SWAP",
+    "AVAX-USDT-SWAP",
+    "BCH-USDT-SWAP",
+    "BTC-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "selectedBeforeResults": true,
+  "selectionRule": "frozen_v13_27_1_13_representative_universe",
+  "snapshotHash": "minimal_shared_snapshot_785e47b180c17327dcb35e37d9f12c22e86eae8150e0adf5e1b44fb298f89e3b",
+  "snapshotId": "minimal_snapshot_785e47b180c17327dcb35e37"
+}

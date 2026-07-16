@@ -5255,3 +5255,18 @@ cost, drawdown, walk-forward, statistical, locked-OOS, approval, Demo ARM, and
 Live boundaries are not relaxed. Migration evidence is under
 `reports/exit_policy/`; the implementation entry point is
 `alphapilot/exit_policy/`.
+
+## V13.27.1.15 Advisory-R Strategy Prefilter
+
+V13.27.1.15 preregistered ten candidates across eight independent mechanism
+families before reading market results. Each candidate froze one primary exit
+policy, while target R remained descriptive (`targetRGateMode=advisory` and
+`minimumTargetR=null`). The causal representative-universe prefilter used the
+existing governed snapshot and did not open locked holdout evidence.
+
+No candidate passed the economic prefilter after costs. Nine candidates were
+archived as economic failures and the tenth remained diagnostic-only, so the
+workflow stopped at `zero_prefilter_survivors` as designed. V13.27.1.16 through
+V13.27.1.18 were not executed, and Release, Demo ARM, and order counts all
+remained zero. Frozen reports are under
+`reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/`.

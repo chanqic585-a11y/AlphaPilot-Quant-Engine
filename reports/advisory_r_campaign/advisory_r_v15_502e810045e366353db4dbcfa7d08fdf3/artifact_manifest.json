@@ -1,0 +1,70 @@
+{
+  "artifacts": [
+    {
+      "bytes": 3488,
+      "path": "prefilter/archived_prefilter_failures.json",
+      "sha256": "3bf3bd105bc8c807971073cde0f22a481d20aff7973b880deaba9e84b938f5e9"
+    },
+    {
+      "bytes": 7098095,
+      "path": "prefilter/candidate_events.parquet",
+      "sha256": "8bce50473827da57029132d4e2e72e32d173a4aaadbb67d92b40edb60cfe99be"
+    },
+    {
+      "bytes": 9392,
+      "path": "prefilter/exit_policy_attribution.json",
+      "sha256": "2115e635def98dfc078d92a2a7414f5e51c9d382011404d1e46c8f3783b1fd4e"
+    },
+    {
+      "bytes": 3341,
+      "path": "prefilter/novelty_audit.json",
+      "sha256": "1abe7ed0b316aac245b23a8be203a2739c93305edad163ef2600bec667c4d642"
+    },
+    {
+      "bytes": 12670,
+      "path": "prefilter/prefilter_gate_matrix.json",
+      "sha256": "7244e7c12841eebb227e799e26848595a230b61045283435c147b07a3834583c"
+    },
+    {
+      "bytes": 33547,
+      "path": "prefilter/prefilter_results.json",
+      "sha256": "6f9326a0fddb586081db2f8952537a3ed322fa0b36e33f56724e0390d254d179"
+    },
+    {
+      "bytes": 627,
+      "path": "prefilter/prefilter_summary.md",
+      "sha256": "ddfe42e7938adcc87d27fff07bdceab658c724bb16a1588abe18c2f628d50b59"
+    },
+    {
+      "bytes": 7641,
+      "path": "prefilter/representative_universe.json",
+      "sha256": "f582d13ae8a3e9f361b09a64ab543c3a6a91b5445d9e909598eae1f09e7d9df5"
+    },
+    {
+      "bytes": 1394,
+      "path": "prefilter/simple_benchmarks.json",
+      "sha256": "5069215130ceb873b800f4b3388fb9cd34425101302c72c377cf7735ac59b8cf"
+    },
+    {
+      "bytes": 17748,
+      "path": "prefilter/strategy_inventory.json",
+      "sha256": "955fed7aeda70641454cbe0d7b1b4d113767d31bf68647992d4e78427efedc91"
+    },
+    {
+      "bytes": 4065,
+      "path": "prefilter/trial_ledger.csv",
+      "sha256": "edef7f6cccd39510eff91eccd16be0d9e88516cf62100cc3679d3d479d02b3f8"
+    },
+    {
+      "bytes": 7005,
+      "path": "prefilter/trial_ledger.json",
+      "sha256": "0de98413224e534bdfe1c77871b1e73d4abbdaf3c0afeb4cae1af5dff0640e13"
+    },
+    {
+      "bytes": 739,
+      "path": "route_decision.json",
+      "sha256": "39a1dd4853577e320abb04114c1a79120fdd8a1c6259993097f814bbca1ed16d"
+    }
+  ],
+  "schemaVersion": "advisory_r_artifact_manifest_v1"
+}
