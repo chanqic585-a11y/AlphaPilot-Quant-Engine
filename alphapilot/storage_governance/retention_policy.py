@@ -11,6 +11,16 @@ SAFE_DUPLICATE_CLASSES = {
     "rolling_snapshot_superseded",
 }
 
+SEMANTIC_AUDIT_PATH_MARKERS = (
+    "/_alphapilot/manifests/",
+    "/_alphapilot/releases/",
+    "/_alphapilot/evidence/",
+    "/research/data_snapshots/",
+    "/research/factor_shortlists/",
+    "/research/preregistrations/",
+    "/formal_pass_evidence/",
+)
+
 
 def choose_authoritative_record(records: Iterable[Mapping[str, Any]]) -> Mapping[str, Any]:
     materialized = list(records)
@@ -34,8 +44,10 @@ def duplicate_class_is_safe(value: str) -> bool:
 
 
 def must_retain(record: Mapping[str, Any]) -> bool:
+    normalized_path = str(record.get("path") or "").replace("\\", "/").lower()
     return bool(
         record.get("immutableEvidence")
         or int(record.get("referenceCount") or 0) > 0
         or record.get("provenanceStatus") in {"unknown", "conflicting"}
+        or any(marker in normalized_path for marker in SEMANTIC_AUDIT_PATH_MARKERS)
     )

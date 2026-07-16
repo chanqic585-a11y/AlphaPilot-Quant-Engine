@@ -11,7 +11,7 @@ from typing import Any, Mapping
 
 from .duplicate_classifier import classify_duplicates
 from .reference_graph import build_reference_graph
-from .retention_policy import duplicate_class_is_safe
+from .retention_policy import duplicate_class_is_safe, must_retain
 
 
 def _utc_now() -> str:
@@ -50,6 +50,8 @@ def build_cleanup_plan(graph: Mapping[str, Any], duplicates: Mapping[str, Any]) 
                     reasons.append("referenced")
                 if bool(row.get("immutableEvidence")):
                     reasons.append("immutable_evidence")
+                if must_retain(row) and not reasons:
+                    reasons.append("semantic_audit_artifact")
             if not duplicate_class_is_safe(duplicate_class):
                 reasons.append("unsafe_duplicate_class")
             if not bool(group.get("contentVerified")):
