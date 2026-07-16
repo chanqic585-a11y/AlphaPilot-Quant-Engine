@@ -5179,6 +5179,54 @@ See `docs/V13.27.1.12-formal-data-coverage-closeout.md` and
 immutable snapshot after at least two top-level directions have formal
 same-exchange evidence and direction C has sufficient historical PIT coverage.
 
+## V13.27.1.13 Minimal Data Layer and Bounded Strategy Funnel
+
+V13.27.1.13 narrows research to a storage-governed, reproducible minimum rather
+than repeatedly downloading broad datasets. Storage governance is strictly
+limited to `D:\Codex-Workspace\回测数据`. The completed apply audit deleted zero
+files and reclaimed zero bytes because no candidate met every safety rule;
+semantic manifests and evidence identities were retained.
+
+The minimal data layer reuses existing local data through a manifest-only
+snapshot with no physical copies. It freezes a 20-instrument core universe,
+shared 1h and 4h evidence cutoffs, family eligibility, and an append-only
+forward-collection plan. Historical point-in-time membership and complete
+funding evidence remain unavailable and are recorded as unavailable rather than
+filled with synthetic values.
+
+The bounded campaign `v13_27_1_13_033bddecbaa9c735` preregistered three market
+hypotheses and used only the first 55% of the available history for prefiltering.
+The event-driven selloff-recovery hypothesis produced 644 events but failed the
+profit-factor, average-net-R, total-net-R, positive-month, and drawdown gates.
+The trend-continuation hypothesis was rejected as non-novel against archived
+evidence, while the cross-sectional hypothesis remained diagnostic-only because
+historical PIT and 1d evidence were insufficient. There were therefore zero
+formal survivors: locked OOS was not opened, the formal stage was not run, and
+no Release, Demo ARM, order, private exchange API, Trade API, or Withdraw API was
+created or used.
+
+Key commands and evidence:
+
+```powershell
+python -m alphapilot.storage_governance.cleanup_planner `
+  --data-root D:\Codex-Workspace\回测数据 `
+  --repo-root D:\Codex-Workspace\AlphaPilot-Quant-Engine `
+  --output-root reports\storage_governance
+python -m alphapilot.storage_governance.cleanup_executor `
+  --data-root D:\Codex-Workspace\回测数据 `
+  --plan reports\storage_governance\cleanup_dry_run.json `
+  --output-root reports\storage_governance
+powershell -ExecutionPolicy Bypass -File scripts\build_minimal_formal_data_layer.ps1
+powershell -ExecutionPolicy Bypass -File scripts\run_minimal_strategy_campaign.ps1
+```
+
+- Storage audit: `reports/storage_governance/`
+- Minimal layer: `reports/minimal_data_layer/`
+- Forward plan: `reports/forward_collection/`
+- Immutable snapshot: `research/data_snapshots/minimal_snapshot_785e47b180c17327dcb35e37.json`
+- Preregistration: `research/preregistrations/v13_27_1_13_033bddecbaa9c735_prefilter.json`
+- Campaign evidence: `reports/minimal_strategy_campaign/v13_27_1_13_033bddecbaa9c735/`
+
 ## Historical Next Versions (Superseded)
 
 The entries below are retained as historical roadmap notes. Any Local Forward
