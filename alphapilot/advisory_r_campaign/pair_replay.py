@@ -146,6 +146,63 @@ def _synthetic_pair_frame(metrics: pd.DataFrame, beta: float) -> pd.DataFrame:
     )
 
 
+def _simple_benchmark_result(
+    candidate: Mapping[str, Any],
+    metrics: pd.DataFrame,
+    synthetic: pd.DataFrame,
+    *,
+    entry_position: int,
+    entry_price: float,
+    direction: str,
+    risk_distance: float,
+    maximum_hold_bars: int,
+    cost_r: float,
+) -> dict[str, Any]:
+    """Compile the frozen pair benchmark without reusing candidate PnL."""
+
+    variant = str(candidate["variantId"])
+    last_position = len(synthetic) - 1
+    if variant == "S04":
+        side = 1 if direction == "long" else -1
+        trigger_limit = min(entry_position + maximum_hold_bars - 1, last_position - 1)
+        trigger_position = None
+        for position in range(entry_position, trigger_limit + 1):
+            residual_z = float(metrics.iloc[position]["residualZ"])
+            if np.isfinite(residual_z) and (
+                (side > 0 and residual_z >= 0.0)
+                or (side < 0 and residual_z <= 0.0)
+            ):
+                trigger_position = position
+                break
+        if trigger_position is None:
+            exit_position = min(entry_position + maximum_hold_bars, last_position)
+            reason = "maximum_hold"
+        else:
+            exit_position = trigger_position + 1
+            reason = "residual_zero_cross"
+    elif variant == "S05":
+        exit_position = min(entry_position + maximum_hold_bars, last_position)
+        reason = "equal_hold"
+    else:
+        raise ImplementationConformanceError(
+            f"no frozen pair benchmark compiler for {variant}"
+        )
+
+    exit_price = float(synthetic.iloc[exit_position]["open"])
+    signed_move = exit_price - entry_price
+    if direction == "short":
+        signed_move *= -1.0
+    gross_r = signed_move / risk_distance
+    return {
+        "simpleBenchmarkName": str(candidate["simpleBenchmark"]),
+        "simpleBenchmarkExitIndex": exit_position,
+        "simpleBenchmarkExitPrice": exit_price,
+        "simpleBenchmarkExitReason": reason,
+        "simpleBenchmarkGrossR": gross_r,
+        "simpleBenchmarkNetR": gross_r - cost_r,
+    }
+
+
 def replay_pair_candidate(
     candidate: Mapping[str, Any],
     frames: Mapping[str, pd.DataFrame],
@@ -202,6 +259,22 @@ def replay_pair_candidate(
             payload = exit_execution_to_dict(result)
             alt_direction = "long" if side > 0 else "short"
             btc_direction = "short" if side > 0 else "long"
+            benchmark = _simple_benchmark_result(
+                candidate,
+                metrics,
+                synthetic,
+                entry_position=result.entryPosition,
+                entry_price=result.entryPrice,
+                direction=result.direction,
+                risk_distance=risk_distance,
+                maximum_hold_bars=policy.maximumHoldBars,
+                cost_r=(
+                    result.feesR
+                    + result.slippageR
+                    + result.spreadProxyR
+                    + float(result.fundingR or 0.0)
+                ),
+            )
             payload.update(
                 {
                     "candidateId": candidate["candidateId"],
@@ -230,6 +303,7 @@ def replay_pair_candidate(
                     "maximumHold": policy.maximumHoldBars,
                     "initialStopMayWiden": False,
                     "fundingR": None,
+                    **benchmark,
                 }
             )
             events.append(payload)

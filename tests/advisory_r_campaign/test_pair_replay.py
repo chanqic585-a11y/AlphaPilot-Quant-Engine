@@ -58,3 +58,6 @@ def test_s04_replay_is_two_leg_and_charges_both_legs() -> None:
     assert all(row["marketLegCount"] == 2 for row in events)
     assert all(row["twoLegCostMultiplier"] == 2.0 for row in events)
     assert all(row["fundingR"] is None for row in events)
+    assert all(row["simpleBenchmarkName"] == "pair_residual_zero_cross" for row in events)
+    assert all(row["simpleBenchmarkExitIndex"] >= row["entryIndex"] for row in events)
+    assert all(math.isfinite(row["simpleBenchmarkNetR"]) for row in events)
