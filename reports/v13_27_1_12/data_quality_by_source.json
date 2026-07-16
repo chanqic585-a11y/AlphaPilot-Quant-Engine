@@ -1,0 +1,14 @@
+[
+  {
+    "blockers": [
+      "missing_license_metadata",
+      "missing_source_metadata",
+      "missing_strict_availability_clocks"
+    ],
+    "dataType": "funding",
+    "exchange": "binance",
+    "formalEligiblePartitionCount": 0,
+    "partitionCount": 8,
+    "qualityPassed": false
+  }
+]

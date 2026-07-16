@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-07-16T00:00:00Z",
+  "currentTopNBackfill": false,
+  "preregisteredRule": {
+    "coreOhlcvRequired": true,
+    "instrumentType": "USDT perpetual",
+    "minimumListingAgeDays": 90,
+    "spreadThresholdMode": "pre_registered_maximum",
+    "tradingState": "live_at_snapshot",
+    "volumeAndOiThresholdMode": "pre_registered_quantiles"
+  },
+  "schemaVersion": "v13_27_1_12_pit_universe_manifest_v1",
+  "snapshotCount": 0,
+  "sourceHashes": [],
+  "sourceMode": "historical_point_in_time_only",
+  "status": "not_built"
+}

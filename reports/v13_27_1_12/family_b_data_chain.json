@@ -1,0 +1,27 @@
+{
+  "availableDataTypes": [
+    "funding"
+  ],
+  "bestAvailableExchange": "binance",
+  "coreCoverage": 0.0,
+  "eligibleContracts": 0,
+  "formalEligibleExchanges": [],
+  "futureLeakCount": 0,
+  "historyMonths": 0,
+  "maximumInstrumentMissingRate": null,
+  "missingDataTypes": [
+    "basis",
+    "instrument_state",
+    "open_interest",
+    "perpetual_ohlcv",
+    "spot_ohlcv",
+    "spread_slippage"
+  ],
+  "qualificationId": "short_crowding_unwind_data_chain",
+  "qualityPassed": false,
+  "sameExchangeCoreChain": false,
+  "schemaVersion": "v13_27_1_12_family_b_data_chain_v1",
+  "status": "diagnostic_ready",
+  "thresholdsChangedFromLockedSpec": false,
+  "unexplainedLongGapCount": 0
+}
