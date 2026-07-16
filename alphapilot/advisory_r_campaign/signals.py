@@ -16,6 +16,7 @@ from alphapilot.exit_policy import (
 )
 
 from .conformance import ImplementationConformanceError
+from .structure_rules import compile_structure_rule
 
 
 def _ordered(frame: pd.DataFrame) -> pd.DataFrame:
@@ -68,12 +69,143 @@ def _aligned(values: pd.Series, dates: pd.Series) -> pd.Series:
     return values.reindex(pd.DatetimeIndex(dates)).ffill().reset_index(drop=True)
 
 
+def _lagged_impulse_context(
+    *,
+    impulse_z: pd.Series,
+    btc_returns: pd.Series,
+    follower_close: pd.Series,
+    lag_window: int,
+) -> pd.DataFrame:
+    """Select the strongest prior BTC impulse and expose its causal follower path."""
+
+    rows: list[dict[str, float]] = []
+    for position in range(len(impulse_z)):
+        best_lag = 0
+        best_z = 0.0
+        for lag in range(1, lag_window + 1):
+            source = position - lag
+            if source < 0:
+                continue
+            value = float(impulse_z.iloc[source])
+            if np.isfinite(value) and abs(value) > abs(best_z):
+                best_z = value
+                best_lag = lag
+        if best_lag == 0:
+            rows.append(
+                {
+                    "impulseZ": np.nan,
+                    "impulseReturn": np.nan,
+                    "lag": 0,
+                    "followerMoveFraction": np.nan,
+                    "maximumFollowerMoveFraction": np.nan,
+                }
+            )
+            continue
+        source = position - best_lag
+        impulse_return = float(btc_returns.iloc[source])
+        base = float(follower_close.iloc[source])
+        follower_path = follower_close.iloc[source + 1 : position + 1]
+        path_moves = (follower_path / base - 1.0).abs()
+        current_move = abs(float(follower_close.iloc[position]) / base - 1.0)
+        denominator = abs(impulse_return)
+        rows.append(
+            {
+                "impulseZ": best_z,
+                "impulseReturn": impulse_return,
+                "lag": best_lag,
+                "followerMoveFraction": current_move / denominator if denominator else np.nan,
+                "maximumFollowerMoveFraction": float(path_moves.max()) / denominator
+                if denominator and not path_moves.empty
+                else np.nan,
+            }
+        )
+    return pd.DataFrame(rows, index=impulse_z.index)
+
+
+def _cross_sectional_beta_ranks(
+    frames: Mapping[str, pd.DataFrame],
+    *,
+    btc_close: pd.Series,
+    window: int,
+) -> dict[str, pd.Series]:
+    beta_columns: dict[str, pd.Series] = {}
+    btc_returns = btc_close.pct_change()
+    btc_variance = btc_returns.rolling(window, min_periods=window).var().replace(0, np.nan)
+    for symbol, frame in frames.items():
+        close = frame.set_index("date")["close"]
+        returns = close.pct_change().reindex(btc_close.index)
+        beta_columns[symbol] = returns.rolling(window, min_periods=window).cov(btc_returns) / btc_variance
+    ranks = pd.DataFrame(beta_columns).rank(axis=1, pct=True, method="average")
+    return {
+        symbol: _aligned(ranks[symbol], frame["date"])
+        for symbol, frame in frames.items()
+        if symbol in ranks
+    }
+
+
+def weak_signal_components(
+    candidate: Mapping[str, Any],
+    frame: pd.DataFrame,
+    *,
+    market_close: pd.Series,
+) -> pd.DataFrame:
+    """Compile only the three frozen S10 weak signals for correlation evidence."""
+
+    configured = list(dict(candidate["featureDefinition"])["signals"])
+    allowed = {"residual_turn", "volume_surprise", "trend_slope"}
+    if set(configured) != allowed:
+        raise ImplementationConformanceError("S10 weak-signal set differs from frozen definition")
+    close = frame["close"]
+    returns = close.pct_change()
+    market_returns = _aligned(market_close, frame["date"]).pct_change()
+    residual = returns - market_returns
+    residual_turn = np.sign(residual.diff()).fillna(0).astype(int)
+    volume_ratio = frame["volume"] / frame["volume"].rolling(42, min_periods=20).mean()
+    volume_surprise = np.sign(returns).where(volume_ratio >= 1.25, 0).fillna(0).astype(int)
+    trend = close.rolling(12, min_periods=12).mean() - close.rolling(48, min_periods=48).mean()
+    trend_slope = np.sign(trend).fillna(0).astype(int)
+    return pd.DataFrame(
+        {
+            "residual_turn": residual_turn,
+            "volume_surprise": volume_surprise,
+            "trend_slope": trend_slope,
+        },
+        index=frame.index,
+    )[configured]
+
+
+def weak_signal_correlation_audit(components: pd.DataFrame) -> dict[str, Any]:
+    """Return the observed Development correlation matrix without claiming orthogonality."""
+
+    expected = ["residual_turn", "volume_surprise", "trend_slope"]
+    if list(components.columns) != expected:
+        raise ImplementationConformanceError(
+            "S10 correlation audit requires the three frozen weak signals in order"
+        )
+    numeric = components.apply(pd.to_numeric, errors="coerce")
+    matrix = numeric.corr().fillna(0.0)
+    for name in expected:
+        if numeric[name].notna().any():
+            matrix.loc[name, name] = 1.0
+    return {
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1",
+        "componentNames": expected,
+        "rowCount": int(len(numeric)),
+        "correlationMatrix": {
+            row: {column: float(matrix.loc[row, column]) for column in expected}
+            for row in expected
+        },
+        "orthogonalityClaimed": False,
+    }
+
+
 def _signal_series(
     candidate: Mapping[str, Any],
     frame: pd.DataFrame,
     *,
     btc_close: pd.Series,
     market_close: pd.Series,
+    beta_rank: pd.Series | None = None,
 ) -> pd.Series:
     variant = str(candidate["variantId"])
     feature = dict(candidate["featureDefinition"])
@@ -88,53 +220,64 @@ def _signal_series(
 
     if variant == "S01":
         window = int(feature["residualWindow"])
+        recovery_bars = int(feature["recoveryBars"])
         residual_z = _rolling_z(residual, window)
-        recovery = residual_z.diff()
+        recovery_steps = residual_z.diff() > 0
+        complete_recovery = (
+            recovery_steps.rolling(recovery_bars, min_periods=recovery_bars).sum()
+            == recovery_bars
+        )
+        recovery_size = residual_z - residual_z.shift(recovery_bars)
+        if str(feature["marketRegime"]) != "btc_close_below_ema_200":
+            raise ImplementationConformanceError("unsupported S01 market regime")
         btc_bear = btc < btc.ewm(span=200, adjust=False, min_periods=200).mean()
         condition = (
-            (residual_z.shift(1) <= float(feature["residualZMaximum"]))
-            & (recovery >= float(entry["minimumRecoveryZ"]))
+            (residual_z.shift(recovery_bars) <= float(feature["residualZMaximum"]))
+            & complete_recovery
+            & (recovery_size >= float(entry["minimumRecoveryZ"]))
             & btc_bear
         )
         direction.loc[condition.fillna(False)] = 1
     elif variant in {"S02", "S03"}:
-        impulse = _rolling_z(btc_returns, 168)
-        threshold = float(feature["btcImpulseZ"])
-        follower_fraction = returns.abs() / btc_returns.abs().replace(0, np.nan)
+        beta_window = int(feature.get("betaWindow") or 168)
+        impulse = _rolling_z(btc_returns, beta_window)
+        context = _lagged_impulse_context(
+            impulse_z=impulse,
+            btc_returns=btc_returns,
+            follower_close=close,
+            lag_window=int(feature["lagWindow"]),
+        )
+        qualifying_impulse = context["impulseZ"].abs() >= float(feature["btcImpulseZ"])
         if variant == "S02":
-            condition = (impulse.abs() >= threshold) & (
-                follower_fraction <= float(entry["maximumFollowerMoveFraction"])
+            if beta_rank is None:
+                raise ImplementationConformanceError("S02 requires cross-sectional beta rank")
+            high_beta = pd.Series(beta_rank, index=frame.index) >= 0.5
+            underreaction = context["followerMoveFraction"] <= float(
+                entry["maximumFollowerMoveFraction"]
             )
-            direction.loc[condition.fillna(False)] = np.sign(impulse[condition.fillna(False)]).astype(int)
+            condition = qualifying_impulse & high_beta & underreaction
+            direction.loc[condition.fillna(False)] = np.sign(
+                context.loc[condition.fillna(False), "impulseZ"]
+            ).astype(int)
         else:
-            overreaction = follower_fraction >= float(feature["overreactionRatio"])
-            turn = np.sign(returns) != np.sign(returns.shift(1))
-            condition = (impulse.abs() >= threshold) & overreaction & turn
-            direction.loc[condition.fillna(False)] = -np.sign(returns[condition.fillna(False)]).astype(int)
-    elif variant == "S04":
-        window = int(feature["pairWindow"])
-        residual_pair = returns - btc_returns
-        residual_z = _rolling_z(residual_pair, window)
-        correlation = returns.rolling(window, min_periods=window).corr(btc_returns)
-        extreme = residual_z.abs() >= float(feature["entryResidualZ"])
-        turn = residual_z.abs() < residual_z.abs().shift(1)
-        condition = extreme & turn & (correlation >= float(feature["minimumCorrelation"]))
-        direction.loc[condition.fillna(False)] = -np.sign(residual_z[condition.fillna(False)]).astype(int)
-    elif variant in {"S05", "S06"}:
-        window = int(feature["correlationWindow"])
-        correlation = returns.rolling(window, min_periods=window).corr(btc_returns)
-        baseline = correlation.shift(6).rolling(window, min_periods=max(12, window // 2)).mean()
-        residual_pair = returns - btc_returns
-        break_condition = (baseline >= 0.65) & (correlation <= float(feature["breakMaximum"]))
-        if variant == "S05":
-            turn = residual_pair.abs() < residual_pair.abs().shift(1)
-            condition = break_condition & turn
-            direction.loc[condition.fillna(False)] = -np.sign(residual_pair[condition.fillna(False)]).astype(int)
-        else:
-            strength = residual_pair.rolling(int(feature["relativeStrengthBars"]), min_periods=2).sum()
-            strength_z = _rolling_z(strength, window)
-            condition = break_condition & (strength_z.abs() >= float(entry["minimumRelativeMoveZ"]))
-            direction.loc[condition.fillna(False)] = np.sign(strength_z[condition.fillna(False)]).astype(int)
+            confirmation_bars = int(entry["confirmationBars"])
+            impulse_sign = np.sign(context["impulseZ"])
+            opposite = returns * impulse_sign < 0
+            confirmed = (
+                opposite.rolling(confirmation_bars, min_periods=confirmation_bars).sum()
+                == confirmation_bars
+            )
+            overreaction = context["maximumFollowerMoveFraction"] >= float(
+                feature["overreactionRatio"]
+            )
+            condition = qualifying_impulse & overreaction & confirmed
+            direction.loc[condition.fillna(False)] = -np.sign(
+                context.loc[condition.fillna(False), "impulseZ"]
+            ).astype(int)
+    elif variant in {"S04", "S05", "S06", "S09"}:
+        raise ImplementationConformanceError(
+            f"{variant} must use its pair or portfolio replay adapter"
+        )
     elif variant == "S07":
         atr_fraction = _atr(frame) / close.replace(0, np.nan)
         window = int(feature["atrPercentileWindow"])
@@ -143,35 +286,43 @@ def _signal_series(
         shock = rank >= float(feature["shockPercentile"])
         upper = location >= float(feature["closeLocationThreshold"])
         lower = location <= 1.0 - float(feature["closeLocationThreshold"])
-        direction.loc[(shock & upper).fillna(False)] = 1
-        direction.loc[(shock & lower).fillna(False)] = -1
+        confirmation_bars = int(entry["confirmationBars"])
+        if confirmation_bars != 1:
+            raise ImplementationConformanceError("S07 only supports one-bar confirmation")
+        direction.loc[((shock & upper).shift(1).fillna(False) & (returns > 0))] = 1
+        direction.loc[((shock & lower).shift(1).fillna(False) & (returns < 0))] = -1
     elif variant == "S08":
-        window = int(feature["trendWindow"])
-        trend = close.pct_change(window)
-        volume_ratio = frame["volume"] / frame["volume"].rolling(24, min_periods=12).mean()
+        trend_window = int(feature["trendWindow"])
+        prior_bars = int(entry["directionFromPriorBars"])
+        prior_direction = close.pct_change(prior_bars).shift(1)
+        broad_trend = close.pct_change(trend_window).shift(1)
+        volume_ratio = frame["volume"] / frame["volume"].rolling(24, min_periods=3).mean()
         hour = frame["date"].dt.hour
         condition = hour.isin([int(value) for value in feature["utcEntryHours"]]) & (
             volume_ratio >= float(feature["minimumVolumeRatio"])
-        )
-        direction.loc[condition.fillna(False)] = np.sign(trend[condition.fillna(False)]).replace(0, 1).astype(int)
-    elif variant == "S09":
-        window = int(feature["betaWindow"])
-        covariance = returns.rolling(window, min_periods=window).cov(btc_returns)
-        variance = btc_returns.rolling(window, min_periods=window).var().replace(0, np.nan)
-        beta = covariance / variance
-        btc_weak = btc.pct_change(int(feature["btcTrendWindow"])) < 0
-        condition = btc_weak & (beta <= beta.rolling(window, min_periods=window).quantile(0.3))
-        direction.loc[condition.fillna(False)] = 1
+        ) & (np.sign(prior_direction) == np.sign(broad_trend))
+        direction.loc[condition.fillna(False)] = np.sign(
+            prior_direction[condition.fillna(False)]
+        ).replace(0, 1).astype(int)
     elif variant == "S10":
-        residual_turn = (residual > residual.shift(1)).astype(int) - (residual < residual.shift(1)).astype(int)
-        volume_ratio = frame["volume"] / frame["volume"].rolling(42, min_periods=20).mean()
-        volume_vote = np.sign(returns).where(volume_ratio >= 1.25, 0).astype(int)
-        trend = close.ewm(span=12, adjust=False).mean() - close.ewm(span=48, adjust=False).mean()
-        trend_vote = np.sign(trend).astype(int)
-        vote = residual_turn + volume_vote + trend_vote
+        components = weak_signal_components(candidate, frame, market_close=market_close)
+        vote = components.sum(axis=1)
         minimum_votes = int(feature["minimumVotes"])
-        direction.loc[vote >= minimum_votes] = 1
-        direction.loc[vote <= -minimum_votes] = -1
+        confirmation_bars = int(entry["confirmationBars"])
+        positive = vote >= minimum_votes
+        negative = vote <= -minimum_votes
+        positive_confirmed = (
+            positive.rolling(confirmation_bars, min_periods=confirmation_bars).sum()
+            == confirmation_bars
+        )
+        negative_confirmed = (
+            negative.rolling(confirmation_bars, min_periods=confirmation_bars).sum()
+            == confirmation_bars
+        )
+        direction.loc[positive_confirmed] = 1
+        direction.loc[negative_confirmed] = -1
+    else:
+        raise ImplementationConformanceError(f"unsupported frozen variant: {variant}")
 
     return direction.fillna(0).astype(int)
 
@@ -187,43 +338,17 @@ def _structure_exit_mask(
     policy = exit_policy_from_dict(dict(candidate["exitPolicy"]))
     rule = dict(policy.parameters.get("structureRule") or {})
     kind = str(rule.get("kind") or "")
-    close = frame["close"]
-    open_ = frame["open"]
-    if kind == "trend_invalidation":
-        fast_window = int(rule["fastWindow"])
-        slow_window = int(rule["slowWindow"])
-        fast = close.rolling(fast_window, min_periods=fast_window).mean()
-        slow = close.rolling(slow_window, min_periods=slow_window).mean()
-        result = fast <= slow if side > 0 else fast >= slow
-    elif kind == "event_reversal":
-        confirmation = int(rule["confirmationBars"])
-        opposite = close < open_ if side > 0 else close > open_
-        result = opposite.rolling(confirmation, min_periods=confirmation).sum() == confirmation
-    elif kind == "residual_neutral_zone":
-        variant = str(candidate["variantId"])
-        if variant == "S01":
-            benchmark_returns = _aligned(market_close, frame["date"]).pct_change()
-            window = int(candidate["featureDefinition"]["residualWindow"])
-        else:
-            benchmark_returns = _aligned(btc_close, frame["date"]).pct_change()
-            window = int(candidate["featureDefinition"]["pairWindow"])
-        residual_z = _rolling_z(close.pct_change() - benchmark_returns, window)
-        result = residual_z.abs() <= float(rule["absoluteZscoreMaximum"])
-    elif kind == "correlation_recovery":
-        btc_returns = _aligned(btc_close, frame["date"]).pct_change()
-        window = int(candidate["featureDefinition"]["correlationWindow"])
-        result = close.pct_change().rolling(window, min_periods=window).corr(btc_returns) >= float(
-            rule["minimumCorrelation"]
+    working = frame.copy()
+    if kind == "residual_neutral_zone" and "residualZ" not in working:
+        if str(candidate["variantId"]) != "S01":
+            raise ValueError("pair residual exits require the pair replay adapter")
+        benchmark_returns = _aligned(market_close, frame["date"]).pct_change()
+        window = int(candidate["featureDefinition"]["residualWindow"])
+        working["residualZ"] = _rolling_z(
+            working["close"].pct_change() - benchmark_returns,
+            window,
         )
-    elif kind == "beta_rank_exit":
-        if "betaRankPercentile" not in frame:
-            raise ValueError("beta_rank_exit requires cross-sectional betaRankPercentile")
-        result = pd.to_numeric(frame["betaRankPercentile"], errors="coerce") <= float(
-            rule["maximumRankPercentile"]
-        )
-    else:
-        raise ValueError(f"unsupported structure rule: {kind}")
-    return pd.Series(result, index=frame.index).fillna(False).astype(bool)
+    return compile_structure_rule(candidate, working, side=side)
 
 
 def _formal_costs(round_trip_cost_rate: float) -> ExitCosts:
@@ -325,11 +450,37 @@ def replay_candidate(
     ordered_frames = {symbol: _ordered(frame) for symbol, frame in frames.items()}
     if not ordered_frames:
         return []
+    variant = str(candidate["variantId"])
+    if variant in {"S04", "S05", "S06"}:
+        from .pair_replay import replay_pair_candidate
+
+        return replay_pair_candidate(
+            candidate,
+            ordered_frames,
+            round_trip_cost_rate=round_trip_cost_rate,
+        )
+    if variant == "S09":
+        from .portfolio_replay import replay_portfolio_candidate
+
+        return replay_portfolio_candidate(
+            candidate,
+            ordered_frames,
+            round_trip_cost_rate=round_trip_cost_rate,
+        )
     btc_frame = ordered_frames.get("BTC-USDT-SWAP")
     if btc_frame is None:
         btc_frame = next(iter(ordered_frames.values()))
     btc_close = btc_frame.set_index("date")["close"]
     market_close = _market_close(ordered_frames)
+    beta_ranks = (
+        _cross_sectional_beta_ranks(
+            ordered_frames,
+            btc_close=btc_close,
+            window=int(candidate["featureDefinition"]["betaWindow"]),
+        )
+        if variant == "S02"
+        else {}
+    )
     events: list[dict[str, Any]] = []
     for symbol, frame in sorted(ordered_frames.items()):
         if len(frame) < 60:
@@ -339,6 +490,7 @@ def replay_candidate(
             frame,
             btc_close=btc_close,
             market_close=market_close,
+            beta_rank=beta_ranks.get(symbol),
         )
         atr = _atr(frame)
         next_available = 0
