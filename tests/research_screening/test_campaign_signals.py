@@ -1,7 +1,12 @@
 import pandas as pd
+import pytest
 
 from alphapilot.research_screening.campaign_contract import CandidateSpec
-from alphapilot.research_screening.campaign_signals import replay_signal
+from alphapilot.exit_policy import ExitPolicy, ExitPolicyMode, exit_policy_hash
+from alphapilot.research_screening.campaign_signals import (
+    replay_candidate_events,
+    replay_signal,
+)
 
 
 def _candidate(direction: str = "long") -> CandidateSpec:
@@ -79,3 +84,50 @@ def test_target_hit_records_two_r_and_separate_cost_components() -> None:
     assert event["slippageR"] > 0
     assert event["spreadProxyR"] > 0
     assert event["netR"] < event["grossR"]
+
+
+def test_advisory_candidate_replay_uses_preregistered_sub_two_r_policy() -> None:
+    frame = _frame(
+        [
+            {"open": 100, "high": 101, "low": 99, "close": 100, "volume": 10},
+            {"open": 100, "high": 100.5, "low": 99.5, "close": 100.2, "volume": 10},
+            {"open": 100.2, "high": 101.4, "low": 100, "close": 101.2, "volume": 10},
+            {"open": 101.2, "high": 101.5, "low": 101, "close": 101.3, "volume": 10},
+        ]
+    )
+    frame = pd.concat([frame] * 5, ignore_index=True)
+    frame["date"] = pd.date_range("2024-01-01", periods=len(frame), freq="h", tz="UTC")
+    frame.loc[15, ["open", "high", "low", "close"]] = [100.0, 100.5, 99.8, 100.2]
+    frame.loc[16, ["open", "high", "low", "close"]] = [100.2, 110.0, 100.0, 102.0]
+    policy = ExitPolicy(
+        mode=ExitPolicyMode.FIXED_R,
+        maximumHoldBars=3,
+        parameters={"targetR": 1.25},
+    )
+    candidate = CandidateSpec(
+        **{
+            **_candidate().__dict__,
+            "schemaVersion": "phase3c_candidate_v2",
+            "targetR": None,
+            "exitPolicy": policy,
+        }
+    )
+
+    events = replay_candidate_events(
+        candidate=candidate,
+        frame=frame,
+        benchmark_close=None,
+        funding_rate=None,
+        costs={
+            "feeBpsPerSide": 0,
+            "slippageBpsPerSide": 0,
+            "spreadProxyBpsPerSide": 0,
+        },
+        signal_mask=pd.Series([False] * 14 + [True] + [False] * 5),
+    )
+
+    assert len(events) == 1
+    assert events[0]["exitPolicyHash"] == exit_policy_hash(policy)
+    assert events[0]["exitPolicy"]["parameters"]["targetR"] == 1.25
+    assert events[0]["legs"][0]["reason"] == "target"
+    assert events[0]["grossR"] == pytest.approx(1.25)

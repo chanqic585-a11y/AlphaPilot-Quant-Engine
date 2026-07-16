@@ -7,6 +7,13 @@ from typing import Any
 import numpy as np
 import pandas as pd
 
+from alphapilot.exit_policy import (
+    ExitCosts,
+    ExitPolicyMode,
+    exit_execution_to_dict,
+    replay_exit_policy,
+)
+
 from .campaign_contract import CandidateSpec
 
 
@@ -186,6 +193,7 @@ def replay_candidate_events(
     benchmark_close: pd.Series | None,
     funding_rate: pd.Series | None,
     costs: dict[str, float],
+    signal_mask: pd.Series | None = None,
 ) -> list[dict[str, Any]]:
     ordered = frame.sort_values("date").drop_duplicates("date", keep="last").reset_index(drop=True)
     aligned_funding = (
@@ -193,11 +201,15 @@ def replay_candidate_events(
         if funding_rate is not None
         else None
     )
-    mask = build_signal_mask(
-        candidate=candidate,
-        frame=ordered,
-        benchmark_close=benchmark_close,
-        funding_rate=aligned_funding,
+    mask = (
+        pd.Series(signal_mask).reset_index(drop=True).reindex(ordered.index).fillna(False).astype(bool)
+        if signal_mask is not None
+        else build_signal_mask(
+            candidate=candidate,
+            frame=ordered,
+            benchmark_close=benchmark_close,
+            funding_rate=aligned_funding,
+        )
     )
     atr = atr_series(ordered)
     events: list[dict[str, Any]] = []
@@ -205,17 +217,101 @@ def replay_candidate_events(
     for position in np.flatnonzero(mask.to_numpy()):
         if position < next_allowed_position:
             continue
-        event = replay_signal(
-            frame=ordered,
-            signal_position=int(position),
-            candidate=candidate,
-            atr_value=float(atr.iloc[position]),
-            fee_bps_per_side=float(costs["feeBpsPerSide"]),
-            slippage_bps_per_side=float(costs["slippageBpsPerSide"]),
-            spread_bps_per_side=float(costs["spreadProxyBpsPerSide"]),
-            funding_rate=aligned_funding,
-        )
+        atr_value = float(atr.iloc[position])
+        if not np.isfinite(atr_value) or atr_value <= 0:
+            continue
+        if candidate.exitPolicy is None:
+            event = replay_signal(
+                frame=ordered,
+                signal_position=int(position),
+                candidate=candidate,
+                atr_value=atr_value,
+                fee_bps_per_side=float(costs["feeBpsPerSide"]),
+                slippage_bps_per_side=float(costs["slippageBpsPerSide"]),
+                spread_bps_per_side=float(costs["spreadProxyBpsPerSide"]),
+                funding_rate=aligned_funding,
+            )
+        else:
+            structure_mask = None
+            if candidate.exitPolicy.mode in {
+                ExitPolicyMode.STRUCTURE_OR_TIME,
+                ExitPolicyMode.HYBRID,
+            } and candidate.exitPolicy.parameters.get("remainderMode") != "trailing":
+                structure_mask = build_structure_exit_mask(
+                    candidate=candidate,
+                    frame=ordered,
+                    benchmark_close=benchmark_close,
+                    policy_rule=candidate.exitPolicy.parameters.get("structureRule"),
+                )
+            result = replay_exit_policy(
+                frame=ordered,
+                signalPosition=int(position),
+                direction=candidate.direction,
+                riskDistance=float(candidate.stopAtr * atr_value),
+                policy=candidate.exitPolicy,
+                costs=ExitCosts(
+                    feeBpsPerSide=float(costs["feeBpsPerSide"]),
+                    slippageBpsPerSide=float(costs["slippageBpsPerSide"]),
+                    spreadBpsPerSide=float(costs["spreadProxyBpsPerSide"]),
+                ),
+                atrValues=atr,
+                structureExitMask=structure_mask,
+                fundingRate=aligned_funding,
+            )
+            event = exit_execution_to_dict(result)
         if event is not None:
             events.append(event)
             next_allowed_position = int(event["exitPosition"]) + 1
     return events
+
+
+def build_structure_exit_mask(
+    *,
+    candidate: CandidateSpec,
+    frame: pd.DataFrame,
+    benchmark_close: pd.Series | None,
+    policy_rule: Any,
+) -> pd.Series:
+    if not isinstance(policy_rule, dict):
+        raise ValueError("structure policies require a declarative structureRule")
+    ordered = frame.reset_index(drop=True)
+    close = pd.to_numeric(ordered["close"], errors="coerce")
+    open_ = pd.to_numeric(ordered["open"], errors="coerce")
+    kind = str(policy_rule.get("kind") or "")
+    if kind == "trend_invalidation":
+        fast = close.rolling(int(policy_rule["fastWindow"]), min_periods=int(policy_rule["fastWindow"])).mean()
+        slow = close.rolling(int(policy_rule["slowWindow"]), min_periods=int(policy_rule["slowWindow"])).mean()
+        result = fast.lt(slow) if candidate.direction == "long" else fast.gt(slow)
+    elif kind == "session_end":
+        timestamps = pd.to_datetime(ordered["date"], utc=True)
+        result = timestamps.dt.hour.eq(int(policy_rule["utcHour"]))
+    elif kind == "event_reversal":
+        confirmation = int(policy_rule["confirmationBars"])
+        opposite = close.lt(open_) if candidate.direction == "long" else close.gt(open_)
+        result = opposite.rolling(confirmation, min_periods=confirmation).sum().eq(confirmation)
+    elif kind in {"residual_neutral_zone", "correlation_recovery"}:
+        if benchmark_close is None:
+            raise ValueError(f"benchmark_close is required for {kind}")
+        benchmark = pd.Series(benchmark_close).reset_index(drop=True).reindex(ordered.index)
+        if kind == "correlation_recovery":
+            result = close.pct_change().rolling(48, min_periods=24).corr(benchmark.pct_change()).ge(
+                float(policy_rule["minimumCorrelation"])
+            )
+        else:
+            horizon = int(candidate.eventDefinition.get("shockBars", 3))
+            window = int(candidate.eventDefinition.get("zscoreWindow", 120))
+            residual = close.pct_change(horizon).sub(benchmark.pct_change(horizon))
+            mean = residual.rolling(window, min_periods=max(30, window // 2)).mean()
+            std = residual.rolling(window, min_periods=max(30, window // 2)).std(ddof=0).replace(0, np.nan)
+            result = residual.sub(mean).div(std).abs().le(
+                float(policy_rule["absoluteZscoreMaximum"])
+            )
+    elif kind == "beta_rank_exit":
+        if "betaRankPercentile" not in ordered:
+            raise ValueError("beta_rank_exit requires betaRankPercentile data")
+        result = pd.to_numeric(ordered["betaRankPercentile"], errors="coerce").le(
+            float(policy_rule["maximumRankPercentile"])
+        )
+    else:
+        raise ValueError(f"unsupported structure rule: {kind}")
+    return pd.Series(result, index=ordered.index).fillna(False).astype(bool)

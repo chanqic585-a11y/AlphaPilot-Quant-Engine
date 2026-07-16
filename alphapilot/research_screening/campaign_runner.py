@@ -16,6 +16,7 @@ import pandas as pd
 
 from alphapilot.data_foundation.checkpoint import write_json_atomic
 from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
+from alphapilot.exit_policy import exit_policy_from_dict
 
 from .campaign_contract import CandidateSpec
 from .campaign_metrics import evaluate_candidate_gates
@@ -76,6 +77,7 @@ def build_event_contract(
         "veto": list(candidate.get("factorVetoes", [])),
     }
     factor_hashes = sorted({value for values in factor_roles.values() for value in values})
+    advisory = candidate.get("schemaVersion") == "phase3c_candidate_v2"
     return {
         **dict(raw_event),
         "hypothesisId": candidate["candidateId"],
@@ -90,7 +92,19 @@ def build_event_contract(
         "factorRoles": factor_roles,
         "entryReference": "next_bar_open",
         "stopReference": "fixed_initial_atr_stop_never_widened",
-        "targetReference": f"fixed_{candidate.get('targetR', 2)}R_target",
+        "targetReference": (
+            "advisory_exit_policy"
+            if advisory
+            else f"fixed_{candidate.get('targetR', 2)}R_target"
+        ),
+        **(
+            {
+                "exitPolicyVersion": candidate["exitPolicyVersion"],
+                "exitPolicyHash": candidate["exitPolicyHash"],
+            }
+            if advisory
+            else {}
+        ),
         "maximumHoldBars": candidate["maximumHoldBars"],
         "candidateDefinitionHash": candidate["definitionHash"],
         "split": split,
@@ -134,6 +148,9 @@ def _candidate_from_row(row: Mapping[str, Any]) -> CandidateSpec:
             "factorRanking", "factorVetoes",
         )
     }
+    if row.get("schemaVersion") == "phase3c_candidate_v2":
+        fields["schemaVersion"] = str(row["schemaVersion"])
+        fields["exitPolicy"] = exit_policy_from_dict(row["exitPolicy"])
     for name in ("requiredData", "expectedFailureRegimes", "factorConfirmations", "factorRanking", "factorVetoes"):
         fields[name] = tuple(fields[name])
     return CandidateSpec(**fields)

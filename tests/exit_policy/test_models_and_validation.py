@@ -6,6 +6,7 @@ from alphapilot.exit_policy import (
     ExitPolicy,
     ExitPolicyMode,
     canonical_exit_policy,
+    exit_policy_from_dict,
     exit_policy_hash,
     validate_exit_policy,
 )
@@ -177,3 +178,15 @@ def test_hash_changes_when_exit_policy_parameters_change() -> None:
     )
 
     assert exit_policy_hash(first) != exit_policy_hash(second)
+
+
+def test_canonical_policy_round_trip_is_strict() -> None:
+    policy = ExitPolicy(
+        mode=ExitPolicyMode.FIXED_R,
+        maximumHoldBars=24,
+        parameters={"targetR": 1.25},
+    )
+
+    assert exit_policy_from_dict(canonical_exit_policy(policy)) == policy
+    with pytest.raises(ValueError, match="invalid exitPolicy fields"):
+        exit_policy_from_dict({**canonical_exit_policy(policy), "callback": "unsafe"})
