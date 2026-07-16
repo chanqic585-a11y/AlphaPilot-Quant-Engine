@@ -17,8 +17,8 @@ def build_event_exit_geometry(
         raise ValueError("portfolio strategies cannot use a single-symbol R target")
     if entry_price <= 0 or initial_stop_price <= 0:
         raise ValueError("prices must be positive")
-    if remaining_target_r < 2.0:
-        raise ValueError("remaining directional target must start at no less than 2R")
+    if remaining_target_r <= 0:
+        raise ValueError("remaining directional target must be positive in R units")
     if direction == "long" and initial_stop_price >= entry_price:
         raise ValueError("long stop must be below entry")
     if direction == "short" and initial_stop_price <= entry_price:
