@@ -183,6 +183,9 @@ def _simple_benchmark_result(
     elif variant == "S05":
         exit_position = min(entry_position + maximum_hold_bars, last_position)
         reason = "equal_hold"
+    elif variant == "S06":
+        exit_position = min(entry_position + 6, last_position)
+        reason = "fixed_6_bar"
     else:
         raise ImplementationConformanceError(
             f"no frozen pair benchmark compiler for {variant}"

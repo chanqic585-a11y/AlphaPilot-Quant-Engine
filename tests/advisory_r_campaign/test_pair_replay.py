@@ -5,7 +5,10 @@ import math
 import pandas as pd
 
 from alphapilot.advisory_r_campaign.candidates import build_candidate_inventory
-from alphapilot.advisory_r_campaign.pair_replay import replay_pair_candidate
+from alphapilot.advisory_r_campaign.pair_replay import (
+    _simple_benchmark_result,
+    replay_pair_candidate,
+)
 
 
 def _frame(
@@ -61,3 +64,26 @@ def test_s04_replay_is_two_leg_and_charges_both_legs() -> None:
     assert all(row["simpleBenchmarkName"] == "pair_residual_zero_cross" for row in events)
     assert all(row["simpleBenchmarkExitIndex"] >= row["entryIndex"] for row in events)
     assert all(math.isfinite(row["simpleBenchmarkNetR"]) for row in events)
+
+
+def test_s06_simple_benchmark_is_independent_fixed_six_bar_hold() -> None:
+    candidate = next(row for row in build_candidate_inventory() if row["variantId"] == "S06")
+    synthetic = pd.DataFrame({"open": [100.0 + index for index in range(12)]})
+
+    result = _simple_benchmark_result(
+        candidate,
+        pd.DataFrame(index=synthetic.index),
+        synthetic,
+        entry_position=2,
+        entry_price=102.0,
+        direction="long",
+        risk_distance=2.0,
+        maximum_hold_bars=30,
+        cost_r=0.25,
+    )
+
+    assert result["simpleBenchmarkName"] == "correlation_break_next_6_bar_direction"
+    assert result["simpleBenchmarkExitIndex"] == 8
+    assert result["simpleBenchmarkExitReason"] == "fixed_6_bar"
+    assert result["simpleBenchmarkGrossR"] == 3.0
+    assert result["simpleBenchmarkNetR"] == 2.75
