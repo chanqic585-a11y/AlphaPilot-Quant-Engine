@@ -1,0 +1,11 @@
+{
+  "blockers": [
+    "c_formal_ready",
+    "pit_median_at_least_30",
+    "fresh_holdout_ready"
+  ],
+  "modelCampaignRun": false,
+  "qlibCampaignMayRun": false,
+  "schemaVersion": "v13_27_1_12_qlib_readiness_gate_v1",
+  "status": "blocked"
+}

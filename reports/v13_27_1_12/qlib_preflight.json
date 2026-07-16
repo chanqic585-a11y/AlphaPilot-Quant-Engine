@@ -1,0 +1,27 @@
+{
+  "blockers": [
+    "c_formal_ready",
+    "pit_median_at_least_30",
+    "fresh_holdout_ready"
+  ],
+  "checks": {
+    "c_formal_ready": false,
+    "data_only_snapshot": true,
+    "docker_daemon_available": true,
+    "docker_image_available": true,
+    "fresh_holdout_ready": false,
+    "pit_median_at_least_30": false,
+    "snapshot_hash_verified": true
+  },
+  "dockerReproducibilityPassed": true,
+  "informalSnapshotParityTestAllowed": true,
+  "installationAttempted": false,
+  "license": "MIT",
+  "licenseUrl": "https://github.com/microsoft/qlib/blob/main/LICENSE",
+  "modelCampaignRun": false,
+  "qlibCampaignMayRun": false,
+  "qlibCommit": "d5379c520f66a39953bad76234a7019a72796fd0",
+  "schemaVersion": "v13_27_1_12_qlib_preflight_v1",
+  "sourceUrl": "https://github.com/microsoft/qlib/tree/d5379c520f66a39953bad76234a7019a72796fd0",
+  "syntheticAdapterTestAllowed": true
+}

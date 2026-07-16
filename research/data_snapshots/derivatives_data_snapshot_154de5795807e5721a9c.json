@@ -1,0 +1,78 @@
+{
+  "auditStatuses": {
+    "apiCapability": "completed",
+    "dataQuality": "completed",
+    "familyReadiness": "completed",
+    "pitUniverse": "completed"
+  },
+  "containsHoldoutResults": false,
+  "containsStrategyResults": false,
+  "createdAt": "2026-07-16T00:00:00Z",
+  "derivedHashes": [
+    "sha256:dbb92062c7a2d2682a08cfea87ddc24b867befccf9189e481bb81b59ae3ab504"
+  ],
+  "environmentManifestHash": "environment_manifest_344c670403e5737b6acf4afa5625cc6b7c3a71b27e40a0dbc6669ae6102d1145",
+  "familyReadiness": {
+    "B": {
+      "availableDataTypes": [
+        "funding"
+      ],
+      "bestAvailableExchange": "binance",
+      "coreCoverage": 0.0,
+      "eligibleContracts": 0,
+      "formalEligibleExchanges": [],
+      "futureLeakCount": 0,
+      "historyMonths": 0,
+      "maximumInstrumentMissingRate": null,
+      "missingDataTypes": [
+        "basis",
+        "instrument_state",
+        "open_interest",
+        "perpetual_ohlcv",
+        "spot_ohlcv",
+        "spread_slippage"
+      ],
+      "qualificationId": "short_crowding_unwind_data_chain",
+      "qualityPassed": false,
+      "sameExchangeCoreChain": false,
+      "schemaVersion": "v13_27_1_12_family_b_data_chain_v1",
+      "status": "diagnostic_ready",
+      "thresholdsChangedFromLockedSpec": false,
+      "unexplainedLongGapCount": 0
+    },
+    "C": {
+      "checkedAt": "2026-07-16T00:00:00Z",
+      "currentTopNBackfill": false,
+      "futureCollectionReady": true,
+      "historicalFormalReady": false,
+      "holdoutSymbolCount": 0,
+      "majorityDatesAtLeast30": false,
+      "medianInvestableContracts": 0,
+      "pitSnapshotCount": 0,
+      "pitSnapshotCoverage": 0.0,
+      "reason": "no_historical_point_in_time_membership_source",
+      "researchSymbolCount": 0,
+      "schemaVersion": "v13_27_1_12_pit_universe_audit_v1",
+      "status": "unavailable"
+    }
+  },
+  "gitCommit": "8a8b85c9f4b1f08439d76c89b9bd2b98bb4d09f7",
+  "hashVerified": true,
+  "normalizedHashes": [
+    "09f116003e700dd114a13645017cc3f50e6381b868b4303314f0384577e8f626",
+    "1cb2a180a40f0e35507cf87215926fecbc0befd07c6948b83044939baacd6e23",
+    "4bf71c1e2a1cd252dc4ee63c87701436860b8236aa3dd945abebadb2bd0aa395",
+    "8b5e156736bd8ab4da58c57fc6e51ceb41c0dce04a3c3cb299c73bbdc6b92cd8",
+    "9ed3793949f05a6839a773d8d90c7b398933ed8de62f855a267e512f3f7b638d",
+    "9f7bb08a74314ae35b757f09fe4db2118fe22678cf54c5f2f6086c35af504ce2",
+    "d7c4da3ead360d5ed258dea6633aab095f172855cb0612f25a15b0869259c4b0",
+    "f60b008b310fba90eed8b8cecbd39d1c494e40f6b24cb737ee40a6d26896746d"
+  ],
+  "pitHash": "sha256:dbb92062c7a2d2682a08cfea87ddc24b867befccf9189e481bb81b59ae3ab504",
+  "schemaVersion": "v13_27_1_12_derivatives_data_snapshot_v1",
+  "snapshotHash": "sha256:154de5795807e5721a9c28ca455fa90d3b2586276aada1d05de969ed99b69c06",
+  "snapshotId": "derivatives_data_snapshot_154de5795807e5721a9c",
+  "sourceManifestHashes": [
+    "sha256:1a7dab7ccd87085fcdf626528336f885dcec8a8417dc0555f3389f0e8562489f"
+  ]
+}

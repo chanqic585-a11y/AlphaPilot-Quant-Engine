@@ -75,6 +75,18 @@ def build_environment_manifest(
         "numpy": _version("numpy"),
         "pyarrow": _version("pyarrow"),
     }
+    docker_version = _safe_command(command_output, "docker --version")
+    docker_daemon_version = _safe_command(
+        command_output,
+        "docker info --format {{.ServerVersion}}",
+    )
+    docker_image_digest = _safe_command(
+        command_output,
+        f"docker image inspect {docker_image_tag} --format {{{{.Id}}}}",
+    )
+    docker_reproducibility_passed = bool(
+        docker_daemon_version and docker_image_digest
+    )
     core = {
         "schemaVersion": "reproducibility_environment_manifest_v2",
         "operatingSystem": platform.platform(),
@@ -84,11 +96,17 @@ def build_environment_manifest(
             command_output,
             f"{python_command} -m freqtrade --version",
         ),
-        "dockerVersion": _safe_command(command_output, "docker --version"),
+        "dockerVersion": docker_version,
+        "dockerDaemonAvailable": bool(docker_daemon_version),
+        "dockerDaemonVersion": docker_daemon_version,
         "dockerImageTag": docker_image_tag,
-        "dockerImageDigest": _safe_command(
-            command_output,
-            f"docker image inspect {docker_image_tag} --format {{{{.Id}}}}",
+        "dockerImageAvailable": bool(docker_image_digest),
+        "dockerImageDigest": docker_image_digest,
+        "dockerReproducibilityPassed": docker_reproducibility_passed,
+        "dockerReproducibilityReason": (
+            None
+            if docker_reproducibility_passed
+            else "daemon_or_image_unavailable"
         ),
         "dependencyLockPath": str(dependency_lock_path),
         "dependencyLockHash": _sha256_bytes(lock_bytes),

@@ -13,6 +13,7 @@ def test_environment_manifest_records_reproducibility_contract(tmp_path) -> None
         command_output=lambda command, _cwd=None: {
             "git rev-parse HEAD": "abc123",
             "docker --version": "Docker version 29.6.1",
+            "docker info --format {{.ServerVersion}}": "29.6.1",
             "docker image inspect freqtradeorg/freqtrade:stable --format {{.Id}}": "sha256:image",
             "python -m pip freeze --all": "numpy==2.3.5\npandas==3.0.1\npyarrow==24.0.0",
             "python -m freqtrade --version": "freqtrade 2026.6",
@@ -30,6 +31,9 @@ def test_environment_manifest_records_reproducibility_contract(tmp_path) -> None
     assert manifest["pipFreezeHash"]
     assert manifest["gitCommits"] == {"quant": "abc123"}
     assert manifest["randomSeeds"] == [13, 27, 111]
+    assert manifest["dockerDaemonAvailable"] is True
+    assert manifest["dockerImageAvailable"] is True
+    assert manifest["dockerReproducibilityPassed"] is True
 
 
 def test_environment_manifest_uses_the_selected_python_executable(tmp_path) -> None:

@@ -1,0 +1,12 @@
+{
+  "accountAccess": false,
+  "checkpointCount": 0,
+  "historicalFormalReady": false,
+  "networkRequestCount": 0,
+  "orderCreation": false,
+  "readyStreamCount": 8,
+  "recordCount": 0,
+  "schemaVersion": "v13_27_1_12_forward_collection_status_v1",
+  "status": "planned_not_running",
+  "streamCount": 9
+}

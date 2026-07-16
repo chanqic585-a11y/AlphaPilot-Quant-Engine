@@ -5,15 +5,20 @@
     "pyarrow": "24.0.0"
   },
   "dependencyLockHash": "d4011a427e0951e6a766bfb19ffa59395a37ffebccaa5c125c70ae6d21ba5765",
-  "dependencyLockPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.11-research-factory-repair\\requirements-data.txt",
+  "dependencyLockPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.12-formal-data-coverage\\requirements-data.txt",
   "displayTimezone": "Asia/Shanghai",
-  "dockerImageDigest": null,
+  "dockerDaemonAvailable": true,
+  "dockerDaemonVersion": "29.6.1",
+  "dockerImageAvailable": true,
+  "dockerImageDigest": "sha256:87aa5c6d65359b34e9d99a0bb260a38c0efe0315253811e6f48c2afe8f278a6a",
   "dockerImageTag": "freqtradeorg/freqtrade:stable",
+  "dockerReproducibilityPassed": true,
+  "dockerReproducibilityReason": null,
   "dockerVersion": "Docker version 29.6.1, build 8900f1d",
-  "environmentHash": "environment_manifest_bf83cb7cb17360e0510f94d8acf90c206241377ce3229f87ea81cab814ba5b32",
+  "environmentHash": "environment_manifest_344c670403e5737b6acf4afa5625cc6b7c3a71b27e40a0dbc6669ae6102d1145",
   "freqtradeVersion": null,
   "gitCommits": {
-    "quant": "15c7109390f67d268644269b93b726a31a0128dc"
+    "quant": "8a8b85c9f4b1f08439d76c89b9bd2b98bb4d09f7"
   },
   "locale": [
     "Chinese (Simplified)_China",

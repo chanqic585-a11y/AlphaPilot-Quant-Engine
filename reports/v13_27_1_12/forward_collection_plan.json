@@ -1,0 +1,74 @@
+{
+  "accountAccess": false,
+  "appendOnly": true,
+  "auditable": true,
+  "budgets": {
+    "maximumRequestsPerMinute": 60,
+    "maximumRetriesPerPage": 3,
+    "maximumRunHours": 6
+  },
+  "futureCollectionReady": true,
+  "historicalFormalReady": false,
+  "orderCreation": false,
+  "publicDataOnly": true,
+  "resumable": true,
+  "schemaVersion": "v13_27_1_12_forward_collection_plan_v1",
+  "status": "planned",
+  "streams": [
+    {
+      "appendOnly": true,
+      "dataType": "open_interest",
+      "status": "ready_to_collect",
+      "strictAvailabilityClockRequired": true
+    },
+    {
+      "appendOnly": true,
+      "dataType": "funding",
+      "status": "ready_to_collect",
+      "strictAvailabilityClockRequired": true
+    },
+    {
+      "appendOnly": true,
+      "dataType": "spot_ohlcv",
+      "status": "ready_to_collect",
+      "strictAvailabilityClockRequired": true
+    },
+    {
+      "appendOnly": true,
+      "dataType": "perpetual_ohlcv",
+      "status": "ready_to_collect",
+      "strictAvailabilityClockRequired": true
+    },
+    {
+      "appendOnly": true,
+      "dataType": "basis",
+      "status": "ready_to_collect",
+      "strictAvailabilityClockRequired": true
+    },
+    {
+      "appendOnly": true,
+      "dataType": "instrument_state",
+      "status": "ready_to_collect",
+      "strictAvailabilityClockRequired": true
+    },
+    {
+      "appendOnly": true,
+      "dataType": "pit_liquidity",
+      "status": "ready_to_collect",
+      "strictAvailabilityClockRequired": true
+    },
+    {
+      "appendOnly": true,
+      "dataType": "spread",
+      "status": "ready_to_collect",
+      "strictAvailabilityClockRequired": true
+    },
+    {
+      "appendOnly": true,
+      "dataType": "liquidation",
+      "status": "unavailable",
+      "strictAvailabilityClockRequired": true
+    }
+  ],
+  "warning": "future collection cannot substitute for historical formal evidence"
+}
