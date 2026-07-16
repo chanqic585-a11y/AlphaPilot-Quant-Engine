@@ -1,0 +1,17 @@
+{
+  "campaignId": "advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3",
+  "campaignStatus": "implementation_nonconformant",
+  "reviewSchemaVersion": "advisory_r_implementation_conformance_review_v1",
+  "stageStopCorrect": true,
+  "twoRMigrationPassed": true,
+  "lockedOosPreserved": true,
+  "originalArtifactsImmutable": true,
+  "parameterConclusionAllowed": false,
+  "marketMechanismConclusionAllowed": false,
+  "reasonCodes": [
+    "campaign_used_second_exit_simulator",
+    "frozen_candidate_fields_not_consumed",
+    "pair_and_portfolio_semantics_not_faithfully_replayed"
+  ],
+  "requiredNextAction": "repair_implementation_and_run_one_bounded_correction_campaign"
+}
