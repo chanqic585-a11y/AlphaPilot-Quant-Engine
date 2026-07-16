@@ -1,0 +1,56 @@
+{
+  "artifacts": [
+    {
+      "actualPath": "reports/derivatives_data/artifact_manifest.json",
+      "ambiguousCandidates": [],
+      "contentHash": "cf5ac381efea66586adab1b3b277540a47c80f9490cd7ccaff05388a9dd65af8",
+      "exists": true,
+      "logicalRole": "baselineArtifactManifest",
+      "schemaFingerprint": "236266ac047d8da0b6a87471c513272eb32da249007883adce706dbede0ffa21",
+      "selectedBy": "single_existing_candidate",
+      "selectionReason": "exactly one declared candidate exists"
+    },
+    {
+      "actualPath": "reports/research_factory_repair/campaign_stop_decision.json",
+      "ambiguousCandidates": [],
+      "contentHash": "532d81432f92fad8e4d199e2d81375a91aba603ef187f6d8aeecb9b6c4b92e17",
+      "exists": true,
+      "logicalRole": "baselineCampaignStopDecision",
+      "schemaFingerprint": "ea15c1ae09fbb353dc7342c6a635f43e14972b3af1bd78716d279882d050f121",
+      "selectedBy": "single_existing_candidate",
+      "selectionReason": "exactly one declared candidate exists"
+    },
+    {
+      "actualPath": "docs/V13.27.1.11-research-factory-data-readiness-closeout.md",
+      "ambiguousCandidates": [],
+      "contentHash": "2d9d710ad92d0e59d4d21f0695f2d10533f15143e46f167679177aa8866a0a91",
+      "exists": true,
+      "logicalRole": "baselineCloseout",
+      "schemaFingerprint": "0512136e4959140917fb15ec7057a27fe16c74a693928c602423afffcd591077",
+      "selectedBy": "single_existing_candidate",
+      "selectionReason": "exactly one declared candidate exists"
+    },
+    {
+      "actualPath": "reports/derivatives_data/data_readiness.json",
+      "ambiguousCandidates": [],
+      "contentHash": "91cb8a2a885558d7afd0d2b7b28b99d56a12189950e1539148b69c009293fd0c",
+      "exists": true,
+      "logicalRole": "baselineDataReadiness",
+      "schemaFingerprint": "931fd4bed360c7da8aaeb7d35a68309a690bb81dcfb24e730a9c6f6d0b0c2cca",
+      "selectedBy": "single_existing_candidate",
+      "selectionReason": "exactly one declared candidate exists"
+    },
+    {
+      "actualPath": "reports/reproducibility/environment_manifest.json",
+      "ambiguousCandidates": [],
+      "contentHash": "18f37e104f1fc79034eef84fdbe3f2dd6c4972d3e065c1239099c5e479d59f19",
+      "exists": true,
+      "logicalRole": "baselineEnvironmentManifest",
+      "schemaFingerprint": "e38351d594460c9b944d5f61b020b04d50add78411a4930f386a679f67edad3e",
+      "selectedBy": "single_existing_candidate",
+      "selectionReason": "exactly one declared candidate exists"
+    }
+  ],
+  "schemaVersion": "v13_27_1_12_input_artifact_mapping_v1",
+  "status": "mapped"
+}

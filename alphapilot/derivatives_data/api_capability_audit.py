@@ -5,6 +5,10 @@ from __future__ import annotations
 from typing import Any
 
 from alphapilot.evolution.registry.hashing import stable_hash
+from alphapilot.derivatives_data.source_capability_schema import (
+    CAPABILITY_FIELDS,
+    build_capability_record,
+)
 
 
 REQUIRED_CAPABILITY_FIELDS = frozenset(
@@ -22,7 +26,7 @@ REQUIRED_CAPABILITY_FIELDS = frozenset(
         "symbolCoverage",
         "knownLimitations",
     }
-)
+) | CAPABILITY_FIELDS
 
 OKX_DOCS = "https://www.okx.com/docs-v5/en/"
 OKX_DOWNLOADS = "https://www.okx.com/en-gb/historical-data"
@@ -48,20 +52,58 @@ def _capability(
     formal_historical_eligible: bool,
     documentation_url: str,
 ) -> dict[str, Any]:
+    market_type = "mixed"
+    if (
+        "funding" in data_type
+        or "open_interest" in data_type
+        or "liquidation" in data_type
+        or data_type == "perpetual_ohlcv"
+    ):
+        market_type = "swap"
+    elif data_type == "spot_ohlcv":
+        market_type = "spot"
+    elif data_type in {
+        "instrument_lifecycle",
+        "instrument_history",
+        "listing_delisting",
+        "trading_state",
+        "volume_24h_history",
+        "orderbook_snapshots",
+    }:
+        market_type = "all_public_instruments"
+    historical_completeness = "candidate_unverified"
+    point_in_time_semantics = "event_history_unverified"
+    if historical_depth == "current_snapshot":
+        historical_completeness = "current_only"
+        point_in_time_semantics = "current_snapshot_only"
+    elif historical_depth in {"recent_only", "latest_1_month", "latest_30_days"}:
+        historical_completeness = "insufficient_history"
+    record = build_capability_record(
+        provider=f"{exchange} official public data",
+        exchange=exchange,
+        endpointOrArchive=endpoint,
+        dataType=data_type,
+        marketType=market_type,
+        requiresAuth=False,
+        publicOnly=True,
+        licenseOrUsageTerms="official public API or historical-data terms; verify before redistribution",
+        earliestAvailable=earliest,
+        latestAvailable=latest,
+        symbolCoverage=symbol_coverage,
+        granularity="endpoint_or_archive_defined",
+        pagination=pagination,
+        rateLimit=rate_limit,
+        maximumLookback=historical_depth,
+        historicalCompleteness=historical_completeness,
+        pointInTimeSemantics=point_in_time_semantics,
+        knownLimitations=limitations,
+        probeStatus="not_run",
+    )
     return {
+        **record,
         "capabilityId": capability_id,
-        "exchange": exchange,
         "endpoint": endpoint,
-        "dataType": data_type,
-        "earliestAvailable": earliest,
-        "latestAvailable": latest,
-        "pagination": pagination,
-        "rateLimit": rate_limit,
-        "requiresAuth": False,
-        "publicOnly": True,
         "historicalDepth": historical_depth,
-        "symbolCoverage": symbol_coverage,
-        "knownLimitations": limitations,
         "formalHistoricalEligible": formal_historical_eligible,
         "documentationUrl": documentation_url,
     }
@@ -69,6 +111,36 @@ def _capability(
 
 def _capabilities() -> list[dict[str, Any]]:
     return [
+        _capability(
+            "okx_perpetual_history_candles",
+            exchange="OKX",
+            endpoint="GET /api/v5/market/history-candles (SWAP)",
+            data_type="perpetual_ohlcv",
+            earliest=None,
+            latest="current",
+            pagination="after/before timestamp; maximum 300 rows",
+            rate_limit="20 requests per 2 seconds per IP",
+            historical_depth="recent_years",
+            symbol_coverage="active OKX perpetual instruments",
+            limitations=["earliest coverage must be probed per instrument"],
+            formal_historical_eligible=True,
+            documentation_url=OKX_DOCS,
+        ),
+        _capability(
+            "okx_spot_history_candles",
+            exchange="OKX",
+            endpoint="GET /api/v5/market/history-candles (SPOT)",
+            data_type="spot_ohlcv",
+            earliest=None,
+            latest="current",
+            pagination="after/before timestamp; maximum 300 rows",
+            rate_limit="20 requests per 2 seconds per IP",
+            historical_depth="recent_years",
+            symbol_coverage="active OKX spot instruments",
+            limitations=["earliest coverage must be probed per instrument"],
+            formal_historical_eligible=True,
+            documentation_url=OKX_DOCS,
+        ),
         _capability(
             "okx_history_candles",
             exchange="OKX",
@@ -160,6 +232,81 @@ def _capabilities() -> list[dict[str, Any]]:
             documentation_url=OKX_DOCS,
         ),
         _capability(
+            "okx_instrument_history_current_view",
+            exchange="OKX",
+            endpoint="GET /api/v5/public/instruments",
+            data_type="instrument_history",
+            earliest=None,
+            latest="current",
+            pagination="instrument type query",
+            rate_limit="20 requests per 2 seconds per IP",
+            historical_depth="current_snapshot",
+            symbol_coverage="current OKX instruments",
+            limitations=["current view cannot reconstruct historical instrument membership"],
+            formal_historical_eligible=False,
+            documentation_url=OKX_DOCS,
+        ),
+        _capability(
+            "okx_listing_delisting_current_view",
+            exchange="OKX",
+            endpoint="GET /api/v5/public/instruments",
+            data_type="listing_delisting",
+            earliest=None,
+            latest="current",
+            pagination="instrument type query",
+            rate_limit="20 requests per 2 seconds per IP",
+            historical_depth="current_snapshot",
+            symbol_coverage="current OKX instruments",
+            limitations=["delisted instruments may be absent from the current response"],
+            formal_historical_eligible=False,
+            documentation_url=OKX_DOCS,
+        ),
+        _capability(
+            "okx_trading_state_current_view",
+            exchange="OKX",
+            endpoint="GET /api/v5/public/instruments",
+            data_type="trading_state",
+            earliest=None,
+            latest="current",
+            pagination="instrument type query",
+            rate_limit="20 requests per 2 seconds per IP",
+            historical_depth="current_snapshot",
+            symbol_coverage="current OKX instruments",
+            limitations=["historical state transitions are not reconstructed"],
+            formal_historical_eligible=False,
+            documentation_url=OKX_DOCS,
+        ),
+        _capability(
+            "okx_tickers_current_24h_volume",
+            exchange="OKX",
+            endpoint="GET /api/v5/market/tickers",
+            data_type="volume_24h_history",
+            earliest=None,
+            latest="current",
+            pagination="instrument type query",
+            rate_limit="20 requests per 2 seconds per IP",
+            historical_depth="current_snapshot",
+            symbol_coverage="current OKX instruments",
+            limitations=["rolling 24-hour current value is not historical volume history"],
+            formal_historical_eligible=False,
+            documentation_url=OKX_DOCS,
+        ),
+        _capability(
+            "okx_orderbook_current_snapshot",
+            exchange="OKX",
+            endpoint="GET /api/v5/market/books",
+            data_type="orderbook_snapshots",
+            earliest=None,
+            latest="current",
+            pagination="single instrument query",
+            rate_limit="40 requests per 2 seconds per IP",
+            historical_depth="current_snapshot",
+            symbol_coverage="current OKX instruments",
+            limitations=["public REST endpoint does not provide historical order-book snapshots"],
+            formal_historical_eligible=False,
+            documentation_url=OKX_DOCS,
+        ),
+        _capability(
             "binance_continuous_klines",
             exchange="Binance",
             endpoint="GET /fapi/v1/continuousKlines",
@@ -240,7 +387,7 @@ def _capabilities() -> list[dict[str, Any]]:
 def build_default_capability_audit(*, checked_at: str) -> dict[str, Any]:
     capabilities = _capabilities()
     core = {
-        "schemaVersion": "derivatives_api_capability_audit_v2",
+        "schemaVersion": "derivatives_api_capability_audit_v13_27_1_12",
         "status": "completed",
         "checkedAt": checked_at,
         "publicDataOnly": True,
