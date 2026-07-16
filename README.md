@@ -5153,6 +5153,32 @@ The run therefore stopped before preregistration, backtesting, or holdout access
 No Console import, Demo/Live ARM, order, credential, or private exchange API was
 used. See `docs/V13.27.1.11-research-factory-data-readiness-closeout.md`.
 
+## V13.27.1.12 Formal Data Coverage and PIT/Qlib Readiness
+
+V13.27.1.12 adds a bounded, resumable public-data readiness layer for formal
+same-exchange derivatives evidence, historical point-in-time universe checks,
+immutable data-only snapshots, and a pinned Qlib preflight.
+
+The completed audit stopped fail-closed at `data_not_ready`: 0 of the required
+2 top-level directions are formal-ready. Existing data reuse found eight valid
+Binance swap funding partitions, while four public-only OKX capability probes
+returned HTTP 200. Historical PIT coverage and complete same-exchange data
+chains remain insufficient, so no strategy campaign, Qlib campaign, holdout
+access, Release, Demo ARM, or order was created.
+
+The audit is plan-only unless `-Run` is supplied:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\audit_derivatives_data_capabilities.ps1 `
+  -DataRoot D:\Codex-Workspace\回测数据 `
+  -Run
+```
+
+See `docs/V13.27.1.12-formal-data-coverage-closeout.md` and
+`reports/v13_27_1_12/data_readiness_summary.md`. Continue only from a new
+immutable snapshot after at least two top-level directions have formal
+same-exchange evidence and direction C has sufficient historical PIT coverage.
+
 ## Historical Next Versions (Superseded)
 
 The entries below are retained as historical roadmap notes. Any Local Forward

@@ -1,0 +1,16 @@
+{
+  "blockers": [
+    "c_formal_ready",
+    "pit_median_at_least_30",
+    "fresh_holdout_ready"
+  ],
+  "checkedAt": "2026-07-16T03:22:22Z",
+  "decisionHash": "v13_27_1_12_qlib_decision_ae67678016a8b8ffc1658bed3196043c19c7d19f463d55094aa1bf8733fe4dba",
+  "holdoutAccessCount": 0,
+  "installationAttempted": false,
+  "modelCampaignRun": false,
+  "pinnedCommit": "d5379c520f66a39953bad76234a7019a72796fd0",
+  "qlibCampaignMayRun": false,
+  "schemaVersion": "v13_27_1_12_qlib_start_decision_v1",
+  "status": "blocked"
+}

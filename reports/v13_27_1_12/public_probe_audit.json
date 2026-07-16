@@ -1,0 +1,63 @@
+{
+  "checkedAt": "2026-07-16T03:22:22Z",
+  "credentialsUsed": false,
+  "probeCount": 4,
+  "probes": [
+    {
+      "ok": true,
+      "responseBytes": 53,
+      "responseSha256": "1daef7330746b5baa15900d1c8f79936fec1cae13e0c4feb475185118a506234",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "topLevelType": "dict",
+      "url": "https://www.okx.com/api/v5/public/time"
+    },
+    {
+      "ok": true,
+      "responseBytes": 189,
+      "responseSha256": "a6eb1ae44caf4b6dc5c24c0b8d0d8f1bfeb87831d91cdf65de3d0d27b801a1d2",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "topLevelType": "dict",
+      "url": "https://www.okx.com/api/v5/public/open-interest?instType=SWAP&instId=BTC-USDT-SWAP"
+    },
+    {
+      "ok": true,
+      "responseBytes": 227,
+      "responseSha256": "41b52da706589dcaabb87977d08426e65aba61b9ed9c2304ec17f4bec7a6556e",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "topLevelType": "dict",
+      "url": "https://www.okx.com/api/v5/public/funding-rate-history?instId=BTC-USDT-SWAP&limit=1"
+    },
+    {
+      "ok": true,
+      "responseBytes": 131,
+      "responseSha256": "f09ab940cac787bc22d90f6720d20c428d6cac5a1af74640e294a2805f18f371",
+      "statusCode": 200,
+      "topLevelKeys": [
+        "code",
+        "data",
+        "msg"
+      ],
+      "topLevelType": "dict",
+      "url": "https://www.okx.com/api/v5/market/history-candles?instId=BTC-USDT-SWAP&bar=1H&limit=1"
+    }
+  ],
+  "publicOnly": true,
+  "rawPayloadPersisted": false,
+  "schemaVersion": "v13_27_1_12_public_probe_audit_v1",
+  "successfulProbeCount": 4
+}

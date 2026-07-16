@@ -9,12 +9,15 @@ def test_committed_evidence_sidecars_survive_git_checkout() -> None:
     attributes = repo_root / ".gitattributes"
 
     assert attributes.exists()
-    assert "reports/derivatives_data/*.csv text eol=lf" in attributes.read_text(
-        encoding="utf-8"
-    )
+    attribute_text = attributes.read_text(encoding="utf-8")
+    assert "reports/derivatives_data/*.csv text eol=lf" in attribute_text
+    assert "reports/v13_27_1_12/*.csv text eol=lf" in attribute_text
+    assert "reports/v13_27_1_12/*.json text eol=lf" in attribute_text
+    assert "reports/v13_27_1_12/*.md text eol=lf" in attribute_text
 
     roots = (
         repo_root / "reports" / "derivatives_data",
+        repo_root / "reports" / "v13_27_1_12",
         repo_root / "reports" / "reproducibility",
         repo_root / "reports" / "research_factory_repair",
         repo_root / "research" / "data_snapshots",
