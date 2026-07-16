@@ -1,0 +1,235 @@
+{
+  "candidates": [
+    {
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "correctedEventCount": 442,
+      "correctedFailedGates": [],
+      "correctedPassed": true,
+      "correctedTotalNetR": 52.54714176734539,
+      "eventCountDelta": -582,
+      "v15EventCount": 1024,
+      "v15FailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -27.938456563076706
+    },
+    {
+      "candidateId": "s02_btc_lead_lag_continuation_1h",
+      "correctedEventCount": 8125,
+      "correctedFailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": -559.7397408614368,
+      "eventCountDelta": 5430,
+      "v15EventCount": 2695,
+      "v15FailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -1974.4346407076837
+    },
+    {
+      "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+      "correctedEventCount": 2202,
+      "correctedFailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": -144.41335841108614,
+      "eventCountDelta": -456,
+      "v15EventCount": 2658,
+      "v15FailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -262.93455002201347
+    },
+    {
+      "candidateId": "s04_pair_residual_mean_reversion_1h",
+      "correctedEventCount": 537,
+      "correctedFailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": -1869.4734853775415,
+      "eventCountDelta": -49,
+      "v15EventCount": 586,
+      "v15FailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -109.04525571433243
+    },
+    {
+      "candidateId": "s05_correlation_break_recovery_4h",
+      "correctedEventCount": 2,
+      "correctedFailedGates": [
+        "minimumAverageRealizedNetR",
+        "minimumEvents",
+        "minimumHistoryMonths",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": -0.13092324164934344,
+      "eventCountDelta": -9,
+      "v15EventCount": 11,
+      "v15FailedGates": [
+        "minimumAverageRealizedNetR",
+        "minimumEvents",
+        "minimumHistoryMonths",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -2.4565970022364647
+    },
+    {
+      "candidateId": "s06_correlation_break_decoupling_4h",
+      "correctedEventCount": 2,
+      "correctedFailedGates": [
+        "minimumAverageRealizedNetR",
+        "minimumEvents",
+        "minimumHistoryMonths",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": -0.10009942785330272,
+      "eventCountDelta": -1,
+      "v15EventCount": 3,
+      "v15FailedGates": [
+        "minimumAverageRealizedNetR",
+        "minimumEvents",
+        "minimumHistoryMonths",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -1.9424053836134092
+    },
+    {
+      "candidateId": "s07_volatility_shock_asymmetry_4h",
+      "correctedEventCount": 946,
+      "correctedFailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": -54.42745662904098,
+      "eventCountDelta": -415,
+      "v15EventCount": 1361,
+      "v15FailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -621.0391506925932
+    },
+    {
+      "candidateId": "s08_utc_session_transition_1h",
+      "correctedEventCount": 16789,
+      "correctedFailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": -2521.3555293206687,
+      "eventCountDelta": -3966,
+      "v15EventCount": 20755,
+      "v15FailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -2791.6846461374557
+    },
+    {
+      "candidateId": "s09_beta_defensive_rotation_4h",
+      "correctedEventCount": 312,
+      "correctedFailedGates": [
+        "maximumDrawdownPct",
+        "minimumNetReturn",
+        "minimumPositiveMonthRatio"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": -8.470968278339686,
+      "eventCountDelta": -8667,
+      "v15EventCount": 8979,
+      "v15FailedGates": [
+        "maximumDrawdownPct",
+        "minimumNetReturn",
+        "minimumPositiveMonthRatio"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -636.9977872490232
+    },
+    {
+      "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+      "correctedEventCount": 9381,
+      "correctedFailedGates": [
+        "maximumDrawdownPct"
+      ],
+      "correctedPassed": false,
+      "correctedTotalNetR": 224.78599069507922,
+      "eventCountDelta": -2324,
+      "v15EventCount": 11705,
+      "v15FailedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "v15Passed": false,
+      "v15TotalNetR": -53.298527488632345
+    }
+  ],
+  "interpretation": "Implementation correction only; parameters and gates are unchanged.",
+  "schemaVersion": "advisory_r_corrected_vs_v15_v1"
+}

@@ -1,0 +1,43 @@
+{
+  "candidateChanges": 0,
+  "codeCommit": "b32cabc",
+  "correctedPrefilterRuns": 1,
+  "correctionCampaignId": "advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02",
+  "correctionOfCampaignId": "advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3",
+  "correctionReason": "implementation_nonconformance",
+  "costChanges": 0,
+  "gateChanges": 0,
+  "implementationConformanceHash": "advisory_r_implementation_conformance_bundle_da045062e6a280f0103b2870aa2bfd3b8b28d1008d8d89d09c959ee930a7653e",
+  "originalArtifactHashMismatchCount": 0,
+  "originalArtifactHashes": {
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/artifact_manifest.json": "881f4f243f87ebadeb703bbdb0c3c87a87081b1d663f7c2b52fa77ced7e63874",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/implementation_conformance_review.json": "ec6fa8a3b8bb268f112a3099babd086e075e9e4a20ac7ce38d7b6b1601528010",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/archived_prefilter_failures.json": "3bf3bd105bc8c807971073cde0f22a481d20aff7973b880deaba9e84b938f5e9",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/candidate_events.parquet": "8bce50473827da57029132d4e2e72e32d173a4aaadbb67d92b40edb60cfe99be",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/exit_policy_attribution.json": "2115e635def98dfc078d92a2a7414f5e51c9d382011404d1e46c8f3783b1fd4e",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/novelty_audit.json": "1abe7ed0b316aac245b23a8be203a2739c93305edad163ef2600bec667c4d642",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/prefilter_gate_matrix.json": "7244e7c12841eebb227e799e26848595a230b61045283435c147b07a3834583c",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/prefilter_results.json": "6f9326a0fddb586081db2f8952537a3ed322fa0b36e33f56724e0390d254d179",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/prefilter_summary.md": "ddfe42e7938adcc87d27fff07bdceab658c724bb16a1588abe18c2f628d50b59",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/representative_universe.json": "f582d13ae8a3e9f361b09a64ab543c3a6a91b5445d9e909598eae1f09e7d9df5",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/simple_benchmarks.json": "5069215130ceb873b800f4b3388fb9cd34425101302c72c377cf7735ac59b8cf",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/strategy_inventory.json": "955fed7aeda70641454cbe0d7b1b4d113767d31bf68647992d4e78427efedc91",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/trial_ledger.csv": "edef7f6cccd39510eff91eccd16be0d9e88516cf62100cc3679d3d479d02b3f8",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/prefilter/trial_ledger.json": "0de98413224e534bdfe1c77871b1e73d4abbdaf3c0afeb4cae1af5dff0640e13",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/route_decision.json": "39a1dd4853577e320abb04114c1a79120fdd8a1c6259993097f814bbca1ed16d",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/research/data_snapshots/minimal_snapshot_785e47b180c17327dcb35e37.json": "2c9da2f780b66ea50ce86a218834533e89929dc31efd65841adf775167ccbbc4",
+    "D:/Codex-Workspace/AlphaPilot-Quant-Engine/.worktrees/advisory-r-workflow-v13.27.1.14-18/research/preregistrations/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3_prefilter_v2.json": "68f2255aa717c05a7f02279e21e64d2dd0f70451e95ddc56b1122fb12e397106"
+  },
+  "originalFilesModified": [],
+  "originalPreregistrationHash": "advisory_r_prefilter_preregistration_8eb71c9974d772e6bb9cad6f75843cd68c0e907fef679fc0730a3b3f9f9e7ff5",
+  "parameterChanges": 0,
+  "safetyBoundary": {
+    "demoArm": false,
+    "formalEvidenceCount": 0,
+    "lockedOosAccessCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0
+  },
+  "schemaVersion": "advisory_r_correction_manifest_v1",
+  "universeChanges": 0
+}

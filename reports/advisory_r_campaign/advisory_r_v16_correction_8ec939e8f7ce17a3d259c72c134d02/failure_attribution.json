@@ -1,0 +1,19 @@
+{
+  "candidateCount": 10,
+  "economicPrefilterFailureCount": 9,
+  "failedGateCounts": {
+    "maximumDrawdownPct": 7,
+    "minimumAverageRealizedNetR": 7,
+    "minimumEvents": 2,
+    "minimumHistoryMonths": 2,
+    "minimumNetReturn": 1,
+    "minimumPositiveMonthRatio": 7,
+    "minimumProfitFactor": 7,
+    "minimumTotalRealizedNetR": 7
+  },
+  "implementationBlockedCount": 0,
+  "nextAction": "defer_survivors_to_future_formal_stage",
+  "postResultParameterChanges": 0,
+  "prefilterSurvivorCount": 1,
+  "schemaVersion": "advisory_r_failure_attribution_v1"
+}

@@ -1,0 +1,8 @@
+{
+  "eventCount": 38738,
+  "exitLegCount": 43854,
+  "failedEventCount": 0,
+  "fundingUnavailableCount": 38738,
+  "passed": true,
+  "schemaVersion": "advisory_r_exit_leg_parity_v1"
+}

@@ -1,0 +1,462 @@
+[
+  {
+    "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+    "complexityScore": 4,
+    "diagnosticOnly": false,
+    "direction": "long",
+    "entryDefinition": {
+      "kind": "residual_reclaim",
+      "minimumRecoveryZ": 0.35
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 24,
+      "mode": "hybrid",
+      "parameters": {
+        "partialAtR": 0.7,
+        "partialFraction": 0.4,
+        "remainderMode": "structure",
+        "structureRule": {
+          "absoluteZscoreMaximum": 0.35,
+          "kind": "residual_neutral_zone"
+        }
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_aa415db5c0527ec941e87a41eb3779413b2dce6cb6577f00356823fb5be56ba3",
+    "exitPolicyRationaleZh": "残差恢复是主机制；先减仓，再在关系修复或时限到达时退出。",
+    "falsificationCriteriaZh": "成本后平均净 R 或总净 R 不为正，或正月份不足一半。",
+    "familyId": "idiosyncratic_selloff_recovery",
+    "featureDefinition": {
+      "marketRegime": "btc_close_below_ema_200",
+      "recoveryBars": 2,
+      "residualWindow": 30,
+      "residualZMaximum": -2.25
+    },
+    "humanHypothesisZh": "熊市中相对 BTC 与核心池出现极端负残差后，价格收回可形成短期恢复。",
+    "initialStopDefinition": {
+      "kind": "atr",
+      "mayWiden": false,
+      "multiple": 1.6
+    },
+    "maximumHold": 24,
+    "originLineage": "v13.27.1.13_bear_regime_posthoc_clue_new_trial",
+    "semanticFingerprint": "advisory_r_semantic_e5ee388e5f99ba3cacf9cc75f4052538cc9baa910f69ccd18739e988589cbd14",
+    "simpleBenchmark": "same_event_fixed_12_bar_exit",
+    "strategyDefinitionHash": "advisory_r_strategy_062a7c3c3bd7b9f8f741c9506a40efabd3225bd57645f093eda0f86901ac2c37",
+    "strategyType": "event",
+    "timeframe": "4h",
+    "variantId": "S01"
+  },
+  {
+    "candidateId": "s02_btc_lead_lag_continuation_1h",
+    "complexityScore": 4,
+    "diagnosticOnly": false,
+    "direction": "conditional",
+    "entryDefinition": {
+      "kind": "btc_lead_continuation",
+      "maximumFollowerMoveFraction": 0.45
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 24,
+      "mode": "partial_then_trailing",
+      "parameters": {
+        "partialAtR": 0.8,
+        "partialFraction": 0.35,
+        "trailingAtrMultiple": 1.8
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_be7abc5c2ba80c4a153513cf73cccd901f13b09e1cd95a3f4e39d088b5b8e6d6",
+    "exitPolicyRationaleZh": "延续效应可能扩展，部分兑现后用 ATR 收紧剩余风险。",
+    "falsificationCriteriaZh": "延迟反应在成本后无正净 R，或收益只集中于单月。",
+    "familyId": "btc_lead_lag",
+    "featureDefinition": {
+      "betaWindow": 168,
+      "btcImpulseZ": 2.0,
+      "lagWindow": 3
+    },
+    "humanHypothesisZh": "BTC 单小时显著方向冲击后，尚未同步的高 beta 币种存在延迟同向反应。",
+    "initialStopDefinition": {
+      "kind": "atr",
+      "mayWiden": false,
+      "multiple": 1.4
+    },
+    "maximumHold": 24,
+    "originLineage": "new_btc_lead_lag_trial",
+    "semanticFingerprint": "advisory_r_semantic_40e390382f9dd288c22ae564890065f2c5a075a4e2ebda71c7a9d9ba5d292350",
+    "simpleBenchmark": "btc_impulse_next_6_bar_direction",
+    "strategyDefinitionHash": "advisory_r_strategy_5855ef4eb97bc6969ebe1b90eaad1642f809ef0628d49e2e947de99e74e7c36b",
+    "strategyType": "event",
+    "timeframe": "1h",
+    "variantId": "S02"
+  },
+  {
+    "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+    "complexityScore": 4,
+    "diagnosticOnly": false,
+    "direction": "conditional",
+    "entryDefinition": {
+      "confirmationBars": 2,
+      "kind": "btc_lead_overreaction_reversion"
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 18,
+      "mode": "structure_or_time",
+      "parameters": {
+        "structureRule": {
+          "confirmationBars": 2,
+          "kind": "event_reversal"
+        }
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_68c41d73aaebc99d614cb65d5ebcc34dc9f693cc9ba02b86284f9ca5f0f7333d",
+    "exitPolicyRationaleZh": "当冲击反转被确认或持有时限到达时退出，不设置事后固定目标。",
+    "falsificationCriteriaZh": "过度反应后的反向交易成本后无正净 R。",
+    "familyId": "btc_lead_lag",
+    "featureDefinition": {
+      "btcImpulseZ": 2.0,
+      "lagWindow": 3,
+      "overreactionRatio": 1.55
+    },
+    "humanHypothesisZh": "BTC 冲击后跟随币过度反应时，超额变动会向短期关系均值回归。",
+    "initialStopDefinition": {
+      "kind": "atr",
+      "mayWiden": false,
+      "multiple": 1.35
+    },
+    "maximumHold": 18,
+    "originLineage": "new_btc_lead_lag_trial",
+    "semanticFingerprint": "advisory_r_semantic_d5115dd002dc5ffc9efb29d9bc23c915c89d5f91cb338bb7b536c3a7ac332238",
+    "simpleBenchmark": "btc_impulse_contemporaneous_reversal",
+    "strategyDefinitionHash": "advisory_r_strategy_0f36d1f1b2dbc6b750c5b33eb7b19991d71252634070f8d25b57d8a88eb61afc",
+    "strategyType": "event",
+    "timeframe": "1h",
+    "variantId": "S03"
+  },
+  {
+    "candidateId": "s04_pair_residual_mean_reversion_1h",
+    "complexityScore": 5,
+    "diagnosticOnly": false,
+    "direction": "pair_relative",
+    "entryDefinition": {
+      "kind": "pair_residual_extreme",
+      "requireTurn": true
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 36,
+      "mode": "structure_or_time",
+      "parameters": {
+        "structureRule": {
+          "absoluteZscoreMaximum": 0.25,
+          "kind": "residual_neutral_zone"
+        }
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_933142f80308979beef57a8b5e9e41b8b015d5acc79b0d140e70c8c4689e3fff",
+    "exitPolicyRationaleZh": "交易目标是关系恢复，因此以残差中性区而非固定 R 退出。",
+    "falsificationCriteriaZh": "价差极端事件在成本后没有稳定回归收益。",
+    "familyId": "pair_residual_mean_reversion",
+    "featureDefinition": {
+      "entryResidualZ": 2.2,
+      "minimumCorrelation": 0.75,
+      "pairWindow": 240
+    },
+    "humanHypothesisZh": "长期高相关币对的标准化价差极端偏离后会回到预注册中性区。",
+    "initialStopDefinition": {
+      "kind": "residual_z",
+      "maximumAdverseZ": 3.4,
+      "mayWiden": false
+    },
+    "maximumHold": 36,
+    "originLineage": "new_pair_relationship_trial",
+    "semanticFingerprint": "advisory_r_semantic_c1ab9f453481627ae77d394883a2f7e926b1362d642f353f3a4816e47b5c2612",
+    "simpleBenchmark": "pair_residual_zero_cross",
+    "strategyDefinitionHash": "advisory_r_strategy_4ac37414b3a96f50a841700c6416e094810a04693ff29054fee87df84bb81948",
+    "strategyType": "event",
+    "timeframe": "1h",
+    "variantId": "S04"
+  },
+  {
+    "candidateId": "s05_correlation_break_recovery_4h",
+    "complexityScore": 5,
+    "diagnosticOnly": false,
+    "direction": "relative_recovery",
+    "entryDefinition": {
+      "kind": "correlation_break_recovery",
+      "residualTurnBars": 2
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 24,
+      "mode": "hybrid",
+      "parameters": {
+        "partialAtR": 0.6,
+        "partialFraction": 0.35,
+        "remainderMode": "structure",
+        "structureRule": {
+          "kind": "correlation_recovery",
+          "minimumCorrelation": 0.6
+        }
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_b5e45f1e506c0a123984d25bca0bab6f7cb9892056096afd73789227ca105f22",
+    "exitPolicyRationaleZh": "先降低风险，再在相关性恢复或时间到期时退出。",
+    "falsificationCriteriaZh": "关系破裂后继续恶化，成本后恢复交易无正净 R。",
+    "familyId": "correlation_break",
+    "featureDefinition": {
+      "baselineMinimum": 0.75,
+      "breakMaximum": 0.25,
+      "correlationWindow": 60
+    },
+    "humanHypothesisZh": "稳定关系突然破裂但共同趋势未变时，相关性和残差可能恢复。",
+    "initialStopDefinition": {
+      "kind": "atr",
+      "mayWiden": false,
+      "multiple": 1.7
+    },
+    "maximumHold": 24,
+    "originLineage": "new_pair_relationship_trial",
+    "semanticFingerprint": "advisory_r_semantic_e12fa71996835d5380f0d6a34b7c7248fefa1abe4ead414e99fbe5af49f80e20",
+    "simpleBenchmark": "correlation_break_equal_hold",
+    "strategyDefinitionHash": "advisory_r_strategy_a651fd6a9ac22650ebe20577fd3e9143816bbc9e2214de21db09e4a8f61b7955",
+    "strategyType": "event",
+    "timeframe": "4h",
+    "variantId": "S05"
+  },
+  {
+    "candidateId": "s06_correlation_break_decoupling_4h",
+    "complexityScore": 5,
+    "diagnosticOnly": false,
+    "direction": "break_direction",
+    "entryDefinition": {
+      "kind": "correlation_break_continuation",
+      "minimumRelativeMoveZ": 1.5
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 30,
+      "mode": "partial_then_trailing",
+      "parameters": {
+        "partialAtR": 0.9,
+        "partialFraction": 0.3,
+        "trailingAtrMultiple": 2.0
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_6ec878a8cba8e29f82a7210202007cb539390ddcb146c91bcccd1fe009e2996c",
+    "exitPolicyRationaleZh": "脱钩延续没有固定结构终点，部分兑现后跟踪趋势。",
+    "falsificationCriteriaZh": "脱钩方向在成本后不能延续，或回撤超过预筛上限。",
+    "familyId": "correlation_break",
+    "featureDefinition": {
+      "breakMaximum": 0.2,
+      "correlationWindow": 60,
+      "relativeStrengthBars": 6
+    },
+    "humanHypothesisZh": "关系破裂伴随相对强度扩张时，脱钩可能延续而非立即回归。",
+    "initialStopDefinition": {
+      "kind": "atr",
+      "mayWiden": false,
+      "multiple": 1.6
+    },
+    "maximumHold": 30,
+    "originLineage": "new_pair_relationship_trial",
+    "semanticFingerprint": "advisory_r_semantic_60503de3ad4dc8bd41c1bff039d1178b3d8a7071d1dbc9843183dbc3cc183962",
+    "simpleBenchmark": "correlation_break_next_6_bar_direction",
+    "strategyDefinitionHash": "advisory_r_strategy_4926a1c885fa7faa2a521f8c67396bdca94500a4d57aa53377a0f97a04fa8668",
+    "strategyType": "event",
+    "timeframe": "4h",
+    "variantId": "S06"
+  },
+  {
+    "candidateId": "s07_volatility_shock_asymmetry_4h",
+    "complexityScore": 3,
+    "diagnosticOnly": false,
+    "direction": "conditional",
+    "entryDefinition": {
+      "confirmationBars": 1,
+      "kind": "directional_volatility_shock"
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 18,
+      "mode": "partial_then_trailing",
+      "parameters": {
+        "partialAtR": 0.75,
+        "partialFraction": 0.4,
+        "trailingAtrMultiple": 1.6
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_4816d1dde152a188c7ec58e2e0bd100a04845c349684af701105588f305d7401",
+    "exitPolicyRationaleZh": "冲击后的单边扩张用部分止盈和因果 ATR 跟踪管理。",
+    "falsificationCriteriaZh": "分方向事件在成本后没有正的组合净 R。",
+    "familyId": "volatility_shock_asymmetry",
+    "featureDefinition": {
+      "atrPercentileWindow": 180,
+      "closeLocationThreshold": 0.75,
+      "shockPercentile": 0.95
+    },
+    "humanHypothesisZh": "极端波动冲击后的延续与反转概率具有方向不对称性。",
+    "initialStopDefinition": {
+      "kind": "atr",
+      "mayWiden": false,
+      "multiple": 1.8
+    },
+    "maximumHold": 18,
+    "originLineage": "new_volatility_asymmetry_trial",
+    "semanticFingerprint": "advisory_r_semantic_b3427e310ade5ca39be411e18b502d0b82e648187f51e50715df2149e3eeca7f",
+    "simpleBenchmark": "volatility_shock_fixed_6_bar",
+    "strategyDefinitionHash": "advisory_r_strategy_7f6747a8eb0e7e2bf85f19ae15a1611ef68357539793fc2bb49ecfa08eda62a8",
+    "strategyType": "event",
+    "timeframe": "4h",
+    "variantId": "S07"
+  },
+  {
+    "candidateId": "s08_utc_session_transition_1h",
+    "complexityScore": 2,
+    "diagnosticOnly": false,
+    "direction": "conditional",
+    "entryDefinition": {
+      "directionFromPriorBars": 3,
+      "kind": "utc_session_transition"
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 12,
+      "mode": "fixed_r",
+      "parameters": {
+        "targetR": 1.2
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_23aa1ea819f6ffa5d4c59933b5f92152299d901657014b0cdda6ad6b04183aee",
+    "exitPolicyRationaleZh": "短时段效应的目标小于 2R，并由最大持有期限制暴露。",
+    "falsificationCriteriaZh": "扣除成本后时段效应消失或正月份不足一半。",
+    "familyId": "utc_session_transition",
+    "featureDefinition": {
+      "minimumVolumeRatio": 1.1,
+      "trendWindow": 6,
+      "utcEntryHours": [
+        7,
+        15,
+        20
+      ]
+    },
+    "humanHypothesisZh": "UTC 交易时段转换附近的流动性与方向延续具有可重复但短暂的边际。",
+    "initialStopDefinition": {
+      "kind": "atr",
+      "mayWiden": false,
+      "multiple": 1.2
+    },
+    "maximumHold": 12,
+    "originLineage": "new_session_microstructure_trial",
+    "semanticFingerprint": "advisory_r_semantic_d7f73900bd6b49f060643858b093a01dee8df62c34d2e16c34faa17dee23d430",
+    "simpleBenchmark": "same_hour_unconditional_direction",
+    "strategyDefinitionHash": "advisory_r_strategy_67cefcd989bf633c8f6c802859f3e86fc3fb61803bbf2679b401fb59c4bdf816",
+    "strategyType": "event",
+    "timeframe": "1h",
+    "variantId": "S08"
+  },
+  {
+    "candidateId": "s09_beta_defensive_rotation_4h",
+    "complexityScore": 4,
+    "diagnosticOnly": false,
+    "direction": "cross_sectional_long_short",
+    "entryDefinition": {
+      "kind": "beta_defensive_rotation",
+      "longQuantile": 0.3,
+      "shortQuantile": 0.3
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 30,
+      "mode": "structure_or_time",
+      "parameters": {
+        "structureRule": {
+          "kind": "beta_rank_exit",
+          "maximumRankPercentile": 0.5
+        }
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_22378d4be22c861b2b0a075295e070058943f39ab509c8188a4a2532e22b9607",
+    "exitPolicyRationaleZh": "组合在 beta 排名失效或再平衡时限到达时退出。",
+    "falsificationCriteriaZh": "成本后多空组合收益不为正或回撤超过 35%。",
+    "familyId": "beta_defensive_rotation",
+    "featureDefinition": {
+      "betaWindow": 90,
+      "btcTrendWindow": 50,
+      "rebalanceBars": 6
+    },
+    "humanHypothesisZh": "BTC 风险转弱时，低 beta 币相对高 beta 币具有防御性超额收益。",
+    "initialStopDefinition": {
+      "kind": "portfolio_drawdown",
+      "mayWiden": false,
+      "riskBudgetR": 1.0
+    },
+    "maximumHold": 30,
+    "originLineage": "new_cross_sectional_rotation_trial",
+    "semanticFingerprint": "advisory_r_semantic_8934ab95bbb00ff9f7062cdb8fc13b677f0d167bb189363eb18eaca9181b37a3",
+    "simpleBenchmark": "equal_weight_representative_universe",
+    "strategyDefinitionHash": "advisory_r_strategy_e87edd3fa47f037a68ad3105bbd834e28e41a3ffdf5d02dd3756e8025d3ffc7c",
+    "strategyType": "portfolio",
+    "timeframe": "4h",
+    "variantId": "S09"
+  },
+  {
+    "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+    "complexityScore": 6,
+    "diagnosticOnly": true,
+    "direction": "conditional",
+    "entryDefinition": {
+      "confirmationBars": 1,
+      "kind": "orthogonal_vote"
+    },
+    "exitPolicy": {
+      "initialStopMayWiden": false,
+      "maximumHoldBars": 24,
+      "mode": "structure_or_time",
+      "parameters": {
+        "structureRule": {
+          "fastWindow": 12,
+          "kind": "trend_invalidation",
+          "slowWindow": 48
+        }
+      },
+      "version": "advisory_r_exit_policy_v1"
+    },
+    "exitPolicyHash": "exit_policy_5120f20692a4377a7c5a925044e3e829afcce9b46dc50d8afd7b43881a0402e8",
+    "exitPolicyRationaleZh": "诊断候选在趋势结构失效或时限到达时退出。",
+    "falsificationCriteriaZh": "组合后仍不能超过零交易基准，或贡献高度集中。",
+    "familyId": "orthogonal_weak_signal_matrix",
+    "featureDefinition": {
+      "minimumVotes": 2,
+      "signals": [
+        "residual_turn",
+        "volume_surprise",
+        "trend_slope"
+      ]
+    },
+    "humanHypothesisZh": "三个低相关弱信号在方向一致时可能形成可诊断的增量。",
+    "initialStopDefinition": {
+      "kind": "atr",
+      "mayWiden": false,
+      "multiple": 1.5
+    },
+    "maximumHold": 24,
+    "originLineage": "new_orthogonal_diagnostic_trial",
+    "semanticFingerprint": "advisory_r_semantic_b2070b5f9b7f8f19c68d2e30777e4b82cf2d7c71a7faabf256ab1f0d075bf264",
+    "simpleBenchmark": "equal_weight_component_signals",
+    "strategyDefinitionHash": "advisory_r_strategy_75352811bf3cf4dfbb219dc07326b141582ba4e4cca66f333d2d7c0f22ea16b9",
+    "strategyType": "event",
+    "timeframe": "4h",
+    "variantId": "S10"
+  }
+]
