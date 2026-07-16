@@ -6,6 +6,7 @@ import pytest
 
 from alphapilot.advisory_r_campaign.corrected_reporting import (
     REQUIRED_REPORT_NAMES,
+    _failure_attribution,
     build_correction_manifest,
     build_corrected_trial_ledger,
     verify_immutable_artifacts,
@@ -93,3 +94,29 @@ def test_corrected_trial_ledger_preserves_original_attempts() -> None:
     assert corrected["trials"][0]["trialId"] == "trial-1"
     assert corrected["trials"][1]["attemptType"] == "implementation_correction"
     assert corrected["trials"][1]["parentTrialId"] == "trial-1"
+
+
+def test_failure_attribution_stops_when_there_are_zero_survivors() -> None:
+    result = _failure_attribution(
+        [{"passed": False, "failedGates": ["minimumProfitFactor"]}],
+        [{"implementationConformancePassed": True}],
+    )
+
+    assert result["prefilterSurvivorCount"] == 0
+    assert result["nextAction"] == "stop_frozen_campaign_if_zero_survivors"
+
+
+def test_failure_attribution_defers_survivors_to_future_formal_stage() -> None:
+    result = _failure_attribution(
+        [
+            {"passed": True, "failedGates": []},
+            {"passed": False, "failedGates": ["maximumDrawdownPct"]},
+        ],
+        [
+            {"implementationConformancePassed": True},
+            {"implementationConformancePassed": True},
+        ],
+    )
+
+    assert result["prefilterSurvivorCount"] == 1
+    assert result["nextAction"] == "defer_survivors_to_future_formal_stage"

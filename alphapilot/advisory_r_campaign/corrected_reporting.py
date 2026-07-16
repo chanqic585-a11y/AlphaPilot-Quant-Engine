@@ -453,9 +453,11 @@ def _failure_attribution(
     failed_gates = Counter(
         gate for result in results for gate in result.get("failedGates") or []
     )
+    survivor_count = sum(bool(row["passed"]) for row in results)
     return {
         "schemaVersion": "advisory_r_failure_attribution_v1",
         "candidateCount": len(results),
+        "prefilterSurvivorCount": survivor_count,
         "implementationBlockedCount": sum(
             not bool(row["implementationConformancePassed"])
             for row in conformance_records
@@ -463,7 +465,11 @@ def _failure_attribution(
         "economicPrefilterFailureCount": sum(not bool(row["passed"]) for row in results),
         "failedGateCounts": dict(sorted(failed_gates.items())),
         "postResultParameterChanges": 0,
-        "nextAction": "stop_frozen_campaign_if_zero_survivors",
+        "nextAction": (
+            "defer_survivors_to_future_formal_stage"
+            if survivor_count
+            else "stop_frozen_campaign_if_zero_survivors"
+        ),
     }
 
 
