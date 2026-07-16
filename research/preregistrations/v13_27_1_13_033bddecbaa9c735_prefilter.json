@@ -1,0 +1,144 @@
+{
+  "campaignId": "v13_27_1_13_033bddecbaa9c735",
+  "cohortBoundary": {
+    "cohortType": "fixed_core_cohort",
+    "crossSectionalUse": "diagnostic_only_without_historical_pit",
+    "formalUse": "time_series_only_with_fixed_cohort_limitation",
+    "historicalPitUniverse": false
+  },
+  "coreUniverseHash": "minimal_fixed_core_universe_c96658fbc82fbf43f396dab7857e8803ad73a7fc0eb45607b4b75ffcb53cee34",
+  "costModel": {
+    "components": [
+      "fees",
+      "spread_proxy",
+      "slippage"
+    ],
+    "funding": "unavailable_not_zero",
+    "officialFeeScheduleClaimed": false,
+    "roundTripRate": 0.002,
+    "stressMultipliers": [
+      1.0,
+      1.5,
+      2.0
+    ]
+  },
+  "createdAt": "2026-07-16T10:05:14.887652+00:00",
+  "dataBoundary": {
+    "availableEnd": "2026-05-15T04:00:00+00:00",
+    "developmentFraction": 0.55,
+    "developmentStart": "2020-09-23T04:00:00+00:00",
+    "prefilterMayReadAfterDevelopmentEnd": false,
+    "timeframe": "4h"
+  },
+  "eventDefinition": {
+    "atrStopMultiple": 0.25,
+    "atrWindowBars": 14,
+    "marketCrashFloor": -0.08,
+    "marketCrashLookbackBars": 6,
+    "maximumHoldBars": 18,
+    "recaptureRule": "close_above_previous_event_bar_midpoint",
+    "residualBenchmark": "representative_core_median_return",
+    "residualRecoveryDelta": 0.2,
+    "residualZThreshold": -1.75,
+    "residualZWindowBars": 42
+  },
+  "eventExecution": {
+    "initialStopFrozenBeforeEntry": true,
+    "initialStopMayWiden": false,
+    "nextBarOnly": true,
+    "partialExitAtR": 1.0,
+    "partialExitFraction": 0.5,
+    "remainingTargetR": 2.0,
+    "signalOnConfirmedClose": true
+  },
+  "experimentBudget": {
+    "formalStructuralRevisionsPerSurvivingFamily": 1,
+    "fourthReplacementHypothesisAllowed": false,
+    "maximumHypotheses": 3,
+    "prefilterRevisionsPerFamily": 0
+  },
+  "hypotheses": [
+    {
+      "diagnosticOnly": false,
+      "direction": "long",
+      "familyId": "idiosyncratic_selloff_recovery",
+      "formalPassEligible": true,
+      "noveltyStatus": "accepted",
+      "releaseEligible": false,
+      "strategyId": "core_idiosyncratic_selloff_recovery_long_4h",
+      "timeframe": "4h"
+    },
+    {
+      "diagnosticOnly": false,
+      "direction": "long_short_family",
+      "familyId": "breadth_transition_leader_continuation",
+      "formalPassEligible": false,
+      "noveltyReason": "overlaps archived trend-pullback and breakout families",
+      "noveltyStatus": "rejected_overlap",
+      "releaseEligible": false,
+      "strategyId": "core_breadth_transition_leader_continuation_4h",
+      "timeframe": "4h"
+    },
+    {
+      "diagnosticOnly": true,
+      "direction": "market_neutral_diagnostic",
+      "familyId": "fixed_core_cross_sectional_momentum",
+      "formalPassEligible": false,
+      "noveltyStatus": "accepted_diagnostic",
+      "pitBoundary": "fixed_core_cohort_is_not_historical_pit",
+      "releaseEligible": false,
+      "strategyId": "diagnostic_fixed_core_cross_sectional_momentum_1d",
+      "timeframe": "1d"
+    }
+  ],
+  "implementationCommit": "0295c2efa84c0d39e212905fb9904ea0b22a8dfe",
+  "implementationSourceHashes": {
+    "campaign.py": "d37776a33926a03e829013393d4995ff9ba29f16b6feae25ea0a1b34d6b7a35b",
+    "campaign_runner.py": "909006a31db63c1d6b22f552ede68465663ca2765d786cc14992371c7663f0ab",
+    "event_strategy.py": "84c8d93ad2a83086b240d5652864a47a57b85874a0ce55fe03f2fe6e8ffc91af",
+    "execution.py": "a0d122f0e652d14b296a0a25334610a4953d3e45ac5cc0640a37d1a45329664b",
+    "prefilter.py": "3de11c477bf4dcd1d59a573c6d0136bef9921557a50dc2231d4ab6b193e296ef",
+    "preregistration.py": "9fe0dfeb81d749f6d74089ff9089b725655991d45a57fa7827cb3b772743b39c"
+  },
+  "prefilterGates": {
+    "minimumAverageNetR": 0.0,
+    "minimumEvents": 30,
+    "minimumPositiveMonthRatio": 0.5,
+    "minimumProfitFactor": 1.03,
+    "minimumTotalNetR": 0.0
+  },
+  "preregistrationHash": "minimal_prefilter_preregistration_ef26b6424b3bcb242fc4e6e26325acbf673e9e014c72eac0c021a9957e2ef2ed",
+  "regimeReporting": {
+    "postResultRegimeExclusionAllowed": false,
+    "states": [
+      "bull",
+      "bear",
+      "range",
+      "high_vol",
+      "low_vol"
+    ]
+  },
+  "representativeSelectionRule": "BTC_ETH_plus_listing_age_liquidity_volatility_strata_and_stable_hash",
+  "representativeUniverse": [
+    "ADA-USDT-SWAP",
+    "ALGO-USDT-SWAP",
+    "AVAX-USDT-SWAP",
+    "BCH-USDT-SWAP",
+    "BTC-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "safetyBoundary": {
+    "demoArm": false,
+    "demoReleaseCount": 0,
+    "liveTradingEnabled": false,
+    "orderCount": 0,
+    "withdrawEnabled": false
+  },
+  "schemaVersion": "minimal_strategy_prefilter_preregistration_v1",
+  "snapshotHash": "minimal_shared_snapshot_785e47b180c17327dcb35e37d9f12c22e86eae8150e0adf5e1b44fb298f89e3b",
+  "snapshotId": "minimal_snapshot_785e47b180c17327dcb35e37"
+}
