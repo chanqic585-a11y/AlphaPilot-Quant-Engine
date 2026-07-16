@@ -111,6 +111,25 @@ def _write_json(path: Path, payload: Mapping[str, Any]) -> None:
     temporary.replace(path)
 
 
+def write_artifact_manifest(output_root: Path, *, data_root: Path) -> dict[str, Any]:
+    artifacts: dict[str, dict[str, Any]] = {}
+    for path in sorted(output_root.iterdir()):
+        if not path.is_file() or path.name in {"artifact_manifest.json", "hash_checkpoint.json"}:
+            continue
+        artifacts[path.name] = {
+            "path": str(path.resolve()),
+            "sha256": sha256_file(path),
+            "sizeBytes": path.stat().st_size,
+        }
+    manifest = {
+        "schemaVersion": "storage_governance_artifact_manifest_v1",
+        "dataRoot": str(data_root.resolve()),
+        "artifacts": artifacts,
+    }
+    _write_json(output_root / "artifact_manifest.json", manifest)
+    return manifest
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--data-root", required=True)
@@ -131,6 +150,7 @@ def main() -> int:
         "status": "passed",
     }
     _write_json(output / "cleanup_integrity_check.json", integrity)
+    write_artifact_manifest(output, data_root=Path(result["dataRoot"]))
     print(json.dumps({"deletedFileCount": result["deletedFileCount"], "reclaimedBytes": result["reclaimedBytes"]}))
     return 0
 

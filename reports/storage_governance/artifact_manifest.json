@@ -1,0 +1,56 @@
+{
+  "artifacts": {
+    "cleanup_apply_manifest.json": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\cleanup_apply_manifest.json",
+      "sha256": "5db9cb2a2d77e63ba6f1427328bf75ad7825a4ba7a6f4f533d3633b478b3023e",
+      "sizeBytes": 327
+    },
+    "cleanup_dry_run.json": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\cleanup_dry_run.json",
+      "sha256": "e1a7ee93d51029bfaf21ebf5d56c9ad2988d8271a4c76ac24a3e3eca720eb1b4",
+      "sizeBytes": 20470336
+    },
+    "cleanup_dry_run.md": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\cleanup_dry_run.md",
+      "sha256": "a3ce472f2d7a0538d49f719820abcfe5ee25b39c98765402d3c24ab775100c0e",
+      "sizeBytes": 166
+    },
+    "cleanup_integrity_check.json": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\cleanup_integrity_check.json",
+      "sha256": "0b065e1c77cb5589790a8ac8b1c9940e4cd34feae25c5a151fd3092612bfa5a6",
+      "sizeBytes": 253
+    },
+    "duplicate_groups.json": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\duplicate_groups.json",
+      "sha256": "bdd0b6e63c3489e6ca742a132a49487114c984be6a144c14913358557bc10c77",
+      "sizeBytes": 3876606
+    },
+    "reclaim_estimate.json": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\reclaim_estimate.json",
+      "sha256": "236016fedfb4bdeccb616af808470d1484f6367ff8661bc5872a3d395d2b2520",
+      "sizeBytes": 106
+    },
+    "reference_graph.json": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\reference_graph.json",
+      "sha256": "217083b0f7fde2bf475a7ab21154607f83bf5587004ea65b77d1c1d85e3f9425",
+      "sizeBytes": 25716805
+    },
+    "reference_graph_summary.md": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\reference_graph_summary.md",
+      "sha256": "78d54e0683960eed58e5ecb250e4577d21a687370ff9fc32eb199d18a6b93fb9",
+      "sizeBytes": 93
+    },
+    "retention_manifest.json": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\retention_manifest.json",
+      "sha256": "dc6ae5a776c9280bd84f1497ef451d4e7308553bb0ff5c40c697a1a87ed1503d",
+      "sizeBytes": 426
+    },
+    "storage_inventory.json": {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\v13.27.1.13-minimal-data-funnel\\reports\\storage_governance\\storage_inventory.json",
+      "sha256": "30047c76fd9034b5c4d268ee4100a18f836f0c71c17ab03c23dba04ebd4362ab",
+      "sizeBytes": 25716779
+    }
+  },
+  "dataRoot": "D:\\Codex-Workspace\\回测数据",
+  "schemaVersion": "storage_governance_artifact_manifest_v1"
+}

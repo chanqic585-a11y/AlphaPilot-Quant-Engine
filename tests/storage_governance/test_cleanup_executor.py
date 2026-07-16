@@ -3,7 +3,7 @@ from pathlib import Path
 import pytest
 
 from alphapilot.evolution.registry.hashing import sha256_file
-from alphapilot.storage_governance.cleanup_executor import execute_cleanup
+from alphapilot.storage_governance.cleanup_executor import execute_cleanup, write_artifact_manifest
 
 
 def _plan(old: Path, authority: Path) -> dict:
@@ -89,3 +89,17 @@ def test_executor_rejects_plan_for_a_different_data_root(tmp_path: Path) -> None
 
     assert old.exists()
     assert authority.exists()
+
+
+def test_artifact_manifest_includes_apply_and_integrity_reports(tmp_path: Path) -> None:
+    output = tmp_path / "reports"
+    output.mkdir()
+    (output / "cleanup_apply_manifest.json").write_text("{}\n", encoding="utf-8")
+    (output / "cleanup_integrity_check.json").write_text("{}\n", encoding="utf-8")
+
+    manifest = write_artifact_manifest(output, data_root=tmp_path / "data")
+
+    assert set(manifest["artifacts"]) == {
+        "cleanup_apply_manifest.json",
+        "cleanup_integrity_check.json",
+    }

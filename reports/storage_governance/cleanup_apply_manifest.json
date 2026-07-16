@@ -1,0 +1,11 @@
+{
+  "applyCleanup": true,
+  "dataRoot": "D:\\Codex-Workspace\\回测数据",
+  "deletedFileCount": 0,
+  "deletedFiles": [],
+  "generatedAt": "2026-07-16T07:11:04.291728+00:00",
+  "reclaimedBytes": 0,
+  "schemaVersion": "storage_cleanup_apply_manifest_v1",
+  "verifiedCandidateCount": 0,
+  "verifiedCandidates": []
+}

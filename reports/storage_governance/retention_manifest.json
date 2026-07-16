@@ -1,0 +1,16 @@
+{
+  "retainedFileCount": 24385,
+  "rules": {
+    "rawAnnualVsAllRequiresContentProof": true,
+    "retainConflicting": true,
+    "retainImmutableEvidence": true,
+    "retainReferenced": true,
+    "retainUnknownProvenance": true,
+    "safeDuplicateClasses": [
+      "byte_identical",
+      "content_equivalent",
+      "rolling_snapshot_superseded"
+    ]
+  },
+  "schemaVersion": "storage_retention_manifest_v1"
+}
