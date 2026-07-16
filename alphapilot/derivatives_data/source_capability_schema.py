@@ -38,4 +38,3 @@ def build_capability_record(**values: Any) -> dict[str, Any]:
     if record["requiresAuth"] or not record["publicOnly"]:
         record["formalHistoricalEligible"] = False
     return record
-

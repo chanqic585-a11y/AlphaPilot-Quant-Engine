@@ -1,0 +1,11 @@
+{
+  "maximumDownloadBytes": 5368709120,
+  "maximumRequestsPerMinute": 60,
+  "maximumRetriesPerPage": 3,
+  "maximumRunHours": 6,
+  "maximumTotalRequests": 5000,
+  "minimumFreeDiskBytes": 21474836480,
+  "preRegisteredBeforeCollection": true,
+  "publicDataOnly": true,
+  "schemaVersion": "v13_27_1_12_download_budget_v1"
+}

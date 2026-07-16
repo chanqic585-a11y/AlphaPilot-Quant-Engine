@@ -1,0 +1,13 @@
+{
+  "duplicateRecordCount": 0,
+  "inputRecordCount": 0,
+  "outputRecordCount": 0,
+  "primaryKey": [
+    "exchange",
+    "instrumentId",
+    "dataType",
+    "timestampUtc"
+  ],
+  "schemaVersion": "v13_27_1_12_deduplication_report_v1",
+  "status": "not_run_no_new_records"
+}

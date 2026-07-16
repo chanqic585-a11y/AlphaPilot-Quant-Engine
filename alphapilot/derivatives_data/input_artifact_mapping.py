@@ -88,4 +88,3 @@ def map_required_artifacts(
         "status": "blocked_input_mapping" if blocked else "mapped",
         "artifacts": rows,
     }
-

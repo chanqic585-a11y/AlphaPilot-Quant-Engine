@@ -13,9 +13,15 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-
-PRIMARY_KEY = ("exchange", "instrumentId", "dataType", "timestampUtc")
-
+from alphapilot.derivatives_data.checkpoint_store import (
+    load_collection_checkpoint,
+    scan_existing_partitions,
+    write_collection_checkpoint,
+)
+from alphapilot.derivatives_data.deduplication import (
+    PRIMARY_KEY,
+    deduplicate_records as _deduplicate_records,
+)
 
 class CollectionBudgetExceeded(RuntimeError):
     """Raised before a collector writes output outside the frozen resource budget."""
@@ -27,12 +33,16 @@ class CollectorBudget:
     maximum_retries: int
     maximum_download_bytes: int
     minimum_free_disk_bytes: int
+    maximum_total_requests: int = 10_000
+    maximum_run_hours: float = 24.0
 
     def __post_init__(self) -> None:
         if min(
             self.maximum_requests_per_minute,
             self.maximum_download_bytes,
             self.minimum_free_disk_bytes,
+            self.maximum_total_requests,
+            self.maximum_run_hours,
         ) <= 0:
             raise ValueError("collector budgets must be positive")
         if self.maximum_retries < 0:
@@ -54,29 +64,9 @@ def _sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def _record_key(record: Mapping[str, Any]) -> tuple[str, str, str, str]:
-    missing = [field for field in PRIMARY_KEY if not record.get(field)]
-    if missing:
-        raise ValueError(f"record missing primary key fields: {', '.join(missing)}")
-    return tuple(str(record[field]) for field in PRIMARY_KEY)  # type: ignore[return-value]
-
-
 def deduplicate_records(records: list[dict[str, Any]]) -> tuple[list[dict[str, Any]], int]:
-    unique: dict[tuple[str, str, str, str], dict[str, Any]] = {}
-    duplicates = 0
-    for record in records:
-        key = _record_key(record)
-        if key in unique:
-            duplicates += 1
-            continue
-        unique[key] = dict(record)
-    return [unique[key] for key in sorted(unique)], duplicates
-
-
-def _load_checkpoint(path: Path) -> dict[str, Any]:
-    if not path.exists():
-        return {"lastVerifiedCursor": None, "complete": False}
-    return json.loads(path.read_text(encoding="utf-8"))
+    rows, report = _deduplicate_records(records)
+    return rows, int(report["duplicateRecordCount"])
 
 
 def _csv_text(records: list[dict[str, Any]]) -> str:
@@ -110,41 +100,70 @@ def collect_resumable_pages(
     budget: CollectorBudget,
     free_disk_bytes: Callable[[Path], int] | None = None,
     sleep: Callable[[float], None] = time.sleep,
+    monotonic: Callable[[], float] = time.monotonic,
 ) -> dict[str, Any]:
     free_disk_bytes = free_disk_bytes or (lambda path: shutil.disk_usage(path).free)
     disk_probe = output_dir if output_dir.exists() else output_dir.parent
     if free_disk_bytes(disk_probe) < budget.minimum_free_disk_bytes:
         raise CollectionBudgetExceeded("free disk budget is below minimumFreeDiskBytes")
 
-    checkpoint = _load_checkpoint(checkpoint_path)
+    stale_partial = output_dir / "records.json.partial"
+    if stale_partial.exists():
+        raise ValueError(f"partial output requires validation before resume: {stale_partial}")
+
+    checkpoint = load_collection_checkpoint(checkpoint_path)
     cursor = checkpoint.get("lastVerifiedCursor")
-    all_records: list[dict[str, Any]] = []
+    existing_json = output_dir / "records.json"
+    existing_records: list[dict[str, Any]] = []
+    if existing_json.is_file():
+        payload = json.loads(existing_json.read_text(encoding="utf-8"))
+        if not isinstance(payload, list):
+            raise ValueError("existing records.json must contain a JSON array")
+        existing_records = [dict(row) for row in payload]
+    all_records: list[dict[str, Any]] = list(existing_records)
     downloaded_bytes = 0
     request_count = 0
+    retry_count = 0
+    started_at = monotonic()
     complete = bool(checkpoint.get("complete", False))
     if complete:
+        outputs: dict[str, str] = {}
+        csv_path = output_dir / "records.csv"
+        if existing_json.is_file():
+            outputs.update({"json": str(existing_json), "jsonSha256": _sha256(existing_json)})
+        if csv_path.is_file():
+            outputs.update({"csv": str(csv_path), "csvSha256": _sha256(csv_path)})
         return {
-            "recordCount": 0,
+            "recordCount": len(existing_records),
             "duplicateCount": 0,
+            "reusedRecordCount": len(existing_records),
             "complete": True,
             "lastVerifiedCursor": cursor,
             "requestCount": 0,
+            "retryCount": 0,
             "downloadedBytes": 0,
-            "outputs": {},
+            "outputs": outputs,
         }
 
     while not complete:
+        if monotonic() - started_at > budget.maximum_run_hours * 3600:
+            raise CollectionBudgetExceeded("run budget exceeded maximumRunHours")
         last_error: Exception | None = None
         page: Mapping[str, Any] | None = None
         for attempt in range(budget.maximum_retries + 1):
+            if request_count >= budget.maximum_total_requests:
+                raise CollectionBudgetExceeded("request budget reached maximumTotalRequests")
+            if monotonic() - started_at > budget.maximum_run_hours * 3600:
+                raise CollectionBudgetExceeded("run budget exceeded maximumRunHours")
+            request_count += 1
             try:
                 page = fetch_page(cursor)
-                request_count += 1
                 break
             except Exception as exc:  # bounded retry preserves the original exception type
                 last_error = exc
                 if attempt >= budget.maximum_retries:
                     raise
+                retry_count += 1
                 sleep(min(2**attempt, 30))
         if page is None:
             assert last_error is not None
@@ -163,20 +182,17 @@ def collect_resumable_pages(
         if not complete and next_cursor == cursor:
             raise ValueError("collector cursor did not advance")
         cursor = str(next_cursor) if next_cursor is not None else None
-        _atomic_write(
+        write_collection_checkpoint(
             checkpoint_path,
-            json.dumps(
-                {
-                    "lastVerifiedCursor": cursor,
-                    "complete": complete,
-                    "downloadedBytes": downloaded_bytes,
-                    "requestCount": request_count,
-                },
-                ensure_ascii=False,
-                indent=2,
-                sort_keys=True,
-            )
-            + "\n",
+            {
+                "lastVerifiedCursor": cursor,
+                "complete": complete,
+                "totalDownloadedBytes": int(checkpoint.get("totalDownloadedBytes", 0))
+                + downloaded_bytes,
+                "totalRequestCount": int(checkpoint.get("totalRequestCount", 0)) + request_count,
+                "totalRetryCount": int(checkpoint.get("totalRetryCount", 0)) + retry_count,
+                "resumeCount": int(checkpoint.get("resumeCount", 0)) + 1,
+            },
         )
         if not complete:
             sleep(60 / budget.maximum_requests_per_minute)
@@ -192,9 +208,11 @@ def collect_resumable_pages(
     return {
         "recordCount": len(records),
         "duplicateCount": duplicate_count,
+        "reusedRecordCount": len(existing_records),
         "complete": complete,
         "lastVerifiedCursor": cursor,
         "requestCount": request_count,
+        "retryCount": retry_count,
         "downloadedBytes": downloaded_bytes,
         "outputs": {
             "json": str(json_path),

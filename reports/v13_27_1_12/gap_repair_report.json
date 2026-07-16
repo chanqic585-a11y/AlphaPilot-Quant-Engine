@@ -1,0 +1,8 @@
+{
+  "detectedGapCount": 0,
+  "existingDataDeleted": false,
+  "repairedGapCount": 0,
+  "schemaVersion": "v13_27_1_12_gap_repair_report_v1",
+  "status": "not_run_no_verified_collection_chain",
+  "unresolvedGapCount": 0
+}

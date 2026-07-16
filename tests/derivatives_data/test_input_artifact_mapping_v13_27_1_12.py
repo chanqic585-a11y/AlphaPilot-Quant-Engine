@@ -46,4 +46,3 @@ def test_input_mapping_fails_closed_for_missing_or_ambiguous_inputs(tmp_path) ->
     assert by_role["missing"]["exists"] is False
     assert by_role["ambiguous"]["actualPath"] is None
     assert by_role["ambiguous"]["ambiguousCandidates"] == ["a.json", "b.json"]
-

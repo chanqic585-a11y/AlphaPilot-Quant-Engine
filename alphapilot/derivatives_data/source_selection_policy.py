@@ -57,4 +57,3 @@ def select_formal_source_chain(
         "reason": "no_single_exchange_has_complete_formal_chain",
         "coverageByExchange": coverage,
     }
-

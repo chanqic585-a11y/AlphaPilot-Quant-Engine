@@ -1,0 +1,91 @@
+{
+  "downloadedBytes": 0,
+  "existingDataScan": {
+    "dataRoot": "D:\\Codex-Workspace\\回测数据\\normalized",
+    "formalEligiblePartitionCount": 8,
+    "partialFileCount": 0,
+    "partitionCount": 8,
+    "partitions": [
+      {
+        "bytes": 123835,
+        "formalEligible": true,
+        "partial": false,
+        "path": "binance/swap/funding/ADA-USDT-SWAP.parquet",
+        "supportedFormat": true,
+        "valid": true,
+        "validationError": null
+      },
+      {
+        "bytes": 132235,
+        "formalEligible": true,
+        "partial": false,
+        "path": "binance/swap/funding/BCH-USDT-SWAP.parquet",
+        "supportedFormat": true,
+        "valid": true,
+        "validationError": null
+      },
+      {
+        "bytes": 129456,
+        "formalEligible": true,
+        "partial": false,
+        "path": "binance/swap/funding/BTC-USDT-SWAP.parquet",
+        "supportedFormat": true,
+        "valid": true,
+        "validationError": null
+      },
+      {
+        "bytes": 125264,
+        "formalEligible": true,
+        "partial": false,
+        "path": "binance/swap/funding/ETC-USDT-SWAP.parquet",
+        "supportedFormat": true,
+        "valid": true,
+        "validationError": null
+      },
+      {
+        "bytes": 129381,
+        "formalEligible": true,
+        "partial": false,
+        "path": "binance/swap/funding/ETH-USDT-SWAP.parquet",
+        "supportedFormat": true,
+        "valid": true,
+        "validationError": null
+      },
+      {
+        "bytes": 122016,
+        "formalEligible": true,
+        "partial": false,
+        "path": "binance/swap/funding/LINK-USDT-SWAP.parquet",
+        "supportedFormat": true,
+        "valid": true,
+        "validationError": null
+      },
+      {
+        "bytes": 126221,
+        "formalEligible": true,
+        "partial": false,
+        "path": "binance/swap/funding/LTC-USDT-SWAP.parquet",
+        "supportedFormat": true,
+        "valid": true,
+        "validationError": null
+      },
+      {
+        "bytes": 127674,
+        "formalEligible": true,
+        "partial": false,
+        "path": "binance/swap/funding/XRP-USDT-SWAP.parquet",
+        "supportedFormat": true,
+        "valid": true,
+        "validationError": null
+      }
+    ],
+    "validPartitionCount": 8
+  },
+  "networkAccessAttempted": false,
+  "networkRequestCount": 0,
+  "reason": "no_verified_complete_same_exchange_source_chain",
+  "resumeCount": 0,
+  "retryCount": 0,
+  "schemaVersion": "v13_27_1_12_download_resume_manifest_v1",
+  "status": "existing_data_scanned_no_download"
+}

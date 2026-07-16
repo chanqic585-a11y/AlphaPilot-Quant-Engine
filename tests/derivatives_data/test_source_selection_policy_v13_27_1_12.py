@@ -56,4 +56,3 @@ def test_source_policy_rejects_cross_exchange_splicing() -> None:
     assert decision["selectedExchange"] is None
     assert decision["crossExchangeSplicingUsed"] is False
     assert decision["reason"] == "no_single_exchange_has_complete_formal_chain"
-
