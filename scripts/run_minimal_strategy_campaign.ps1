@@ -16,8 +16,20 @@ if (-not (Test-Path -LiteralPath $DataRoot -PathType Container)) {
   throw "Data root does not exist: $DataRoot"
 }
 if (-not $PythonPath) {
-  $venvPython = Join-Path $repoRoot ".venv\Scripts\python.exe"
-  $PythonPath = if (Test-Path -LiteralPath $venvPython) { $venvPython } else { "python" }
+  $pythonCandidates = @(
+    (Join-Path $repoRoot ".venv\Scripts\python.exe")
+  )
+  $gitCommonDir = (& git -C $repoRoot rev-parse --path-format=absolute --git-common-dir).Trim()
+  if ($LASTEXITCODE -eq 0 -and $gitCommonDir) {
+    $mainRepoRoot = Split-Path -Parent $gitCommonDir
+    $pythonCandidates += (Join-Path $mainRepoRoot ".venv\Scripts\python.exe")
+  }
+  $PythonPath = $pythonCandidates |
+    Where-Object { Test-Path -LiteralPath $_ -PathType Leaf } |
+    Select-Object -First 1
+  if (-not $PythonPath) {
+    $PythonPath = "python"
+  }
 }
 
 $stageMap = @{
