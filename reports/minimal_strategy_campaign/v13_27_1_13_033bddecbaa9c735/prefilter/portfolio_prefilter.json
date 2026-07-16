@@ -1,0 +1,10 @@
+{
+  "diagnosticOnly": true,
+  "formalPassEligible": false,
+  "prefilter": {
+    "passed": false
+  },
+  "reason": "Historical PIT membership is unavailable and the shared minimal snapshot does not contain sufficient 1d core coverage.",
+  "status": "diagnostic_data_insufficient",
+  "strategyId": "diagnostic_fixed_core_cross_sectional_momentum_1d"
+}

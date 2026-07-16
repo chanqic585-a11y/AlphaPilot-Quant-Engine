@@ -1,0 +1,21 @@
+{
+  "archivedEvidence": "reports/full_archived_strategy_cross_strategy_patterns.json",
+  "hypotheses": [
+    {
+      "noveltyReason": null,
+      "noveltyStatus": "accepted",
+      "strategyId": "core_idiosyncratic_selloff_recovery_long_4h"
+    },
+    {
+      "noveltyReason": "overlaps archived trend-pullback and breakout families",
+      "noveltyStatus": "rejected_overlap",
+      "strategyId": "core_breadth_transition_leader_continuation_4h"
+    },
+    {
+      "noveltyReason": null,
+      "noveltyStatus": "accepted_diagnostic",
+      "strategyId": "diagnostic_fixed_core_cross_sectional_momentum_1d"
+    }
+  ],
+  "replacementHypothesisAllowed": false
+}

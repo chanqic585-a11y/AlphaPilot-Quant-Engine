@@ -1,0 +1,14 @@
+{
+  "archivedStrategyIds": [
+    "core_breadth_transition_leader_continuation_4h",
+    "core_idiosyncratic_selloff_recovery_long_4h"
+  ],
+  "demoArm": false,
+  "demoReleaseCount": 0,
+  "diagnosticStrategyIds": [
+    "diagnostic_fixed_core_cross_sectional_momentum_1d"
+  ],
+  "formalStageAllowed": false,
+  "formalStrategyIds": [],
+  "orderCount": 0
+}

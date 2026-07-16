@@ -1,0 +1,51 @@
+{
+  "stage": "prefilter",
+  "strategies": [
+    {
+      "gates": {
+        "minimumAverageNetR": {
+          "observed": -0.04435126414432167,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 644,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.40540540540540543,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.9183736874508704,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalNetR": {
+          "observed": -28.562214108943152,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "passed": false,
+      "strategyId": "core_idiosyncratic_selloff_recovery_long_4h"
+    },
+    {
+      "gates": {},
+      "passed": false,
+      "strategyId": "core_breadth_transition_leader_continuation_4h"
+    },
+    {
+      "gates": {},
+      "passed": false,
+      "strategyId": "diagnostic_fixed_core_cross_sectional_momentum_1d"
+    }
+  ]
+}

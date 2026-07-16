@@ -1,0 +1,29 @@
+{
+  "failures": [
+    {
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "nextAction": "archive_without_tuning",
+      "status": "evaluated",
+      "strategyId": "core_idiosyncratic_selloff_recovery_long_4h"
+    },
+    {
+      "failedGates": [
+        "archived_family_novelty"
+      ],
+      "nextAction": "archive_without_tuning",
+      "status": "not_generated_novelty_rejected",
+      "strategyId": "core_breadth_transition_leader_continuation_4h"
+    },
+    {
+      "failedGates": [],
+      "nextAction": "retain_as_diagnostic_only",
+      "status": "diagnostic_data_insufficient",
+      "strategyId": "diagnostic_fixed_core_cross_sectional_momentum_1d"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "btcDevelopmentReturn": 2.28264269335201,
+  "comparabilityNote": "Holding returns are context benchmarks, not event-risk-normalized pass gates.",
+  "equalWeightRepresentativeReturn": 3.732188713173663,
+  "instrumentReturns": {
+    "ADA-USDT-SWAP": 2.735733864938948,
+    "ALGO-USDT-SWAP": -0.6225850340136054,
+    "AVAX-USDT-SWAP": 1.8471115537848606,
+    "BCH-USDT-SWAP": 0.13572325289440657,
+    "BTC-USDT-SWAP": 2.28264269335201,
+    "DOGE-USDT-SWAP": 25.382409177820264,
+    "ETH-USDT-SWAP": 4.346356570679848,
+    "FIL-USDT-SWAP": -0.8166826462128476,
+    "LTC-USDT-SWAP": 0.5539990962494352,
+    "XRP-USDT-SWAP": 1.4771786022433133
+  },
+  "noTradeReturn": 0.0
+}

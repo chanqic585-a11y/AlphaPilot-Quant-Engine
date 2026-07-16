@@ -1,0 +1,85 @@
+{
+  "artifacts": [
+    {
+      "bytes": 210,
+      "path": "campaign_summary.json",
+      "sha256": "5ae36aff554fc957d74ee36f72baeade8b869810fd54eb4ee532c23ad05f1a2b"
+    },
+    {
+      "bytes": 533,
+      "path": "campaign_summary.md",
+      "sha256": "dc83a4fb8e0a5978a0eecf3788efbb4ddca7ecac184c14e74985377c8c4d6824"
+    },
+    {
+      "bytes": 3081,
+      "path": "candidate_results.parquet",
+      "sha256": "e554f55ab2afb7a2889d849d19452bc8f1b4ff8a9f6e56a97f56fae52f3da8b2"
+    },
+    {
+      "bytes": 168,
+      "path": "experiment_budget.json",
+      "sha256": "77ebb3ce61f81dc9afd0fe92192649082d19f3bde8c1b3b64841566104fb7c7b"
+    },
+    {
+      "bytes": 812,
+      "path": "failure_attribution.json",
+      "sha256": "f25c5ba7db47159880cd1bc7148a8c31a1d6786562b64da15c9708bd2f378e77"
+    },
+    {
+      "bytes": 1293,
+      "path": "gate_matrix.json",
+      "sha256": "5e575147cc31203da62642499b6f3418e5c2d3f50c6bc382ed4052451f6d1bef"
+    },
+    {
+      "bytes": 103036,
+      "path": "prefilter/event_ledger.parquet",
+      "sha256": "6acdc061d38c1b78b51c74222df6621d64acf453e360ca7a21b4436895175ebd"
+    },
+    {
+      "bytes": 6575,
+      "path": "prefilter/event_prefilter.json",
+      "sha256": "d3f3f1c66f9f0505388f74e835745b93dee429e91ba5f609f9ed3ad304e77612"
+    },
+    {
+      "bytes": 812,
+      "path": "prefilter/failure_attribution.json",
+      "sha256": "f25c5ba7db47159880cd1bc7148a8c31a1d6786562b64da15c9708bd2f378e77"
+    },
+    {
+      "bytes": 679,
+      "path": "prefilter/novelty_audit.json",
+      "sha256": "c7c1f81529eb2d3d77c9603657360dc95ee054a2c99336468587134639afa54f"
+    },
+    {
+      "bytes": 357,
+      "path": "prefilter/portfolio_prefilter.json",
+      "sha256": "857d46fa01ef29a5ce9f0d37a13ab8c8a2e5678f26a4076ce59a8200e539fe08"
+    },
+    {
+      "bytes": 533,
+      "path": "prefilter/prefilter_summary.md",
+      "sha256": "dc83a4fb8e0a5978a0eecf3788efbb4ddca7ecac184c14e74985377c8c4d6824"
+    },
+    {
+      "bytes": 379,
+      "path": "prefilter/representative_universe.json",
+      "sha256": "c3106719afbf7a2a2d1cca43eaadea9edd68b57708e00d6eb65d95d5f3ac18a0"
+    },
+    {
+      "bytes": 688,
+      "path": "prefilter/simple_benchmarks.json",
+      "sha256": "5225854e5b2c52ffaafe083520bfd8f9f131b75d64edf1bb2a80ee41c1d6abed"
+    },
+    {
+      "bytes": 1137,
+      "path": "prefilter/strategy_inventory.json",
+      "sha256": "fa2c74ddc04b9a2fef7f6500b8c67f86d62f9fb865f75de8b25d4623c44f2254"
+    },
+    {
+      "bytes": 363,
+      "path": "route_decision.json",
+      "sha256": "a5230933364a9afda0e48d4d590577a01edb984cc965d766f58fdfa7a957bcd6"
+    }
+  ],
+  "schemaVersion": "minimal_campaign_artifact_manifest_v1"
+}

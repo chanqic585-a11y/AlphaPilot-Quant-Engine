@@ -1,0 +1,34 @@
+[
+  {
+    "diagnosticOnly": false,
+    "direction": "long",
+    "familyId": "idiosyncratic_selloff_recovery",
+    "formalPassEligible": true,
+    "noveltyStatus": "accepted",
+    "releaseEligible": false,
+    "strategyId": "core_idiosyncratic_selloff_recovery_long_4h",
+    "timeframe": "4h"
+  },
+  {
+    "diagnosticOnly": false,
+    "direction": "long_short_family",
+    "familyId": "breadth_transition_leader_continuation",
+    "formalPassEligible": false,
+    "noveltyReason": "overlaps archived trend-pullback and breakout families",
+    "noveltyStatus": "rejected_overlap",
+    "releaseEligible": false,
+    "strategyId": "core_breadth_transition_leader_continuation_4h",
+    "timeframe": "4h"
+  },
+  {
+    "diagnosticOnly": true,
+    "direction": "market_neutral_diagnostic",
+    "familyId": "fixed_core_cross_sectional_momentum",
+    "formalPassEligible": false,
+    "noveltyStatus": "accepted_diagnostic",
+    "pitBoundary": "fixed_core_cohort_is_not_historical_pit",
+    "releaseEligible": false,
+    "strategyId": "diagnostic_fixed_core_cross_sectional_momentum_1d",
+    "timeframe": "1d"
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "instrumentIds": [
+    "ADA-USDT-SWAP",
+    "ALGO-USDT-SWAP",
+    "AVAX-USDT-SWAP",
+    "BCH-USDT-SWAP",
+    "BTC-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "selectedBeforeResults": true,
+  "selectionRule": "BTC_ETH_plus_listing_age_liquidity_volatility_strata_and_stable_hash"
+}

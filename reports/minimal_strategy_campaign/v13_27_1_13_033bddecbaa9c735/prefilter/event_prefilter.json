@@ -1,0 +1,185 @@
+{
+  "availableEndNotRead": "2026-05-15T04:00:00+00:00",
+  "costStress": {
+    "1.5x": {
+      "averageNetR": -0.1037375846843148,
+      "eventCount": 644,
+      "folds": {},
+      "maximumDrawdownPct": 86.48812516110796,
+      "maximumDrawdownR": 86.48812516110796,
+      "observedMonthCount": 37,
+      "positiveFoldCount": 0,
+      "positiveMonthRatio": 0.35135135135135137,
+      "profitFactor": 0.8213824093624488,
+      "singleInstrumentPositiveContribution": 0.14662209786591507,
+      "singleMonthPositiveContribution": 0.060086474744579725,
+      "totalNetR": -66.80700453669873
+    },
+    "2.0x": {
+      "averageNetR": -0.16312390522430792,
+      "eventCount": 644,
+      "folds": {},
+      "maximumDrawdownPct": 115.2137970540178,
+      "maximumDrawdownR": 115.21379705401779,
+      "observedMonthCount": 37,
+      "positiveFoldCount": 0,
+      "positiveMonthRatio": 0.2702702702702703,
+      "profitFactor": 0.7364480817872203,
+      "singleInstrumentPositiveContribution": 0.14276826670669468,
+      "singleMonthPositiveContribution": 0.061044606001387475,
+      "totalNetR": -105.0517949644543
+    },
+    "base": {
+      "averageNetR": -0.04435126414432167,
+      "eventCount": 644,
+      "folds": {},
+      "maximumDrawdownPct": 62.785739542849214,
+      "maximumDrawdownR": 62.78573954284922,
+      "observedMonthCount": 37,
+      "positiveFoldCount": 0,
+      "positiveMonthRatio": 0.40540540540540543,
+      "profitFactor": 0.9183736874508704,
+      "singleInstrumentPositiveContribution": 0.15138160403421358,
+      "singleMonthPositiveContribution": 0.05912350633247432,
+      "totalNetR": -28.562214108943152
+    },
+    "funding": "unavailable_not_zero"
+  },
+  "developmentEndExclusive": "2023-10-31T04:00:00+00:00",
+  "developmentStart": "2020-09-23T04:00:00+00:00",
+  "diagnosticOnly": false,
+  "prefilter": {
+    "eventCount": 644,
+    "failedGates": [
+      "minimumAverageNetR",
+      "minimumPositiveMonthRatio",
+      "minimumProfitFactor",
+      "minimumTotalNetR"
+    ],
+    "gates": {
+      "minimumAverageNetR": {
+        "observed": -0.04435126414432167,
+        "operator": ">",
+        "passed": false,
+        "required": 0.0
+      },
+      "minimumEvents": {
+        "observed": 644,
+        "operator": ">=",
+        "passed": true,
+        "required": 30
+      },
+      "minimumPositiveMonthRatio": {
+        "observed": 0.40540540540540543,
+        "operator": ">=",
+        "passed": false,
+        "required": 0.5
+      },
+      "minimumProfitFactor": {
+        "observed": 0.9183736874508704,
+        "operator": ">=",
+        "passed": false,
+        "required": 1.03
+      },
+      "minimumTotalNetR": {
+        "observed": -28.562214108943152,
+        "operator": ">",
+        "passed": false,
+        "required": 0.0
+      }
+    },
+    "metrics": {
+      "averageNetR": -0.04435126414432167,
+      "eventCount": 644,
+      "folds": {},
+      "maximumDrawdownPct": 62.785739542849214,
+      "maximumDrawdownR": 62.78573954284922,
+      "observedMonthCount": 37,
+      "positiveFoldCount": 0,
+      "positiveMonthRatio": 0.40540540540540543,
+      "profitFactor": 0.9183736874508704,
+      "singleInstrumentPositiveContribution": 0.15138160403421358,
+      "singleMonthPositiveContribution": 0.05912350633247432,
+      "totalNetR": -28.562214108943152
+    },
+    "passed": false,
+    "regimeBreakdown": {
+      "marketState": {
+        "bear": {
+          "averageNetR": 0.14399999362295396,
+          "eventCount": 114,
+          "folds": {},
+          "maximumDrawdownPct": 11.11048175950806,
+          "maximumDrawdownR": 11.11048175950806,
+          "observedMonthCount": 27,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 0.6296296296296297,
+          "profitFactor": 1.3233882327660218,
+          "singleInstrumentPositiveContribution": 0.27549782364238856,
+          "singleMonthPositiveContribution": 0.10602028672493663,
+          "totalNetR": 16.41599927301675
+        },
+        "bull": {
+          "averageNetR": -0.050204744134176894,
+          "eventCount": 60,
+          "folds": {},
+          "maximumDrawdownPct": 8.818676750113486,
+          "maximumDrawdownR": 8.818676750113486,
+          "observedMonthCount": 18,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 0.4444444444444444,
+          "profitFactor": 0.9041025622162073,
+          "singleInstrumentPositiveContribution": 0.19501870075549826,
+          "singleMonthPositiveContribution": 0.32991061969151486,
+          "totalNetR": -3.012284648050614
+        },
+        "range": {
+          "averageNetR": -0.08928921007214742,
+          "eventCount": 470,
+          "folds": {},
+          "maximumDrawdownPct": 60.823764915427084,
+          "maximumDrawdownR": 60.82376491542708,
+          "observedMonthCount": 37,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 0.3783783783783784,
+          "profitFactor": 0.8432588061010544,
+          "singleInstrumentPositiveContribution": 0.1334928543907497,
+          "singleMonthPositiveContribution": 0.06588500222588534,
+          "totalNetR": -41.96592873390929
+        }
+      },
+      "volatilityState": {
+        "high": {
+          "averageNetR": 0.007764039013288357,
+          "eventCount": 292,
+          "folds": {},
+          "maximumDrawdownPct": 24.384013043604224,
+          "maximumDrawdownR": 24.384013043604224,
+          "observedMonthCount": 29,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 0.5172413793103449,
+          "profitFactor": 1.0152181675285088,
+          "singleInstrumentPositiveContribution": 0.16330830242489333,
+          "singleMonthPositiveContribution": 0.09008357514415428,
+          "totalNetR": 2.2670993918802003
+        },
+        "low": {
+          "averageNetR": -0.08758327699097544,
+          "eventCount": 352,
+          "folds": {},
+          "maximumDrawdownPct": 51.73535536545681,
+          "maximumDrawdownR": 51.73535536545682,
+          "observedMonthCount": 33,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 0.30303030303030304,
+          "profitFactor": 0.8465753590417813,
+          "singleInstrumentPositiveContribution": 0.14077800112876176,
+          "singleMonthPositiveContribution": 0.08744334783081871,
+          "totalNetR": -30.829313500823353
+        }
+      }
+    }
+  },
+  "status": "evaluated",
+  "strategyId": "core_idiosyncratic_selloff_recovery_long_4h"
+}
