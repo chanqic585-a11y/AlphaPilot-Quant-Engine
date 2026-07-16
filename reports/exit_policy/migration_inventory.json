@@ -1,18 +1,18 @@
 {
   "schemaVersion": "exit_policy_migration_inventory_v1",
   "summary": {
-    "totalHits": 7709,
+    "totalHits": 7721,
     "activeHardGateHits": 32,
     "historicalHitsPreserved": 6879,
-    "liveBoundaryHitsPreserved": 11,
+    "liveBoundaryHitsPreserved": 12,
     "classificationCounts": {
       "active_logic": 32,
       "active_ui_mixed": 31,
-      "documentation": 247,
+      "documentation": 225,
       "historical_evidence": 6879,
-      "legacy_or_unreviewed_code": 357,
-      "live_boundary": 11,
-      "test_contract": 152
+      "legacy_or_unreviewed_code": 407,
+      "live_boundary": 12,
+      "test_contract": 135
     }
   },
   "references": [
@@ -2393,6 +2393,564 @@
       "line": ".auto-lifecycle-lane-take_profit_2r {"
     },
     {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_Strategy_Generation_Core_Principles.md",
+      "lineNumber": 19,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "7. **统一使用 R。** 初始止损定义 `1R`，杠杆不得改变单笔最大允许亏损。初始净目标原则上不低于 `2R`。"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_Strategy_Generation_Core_Principles.md",
+      "lineNumber": 20,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "8. **盈利延伸不放宽风险。** 达到 `2R` 后可以分批止盈或保留趋势尾仓，但不能下移保护线、扩大初始止损或把盈利单重新变成大亏损。"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Design.md",
+      "lineNumber": 49,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "7. A formal backtest always evaluates a fixed reward target of at least `2R`."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Design.md",
+      "lineNumber": 162,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- stop-loss model and `targetR >= 2`;"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Design.md",
+      "lineNumber": 275,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "### 6.7 Fixed 2R Outcome Evaluation"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Design.md",
+      "lineNumber": 281,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- target price at `targetR >= 2`;"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Design.md",
+      "lineNumber": 341,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- Can the entry and 2R exit path execute without exceptions?"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Design.md",
+      "lineNumber": 489,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "10. Fixed `targetR >= 2` is enforced and same-bar ambiguity is conservative."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_V13.27_Unified_Workflow_Orchestrator_Design.md",
+      "lineNumber": 211,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- fees, slippage, latency, and 2R target treatment;"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "architecture/AlphaPilot_V13.27_Unified_Workflow_Orchestrator_Design.md",
+      "lineNumber": 224,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "It must not count historical replay, synthetic `+2R/-1R` outcomes, or repeated heartbeats as official forward evidence."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "docs/superpowers/plans/2026-07-15-integrated-factor-research-backtest-factory.md",
+      "lineNumber": 364,
+      "classification": "documentation",
+      "action": "update_current_wording_only",
+      "activeHardGate": false,
+      "line": "初始目标原则上至少 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "docs/superpowers/plans/2026-07-15-integrated-factor-research-backtest-factory.md",
+      "lineNumber": 1344,
+      "classification": "documentation",
+      "action": "update_current_wording_only",
+      "activeHardGate": false,
+      "line": "目标 >= 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "docs/superpowers/plans/2026-07-15-integrated-factor-research-backtest-factory.md",
+      "lineNumber": 1415,
+      "classification": "documentation",
+      "action": "update_current_wording_only",
+      "activeHardGate": false,
+      "line": "targetReference"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "docs/superpowers/plans/2026-07-15-strategy-validation-demo-admission-and-cutover-v2.md",
+      "lineNumber": 192,
+      "classification": "documentation",
+      "action": "update_current_wording_only",
+      "activeHardGate": false,
+      "line": "初始目标 >= 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "docs/superpowers/plans/2026-07-15-strategy-validation-demo-admission-and-cutover-v2.md",
+      "lineNumber": 310,
+      "classification": "documentation",
+      "action": "update_current_wording_only",
+      "activeHardGate": false,
+      "line": "minimumTargetR"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_Archived_Failed_Strategy_Analysis_Codex_Prompt_CN.md",
+      "lineNumber": 365,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "未来先到 +1R / +2R 还是 -1R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_Candidate_Evidence_Closure_Locked_Validation_Codex_Prompt_CN.md",
+      "lineNumber": 837,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "先到 +2R 比例"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_Candidate_Evidence_Closure_Locked_Validation_Codex_Prompt_CN.md",
+      "lineNumber": 1189,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "2R 目标"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_Full_Archived_Strategy_Evidence_Analysis_Codex_Prompt_CN.md",
+      "lineNumber": 679,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "是否先到 +2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_Full_Archived_Strategy_Evidence_Analysis_Codex_Prompt_CN.md",
+      "lineNumber": 681,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "到达 +1R / +2R / -1R 的时间"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.16_Auditable_Market_Data_Foundation_Codex_Prompt.md",
+      "lineNumber": 19,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "Minimum future strategy reward/risk: >= 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.16_Auditable_Market_Data_Foundation_Codex_Prompt.md",
+      "lineNumber": 88,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "V13.17 may materialize point-in-time FactorRuns and `>=2R` labels only from a"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.17_Point_in_Time_FactorRun_Backtest_Codex_Prompt.md",
+      "lineNumber": 5,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "Materialize approved point-in-time factors and `>=2R` directional labels from"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.17_Point_in_Time_FactorRun_Backtest_Codex_Prompt.md",
+      "lineNumber": 15,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "4. Keep stop distance at `1R` and target distance at least `2R`."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.18_Actual_Candle_Historical_Path_Replay_Codex_Prompt.md",
+      "lineNumber": 13,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "3. Keep stop at `1R` and target at least `2R`."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.19_Real_Time_Local_Forward_Observation_Codex_Prompt.md",
+      "lineNumber": 8,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "stop, a target of at least 2R, and append-only restart state."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.22_Offline_Evolution_Feedback_Loop_Codex_Prompt.md",
+      "lineNumber": 15,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "3. Report expectancy, profit factor, fixed-2R exits, costs, concentration,"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.22_Offline_Evolution_Feedback_Loop_Codex_Prompt.md",
+      "lineNumber": 22,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "experiment, FactorRun, fixed `>=2R`, and formal gate evidence."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.24_Versioned_Risk_Profile_Codex_Prompt.md",
+      "lineNumber": 17,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- Keep `reward/risk >= 2R`."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.25_Fail_Closed_OKX_Live_Canary_Codex_Prompt.md",
+      "lineNumber": 16,
+      "classification": "live_boundary",
+      "action": "preserve_live_admission",
+      "activeHardGate": false,
+      "line": "- Require isolated margin, attached TP and SL, and reward/risk >= 2R."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 299,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "固定 2R / 2.2R 型退出"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 748,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "hit2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 752,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "timeTo2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 1801,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "# 25. 2R 规则统一口径"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 1811,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "4. 剩余仓位的初始盈利目标不得低于 +2R。"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 1854,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "剩余 >=2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 1859,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "剩余 >=2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 2069,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "剩余目标 >=2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 2272,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "68. 是否将剩余目标降到 2R 以下"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.11_Revised_V2_Hierarchical_Gates_Causal_Data_Clean_Holdout_Codex_Prompt_CN.md",
+      "lineNumber": 2386,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "方向策略剩余目标不低于 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.1.13_Minimal_Data_Layer_Storage_Governance_Bounded_Strategy_Funnel_Codex_Prompt_CN.md",
+      "lineNumber": 1304,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "剩余仓位初始目标 >= 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.27.8_Shared_Official_Market_Data_Codex_Prompt.md",
+      "lineNumber": 37,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- 不修改 `targetR >= 2R`。"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.4.33_Low_Frequency_Candidate_Spec_Codex_Prompt.md",
+      "lineNumber": 389,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "take profit: 1.5R - 2R 或 trailing"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/AlphaPilot_V13.4.33_Low_Frequency_Candidate_Spec_Codex_Prompt.md",
+      "lineNumber": 427,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "take profit: 1.5R - 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/V13.4.6-strategy-direction-review.md",
+      "lineNumber": 300,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "3. V03 是否需要至少 1.5R 或 2R 目标"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/V13.4.7-v03-candidate-selection.md",
+      "lineNumber": 506,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "Minimum reward/risk: 1.5R 或 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/V13.4.7-v03-candidate-selection.md",
+      "lineNumber": 527,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "take profit = 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "prompts/V13.4.8-trend-pullback-1h-smoke.md",
+      "lineNumber": 275,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "ATR stop + 2R take profit"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "README.md",
+      "lineNumber": 28,
+      "classification": "documentation",
+      "action": "update_current_wording_only",
+      "activeHardGate": false,
+      "line": "- `roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md`: Task-by-task TDD plan for dual data storage, official OKX preparation, formal fixed-2R backtesting, and automatic Local Forward entry"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "README.md",
+      "lineNumber": 52,
+      "classification": "documentation",
+      "action": "update_current_wording_only",
+      "activeHardGate": false,
+      "line": "- `prompts/AlphaPilot_V13.17_Point_in_Time_FactorRun_Backtest_Codex_Prompt.md`: Point-in-time FactorRuns, fixed 2R labels, purged walk-forward, locked test, and formal promotion gate prompt"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "README.md",
+      "lineNumber": 53,
+      "classification": "documentation",
+      "action": "update_current_wording_only",
+      "activeHardGate": false,
+      "line": "- `prompts/AlphaPilot_V13.18_Actual_Candle_Historical_Path_Replay_Codex_Prompt.md`: Next-bar actual-candle replay, 2R exits, immutable Outcome Ledger, and legacy synthetic evidence boundary prompt"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 19,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- Every formal result enforces `targetR >= 2` and conservative stop-first handling when stop and target are ambiguous within the finest available candle."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 44,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- `alphapilot/evolution/evaluation/fixed_r_path.py` - signal/execution timeframe fixed-2R path evaluator."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 240,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "Tests must also reject unsupported timeframes, `targetR < 2`, missing market, and strategy content hash mismatch. Repeated derivation must return the same contract ID."
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 266,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "\"targetR\": float(definition[\"targetR\"]),"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 534,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "### Task 6: Implement Snapshot-Bound Fixed-2R Formal Backtest"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 587,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "git commit -m \"Run snapshot-bound fixed 2R backtests\""
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 690,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "if float(strategy_version.definition.get(\"targetR\", 0.0)) < 2.0:"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 691,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "raise ValueError(\"Forward release requires targetR >= 2\")"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1.1_Dual_Data_Warehouse_One_Click_Backtest_Implementation_Plan.md",
+      "lineNumber": 895,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- fixed `targetR >= 2` is weakened;"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27.1_Strategy_Backtest_Workflow_Result.md",
+      "lineNumber": 11,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "- point-in-time DataSnapshot, walk-forward, locked-OOS, cost-model, and 2R"
+    },
+    {
+      "repo": "docs",
+      "relativePath": "roadmap/AlphaPilot_V13.27_Unified_Workflow_Orchestrator_Implementation_Plan.md",
+      "lineNumber": 121,
+      "classification": "legacy_or_unreviewed_code",
+      "action": "review_without_global_replacement",
+      "activeHardGate": false,
+      "line": "`targetR >= 2` formal backtest."
+    },
+    {
       "repo": "quant",
       "relativePath": "alphapilot/control_tower/strategy_control_tower.py",
       "lineNumber": 89,
@@ -2952,24 +3510,6 @@
     },
     {
       "repo": "quant",
-      "relativePath": "alphapilot/exit_policy/validation.py",
-      "lineNumber": 87,
-      "classification": "legacy_or_unreviewed_code",
-      "action": "review_without_global_replacement",
-      "activeHardGate": false,
-      "line": "_exact_fields(parameters, {\"targetR\"})"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "alphapilot/exit_policy/validation.py",
-      "lineNumber": 88,
-      "classification": "legacy_or_unreviewed_code",
-      "action": "review_without_global_replacement",
-      "activeHardGate": false,
-      "line": "_number(parameters[\"targetR\"], \"targetR\", minimum=0.01, maximum=MAXIMUM_R_MULTIPLE)"
-    },
-    {
-      "repo": "quant",
       "relativePath": "alphapilot/low_frequency/factor_confluence_backtest.py",
       "lineNumber": 300,
       "classification": "legacy_or_unreviewed_code",
@@ -3264,15 +3804,6 @@
       "action": "review_without_global_replacement",
       "activeHardGate": false,
       "line": "\"plannedTargetR\": None,"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "alphapilot/reports/generate_exit_policy_migration_inventory.py",
-      "lineNumber": 13,
-      "classification": "legacy_or_unreviewed_code",
-      "action": "review_without_global_replacement",
-      "activeHardGate": false,
-      "line": "r\"minimumTargetR|targetRewardRiskRatio|targetR|remaining[_A-Za-z]*target[_A-Za-z]*r|(?:^|[^0-9])2R(?:[^A-Za-z]|$)\","
     },
     {
       "repo": "quant",
@@ -5004,87 +5535,6 @@
     },
     {
       "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 5,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "**Goal:** Replace fixed 2R as a research and Demo-admission hard gate with immutable, preregistered Advisory-R exit policies, then run a bounded strategy funnel through prefilter, statistical audit, locked OOS, and evidence-only Demo release generation."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 13,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- R remains the common risk-accounting unit; `minimumTargetR` is `null` for new Advisory-R research."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 47,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- [ ] Write failing tests for valid sub-2R fixed exits, null-target structure exits, bounded partial/trailing parameters, structure-rule whitelist, positive maximum hold, and unbounded/unknown-field rejection."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 70,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- [ ] Write failing tests for next-bar entry, stop-first ambiguity, fixed target below 2R, weighted partial costs, trailing tightening only, next-bar trailing activation, structure/time next-open execution, conservative gap fills, MFE/MAE, and total leg fractions equal to one."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 74,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- [ ] Write a golden legacy parity test using existing fixed-2R events and candidate hashes."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 93,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- `CandidateSpec.targetR` becomes optional for schema-v2 candidates and `exitPolicy` is required for schema v2."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 95,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- `build_campaign_preregistration()` emits `targetRGateMode=advisory`, `minimumTargetR=null`, and `exitPolicyRequired=true` only for the new schema."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 118,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- Demo readiness requires a complete immutable exit policy instead of `targetR >= 2` for schema v2."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/plans/2026-07-17-advisory-r-workflow-v13.27.1.14-to-v13.27.1.18.md",
-      "lineNumber": 123,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- [ ] Implement dual-schema import/admission and remove only active Demo fixed-2R blockers."
-    },
-    {
-      "repo": "quant",
       "relativePath": "docs/superpowers/specs/2026-07-10-alphapilot-data-to-live-evidence-pipeline-design.md",
       "lineNumber": 5,
       "classification": "documentation",
@@ -5298,195 +5748,6 @@
       "action": "update_current_wording_only",
       "activeHardGate": false,
       "line": "- `targetR >= 2R` remains mandatory."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 10,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "AlphaPilot will temporarily remove the rule that every new strategy must target at least 2R. R remains the common risk-accounting unit, but a fixed 2R target is no longer a strategy-creation or Demo-admission gate."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 18,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- `riskPolicy.minimumTargetR = 2.0`;"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 19,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- candidate targets of `2.2R, 2.2R, 2R, 2R, 2R, 2R`;"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 20,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- `CandidateSpec` validation that rejects `targetR < 2`;"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 21,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- a backtest simulator that exits at a fixed `candidate.targetR` price."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 23,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "The existing `build_event_exit_geometry` helper exposes a partial-exit shape, but it is not connected to the formal campaign simulator and still rejects a remaining target below 2R. Console Demo admission also treats a target below 2R as a blocker."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 25,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "Therefore the recent campaign was not merely labelled with 2R: it was constructed and simulated under a fixed 2R-or-better exit constraint. Its failures must remain historical evidence and must not be rewritten after this policy change."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 29,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "1. Remove fixed 2R as a hard gate for new research candidates."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 34,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "6. Let valid non-2R candidates enter OKX Demo when all other research and safety evidence passes."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 52,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "1. `fixed_r`: a positive fixed target in R. The target may be below, equal to, or above 2R."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 61,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "Existing candidates with `targetR` and no `exitPolicy` remain valid legacy `fixed_r` candidates. Their target and historical results do not change."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 68,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "\"targetRGateMode\": \"advisory\","
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 69,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "\"minimumTargetR\": null,"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 75,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "`targetR` remains reportable when a policy has a fixed target, but it is optional and is not a pass/fail gate."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 112,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- display exit-policy mode instead of `target >= 2R` as required evidence;"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 116,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- preserve existing 2R releases under their original schema;"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 129,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "They must not claim that removing 2R makes a strategy profitable or ready for live trading."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 143,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "1. A new candidate with a valid fixed target below 2R is accepted."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 149,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "7. Legacy fixed-2R candidates produce unchanged events and hashes."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 152,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "10. Console Demo admission accepts a complete non-2R exit policy but rejects incomplete definitions."
-    },
-    {
-      "repo": "quant",
-      "relativePath": "docs/superpowers/specs/2026-07-16-advisory-r-exit-policy-design.md",
-      "lineNumber": 168,
-      "classification": "documentation",
-      "action": "update_current_wording_only",
-      "activeHardGate": false,
-      "line": "- New strategies are no longer rejected solely because their target is below 2R or because they use a bounded non-fixed exit."
     },
     {
       "repo": "quant",
@@ -68913,87 +69174,6 @@
     },
     {
       "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 18,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "parameters={\"targetR\": 1.25},"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 28,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "\"parameters\": {\"targetR\": 1.25},"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 47,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "assert \"targetR\" not in canonical_exit_policy(policy)[\"parameters\"]"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 113,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "({\"targetR\": 0.0}, \"targetR\"),"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 114,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "({\"targetR\": 1.0, \"unexpected\": True}, \"unknown\"),"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 152,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "parameters={\"targetR\": 1.0},"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 161,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "parameters={\"targetR\": 1.0},"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 171,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "parameters={\"targetR\": 1.25},"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/exit_policy/test_models_and_validation.py",
-      "lineNumber": 176,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "parameters={\"targetR\": 1.5},"
-    },
-    {
-      "repo": "quant",
       "relativePath": "tests/low_frequency/test_long_horizon_candidate_pack.py",
       "lineNumber": 22,
       "classification": "test_contract",
@@ -69099,78 +69279,6 @@
       "action": "update_test_if_behavior_changes",
       "activeHardGate": false,
       "line": "\"targetR\": 1.5 if timeframe == \"5m\" and index == 0 else 2.0,"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/reports/test_exit_policy_migration_inventory.py",
-      "lineNumber": 25,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "'raise ValueError(\"targetR must be at least 2R\")\\n',"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/reports/test_exit_policy_migration_inventory.py",
-      "lineNumber": 30,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "'{\"minimumTargetR\": 2.0}\\n',"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/reports/test_exit_policy_migration_inventory.py",
-      "lineNumber": 35,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "\"assert payload['targetR'] == 2\\n\","
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/reports/test_exit_policy_migration_inventory.py",
-      "lineNumber": 40,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "'target=\">= 2R\"\\n',"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/reports/test_exit_policy_migration_inventory.py",
-      "lineNumber": 45,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "\"Demo historically required 2R.\\n\","
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/reports/test_exit_policy_migration_inventory.py",
-      "lineNumber": 66,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "_write(root, \".worktrees/other/active.py\", \"targetR >= 2\\n\")"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/reports/test_exit_policy_migration_inventory.py",
-      "lineNumber": 67,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "_write(root, \".venv/lib/site.py\", \"targetR >= 2\\n\")"
-    },
-    {
-      "repo": "quant",
-      "relativePath": "tests/reports/test_exit_policy_migration_inventory.py",
-      "lineNumber": 70,
-      "classification": "test_contract",
-      "action": "update_test_if_behavior_changes",
-      "activeHardGate": false,
-      "line": "binary.write_bytes(b\"targetR >= 2\")"
     },
     {
       "repo": "quant",

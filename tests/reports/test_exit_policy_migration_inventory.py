@@ -5,6 +5,7 @@ from pathlib import Path
 from alphapilot.reports.generate_exit_policy_migration_inventory import (
     scan_exit_policy_references,
     summarize_inventory,
+    write_inventory,
 )
 
 
@@ -72,3 +73,28 @@ def test_inventory_ignores_worktrees_virtualenvs_and_binary_files(tmp_path: Path
     rows = scan_exit_policy_references({"repo": root})
 
     assert rows == []
+
+
+def test_inventory_writes_required_markdown_filename(tmp_path: Path) -> None:
+    root = tmp_path / "repo"
+    _write(root, "README.md", "Historical 2R note.\n")
+
+    json_path, markdown_path, _payload = write_inventory(
+        {"repo": root}, tmp_path / "reports"
+    )
+
+    assert json_path.name == "migration_inventory.json"
+    assert markdown_path.name == "migration_inventory.md"
+    assert markdown_path.exists()
+
+
+def test_inventory_does_not_rescan_its_generated_outputs(tmp_path: Path) -> None:
+    root = tmp_path / "repo"
+    _write(root, "reports/exit_policy/migration_inventory.json", '{"targetR": 2}\n')
+    _write(root, "reports/exit_policy/migration_inventory.md", "minimumTargetR\n")
+    _write(root, "reports/exit_policy/migration_summary.md", ">=2R\n")
+    _write(root, "reports/old_campaign.json", '{"targetR": 2}\n')
+
+    rows = scan_exit_policy_references({"repo": root})
+
+    assert [row["relativePath"] for row in rows] == ["reports/old_campaign.json"]

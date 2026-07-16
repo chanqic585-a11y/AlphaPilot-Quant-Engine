@@ -1,0 +1,49 @@
+{
+  "schemaVersion": "v13_27_1_14_acceptance_v1",
+  "version": "V13.27.1.14",
+  "status": "passed_with_documented_preexisting_baseline_failure",
+  "migrationInventory": {
+    "activeTwoRReferenceHits": 32,
+    "fixedIssueClasses": 4,
+    "historicalHitsPreserved": 6879,
+    "inventoryPath": "reports/exit_policy/migration_inventory.json",
+    "note": "The inventory is a pre-V14 baseline snapshot. Historical and immutable evidence was not rewritten."
+  },
+  "exitModes": {
+    "fixed_r": "passed",
+    "partial_then_trailing": "passed",
+    "structure_or_time": "passed",
+    "hybrid": "passed"
+  },
+  "compatibility": {
+    "legacyByteHashParity": "passed",
+    "newSchemaHashStability": "passed",
+    "consoleV1Import": "passed",
+    "consoleV2Import": "passed",
+    "liveBoundaryUnchanged": "passed"
+  },
+  "sideEffects": {
+    "newCampaignCount": 0,
+    "holdoutAccessCount": 0,
+    "releaseCount": 0,
+    "arm": false,
+    "orderCount": 0
+  },
+  "verification": {
+    "quantTargeted": "passed",
+    "quantFirstParty": {
+      "passed": 694,
+      "subtestsPassed": 157,
+      "failed": 1,
+      "failureClassification": "preexisting_v13_27_1_13_historical_sidecar_line_ending_hash_mismatch"
+    },
+    "consoleUnittest": {
+      "passed": 429,
+      "failed": 0
+    },
+    "compileall": "passed",
+    "configValidation": "passed",
+    "safetyScan": "passed_no_new_execution_capability",
+    "diffCheck": "passed"
+  }
+}

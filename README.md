@@ -5239,3 +5239,19 @@ workflow above.
 - V13.5.25: compare V13.5.21 local paper package against newly closed forward samples and flag any drift.
 - V13.5.26: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
+
+## V13.27.1.14 Advisory-R Exit Policy
+
+V13.27.1.14 introduces the immutable `advisory_r_exit_policy_v1` contract and
+connects it to the causal simulator, reports, and campaign contracts without
+running a new campaign. New Advisory-R research can preregister `fixed_r`,
+`partial_then_trailing`, `structure_or_time`, or `hybrid` exits; a fixed target
+below 2R is descriptive rather than an admission gate. Initial stops may
+tighten but never widen, every adaptive bound is preregistered, and policy
+canonicalization produces a stable `exitPolicyHash`.
+
+Legacy strategy behavior and historical evidence remain unchanged. Economic,
+cost, drawdown, walk-forward, statistical, locked-OOS, approval, Demo ARM, and
+Live boundaries are not relaxed. Migration evidence is under
+`reports/exit_policy/`; the implementation entry point is
+`alphapilot/exit_policy/`.

@@ -15,6 +15,11 @@ REFERENCE_PATTERN = re.compile(
 )
 TEXT_SUFFIXES = {".py", ".js", ".ts", ".tsx", ".json", ".md", ".ps1", ".html", ".css"}
 IGNORED_PARTS = {".git", ".worktrees", ".venv", "__pycache__", "node_modules", "third_party"}
+GENERATED_INVENTORY_PATHS = {
+    "reports/exit_policy/migration_inventory.json",
+    "reports/exit_policy/migration_inventory.md",
+    "reports/exit_policy/migration_summary.md",
+}
 
 ACTIVE_LOGIC_PREFIXES = (
     "alphapilot/research_screening/",
@@ -49,7 +54,10 @@ def _iter_text_files(root: Path) -> Iterable[Path]:
     for path in sorted(root.rglob("*")):
         if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:
             continue
-        if any(part in IGNORED_PARTS for part in path.relative_to(root).parts):
+        relative = path.relative_to(root)
+        if any(part in IGNORED_PARTS for part in relative.parts):
+            continue
+        if relative.as_posix() in GENERATED_INVENTORY_PATHS:
             continue
         yield path
 
@@ -106,7 +114,7 @@ def write_inventory(
     }
     output_root.mkdir(parents=True, exist_ok=True)
     json_path = output_root / "migration_inventory.json"
-    markdown_path = output_root / "migration_summary.md"
+    markdown_path = output_root / "migration_inventory.md"
     json_path.write_text(
         json.dumps(payload, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8",
