@@ -41,6 +41,15 @@ def _contained_exactly(candidate: Path, authority: Path) -> bool:
         latest, latest_key = _table_profile(authority)
     except (OSError, ValueError, TypeError):
         return False
+    return _profile_contained_exactly(old, old_key, latest, latest_key)
+
+
+def _profile_contained_exactly(
+    old: pd.DataFrame,
+    old_key: str,
+    latest: pd.DataFrame,
+    latest_key: str,
+) -> bool:
     if old_key != latest_key or list(old.columns) != list(latest.columns) or old.empty:
         return False
     start, end = old[old_key].iloc[0], old[old_key].iloc[-1]
@@ -94,10 +103,24 @@ def classify_duplicates(graph: Mapping[str, Any], *, data_root: Path | str) -> d
         authority = Path(str(authority_row["path"])).resolve()
         superseded: list[str] = []
         conflicts: list[str] = []
+        try:
+            authority_frame, authority_key = _table_profile(authority)
+        except (OSError, ValueError, TypeError):
+            authority_frame = None
+            authority_key = ""
         for path in sorted(candidates):
             if path == authority:
                 continue
-            if _contained_exactly(path, authority):
+            try:
+                candidate_frame, candidate_key = _table_profile(path)
+            except (OSError, ValueError, TypeError):
+                candidate_frame = None
+                candidate_key = ""
+            if (
+                authority_frame is not None
+                and candidate_frame is not None
+                and _profile_contained_exactly(candidate_frame, candidate_key, authority_frame, authority_key)
+            ):
                 superseded.append(str(path))
             else:
                 conflicts.append(str(path))

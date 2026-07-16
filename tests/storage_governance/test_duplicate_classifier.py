@@ -2,6 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
+import alphapilot.storage_governance.duplicate_classifier as duplicate_classifier
 from alphapilot.storage_governance.duplicate_classifier import classify_duplicates
 from alphapilot.storage_governance.reference_graph import build_reference_graph
 
@@ -70,3 +71,27 @@ def test_classifier_keeps_conflicting_parquet(tmp_path: Path) -> None:
         item["duplicateClass"] == "conflicting" and str(old.resolve()) in item["members"]
         for item in result["groups"]
     )
+
+
+def test_classifier_reads_group_authority_only_once(tmp_path: Path, monkeypatch) -> None:
+    identity = tmp_path / "data" / "_alphapilot" / "canonical" / "okx" / "swap" / "ohlcv" / "ETH-USDT-SWAP" / "4h"
+    identity.mkdir(parents=True)
+    first = identity / "0-1000-first.parquet"
+    second = identity / "0-2000-second.parquet"
+    authority = identity / "0-4000-authority.parquet"
+    _write_parquet(first, 2)
+    _write_parquet(second, 3)
+    _write_parquet(authority, 5)
+    graph = build_reference_graph(tmp_path / "data")
+    original = duplicate_classifier._table_profile
+    calls: list[str] = []
+
+    def counted(path: Path):
+        calls.append(str(path.resolve()))
+        return original(path)
+
+    monkeypatch.setattr(duplicate_classifier, "_table_profile", counted)
+
+    classify_duplicates(graph, data_root=tmp_path / "data")
+
+    assert calls.count(str(authority.resolve())) == 1
