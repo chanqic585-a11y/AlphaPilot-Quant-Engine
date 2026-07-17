@@ -1,0 +1,12 @@
+{
+  "blockers": [
+    "capital_infeasible_under_frozen_policy"
+  ],
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616",
+  "implementationOrEvidenceFailure": false,
+  "primaryBlocker": "capital_infeasible_under_frozen_policy",
+  "resultDrivenRepairAllowed": false,
+  "route": "archive_s01_current_version",
+  "schemaVersion": "s01_v18_formal_failure_attribution_v1",
+  "strategyPerformanceFailure": true
+}

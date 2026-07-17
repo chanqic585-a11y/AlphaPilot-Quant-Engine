@@ -1,0 +1,43 @@
+{
+  "coveragePct": 45.0,
+  "dataAvailableBySymbol": {
+    "AAVE-USDT-SWAP": true,
+    "ADA-USDT-SWAP": true,
+    "ALGO-USDT-SWAP": true,
+    "ATOM-USDT-SWAP": true,
+    "AVAX-USDT-SWAP": true,
+    "BCH-USDT-SWAP": false,
+    "BTC-USDT-SWAP": true,
+    "COMP-USDT-SWAP": false,
+    "DOGE-USDT-SWAP": true,
+    "ETC-USDT-SWAP": false,
+    "ETH-USDT-SWAP": true,
+    "FIL-USDT-SWAP": false,
+    "LINK-USDT-SWAP": false,
+    "LTC-USDT-SWAP": false,
+    "NEO-USDT-SWAP": false,
+    "SOL-USDT-SWAP": true,
+    "TRX-USDT-SWAP": false,
+    "XRP-USDT-SWAP": false,
+    "XTZ-USDT-SWAP": false,
+    "YFI-USDT-SWAP": false
+  },
+  "implementationComplete": true,
+  "knownUnitCount": 9,
+  "schemaVersion": "capacity_data_semantics_audit_v1",
+  "totalInstrumentCount": 20,
+  "unknownUnitAction": "reject_capacity_evidence_unavailable",
+  "unknownUnitInstruments": [
+    "BCH-USDT-SWAP",
+    "COMP-USDT-SWAP",
+    "ETC-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "LINK-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "NEO-USDT-SWAP",
+    "TRX-USDT-SWAP",
+    "XRP-USDT-SWAP",
+    "XTZ-USDT-SWAP",
+    "YFI-USDT-SWAP"
+  ]
+}

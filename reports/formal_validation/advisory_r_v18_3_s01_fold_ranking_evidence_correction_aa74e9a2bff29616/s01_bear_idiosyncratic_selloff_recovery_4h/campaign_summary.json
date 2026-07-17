@@ -1,0 +1,41 @@
+{
+  "baseAcceptedTradeCount": 0,
+  "baseMetrics": {
+    "averageNetR": 0.0,
+    "lossCount": 0,
+    "maximumDrawdownPercent": 0.0,
+    "maximumSingleMonthPositiveContribution": 0.0,
+    "maximumSingleSymbolPositiveContribution": 0.0,
+    "netPnl": 0.0,
+    "netReturnPercent": 0.0,
+    "positiveContributionByMonth": {},
+    "positiveContributionBySymbol": {},
+    "profitFactor": null,
+    "profitFactorStatus": "undefined_no_losses",
+    "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+    "totalNetR": 0,
+    "tradeCount": 0,
+    "winCount": 0
+  },
+  "baseRawSignalCount": 884,
+  "baseRejectedSignalCount": 884,
+  "blockers": [
+    "capital_infeasible_under_frozen_policy"
+  ],
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616",
+  "cleanLockedOosAvailable": false,
+  "demoArm": false,
+  "formalAdmissionPassed": false,
+  "formalEvidenceCount": 0,
+  "formalInputReadCount": 1,
+  "formalPass": false,
+  "formalRunCount": 1,
+  "fundingGateEvaluable": false,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultDrivenParameterChangeCount": 0,
+  "route": "archive_s01_current_version",
+  "schemaVersion": "s01_v18_formal_route_v1",
+  "statisticsUnavailablePredeclared": true
+}

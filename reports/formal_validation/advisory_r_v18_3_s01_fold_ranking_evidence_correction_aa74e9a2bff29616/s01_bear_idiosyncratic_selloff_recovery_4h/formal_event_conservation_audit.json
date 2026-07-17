@@ -1,0 +1,12 @@
+{
+  "assignedValidationEventCount": 417,
+  "crossBoundaryLeakageCount": 0,
+  "duplicateDispositionCount": 0,
+  "explicitlyExcludedEventCount": 467,
+  "multiAssignedEventCount": 0,
+  "rawEqualsAssignedPlusExcluded": true,
+  "rawEventCount": 884,
+  "schemaVersion": "formal_event_conservation_audit_v1",
+  "unclassifiedEventCount": 0,
+  "unknownDispositionCount": 0
+}

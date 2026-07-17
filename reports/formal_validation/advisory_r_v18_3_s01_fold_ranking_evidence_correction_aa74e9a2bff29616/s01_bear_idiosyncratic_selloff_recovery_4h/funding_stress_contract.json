@@ -1,0 +1,12 @@
+{
+  "crossExchangeSubstitutionAllowed": false,
+  "fundingStressContractHash": "funding_stress_contract_9b2891e5656edd742ec06b239da0f7aac79e0575fbb9173ae29e07079bc3d442",
+  "precedence": [
+    "same_exchange_actual_history",
+    "preregistered_same_exchange_stress",
+    "unavailable"
+  ],
+  "schemaVersion": "funding_stress_contract_v1",
+  "stressRate": null,
+  "zeroFillAllowed": false
+}

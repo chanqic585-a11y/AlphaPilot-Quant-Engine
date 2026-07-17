@@ -1,0 +1,40 @@
+{
+  "assignmentTimestampField": "signalTimestamp",
+  "conservationLaw": "rawEventCount=assignedValidationEventCount+explicitlyExcludedEventCount",
+  "contractHash": "formal_event_disposition_contract_315485621165a20ec66f5735082c7dbd6e02150211fc05e784da59a053c5d20f",
+  "dispositions": [
+    "assigned_validation_fold",
+    "excluded_initial_history_prefix",
+    "excluded_after_final_validation_tail",
+    "excluded_outside_common_window",
+    "excluded_cross_fold_holding_path",
+    "excluded_invalid_timestamp",
+    "excluded_duplicate_event_identity"
+  ],
+  "eventMayCrossFoldBoundary": false,
+  "forbiddenOutcomes": [
+    "unclassified_event",
+    "multiple_validation_fold_assignment",
+    "unknown_disposition",
+    "cross_boundary_leakage"
+  ],
+  "requiredFields": [
+    "eventId",
+    "canonicalSignalId",
+    "candidateId",
+    "instrumentId",
+    "signalTimestamp",
+    "expectedEntryTimestamp",
+    "splitPolicyHash",
+    "disposition",
+    "foldId",
+    "dispositionReasonCode",
+    "dispositionContractHash",
+    "sourceEventHash",
+    "assignmentEvidenceHash"
+  ],
+  "schemaVersion": "formal_event_disposition_contract_v1",
+  "timeframeGridRequired": true,
+  "timestampStandard": "UTC",
+  "validationIntervalOwnership": "unique_containing_validation_interval"
+}

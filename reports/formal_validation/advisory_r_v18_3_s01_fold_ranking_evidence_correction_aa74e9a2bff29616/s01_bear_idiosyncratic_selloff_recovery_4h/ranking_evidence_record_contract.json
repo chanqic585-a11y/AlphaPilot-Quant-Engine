@@ -1,0 +1,60 @@
+{
+  "contractHash": "ranking_evidence_record_contract_ce9c8eca115d08955f46d97c63441fde06cd6cc69fe3fb6c35bac7883d2eaa69",
+  "forbiddenOperations": [
+    "missing_value_imputation",
+    "post_entry_recalculation",
+    "exit_path_read",
+    "economic_result_read"
+  ],
+  "freezeWindow": "after_signal_close_before_expected_entry",
+  "materializationScope": "every_assigned_validation_fold_event",
+  "missingValuePolicy": "reject_if_any_of_first_three_fields_missing_or_nonfinite",
+  "ordering": [
+    {
+      "direction": "ascending",
+      "field": "eventExtremeResidualZ"
+    },
+    {
+      "direction": "descending",
+      "field": "recoverySizeZ"
+    },
+    {
+      "direction": "descending",
+      "field": "liquidity30d"
+    },
+    {
+      "direction": "ascending",
+      "field": "instrumentId"
+    }
+  ],
+  "requiredFields": [
+    "canonicalSignalId",
+    "candidateId",
+    "instrumentId",
+    "signalTimestamp",
+    "expectedEntryTimestamp",
+    "foldId",
+    "eventExtremeResidualZ",
+    "eventExtremeResidualZStatus",
+    "recoverySizeZ",
+    "recoverySizeZStatus",
+    "liquidity30d",
+    "liquidity30dStatus",
+    "rankingEvidenceStatus",
+    "rankingUnavailableReason",
+    "availableAt",
+    "sourceBarHashes",
+    "capacitySemanticsHash",
+    "rankingPolicyHash",
+    "rankingEvidenceHash"
+  ],
+  "schemaVersion": "ranking_evidence_record_contract_v1",
+  "stableRejectionReason": "reject_ranking_field_unavailable",
+  "statuses": [
+    "available",
+    "unavailable_insufficient_history",
+    "unavailable_volume_semantics",
+    "unavailable_nonfinite_feature",
+    "invalid_timestamp"
+  ]
+}

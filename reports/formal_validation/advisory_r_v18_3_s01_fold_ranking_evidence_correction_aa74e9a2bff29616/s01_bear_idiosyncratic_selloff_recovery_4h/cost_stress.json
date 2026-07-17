@@ -1,0 +1,77 @@
+{
+  "baseAcceptedSignalIds": [],
+  "scenarios": [
+    {
+      "acceptedSignalIds": [],
+      "metrics": {
+        "averageNetR": 0.0,
+        "lossCount": 0,
+        "maximumDrawdownPercent": 0.0,
+        "maximumSingleMonthPositiveContribution": 0.0,
+        "maximumSingleSymbolPositiveContribution": 0.0,
+        "netPnl": 0.0,
+        "netReturnPercent": 0.0,
+        "positiveContributionByMonth": {},
+        "positiveContributionBySymbol": {},
+        "profitFactor": null,
+        "profitFactorStatus": "undefined_no_losses",
+        "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+        "totalNetR": 0,
+        "tradeCount": 0,
+        "winCount": 0
+      },
+      "multiplier": 1.0,
+      "scenarioId": "base",
+      "trades": []
+    },
+    {
+      "acceptedSignalIds": [],
+      "metrics": {
+        "averageNetR": 0.0,
+        "lossCount": 0,
+        "maximumDrawdownPercent": 0.0,
+        "maximumSingleMonthPositiveContribution": 0.0,
+        "maximumSingleSymbolPositiveContribution": 0.0,
+        "netPnl": 0.0,
+        "netReturnPercent": 0.0,
+        "positiveContributionByMonth": {},
+        "positiveContributionBySymbol": {},
+        "profitFactor": null,
+        "profitFactorStatus": "undefined_no_losses",
+        "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+        "totalNetR": 0,
+        "tradeCount": 0,
+        "winCount": 0
+      },
+      "multiplier": 1.5,
+      "scenarioId": "cost_1_5x",
+      "trades": []
+    },
+    {
+      "acceptedSignalIds": [],
+      "metrics": {
+        "averageNetR": 0.0,
+        "lossCount": 0,
+        "maximumDrawdownPercent": 0.0,
+        "maximumSingleMonthPositiveContribution": 0.0,
+        "maximumSingleSymbolPositiveContribution": 0.0,
+        "netPnl": 0.0,
+        "netReturnPercent": 0.0,
+        "positiveContributionByMonth": {},
+        "positiveContributionBySymbol": {},
+        "profitFactor": null,
+        "profitFactorStatus": "undefined_no_losses",
+        "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+        "totalNetR": 0,
+        "tradeCount": 0,
+        "winCount": 0
+      },
+      "multiplier": 2.0,
+      "scenarioId": "cost_2_0x",
+      "trades": []
+    }
+  ],
+  "schemaVersion": "s01_v18_locked_cost_stress_v1",
+  "selectionFrozenFrom": "base",
+  "selectionIdentityStable": true
+}

@@ -1,0 +1,8 @@
+{
+  "assignedEventCount": 417,
+  "availableRecordCount": 0,
+  "reasonCounts": {
+    "liquidity30d:unavailable_volume_semantics": 417
+  },
+  "schemaVersion": "ranking_unavailable_reason_breakdown_v1"
+}
