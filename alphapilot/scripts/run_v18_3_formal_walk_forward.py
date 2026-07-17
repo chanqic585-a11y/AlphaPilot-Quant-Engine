@@ -9,6 +9,9 @@ from pathlib import Path
 from typing import Any
 
 from alphapilot.data_foundation.checkpoint import write_json_atomic
+from alphapilot.formal_validation.v18_2_evidence_chain import (
+    validate_evidence_chain_configuration,
+)
 from alphapilot.formal_validation.v18_3_contracts import (
     verify_v18_3_formal_run_authorization,
     verify_v18_3_preregistration,
@@ -66,6 +69,41 @@ def _write_accounting(destination: Path, *, result_generated: bool) -> None:
     )
 
 
+def _validate_structural_certification(
+    certification: dict[str, Any], *, preregistration: dict[str, Any]
+) -> None:
+    if certification.get("status") != "certified":
+        raise RuntimeError("signal_evidence_structural_certification_not_certified")
+    observed_hash = str(
+        certification.get("signalEvidenceStructuralCertificationHash") or ""
+    )
+    expected_hash = str(
+        preregistration.get("signalEvidenceStructuralCertificationHash") or ""
+    )
+    if not observed_hash or (expected_hash and observed_hash != expected_hash):
+        raise RuntimeError("signal_evidence_structural_certification_hash_mismatch")
+    required_true = (
+        "economicResultComputationDisabled",
+        "exitReplayDisabled",
+        "resultMetricWriterDisabled",
+    )
+    required_zero = (
+        "economicMetricReadCount",
+        "exitReplayCount",
+        "formalRunClaimCount",
+        "formalRunAttemptCount",
+        "resultReadCount",
+        "lockedOosAccessCount",
+        "formalEvidenceCount",
+        "releaseCount",
+        "orderCount",
+    )
+    if any(certification.get(field) is not True for field in required_true):
+        raise RuntimeError("signal_evidence_structural_certification_guard_failed")
+    if any(int(certification.get(field) or 0) != 0 for field in required_zero):
+        raise RuntimeError("signal_evidence_structural_certification_scope_exceeded")
+
+
 def run(
     repo_root: Path,
     *,
@@ -74,7 +112,8 @@ def run(
     authorization_path: Path,
     freeze_audit_path: Path,
     runtime_binding_path: Path,
-    certification_path: Path,
+    evidence_chain_certification_path: Path,
+    structural_certification_path: Path,
     output_root: Path,
     data_root: Path,
 ) -> dict[str, Any]:
@@ -87,7 +126,23 @@ def run(
     assert_exact_inprocess_runtime(repo_root=root)
     authorization = _read_json(Path(authorization_path).resolve())
     runtime_binding = _read_json(Path(runtime_binding_path).resolve())
-    certification = _read_json(Path(certification_path).resolve())
+    evidence_chain_certification = _read_json(
+        Path(evidence_chain_certification_path).resolve()
+    )
+    structural_certification = _read_json(
+        Path(structural_certification_path).resolve()
+    )
+    evidence_chain_context = {
+        "enabled": True,
+        "evidenceRecordVersion": "v18_3",
+        "runtimeBinding": runtime_binding,
+        "certification": evidence_chain_certification,
+        "structuralCertification": structural_certification,
+    }
+    validate_evidence_chain_configuration(evidence_chain_context)
+    _validate_structural_certification(
+        structural_certification, preregistration=preregistration
+    )
     destination = formal_artifact_root(
         output_root,
         campaign_id=str(preregistration["campaignId"]),
@@ -114,12 +169,7 @@ def run(
                     )
                 ),
                 executor_context={
-                    "formal_evidence_chain": {
-                        "enabled": True,
-                        "evidenceRecordVersion": "v18_3",
-                        "runtimeBinding": runtime_binding,
-                        "certification": certification,
-                    }
+                    "formal_evidence_chain": evidence_chain_context
                 },
                 run_id=f"{candidate_id}-v18-3-formal-001",
             )
@@ -155,7 +205,10 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--authorization", type=Path, required=True)
     parser.add_argument("--freeze-audit", type=Path, required=True)
     parser.add_argument("--runtime-binding", type=Path, required=True)
-    parser.add_argument("--certification", type=Path, required=True)
+    parser.add_argument(
+        "--evidence-chain-certification", type=Path, required=True
+    )
+    parser.add_argument("--structural-certification", type=Path, required=True)
     parser.add_argument("--output-root", type=Path, required=True)
     parser.add_argument("--data-root", type=Path, required=True)
     args = parser.parse_args(argv)
@@ -166,7 +219,8 @@ def main(argv: list[str] | None = None) -> int:
         authorization_path=args.authorization,
         freeze_audit_path=args.freeze_audit,
         runtime_binding_path=args.runtime_binding,
-        certification_path=args.certification,
+        evidence_chain_certification_path=args.evidence_chain_certification,
+        structural_certification_path=args.structural_certification,
         output_root=args.output_root,
         data_root=args.data_root,
     )
