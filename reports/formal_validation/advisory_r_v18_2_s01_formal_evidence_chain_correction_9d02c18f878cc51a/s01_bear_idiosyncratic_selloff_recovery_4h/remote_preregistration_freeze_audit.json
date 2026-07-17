@@ -3,7 +3,7 @@
   "demoArm": false,
   "formalResultRunCount": 0,
   "hashMatch": true,
-  "headCommit": "5b9a341df492f77674d9e595db8dc1eafbdbd91b",
+  "headCommit": "8f7b523cd2ddcab75aa3a036fd6a3094dc3ffd5f",
   "implementationCommit": "72fb4d35629d17426104885816b4719a5b306001",
   "localPreregistrationSha256": "6c7a446365a33dbe131f4dd6741e2620a12d92f330e75fe8d5b7da8e8879b9c4",
   "lockedOosAccessCount": 0,
@@ -22,8 +22,8 @@
   "route": "ready_for_authorization",
   "schemaVersion": "s01_v18_2_remote_preregistration_freeze_audit_v1",
   "status": "passed",
-  "upstreamCommit": "5b9a341df492f77674d9e595db8dc1eafbdbd91b",
+  "upstreamCommit": "8f7b523cd2ddcab75aa3a036fd6a3094dc3ffd5f",
   "v18_2FreezeTagValid": true,
-  "v18_2TagAtHead": true,
+  "v18_2TagAtHead": false,
   "v18_2TagRequired": true
 }
