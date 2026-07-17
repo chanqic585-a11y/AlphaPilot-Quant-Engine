@@ -1,0 +1,14 @@
+{
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_8eb5b226cc5e3b8d",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "demoArm": false,
+  "formalResultRunCount": 0,
+  "formalRunClaimCount": 0,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "preregistrationHash": "s01_v18_3_fold_ranking_evidence_correction_preregistration_a0ec3b2b48e42e3acf9608cf33ebc5dbebbdbf51e2031759b0ea00b344418423",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v18_3_pre_result_state_v1",
+  "stage": "preregistration_created"
+}
