@@ -1,0 +1,35 @@
+{
+  "schemaVersion": "s01_v18_3_statistical_availability_matrix_v1",
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "neweyWestAlpha": {
+    "status": "available",
+    "sampleCount": 1939,
+    "alpha": 0.0,
+    "annualizedAlpha": 0.0,
+    "hacT": 0.0,
+    "oneSidedP": 0.5,
+    "supportsPositiveEdge": false
+  },
+  "benjaminiHochbergFdr": {
+    "status": "unavailable_predeclared",
+    "reason": "No point-in-time daily-return panel for the ten-candidate selection family was frozen before results; retroactive construction is prohibited."
+  },
+  "deflatedSharpe": {
+    "status": "unavailable_predeclared",
+    "reason": "No point-in-time daily-return panel for the ten-candidate selection family was frozen before results; retroactive construction is prohibited."
+  },
+  "probabilityOfBacktestOverfitting": {
+    "status": "unavailable_predeclared",
+    "reason": "No point-in-time daily-return panel for the ten-candidate selection family was frozen before results; retroactive construction is prohibited."
+  },
+  "whiteRealityCheck": {
+    "status": "unavailable_predeclared",
+    "reason": "No point-in-time daily-return panel for the ten-candidate selection family was frozen before results; retroactive construction is prohibited."
+  },
+  "spa": {
+    "status": "unavailable_predeclared",
+    "reason": "No point-in-time daily-return panel for the ten-candidate selection family was frozen before results; retroactive construction is prohibited."
+  },
+  "retroactivePanelConstructionPerformed": false
+}

@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "s01_v18_3_commit_role_manifest_final_v1",
+  "branch": "feature/v13.27.1.18.3-fold-ranking-closure",
+  "remote": "origin",
+  "v18_2ClarificationCommit": "ded17c57533d84966d6bdf069e177c8cc05bc435",
+  "eventDispositionCommit": "333cafc0032615b9d19c8a3cc314fc40783616f9",
+  "rankingEvidenceCommit": "128191fa39fcac054aadba4c159d991d3674f3ea",
+  "structuralSignalSourcesCommit": "3b997e4ce5896dfdb22ff890d38ffbe7df0913bb",
+  "evidenceIntegrationCommit": "a2213ea558fec4d6a2f8a80e5d2afe5192c58d3e",
+  "certificationContractCommit": "934691789611ea32c13d3b2bb63d3fb414fc4a6a",
+  "structuralCertificationCommit": "60ead957b247b99a5cf25d5a367dddc1adc72f39",
+  "firstFailClosedAttemptCommit": "69510f70e6ee3dbc35b04789f06f2a775cc4703a",
+  "preclaimCertificationFixCommit": "1d5421f0f0d86fa7f65f46dabed51febe2c1cc49",
+  "secondFailClosedAttemptCommit": "98267cacc908bfbc6a80b58a6cdad20001c33659",
+  "canonicalRankingIdentityFixCommit": "9d9a4e8c0c343e8d3749eadd12708861633be1e5",
+  "finalPreregistrationCommit": "73104396209e5720c9b28d37007f4196b307ad9c",
+  "finalFreezeVerificationCommit": "97b8e09f9391cd5dbdb4e8fbbe6ad461d0bf7542",
+  "finalAuthorizationCommit": "936b646285112cabad26a604f0a211dbdc1babb5",
+  "formalResultCommit": "3e3f85e4309ef4719149768b906c862704e1e027",
+  "releaseTag": "v13.27.1.18.3",
+  "allRecordedCommitsPushedBeforeCloseout": true,
+  "supplementalCloseoutCommitCapturedByGitHistory": true
+}

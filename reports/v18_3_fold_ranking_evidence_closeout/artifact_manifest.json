@@ -1,0 +1,26 @@
+{
+  "schemaVersion": "s01_v18_3_closeout_artifact_manifest_v1",
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalArtifactRoot": "reports/formal_validation/advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616/s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalArtifactManifest": "reports/formal_validation/advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616/s01_bear_idiosyncratic_selloff_recovery_4h/artifact_manifest.json",
+  "formalResultManifestHash": "sha256:230a8ae9b78c023e7b26974535d5cf9c38bb8c70e88f80fd3602229fa05a784b",
+  "formalResultFolderFileCount": 81,
+  "formalArtifactManifestEntryCount": 65,
+  "formalArtifactHashMismatchCount": 0,
+  "closeoutFiles": [
+    "artifact_manifest.json",
+    "commit_role_manifest_final.json",
+    "evidence_location_manifest.json",
+    "final_self_check.md",
+    "final_validation.json",
+    "future_locked_oos_identity_reference.json",
+    "gate_matrix.csv",
+    "patch_audit.json",
+    "real_signal_structural_certification_reference.json",
+    "statistical_availability_matrix.json",
+    "structural_certification_access_audit_reference.json",
+    "v18_2_failure_taxonomy_clarification_reference.json",
+    "v18_2_identity_reference.json"
+  ]
+}
