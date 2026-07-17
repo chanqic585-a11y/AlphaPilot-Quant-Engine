@@ -8,7 +8,25 @@ import pytest
 
 from alphapilot.advisory_r_campaign.candidates import build_candidate_inventory
 from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
+from alphapilot.formal_validation.candidate_adapters import S01CandidateAdapter
 from alphapilot.formal_validation.formal_input import FormalInputError, load_formal_input
+from alphapilot.formal_validation.phase1_contracts import (
+    verify_s01_formal_preregistration,
+)
+
+
+CANDIDATE_ID = "s01_bear_idiosyncratic_selloff_recovery_4h"
+
+
+def _load(repo_root: Path, data_root: Path, preregistration_path: Path):
+    return load_formal_input(
+        repo_root=repo_root,
+        data_root=data_root,
+        preregistration_path=preregistration_path,
+        candidate_id=CANDIDATE_ID,
+        candidate_adapter=S01CandidateAdapter(),
+        preregistration_validator=verify_s01_formal_preregistration,
+    )
 
 
 def _write_json(path: Path, payload: object) -> None:
@@ -116,11 +134,7 @@ def test_load_formal_input_verifies_identity_hashes_and_common_index(
 ) -> None:
     repo_root, data_root, preregistration_path = _fixture(tmp_path)
 
-    bundle = load_formal_input(
-        repo_root=repo_root,
-        data_root=data_root,
-        preregistration_path=preregistration_path,
-    )
+    bundle = _load(repo_root, data_root, preregistration_path)
 
     assert bundle.candidate["candidateId"] == (
         "s01_bear_idiosyncratic_selloff_recovery_4h"
@@ -142,11 +156,7 @@ def test_load_formal_input_rejects_partition_hash_drift(tmp_path: Path) -> None:
         handle.write(b"drift")
 
     with pytest.raises(FormalInputError, match="partition_hash_mismatch"):
-        load_formal_input(
-            repo_root=repo_root,
-            data_root=data_root,
-            preregistration_path=preregistration_path,
-        )
+        _load(repo_root, data_root, preregistration_path)
 
 
 def test_load_formal_input_rejects_candidate_identity_drift(tmp_path: Path) -> None:
@@ -160,8 +170,4 @@ def test_load_formal_input_rejects_candidate_identity_drift(tmp_path: Path) -> N
     _write_json(preregistration_path, payload)
 
     with pytest.raises(FormalInputError, match="candidate_identity_mismatch"):
-        load_formal_input(
-            repo_root=repo_root,
-            data_root=data_root,
-            preregistration_path=preregistration_path,
-        )
+        _load(repo_root, data_root, preregistration_path)

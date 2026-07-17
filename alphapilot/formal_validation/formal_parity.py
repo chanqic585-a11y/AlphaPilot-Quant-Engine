@@ -13,8 +13,16 @@ import pandas as pd
 from alphapilot.advisory_r_campaign.signals import replay_candidate
 
 from .dual_engine_parity import evaluate_dual_engine_parity
+from .formal_event_contract import canonicalize_formal_event as _canonicalize_formal_event
 from .formal_input import FormalInputBundle
 from .s01_dual_engine_audit import _load_strategy, _simulate_adapter_event
+from .s01_event_identity import with_s01_signal_id
+
+
+def canonicalize_formal_event(event: Mapping[str, Any]) -> dict[str, Any]:
+    """Canonicalize S01 while retaining its historical signal identity."""
+
+    return _canonicalize_formal_event(with_s01_signal_id(event))
 
 
 def _pair(instrument_id: str) -> str:
@@ -23,52 +31,6 @@ def _pair(instrument_id: str) -> str:
 
 def _instrument(pair: str) -> str:
     return pair.replace("/USDT:USDT", "-USDT-SWAP")
-
-
-def _signal_id(symbol: str, timestamp: str) -> str:
-    return f"s01_formal::{symbol}::{timestamp}"
-
-
-def canonicalize_formal_event(event: Mapping[str, Any]) -> dict[str, Any]:
-    """Map an internal replay event to the strict parity contract."""
-
-    legs: list[dict[str, Any]] = []
-    for leg_index, raw_leg in enumerate(event.get("legs") or event.get("exitLegs") or []):
-        leg = dict(raw_leg)
-        legs.append(
-            {
-                "legIndex": int(leg.get("legIndex", leg_index)),
-                "legFraction": float(leg.get("legFraction", leg.get("fraction"))),
-                "exitReason": str(leg.get("exitReason", leg.get("reason"))),
-                "triggerTimestamp": str(leg["triggerTimestamp"]),
-                "executionTimestamp": str(leg["executionTimestamp"]),
-                "price": float(leg["price"]),
-                "grossR": float(leg["grossR"]),
-                "feesR": float(leg["feesR"]),
-                "slippageR": float(leg["slippageR"]),
-                "spreadProxyR": float(leg["spreadProxyR"]),
-                "fundingR": float(leg.get("fundingR") or 0.0),
-                "netR": float(leg["netR"]),
-                "isGapFill": bool(leg["isGapFill"]),
-                "ambiguousPath": bool(leg["ambiguousPath"]),
-            }
-        )
-    signal_timestamp = str(event["signalTimestamp"])
-    symbol = str(event["symbol"])
-    initial_stop = event.get("initialStop", event.get("initialStopPrice"))
-    return {
-        "candidateId": str(event["candidateId"]),
-        "signalId": str(event.get("signalId") or _signal_id(symbol, signal_timestamp)),
-        "symbol": symbol,
-        "direction": str(event.get("direction") or event.get("side")),
-        "signalTimestamp": signal_timestamp,
-        "entryTimestamp": str(event["entryTimestamp"]),
-        "entryPrice": float(event["entryPrice"]),
-        "initialStop": float(initial_stop),
-        "exitPolicyHash": str(event["exitPolicyHash"]),
-        "exitLegCount": len(legs),
-        "exitLegs": legs,
-    }
 
 
 def summarize_formal_parity(

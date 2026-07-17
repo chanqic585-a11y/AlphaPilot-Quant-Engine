@@ -577,7 +577,7 @@ def build_evidence_delivery(
         source = repo_root / relative
         if source.is_file():
             target = source_dir / relative.name
-            shutil.copyfile(source, target)
+            _write_text(target, source.read_text(encoding="utf-8"))
             source_manifest.append({"path": str(relative), "sha256": _sha256(source), "sizeBytes": source.stat().st_size})
     _write_json(output / "s01_source_manifest.json", source_manifest)
 

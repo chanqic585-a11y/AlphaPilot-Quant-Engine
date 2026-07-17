@@ -1,18 +1,17 @@
-"""Frozen formal-input loader for the preregistered S01 Walk-forward."""
+"""Candidate-neutral frozen formal-input loader."""
 
 from __future__ import annotations
 
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Callable, Mapping
 
 import pandas as pd
 
-from alphapilot.advisory_r_campaign.candidates import build_candidate_inventory
 from alphapilot.evolution.registry.hashing import sha256_file
 
-from .phase1_contracts import verify_s01_formal_preregistration
+from .candidate_adapter import CandidateAdapter, validate_candidate_binding
 
 
 REQUIRED_COLUMNS = ("date", "open", "high", "low", "close", "volume")
@@ -42,18 +41,27 @@ def _read_json(path: Path) -> dict[str, Any]:
     return value
 
 
-def _candidate(preregistration: Mapping[str, Any]) -> dict[str, Any]:
-    candidate_id = str(preregistration.get("sourceCandidateId", ""))
-    candidate = next(
-        (
-            dict(row)
-            for row in build_candidate_inventory()
-            if str(row.get("candidateId")) == candidate_id
-        ),
-        None,
+def _candidate(
+    preregistration: Mapping[str, Any],
+    *,
+    repo_root: Path,
+    candidate_id: str,
+    candidate_adapter: CandidateAdapter,
+) -> dict[str, Any]:
+    validate_candidate_binding(
+        adapter=candidate_adapter,
+        preregistration=preregistration,
+        requested_candidate_id=candidate_id,
     )
-    if candidate is None:
-        raise FormalInputError("candidate_identity_missing")
+    try:
+        candidate = dict(
+            candidate_adapter.resolve_candidate(
+                repo_root=repo_root,
+                preregistration=preregistration,
+            )
+        )
+    except (KeyError, ValueError) as error:
+        raise FormalInputError("candidate_identity_missing") from error
     if (
         candidate.get("strategyDefinitionHash")
         != preregistration.get("strategyDefinitionHash")
@@ -63,8 +71,12 @@ def _candidate(preregistration: Mapping[str, Any]) -> dict[str, Any]:
     return candidate
 
 
-def _validate_preregistration(preregistration: Mapping[str, Any]) -> None:
-    if not verify_s01_formal_preregistration(preregistration):
+def _validate_preregistration(
+    preregistration: Mapping[str, Any],
+    *,
+    validator: Callable[[Mapping[str, Any]], bool],
+) -> None:
+    if not validator(preregistration):
         raise FormalInputError("preregistration_hash_mismatch")
     frozen_counts = {
         "candidateCount": 1,
@@ -154,14 +166,24 @@ def load_formal_input(
     repo_root: Path,
     data_root: Path,
     preregistration_path: Path,
+    candidate_id: str,
+    candidate_adapter: CandidateAdapter,
+    preregistration_validator: Callable[[Mapping[str, Any]], bool],
 ) -> FormalInputBundle:
     """Load only the frozen formal window and return auditable input metadata."""
 
     repo_root = Path(repo_root).resolve()
     data_root = Path(data_root).resolve()
     preregistration = _read_json(Path(preregistration_path).resolve())
-    _validate_preregistration(preregistration)
-    candidate = _candidate(preregistration)
+    _validate_preregistration(
+        preregistration, validator=preregistration_validator
+    )
+    candidate = _candidate(
+        preregistration,
+        repo_root=repo_root,
+        candidate_id=candidate_id,
+        candidate_adapter=candidate_adapter,
+    )
 
     snapshot_id = str(preregistration.get("dataSnapshotId", ""))
     snapshot = _read_json(
@@ -220,7 +242,7 @@ def load_formal_input(
         )
 
     input_mapping = {
-        "schemaVersion": "s01_formal_input_mapping_v1",
+        "schemaVersion": "formal_input_mapping_v2",
         "campaignId": preregistration.get("campaignId"),
         "candidateId": candidate["candidateId"],
         "candidateIdentityValid": True,
@@ -242,7 +264,7 @@ def load_formal_input(
         "partitions": partitions,
     }
     holdout_lineage = {
-        "schemaVersion": "s01_formal_holdout_lineage_v1",
+        "schemaVersion": "formal_holdout_lineage_v2",
         "campaignId": preregistration.get("campaignId"),
         "sourceCampaignId": preregistration.get("sourceCampaignId"),
         "formalWindow": {

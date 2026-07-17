@@ -1,0 +1,17 @@
+{
+  "artifacts": [
+    {
+      "byteCount": 3142,
+      "path": "v17_closeout_provenance_sidecar.json",
+      "sha256": "642ff4e52d66577bc012506a07254a3962a5638873f1235364e369f6df477182"
+    },
+    {
+      "byteCount": 598,
+      "path": "v17_closeout_issue_resolution_sidecar.json",
+      "sha256": "e972587ba8a55c55f4f88ebe4554ce0996edfa6082b3f5bbe529ad0d1bc32273"
+    }
+  ],
+  "manifestHash": "v17_closeout_supplement_artifact_manifest_8dc07c3980a1653bf1a26173f3cc1677240579e2fab6db238ab442bdd9dea2ab",
+  "originalEvidenceModified": false,
+  "schemaVersion": "v17_closeout_supplement_artifact_manifest_v1"
+}

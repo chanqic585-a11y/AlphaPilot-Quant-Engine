@@ -1,0 +1,15 @@
+{
+  "P2-02": "status_resolved_at_final_closeout",
+  "campaignId": "advisory_r_v17",
+  "finalTestManifest": {
+    "passed": 817,
+    "skipped": 0,
+    "source": "reports/v13_27_1_17_evidence_delivery/test_manifest.json"
+  },
+  "historicalLineEndingEvidence": "historical_preserved",
+  "originalEvidenceModified": false,
+  "originalLedgerModified": false,
+  "resolutionScope": "non_result_closeout_metadata_only",
+  "schemaVersion": "v17_closeout_issue_resolution_sidecar_v1",
+  "sidecarHash": "v17_closeout_issue_resolution_sidecar_9715c09494c7549bd74bc8bdd282e01c4dd5f0d4e9f514e33831c643b3afb6d3"
+}

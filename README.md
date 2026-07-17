@@ -5270,3 +5270,44 @@ workflow stopped at `zero_prefilter_survivors` as designed. V13.27.1.16 through
 V13.27.1.18 were not executed, and Release, Demo ARM, and order counts all
 remained zero. Frozen reports are under
 `reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/`.
+
+## V13.27.1.18 S01 Capital Policy Correction
+
+V13.27.1.18 corrects only the incomplete executable capital-policy contract
+found during the V17 independent closeout audit. It freezes deterministic
+capacity sizing, correlation clusters, signed BTC beta, same-timestamp signal
+ranking, and one canonical acceptance sequence. Strategy parameters, Bear
+definition, exit policy, split policy, universe, costs, and gates are unchanged.
+
+The pre-result campaign is
+`advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a`. Its code,
+preregistration, and tag have not yet been frozen remotely, so the mechanical
+route is `blocked_remote_freeze`: formal run count, Locked OOS access, Release,
+Demo ARM, and order count remain zero. Evidence is under
+`reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/`;
+the preregistration is under `research/preregistrations/`.
+
+The one-shot formal runner and atomic evidence publisher are implemented and
+covered by synthetic tests. They produce fold, capital competition, exposure,
+parity, cost, funding, benchmark, statistical, gate, route, failure, and
+manifest artifacts. Missing funding or comparable-candidate evidence remains
+explicitly unavailable and cannot be filled with zero or inferred after the
+run. These capabilities have not been used on formal inputs: the existing
+campaign directory remains pre-result contract evidence only.
+
+The pre-result formal-validation architecture is candidate-neutral. Candidate
+implementations enter through `CandidateAdapter`; S01 lives in
+`alphapilot/formal_validation/candidate_adapters/s01.py`, while Capacity,
+Cluster, Beta, and Ranking are independently versioned policy objects. The
+generic command requires both frozen identities and writes to a dynamic path:
+
+```powershell
+python -m alphapilot.scripts.run_formal_walk_forward `
+  --preregistration research/preregistrations/<campaignId>.json `
+  --candidate-id <candidateId>
+```
+
+Formal artifacts are published under
+`reports/formal_validation/<campaignId>/<candidateId>/`. The compatibility
+module `run_v18_s01_formal_walk_forward.py` delegates to this generic entry
+point and does not own a separate S01 execution engine.
