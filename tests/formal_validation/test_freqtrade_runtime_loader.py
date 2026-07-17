@@ -67,4 +67,3 @@ def test_missing_runtime_fails_closed_without_fallback(tmp_path: Path) -> None:
         load_freqtrade_runtime(
             _request(tmp_path), repo_root=tmp_path, runner=runner
         )
-

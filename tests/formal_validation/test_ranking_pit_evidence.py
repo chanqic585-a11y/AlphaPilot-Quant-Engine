@@ -71,4 +71,3 @@ def test_pit_portfolio_context_hashes_match_between_core_and_adapter() -> None:
     assert audit["fieldParityPct"] == 100.0
     assert audit["hashParityPct"] == 100.0
     assert audit["resultReconstructionCount"] == 0
-
