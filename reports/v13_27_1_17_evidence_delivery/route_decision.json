@@ -1,0 +1,25 @@
+{
+  "blockerCodes": [
+    "capacity_model_not_frozen",
+    "correlation_cluster_policy_not_frozen",
+    "portfolio_beta_policy_not_frozen",
+    "ranking_field_definitions_not_frozen"
+  ],
+  "campaignId": "advisory_r_v17",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "demoArm": false,
+  "formalPass": false,
+  "formalPerformanceArtifactCount": 0,
+  "formalRunCount": 0,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "preregistrationHash": "s01_formal_walk_forward_preregistration_05e26d4f8da2a3d47f22a91464e179f19096889bdc9e3839892ee8eca0e34b6b",
+  "preserveOriginalCampaign": true,
+  "releaseCount": 0,
+  "requiresNewCampaign": true,
+  "resultReadCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "routeStage": "before_formal_performance_execution",
+  "schemaVersion": "s01_formal_pre_run_route_v1",
+  "terminal": true
+}

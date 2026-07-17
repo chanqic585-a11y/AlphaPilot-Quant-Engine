@@ -1,0 +1,2 @@
+schemaVersion,formalResultStatus,exactReason,rawSignalCount,acceptedSignalCount,rejectedByCapitalCompetitionCount,tradeCount,winRatePct,profitFactor,averageGrossR,averageNetR,totalNetR,maximumDrawdownR,maximumDrawdownPct,feesR,slippageR,spreadR,fundingR
+v17_s01_formal_metric_summary_v1,not_run,implementation_invalid_requires_new_campaign,,,,,,,,,,,,,,,

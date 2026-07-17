@@ -1,0 +1,17 @@
+issueId,category,doesNotChangeStrategyLogic,doesNotChangeResultComputation,doesNotChangeArtifactIdentity,preserveOriginalCampaign,newCampaignIdRequired,newPreregistrationRequired
+P0-01,C,True,True,True,True,False,False
+P0-02,A,True,True,True,True,False,False
+P0-03,B,False,False,False,True,True,True
+P0-04,A,True,True,True,True,False,False
+P0-05,A,True,True,True,True,False,False
+P0-06,A,True,True,True,True,False,False
+P2-01,A,True,True,True,True,False,False
+P2-02,A,True,True,True,True,False,False
+P2-03,A,True,True,True,True,False,False
+P2-04,C,True,True,True,True,False,False
+P2-05,C,True,True,True,True,False,False
+P2-06,C,True,True,True,True,False,False
+F17-01,B,False,False,False,True,True,True
+F17-02,B,False,False,False,True,True,True
+F17-03,B,False,False,False,True,True,True
+F17-04,B,False,False,False,True,True,True

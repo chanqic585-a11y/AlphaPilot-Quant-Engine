@@ -1,0 +1,18 @@
+{
+  "benjaminiHochberg": {
+    "campaignFamilySize": 10,
+    "maximumQ": 0.1
+  },
+  "dailyReturnPanel": true,
+  "deflatedSharpeRatio": {
+    "actualTrials": 10,
+    "minimum": 0.9
+  },
+  "neweyWest": {
+    "alpha": 0.05,
+    "maximumLagDays": 5,
+    "oneSided": true
+  },
+  "probabilityOfBacktestOverfittingMaximum": 0.4,
+  "spaPValueMaximum": 0.1
+}

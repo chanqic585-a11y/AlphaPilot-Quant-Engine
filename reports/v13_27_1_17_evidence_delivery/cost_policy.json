@@ -1,0 +1,35 @@
+{
+  "baseComponentsBpsPerSide": {
+    "fee": 5.0,
+    "slippage": 2.5,
+    "spreadProxy": 2.5
+  },
+  "baseRoundTripCostRate": 0.002,
+  "conservativeFundingStress": {
+    "applyByObservedSettlementCount": true,
+    "evidenceStatusWhenInsufficient": "partial_or_proxy",
+    "method": "adverse_quantile_from_available_same_exchange_history",
+    "quantile": 0.9
+  },
+  "costModelHash": "s01_formal_cost_model_cb68c2cf24c1ea1afabec0ab881c3230e1f64d2b54dd3989ef610b26357da192",
+  "gapPolicy": "execute_at_observed_gap_open_when_stop_or_exit_is_crossed",
+  "historicalFundingMissingValue": null,
+  "missingFundingMayBeFilledWithZero": false,
+  "partialExitLegsChargedSeparately": true,
+  "scenarios": [
+    {
+      "multiplier": 1.0,
+      "scenarioId": "base"
+    },
+    {
+      "multiplier": 1.5,
+      "scenarioId": "cost_1_5x"
+    },
+    {
+      "multiplier": 2.0,
+      "scenarioId": "cost_2_0x"
+    }
+  ],
+  "schemaVersion": "s01_formal_cost_model_v1",
+  "source": "v16_round_trip_cost_model"
+}

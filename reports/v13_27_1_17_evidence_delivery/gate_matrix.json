@@ -1,0 +1,42 @@
+{
+  "campaignId": "advisory_r_v17",
+  "gates": [
+    {
+      "blocking": true,
+      "gateId": "executable_frozen_contract",
+      "reasonCodes": [
+        "capacity_model_not_frozen",
+        "correlation_cluster_policy_not_frozen",
+        "portfolio_beta_policy_not_frozen",
+        "ranking_field_definitions_not_frozen"
+      ],
+      "status": "failed"
+    },
+    {
+      "blocking": false,
+      "gateId": "formal_performance_execution",
+      "reasonCodes": [
+        "implementation_invalid_requires_new_campaign"
+      ],
+      "status": "not_run"
+    },
+    {
+      "blocking": true,
+      "gateId": "locked_oos_admission",
+      "reasonCodes": [
+        "clean_locked_oos_unavailable"
+      ],
+      "status": "intentional_safety_block"
+    },
+    {
+      "blocking": true,
+      "gateId": "release_demo_order",
+      "reasonCodes": [
+        "zero_formal_pass_evidence"
+      ],
+      "status": "not_run"
+    }
+  ],
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_formal_gate_matrix_v1"
+}

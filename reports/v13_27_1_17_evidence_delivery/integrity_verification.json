@@ -1,0 +1,12 @@
+{
+  "crlfFiles": [],
+  "csvParseErrors": [],
+  "jsonParseErrors": [],
+  "parquetArtifactsPresent": false,
+  "parquetStatus": "not_run_no_artifacts",
+  "passed": true,
+  "requiredLogicalRoleMissingSilentlyCount": 0,
+  "schemaVersion": "v17_integrity_verification_v1",
+  "sourceToZipHashMismatches": [],
+  "zipCrcFailures": {}
+}

@@ -1,0 +1,41 @@
+{
+  "admissionStatus": "blocked",
+  "audit": {
+    "admissionStatus": "blocked",
+    "blockers": [
+      "future_market_data_not_available",
+      "formal_walk_forward_not_completed"
+    ],
+    "contentHash": null,
+    "contentReadCount": 0,
+    "hashChainValid": true,
+    "identityHash": "2a7dc8fdb56dd8d79f993a5e2159ad885a8d4ec60a9395aa159d157ae66e42c0",
+    "identityHashValid": true,
+    "lastEventHash": "4849eaebc956007c6d1c3760f96f5a789cc9a0e43247be44ed48aec2f2e95dbc",
+    "ledgerEventCount": 1,
+    "lockedOosAccessCount": 0,
+    "metadataOnly": true,
+    "route": "future_data_required",
+    "schemaVersion": "alphapilot_future_locked_oos_metadata_audit_v1",
+    "status": "passed"
+  },
+  "blockers": [
+    "future_market_data_not_available",
+    "formal_walk_forward_not_completed"
+  ],
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "demoArm": false,
+  "formalPreregistrationHash": "s01_formal_walk_forward_preregistration_05e26d4f8da2a3d47f22a91464e179f19096889bdc9e3839892ee8eca0e34b6b",
+  "formalResultCount": 0,
+  "futureMarketDataRoot": "research/locked_oos/future_market_data",
+  "identityHash": "2a7dc8fdb56dd8d79f993a5e2159ad885a8d4ec60a9395aa159d157ae66e42c0",
+  "identityPath": "research/locked_oos/s01_future_locked_oos_identity.json",
+  "ledgerPath": "research/locked_oos/s01_future_locked_oos_access_ledger.jsonl",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "route": "future_data_required",
+  "schemaVersion": "alphapilot_future_locked_oos_readiness_v1",
+  "status": "passed",
+  "strategyDefinitionHash": "advisory_r_strategy_062a7c3c3bd7b9f8f741c9506a40efabd3225bd57645f093eda0f86901ac2c37"
+}

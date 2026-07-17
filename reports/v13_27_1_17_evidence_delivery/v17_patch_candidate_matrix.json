@@ -1,0 +1,162 @@
+[
+  {
+    "category": "C",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P0-01",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "A",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P0-02",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "B",
+    "doesNotChangeArtifactIdentity": false,
+    "doesNotChangeResultComputation": false,
+    "doesNotChangeStrategyLogic": false,
+    "issueId": "P0-03",
+    "newCampaignIdRequired": true,
+    "newPreregistrationRequired": true,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "A",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P0-04",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "A",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P0-05",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "A",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P0-06",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "A",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P2-01",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "A",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P2-02",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "A",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P2-03",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "C",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P2-04",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "C",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P2-05",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "C",
+    "doesNotChangeArtifactIdentity": true,
+    "doesNotChangeResultComputation": true,
+    "doesNotChangeStrategyLogic": true,
+    "issueId": "P2-06",
+    "newCampaignIdRequired": false,
+    "newPreregistrationRequired": false,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "B",
+    "doesNotChangeArtifactIdentity": false,
+    "doesNotChangeResultComputation": false,
+    "doesNotChangeStrategyLogic": false,
+    "issueId": "F17-01",
+    "newCampaignIdRequired": true,
+    "newPreregistrationRequired": true,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "B",
+    "doesNotChangeArtifactIdentity": false,
+    "doesNotChangeResultComputation": false,
+    "doesNotChangeStrategyLogic": false,
+    "issueId": "F17-02",
+    "newCampaignIdRequired": true,
+    "newPreregistrationRequired": true,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "B",
+    "doesNotChangeArtifactIdentity": false,
+    "doesNotChangeResultComputation": false,
+    "doesNotChangeStrategyLogic": false,
+    "issueId": "F17-03",
+    "newCampaignIdRequired": true,
+    "newPreregistrationRequired": true,
+    "preserveOriginalCampaign": true
+  },
+  {
+    "category": "B",
+    "doesNotChangeArtifactIdentity": false,
+    "doesNotChangeResultComputation": false,
+    "doesNotChangeStrategyLogic": false,
+    "issueId": "F17-04",
+    "newCampaignIdRequired": true,
+    "newPreregistrationRequired": true,
+    "preserveOriginalCampaign": true
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "path": "user_data\\strategies\\AlphaPilotS01BearRecovery4H.py",
+    "sha256": "e2b6b05c1798e98c7bb7d01db589d36481842bcf56ad7fe447e6a716ee678ab4",
+    "sizeBytes": 8976
+  },
+  {
+    "path": "alphapilot\\formal_validation\\s01_freqtrade_translation.py",
+    "sha256": "53b3b13e12cab7aa3fc0aaff0317084d744ff010f3ffe618f3e4c69895951b59",
+    "sizeBytes": 3125
+  },
+  {
+    "path": "alphapilot\\formal_validation\\s01_dual_engine_audit.py",
+    "sha256": "ccbc309c8b5819dce17ed466aec8047c68e86bce81bc9b015782adcce784ae02",
+    "sizeBytes": 16074
+  }
+]
