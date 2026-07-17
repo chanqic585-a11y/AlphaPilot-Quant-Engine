@@ -1,0 +1,10 @@
+{
+  "certificationFileHash": "2124969e234e196a1503c66df12d4049ae4f698d6cd6bcb26896a5ed7ea9df3b",
+  "fixtureFileHash": "d40a51bafd5063d12d3783c74fb6fcdd875242bbdfdb71f1c8bb0c8540724458",
+  "fixtureHash": "formal_evidence_chain_fixture_a3512ec7b5aa8a1aa115833bcc6d1c3e1723df91d49f59cdbea97d0a479bf611",
+  "formalEvidenceChainCertificationHash": "formal_evidence_chain_certification_95f9253c8c57d441c64d9172fc27cfc0b9bfeefca86525f7a7e6ce3f09b8e87a",
+  "runtimeBindingFileHash": "399344acd80677e5fdb48a082b7a1df2f460c568a40e431f13e729e121b7b701",
+  "runtimeHash": "freqtrade_runtime_1d0abfa471f2d1fa5e777dcef4e520d48f8f2e287689d18a19e8fd6e7bc9e5ab",
+  "schemaVersion": "v18_2_formal_evidence_chain_certification_reference_v1",
+  "status": "certified"
+}
