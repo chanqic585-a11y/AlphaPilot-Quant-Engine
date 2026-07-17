@@ -122,6 +122,22 @@ def test_s01_formal_runtime_real_signal_branch_uses_authoritative_identity() -> 
     assert reference_events[0]["signalId"].startswith("s01_formal::")
 
 
+def test_s01_formal_runtime_uses_frozen_round_trip_cost() -> None:
+    bundle = _real_signal_bundle()
+    bundle.preregistration["costModel"]["baseRoundTripCostRate"] = 0.002
+
+    report, reference_events, adapter_events = S01CandidateAdapter().run_parity(
+        bundle=bundle,
+        repo_root=REPO_ROOT,
+    )
+
+    assert report["status"] in {"passed", "blocked"}
+    if report["status"] == "blocked":
+        assert report["blockers"] == ["freqtrade_runtime_not_loaded"]
+    assert report["mismatches"] == []
+    assert adapter_events[0]["exitLegs"] == reference_events[0]["exitLegs"]
+
+
 def test_s01_formal_runtime_zero_signal_branch_does_not_resolve_identity(
     monkeypatch: pytest.MonkeyPatch,
 ) -> None:

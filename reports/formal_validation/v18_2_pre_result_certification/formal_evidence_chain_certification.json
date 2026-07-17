@@ -1,0 +1,26 @@
+{
+  "certification": {
+    "capacitySemanticsImplementationComplete": true,
+    "capitalAcceptanceFixtureParityPct": 100.0,
+    "exitFixtureParityPct": 100.0,
+    "foldAssignmentFixtureCompletenessPct": 100.0,
+    "fundingContractComplete": true,
+    "identityMappingCompletenessPct": 100.0,
+    "pitContextFixtureParityPct": 100.0,
+    "positionSizeFixtureParityPct": 100.0,
+    "rankingEvidenceFixtureParityPct": 100.0,
+    "runtimeLoadedFixture": true
+  },
+  "demoArm": false,
+  "fixtureHash": "formal_evidence_chain_fixture_8ded76083403ca092e96a2b9f9c6406f41707306ed142caa3c0a280c12a9d884",
+  "fixtureId": "formal_evidence_chain_fixture_v1",
+  "formalEvidenceChainCertificationHash": "formal_evidence_chain_certification_37e49f64224cb949128f8f1440c17855c21830d97565d9a0661114da45e415dd",
+  "formalResultCount": 0,
+  "lockedOosReadCount": 0,
+  "networkAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "runtimeHash": "freqtrade_runtime_0047a6cf62cf333b352a714cdae3242a0f99953f1ac9827c5b8af48bd3a027d6",
+  "schemaVersion": "formal_evidence_chain_certification_v1",
+  "status": "certified"
+}

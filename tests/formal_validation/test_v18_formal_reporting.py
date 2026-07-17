@@ -378,3 +378,133 @@ def test_formal_reporting_is_atomic_when_parity_raises(tmp_path: Path) -> None:
 
     assert not (tmp_path / "formal" / "artifact_manifest.json").exists()
     assert not list((tmp_path / "formal").glob("fold_results.*"))
+
+
+def test_v18_2_evidence_chain_publishes_complete_candidate_neutral_artifacts(
+    tmp_path: Path,
+) -> None:
+    bundle, raw_events = _bundle()
+    frame = bundle.frames["BTC-USDT-SWAP"]
+    split = {
+        **bundle.preregistration["splitPolicy"],
+        "folds": [
+            {
+                "foldId": "fold_001",
+                "trainStartTimestamp": frame.iloc[0]["date"].isoformat(),
+                "trainEndExclusiveTimestamp": frame.iloc[115]["date"].isoformat(),
+                "purgeStartTimestamp": frame.iloc[115]["date"].isoformat(),
+                "purgeEndExclusiveTimestamp": frame.iloc[118]["date"].isoformat(),
+                "embargoStartTimestamp": frame.iloc[118]["date"].isoformat(),
+                "embargoEndExclusiveTimestamp": frame.iloc[120]["date"].isoformat(),
+                "testStartTimestamp": frame.iloc[120]["date"].isoformat(),
+                "testEndExclusiveTimestamp": (
+                    frame.iloc[-1]["date"] + pd.Timedelta(hours=12)
+                ).isoformat(),
+            }
+        ],
+    }
+    preregistration = {
+        **bundle.preregistration,
+        "splitPolicy": split,
+        "strategyDefinitionHash": "strategy-hash",
+        "exitPolicyHash": "exit-policy",
+        "signalRankingPolicyHash": "ranking-policy",
+        "formalPortfolioPolicyV2Hash": "portfolio-policy",
+        "fundingRequiredForResearchOnly": False,
+        "fundingRequiredForFormalEvidence": True,
+    }
+    snapshot = {
+        **bundle.snapshot,
+        "snapshotHash": "snapshot-hash",
+        "datasetReferences": [
+            {
+                "instrumentId": symbol,
+                "timeframe": "4h",
+                "path": f"canonical/{symbol}/4h/data.parquet",
+                "provider": "okx",
+                "sha256": f"sha-{index}",
+            }
+            for index, symbol in enumerate(bundle.frames)
+        ],
+    }
+    v18_2_bundle = replace(
+        bundle,
+        preregistration=preregistration,
+        candidate={
+            **bundle.candidate,
+            "timeframe": "4h",
+            "strategyDefinitionHash": "strategy-hash",
+            "exitPolicyHash": "exit-policy",
+        },
+        snapshot=snapshot,
+    )
+    result = execute_v18_formal_campaign(
+        bundle=v18_2_bundle,
+        repo_root=tmp_path,
+        output_root=tmp_path / "v18-2-formal",
+        candidate_adapter=_SyntheticAdapter(),
+        parity_runner=_parity_runner,
+        raw_replay_runner=lambda **_: [dict(row) for row in raw_events],
+        formal_evidence_chain={
+            "enabled": True,
+            "runtimeBinding": {
+                "runtimeRequested": True,
+                "runtimeLoaded": True,
+                "strategyLoaded": True,
+                "configLoaded": True,
+                "dataRootValidated": True,
+                "timerangeValidated": True,
+                "networkAccessCount": 0,
+                "lockedOosReadCount": 0,
+                "runtimeHash": "runtime-hash",
+            },
+            "certification": {
+                "status": "certified",
+                "formalEvidenceChainCertificationHash": "certification-hash",
+            },
+        },
+    )
+
+    names = {path.name for path in (tmp_path / "v18-2-formal").iterdir()}
+    assert {
+        "canonical_event_identity_contract.json",
+        "canonical_event_identity_mapping_audit.json",
+        "canonical_event_identity_collision_audit.json",
+        "formal_event_fold_assignment.json",
+        "formal_event_fold_assignment.csv",
+        "cross_fold_event_audit.json",
+        "frozen_signal_ranking_evidence.parquet",
+        "adapter_signal_ranking_evidence.parquet",
+        "ranking_evidence_parity.json",
+        "pit_portfolio_context.parquet",
+        "adapter_pit_portfolio_context.parquet",
+        "pit_context_parity.json",
+        "capacity_data_semantics_by_symbol.json",
+        "capacity_data_semantics_by_symbol.csv",
+        "capacity_semantics_coverage.json",
+        "funding_input_registry.json",
+        "funding_input_coverage.json",
+        "funding_stress_contract.json",
+        "freqtrade_runtime_binding.json",
+    } <= names
+    identity = json.loads(
+        (tmp_path / "v18-2-formal" / "canonical_event_identity_mapping_audit.json")
+        .read_text(encoding="utf-8")
+    )
+    ranking = json.loads(
+        (tmp_path / "v18-2-formal" / "ranking_evidence_parity.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    pit = json.loads(
+        (tmp_path / "v18-2-formal" / "pit_context_parity.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert identity["mappingCompletenessPct"] == 100.0
+    assert ranking["fieldParityPct"] == ranking["hashParityPct"] == 100.0
+    assert pit["fieldParityPct"] == pit["hashParityPct"] == 100.0
+    assert result["route"] != "implementation_invalid_requires_new_campaign"
+    assert result["formalPass"] is False
+    assert result["formalEvidenceCount"] == 0
+    assert result["releaseCount"] == result["orderCount"] == 0

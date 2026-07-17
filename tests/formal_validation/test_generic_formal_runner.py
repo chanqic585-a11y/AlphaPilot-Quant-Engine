@@ -146,3 +146,43 @@ def test_authorization_gate_precedes_adapter_and_formal_input_read(
     assert route["route"] == "blocked_formal_run_authorization"
     assert route["formalRunCount"] == 0
     assert calls == {"adapter": 0, "input": 0, "execute": 0}
+
+
+def test_generic_runner_passes_candidate_neutral_executor_context(
+    tmp_path: Path,
+) -> None:
+    captured: dict[str, object] = {}
+
+    class Adapter:
+        adapter_id = "fixture-adapter"
+        adapter_version = "2"
+
+    def executor(**kwargs: object) -> dict[str, object]:
+        captured.update(kwargs)
+        return {
+            "route": "formal_run_completed",
+            "resultManifestHash": "manifest-hash",
+        }
+
+    run(
+        REPO_ROOT,
+        preregistration_path=PREREGISTRATION,
+        candidate_id=CANDIDATE_ID,
+        output_root=tmp_path / "output",
+        freeze_auditor=lambda **_: {
+            "status": "passed",
+            "route": "remote_freeze_verified",
+            "headCommit": "commit-a",
+            "blockers": [],
+        },
+        adapter_resolver=lambda _: Adapter(),
+        input_loader=lambda **_: object(),
+        executor=executor,
+        executor_context={
+            "formal_evidence_chain": {"enabled": True},
+            "campaign_runtime": "digest-pinned",
+        },
+    )
+
+    assert captured["formal_evidence_chain"] == {"enabled": True}
+    assert captured["campaign_runtime"] == "digest-pinned"

@@ -215,6 +215,66 @@ def test_capital_replay_handles_partial_exits_without_double_counting_marks() ->
     assert scenarios["cost_2_0x"]["metrics"]["averageNetR"] < metrics["averageNetR"]
 
 
+def test_capital_replay_captures_pre_entry_point_in_time_context() -> None:
+    dates = pd.date_range("2026-01-01", periods=3, freq="4h", tz="UTC")
+    frame = pd.DataFrame(
+        {
+            "date": dates,
+            "open": [100.0, 101.0, 102.0],
+            "high": [101.0, 102.0, 103.0],
+            "low": [99.0, 100.0, 101.0],
+            "close": [100.0, 101.0, 102.0],
+            "volume": [1_000_000.0] * 3,
+        }
+    )
+    event = {
+        "candidateId": "S01",
+        "signalId": "signal-pit",
+        "instrumentId": "ETH-USDT-SWAP",
+        "direction": "long",
+        "signalTimestamp": dates[0].isoformat(),
+        "entryTimestamp": dates[0].isoformat(),
+        "entryPrice": 100.0,
+        "initialStop": 95.0,
+        "eventExtremeResidualZ": -3.0,
+        "recoverySizeZ": 1.0,
+        "liquidity30d": 20_000_000.0,
+        "dailyLiquidity": _liquidity(),
+        "correlationCluster": "cluster-eth",
+        "beta": 1.0,
+        "foldId": "fold_001",
+        "exitLegs": [
+            {
+                "legIndex": 0,
+                "legFraction": 1.0,
+                "executionTimestamp": dates[2].isoformat(),
+                "netR": 0.2,
+                "grossR": 0.22,
+            }
+        ],
+    }
+
+    replay = replay_v18_capital_policy(
+        [event],
+        {"ETH-USDT-SWAP": frame},
+        policy=build_capital_policy_v2(),
+        capture_pit_context=True,
+    )
+
+    assert len(replay["pitContexts"]) == 1
+    context = replay["pitContexts"][0]
+    assert context["signalId"] == "signal-pit"
+    assert context["contextTimestamp"] == dates[0].isoformat().replace("+00:00", "Z")
+    assert context["currentEquity"] == pytest.approx(10_000.0)
+    assert context["openPositions"] == []
+    assert context["concurrentPositionCount"] == 0
+    assert context["symbolAlreadyOpen"] is False
+    assert context["clusterMembership"] == "cluster-eth"
+    assert context["assetBeta"] == pytest.approx(1.0)
+    assert "result" not in context
+    assert "realizedPnl" not in context
+
+
 def test_capital_replay_ignores_exit_legs_for_rejected_entries() -> None:
     dates = pd.date_range("2026-01-01", periods=3, freq="4h", tz="UTC")
     frame = pd.DataFrame(

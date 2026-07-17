@@ -99,6 +99,7 @@ def run_s01_formal_adapter_parity(
                 symbol=_instrument(pair),
                 frame=analyzed,
                 signal_position=int(signal_position),
+                round_trip_cost_rate=round_trip_cost,
             )
             adapter_events.append(
                 canonicalize_formal_event(

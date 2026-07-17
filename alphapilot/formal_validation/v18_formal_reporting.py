@@ -18,8 +18,17 @@ import pandas as pd
 
 from alphapilot.data_foundation.checkpoint import write_json_atomic
 
-from .candidate_adapter import CandidateAdapter, validate_candidate_binding
+from .candidate_adapter import (
+    CandidateAdapter,
+    resolve_candidate_signal_identity,
+    validate_candidate_binding,
+)
+from .canonical_event_identity import (
+    audit_canonical_identity_mapping,
+    map_canonical_identity,
+)
 from .formal_event_contract import canonicalize_formal_event
+from .formal_fold_assignment import assign_formal_events_by_signal_timestamp
 from .formal_input import FormalInputBundle
 from .formal_statistics import newey_west_alpha
 from .formal_stress import (
@@ -28,6 +37,22 @@ from .formal_stress import (
     build_utc_daily_returns,
 )
 from .formal_walk_forward import assign_events_to_folds
+from .funding_input_registry import cap_route_for_funding
+from .pit_portfolio_context import (
+    audit_pit_context_parity,
+    freeze_pit_portfolio_context,
+)
+from .ranking_evidence import (
+    audit_ranking_evidence_parity,
+    freeze_ranking_evidence,
+)
+from .v18_2_evidence_chain import (
+    build_capacity_semantics_registry,
+    build_funding_registry,
+    build_source_change_scope_audits,
+    canonical_identity_contract,
+    validate_evidence_chain_configuration,
+)
 from .v18_formal_execution import (
     attach_point_in_time_context,
     build_daily_market_evidence,
@@ -504,6 +529,7 @@ def _route(
     bundle: FormalInputBundle,
     gate_matrix: Mapping[str, Any],
     implementation_blockers: Sequence[str],
+    funding_unavailable_is_route_cap: bool = False,
 ) -> tuple[str, list[str]]:
     stopping = bundle.preregistration.get("stoppingRules") or {}
     blockers = list(dict.fromkeys(str(value) for value in implementation_blockers))
@@ -529,7 +555,13 @@ def _route(
     failed = [
         str(row["gateId"])
         for row in gate_matrix["gates"]
-        if row["gateId"] in economic_gate_ids and row["passed"] is not True
+        if row["gateId"] in economic_gate_ids
+        and not (
+            funding_unavailable_is_route_cap
+            and row["gateId"] == "conservative_funding_average_net_r"
+            and row["passed"] is None
+        )
+        and row["passed"] is not True
     ]
     if failed:
         return str(stopping.get("economicGateFailure") or "archive_s01_current_version"), failed
@@ -645,7 +677,79 @@ def _publish_artifacts(
         return result_manifest_hash
     finally:
         if staging.exists():
-            shutil.rmtree(staging)
+            # Do not mask the original writer exception if pyarrow still owns a
+            # failed output handle briefly on Windows.
+            shutil.rmtree(staging, ignore_errors=True)
+
+
+def _apply_stable_rejections(
+    replay: Mapping[str, Any], rejected: Sequence[Mapping[str, Any]]
+) -> dict[str, Any]:
+    """Add pre-competition rejections without changing accepted trade accounting."""
+
+    result = dict(replay)
+    decisions = [dict(row) for row in replay.get("decisions", [])]
+    breakdown = dict(replay.get("rejectionBreakdown") or {})
+    seen = {
+        (str(row.get("signalId") or ""), str(row.get("reason") or ""))
+        for row in decisions
+        if row.get("accepted") is False
+    }
+    added = 0
+    for source in rejected:
+        signal_id = str(source.get("signalId") or _signal_id(source))
+        reason = str(
+            source.get("reason")
+            or source.get("assignmentReason")
+            or "reject_formal_evidence_unavailable"
+        )
+        if (signal_id, reason) in seen:
+            continue
+        decisions.append(
+            {
+                "signalId": signal_id,
+                "instrumentId": str(
+                    source.get("instrumentId") or source.get("symbol") or ""
+                ),
+                "accepted": False,
+                "reason": reason,
+                "actualNotional": None,
+                "riskAmount": None,
+            }
+        )
+        breakdown[reason] = int(breakdown.get(reason, 0)) + 1
+        seen.add((signal_id, reason))
+        added += 1
+    result["decisions"] = decisions
+    result["rejectionBreakdown"] = dict(sorted(breakdown.items()))
+    result["rawSignalCount"] = int(replay.get("rawSignalCount") or 0) + added
+    result["rejectedSignalCount"] = int(replay.get("rejectedSignalCount") or 0) + added
+    result["preCompetitionRejectedSignalCount"] = added
+    return result
+
+
+def _frame_from_rows(
+    rows: Sequence[Mapping[str, Any]], columns: Sequence[str]
+) -> pd.DataFrame:
+    normalized = []
+    for source in rows:
+        row = {}
+        for key, value in dict(source).items():
+            row[key] = (
+                json.dumps(
+                    _jsonable(value),
+                    ensure_ascii=False,
+                    separators=(",", ":"),
+                    sort_keys=True,
+                )
+                if isinstance(value, (Mapping, list, tuple))
+                else value
+            )
+        normalized.append(row)
+    frame = pd.DataFrame(normalized)
+    if frame.empty:
+        return pd.DataFrame(columns=list(columns))
+    return frame
 
 
 def execute_v18_formal_campaign(
@@ -656,10 +760,18 @@ def execute_v18_formal_campaign(
     candidate_adapter: CandidateAdapter,
     parity_runner: ParityRunner | None = None,
     raw_replay_runner: RawReplayRunner | None = None,
+    formal_evidence_chain: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
     """Execute frozen V18 evidence once and publish a manifest-last bundle."""
 
     preregistration = bundle.preregistration
+    evidence_enabled = formal_evidence_chain is not None
+    runtime_binding: dict[str, Any] = {}
+    evidence_certification: dict[str, Any] = {}
+    if evidence_enabled:
+        runtime_binding, evidence_certification = (
+            validate_evidence_chain_configuration(formal_evidence_chain or {})
+        )
     campaign_id = str(preregistration["campaignId"])
     candidate_id = str(bundle.candidate["candidateId"])
     validate_candidate_binding(
@@ -676,18 +788,36 @@ def execute_v18_formal_campaign(
     round_trip_cost = float(
         preregistration.get("costModel", {}).get("baseRoundTripCostRate", 0.0)
     )
-    raw_events = [
-        {**dict(row), "signalId": _signal_id(row)}
-        for row in effective_raw_replay_runner(
+    raw_events = []
+    for source in effective_raw_replay_runner(
             candidate=bundle.candidate,
             frames=bundle.frames,
             round_trip_cost_rate=round_trip_cost,
+        ):
+        row = dict(source)
+        raw_events.append(
+            {
+                **row,
+                "signalId": (
+                    str(row.get("signalId") or "")
+                    or resolve_candidate_signal_identity(
+                        adapter=candidate_adapter, event=row
+                    )
+                ),
+            }
         )
-    ]
-    assigned_raw, fold_rejected, fold_audit = assign_events_to_folds(
-        raw_events,
-        preregistration["splitPolicy"],
-    )
+    if evidence_enabled:
+        assigned_raw, fold_rejected, fold_audit = (
+            assign_formal_events_by_signal_timestamp(
+                raw_events,
+                preregistration["splitPolicy"]["folds"],
+            )
+        )
+    else:
+        assigned_raw, fold_rejected, fold_audit = assign_events_to_folds(
+            raw_events,
+            preregistration["splitPolicy"],
+        )
     reference_events, reference_missing = _merge_canonical_events(
         reference_canonical,
         assigned_raw,
@@ -696,6 +826,64 @@ def execute_v18_formal_campaign(
         adapter_canonical,
         assigned_raw,
     )
+    identity_contract: dict[str, Any] = {}
+    identity_audit: dict[str, Any] = {}
+    identity_collision_audit: dict[str, Any] = {}
+    reference_identities: list[dict[str, Any]] = []
+    adapter_identities: list[dict[str, Any]] = []
+    if evidence_enabled:
+        timeframe = str(bundle.candidate.get("timeframe") or "")
+        strategy_hash = str(
+            preregistration.get("strategyDefinitionHash")
+            or bundle.candidate.get("strategyDefinitionHash")
+            or ""
+        )
+        exit_policy_hash = str(
+            preregistration.get("exitPolicyHash")
+            or bundle.candidate.get("exitPolicyHash")
+            or ""
+        )
+        reference_events = [
+            {
+                **row,
+                "timeframe": timeframe,
+                "strategyDefinitionHash": strategy_hash,
+                "exitPolicyHash": exit_policy_hash,
+            }
+            for row in reference_events
+        ]
+        adapter_events = [
+            {
+                **row,
+                "timeframe": timeframe,
+                "strategyDefinitionHash": strategy_hash,
+                "exitPolicyHash": exit_policy_hash,
+            }
+            for row in adapter_events
+        ]
+        reference_identities = [
+            map_canonical_identity(
+                row, adapter=candidate_adapter, source="formal_validation_core"
+            )
+            for row in reference_events
+        ]
+        adapter_identities = [
+            map_canonical_identity(
+                row, adapter=candidate_adapter, source="freqtrade_adapter"
+            )
+            for row in adapter_events
+        ]
+        identity_contract = canonical_identity_contract()
+        identity_audit = audit_canonical_identity_mapping(
+            reference_identities, adapter_identities
+        )
+        identity_collision_audit = {
+            "schemaVersion": "canonical_event_identity_collision_audit_v1",
+            "status": identity_audit["status"],
+            "collisionCount": identity_audit["collisionCount"],
+            "unmappedInternalCount": identity_audit["unmappedInternalCount"],
+            "unmappedFreqtradeCount": identity_audit["unmappedFreqtradeCount"],
+        }
     reference_features, ranking_audit = build_signal_feature_evidence(
         reference_events,
         bundle.frames,
@@ -706,6 +894,92 @@ def execute_v18_formal_campaign(
         bundle.frames,
         bundle.candidate,
     )
+    frozen_ranking: list[dict[str, Any]] = []
+    adapter_ranking: list[dict[str, Any]] = []
+    ranking_parity: dict[str, Any] = {}
+    stable_rejections: list[dict[str, Any]] = [dict(row) for row in fold_rejected]
+    capacity_rows: list[dict[str, Any]] = []
+    capacity_coverage: dict[str, Any] = {}
+    funding_registry: list[dict[str, Any]] = []
+    funding_coverage: dict[str, Any] = {}
+    funding_contract: dict[str, Any] = {}
+    source_scope_audit: dict[str, Any] = {}
+    frozen_contract_audit: dict[str, Any] = {}
+    if evidence_enabled:
+        ranking_policy_hash = str(
+            preregistration.get("signalRankingPolicyHash") or ""
+        )
+        frozen_ranking, reference_ranking_rejected = freeze_ranking_evidence(
+            reference_features,
+            ranking_policy_hash=ranking_policy_hash,
+        )
+        adapter_ranking, adapter_ranking_rejected = freeze_ranking_evidence(
+            adapter_features,
+            ranking_policy_hash=ranking_policy_hash,
+        )
+        ranking_parity = audit_ranking_evidence_parity(
+            frozen_ranking, adapter_ranking
+        )
+        stable_rejections.extend(reference_ranking_rejected)
+        stable_rejections.extend(adapter_ranking_rejected)
+        shared_ranking_ids = {
+            str(row["signalId"]) for row in frozen_ranking
+        } & {str(row["signalId"]) for row in adapter_ranking}
+        reference_features = [
+            row
+            for row in reference_features
+            if str(row.get("signalId") or "") in shared_ranking_ids
+        ]
+        adapter_features = [
+            row
+            for row in adapter_features
+            if str(row.get("signalId") or "") in shared_ranking_ids
+        ]
+        timeframe = str(bundle.candidate.get("timeframe") or "")
+        instruments = sorted(bundle.frames)
+        capacity_rows, capacity_coverage = build_capacity_semantics_registry(
+            snapshot=bundle.snapshot,
+            instrument_ids=instruments,
+            timeframe=timeframe,
+        )
+        unavailable_capacity = set(capacity_coverage["unknownUnitInstruments"])
+        for row in [*reference_features, *adapter_features]:
+            if str(row.get("instrumentId") or "") in unavailable_capacity:
+                stable_rejections.append(
+                    {**dict(row), "reason": "reject_capacity_evidence_unavailable"}
+                )
+        reference_features = [
+            row
+            for row in reference_features
+            if str(row.get("instrumentId") or "") not in unavailable_capacity
+        ]
+        adapter_features = [
+            row
+            for row in adapter_features
+            if str(row.get("instrumentId") or "") not in unavailable_capacity
+        ]
+        funding_registry, funding_coverage, funding_contract = build_funding_registry(
+            instrument_ids=instruments,
+            actual_rates_by_instrument=(formal_evidence_chain or {}).get(
+                "actualFundingRatesByInstrument"
+            ),
+            stress_rate=_registered_funding_rate(bundle),
+        )
+        source_scope_audit, frozen_contract_audit = build_source_change_scope_audits(
+            preregistration=preregistration,
+            candidate=bundle.candidate,
+        )
+        # Missing ranking inputs are stable event rejections, not implementation gaps.
+        ranking_audit = {
+            **ranking_audit,
+            "missingRankingFieldCount": 0,
+            "stableRejectedEventCount": len(reference_ranking_rejected),
+        }
+        adapter_ranking_audit = {
+            **adapter_ranking_audit,
+            "missingRankingFieldCount": 0,
+            "stableRejectedEventCount": len(adapter_ranking_rejected),
+        }
     daily_liquidity, return_panel, semantics_audit = build_daily_market_evidence(
         bundle.frames
     )
@@ -723,12 +997,46 @@ def execute_v18_formal_campaign(
         reference_ready,
         bundle.frames,
         policy=policy,
+        capture_pit_context=evidence_enabled,
     )
     adapter_replay = replay_v18_capital_policy(
         adapter_ready,
         bundle.frames,
         policy=policy,
+        capture_pit_context=evidence_enabled,
     )
+    pit_contexts: list[dict[str, Any]] = []
+    adapter_pit_contexts: list[dict[str, Any]] = []
+    pit_parity: dict[str, Any] = {}
+    if evidence_enabled:
+        formal_policy_hash = str(
+            preregistration.get("formalPortfolioPolicyV2Hash") or ""
+        )
+        pit_contexts = [
+            freeze_pit_portfolio_context(
+                signal_id=str(row["signalId"]),
+                state=row,
+                formal_policy_hash=formal_policy_hash,
+            )
+            for row in reference_replay.get("pitContexts", [])
+        ]
+        adapter_pit_contexts = [
+            freeze_pit_portfolio_context(
+                signal_id=str(row["signalId"]),
+                state=row,
+                formal_policy_hash=formal_policy_hash,
+            )
+            for row in adapter_replay.get("pitContexts", [])
+        ]
+        pit_parity = audit_pit_context_parity(
+            pit_contexts, adapter_pit_contexts
+        )
+        reference_replay = _apply_stable_rejections(
+            reference_replay, stable_rejections
+        )
+        adapter_replay = _apply_stable_rejections(
+            adapter_replay, stable_rejections
+        )
     capital_parity = compare_capital_replays(reference_replay, adapter_replay)
     base_metrics = summarize_capital_replay(reference_replay)
     folds = _fold_results(preregistration, reference_replay)
@@ -813,7 +1121,7 @@ def execute_v18_formal_campaign(
         implementation_blockers.append("capital_policy_parity_failed")
     if reference_missing or adapter_missing:
         implementation_blockers.append("canonical_event_identity_mapping_incomplete")
-    if fold_rejected:
+    if fold_rejected and not evidence_enabled:
         implementation_blockers.append("formal_event_fold_assignment_incomplete")
     if int(ranking_audit.get("missingRankingFieldCount", 0)) > 0:
         implementation_blockers.append("frozen_signal_ranking_evidence_incomplete")
@@ -823,15 +1131,61 @@ def execute_v18_formal_campaign(
         implementation_blockers.append("point_in_time_portfolio_context_incomplete")
     if int(adapter_context_audit.get("missingContextFieldCount", 0)) > 0:
         implementation_blockers.append("adapter_point_in_time_context_incomplete")
-    if semantics_audit.get("status") != "passed":
+    if semantics_audit.get("status") != "passed" and not evidence_enabled:
         implementation_blockers.append("capacity_data_semantics_failed")
-    if funding.get("gateEvaluable") is not True:
+    if funding.get("gateEvaluable") is not True and not evidence_enabled:
         implementation_blockers.append("registered_funding_stress_input_unavailable")
+    if evidence_enabled:
+        if identity_audit.get("status") != "certified":
+            implementation_blockers.append(
+                "canonical_event_identity_mapping_incomplete"
+            )
+        if float(fold_audit.get("assignmentCompletenessPct") or 0.0) != 100.0:
+            implementation_blockers.append("formal_event_fold_assignment_incomplete")
+        if int(fold_audit.get("crossBoundaryLeakageCount") or 0) != 0:
+            implementation_blockers.append("formal_event_cross_fold_leakage")
+        if (
+            float(ranking_parity.get("fieldParityPct") or 0.0) != 100.0
+            or float(ranking_parity.get("hashParityPct") or 0.0) != 100.0
+            or int(ranking_parity.get("postEntryDataUseCount") or 0) != 0
+            or int(ranking_parity.get("unmappedCount") or 0) != 0
+        ):
+            implementation_blockers.append("ranking_evidence_parity_failed")
+        if (
+            float(pit_parity.get("fieldParityPct") or 0.0) != 100.0
+            or float(pit_parity.get("hashParityPct") or 0.0) != 100.0
+            or int(pit_parity.get("resultReconstructionCount") or 0) != 0
+            or int(pit_parity.get("unmappedCount") or 0) != 0
+        ):
+            implementation_blockers.append("pit_portfolio_context_parity_failed")
+        if source_scope_audit.get("status") != "passed":
+            implementation_blockers.append("source_change_scope_failed")
+        if frozen_contract_audit.get("status") != "passed":
+            implementation_blockers.append("frozen_contract_diff_failed")
     route, blockers = _route(
         bundle=bundle,
         gate_matrix=gate_matrix,
         implementation_blockers=implementation_blockers,
+        funding_unavailable_is_route_cap=evidence_enabled,
     )
+    if evidence_enabled:
+        if route.startswith("walk_forward_research_pass_") and not bool(
+            funding_coverage.get("formalEvidenceAvailable")
+        ):
+            route = cap_route_for_funding(
+                route, {"fundingStatus": "unavailable"}
+            )
+            blockers = ["registered_funding_input_unavailable"]
+        if (
+            not implementation_blockers
+            and int(reference_replay.get("acceptedSignalCount") or 0) == 0
+        ):
+            route = str(
+                preregistration.get("stoppingRules", {}).get(
+                    "economicGateFailure", "archive_s01_current_version"
+                )
+            )
+            blockers = ["capital_infeasible_under_frozen_policy"]
 
     route_payload = {
         "schemaVersion": "s01_v18_formal_route_v1",
@@ -845,6 +1199,8 @@ def execute_v18_formal_campaign(
         "releaseCount": 0,
         "demoArm": False,
         "orderCount": 0,
+        "formalPass": False,
+        "formalEvidenceCount": 0,
     }
     summary = {
         "schemaVersion": "s01_v18_formal_campaign_summary_v1",
@@ -857,6 +1213,8 @@ def execute_v18_formal_campaign(
         "fundingGateEvaluable": funding["gateEvaluable"],
         "cleanLockedOosAvailable": False,
         "formalAdmissionPassed": False,
+        "formalPass": False,
+        "formalEvidenceCount": 0,
     }
     failure = {
         "schemaVersion": "s01_v18_formal_failure_attribution_v1",
@@ -991,16 +1349,107 @@ def execute_v18_formal_campaign(
         "failure_attribution.json": failure,
         "campaign_summary.json": summary,
     }
+    parquet_payloads: dict[str, pd.DataFrame] = {
+        "portfolio_exposure_daily.parquet": exposure,
+        "daily_return_panel.parquet": daily_returns,
+        "comparable_candidate_panel.parquet": comparable,
+    }
+    csv_payloads: dict[str, Sequence[Mapping[str, Any]]] = {
+        "fold_results.csv": folds
+    }
+    if evidence_enabled:
+        fold_rows = [*assigned_raw, *fold_rejected]
+        json_payloads.update(
+            {
+                "canonical_event_identity_contract.json": identity_contract,
+                "canonical_event_identity_mapping_audit.json": identity_audit,
+                "canonical_event_identity_collision_audit.json": (
+                    identity_collision_audit
+                ),
+                "formal_event_fold_assignment.json": {
+                    "schemaVersion": "formal_event_fold_assignment_v2",
+                    "assigned": assigned_raw,
+                    "rejected": fold_rejected,
+                    "audit": fold_audit,
+                },
+                "cross_fold_event_audit.json": {
+                    "schemaVersion": "cross_fold_event_audit_v1",
+                    "explicitlyRejectedEventCount": len(fold_rejected),
+                    "crossBoundaryLeakageCount": int(
+                        fold_audit.get("crossBoundaryLeakageCount") or 0
+                    ),
+                    "rejected": fold_rejected,
+                },
+                "ranking_evidence_parity.json": ranking_parity,
+                "pit_context_parity.json": pit_parity,
+                "capacity_data_semantics_by_symbol.json": {
+                    "schemaVersion": "capacity_data_semantics_registry_v1",
+                    "rows": capacity_rows,
+                },
+                "capacity_semantics_coverage.json": capacity_coverage,
+                "funding_input_registry.json": {
+                    "schemaVersion": "funding_input_registry_collection_v1",
+                    "rows": funding_registry,
+                },
+                "funding_input_coverage.json": funding_coverage,
+                "funding_stress_contract.json": funding_contract,
+                "freqtrade_runtime_binding.json": {
+                    **runtime_binding,
+                    "formalEvidenceChainCertificationHash": (
+                        evidence_certification[
+                            "formalEvidenceChainCertificationHash"
+                        ]
+                    ),
+                },
+                "formal_evidence_chain_certification.json": (
+                    evidence_certification
+                ),
+                "source_change_scope_audit.json": source_scope_audit,
+                "frozen_contract_diff_audit.json": frozen_contract_audit,
+            }
+        )
+        parquet_payloads.update(
+            {
+                "frozen_signal_ranking_evidence.parquet": _frame_from_rows(
+                    frozen_ranking,
+                    (
+                        "signalId",
+                        "instrumentId",
+                        "signalTimestamp",
+                        "rankingEvidenceHash",
+                    ),
+                ),
+                "adapter_signal_ranking_evidence.parquet": _frame_from_rows(
+                    adapter_ranking,
+                    (
+                        "signalId",
+                        "instrumentId",
+                        "signalTimestamp",
+                        "rankingEvidenceHash",
+                    ),
+                ),
+                "pit_portfolio_context.parquet": _frame_from_rows(
+                    pit_contexts,
+                    ("signalId", "contextTimestamp", "pitContextHash"),
+                ),
+                "adapter_pit_portfolio_context.parquet": _frame_from_rows(
+                    adapter_pit_contexts,
+                    ("signalId", "contextTimestamp", "pitContextHash"),
+                ),
+            }
+        )
+        csv_payloads.update(
+            {
+                "formal_event_fold_assignment.csv": fold_rows,
+                "capacity_data_semantics_by_symbol.csv": capacity_rows,
+            }
+        )
     result_manifest_hash = _publish_artifacts(
         Path(output_root),
         json_payloads=json_payloads,
         markdown_payloads={"campaign_summary.md": _summary_markdown(summary)},
-        parquet_payloads={
-            "portfolio_exposure_daily.parquet": exposure,
-            "daily_return_panel.parquet": daily_returns,
-            "comparable_candidate_panel.parquet": comparable,
-        },
-        csv_payloads={"fold_results.csv": folds},
+        parquet_payloads=parquet_payloads,
+        csv_payloads=csv_payloads,
         campaign_id=campaign_id,
         candidate_id=candidate_id,
         candidate_adapter=candidate_adapter,

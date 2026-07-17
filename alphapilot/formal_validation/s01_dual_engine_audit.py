@@ -165,14 +165,16 @@ def _leg(
     trigger_position: int,
     execution_position: int,
     price: float,
+    round_trip_cost_rate: float,
     is_gap_fill: bool = False,
     ambiguous_path: bool = False,
 ) -> dict[str, Any]:
     gross_r = (price - entry_price) / risk_distance * fraction
     price_scale = (entry_price + abs(price)) / risk_distance * fraction
-    fees_r = price_scale * 2.5 / 10_000
-    slippage_r = price_scale * 1.25 / 10_000
-    spread_r = price_scale * 1.25 / 10_000
+    total_bps = round_trip_cost_rate * 10_000
+    fees_r = price_scale * (total_bps * 0.25) / 10_000
+    slippage_r = price_scale * (total_bps * 0.125) / 10_000
+    spread_r = price_scale * (total_bps * 0.125) / 10_000
     return {
         "legFraction": float(fraction),
         "exitReason": reason,
@@ -199,6 +201,7 @@ def _simulate_adapter_event(
     symbol: str,
     frame: pd.DataFrame,
     signal_position: int,
+    round_trip_cost_rate: float = 0.001,
 ) -> dict[str, Any]:
     entry_position = signal_position + 1
     entry_price = float(frame.iloc[entry_position]["open"])
@@ -233,6 +236,7 @@ def _simulate_adapter_event(
                     trigger_position=position,
                     execution_position=position,
                     price=open_price,
+                    round_trip_cost_rate=round_trip_cost_rate,
                     is_gap_fill=position > entry_position,
                 )
             )
@@ -251,6 +255,7 @@ def _simulate_adapter_event(
                     trigger_position=position,
                     execution_position=position,
                     price=initial_stop,
+                    round_trip_cost_rate=round_trip_cost_rate,
                     ambiguous_path=partial_hit,
                 )
             )
@@ -269,6 +274,7 @@ def _simulate_adapter_event(
                     trigger_position=position,
                     execution_position=position,
                     price=partial_target,
+                    round_trip_cost_rate=round_trip_cost_rate,
                     is_gap_fill=True,
                 )
             )
@@ -287,6 +293,7 @@ def _simulate_adapter_event(
                     trigger_position=position,
                     execution_position=position,
                     price=partial_target,
+                    round_trip_cost_rate=round_trip_cost_rate,
                 )
             )
             remaining -= fraction
@@ -309,6 +316,7 @@ def _simulate_adapter_event(
                     trigger_position=position,
                     execution_position=execution_position,
                     price=exit_price,
+                    round_trip_cost_rate=round_trip_cost_rate,
                 )
             )
             remaining = 0.0
@@ -331,6 +339,7 @@ def _simulate_adapter_event(
                     trigger_position=position,
                     execution_position=execution_position,
                     price=exit_price,
+                    round_trip_cost_rate=round_trip_cost_rate,
                 )
             )
             remaining = 0.0

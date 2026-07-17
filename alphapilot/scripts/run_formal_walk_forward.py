@@ -110,6 +110,7 @@ def run(
     adapter_resolver: AdapterResolver = get_candidate_adapter,
     input_loader: Callable[..., Any] = load_formal_input,
     executor: Callable[..., Mapping[str, Any]] = _default_executor,
+    executor_context: Mapping[str, Any] | None = None,
     run_id: str | None = None,
 ) -> dict[str, Any]:
     """Gate on remote freeze before resolving an adapter or opening input."""
@@ -189,12 +190,18 @@ def run(
             candidate_adapter=candidate_adapter,
             preregistration_validator=preregistration_validator,
         )
+        context = dict(executor_context or {})
+        reserved = {"bundle", "repo_root", "output_root", "candidate_adapter"}
+        overlap = sorted(reserved.intersection(context))
+        if overlap:
+            raise ValueError("reserved_executor_context:" + ",".join(overlap))
         result = dict(
             executor(
                 bundle=bundle,
                 repo_root=root,
                 output_root=destination,
                 candidate_adapter=candidate_adapter,
+                **context,
             )
         )
         manifest_hash = str(result.get("resultManifestHash") or "")

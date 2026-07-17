@@ -192,6 +192,8 @@ def build_signal_feature_evidence(
                 **row,
                 **values,
                 "instrumentId": symbol,
+                "sourceTimestamp": _utc_iso(row.get("signalTimestamp")),
+                "availableAt": _utc_iso(row.get("signalTimestamp")),
                 "dailyLiquidity": daily_liquidity.get(symbol, []),
                 "lookaheadReadCount": 0,
             }
@@ -287,6 +289,7 @@ def replay_v18_capital_policy(
     frames: Mapping[str, pd.DataFrame],
     *,
     policy: Mapping[str, Any],
+    capture_pit_context: bool = False,
 ) -> dict[str, Any]:
     """Replay one frozen event stream through the canonical V18 portfolio engine."""
 
@@ -327,6 +330,7 @@ def replay_v18_capital_policy(
     maximum_open_risk = 0.0
     maximum_cluster_risk = 0.0
     maximum_projected_beta = 0.0
+    pit_contexts: list[dict[str, Any]] = []
 
     for timestamp in timeline:
         exit_rows: list[dict[str, Any]] = []
@@ -395,6 +399,80 @@ def replay_v18_capital_policy(
                     "stopPrice": float(raw.get("stopPrice") or raw["initialStop"]),
                 }
             )
+        if capture_pit_context and entries:
+            preview = process_portfolio_timestamp_v2(
+                timestamp=_utc_iso(timestamp),
+                current_equity=equity,
+                open_positions=positions,
+                exits=exit_rows,
+                funding=[],
+                marks=marks,
+                entry_signals=[],
+                policy=policy,
+            )
+            preview_equity = float(preview["currentEquity"])
+            preview_positions = sorted(
+                (dict(row) for row in preview["openPositions"]),
+                key=lambda row: (
+                    str(row.get("instrumentId") or ""),
+                    str(row.get("signalId") or ""),
+                ),
+            )
+            open_risk_amount = sum(
+                float(row.get("riskAmount") or 0.0) for row in preview_positions
+            )
+            cluster_risk_amount: dict[str, float] = defaultdict(float)
+            portfolio_beta = 0.0
+            for position in preview_positions:
+                cluster_risk_amount[str(position.get("correlationCluster") or "")] += (
+                    float(position.get("riskAmount") or 0.0)
+                )
+                direction_sign = (
+                    1.0 if str(position.get("direction") or "") == "long" else -1.0
+                )
+                portfolio_beta += (
+                    direction_sign
+                    * float(position.get("markNotional") or 0.0)
+                    / preview_equity
+                    * float(position.get("beta") or 0.0)
+                )
+            for entry in entries:
+                direction = str(entry.get("direction") or "")
+                same_direction_risk = sum(
+                    float(row.get("riskAmount") or 0.0)
+                    for row in preview_positions
+                    if str(row.get("direction") or "") == direction
+                )
+                symbol = str(entry.get("instrumentId") or entry.get("symbol") or "")
+                pit_contexts.append(
+                    {
+                        "signalId": str(entry.get("signalId") or ""),
+                        "contextTimestamp": _utc_iso(timestamp),
+                        "currentEquity": preview_equity,
+                        "openPositions": preview_positions,
+                        "openRiskR": open_risk_amount / preview_equity,
+                        "sameDirectionRiskR": same_direction_risk / preview_equity,
+                        "clusterRiskByCluster": {
+                            key: value / preview_equity
+                            for key, value in sorted(cluster_risk_amount.items())
+                        },
+                        "portfolioBeta": portfolio_beta,
+                        "concurrentPositionCount": len(preview_positions),
+                        "symbolAlreadyOpen": any(
+                            str(row.get("instrumentId") or "") == symbol
+                            for row in preview_positions
+                        ),
+                        "clusterMembership": entry.get("correlationCluster"),
+                        "assetBeta": entry.get("beta"),
+                        "capacityInputs": {
+                            "currentEquity": preview_equity,
+                            "entryPrice": entry.get("entryPrice"),
+                            "stopPrice": entry.get("stopPrice"),
+                            "dailyLiquidity": entry.get("dailyLiquidity"),
+                            "instrumentMeta": entry.get("instrumentMeta") or {},
+                        },
+                    }
+                )
         result = process_portfolio_timestamp_v2(
             timestamp=_utc_iso(timestamp),
             current_equity=equity,
@@ -471,7 +549,7 @@ def replay_v18_capital_policy(
     rejection_counts = Counter(
         str(row["reason"]) for row in decisions if not bool(row["accepted"])
     )
-    return {
+    replay = {
         "schemaVersion": "s01_v18_formal_capital_replay_v1",
         "initialEquity": float(policy["initial_capital"]),
         "finalEquity": equity,
@@ -494,6 +572,9 @@ def replay_v18_capital_policy(
         "demoArm": False,
         "orderCount": 0,
     }
+    if capture_pit_context:
+        replay["pitContexts"] = pit_contexts
+    return replay
 
 
 def _maximum_drawdown_percent(equity_curve: Sequence[Mapping[str, Any]]) -> float:
