@@ -19,6 +19,11 @@ from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
 from alphapilot.research_screening.capital_competition import CapitalCompetitionPolicy
 
 from .holdout_lineage_audit import CAMPAIGN_ID, audit_holdout_lineage, load_metadata_json
+from .phase1_contracts import (
+    FORMAL_CAMPAIGN_ID,
+    FORMAL_PREREGISTRATION_PATH,
+    verify_s01_formal_preregistration,
+)
 
 
 BASELINE_TAG = "v13.27.1.16"
@@ -52,6 +57,63 @@ EXPECTED_V16_ARTIFACTS = {
     "trialLedgerJson": "trial_ledger.json",
 }
 
+_PHASE1_FORMAL_MESSAGES = {
+    "v16_identity_incomplete": "V16 identity or its evidence bundle is incomplete.",
+    "formal_preregistration_invalid": "The S01 formal preregistration is missing or invalid.",
+    "formal_preregistration_not_published": "The S01 preregistration is not committed and published on the upstream branch.",
+    "formal_split_policy_not_frozen": "The five-fold split, purge, and embargo policy is not frozen.",
+    "capital_policy_not_frozen": "The capital-competition policy is not frozen.",
+    "s01_freqtrade_translation_missing": "The exact research-only S01 Freqtrade translation is missing.",
+    "freqtrade_runtime_missing": "Freqtrade is unavailable in the audited execution runtime.",
+    "timerange_io_guard_missing": "The timerange and input/output isolation guard is incomplete.",
+}
+
+
+def classify_phase1_readiness(
+    *,
+    formal_checks: dict[str, bool],
+    clean_locked_oos_available: bool,
+    formal_walk_forward_completed: bool,
+) -> dict[str, Any]:
+    """Keep formal execution and one-shot Locked OOS admission independent."""
+
+    unknown = set(formal_checks) - set(_PHASE1_FORMAL_MESSAGES)
+    if unknown:
+        raise ValueError(f"unknown Phase 1 formal checks: {sorted(unknown)}")
+    formal_blockers = [
+        {"code": code, "message": _PHASE1_FORMAL_MESSAGES[code]}
+        for code, passed in formal_checks.items()
+        if not passed
+    ]
+    locked_blockers: list[dict[str, str]] = []
+    if not clean_locked_oos_available:
+        locked_blockers.append(
+            {
+                "code": "locked_oos_identity_incomplete",
+                "message": (
+                    "The Locked OOS boundary, content hash, zero-access record, and "
+                    "one-shot unlock ledger are not all available."
+                ),
+            }
+        )
+    if not formal_walk_forward_completed:
+        locked_blockers.append(
+            {
+                "code": "formal_walk_forward_not_completed",
+                "message": "The preregistered formal Walk-forward has not been completed.",
+            }
+        )
+    return {
+        "formalExecution": {
+            "status": "ready" if not formal_blockers else "blocked",
+            "blockers": formal_blockers,
+        },
+        "lockedOosAdmission": {
+            "status": "ready" if not locked_blockers else "blocked",
+            "blockers": locked_blockers,
+        },
+    }
+
 
 def _git(repo_root: Path, *args: str, check: bool = True) -> str:
     completed = subprocess.run(
@@ -74,6 +136,95 @@ def _git_succeeds(repo_root: Path, *args: str) -> bool:
         ).returncode
         == 0
     )
+
+
+def _git_optional(repo_root: Path, *args: str) -> str | None:
+    completed = subprocess.run(
+        ["git", *args],
+        cwd=repo_root,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    if completed.returncode != 0:
+        return None
+    return completed.stdout.strip() or None
+
+
+def audit_phase1_preregistration(repo_root: Path) -> dict[str, Any]:
+    """Audit the frozen preregistration and its publication state only."""
+
+    repo_root = Path(repo_root).resolve()
+    path = repo_root / FORMAL_PREREGISTRATION_PATH
+    relative_path = FORMAL_PREREGISTRATION_PATH.as_posix()
+    upstream = _git_optional(
+        repo_root,
+        "rev-parse",
+        "--abbrev-ref",
+        "--symbolic-full-name",
+        "@{u}",
+    )
+    if not path.is_file():
+        return {
+            "schemaVersion": "s01_formal_preregistration_audit_v1",
+            "status": "missing",
+            "path": relative_path,
+            "exists": False,
+            "hashValid": False,
+            "identityValid": False,
+            "tracked": False,
+            "workingTreeMatchesCommit": False,
+            "containingCommit": None,
+            "upstream": upstream,
+            "published": False,
+        }
+
+    payload = load_metadata_json(path)
+    tracked = _git_succeeds(repo_root, "ls-files", "--error-unmatch", "--", relative_path)
+    working_tree_matches = bool(
+        tracked
+        and _git_succeeds(repo_root, "diff", "--quiet", "HEAD", "--", relative_path)
+        and _git_succeeds(repo_root, "diff", "--cached", "--quiet", "--", relative_path)
+    )
+    containing_commit = (
+        _git_optional(repo_root, "log", "-1", "--format=%H", "--", relative_path)
+        if tracked
+        else None
+    )
+    published = bool(
+        containing_commit
+        and upstream
+        and working_tree_matches
+        and _git_succeeds(
+            repo_root,
+            "merge-base",
+            "--is-ancestor",
+            containing_commit,
+            upstream,
+        )
+    )
+    hash_valid = verify_s01_formal_preregistration(payload)
+    identity_valid = bool(
+        payload.get("campaignId") == FORMAL_CAMPAIGN_ID
+        and payload.get("sourceCandidateId") == S01_CANDIDATE_ID
+        and payload.get("candidateCount") == 1
+    )
+    return {
+        "schemaVersion": "s01_formal_preregistration_audit_v1",
+        "status": "published" if hash_valid and identity_valid and published else "blocked",
+        "path": relative_path,
+        "exists": True,
+        "campaignId": payload.get("campaignId"),
+        "candidateId": payload.get("sourceCandidateId"),
+        "preregistrationHash": payload.get("preregistrationHash"),
+        "hashValid": hash_valid,
+        "identityValid": identity_valid,
+        "tracked": tracked,
+        "workingTreeMatchesCommit": working_tree_matches,
+        "containingCommit": containing_commit,
+        "upstream": upstream,
+        "published": published,
+    }
 
 
 def _verify_preregistration_hash(payload: dict[str, Any]) -> bool:
@@ -353,6 +504,105 @@ def build_phase0_readiness_audit(repo_root: Path) -> dict[str, Any]:
     }
 
 
+def _audit_phase1_frozen_contracts(repo_root: Path) -> dict[str, Any]:
+    path = Path(repo_root).resolve() / FORMAL_PREREGISTRATION_PATH
+    payload = load_metadata_json(path) if path.is_file() else {}
+    split = dict(payload.get("splitPolicy") or {})
+    capital = dict(payload.get("capitalCompetitionPolicy") or {})
+    split_frozen = bool(
+        split.get("foldCount") == 5
+        and len(split.get("folds") or []) == 5
+        and int(split.get("purgeBars") or 0) >= 24
+        and int(split.get("embargoBars") or 0) >= 24
+        and split.get("eventMayCrossFoldBoundary") is False
+        and payload.get("splitPolicyHash") == split.get("splitPolicyHash")
+    )
+    capital_frozen = bool(
+        capital.get("duplicateSymbolPolicy") == "reject_while_open"
+        and len(capital.get("rankingPolicy") or []) == 4
+        and payload.get("capitalCompetitionPolicyHash")
+        == capital.get("capitalCompetitionPolicyHash")
+    )
+    translation_available, translation_paths = _candidate_translation_available(
+        Path(repo_root).resolve()
+    )
+    timerange_module = (
+        Path(repo_root).resolve()
+        / "alphapilot"
+        / "formal_validation"
+        / "timerange_io_guard.py"
+    )
+    timerange_cli = Path(repo_root).resolve() / "scripts" / "validate_formal_timerange.py"
+    return {
+        "splitPolicyFrozen": split_frozen,
+        "splitPolicyHash": payload.get("splitPolicyHash"),
+        "capitalCompetitionPolicyFrozen": capital_frozen,
+        "capitalCompetitionPolicyHash": payload.get("capitalCompetitionPolicyHash"),
+        "s01TranslationAvailable": translation_available,
+        "translationPaths": translation_paths,
+        "freqtradePackageAvailable": importlib.util.find_spec("freqtrade") is not None,
+        "timerangeGuardModuleAvailable": timerange_module.is_file(),
+        "timerangeGuardCliAvailable": timerange_cli.is_file(),
+    }
+
+
+def build_phase1_readiness_audit(repo_root: Path) -> dict[str, Any]:
+    """Build post-freeze readiness without running S01 or opening Locked OOS."""
+
+    repo_root = Path(repo_root).resolve()
+    identity = audit_v16_identity(repo_root)
+    holdout = audit_holdout_lineage(repo_root)
+    preregistration = audit_phase1_preregistration(repo_root)
+    contracts = _audit_phase1_frozen_contracts(repo_root)
+    formal_checks = {
+        "v16_identity_incomplete": identity["status"] == "ready",
+        "formal_preregistration_invalid": bool(
+            preregistration["exists"]
+            and preregistration["hashValid"]
+            and preregistration["identityValid"]
+        ),
+        "formal_preregistration_not_published": preregistration["published"],
+        "formal_split_policy_not_frozen": contracts["splitPolicyFrozen"],
+        "capital_policy_not_frozen": contracts["capitalCompetitionPolicyFrozen"],
+        "s01_freqtrade_translation_missing": contracts["s01TranslationAvailable"],
+        "freqtrade_runtime_missing": contracts["freqtradePackageAvailable"],
+        "timerange_io_guard_missing": bool(
+            contracts["timerangeGuardModuleAvailable"]
+            and contracts["timerangeGuardCliAvailable"]
+        ),
+    }
+    gates = classify_phase1_readiness(
+        formal_checks=formal_checks,
+        clean_locked_oos_available=holdout["cleanLockedOosAvailable"],
+        formal_walk_forward_completed=False,
+    )
+    return {
+        "schemaVersion": "formal_validation_phase1_readiness_audit_v1",
+        "generatedAt": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
+        "phase": "V13.27.1.17-phase1",
+        "scope": "prerequisite_freeze_only",
+        "route": (
+            "ready_for_formal_walk_forward"
+            if gates["formalExecution"]["status"] == "ready"
+            else "blocked"
+        ),
+        "candidateId": S01_CANDIDATE_ID,
+        "identity": identity,
+        "preregistration": preregistration,
+        "frozenContracts": contracts,
+        "holdoutLineage": holdout,
+        "gates": gates,
+        "blockers": gates["formalExecution"]["blockers"],
+        "safetyBoundary": {
+            "lockedOosAccessCount": 0,
+            "formalResultCount": 0,
+            "releaseCount": 0,
+            "demoArm": False,
+            "orderCount": 0,
+        },
+    }
+
+
 def _render_holdout_markdown(audit: dict[str, Any]) -> str:
     missing = ", ".join(audit["missingIdentityFields"]) or "none"
     return "\n".join(
@@ -438,6 +688,83 @@ def write_phase0_evidence_bundle(audit: dict[str, Any], output_root: Path) -> li
     }
     manifest = {
         "schemaVersion": "formal_validation_phase0_manifest_v1",
+        "artifacts": [
+            {
+                "logicalRole": logical_roles[path.name],
+                "path": path.name,
+                "sha256": sha256_file(path),
+                "sizeBytes": path.stat().st_size,
+            }
+            for path in report_paths
+        ],
+    }
+    write_json_atomic(manifest_path, manifest)
+    return [*report_paths, manifest_path]
+
+
+def _render_phase1_markdown(audit: dict[str, Any]) -> str:
+    formal = audit["gates"]["formalExecution"]
+    locked = audit["gates"]["lockedOosAdmission"]
+    lines = [
+        "# V13.27.1.17 Phase 1 Readiness Audit",
+        "",
+        f"- Route: `{audit['route']}`",
+        f"- Candidate: `{audit['candidateId']}`",
+        f"- Formal execution gate: `{formal['status']}`",
+        f"- Locked OOS admission gate: `{locked['status']}`",
+        f"- Preregistration published: `{str(audit['preregistration']['published']).lower()}`",
+        "- Formal results produced: `0`",
+        "- Locked OOS access count: `0`",
+        "",
+        "## Formal execution blockers",
+        "",
+    ]
+    lines.extend(
+        [f"- `{item['code']}`: {item['message']}" for item in formal["blockers"]]
+        or ["- None"]
+    )
+    lines.extend(["", "## Locked OOS admission blockers", ""])
+    lines.extend(
+        [f"- `{item['code']}`: {item['message']}" for item in locked["blockers"]]
+        or ["- None"]
+    )
+    lines.extend(
+        [
+            "",
+            "## Decision",
+            "",
+            (
+                "A missing clean Locked OOS blocks only one-shot admission. It does not "
+                "invalidate a separately preregistered formal Walk-forward research run."
+            ),
+            "",
+        ]
+    )
+    return "\n".join(lines)
+
+
+def write_phase1_evidence_bundle(audit: dict[str, Any], output_root: Path) -> list[Path]:
+    output_root = Path(output_root)
+    output_root.mkdir(parents=True, exist_ok=True)
+    readiness_json = output_root / "phase1_readiness_audit.json"
+    readiness_md = output_root / "phase1_readiness_audit.md"
+    holdout_json = output_root / "holdout_lineage_audit.json"
+    holdout_md = output_root / "holdout_lineage_audit.md"
+    manifest_path = output_root / "artifact_manifest.json"
+
+    write_json_atomic(readiness_json, audit)
+    readiness_md.write_text(_render_phase1_markdown(audit), encoding="utf-8")
+    write_json_atomic(holdout_json, audit["holdoutLineage"])
+    holdout_md.write_text(_render_holdout_markdown(audit["holdoutLineage"]), encoding="utf-8")
+    report_paths = [readiness_json, readiness_md, holdout_json, holdout_md]
+    logical_roles = {
+        "phase1_readiness_audit.json": "phase1ReadinessJson",
+        "phase1_readiness_audit.md": "phase1ReadinessMarkdown",
+        "holdout_lineage_audit.json": "holdoutLineageJson",
+        "holdout_lineage_audit.md": "holdoutLineageMarkdown",
+    }
+    manifest = {
+        "schemaVersion": "formal_validation_phase1_manifest_v1",
         "artifacts": [
             {
                 "logicalRole": logical_roles[path.name],

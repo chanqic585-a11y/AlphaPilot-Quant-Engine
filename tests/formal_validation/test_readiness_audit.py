@@ -37,7 +37,7 @@ def test_v16_identity_bundle_and_universe_mapping_are_complete() -> None:
     assert universe["timeframes"] == ["1h", "4h"]
 
 
-def test_formal_prerequisites_report_missing_formal_execution_inputs() -> None:
+def test_formal_prerequisites_report_current_execution_inputs() -> None:
     result = audit_formal_prerequisites(REPO_ROOT)
 
     panel = result["statisticalPanel"]
@@ -53,8 +53,8 @@ def test_formal_prerequisites_report_missing_formal_execution_inputs() -> None:
     assert result["capitalCompetition"]["available"] is True
     assert result["capitalCompetition"]["frozenForV17"] is False
     assert result["freqtrade"]["packageAvailable"] is False
-    assert result["freqtrade"]["s01TranslationAvailable"] is False
-    assert result["freqtrade"]["timerangeIoGuardAvailable"] is False
+    assert result["freqtrade"]["s01TranslationAvailable"] is True
+    assert result["freqtrade"]["timerangeIoGuardAvailable"] is True
 
 
 def test_phase0_bundle_is_fail_closed_and_hash_manifested(tmp_path: Path) -> None:
@@ -64,9 +64,9 @@ def test_phase0_bundle_is_fail_closed_and_hash_manifested(tmp_path: Path) -> Non
     blocker_codes = {item["code"] for item in audit["blockers"]}
     assert "locked_oos_identity_incomplete" in blocker_codes
     assert "formal_split_policy_not_frozen" in blocker_codes
-    assert "s01_freqtrade_translation_missing" in blocker_codes
     assert "freqtrade_runtime_missing" in blocker_codes
-    assert "timerange_io_guard_missing" in blocker_codes
+    assert "s01_freqtrade_translation_missing" not in blocker_codes
+    assert "timerange_io_guard_missing" not in blocker_codes
 
     written = write_phase0_evidence_bundle(audit, tmp_path)
 
