@@ -1,0 +1,24 @@
+{
+  "auditHash": "v18_3_candidate_neutral_import_94380955cd318766a2580943f5cc83f4dec620937218af8cca367e9d0aa10c58",
+  "candidateAdapterBoundaryPresent": true,
+  "dynamicArtifactIdentityPresent": true,
+  "formalCoreImportsS01Module": false,
+  "formalCorePath": "alphapilot/scripts/run_formal_walk_forward.py",
+  "importedModules": [
+    "__future__",
+    "alphapilot.data_foundation.checkpoint",
+    "alphapilot.formal_validation.candidate_adapter",
+    "alphapilot.formal_validation.candidate_adapters",
+    "alphapilot.formal_validation.formal_input",
+    "alphapilot.formal_validation.formal_run_ledger",
+    "alphapilot.formal_validation.v18_contracts",
+    "alphapilot.formal_validation.v18_formal_reporting",
+    "alphapilot.formal_validation.v18_remote_freeze",
+    "argparse",
+    "json",
+    "pathlib",
+    "typing"
+  ],
+  "schemaVersion": "v18_3_candidate_neutral_import_audit_v1",
+  "status": "passed"
+}

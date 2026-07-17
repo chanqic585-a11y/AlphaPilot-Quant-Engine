@@ -1,0 +1,18 @@
+{
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_8eb5b226cc5e3b8d",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "demoArm": false,
+  "formalResultRunCount": 0,
+  "formalRunClaimCount": 0,
+  "futureLockedOosId": "s01_v18_3_future_locked_oos_6852af5de61cebb859c5ed4565b409a70ff6d683deec75f425ce652e59a85a69",
+  "futureLockedOosIdentityPath": "research/locked_oos/advisory_r_v18_3_s01_fold_ranking_evidence_correction_8eb5b226cc5e3b8d_future_locked_oos_identity.json",
+  "futureLockedOosLedgerPath": "research/locked_oos/advisory_r_v18_3_s01_fold_ranking_evidence_correction_8eb5b226cc5e3b8d_future_locked_oos_access_ledger.jsonl",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "preregistrationHash": "s01_v18_3_fold_ranking_evidence_correction_preregistration_a0ec3b2b48e42e3acf9608cf33ebc5dbebbdbf51e2031759b0ea00b344418423",
+  "releaseCount": 0,
+  "remotePreregistrationCommit": "3f95d1093dc802f9eebc355821057cdd40e9503e",
+  "resultReadCount": 0,
+  "schemaVersion": "v18_3_pre_result_evidence_state_v1",
+  "stage": "pre_result_evidence_prepared"
+}
