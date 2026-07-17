@@ -15,6 +15,34 @@ from alphapilot.formal_validation.s01_freqtrade_translation import (
     s01_structure_exit_mask,
 )
 
+
+FROZEN_S01_INSTRUMENT_IDS = (
+    "AAVE-USDT-SWAP",
+    "ADA-USDT-SWAP",
+    "ALGO-USDT-SWAP",
+    "ATOM-USDT-SWAP",
+    "AVAX-USDT-SWAP",
+    "BCH-USDT-SWAP",
+    "BTC-USDT-SWAP",
+    "COMP-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETC-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "LINK-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "NEO-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "TRX-USDT-SWAP",
+    "XRP-USDT-SWAP",
+    "XTZ-USDT-SWAP",
+    "YFI-USDT-SWAP",
+)
+FROZEN_S01_PAIRS = tuple(
+    instrument.replace("-USDT-SWAP", "/USDT:USDT")
+    for instrument in FROZEN_S01_INSTRUMENT_IDS
+)
+
 try:
     from freqtrade.strategy import IStrategy, stoploss_from_absolute
 except ModuleNotFoundError:  # Static tests intentionally run without Freqtrade.
@@ -68,14 +96,7 @@ class AlphaPilotS01BearRecovery4H(IStrategy):
     maximum_hold_bars = 24
 
     def informative_pairs(self) -> list[tuple[str, str]]:
-        pairs: list[str] = []
-        if getattr(self, "dp", None):
-            try:
-                pairs = list(self.dp.current_whitelist())
-            except Exception:
-                pairs = []
-        pairs.append("BTC/USDT:USDT")
-        return sorted({(pair, "4h") for pair in pairs})
+        return [(pair, "4h") for pair in FROZEN_S01_PAIRS]
 
     def _load_market_context(
         self, dataframe: DataFrame
@@ -85,12 +106,8 @@ class AlphaPilotS01BearRecovery4H(IStrategy):
             missing = pd.Series(np.nan, index=dates, dtype="float64")
             return missing, missing
 
-        try:
-            pairs = sorted(set(self.dp.current_whitelist()))
-        except Exception:
-            pairs = []
         closes: dict[str, pd.Series] = {}
-        for pair in pairs:
+        for pair in FROZEN_S01_PAIRS:
             try:
                 frame = self.dp.get_pair_dataframe(pair=pair, timeframe="4h")
             except Exception:
@@ -156,6 +173,7 @@ class AlphaPilotS01BearRecovery4H(IStrategy):
         dataframe.loc[
             dataframe["s01_entry_signal"].eq(1)
             & ~dataframe["s01_context_missing"]
+            & dataframe["s01_atr14"].gt(0)
             & dataframe["volume"].gt(0),
             ["enter_long", "enter_tag"],
         ] = (1, "s01_residual_reclaim")
@@ -180,7 +198,7 @@ class AlphaPilotS01BearRecovery4H(IStrategy):
             return None
         if analyzed.empty or "s01_atr14" not in analyzed.columns:
             return None
-        eligible = analyzed.loc[analyzed["date"] <= trade.open_date_utc]
+        eligible = analyzed.loc[analyzed["date"] < trade.open_date_utc]
         if eligible.empty:
             return None
         value = float(eligible.iloc[-1]["s01_atr14"])

@@ -1,0 +1,27 @@
+{
+  "accessPolicy": {
+    "appendIntentBeforeContentRead": true,
+    "contentReadAllowed": false,
+    "oneShotAdmission": true
+  },
+  "admissionStatus": "blocked",
+  "blockers": [
+    "future_market_data_not_available",
+    "formal_walk_forward_not_completed"
+  ],
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "contentHash": null,
+  "dataFileCount": 0,
+  "formalPreregistrationHash": "s01_formal_walk_forward_preregistration_05e26d4f8da2a3d47f22a91464e179f19096889bdc9e3839892ee8eca0e34b6b",
+  "formalWalkForwardResultHash": null,
+  "frozenAvailableEndExclusive": "2026-05-15T04:00:00Z",
+  "futureEndExclusive": null,
+  "futureStartInclusive": "2026-05-15T08:00:00Z",
+  "identityHash": "2a7dc8fdb56dd8d79f993a5e2159ad885a8d4ec60a9395aa159d157ae66e42c0",
+  "marketDataPaths": [],
+  "metadataOnly": true,
+  "route": "future_data_required",
+  "schemaVersion": "alphapilot_future_locked_oos_identity_v1",
+  "strategyDefinitionHash": "advisory_r_strategy_062a7c3c3bd7b9f8f741c9506a40efabd3225bd57645f093eda0f86901ac2c37",
+  "timeframe": "4h"
+}

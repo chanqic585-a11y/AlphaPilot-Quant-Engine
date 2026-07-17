@@ -1,0 +1,60 @@
+{
+  "artifacts": [
+    {
+      "path": "dual_engine_readiness_parity.json",
+      "sha256": "304d4be96e9ddf9acafabe787347397f732e144448d41360203f10aeb31558fa",
+      "sizeBytes": 1322
+    },
+    {
+      "path": "freqtrade_dependency_lock.txt",
+      "sha256": "c7bb852ffe0b35f41d99a43f8fac2a98fff2e07be25de7fb01175344a5ba77c3",
+      "sizeBytes": 104
+    },
+    {
+      "path": "freqtrade_io_fixture_access_log.json",
+      "sha256": "062f8a7678b4ae248a2c45d9f1f7867cc0e03bd277c4a55ddae2fdac123a1966",
+      "sizeBytes": 1140
+    },
+    {
+      "path": "freqtrade_io_fixture_access_log.jsonl",
+      "sha256": "297ab4c8fc16fd9ffe918c56d8a9a45c37af5f057314dfb84fc66539ac3b0739",
+      "sizeBytes": 688
+    },
+    {
+      "path": "freqtrade_io_guard_readiness.json",
+      "sha256": "6235aa9f9daebbf1da153f926d420b9efe190b42fae596cc1f0b907c7a222dbd",
+      "sizeBytes": 913
+    },
+    {
+      "path": "freqtrade_runtime_manifest.json",
+      "sha256": "dbad3404140ba78b1201783c8e3cdee67ce350ab840dd49a506dcf92ef599548",
+      "sizeBytes": 794
+    },
+    {
+      "path": "freqtrade_runtime_smoke.json",
+      "sha256": "72bebac61bb853ef54c9f5607c3f3061768a42dcee41fc48125536cbabb1b018",
+      "sizeBytes": 1154
+    },
+    {
+      "path": "future_locked_oos_readiness.json",
+      "sha256": "630dd73c899eeb2cb7ce58f82c1cc6da04458d1a26fd95a5afa74a5c9241cf13",
+      "sizeBytes": 1666
+    },
+    {
+      "path": "non_holdout_data_root_manifest.json",
+      "sha256": "42a0a36e4f13ef7530ef1130a7d1a5192eb95acb6b999dceee2832bca8cdbcd2",
+      "sizeBytes": 924
+    },
+    {
+      "path": "phase2_readiness_audit.json",
+      "sha256": "8d4928106672e42dd05dcb875205376e312337a3a6ecfafcbfe7edc6398e9c59",
+      "sizeBytes": 9682
+    },
+    {
+      "path": "phase2_readiness_audit.md",
+      "sha256": "07b991ad7b386b28c7b3939feb6b26564f155c64dc1cdc5728fd62d77f0387e4",
+      "sizeBytes": 909
+    }
+  ],
+  "schemaVersion": "formal_validation_phase2_manifest_v1"
+}

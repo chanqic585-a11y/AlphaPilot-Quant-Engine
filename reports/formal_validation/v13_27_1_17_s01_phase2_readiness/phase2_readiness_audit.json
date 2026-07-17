@@ -1,0 +1,260 @@
+{
+  "blockers": [],
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "evidence": {
+    "dualEngineParity": {
+      "actualStrategyAdapterInvoked": true,
+      "adapterContextPairs": [
+        "AAVE-USDT-SWAP",
+        "ADA-USDT-SWAP",
+        "ALGO-USDT-SWAP",
+        "ATOM-USDT-SWAP",
+        "AVAX-USDT-SWAP",
+        "BCH-USDT-SWAP",
+        "BTC-USDT-SWAP",
+        "COMP-USDT-SWAP",
+        "DOGE-USDT-SWAP",
+        "ETC-USDT-SWAP",
+        "ETH-USDT-SWAP",
+        "FIL-USDT-SWAP",
+        "LINK-USDT-SWAP",
+        "LTC-USDT-SWAP",
+        "NEO-USDT-SWAP",
+        "SOL-USDT-SWAP",
+        "TRX-USDT-SWAP",
+        "XRP-USDT-SWAP",
+        "XTZ-USDT-SWAP",
+        "YFI-USDT-SWAP"
+      ],
+      "adapterRuntimeBase": "freqtrade.strategy.interface",
+      "adapterSignalCount": 1,
+      "blockers": [],
+      "coveredExitReasons": [
+        "partial_gap",
+        "structure_exit"
+      ],
+      "credentialReadCount": 0,
+      "extraEventCount": 0,
+      "formalPerformanceClaimed": false,
+      "formalSignalCount": 1,
+      "frozenUniverseCount": 20,
+      "implementationEventCount": 1,
+      "lockedOosAccessCount": 0,
+      "malformedReasons": [],
+      "matchedEventCount": 1,
+      "matchedLegCount": 2,
+      "mismatchedEventCount": 0,
+      "mismatches": [],
+      "missingEventCount": 0,
+      "networkAccessCount": 0,
+      "numericTolerance": 1e-09,
+      "passed": true,
+      "referenceEventCount": 1,
+      "runtimeWhitelistIgnored": true,
+      "schemaVersion": "alphapilot_dual_engine_readiness_parity_v1",
+      "status": "passed",
+      "syntheticFixtureOnly": true,
+      "zeroSignalParityRejected": true
+    },
+    "futureLockedOos": {
+      "admissionStatus": "blocked",
+      "audit": {
+        "admissionStatus": "blocked",
+        "blockers": [
+          "future_market_data_not_available",
+          "formal_walk_forward_not_completed"
+        ],
+        "contentHash": null,
+        "contentReadCount": 0,
+        "hashChainValid": true,
+        "identityHash": "2a7dc8fdb56dd8d79f993a5e2159ad885a8d4ec60a9395aa159d157ae66e42c0",
+        "identityHashValid": true,
+        "lastEventHash": "4849eaebc956007c6d1c3760f96f5a789cc9a0e43247be44ed48aec2f2e95dbc",
+        "ledgerEventCount": 1,
+        "lockedOosAccessCount": 0,
+        "metadataOnly": true,
+        "route": "future_data_required",
+        "schemaVersion": "alphapilot_future_locked_oos_metadata_audit_v1",
+        "status": "passed"
+      },
+      "blockers": [
+        "future_market_data_not_available",
+        "formal_walk_forward_not_completed"
+      ],
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "demoArm": false,
+      "formalPreregistrationHash": "s01_formal_walk_forward_preregistration_05e26d4f8da2a3d47f22a91464e179f19096889bdc9e3839892ee8eca0e34b6b",
+      "formalResultCount": 0,
+      "futureMarketDataRoot": "research/locked_oos/future_market_data",
+      "identityHash": "2a7dc8fdb56dd8d79f993a5e2159ad885a8d4ec60a9395aa159d157ae66e42c0",
+      "identityPath": "research/locked_oos/s01_future_locked_oos_identity.json",
+      "ledgerPath": "research/locked_oos/s01_future_locked_oos_access_ledger.jsonl",
+      "lockedOosAccessCount": 0,
+      "orderCount": 0,
+      "releaseCount": 0,
+      "route": "future_data_required",
+      "schemaVersion": "alphapilot_future_locked_oos_readiness_v1",
+      "status": "passed",
+      "strategyDefinitionHash": "advisory_r_strategy_062a7c3c3bd7b9f8f741c9506a40efabd3225bd57645f093eda0f86901ac2c37"
+    },
+    "ioGuard": {
+      "accessAudit": {
+        "allowedReadCount": 1,
+        "contractHash": "4b053b874fc7365c372adcb3b3bab08a0ee17e9977c80ece9fde7a077b370440",
+        "eventCount": 1,
+        "hashChainValid": true,
+        "lastEventHash": "8394b9a8a4431989cdc8a981fa918cbcf19ee40b1ed01dbbd0002339c155e7f0",
+        "schemaVersion": "alphapilot_freqtrade_io_access_audit_v1",
+        "status": "passed",
+        "unauthorizedAttemptCount": 0
+      },
+      "contractHash": "4b053b874fc7365c372adcb3b3bab08a0ee17e9977c80ece9fde7a077b370440",
+      "demoArm": false,
+      "fixtureOnly": true,
+      "formalResultCount": 0,
+      "lockedOosAccessCount": 0,
+      "lockedOosMounted": false,
+      "networkMode": "none",
+      "orderCount": 0,
+      "releaseCount": 0,
+      "repositoryReadOnly": true,
+      "runtimeImage": "freqtradeorg/freqtrade@sha256:87aa5c6d65359b34e9d99a0bb260a38c0efe0315253811e6f48c2afe8f278a6a",
+      "schemaVersion": "alphapilot_freqtrade_io_guard_readiness_v1",
+      "status": "passed"
+    },
+    "runtimeManifest": {
+      "ccxtVersion": "4.5.61",
+      "credentialRequired": false,
+      "dependencyLockSha256": "c7bb852ffe0b35f41d99a43f8fac2a98fff2e07be25de7fb01175344a5ba77c3",
+      "dockerServerVersion": "29.6.1",
+      "freqtradeVersion": "2026.6",
+      "imageDigest": "sha256:87aa5c6d65359b34e9d99a0bb260a38c0efe0315253811e6f48c2afe8f278a6a",
+      "imageReference": "freqtradeorg/freqtrade@sha256:87aa5c6d65359b34e9d99a0bb260a38c0efe0315253811e6f48c2afe8f278a6a",
+      "lockedOosRequired": false,
+      "manifestHash": "freqtrade_runtime_manifest_3168af7af47bf57178fa1bf0f20b55d09afe2d573a25366016cf8403bed029ad",
+      "networkRequired": false,
+      "pythonVersion": "3.14.6",
+      "randomSeeds": [
+        13,
+        27,
+        111
+      ],
+      "schemaVersion": "freqtrade_runtime_manifest_v1",
+      "status": "pinned",
+      "timezone": "UTC"
+    },
+    "runtimeSmoke": {
+      "accountAccessCount": 0,
+      "checks": {
+        "cliStartup": {
+          "detail": "Operating System:\tLinux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.41\nPython Version:\t\tPython 3.14.6\nCCXT Version:\t\t4.5.61\n\nFreqtrade Version:\tfreqtrade 2026.6",
+          "returnCode": 0
+        },
+        "configParse": {
+          "detail": "config parsed without credentials",
+          "returnCode": 0
+        },
+        "exitHooks": {
+          "detail": "exit hooks callable",
+          "returnCode": 0
+        },
+        "strategyLoad": {
+          "detail": "AlphaPilotS01BearRecovery4H",
+          "returnCode": 0
+        }
+      },
+      "credentialReadCount": 0,
+      "demoArm": false,
+      "fixtureType": "synthetic_non_result",
+      "formalResultCount": 0,
+      "imageReference": "freqtradeorg/freqtrade@sha256:87aa5c6d65359b34e9d99a0bb260a38c0efe0315253811e6f48c2afe8f278a6a",
+      "lockedOosContentReadCount": 0,
+      "networkAccessCount": 0,
+      "networkMode": "none",
+      "orderCount": 0,
+      "releaseCount": 0,
+      "schemaVersion": "freqtrade_runtime_smoke_v1",
+      "smokeHash": "freqtrade_runtime_smoke_cecc3c6106b2e276a6fd2e6fd0b8d57f605713641a1ff0c11faed3575391d5ee",
+      "status": "passed"
+    }
+  },
+  "evidenceArtifacts": [
+    {
+      "exists": true,
+      "logicalRole": "runtimeManifest",
+      "path": "reports/formal_validation/v13_27_1_17_s01_phase2_readiness/freqtrade_runtime_manifest.json",
+      "sha256": "dbad3404140ba78b1201783c8e3cdee67ce350ab840dd49a506dcf92ef599548"
+    },
+    {
+      "exists": true,
+      "logicalRole": "runtimeSmoke",
+      "path": "reports/formal_validation/v13_27_1_17_s01_phase2_readiness/freqtrade_runtime_smoke.json",
+      "sha256": "72bebac61bb853ef54c9f5607c3f3061768a42dcee41fc48125536cbabb1b018"
+    },
+    {
+      "exists": true,
+      "logicalRole": "dualEngineParity",
+      "path": "reports/formal_validation/v13_27_1_17_s01_phase2_readiness/dual_engine_readiness_parity.json",
+      "sha256": "304d4be96e9ddf9acafabe787347397f732e144448d41360203f10aeb31558fa"
+    },
+    {
+      "exists": true,
+      "logicalRole": "ioGuard",
+      "path": "reports/formal_validation/v13_27_1_17_s01_phase2_readiness/freqtrade_io_guard_readiness.json",
+      "sha256": "6235aa9f9daebbf1da153f926d420b9efe190b42fae596cc1f0b907c7a222dbd"
+    },
+    {
+      "exists": true,
+      "logicalRole": "futureLockedOos",
+      "path": "reports/formal_validation/v13_27_1_17_s01_phase2_readiness/future_locked_oos_readiness.json",
+      "sha256": "630dd73c899eeb2cb7ce58f82c1cc6da04458d1a26fd95a5afa74a5c9241cf13"
+    }
+  ],
+  "evidenceRoot": "reports/formal_validation/v13_27_1_17_s01_phase2_readiness",
+  "formalPerformanceClaimed": false,
+  "formalWalkForwardExecuted": false,
+  "gates": {
+    "formalExecution": {
+      "blockers": [],
+      "status": "ready"
+    },
+    "lockedOosAdmission": {
+      "blockers": [
+        {
+          "code": "future_market_data_not_available",
+          "message": "The preregistered future market-data window does not exist yet."
+        },
+        {
+          "code": "formal_walk_forward_not_completed",
+          "message": "The preregistered formal Walk-forward has not been completed."
+        }
+      ],
+      "status": "blocked"
+    }
+  },
+  "generatedAt": "2026-07-17T05:07:50.604967Z",
+  "phase": "V13.27.1.17-phase2",
+  "phase1": {
+    "formalExecution": {
+      "blockers": [
+        {
+          "code": "freqtrade_runtime_missing",
+          "message": "Freqtrade is unavailable in the audited execution runtime."
+        }
+      ],
+      "status": "blocked"
+    },
+    "route": "blocked",
+    "runtimeBlockerReplacedByPinnedDockerEvidence": true
+  },
+  "route": "ready_for_formal_walk_forward",
+  "safetyBoundary": {
+    "demoArm": false,
+    "formalResultCount": 0,
+    "lockedOosAccessCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0
+  },
+  "schemaVersion": "formal_validation_phase2_readiness_audit_v1",
+  "scope": "engineering_readiness_only"
+}
