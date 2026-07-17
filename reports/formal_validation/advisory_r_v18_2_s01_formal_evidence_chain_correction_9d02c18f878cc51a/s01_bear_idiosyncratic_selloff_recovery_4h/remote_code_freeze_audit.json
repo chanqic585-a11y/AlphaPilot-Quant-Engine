@@ -1,0 +1,13 @@
+{
+  "blockers": [],
+  "branch": "feature/v13.27.1.18.2-formal-evidence-chain",
+  "hashMatch": true,
+  "headCommit": "5b9a341df492f77674d9e595db8dc1eafbdbd91b",
+  "localCommit": "5b9a341df492f77674d9e595db8dc1eafbdbd91b",
+  "pushed": true,
+  "remoteCommit": "5b9a341df492f77674d9e595db8dc1eafbdbd91b",
+  "route": "code_frozen_remotely",
+  "schemaVersion": "s01_v18_2_remote_code_freeze_audit_v1",
+  "status": "passed",
+  "worktreeClean": true
+}
