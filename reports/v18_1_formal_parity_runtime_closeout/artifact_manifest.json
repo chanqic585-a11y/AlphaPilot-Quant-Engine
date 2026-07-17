@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "s01_v18_1_closeout_artifact_manifest_v1",
+  "campaignId": "advisory_r_v18_1_s01_formal_parity_runtime_correction_72ec6d1a8bf0fb71",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalResultCommit": "8ea936ad55e5f821c2d507a2e6d390c1200fad40",
+  "formalResultManifestHash": "sha256:8068414f302fea0cc21d1b6907487ec374aeedbd9c10f8b16358d09dda4a05a5",
+  "generatedAt": "2026-07-17T18:48:57Z",
+  "artifactCount": 6,
+  "artifacts": [
+    {
+      "path": "commit_role_manifest_final.json",
+      "bytes": 1673,
+      "sha256": "sha256:d1d5cb169b775d33a2ee1cafb26b92d2f2c879a67ccdea57bf2294a2bd9b7bcd"
+    },
+    {
+      "path": "final_self_check.md",
+      "bytes": 3482,
+      "sha256": "sha256:5d26088548c447ffc5b2046991d4f7434652211430d3312ecf8e79fad1a1bafc"
+    },
+    {
+      "path": "final_validation.json",
+      "bytes": 1329,
+      "sha256": "sha256:72735c6a0283d263f07b6f26a16863ec9589f235ef736c2fd64809a5e180e9ad"
+    },
+    {
+      "path": "gate_matrix.csv",
+      "bytes": 1027,
+      "sha256": "sha256:aca280011c52bf56a3be647cc878d6fca3e8ac0e47c56b702afff954bc4b4f04"
+    },
+    {
+      "path": "patch_audit.json",
+      "bytes": 1398,
+      "sha256": "sha256:cfba232ff08682b9636804b76b84ee42a8281a9adf24dcd22b981b0cbb166d10"
+    },
+    {
+      "path": "statistical_availability_matrix.json",
+      "bytes": 1410,
+      "sha256": "sha256:8d48ad1de1fff555f999a87490cbec43c6837a6d88f25e1bc24a89791647cc10"
+    }
+  ]
+}

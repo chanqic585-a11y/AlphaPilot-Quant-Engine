@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "s01_v18_1_statistical_availability_matrix_v1",
+  "campaignId": "advisory_r_v18_1_s01_formal_parity_runtime_correction_72ec6d1a8bf0fb71",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalResultCommit": "8ea936ad55e5f821c2d507a2e6d390c1200fad40",
+  "retroactiveConstructionAllowed": false,
+  "resultReadCount": 1,
+  "tests": [
+    {
+      "testId": "newey_west_alpha",
+      "status": "available",
+      "sampleCount": 1939,
+      "oneSidedP": 0.5,
+      "source": "newey_west_alpha.json"
+    },
+    {
+      "testId": "benjamini_hochberg",
+      "status": "unavailable_predeclared",
+      "source": "benjamini_hochberg_fdr.json"
+    },
+    {
+      "testId": "benjamini_yekutieli",
+      "status": "not_produced",
+      "reason": "No preregistered point-in-time family panel was available; no BY result was fabricated."
+    },
+    {
+      "testId": "deflated_sharpe",
+      "status": "unavailable_predeclared",
+      "source": "deflated_sharpe.json"
+    },
+    {
+      "testId": "probability_of_backtest_overfitting",
+      "status": "unavailable_predeclared",
+      "source": "pbo.json"
+    },
+    {
+      "testId": "white_reality_check",
+      "status": "unavailable_predeclared",
+      "source": "white_reality_check.json"
+    },
+    {
+      "testId": "superior_predictive_ability",
+      "status": "unavailable_predeclared",
+      "source": "spa.json"
+    }
+  ]
+}
