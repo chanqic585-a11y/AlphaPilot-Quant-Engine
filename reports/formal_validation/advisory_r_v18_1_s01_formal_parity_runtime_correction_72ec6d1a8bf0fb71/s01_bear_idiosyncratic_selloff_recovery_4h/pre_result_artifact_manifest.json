@@ -6,9 +6,14 @@
       "sha256": "cf311f629346253539c84887e7305f4e205414dd7578e51355645ea42c34fc6e"
     },
     {
-      "byteCount": 3665,
+      "byteCount": 3751,
       "path": "commit_role_manifest.json",
-      "sha256": "7f09cacbae2ad1db89b235cffbe95eab9212b87730edc00e273139bb9bc44469"
+      "sha256": "dfad50f1831ab88307a7b7d1057059cf86b0f2c27d08a9f9442c613db2b7e72f"
+    },
+    {
+      "byteCount": 3709,
+      "path": "formal_run_authorization.json",
+      "sha256": "f3864a616b5843b4d7a357d9b5206e744d002dd2284853b78bd921802ac43d76"
     },
     {
       "byteCount": 4411,
@@ -16,14 +21,14 @@
       "sha256": "961bcedfe4e113d34eab6299c0b93ee398f9d0b1de49b917c8b5885c08ba2f07"
     },
     {
-      "byteCount": 181,
+      "byteCount": 498,
       "path": "future_locked_oos_access_audit.json",
-      "sha256": "ce5785a4e883cf8567aa5c03d88369823776265569b2ad9d500b290739445ede"
+      "sha256": "2eabeb6b59926872b74ec472d213118b02848f5fc135c40e2004f7801f1b66e8"
     },
     {
-      "byteCount": 242,
+      "byteCount": 687,
       "path": "future_locked_oos_identity_reference.json",
-      "sha256": "efcea639d7f6f4ffa2fd64d41ba97e979e9ad0f646153beb08db43c3348626a8"
+      "sha256": "222e4ef6a4dc253295c0d8adbc3a81b8e08860af4140cedc8b8d876d2554c02f"
     },
     {
       "byteCount": 321,
@@ -86,7 +91,7 @@
   "demoArm": false,
   "formalResultArtifactCount": 0,
   "lockedOosAccessCount": 0,
-  "manifestHash": "s01_v18_1_pre_result_artifact_manifest_2442c750d989052a5fdc56a769e955f92bbca103db30e37b6b7f2fca968f2b32",
+  "manifestHash": "s01_v18_1_pre_result_artifact_manifest_63db0a853970c5e427c00d11f3e094a5925a5e052567803f7dfd447f4be0f77d",
   "orderCount": 0,
   "releaseCount": 0,
   "schemaVersion": "s01_v18_1_pre_result_artifact_manifest_v1"

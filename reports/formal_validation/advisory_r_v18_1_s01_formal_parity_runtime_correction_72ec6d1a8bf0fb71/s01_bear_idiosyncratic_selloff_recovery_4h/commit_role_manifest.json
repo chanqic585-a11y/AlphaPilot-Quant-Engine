@@ -82,12 +82,12 @@
   },
   "v18_1FreezeCommit": {
     "branch": "feature/v13.27.1.18.1-formal-parity-remediation",
-    "commit": null,
+    "commit": "b60d0e191431a353e79f9c954c31d4de0be25c92",
     "containsCode": false,
     "containsPreregistration": true,
     "containsResult": false,
-    "purpose": "Freeze Future OOS identity and one-shot authorization.",
-    "pushed": false,
+    "purpose": "Freeze V18.1 correction code, preregistration, and pre-result evidence before Future OOS registration.",
+    "pushed": true,
     "remoteRef": "refs/tags/v13.27.1.18.1"
   },
   "v18_1ResultCommit": {

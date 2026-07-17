@@ -1,8 +1,13 @@
 {
+  "campaignId": "advisory_r_v18_1_s01_formal_parity_runtime_correction_72ec6d1a8bf0fb71",
   "contentReadCount": 0,
-  "futureLockedOosId": null,
+  "futureLockedOosId": "s01_v18_1_future_locked_oos_1dedd104ae1e56a07af4841fa5f2f3ed9309b1fd73390a2daa54eb4bbb7b70a9",
+  "identityHash": "s01_v18_1_future_locked_oos_identity_3b152dc47e4bd28e934cccf8cca0e4a5a670792cd315be444006fa3b03aa83e0",
   "lockedOosAccessCount": 0,
+  "remoteFreezeCommit": "b60d0e191431a353e79f9c954c31d4de0be25c92",
   "schemaVersion": "s01_v18_1_future_locked_oos_identity_reference_v1",
-  "status": "pending_remote_preregistration_freeze",
-  "strategyMetricReadCount": 0
+  "startInclusive": "2026-07-17T20:00:00Z",
+  "status": "registered_after_remote_preregistration_freeze",
+  "strategyMetricReadCount": 0,
+  "timeframe": "4h"
 }
