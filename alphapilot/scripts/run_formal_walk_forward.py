@@ -24,6 +24,8 @@ from alphapilot.formal_validation.v18_remote_freeze import audit_v18_remote_free
 
 
 AdapterResolver = Callable[[str], CandidateAdapter]
+PreregistrationValidator = Callable[[Mapping[str, Any]], bool]
+AuthorizationValidator = Callable[[Mapping[str, Any], Mapping[str, Any]], bool]
 
 
 def _read_json(path: Path) -> dict[str, Any]:
@@ -74,6 +76,21 @@ def _blocked_route(audit: Mapping[str, Any]) -> dict[str, Any]:
     }
 
 
+def _blocked_authorization_route() -> dict[str, Any]:
+    return {
+        "schemaVersion": "formal_run_route_v3",
+        "route": "blocked_formal_run_authorization",
+        "blockers": ["formal_run_authorization_invalid"],
+        "formalRunCount": 0,
+        "formalInputReadCount": 0,
+        "resultReadCount": 0,
+        "lockedOosAccessCount": 0,
+        "releaseCount": 0,
+        "demoArm": False,
+        "orderCount": 0,
+    }
+
+
 def _default_executor(**kwargs: Any) -> dict[str, Any]:
     return execute_v18_formal_campaign(**kwargs)
 
@@ -86,7 +103,10 @@ def run(
     output_root: Path,
     data_root: Path | None = None,
     git_executable: str | None = None,
+    preregistration_validator: PreregistrationValidator = verify_v18_preregistration,
     freeze_auditor: Callable[..., Mapping[str, Any]] = audit_v18_remote_freeze,
+    authorization_path: Path | None = None,
+    authorization_validator: AuthorizationValidator | None = None,
     adapter_resolver: AdapterResolver = get_candidate_adapter,
     input_loader: Callable[..., Any] = load_formal_input,
     executor: Callable[..., Mapping[str, Any]] = _default_executor,
@@ -97,8 +117,8 @@ def run(
     root = Path(repo_root).resolve()
     prereg_path = Path(preregistration_path).resolve()
     preregistration = _read_json(prereg_path)
-    if not verify_v18_preregistration(preregistration):
-        raise ValueError("V18 preregistration hash mismatch")
+    if not preregistration_validator(preregistration):
+        raise ValueError("formal preregistration hash mismatch")
     requested_candidate_id = _safe_identity(candidate_id, label="candidate_id")
     frozen_candidate_id = str(preregistration.get("sourceCandidateId") or "")
     if requested_candidate_id != frozen_candidate_id:
@@ -129,6 +149,15 @@ def run(
         write_json_atomic(destination / "formal_run_route.json", route)
         return route
 
+    if authorization_path is not None:
+        authorization = _read_json(Path(authorization_path).resolve())
+        if authorization_validator is None or not authorization_validator(
+            authorization, preregistration
+        ):
+            route = _blocked_authorization_route()
+            write_json_atomic(destination / "formal_run_route.json", route)
+            return route
+
     candidate_adapter = adapter_resolver(requested_candidate_id)
     identity = {
         "codeCommit": audit.get("headCommit"),
@@ -158,7 +187,7 @@ def run(
             preregistration_path=prereg_path,
             candidate_id=requested_candidate_id,
             candidate_adapter=candidate_adapter,
-            preregistration_validator=verify_v18_preregistration,
+            preregistration_validator=preregistration_validator,
         )
         result = dict(
             executor(

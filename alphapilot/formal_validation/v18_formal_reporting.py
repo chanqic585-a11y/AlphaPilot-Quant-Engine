@@ -951,7 +951,23 @@ def execute_v18_formal_campaign(
             "formalPerformanceClaimed": False,
         },
         "translation_parity.json": parity,
+        "signal_identity_parity.json": {
+            "schemaVersion": "s01_v18_signal_identity_parity_v1",
+            "status": parity.get("status"),
+            "passed": parity.get("passed"),
+            "signalIdentityParityPct": parity.get("identityParityPct"),
+            "referenceEventCount": parity.get("referenceEventCount"),
+            "implementationEventCount": parity.get("implementationEventCount"),
+            "blockers": parity.get("blockers", []),
+        },
         "capital_policy_parity.json": capital_parity,
+        "position_size_parity.json": {
+            "schemaVersion": "s01_v18_position_size_parity_v1",
+            "status": capital_parity.get("status"),
+            "passed": capital_parity.get("passed"),
+            "positionSizeParityPct": capital_parity.get("positionSizeParityPct"),
+            "blockers": capital_parity.get("blockers", []),
+        },
         "exit_leg_parity.json": {
             "schemaVersion": "s01_v18_exit_leg_parity_v1",
             "status": parity.get("status"),
