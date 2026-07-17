@@ -658,8 +658,11 @@ def build_evidence_delivery(
 
     _write_not_run_tables(output)
     for name in ("route_decision.json", "gate_matrix.json", "failure_attribution.json", "campaign_summary.json"):
-        shutil.copyfile(Path(route_root) / name, output / name)
-    shutil.copyfile(Path(route_root) / "campaign_summary.md", output / "campaign_summary.md")
+        _write_json(output / name, _read_json(Path(route_root) / name))
+    _write_text(
+        output / "campaign_summary.md",
+        (Path(route_root) / "campaign_summary.md").read_text(encoding="utf-8"),
+    )
 
     tests = {
         "schemaVersion": "v17_test_manifest_v1",
