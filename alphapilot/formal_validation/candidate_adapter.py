@@ -12,6 +12,10 @@ class CandidateAdapterIdentityError(ValueError):
     """Raised when CLI, preregistration, and adapter identities diverge."""
 
 
+class CandidateAdapterContractError(RuntimeError):
+    """Raised when an adapter omits a required formal-validation capability."""
+
+
 @runtime_checkable
 class CandidateAdapter(Protocol):
     """Boundary between a candidate implementation and the formal core."""
@@ -19,6 +23,17 @@ class CandidateAdapter(Protocol):
     candidate_id: str
     adapter_id: str
     adapter_version: str
+
+    def signal_identity(
+        self,
+        *,
+        candidate_id: str,
+        symbol: str,
+        direction: str,
+        signal_timestamp: str,
+        expected_entry_timestamp: str | None,
+        signal_context: Mapping[str, Any],
+    ) -> str: ...
 
     def resolve_candidate(
         self,
@@ -41,6 +56,46 @@ class CandidateAdapter(Protocol):
         bundle: object,
         repo_root: Path,
     ) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]: ...
+
+
+def resolve_candidate_signal_identity(
+    *,
+    adapter: CandidateAdapter,
+    event: Mapping[str, Any],
+) -> str:
+    """Resolve a signal ID through the candidate adapter or fail closed."""
+
+    identity_resolver = getattr(adapter, "signal_identity", None)
+    if not callable(identity_resolver):
+        raise CandidateAdapterContractError("candidate_adapter_contract_incomplete")
+
+    candidate_id = str(event.get("candidateId") or "").strip()
+    symbol = str(event.get("symbol") or "").strip()
+    direction = str(event.get("direction") or event.get("side") or "").strip()
+    signal_timestamp = str(event.get("signalTimestamp") or "").strip()
+    expected_entry_timestamp = str(event.get("entryTimestamp") or "").strip() or None
+    if not candidate_id or not symbol or not direction or not signal_timestamp:
+        raise CandidateAdapterContractError("candidate_adapter_contract_incomplete")
+    if candidate_id != str(adapter.candidate_id or "").strip():
+        raise CandidateAdapterIdentityError(
+            "candidate_id_mismatch:"
+            f"event={candidate_id}:adapter={adapter.candidate_id}"
+        )
+
+    signal_id = str(
+        identity_resolver(
+            candidate_id=candidate_id,
+            symbol=symbol,
+            direction=direction,
+            signal_timestamp=signal_timestamp,
+            expected_entry_timestamp=expected_entry_timestamp,
+            signal_context=dict(event),
+        )
+        or ""
+    ).strip()
+    if not signal_id:
+        raise CandidateAdapterContractError("candidate_adapter_contract_incomplete")
+    return signal_id
 
 
 def validate_candidate_binding(

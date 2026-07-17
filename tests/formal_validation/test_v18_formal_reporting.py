@@ -3,6 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from dataclasses import dataclass, replace
+from typing import Any, Mapping
 
 import pandas as pd
 
@@ -20,6 +21,20 @@ class _SyntheticAdapter:
     candidate_id: str = "S01"
     adapter_id: str = "synthetic-reporting-adapter"
     adapter_version: str = "1"
+
+    def signal_identity(
+        self,
+        *,
+        candidate_id: str,
+        symbol: str,
+        direction: str,
+        signal_timestamp: str,
+        expected_entry_timestamp: str | None,
+        signal_context: Mapping[str, Any],
+    ) -> str:
+        del direction, expected_entry_timestamp, signal_context
+        assert candidate_id == self.candidate_id
+        return f"{candidate_id}::synthetic::{symbol}::{signal_timestamp}"
 
     def run_parity(self, **_: object):
         raise AssertionError("test injects parity runner")
@@ -184,7 +199,11 @@ def _bundle() -> tuple[FormalInputBundle, list[dict[str, object]]]:
 def _parity_runner(*, bundle: FormalInputBundle, repo_root: Path):
     del repo_root
     _, raw_events = _bundle()
-    reference = [canonicalize_formal_event(row) for row in raw_events]
+    adapter = _SyntheticAdapter(candidate_id=str(bundle.candidate["candidateId"]))
+    reference = [
+        canonicalize_formal_event(row, candidate_adapter=adapter)
+        for row in raw_events
+    ]
     report = {
         "status": "passed",
         "passed": True,
@@ -282,7 +301,11 @@ def test_second_candidate_fixture_executes_through_the_same_formal_core(
     synthetic_events = [
         {**dict(row), "candidateId": candidate_id} for row in raw_events
     ]
-    canonical = [canonicalize_formal_event(row) for row in synthetic_events]
+    synthetic_adapter = _SyntheticAdapter(candidate_id=candidate_id)
+    canonical = [
+        canonicalize_formal_event(row, candidate_adapter=synthetic_adapter)
+        for row in synthetic_events
+    ]
 
     def parity_runner(*, bundle: FormalInputBundle, repo_root: Path):
         del repo_root
@@ -309,7 +332,7 @@ def test_second_candidate_fixture_executes_through_the_same_formal_core(
         bundle=synthetic_bundle,
         repo_root=tmp_path,
         output_root=tmp_path / "synthetic-formal",
-        candidate_adapter=_SyntheticAdapter(candidate_id=candidate_id),
+        candidate_adapter=synthetic_adapter,
         parity_runner=parity_runner,
         raw_replay_runner=lambda **_: [dict(row) for row in synthetic_events],
     )
