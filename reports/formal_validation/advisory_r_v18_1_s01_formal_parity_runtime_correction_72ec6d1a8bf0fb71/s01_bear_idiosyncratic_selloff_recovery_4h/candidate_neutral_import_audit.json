@@ -1,0 +1,14 @@
+{
+  "auditedFiles": [
+    "alphapilot/formal_validation/candidate_adapter.py",
+    "alphapilot/formal_validation/formal_parity.py",
+    "alphapilot/formal_validation/formal_input.py",
+    "alphapilot/formal_validation/v18_formal_reporting.py",
+    "alphapilot/scripts/run_formal_walk_forward.py"
+  ],
+  "coreImportsS01": false,
+  "forbiddenImports": [],
+  "hardcodedS01ReferenceCountInCore": 0,
+  "schemaVersion": "s01_v18_1_candidate_neutral_import_audit_v1",
+  "status": "passed"
+}

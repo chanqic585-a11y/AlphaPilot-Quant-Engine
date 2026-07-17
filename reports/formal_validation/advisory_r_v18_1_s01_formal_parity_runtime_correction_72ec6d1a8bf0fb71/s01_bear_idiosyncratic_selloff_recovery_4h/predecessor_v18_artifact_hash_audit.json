@@ -1,0 +1,190 @@
+{
+  "artifactCount": 20,
+  "artifacts": [
+    {
+      "baselineBlobId": "8fc9c27825d50680bbe40f4d93c33f05088e05fb",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "8fc9c27825d50680bbe40f4d93c33f05088e05fb",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/artifact_manifest.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "f128c47b05cc28e752b86e68723abdece7965c1e",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "f128c47b05cc28e752b86e68723abdece7965c1e",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/campaign_summary.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "7f0497dfdf9ab70d7cc57ee283172404fbdc6459",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "7f0497dfdf9ab70d7cc57ee283172404fbdc6459",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/campaign_summary.md",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "edc7272b1931e430a7b2047fb246dffedc5e774d",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "edc7272b1931e430a7b2047fb246dffedc5e774d",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/capacity_data_semantics_audit.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "dd0062c72da22bacb255510a05f08ba8433aec5b",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "dd0062c72da22bacb255510a05f08ba8433aec5b",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/capacity_model_contract.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "6c0580f83ca1025674cb839ba574f21b32d1fe2c",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "6c0580f83ca1025674cb839ba574f21b32d1fe2c",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/capital_policy_conformance.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "55f6aeaf072a2211f98af793ac1719d5bd726ccf",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "55f6aeaf072a2211f98af793ac1719d5bd726ccf",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/correction_manifest.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "d2e39a1993762ec46757208d259b83af7eec9ddb",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "d2e39a1993762ec46757208d259b83af7eec9ddb",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/correlation_cluster_policy_contract.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "625d7fd2d5e486dc996659caffe26ec40737454d",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "625d7fd2d5e486dc996659caffe26ec40737454d",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/formal_portfolio_policy_v2.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "73111f8f42f6197584390d88a67202a687f76c77",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "73111f8f42f6197584390d88a67202a687f76c77",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/formal_preregistration_reference.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "f10172f161ffe2fe4b9f34dffe0ab8843474c82b",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "f10172f161ffe2fe4b9f34dffe0ab8843474c82b",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/future_locked_oos_identity_reference.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "16ff3c73098e3756a0f80f5878e48da5e4e9c26b",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "16ff3c73098e3756a0f80f5878e48da5e4e9c26b",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/portfolio_beta_policy_contract.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "7b7062f4f63d2406f94761611fe84fda56745053",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "7b7062f4f63d2406f94761611fe84fda56745053",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/route_decision.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "073053911731576c3d286e61ab5150b79edc1c92",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "073053911731576c3d286e61ab5150b79edc1c92",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/s01_bear_idiosyncratic_selloff_recovery_4h/formal_run_ledger.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "15cf087d825f96396734790e10f5c19c7cb01703",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "15cf087d825f96396734790e10f5c19c7cb01703",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/s01_bear_idiosyncratic_selloff_recovery_4h/remote_freeze_audit.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "d7e208caa3fe7592efecad14f98ba78f920dc284",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "d7e208caa3fe7592efecad14f98ba78f920dc284",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/signal_ranking_policy_contract.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "5c1c74a635f4ddf26b7f4153fdd495d13cceacac",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "5c1c74a635f4ddf26b7f4153fdd495d13cceacac",
+      "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/v17_closeout_provenance_reference.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "50b30db07e368685853393625f0b6d9d905064d2",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "50b30db07e368685853393625f0b6d9d905064d2",
+      "path": "research/locked_oos/s01_future_locked_oos_access_ledger.jsonl",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "ae55cba35a78742896d19773d5e4180d0fba8beb",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "ae55cba35a78742896d19773d5e4180d0fba8beb",
+      "path": "research/locked_oos/s01_future_locked_oos_identity.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    },
+    {
+      "baselineBlobId": "910c334a9910ed9950b9b6ad69c88a2f4dc108c5",
+      "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+      "currentBlobId": "910c334a9910ed9950b9b6ad69c88a2f4dc108c5",
+      "path": "research/preregistrations/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a.json",
+      "trackedAtBaseline": true,
+      "unchanged": true,
+      "worktreeDirty": false
+    }
+  ],
+  "baselineCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+  "changedArtifactCount": 0,
+  "changedArtifacts": [],
+  "schemaVersion": "s01_v18_1_predecessor_artifact_hash_audit_v1",
+  "status": "passed"
+}

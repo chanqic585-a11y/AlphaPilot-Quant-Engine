@@ -1,0 +1,93 @@
+{
+  "artifacts": [
+    {
+      "byteCount": 483,
+      "path": "candidate_neutral_import_audit.json",
+      "sha256": "cf311f629346253539c84887e7305f4e205414dd7578e51355645ea42c34fc6e"
+    },
+    {
+      "byteCount": 3665,
+      "path": "commit_role_manifest.json",
+      "sha256": "7f09cacbae2ad1db89b235cffbe95eab9212b87730edc00e273139bb9bc44469"
+    },
+    {
+      "byteCount": 4411,
+      "path": "frozen_contract_diff_audit.json",
+      "sha256": "961bcedfe4e113d34eab6299c0b93ee398f9d0b1de49b917c8b5885c08ba2f07"
+    },
+    {
+      "byteCount": 181,
+      "path": "future_locked_oos_access_audit.json",
+      "sha256": "ce5785a4e883cf8567aa5c03d88369823776265569b2ad9d500b290739445ede"
+    },
+    {
+      "byteCount": 242,
+      "path": "future_locked_oos_identity_reference.json",
+      "sha256": "efcea639d7f6f4ffa2fd64d41ba97e979e9ad0f646153beb08db43c3348626a8"
+    },
+    {
+      "byteCount": 321,
+      "path": "operational_attempt_ledger.json",
+      "sha256": "04a1a174ea9023e3eedffacba27e93afb62676692e9932f4423ed701677225b2"
+    },
+    {
+      "byteCount": 8965,
+      "path": "predecessor_v18_artifact_hash_audit.json",
+      "sha256": "98e36d0e83f15d382514b4183a545be4827d8abcdcea08abd6e8a3eb58f42ef9"
+    },
+    {
+      "byteCount": 518,
+      "path": "predecessor_v18_failure_ledger_reference.json",
+      "sha256": "5a9a46ad5a79d2bf2ed444a77f93bea119274b52d98128a2c837007454a7ca95"
+    },
+    {
+      "byteCount": 844,
+      "path": "predecessor_v18_identity.json",
+      "sha256": "8fecfb9e8cbd679fd94c5ae8ecf9eabeb4620acefa83c47b840a2a68d2f64dc8"
+    },
+    {
+      "byteCount": 113,
+      "path": "real_signal_branch_fixture.json",
+      "sha256": "a654e1034c9586e086eee83306ea7e9b653cc06eb43cde2eaaba71ad11e0d330"
+    },
+    {
+      "byteCount": 387,
+      "path": "remote_code_freeze_audit.json",
+      "sha256": "da9514992c529357fd0101584102812e541aff5bf246df3e0a1a013feb54460b"
+    },
+    {
+      "byteCount": 947,
+      "path": "remote_preregistration_freeze_audit.json",
+      "sha256": "c23bcfa235a3ebefe95032ed18970d2a435ad363f04a025db101ece7d5ede400"
+    },
+    {
+      "byteCount": 405,
+      "path": "result_exposure_ledger.json",
+      "sha256": "383071926f4890949cb663b64a6981d80e7964d5f80e65e08e076aa57ea60731"
+    },
+    {
+      "byteCount": 255,
+      "path": "signal_identity_golden_parity.json",
+      "sha256": "068f0d44c43dba48d2705f6cc44fc592479c0328635393b20e0e5a8ebd3e3f3a"
+    },
+    {
+      "byteCount": 2878,
+      "path": "source_change_scope_audit.json",
+      "sha256": "7d0a6dab4e540f98ccc2dffd91d3258bda509463fc992de8987d2c48c10b85e9"
+    },
+    {
+      "byteCount": 150,
+      "path": "synthetic_second_candidate_fixture.json",
+      "sha256": "b1ce71124e6b3b147dbffca85168c8926a874ad84822109046d3cd288579bae7"
+    }
+  ],
+  "campaignId": "advisory_r_v18_1_s01_formal_parity_runtime_correction_72ec6d1a8bf0fb71",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "demoArm": false,
+  "formalResultArtifactCount": 0,
+  "lockedOosAccessCount": 0,
+  "manifestHash": "s01_v18_1_pre_result_artifact_manifest_2442c750d989052a5fdc56a769e955f92bbca103db30e37b6b7f2fca968f2b32",
+  "orderCount": 0,
+  "releaseCount": 0,
+  "schemaVersion": "s01_v18_1_pre_result_artifact_manifest_v1"
+}
