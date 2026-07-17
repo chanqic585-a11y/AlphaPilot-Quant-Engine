@@ -1,0 +1,30 @@
+{
+  "definitionHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+  "inputs": [
+    "currentEquity",
+    "entryPrice",
+    "stopPrice",
+    "priorDailyLiquidity",
+    "instrumentMetadataOnlyWhenVolumeConversionRequiresIt"
+  ],
+  "invalidInputPolicy": "reject_nonpositive_equity_price_or_stop_distance",
+  "lookbackCompletedUtcDays": 30,
+  "method": "median_prior_completed_utc_daily_quote_turnover",
+  "minimumCompletedUtcDays": 24,
+  "minimumRiskUtilization": 0.5,
+  "missingDataPolicy": "reject_without_verified_quote_turnover_semantics",
+  "pointInTimePolicy": "strictly_prior_completed_utc_days_only",
+  "positionQuantization": "continuous_research_notional_without_historical_exchange_lot_assumption",
+  "riskBudgetFraction": 0.01,
+  "schemaVersion": "s01_capacity_model_v1",
+  "sourcePriority": [
+    "quote_volume",
+    "base_volume_times_close",
+    "verified_contract_volume_times_contract_value_multiplier_and_close"
+  ],
+  "thresholds": {
+    "maximumTurnoverParticipation": 0.0005,
+    "minimumRiskUtilization": 0.5
+  },
+  "turnoverParticipationFraction": 0.0005
+}

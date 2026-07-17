@@ -1,0 +1,13 @@
+{
+  "campaignId": "advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a",
+  "demoArm": false,
+  "formalRunCount": 0,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "remoteFreezeStatus": "not_published",
+  "resultReadCount": 0,
+  "route": "blocked_remote_freeze",
+  "schemaVersion": "s01_v18_pre_result_route_v1",
+  "stopImmediately": true
+}

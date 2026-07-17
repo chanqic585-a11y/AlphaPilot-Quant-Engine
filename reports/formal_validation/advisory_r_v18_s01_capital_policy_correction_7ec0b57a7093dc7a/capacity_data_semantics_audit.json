@@ -1,0 +1,19 @@
+{
+  "auditHash": "s01_v18_capacity_data_semantics_audit_b6d636a7a3ee67a00e16770343bad6c39625a0166774741f149aa46b9a4fc31d",
+  "campaignId": "advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a",
+  "capacityModelHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+  "derivativesVolumeRequirement": "contract volume requires verified contract value and multiplier semantics",
+  "lookaheadReadCount": 0,
+  "lookbackCompletedUtcDays": 30,
+  "minimumCompletedUtcDays": 24,
+  "missingDataPolicy": "reject_without_fallback",
+  "pointInTimePolicy": "strictly_prior_completed_utc_days_only",
+  "resultDataAccessed": false,
+  "schemaVersion": "s01_v18_capacity_data_semantics_audit_v1",
+  "sourcePriority": [
+    "quote_volume",
+    "base_volume_times_close",
+    "verified_contract_volume_times_contract_value_multiplier_and_close"
+  ],
+  "status": "passed_contract_only"
+}
