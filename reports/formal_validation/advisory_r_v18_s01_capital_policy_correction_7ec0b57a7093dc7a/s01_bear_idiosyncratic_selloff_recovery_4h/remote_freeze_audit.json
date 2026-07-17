@@ -1,0 +1,18 @@
+{
+  "blockers": [],
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "headCommit": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01",
+  "implementationCommit": "597e34aa583224a3801dba38fef06e8f8a1734ee",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "remoteTags": {
+    "v13.27.1.17": "8b7f5aa01de9bf4240d8d4613973291ca19ab83c",
+    "v13.27.1.18": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01"
+  },
+  "route": "ready_for_single_formal_run",
+  "schemaVersion": "s01_v18_remote_freeze_audit_v1",
+  "status": "passed",
+  "upstreamRef": "origin/feature/v13.27.1.18-capital-policy-correction"
+}
