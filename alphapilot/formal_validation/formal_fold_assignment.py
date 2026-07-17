@@ -19,6 +19,48 @@ FORMAL_EVENT_DISPOSITIONS = (
 )
 
 
+def formal_event_disposition_contract() -> dict[str, Any]:
+    """Return the immutable V18.3 event-disposition evidence contract."""
+
+    contract: dict[str, Any] = {
+        "schemaVersion": "formal_event_disposition_contract_v1",
+        "assignmentTimestampField": "signalTimestamp",
+        "timestampStandard": "UTC",
+        "timeframeGridRequired": True,
+        "validationIntervalOwnership": "unique_containing_validation_interval",
+        "eventMayCrossFoldBoundary": False,
+        "dispositions": list(FORMAL_EVENT_DISPOSITIONS),
+        "requiredFields": [
+            "eventId",
+            "canonicalSignalId",
+            "candidateId",
+            "instrumentId",
+            "signalTimestamp",
+            "expectedEntryTimestamp",
+            "splitPolicyHash",
+            "disposition",
+            "foldId",
+            "dispositionReasonCode",
+            "dispositionContractHash",
+            "sourceEventHash",
+            "assignmentEvidenceHash",
+        ],
+        "conservationLaw": (
+            "rawEventCount=assignedValidationEventCount+explicitlyExcludedEventCount"
+        ),
+        "forbiddenOutcomes": [
+            "unclassified_event",
+            "multiple_validation_fold_assignment",
+            "unknown_disposition",
+            "cross_boundary_leakage",
+        ],
+    }
+    contract["contractHash"] = stable_hash(
+        contract, prefix="formal_event_disposition_contract"
+    )
+    return contract
+
+
 def _utc(value: object) -> datetime:
     text = str(value or "").replace("Z", "+00:00")
     parsed = datetime.fromisoformat(text)
@@ -308,6 +350,8 @@ def build_formal_event_dispositions(
         "dispositionRecordCount": len(records),
         "assignedEventCount": assigned_count,
         "excludedEventCount": excluded_count,
+        "assignedValidationEventCount": assigned_count,
+        "explicitlyExcludedEventCount": excluded_count,
         "rawEqualsAssignedPlusExcluded": len(events)
         == assigned_count + excluded_count,
         "recordCoveragePct": round(100.0 * len(records) / len(events), 6)
@@ -315,6 +359,8 @@ def build_formal_event_dispositions(
         else 100.0,
         "unclassifiedCount": max(0, len(events) - len(records)),
         "multiAssignedCount": 0,
+        "unclassifiedEventCount": max(0, len(events) - len(records)),
+        "multiAssignedEventCount": 0,
         "duplicateDispositionCount": 0,
         "duplicateEventIdentityCount": duplicate_event_identity_count,
         "unknownDispositionCount": unknown_count,

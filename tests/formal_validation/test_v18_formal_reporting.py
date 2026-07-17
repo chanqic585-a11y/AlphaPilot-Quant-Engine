@@ -508,3 +508,63 @@ def test_v18_2_evidence_chain_publishes_complete_candidate_neutral_artifacts(
     assert result["formalPass"] is False
     assert result["formalEvidenceCount"] == 0
     assert result["releaseCount"] == result["orderCount"] == 0
+
+    v18_3_root = tmp_path / "v18-3-formal"
+    v18_3_result = execute_v18_formal_campaign(
+        bundle=v18_2_bundle,
+        repo_root=tmp_path,
+        output_root=v18_3_root,
+        candidate_adapter=_SyntheticAdapter(),
+        parity_runner=_parity_runner,
+        raw_replay_runner=lambda **_: [dict(row) for row in raw_events],
+        formal_evidence_chain={
+            "enabled": True,
+            "evidenceRecordVersion": "v18_3",
+            "runtimeBinding": {
+                "runtimeRequested": True,
+                "runtimeLoaded": True,
+                "strategyLoaded": True,
+                "configLoaded": True,
+                "dataRootValidated": True,
+                "timerangeValidated": True,
+                "networkAccessCount": 0,
+                "lockedOosReadCount": 0,
+                "runtimeHash": "runtime-hash",
+            },
+            "certification": {
+                "status": "certified",
+                "formalEvidenceChainCertificationHash": "certification-hash",
+            },
+        },
+    )
+    v18_3_names = {path.name for path in v18_3_root.iterdir()}
+    assert {
+        "formal_event_disposition_contract.json",
+        "formal_event_disposition.parquet",
+        "formal_event_disposition_sample.csv",
+        "formal_event_disposition_audit.json",
+        "formal_event_conservation_audit.json",
+        "frozen_ranking_evidence.parquet",
+        "adapter_ranking_evidence.parquet",
+        "ranking_evidence_record_audit.json",
+        "ranking_evidence_parity.json",
+        "ranking_unavailable_reason_breakdown.json",
+    } <= v18_3_names
+    disposition_audit = json.loads(
+        (v18_3_root / "formal_event_disposition_audit.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    ranking_record_audit = json.loads(
+        (v18_3_root / "ranking_evidence_record_audit.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    assert disposition_audit["recordCoveragePct"] == 100.0
+    assert disposition_audit["unclassifiedCount"] == 0
+    assert ranking_record_audit["recordCoveragePct"] == 100.0
+    assert ranking_record_audit["statusCoveragePct"] == 100.0
+    assert v18_3_result["route"] != "implementation_invalid_requires_new_campaign"
+    assert v18_3_result["formalEvidenceCount"] == 0
+    assert v18_3_result["demoArm"] is False
+    assert v18_3_result["orderCount"] == 0

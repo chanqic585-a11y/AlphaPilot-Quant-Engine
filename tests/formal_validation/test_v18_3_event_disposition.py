@@ -4,6 +4,7 @@ import pytest
 
 from alphapilot.formal_validation.formal_fold_assignment import (
     build_formal_event_dispositions,
+    formal_event_disposition_contract,
 )
 
 
@@ -148,3 +149,14 @@ def test_overlapping_validation_intervals_fail_closed() -> None:
             disposition_contract_hash="disposition-contract",
             timeframe="4h",
         )
+
+
+def test_disposition_contract_is_frozen_and_deterministic() -> None:
+    first = formal_event_disposition_contract()
+    second = formal_event_disposition_contract()
+
+    assert first == second
+    assert first["schemaVersion"] == "formal_event_disposition_contract_v1"
+    assert first["eventMayCrossFoldBoundary"] is False
+    assert first["assignmentTimestampField"] == "signalTimestamp"
+    assert first["contractHash"].startswith("formal_event_disposition_contract_")

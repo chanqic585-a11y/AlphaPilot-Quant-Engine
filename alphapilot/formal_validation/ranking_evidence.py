@@ -35,6 +35,58 @@ RANKING_VALUE_STATUSES = (
 )
 
 
+def ranking_evidence_record_contract() -> dict[str, Any]:
+    """Return the immutable V18.3 ranking-evidence record contract."""
+
+    contract: dict[str, Any] = {
+        "schemaVersion": "ranking_evidence_record_contract_v1",
+        "materializationScope": "every_assigned_validation_fold_event",
+        "freezeWindow": "after_signal_close_before_expected_entry",
+        "ordering": [
+            {"field": "eventExtremeResidualZ", "direction": "ascending"},
+            {"field": "recoverySizeZ", "direction": "descending"},
+            {"field": "liquidity30d", "direction": "descending"},
+            {"field": "instrumentId", "direction": "ascending"},
+        ],
+        "missingValuePolicy": (
+            "reject_if_any_of_first_three_fields_missing_or_nonfinite"
+        ),
+        "stableRejectionReason": "reject_ranking_field_unavailable",
+        "statuses": list(RANKING_VALUE_STATUSES),
+        "requiredFields": [
+            "canonicalSignalId",
+            "candidateId",
+            "instrumentId",
+            "signalTimestamp",
+            "expectedEntryTimestamp",
+            "foldId",
+            "eventExtremeResidualZ",
+            "eventExtremeResidualZStatus",
+            "recoverySizeZ",
+            "recoverySizeZStatus",
+            "liquidity30d",
+            "liquidity30dStatus",
+            "rankingEvidenceStatus",
+            "rankingUnavailableReason",
+            "availableAt",
+            "sourceBarHashes",
+            "capacitySemanticsHash",
+            "rankingPolicyHash",
+            "rankingEvidenceHash",
+        ],
+        "forbiddenOperations": [
+            "missing_value_imputation",
+            "post_entry_recalculation",
+            "exit_path_read",
+            "economic_result_read",
+        ],
+    }
+    contract["contractHash"] = stable_hash(
+        contract, prefix="ranking_evidence_record_contract"
+    )
+    return contract
+
+
 def _utc(value: object) -> datetime:
     parsed = datetime.fromisoformat(str(value).replace("Z", "+00:00"))
     if parsed.tzinfo is None:
@@ -229,6 +281,13 @@ def materialize_ranking_evidence_records(
         "schemaVersion": "ranking_evidence_record_audit_v1",
         "assignedEventCount": len(assigned_events),
         "recordCount": len(records),
+        "rankingEvidenceRecordCount": len(records),
+        "rankingEvidenceRecordMissingCount": max(
+            0, len(assigned_events) - len(records)
+        ),
+        "rankingEvidenceStatusMissingCount": max(
+            0, status_field_count - populated_status_count
+        ),
         "recordCoveragePct": round(
             100.0 * len(records) / len(assigned_events), 6
         )
@@ -244,6 +303,11 @@ def materialize_ranking_evidence_records(
         ),
         "unavailableRecordCount": sum(
             row["rankingEvidenceStatus"] != "available" for row in records
+        ),
+        "rankingFieldUnavailableCount": sum(
+            row[f"{field}Status"] != "available"
+            for row in records
+            for field in RANKING_VALUE_FIELDS
         ),
         "postEntryDataUseCount": post_entry_data_use_count,
     }

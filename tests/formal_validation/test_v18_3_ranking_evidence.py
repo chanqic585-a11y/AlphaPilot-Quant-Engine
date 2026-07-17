@@ -3,6 +3,7 @@ from __future__ import annotations
 from alphapilot.formal_validation.ranking_evidence import (
     audit_ranking_evidence_record_parity,
     materialize_ranking_evidence_records,
+    ranking_evidence_record_contract,
 )
 
 
@@ -123,3 +124,20 @@ def test_capacity_semantics_hash_is_bound_per_instrument() -> None:
         "capacity-btc",
         "capacity-eth",
     ]
+
+
+def test_ranking_record_contract_preserves_frozen_order_and_null_policy() -> None:
+    contract = ranking_evidence_record_contract()
+
+    assert contract["schemaVersion"] == "ranking_evidence_record_contract_v1"
+    assert contract["ordering"] == [
+        {"field": "eventExtremeResidualZ", "direction": "ascending"},
+        {"field": "recoverySizeZ", "direction": "descending"},
+        {"field": "liquidity30d", "direction": "descending"},
+        {"field": "instrumentId", "direction": "ascending"},
+    ]
+    assert (
+        contract["missingValuePolicy"]
+        == "reject_if_any_of_first_three_fields_missing_or_nonfinite"
+    )
+    assert contract["contractHash"].startswith("ranking_evidence_record_contract_")

@@ -28,7 +28,11 @@ from .canonical_event_identity import (
     map_canonical_identity,
 )
 from .formal_event_contract import canonicalize_formal_event
-from .formal_fold_assignment import assign_formal_events_by_signal_timestamp
+from .formal_fold_assignment import (
+    assign_formal_events_by_signal_timestamp,
+    build_formal_event_dispositions,
+    formal_event_disposition_contract,
+)
 from .formal_input import FormalInputBundle
 from .formal_statistics import newey_west_alpha
 from .formal_stress import (
@@ -43,8 +47,11 @@ from .pit_portfolio_context import (
     freeze_pit_portfolio_context,
 )
 from .ranking_evidence import (
+    audit_ranking_evidence_record_parity,
     audit_ranking_evidence_parity,
     freeze_ranking_evidence,
+    materialize_ranking_evidence_records,
+    ranking_evidence_record_contract,
 )
 from .v18_2_evidence_chain import (
     build_capacity_semantics_registry,
@@ -766,6 +773,11 @@ def execute_v18_formal_campaign(
 
     preregistration = bundle.preregistration
     evidence_enabled = formal_evidence_chain is not None
+    v18_3_enabled = bool(
+        evidence_enabled
+        and str((formal_evidence_chain or {}).get("evidenceRecordVersion") or "")
+        == "v18_3"
+    )
     runtime_binding: dict[str, Any] = {}
     evidence_certification: dict[str, Any] = {}
     if evidence_enabled:
@@ -806,7 +818,44 @@ def execute_v18_formal_campaign(
                 ),
             }
         )
-    if evidence_enabled:
+    disposition_contract: dict[str, Any] = {}
+    disposition_rows: list[dict[str, Any]] = []
+    disposition_audit: dict[str, Any] = {}
+    if v18_3_enabled:
+        disposition_contract = formal_event_disposition_contract()
+        disposition_rows, disposition_audit = build_formal_event_dispositions(
+            raw_events,
+            preregistration["splitPolicy"]["folds"],
+            candidate_id=candidate_id,
+            split_policy_hash=str(
+                preregistration.get("splitPolicyHash")
+                or preregistration.get("splitPolicy", {}).get("splitPolicyHash")
+                or ""
+            ),
+            disposition_contract_hash=str(disposition_contract["contractHash"]),
+            timeframe=str(bundle.candidate.get("timeframe") or ""),
+        )
+        assigned_raw = []
+        fold_rejected = []
+        for raw_event, disposition in zip(raw_events, disposition_rows, strict=True):
+            target = {
+                **dict(raw_event),
+                "canonicalSignalId": str(disposition["canonicalSignalId"]),
+                "foldId": disposition.get("foldId"),
+                "disposition": disposition["disposition"],
+                "dispositionReasonCode": disposition["dispositionReasonCode"],
+                "assignmentEvidenceHash": disposition["assignmentEvidenceHash"],
+            }
+            if disposition["disposition"] == "assigned_validation_fold":
+                assigned_raw.append(target)
+            else:
+                fold_rejected.append(target)
+        fold_audit = {
+            **disposition_audit,
+            "assignmentCompletenessPct": disposition_audit["recordCoveragePct"],
+            "rejectedEventCount": 0,
+        }
+    elif evidence_enabled:
         assigned_raw, fold_rejected, fold_audit = (
             assign_formal_events_by_signal_timestamp(
                 raw_events,
@@ -826,6 +875,14 @@ def execute_v18_formal_campaign(
         adapter_canonical,
         assigned_raw,
     )
+    if v18_3_enabled:
+        assigned_signal_ids = {_signal_id(row) for row in assigned_raw}
+        reference_missing = [
+            signal_id for signal_id in reference_missing if signal_id in assigned_signal_ids
+        ]
+        adapter_missing = [
+            signal_id for signal_id in adapter_missing if signal_id in assigned_signal_ids
+        ]
     identity_contract: dict[str, Any] = {}
     identity_audit: dict[str, Any] = {}
     identity_collision_audit: dict[str, Any] = {}
@@ -888,11 +945,13 @@ def execute_v18_formal_campaign(
         reference_events,
         bundle.frames,
         bundle.candidate,
+        include_source_bar_hashes=v18_3_enabled,
     )
     adapter_features, adapter_ranking_audit = build_signal_feature_evidence(
         adapter_events,
         bundle.frames,
         bundle.candidate,
+        include_source_bar_hashes=v18_3_enabled,
     )
     frozen_ranking: list[dict[str, Any]] = []
     adapter_ranking: list[dict[str, Any]] = []
@@ -905,26 +964,91 @@ def execute_v18_formal_campaign(
     funding_contract: dict[str, Any] = {}
     source_scope_audit: dict[str, Any] = {}
     frozen_contract_audit: dict[str, Any] = {}
+    ranking_record_contract: dict[str, Any] = {}
+    ranking_record_audit: dict[str, Any] = {}
+    ranking_unavailable_breakdown: dict[str, Any] = {}
     if evidence_enabled:
         ranking_policy_hash = str(
             preregistration.get("signalRankingPolicyHash") or ""
         )
-        frozen_ranking, reference_ranking_rejected = freeze_ranking_evidence(
-            reference_features,
-            ranking_policy_hash=ranking_policy_hash,
+        timeframe = str(bundle.candidate.get("timeframe") or "")
+        instruments = sorted(bundle.frames)
+        capacity_rows, capacity_coverage = build_capacity_semantics_registry(
+            snapshot=bundle.snapshot,
+            instrument_ids=instruments,
+            timeframe=timeframe,
         )
-        adapter_ranking, adapter_ranking_rejected = freeze_ranking_evidence(
-            adapter_features,
-            ranking_policy_hash=ranking_policy_hash,
-        )
-        ranking_parity = audit_ranking_evidence_parity(
-            frozen_ranking, adapter_ranking
-        )
+        capacity_hashes = {
+            str(row["instrumentId"]): str(row["capacitySemanticsHash"])
+            for row in capacity_rows
+        }
+        if v18_3_enabled:
+            ranking_record_contract = ranking_evidence_record_contract()
+            frozen_ranking, ranking_record_audit = (
+                materialize_ranking_evidence_records(
+                    reference_events,
+                    reference_features,
+                    ranking_policy_hash=ranking_policy_hash,
+                    capacity_semantics_hash=capacity_hashes,
+                )
+            )
+            adapter_ranking, adapter_ranking_audit = (
+                materialize_ranking_evidence_records(
+                    adapter_events,
+                    adapter_features,
+                    ranking_policy_hash=ranking_policy_hash,
+                    capacity_semantics_hash=capacity_hashes,
+                )
+            )
+            ranking_parity = audit_ranking_evidence_record_parity(
+                frozen_ranking, adapter_ranking
+            )
+            reference_ranking_rejected = [
+                {**dict(row), "reason": "reject_ranking_field_unavailable"}
+                for row in frozen_ranking
+                if row.get("rankingEvidenceStatus") != "available"
+            ]
+            adapter_ranking_rejected = [
+                {**dict(row), "reason": "reject_ranking_field_unavailable"}
+                for row in adapter_ranking
+                if row.get("rankingEvidenceStatus") != "available"
+            ]
+            reason_counts: dict[str, int] = {}
+            for row in frozen_ranking:
+                reason = str(row.get("rankingUnavailableReason") or "available")
+                reason_counts[reason] = reason_counts.get(reason, 0) + 1
+            ranking_unavailable_breakdown = {
+                "schemaVersion": "ranking_unavailable_reason_breakdown_v1",
+                "assignedEventCount": len(reference_events),
+                "availableRecordCount": sum(
+                    row.get("rankingEvidenceStatus") == "available"
+                    for row in frozen_ranking
+                ),
+                "reasonCounts": reason_counts,
+            }
+        else:
+            frozen_ranking, reference_ranking_rejected = freeze_ranking_evidence(
+                reference_features,
+                ranking_policy_hash=ranking_policy_hash,
+            )
+            adapter_ranking, adapter_ranking_rejected = freeze_ranking_evidence(
+                adapter_features,
+                ranking_policy_hash=ranking_policy_hash,
+            )
+            ranking_parity = audit_ranking_evidence_parity(
+                frozen_ranking, adapter_ranking
+            )
         stable_rejections.extend(reference_ranking_rejected)
         stable_rejections.extend(adapter_ranking_rejected)
         shared_ranking_ids = {
-            str(row["signalId"]) for row in frozen_ranking
-        } & {str(row["signalId"]) for row in adapter_ranking}
+            str(row.get("canonicalSignalId") or row.get("signalId") or "")
+            for row in frozen_ranking
+            if row.get("rankingEvidenceStatus", "available") == "available"
+        } & {
+            str(row.get("canonicalSignalId") or row.get("signalId") or "")
+            for row in adapter_ranking
+            if row.get("rankingEvidenceStatus", "available") == "available"
+        }
         reference_features = [
             row
             for row in reference_features
@@ -935,13 +1059,6 @@ def execute_v18_formal_campaign(
             for row in adapter_features
             if str(row.get("signalId") or "") in shared_ranking_ids
         ]
-        timeframe = str(bundle.candidate.get("timeframe") or "")
-        instruments = sorted(bundle.frames)
-        capacity_rows, capacity_coverage = build_capacity_semantics_registry(
-            snapshot=bundle.snapshot,
-            instrument_ids=instruments,
-            timeframe=timeframe,
-        )
         unavailable_capacity = set(capacity_coverage["unknownUnitInstruments"])
         for row in [*reference_features, *adapter_features]:
             if str(row.get("instrumentId") or "") in unavailable_capacity:
@@ -970,16 +1087,28 @@ def execute_v18_formal_campaign(
             candidate=bundle.candidate,
         )
         # Missing ranking inputs are stable event rejections, not implementation gaps.
-        ranking_audit = {
-            **ranking_audit,
-            "missingRankingFieldCount": 0,
-            "stableRejectedEventCount": len(reference_ranking_rejected),
-        }
-        adapter_ranking_audit = {
-            **adapter_ranking_audit,
-            "missingRankingFieldCount": 0,
-            "stableRejectedEventCount": len(adapter_ranking_rejected),
-        }
+        if v18_3_enabled:
+            ranking_audit = {
+                **ranking_record_audit,
+                "missingRankingFieldCount": 0,
+                "stableRejectedEventCount": len(reference_ranking_rejected),
+            }
+            adapter_ranking_audit = {
+                **adapter_ranking_audit,
+                "missingRankingFieldCount": 0,
+                "stableRejectedEventCount": len(adapter_ranking_rejected),
+            }
+        else:
+            ranking_audit = {
+                **ranking_audit,
+                "missingRankingFieldCount": 0,
+                "stableRejectedEventCount": len(reference_ranking_rejected),
+            }
+            adapter_ranking_audit = {
+                **adapter_ranking_audit,
+                "missingRankingFieldCount": 0,
+                "stableRejectedEventCount": len(adapter_ranking_rejected),
+            }
     daily_liquidity, return_panel, semantics_audit = build_daily_market_evidence(
         bundle.frames
     )
@@ -1135,16 +1264,58 @@ def execute_v18_formal_campaign(
         implementation_blockers.append("capacity_data_semantics_failed")
     if funding.get("gateEvaluable") is not True and not evidence_enabled:
         implementation_blockers.append("registered_funding_stress_input_unavailable")
+    if v18_3_enabled:
+        disposition_complete = (
+            float(disposition_audit.get("recordCoveragePct") or 0.0) == 100.0
+            and bool(disposition_audit.get("rawEqualsAssignedPlusExcluded"))
+            and int(disposition_audit.get("unclassifiedEventCount") or 0) == 0
+            and int(disposition_audit.get("multiAssignedEventCount") or 0) == 0
+            and int(disposition_audit.get("duplicateDispositionCount") or 0) == 0
+            and int(disposition_audit.get("unknownDispositionCount") or 0) == 0
+            and int(disposition_audit.get("crossBoundaryLeakageCount") or 0) == 0
+        )
+        if not disposition_complete:
+            implementation_blockers.append("formal_event_disposition_incomplete")
+        ranking_records_complete = (
+            float(ranking_record_audit.get("recordCoveragePct") or 0.0) == 100.0
+            and float(ranking_record_audit.get("statusCoveragePct") or 0.0) == 100.0
+            and int(
+                ranking_record_audit.get("rankingEvidenceRecordMissingCount") or 0
+            )
+            == 0
+            and int(
+                ranking_record_audit.get("rankingEvidenceStatusMissingCount") or 0
+            )
+            == 0
+        )
+        if not ranking_records_complete:
+            implementation_blockers.append(
+                "frozen_ranking_evidence_record_incomplete"
+            )
+        if (
+            float(ranking_parity.get("recordCoveragePct") or 0.0) != 100.0
+            or float(ranking_parity.get("statusCoveragePct") or 0.0) != 100.0
+            or float(ranking_parity.get("fieldParityPct") or 0.0) != 100.0
+            or float(ranking_parity.get("hashParityPct") or 0.0) != 100.0
+            or float(ranking_parity.get("rejectionReasonParityPct") or 0.0)
+            != 100.0
+            or int(ranking_parity.get("postEntryDataUseCount") or 0) != 0
+            or int(ranking_parity.get("unmappedCount") or 0) != 0
+        ):
+            implementation_blockers.append("ranking_evidence_parity_failed")
     if evidence_enabled:
         if identity_audit.get("status") != "certified":
             implementation_blockers.append(
                 "canonical_event_identity_mapping_incomplete"
             )
-        if float(fold_audit.get("assignmentCompletenessPct") or 0.0) != 100.0:
+        if (
+            not v18_3_enabled
+            and float(fold_audit.get("assignmentCompletenessPct") or 0.0) != 100.0
+        ):
             implementation_blockers.append("formal_event_fold_assignment_incomplete")
         if int(fold_audit.get("crossBoundaryLeakageCount") or 0) != 0:
             implementation_blockers.append("formal_event_cross_fold_leakage")
-        if (
+        if not v18_3_enabled and (
             float(ranking_parity.get("fieldParityPct") or 0.0) != 100.0
             or float(ranking_parity.get("hashParityPct") or 0.0) != 100.0
             or int(ranking_parity.get("postEntryDataUseCount") or 0) != 0
@@ -1444,6 +1615,87 @@ def execute_v18_formal_campaign(
                 "capacity_data_semantics_by_symbol.csv": capacity_rows,
             }
         )
+    if v18_3_enabled:
+        conservation_audit = {
+            "schemaVersion": "formal_event_conservation_audit_v1",
+            "rawEventCount": disposition_audit["rawEventCount"],
+            "assignedValidationEventCount": disposition_audit[
+                "assignedValidationEventCount"
+            ],
+            "explicitlyExcludedEventCount": disposition_audit[
+                "explicitlyExcludedEventCount"
+            ],
+            "rawEqualsAssignedPlusExcluded": disposition_audit[
+                "rawEqualsAssignedPlusExcluded"
+            ],
+            "unclassifiedEventCount": disposition_audit[
+                "unclassifiedEventCount"
+            ],
+            "multiAssignedEventCount": disposition_audit[
+                "multiAssignedEventCount"
+            ],
+            "duplicateDispositionCount": disposition_audit[
+                "duplicateDispositionCount"
+            ],
+            "unknownDispositionCount": disposition_audit[
+                "unknownDispositionCount"
+            ],
+            "crossBoundaryLeakageCount": disposition_audit[
+                "crossBoundaryLeakageCount"
+            ],
+        }
+        json_payloads.update(
+            {
+                "formal_event_disposition_contract.json": disposition_contract,
+                "formal_event_disposition_audit.json": disposition_audit,
+                "formal_event_conservation_audit.json": conservation_audit,
+                "ranking_evidence_record_contract.json": ranking_record_contract,
+                "ranking_evidence_record_audit.json": ranking_record_audit,
+                "adapter_ranking_evidence_record_audit.json": (
+                    adapter_ranking_audit
+                ),
+                "ranking_unavailable_reason_breakdown.json": (
+                    ranking_unavailable_breakdown
+                ),
+            }
+        )
+        parquet_payloads.update(
+            {
+                "formal_event_disposition.parquet": _frame_from_rows(
+                    disposition_rows,
+                    (
+                        "eventId",
+                        "canonicalSignalId",
+                        "candidateId",
+                        "instrumentId",
+                        "signalTimestamp",
+                        "disposition",
+                        "assignmentEvidenceHash",
+                    ),
+                ),
+                "frozen_ranking_evidence.parquet": _frame_from_rows(
+                    frozen_ranking,
+                    (
+                        "canonicalSignalId",
+                        "instrumentId",
+                        "signalTimestamp",
+                        "rankingEvidenceStatus",
+                        "rankingEvidenceHash",
+                    ),
+                ),
+                "adapter_ranking_evidence.parquet": _frame_from_rows(
+                    adapter_ranking,
+                    (
+                        "canonicalSignalId",
+                        "instrumentId",
+                        "signalTimestamp",
+                        "rankingEvidenceStatus",
+                        "rankingEvidenceHash",
+                    ),
+                ),
+            }
+        )
+        csv_payloads["formal_event_disposition_sample.csv"] = disposition_rows[:100]
     result_manifest_hash = _publish_artifacts(
         Path(output_root),
         json_payloads=json_payloads,
