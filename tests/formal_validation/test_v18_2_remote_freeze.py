@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from alphapilot.formal_validation.v18_2_contracts import V18_2_TAG
 from alphapilot.formal_validation.v18_2_remote_freeze import (
     evaluate_v18_2_code_freeze,
     evaluate_v18_2_preregistration_freeze,
@@ -39,6 +40,7 @@ def test_v18_2_code_freeze_requires_clean_published_commit() -> None:
 
 
 def test_v18_2_preregistration_freeze_binds_remote_bytes_and_tags() -> None:
+    assert V18_2_TAG == "v13.27.1.18.2-r1"
     snapshot = {
         "headCommit": PREREGISTRATION,
         "upstreamCommit": PREREGISTRATION,
@@ -53,7 +55,7 @@ def test_v18_2_preregistration_freeze_binds_remote_bytes_and_tags() -> None:
         "remoteTags": {
             "v13.27.1.18": V18_TAG_COMMIT,
             "v13.27.1.18.1": V18_1_TAG_COMMIT,
-            "v13.27.1.18.2": PREREGISTRATION,
+            V18_2_TAG: PREREGISTRATION,
         },
     }
     passed = evaluate_v18_2_preregistration_freeze(snapshot)
@@ -61,7 +63,7 @@ def test_v18_2_preregistration_freeze_binds_remote_bytes_and_tags() -> None:
         {
             **snapshot,
             "remotePreregistrationSha256": "hash-b",
-            "remoteTags": {**snapshot["remoteTags"], "v13.27.1.18.2": None},
+            "remoteTags": {**snapshot["remoteTags"], V18_2_TAG: None},
         }
     )
 

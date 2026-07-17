@@ -2,12 +2,28 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from types import SimpleNamespace
 
 from alphapilot.scripts import run_v18_2_formal_walk_forward as runner
 
 
 CAMPAIGN_ID = "advisory_r_v18_2_s01_formal_evidence_chain_correction_fixture"
 CANDIDATE_ID = "s01_bear_idiosyncratic_selloff_recovery_4h"
+
+
+def test_observed_runtime_versions_include_python(monkeypatch) -> None:
+    monkeypatch.setattr(runner.platform, "python_version", lambda: "3.14.6")
+    module = SimpleNamespace(__version__="fixture")
+
+    observed = runner._observed_runtime_versions(
+        freqtrade=module,
+        ccxt=module,
+        pandas=module,
+        numpy=module,
+        pyarrow=module,
+    )
+
+    assert observed["pythonVersion"] == "3.14.6"
 
 
 def test_v18_2_runner_requires_exact_runtime_and_injects_evidence_chain(

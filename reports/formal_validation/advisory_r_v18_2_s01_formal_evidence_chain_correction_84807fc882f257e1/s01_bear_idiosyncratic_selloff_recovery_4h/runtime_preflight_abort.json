@@ -1,0 +1,24 @@
+{
+  "blockers": [
+    "runtime_version_observation_missing_python_version"
+  ],
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_84807fc882f257e1",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "classification": "implementation_invalid_requires_new_campaign",
+  "expectedPythonVersion": "3.14.6",
+  "formalResultArtifactCount": 0,
+  "formalResultRunCount": 0,
+  "formalRunAttemptCount": 0,
+  "formalRunClaimCount": 0,
+  "observedPythonVersion": null,
+  "preflightOnly": true,
+  "preregistrationCommit": "0a6dd80709bda747fa2bc8611dfbef0dc3abae06",
+  "preregistrationTag": "v13.27.1.18.2",
+  "reason": "The exact-runtime guard omitted pythonVersion from its observed version map. The pinned Docker preflight failed closed before invoking the generic formal runner.",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_v18_2_runtime_preflight_abort_v1",
+  "status": "preflight_blocked",
+  "successorTag": "v13.27.1.18.2-r1"
+}

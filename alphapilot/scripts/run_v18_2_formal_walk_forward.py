@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import platform
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -29,6 +30,19 @@ def _read_json(path: Path) -> dict[str, Any]:
     return payload
 
 
+def _observed_runtime_versions(
+    *, freqtrade: Any, ccxt: Any, pandas: Any, numpy: Any, pyarrow: Any
+) -> dict[str, str]:
+    return {
+        "pythonVersion": platform.python_version(),
+        "freqtradeVersion": str(freqtrade.__version__),
+        "ccxtVersion": str(ccxt.__version__),
+        "pandasVersion": str(pandas.__version__),
+        "numpyVersion": str(numpy.__version__),
+        "pyarrowVersion": str(pyarrow.__version__),
+    }
+
+
 def assert_exact_inprocess_runtime(*, repo_root: Path) -> None:
     """Prove the running interpreter is the digest-pinned Freqtrade environment."""
 
@@ -39,13 +53,13 @@ def assert_exact_inprocess_runtime(*, repo_root: Path) -> None:
         import pandas
         import pyarrow
 
-        observed = {
-            "freqtradeVersion": freqtrade.__version__,
-            "ccxtVersion": ccxt.__version__,
-            "pandasVersion": pandas.__version__,
-            "numpyVersion": numpy.__version__,
-            "pyarrowVersion": pyarrow.__version__,
-        }
+        observed = _observed_runtime_versions(
+            freqtrade=freqtrade,
+            ccxt=ccxt,
+            pandas=pandas,
+            numpy=numpy,
+            pyarrow=pyarrow,
+        )
         mismatch = {
             key: {"expected": expected, "actual": observed.get(key)}
             for key, expected in EXACT_RUNTIME_VERSIONS.items()
