@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "v18_2_failure_taxonomy_clarification_sidecar_v1",
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "trialClassification": "implementation_invalid_after_result_artifact",
+  "originalRoute": "implementation_invalid_requires_new_campaign",
+  "originalReportedBlocker": "canonical_event_identity_mapping_incomplete",
+  "clarifiedBlockers": [
+    "formal_event_disposition_incomplete",
+    "frozen_ranking_evidence_record_incomplete"
+  ],
+  "clarification": "Canonical event identity was complete for events admitted to validation folds. The unresolved implementation gaps were exhaustive disposition evidence for every raw event and immutable ranking-evidence records for every assigned event.",
+  "authoritativeCounts": {
+    "rawEventCount": 884,
+    "assignedValidationFoldCount": 417,
+    "explicitlyRejectedCount": 467,
+    "unassignedDispositionCount": 466,
+    "crossFoldHoldingPathCount": 1,
+    "assignedEventsWithoutRankingEvidenceRecordCount": 417,
+    "acceptedTradeCount": 0
+  },
+  "resultManifestHash": "sha256:a9b499063547c5a3db131c749b5db404ffed2c5160eb39c8c9aa03a75809129b",
+  "preservation": {
+    "originalArtifactsMutated": false,
+    "originalManifestMutated": false,
+    "economicConclusionAllowed": false,
+    "lockedOosAccessCount": 0,
+    "releaseCount": 0,
+    "demoArm": false,
+    "orderCount": 0
+  },
+  "correctionCampaignVersion": "V13.27.1.18.3"
+}
