@@ -40,7 +40,7 @@ def test_v18_2_code_freeze_requires_clean_published_commit() -> None:
 
 
 def test_v18_2_preregistration_freeze_binds_remote_bytes_and_tags() -> None:
-    assert V18_2_TAG == "v13.27.1.18.2-r1"
+    assert V18_2_TAG == "v13.27.1.18.2-r2"
     snapshot = {
         "headCommit": PREREGISTRATION,
         "upstreamCommit": PREREGISTRATION,

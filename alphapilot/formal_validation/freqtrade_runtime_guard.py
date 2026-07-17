@@ -9,6 +9,7 @@ from .freqtrade_runtime_loader import EXACT_RUNTIME_VERSIONS
 
 def guard_runtime(report: Mapping[str, Any]) -> dict[str, Any]:
     checks = {
+        "runtimeRequested": report.get("runtimeRequested") is True,
         "runtimeLoaded": report.get("runtimeLoaded") is True,
         "strategyLoaded": report.get("strategyLoaded") is True,
         "configLoaded": report.get("configLoaded") is True,

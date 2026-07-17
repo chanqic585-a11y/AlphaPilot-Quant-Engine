@@ -51,6 +51,7 @@ def test_exact_runtime_loads_and_binds_all_frozen_fields(tmp_path: Path) -> None
     )
     guard = guard_runtime(report)
 
+    assert report["runtimeRequested"] is True
     assert report["runtimeLoaded"] is True
     assert report["networkAccessCount"] == 0
     assert report["lockedOosReadCount"] == 0

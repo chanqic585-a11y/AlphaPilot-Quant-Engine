@@ -7,6 +7,7 @@ from alphapilot.formal_validation.formal_evidence_chain_fixture import (
 
 def _runtime() -> dict[str, object]:
     return {
+        "runtimeRequested": True,
         "runtimeLoaded": True,
         "strategyLoaded": True,
         "configLoaded": True,

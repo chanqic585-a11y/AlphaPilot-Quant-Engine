@@ -12,15 +12,15 @@
     "runtimeLoadedFixture": true
   },
   "demoArm": false,
-  "fixtureHash": "formal_evidence_chain_fixture_8ded76083403ca092e96a2b9f9c6406f41707306ed142caa3c0a280c12a9d884",
+  "fixtureHash": "formal_evidence_chain_fixture_a3512ec7b5aa8a1aa115833bcc6d1c3e1723df91d49f59cdbea97d0a479bf611",
   "fixtureId": "formal_evidence_chain_fixture_v1",
-  "formalEvidenceChainCertificationHash": "formal_evidence_chain_certification_37e49f64224cb949128f8f1440c17855c21830d97565d9a0661114da45e415dd",
+  "formalEvidenceChainCertificationHash": "formal_evidence_chain_certification_95f9253c8c57d441c64d9172fc27cfc0b9bfeefca86525f7a7e6ce3f09b8e87a",
   "formalResultCount": 0,
   "lockedOosReadCount": 0,
   "networkAccessCount": 0,
   "orderCount": 0,
   "releaseCount": 0,
-  "runtimeHash": "freqtrade_runtime_0047a6cf62cf333b352a714cdae3242a0f99953f1ac9827c5b8af48bd3a027d6",
+  "runtimeHash": "freqtrade_runtime_1d0abfa471f2d1fa5e777dcef4e520d48f8f2e287689d18a19e8fd6e7bc9e5ab",
   "schemaVersion": "formal_evidence_chain_certification_v1",
   "status": "certified"
 }

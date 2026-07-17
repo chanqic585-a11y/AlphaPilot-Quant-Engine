@@ -143,6 +143,7 @@ def load_freqtrade_runtime(
             "timerange": request.timerange,
             "timezone": request.timezone,
             **observed,
+            "runtimeRequested": True,
             "runtimeLoaded": True,
             "strategyLoaded": True,
             "configLoaded": True,

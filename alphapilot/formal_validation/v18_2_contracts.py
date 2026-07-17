@@ -28,9 +28,9 @@ V18_2_CAMPAIGN_PREFIX = (
 V18_2_PREREGISTRATION_HASH_PREFIX = (
     "s01_v18_2_formal_evidence_chain_correction_preregistration"
 )
-# The original V18.2 tag remains immutable on the preregistration whose runtime
-# preflight failed before a formal attempt. The repaired campaign freezes here.
-V18_2_TAG = "v13.27.1.18.2-r1"
+# Earlier V18.2 tags remain immutable on campaigns that failed closed. The r2
+# campaign additionally binds the runtime-request evidence required at execute.
+V18_2_TAG = "v13.27.1.18.2-r2"
 CORRECTION_REASON = (
     "formal_runtime_identity_fold_ranking_pit_capacity_funding_evidence_incomplete"
 )
