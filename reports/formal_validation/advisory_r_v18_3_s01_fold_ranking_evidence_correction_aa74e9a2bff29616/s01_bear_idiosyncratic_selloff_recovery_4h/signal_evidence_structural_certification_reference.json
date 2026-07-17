@@ -1,0 +1,11 @@
+{
+  "certificationFileHash": "37e4a0235d6978fdbaa926fbef675c31af0e98b6be83230710ab5bdae9ca64f3",
+  "certificationHash": "v18_3_signal_evidence_structural_certification_c0107ddff822a5ddfea1fce5beb0f65d979320b75af60cf6c077804f18d1f5e2",
+  "certificationPath": "reports/formal_validation/v18_3_pre_result_certification/signal_evidence_structural_certification.json",
+  "formalResultRunCount": 0,
+  "formalRunClaimCount": 0,
+  "lockedOosAccessCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v18_3_signal_evidence_certification_reference_v1",
+  "status": "certified"
+}
