@@ -29,6 +29,7 @@ def test_certify_binds_runtime_and_writes_certification(tmp_path: Path) -> None:
             "numpyVersion": "2.4.6",
             "pyarrowVersion": "24.0.0",
             "timezone": "UTC",
+            "runtimeRequested": True,
             "runtimeLoaded": True,
             "strategyLoaded": True,
             "configLoaded": True,
@@ -60,3 +61,7 @@ def test_certify_binds_runtime_and_writes_certification(tmp_path: Path) -> None:
         )
     )
     assert certification["status"] == "certified"
+    runtime_binding = json.loads(
+        (output_root / "freqtrade_runtime_binding.json").read_text(encoding="utf-8")
+    )
+    assert runtime_binding["runtimeRequested"] is True

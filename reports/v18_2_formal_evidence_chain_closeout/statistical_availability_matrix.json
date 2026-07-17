@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "s01_v18_2_statistical_availability_matrix_v1",
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "retroactiveConstructionAllowed": false,
+  "resultReadCount": 1,
+  "tests": [
+    {"testId": "newey_west_alpha", "status": "available", "sampleCount": 1939, "alpha": 0.0, "oneSidedP": 0.5},
+    {"testId": "benjamini_hochberg", "status": "unavailable_predeclared"},
+    {"testId": "benjamini_yekutieli", "status": "not_produced", "reason": "No preregistered point-in-time family panel; no result fabricated."},
+    {"testId": "deflated_sharpe", "status": "unavailable_predeclared"},
+    {"testId": "probability_of_backtest_overfitting", "status": "unavailable_predeclared"},
+    {"testId": "white_reality_check", "status": "unavailable_predeclared"},
+    {"testId": "superior_predictive_ability", "status": "unavailable_predeclared"}
+  ]
+}

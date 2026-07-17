@@ -1,0 +1,39 @@
+{
+  "schemaVersion": "s01_v18_2_closeout_patch_audit_v1",
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalResultCommit": "6752c721b39578cf7d4aec1569c55e0d77745452",
+  "resultManifestHash": "sha256:a9b499063547c5a3db131c749b5db404ffed2c5160eb39c8c9aa03a75809129b",
+  "formalArtifactCount": 54,
+  "formalArtifactHashMismatchCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "primaryBlocker": "canonical_event_identity_mapping_incomplete",
+  "strategyPerformanceFailure": false,
+  "implementationOrEvidenceFailure": true,
+  "formalRunClaimCount": 1,
+  "formalRunAttemptCount": 1,
+  "formalResultRunCount": 1,
+  "resultReadCount": 1,
+  "formalResultArtifactCount": 1,
+  "lockedOosAccessCount": 0,
+  "releaseCount": 0,
+  "demoArm": false,
+  "orderCount": 0,
+  "frozenContractChangeCount": 0,
+  "parity": {
+    "canonicalIdentityMappingPct": 100.0,
+    "signalIdentityParityPct": 100.0,
+    "exitLegParityPct": 100.0,
+    "rankingEvidenceParityPct": 100.0,
+    "pitContextParityPct": 100.0,
+    "capitalAcceptanceParityPct": 100.0,
+    "positionSizeParityPct": 100.0
+  },
+  "realDataEvidenceGaps": {
+    "unassignedEventCount": 466,
+    "rankingFieldUnavailableCount": 417,
+    "crossFoldEventCount": 1
+  },
+  "nextCampaignRequired": true,
+  "resultDrivenRepairInCurrentCampaignAllowed": false
+}
