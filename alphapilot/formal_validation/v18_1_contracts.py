@@ -461,7 +461,6 @@ def write_v18_1_future_locked_oos_metadata(
         identity_path, ledger_path
     )
 
-
 def build_v18_1_formal_run_authorization(
     preregistration: Mapping[str, Any],
     *,
@@ -569,4 +568,3 @@ def verify_v18_1_formal_run_authorization(
         and authorization.get("futureLockedOosAccessCount") == 0
         and authorization.get("blockers") == []
     )
-
