@@ -1,0 +1,44 @@
+{
+  "allowedReads": [
+    "signal_timestamp",
+    "expected_entry_timestamp",
+    "pre_entry_factor_values",
+    "pre_entry_liquidity",
+    "fold_metadata",
+    "ranking_policy"
+  ],
+  "contractHash": "v18_3_signal_evidence_structural_certification_contract_8339c55622d0e7dab371334d2d868d212e53eacf12c9656c74167bef19bac789",
+  "economicResultComputationDisabled": true,
+  "exitReplayDisabled": true,
+  "formalRunClaimBudget": 0,
+  "lockedOosAccessBudget": 0,
+  "productionPathRequired": true,
+  "requiredGates": {
+    "assignedValidationEventCountPositive": true,
+    "economicMetricReadCount": 0,
+    "eventDispositionConservationExact": true,
+    "exitReplayCount": 0,
+    "formalRunClaimCount": 0,
+    "lockedOosAccessCount": 0,
+    "postEntryDataUseCount": 0,
+    "rankingEvidenceParityPct": 100.0,
+    "rankingRecordCoveragePct": 100.0,
+    "rankingStatusCoveragePct": 100.0,
+    "rawEventCountPositive": true
+  },
+  "requiredStages": [
+    "candidate_adapter_load_signals",
+    "formal_event_disposition",
+    "signal_feature_evidence",
+    "frozen_ranking_evidence_materialization",
+    "ranking_evidence_parity"
+  ],
+  "resultMetricWriterDisabled": true,
+  "schemaVersion": "v18_3_signal_evidence_structural_certification_contract_v1",
+  "stopBeforeStages": [
+    "capital_policy",
+    "exit_replay",
+    "pnl_computation",
+    "formal_result_writer"
+  ]
+}
