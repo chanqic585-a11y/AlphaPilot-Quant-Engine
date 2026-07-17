@@ -704,7 +704,11 @@ def _apply_stable_rejections(
     }
     added = 0
     for source in rejected:
-        signal_id = str(source.get("signalId") or _signal_id(source))
+        signal_id = str(
+            source.get("canonicalSignalId")
+            or source.get("signalId")
+            or _signal_id(source)
+        )
         reason = str(
             source.get("reason")
             or source.get("assignmentReason")
@@ -716,7 +720,10 @@ def _apply_stable_rejections(
             {
                 "signalId": signal_id,
                 "instrumentId": str(
-                    source.get("instrumentId") or source.get("symbol") or ""
+                    source.get("instrumentId")
+                    or source.get("exactInstrumentId")
+                    or source.get("symbol")
+                    or ""
                 ),
                 "accepted": False,
                 "reason": reason,

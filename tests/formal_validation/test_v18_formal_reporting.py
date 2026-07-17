@@ -13,8 +13,42 @@ from alphapilot.formal_validation.executable_capital_policy import (
 from alphapilot.formal_validation.formal_input import FormalInputBundle
 from alphapilot.formal_validation.formal_parity import canonicalize_formal_event
 from alphapilot.formal_validation.v18_formal_reporting import (
+    _apply_stable_rejections,
     execute_v18_formal_campaign,
 )
+
+
+def test_stable_rejection_accepts_canonical_signal_id_without_symbol() -> None:
+    replay = {
+        "decisions": [],
+        "rejectionBreakdown": {},
+        "rawSignalCount": 0,
+        "rejectedSignalCount": 0,
+    }
+
+    result = _apply_stable_rejections(
+        replay,
+        [
+            {
+                "canonicalSignalId": "S01::canonical::signal-1",
+                "exactInstrumentId": "BTC-USDT-SWAP",
+                "reason": "reject_ranking_field_unavailable",
+            }
+        ],
+    )
+
+    assert result["decisions"] == [
+        {
+            "signalId": "S01::canonical::signal-1",
+            "instrumentId": "BTC-USDT-SWAP",
+            "accepted": False,
+            "reason": "reject_ranking_field_unavailable",
+            "actualNotional": None,
+            "riskAmount": None,
+        }
+    ]
+    assert result["rawSignalCount"] == 1
+    assert result["rejectedSignalCount"] == 1
 
 @dataclass(frozen=True)
 class _SyntheticAdapter:
