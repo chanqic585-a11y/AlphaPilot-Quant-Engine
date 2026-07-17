@@ -2,7 +2,10 @@ import pandas as pd
 import inspect
 
 import alphapilot.advisory_r_campaign.signals as campaign_signals
-from alphapilot.advisory_r_campaign.signals import replay_candidate
+from alphapilot.advisory_r_campaign.signals import (
+    load_candidate_signals,
+    replay_candidate,
+)
 from alphapilot.exit_policy import exit_policy_from_dict, exit_policy_hash
 
 
@@ -106,3 +109,42 @@ def test_replay_never_uses_unconfirmed_candles() -> None:
 def test_campaign_has_no_second_hand_written_exit_simulator() -> None:
     assert not hasattr(campaign_signals, "_simulate_event")
     assert "replay_exit_policy" in inspect.getsource(campaign_signals._replay_event)
+
+
+def test_structural_signal_loader_never_calls_exit_replay(monkeypatch) -> None:
+    candidate = {
+        "candidateId": "test_candidate",
+        "variantId": "S08",
+        "familyId": "utc_session_transition",
+        "direction": "conditional",
+        "timeframe": "1h",
+        "maximumHold": 4,
+        "exitPolicy": {
+            "version": "advisory_r_exit_policy_v1",
+            "mode": "fixed_r",
+            "maximumHoldBars": 4,
+            "parameters": {"targetR": 1.2},
+            "initialStopMayWiden": False,
+        },
+        "featureDefinition": {
+            "utcEntryHours": [2],
+            "trendWindow": 3,
+            "minimumVolumeRatio": 0.5,
+        },
+        "entryDefinition": {
+            "kind": "utc_session_transition",
+            "directionFromPriorBars": 3,
+        },
+    }
+    monkeypatch.setattr(
+        campaign_signals,
+        "replay_exit_policy",
+        lambda **_: (_ for _ in ()).throw(AssertionError("exit replay called")),
+    )
+
+    signals = load_candidate_signals(candidate, {"BTC-USDT-SWAP": _frame()})
+
+    assert signals
+    assert all(row["entryTimestamp"] > row["signalTimestamp"] for row in signals)
+    assert all(row["structuralOnly"] is True for row in signals)
+    assert all("realizedNetR" not in row for row in signals)

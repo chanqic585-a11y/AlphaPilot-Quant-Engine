@@ -9,7 +9,10 @@ from typing import Any, Mapping, Sequence
 import pandas as pd
 
 from alphapilot.advisory_r_campaign.candidates import build_candidate_inventory
-from alphapilot.advisory_r_campaign.signals import replay_candidate
+from alphapilot.advisory_r_campaign.signals import (
+    load_candidate_signals,
+    replay_candidate,
+)
 from alphapilot.formal_validation.candidate_adapter import (
     CandidateAdapterIdentityError,
     resolve_candidate_signal_identity,
@@ -85,6 +88,24 @@ class S01CandidateAdapter:
             frames,
             round_trip_cost_rate=round_trip_cost_rate,
         ):
+            identified = dict(event)
+            identified["signalId"] = resolve_candidate_signal_identity(
+                adapter=self,
+                event=identified,
+            )
+            events.append(identified)
+        return events
+
+    def load_signals(
+        self,
+        *,
+        candidate: Mapping[str, Any],
+        frames: Mapping[str, pd.DataFrame],
+    ) -> Sequence[Mapping[str, Any]]:
+        """Expose production S01 signals without exit or economic replay."""
+
+        events: list[dict[str, Any]] = []
+        for event in load_candidate_signals(candidate, frames):
             identified = dict(event)
             identified["signalId"] = resolve_candidate_signal_identity(
                 adapter=self,

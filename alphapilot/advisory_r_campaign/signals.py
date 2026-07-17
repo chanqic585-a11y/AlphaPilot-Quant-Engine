@@ -327,6 +327,85 @@ def _signal_series(
     return direction.fillna(0).astype(int)
 
 
+def load_candidate_signals(
+    candidate: Mapping[str, Any],
+    frames: Mapping[str, pd.DataFrame],
+) -> list[dict[str, Any]]:
+    """Load production signal events without replaying exits or economic results."""
+
+    ordered_frames = {symbol: _ordered(frame) for symbol, frame in frames.items()}
+    if not ordered_frames:
+        return []
+    variant = str(candidate["variantId"])
+    if variant in {"S04", "S05", "S06", "S09"}:
+        raise ImplementationConformanceError(
+            f"{variant} requires a dedicated structural signal loader"
+        )
+    btc_frame = ordered_frames.get("BTC-USDT-SWAP")
+    if btc_frame is None:
+        btc_frame = next(iter(ordered_frames.values()))
+    btc_close = btc_frame.set_index("date")["close"]
+    market_close = _market_close(ordered_frames)
+    beta_ranks = (
+        _cross_sectional_beta_ranks(
+            ordered_frames,
+            btc_close=btc_close,
+            window=int(candidate["featureDefinition"]["betaWindow"]),
+        )
+        if variant == "S02"
+        else {}
+    )
+    maximum_hold = int(
+        dict(candidate.get("exitPolicy") or {}).get("maximumHoldBars")
+        or candidate.get("maximumHold")
+        or 0
+    )
+    timeframe = str(candidate.get("timeframe") or "").strip()
+    if maximum_hold <= 0 or not timeframe:
+        raise ImplementationConformanceError("structural signal horizon is incomplete")
+    interval = pd.Timedelta(timeframe)
+    events: list[dict[str, Any]] = []
+    for symbol, frame in sorted(ordered_frames.items()):
+        if len(frame) < 60:
+            continue
+        signal = _signal_series(
+            candidate,
+            frame,
+            btc_close=btc_close,
+            market_close=market_close,
+            beta_rank=beta_ranks.get(symbol),
+        )
+        for signal_index in np.flatnonzero(signal.to_numpy()):
+            if signal_index >= len(frame) - 1:
+                continue
+            side = int(signal.iloc[signal_index])
+            signal_timestamp = pd.Timestamp(frame.iloc[signal_index]["date"])
+            entry_timestamp = pd.Timestamp(frame.iloc[signal_index + 1]["date"])
+            events.append(
+                {
+                    "candidateId": candidate["candidateId"],
+                    "familyId": candidate["familyId"],
+                    "variantId": variant,
+                    "symbol": symbol,
+                    "instrumentId": symbol,
+                    "signalIndex": int(signal_index),
+                    "entryIndex": int(signal_index + 1),
+                    "signalTimestamp": signal_timestamp.isoformat(),
+                    "entryTimestamp": entry_timestamp.isoformat(),
+                    "expectedEntryTimestamp": entry_timestamp.isoformat(),
+                    "exitTimestamp": (
+                        entry_timestamp + maximum_hold * interval
+                    ).isoformat(),
+                    "side": "long" if side > 0 else "short",
+                    "direction": "long" if side > 0 else "short",
+                    "structuralOnly": True,
+                    "economicResultComputationDisabled": True,
+                    "exitReplayDisabled": True,
+                }
+            )
+    return events
+
+
 def _structure_exit_mask(
     candidate: Mapping[str, Any],
     frame: pd.DataFrame,

@@ -126,7 +126,7 @@ def materialize_ranking_evidence_records(
     feature_rows: Sequence[Mapping[str, Any]],
     *,
     ranking_policy_hash: str,
-    capacity_semantics_hash: str,
+    capacity_semantics_hash: str | Mapping[str, str],
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Create one immutable ranking record for every assigned formal event."""
 
@@ -184,14 +184,20 @@ def materialize_ranking_evidence_records(
             if post_entry:
                 ranking_status = "invalid_timestamp"
             unavailable_reason = ";".join(unavailable_parts) or None
+        instrument_id = str(
+            assigned.get("instrumentId") or feature.get("instrumentId") or ""
+        )
+        bound_capacity_hash = (
+            str(capacity_semantics_hash.get(instrument_id) or "")
+            if isinstance(capacity_semantics_hash, Mapping)
+            else str(capacity_semantics_hash)
+        )
         record = {
             "canonicalSignalId": canonical_signal_id,
             "candidateId": str(
                 assigned.get("candidateId") or feature.get("candidateId") or ""
             ),
-            "instrumentId": str(
-                assigned.get("instrumentId") or feature.get("instrumentId") or ""
-            ),
+            "instrumentId": instrument_id,
             "signalTimestamp": assigned.get("signalTimestamp"),
             "expectedEntryTimestamp": expected_entry,
             "foldId": assigned.get("foldId"),
@@ -205,7 +211,7 @@ def materialize_ranking_evidence_records(
             "rankingUnavailableReason": unavailable_reason,
             "availableAt": available_at,
             "sourceBarHashes": list(feature.get("sourceBarHashes") or []),
-            "capacitySemanticsHash": str(capacity_semantics_hash),
+            "capacitySemanticsHash": bound_capacity_hash,
             "rankingPolicyHash": str(ranking_policy_hash),
         }
         record["rankingEvidenceHash"] = stable_hash(

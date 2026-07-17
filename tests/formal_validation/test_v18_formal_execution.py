@@ -74,6 +74,7 @@ def test_signal_feature_evidence_reconstructs_frozen_s01_ranking_fields() -> Non
         events,
         {"BTC-USDT-SWAP": btc, "ETH-USDT-SWAP": eth},
         candidate,
+        include_source_bar_hashes=True,
     )
 
     assert audit["missingRankingFieldCount"] == 0
@@ -81,6 +82,8 @@ def test_signal_feature_evidence_reconstructs_frozen_s01_ranking_fields() -> Non
     assert enriched[0]["recoverySizeZ"] > 0.0
     assert enriched[0]["liquidity30d"] > 0.0
     assert enriched[0]["lookaheadReadCount"] == 0
+    assert len(enriched[0]["sourceBarHashes"]) == 3
+    assert all(value.startswith("sha256:") for value in enriched[0]["sourceBarHashes"])
 
 
 def _return_rows(scale: float = 1.0) -> list[dict[str, object]]:

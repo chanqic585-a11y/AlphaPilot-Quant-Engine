@@ -10,6 +10,8 @@ from typing import Any, Mapping, Sequence
 import numpy as np
 import pandas as pd
 
+from alphapilot.evolution.registry.hashing import stable_hash
+
 from .correlation_cluster_policy import build_correlation_clusters_v1
 from .portfolio_beta_policy import estimate_portfolio_betas_v1
 from .portfolio_event_engine import process_portfolio_timestamp_v2
@@ -134,6 +136,8 @@ def build_signal_feature_evidence(
     events: Sequence[Mapping[str, Any]],
     frames: Mapping[str, pd.DataFrame],
     candidate: Mapping[str, Any],
+    *,
+    include_source_bar_hashes: bool = False,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Rebuild exactly the frozen S01 ranking fields at each signal timestamp."""
 
@@ -182,6 +186,37 @@ def build_signal_feature_evidence(
             "recoverySizeZ": recovery,
             "liquidity30d": liquidity,
         }
+        source_bar_hashes: list[str] = []
+        if include_source_bar_hashes:
+            target = _utc_timestamp(row.get("signalTimestamp"))
+            lookback = max(residual_window + recovery_bars + 2, 2)
+            instrument_frame = ordered.get(symbol, pd.DataFrame())
+            instrument_rows = (
+                instrument_frame[instrument_frame["date"] <= target]
+                .tail(lookback)[["date", "close", "volume"]]
+                .to_dict("records")
+                if not instrument_frame.empty
+                else []
+            )
+            market_rows = [
+                {
+                    "instrumentId": instrument_id,
+                    "rows": frame[frame["date"] <= target]
+                    .tail(lookback)[["date", "close"]]
+                    .to_dict("records"),
+                }
+                for instrument_id, frame in sorted(ordered.items())
+            ]
+            liquidity_rows = [
+                item
+                for item in daily_liquidity.get(symbol, [])
+                if _utc_timestamp(item["timestamp"]) <= target
+            ][-30:]
+            source_bar_hashes = [
+                "sha256:" + stable_hash(instrument_rows),
+                "sha256:" + stable_hash(market_rows),
+                "sha256:" + stable_hash(liquidity_rows),
+            ]
         for field, value in values.items():
             if value is None or not math.isfinite(float(value)):
                 missing.append(
@@ -195,6 +230,7 @@ def build_signal_feature_evidence(
                 "sourceTimestamp": _utc_iso(row.get("signalTimestamp")),
                 "availableAt": _utc_iso(row.get("signalTimestamp")),
                 "dailyLiquidity": daily_liquidity.get(symbol, []),
+                "sourceBarHashes": source_bar_hashes,
                 "lookaheadReadCount": 0,
             }
         )

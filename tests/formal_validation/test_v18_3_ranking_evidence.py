@@ -103,3 +103,23 @@ def test_record_parity_compares_status_provenance_and_rejection_reason() -> None
     mismatch = audit_ranking_evidence_record_parity(core, adapter)
     assert mismatch["statusCoveragePct"] < 100.0
     assert mismatch["fieldParityPct"] < 100.0
+
+
+def test_capacity_semantics_hash_is_bound_per_instrument() -> None:
+    second = _assigned("signal-2")
+    second["instrumentId"] = "ETH-USDT-SWAP"
+    second_feature = _feature("signal-2")
+    rows, _ = materialize_ranking_evidence_records(
+        [_assigned(), second],
+        [_feature(), second_feature],
+        ranking_policy_hash="rank-hash",
+        capacity_semantics_hash={
+            "BTC-USDT-SWAP": "capacity-btc",
+            "ETH-USDT-SWAP": "capacity-eth",
+        },
+    )
+
+    assert [row["capacitySemanticsHash"] for row in rows] == [
+        "capacity-btc",
+        "capacity-eth",
+    ]
