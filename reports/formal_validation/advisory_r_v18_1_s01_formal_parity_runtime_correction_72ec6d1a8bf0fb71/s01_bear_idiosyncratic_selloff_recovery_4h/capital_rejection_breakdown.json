@@ -1,0 +1,7 @@
+{
+  "rejectedSignalCount": 417,
+  "rejectionBreakdown": {
+    "missing_ranking_field": 417
+  },
+  "schemaVersion": "s01_v18_capital_rejection_breakdown_v1"
+}

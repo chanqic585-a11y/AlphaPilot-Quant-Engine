@@ -1,16 +1,16 @@
 {
   "benjaminiHochbergPanelCount": 0,
   "demoArm": false,
-  "formalResultArtifactCount": 0,
-  "formalResultRunCount": 0,
+  "formalResultArtifactCount": 1,
+  "formalResultRunCount": 1,
   "lockedOosAccessCount": 0,
   "orderCount": 0,
   "pboPanelCount": 0,
   "releaseCount": 0,
-  "resultExposed": false,
-  "resultReadCount": 0,
-  "resultReadTrialCount": 0,
+  "resultExposed": true,
+  "resultReadCount": 1,
+  "resultReadTrialCount": 1,
   "schemaVersion": "s01_v18_1_result_exposure_ledger_v1",
   "spaPanelCount": 0,
-  "statisticalCandidateCount": 0
+  "statisticalCandidateCount": 1
 }

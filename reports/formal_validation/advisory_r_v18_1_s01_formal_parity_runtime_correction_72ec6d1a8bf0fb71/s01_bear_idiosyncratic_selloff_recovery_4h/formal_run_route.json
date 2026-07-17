@@ -1,0 +1,18 @@
+{
+  "campaignId": "advisory_r_v18_1_s01_formal_parity_runtime_correction_72ec6d1a8bf0fb71",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "demoArm": false,
+  "formalInputReadCount": 1,
+  "formalResultArtifactCount": 1,
+  "formalResultRunCount": 1,
+  "formalRunAttemptCount": 1,
+  "formalRunClaimCount": 1,
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultManifestHash": "sha256:8068414f302fea0cc21d1b6907487ec374aeedbd9c10f8b16358d09dda4a05a5",
+  "resultReadCount": 1,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "v18_formal_run_route_v2"
+}

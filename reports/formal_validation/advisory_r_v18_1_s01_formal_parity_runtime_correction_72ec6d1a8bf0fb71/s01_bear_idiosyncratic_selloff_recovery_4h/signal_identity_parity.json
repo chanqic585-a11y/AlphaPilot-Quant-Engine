@@ -1,0 +1,12 @@
+{
+  "blockers": [
+    "numeric_mismatch",
+    "freqtrade_runtime_not_loaded"
+  ],
+  "implementationEventCount": 884,
+  "passed": false,
+  "referenceEventCount": 884,
+  "schemaVersion": "s01_v18_signal_identity_parity_v1",
+  "signalIdentityParityPct": 0.0,
+  "status": "failed"
+}

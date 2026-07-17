@@ -1,11 +1,12 @@
 {
-  "formalResultRunCount": 0,
-  "formalRunAttemptCount": 0,
-  "formalRunClaimCount": 0,
-  "operationalAttemptCount": 0,
-  "resultExposed": false,
+  "failureReason": null,
+  "formalResultRunCount": 1,
+  "formalRunAttemptCount": 1,
+  "formalRunClaimCount": 1,
+  "operationalAttemptCount": 1,
+  "resultExposed": true,
   "schemaVersion": "s01_v18_1_operational_attempt_ledger_v1",
-  "selectionInformationGained": false,
-  "trialClassification": "not_started",
-  "validComparableTrial": false
+  "selectionInformationGained": true,
+  "trialClassification": "formal_result_generated",
+  "validComparableTrial": true
 }
