@@ -1,0 +1,67 @@
+{
+  "campaignId": "advisory_r_v17",
+  "failureLayer": "implementation_contract",
+  "issues": [
+    {
+      "affectsResultComputation": true,
+      "affectsResultValidity": true,
+      "affectsStrategyLogic": false,
+      "code": "capacity_model_not_frozen",
+      "description": "Capacity model and executable thresholds are not frozen.",
+      "issueType": "frozen_execution_contract_gap",
+      "recommendedAction": "Freeze the capacity inputs, thresholds, missing-data policy, and derivation method in a new campaign.",
+      "requiresNewCampaign": true,
+      "requiresPatch": false,
+      "requiresResultRerun": false,
+      "severity": "blocking",
+      "status": "requires_new_campaign"
+    },
+    {
+      "affectsResultComputation": true,
+      "affectsResultValidity": true,
+      "affectsStrategyLogic": false,
+      "code": "correlation_cluster_policy_not_frozen",
+      "description": "Correlation-cluster assignment is not frozen.",
+      "issueType": "frozen_execution_contract_gap",
+      "recommendedAction": "Freeze the return window, correlation method, threshold, clustering algorithm, and fallback policy in a new campaign.",
+      "requiresNewCampaign": true,
+      "requiresPatch": false,
+      "requiresResultRerun": false,
+      "severity": "blocking",
+      "status": "requires_new_campaign"
+    },
+    {
+      "affectsResultComputation": true,
+      "affectsResultValidity": true,
+      "affectsStrategyLogic": false,
+      "code": "portfolio_beta_policy_not_frozen",
+      "description": "Portfolio beta derivation is not frozen.",
+      "issueType": "frozen_execution_contract_gap",
+      "recommendedAction": "Freeze the benchmark, lookback, estimator, alignment, and missing-data policy in a new campaign.",
+      "requiresNewCampaign": true,
+      "requiresPatch": false,
+      "requiresResultRerun": false,
+      "severity": "blocking",
+      "status": "requires_new_campaign"
+    },
+    {
+      "affectsResultComputation": true,
+      "affectsResultValidity": true,
+      "affectsStrategyLogic": false,
+      "code": "ranking_field_definitions_not_frozen",
+      "description": "The ranking order names fields whose executable definitions are not frozen.",
+      "issueType": "frozen_execution_contract_gap",
+      "recommendedAction": "Freeze each ranking field derivation and null/tie policy in a new campaign.",
+      "requiresNewCampaign": true,
+      "requiresPatch": false,
+      "requiresResultRerun": false,
+      "severity": "blocking",
+      "status": "requires_new_campaign"
+    }
+  ],
+  "performanceResultAvailable": false,
+  "recommendedAction": "Preserve V17 unchanged and create a new preregistered campaign with complete executable capital-policy definitions.",
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_formal_failure_attribution_v1",
+  "strategyEconomicFailureClaimed": false
+}

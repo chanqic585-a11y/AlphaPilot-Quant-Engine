@@ -1,0 +1,42 @@
+{
+  "artifacts": [
+    {
+      "path": "campaign_summary.json",
+      "sha256": "f9c832b66d04dbb9997a6a120612e8b196be2ef22b9712b2c711a4283321c4f2",
+      "sizeBytes": 658
+    },
+    {
+      "path": "campaign_summary.md",
+      "sha256": "244cc3235bd8a3f7fe6f670598f9cfb838d2c55bae3f9e1cb55afbdc8e6fe715",
+      "sizeBytes": 548
+    },
+    {
+      "path": "failure_attribution.json",
+      "sha256": "c35ea68f836d68d3d1d7f11c89ddbc441b7ed26d5a1d39e780ff717eeb3fa817",
+      "sizeBytes": 2935
+    },
+    {
+      "path": "formal_execution_contract_audit.json",
+      "sha256": "f93c66c6267fd92063f425aaf549895d0c38e0555e151efe9abba68cc03fc791",
+      "sizeBytes": 2745
+    },
+    {
+      "path": "gate_matrix.json",
+      "sha256": "2741a61e71edae42e2b05de62e2f737eb6875ae3f14dff7169b03df0cc2ef3fc",
+      "sizeBytes": 1077
+    },
+    {
+      "path": "route_decision.json",
+      "sha256": "f6f7ac3f7698b534df97cd85b83712e222cd59d311cf5269a71b972359994966",
+      "sizeBytes": 891
+    }
+  ],
+  "campaignId": "advisory_r_v17",
+  "demoArm": false,
+  "formalPerformanceArtifactCount": 0,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_formal_terminal_artifact_manifest_v1"
+}
