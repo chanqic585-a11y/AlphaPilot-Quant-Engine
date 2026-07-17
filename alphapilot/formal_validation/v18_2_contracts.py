@@ -83,8 +83,7 @@ def _campaign_id(
             "correctionReason": CORRECTION_REASON,
             "correctionImplementationCommit": implementation_commit,
             "formalEvidenceChainCertificationHash": certification_hash,
-        },
-        prefix="s01_v18_2_formal_evidence_chain_campaign",
+        }
     )
     return f"{V18_2_CAMPAIGN_PREFIX}{digest[:16]}"
 

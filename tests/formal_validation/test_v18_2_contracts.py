@@ -52,6 +52,9 @@ def test_v18_2_preregistration_changes_only_evidence_chain_identity() -> None:
     assert payload["campaignId"].startswith(
         "advisory_r_v18_2_s01_formal_evidence_chain_correction_"
     )
+    campaign_suffix = str(payload["campaignId"]).rsplit("_", 1)[-1]
+    assert len(campaign_suffix) == 16
+    assert set(campaign_suffix) <= set("0123456789abcdef")
     assert payload["correctionOfCampaignId"] == V18_1_CAMPAIGN
     assert payload["correctionReason"] == (
         "formal_runtime_identity_fold_ranking_pit_capacity_funding_evidence_incomplete"
