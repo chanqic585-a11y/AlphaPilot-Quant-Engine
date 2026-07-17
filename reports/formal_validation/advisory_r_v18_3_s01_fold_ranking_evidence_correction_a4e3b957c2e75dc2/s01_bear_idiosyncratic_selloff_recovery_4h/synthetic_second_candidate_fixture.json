@@ -1,0 +1,15 @@
+{
+  "adapterId": "synthetic_second_candidate_adapter",
+  "adapterVersion": "1",
+  "bindingPassed": true,
+  "candidateId": "synthetic_second_candidate_fixture",
+  "fixtureHash": "v18_3_second_candidate_fixture_64e1e0f721bae71030f198d3ea810c1286578bf4e32ff7d949fa12b93be65cbe",
+  "formalResultRunCount": 0,
+  "formalRunClaimCount": 0,
+  "lockedOosAccessCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v18_3_synthetic_second_candidate_fixture_v1",
+  "signalIdentityHash": "synthetic_second_candidate_signal_13c70bdbbe5b7c5187fb3c4f2c2c3c6844de02e465e39f3a4054f7739939101f",
+  "signalIdentityResolved": true,
+  "status": "passed"
+}
