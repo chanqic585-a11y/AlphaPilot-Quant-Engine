@@ -1,0 +1,10 @@
+{
+  "candidateDateMaximum": "2026-05-14T00:00:00Z",
+  "candidateDateMinimum": "2021-01-22T00:00:00Z",
+  "candidateRowCount": 1939,
+  "comparableCandidatePanelRowCount": 0,
+  "comparableCandidatePanelStatus": "unavailable_predeclared",
+  "lookaheadReadCount": 0,
+  "retroactiveConstructionAllowed": false,
+  "schemaVersion": "s01_v18_return_panel_audit_v1"
+}

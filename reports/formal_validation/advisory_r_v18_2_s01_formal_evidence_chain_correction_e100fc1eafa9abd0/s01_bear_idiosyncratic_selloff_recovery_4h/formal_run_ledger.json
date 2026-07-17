@@ -1,0 +1,19 @@
+{
+  "attemptCount": 1,
+  "checkpoint": {
+    "checkpointId": "before_formal_input_read",
+    "deterministic": true
+  },
+  "claimedAt": "2026-07-17T20:43:34.869845Z",
+  "completedAt": "2026-07-17T20:43:55.485708Z",
+  "identity": {
+    "codeCommit": "6d88ad369f266a2f0c4c176273e3fc5e3fbfc957",
+    "inputSnapshotHash": "minimal_shared_snapshot_785e47b180c17327dcb35e37d9f12c22e86eae8150e0adf5e1b44fb298f89e3b",
+    "preregistrationHash": "s01_v18_2_formal_evidence_chain_correction_preregistration_c3898c363c8b4eba7a21e4b1cb96ed9b84ae9030cc520fd32e418a3093a0c5db"
+  },
+  "resultManifestHash": "sha256:a9b499063547c5a3db131c749b5db404ffed2c5160eb39c8c9aa03a75809129b",
+  "resumed": false,
+  "runId": "s01_bear_idiosyncratic_selloff_recovery_4h-v18-2-formal-001",
+  "schemaVersion": "s01_v18_atomic_run_ledger_v1",
+  "state": "completed"
+}

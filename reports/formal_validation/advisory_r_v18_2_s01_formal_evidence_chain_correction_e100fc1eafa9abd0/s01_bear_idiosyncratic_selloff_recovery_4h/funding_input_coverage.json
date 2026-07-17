@@ -1,0 +1,12 @@
+{
+  "crossExchangeSubstitution": false,
+  "formalEvidenceAvailable": false,
+  "instrumentCount": 20,
+  "schemaVersion": "funding_input_coverage_v1",
+  "statusCounts": {
+    "actual": 0,
+    "stress": 0,
+    "unavailable": 20
+  },
+  "zeroFillUsed": false
+}

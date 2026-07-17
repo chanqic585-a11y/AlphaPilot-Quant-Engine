@@ -1,0 +1,18 @@
+{
+  "contractHash": "canonical_event_identity_contract_f35cf995246b179e0620625c67ecceb692fe0466364859af4b4aaf1d0c858bc0",
+  "fields": [
+    "candidateId",
+    "signalId",
+    "exactInstrumentId",
+    "direction",
+    "timeframe",
+    "signalTimestampUtc",
+    "expectedEntryTimestampUtc",
+    "strategyDefinitionHash",
+    "exitPolicyHash"
+  ],
+  "identityMutationAllowed": false,
+  "schemaVersion": "canonical_event_identity_contract_v1",
+  "signalIdAuthority": "CandidateAdapter.signal_identity",
+  "timestampTimezone": "UTC"
+}
