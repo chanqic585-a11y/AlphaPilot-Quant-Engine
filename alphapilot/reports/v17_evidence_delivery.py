@@ -453,7 +453,13 @@ def _integrity(output: Path, zip_entries: Mapping[str, Sequence[Mapping[str, Any
         "sourceToZipHashMismatches": hash_mismatches,
         "crlfFiles": crlf_files,
         "requiredLogicalRoleMissingSilentlyCount": 0,
-        "passed": not json_errors and not csv_errors and not any(zip_crc.values()) and not hash_mismatches,
+        "passed": (
+            not json_errors
+            and not csv_errors
+            and not any(zip_crc.values())
+            and not hash_mismatches
+            and not crlf_files
+        ),
     }
 
 

@@ -73,3 +73,20 @@ def test_delivery_zips_pass_crc_without_fabricated_event_parquet(tmp_path: Path)
 
     scan = json.loads((output / "sensitive_information_scan.json").read_text("utf-8"))
     assert scan["sensitiveHitCount"] == 0
+
+
+def test_delivery_text_artifacts_use_canonical_lf_line_endings(tmp_path: Path) -> None:
+    output = _build(tmp_path)
+
+    crlf_files = [
+        path.relative_to(output).as_posix()
+        for path in output.rglob("*")
+        if path.is_file()
+        and path.suffix.lower() not in {".zip", ".parquet", ".feather"}
+        and b"\r\n" in path.read_bytes()
+    ]
+    integrity = json.loads((output / "integrity_verification.json").read_text("utf-8"))
+
+    assert crlf_files == []
+    assert integrity["crlfFiles"] == []
+    assert integrity["passed"] is True
