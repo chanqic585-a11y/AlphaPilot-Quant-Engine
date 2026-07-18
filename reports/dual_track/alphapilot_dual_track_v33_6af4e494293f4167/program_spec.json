@@ -1,0 +1,16 @@
+{
+  "candidateGenerationEnabled": false,
+  "continuationOf": "automatic_strategy_renewal_v28_4e6ab55a5e949716",
+  "demoEnabled": false,
+  "formalResultRunsEnabled": false,
+  "implementationCommit": "f34aa89",
+  "implementationContractHash": "7c03dc5267cb9d616e425f271e5f8cec78a4bbfd77cb1e239e781ae221712f32",
+  "liveEnabled": false,
+  "predecessorBudgetLedgerHash": "predecessor_budget_evidence_0560711df01af0b635cc396e8e180339cdbf25a1cc03c0c6c9ff6fbc3fe56ae4",
+  "predecessorFinalRoute": "blocked_formal_data",
+  "programId": "alphapilot_dual_track_v33_6af4e494293f4167",
+  "programSpecHash": "dual_track_program_spec_a3c1895453e75f1a99a12e0cf4de68f490eb8160f53f5bca55af204696dcec54",
+  "schemaVersion": "alphapilot_dual_track_program_spec_v1",
+  "tradeApiEnabled": false,
+  "withdrawEnabled": false
+}

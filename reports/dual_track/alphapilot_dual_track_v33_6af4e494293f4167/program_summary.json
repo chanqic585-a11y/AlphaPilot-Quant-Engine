@@ -1,0 +1,38 @@
+{
+  "approvalCount": 0,
+  "budget": {
+    "budgetReset": false,
+    "campaignsUsed": 1,
+    "fullBacktestsRemaining": 96,
+    "fullBacktestsUsed": 0,
+    "maximumAdditionalFullBacktests": 96,
+    "predecessorProgramId": "automatic_strategy_renewal_v28_4e6ab55a5e949716",
+    "schemaVersion": "dual_track_inherited_budget_v1"
+  },
+  "candidateCount": 0,
+  "continuationOf": "automatic_strategy_renewal_v28_4e6ab55a5e949716",
+  "dataPilotResultHash": "v34a_data_pilot_result_cfb4589fe6dbb62a5d7f4ff87e84978c2870f0a7edb23cbf4ffa1d36c3da7d5d",
+  "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+  "demoArm": false,
+  "formalRunCount": 0,
+  "generatedAt": "2026-07-18T18:12:47+00:00",
+  "historicalMutationCount": 0,
+  "lockedOosReadCount": 0,
+  "orderCount": 0,
+  "predecessorBudgetLedgerHash": "predecessor_budget_evidence_0560711df01af0b635cc396e8e180339cdbf25a1cc03c0c6c9ff6fbc3fe56ae4",
+  "predecessorFinalRoute": "blocked_formal_data",
+  "programId": "alphapilot_dual_track_v33_6af4e494293f4167",
+  "qualification": {
+    "closeoutIntegrityPassed": true,
+    "demoQualified": false,
+    "liveQualified": false,
+    "programObjectivePassed": false,
+    "schemaVersion": "dual_track_qualification_status_v1",
+    "strategyQualified": false
+  },
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "alphapilot_dual_track_summary_v1",
+  "summaryHash": "dual_track_summary_05b32e86927c21d845f6054d940561f564b604cdc57a6857403defa29a090005",
+  "topLevelState": "data_pilot_completed"
+}
