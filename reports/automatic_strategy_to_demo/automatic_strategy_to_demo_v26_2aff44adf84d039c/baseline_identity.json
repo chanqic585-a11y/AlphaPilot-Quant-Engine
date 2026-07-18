@@ -1,0 +1,10 @@
+{
+  "baselineIdentityHash": "master_baseline_identity_35de5ec15556d8a80446784c64c1a5591b0beb53917c7baa9ea6b549703e8667",
+  "consoleBaselineCommit": "6ea1f50e56e8ac4d6991b04d3f7717d3d33825c1",
+  "docsBaselineCommit": "33366769ab0bbd396520b71883c7f9225ebb39c4",
+  "promptHash": "9622FA42060D9C19303924098D75A5088B336ADA955D43F6E64A28518B776AFE",
+  "quantBaselineCommit": "2fb5a36ee7284808ede07166c6d1c9747cbb6078",
+  "schemaVersion": "master_baseline_identity_v1",
+  "sourceCandidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "sourceProgramId": "automatic_strategy_demo_f57c443abeaf06c0"
+}

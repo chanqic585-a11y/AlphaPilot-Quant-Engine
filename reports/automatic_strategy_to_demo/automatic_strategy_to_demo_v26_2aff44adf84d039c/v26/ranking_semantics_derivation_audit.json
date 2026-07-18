@@ -1,0 +1,43 @@
+{
+  "auditHash": "ranking_semantics_derivation_audit_c6e15950989db7133cd8bc812fcdcbd4d18fd371c24add0c767c5dd21a258864",
+  "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "economicReadCount": 0,
+  "exitResultReadCount": 0,
+  "familyId": "trend_failure_reversal",
+  "fieldsDefinedByFrozenAdapters": [],
+  "fieldsDefinedByFrozenCandidate": [],
+  "formalAttemptCount": 0,
+  "formalClaimCount": 0,
+  "formalResultCount": 0,
+  "formalResultReadCount": 0,
+  "formulaSearchCount": 0,
+  "frozenEntryEvidence": [
+    "ema_fast_span_20",
+    "ema_slow_span_80",
+    "prior_trend_relation",
+    "closed_bar_ema_fast_reversal",
+    "next_bar_open_entry"
+  ],
+  "frozenEntrySetupId": "trend_failure_reversal",
+  "identityConsistent": true,
+  "lockedOosReadCount": 0,
+  "missingFrozenDefinitions": [
+    "residual_source_series",
+    "residual_lookback",
+    "recovery_source_series",
+    "recovery_lookback",
+    "normalization_formula"
+  ],
+  "multiplePlausibleDefinitionsExist": true,
+  "newHypothesisRequired": true,
+  "prohibitedOperationsObserved": [],
+  "requestedRankingFields": [
+    "eventExtremeResidualZ",
+    "recoverySizeZ"
+  ],
+  "s01DefaultApplied": false,
+  "schemaVersion": "ranking_semantics_derivation_audit_v1",
+  "sourceCommit": "f448447991a21efb69281363701c86b8759d8d0f",
+  "statisticalResultReadCount": 0,
+  "status": "not_derivable_without_new_hypothesis"
+}

@@ -1,0 +1,72 @@
+{
+  "artifactCount": 13,
+  "artifacts": [
+    {
+      "path": "baseline_identity.json",
+      "sha256": "fcebeea00e8278079eaa34d05f1e35161aa301f2ace57692a686f2524016bde2",
+      "sizeBytes": 594
+    },
+    {
+      "path": "candidate_ranking_registry.json",
+      "sha256": "4eb1e14b77c2c3db3c2434ecbcdb80e94ea0930ec98a641684f5405ba2a05a55",
+      "sizeBytes": 231
+    },
+    {
+      "path": "current_candidate_resolution.json",
+      "sha256": "86d1da7c41e3578b21c06a6fc8e4f77d81282c3867d2493d9f37b38bf61e10ac",
+      "sizeBytes": 807
+    },
+    {
+      "path": "program_budget.json",
+      "sha256": "ef30b3045ff634ec14a3ffa3da55262e594c1f4156d8af8c35d9168271bb1376",
+      "sizeBytes": 326
+    },
+    {
+      "path": "program_budget_ledger.jsonl",
+      "sha256": "59b975de1150c15fa90f015b7eb45610c54deb3c0d0325f93f1dd15165be84ff",
+      "sizeBytes": 368
+    },
+    {
+      "path": "program_ledger.jsonl",
+      "sha256": "2b5808077b6ee3a3a2704ff96bbdc40118e4b385ff32e06a9a81bce892b20fab",
+      "sizeBytes": 476
+    },
+    {
+      "path": "program_spec.json",
+      "sha256": "8c0282c98c877eb9f887000b5462d6646487783a43eb21c47a4bccc0493b3b79",
+      "sizeBytes": 1118
+    },
+    {
+      "path": "program_state.json",
+      "sha256": "07b084696eb2f577489a221ad1475e4d4a3dfa605264500eb33efe7ee27bec90",
+      "sizeBytes": 488
+    },
+    {
+      "path": "ranking_semantics_derivation_audit.json",
+      "sha256": "04afd5647c56445ec0142d55206dfdb263874aff0b69174f9d1d1ae443a87297",
+      "sizeBytes": 1379
+    },
+    {
+      "path": "ranking_semantics_derivation_audit.md",
+      "sha256": "41c219f93090d476a3bd2768d560aa0b629c5f0ee747236d373fcc82dce780da",
+      "sizeBytes": 490
+    },
+    {
+      "path": "v25_ranking_semantics_clarification_sidecar.json",
+      "sha256": "e3d8bdfa3589444756f068918829eb0e7e85aa6d2d84d394ddbd34940d95c416",
+      "sizeBytes": 928
+    },
+    {
+      "path": "v26/ranking_semantics_derivation_audit.json",
+      "sha256": "04afd5647c56445ec0142d55206dfdb263874aff0b69174f9d1d1ae443a87297",
+      "sizeBytes": 1379
+    },
+    {
+      "path": "v26/v25_ranking_semantics_clarification_sidecar.json",
+      "sha256": "e3d8bdfa3589444756f068918829eb0e7e85aa6d2d84d394ddbd34940d95c416",
+      "sizeBytes": 928
+    }
+  ],
+  "manifestHash": "automatic_strategy_to_demo_manifest_ad0f61876a3b48de8bee31d393940f7bbafe53013ce1028f195d4599b6c00993",
+  "schemaVersion": "automatic_strategy_to_demo_artifact_manifest_v1"
+}
