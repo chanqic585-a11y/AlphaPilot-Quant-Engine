@@ -11,11 +11,12 @@ from alphapilot.research_factory.program_v19 import run_v19_data_capability
 from alphapilot.research_factory.program_v20 import run_v20_candidate_generation
 from alphapilot.research_factory.program_v21 import run_v21_prefilter_and_freeze
 from alphapilot.research_factory.program_v22 import run_v22_formal_validation
+from alphapilot.research_factory.program_v23 import run_v23_release_generation
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--stage", choices=("v19", "v20", "v21", "v22"), required=True)
+    parser.add_argument("--stage", choices=("v19", "v20", "v21", "v22", "v23"), required=True)
     parser.add_argument("--reports-root", type=Path, default=Path("reports"))
     parser.add_argument("--research-root", type=Path, default=Path("research"))
     parser.add_argument("--program-id", required=True)
@@ -108,6 +109,12 @@ def main() -> int:
             catalog_path=args.catalog,
             repo_root=args.repo_root,
             runtime_data_root=args.runtime_data_root,
+        )
+    elif args.stage == "v23":
+        result = run_v23_release_generation(
+            reports_root=args.reports_root,
+            program_id=args.program_id,
+            generated_at=args.generated_at,
         )
     else:
         raise ValueError(f"unsupported stage: {args.stage}")
