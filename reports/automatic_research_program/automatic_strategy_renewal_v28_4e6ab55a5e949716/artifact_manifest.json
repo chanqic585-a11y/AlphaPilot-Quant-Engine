@@ -1,0 +1,67 @@
+{
+  "artifactCount": 12,
+  "artifacts": [
+    {
+      "path": "benchmark_comparability_policy.json",
+      "sha256": "80c4787a91f8b5c08adc2949c7b5b88b82af5614d676ef26d0cbf7c91a4b462c",
+      "sizeBytes": 171
+    },
+    {
+      "path": "campaigns/v28-causal-data-readiness-audit/campaign_summary.json",
+      "sha256": "de2d3b212823c4c3330d1175f0f8843dbf5dc78ce3ff8ab872daddd86d920f49",
+      "sizeBytes": 415
+    },
+    {
+      "path": "campaigns/v28-causal-data-readiness-audit/campaign_summary.md",
+      "sha256": "fc3c311cdf6478bc9ba7aaf937652aa49288a31a2befc1dcba6117331a842e7a",
+      "sizeBytes": 186
+    },
+    {
+      "path": "eligibility_window_policy.json",
+      "sha256": "60273602c6b4765025f950e8e229d1abd7543f00f53aaf839a49b1dcda98daf3",
+      "sizeBytes": 202
+    },
+    {
+      "path": "program_budget.json",
+      "sha256": "27f6b57c3f8a38304f72f62b2dd64cd17f016bb79f2366a65504d1da56b0efa5",
+      "sizeBytes": 548
+    },
+    {
+      "path": "program_ledger.jsonl",
+      "sha256": "a9b21e2389f0a952b50757a2887db7493adc9e928af9b7544372b07bdf341f96",
+      "sizeBytes": 1807
+    },
+    {
+      "path": "program_spec.json",
+      "sha256": "264fa6a6934e9da29e170d34bcbfe875632bfea203619f3b10e7a932f5050b04",
+      "sizeBytes": 1174
+    },
+    {
+      "path": "program_state.json",
+      "sha256": "aaff6a9b424cd5eef43475c801353e02e1220efcad2ce8a9bdb1824e5ce5827f",
+      "sizeBytes": 348
+    },
+    {
+      "path": "program_summary.json",
+      "sha256": "351c4691af689843fe2867c3b50211e27f2c2160bc68af1040b2ccc0a6062651",
+      "sizeBytes": 2104
+    },
+    {
+      "path": "program_summary.md",
+      "sha256": "5ec85735a99080468a43bf05183eed6595e322c0098234fd16b0a161318d052a",
+      "sizeBytes": 376
+    },
+    {
+      "path": "v27_benchmark_read_only_audit.json",
+      "sha256": "928eb0e35336fb69b2ec3452b10a2c459bc0516fb6435cc48bbabdfc516d5fca",
+      "sizeBytes": 546
+    },
+    {
+      "path": "v28_data_readiness_audit.json",
+      "sha256": "89dc16b1b6fa80a657a46668d7d40a66b856b8da496990366ea03038b04c3021",
+      "sizeBytes": 664
+    }
+  ],
+  "manifestHash": "automatic_strategy_renewal_manifest_8938e251c45470af00e9d138341a25b76406d15f9d639da39f8624b9d6248abb",
+  "schemaVersion": "automatic_strategy_renewal_artifact_manifest_v1"
+}

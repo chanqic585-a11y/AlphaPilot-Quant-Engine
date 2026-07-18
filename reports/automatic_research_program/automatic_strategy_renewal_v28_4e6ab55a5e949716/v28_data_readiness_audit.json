@@ -1,0 +1,20 @@
+{
+  "auditHash": "v28_catalog_readiness_5d4611fe26445c7c9dc2c1b36c49a9b6f77c1ba4a9bcd3a477c34771eeca5b70",
+  "blockers": [
+    "ohlcv_provenance_or_pit_semantics_unverified"
+  ],
+  "candidateIdentityCreated": false,
+  "catalogManifestHash": "data_manifest_4a178c9ef2b42a68bf551137358b908779863fb3f50267d83b56bf68d35fdf61",
+  "datasetCount": 32,
+  "demoReady": false,
+  "formalFundingDatasetCount": 8,
+  "formalOhlcvDatasetCount": 0,
+  "formalReady": false,
+  "formalRunCount": 0,
+  "fundingDatasetCount": 8,
+  "lockedOosReadCount": 0,
+  "ohlcvDatasetCount": 24,
+  "releaseReady": false,
+  "resultReadCount": 0,
+  "schemaVersion": "v28_catalog_readiness_audit_v1"
+}

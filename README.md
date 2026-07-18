@@ -5328,3 +5328,26 @@ V26 was not started. The frozen candidate lacks preregistered definitions for
 `formal_data_blocked_capacity_semantics` before any Formal claim. Claim,
 Attempt, Result, Read, Release, approval, Demo ARM, and order counts remain
 zero. See `reports/automatic_research_program/automatic_strategy_demo_f57c443abeaf06c0/v25/`.
+
+## V13.27.1.28-32 Research Renewal
+
+V28-V32 adds candidate-neutral causal eligibility windows, layered data
+readiness, capital- and event-comparable benchmarks, three typed strategy
+contracts, bounded campaign orchestration, OKX same-exchange/portability
+admission, and exact-hash immutable Demo Release approval. It preserves the V27
+zero-survivor evidence and never revives or reruns those candidates.
+
+The frozen Prompt run is
+`automatic_strategy_renewal_v28_4e6ab55a5e949716`. Its legal terminal route is
+`blocked_formal_data`: the catalog contains 24 OHLCV datasets and eight formal
+funding datasets, but zero OHLCV datasets have both verified exchange provenance
+and point-in-time semantics. Candidate identity, Formal runs, result reads,
+Locked OOS reads, Releases, approvals, Demo ARM, and orders therefore all remain
+zero; the full 96-backtest result budget remains unused.
+
+Evidence is under
+`reports/automatic_research_program/automatic_strategy_renewal_v28_4e6ab55a5e949716/`.
+Resume only from a new immutable catalog containing verified PIT OHLCV evidence.
+If a future run generates a Release, execution must stop at
+`blocked_waiting_exact_release_approval` until the user approves that exact
+Release hash. See `docs/V13.27.1.28-32-research-renewal-closeout.md`.

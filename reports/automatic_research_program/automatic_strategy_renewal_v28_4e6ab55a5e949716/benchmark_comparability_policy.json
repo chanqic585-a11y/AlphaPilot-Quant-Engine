@@ -1,0 +1,6 @@
+{
+  "capitalComparableRequired": true,
+  "diagnosticOnlyCannotAdvance": true,
+  "eventComparableRequired": true,
+  "schemaVersion": "benchmark_comparability_contract_v1"
+}

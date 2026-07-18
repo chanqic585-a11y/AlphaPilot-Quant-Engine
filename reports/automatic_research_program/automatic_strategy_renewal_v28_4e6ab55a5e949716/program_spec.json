@@ -1,0 +1,28 @@
+{
+  "automaticApprovalAllowed": false,
+  "baselineMergeCommits": {
+    "docs": "f8f529f2b9e31131782d2f09336c732f17f2b698",
+    "quant": "375c6429658e880060e0f3f914d551b7447b4140"
+  },
+  "budget": {
+    "maximumAdditionalFullBacktests": 96,
+    "maximumCampaigns": 2,
+    "maximumDemoReleasesPerCampaign": 3,
+    "maximumFamiliesPerCampaign": 6,
+    "maximumFormalCandidatesPerCampaign": 4,
+    "maximumFullBacktestsPerCampaign": 48,
+    "maximumInitialCandidatesPerCampaign": 12,
+    "maximumInitialVariantsPerFamily": 2,
+    "maximumStructuralRevisionsPerFamily": 1
+  },
+  "candidateEditsAfterResultsAllowed": false,
+  "demoArm": false,
+  "historicalMutationCount": 0,
+  "implementationCommit": "973f63469c37bd06262367e045116e8c25370669",
+  "orderCount": 0,
+  "parentProgramId": "automatic_strategy_to_demo_v26_2aff44adf84d039c",
+  "programId": "automatic_strategy_renewal_v28_4e6ab55a5e949716",
+  "programSpecHash": "automatic_strategy_renewal_spec_e9474b0572b284cdaea002666362bc7007f6a355c6474238184131fbfee3cc77",
+  "promptHash": "sha256:18C6BBA3409321985C4C56FD22630F7A67422B98D196FB2C75296F8EB80C317E",
+  "schemaVersion": "automatic_strategy_renewal_program_spec_v1"
+}

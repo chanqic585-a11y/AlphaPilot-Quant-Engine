@@ -1,0 +1,12 @@
+{
+  "archivedCount": 0,
+  "campaignId": "v28-causal-data-readiness-audit",
+  "candidateCount": 0,
+  "familyCount": 0,
+  "formalCandidateCount": 0,
+  "fullBacktestsUsed": 0,
+  "releaseEligibleCandidateIds": [],
+  "schemaVersion": "research_renewal_campaign_summary_v1",
+  "status": "formal_data_blocked",
+  "summaryHash": "research_renewal_campaign_62b128e0d4c4c103ef619b9331c8b3056fb2a15dac8113073612b21c6a564642"
+}

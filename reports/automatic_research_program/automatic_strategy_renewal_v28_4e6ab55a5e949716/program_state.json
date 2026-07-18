@@ -1,0 +1,11 @@
+{
+  "approved": false,
+  "demoArm": false,
+  "generatedAt": "2026-07-18T16:04:24Z",
+  "nextAllowedStage": "blocked_formal_data",
+  "orderCount": 0,
+  "programId": "automatic_strategy_renewal_v28_4e6ab55a5e949716",
+  "schemaVersion": "automatic_strategy_renewal_state_v1",
+  "stage": "blocked_formal_data",
+  "terminalRoute": "blocked_formal_data"
+}

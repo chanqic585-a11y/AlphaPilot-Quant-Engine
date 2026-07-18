@@ -1,0 +1,13 @@
+{
+  "auditHash": "v27_read_only_benchmark_c1d496440f5826d11ca787d5df865e9d1405fe2741e67ad92a764dac2a617d63",
+  "benchmarkTotalNetR": 874.687312,
+  "candidateId": "v27-range_expansion_close_followthrough-4h-long-v1",
+  "candidateRerun": false,
+  "candidateRevived": false,
+  "candidateTotalNetR": 64.9102666,
+  "historicalMutationCount": 0,
+  "incrementalNetR": -809.7770454,
+  "schemaVersion": "v27_benchmark_read_only_audit_v1",
+  "sourceProgramId": "automatic_strategy_to_demo_v26_2aff44adf84d039c",
+  "status": "archived_benchmark_dominated"
+}

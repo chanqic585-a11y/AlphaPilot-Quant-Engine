@@ -1,0 +1,18 @@
+{
+  "campaignsUsed": 1,
+  "candidateTrialsUsed": 0,
+  "demoReleasesUsed": 0,
+  "formalCandidatesUsed": 0,
+  "fullBacktestsRemaining": 96,
+  "fullBacktestsUsed": 0,
+  "maximumAdditionalFullBacktests": 96,
+  "maximumCampaigns": 2,
+  "maximumDemoReleasesPerCampaign": 3,
+  "maximumFamiliesPerCampaign": 6,
+  "maximumFormalCandidatesPerCampaign": 4,
+  "maximumFullBacktestsPerCampaign": 48,
+  "maximumInitialCandidatesPerCampaign": 12,
+  "maximumInitialVariantsPerFamily": 2,
+  "maximumStructuralRevisionsPerFamily": 1,
+  "structuralRevisionsUsed": 0
+}
