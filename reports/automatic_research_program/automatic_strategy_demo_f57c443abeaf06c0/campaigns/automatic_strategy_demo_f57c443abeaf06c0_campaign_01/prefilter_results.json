@@ -1,0 +1,1888 @@
+{
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "candidateCount": 16,
+  "formalRunCount": 0,
+  "gatePolicy": {
+    "maximumSingleInstrumentPositiveContribution": 0.45,
+    "maximumSingleMonthPositiveContribution": 0.35,
+    "minimumAverageNetR": 0.0,
+    "minimumBenchmarkIncrementNetR": 0.0,
+    "minimumEvents": 30,
+    "minimumPositiveMonthRatio": 0.5,
+    "minimumProfitFactor": 1.03,
+    "minimumStressAverageNetR": 0.0,
+    "minimumStressProfitFactor": 1.0,
+    "minimumTotalNetR": 0.0,
+    "policyId": "automatic_directional_event_prefilter_v1",
+    "resultDrivenRelaxationForbidden": true,
+    "schemaVersion": "automatic_prefilter_gate_policy_v1",
+    "targetRGateMode": "advisory",
+    "universalTwoRHardGate": false
+  },
+  "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+  "lockedOosAccessCount": 0,
+  "prefilterPassCount": 1,
+  "resultReadCount": 0,
+  "results": [
+    {
+      "candidateId": "auto-trend_pullback_continuation-4h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "trend_pullback_continuation",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_d97b7ffaf7300ee032aead150d429ae8058e0b21304e578f35a464b4d2866c22",
+          "observed": 0.13798434621387373,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_429a428b06b50e66ef765bba16e8eabacc8350c8fa08a2a0aaa587c50081f2f1",
+          "observed": 0.08309324264751508,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_b8a2bd47ace6cd077006b13c90798e69dde83af7412f33738d374628d99d2735",
+          "observed": -0.008132632243605586,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_de00d5e7ed76e87b846401c88e0b498745814370019ceef6322987605ef82b14",
+          "observed": -180.25742380583984,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_9d20cb79233c44c93ad534bee9678c4e591c66b78af5986732d71006840e851e",
+          "observed": 1439,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_7b3b270fdcdb234f3b964e8ef4842afc74dd86016d0197a37c2681ca16cd55fc",
+          "observed": 0.4166666666666667,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_2b4e6e1ca0cec8ba2eaf75aada441328ef4baebc26061caa8d1906217a48a7c2",
+          "observed": 0.9859950342641438,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_b94bb9740fd3d83df5a61ac5143aad9d07242abcd257311f4fb69f765ea4553f",
+          "observed": -0.027299924223569076,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_9e26600e039beb190c15d2c502642f26bb95d4e58a091f12423eb0b35e06bc6f",
+          "observed": 0.9538928215396317,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_f0460c7d9447be4c85978d3f0f7c08af7c0d93d769ab5369e606d45c2d1414e7",
+          "observed": -11.702857798548438,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.0072830640979487,
+        "averageMfeR": 1.1113903060582642,
+        "averageNetR": -0.008132632243605586,
+        "benchmarkIncrementNetR": -180.25742380583984,
+        "benchmarkTotalNetR": 168.55456600729138,
+        "eventCount": 1439,
+        "exitReasons": {
+          "advisory_r_target": 545,
+          "initial_stop": 791,
+          "maximum_hold": 103
+        },
+        "folds": {},
+        "maximumDrawdownPct": 54.22634515473678,
+        "maximumDrawdownR": 54.22634515473678,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.4166666666666667,
+        "profitFactor": 0.9859950342641438,
+        "singleInstrumentPositiveContribution": 0.13798434621387373,
+        "singleMonthPositiveContribution": 0.08309324264751508,
+        "stressAverageNetR": -0.027299924223569076,
+        "stressProfitFactor": 0.9538928215396317,
+        "stressTotalNetR": -39.2845909577159,
+        "totalNetR": -11.702857798548438
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-trend_pullback_continuation-4h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "trend_pullback_continuation",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_1fe8fafa517e6eaabfff7b79b0056328f0f76f91343e7c17e17dc7ac38085613",
+          "observed": 0.15628298630684406,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_6d1f0aa6e9106bbaa6b346c9fef9a99757318662e760ae761f31e48a63fbd554",
+          "observed": 0.07209330158872662,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_fb65e565b6d3d4e84abd7db6a20d24829590de60648d57923637f97e2f1b26a5",
+          "observed": -0.06526649414362133,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_59173a85252975afc37de4387ba22c5c7d9e5b1ed8f54262735f0933871004eb",
+          "observed": 215.7848247274605,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_362965b3376f988648e95b6ed53ee9ecad1f5c0245b450ee442148a72ec4afd0",
+          "observed": 1535,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_20df7869bade883bcee42e872768a30413353ab7f029d3496002b0e19b7899b0",
+          "observed": 0.3611111111111111,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ab066bb22a556f4d19d8ae5086652a6f986bdb63657ab037d95dc25a6a88eae3",
+          "observed": 0.8914482896537279,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_c309f313ae7e865fd05ddcb21a8fc6f202f6922f979281b60a3cc3d2d2f89444",
+          "observed": -0.08659297196197425,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_518204d8c8e4f05a0c8866df044d7752c84d661ebdd163c302cb8403734f8217",
+          "observed": 0.8588958842153781,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_8b9a482ba44fa29e96048dcbc84daffe416b3bc1e2a8d82768b444aa99608d12",
+          "observed": -100.18406851045874,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -0.9962709425468622,
+        "averageMfeR": 1.071261991435591,
+        "averageNetR": -0.06526649414362133,
+        "benchmarkIncrementNetR": 215.7848247274605,
+        "benchmarkTotalNetR": -315.96889323791925,
+        "eventCount": 1535,
+        "exitReasons": {
+          "advisory_r_target": 540,
+          "initial_stop": 871,
+          "maximum_hold": 124
+        },
+        "folds": {},
+        "maximumDrawdownPct": 158.2653179386317,
+        "maximumDrawdownR": 158.2653179386317,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.3611111111111111,
+        "profitFactor": 0.8914482896537279,
+        "singleInstrumentPositiveContribution": 0.15628298630684406,
+        "singleMonthPositiveContribution": 0.07209330158872662,
+        "stressAverageNetR": -0.08659297196197425,
+        "stressProfitFactor": 0.8588958842153781,
+        "stressTotalNetR": -132.92021196163049,
+        "totalNetR": -100.18406851045874
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-volatility_compression_release-4h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "volatility_compression_release",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_aa18f93a8f66543de03b2058b484efe98c717ae8cefd5d108e5189b2783591d7",
+          "observed": 0.15573642562114046,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_5cd34b39450021ee05cbcd2ce918b785acf1150fb794a6bdd83c9fc2cae4750f",
+          "observed": 0.10792987351264431,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_5a311f164e3c0dc39cb29195603c30e982cb2ef29e612a098dd1ce424456cbf0",
+          "observed": -0.040819278385981046,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_fb845c7e1eea80996f33067774959ab685a7017b0f648c88919c396de7b8b3fb",
+          "observed": -547.3578200484102,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_8eecaa8181ae8d3bf6a921131f06b8fc34d95c271fef0ae7f4894f8122dd992d",
+          "observed": 1585,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_49cb31909d537cf73947abffa066e3ec80ab8541c8e53a6421a8f9392f84583e",
+          "observed": 0.3888888888888889,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_70c962f519b2f48895273e332274b2bf0c541ef8deae8b858a76f6b3a98655dd",
+          "observed": 0.9339393323255757,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_473fe2624ebe19fd51c47615ff5737ee58f10762dae8a0c7e88ef9d17cf12f49",
+          "observed": -0.06359642109788112,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ca481c7a8099469ebdfb70788bc299ba21bddd4f456ba90c3d36585840823b0e",
+          "observed": 0.8993699249407154,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ecfe27e4231e414aea5e6af9e4a3f95a0898fda09bbd96655436b248df41ea11",
+          "observed": -64.69855624177995,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.022373153797476,
+        "averageMfeR": 1.1430931719081918,
+        "averageNetR": -0.040819278385981046,
+        "benchmarkIncrementNetR": -547.3578200484102,
+        "benchmarkTotalNetR": 482.65926380663024,
+        "eventCount": 1585,
+        "exitReasons": {
+          "advisory_r_target": 617,
+          "initial_stop": 932,
+          "maximum_hold": 36
+        },
+        "folds": {},
+        "maximumDrawdownPct": 94.24894801033473,
+        "maximumDrawdownR": 94.24894801033473,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.3888888888888889,
+        "profitFactor": 0.9339393323255757,
+        "singleInstrumentPositiveContribution": 0.15573642562114046,
+        "singleMonthPositiveContribution": 0.10792987351264431,
+        "stressAverageNetR": -0.06359642109788112,
+        "stressProfitFactor": 0.8993699249407154,
+        "stressTotalNetR": -100.80032744014157,
+        "totalNetR": -64.69855624177995
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-volatility_compression_release-4h-short-v2",
+      "failedGates": [
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor"
+      ],
+      "familyId": "volatility_compression_release",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_a8ffb5ddc1f14091222581c666f382623f6b571d72fa7906dc9ffa0c4422bbcc",
+          "observed": 0.17294466252316223,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_f27ab38eb3a84a9a4a65b2c8fa16c7ab6a4ad89b93aecebef161dea90857c97f",
+          "observed": 0.09026803254530534,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_691f7f3764b1e4dce5e86cde8a607e7b27f2617aab4638eaf0207aec790c3a59",
+          "observed": 0.008501070159358871,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_200dffa6285b7e463c20e3b6c54d6e86e4f26b5720497daf9c4e10e58212744f",
+          "observed": 154.26628239734916,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_37a24467ab16046576d22d93bde80fd3b65d320984e8b1dc7ffb45fa5d696f76",
+          "observed": 1430,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_7b3b270fdcdb234f3b964e8ef4842afc74dd86016d0197a37c2681ca16cd55fc",
+          "observed": 0.4166666666666667,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ffffaacb24bad52842d708e49b9e3e45679e5cd91939b941d9dfdaa3f9214be5",
+          "observed": 1.0143690198642101,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_1b40051159102c703213180cbfde678a8a47978bcdcb1dedb5b0ff5357b488a7",
+          "observed": -0.012950103769829838,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_3ce8a3bbe96d3b1b58ce96e47eb7e8e16aa128fff8c779eb482bb57814293f9e",
+          "observed": 0.9785478261496177,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_6fbad7e11bf6f4b27f1890b4f42d424b6459029e774488e4d04fb8a9a183e402",
+          "observed": 12.156530327883186,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -0.9520451698833587,
+        "averageMfeR": 1.2205582419233845,
+        "averageNetR": 0.008501070159358871,
+        "benchmarkIncrementNetR": 154.26628239734916,
+        "benchmarkTotalNetR": -142.10975206946597,
+        "eventCount": 1430,
+        "exitReasons": {
+          "advisory_r_target": 585,
+          "initial_stop": 807,
+          "maximum_hold": 38
+        },
+        "folds": {},
+        "maximumDrawdownPct": 70.22763244898952,
+        "maximumDrawdownR": 70.22763244898952,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.4166666666666667,
+        "profitFactor": 1.0143690198642101,
+        "singleInstrumentPositiveContribution": 0.17294466252316223,
+        "singleMonthPositiveContribution": 0.09026803254530534,
+        "stressAverageNetR": -0.012950103769829838,
+        "stressProfitFactor": 0.9785478261496177,
+        "stressTotalNetR": -18.51864839085667,
+        "totalNetR": 12.156530327883186
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-btc_shock_lag-1h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "btc_shock_lag",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_21ac49413b004af51365f8a8e82944a5d293ab876d9fb3edbb46f362eed8d049",
+          "observed": 0.15858441168654977,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_f871fbc1dffa050ebeb26b9c0812709c2a25e67803babe16ccea394eee34ea5e",
+          "observed": 0.17440687769269156,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_da0593f5498d952270599113dde5f7f19646aa72d27e9572391f2b594ec5c23d",
+          "observed": -0.03924943775543844,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_d56d0fc61ba5b67dc7a5a3797ddc051928c5b8405fe6f2475a0076b8f871b8ad",
+          "observed": -642.4275812994795,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ddc60e8565fd66d366d0d5e93788e92a0b3e26cb37b7a15e1708026f63c417db",
+          "observed": 1922,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_567b75dbc39c49b554ba4ddb4cd159d0002c66f004b61c3093be7dece8087cfc",
+          "observed": 0.4444444444444444,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_e0a0d5b194efbe506771782b7cce64350da8151216f9b10c3320ef61e53681b0",
+          "observed": 0.9337360937436457,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_546b342f0110d0404f0c339c81a779aa0638f10a09bbb9c6b4a95f601d206813",
+          "observed": -0.05925433406199614,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ef970ce6c45934ced55012fe8bc95892604223b0d46b51974ddc6ad9dbf8cb12",
+          "observed": 0.9019512467684895,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_6b295ac55d24a4ec282bb79beceaabebd5bea0493253d22b8d9a6efcd2eb452d",
+          "observed": -75.43741936595268,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -0.991147635197397,
+        "averageMfeR": 1.0257518248493696,
+        "averageNetR": -0.03924943775543844,
+        "benchmarkIncrementNetR": -642.4275812994795,
+        "benchmarkTotalNetR": 566.9901619335268,
+        "eventCount": 1922,
+        "exitReasons": {
+          "advisory_r_target": 699,
+          "initial_stop": 1083,
+          "maximum_hold": 140
+        },
+        "folds": {},
+        "maximumDrawdownPct": 125.62837011158561,
+        "maximumDrawdownR": 125.62837011158561,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.4444444444444444,
+        "profitFactor": 0.9337360937436457,
+        "singleInstrumentPositiveContribution": 0.15858441168654977,
+        "singleMonthPositiveContribution": 0.17440687769269156,
+        "stressAverageNetR": -0.05925433406199614,
+        "stressProfitFactor": 0.9019512467684895,
+        "stressTotalNetR": -113.88683006715658,
+        "totalNetR": -75.43741936595268
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-btc_shock_lag-1h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "btc_shock_lag",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_79284a25b55e1b3a033ba7ff67b527c83c6349ed420e8427b838810c4f37a38c",
+          "observed": 0.15312099509975866,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_36c4da2c5f2425e0bf6e98e7f399cbfd1464d8d957b5a76a0ff0df536ae099b1",
+          "observed": 0.18422333497801743,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_dc3760bc4fbd4bcdacbde8d7bc302f132cda9710c484b8f3218e8328398d365e",
+          "observed": -0.12819306009305362,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_af1a825a57b4c44e7fd5117a2a6faab79d3e03c920b195b3121618560a1427f9",
+          "observed": 962.1071767061189,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_1b30465c7d56479610e65556ff67ec2f8638cb3f63820f973ad9b968fba5d2c2",
+          "observed": 1582,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_56fe0642271e31356c14063261273fa29adef1f0031eeb00d7b6de9c31318237",
+          "observed": 0.3055555555555556,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_d70ea14d9ac4125a0071ad1c298614014d337a447cb942a0ab204d6f5a60fb35",
+          "observed": 0.8010978972560922,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_26aca463daf56d1f6154d201929dde07218a7cc2fbb730d987518e82043d0292",
+          "observed": -0.1524164586033749,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_7ff55bfc6bea75a5ac6ceb5d12ea703e109afba073abdb517941cb4ca91f0324",
+          "observed": 0.7690874993448538,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_0b495e6ac28e964cfadc45a3e033e284b2157bf9afa15dddeaa3306148c3ee78",
+          "observed": -202.80142106721084,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.017447808578768,
+        "averageMfeR": 1.0434234540978609,
+        "averageNetR": -0.12819306009305362,
+        "benchmarkIncrementNetR": 962.1071767061189,
+        "benchmarkTotalNetR": -1164.9085977733298,
+        "eventCount": 1582,
+        "exitReasons": {
+          "advisory_r_target": 554,
+          "initial_stop": 961,
+          "maximum_hold": 67
+        },
+        "folds": {},
+        "maximumDrawdownPct": 227.33953695971093,
+        "maximumDrawdownR": 227.33953695971093,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.3055555555555556,
+        "profitFactor": 0.8010978972560922,
+        "singleInstrumentPositiveContribution": 0.15312099509975866,
+        "singleMonthPositiveContribution": 0.18422333497801743,
+        "stressAverageNetR": -0.1524164586033749,
+        "stressProfitFactor": 0.7690874993448538,
+        "stressTotalNetR": -241.1228375105391,
+        "totalNetR": -202.80142106721084
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-volatility_shock_asymmetry-1h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "volatility_shock_asymmetry",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_95080d8d15942d974645e54b7118a159a1e78ec770d66a6776b436a6177c10d5",
+          "observed": 0.14090708394210424,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_a8143e9acdbac2d331579809904e1719e4776758b0823e3a3bc4031a1a6d3a32",
+          "observed": 0.043609682470033384,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_fd6ce87843d152f86e92d04dd1e8289f2c0990c035b3b47415bc6549149fe89d",
+          "observed": -0.09816993533777023,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_6d8f4ed40b5e302bd140d45f5b519cd10dc1d5aa88aa259aad11e3ffc526ecc0",
+          "observed": -393.5797282605944,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_25085d9f716bc9f4dc2dafdf5939e4b9e481f021d8ae672ad9b56233aa8de562",
+          "observed": 2619,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ea7d821689cfded94455e434a23b97a0224634bea81dc244ad0083675ec1ba2e",
+          "observed": 0.3333333333333333,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_8fe2696785b7fbbb8c90b6ade0b90d91ff6feda183c9e3b6f8d393dd57789e7c",
+          "observed": 0.8461958817147315,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_7692e564c422e60f39dddee3c1ead1e842b9be3af3c13b72cfacb506c260fbb7",
+          "observed": -0.13300321666325562,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_f5519ac03a5880bc1d5e28ae0db79e4427060420a1d48534a14830aaf5ca7991",
+          "observed": 0.7983728948385563,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_93aa255f859a7ee40f15b0ec8277486e4d2d69dc82227e0c112945c5409921cd",
+          "observed": -257.1070606496202,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.0867165245982626,
+        "averageMfeR": 1.0492970292531314,
+        "averageNetR": -0.09816993533777023,
+        "benchmarkIncrementNetR": -393.5797282605944,
+        "benchmarkTotalNetR": 136.47266761097416,
+        "eventCount": 2619,
+        "exitReasons": {
+          "advisory_r_target": 964,
+          "initial_stop": 1555,
+          "maximum_hold": 100
+        },
+        "folds": {},
+        "maximumDrawdownPct": 267.5545477430042,
+        "maximumDrawdownR": 267.5545477430042,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.3333333333333333,
+        "profitFactor": 0.8461958817147315,
+        "singleInstrumentPositiveContribution": 0.14090708394210424,
+        "singleMonthPositiveContribution": 0.043609682470033384,
+        "stressAverageNetR": -0.13300321666325562,
+        "stressProfitFactor": 0.7983728948385563,
+        "stressTotalNetR": -348.3354244410665,
+        "totalNetR": -257.1070606496202
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-volatility_shock_asymmetry-1h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "volatility_shock_asymmetry",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_b5fdd686fcfe2592945d9ccec5792a0fc4cb40a91a74741cb9a2c29d74f927be",
+          "observed": 0.14343863387660657,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_d10fbb296d04b8b29db8b244ca3853a93cf2c67fd112429511d60dc0e416ecad",
+          "observed": 0.055435741823109924,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_bc55b2405dc84d6cf6d6fc4f7dd3d0cb9d56afe4518fafa508f24022a08dec53",
+          "observed": -0.12245724169191863,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_a1545874305cbe9a1dd5aa7ef165487de01c40242771ac701b2fbccf22a507a9",
+          "observed": 1053.8066612560476,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_304c5421bbf2ea541cba2be0a9f88287d5360dc8ddc88b49813c465e27954b09",
+          "observed": 2309,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_56fe0642271e31356c14063261273fa29adef1f0031eeb00d7b6de9c31318237",
+          "observed": 0.3055555555555556,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_4f35e459342228c7a1e8973ea278e8e084bdbd10a76e9ad3608368741efd6d69",
+          "observed": 0.81368261970245,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_06444b4d5290dfaa46103ec968934c28584ac04f69e01576540b9f186d6a7320",
+          "observed": -0.15935387791822478,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_36c09e8fdca40cf21ce245fc731f582e2e6ac793fb0d0666f41b98b136c77bdb",
+          "observed": 0.7655639130427219,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_b009d887814c4d22963520b2bd2bb114d6bfc756a33cf67c4988e29a06b327c5",
+          "observed": -282.7537710666401,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.0617476510383055,
+        "averageMfeR": 1.0873566574522804,
+        "averageNetR": -0.12245724169191863,
+        "benchmarkIncrementNetR": 1053.8066612560476,
+        "benchmarkTotalNetR": -1336.5604323226878,
+        "eventCount": 2309,
+        "exitReasons": {
+          "advisory_r_target": 857,
+          "initial_stop": 1410,
+          "maximum_hold": 42
+        },
+        "folds": {},
+        "maximumDrawdownPct": 289.55017637348766,
+        "maximumDrawdownR": 289.55017637348766,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.3055555555555556,
+        "profitFactor": 0.81368261970245,
+        "singleInstrumentPositiveContribution": 0.14343863387660657,
+        "singleMonthPositiveContribution": 0.055435741823109924,
+        "stressAverageNetR": -0.15935387791822478,
+        "stressProfitFactor": 0.7655639130427219,
+        "stressTotalNetR": -367.948104113181,
+        "totalNetR": -282.7537710666401
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-cross_session_liquidity_transition-1h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "cross_session_liquidity_transition",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_293f8374a7954b53b269b81e5b8d487c86f664705f72040ed96dcc2aa697fd94",
+          "observed": 0.1393474665302563,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_bd666dbd2c9b5b489ad96d0fea987ef368a07ea69a00f04b59789b5d1d789483",
+          "observed": 0.037139944397912746,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_06e3bfa86ea317ac12e64111e4bfceab1b01a57b30ccdb722e2c735d09b65283",
+          "observed": -0.13168676375628474,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_9d493230dd7962412d32429dd18c059c4cf0aa235201d2893a67217a877367c5",
+          "observed": -2912.8242004775366,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_25c3d51c4a008b1cf3b4ae1bce0cfb285800d515c2447401201050c5803a9ab6",
+          "observed": 13422,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_75d8b7dedd05ff3c63e6c8afbf29deb65e1e63e8b07d967546bf254bce354a7f",
+          "observed": 0.16666666666666666,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_3b47ca1414049e31b28988c91b87116dacdf77ad2927e06610db3ae6d0afcf6d",
+          "observed": 0.8010410977646771,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_f78c9178f34642ce73330cb728a21c8c94fd0e227a949283fd3786b527a5fe66",
+          "observed": -0.17282080166415933,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_d57d5192b94e2c8c5a905f386594ceec831c96e4d50103b3bb9f6a10bb96b2f5",
+          "observed": 0.7485916802457054,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ac70247d97679bc40889808a8012af563bbe540d841d794228c71472179d5a5d",
+          "observed": -1767.4997431368538,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.039804311359759,
+        "averageMfeR": 1.089273417205989,
+        "averageNetR": -0.13168676375628474,
+        "benchmarkIncrementNetR": -2912.8242004775366,
+        "benchmarkTotalNetR": 1145.324457340683,
+        "eventCount": 13422,
+        "exitReasons": {
+          "advisory_r_target": 4974,
+          "initial_stop": 8174,
+          "maximum_hold": 274
+        },
+        "folds": {},
+        "maximumDrawdownPct": 1773.3774214393727,
+        "maximumDrawdownR": 1773.3774214393725,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.16666666666666666,
+        "profitFactor": 0.8010410977646771,
+        "singleInstrumentPositiveContribution": 0.1393474665302563,
+        "singleMonthPositiveContribution": 0.037139944397912746,
+        "stressAverageNetR": -0.17282080166415933,
+        "stressProfitFactor": 0.7485916802457054,
+        "stressTotalNetR": -2319.6007999363464,
+        "totalNetR": -1767.4997431368538
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-cross_session_liquidity_transition-1h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "cross_session_liquidity_transition",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_cf6f4b84a9497396773c32a24b54796e7e43f120405a528080bd9022916d1f53",
+          "observed": 0.13018011187892384,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_3f610419b8f0a8f3d832d74c3554dcc4e112d261e6e6c0eb1eeaa697b579a89c",
+          "observed": 0.04157067247061083,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_4926f1c427125f387788a3ebd3ccf4c600d8edc921a1eaed72e6184e0d69a339",
+          "observed": -0.060130540499430354,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_a2bac42d409d9619d1232349922bf316c3ac6a9af44a94700032a6a465c6f0f7",
+          "observed": 1486.7998387061853,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_24f87fb76c0cd3d20137ba865420d49d1c31400f62f7a89c6426570f40fc53b9",
+          "observed": 12241,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_906622927d7ab30e66d908930187296957c80e7ef244da65f7dfa9d5717c01a9",
+          "observed": 0.25,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_b3e0a4ba3219221949742c08e51169bf87f815c607cd92da95f6848ae997be8f",
+          "observed": 0.9047337056350623,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_43c109fbde9f6f1b58f4892de954eccabfbaeaf6c709e3d43971ea267e4d8d58",
+          "observed": -0.10098164786730085,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_795afb44867bfd2596e19b9370feae557fd1cfd4baf920e1a46d2da95ef7a99c",
+          "observed": 0.8458279993500472,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_9c8a77fbd8acadee86c0959a5c805c3556719ae4e43a0599c9396e89ffc9a7aa",
+          "observed": -736.057946253527,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.0070590186390922,
+        "averageMfeR": 1.17318200637667,
+        "averageNetR": -0.060130540499430354,
+        "benchmarkIncrementNetR": 1486.7998387061853,
+        "benchmarkTotalNetR": -2222.8577849597123,
+        "eventCount": 12241,
+        "exitReasons": {
+          "advisory_r_target": 4898,
+          "initial_stop": 7121,
+          "maximum_hold": 222
+        },
+        "folds": {},
+        "maximumDrawdownPct": 804.3374591314808,
+        "maximumDrawdownR": 804.3374591314808,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.25,
+        "profitFactor": 0.9047337056350623,
+        "singleInstrumentPositiveContribution": 0.13018011187892384,
+        "singleMonthPositiveContribution": 0.04157067247061083,
+        "stressAverageNetR": -0.10098164786730085,
+        "stressProfitFactor": 0.8458279993500472,
+        "stressTotalNetR": -1236.1163515436297,
+        "totalNetR": -736.057946253527
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-residual_extreme_causal_recovery-4h-long-v1",
+      "failedGates": [
+        "minimumBenchmarkIncrementNetR"
+      ],
+      "familyId": "residual_extreme_causal_recovery",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_f8ae57671b8c598b1bba1e500f3c1ffe96ccabb67c3a9205cdca7dcc6bae0a30",
+          "observed": 0.17048798602783793,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_8792cb9e1dc5c25ff3b14ea99745e59b2337d907e5873bd4c4ef7b34f77b6f95",
+          "observed": 0.09022986708392954,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_18b1a6f3df501d74c37ac833d5451604f565bdd8412391e980457a95dbe4b28e",
+          "observed": 0.039382680663237246,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_92607f792a5f98d32759011d61caaf7b23510cc5ef46cf6b9a0f5ba66677065c",
+          "observed": -85.82037482202362,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_abce7e7bae421c5d43920faceb9731b3423e468799e2f58c04c5c4fc6bea9881",
+          "observed": 606,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_53de4e6ad43dc3b7ea9e3c69fd138774eda3a9bbe2512805abab54ebb727f5d2",
+          "observed": 0.5,
+          "operator": ">=",
+          "passed": true,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_6dc1e7058f42e62ab52cb4a531ade84c4ecf861286e34e23412f2e772660020e",
+          "observed": 1.0728967702866679,
+          "operator": ">",
+          "passed": true,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_6fdbb5d959d7874b3fe6dd51799ee774cfe809b0be8c95a6645330d0c6aee708",
+          "observed": 0.02386051456686432,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_3bccadd9ee2b6539b7afa478762f6845c3ca00fc7266aff1102dc9cc9230cc9d",
+          "observed": 1.0434944840226026,
+          "operator": ">=",
+          "passed": true,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_3ed502e840deb6b023dd3f245bc745a841f72dc2ba431c92e5219c150c95209f",
+          "observed": 23.86590448192177,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.011921148789291,
+        "averageMfeR": 1.0910961723169403,
+        "averageNetR": 0.039382680663237246,
+        "benchmarkIncrementNetR": -85.82037482202362,
+        "benchmarkTotalNetR": 109.6862793039454,
+        "eventCount": 606,
+        "exitReasons": {
+          "advisory_r_target": 222,
+          "initial_stop": 311,
+          "maximum_hold": 73
+        },
+        "folds": {},
+        "maximumDrawdownPct": 19.306183220930173,
+        "maximumDrawdownR": 19.306183220930173,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.5,
+        "profitFactor": 1.0728967702866679,
+        "singleInstrumentPositiveContribution": 0.17048798602783793,
+        "singleMonthPositiveContribution": 0.09022986708392954,
+        "stressAverageNetR": 0.02386051456686432,
+        "stressProfitFactor": 1.0434944840226026,
+        "stressTotalNetR": 14.459471827519778,
+        "totalNetR": 23.86590448192177
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-residual_extreme_causal_recovery-4h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "residual_extreme_causal_recovery",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ced07fee01d6c0c702c2cd19dbaa5f661b39b361c13fdff4597808ce84ba564d",
+          "observed": 0.1727835164267142,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_98cfa1813959bd98167c5cef042e9e69eff9cb2c6a3aa0ed9e91f3f9532c2b48",
+          "observed": 0.04864224469522246,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_95e041928b0a5e6052497f4b9cef94331b8496b6468ef1306da016c4ebb18eba",
+          "observed": -0.09221344433188249,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_55fd1cdde3290cce4486de12dff2de745d44be795d9ec42840840a81b286c63c",
+          "observed": 167.07779940994632,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_d9ba3bf5f9bec79071629118cb8c9931e4ce6552f253139b1d312719059329d2",
+          "observed": 862,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_7b3b270fdcdb234f3b964e8ef4842afc74dd86016d0197a37c2681ca16cd55fc",
+          "observed": 0.4166666666666667,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_33f3cccac1fe600b2c882638cb3bcd387f70c79ca7f496dd1018233bf619183a",
+          "observed": 0.8466553264230903,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_69afa5ac914ab0abb79e38956074e7e32bc195ea160e98e990fa9fd05f36b002",
+          "observed": -0.10731863433317751,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_4016f0e85995307a76db967ec5d813f0b296a7b2838a6e03e3c6d8a3ab8f1aab",
+          "observed": 0.8242171670110114,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_fe03f7515899a091c74ef25f2379f96145b7b60a4c5538ef4a93922c9f74be0f",
+          "observed": -79.4879890140827,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -1.0381640724338546,
+        "averageMfeR": 1.0381424937372223,
+        "averageNetR": -0.09221344433188249,
+        "benchmarkIncrementNetR": 167.07779940994632,
+        "benchmarkTotalNetR": -246.56578842402902,
+        "eventCount": 862,
+        "exitReasons": {
+          "advisory_r_target": 277,
+          "initial_stop": 496,
+          "maximum_hold": 89
+        },
+        "folds": {},
+        "maximumDrawdownPct": 104.37910107554768,
+        "maximumDrawdownR": 104.37910107554768,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.4166666666666667,
+        "profitFactor": 0.8466553264230903,
+        "singleInstrumentPositiveContribution": 0.1727835164267142,
+        "singleMonthPositiveContribution": 0.04864224469522246,
+        "stressAverageNetR": -0.10731863433317751,
+        "stressProfitFactor": 0.8242171670110114,
+        "stressTotalNetR": -92.50866279519902,
+        "totalNetR": -79.4879890140827
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-trend_failure_reversal-4h-long-v1",
+      "failedGates": [
+        "minimumBenchmarkIncrementNetR"
+      ],
+      "familyId": "trend_failure_reversal",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_2246ae3512c686ed3e2a3594321f982cd573670553bdb40d9fb967ce8373e746",
+          "observed": 0.14007223425676177,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_3576d3ce1432fbc3f3d0fb3963e5abcdb381f6bb2a6f8f998d5c6aa54eaebe69",
+          "observed": 0.05539947131907399,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_cfd8373f0b2eb96d007140c7be389542cda633066b604661d9cac1c0c88bc0d8",
+          "observed": 0.026711214997946445,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_9258d107627eb2449dc7557bfcf6d211da05785a23fe469f29afec673e2df090",
+          "observed": -247.35129865229158,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_b95da67c152d1d744786a02674294366129cd869d33eb71ba563633fbbf5286a",
+          "observed": 1868,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_5141316048d5c7008ae99c31cbd97f8659c456edc816accec1072f398ae0c194",
+          "observed": 0.5277777777777778,
+          "operator": ">=",
+          "passed": true,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_57ba711e514a1844d513d42e05cb8a1189d54354e9bf04a5185db6cb0b107b9c",
+          "observed": 1.047580136493802,
+          "operator": ">",
+          "passed": true,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_991216107e0ea2f786019d3ab10ebe74b8cbb4b2e119677b9bdb43c4559d6fc6",
+          "observed": 0.005467006472053994,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_060fa883768d42cceb34643831ad5145b6adea48a19fdd5af45bfedbaa476b5c",
+          "observed": 1.009532016471147,
+          "operator": ">=",
+          "passed": true,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_9a1d601540a02aba91f562d4381759780908189f0eee6fa0f7228939ac755456",
+          "observed": 49.89654961616396,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -0.938273071763227,
+        "averageMfeR": 1.1533749962406068,
+        "averageNetR": 0.026711214997946445,
+        "benchmarkIncrementNetR": -247.35129865229158,
+        "benchmarkTotalNetR": 297.2478482684555,
+        "eventCount": 1868,
+        "exitReasons": {
+          "advisory_r_target": 727,
+          "initial_stop": 983,
+          "maximum_hold": 158
+        },
+        "folds": {},
+        "maximumDrawdownPct": 69.13114362431574,
+        "maximumDrawdownR": 69.13114362431574,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.5277777777777778,
+        "profitFactor": 1.047580136493802,
+        "singleInstrumentPositiveContribution": 0.14007223425676177,
+        "singleMonthPositiveContribution": 0.05539947131907399,
+        "stressAverageNetR": 0.005467006472053994,
+        "stressProfitFactor": 1.009532016471147,
+        "stressTotalNetR": 10.212368089796861,
+        "totalNetR": 49.89654961616396
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+      "failedGates": [],
+      "familyId": "trend_failure_reversal",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_bb2309b4fdf40803c905f2d5a2ab48b8baa16d1db312df9ef7e4d16aa6ef0591",
+          "observed": 0.15102196222021674,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_114fa70234be3a9ee16f941d0ad1d9f29b286a9a175518442cba2875830013a4",
+          "observed": 0.056251895852476586,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_5f34faa0dc026f0ca6fd88e988b0bcb6b47b640af00db6b78d4db8df77ba62e4",
+          "observed": 0.03444060876501615,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_0debbc2871ee267cf0f0b73b2f2cdc88833653b9e99b23efd2b18ce58ca233c1",
+          "observed": 300.4793738964413,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_07503bbd2757639434bac746ef12b27888f4f27c7e36aaad1554df5745a974b0",
+          "observed": 1766,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_f5d422ade490097a8325cb1783ca57411349e30f76aa03246b48c6f28e4d44ae",
+          "observed": 0.5833333333333334,
+          "operator": ">=",
+          "passed": true,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_ecc62de2f7386bb4a2ebd886b8d7bd5c0c47458fd104267a224b9747dc989cb0",
+          "observed": 1.0620924726361922,
+          "operator": ">",
+          "passed": true,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_e2ca218dbcca759b2525f826c8d84307d0b196c32871338e22c72def3e657199",
+          "observed": 0.01581831364118276,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_86ab5ac9156e1d21f3ead136eeb0682f0bfffa197016df82623cc2c02e438d14",
+          "observed": 1.0280033774228257,
+          "operator": ">=",
+          "passed": true,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_9d1c3e738e342337354fa8c12fdead86c0e9d453f8a5d6f7bf58fb9809dba2de",
+          "observed": 60.82211507901853,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -0.9563462684000502,
+        "averageMfeR": 1.1472885418635932,
+        "averageNetR": 0.03444060876501615,
+        "benchmarkIncrementNetR": 300.4793738964413,
+        "benchmarkTotalNetR": -239.6572588174228,
+        "eventCount": 1766,
+        "exitReasons": {
+          "advisory_r_target": 688,
+          "initial_stop": 924,
+          "maximum_hold": 154
+        },
+        "folds": {},
+        "maximumDrawdownPct": 48.40933236406677,
+        "maximumDrawdownR": 48.40933236406677,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.5833333333333334,
+        "profitFactor": 1.0620924726361922,
+        "singleInstrumentPositiveContribution": 0.15102196222021674,
+        "singleMonthPositiveContribution": 0.056251895852476586,
+        "stressAverageNetR": 0.01581831364118276,
+        "stressProfitFactor": 1.0280033774228257,
+        "stressTotalNetR": 27.935141890328754,
+        "totalNetR": 60.82211507901853
+      },
+      "passed": true,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-breadth_correlation_directional_filter-4h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "breadth_correlation_directional_filter",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_119fc743a383e5091671e84f9d2808dedd1352e84c1c4bdbd07a25e8769ac4a1",
+          "observed": 0.1417762334842247,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_36ed6211a53eafdd2a3e69a31ef436bbd8fe7782a7b8da7d774fee8b76bfc3cb",
+          "observed": 0.044187413026939605,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_5935a2f9df3babdeec59c68c1165bac080105323dfaa45005db664293b83194c",
+          "observed": -0.03623867292626997,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_138f877debbcf1b0e0285e681dc87ead7824256f37c48cba71400250b04d069f",
+          "observed": -3653.2671362582505,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_85362e6fb813978a83d5bb149dce7285d41100d8828d7c518dc3723325de028f",
+          "observed": 19618,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_49cb31909d537cf73947abffa066e3ec80ab8541c8e53a6421a8f9392f84583e",
+          "observed": 0.3888888888888889,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_df32f87939355072c435132db04cbc1a2dd44090e2e79476f379511e8a0b8aa1",
+          "observed": 0.9384198104402292,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_d0f8ea5cf564db999e389ba41671fe6be28456b667d895332b82f5601671a3ed",
+          "observed": -0.055248716292821624,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_13d140fc46cde3483f211ad92373c720ae8b5d29ba9f1946dfba1870000e2152",
+          "observed": 0.9078711101537623,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_a60bf8ac1cac849e31e9be6fbfde0f8ff42082e85f6198d9b395982ad6f90961",
+          "observed": -710.9302854675642,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -0.9992108134989737,
+        "averageMfeR": 1.0852943827649395,
+        "averageNetR": -0.03623867292626997,
+        "benchmarkIncrementNetR": -3653.2671362582505,
+        "benchmarkTotalNetR": 2942.336850790686,
+        "eventCount": 19618,
+        "exitReasons": {
+          "advisory_r_target": 7092,
+          "initial_stop": 10931,
+          "maximum_hold": 1595
+        },
+        "folds": {},
+        "maximumDrawdownPct": 803.2634929869721,
+        "maximumDrawdownR": 803.263492986972,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.3888888888888889,
+        "profitFactor": 0.9384198104402292,
+        "singleInstrumentPositiveContribution": 0.1417762334842247,
+        "singleMonthPositiveContribution": 0.044187413026939605,
+        "stressAverageNetR": -0.055248716292821624,
+        "stressProfitFactor": 0.9078711101537623,
+        "stressTotalNetR": -1083.8693162325746,
+        "totalNetR": -710.9302854675642
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    },
+    {
+      "candidateId": "auto-breadth_correlation_directional_filter-4h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "breadth_correlation_directional_filter",
+      "formalPassClaimCount": 0,
+      "gatePolicyHash": "automatic_prefilter_gate_policy_937cabd6e0aeb75546926e5a9e9dfa1ebd6a3f04fff7fe873e62637dbb53d90f",
+      "gates": {
+        "maximumSingleInstrumentPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_04af1dc8c4639f7892a358fc5e4209ae488f7cb3621dc8fc8776ec060e2676d3",
+          "observed": 0.13100378172902916,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.45
+        },
+        "maximumSingleMonthPositiveContribution": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_326e88e4dd94a1be6be6976d7686977415e36163fadbb2fa78d9af9b9e27f2b9",
+          "observed": 0.045375005615560335,
+          "operator": "<=",
+          "passed": true,
+          "required": 0.35
+        },
+        "minimumAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_daca44b728eef08b922155f106f5de42683c77eefe4e04d15ae288f6f51c9a78",
+          "observed": -0.04505711777249424,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumBenchmarkIncrementNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_52de486b812b2205eaa6e0efae72b3e5402e340e1d59653258e25ef8ae0631d8",
+          "observed": 2688.303858360292,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_46ba72660168846145ab1f7a82bb84fc8033058a3f55b2437af023a07d5565a6",
+          "observed": 18870,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumPositiveMonthRatio": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_567b75dbc39c49b554ba4ddb4cd159d0002c66f004b61c3093be7dece8087cfc",
+          "observed": 0.4444444444444444,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_0310b847a88c3184ee5ddfe5bc54cd76c9c57ca2af51fd7e77f14c24c78a7952",
+          "observed": 0.9238157771570262,
+          "operator": ">",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumStressAverageNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_823c75fd5b380687200032c8eee34956196340af38f82784c7a52c91adeff580",
+          "observed": -0.06381526855146515,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumStressProfitFactor": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_3594ef10020bde32a667a1271ba268f2399a96aacf6e7cd8f297985a1213fc02",
+          "observed": 0.8940752078061871,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.0
+        },
+        "minimumTotalNetR": {
+          "evidenceHash": "automatic_prefilter_gate_evidence_21233c6f6d7c43508d499786657a4871d72f61b5347c60c8b12252c3c8f73e29",
+          "observed": -850.2278123669664,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "lockedOosAccessCount": 0,
+      "metrics": {
+        "averageMaeR": -0.9863938604376011,
+        "averageMfeR": 1.101135702443588,
+        "averageNetR": -0.04505711777249424,
+        "benchmarkIncrementNetR": 2688.303858360292,
+        "benchmarkTotalNetR": -3538.531670727258,
+        "eventCount": 18870,
+        "exitReasons": {
+          "advisory_r_target": 6784,
+          "initial_stop": 10545,
+          "maximum_hold": 1541
+        },
+        "folds": {},
+        "maximumDrawdownPct": 1042.4269199561404,
+        "maximumDrawdownR": 1042.4269199561404,
+        "observedMonthCount": 36,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.4444444444444444,
+        "profitFactor": 0.9238157771570262,
+        "singleInstrumentPositiveContribution": 0.13100378172902916,
+        "singleMonthPositiveContribution": 0.045375005615560335,
+        "stressAverageNetR": -0.06381526855146515,
+        "stressProfitFactor": 0.8940752078061871,
+        "stressTotalNetR": -1204.1941175661473,
+        "totalNetR": -850.2278123669664
+      },
+      "passed": false,
+      "schemaVersion": "automatic_prefilter_candidate_result_v1",
+      "targetRGateMode": "advisory",
+      "universalTwoRHardGate": false
+    }
+  ],
+  "schemaVersion": "automatic_prefilter_results_v1"
+}

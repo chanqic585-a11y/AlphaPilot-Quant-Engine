@@ -1,0 +1,33 @@
+{
+  "demoArm": false,
+  "formalCandidateIds": [
+    "auto-trend_failure_reversal-4h-short-v2"
+  ],
+  "formalPassClaimCount": 0,
+  "formalRunCount": 0,
+  "maximumFormalCandidates": 6,
+  "maximumPerFamily": 1,
+  "orderCount": 0,
+  "prefilterFailedCandidateIds": [
+    "auto-breadth_correlation_directional_filter-4h-long-v1",
+    "auto-breadth_correlation_directional_filter-4h-short-v2",
+    "auto-btc_shock_lag-1h-long-v1",
+    "auto-btc_shock_lag-1h-short-v2",
+    "auto-cross_session_liquidity_transition-1h-long-v1",
+    "auto-cross_session_liquidity_transition-1h-short-v2",
+    "auto-residual_extreme_causal_recovery-4h-long-v1",
+    "auto-residual_extreme_causal_recovery-4h-short-v2",
+    "auto-trend_failure_reversal-4h-long-v1",
+    "auto-trend_pullback_continuation-4h-long-v1",
+    "auto-trend_pullback_continuation-4h-short-v2",
+    "auto-volatility_compression_release-4h-long-v1",
+    "auto-volatility_compression_release-4h-short-v2",
+    "auto-volatility_shock_asymmetry-1h-long-v1",
+    "auto-volatility_shock_asymmetry-1h-short-v2"
+  ],
+  "readTrialCandidateIds": [],
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "automatic_prefilter_route_v1",
+  "terminalRoute": null
+}

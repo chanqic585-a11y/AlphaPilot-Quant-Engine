@@ -1,0 +1,12 @@
+{
+  "artifactPathTemplate": "reports/formal_validation/{campaignId}/{candidateId}",
+  "candidateAdapter": "generated_directional_event_adapter",
+  "candidateSpecificImportsAllowedInFormalCore": false,
+  "formalRunCommandInputs": [
+    "preregistrationPath",
+    "candidateId"
+  ],
+  "runtimeHash": "automatic_runtime_policy_b2316d7fb24ffaf8b8defd4bd4931eaadf7c64219aed9b81b7d6e549482dc979",
+  "schemaVersion": "automatic_candidate_neutral_runtime_v1",
+  "syntheticSecondCandidateFixtureRequired": true
+}

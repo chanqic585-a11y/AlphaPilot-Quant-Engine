@@ -1,0 +1,22 @@
+{
+  "embargoBars": 36,
+  "formal": {
+    "endExclusive": "2025-01-01T00:00:00Z",
+    "start": "2023-01-01T00:00:00Z"
+  },
+  "formalFoldCount": 5,
+  "futureLockedOos": {
+    "accessBeforeV22FinalEvaluation": 0,
+    "endExclusive": "2026-05-10T00:00:00Z",
+    "start": "2025-01-01T00:00:00Z"
+  },
+  "ordering": "chronological_utc",
+  "prefilter": {
+    "endExclusive": "2023-01-01T00:00:00Z",
+    "start": "2020-01-01T00:00:00Z"
+  },
+  "purgeBars": 36,
+  "resultDrivenMutationAllowed": false,
+  "schemaVersion": "automatic_split_policy_v1",
+  "splitHash": "automatic_split_policy_c1e796b455772586264bf0057ed4b44892195e2f5e5294f78db821957e0a1d14"
+}

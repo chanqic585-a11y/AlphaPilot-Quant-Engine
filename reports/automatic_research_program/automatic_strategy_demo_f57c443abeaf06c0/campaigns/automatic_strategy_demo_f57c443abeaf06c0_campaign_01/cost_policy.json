@@ -1,0 +1,24 @@
+{
+  "baseRoundTripCostRate": 0.0012,
+  "costHash": "automatic_cost_policy_3b8bbfdd46957ba591067687a031e915c2ee504edcd26691f5eb4f776a4957c7",
+  "fundingMissingMayBeFilledWithZero": false,
+  "resultDrivenMutationAllowed": false,
+  "schemaVersion": "automatic_cost_policy_v1",
+  "stressScenarios": [
+    {
+      "multiplier": 1.0,
+      "roundTripCostRate": 0.0012,
+      "scenarioId": "base"
+    },
+    {
+      "multiplier": 1.5,
+      "roundTripCostRate": 0.0018,
+      "scenarioId": "cost_1_5x"
+    },
+    {
+      "multiplier": 2.0,
+      "roundTripCostRate": 0.0024,
+      "scenarioId": "cost_2_0x"
+    }
+  ]
+}

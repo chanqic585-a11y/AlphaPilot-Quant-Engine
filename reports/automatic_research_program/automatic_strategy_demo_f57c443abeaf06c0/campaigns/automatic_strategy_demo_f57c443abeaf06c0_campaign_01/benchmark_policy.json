@@ -1,0 +1,10 @@
+{
+  "benchmarkHash": "automatic_benchmark_policy_faaf5ebda80b0c928c5a54e3441efd413541feba5c2d44e1f42be931bd1ebb26",
+  "candidateEventIdentityMatched": true,
+  "diagnosticBenchmarks": [
+    "no_trade"
+  ],
+  "mainGateBenchmark": "same_signal_maximum_hold",
+  "resultDrivenMutationAllowed": false,
+  "schemaVersion": "automatic_benchmark_policy_v1"
+}

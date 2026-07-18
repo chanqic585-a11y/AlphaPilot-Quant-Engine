@@ -1,0 +1,17 @@
+{
+  "checkpointHash": "57588f8b26dde54283f90127e89546803772e1abff6eb39988904f35d3cbb3ce",
+  "createdAt": "2026-07-18T01:49:17.7049443Z",
+  "payload": {
+    "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+    "candidateCount": 16,
+    "formalCandidateCount": 1,
+    "formalRunCount": 0,
+    "lockedOosAccessCount": 0,
+    "prefilterPassCount": 1,
+    "resultReadCount": 0,
+    "status": "completed",
+    "terminalRoute": null
+  },
+  "schemaVersion": "automatic_strategy_demo_checkpoint_v1",
+  "stage": "v21"
+}

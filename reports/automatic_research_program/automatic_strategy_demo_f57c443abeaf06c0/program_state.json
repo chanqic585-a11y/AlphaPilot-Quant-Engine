@@ -4,15 +4,15 @@
   "baselineCommit": "f9f36f420496a9cbd59bc079bbcdf7796bac6c5a",
   "createdAt": "2026-07-18T01:08:06.1670776Z",
   "humanGateStatus": "not_requested",
-  "nextAllowedStage": "prefilter_completed",
+  "nextAllowedStage": "formal_campaign_frozen",
   "oneShotClaimsConsumed": 0,
-  "previousCheckpoint": "v19",
+  "previousCheckpoint": "v20",
   "programId": "automatic_strategy_demo_f57c443abeaf06c0",
   "programSpecHash": "sha256:e7c2b6711fdc48cacf731b3c6b8930b6d370bcb802742c6e554c4d82b7e87953",
   "resultReadCount": 0,
   "schemaVersion": "automatic_strategy_demo_program_state_v1",
-  "stage": "candidates_certified",
+  "stage": "prefilter_completed",
   "stageAttempt": 0,
   "terminalRoute": null,
-  "updatedAt": "2026-07-18T01:28:24.0105527Z"
+  "updatedAt": "2026-07-18T01:49:17.7049443Z"
 }

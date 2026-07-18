@@ -1,0 +1,34 @@
+{
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "candidateCount": 16,
+  "candidateIds": [
+    "auto-trend_pullback_continuation-4h-long-v1",
+    "auto-trend_pullback_continuation-4h-short-v2",
+    "auto-volatility_compression_release-4h-long-v1",
+    "auto-volatility_compression_release-4h-short-v2",
+    "auto-btc_shock_lag-1h-long-v1",
+    "auto-btc_shock_lag-1h-short-v2",
+    "auto-volatility_shock_asymmetry-1h-long-v1",
+    "auto-volatility_shock_asymmetry-1h-short-v2",
+    "auto-cross_session_liquidity_transition-1h-long-v1",
+    "auto-cross_session_liquidity_transition-1h-short-v2",
+    "auto-residual_extreme_causal_recovery-4h-long-v1",
+    "auto-residual_extreme_causal_recovery-4h-short-v2",
+    "auto-trend_failure_reversal-4h-long-v1",
+    "auto-trend_failure_reversal-4h-short-v2",
+    "auto-breadth_correlation_directional_filter-4h-long-v1",
+    "auto-breadth_correlation_directional_filter-4h-short-v2"
+  ],
+  "candidatePanelHash": "automatic_candidate_daily_return_panel_plan_1d6621a168fbb4277dec89741c225ec7bf00d276bc4fd90b55dbe2c57e88fe8f",
+  "capitalPolicyHash": "automatic_capital_policy_3fb0b411d281137953386f3e6136deec15b99ce3499c529a81c9fbd393c49941",
+  "costHash": "automatic_cost_policy_3b8bbfdd46957ba591067687a031e915c2ee504edcd26691f5eb4f776a4957c7",
+  "dailyReturnPanelReadCount": 0,
+  "dateWindow": {
+    "endExclusive": "2025-01-01T00:00:00Z",
+    "start": "2023-01-01T00:00:00Z"
+  },
+  "postResultCandidateAdditionAllowed": false,
+  "resultReadCount": 0,
+  "schemaVersion": "automatic_candidate_daily_return_panel_plan_v1",
+  "universeHash": "universe_bac8c3726d0f4fbabacdcad02798449dae154a28aecc581aa34cd71bb2ab917f"
+}
