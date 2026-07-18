@@ -5351,3 +5351,29 @@ Resume only from a new immutable catalog containing verified PIT OHLCV evidence.
 If a future run generates a Release, execution must stop at
 `blocked_waiting_exact_release_approval` until the user approves that exact
 Release hash. See `docs/V13.27.1.28-32-research-renewal-closeout.md`.
+
+## V13.27.1.33-34B Dual-Track Data Foundation
+
+V33 freezes a dual-track program ledger so research/data work and Demo product
+work cannot silently promote each other. V34A created the bounded immutable OKX
+public OHLCV snapshot for BTC, ETH, and SOL across 1h, 4h, and UTC daily bars.
+
+V34B extends that accepted warehouse with recent public funding history, daily
+point-in-time SWAP instrument metadata, and resumable append-only forward
+snapshots for instrument state, current funding, open interest, mark price,
+index price, ticker spread, and order-book summaries. Historical instrument
+state is not reconstructed, unavailable long funding history is not fabricated,
+and settled funding cannot be used before its funding timestamp.
+
+This stage is data-only. It creates no candidate, Formal run, result read,
+Release, approval, Demo ARM, account access, or order. Run it explicitly with:
+
+```powershell
+python -m alphapilot.scripts.run_v34b_okx_funding_pit_forward `
+  --program-root reports\dual_track\<programId> `
+  --warehouse-root D:\Codex-Workspace\回测数据 `
+  --implementation-commit <commit>
+```
+
+The executable plan is
+`docs/superpowers/plans/2026-07-19-v13.27.1.34b-funding-pit-forward.md`.

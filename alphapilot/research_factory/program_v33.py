@@ -386,10 +386,122 @@ def record_v34a_data_pilot(
     return summary
 
 
+def record_v34b_data_extension(
+    *,
+    program_root: Path,
+    extension_result: dict[str, Any],
+    created_at: str,
+    writer_id: str,
+) -> dict[str, Any]:
+    """Append a V34B public-data receipt while preserving the V34A identity."""
+
+    root = Path(program_root)
+    summary_path = root / "program_summary.json"
+    state_path = root / "program_state.json"
+    if not summary_path.is_file() or not state_path.is_file():
+        raise FileNotFoundError("dual_track_program_baseline_missing")
+    if extension_result.get("status") != "completed":
+        raise ValueError("v34b_data_extension_not_completed")
+    if extension_result.get("scope") != "v34b_public_data_only":
+        raise ValueError("v34b_data_extension_scope_mismatch")
+    zero_fields = {
+        "candidateCount": 0,
+        "formalRunCount": 0,
+        "resultReadCount": 0,
+        "lockedOosReadCount": 0,
+        "releaseCount": 0,
+        "demoReleaseCount": 0,
+        "approvalCount": 0,
+        "orderCount": 0,
+    }
+    for field, expected in zero_fields.items():
+        if int(extension_result.get(field) or 0) != expected:
+            raise ValueError(f"v34b_forbidden_side_effect:{field}")
+    if bool(extension_result.get("demoArm")):
+        raise ValueError("v34b_forbidden_side_effect:demoArm")
+    for field in ("tradeApiUsed", "withdrawApiUsed", "privateAccountReadUsed"):
+        if bool(extension_result.get(field)):
+            raise ValueError(f"v34b_forbidden_side_effect:{field}")
+    extension_id = str(extension_result.get("snapshotId") or "").strip()
+    if not extension_id:
+        raise ValueError("v34b_data_extension_snapshot_id_missing")
+
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    if not summary.get("dataSnapshotId"):
+        raise ValueError("v34a_data_snapshot_must_be_registered_first")
+    if summary.get("dataFoundationExtensionId") == extension_id:
+        return summary
+    if summary.get("dataFoundationExtensionId"):
+        raise ValueError("v34b_data_extension_already_registered")
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    result_hash = stable_hash(extension_result, prefix="v34b_data_extension_result")
+    payload = {
+        "programId": summary["programId"],
+        "baseDataSnapshotId": summary["dataSnapshotId"],
+        "dataFoundationExtensionId": extension_id,
+        "extensionResultHash": result_hash,
+        "instrumentMetadataCount": int(
+            extension_result.get("instrumentMetadataCount") or 0
+        ),
+        "fundingInstrumentCount": int(
+            extension_result.get("fundingInstrumentCount") or 0
+        ),
+        "forwardStreamsCompleted": sorted(
+            str(value)
+            for value in (extension_result.get("forwardStreamsCompleted") or [])
+        ),
+        **zero_fields,
+        "demoArm": False,
+    }
+    ledgers = DualTrackLedgerSet(root, writer_id=writer_id)
+    for track, event_type in (
+        ("master", "data_foundation_extended"),
+        ("research", "public_forward_snapshot_registered"),
+        ("cross_track", "data_extension_receipt_recorded"),
+    ):
+        ledgers.append(
+            track,
+            event_type=event_type,
+            stage="v34b_funding_pit_forward",
+            created_at=created_at,
+            payload=payload,
+        )
+    state.update(
+        {
+            "topLevelState": "data_foundation_extended",
+            "researchTrackState": "data_foundation_extended",
+            "generatedAt": created_at,
+            "dataFoundationExtensionId": extension_id,
+        }
+    )
+    summary.update(
+        {
+            "topLevelState": "data_foundation_extended",
+            "generatedAt": created_at,
+            "dataFoundationExtensionId": extension_id,
+            "dataFoundationExtensionResultHash": result_hash,
+            "candidateCount": 0,
+            "formalRunCount": 0,
+            "resultReadCount": 0,
+            "lockedOosReadCount": 0,
+            "releaseCount": 0,
+            "approvalCount": 0,
+            "demoArm": False,
+            "orderCount": 0,
+        }
+    )
+    summary.pop("summaryHash", None)
+    summary["summaryHash"] = stable_hash(summary, prefix="dual_track_summary")
+    write_json_atomic(state_path, state)
+    write_json_atomic(summary_path, summary)
+    return summary
+
+
 __all__ = [
     "DUAL_TRACK_LEDGER_FILES",
     "DualTrackLedgerSet",
     "build_dual_track_program_id",
     "initialize_dual_track_successor",
     "record_v34a_data_pilot",
+    "record_v34b_data_extension",
 ]

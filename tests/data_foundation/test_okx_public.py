@@ -32,6 +32,33 @@ class _Response:
 
 
 class OkxPublicTests(unittest.TestCase):
+    def test_public_derivatives_snapshot_methods_use_only_public_endpoints(self) -> None:
+        calls: list[str] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(str(getattr(request, "full_url")))
+            return _Response({"code": "0", "msg": "", "data": []})
+
+        client = OkxPublicClient(opener=opener, throttle_seconds=0)
+        client.current_funding_rate(instrument_id="BTC-USDT-SWAP")
+        client.open_interest(instrument_id="BTC-USDT-SWAP")
+        client.mark_price(instrument_id="BTC-USDT-SWAP")
+        client.index_ticker(instrument_id="BTC-USDT")
+        client.order_book(instrument_id="BTC-USDT-SWAP", depth=5)
+
+        parsed = [(urlparse(url).path, parse_qs(urlparse(url).query)) for url in calls]
+        self.assertEqual(
+            parsed,
+            [
+                ("/api/v5/public/funding-rate", {"instId": ["BTC-USDT-SWAP"]}),
+                ("/api/v5/public/open-interest", {"instType": ["SWAP"], "instId": ["BTC-USDT-SWAP"]}),
+                ("/api/v5/public/mark-price", {"instType": ["SWAP"], "instId": ["BTC-USDT-SWAP"]}),
+                ("/api/v5/market/index-tickers", {"instId": ["BTC-USDT"]}),
+                ("/api/v5/market/books", {"instId": ["BTC-USDT-SWAP"], "sz": ["5"]}),
+            ],
+        )
+
     def test_raw_history_rows_support_1dutc_and_preserve_documented_fields(self) -> None:
         calls: list[str] = []
 

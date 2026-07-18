@@ -193,6 +193,58 @@ class OkxPublicClient:
             if isinstance(item, dict)
         ]
 
+    def current_funding_rate(self, *, instrument_id: str) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/funding-rate",
+                {"instId": instrument_id},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def open_interest(self, *, instrument_id: str) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/open-interest",
+                {"instType": "SWAP", "instId": instrument_id},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def mark_price(self, *, instrument_id: str) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/mark-price",
+                {"instType": "SWAP", "instId": instrument_id},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def index_ticker(self, *, instrument_id: str) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/market/index-tickers",
+                {"instId": instrument_id},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def order_book(
+        self, *, instrument_id: str, depth: int = 5
+    ) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/market/books",
+                {"instId": instrument_id, "sz": max(1, min(int(depth), 400))},
+            )
+            if isinstance(item, dict)
+        ]
+
     def funding_rate_history(
         self,
         *,

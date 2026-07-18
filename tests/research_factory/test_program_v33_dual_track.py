@@ -11,6 +11,7 @@ from alphapilot.research_factory.program_v33 import (
     build_dual_track_program_id,
     initialize_dual_track_successor,
     record_v34a_data_pilot,
+    record_v34b_data_extension,
 )
 
 
@@ -193,3 +194,65 @@ def test_v34a_receipt_advances_data_state_without_creating_strategy_or_orders(
     assert master[-1]["eventType"] == "data_pilot_completed"
     assert research[-1]["eventType"] == "official_data_snapshot_registered"
     assert cross_track[-1]["eventType"] == "data_snapshot_receipt_recorded"
+
+
+def test_v34b_receipt_extends_data_without_mutating_v34a_snapshot_or_side_effects(
+    tmp_path: Path,
+) -> None:
+    predecessor = _predecessor(tmp_path)
+    summary = initialize_dual_track_successor(
+        reports_root=tmp_path,
+        predecessor_program_root=predecessor,
+        implementation_contract_hash="sha256:v33-contract",
+        implementation_commit="commit-v33",
+        generated_at="2026-07-19T00:00:00Z",
+        writer_id="test-writer",
+    )
+    root = tmp_path / "dual_track" / summary["programId"]
+    record_v34a_data_pilot(
+        program_root=root,
+        pilot_result={
+            "status": "completed",
+            "scope": "v34a_data_only",
+            "snapshotId": "okx_snapshot_123",
+            "partitionCount": 9,
+            "candidateCount": 0,
+            "formalRunCount": 0,
+            "demoReleaseCount": 0,
+            "orderCount": 0,
+        },
+        created_at="2026-07-19T01:00:00Z",
+        writer_id="test-writer",
+    )
+
+    updated = record_v34b_data_extension(
+        program_root=root,
+        extension_result={
+            "status": "completed",
+            "scope": "v34b_public_data_only",
+            "snapshotId": "okx_v34b_snapshot_456",
+            "instrumentMetadataCount": 300,
+            "fundingInstrumentCount": 3,
+            "forwardStreamsCompleted": ["open_interest", "funding"],
+            "candidateCount": 0,
+            "formalRunCount": 0,
+            "resultReadCount": 0,
+            "demoReleaseCount": 0,
+            "approvalCount": 0,
+            "orderCount": 0,
+            "demoArm": False,
+        },
+        created_at="2026-07-19T02:00:00Z",
+        writer_id="test-writer",
+    )
+
+    assert updated["dataSnapshotId"] == "okx_snapshot_123"
+    assert updated["dataFoundationExtensionId"] == "okx_v34b_snapshot_456"
+    assert updated["topLevelState"] == "data_foundation_extended"
+    assert updated["candidateCount"] == 0
+    assert updated["formalRunCount"] == 0
+    assert updated["resultReadCount"] == 0
+    assert updated["releaseCount"] == 0
+    assert updated["approvalCount"] == 0
+    assert updated["demoArm"] is False
+    assert updated["orderCount"] == 0
