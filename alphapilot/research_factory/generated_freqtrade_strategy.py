@@ -61,6 +61,8 @@ def _translated_mask(
     rolling_low = close.rolling(20, min_periods=20).min().shift(1)
     volatility_fast = returns.rolling(12, min_periods=12).std()
     volatility_slow = returns.rolling(48, min_periods=24).std()
+    atr = _average_true_range(frame)
+    prior_atr = atr.shift(1)
     long = direction == "long"
 
     if setup_id == "trend_pullback_continuation":
@@ -118,6 +120,33 @@ def _translated_mask(
         aligned = regime.reindex(frame["date"]).fillna(False).reset_index(drop=True)
         local = returns > 0 if long else returns < 0
         return pd.Series(aligned.to_numpy(), index=frame.index) & local
+    if setup_id == "range_expansion_close_followthrough":
+        bar_range = (frame["high"] - frame["low"]).clip(lower=1e-12)
+        close_location = (close - frame["low"]) / bar_range
+        expanded = bar_range > prior_atr * 1.4
+        directional_close = close_location >= 0.68 if long else close_location <= 0.32
+        return expanded & directional_close
+    if setup_id == "liquidity_gap_reentry":
+        gap = frame["open"] - close.shift(1)
+        material_gap = gap < -prior_atr * 0.8 if long else gap > prior_atr * 0.8
+        reentry = close > frame["open"] if long else close < frame["open"]
+        return material_gap & reentry
+    if setup_id == "cross_section_dispersion_leader_followthrough":
+        panel = _return_panel(all_frames)
+        mean = panel.mean(axis=1)
+        scale = panel.std(axis=1, ddof=0).replace(0.0, np.nan)
+        z_score = panel.sub(mean, axis=0).div(scale, axis=0)
+        if symbol not in z_score:
+            return pd.Series(False, index=frame.index)
+        event = z_score[symbol] >= 0.8 if long else z_score[symbol] <= -0.8
+        aligned = event.reindex(frame["date"]).fillna(False)
+        return pd.Series(aligned.to_numpy(), index=frame.index)
+    if setup_id == "opening_range_failure_reversal":
+        prior_high = frame["high"].rolling(12, min_periods=12).max().shift(2)
+        prior_low = frame["low"].rolling(12, min_periods=12).min().shift(2)
+        if long:
+            return (frame["low"].shift(1) < prior_low) & (close > prior_low)
+        return (frame["high"].shift(1) > prior_high) & (close < prior_high)
     raise ValueError(f"unknown_generated_setup:{setup_id}")
 
 
@@ -149,7 +178,10 @@ def translated_load_signals(
             direction=direction,
             all_frames=frames,
         ).fillna(False)
+        minimum_index = int(candidate.get("rankingLookbackBars") or 0)
         for index in frame.index[mask]:
+            if index < minimum_index:
+                continue
             if index + 1 >= len(frame):
                 continue
             signal_time = frame.at[index, "date"].isoformat()
@@ -157,6 +189,7 @@ def translated_load_signals(
             row = {
                 "candidateId": str(candidate["candidateId"]),
                 "symbol": symbol,
+                "instrumentId": symbol,
                 "direction": direction,
                 "signalTimestamp": signal_time,
                 "entryTimestamp": entry_time,

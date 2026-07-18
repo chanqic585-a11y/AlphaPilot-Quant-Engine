@@ -63,6 +63,8 @@ def _setup_mask(
     rolling_low = close.rolling(20, min_periods=20).min().shift(1)
     volatility_fast = returns.rolling(12, min_periods=12).std()
     volatility_slow = returns.rolling(48, min_periods=24).std()
+    atr = _atr(frame)
+    prior_atr = atr.shift(1)
     long = direction == "long"
 
     if setup_id == "trend_pullback_continuation":
@@ -121,11 +123,38 @@ def _setup_mask(
         aligned_regime = regime.reindex(frame["date"]).fillna(False).reset_index(drop=True)
         local = returns > 0 if long else returns < 0
         return pd.Series(aligned_regime.to_numpy(), index=frame.index) & local
+    if setup_id == "range_expansion_close_followthrough":
+        bar_range = (frame["high"] - frame["low"]).clip(lower=1e-12)
+        close_location = (close - frame["low"]) / bar_range
+        expanded = bar_range > prior_atr * 1.4
+        directional_close = close_location >= 0.68 if long else close_location <= 0.32
+        return expanded & directional_close
+    if setup_id == "liquidity_gap_reentry":
+        gap = frame["open"] - close.shift(1)
+        material_gap = gap < -prior_atr * 0.8 if long else gap > prior_atr * 0.8
+        reentry = close > frame["open"] if long else close < frame["open"]
+        return material_gap & reentry
+    if setup_id == "cross_section_dispersion_leader_followthrough":
+        panel = _aligned_returns(all_frames)
+        mean = panel.mean(axis=1)
+        scale = panel.std(axis=1, ddof=0).replace(0.0, np.nan)
+        z_score = panel.sub(mean, axis=0).div(scale, axis=0)
+        if symbol not in z_score:
+            return pd.Series(False, index=frame.index)
+        event = z_score[symbol] >= 0.8 if long else z_score[symbol] <= -0.8
+        aligned = event.reindex(frame["date"]).fillna(False)
+        return pd.Series(aligned.to_numpy(), index=frame.index)
+    if setup_id == "opening_range_failure_reversal":
+        prior_high = frame["high"].rolling(12, min_periods=12).max().shift(2)
+        prior_low = frame["low"].rolling(12, min_periods=12).min().shift(2)
+        if long:
+            return (frame["low"].shift(1) < prior_low) & (close > prior_low)
+        return (frame["high"].shift(1) > prior_high) & (close < prior_high)
     raise ValueError(f"unknown_generated_setup:{setup_id}")
 
 
 def _synthetic_frames(setup_id: str) -> dict[str, pd.DataFrame]:
-    count = 600
+    count = 1_000
     dates = pd.date_range("2024-01-01", periods=count, freq="h", tz="UTC")
     if setup_id == "btc_shock_lag":
         btc_returns = np.full(count, 0.0002)
@@ -137,7 +166,12 @@ def _synthetic_frames(setup_id: str) -> dict[str, pd.DataFrame]:
     else:
         trend = np.linspace(100.0, 130.0, count)
         wave = np.sin(np.arange(count) / 5.0) * 3.0
-        jumps = np.where(np.arange(count) % 97 == 0, -8.0, 0.0)
+        jump_index = np.arange(count) // 97
+        jumps = np.where(
+            np.arange(count) % 97 == 0,
+            np.where(jump_index % 2 == 0, -8.0, 8.0),
+            0.0,
+        )
         btc_close = trend + wave + jumps
         eth_close = trend * 0.55 + np.sin(np.arange(count) / 3.0) * 4.0 + np.roll(jumps, 1)
 
@@ -155,7 +189,20 @@ def _synthetic_frames(setup_id: str) -> dict[str, pd.DataFrame]:
             }
         )
 
-    return {"BTC-USDT-SWAP": make(btc_close), "ETH-USDT-SWAP": make(eth_close)}
+    frames = {"BTC-USDT-SWAP": make(btc_close), "ETH-USDT-SWAP": make(eth_close)}
+    if setup_id == "liquidity_gap_reentry":
+        for frame in frames.values():
+            for index, gap in ((800, -8.0), (900, 8.0)):
+                previous = float(frame.at[index - 1, "close"])
+                frame.at[index, "open"] = previous + gap
+                frame.at[index, "close"] = previous + (-2.0 if gap > 0 else 2.0)
+                frame.at[index, "high"] = max(
+                    float(frame.at[index, "open"]), float(frame.at[index, "close"])
+                ) + 1.0
+                frame.at[index, "low"] = min(
+                    float(frame.at[index, "open"]), float(frame.at[index, "close"])
+                ) - 1.0
+    return frames
 
 
 @dataclass(frozen=True)
@@ -219,7 +266,10 @@ class GeneratedDirectionalEventAdapter:
                 direction=direction,
                 all_frames=frames,
             ).fillna(False)
+            minimum_index = int(candidate.get("rankingLookbackBars") or 0)
             for index in frame.index[mask]:
+                if index < minimum_index:
+                    continue
                 if index + 1 >= len(frame):
                     continue
                 signal_time = frame.at[index, "date"].isoformat()
@@ -227,6 +277,7 @@ class GeneratedDirectionalEventAdapter:
                 event = {
                     "candidateId": self.candidate_id,
                     "symbol": symbol,
+                    "instrumentId": symbol,
                     "direction": direction,
                     "signalTimestamp": signal_time,
                     "entryTimestamp": entry_time,
