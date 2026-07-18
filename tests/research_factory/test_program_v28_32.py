@@ -22,6 +22,7 @@ def _candidate(
     status: str = "formal_economic_failed",
     release_eligible: bool = False,
     revision_of: str | None = None,
+    extra: dict[str, object] | None = None,
 ) -> dict[str, object]:
     payload: dict[str, object] = {
         "candidateId": candidate_id,
@@ -35,6 +36,7 @@ def _candidate(
     }
     if revision_of:
         payload["revisionOfCandidateId"] = revision_of
+    payload.update(extra or {})
     return payload
 
 
@@ -148,9 +150,97 @@ def test_program_stops_after_first_release_eligible_candidate(tmp_path: Path) ->
         ],
     )
 
-    assert summary["finalRoute"] == "v30_completed_release_eligible"
+    assert summary["finalRoute"] == "blocked_okx_data"
     assert summary["campaignCount"] == 1
     assert summary["releaseEligibleCandidateIds"] == ["candidate-pass"]
+    assert summary["releaseCount"] == 0
+
+
+def test_release_eligible_candidate_stops_at_exact_hash_approval(tmp_path: Path) -> None:
+    summary = run_research_renewal_program(
+        reports_root=tmp_path,
+        prompt_hash="sha256:release",
+        implementation_commit="commit-1",
+        generated_at="2026-07-18T00:00:00Z",
+        campaigns=[
+            {
+                "campaignId": "campaign-release",
+                "candidates": [
+                    _candidate(
+                        "candidate-pass",
+                        status="formal_pass",
+                        release_eligible=True,
+                        extra={
+                            "okxProfile": {
+                                "status": "ready",
+                                "profileHash": "okx-profile-1",
+                            },
+                            "evidenceSummary": {
+                                "fiveFold": "passed",
+                                "costStress": "passed",
+                            },
+                            "riskOverlay": {"riskOverlayHash": "risk-1"},
+                        },
+                    )
+                ],
+            }
+        ],
+    )
+    candidate_root = (
+        tmp_path
+        / "automatic_research_program"
+        / str(summary["programId"])
+        / "campaigns"
+        / "campaign-release"
+        / "candidates"
+        / "candidate-pass"
+    )
+    release = json.loads(
+        (candidate_root / "immutable_demo_release.json").read_text(encoding="utf-8")
+    )
+    approval = json.loads(
+        (candidate_root / "demo_approval_request.json").read_text(encoding="utf-8")
+    )
+
+    assert summary["finalRoute"] == "blocked_waiting_exact_release_approval"
+    assert summary["releaseCount"] == 1
+    assert summary["approvalCount"] == 0
+    assert summary["demoArm"] is False
+    assert summary["orderCount"] == 0
+    assert release["approved"] is False
+    assert approval["releaseHash"] == release["releaseHash"]
+    assert (candidate_root / "demo_approval_request.md").is_file()
+
+
+def test_failed_portability_is_a_terminal_release_block(tmp_path: Path) -> None:
+    summary = run_research_renewal_program(
+        reports_root=tmp_path,
+        prompt_hash="sha256:portability-block",
+        implementation_commit="commit-1",
+        generated_at="2026-07-18T00:00:00Z",
+        campaigns=[
+            {
+                "campaignId": "campaign-portability",
+                "candidates": [
+                    _candidate(
+                        "candidate-pass",
+                        status="formal_pass",
+                        release_eligible=True,
+                        extra={
+                            "okxProfile": {"status": "blocked_okx_data"},
+                            "portabilityAudit": {
+                                "status": "blocked_okx_portability",
+                                "failedThresholds": ["minimumEventOverlapPct"],
+                            },
+                        },
+                    )
+                ],
+            }
+        ],
+    )
+
+    assert summary["finalRoute"] == "blocked_okx_portability"
+    assert summary["releaseCount"] == 0
 
 
 def test_data_blocked_campaign_consumes_no_result_budget(tmp_path: Path) -> None:

@@ -14,6 +14,10 @@ from alphapilot.data_foundation.checkpoint import write_json_atomic
 from alphapilot.evolution.registry.hashing import stable_hash
 
 from .artifact_paths import ProgramArtifactPaths
+from .okx_release_admission import (
+    build_immutable_release,
+    build_release_approval_request,
+)
 from .program_ledger import ProgramLedger
 
 
@@ -23,6 +27,7 @@ _TERMINAL_ROUTES = {
     "blocked_formal_data",
     "blocked_okx_data",
     "blocked_okx_portability",
+    "blocked_waiting_exact_release_approval",
     "implementation_invalid",
 }
 _PASS_CLASSES = {
@@ -228,6 +233,7 @@ def run_research_renewal_program(
     result_read_count = 0
     formal_run_count = 0
     release_eligible_ids: list[str] = []
+    release_eligible_candidates: list[tuple[str, dict[str, Any], str]] = []
     data_blocked = False
 
     for campaign in campaigns:
@@ -308,6 +314,9 @@ def run_research_renewal_program(
             if result["releaseEligible"]:
                 release_eligible_ids.append(candidate_id)
                 campaign_release_eligible.append(candidate_id)
+                release_eligible_candidates.append(
+                    (campaign_id, candidate, str(result["formalStatus"]))
+                )
             else:
                 failed_candidate_ids.add(candidate_id)
                 archived_count += 1
@@ -355,8 +364,78 @@ def run_research_renewal_program(
         if release_eligible_ids:
             break
 
-    if release_eligible_ids:
-        final_route = "v30_completed_release_eligible"
+    releases: list[dict[str, Any]] = []
+    approval_requests: list[dict[str, Any]] = []
+    release_blockers: list[str] = []
+    releases_by_campaign: Counter[str] = Counter()
+    for campaign_id, candidate, result_class in release_eligible_candidates:
+        okx_profile = candidate.get("okxProfile")
+        portability_audit = candidate.get("portabilityAudit")
+        if not isinstance(okx_profile, Mapping):
+            okx_profile = None
+        if not isinstance(portability_audit, Mapping):
+            portability_audit = None
+        okx_ready = okx_profile is not None and okx_profile.get("status") == "ready"
+        portability_ready = (
+            portability_audit is not None
+            and portability_audit.get("status") == "passed"
+        )
+        if not (okx_ready or portability_ready):
+            if (
+                portability_audit is not None
+                and portability_audit.get("status") == "blocked_okx_portability"
+            ):
+                release_blockers.append("blocked_okx_portability")
+            else:
+                release_blockers.append("blocked_okx_data")
+            continue
+        releases_by_campaign[campaign_id] += 1
+        if (
+            releases_by_campaign[campaign_id]
+            > active_budget.maximum_demo_releases_per_campaign
+        ):
+            raise ValueError("campaign_demo_release_budget_exceeded")
+        release = build_immutable_release(
+            campaign_id=campaign_id,
+            candidate=candidate,
+            result_class=result_class,
+            okx_profile=okx_profile,
+            portability_audit=portability_audit,
+            evidence_summary=dict(candidate.get("evidenceSummary") or {}),
+            risk_overlay=dict(candidate.get("riskOverlay") or {}),
+        )
+        request = build_release_approval_request(release)
+        candidate_root = paths.candidate(
+            campaign_id, str(candidate.get("candidateId") or "")
+        )
+        write_json_atomic(candidate_root / "immutable_demo_release.json", release)
+        write_json_atomic(candidate_root / "demo_approval_request.json", request)
+        _write_markdown(
+            candidate_root / "demo_approval_request.md",
+            "Exact Demo Release Approval Required",
+            [
+                ("Release ID", release["releaseId"]),
+                ("Release Hash", release["releaseHash"]),
+                ("Candidate ID", release["candidateId"]),
+                ("Evidence Class", release["resultClass"]),
+                ("Admission route", release["admissionRoute"]),
+                ("Risk Overlay Hash", release["riskOverlayHash"]),
+                ("Status", request["status"]),
+                ("Demo ARM", False),
+                ("Orders", 0),
+            ],
+        )
+        releases.append(release)
+        approval_requests.append(request)
+
+    if releases:
+        final_route = "blocked_waiting_exact_release_approval"
+    elif release_eligible_ids:
+        final_route = (
+            "blocked_okx_portability"
+            if "blocked_okx_portability" in release_blockers
+            else "blocked_okx_data"
+        )
     elif data_blocked and candidate_count == 0:
         final_route = "blocked_formal_data"
     else:
@@ -372,7 +451,7 @@ def run_research_renewal_program(
         "fullBacktestsRemaining": max(
             0, active_budget.maximum_additional_full_backtests - full_backtests_used
         ),
-        "demoReleasesUsed": 0,
+        "demoReleasesUsed": len(releases),
     }
     summary: dict[str, Any] = {
         "schemaVersion": "automatic_strategy_renewal_summary_v1",
@@ -400,8 +479,22 @@ def run_research_renewal_program(
         "resultReadCount": result_read_count,
         "lockedOosReadCount": 0,
         "releaseEligibleCandidateIds": release_eligible_ids,
-        "releaseCount": 0,
+        "releaseCount": len(releases),
         "approvalCount": 0,
+        "releases": [
+            {
+                "releaseId": release["releaseId"],
+                "releaseHash": release["releaseHash"],
+                "candidateId": release["candidateId"],
+                "riskOverlayHash": release["riskOverlayHash"],
+                "approved": False,
+            }
+            for release in releases
+        ],
+        "approvalRequestHashes": [
+            request["approvalRequestHash"] for request in approval_requests
+        ],
+        "releaseAdmissionBlockers": sorted(set(release_blockers)),
         "demoArm": False,
         "orderCount": 0,
         "budget": budget_summary,
@@ -414,13 +507,9 @@ def run_research_renewal_program(
     write_json_atomic(root / "program_state.json", {
         "schemaVersion": "automatic_strategy_renewal_state_v1",
         "programId": program_id,
-        "stage": "v30_completed" if final_route.startswith("v30_") else final_route,
+        "stage": final_route,
         "terminalRoute": final_route if final_route in _TERMINAL_ROUTES else None,
-        "nextAllowedStage": (
-            "v31_okx_release_admission"
-            if final_route == "v30_completed_release_eligible"
-            else final_route
-        ),
+        "nextAllowedStage": final_route,
         "approved": False,
         "demoArm": False,
         "orderCount": 0,
@@ -439,13 +528,20 @@ def run_research_renewal_program(
             ("Formal pass", formal_pass_count),
             ("Research pass", research_pass_count),
             ("Release eligible", len(release_eligible_ids)),
+            ("Releases", len(releases)),
             ("Demo ARM", False),
             ("Orders", 0),
         ],
     )
     ledger.append(
         event_type="program_completed",
-        stage="v30_completed",
+        stage=(
+            "v32_exact_release_approval"
+            if final_route == "blocked_waiting_exact_release_approval"
+            else "v31_okx_release_admission"
+            if release_eligible_ids
+            else "v30_completed"
+        ),
         created_at=generated_at,
         payload={"finalRoute": final_route, "summaryHash": summary["summaryHash"]},
     )
