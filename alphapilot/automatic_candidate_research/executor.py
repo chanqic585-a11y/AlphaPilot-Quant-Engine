@@ -10,6 +10,7 @@ from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
 from alphapilot.standard_replication import ReplicationSourceRegistry
 
 from .contracts import V36ContractError
+from .development_replay import build_development_evidence
 from .formal_routing import route_formal_outcomes
 from .preregistration import build_preregistration
 from .selection import project_development_evidence, select_stable_neighborhood
@@ -47,6 +48,57 @@ class AutomaticCandidateResearchExecutor:
             comparison_panel=comparison_panel,
         )
 
+        development_replay_audit: dict[str, Any]
+        raw_development_evidence = list(campaign_input.get("developmentEvidence") or [])
+        replay_config = campaign_input.get("developmentReplay")
+        if raw_development_evidence:
+            development_replay_audit = {
+                "schemaVersion": "v36_development_replay_audit_v1",
+                "status": "supplied_evidence",
+                "campaignId": campaign_id,
+                "evidenceCount": len(raw_development_evidence),
+                "formalRunCount": 0,
+                "resultReadCount": 0,
+                "lockedOosReadCount": 0,
+                "releaseCount": 0,
+                "approvalCount": 0,
+                "demoArm": False,
+                "orderCount": 0,
+                "privateAccountReadUsed": False,
+                "tradeApiUsed": False,
+                "withdrawApiUsed": False,
+            }
+        elif isinstance(replay_config, Mapping):
+            raw_development_evidence, development_replay_audit = (
+                build_development_evidence(
+                    registry=self.registry,
+                    preregistration=preregistration,
+                    comparison_panel=comparison_panel,
+                    replay_config=replay_config,
+                )
+            )
+        else:
+            development_replay_audit = {
+                "schemaVersion": "v36_development_replay_audit_v1",
+                "status": "not_requested",
+                "campaignId": campaign_id,
+                "evidenceCount": 0,
+                "formalRunCount": 0,
+                "resultReadCount": 0,
+                "lockedOosReadCount": 0,
+                "releaseCount": 0,
+                "approvalCount": 0,
+                "demoArm": False,
+                "orderCount": 0,
+                "privateAccountReadUsed": False,
+                "tradeApiUsed": False,
+                "withdrawApiUsed": False,
+            }
+        if "auditHash" not in development_replay_audit:
+            development_replay_audit["auditHash"] = stable_hash(
+                development_replay_audit, prefix="v36_development_replay_audit"
+            )
+
         trial_lookup = {
             str(trial["trialId"]): trial
             for trials in preregistration["trialsByCandidate"].values()
@@ -54,7 +106,7 @@ class AutomaticCandidateResearchExecutor:
         }
         projections_by_candidate: dict[str, list[dict[str, Any]]] = {}
         seen_trial_ids: set[str] = set()
-        for raw_evidence in campaign_input.get("developmentEvidence") or []:
+        for raw_evidence in raw_development_evidence:
             if not isinstance(raw_evidence, Mapping):
                 raise V36ContractError("development_evidence_invalid")
             trial_id = str(raw_evidence.get("trialId") or "")
@@ -157,7 +209,18 @@ class AutomaticCandidateResearchExecutor:
             "blockedFamilyCount": preregistration["blockedFamilyCount"],
             "blockedFamilyIds": preregistration["blockedFamilyIds"],
             "developmentProjectionCount": development_projection["projectionCount"],
+            "developmentReplayStatus": development_replay_audit["status"],
+            "developmentEvidenceCount": development_replay_audit["evidenceCount"],
             "stableSelectionCount": neighborhood_selection["eligibleSelectionCount"],
+            "developmentPhaseStatus": (
+                "stable_candidates_selected"
+                if neighborhood_selection["eligibleSelectionCount"]
+                else (
+                    "development_evidence_missing"
+                    if development_projection["missingCandidateIds"]
+                    else "no_stable_candidates"
+                )
+            ),
             "formalRunCount": formal_route["formalRunCount"],
             "resultReadCount": formal_route["resultReadCount"],
             "lockedOosReadCount": formal_route["lockedOosReadCount"],
@@ -176,6 +239,7 @@ class AutomaticCandidateResearchExecutor:
 
         artifacts: tuple[tuple[str, Mapping[str, object]], ...] = (
             ("preregistration.json", preregistration),
+            ("development_replay_audit.json", development_replay_audit),
             ("development_projection.json", development_projection),
             ("neighborhood_selection.json", neighborhood_selection),
             ("formal_route.json", formal_route),

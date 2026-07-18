@@ -44,6 +44,7 @@ def test_executor_writes_complete_zero_winner_artifact_set(tmp_path: Path) -> No
     campaign_root = tmp_path / "reports/v36-zero"
     assert {path.name for path in campaign_root.glob("*.json")} == {
         "preregistration.json",
+        "development_replay_audit.json",
         "development_projection.json",
         "neighborhood_selection.json",
         "formal_route.json",
@@ -52,7 +53,7 @@ def test_executor_writes_complete_zero_winner_artifact_set(tmp_path: Path) -> No
         "artifact_manifest.json",
     }
     manifest = json.loads((campaign_root / "artifact_manifest.json").read_text("utf-8"))
-    assert len(manifest["artifacts"]) == 6
+    assert len(manifest["artifacts"]) == 7
     assert all(item["sha256"] for item in manifest["artifacts"])
 
 

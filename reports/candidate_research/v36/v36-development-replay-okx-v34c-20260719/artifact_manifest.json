@@ -1,0 +1,36 @@
+{
+  "artifacts": [
+    {
+      "path": "preregistration.json",
+      "sha256": "4bbf04e0f5e74ba94e51b42e8e48f92daab31c0d1015cc18a11d69ca09142bd9"
+    },
+    {
+      "path": "development_replay_audit.json",
+      "sha256": "a218bc87a258db3887bd1d6b661a5ea8536835fb05f5122b89dd53679d9803ca"
+    },
+    {
+      "path": "development_projection.json",
+      "sha256": "3ca4f2d08af7944e5bb44226aa213cd17f5f4b01a34268a3937efdeb018ebea8"
+    },
+    {
+      "path": "neighborhood_selection.json",
+      "sha256": "9a619ae1b45d78f8b79fddf751f8b68e7f1c308d043e479838544757c3acc3cf"
+    },
+    {
+      "path": "formal_route.json",
+      "sha256": "07db7eda84d20acd144bcd769275214230fb396b3ce75bbfd0fe2a70b10ab5ce"
+    },
+    {
+      "path": "immutable_releases.json",
+      "sha256": "7ba5a331a66405d5501bea415bee86cc5bd42d06ea917baf132846ff0129d7de"
+    },
+    {
+      "path": "campaign_summary.json",
+      "sha256": "72fed3ab3d67ab08465be84e1d96e5f8d4999dd70110d6bcac18508f243e581b"
+    }
+  ],
+  "campaignHash": "v36_campaign_bc5e99d92aa4a3790eca14e86a19f267162890be5e75a3f438206a745aad8e66",
+  "campaignId": "v36-development-replay-okx-v34c-20260719",
+  "manifestHash": "v36_manifest_c2e63d415ab7a97776f95e899950fc1b44602af3e759479871fcd5d2ad68c1c4",
+  "schemaVersion": "v36_artifact_manifest_v1"
+}

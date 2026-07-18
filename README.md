@@ -5448,6 +5448,13 @@ trials, selection reads Development evidence only, and stable-neighborhood
 checks reject isolated best points. Directional, pair, portfolio, and event
 families retain separate evidence contracts.
 
+An optional `developmentReplay` block now runs the executable V35 families
+against a frozen, hash-verified local OKX public snapshot. The first real
+Development campaign generated all 18 preregistered trials and selected two
+stable time-series-momentum neighborhoods while keeping Formal, Locked OOS,
+Release, ARM, private-account, and order counters at zero. See
+`docs/V13.27.1.36-automatic-candidate-research.md`.
+
 Formal statistics remain owned by the existing Formal Validation modules. V36
 only validates and routes immutable Formal outcome records. Only
 `formal_pass` may emit `immutable_release_ready`; every emitted Release remains

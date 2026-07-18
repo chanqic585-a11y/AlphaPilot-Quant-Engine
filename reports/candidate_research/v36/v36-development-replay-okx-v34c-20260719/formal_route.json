@@ -1,0 +1,28 @@
+{
+  "approvalCount": 0,
+  "blockedFamilyIds": [
+    "crypto_cross_sectional_factor_v1",
+    "crypto_event_driven_v1"
+  ],
+  "campaignId": "v36-development-replay-okx-v34c-20260719",
+  "demoArm": false,
+  "formalOutcomeCounts": {
+    "capital_infeasible": 0,
+    "data_blocked": 0,
+    "formal_economic_failed": 0,
+    "formal_pass": 0,
+    "implementation_invalid": 0,
+    "research_pass_funding_unavailable": 0,
+    "research_pass_no_clean_holdout": 0,
+    "statistical_failed": 0
+  },
+  "formalOutcomes": [],
+  "formalRunCount": 0,
+  "immutableReleases": [],
+  "lockedOosReadCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_formal_route_v1",
+  "status": "research_blocked_data"
+}
