@@ -12,6 +12,7 @@ from alphapilot.research_factory.program_v33 import (
     initialize_dual_track_successor,
     record_v34a_data_pilot,
     record_v34b_data_extension,
+    record_v34c_public_data_service,
 )
 
 
@@ -256,3 +257,102 @@ def test_v34b_receipt_extends_data_without_mutating_v34a_snapshot_or_side_effect
     assert updated["approvalCount"] == 0
     assert updated["demoArm"] is False
     assert updated["orderCount"] == 0
+
+
+def test_v34c_receipt_registers_service_without_advancing_strategy_or_trading(
+    tmp_path: Path,
+) -> None:
+    predecessor = _predecessor(tmp_path)
+    summary = initialize_dual_track_successor(
+        reports_root=tmp_path,
+        predecessor_program_root=predecessor,
+        implementation_contract_hash="sha256:v33-contract",
+        implementation_commit="commit-v33",
+        generated_at="2026-07-19T00:00:00Z",
+        writer_id="test-writer",
+    )
+    root = tmp_path / "dual_track" / summary["programId"]
+    record_v34a_data_pilot(
+        program_root=root,
+        pilot_result={
+            "status": "completed",
+            "scope": "v34a_data_only",
+            "snapshotId": "okx_snapshot_123",
+            "candidateCount": 0,
+            "formalRunCount": 0,
+            "demoReleaseCount": 0,
+            "orderCount": 0,
+        },
+        created_at="2026-07-19T01:00:00Z",
+        writer_id="test-writer",
+    )
+    record_v34b_data_extension(
+        program_root=root,
+        extension_result={
+            "status": "completed",
+            "scope": "v34b_public_data_only",
+            "snapshotId": "okx_v34b_snapshot_456",
+            "candidateCount": 0,
+            "formalRunCount": 0,
+            "resultReadCount": 0,
+            "lockedOosReadCount": 0,
+            "releaseCount": 0,
+            "demoReleaseCount": 0,
+            "approvalCount": 0,
+            "orderCount": 0,
+            "demoArm": False,
+        },
+        created_at="2026-07-19T02:00:00Z",
+        writer_id="test-writer",
+    )
+
+    updated = record_v34c_public_data_service(
+        program_root=root,
+        service_result={
+            "status": "completed",
+            "scope": "v34c_public_data_service_only",
+            "dataFoundationServiceId": "okx_public_service_789",
+            "policyHash": "sha256:policy-789",
+            "latestCycleHash": "sha256:cycle-789",
+            "latestQualityStatus": "healthy",
+            "cycleLedgerPath": "manifests/v34c/cycle_ledger.jsonl",
+            "candidateCount": 0,
+            "formalRunCount": 0,
+            "resultReadCount": 0,
+            "lockedOosReadCount": 0,
+            "releaseCount": 0,
+            "demoReleaseCount": 0,
+            "approvalCount": 0,
+            "orderCount": 0,
+            "demoArm": False,
+            "tradeApiUsed": False,
+            "withdrawApiUsed": False,
+            "privateAccountReadUsed": False,
+        },
+        created_at="2026-07-19T03:00:00Z",
+        writer_id="test-writer",
+    )
+
+    assert updated["dataSnapshotId"] == "okx_snapshot_123"
+    assert updated["dataFoundationExtensionId"] == "okx_v34b_snapshot_456"
+    assert updated["dataFoundationServiceId"] == "okx_public_service_789"
+    assert updated["topLevelState"] == "public_data_service_active"
+    assert updated["candidateCount"] == 0
+    assert updated["formalRunCount"] == 0
+    assert updated["resultReadCount"] == 0
+    assert updated["lockedOosReadCount"] == 0
+    assert updated["releaseCount"] == 0
+    assert updated["approvalCount"] == 0
+    assert updated["demoArm"] is False
+    assert updated["orderCount"] == 0
+    state = json.loads((root / "program_state.json").read_text(encoding="utf-8"))
+    assert state["dataSnapshotId"] == "okx_snapshot_123"
+    assert state["dataFoundationExtensionId"] == "okx_v34b_snapshot_456"
+    assert state["dataFoundationServiceId"] == "okx_public_service_789"
+    assert state["demoProductTrackState"] == "demo_platform_building"
+    master = ProgramLedger(root / "master_program_ledger.jsonl").read_all()
+    research = ProgramLedger(root / "research_track_ledger.jsonl").read_all()
+    cross_track = ProgramLedger(root / "cross_track_receipt_ledger.jsonl").read_all()
+    assert master[-1]["eventType"] == "public_data_service_registered"
+    assert research[-1]["eventType"] == "public_data_scheduler_activated"
+    assert cross_track[-1]["eventType"] == "public_data_service_receipt_recorded"

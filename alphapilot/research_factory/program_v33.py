@@ -497,6 +497,132 @@ def record_v34b_data_extension(
     return summary
 
 
+def record_v34c_public_data_service(
+    *,
+    program_root: Path,
+    service_result: dict[str, Any],
+    created_at: str,
+    writer_id: str,
+) -> dict[str, Any]:
+    """Register the V34C public-data service with no research or trade effects."""
+
+    root = Path(program_root)
+    summary_path = root / "program_summary.json"
+    state_path = root / "program_state.json"
+    if not summary_path.is_file() or not state_path.is_file():
+        raise FileNotFoundError("dual_track_program_baseline_missing")
+    if service_result.get("status") != "completed":
+        raise ValueError("v34c_public_data_service_not_completed")
+    if service_result.get("scope") != "v34c_public_data_service_only":
+        raise ValueError("v34c_public_data_service_scope_mismatch")
+    zero_fields = {
+        "candidateCount": 0,
+        "formalRunCount": 0,
+        "resultReadCount": 0,
+        "lockedOosReadCount": 0,
+        "releaseCount": 0,
+        "demoReleaseCount": 0,
+        "approvalCount": 0,
+        "orderCount": 0,
+    }
+    for field, expected in zero_fields.items():
+        if int(service_result.get(field) or 0) != expected:
+            raise ValueError(f"v34c_forbidden_side_effect:{field}")
+    if bool(service_result.get("demoArm")):
+        raise ValueError("v34c_forbidden_side_effect:demoArm")
+    for field in ("tradeApiUsed", "withdrawApiUsed", "privateAccountReadUsed"):
+        if bool(service_result.get(field)):
+            raise ValueError(f"v34c_forbidden_side_effect:{field}")
+
+    service_id = str(service_result.get("dataFoundationServiceId") or "").strip()
+    policy_hash = str(service_result.get("policyHash") or "").strip()
+    cycle_hash = str(service_result.get("latestCycleHash") or "").strip()
+    if not service_id:
+        raise ValueError("v34c_data_foundation_service_id_missing")
+    if not policy_hash:
+        raise ValueError("v34c_policy_hash_missing")
+    if not cycle_hash:
+        raise ValueError("v34c_latest_cycle_hash_missing")
+
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    if not summary.get("dataSnapshotId"):
+        raise ValueError("v34a_data_snapshot_must_be_registered_first")
+    if not summary.get("dataFoundationExtensionId"):
+        raise ValueError("v34b_data_extension_must_be_registered_first")
+    if summary.get("dataFoundationServiceId") == service_id:
+        return summary
+    if summary.get("dataFoundationServiceId"):
+        raise ValueError("v34c_public_data_service_already_registered")
+
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    result_hash = stable_hash(service_result, prefix="v34c_public_data_service_result")
+    payload = {
+        "programId": summary["programId"],
+        "baseDataSnapshotId": summary["dataSnapshotId"],
+        "dataFoundationExtensionId": summary["dataFoundationExtensionId"],
+        "dataFoundationServiceId": service_id,
+        "publicDataServiceResultHash": result_hash,
+        "policyHash": policy_hash,
+        "latestCycleHash": cycle_hash,
+        "latestQualityStatus": str(
+            service_result.get("latestQualityStatus") or "unknown"
+        ),
+        "cycleLedgerPath": str(service_result.get("cycleLedgerPath") or ""),
+        **zero_fields,
+        "demoArm": False,
+        "tradeApiUsed": False,
+        "withdrawApiUsed": False,
+        "privateAccountReadUsed": False,
+    }
+    ledgers = DualTrackLedgerSet(root, writer_id=writer_id)
+    for track, event_type in (
+        ("master", "public_data_service_registered"),
+        ("research", "public_data_scheduler_activated"),
+        ("cross_track", "public_data_service_receipt_recorded"),
+    ):
+        ledgers.append(
+            track,
+            event_type=event_type,
+            stage="v34c_public_data_scheduler",
+            created_at=created_at,
+            payload=payload,
+        )
+    state.update(
+        {
+            "topLevelState": "public_data_service_active",
+            "researchTrackState": "public_data_service_active",
+            "generatedAt": created_at,
+            "dataFoundationServiceId": service_id,
+        }
+    )
+    summary.update(
+        {
+            "topLevelState": "public_data_service_active",
+            "generatedAt": created_at,
+            "dataFoundationServiceId": service_id,
+            "publicDataServiceResultHash": result_hash,
+            "publicDataServicePolicyHash": policy_hash,
+            "publicDataServiceLatestCycleHash": cycle_hash,
+            "publicDataServiceLatestQualityStatus": payload[
+                "latestQualityStatus"
+            ],
+            "candidateCount": 0,
+            "formalRunCount": 0,
+            "resultReadCount": 0,
+            "lockedOosReadCount": 0,
+            "releaseCount": 0,
+            "approvalCount": 0,
+            "demoArm": False,
+            "orderCount": 0,
+        }
+    )
+    summary.pop("summaryHash", None)
+    summary["summaryHash"] = stable_hash(summary, prefix="dual_track_summary")
+    write_json_atomic(state_path, state)
+    write_json_atomic(summary_path, summary)
+    return summary
+
+
 __all__ = [
     "DUAL_TRACK_LEDGER_FILES",
     "DualTrackLedgerSet",
@@ -504,4 +630,5 @@ __all__ = [
     "initialize_dual_track_successor",
     "record_v34a_data_pilot",
     "record_v34b_data_extension",
+    "record_v34c_public_data_service",
 ]
