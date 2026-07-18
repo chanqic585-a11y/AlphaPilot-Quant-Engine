@@ -1,0 +1,107 @@
+{
+  "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "contractHash": "end_to_end_data_contract_05119fd078165a3a4a28488e682d14f19e02a85e1fdf96bf0fbdd17050829ec7",
+  "edges": [
+    {
+      "field": "close",
+      "layer": "signal"
+    },
+    {
+      "field": "high",
+      "layer": "signal"
+    },
+    {
+      "field": "low",
+      "layer": "signal"
+    },
+    {
+      "field": "open",
+      "layer": "signal"
+    },
+    {
+      "field": "eventExtremeResidualZ",
+      "layer": "ranking"
+    },
+    {
+      "field": "instrumentId",
+      "layer": "ranking"
+    },
+    {
+      "field": "liquidity30d",
+      "layer": "ranking"
+    },
+    {
+      "field": "recoverySizeZ",
+      "layer": "ranking"
+    },
+    {
+      "field": "atr",
+      "layer": "exit"
+    },
+    {
+      "field": "current_equity",
+      "layer": "capital"
+    },
+    {
+      "field": "entry_price",
+      "layer": "capital"
+    },
+    {
+      "field": "quote_turnover",
+      "layer": "capital"
+    },
+    {
+      "field": "signal_timestamp",
+      "layer": "capital"
+    },
+    {
+      "field": "stop_price",
+      "layer": "capital"
+    },
+    {
+      "field": "fee_rate",
+      "layer": "cost"
+    },
+    {
+      "field": "slippage_rate",
+      "layer": "cost"
+    },
+    {
+      "field": "benchmark_return",
+      "layer": "benchmark"
+    },
+    {
+      "field": "fold_identity",
+      "layer": "statistical"
+    },
+    {
+      "field": "instrument_id",
+      "layer": "demo_execution"
+    },
+    {
+      "field": "lot_size",
+      "layer": "demo_execution"
+    },
+    {
+      "field": "tick_size",
+      "layer": "demo_execution"
+    },
+    {
+      "field": "reported_volume",
+      "layer": "optional_diagnostic"
+    }
+  ],
+  "graphHash": "data_dependency_graph_4ecf33df6c8bf09a8129d1101a7671abd66b65a2d135d4bd6a298b88e3c71fe1",
+  "layers": [
+    "signal",
+    "ranking",
+    "exit",
+    "capital",
+    "cost",
+    "benchmark",
+    "statistical",
+    "demo_execution",
+    "optional_diagnostic"
+  ],
+  "schemaVersion": "data_dependency_graph_v1"
+}

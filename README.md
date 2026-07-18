@@ -5311,3 +5311,20 @@ Formal artifacts are published under
 `reports/formal_validation/<campaignId>/<candidateId>/`. The compatibility
 module `run_v18_s01_formal_walk_forward.py` delegates to this generic entry
 point and does not own a separate S01 execution engine.
+
+## V13.27.1.25 Capacity Data Semantics
+
+V25 preserves the V19-V24 evidence and adds a clarification sidecar instead of
+rewriting history. The local provenance audit verified direct quote-turnover
+semantics for all 24 required instrument/timeframe datasets and froze the
+capacity-ready profile `ohlcv_verified_capacity_v2` for eight USDT swaps.
+
+The frozen 4h candidate produced 1,258 real signals in the formal window;
+1,258 had capacity inputs, 1,257 passed capacity policy, and one was rejected.
+The certification read no PnL, exit, statistical, or Locked-OOS result.
+
+V26 was not started. The frozen candidate lacks preregistered definitions for
+`eventExtremeResidualZ` and `recoverySizeZ`, so the correct route is
+`formal_data_blocked_capacity_semantics` before any Formal claim. Claim,
+Attempt, Result, Read, Release, approval, Demo ARM, and order counts remain
+zero. See `reports/automatic_research_program/automatic_strategy_demo_f57c443abeaf06c0/v25/`.

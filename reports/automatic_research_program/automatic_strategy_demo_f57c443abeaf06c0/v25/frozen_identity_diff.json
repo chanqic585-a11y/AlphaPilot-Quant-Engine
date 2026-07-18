@@ -1,0 +1,15 @@
+{
+  "allowedChanges": [
+    "dataProfile",
+    "dataSnapshot"
+  ],
+  "candidateChangedFields": [],
+  "candidateDefinitionDiffCount": 0,
+  "candidateId": "auto-trend_failure-reversal-4h-short-v2",
+  "dataProfileChanged": true,
+  "diffHash": "v25_frozen_identity_diff_2282d5c1a5ae5ce4d4e6d4afb16ea1830384a2b78dfe5d37ac3449f50afbb91f",
+  "lockedOosReadCount": 0,
+  "policyGateChangedFiles": [],
+  "policyGateDiffCount": 0,
+  "schemaVersion": "v25_frozen_identity_diff_v1"
+}

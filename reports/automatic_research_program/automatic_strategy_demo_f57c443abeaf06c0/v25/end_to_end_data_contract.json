@@ -1,0 +1,92 @@
+{
+  "benchmarkRequiredFields": [
+    "benchmark_return"
+  ],
+  "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "capitalRequiredFields": [
+    "current_equity",
+    "entry_price",
+    "quote_turnover",
+    "signal_timestamp",
+    "stop_price"
+  ],
+  "contractHash": "end_to_end_data_contract_05119fd078165a3a4a28488e682d14f19e02a85e1fdf96bf0fbdd17050829ec7",
+  "costRequiredFields": [
+    "fee_rate",
+    "slippage_rate"
+  ],
+  "demoExecutionRequiredFields": [
+    "instrument_id",
+    "lot_size",
+    "tick_size"
+  ],
+  "demoRequiredFields": [
+    "atr",
+    "benchmark_return",
+    "close",
+    "current_equity",
+    "entry_price",
+    "eventExtremeResidualZ",
+    "fee_rate",
+    "high",
+    "instrumentId",
+    "liquidity30d",
+    "low",
+    "open",
+    "quote_turnover",
+    "recoverySizeZ",
+    "signal_timestamp",
+    "slippage_rate",
+    "stop_price",
+    "instrument_id",
+    "lot_size",
+    "tick_size"
+  ],
+  "exitRequiredFields": [
+    "atr"
+  ],
+  "formalRequiredFields": [
+    "atr",
+    "benchmark_return",
+    "close",
+    "current_equity",
+    "entry_price",
+    "eventExtremeResidualZ",
+    "fee_rate",
+    "high",
+    "instrumentId",
+    "liquidity30d",
+    "low",
+    "open",
+    "quote_turnover",
+    "recoverySizeZ",
+    "signal_timestamp",
+    "slippage_rate",
+    "stop_price"
+  ],
+  "missingDataPolicy": "fail_closed_before_the_next_irreversible_stage",
+  "optionalDiagnosticFields": [
+    "reported_volume"
+  ],
+  "rankingRequiredFields": [
+    "eventExtremeResidualZ",
+    "instrumentId",
+    "liquidity30d",
+    "recoverySizeZ"
+  ],
+  "readinessLevels": [
+    "signal_ready",
+    "formal_ready",
+    "demo_ready"
+  ],
+  "schemaVersion": "end_to_end_data_contract_v1",
+  "signalRequiredFields": [
+    "close",
+    "high",
+    "low",
+    "open"
+  ],
+  "statisticalRequiredFields": [
+    "fold_identity"
+  ]
+}

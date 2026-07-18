@@ -1,0 +1,112 @@
+{
+  "atr": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "candidate_initial_stop_atr_period_14"
+  },
+  "benchmark_return": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_same_signal_maximum_hold_benchmark"
+  },
+  "close": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_ohlcv_capacity_profile"
+  },
+  "current_equity": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_capital_policy_initial_capital"
+  },
+  "entry_price": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "candidate_next_bar_open"
+  },
+  "eventExtremeResidualZ": {
+    "coveragePct": 0.0,
+    "reason": "frozen candidate does not preregister residualWindow or source semantics",
+    "semanticallyVerified": false
+  },
+  "fee_rate": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_cost_policy"
+  },
+  "fold_identity": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_purged_embargoed_split_policy"
+  },
+  "high": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_ohlcv_capacity_profile"
+  },
+  "instrumentId": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_data_profile_instrument_set"
+  },
+  "instrument_id": {
+    "coveragePct": 0.0,
+    "reason": "research-to-OKX instrument identity portability is not verified",
+    "semanticallyVerified": false
+  },
+  "liquidity30d": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "verified_quote_turnover_prior_completed_utc_days"
+  },
+  "lot_size": {
+    "coveragePct": 0.0,
+    "reason": "OKX Demo execution metadata is not frozen",
+    "semanticallyVerified": false
+  },
+  "low": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_ohlcv_capacity_profile"
+  },
+  "open": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_ohlcv_capacity_profile"
+  },
+  "quote_turnover": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "volume_quote_currency"
+  },
+  "recoverySizeZ": {
+    "coveragePct": 0.0,
+    "reason": "frozen candidate does not preregister recoveryBars or source semantics",
+    "semanticallyVerified": false
+  },
+  "reported_volume": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "raw_multicolumn_source_diagnostic_only"
+  },
+  "signal_timestamp": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "closed_candle_signal_identity"
+  },
+  "slippage_rate": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_cost_policy"
+  },
+  "stop_price": {
+    "coveragePct": 100.0,
+    "semanticallyVerified": true,
+    "source": "frozen_atr_initial_stop"
+  },
+  "tick_size": {
+    "coveragePct": 0.0,
+    "reason": "OKX Demo execution metadata is not frozen",
+    "semanticallyVerified": false
+  }
+}

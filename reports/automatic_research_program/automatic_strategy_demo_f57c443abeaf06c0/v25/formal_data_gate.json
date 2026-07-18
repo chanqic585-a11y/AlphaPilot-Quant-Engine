@@ -1,0 +1,26 @@
+{
+  "blockedAction": "repair_data_semantics_without_reading_formal_results",
+  "checks": {
+    "allFormalRequiredFieldsSemanticallyVerified": false,
+    "formalDataProfileReady": false,
+    "formalEventCapacityInputCoverage": true
+  },
+  "claimPermitted": false,
+  "failedConditions": [
+    "allFormalRequiredFieldsSemanticallyVerified",
+    "formalDataProfileReady"
+  ],
+  "formalDataProfileStatus": "blocked",
+  "formalEventCapacityInputCoverage": 1.0,
+  "formalRunBudgetConsumed": 0,
+  "gateHash": "formal_data_gate_e2b2b03f5aae7003953c6ea78e4b749e018d2e4ea64ef8d592488a78fcbc1866",
+  "ledgerDelta": {
+    "attemptCount": 0,
+    "claimCount": 0,
+    "resultCount": 0,
+    "resultReadCount": 0
+  },
+  "minimumCapacityInputCoverage": 0.95,
+  "schemaVersion": "formal_data_gate_v1",
+  "status": "formal_data_blocked_before_claim"
+}

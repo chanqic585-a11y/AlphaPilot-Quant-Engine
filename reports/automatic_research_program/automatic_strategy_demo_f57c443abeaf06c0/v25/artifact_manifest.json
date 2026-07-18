@@ -1,0 +1,97 @@
+{
+  "artifactCount": 18,
+  "artifacts": [
+    {
+      "relativePath": "capacity_data_capability.json",
+      "sha256": "a4c93527dfd9a84e5c91492a6ef0025a0f02f0ae7ba867973fbd8dedd2690a5e",
+      "sizeBytes": 25371
+    },
+    {
+      "relativePath": "capacity_data_profile.json",
+      "sha256": "97ab346aacd1e7bc3b454eb710205470b583046c7f0f715cb0255f71d5cc4f84",
+      "sizeBytes": 8963
+    },
+    {
+      "relativePath": "capital_policy_data_dependencies.json",
+      "sha256": "fba452db2e24892cff088f9fdc45fe5c3b8cb58de54f28af9c7dfaeaa2a97865",
+      "sizeBytes": 1172
+    },
+    {
+      "relativePath": "data_contract_readiness.json",
+      "sha256": "bb34d737e291f3db7ddeb072764148d504de49b69402c6c73b910793ddedd47e",
+      "sizeBytes": 865
+    },
+    {
+      "relativePath": "data_dependency_graph.json",
+      "sha256": "6fd32799035c52b8dd12b05c20adc6b1ed2d57c5039fa264f168361b28235433",
+      "sizeBytes": 2030
+    },
+    {
+      "relativePath": "demo_data_gate.json",
+      "sha256": "7ea89abce18cffc463075c5cc4c5348dae0b48c27d2ca91e62062cf2e3dfa111",
+      "sizeBytes": 495
+    },
+    {
+      "relativePath": "end_to_end_data_contract.json",
+      "sha256": "31433dda919b3d27796a36b41a838cf33f867cee7593b4ad0d8aa78155297dc1",
+      "sizeBytes": 1845
+    },
+    {
+      "relativePath": "exchange_identity_and_portability_audit.json",
+      "sha256": "da028d5949b3d6ff38f12432abd192624610cc93061e16c0a9a07f81e0cca3de",
+      "sizeBytes": 719
+    },
+    {
+      "relativePath": "exchange_identity_audit.json",
+      "sha256": "da028d5949b3d6ff38f12432abd192624610cc93061e16c0a9a07f81e0cca3de",
+      "sizeBytes": 719
+    },
+    {
+      "relativePath": "field_semantics_evidence.json",
+      "sha256": "e1e2159ef73176b8b7b414848b4be0138965a38bc5749e9ec073066020bbd27e",
+      "sizeBytes": 3019
+    },
+    {
+      "relativePath": "formal_data_gate.json",
+      "sha256": "6166a596e755d0b0f21525a2ceb0c5736a5af55f310b68159a3a6a8a1cbc9ef3",
+      "sizeBytes": 831
+    },
+    {
+      "relativePath": "frozen_identity_diff.json",
+      "sha256": "3794281ef1d123f004a2f4a8fabd876aa65552e772cae580f7dced7e49b7a095",
+      "sizeBytes": 470
+    },
+    {
+      "relativePath": "original_evidence_integrity_audit.json",
+      "sha256": "73b4e664392889bdebf4becf4307251e2325b195869aa803d4d26fa1f0022ad2",
+      "sizeBytes": 306
+    },
+    {
+      "relativePath": "real_signal_capacity_certification.json",
+      "sha256": "0866d7a39950b94a5018e2fb01cd75c3a7938560880ab710caf8fdd4c6da5da3",
+      "sizeBytes": 641546
+    },
+    {
+      "relativePath": "run_summary.json",
+      "sha256": "ae6f51b607af8ae16d329666f361bca66377d0eee9dd6eb3736b9c088390c898",
+      "sizeBytes": 676683
+    },
+    {
+      "relativePath": "run_summary.md",
+      "sha256": "9c175cc4aff30ba69adbf04b9b3a12e5cf1b54a28ad7f4bc21f9373e80ab8221",
+      "sizeBytes": 928
+    },
+    {
+      "relativePath": "v26_admission_route.json",
+      "sha256": "0b6fb63a545a92807cf1c067eeb5f429fd8d13f8048a8a51c1c46ecbe4d26fb6",
+      "sizeBytes": 1186
+    },
+    {
+      "relativePath": "volume_provenance_audit.json",
+      "sha256": "b94761a171bc17a17fc20e48051692722f654b175ed8bd5a687fca3543c48034",
+      "sizeBytes": 50542
+    }
+  ],
+  "manifestHash": "artifact_manifest_40543d92c142e311469696a9e9168bea7d9bac08d24ca7aa0ac728b9bd7d3c04",
+  "schemaVersion": "automatic_strategy_demo_artifact_manifest_v1"
+}

@@ -1,0 +1,35 @@
+{
+  "availableAtRules": {
+    "capacity_window": "strictly_prior_completed_utc_days_only",
+    "quote_turnover": "completed_candle_close_timestamp"
+  },
+  "capacityModelHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+  "dependencyHash": "capital_policy_data_dependencies_db1df0a18ca7e7a1a53f3437f3aba1afa42695391389ae08c32cf68cfd4fd6fc",
+  "fieldSemantics": {
+    "quote_turnover": [
+      "exact_quote_turnover",
+      "conservative_quote_turnover_lower_bound"
+    ],
+    "signal_timestamp": "closed_candle_available_at"
+  },
+  "minimumLookback": 30,
+  "minimumValidObservations": 24,
+  "missingDataPolicy": "reject_without_verified_quote_turnover_semantics",
+  "policyComponents": [
+    "capacity_model",
+    "correlation_cluster",
+    "portfolio_beta",
+    "ranking",
+    "position_sizing",
+    "acceptance_sequence"
+  ],
+  "policyHash": "automatic_capital_policy_3fb0b411d281137953386f3e6136deec15b99ce3499c529a81c9fbd393c49941",
+  "requiredFields": [
+    "current_equity",
+    "entry_price",
+    "stop_price",
+    "quote_turnover",
+    "signal_timestamp"
+  ],
+  "schemaVersion": "capital_policy_data_dependencies_v1"
+}
