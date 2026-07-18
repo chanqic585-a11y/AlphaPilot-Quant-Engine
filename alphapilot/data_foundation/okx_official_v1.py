@@ -6,6 +6,7 @@ from dataclasses import asdict, dataclass
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
+import hashlib
 import json
 import math
 
@@ -732,29 +733,20 @@ class OkxOfficialV1Pilot:
             raise RuntimeError(
                 f"okx_official_v1_partition_failed_quality:{instrument_id}:{timeframe}"
             )
-        identity = stable_hash(
-            {
-                "schemaVersion": "okx_official_v1_canonical_v1",
-                "instrumentId": instrument_id,
-                "timeframe": timeframe,
-                "rows": len(combined),
-                "start": int(combined["timestamp_ms"].min()),
-                "end": int(combined["timestamp_ms"].max()),
-                "sourceBaseSha256": audit.outputSha256,
-                "downloadedRows": len(incremental),
-            },
-            prefix="okx_official_v1_partition",
-        )
+        frame_digest = hashlib.sha256(
+            pd.util.hash_pandas_object(combined, index=False).values.tobytes()
+        ).hexdigest()
         output = (
             self.layout.canonicalRoot
             / "swap"
             / "ohlcv"
             / instrument_id
             / timeframe
-            / f"{int(combined['timestamp_ms'].min())}-{int(combined['timestamp_ms'].max())}-{identity[:16]}.parquet"
+            / f"{int(combined['timestamp_ms'].min())}-{int(combined['timestamp_ms'].max())}-{frame_digest[:16]}.parquet"
         )
         output.parent.mkdir(parents=True, exist_ok=True)
-        combined.to_parquet(output, index=False, compression="zstd")
+        if not output.is_file():
+            combined.to_parquet(output, index=False, compression="zstd")
         digest = sha256_file(output)
         manifest = {
             "schemaVersion": "okx_official_v1_partition_manifest_v1",
@@ -782,9 +774,9 @@ class OkxOfficialV1Pilot:
             "outputPath": str(output),
             "outputSha256": digest,
         }
-        manifest_path = (
-            self.layout.manifestRoot
-            / f"{instrument_id}-{timeframe}-{digest[:16]}.json"
+        manifest_identity = stable_hash(manifest, prefix="okx_official_v1_manifest")
+        manifest_path = self.layout.manifestRoot / (
+            f"{instrument_id}-{timeframe}-{manifest_identity[:20]}.json"
         )
         write_json_atomic(manifest_path, manifest)
         checkpoint_path.unlink(missing_ok=True)
@@ -813,17 +805,18 @@ class OkxOfficialV1Pilot:
             self.layout.metadataSnapshotRoot
             / f"instruments-{metadata_identity[:20]}.json"
         )
-        write_json_atomic(
-            metadata_path,
-            {
-                "schemaVersion": "okx_official_v1_instrument_metadata_v1",
-                "sourceEndpoint": (
-                    f"{self.client.base_url}/api/v5/public/instruments"
-                ),
-                "ingestedAt": ingested_at,
-                "instruments": selected_metadata,
-            },
-        )
+        if not metadata_path.is_file():
+            write_json_atomic(
+                metadata_path,
+                {
+                    "schemaVersion": "okx_official_v1_instrument_metadata_v1",
+                    "sourceEndpoint": (
+                        f"{self.client.base_url}/api/v5/public/instruments"
+                    ),
+                    "ingestedAt": ingested_at,
+                    "instruments": selected_metadata,
+                },
+            )
         partitions = [
             self._partition(
                 instrument_id=instrument_id,
@@ -1016,31 +1009,32 @@ class OkxOfficialV1Pilot:
         snapshot_id = stable_hash(
             {
                 "schemaVersion": "okx_official_v1_snapshot_v1",
-                "metadataSha256": sha256_file(metadata_path),
+                "metadataIdentity": metadata_identity,
                 "partitionSha256": sorted(row["outputSha256"] for row in partitions),
             },
             prefix="okx_official_v1_snapshot",
         )
         snapshot_path = self.layout.manifestRoot / f"snapshot-{snapshot_id}.json"
-        write_json_atomic(
-            snapshot_path,
-            {
-                "schemaVersion": "okx_official_v1_snapshot_v1",
-                "snapshotId": snapshot_id,
-                "generatedAt": _utc_now(),
-                "status": "immutable_data_snapshot",
-                "instrumentMetadataPath": str(metadata_path),
-                "partitions": [
-                    {
-                        "instrumentId": row["instrumentId"],
-                        "timeframe": row["timeframe"],
-                        "outputPath": row["outputPath"],
-                        "outputSha256": row["outputSha256"],
-                    }
-                    for row in partitions
-                ],
-            },
-        )
+        if not snapshot_path.is_file():
+            write_json_atomic(
+                snapshot_path,
+                {
+                    "schemaVersion": "okx_official_v1_snapshot_v1",
+                    "snapshotId": snapshot_id,
+                    "generatedAt": _utc_now(),
+                    "status": "immutable_data_snapshot",
+                    "instrumentMetadataPath": str(metadata_path),
+                    "partitions": [
+                        {
+                            "instrumentId": row["instrumentId"],
+                            "timeframe": row["timeframe"],
+                            "outputPath": row["outputPath"],
+                            "outputSha256": row["outputSha256"],
+                        }
+                        for row in partitions
+                    ],
+                },
+            )
         result = {
             "schemaVersion": "okx_official_v1_pilot_result_v1",
             "status": "completed",

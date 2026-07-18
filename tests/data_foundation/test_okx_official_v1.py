@@ -369,3 +369,38 @@ def test_pilot_resumes_from_durable_page_rows(tmp_path: Path) -> None:
         / "BTC-USDT-SWAP-1h.json"
     )
     assert not checkpoint.exists()
+
+
+def test_identical_pilot_rerun_preserves_immutable_snapshot_identity(
+    tmp_path: Path,
+) -> None:
+    one_hour = BAR_DURATION_MS["1h"]
+    first = OkxOfficialV1Pilot(
+        warehouse_root=tmp_path,
+        client=_FakePilotClient(
+            [[str(one_hour), "1", "2", "0.5", "1.5", "3", "4", "5", "1"]]
+        ),
+        instruments=("BTC-USDT-SWAP",),
+        timeframes=("1h",),
+        requested_start_ms=0,
+    ).run()
+    metadata_path = next(
+        OkxOfficialV1Layout.from_warehouse(tmp_path).metadataSnapshotRoot.glob(
+            "instruments-*.json"
+        )
+    )
+    first_metadata_hash = sha256_file(metadata_path)
+    first_snapshot_hash = sha256_file(first["snapshotManifestPath"])
+
+    second = OkxOfficialV1Pilot(
+        warehouse_root=tmp_path,
+        client=_FakePilotClient([]),
+        instruments=("BTC-USDT-SWAP",),
+        timeframes=("1h",),
+        requested_start_ms=0,
+    ).run()
+
+    assert second["snapshotId"] == first["snapshotId"]
+    assert second["partitions"][0]["outputPath"] == first["partitions"][0]["outputPath"]
+    assert sha256_file(metadata_path) == first_metadata_hash
+    assert sha256_file(second["snapshotManifestPath"]) == first_snapshot_hash
