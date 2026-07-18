@@ -1,0 +1,14 @@
+{
+  "campaignsUsed": 1,
+  "consumptionHash": "program_budget_consumption_6620bd046a4df922214b95118fb8f15c086e5e84dea2e262fc7282fec8d9805a",
+  "demoReleasesUsed": 0,
+  "familiesUsed": 8,
+  "formalCandidatesUsed": 1,
+  "fullBacktestsRemaining": 143,
+  "fullBacktestsUsed": 1,
+  "generatedAt": "2026-07-18T03:14:18.814470Z",
+  "initialCandidatesUsed": 16,
+  "programId": "automatic_strategy_demo_f57c443abeaf06c0",
+  "schemaVersion": "automatic_strategy_demo_budget_consumption_v1",
+  "terminalRoute": "completed_zero_qualified_candidates"
+}

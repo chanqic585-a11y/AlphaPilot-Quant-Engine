@@ -1,5 +1,5 @@
 {
-  "artifactCount": 47,
+  "artifactCount": 70,
   "artifacts": [
     {
       "relativePath": "approval_requirements.json",
@@ -10,6 +10,11 @@
       "relativePath": "baseline_identity.json",
       "sha256": "56e6f09881c4ea44822ecb3dca359a80da245313fd449423400049fcffb8c336",
       "sizeBytes": 1720
+    },
+    {
+      "relativePath": "budget_consumption_summary.json",
+      "sha256": "c7349a04594d9ab6963a87d8a2917b903b51fc05251031c181c79c77c2f770fe",
+      "sizeBytes": 538
     },
     {
       "relativePath": "campaigns/automatic_strategy_demo_f57c443abeaf06c0_campaign_01/benchmark_policy.json",
@@ -112,6 +117,11 @@
       "sizeBytes": 34005
     },
     {
+      "relativePath": "candidate_releases/release_inventory.json",
+      "sha256": "ea2b07c7dc5295b39dfad20688e4e0d140f4ed7f3bfaaba9af00e70e1e8bb679",
+      "sizeBytes": 526
+    },
+    {
       "relativePath": "candidate_structural_certification.json",
       "sha256": "9cc852d4e3e248ec040bbaf30a6c3fb0f59e066d3288b91896ccce8a60c7b939",
       "sizeBytes": 19199
@@ -177,14 +187,69 @@
       "sizeBytes": 2801
     },
     {
+      "relativePath": "demo_approval_overlay.json",
+      "sha256": "2533f546a2f24931da22e1fc28cc575fb6defaa548b8ba7b265b520369ca35f3",
+      "sizeBytes": 224
+    },
+    {
+      "relativePath": "demo_approval_request.json",
+      "sha256": "3eb832848114aad8db091289e4a2fa7ac664c2735c590b2782fd1283a485613c",
+      "sizeBytes": 245
+    },
+    {
+      "relativePath": "demo_approval_request.md",
+      "sha256": "e1eb231645c7e842a4f367e99697e7304926405806688a5cd9a6008f52710acf",
+      "sizeBytes": 91
+    },
+    {
+      "relativePath": "demo_arm_audit.json",
+      "sha256": "22927df24e3942a78db8b77331e6e54177512c5bc4c3aac3d38a9a228bcab227",
+      "sizeBytes": 98
+    },
+    {
+      "relativePath": "demo_universe_audit.json",
+      "sha256": "e01199ea8b24de1e480669a7fa83cdafefc36ea7162aa141d2007f6f7eafd5ff",
+      "sizeBytes": 89
+    },
+    {
       "relativePath": "eligible_candidate_ranking.csv",
       "sha256": "7ee08a65521a98aa69e3e7865dd9103195bf6998e245298504958b2f9330b1f0",
       "sizeBytes": 169
     },
     {
+      "relativePath": "engineering_smoke_isolation_audit.json",
+      "sha256": "bfc2461552fdef2dcb64f5a3d311c9dae0117e9fb78ddc2d3d3b3f1ed9d0e0aa",
+      "sizeBytes": 343
+    },
+    {
       "relativePath": "field_semantics_registry.json",
       "sha256": "1381ccbedc99f72815f227000b02ca22cc8c6b134925e72602a3b5e610125045",
       "sizeBytes": 3656
+    },
+    {
+      "relativePath": "final_route_decision.json",
+      "sha256": "24a45bea25b74cdf300ccc5886e850d84d288ded9e254909c9161d27b5476f69",
+      "sizeBytes": 332
+    },
+    {
+      "relativePath": "final_self_check.md",
+      "sha256": "d64b5a4f8e88e2e98ad92460d21e7f3634fe5743c20dbc3a2e20f082399d0ec0",
+      "sizeBytes": 261
+    },
+    {
+      "relativePath": "formal_campaign_inventory.json",
+      "sha256": "3bb0578b4e8de9f1db8628735834047e07065db1552155c7be80a02b450215ed",
+      "sizeBytes": 407
+    },
+    {
+      "relativePath": "formal_gate_matrix.csv",
+      "sha256": "27d3f60b9a59fcc3bceac0b406e6e8030eabeaef7e81e9d357c7dbc196c9b07f",
+      "sizeBytes": 1510
+    },
+    {
+      "relativePath": "formal_metric_matrix.csv",
+      "sha256": "e8229d323531e11ba44b567f2e9b4581c8303232d9b344f47fcb3a5434d9a052",
+      "sizeBytes": 299
     },
     {
       "relativePath": "historical_overlap_audit.json",
@@ -202,9 +267,39 @@
       "sizeBytes": 1385
     },
     {
+      "relativePath": "prefilter_failure_attribution.json",
+      "sha256": "7951b7cfc3158bf029c2be596ec1670c1783fcaf388dcd6df8c5c066528c1e3e",
+      "sizeBytes": 5394
+    },
+    {
+      "relativePath": "prefilter_gate_matrix.csv",
+      "sha256": "6d781ea7d1b67d11815b6ceacf5d757b489297f7b46f951fa25cff77025dc963",
+      "sizeBytes": 36923
+    },
+    {
+      "relativePath": "prefilter_metric_matrix.csv",
+      "sha256": "766bf331546f90f85e110a43855844649d08e537421acbdf7e85a3f8f7a6838b",
+      "sizeBytes": 7742
+    },
+    {
+      "relativePath": "program_budget.json",
+      "sha256": "a6dfc6ad9f9b2a77b370fc82d4773a7e6103abf43f954ed383c4c7a15b4a873b",
+      "sizeBytes": 587
+    },
+    {
+      "relativePath": "program_budget_ledger.jsonl",
+      "sha256": "53a82721e8e29478f4c769851f092941fe81f7965b9e4efda5b6568025cc884f",
+      "sizeBytes": 721
+    },
+    {
       "relativePath": "program_ledger.jsonl",
       "sha256": "03d55dab49063680e37e508541e9e35413cbe49831c4b4c0f81ac2633c2dcd1c",
       "sizeBytes": 5934
+    },
+    {
+      "relativePath": "program_spec.json",
+      "sha256": "3c5fc3a92f0eea9fb40151846f3e57a189b5c761ed872a3760cad178c34fba6e",
+      "sizeBytes": 624
     },
     {
       "relativePath": "program_state.json",
@@ -212,14 +307,34 @@
       "sizeBytes": 729
     },
     {
+      "relativePath": "release_import_audit.json",
+      "sha256": "9872d7009c856079709366ed796ed54046c79064538f9dbbba2cbb0644e84695",
+      "sizeBytes": 892
+    },
+    {
       "relativePath": "release_inventory.json",
       "sha256": "ea2b07c7dc5295b39dfad20688e4e0d140f4ed7f3bfaaba9af00e70e1e8bb679",
       "sizeBytes": 526
     },
     {
+      "relativePath": "release_store_record.json",
+      "sha256": "cd93e3d90e34af8ad931e6e66f677c73fc9389a6859b5deeef56e047195bd4cd",
+      "sizeBytes": 233
+    },
+    {
+      "relativePath": "statistical_availability_matrix.json",
+      "sha256": "78153fe2551851b47facf8845f5d2d8f6e7435a1776e3ecbdfd42e76b75a4af8",
+      "sizeBytes": 1618
+    },
+    {
       "relativePath": "structural_certification_vs_formal_event_delta_audit.json",
       "sha256": "5adbaa18c612404954dfbb471a9754cd10cf1e610f9f58c76f73f9fe8212858d",
       "sizeBytes": 334
+    },
+    {
+      "relativePath": "trial_lineage.json",
+      "sha256": "884a2c4da8931492714b45f789640d4d6d69c03c12b481c417939ecf64a497d4",
+      "sizeBytes": 561
     },
     {
       "relativePath": "v18_3_archived_candidate_reference.json",
@@ -237,6 +352,6 @@
       "sizeBytes": 218
     }
   ],
-  "manifestHash": "artifact_manifest_d2a6c3ae1d78993a6dc14feaa6f8a466ed11db090992fc9b16bd467ef9ca973d",
+  "manifestHash": "artifact_manifest_36c643d997c790c400a8a4363593ef4112019200586905ec96630f976d169b69",
   "schemaVersion": "automatic_strategy_demo_artifact_manifest_v1"
 }

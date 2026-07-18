@@ -1,0 +1,12 @@
+{
+  "approvalCount": 0,
+  "demoArm": false,
+  "importedReleaseCount": 0,
+  "liveTradingEnabled": false,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "schemaVersion": "automatic_v24_final_route_v1",
+  "status": "completed_zero_qualified_candidates",
+  "terminalRoute": "completed_zero_qualified_candidates",
+  "withdrawEnabled": false
+}

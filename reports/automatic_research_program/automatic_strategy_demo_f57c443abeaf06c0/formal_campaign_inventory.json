@@ -1,0 +1,14 @@
+{
+  "campaigns": [
+    {
+      "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+      "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+      "formalRunCount": 1,
+      "lockedOosAccessCount": 0,
+      "releaseEligible": false,
+      "resultReadCount": 1,
+      "route": "capital_infeasible"
+    }
+  ],
+  "schemaVersion": "automatic_strategy_demo_formal_campaign_inventory_v1"
+}

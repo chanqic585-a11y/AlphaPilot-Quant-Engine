@@ -1,0 +1,14 @@
+{
+  "budgetHash": "program_budget_58874b92c8e1adf0239fd02b2a648615fe1edc6ec67adfa873b3cdc2aafbaf51",
+  "maximumDemoReleasesPerCampaign": 3,
+  "maximumFamiliesPerCampaign": 8,
+  "maximumFormalCandidatesPerCampaign": 6,
+  "maximumFullBacktestsAcrossProgram": 144,
+  "maximumFullBacktestsPerCampaign": 48,
+  "maximumInitialCandidatesPerCampaign": 16,
+  "maximumInitialVariantsPerFamily": 2,
+  "maximumResearchCampaigns": 3,
+  "maximumStructuralRevisionPerFamily": 1,
+  "programId": "automatic_strategy_demo_f57c443abeaf06c0",
+  "schemaVersion": "automatic_strategy_demo_program_budget_v1"
+}

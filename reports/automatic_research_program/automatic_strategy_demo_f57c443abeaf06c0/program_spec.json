@@ -1,0 +1,11 @@
+{
+  "advisoryR": true,
+  "lockedOosReadsAllowed": false,
+  "programId": "automatic_strategy_demo_f57c443abeaf06c0",
+  "programSpecHash": "sha256:e7c2b6711fdc48cacf731b3c6b8930b6d370bcb802742c6e554c4d82b7e87953",
+  "promptPath": "D:/Codex-Workspace/AlphaPilot-Docs-V19-24-worktree/prompts/AlphaPilot_V13.27.1.19-24_Automatic_Strategy_to_OKX_Demo_Long_Workflow_Codex_Prompt_CN.md",
+  "promptSha256": "e7c2b6711fdc48cacf731b3c6b8930b6d370bcb802742c6e554c4d82b7e87953",
+  "resultDrivenGateRelaxationForbidden": true,
+  "schemaVersion": "automatic_strategy_demo_program_spec_reference_v1",
+  "workflowVersion": "v13.27.1.19-24"
+}

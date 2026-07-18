@@ -1,0 +1,19 @@
+{
+  "approvalCount": 0,
+  "approvalRequired": false,
+  "auditHash": "automatic_v24_release_import_audit_fe181dd8c437beea963e912f4bba81232508fe04bd54ec5e7645e16c5c9bbd2f",
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "demoArm": false,
+  "engineeringSmokeCountedAsStrategyEvidence": false,
+  "exactHashApprovalRecorded": false,
+  "generatedAt": "2026-07-18T02:58:46Z",
+  "importedReleaseCount": 0,
+  "importedReleases": [],
+  "orderCount": 0,
+  "quantProgramRoot": "D:/Codex-Workspace/AlphaPilot-V19-24-worktree/reports/automatic_research_program/automatic_strategy_demo_f57c443abeaf06c0",
+  "releaseCount": 0,
+  "releasePlanHash": "automatic_v23_release_plan_d9a19f99f5043f4e6ac05f6d8fcca3e60d74394cf4bd8a834ef9e70ebb7576d6",
+  "runtimeEnabled": false,
+  "schemaVersion": "automatic_v24_release_import_audit_v1",
+  "status": "completed_zero_qualified_candidates"
+}

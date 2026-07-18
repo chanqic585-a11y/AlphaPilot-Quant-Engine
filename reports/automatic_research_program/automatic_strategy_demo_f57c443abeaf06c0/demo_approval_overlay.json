@@ -1,0 +1,10 @@
+{
+  "approvalCount": 0,
+  "approvedAt": null,
+  "approvedReleaseHashes": [],
+  "approver": null,
+  "demoArm": false,
+  "orderCount": 0,
+  "riskOverlayHashes": [],
+  "schemaVersion": "automatic_v24_demo_approval_overlay_v1"
+}

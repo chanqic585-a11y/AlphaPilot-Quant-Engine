@@ -1,0 +1,15 @@
+{
+  "approvalRequired": false,
+  "automaticApprovalAllowed": false,
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "demoArm": false,
+  "eligibleCandidateCount": 0,
+  "maximumReleaseCount": 3,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "releaseHashes": [],
+  "releasePlanHash": "automatic_v23_release_plan_d9a19f99f5043f4e6ac05f6d8fcca3e60d74394cf4bd8a834ef9e70ebb7576d6",
+  "releases": [],
+  "schemaVersion": "automatic_v23_release_plan_v1",
+  "terminalRoute": "completed_zero_qualified_candidates"
+}

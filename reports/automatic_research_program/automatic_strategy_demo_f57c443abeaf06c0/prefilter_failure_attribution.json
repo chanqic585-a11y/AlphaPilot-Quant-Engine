@@ -1,0 +1,179 @@
+{
+  "candidateFailures": [
+    {
+      "candidateId": "auto-trend_pullback_continuation-4h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "trend_pullback_continuation"
+    },
+    {
+      "candidateId": "auto-trend_pullback_continuation-4h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "trend_pullback_continuation"
+    },
+    {
+      "candidateId": "auto-volatility_compression_release-4h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "volatility_compression_release"
+    },
+    {
+      "candidateId": "auto-volatility_compression_release-4h-short-v2",
+      "failedGates": [
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor"
+      ],
+      "familyId": "volatility_compression_release"
+    },
+    {
+      "candidateId": "auto-btc_shock_lag-1h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "btc_shock_lag"
+    },
+    {
+      "candidateId": "auto-btc_shock_lag-1h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "btc_shock_lag"
+    },
+    {
+      "candidateId": "auto-volatility_shock_asymmetry-1h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "volatility_shock_asymmetry"
+    },
+    {
+      "candidateId": "auto-volatility_shock_asymmetry-1h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "volatility_shock_asymmetry"
+    },
+    {
+      "candidateId": "auto-cross_session_liquidity_transition-1h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "cross_session_liquidity_transition"
+    },
+    {
+      "candidateId": "auto-cross_session_liquidity_transition-1h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "cross_session_liquidity_transition"
+    },
+    {
+      "candidateId": "auto-residual_extreme_causal_recovery-4h-long-v1",
+      "failedGates": [
+        "minimumBenchmarkIncrementNetR"
+      ],
+      "familyId": "residual_extreme_causal_recovery"
+    },
+    {
+      "candidateId": "auto-residual_extreme_causal_recovery-4h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "residual_extreme_causal_recovery"
+    },
+    {
+      "candidateId": "auto-trend_failure_reversal-4h-long-v1",
+      "failedGates": [
+        "minimumBenchmarkIncrementNetR"
+      ],
+      "familyId": "trend_failure_reversal"
+    },
+    {
+      "candidateId": "auto-breadth_correlation_directional_filter-4h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "breadth_correlation_directional_filter"
+    },
+    {
+      "candidateId": "auto-breadth_correlation_directional_filter-4h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "familyId": "breadth_correlation_directional_filter"
+    }
+  ],
+  "schemaVersion": "automatic_prefilter_failure_attribution_v1"
+}
