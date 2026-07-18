@@ -1,0 +1,349 @@
+{
+  "hypotheses": [
+    {
+      "direction": "bidirectional_family",
+      "displayNameZh": "趋势回撤延续",
+      "expectedTradeFrequency": "low",
+      "falsificationCondition": "成本后回撤恢复事件不优于同方向持有基准。",
+      "familyId": "trend_pullback_continuation",
+      "historicalOverlap": {
+        "classification": "materially_different_mechanism",
+        "nearestHistoricalFamily": "short_cycle_redesign_5m_trend_pullback_confirmation_long_v1",
+        "semanticTokenOverlap": 0.222222,
+        "thresholdOnlyVariant": false
+      },
+      "hypothesisHash": "automatic_hypothesis_185bba7d1a2e3ef64abb7deacae4f1c28ce442143f5fcde33d28139de9b5bc02",
+      "hypothesisId": "auto-hyp-01-trend_pullback_continuation",
+      "knownFailureModes": [
+        "cost_sensitivity",
+        "single_symbol_concentration",
+        "single_month_concentration",
+        "regime_instability"
+      ],
+      "marketMechanism": "成熟趋势中的短暂流动性回撤被顺势需求吸收后恢复。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "ema_regime_directional_hold",
+      "sourceReferences": [
+        "reports/full_archived_strategy_inventory.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/full_archived_strategy_failure_attribution.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/v13_27_17_cross_timeframe_candidate_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "4h",
+      "whyCryptoSpecific": "永续合约全天交易与杠杆清算使回撤和恢复更集中。"
+    },
+    {
+      "direction": "bidirectional_family",
+      "displayNameZh": "波动压缩释放",
+      "expectedTradeFrequency": "low",
+      "falsificationCondition": "突破事件在 1.5 倍成本下没有正平均净 R。",
+      "familyId": "volatility_compression_release",
+      "historicalOverlap": {
+        "classification": "materially_different_mechanism",
+        "nearestHistoricalFamily": "short_cycle_redesign_5m_compression_release_long_v1",
+        "semanticTokenOverlap": 0.25,
+        "thresholdOnlyVariant": false
+      },
+      "hypothesisHash": "automatic_hypothesis_04ef07340340416dca9b0a9d6081f7d4eca89da67ae4c4f59052753fb6725261",
+      "hypothesisId": "auto-hyp-02-volatility_compression_release",
+      "knownFailureModes": [
+        "cost_sensitivity",
+        "single_symbol_concentration",
+        "single_month_concentration",
+        "regime_instability"
+      ],
+      "marketMechanism": "波动压缩后价格发现重新启动并突破局部边界。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "rolling_breakout",
+      "sourceReferences": [
+        "reports/full_archived_strategy_inventory.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/full_archived_strategy_failure_attribution.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/v13_27_17_cross_timeframe_candidate_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "4h",
+      "whyCryptoSpecific": "全天订单流会在跨市场安静期积累并集中释放。"
+    },
+    {
+      "direction": "bidirectional_family",
+      "displayNameZh": "BTC 冲击滞后传导",
+      "expectedTradeFrequency": "medium",
+      "falsificationCondition": "非 BTC 合约的滞后响应与无条件样本无差异。",
+      "familyId": "btc_shock_lag",
+      "historicalOverlap": {
+        "classification": "materially_different_mechanism",
+        "nearestHistoricalFamily": "short_cycle_event_1h_breakout_retest_btc_factor_v2",
+        "semanticTokenOverlap": 0.1,
+        "thresholdOnlyVariant": false
+      },
+      "hypothesisHash": "automatic_hypothesis_a973be9b926f9653f6fc6b55200fc09096b3806774c420f87f15ab91e815cfce",
+      "hypothesisId": "auto-hyp-03-btc_shock_lag",
+      "knownFailureModes": [
+        "cost_sensitivity",
+        "single_symbol_concentration",
+        "single_month_concentration",
+        "regime_instability"
+      ],
+      "marketMechanism": "BTC 冲击先发生，部分主流币在下一闭合周期才完成方向响应。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "btc_shock_same_direction",
+      "sourceReferences": [
+        "reports/full_archived_strategy_inventory.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/full_archived_strategy_failure_attribution.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/v13_27_17_cross_timeframe_candidate_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "1h",
+      "whyCryptoSpecific": "BTC 是加密风险定价锚，跨币种传导存在可观测延迟。"
+    },
+    {
+      "direction": "bidirectional_family",
+      "displayNameZh": "波动冲击非对称恢复",
+      "expectedTradeFrequency": "medium",
+      "falsificationCondition": "冲击后反转不能覆盖基础成本与 1.5 倍成本压力。",
+      "familyId": "volatility_shock_asymmetry",
+      "historicalOverlap": {
+        "classification": "materially_different_mechanism",
+        "nearestHistoricalFamily": null,
+        "semanticTokenOverlap": 0.0,
+        "thresholdOnlyVariant": false
+      },
+      "hypothesisHash": "automatic_hypothesis_999d4bd1b7ce8f6a4969176614e4b8426b3884a765b296ba1c278d09ac6a5502",
+      "hypothesisId": "auto-hyp-04-volatility_shock_asymmetry",
+      "knownFailureModes": [
+        "cost_sensitivity",
+        "single_symbol_concentration",
+        "single_month_concentration",
+        "regime_instability"
+      ],
+      "marketMechanism": "极端单周期冲击后的恢复速度在上下方向并不对称。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "shock_reversal",
+      "sourceReferences": [
+        "reports/full_archived_strategy_inventory.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/full_archived_strategy_failure_attribution.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/v13_27_17_cross_timeframe_candidate_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "1h",
+      "whyCryptoSpecific": "杠杆清算链使尾部冲击和随后的流动性恢复呈非对称。"
+    },
+    {
+      "direction": "bidirectional_family",
+      "displayNameZh": "跨时段流动性切换",
+      "expectedTradeFrequency": "medium",
+      "falsificationCondition": "时段切换事件相对全天同方向基准无增量。",
+      "familyId": "cross_session_liquidity_transition",
+      "historicalOverlap": {
+        "classification": "materially_different_mechanism",
+        "nearestHistoricalFamily": "short_cycle_evidence_5m_liquidity_sweep_reclaim_long_v1",
+        "semanticTokenOverlap": 0.090909,
+        "thresholdOnlyVariant": false
+      },
+      "hypothesisHash": "automatic_hypothesis_8dddf0dd9dfdf60df9cead4595c6cd9b7c72cbc81b5160f137b8b4aa3ac92ce6",
+      "hypothesisId": "auto-hyp-05-cross_session_liquidity_transition",
+      "knownFailureModes": [
+        "cost_sensitivity",
+        "single_symbol_concentration",
+        "single_month_concentration",
+        "regime_instability"
+      ],
+      "marketMechanism": "亚洲、欧洲和美洲活跃时段切换时，订单流方向可能重新定价。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "same_hour_unconditional",
+      "sourceReferences": [
+        "reports/full_archived_strategy_inventory.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/full_archived_strategy_failure_attribution.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/v13_27_17_cross_timeframe_candidate_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "1h",
+      "whyCryptoSpecific": "加密连续交易但法币与机构流动性仍有显著时段结构。"
+    },
+    {
+      "direction": "bidirectional_family",
+      "displayNameZh": "BTC 中性残差极值恢复",
+      "expectedTradeFrequency": "low",
+      "falsificationCondition": "残差极值恢复不优于原始超跌反弹基准。",
+      "familyId": "residual_extreme_causal_recovery",
+      "historicalOverlap": {
+        "classification": "materially_different_mechanism",
+        "nearestHistoricalFamily": "event_4h_bull_recovery_atr15_h24_v1",
+        "semanticTokenOverlap": 0.1,
+        "thresholdOnlyVariant": false
+      },
+      "hypothesisHash": "automatic_hypothesis_5150712384f311e6eee9dd5e220e71c62fd3743f99c2d32b57f412721ec0c3bc",
+      "hypothesisId": "auto-hyp-06-residual_extreme_causal_recovery",
+      "knownFailureModes": [
+        "cost_sensitivity",
+        "single_symbol_concentration",
+        "single_month_concentration",
+        "regime_instability"
+      ],
+      "marketMechanism": "剔除 BTC 同期方向后，个币异常残差在流动性恢复时部分回归。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "raw_return_extreme_recovery",
+      "sourceReferences": [
+        "reports/full_archived_strategy_inventory.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/full_archived_strategy_failure_attribution.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/v13_27_17_cross_timeframe_candidate_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "4h",
+      "whyCryptoSpecific": "共同 BTC beta 很强，残差比原始收益更能隔离币种冲击。"
+    },
+    {
+      "direction": "bidirectional_family",
+      "displayNameZh": "趋势失效反转",
+      "expectedTradeFrequency": "low",
+      "falsificationCondition": "趋势失效后的反向事件不优于普通均线交叉。",
+      "familyId": "trend_failure_reversal",
+      "historicalOverlap": {
+        "classification": "materially_different_mechanism",
+        "nearestHistoricalFamily": "short_cycle_event_1h_trend_reclaim_shadow_v2",
+        "semanticTokenOverlap": 0.111111,
+        "thresholdOnlyVariant": false
+      },
+      "hypothesisHash": "automatic_hypothesis_fcefd4bbaf9dbd76e790e860d1cadaefd39f41c5df3fe03ad8bc5c0bd0698a12",
+      "hypothesisId": "auto-hyp-07-trend_failure_reversal",
+      "knownFailureModes": [
+        "cost_sensitivity",
+        "single_symbol_concentration",
+        "single_month_concentration",
+        "regime_instability"
+      ],
+      "marketMechanism": "已建立趋势未能延续并跌回或涨回均衡区，触发反方向再定价。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "ema_cross_reversal",
+      "sourceReferences": [
+        "reports/full_archived_strategy_inventory.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/full_archived_strategy_failure_attribution.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/v13_27_17_cross_timeframe_candidate_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "4h",
+      "whyCryptoSpecific": "永续杠杆拥挤使假延续后的反向清算更快。"
+    },
+    {
+      "direction": "bidirectional_family",
+      "displayNameZh": "市场宽度与相关性方向过滤",
+      "expectedTradeFrequency": "low",
+      "falsificationCondition": "高宽度事件不能改善单币方向信号的成本后表现。",
+      "familyId": "breadth_correlation_directional_filter",
+      "historicalOverlap": {
+        "classification": "materially_different_mechanism",
+        "nearestHistoricalFamily": null,
+        "semanticTokenOverlap": 0.0,
+        "thresholdOnlyVariant": false
+      },
+      "hypothesisHash": "automatic_hypothesis_dbea9987699b859167489c3036667e4ac748b6f26a4fc44883373f0883861e6d",
+      "hypothesisId": "auto-hyp-08-breadth_correlation_directional_filter",
+      "knownFailureModes": [
+        "cost_sensitivity",
+        "single_symbol_concentration",
+        "single_month_concentration",
+        "regime_instability"
+      ],
+      "marketMechanism": "广泛同步方向比单币孤立突破更可能代表系统性风险偏好。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "single_asset_direction",
+      "sourceReferences": [
+        "reports/full_archived_strategy_inventory.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/full_archived_strategy_failure_attribution.json",
+        "reports/archived_failed_strategy_negative_rules.json",
+        "reports/v13_27_17_cross_timeframe_candidate_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "4h",
+      "whyCryptoSpecific": "主流币受共同 BTC beta 与风险偏好驱动，宽度可区分系统性和个体噪声。"
+    }
+  ],
+  "schemaVersion": "automatic_hypothesis_inventory_v1"
+}

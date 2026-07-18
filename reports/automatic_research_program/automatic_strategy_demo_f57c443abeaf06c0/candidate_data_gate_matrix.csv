@@ -1,3 +1,17 @@
-﻿schemaVersion,status,dataProfileId,requiredFields,optionalFields,timeframes,minimumHistoryRows,minimumCoveragePct,coverageByRequiredField,missingRequiredFields,missingDataPolicy
-candidate_data_gate_v1,ready_for_candidate_creation,ohlcv_core_directional_v1,"[""open"", ""high"", ""low"", ""close""]","[""reported_volume""]","[""1h"", ""4h""]",10000,96.555603,"{""close"": 96.555603, ""high"": 96.555603, ""low"": 96.555603, ""open"": 96.555603}",[],block_before_candidate_id_and_do_not_consume_trial_budget
-candidate_data_gate_v1,data_blocked_before_candidate_creation,future_derivatives_v1,"[""funding_rate"", ""open_interest"", ""basis"", ""liquidation"", ""orderbook""]",[],"[""event""]",1000,0.0,"{""basis"": 0.0, ""funding_rate"": 99.218314, ""liquidation"": 0.0, ""open_interest"": 0.0, ""orderbook"": 0.0}","[""open_interest"", ""basis"", ""liquidation"", ""orderbook""]",block_before_candidate_id_and_do_not_consume_trial_budget
+﻿candidateId,dataGate,dataProfileId,implementationGate,noveltyGate,prefilterEligible
+auto-trend_pullback_continuation-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-trend_pullback_continuation-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-volatility_compression_release-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-volatility_compression_release-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-btc_shock_lag-1h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-btc_shock_lag-1h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-volatility_shock_asymmetry-1h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-volatility_shock_asymmetry-1h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-cross_session_liquidity_transition-1h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-cross_session_liquidity_transition-1h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-residual_extreme_causal_recovery-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-residual_extreme_causal_recovery-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-trend_failure_reversal-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-trend_failure_reversal-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-breadth_correlation_directional_filter-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-breadth_correlation_directional_filter-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True

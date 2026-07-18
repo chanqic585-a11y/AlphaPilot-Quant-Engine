@@ -1,5 +1,5 @@
 {
-  "artifactCount": 14,
+  "artifactCount": 20,
   "artifacts": [
     {
       "relativePath": "baseline_identity.json",
@@ -8,13 +8,28 @@
     },
     {
       "relativePath": "candidate_data_gate_matrix.csv",
-      "sha256": "1e1e2362a92461624ea0fe1681a3ba2e30f337ec16b809bca20dd5739bd2c1ef",
-      "sizeBytes": 942
+      "sha256": "61235f32ea4ed3a802221aaf51bbbda29718edd83de6d0369de025e3f204aa36",
+      "sizeBytes": 1660
+    },
+    {
+      "relativePath": "candidate_inventory.json",
+      "sha256": "152987e7672aea13989f516e12e5e133b0a69ce322a3a88af98e6148ef9b113e",
+      "sizeBytes": 34005
+    },
+    {
+      "relativePath": "candidate_structural_certification.json",
+      "sha256": "9cc852d4e3e248ec040bbaf30a6c3fb0f59e066d3288b91896ccce8a60c7b939",
+      "sizeBytes": 19199
     },
     {
       "relativePath": "checkpoints/v19.json",
       "sha256": "465549a2ba8f68303207abd29ebe4648c39d3588930fe5015fe0dcb129c08037",
       "sizeBytes": 530
+    },
+    {
+      "relativePath": "checkpoints/v20.json",
+      "sha256": "d0405122f86906c774828bfe4902c9cff334791b5f9895d3c1ee718f9bf20955",
+      "sizeBytes": 422
     },
     {
       "relativePath": "data_capability_matrix.csv",
@@ -47,14 +62,29 @@
       "sizeBytes": 3656
     },
     {
+      "relativePath": "historical_overlap_audit.json",
+      "sha256": "da3d23f55a622284c384dfb0cf881388dffe5f6c6a02582eb2cb2ebc7e44bff1",
+      "sizeBytes": 306
+    },
+    {
+      "relativePath": "hypothesis_inventory.json",
+      "sha256": "a649426518a4a136d406ee60eff8c37643e9ef113134f2357f4d9bb782c6faab",
+      "sizeBytes": 14438
+    },
+    {
+      "relativePath": "hypothesis_novelty_matrix.csv",
+      "sha256": "8335ffe4c9dee41b84a03bb2237ed5317aabfce452d170b7578f284a65f1b0dc",
+      "sizeBytes": 1385
+    },
+    {
       "relativePath": "program_ledger.jsonl",
-      "sha256": "297dc47af39ad53a0d0325f9e9c3ff10ebbc98d6bd0da3ba26547e3839d3e53d",
-      "sizeBytes": 1165
+      "sha256": "6eab5bacc517ed13c2b5e41560c52f39fd5a2988fb89b9cf4f28ce30f3e8258e",
+      "sizeBytes": 2405
     },
     {
       "relativePath": "program_state.json",
-      "sha256": "d67e7f53a5c0380220579b64114d48d07c8bb624565f31b457d566af2cfcb85c",
-      "sizeBytes": 694
+      "sha256": "8c2f5b161ca37cf566120e50eb79bdf5a057e9ce7ae97e3716343061c15e434f",
+      "sizeBytes": 733
     },
     {
       "relativePath": "structural_certification_vs_formal_event_delta_audit.json",
@@ -72,6 +102,6 @@
       "sizeBytes": 1439
     }
   ],
-  "manifestHash": "artifact_manifest_e3203696488682a97bfa1d3596d1e77bce053d7af8340ff818b2296826549ddc",
+  "manifestHash": "artifact_manifest_1c0d8b1fd08ddb9a6a335808cf8848623d848968be9874a006a28611ed1c9246",
   "schemaVersion": "automatic_strategy_demo_artifact_manifest_v1"
 }

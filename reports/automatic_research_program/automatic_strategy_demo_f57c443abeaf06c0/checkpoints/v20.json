@@ -1,0 +1,13 @@
+{
+  "checkpointHash": "6eae33b3560740ac5d10784e67b30e0d53e4eb3dff188c22d19d898df4bd3b1d",
+  "createdAt": "2026-07-18T01:28:24.0105527Z",
+  "payload": {
+    "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+    "candidateCount": 16,
+    "certifiedCandidateCount": 16,
+    "hypothesisCount": 8,
+    "status": "completed"
+  },
+  "schemaVersion": "automatic_strategy_demo_checkpoint_v1",
+  "stage": "v20"
+}

@@ -1,0 +1,8 @@
+{
+  "auditHash": "historical_overlap_audit_e58274b72ebd16344205a1f1a65fbb8a0e10efa155dce543a2d86a635bf7cd7b",
+  "historicalFamilyCount": 72,
+  "historicalFamilySemanticDedupPassed": true,
+  "hypothesisCount": 8,
+  "schemaVersion": "historical_family_semantic_dedup_v1",
+  "thresholdOnlyDuplicateCount": 0
+}
