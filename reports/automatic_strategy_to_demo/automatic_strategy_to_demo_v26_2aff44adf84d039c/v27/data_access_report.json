@@ -1,0 +1,228 @@
+{
+  "datasetCount": 24,
+  "datasets": [
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_BTC-USDT-SWAP_1h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "BTC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T23:00:00+00:00",
+      "returnedRowCount": 24624,
+      "timeframe": "1h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_ETH-USDT-SWAP_1h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ETH-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T23:00:00+00:00",
+      "returnedRowCount": 24624,
+      "timeframe": "1h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_XRP-USDT-SWAP_1h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "XRP-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T23:00:00+00:00",
+      "returnedRowCount": 24624,
+      "timeframe": "1h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_LTC-USDT-SWAP_1h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "LTC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T23:00:00+00:00",
+      "returnedRowCount": 24624,
+      "timeframe": "1h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_BCH-USDT-SWAP_1h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "BCH-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T23:00:00+00:00",
+      "returnedRowCount": 24624,
+      "timeframe": "1h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_ETC-USDT-SWAP_1h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ETC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T23:00:00+00:00",
+      "returnedRowCount": 24624,
+      "timeframe": "1h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_ADA-USDT-SWAP_1h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ADA-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T23:00:00+00:00",
+      "returnedRowCount": 24624,
+      "timeframe": "1h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_LINK-USDT-SWAP_1h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "LINK-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T23:00:00+00:00",
+      "returnedRowCount": 24624,
+      "timeframe": "1h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_BTC-USDT-SWAP_4h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "BTC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T20:00:00+00:00",
+      "returnedRowCount": 6156,
+      "timeframe": "4h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_ETH-USDT-SWAP_4h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ETH-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T20:00:00+00:00",
+      "returnedRowCount": 6156,
+      "timeframe": "4h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_XRP-USDT-SWAP_4h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "XRP-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T20:00:00+00:00",
+      "returnedRowCount": 6156,
+      "timeframe": "4h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_LTC-USDT-SWAP_4h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "LTC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T20:00:00+00:00",
+      "returnedRowCount": 6156,
+      "timeframe": "4h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_BCH-USDT-SWAP_4h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "BCH-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T20:00:00+00:00",
+      "returnedRowCount": 6156,
+      "timeframe": "4h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_ETC-USDT-SWAP_4h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ETC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T20:00:00+00:00",
+      "returnedRowCount": 6156,
+      "timeframe": "4h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_ADA-USDT-SWAP_4h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ADA-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T20:00:00+00:00",
+      "returnedRowCount": 6156,
+      "timeframe": "4h"
+    },
+    {
+      "dataType": "ohlcv",
+      "datasetId": "user_local_LINK-USDT-SWAP_4h",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "LINK-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T20:00:00+00:00",
+      "returnedRowCount": 6156,
+      "timeframe": "4h"
+    },
+    {
+      "dataType": "funding",
+      "datasetId": "binance_ADA-USDT-SWAP_funding",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ADA-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T16:00:00+00:00",
+      "returnedRowCount": 3078,
+      "timeframe": null
+    },
+    {
+      "dataType": "funding",
+      "datasetId": "binance_BCH-USDT-SWAP_funding",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "BCH-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T16:00:00+00:00",
+      "returnedRowCount": 3078,
+      "timeframe": null
+    },
+    {
+      "dataType": "funding",
+      "datasetId": "binance_BTC-USDT-SWAP_funding",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "BTC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T16:00:00+00:00",
+      "returnedRowCount": 3078,
+      "timeframe": null
+    },
+    {
+      "dataType": "funding",
+      "datasetId": "binance_ETC-USDT-SWAP_funding",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ETC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T16:00:00+00:00",
+      "returnedRowCount": 3078,
+      "timeframe": null
+    },
+    {
+      "dataType": "funding",
+      "datasetId": "binance_ETH-USDT-SWAP_funding",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "ETH-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T16:00:00+00:00",
+      "returnedRowCount": 3078,
+      "timeframe": null
+    },
+    {
+      "dataType": "funding",
+      "datasetId": "binance_LINK-USDT-SWAP_funding",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "LINK-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T16:00:00+00:00",
+      "returnedRowCount": 3078,
+      "timeframe": null
+    },
+    {
+      "dataType": "funding",
+      "datasetId": "binance_LTC-USDT-SWAP_funding",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "LTC-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T16:00:00+00:00",
+      "returnedRowCount": 3078,
+      "timeframe": null
+    },
+    {
+      "dataType": "funding",
+      "datasetId": "binance_XRP-USDT-SWAP_funding",
+      "hashVerificationMode": "v19_frozen_catalog_binding",
+      "instrumentId": "XRP-USDT-SWAP",
+      "returnedMaximumTimestamp": "2022-12-31T16:00:00+00:00",
+      "returnedRowCount": 3078,
+      "timeframe": null
+    }
+  ],
+  "endExclusive": "2023-01-01T00:00:00+00:00",
+  "futureLockedOosRowsReturned": 0,
+  "lockedOosContentReadCount": 0,
+  "networkAccessCount": 0,
+  "schemaVersion": "automatic_catalog_window_access_v1",
+  "start": "2020-03-11T00:00:00+00:00",
+  "wholeFileFallbackUsed": false
+}

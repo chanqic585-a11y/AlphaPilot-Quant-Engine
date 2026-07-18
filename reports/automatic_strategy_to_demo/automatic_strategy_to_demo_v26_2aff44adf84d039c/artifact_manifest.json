@@ -1,5 +1,5 @@
 {
-  "artifactCount": 13,
+  "artifactCount": 58,
   "artifacts": [
     {
       "path": "baseline_identity.json",
@@ -7,9 +7,24 @@
       "sizeBytes": 594
     },
     {
+      "path": "candidate_data_gate_matrix.csv",
+      "sha256": "e6e31555e8f96afbb5e0badb713a5b0fb02cdbbd90319b5e4690ad026f48434d",
+      "sizeBytes": 1235
+    },
+    {
+      "path": "candidate_inventory.json",
+      "sha256": "99938b7a780304cb18196935e0dade451a31731d6a65cd311e6efd0e279fc082",
+      "sizeBytes": 35314
+    },
+    {
       "path": "candidate_ranking_registry.json",
       "sha256": "4eb1e14b77c2c3db3c2434ecbcdb80e94ea0930ec98a641684f5405ba2a05a55",
       "sizeBytes": 231
+    },
+    {
+      "path": "candidate_releases/release_inventory.json",
+      "sha256": "16e5f3ff9e250a8f90e73ca6291e467db643310101157a79c0c7227617d7cfe1",
+      "sizeBytes": 141
     },
     {
       "path": "current_candidate_resolution.json",
@@ -17,19 +32,144 @@
       "sizeBytes": 807
     },
     {
+      "path": "data_profile_inventory.json",
+      "sha256": "7786cf9c44f6996c79741a2abe6cf13558be531d2f225cf96f64e2921139bf72",
+      "sizeBytes": 21310
+    },
+    {
+      "path": "demo_approval_overlay.json",
+      "sha256": "faaae6364b4c8aa47df75c085bc813dc2aec72e9c1a7e9823d125a554472bcbe",
+      "sizeBytes": 102
+    },
+    {
+      "path": "demo_approval_request.json",
+      "sha256": "0fb6981e60230a7d80d453a6d02c676f81103a564af3496808bcf75454dc61ee",
+      "sizeBytes": 117
+    },
+    {
+      "path": "demo_approval_request.md",
+      "sha256": "de412f4d993dc0e82a67d10f340bf62ab6db42ca23f203f9051afc04e8c65b86",
+      "sizeBytes": 95
+    },
+    {
+      "path": "demo_arm_audit.json",
+      "sha256": "f33e7f09d0b4a19dd83d09b5550abbafc450373cfc847e3aa0ce0b5f90989f67",
+      "sizeBytes": 136
+    },
+    {
+      "path": "demo_universe_audit.json",
+      "sha256": "f62549c69b21820cd8f75e00ebd1f23cdeba08f5d4020d970df5a83996a4ca3c",
+      "sizeBytes": 126
+    },
+    {
+      "path": "eligible_candidate_ranking.csv",
+      "sha256": "269861ef71c6aaa22f519cf146713b27d04c1a9000ffe64e7371f7def8be1bab",
+      "sizeBytes": 37
+    },
+    {
+      "path": "evidence_package_manifest.json",
+      "sha256": "c8add7293952ffbdf8565677a8e5d304288cb13b6082a8968f7d6cfbc80f2f4d",
+      "sizeBytes": 928
+    },
+    {
+      "path": "evidence_packages/AlphaPilot-V26-31-Automatic-Strategy-to-Demo-Core-Evidence.zip",
+      "sha256": "deb47b5dadbd071dcba897532d3017a06ad7f7912e1a4ccb444a9cc77390dbf6",
+      "sizeBytes": 7360
+    },
+    {
+      "path": "evidence_packages/AlphaPilot-V26-31-Candidate-and-Formal-Evidence.zip",
+      "sha256": "61de2dc09f4b3bd16399d300a532f89fe520f775916ccbeb1245fe98392e5852",
+      "sizeBytes": 11148748
+    },
+    {
+      "path": "evidence_packages/AlphaPilot-V26-31-OKX-Release-and-Demo-Evidence.zip",
+      "sha256": "2dc16829efe8c5da77e8966d1ad72c45e60cd5047f2689b3e63913fa44b49eda",
+      "sizeBytes": 4302
+    },
+    {
+      "path": "final_route_decision.json",
+      "sha256": "49a1f4e92f0b80b10c8a0cd19141f6e0c991a27377506115114edbfe78607402",
+      "sizeBytes": 742
+    },
+    {
+      "path": "final_self_check.md",
+      "sha256": "38c6dbd69bf242c53f0275e8ae188e519a84f16fc7047f99942a403d2234f484",
+      "sizeBytes": 513
+    },
+    {
+      "path": "formal_candidate_inventory.json",
+      "sha256": "10f270256756a5a5ac7ab301805eb62dca3d96d2a87b471f8b69fb8efc3d7199",
+      "sizeBytes": 147
+    },
+    {
+      "path": "formal_gate_matrix.csv",
+      "sha256": "a0c209d4da8957c5345889b7aba2a9201cb7b4a0959ced0084ac67058bd1852a",
+      "sizeBytes": 39
+    },
+    {
+      "path": "formal_metric_matrix.csv",
+      "sha256": "193997a228b03abac0b7101fbb39bad462a19c8b632a71a291d1365d43f3bc4a",
+      "sizeBytes": 40
+    },
+    {
+      "path": "hypothesis_inventory.json",
+      "sha256": "3ecf09b0d2a080d4ebd8b6bdb830035d4937fb5ee93cd495b974beeef14d5aa6",
+      "sizeBytes": 5761
+    },
+    {
+      "path": "hypothesis_novelty_matrix.csv",
+      "sha256": "3ef51bb480a00a2661649c413be46e031f1cf708b535b30d8c43b1c555d2a479",
+      "sizeBytes": 440
+    },
+    {
+      "path": "okx_confirmatory_results.json",
+      "sha256": "beb9c017b72e363bb2542d669566f81385f7b185528ec2f11588f016b25ce609",
+      "sizeBytes": 131
+    },
+    {
+      "path": "okx_data_profile_manifest.json",
+      "sha256": "8c258ac254cd78df550f1ccdc55c6d5b704e2c9449b6665f5a30e20792bd466f",
+      "sizeBytes": 110
+    },
+    {
+      "path": "portability_audit.json",
+      "sha256": "e914a3f5ad11dedb4a7b8bf428dc19ae1acdbd794a9f5070967632f0635031c6",
+      "sizeBytes": 102
+    },
+    {
+      "path": "portability_policy.json",
+      "sha256": "a22a0f4b4dd812a06127e8b28f05c5387eaf6cf23606b3e3a26068250cc2340a",
+      "sizeBytes": 103
+    },
+    {
+      "path": "prefilter_failure_attribution.json",
+      "sha256": "16efece091f367087f81f744eb38949f9e83b3fe62feb6c0270dcfb31568669e",
+      "sizeBytes": 2307
+    },
+    {
+      "path": "prefilter_gate_matrix.csv",
+      "sha256": "d6b0ac567c6110374d0ec68719e783cbf3cd784652d41d34dfddc45984155c27",
+      "sizeBytes": 3217
+    },
+    {
+      "path": "prefilter_metric_matrix.csv",
+      "sha256": "c97d9d8d8ab7805b2f926550cd23a3f5a77b3545c1e07c947049221a858cfc94",
+      "sizeBytes": 2328
+    },
+    {
       "path": "program_budget.json",
-      "sha256": "ef30b3045ff634ec14a3ffa3da55262e594c1f4156d8af8c35d9168271bb1376",
+      "sha256": "36ca86f60e83d4d98cea8e9b842355983bafbbf7f9044e5adbe886bda80d587d",
       "sizeBytes": 326
     },
     {
       "path": "program_budget_ledger.jsonl",
-      "sha256": "59b975de1150c15fa90f015b7eb45610c54deb3c0d0325f93f1dd15165be84ff",
-      "sizeBytes": 368
+      "sha256": "0df3e3a9c04800f60f9f565f65ce8f88eacb305f6c6c7d92896fc0e54cbf367c",
+      "sizeBytes": 1506
     },
     {
       "path": "program_ledger.jsonl",
-      "sha256": "2b5808077b6ee3a3a2704ff96bbdc40118e4b385ff32e06a9a81bce892b20fab",
-      "sizeBytes": 476
+      "sha256": "ba9e96465be5e7c3e3b5e56092aa6105e4cd7e39b1febf6233f1104678a4b982",
+      "sizeBytes": 1830
     },
     {
       "path": "program_spec.json",
@@ -38,8 +178,8 @@
     },
     {
       "path": "program_state.json",
-      "sha256": "07b084696eb2f577489a221ad1475e4d4a3dfa605264500eb33efe7ee27bec90",
-      "sizeBytes": 488
+      "sha256": "6cd33a5075fa24eb39ef21f974bbcdd0430bc820e2c926b953389ea325437f34",
+      "sizeBytes": 649
     },
     {
       "path": "ranking_semantics_derivation_audit.json",
@@ -50,6 +190,21 @@
       "path": "ranking_semantics_derivation_audit.md",
       "sha256": "41c219f93090d476a3bd2768d560aa0b629c5f0ee747236d373fcc82dce780da",
       "sizeBytes": 490
+    },
+    {
+      "path": "release_import_audit.json",
+      "sha256": "531a827f4aea6f6f5c464b7c20e1056403e3677b4ef135d7b4f49e630e94ee6d",
+      "sizeBytes": 126
+    },
+    {
+      "path": "statistical_availability_matrix.json",
+      "sha256": "04450dde242cda5237ddf890bf25f83bc85800fa8a50da0deedd4d661eac2c98",
+      "sizeBytes": 154
+    },
+    {
+      "path": "trial_lineage.json",
+      "sha256": "eb34fe33691aa2a9ecaa4b1f5b6e96d3b69f65fe8943158057a1fe44f1d95af2",
+      "sizeBytes": 1663
     },
     {
       "path": "v25_ranking_semantics_clarification_sidecar.json",
@@ -65,8 +220,78 @@
       "path": "v26/v25_ranking_semantics_clarification_sidecar.json",
       "sha256": "e3d8bdfa3589444756f068918829eb0e7e85aa6d2d84d394ddbd34940d95c416",
       "sizeBytes": 928
+    },
+    {
+      "path": "v27/candidate_capacity_certification.json",
+      "sha256": "88654e28c0db733ca79d2c62a2af8f3ed214f2700bdab01558522df18c2b89b6",
+      "sizeBytes": 27289677
+    },
+    {
+      "path": "v27/candidate_inventory.json",
+      "sha256": "acd2531ed3b59a6c399044966353d84767b9d24864ae054f5f937a580ef335f8",
+      "sizeBytes": 32338
+    },
+    {
+      "path": "v27/candidate_ranking_certification.json",
+      "sha256": "9b6011ec79919b4a48cb2f1865dbb8260b0a4b52ec3e7b493af82824c5d16e8e",
+      "sizeBytes": 4880
+    },
+    {
+      "path": "v27/candidate_ranking_evidence.json",
+      "sha256": "634d88a3af346fd15034b87471f3f5fdc3607d5139bfa239cd251826c98e4354",
+      "sizeBytes": 52669216
+    },
+    {
+      "path": "v27/candidate_semantics_matrix.json",
+      "sha256": "92f355ae0a9177b3654dce2097100b166d857acf52d0d178aa63ac7736f1deea",
+      "sizeBytes": 61226
+    },
+    {
+      "path": "v27/candidate_structural_certification.json",
+      "sha256": "869e8b432fccbdfa7f24595d2bb32c4760ed8eef184928c0b6365d6f36de254c",
+      "sizeBytes": 6336
+    },
+    {
+      "path": "v27/capacity_profiles.json",
+      "sha256": "12f88eb0005d6e1c0409e9c8344c82d85b972c12271a19e76413a767647d2cdd",
+      "sizeBytes": 18354
+    },
+    {
+      "path": "v27/data_access_report.json",
+      "sha256": "b6bf0ec2985a7b546623e4488b286e95a9b5b0c1cb69e2143887f9560f22840e",
+      "sizeBytes": 7757
+    },
+    {
+      "path": "v27/data_readiness_receipts.json",
+      "sha256": "40a82d21163ffc0a7b36242225528b1a32e3d0cce7f695031186fcb8c0276d34",
+      "sizeBytes": 1710
+    },
+    {
+      "path": "v27/hypothesis_inventory.json",
+      "sha256": "7dd3cbfcc2a093a1045f945462a397cb95278f5c754159ae30237991171732d8",
+      "sizeBytes": 5409
+    },
+    {
+      "path": "v27/prefilter_results.json",
+      "sha256": "90dbc19a910a10df28c46c6996f1a35c0de8409a9a5a9cd46865723af99a023a",
+      "sizeBytes": 15364
+    },
+    {
+      "path": "v27/prefilter_route.json",
+      "sha256": "f81526ad0408301f61449f9c352aa28084e667cd2bfe0da31ded6368c48f9778",
+      "sizeBytes": 851
+    },
+    {
+      "path": "v27/v27_summary.json",
+      "sha256": "08e3d25873c9bf23c5191fddf3fb43c3691efa8945152695492ca6228b42362a",
+      "sizeBytes": 905
+    },
+    {
+      "path": "v27/v27_summary.md",
+      "sha256": "fd39786a8e2c8768b5c2c6ac3335e32b036520ef91d397578277b9595987ae8c",
+      "sizeBytes": 331
     }
   ],
-  "manifestHash": "automatic_strategy_to_demo_manifest_ad0f61876a3b48de8bee31d393940f7bbafe53013ce1028f195d4599b6c00993",
+  "manifestHash": "automatic_strategy_to_demo_manifest_1476d82425a1200a3db643bc06ca24f765455dfdce215e2897167bbced3f5c19",
   "schemaVersion": "automatic_strategy_to_demo_artifact_manifest_v1"
 }

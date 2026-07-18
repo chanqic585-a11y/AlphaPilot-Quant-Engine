@@ -6,3 +6,5 @@ reports/v13_27_1_12/*.json text eol=lf
 reports/v13_27_1_12/*.md text eol=lf
 research/data_snapshots/*.json text eol=lf
 research/data_snapshots/*.sha256 text eol=lf
+reports/automatic_strategy_to_demo/** text eol=lf
+reports/automatic_strategy_to_demo/**/*.zip -text -eol

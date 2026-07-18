@@ -2,15 +2,17 @@
   "approvalCount": 0,
   "demoArm": false,
   "formalRunCount": 0,
-  "generatedAt": "2026-07-18T00:00:00+08:00",
+  "generatedAt": "2026-07-18T16:20:42.9455362+08:00",
   "humanGateStatus": "not_required",
+  "lastCompletedStage": "v27_completed",
   "lockedOosReadCount": 0,
-  "nextAllowedStage": "v27_new_candidate_research",
+  "nextAllowedStage": "completed_zero_qualified_candidates",
   "orderCount": 0,
+  "programClosedAt": "2026-07-18T16:34:08.3187308+08:00",
   "programId": "automatic_strategy_to_demo_v26_2aff44adf84d039c",
   "releaseCount": 0,
   "resultReadCount": 0,
   "schemaVersion": "automatic_strategy_to_demo_program_state_v1",
-  "stage": "v26_completed_route_v27",
-  "terminalRoute": null
+  "stage": "completed_zero_qualified_candidates",
+  "terminalRoute": "completed_zero_qualified_candidates"
 }

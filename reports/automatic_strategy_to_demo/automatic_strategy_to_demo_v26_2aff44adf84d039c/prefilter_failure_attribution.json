@@ -1,0 +1,84 @@
+{
+  "candidateCount": 8,
+  "candidates": [
+    {
+      "candidateId": "v27-range_expansion_close_followthrough-4h-long-v1",
+      "failedGates": [
+        "minimumBenchmarkIncrementNetR"
+      ],
+      "finalDisposition": "archived"
+    },
+    {
+      "candidateId": "v27-range_expansion_close_followthrough-4h-short-v2",
+      "failedGates": [
+        "capacityCertification"
+      ],
+      "finalDisposition": "archived"
+    },
+    {
+      "candidateId": "v27-liquidity_gap_reentry-1h-long-v1",
+      "failedGates": [
+        "capacityCertification"
+      ],
+      "finalDisposition": "archived"
+    },
+    {
+      "candidateId": "v27-liquidity_gap_reentry-1h-short-v2",
+      "failedGates": [
+        "capacityCertification"
+      ],
+      "finalDisposition": "archived"
+    },
+    {
+      "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-long-v1",
+      "failedGates": [
+        "capacityCertification"
+      ],
+      "finalDisposition": "archived"
+    },
+    {
+      "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-short-v2",
+      "failedGates": [
+        "capacityCertification"
+      ],
+      "finalDisposition": "archived"
+    },
+    {
+      "candidateId": "v27-opening_range_failure_reversal-1h-long-v1",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumBenchmarkIncrementNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "finalDisposition": "archived"
+    },
+    {
+      "candidateId": "v27-opening_range_failure_reversal-1h-short-v2",
+      "failedGates": [
+        "minimumAverageNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumStressAverageNetR",
+        "minimumStressProfitFactor",
+        "minimumTotalNetR"
+      ],
+      "finalDisposition": "archived"
+    }
+  ],
+  "failedCandidateCount": 8,
+  "failedGateCounts": {
+    "capacityCertification": 5,
+    "minimumAverageNetR": 2,
+    "minimumBenchmarkIncrementNetR": 2,
+    "minimumPositiveMonthRatio": 2,
+    "minimumProfitFactor": 2,
+    "minimumStressAverageNetR": 2,
+    "minimumStressProfitFactor": 2,
+    "minimumTotalNetR": 2
+  },
+  "schemaVersion": "v27_prefilter_failure_attribution_v1"
+}

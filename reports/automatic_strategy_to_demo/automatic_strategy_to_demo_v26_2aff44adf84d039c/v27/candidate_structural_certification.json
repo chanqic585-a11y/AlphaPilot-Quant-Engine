@@ -1,0 +1,170 @@
+[
+  {
+    "actualSignalCount": 3155,
+    "actualTranslationParity": true,
+    "candidateId": "v27-range_expansion_close_followthrough-4h-long-v1",
+    "candidateNeutralCore": true,
+    "candidateSpecificCoreImportCount": 0,
+    "certificationHash": "v27_structural_certification_bd1bd2cc54b5bd8c219a065a3fe7584e4bd111d80741383f7b37a458fc5bd84f",
+    "economicResultReadCount": 0,
+    "fixtureParity": {
+      "coreEngineChangedForCandidate": false,
+      "passed": true,
+      "referenceEventCount": 18,
+      "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+      "status": "passed",
+      "translatedEventCount": 18
+    },
+    "lockedOosReadCount": 0,
+    "schemaVersion": "v27_candidate_structural_certification_v1",
+    "status": "passed",
+    "uniqueSignalIdentityCount": 3155
+  },
+  {
+    "actualSignalCount": 2995,
+    "actualTranslationParity": true,
+    "candidateId": "v27-range_expansion_close_followthrough-4h-short-v2",
+    "candidateNeutralCore": true,
+    "candidateSpecificCoreImportCount": 0,
+    "certificationHash": "v27_structural_certification_a6272508fedbba7004bee691567642e18bdf8467643ddeb7a19f1166e3a099c8",
+    "economicResultReadCount": 0,
+    "fixtureParity": {
+      "coreEngineChangedForCandidate": false,
+      "passed": true,
+      "referenceEventCount": 18,
+      "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+      "status": "passed",
+      "translatedEventCount": 18
+    },
+    "lockedOosReadCount": 0,
+    "schemaVersion": "v27_candidate_structural_certification_v1",
+    "status": "passed",
+    "uniqueSignalIdentityCount": 2995
+  },
+  {
+    "actualSignalCount": 34,
+    "actualTranslationParity": true,
+    "candidateId": "v27-liquidity_gap_reentry-1h-long-v1",
+    "candidateNeutralCore": true,
+    "candidateSpecificCoreImportCount": 0,
+    "certificationHash": "v27_structural_certification_449684a519cd6e3a9b02e7430d1056557d2317f8b4388dc6a67829343bab179b",
+    "economicResultReadCount": 0,
+    "fixtureParity": {
+      "coreEngineChangedForCandidate": false,
+      "passed": true,
+      "referenceEventCount": 2,
+      "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+      "status": "passed",
+      "translatedEventCount": 2
+    },
+    "lockedOosReadCount": 0,
+    "schemaVersion": "v27_candidate_structural_certification_v1",
+    "status": "passed",
+    "uniqueSignalIdentityCount": 34
+  },
+  {
+    "actualSignalCount": 29,
+    "actualTranslationParity": true,
+    "candidateId": "v27-liquidity_gap_reentry-1h-short-v2",
+    "candidateNeutralCore": true,
+    "candidateSpecificCoreImportCount": 0,
+    "certificationHash": "v27_structural_certification_3df71c5e70962ceacc691aa63e8225040d7f9c54f1be6db576470003169362b1",
+    "economicResultReadCount": 0,
+    "fixtureParity": {
+      "coreEngineChangedForCandidate": false,
+      "passed": true,
+      "referenceEventCount": 2,
+      "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+      "status": "passed",
+      "translatedEventCount": 2
+    },
+    "lockedOosReadCount": 0,
+    "schemaVersion": "v27_candidate_structural_certification_v1",
+    "status": "passed",
+    "uniqueSignalIdentityCount": 29
+  },
+  {
+    "actualSignalCount": 9865,
+    "actualTranslationParity": true,
+    "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-long-v1",
+    "candidateNeutralCore": true,
+    "candidateSpecificCoreImportCount": 0,
+    "certificationHash": "v27_structural_certification_d6d4814ff7f1c31b6d0bfb5203a845981e3436904b2625ba63ac9b1fd8110afe",
+    "economicResultReadCount": 0,
+    "fixtureParity": {
+      "coreEngineChangedForCandidate": false,
+      "passed": true,
+      "referenceEventCount": 819,
+      "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+      "status": "passed",
+      "translatedEventCount": 819
+    },
+    "lockedOosReadCount": 0,
+    "schemaVersion": "v27_candidate_structural_certification_v1",
+    "status": "passed",
+    "uniqueSignalIdentityCount": 9865
+  },
+  {
+    "actualSignalCount": 9709,
+    "actualTranslationParity": true,
+    "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-short-v2",
+    "candidateNeutralCore": true,
+    "candidateSpecificCoreImportCount": 0,
+    "certificationHash": "v27_structural_certification_fb09e0a8f994a6c296b8be80e28ae30d2b415ea6a7b165f8c3bfc016018751a8",
+    "economicResultReadCount": 0,
+    "fixtureParity": {
+      "coreEngineChangedForCandidate": false,
+      "passed": true,
+      "referenceEventCount": 819,
+      "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+      "status": "passed",
+      "translatedEventCount": 819
+    },
+    "lockedOosReadCount": 0,
+    "schemaVersion": "v27_candidate_structural_certification_v1",
+    "status": "passed",
+    "uniqueSignalIdentityCount": 9709
+  },
+  {
+    "actualSignalCount": 11990,
+    "actualTranslationParity": true,
+    "candidateId": "v27-opening_range_failure_reversal-1h-long-v1",
+    "candidateNeutralCore": true,
+    "candidateSpecificCoreImportCount": 0,
+    "certificationHash": "v27_structural_certification_90deaae432ae15e0956507b11d60924b259a42771c3594ce2e6d5a34f052999f",
+    "economicResultReadCount": 0,
+    "fixtureParity": {
+      "coreEngineChangedForCandidate": false,
+      "passed": true,
+      "referenceEventCount": 77,
+      "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+      "status": "passed",
+      "translatedEventCount": 77
+    },
+    "lockedOosReadCount": 0,
+    "schemaVersion": "v27_candidate_structural_certification_v1",
+    "status": "passed",
+    "uniqueSignalIdentityCount": 11990
+  },
+  {
+    "actualSignalCount": 13448,
+    "actualTranslationParity": true,
+    "candidateId": "v27-opening_range_failure_reversal-1h-short-v2",
+    "candidateNeutralCore": true,
+    "candidateSpecificCoreImportCount": 0,
+    "certificationHash": "v27_structural_certification_ae4fb0569c9c89551d041d1bc2b6dfab7d927521ad8b8ea10a87b37bced2cf2f",
+    "economicResultReadCount": 0,
+    "fixtureParity": {
+      "coreEngineChangedForCandidate": false,
+      "passed": true,
+      "referenceEventCount": 76,
+      "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+      "status": "passed",
+      "translatedEventCount": 76
+    },
+    "lockedOosReadCount": 0,
+    "schemaVersion": "v27_candidate_structural_certification_v1",
+    "status": "passed",
+    "uniqueSignalIdentityCount": 13448
+  }
+]

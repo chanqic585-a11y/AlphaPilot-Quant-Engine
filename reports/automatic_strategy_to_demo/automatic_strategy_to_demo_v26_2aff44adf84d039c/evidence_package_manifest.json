@@ -1,0 +1,25 @@
+{
+  "manifestHash": "v26_31_evidence_package_index_391d1cd39b7dbc6964f7c5f66ce75c62e0b7c2c59a4c2644324109c0b05527a2",
+  "packageCount": 3,
+  "packages": [
+    {
+      "memberCount": 12,
+      "path": "evidence_packages/AlphaPilot-V26-31-Automatic-Strategy-to-Demo-Core-Evidence.zip",
+      "sha256": "deb47b5dadbd071dcba897532d3017a06ad7f7912e1a4ccb444a9cc77390dbf6",
+      "sizeBytes": 7360
+    },
+    {
+      "memberCount": 21,
+      "path": "evidence_packages/AlphaPilot-V26-31-Candidate-and-Formal-Evidence.zip",
+      "sha256": "61de2dc09f4b3bd16399d300a532f89fe520f775916ccbeb1245fe98392e5852",
+      "sizeBytes": 11148748
+    },
+    {
+      "memberCount": 13,
+      "path": "evidence_packages/AlphaPilot-V26-31-OKX-Release-and-Demo-Evidence.zip",
+      "sha256": "2dc16829efe8c5da77e8966d1ad72c45e60cd5047f2689b3e63913fa44b49eda",
+      "sizeBytes": 4302
+    }
+  ],
+  "schemaVersion": "v26_31_evidence_package_index_v1"
+}
