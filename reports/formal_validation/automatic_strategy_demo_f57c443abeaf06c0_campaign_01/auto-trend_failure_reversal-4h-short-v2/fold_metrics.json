@@ -1,0 +1,164 @@
+{
+  "folds": [
+    {
+      "assignedSignalCount": 288,
+      "averageNetR": null,
+      "benchmarkIncrement": 0.0,
+      "costStress": {
+        "base": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_1_5x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_2_0x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        }
+      },
+      "foldId": "fold_01",
+      "maximumDrawdownPct": 0.0,
+      "profitFactor": null,
+      "reason": "all_assigned_events_rejected_by_frozen_capacity_policy",
+      "status": "complete_no_capital_accepted_trades",
+      "stress1_5xAverageNetR": null,
+      "stress1_5xProfitFactor": null,
+      "stress1_5xTotalNetR": 0.0,
+      "totalNetR": 0.0,
+      "tradeCount": 0
+    },
+    {
+      "assignedSignalCount": 194,
+      "averageNetR": null,
+      "benchmarkIncrement": 0.0,
+      "costStress": {
+        "base": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_1_5x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_2_0x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        }
+      },
+      "foldId": "fold_02",
+      "maximumDrawdownPct": 0.0,
+      "profitFactor": null,
+      "reason": "all_assigned_events_rejected_by_frozen_capacity_policy",
+      "status": "complete_no_capital_accepted_trades",
+      "stress1_5xAverageNetR": null,
+      "stress1_5xProfitFactor": null,
+      "stress1_5xTotalNetR": 0.0,
+      "totalNetR": 0.0,
+      "tradeCount": 0
+    },
+    {
+      "assignedSignalCount": 342,
+      "averageNetR": null,
+      "benchmarkIncrement": 0.0,
+      "costStress": {
+        "base": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_1_5x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_2_0x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        }
+      },
+      "foldId": "fold_03",
+      "maximumDrawdownPct": 0.0,
+      "profitFactor": null,
+      "reason": "all_assigned_events_rejected_by_frozen_capacity_policy",
+      "status": "complete_no_capital_accepted_trades",
+      "stress1_5xAverageNetR": null,
+      "stress1_5xProfitFactor": null,
+      "stress1_5xTotalNetR": 0.0,
+      "totalNetR": 0.0,
+      "tradeCount": 0
+    },
+    {
+      "assignedSignalCount": 190,
+      "averageNetR": null,
+      "benchmarkIncrement": 0.0,
+      "costStress": {
+        "base": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_1_5x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_2_0x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        }
+      },
+      "foldId": "fold_04",
+      "maximumDrawdownPct": 0.0,
+      "profitFactor": null,
+      "reason": "all_assigned_events_rejected_by_frozen_capacity_policy",
+      "status": "complete_no_capital_accepted_trades",
+      "stress1_5xAverageNetR": null,
+      "stress1_5xProfitFactor": null,
+      "stress1_5xTotalNetR": 0.0,
+      "totalNetR": 0.0,
+      "tradeCount": 0
+    },
+    {
+      "assignedSignalCount": 244,
+      "averageNetR": null,
+      "benchmarkIncrement": 0.0,
+      "costStress": {
+        "base": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_1_5x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        },
+        "cost_2_0x": {
+          "averageNetR": null,
+          "profitFactor": null,
+          "totalNetR": 0.0
+        }
+      },
+      "foldId": "fold_05",
+      "maximumDrawdownPct": 0.0,
+      "profitFactor": null,
+      "reason": "all_assigned_events_rejected_by_frozen_capacity_policy",
+      "status": "complete_no_capital_accepted_trades",
+      "stress1_5xAverageNetR": null,
+      "stress1_5xProfitFactor": null,
+      "stress1_5xTotalNetR": 0.0,
+      "totalNetR": 0.0,
+      "tradeCount": 0
+    }
+  ]
+}

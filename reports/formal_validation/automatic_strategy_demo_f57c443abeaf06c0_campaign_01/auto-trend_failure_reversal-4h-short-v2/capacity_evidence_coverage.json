@@ -1,0 +1,12 @@
+{
+  "acceptedTradeCount": 0,
+  "coverage": {
+    "capitalDecisionPct": 100.0,
+    "eventDispositionPct": 100.0,
+    "pitContextPct": 100.0,
+    "positionSizePct": 100.0,
+    "rankingEvidenceRecordPct": 100.0
+  },
+  "implementationBlockers": [],
+  "stableRejectedEventCount": 1258
+}

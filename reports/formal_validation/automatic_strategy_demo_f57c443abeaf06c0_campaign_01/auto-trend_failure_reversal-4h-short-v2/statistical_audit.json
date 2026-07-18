@@ -1,0 +1,50 @@
+{
+  "methods": [
+    {
+      "method": "newey_west",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "benjamini_hochberg",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "benjamini_yekutieli",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "deflated_sharpe_ratio",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "probability_of_backtest_overfitting",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "white_reality_check",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "superior_predictive_ability",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "bootstrap_confidence_interval",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    }
+  ],
+  "passed": false,
+  "postResultTrialAdditionCount": 0,
+  "schemaVersion": "automatic_v22_statistical_audit_v1",
+  "statisticalAuditHash": "automatic_v22_statistical_audit_2b66f5119ab289148df92bb43d6623cfd02fbcf739d66e38bd84fb1eab1d0630",
+  "status": "unavailable",
+  "unavailableReason": "no_capital_accepted_trades_under_frozen_capacity_policy"
+}

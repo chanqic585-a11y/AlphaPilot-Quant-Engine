@@ -1,0 +1,9 @@
+{
+  "canonicalIdentityParityPct": 100.0,
+  "coreEngineChangedForCandidate": false,
+  "passed": true,
+  "referenceEventCount": 1268,
+  "schemaVersion": "generated_freqtrade_actual_input_parity_v1",
+  "status": "passed",
+  "translatedEventCount": 1268
+}

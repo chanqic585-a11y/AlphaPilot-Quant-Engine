@@ -1,0 +1,6 @@
+{
+  "microTuningAllowed": false,
+  "reason": "no_materially_distinct_ready_data_profile_with_verified_capacity_semantics",
+  "resultDrivenGateRelaxationAllowed": false,
+  "status": "not_started"
+}

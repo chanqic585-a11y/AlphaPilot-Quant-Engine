@@ -1,0 +1,8 @@
+{
+  "assignedEventCount": 1258,
+  "assignmentCompletenessPct": 100.0,
+  "crossBoundaryLeakageCount": 0,
+  "explicitlyRejectedEventCount": 8,
+  "schemaVersion": "formal_fold_assignment_audit_v2",
+  "unassignedEventCount": 0
+}
