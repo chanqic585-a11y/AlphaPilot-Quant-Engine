@@ -322,9 +322,11 @@ class GeneratedDirectionalEventAdapter:
     def run_fixture_parity(
         self, *, candidate: Mapping[str, Any]
     ) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
+        from .generated_freqtrade_strategy import translated_load_signals
+
         frames = _synthetic_frames(str(candidate["entryDefinition"]["setupId"]))
         first = [dict(row) for row in self.load_signals(candidate=candidate, frames=frames)]
-        second = [dict(row) for row in self.load_signals(candidate=candidate, frames=frames)]
+        second = translated_load_signals(candidate=candidate, frames=frames)
         passed = bool(first) and first == second
         parity = {
             "schemaVersion": "generated_freqtrade_fixture_parity_v1",
@@ -340,7 +342,23 @@ class GeneratedDirectionalEventAdapter:
         self, *, bundle: object, repo_root: Path
     ) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]:
         del repo_root
-        return self.run_fixture_parity(candidate=dict(getattr(bundle, "candidate")))
+        from .generated_freqtrade_strategy import translated_load_signals
+
+        candidate = dict(getattr(bundle, "candidate"))
+        frames = dict(getattr(bundle, "frames"))
+        reference = [dict(row) for row in self.load_signals(candidate=candidate, frames=frames)]
+        translated = translated_load_signals(candidate=candidate, frames=frames)
+        passed = bool(reference) and reference == translated
+        parity = {
+            "schemaVersion": "generated_freqtrade_actual_input_parity_v1",
+            "status": "passed" if passed else "failed",
+            "passed": passed,
+            "referenceEventCount": len(reference),
+            "translatedEventCount": len(translated),
+            "canonicalIdentityParityPct": 100.0 if reference == translated else 0.0,
+            "coreEngineChangedForCandidate": False,
+        }
+        return parity, reference, translated
 
 
 __all__ = ["GeneratedDirectionalEventAdapter"]

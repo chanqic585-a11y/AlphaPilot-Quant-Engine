@@ -10,11 +10,12 @@ from alphapilot.research_factory.catalog_frames import load_catalog_frames
 from alphapilot.research_factory.program_v19 import run_v19_data_capability
 from alphapilot.research_factory.program_v20 import run_v20_candidate_generation
 from alphapilot.research_factory.program_v21 import run_v21_prefilter_and_freeze
+from alphapilot.research_factory.program_v22 import run_v22_formal_validation
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--stage", choices=("v19", "v20", "v21"), required=True)
+    parser.add_argument("--stage", choices=("v19", "v20", "v21", "v22"), required=True)
     parser.add_argument("--reports-root", type=Path, default=Path("reports"))
     parser.add_argument("--research-root", type=Path, default=Path("research"))
     parser.add_argument("--program-id", required=True)
@@ -28,6 +29,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--historical-inventory", type=Path)
     parser.add_argument("--negative-rules", type=Path)
     parser.add_argument("--implementation-commit")
+    parser.add_argument("--repo-root", type=Path)
+    parser.add_argument("--runtime-data-root", type=Path)
     return parser
 
 
@@ -87,6 +90,24 @@ def main() -> int:
             generated_at=args.generated_at,
             implementation_commit=args.implementation_commit,
             frames=load_catalog_frames(args.catalog, timeframes=("1h", "4h")),
+        )
+    elif args.stage == "v22":
+        required = {
+            "catalog": args.catalog,
+            "repo_root": args.repo_root,
+            "runtime_data_root": args.runtime_data_root,
+        }
+        missing = [key for key, value in required.items() if value is None]
+        if missing:
+            raise ValueError("v22_arguments_missing:" + ",".join(missing))
+        result = run_v22_formal_validation(
+            reports_root=args.reports_root,
+            research_root=args.research_root,
+            program_id=args.program_id,
+            generated_at=args.generated_at,
+            catalog_path=args.catalog,
+            repo_root=args.repo_root,
+            runtime_data_root=args.runtime_data_root,
         )
     else:
         raise ValueError(f"unsupported stage: {args.stage}")
