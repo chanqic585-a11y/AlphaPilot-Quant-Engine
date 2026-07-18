@@ -3,16 +3,16 @@
   "activeCampaignIndex": 1,
   "baselineCommit": "f9f36f420496a9cbd59bc079bbcdf7796bac6c5a",
   "createdAt": "2026-07-18T01:08:06.1670776Z",
-  "humanGateStatus": "not_requested",
-  "nextAllowedStage": "release_ready",
+  "humanGateStatus": "not_required",
+  "nextAllowedStage": "demo_waiting_approval",
   "oneShotClaimsConsumed": 1,
-  "previousCheckpoint": "v21",
+  "previousCheckpoint": "v22",
   "programId": "automatic_strategy_demo_f57c443abeaf06c0",
   "programSpecHash": "sha256:e7c2b6711fdc48cacf731b3c6b8930b6d370bcb802742c6e554c4d82b7e87953",
   "resultReadCount": 1,
   "schemaVersion": "automatic_strategy_demo_program_state_v1",
-  "stage": "formal_validation_completed",
-  "stageAttempt": 1,
-  "terminalRoute": null,
-  "updatedAt": "2026-07-18T02:41:59.5691396Z"
+  "stage": "release_ready",
+  "stageAttempt": 2,
+  "terminalRoute": "completed_zero_qualified_candidates",
+  "updatedAt": "2026-07-18T02:51:30Z"
 }
