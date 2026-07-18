@@ -296,6 +296,13 @@ class GeneratedDirectionalEventAdapter:
                     break
             gross_r = (exit_price - entry) / risk * (1.0 if direction == "long" else -1.0)
             cost_r = entry * float(round_trip_cost_rate) / risk
+            observed = frame.iloc[entry_index : exit_index + 1]
+            if direction == "long":
+                mfe_r = (float(observed["high"].max()) - entry) / risk
+                mae_r = (float(observed["low"].min()) - entry) / risk
+            else:
+                mfe_r = (entry - float(observed["low"].min())) / risk
+                mae_r = (entry - float(observed["high"].max())) / risk
             results.append(
                 {
                     **dict(signal),
@@ -306,6 +313,8 @@ class GeneratedDirectionalEventAdapter:
                     "grossR": gross_r,
                     "costR": cost_r,
                     "netR": gross_r - cost_r,
+                    "mfeR": mfe_r,
+                    "maeR": mae_r,
                 }
             )
         return results

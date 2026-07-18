@@ -88,6 +88,7 @@ def test_generated_adapter_is_candidate_neutral_and_fixture_parity_passes() -> N
     assert all(row["candidateId"] == candidate["candidateId"] for row in signals)
     assert all(row["structuralOnly"] is True for row in signals)
     assert all("netR" in row for row in replay)
+    assert all("mfeR" in row and "maeR" in row for row in replay)
     assert parity["status"] == "passed"
     assert reference == translated
     assert isinstance(

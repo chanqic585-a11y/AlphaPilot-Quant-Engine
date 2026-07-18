@@ -9,12 +9,14 @@ from pathlib import Path
 from alphapilot.research_factory.catalog_frames import load_catalog_frames
 from alphapilot.research_factory.program_v19 import run_v19_data_capability
 from alphapilot.research_factory.program_v20 import run_v20_candidate_generation
+from alphapilot.research_factory.program_v21 import run_v21_prefilter_and_freeze
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--stage", choices=("v19", "v20"), required=True)
+    parser.add_argument("--stage", choices=("v19", "v20", "v21"), required=True)
     parser.add_argument("--reports-root", type=Path, default=Path("reports"))
+    parser.add_argument("--research-root", type=Path, default=Path("research"))
     parser.add_argument("--program-id", required=True)
     parser.add_argument("--baseline-commit")
     parser.add_argument("--program-spec-hash")
@@ -25,6 +27,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--baseline-artifact", type=Path, action="append", default=[])
     parser.add_argument("--historical-inventory", type=Path)
     parser.add_argument("--negative-rules", type=Path)
+    parser.add_argument("--implementation-commit")
     return parser
 
 
@@ -67,6 +70,22 @@ def main() -> int:
             generated_at=args.generated_at,
             historical_inventory_path=args.historical_inventory,
             negative_rules_path=args.negative_rules,
+            frames=load_catalog_frames(args.catalog, timeframes=("1h", "4h")),
+        )
+    elif args.stage == "v21":
+        required = {
+            "catalog": args.catalog,
+            "implementation_commit": args.implementation_commit,
+        }
+        missing = [key for key, value in required.items() if value is None]
+        if missing:
+            raise ValueError("v21_arguments_missing:" + ",".join(missing))
+        result = run_v21_prefilter_and_freeze(
+            reports_root=args.reports_root,
+            research_root=args.research_root,
+            program_id=args.program_id,
+            generated_at=args.generated_at,
+            implementation_commit=args.implementation_commit,
             frames=load_catalog_frames(args.catalog, timeframes=("1h", "4h")),
         )
     else:
