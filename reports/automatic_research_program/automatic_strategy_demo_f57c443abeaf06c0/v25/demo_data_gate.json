@@ -1,0 +1,19 @@
+{
+  "approvalCount": 0,
+  "checks": {
+    "crossExchangePortabilityVerified": false,
+    "demoReady": false,
+    "formalReady": false
+  },
+  "demoArm": false,
+  "failedConditions": [
+    "formalReady",
+    "demoReady",
+    "crossExchangePortabilityVerified"
+  ],
+  "gateHash": "demo_data_gate_7b0a0829788574c2be84d8c83e9b88be832d871cf57c981501630a69fc1ab26f",
+  "orderCount": 0,
+  "releaseEligible": false,
+  "schemaVersion": "demo_data_gate_v1",
+  "status": "demo_data_blocked_before_release"
+}

@@ -1,0 +1,16 @@
+{
+  "candidateId": "auto-trend_failure-reversal-4h-short-v2",
+  "clarifiedClassification": "formal_data_blocked_capacity_semantics",
+  "clarifiedPrimaryReason": "candidate_data_profile_not_compatible_with_mandatory_capital_policy_inputs",
+  "dataContractFailure": true,
+  "economicResultValid": false,
+  "implementationFailure": false,
+  "originalEvidenceMutationAllowed": false,
+  "originalProgramRoute": "completed_zero_qualified_candidates",
+  "originalRoute": "capital_infeasible",
+  "prefilterSurvivorStatus": "frozen_prefilter_survivor_waiting_verified_capacity_profile",
+  "programId": "automatic_strategy_demo_f57c443abeaf06c0",
+  "schemaVersion": "v19_24_capacity_semantics_clarification_sidecar_v1",
+  "sidecarHash": "capacity_semantics_clarification_9c70c2eddc6ca6645e1af9add3348a887cd530de5c91851d7a39e774bbc62aaf",
+  "strategyPerformanceFailure": false
+}

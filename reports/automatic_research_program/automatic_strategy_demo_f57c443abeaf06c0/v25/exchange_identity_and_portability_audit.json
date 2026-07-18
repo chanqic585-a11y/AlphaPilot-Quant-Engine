@@ -1,0 +1,19 @@
+{
+  "auditHash": "exchange_identity_audit_bed133ececc7c572f28d60faa7d901bfd963bb1325866fb07f2b7aa50aaefb2b",
+  "crossExchangePortabilityStatus": "not_verified",
+  "demoExecutionExchange": "okx",
+  "eventOverlap": "not_tested",
+  "fundingDifference": "not_tested",
+  "fundingExchange": "binance",
+  "instrumentIdentity": "not_verified",
+  "knownLimitations": [
+    "Cross-exchange portability has not been established."
+  ],
+  "ohlcvExchange": "unverified_local_exchange",
+  "releaseEligible": false,
+  "researchExchange": "unverified_local_exchange",
+  "returnCorrelation": "not_tested",
+  "sameExchange": false,
+  "schemaVersion": "exchange_identity_and_portability_audit_v1",
+  "signalTimestampParity": "not_tested"
+}

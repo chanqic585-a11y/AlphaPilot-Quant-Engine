@@ -1,0 +1,27 @@
+{
+  "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "contractHash": "end_to_end_data_contract_05119fd078165a3a4a28488e682d14f19e02a85e1fdf96bf0fbdd17050829ec7",
+  "demoDataProfileStatus": "blocked",
+  "demoReady": false,
+  "demoStatus": "demo_data_blocked",
+  "formalDataProfileStatus": "blocked",
+  "formalReady": false,
+  "formalStatus": "formal_data_blocked",
+  "minimumCoveragePct": 95.0,
+  "missingDemoFields": [
+    "eventExtremeResidualZ",
+    "recoverySizeZ",
+    "instrument_id",
+    "lot_size",
+    "tick_size"
+  ],
+  "missingFormalFields": [
+    "eventExtremeResidualZ",
+    "recoverySizeZ"
+  ],
+  "missingSignalFields": [],
+  "readinessHash": "data_contract_readiness_0581a1edf79add975ab4f434cd00a31d63312ebf7d4a9ed82d8112f163cbb530",
+  "schemaVersion": "data_contract_readiness_v1",
+  "signalReady": true,
+  "signalStatus": "signal_ready"
+}

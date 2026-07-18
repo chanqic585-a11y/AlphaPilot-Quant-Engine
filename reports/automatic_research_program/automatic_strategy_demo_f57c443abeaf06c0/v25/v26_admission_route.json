@@ -1,0 +1,41 @@
+{
+  "approvalCount": 0,
+  "candidateDefinitionDiffCount": 0,
+  "candidateId": "auto-trend_failure-reversal-4h-short-v2",
+  "capacityCertificationPassed": true,
+  "capacityProfileReady": true,
+  "demoArm": false,
+  "finalRoute": "formal_data_blocked_capacity_semantics",
+  "formalLedger": {
+    "attemptCount": 0,
+    "claimCount": 0,
+    "resultCount": 0,
+    "resultReadCount": 0
+  },
+  "formalRunBudgetConsumed": 0,
+  "liveEnabled": false,
+  "lockedOosReadCount": 0,
+  "missingDemoFields": [
+    "eventExtremeResidualZ",
+    "recoverySizeZ",
+    "instrument_id",
+    "lot_size",
+    "tick_size"
+  ],
+  "missingFormalFields": [
+    "eventExtremeResidualZ",
+    "recoverySizeZ"
+  ],
+  "orderCount": 0,
+  "policyGateDiffCount": 0,
+  "primaryReason": "frozen_ranking_feature_semantics_unresolved",
+  "programId": "automatic_strategy_demo_f57c443abeaf06c0",
+  "releaseCount": 0,
+  "replayCampaignId": null,
+  "routeHash": "v25_route_57b82256caae04f8e6bff13136578c29ec690861d5574a3e39d56228d91812f1",
+  "schemaVersion": "v25_capacity_semantics_route_v1",
+  "tradeApiConnected": false,
+  "v25Status": "completed_data_semantics_audit",
+  "v26Started": false,
+  "withdrawApiConnected": false
+}

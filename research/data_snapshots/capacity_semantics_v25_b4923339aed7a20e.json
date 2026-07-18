@@ -1,0 +1,252 @@
+{
+  "lockedOosReadCount": 0,
+  "partitions": [
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ADA-USDT-SWAP\\1d\\part-all-2cc5cc8f7f5a0c5e.parquet",
+      "contentHash": "7a637ea9bdbe0dedf5cdc529a2f9c3b1ede748e6ea7dace3e0282894d048947b",
+      "end": "2026-05-09T16:00:00+00:00",
+      "instrumentId": "ADA-USDT-SWAP",
+      "rowCount": 2253,
+      "sourceFileHash": "cf5bd00c2546f78a936e96281c7a4f8c6a1e2c6e6345fe48b6b52598d98228d1",
+      "start": "2020-03-09T16:00:00+00:00",
+      "timeframe": "1d"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ADA-USDT-SWAP\\1h\\part-all-37b3aca2de98316c.parquet",
+      "contentHash": "8883858ed3c24ff919408e9869e4d122937e5d41d44cd7207c2323a4e4197151",
+      "end": "2026-05-11T11:00:00+00:00",
+      "instrumentId": "ADA-USDT-SWAP",
+      "rowCount": 54075,
+      "sourceFileHash": "5058faa7e580146113477196f849a4f63d75727b7f98812896cfdf66c39a5a09",
+      "start": "2020-03-10T09:00:00+00:00",
+      "timeframe": "1h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ADA-USDT-SWAP\\4h\\part-all-f4f300304d2bba2d.parquet",
+      "contentHash": "dc442b69721d98dea475ac984720064bf426b4ccef83cf6b4e429b8f56e0022e",
+      "end": "2026-05-11T08:00:00+00:00",
+      "instrumentId": "ADA-USDT-SWAP",
+      "rowCount": 13519,
+      "sourceFileHash": "ae04290c982f458b8974429c2324c7e02aee2f980ec9b5316daa498b51895b2c",
+      "start": "2020-03-10T08:00:00+00:00",
+      "timeframe": "4h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\1d\\part-all-26484b04c3b966e7.parquet",
+      "contentHash": "73a2a5566b6743edb487edc66e078e3591c0d99387090039a45fdecfe8fdbf8b",
+      "end": "2026-05-13T16:00:00+00:00",
+      "instrumentId": "BCH-USDT-SWAP",
+      "rowCount": 2325,
+      "sourceFileHash": "84d8cca185553ecfe43b5ad84921f865344fdba8be5047b103b51da389a806f7",
+      "start": "2020-01-01T16:00:00+00:00",
+      "timeframe": "1d"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\1h\\part-all-ff6d1f58c526a7f1.parquet",
+      "contentHash": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+      "end": "2026-05-15T10:00:00+00:00",
+      "instrumentId": "BCH-USDT-SWAP",
+      "rowCount": 55835,
+      "sourceFileHash": "976a6a338240dc57b9aca76a54f37e6a032e54bbc88a03b4928e74a2af6186f1",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "1h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\4h\\part-all-f2b779ba03dd6b13.parquet",
+      "contentHash": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+      "end": "2026-05-15T04:00:00+00:00",
+      "instrumentId": "BCH-USDT-SWAP",
+      "rowCount": 13958,
+      "sourceFileHash": "049f2dda2b9e4ee4308ec698ab6080b26aa74db0300687b931eb9eb441c27fcc",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "4h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BTC-USDT-SWAP\\1d\\part-all-e97d3e0a028f4d44.parquet",
+      "contentHash": "c071a5a0dfe91fb1d17b9f539be8dd68cac6eac39d00d05d2aebbc77d987dfe2",
+      "end": "2026-05-15T16:00:00+00:00",
+      "instrumentId": "BTC-USDT-SWAP",
+      "rowCount": 2327,
+      "sourceFileHash": "a5c4a5e219201889e48f405570de7093c45c85ed281d13916191e47ed1740612",
+      "start": "2020-01-01T16:00:00+00:00",
+      "timeframe": "1d"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\part-all-9336aa7d598bf1d8.parquet",
+      "contentHash": "8257950e9ca895d29faeccef58c26ce246e7c26c0364e37277bfbca1f2a9b608",
+      "end": "2026-05-17T02:00:00+00:00",
+      "instrumentId": "BTC-USDT-SWAP",
+      "rowCount": 55875,
+      "sourceFileHash": "aa8a0d47b6808b095533c51a564889152e0af5d2b5b3bf77efedc12dbf81fd83",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "1h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\part-all-938505bdd70387e0.parquet",
+      "contentHash": "ca8d7b62b669fae1f81e60400577aa0cc6faddb3574bfd79282666d27a17f155",
+      "end": "2026-05-16T20:00:00+00:00",
+      "instrumentId": "BTC-USDT-SWAP",
+      "rowCount": 13968,
+      "sourceFileHash": "8b378967e6739f3b4454113d2e161af344bd1258c946899c2bf0c27205fb7ef4",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "4h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\1d\\part-all-910c694cac837cb0.parquet",
+      "contentHash": "1c9eed04cc7a88b240254e8c8e401326d0e467bcb886dca940b802d2b3095a38",
+      "end": "2026-05-15T16:00:00+00:00",
+      "instrumentId": "ETC-USDT-SWAP",
+      "rowCount": 2327,
+      "sourceFileHash": "dd9f8d2b1857261b3ee9e38879fbe072bdd61dc81a2063d5feeb9e5408cfbc6a",
+      "start": "2020-01-01T16:00:00+00:00",
+      "timeframe": "1d"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\1h\\part-all-6cbcdf14dc51c01d.parquet",
+      "contentHash": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+      "end": "2026-05-17T13:00:00+00:00",
+      "instrumentId": "ETC-USDT-SWAP",
+      "rowCount": 55886,
+      "sourceFileHash": "3a27c6f4964c0a4b5053d5755feba68872e36d04a937cfdd6c8ed5c03100c885",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "1h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\4h\\part-all-8a30518646e19f75.parquet",
+      "contentHash": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+      "end": "2026-05-17T08:00:00+00:00",
+      "instrumentId": "ETC-USDT-SWAP",
+      "rowCount": 13971,
+      "sourceFileHash": "6dad1cadda783fff115b12a06da4c7ce0efb1bf6de3b7a68c0d0af1ef9b283dc",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "4h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETH-USDT-SWAP\\1d\\part-all-5de606e737736a76.parquet",
+      "contentHash": "0e0464785c5fd54748fb3c3bb207f517ae1472dd29557a8e5894fa673d55ecb1",
+      "end": "2026-05-15T16:00:00+00:00",
+      "instrumentId": "ETH-USDT-SWAP",
+      "rowCount": 2327,
+      "sourceFileHash": "d428eb1f3387574e671c6ea0a00e3c94981ad47d2981eaf9928b4700f3011045",
+      "start": "2020-01-01T16:00:00+00:00",
+      "timeframe": "1d"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\part-all-edab80747e6e0bce.parquet",
+      "contentHash": "2df64d71c83cb9b80bcc63d63ef129df6c0ac718a207de614f133350d5ccbcfe",
+      "end": "2026-05-17T13:00:00+00:00",
+      "instrumentId": "ETH-USDT-SWAP",
+      "rowCount": 55886,
+      "sourceFileHash": "07968aeb44893944709b7d1fb1622fa1b5892da62ddf982d01cd7442606acb64",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "1h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\part-all-c2b01c2698467c03.parquet",
+      "contentHash": "4baa649b93c6f2a890a8de81c07854664dfce86666c7918c00600063d5f6d3c5",
+      "end": "2026-05-17T08:00:00+00:00",
+      "instrumentId": "ETH-USDT-SWAP",
+      "rowCount": 13971,
+      "sourceFileHash": "f50868a0cba8bbb522675b5572714daef7f67c8deee1fc7552a810e8c5d1a306",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "4h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\1d\\part-all-b36c2ac2e7e885e4.parquet",
+      "contentHash": "b795f296bce596160b21bdf0d44c272c271f2e5daed3e739f31196eb73abb050",
+      "end": "2026-05-17T16:00:00+00:00",
+      "instrumentId": "LINK-USDT-SWAP",
+      "rowCount": 2265,
+      "sourceFileHash": "83f555b027690a7f13f80d7403eed1b156a2295d653cf7f13a915d9681dcbb99",
+      "start": "2020-03-05T16:00:00+00:00",
+      "timeframe": "1d"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\1h\\part-all-e1d5e7578e977e3e.parquet",
+      "contentHash": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+      "end": "2026-05-19T12:00:00+00:00",
+      "instrumentId": "LINK-USDT-SWAP",
+      "rowCount": 54362,
+      "sourceFileHash": "c647284ca623b849a46093f749cc8347cfdf51ba71fc1ddf12ff85e5eba32eeb",
+      "start": "2020-03-06T11:00:00+00:00",
+      "timeframe": "1h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\4h\\part-all-c5a7bbc43e2eaeaa.parquet",
+      "contentHash": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+      "end": "2026-05-19T08:00:00+00:00",
+      "instrumentId": "LINK-USDT-SWAP",
+      "rowCount": 13591,
+      "sourceFileHash": "aa6b4f833dfa4b1bdd7883498f774dc300175cc41b12e372e3ccfd18dafcecd6",
+      "start": "2020-03-06T08:00:00+00:00",
+      "timeframe": "4h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\1d\\part-all-e664968cba5dfd7d.parquet",
+      "contentHash": "8b558a79201da9f3a45b5172781222abaae921eb523dd053d7503cfce9a99048",
+      "end": "2026-05-18T16:00:00+00:00",
+      "instrumentId": "LTC-USDT-SWAP",
+      "rowCount": 2330,
+      "sourceFileHash": "2d777febc935ee030b4a79dfe2b923b08c554bd1dcb8ff7fce10a057c1dc1f2f",
+      "start": "2020-01-01T16:00:00+00:00",
+      "timeframe": "1d"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\1h\\part-all-0b00b20e3d27bd85.parquet",
+      "contentHash": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+      "end": "2026-05-20T09:00:00+00:00",
+      "instrumentId": "LTC-USDT-SWAP",
+      "rowCount": 55954,
+      "sourceFileHash": "63120dacaadbff526b682ed918cd54b88b9024a32a1cab47dd10a9c5f6c9cdf3",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "1h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\4h\\part-all-ebd367bc06529c8c.parquet",
+      "contentHash": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+      "end": "2026-05-20T04:00:00+00:00",
+      "instrumentId": "LTC-USDT-SWAP",
+      "rowCount": 13988,
+      "sourceFileHash": "00796e033e7b8ed70069013cd7fb15e6ae78aa40422933e10e97a78f7ddf1157",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "4h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\1d\\part-all-79120ae41b4cf441.parquet",
+      "contentHash": "b36a0c8cc59c8ea7d935b3a83c50b215a666e9ef889176a3c679cff88f98586e",
+      "end": "2026-05-20T16:00:00+00:00",
+      "instrumentId": "XRP-USDT-SWAP",
+      "rowCount": 2332,
+      "sourceFileHash": "767f6f2e5a110d03fa5630b0b0843e22df5bb86d3eb027bf822b0dada241356a",
+      "start": "2020-01-01T16:00:00+00:00",
+      "timeframe": "1d"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\1h\\part-all-468c07e30c4fe659.parquet",
+      "contentHash": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+      "end": "2026-05-22T11:00:00+00:00",
+      "instrumentId": "XRP-USDT-SWAP",
+      "rowCount": 56004,
+      "sourceFileHash": "bc55f9965ab885f02af8493c025e6c390ecbac1e57f2cd5579575e1a7c9c4775",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "1h"
+    },
+    {
+      "canonicalPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\4h\\part-all-f94bdda800a3be0d.parquet",
+      "contentHash": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+      "end": "2026-05-22T04:00:00+00:00",
+      "instrumentId": "XRP-USDT-SWAP",
+      "rowCount": 14000,
+      "sourceFileHash": "78af490f68d44d0ca92dff6617f265332bc2303f4f59d72fe0cfddb56821fe63",
+      "start": "2020-01-01T00:00:00+00:00",
+      "timeframe": "4h"
+    }
+  ],
+  "profileHash": "data_profile_f4f88817927b1813a80003c878fa21dfbe5f89c800a3af880178e972879ac2f3",
+  "profileId": "ohlcv_verified_capacity_v2",
+  "schemaVersion": "capacity_semantics_data_snapshot_v1",
+  "selectionUsesEconomicResults": false,
+  "snapshotHash": "data_snapshot_b4923339aed7a20e1385bfc3b54686eebd1d0c54a8716206258574b782b347d9",
+  "snapshotId": "capacity_semantics_v25_b4923339aed7a20e",
+  "volumeProvenanceAuditHash": "volume_provenance_audit_ae591b9d0f0d419634154eeedb0bcd1fd3af647b9f51adaf553a8b641ada661f"
+}

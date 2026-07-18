@@ -162,3 +162,45 @@ def summarize_data_capabilities(matrix: list[dict[str, Any]]) -> dict[str, Any]:
         "directionalEventReady": gate["status"] == "ready_for_candidate_creation",
         "directionalEventGate": gate,
     }
+
+
+def build_capacity_data_capability(volume_audit: dict[str, Any]) -> list[dict[str, Any]]:
+    """Translate provenance evidence into data-only capacity capabilities."""
+
+    rows: list[dict[str, Any]] = []
+    for source in volume_audit.get("records") or []:
+        verification = dict(source.get("volumeSemantics") or {})
+        verified = verification.get("status") == "verified" and verification.get(
+            "route"
+        ) in {"A", "B", "C", "D"}
+        rows.append(
+            {
+                "datasetId": str(source.get("datasetId") or ""),
+                "instrumentId": str(source.get("instrumentId") or ""),
+                "timeframe": str(source.get("timeframe") or ""),
+                "field": "quote_turnover",
+                "rowCount": int(source.get("rowCount") or 0),
+                "contentHash": str(source.get("contentHash") or ""),
+                "sourceFileHash": str(source.get("sourceFileHash") or ""),
+                "sourceExchange": str(source.get("sourceExchange") or "unknown"),
+                "marketType": str(source.get("marketType") or "unknown"),
+                "selectedVolumeColumn": str(
+                    source.get("selectedVolumeColumn") or ""
+                ),
+                "declaredVolumeUnit": str(
+                    source.get("declaredVolumeUnit") or "unknown"
+                ),
+                "start": source.get("start"),
+                "end": source.get("end"),
+                "availableAtRule": str(
+                    source.get("availableAtRule") or "candle_close_timestamp"
+                ),
+                "canonicalPath": source.get("canonicalPath"),
+                "status": "ready" if verified else "capacity_semantics_unavailable",
+                "semanticRoute": str(verification.get("route") or "E"),
+                "semanticType": verification.get("semanticType"),
+                "verificationHash": str(verification.get("verificationHash") or ""),
+                "selectionUsesEconomicResults": False,
+            }
+        )
+    return sorted(rows, key=lambda row: (row["instrumentId"], row["timeframe"]))
