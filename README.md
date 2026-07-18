@@ -5439,3 +5439,31 @@ The registry is under `research/source_registry/`, frozen replication plans are
 under `research/canonical_replications/`, and runtime state is written under
 `reports/background_research/v35/`. See
 `docs/V13.27.1.35-standard-replication-background-research.md`.
+
+## V13.27.1.36 Automatic Candidate Research
+
+V36 extends the frozen V35 registry with a bounded, deterministic candidate
+research route. Eligible candidates receive three preregistered parameter
+trials, selection reads Development evidence only, and stable-neighborhood
+checks reject isolated best points. Directional, pair, portfolio, and event
+families retain separate evidence contracts.
+
+Formal statistics remain owned by the existing Formal Validation modules. V36
+only validates and routes immutable Formal outcome records. Only
+`formal_pass` may emit `immutable_release_ready`; every emitted Release remains
+`approved=false`, `demoArm=false`, and `orders=0`. Data-blocked and zero-winner
+runs are valid terminal research results and are never forced through a gate.
+
+Run one bounded campaign through the V35 service interface:
+
+```powershell
+python -m alphapilot.scripts.run_v36_candidate_research `
+  --repo-root D:\Codex-Workspace\AlphaPilot-Quant-Engine `
+  --state-root D:\Codex-Workspace\AlphaPilot-Quant-Engine\reports\background_research\v36 `
+  --output-root D:\Codex-Workspace\AlphaPilot-Quant-Engine\reports\candidate_research\v36 `
+  --job-json <frozen-campaign-input.json> `
+  --now <UTC-ISO-8601>
+```
+
+See `docs/V13.27.1.36-automatic-candidate-research.md` and the approved design
+under `docs/superpowers/specs/`.
