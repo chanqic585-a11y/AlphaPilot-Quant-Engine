@@ -12,11 +12,12 @@ from alphapilot.research_factory.program_v20 import run_v20_candidate_generation
 from alphapilot.research_factory.program_v21 import run_v21_prefilter_and_freeze
 from alphapilot.research_factory.program_v22 import run_v22_formal_validation
 from alphapilot.research_factory.program_v23 import run_v23_release_generation
+from alphapilot.research_factory.program_v24 import finalize_v24_zero_release_route
 
 
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--stage", choices=("v19", "v20", "v21", "v22", "v23"), required=True)
+    parser.add_argument("--stage", choices=("v19", "v20", "v21", "v22", "v23", "v24"), required=True)
     parser.add_argument("--reports-root", type=Path, default=Path("reports"))
     parser.add_argument("--research-root", type=Path, default=Path("research"))
     parser.add_argument("--program-id", required=True)
@@ -32,6 +33,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--implementation-commit")
     parser.add_argument("--repo-root", type=Path)
     parser.add_argument("--runtime-data-root", type=Path)
+    parser.add_argument("--console-audit", type=Path)
     return parser
 
 
@@ -115,6 +117,15 @@ def main() -> int:
             reports_root=args.reports_root,
             program_id=args.program_id,
             generated_at=args.generated_at,
+        )
+    elif args.stage == "v24":
+        if args.console_audit is None:
+            raise ValueError("v24_arguments_missing:console_audit")
+        result = finalize_v24_zero_release_route(
+            reports_root=args.reports_root,
+            program_id=args.program_id,
+            generated_at=args.generated_at,
+            console_audit_path=args.console_audit,
         )
     else:
         raise ValueError(f"unsupported stage: {args.stage}")
