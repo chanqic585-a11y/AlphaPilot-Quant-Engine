@@ -1,0 +1,16 @@
+{
+  "checkpointHash": "9f2f40a7e58488658980c33637f52350e9b9da106521efe4e408bddada4d899e",
+  "createdAt": "2026-07-18T01:08:06.1670776Z",
+  "payload": {
+    "dataManifestHash": "data_manifest_4a178c9ef2b42a68bf551137358b908779863fb3f50267d83b56bf68d35fdf61",
+    "directionalEventReady": true,
+    "profileIds": [
+      "ohlcv_core_directional_v1",
+      "ohlcv_verified_turnover_v1",
+      "future_derivatives_v1"
+    ],
+    "status": "completed"
+  },
+  "schemaVersion": "automatic_strategy_demo_checkpoint_v1",
+  "stage": "v19"
+}

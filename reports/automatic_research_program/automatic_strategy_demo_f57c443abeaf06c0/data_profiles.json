@@ -1,0 +1,94 @@
+{
+  "profiles": [
+    {
+      "availableAt": "candle_close_timestamp",
+      "commonCutoff": {
+        "end": "2026-05-09T16:00:00+00:00",
+        "start": "2020-03-10T09:00:00+00:00"
+      },
+      "coverage": {
+        "close": 96.555603,
+        "high": 96.555603,
+        "low": 96.555603,
+        "open": 96.555603
+      },
+      "fieldSet": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "knownLimitations": [
+        "exchange provenance is unverified",
+        "reported volume unit is not independently certified",
+        "PIT listing history is incomplete"
+      ],
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "profileHash": "data_profile_cbd559be0db2103bd3c557721c2c8b66feb1a2b1604cf90f174b3c66ccf02613",
+      "profileId": "ohlcv_core_directional_v1",
+      "status": "ready",
+      "strategyType": "directional_event",
+      "timeframes": [
+        "1h",
+        "4h"
+      ],
+      "universeHash": "universe_bac8c3726d0f4fbabacdcad02798449dae154a28aecc581aa34cd71bb2ab917f"
+    },
+    {
+      "availableAt": "candle_close_timestamp",
+      "commonCutoff": {
+        "end": "2026-05-09T16:00:00+00:00",
+        "start": "2020-03-10T09:00:00+00:00"
+      },
+      "coverage": {},
+      "fieldSet": [
+        "open",
+        "high",
+        "low",
+        "close",
+        "quote_turnover"
+      ],
+      "knownLimitations": [
+        "quote turnover semantics are not verified in the frozen catalog"
+      ],
+      "profileHash": "data_profile_068e0b8048330f6fed0c311e032c013cadb7be489ee8c1d8c66231b8224831ad",
+      "profileId": "ohlcv_verified_turnover_v1",
+      "status": "blocked",
+      "strategyType": "directional_event",
+      "timeframes": [
+        "1h",
+        "4h"
+      ],
+      "universeHash": "universe_bac8c3726d0f4fbabacdcad02798449dae154a28aecc581aa34cd71bb2ab917f"
+    },
+    {
+      "availableAt": "source_timestamp_plus_publication_delay",
+      "commonCutoff": {
+        "end": "2026-05-09T16:00:00+00:00",
+        "start": "2020-03-10T09:00:00+00:00"
+      },
+      "coverage": {},
+      "fieldSet": [
+        "funding_rate",
+        "open_interest",
+        "basis",
+        "liquidation",
+        "orderbook"
+      ],
+      "knownLimitations": [
+        "open interest, basis, liquidation and orderbook are unavailable historically",
+        "must not generate a formal historical candidate from this profile"
+      ],
+      "profileHash": "data_profile_ad86f5606877dcd99aa5f4615ae73fe7097f6bbda4a4c4615a335989455bb693",
+      "profileId": "future_derivatives_v1",
+      "status": "forward_research_only",
+      "strategyType": "directional_event",
+      "timeframes": [
+        "event"
+      ],
+      "universeHash": "universe_bac8c3726d0f4fbabacdcad02798449dae154a28aecc581aa34cd71bb2ab917f"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "artifactCount": 14,
+  "artifacts": [
+    {
+      "relativePath": "baseline_identity.json",
+      "sha256": "56e6f09881c4ea44822ecb3dca359a80da245313fd449423400049fcffb8c336",
+      "sizeBytes": 1720
+    },
+    {
+      "relativePath": "candidate_data_gate_matrix.csv",
+      "sha256": "1e1e2362a92461624ea0fe1681a3ba2e30f337ec16b809bca20dd5739bd2c1ef",
+      "sizeBytes": 942
+    },
+    {
+      "relativePath": "checkpoints/v19.json",
+      "sha256": "465549a2ba8f68303207abd29ebe4648c39d3588930fe5015fe0dcb129c08037",
+      "sizeBytes": 530
+    },
+    {
+      "relativePath": "data_capability_matrix.csv",
+      "sha256": "1bc26e8eaf4f46df970dab5792c89cc6c634b26f3a684f41e1dfa27fcda82337",
+      "sizeBytes": 254614
+    },
+    {
+      "relativePath": "data_capability_matrix.parquet",
+      "sha256": "8fdea78c283b4fed156c2c194af45adccbbeaa1211ca3d10190e0b41aa5d9016",
+      "sizeBytes": 11105
+    },
+    {
+      "relativePath": "data_capability_summary.json",
+      "sha256": "88618e9ad54a2b5d91c4affdecbdd7d5febec35295fb4e5b531f8071f13db4b1",
+      "sizeBytes": 1523
+    },
+    {
+      "relativePath": "data_gap_queue.json",
+      "sha256": "800fa88a4175554a60a7d86253ada335986470d7bdec17c9948b64be6b1adf8c",
+      "sizeBytes": 1942
+    },
+    {
+      "relativePath": "data_profiles.json",
+      "sha256": "a99098482b3784c1b54681250a4a251c4cb3f0c97a972a182dcb2ad456687a2a",
+      "sizeBytes": 2801
+    },
+    {
+      "relativePath": "field_semantics_registry.json",
+      "sha256": "1381ccbedc99f72815f227000b02ca22cc8c6b134925e72602a3b5e610125045",
+      "sizeBytes": 3656
+    },
+    {
+      "relativePath": "program_ledger.jsonl",
+      "sha256": "297dc47af39ad53a0d0325f9e9c3ff10ebbc98d6bd0da3ba26547e3839d3e53d",
+      "sizeBytes": 1165
+    },
+    {
+      "relativePath": "program_state.json",
+      "sha256": "d67e7f53a5c0380220579b64114d48d07c8bb624565f31b457d566af2cfcb85c",
+      "sizeBytes": 694
+    },
+    {
+      "relativePath": "structural_certification_vs_formal_event_delta_audit.json",
+      "sha256": "5adbaa18c612404954dfbb471a9754cd10cf1e610f9f58c76f73f9fe8212858d",
+      "sizeBytes": 334
+    },
+    {
+      "relativePath": "v18_3_archived_candidate_reference.json",
+      "sha256": "140cc1ee83179687e4c20af3946872f806e0f45d80c78163ec1079754a365e7f",
+      "sizeBytes": 289
+    },
+    {
+      "relativePath": "v18_3_reusable_core_manifest.json",
+      "sha256": "8b6dfbe922383a7e342d7e2b8158d342739c697a563a3cc85029e71080f978be",
+      "sizeBytes": 1439
+    }
+  ],
+  "manifestHash": "artifact_manifest_e3203696488682a97bfa1d3596d1e77bce053d7af8340ff818b2296826549ddc",
+  "schemaVersion": "automatic_strategy_demo_artifact_manifest_v1"
+}
