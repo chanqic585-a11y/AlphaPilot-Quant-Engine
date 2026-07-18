@@ -3,12 +3,17 @@ from __future__ import annotations
 from pathlib import Path
 
 from alphapilot.scripts.run_v34c_okx_public_data_service import (
+    DEFAULT_WAREHOUSE_ROOT,
     build_parser,
     run_service,
 )
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
+
+
+def test_default_warehouse_root_uses_the_canonical_chinese_path() -> None:
+    assert DEFAULT_WAREHOUSE_ROOT == Path("D:/Codex-Workspace/回测数据")
 
 
 class FakeService:
@@ -104,6 +109,7 @@ def test_powershell_launcher_is_explicit_and_does_not_install_a_daemon() -> None
     assert "ProgramRoot" in script
     assert "BaseSnapshotId" in script
     assert "WarehouseRoot" in script
+    assert "D:\\Codex-Workspace\\回测数据" in script
     assert "Register-ScheduledTask" not in script
     assert "New-Service" not in script
     assert "Start-Process" not in script

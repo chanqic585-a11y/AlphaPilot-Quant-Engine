@@ -5377,3 +5377,29 @@ python -m alphapilot.scripts.run_v34b_okx_funding_pit_forward `
 
 The executable plan is
 `docs/superpowers/plans/2026-07-19-v13.27.1.34b-funding-pit-forward.md`.
+
+## V13.27.1.34C Public Data Scheduler
+
+V34C adds a resumable foreground scheduler around the accepted V34B public-data
+collectors. Durable task state, a single-owner lease, append-only cycle receipts,
+incremental funding high-water marks, and mechanical quality reports prevent
+duplicate work and make collection failures observable.
+
+The default policy collects metadata daily; funding and instrument state hourly;
+current funding, open interest, and quality every 15 minutes; and mark price,
+index price, ticker spread, and order-book summaries every 5 minutes. The real
+two-cycle pilot correctly skipped non-due tasks on the second cycle, preserved
+all V34A/V34B hashes, and finished with `healthy` quality.
+
+Run the explicit foreground launcher with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\start_v34c_public_data_service.ps1 `
+  -ProgramRoot reports\dual_track\alphapilot_dual_track_v33_6af4e494293f4167 `
+  -BaseSnapshotId okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240 `
+  -WarehouseRoot D:\Codex-Workspace\回测数据
+```
+
+V34C remains public-data-only: candidate, Formal, result-read, Locked-OOS,
+Release, approval, Demo ARM, and order counts stay zero. See
+`docs/V13.27.1.34C-public-data-scheduler.md` and the committed V34C closeout.

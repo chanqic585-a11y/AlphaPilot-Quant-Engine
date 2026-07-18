@@ -13,17 +13,22 @@
   "continuationOf": "automatic_strategy_renewal_v28_4e6ab55a5e949716",
   "dataFoundationExtensionId": "okx_official_v1_v34b_snapshot_e80523c6c48c15abbbf69f082240c3efe034ef05ee6e596a33c3af83b228cc51",
   "dataFoundationExtensionResultHash": "v34b_data_extension_result_b1ae934e595c33936d7b3e0b534caa95985240dc8b75e4566ab63e4733545611",
+  "dataFoundationServiceId": "okx_official_v1_v34c_service_32ab0fdc0c87df06b912e4fdf821ad72b5364f87abb23dc1068d86355c19f02c",
   "dataPilotResultHash": "v34a_data_pilot_result_cfb4589fe6dbb62a5d7f4ff87e84978c2870f0a7edb23cbf4ffa1d36c3da7d5d",
   "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
   "demoArm": false,
   "formalRunCount": 0,
-  "generatedAt": "2026-07-18T18:44:06+00:00",
+  "generatedAt": "2026-07-18T19:38:38+00:00",
   "historicalMutationCount": 0,
   "lockedOosReadCount": 0,
   "orderCount": 0,
   "predecessorBudgetLedgerHash": "predecessor_budget_evidence_0560711df01af0b635cc396e8e180339cdbf25a1cc03c0c6c9ff6fbc3fe56ae4",
   "predecessorFinalRoute": "blocked_formal_data",
   "programId": "alphapilot_dual_track_v33_6af4e494293f4167",
+  "publicDataServiceLatestCycleHash": "v34c_cycle_a6cd1c64bf19ddbffc5338fd2f81baa6744ee02f766ee631f57a706ac210d99a",
+  "publicDataServiceLatestQualityStatus": "healthy",
+  "publicDataServicePolicyHash": "v34c_collection_policy_04dab84d8475bad0efb535cc31547071c1ff03fd9da591aea0fc224d73aac1bb",
+  "publicDataServiceResultHash": "v34c_public_data_service_result_d9aa10263d64290e1e138f1812a3f212741d78f1aade1cc38d9ab43f1fc497cc",
   "qualification": {
     "closeoutIntegrityPassed": true,
     "demoQualified": false,
@@ -35,6 +40,6 @@
   "releaseCount": 0,
   "resultReadCount": 0,
   "schemaVersion": "alphapilot_dual_track_summary_v1",
-  "summaryHash": "dual_track_summary_28075b5300e5ca5d12b5cbc1242d1efb68c868384a10ed2683e4608da2b4c44e",
-  "topLevelState": "data_foundation_extended"
+  "summaryHash": "dual_track_summary_049d3ea5ac28022686dd1c93db03f9e26e62b6f0507ce477929d896e6232b415",
+  "topLevelState": "public_data_service_active"
 }

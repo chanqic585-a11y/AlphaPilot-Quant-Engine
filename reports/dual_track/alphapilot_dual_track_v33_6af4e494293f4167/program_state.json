@@ -1,10 +1,11 @@
 {
   "dataFoundationExtensionId": "okx_official_v1_v34b_snapshot_e80523c6c48c15abbbf69f082240c3efe034ef05ee6e596a33c3af83b228cc51",
+  "dataFoundationServiceId": "okx_official_v1_v34c_service_32ab0fdc0c87df06b912e4fdf821ad72b5364f87abb23dc1068d86355c19f02c",
   "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
   "demoProductTrackState": "demo_platform_building",
-  "generatedAt": "2026-07-18T18:44:06+00:00",
+  "generatedAt": "2026-07-18T19:38:38+00:00",
   "programId": "alphapilot_dual_track_v33_6af4e494293f4167",
-  "researchTrackState": "data_foundation_extended",
+  "researchTrackState": "public_data_service_active",
   "schemaVersion": "alphapilot_dual_track_state_v1",
-  "topLevelState": "data_foundation_extended"
+  "topLevelState": "public_data_service_active"
 }

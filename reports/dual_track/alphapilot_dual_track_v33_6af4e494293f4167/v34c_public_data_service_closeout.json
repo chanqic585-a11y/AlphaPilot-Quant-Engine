@@ -1,0 +1,123 @@
+{
+  "schemaVersion": "alphapilot.v34c.public_data_service_closeout.v1",
+  "status": "completed_data_only",
+  "pilotImplementationCommit": "4d432e04f1f5cf50d17f4ea62560b978fc81f0cb",
+  "observedAt": "2026-07-18T19:38:38+00:00",
+  "warehouseRoot": "D:\\Codex-Workspace\\回测数据",
+  "serviceWarehousePath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1",
+  "programId": "alphapilot_dual_track_v33_6af4e494293f4167",
+  "serviceId": "okx_official_v1_v34c_service_32ab0fdc0c87df06b912e4fdf821ad72b5364f87abb23dc1068d86355c19f02c",
+  "serviceResultHash": "v34c_public_data_service_result_d9aa10263d64290e1e138f1812a3f212741d78f1aade1cc38d9ab43f1fc497cc",
+  "policyHash": "v34c_collection_policy_04dab84d8475bad0efb535cc31547071c1ff03fd9da591aea0fc224d73aac1bb",
+  "baseSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+  "extensionSnapshotId": "okx_official_v1_v34b_snapshot_e80523c6c48c15abbbf69f082240c3efe034ef05ee6e596a33c3af83b228cc51",
+  "cycles": {
+    "count": 2,
+    "chainMismatchCount": 0,
+    "latestCycleHash": "v34c_cycle_a6cd1c64bf19ddbffc5338fd2f81baa6744ee02f766ee631f57a706ac210d99a",
+    "receipts": [
+      {
+        "cycleAt": "2026-07-18T19:32:38+00:00",
+        "cycleHash": "v34c_cycle_92b8b5a21d0e2f91781d9764730448c302fb93f47b5751320bc1123b5aa5cb86",
+        "previousCycleHash": null,
+        "status": "completed",
+        "executedTasks": [
+          "instrument_metadata",
+          "funding_increment",
+          "instrument_state",
+          "current_funding",
+          "open_interest",
+          "mark_price",
+          "index_price",
+          "ticker_spread",
+          "order_book_summary",
+          "quality"
+        ],
+        "skippedTasks": [],
+        "failedTasks": []
+      },
+      {
+        "cycleAt": "2026-07-18T19:38:38+00:00",
+        "cycleHash": "v34c_cycle_a6cd1c64bf19ddbffc5338fd2f81baa6744ee02f766ee631f57a706ac210d99a",
+        "previousCycleHash": "v34c_cycle_92b8b5a21d0e2f91781d9764730448c302fb93f47b5751320bc1123b5aa5cb86",
+        "status": "completed",
+        "executedTasks": [
+          "mark_price",
+          "index_price",
+          "ticker_spread",
+          "order_book_summary"
+        ],
+        "skippedTasks": [
+          "instrument_metadata",
+          "funding_increment",
+          "instrument_state",
+          "current_funding",
+          "open_interest",
+          "quality"
+        ],
+        "failedTasks": []
+      }
+    ]
+  },
+  "incrementalFunding": {
+    "status": "no_new_rows",
+    "rowCount": 0,
+    "duplicateTimestampCount": 0
+  },
+  "quality": {
+    "latestCompletedStatus": "healthy",
+    "failureCount": 0,
+    "qualityHash": "v34c_quality_3dce108ac4f259848e6d22a6feba6ee02f08ae5a3b99bdce6d360ce232240a92",
+    "evaluatedAt": "2026-07-18T19:32:38+00:00",
+    "reasonCount": 0,
+    "artifactCountAtEvaluation": 8
+  },
+  "integrity": {
+    "v34aAndV34bPriorArtifactCount": 23,
+    "v34aAndV34bArtifactMismatchCount": 0,
+    "v34cArtifactCount": 12,
+    "v34cArtifactMismatchCount": 0,
+    "schedulerFailureCount": 0,
+    "pathUnicodeVerified": true,
+    "wrongWarehouseDirectoryExists": false
+  },
+  "programReceipt": {
+    "topLevelState": "public_data_service_active",
+    "masterEventType": "public_data_service_registered",
+    "researchEventType": "public_data_scheduler_activated",
+    "crossTrackEventType": "public_data_service_receipt_recorded",
+    "duplicateLedgerWrites": 0
+  },
+  "sideEffects": {
+    "candidateCount": 0,
+    "formalRunCount": 0,
+    "resultReadCount": 0,
+    "lockedOosReadCount": 0,
+    "releaseCount": 0,
+    "demoReleaseCount": 0,
+    "approvalCount": 0,
+    "orderCount": 0,
+    "demoArm": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "privateAccountReadUsed": false,
+    "historicalMutationCount": 0
+  },
+  "verification": {
+    "targetedPytest": "34 passed, 7 subtests passed",
+    "fullPytest": "1123 passed, 164 subtests passed, 1 pre-existing publication-readiness assertion failed",
+    "fullPytestBlocker": "formal_preregistration_not_published",
+    "fullPytestBlockerScope": "S01 Formal preregistration remote publication; unrelated to V34C public-data behavior",
+    "compileall": "passed",
+    "configValidation": "passed; liveTradingEnabled=false; tradeApiEnabled=false; withdrawApiEnabled=false",
+    "repositorySafetyScan": "completed; legacy and negative-context matches reviewed",
+    "targetedV34cSafetyScan": "two matches, both withdrawApiUsed=false audit fields; no private integration",
+    "gitDiffCheck": "passed for working tree and final staged patch"
+  },
+  "knownLimitations": [
+    "The pilot covered BTC, ETH, and SOL USDT swaps only.",
+    "Incremental funding was already current at the pilot high-water marks, so the due funding task correctly produced no new rows.",
+    "The launcher is an explicit foreground process and does not install a Windows service or scheduled task.",
+    "V34C is public-data infrastructure only and produced no strategy, Formal, Demo, or Live evidence."
+  ]
+}
