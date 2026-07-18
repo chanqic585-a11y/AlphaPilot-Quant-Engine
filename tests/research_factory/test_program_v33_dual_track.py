@@ -13,6 +13,7 @@ from alphapilot.research_factory.program_v33 import (
     record_v34a_data_pilot,
     record_v34b_data_extension,
     record_v34c_public_data_service,
+    record_v35_research_cycle,
 )
 
 
@@ -356,3 +357,56 @@ def test_v34c_receipt_registers_service_without_advancing_strategy_or_trading(
     assert master[-1]["eventType"] == "public_data_service_registered"
     assert research[-1]["eventType"] == "public_data_scheduler_activated"
     assert cross_track[-1]["eventType"] == "public_data_service_receipt_recorded"
+
+
+def test_v35_receipt_advances_only_research_track(tmp_path: Path) -> None:
+    predecessor = _predecessor(tmp_path)
+    summary = initialize_dual_track_successor(
+        reports_root=tmp_path,
+        predecessor_program_root=predecessor,
+        implementation_contract_hash="sha256:v33-contract",
+        implementation_commit="commit-v33",
+        generated_at="2026-07-19T00:00:00Z",
+        writer_id="test-writer",
+    )
+    root = tmp_path / "dual_track" / summary["programId"]
+
+    updated = record_v35_research_cycle(
+        program_root=root,
+        cycle_result={
+            "status": "ready_for_prefilter",
+            "campaignId": "v35-campaign-a",
+            "campaignHash": "v35-campaign-hash-a",
+            "artifactPath": "campaigns/v35-campaign-a/campaign_freeze.json",
+            "candidateCount": 9,
+            "blockedFamilyCount": 2,
+            "formalRunCount": 0,
+            "resultReadCount": 0,
+            "lockedOosReadCount": 0,
+            "releaseCount": 0,
+            "demoReleaseCount": 0,
+            "approvalCount": 0,
+            "demoArm": False,
+            "orderCount": 0,
+            "tradeApiUsed": False,
+            "withdrawApiUsed": False,
+            "privateAccountReadUsed": False,
+        },
+        created_at="2026-07-19T04:00:00Z",
+        writer_id="test-writer",
+    )
+
+    assert updated["researchTrackState"] == "ready_for_prefilter"
+    assert updated["candidateCount"] == 9
+    assert updated["formalRunCount"] == 0
+    assert updated["releaseCount"] == 0
+    assert updated["demoArm"] is False
+    assert updated["orderCount"] == 0
+    state = json.loads((root / "program_state.json").read_text(encoding="utf-8"))
+    assert state["demoProductTrackState"] == "demo_platform_building"
+    research = ProgramLedger(root / "research_track_ledger.jsonl").read_all()
+    demo = ProgramLedger(root / "demo_product_track_ledger.jsonl").read_all()
+    cross_track = ProgramLedger(root / "cross_track_receipt_ledger.jsonl").read_all()
+    assert research[-1]["eventType"] == "canonical_replication_campaign_frozen"
+    assert len(demo) == 1
+    assert len(cross_track) == 1

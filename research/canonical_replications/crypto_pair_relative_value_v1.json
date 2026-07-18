@@ -1,0 +1,10 @@
+{
+  "schemaVersion": "v35_canonical_replication_plan_v1",
+  "familyId": "crypto_pair_relative_value_v1",
+  "status": "registered_not_executable_until_v36",
+  "priority": 2,
+  "hypothesis": "A frozen BTC/ETH relative-value relationship can mean revert after costs when its structural-break tests remain valid.",
+  "falsification": ["unstable hedge ratio", "half-life outside bound", "dual-leg cost stress failure"],
+  "exitPolicies": ["residual_mean_cross", "time_stop", "structural_break"],
+  "variantBudget": 2
+}

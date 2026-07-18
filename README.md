@@ -5403,3 +5403,39 @@ powershell -ExecutionPolicy Bypass -File scripts\start_v34c_public_data_service.
 V34C remains public-data-only: candidate, Formal, result-read, Locked-OOS,
 Release, approval, Demo ARM, and order counts stay zero. See
 `docs/V13.27.1.34C-public-data-scheduler.md` and the committed V34C closeout.
+
+## V13.27.1.35 Standard Replication Background Research
+
+V35 starts the research side of the dual-track program. It replaces free-form
+indicator composition with six bounded, source-registered research families:
+time-series momentum/Turtle, BTC-ETH relative value, conditional mean
+reversion, cross-sectional ranking, public event-driven research, and a
+context-only Chan structure parser. Each source record stores only URL,
+license, concise summary, and citation; no long source text or third-party code
+is copied.
+
+The deterministic service uses an atomic state file, single-writer lease,
+hash-chained receipts, explicit pause/resume, and a frozen resource budget. It
+stops at `ready_for_prefilter` or `waiting_exact_release_approval`. It cannot
+read Locked OOS evidence early, approve/import a Demo Release, ARM execution,
+read private accounts, or submit orders.
+
+Run one cycle:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_strategy_research_cycle.ps1
+```
+
+Run a bounded background window, pause/resume, and inspect status:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\start_strategy_research_background.ps1 -MaxCycles 288 -IntervalSeconds 300
+powershell -ExecutionPolicy Bypass -File scripts\pause_strategy_research.ps1
+powershell -ExecutionPolicy Bypass -File scripts\resume_strategy_research.ps1
+powershell -ExecutionPolicy Bypass -File scripts\get_strategy_research_status.ps1
+```
+
+The registry is under `research/source_registry/`, frozen replication plans are
+under `research/canonical_replications/`, and runtime state is written under
+`reports/background_research/v35/`. See
+`docs/V13.27.1.35-standard-replication-background-research.md`.

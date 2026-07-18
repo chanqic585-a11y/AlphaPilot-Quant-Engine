@@ -623,6 +623,143 @@ def record_v34c_public_data_service(
     return summary
 
 
+def record_v35_research_cycle(
+    *,
+    program_root: Path,
+    cycle_result: dict[str, Any],
+    created_at: str,
+    writer_id: str,
+) -> dict[str, Any]:
+    """Register a research-only V35 cycle without mutating Demo state."""
+
+    root = Path(program_root)
+    summary_path = root / "program_summary.json"
+    state_path = root / "program_state.json"
+    if not summary_path.is_file() or not state_path.is_file():
+        raise FileNotFoundError("dual_track_program_baseline_missing")
+
+    status = str(cycle_result.get("status") or "").strip()
+    if status not in {
+        "ready_for_prefilter",
+        "prefilter_failed",
+        "formal_failed",
+        "immutable_release_ready",
+        "waiting_exact_release_approval",
+    }:
+        raise ValueError("v35_research_cycle_status_not_registerable")
+    campaign_id = str(cycle_result.get("campaignId") or "").strip()
+    campaign_hash = str(cycle_result.get("campaignHash") or "").strip()
+    artifact_path = str(cycle_result.get("artifactPath") or "").strip()
+    if not campaign_id or not campaign_hash or not artifact_path:
+        raise ValueError("v35_research_cycle_identity_incomplete")
+
+    for field in (
+        "demoReleaseCount",
+        "approvalCount",
+        "orderCount",
+    ):
+        if int(cycle_result.get(field) or 0) != 0:
+            raise ValueError(f"v35_forbidden_side_effect:{field}")
+    if bool(cycle_result.get("demoArm")):
+        raise ValueError("v35_forbidden_side_effect:demoArm")
+    for field in ("tradeApiUsed", "withdrawApiUsed", "privateAccountReadUsed"):
+        if bool(cycle_result.get(field)):
+            raise ValueError(f"v35_forbidden_side_effect:{field}")
+    release_count = int(cycle_result.get("releaseCount") or 0)
+    if release_count and status not in {
+        "immutable_release_ready",
+        "waiting_exact_release_approval",
+    }:
+        raise ValueError("v35_release_without_immutable_ready_status")
+
+    summary = json.loads(summary_path.read_text(encoding="utf-8"))
+    registered_hashes = list(summary.get("researchCampaignHashes") or [])
+    if campaign_hash in registered_hashes:
+        return summary
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    payload = {
+        "programId": summary["programId"],
+        "campaignId": campaign_id,
+        "campaignHash": campaign_hash,
+        "artifactPath": artifact_path,
+        "status": status,
+        "candidateCount": int(cycle_result.get("candidateCount") or 0),
+        "blockedFamilyCount": int(
+            cycle_result.get("blockedFamilyCount") or 0
+        ),
+        "formalRunCount": int(cycle_result.get("formalRunCount") or 0),
+        "resultReadCount": int(cycle_result.get("resultReadCount") or 0),
+        "lockedOosReadCount": int(
+            cycle_result.get("lockedOosReadCount") or 0
+        ),
+        "releaseCount": release_count,
+        "demoReleaseCount": 0,
+        "approvalCount": 0,
+        "demoArm": False,
+        "orderCount": 0,
+        "tradeApiUsed": False,
+        "withdrawApiUsed": False,
+        "privateAccountReadUsed": False,
+    }
+    ledgers = DualTrackLedgerSet(root, writer_id=writer_id)
+    ledgers.append(
+        "master",
+        event_type="research_cycle_registered",
+        stage="v35_standard_replication",
+        created_at=created_at,
+        payload=payload,
+    )
+    ledgers.append(
+        "research",
+        event_type="canonical_replication_campaign_frozen",
+        stage="v35_standard_replication",
+        created_at=created_at,
+        payload=payload,
+    )
+    if release_count:
+        ledgers.append(
+            "cross_track",
+            event_type="immutable_release_ready",
+            stage="v35_standard_replication",
+            created_at=created_at,
+            payload=payload,
+        )
+
+    registered_hashes.append(campaign_hash)
+    state.update(
+        {
+            "topLevelState": "research_cycle_active",
+            "researchTrackState": status,
+            "generatedAt": created_at,
+            "latestResearchCampaignId": campaign_id,
+            "latestResearchCampaignHash": campaign_hash,
+        }
+    )
+    summary.update(
+        {
+            "topLevelState": "research_cycle_active",
+            "researchTrackState": status,
+            "generatedAt": created_at,
+            "latestResearchCampaignId": campaign_id,
+            "latestResearchCampaignHash": campaign_hash,
+            "researchCampaignHashes": registered_hashes,
+            "candidateCount": payload["candidateCount"],
+            "formalRunCount": payload["formalRunCount"],
+            "resultReadCount": payload["resultReadCount"],
+            "lockedOosReadCount": payload["lockedOosReadCount"],
+            "releaseCount": release_count,
+            "approvalCount": 0,
+            "demoArm": False,
+            "orderCount": 0,
+        }
+    )
+    summary.pop("summaryHash", None)
+    summary["summaryHash"] = stable_hash(summary, prefix="dual_track_summary")
+    write_json_atomic(state_path, state)
+    write_json_atomic(summary_path, summary)
+    return summary
+
+
 __all__ = [
     "DUAL_TRACK_LEDGER_FILES",
     "DualTrackLedgerSet",
@@ -631,4 +768,5 @@ __all__ = [
     "record_v34a_data_pilot",
     "record_v34b_data_extension",
     "record_v34c_public_data_service",
+    "record_v35_research_cycle",
 ]
