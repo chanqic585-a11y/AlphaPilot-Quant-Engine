@@ -32,6 +32,56 @@ class _Response:
 
 
 class OkxPublicTests(unittest.TestCase):
+    def test_raw_history_rows_support_1dutc_and_preserve_documented_fields(self) -> None:
+        calls: list[str] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(str(getattr(request, "full_url")))
+            return _Response(
+                {
+                    "code": "0",
+                    "msg": "",
+                    "data": [
+                        ["2000", "1", "2", "0.5", "1.5", "3", "4", "5", "0"],
+                        ["1000", "1", "2", "0.5", "1.5", "6", "7", "8", "1"],
+                    ],
+                }
+            )
+
+        rows, request_count = OkxPublicClient(
+            opener=opener,
+            throttle_seconds=0,
+        ).history_candle_rows(
+            instrument_id="BTC-USDT-SWAP",
+            timeframe="1dutc",
+            start_exclusive_ms=0,
+            max_pages=1,
+        )
+
+        self.assertEqual(request_count, 1)
+        self.assertEqual(rows, [["1000", "1", "2", "0.5", "1.5", "6", "7", "8", "1"]])
+        query = parse_qs(urlparse(calls[0]).query)
+        self.assertEqual(query["bar"], ["1Dutc"])
+
+    def test_public_client_records_auditable_request_receipts(self) -> None:
+        def opener(_request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            return _Response({"code": "0", "msg": "", "data": []})
+
+        client = OkxPublicClient(opener=opener, throttle_seconds=0)
+        client.public_instruments(instrument_type="SWAP")
+
+        self.assertEqual(len(client.request_audit_records), 1)
+        receipt = client.request_audit_records[0]
+        self.assertEqual(receipt["method"], "GET")
+        self.assertEqual(receipt["path"], "/api/v5/public/instruments")
+        self.assertEqual(receipt["parameters"], {"instType": "SWAP"})
+        self.assertEqual(receipt["responseCode"], "0")
+        self.assertEqual(len(receipt["rawPayloadSha256"]), 64)
+        self.assertTrue(receipt["requestStartedAt"].endswith("+00:00"))
+        self.assertTrue(receipt["requestCompletedAt"].endswith("+00:00"))
+
     def test_history_candles_reports_page_level_progress(self) -> None:
         pages = [
             [
