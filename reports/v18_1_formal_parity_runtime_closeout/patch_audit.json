@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "s01_v18_1_closeout_patch_audit_v1",
+  "campaignId": "advisory_r_v18_1_s01_formal_parity_runtime_correction_72ec6d1a8bf0fb71",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalResultCommit": "8ea936ad55e5f821c2d507a2e6d390c1200fad40",
+  "resultManifestHash": "sha256:8068414f302fea0cc21d1b6907487ec374aeedbd9c10f8b16358d09dda4a05a5",
+  "formalArtifactCount": 32,
+  "formalArtifactHashMismatchCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "strategyPerformanceFailure": false,
+  "implementationOrEvidenceFailure": true,
+  "formalRunClaimCount": 1,
+  "formalRunAttemptCount": 1,
+  "formalResultRunCount": 1,
+  "resultReadCount": 1,
+  "formalResultArtifactCount": 1,
+  "lockedOosAccessCount": 0,
+  "releaseCount": 0,
+  "demoArm": false,
+  "orderCount": 0,
+  "frozenContractChanges": {
+    "strategyParameterChanges": 0,
+    "exitPolicyChanges": 0,
+    "capitalPolicyNumericChanges": 0,
+    "capitalPolicySemanticChanges": 0,
+    "gateChanges": 0,
+    "universeChanges": 0,
+    "splitChanges": 0,
+    "costChanges": 0,
+    "benchmarkChanges": 0,
+    "statisticalPolicyChanges": 0
+  },
+  "parity": {
+    "signalIdentityParityPct": 0.0,
+    "exitLegParityPct": 0.0,
+    "capitalAcceptanceParityPct": 100.0,
+    "positionSizeParityPct": 100.0
+  },
+  "nextCampaignRequired": true,
+  "resultDrivenRepairInCurrentCampaignAllowed": false
+}

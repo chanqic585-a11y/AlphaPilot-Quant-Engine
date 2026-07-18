@@ -1,0 +1,852 @@
+{
+  "actualStrategyAdapterInvoked": true,
+  "adapterContextPairs": [
+    "AAVE-USDT-SWAP",
+    "ADA-USDT-SWAP",
+    "ALGO-USDT-SWAP",
+    "ATOM-USDT-SWAP",
+    "AVAX-USDT-SWAP",
+    "BCH-USDT-SWAP",
+    "BTC-USDT-SWAP",
+    "COMP-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETC-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "LINK-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "NEO-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "TRX-USDT-SWAP",
+    "XRP-USDT-SWAP",
+    "XTZ-USDT-SWAP",
+    "YFI-USDT-SWAP"
+  ],
+  "adapterRuntimeBase": "alphapilot_s01_phase2_adapter",
+  "adapterSignalCount": 924,
+  "blockers": [
+    "numeric_mismatch",
+    "freqtrade_runtime_not_loaded"
+  ],
+  "campaignId": "advisory_r_v18_1_s01_formal_parity_runtime_correction_72ec6d1a8bf0fb71",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "credentialReadCount": 0,
+  "demoArm": false,
+  "exitLegParityPct": 0.0,
+  "extraEventCount": 0,
+  "formalPerformanceClaimed": false,
+  "formalSignalCount": 884,
+  "freqtradeRuntimeLoaded": false,
+  "frozenUniverseCount": 20,
+  "fullFormalInput": true,
+  "identityParityPct": 0.0,
+  "implementationEventCount": 884,
+  "lockedOosAccessCount": 0,
+  "malformedReasons": [],
+  "matchedEventCount": 0,
+  "matchedLegCount": 0,
+  "mismatchedEventCount": 884,
+  "mismatches": [
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2021-05-05T04:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2021-05-19T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2021-05-25T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2021-06-03T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2021-06-10T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2021-11-25T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2021-12-08T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-01-16T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-02-02T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-02-25T04:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-04-16T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-04-27T00:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-05-10T00:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-05-27T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-08-25T00:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-09-25T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-10-01T00:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-11-09T00:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-12-08T00:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-12-30T04:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2022-12-30T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2023-01-02T12:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2023-05-08T12:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2023-05-10T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2023-06-15T04:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2023-07-31T00:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2023-08-17T16:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2023-09-27T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2024-04-02T12:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2024-04-26T16:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2024-06-27T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-01-10T16:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-04-07T12:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-06-19T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-08-03T16:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-10-17T04:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-10-29T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-11-07T16:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-11-14T12:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2025-12-22T04:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2026-02-13T08:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2026-02-25T20:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2026-03-03T16:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::AAVE-USDT-SWAP::2026-04-07T16:00:00+00:00",
+        "AAVE-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::ADA-USDT-SWAP::2021-05-05T00:00:00+00:00",
+        "ADA-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::ADA-USDT-SWAP::2021-06-22T20:00:00+00:00",
+        "ADA-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR",
+        "leg_numeric_mismatch:1:feesR",
+        "leg_numeric_mismatch:1:slippageR",
+        "leg_numeric_mismatch:1:spreadProxyR",
+        "leg_numeric_mismatch:1:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::ADA-USDT-SWAP::2021-11-24T04:00:00+00:00",
+        "ADA-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::ADA-USDT-SWAP::2021-12-27T20:00:00+00:00",
+        "ADA-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::ADA-USDT-SWAP::2022-01-03T16:00:00+00:00",
+        "ADA-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    },
+    {
+      "duplicateIndex": 0,
+      "primaryKey": [
+        "s01_bear_idiosyncratic_selloff_recovery_4h",
+        "s01_formal::ADA-USDT-SWAP::2022-01-31T20:00:00+00:00",
+        "ADA-USDT-SWAP",
+        "long"
+      ],
+      "reasons": [
+        "leg_numeric_mismatch:0:feesR",
+        "leg_numeric_mismatch:0:slippageR",
+        "leg_numeric_mismatch:0:spreadProxyR",
+        "leg_numeric_mismatch:0:netR"
+      ]
+    }
+  ],
+  "missingEventCount": 0,
+  "networkAccessCount": 0,
+  "numericTolerance": 1e-09,
+  "orderCount": 0,
+  "passed": false,
+  "referenceEventCount": 884,
+  "releaseCount": 0,
+  "schemaVersion": "s01_formal_translation_parity_v1",
+  "status": "failed",
+  "syntheticFixtureOnly": false,
+  "zeroSignalParityRejected": true
+}

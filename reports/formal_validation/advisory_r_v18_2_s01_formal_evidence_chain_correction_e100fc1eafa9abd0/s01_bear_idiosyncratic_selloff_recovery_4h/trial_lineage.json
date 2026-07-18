@@ -1,0 +1,9 @@
+{
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalCandidateCount": 1,
+  "parameterSearchAllowed": false,
+  "resultDrivenParameterChangeCount": 0,
+  "schemaVersion": "s01_v18_trial_lineage_v1",
+  "selectionBiasFamilySize": 10
+}

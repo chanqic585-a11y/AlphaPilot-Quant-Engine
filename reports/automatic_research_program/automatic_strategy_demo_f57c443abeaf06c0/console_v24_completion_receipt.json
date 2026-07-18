@@ -1,0 +1,17 @@
+{
+  "approvalCount": 0,
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "consoleAuditHash": "automatic_v24_release_import_audit_fe181dd8c437beea963e912f4bba81232508fe04bd54ec5e7645e16c5c9bbd2f",
+  "consoleAuditPath": "D:/Codex-Workspace/AlphaPilot-Console-V19-24-worktree/reports/automatic_strategy_demo/automatic_strategy_demo_f57c443abeaf06c0/release_import_audit.json",
+  "consoleAuditSha256": "9872d7009c856079709366ed796ed54046c79064538f9dbbba2cbb0644e84695",
+  "demoArm": false,
+  "engineeringSmokeCountedAsStrategyEvidence": false,
+  "generatedAt": "2026-07-18T03:01:33Z",
+  "importedReleaseCount": 0,
+  "orderCount": 0,
+  "programId": "automatic_strategy_demo_f57c443abeaf06c0",
+  "receiptHash": "automatic_v24_console_receipt_016dda5d6b8b95b1a58e39d4adf23992bef4bdacfea44c392614869dce5ecd9d",
+  "releaseCount": 0,
+  "schemaVersion": "automatic_v24_console_completion_receipt_v1",
+  "terminalRoute": "completed_zero_qualified_candidates"
+}

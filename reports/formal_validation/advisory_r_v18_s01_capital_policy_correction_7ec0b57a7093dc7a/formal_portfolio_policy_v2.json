@@ -1,0 +1,135 @@
+{
+  "acceptanceSequence": [
+    "ranking_validation",
+    "duplicate_symbol",
+    "capacity_and_sizing",
+    "single_symbol_risk",
+    "same_direction_risk",
+    "total_open_risk",
+    "correlation_cluster_risk",
+    "projected_portfolio_beta",
+    "maximum_positions"
+  ],
+  "capacityModel": {
+    "definitionHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+    "inputs": [
+      "currentEquity",
+      "entryPrice",
+      "stopPrice",
+      "priorDailyLiquidity",
+      "instrumentMetadataOnlyWhenVolumeConversionRequiresIt"
+    ],
+    "invalidInputPolicy": "reject_nonpositive_equity_price_or_stop_distance",
+    "lookbackCompletedUtcDays": 30,
+    "method": "median_prior_completed_utc_daily_quote_turnover",
+    "minimumCompletedUtcDays": 24,
+    "minimumRiskUtilization": 0.5,
+    "missingDataPolicy": "reject_without_verified_quote_turnover_semantics",
+    "pointInTimePolicy": "strictly_prior_completed_utc_days_only",
+    "positionQuantization": "continuous_research_notional_without_historical_exchange_lot_assumption",
+    "riskBudgetFraction": 0.01,
+    "schemaVersion": "s01_capacity_model_v1",
+    "sourcePriority": [
+      "quote_volume",
+      "base_volume_times_close",
+      "verified_contract_volume_times_contract_value_multiplier_and_close"
+    ],
+    "thresholds": {
+      "maximumTurnoverParticipation": 0.0005,
+      "minimumRiskUtilization": 0.5
+    },
+    "turnoverParticipationFraction": 0.0005
+  },
+  "capacityRequirement": "capacity_v1_passed_with_continuous_research_notional",
+  "capitalCompetitionPolicyHash": "s01_formal_capital_competition_v2_9e46061fb47a557c94ac840e7b5dc9b5ff0629844d70adb9748a7cf7428fa17f",
+  "correlationClusterPolicy": {
+    "clusterIdMethod": "sha256_of_sorted_component_members",
+    "definitionHash": "s01_correlation_cluster_policy_v1_61293655d64c0bbdf8ea174db277ec96404e8e89c8ce8972091fabdb3bc837c3",
+    "lookbackBars": 90,
+    "method": "positive_pearson_connected_components_union_find",
+    "minimumAlignedBars": 60,
+    "missingDataPolicy": "shared_unknown_cluster",
+    "recomputeSchedule": "utc_00_00_daily_using_strictly_prior_data",
+    "returnDefinition": "utc_daily_log_return",
+    "schemaVersion": "s01_correlation_cluster_policy_v1",
+    "threshold": 0.75,
+    "thresholdSign": "positive_only",
+    "zeroVariancePolicy": "shared_unknown_cluster"
+  },
+  "duplicateSymbolPolicy": "reject_while_open",
+  "eventOrderingPolicy": {
+    "entryBatchPolicy": "rank_all_same_timestamp_candidates_then_accept_sequentially",
+    "sameTimestampOrder": [
+      "exit",
+      "funding",
+      "mark_and_equity",
+      "entry"
+    ]
+  },
+  "fallbackFieldPolicy": "no_result_affecting_fallback_fields",
+  "initial_capital": 10000.0,
+  "maximum_concurrent_positions": 6,
+  "maximum_correlation_cluster_risk": 0.02,
+  "maximum_open_risk": 0.06,
+  "maximum_portfolio_beta": 1.5,
+  "maximum_same_direction_risk": 0.04,
+  "maximum_single_symbol_risk": 0.01,
+  "portfolioBetaPolicy": {
+    "alignment": "intersection_of_strictly_prior_utc_days",
+    "benchmark": "BTC-USDT-SWAP",
+    "benchmarkBeta": 1.0,
+    "contributionFormula": "direction_sign_times_mark_notional_over_current_equity_times_beta",
+    "definitionHash": "s01_portfolio_beta_policy_v1_995df91f9e02d9b221a716cadc13f659fcfa6c3caf4c560e6e4c5665d5da0b90",
+    "lookbackBars": 90,
+    "maximumAbsoluteProjectedBeta": 1.5,
+    "method": "ols_covariance_ratio_without_intercept_equivalent_slope",
+    "minimumAlignedBars": 60,
+    "missingDataPolicy": "reject_candidate",
+    "returnDefinition": "utc_daily_log_return",
+    "schemaVersion": "s01_portfolio_beta_policy_v1",
+    "varianceEpsilon": 1e-18,
+    "zeroBenchmarkVariancePolicy": "reject_candidate"
+  },
+  "positionAccountingPolicy": {
+    "currentEquity": "realized_cash_plus_marked_open_position_pnl_after_same_timestamp_updates",
+    "duplicateSymbol": "any_open_position_with_same_instrument_id",
+    "markNotional": "absolute_mark_price_times_open_quantity"
+  },
+  "rankingFieldDefinitions": {
+    "liquidity_higher_first": "liquidity30d descending",
+    "recovery_confirmation_stronger_first": "recoverySizeZ descending",
+    "residual_z_more_extreme_first": "eventExtremeResidualZ ascending",
+    "symbol_id_ascending_tiebreak": "instrumentId ascending unique final tiebreak"
+  },
+  "rankingPolicy": {
+    "batchDefinition": "same_expected_entry_timestamp",
+    "definitionHash": "s01_signal_ranking_policy_v1_4ad51e23bd84f934b8cb54ed39978de087690850f4d0cd55bf96759876a96314",
+    "duplicateInstrumentPolicy": "reject_duplicate_rows",
+    "fields": [
+      {
+        "name": "eventExtremeResidualZ",
+        "order": "ascending"
+      },
+      {
+        "name": "recoverySizeZ",
+        "order": "descending"
+      },
+      {
+        "name": "liquidity30d",
+        "order": "descending"
+      },
+      {
+        "name": "instrumentId",
+        "order": "ascending"
+      }
+    ],
+    "missingDataPolicy": "reject_if_any_of_first_three_fields_missing_or_nonfinite",
+    "mixedTimestampPolicy": "reject_entire_batch",
+    "schemaVersion": "s01_signal_ranking_policy_v1",
+    "tiePolicy": "instrument_id_is_final_tiebreak_and_must_be_unique"
+  },
+  "resultDrivenRiskReductionAllowed": false,
+  "risk_per_trade": 0.01,
+  "schemaVersion": "s01_formal_capital_competition_v2",
+  "source": "v18_executable_capital_policy_correction"
+}

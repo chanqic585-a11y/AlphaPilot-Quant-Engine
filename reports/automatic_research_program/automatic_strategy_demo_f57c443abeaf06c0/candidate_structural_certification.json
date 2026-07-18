@@ -1,0 +1,551 @@
+{
+  "certifications": [
+    {
+      "blockers": [],
+      "candidateId": "auto-trend_pullback_continuation-4h-long-v1",
+      "canonicalIdentityCount": 3039,
+      "certificationHash": "generated_candidate_structural_certification_51f02c887c6cf817a237d2a89f1491bcf01785837a3cd81c51e30b34861d9706",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 3039
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 46,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 46
+      },
+      "realSignalCount": 3039,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 46
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-trend_pullback_continuation-4h-short-v2",
+      "canonicalIdentityCount": 3415,
+      "certificationHash": "generated_candidate_structural_certification_2cb3620158af1b4d014dd05800fa0e55852cea5d5c823afaa0ab681210e2a92c",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 3415
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 1,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 1
+      },
+      "realSignalCount": 3415,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 1
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-volatility_compression_release-4h-long-v1",
+      "canonicalIdentityCount": 3501,
+      "certificationHash": "generated_candidate_structural_certification_7fd573f022f285ed0a2a5eb3d58cee11440bde93d51acfd5a496ef7fc3ddb85d",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 3501
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 138,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 138
+      },
+      "realSignalCount": 3501,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 138
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-volatility_compression_release-4h-short-v2",
+      "canonicalIdentityCount": 3418,
+      "certificationHash": "generated_candidate_structural_certification_34089af9bb3911c6f93203cc25079446dd673d126401785f807d00add81d2ed4",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 3418
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 65,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 65
+      },
+      "realSignalCount": 3418,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 65
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-btc_shock_lag-1h-long-v1",
+      "canonicalIdentityCount": 2676,
+      "certificationHash": "generated_candidate_structural_certification_ef6849b7f694628be92409e114dbfa3ac7fe3a8c6fbf91c83357537255632032",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 2676
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 1,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 1
+      },
+      "realSignalCount": 2676,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 1
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-btc_shock_lag-1h-short-v2",
+      "canonicalIdentityCount": 2145,
+      "certificationHash": "generated_candidate_structural_certification_bead6fbb8e7f932d651976a9f9d73c2bb21563cc88d47f07565977ecb8885fed",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 2145
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 1,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 1
+      },
+      "realSignalCount": 2145,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 1
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-volatility_shock_asymmetry-1h-long-v1",
+      "canonicalIdentityCount": 5696,
+      "certificationHash": "generated_candidate_structural_certification_8a3545e24132595b3c97e2670996bfbe6ea31d59ee1cad00795bf4eb7e5eea8a",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 5696
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 12,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 12
+      },
+      "realSignalCount": 5696,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 12
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-volatility_shock_asymmetry-1h-short-v2",
+      "canonicalIdentityCount": 5137,
+      "certificationHash": "generated_candidate_structural_certification_d31343db021f6770133488af8cc3fdb08990696cf1152f610fb93621b4e60c7d",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 5137
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 8,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 8
+      },
+      "realSignalCount": 5137,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 8
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-cross_session_liquidity_transition-1h-long-v1",
+      "canonicalIdentityCount": 27758,
+      "certificationHash": "generated_candidate_structural_certification_f79c3d7e78a74140323983d169318479b9f2eab138759e31118fcf71c7de3ebb",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 27758
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 79,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 79
+      },
+      "realSignalCount": 27758,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 79
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-cross_session_liquidity_transition-1h-short-v2",
+      "canonicalIdentityCount": 27314,
+      "certificationHash": "generated_candidate_structural_certification_e258dca3e63fda59e484de69a601641564020d6e0b65c7d546c56d2894cef923",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 27314
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 69,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 69
+      },
+      "realSignalCount": 27314,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 69
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-residual_extreme_causal_recovery-4h-long-v1",
+      "canonicalIdentityCount": 1294,
+      "certificationHash": "generated_candidate_structural_certification_0e97b69b4519117a22e9cb322da97035d1d7e3d32d49a966b59c9c6270d5f20d",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 1294
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 6,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 6
+      },
+      "realSignalCount": 1294,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 6
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-residual_extreme_causal_recovery-4h-short-v2",
+      "canonicalIdentityCount": 1764,
+      "certificationHash": "generated_candidate_structural_certification_c631e9d3443135fa8de0a3ccda4239d0c7b8dd2c09842810a3bf9a6dcff1a5a3",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 1764
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 9,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 9
+      },
+      "realSignalCount": 1764,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 9
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-trend_failure_reversal-4h-long-v1",
+      "canonicalIdentityCount": 4189,
+      "certificationHash": "generated_candidate_structural_certification_32ab6f5c4eae1cf3ba7624b44b174fd0a6c9bcb2d9abf5699b353dcf2aacb802",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 4189
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 20,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 20
+      },
+      "realSignalCount": 4189,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 20
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+      "canonicalIdentityCount": 3810,
+      "certificationHash": "generated_candidate_structural_certification_9ec8bf68cb5bc1b8bc0680dd2fb1f61fc24bd286a86e24f5527a9f06644d129d",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 3810
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 58,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 58
+      },
+      "realSignalCount": 3810,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 58
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-breadth_correlation_directional_filter-4h-long-v1",
+      "canonicalIdentityCount": 40745,
+      "certificationHash": "generated_candidate_structural_certification_08ccf24c337a303e54588d36983c5998e09b354c7c808ceedd370626fbd19d6c",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 40745
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 296,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 296
+      },
+      "realSignalCount": 40745,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 296
+    },
+    {
+      "blockers": [],
+      "candidateId": "auto-breadth_correlation_directional_filter-4h-short-v2",
+      "canonicalIdentityCount": 39922,
+      "certificationHash": "generated_candidate_structural_certification_44fef2381162cef97319f15411c75a07ea3be6a8b2d2d8a8b0d180d13f0e47ba",
+      "economicResultReadCount": 0,
+      "eventDisposition": {
+        "assigned": 39922
+      },
+      "formalRunClaimCount": 0,
+      "gates": {
+        "candidateAdapterContract": true,
+        "coreEngineUnchanged": true,
+        "eventDisposition": true,
+        "freqtradeFixtureParity": true,
+        "rankingPitEvidenceRecorded": true,
+        "realSignalStructuralCertification": true
+      },
+      "lockedOosAccessCount": 0,
+      "parity": {
+        "coreEngineChangedForCandidate": false,
+        "passed": true,
+        "referenceEventCount": 260,
+        "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+        "status": "passed",
+        "translatedEventCount": 260
+      },
+      "realSignalCount": 39922,
+      "status": "certified",
+      "syntheticFixtureSignalCount": 260
+    }
+  ],
+  "negativeResearchRules": [
+    {
+      "evidenceStrategyCount": 12,
+      "rule": "Do not promote a strategy whose available profit factor is below 1 or whose average net R is non-positive.",
+      "ruleId": "AFS_NEG_001",
+      "scope": "promotion_gate"
+    },
+    {
+      "evidenceStrategyCount": 12,
+      "rule": "Do not rescue a structurally negative strategy family with small threshold changes alone.",
+      "ruleId": "AFS_NEG_002",
+      "scope": "redesign_required"
+    },
+    {
+      "evidenceStrategyCount": 10,
+      "rule": "Always review fee and slippage stress before interpreting raw return.",
+      "ruleId": "AFS_NEG_003",
+      "scope": "cost_model"
+    },
+    {
+      "evidenceStrategyCount": 9,
+      "rule": "High trade count without positive per-trade edge is evidence of noise amplification, not diversification.",
+      "ruleId": "AFS_NEG_004",
+      "scope": "frequency"
+    },
+    {
+      "evidenceStrategyCount": 13,
+      "rule": "Never treat missing metrics as zero or as passing evidence.",
+      "ruleId": "AFS_NEG_005",
+      "scope": "data_integrity"
+    },
+    {
+      "evidenceStrategyCount": 13,
+      "rule": "Signal edge and account-path risk must pass independently; one layer cannot hide failure in the other.",
+      "ruleId": "AFS_NEG_006",
+      "scope": "attribution"
+    },
+    {
+      "evidenceStrategyCount": 1,
+      "rule": "Martingale and inverse-averaging designs remain rejected regardless of short-sample headline return.",
+      "ruleId": "AFS_NEG_007",
+      "scope": "risk_boundary"
+    },
+    {
+      "evidenceStrategyCount": 13,
+      "rule": "Archived strategies are negative research assets and cannot become executable without a new version and fresh evidence.",
+      "ruleId": "AFS_NEG_008",
+      "scope": "versioning"
+    }
+  ],
+  "schemaVersion": "automatic_candidate_structural_certification_v1"
+}

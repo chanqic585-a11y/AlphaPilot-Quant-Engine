@@ -1,0 +1,29 @@
+{
+  "assignedEventCount": 417,
+  "assignedValidationEventCount": 417,
+  "auditHash": "formal_event_disposition_audit_00c1f41ba6751921e777cbbcb832af85f03b5a43b4e8883e084631aa70eda8c6",
+  "crossBoundaryLeakageCount": 0,
+  "dispositionCounts": {
+    "assigned_validation_fold": 417,
+    "excluded_after_final_validation_tail": 0,
+    "excluded_cross_fold_holding_path": 1,
+    "excluded_duplicate_event_identity": 0,
+    "excluded_initial_history_prefix": 466,
+    "excluded_invalid_timestamp": 0,
+    "excluded_outside_common_window": 0
+  },
+  "dispositionRecordCount": 884,
+  "duplicateDispositionCount": 0,
+  "duplicateEventIdentityCount": 0,
+  "excludedEventCount": 467,
+  "explicitlyExcludedEventCount": 467,
+  "multiAssignedCount": 0,
+  "multiAssignedEventCount": 0,
+  "rawEqualsAssignedPlusExcluded": true,
+  "rawEventCount": 884,
+  "recordCoveragePct": 100.0,
+  "schemaVersion": "formal_event_disposition_audit_v1",
+  "unclassifiedCount": 0,
+  "unclassifiedEventCount": 0,
+  "unknownDispositionCount": 0
+}

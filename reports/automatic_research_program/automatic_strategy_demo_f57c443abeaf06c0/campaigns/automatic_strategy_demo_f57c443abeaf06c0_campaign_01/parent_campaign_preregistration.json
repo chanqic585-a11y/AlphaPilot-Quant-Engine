@@ -1,0 +1,35 @@
+{
+  "bindings": {
+    "benchmarkHash": "automatic_benchmark_policy_faaf5ebda80b0c928c5a54e3441efd413541feba5c2d44e1f42be931bd1ebb26",
+    "candidatePanelHash": "automatic_candidate_daily_return_panel_plan_1d6621a168fbb4277dec89741c225ec7bf00d276bc4fd90b55dbe2c57e88fe8f",
+    "capitalPolicyHash": "automatic_capital_policy_3fb0b411d281137953386f3e6136deec15b99ce3499c529a81c9fbd393c49941",
+    "costHash": "automatic_cost_policy_3b8bbfdd46957ba591067687a031e915c2ee504edcd26691f5eb4f776a4957c7",
+    "dataProfileHash": "data_profile_cbd559be0db2103bd3c557721c2c8b66feb1a2b1604cf90f174b3c66ccf02613",
+    "dataSnapshotHash": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+    "gateHash": "automatic_formalGate_policy_8e4547535efbc20b63fdd7c30f82227d3d86f4b2b0b4e7bddcb02b91e93976f6",
+    "ioGuardHash": "automatic_ioGuard_policy_5253fcb7ef9896144a15a060282bf7b15168763bf02756d85ece61b640e58b86",
+    "runtimeHash": "automatic_runtime_policy_b2316d7fb24ffaf8b8defd4bd4931eaadf7c64219aed9b81b7d6e549482dc979",
+    "splitHash": "automatic_split_policy_c1e796b455772586264bf0057ed4b44892195e2f5e5294f78db821957e0a1d14",
+    "statisticalPolicyHash": "automatic_statistics_policy_e29b8980155b5b2f8d57a1d0b15d111552b32a9184cf9cc8e4a39dcb9c944795",
+    "universeHash": "universe_bac8c3726d0f4fbabacdcad02798449dae154a28aecc581aa34cd71bb2ab917f"
+  },
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "candidateIds": [
+    "auto-trend_failure_reversal-4h-short-v2"
+  ],
+  "candidatePreregistrationHashes": {
+    "auto-trend_failure_reversal-4h-short-v2": "automatic_formal_preregistration_90d49332ac7a8d37e3eb5a09794e166ae836f1662dbeb5b31716c900a109df53"
+  },
+  "demoArm": false,
+  "formalRunCount": 0,
+  "futureLockedOosIdentityHash": "automatic_future_locked_oos_identity_c2ad216def8913cebe444662112caf23dc74c3944a8a66ea862baaae328f491f",
+  "generatedAt": "2026-07-18T01:49:17.7049443Z",
+  "implementationCommit": "f448447991a21efb69281363701c86b8759d8d0f",
+  "lockedOosAccessCount": 0,
+  "multipleTestingScopeHash": "automatic_multiple_testing_scope_536c0c221c944cfab4ccc9c85fba876e404d54057b78d54e90cec9de2f353304",
+  "orderCount": 0,
+  "parentPreregistrationHash": "automatic_parent_campaign_preregistration_7571aa023bfb4df1b4ee09e749d249a4f1f746da3ac864034fbf274121483c3d",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "automatic_parent_campaign_preregistration_v1"
+}

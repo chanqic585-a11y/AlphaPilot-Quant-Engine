@@ -1,0 +1,17 @@
+{
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_84807fc882f257e1",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalEvidenceCount": 0,
+  "formalPass": false,
+  "formalResultArtifactCount": 0,
+  "formalResultRunCount": 0,
+  "formalRunAttemptCount": 0,
+  "formalRunClaimCount": 0,
+  "orderCount": 0,
+  "reason": "Pinned-runtime preflight failed before the formal runner because pythonVersion was not observed by the runtime guard.",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_v18_2_preflight_route_decision_v1",
+  "status": "closed_without_formal_run"
+}

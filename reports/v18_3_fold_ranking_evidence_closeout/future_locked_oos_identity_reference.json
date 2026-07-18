@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "s01_v18_3_future_locked_oos_reference_v1",
+  "source": "research/locked_oos/advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616_future_locked_oos_identity.json",
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "futureLockedOosId": "s01_v18_3_future_locked_oos_eb378608c50c961adf5ce88a28550950aa2730dc723e42cf05dcd74340ccbbd9",
+  "identityHash": "s01_v18_3_future_locked_oos_identity_8d16c7f5ae3108d69857e13f3332ff3a9d9196a74ce44513c8e8cee917ad66c3",
+  "remoteFreezeCommit": "73104396209e5720c9b28d37007f4196b307ad9c",
+  "startInclusive": "2026-07-18T00:00:00Z",
+  "metadataOnly": true,
+  "accessCount": 0,
+  "contentReadCount": 0,
+  "strategyMetricReadCount": 0,
+  "releaseCount": 0,
+  "demoArm": false,
+  "orderCount": 0
+}

@@ -1,0 +1,81 @@
+{
+  "artifacts": [
+    {
+      "byteCount": 933,
+      "path": "campaign_summary.json",
+      "sha256": "add681c88cbb0f4a0426ecf18aa24e0960d9b49348c71f1e792c117f25ef5450"
+    },
+    {
+      "byteCount": 394,
+      "path": "campaign_summary.md",
+      "sha256": "eb920a2b313df8267da644928cd60f27843e2583cfcc83215b82e55a102d5200"
+    },
+    {
+      "byteCount": 918,
+      "path": "capacity_data_semantics_audit.json",
+      "sha256": "e169c5f1384dde2dfe26a404270c9ef923164175c5713fdba37b7fd50775cd01"
+    },
+    {
+      "byteCount": 1122,
+      "path": "capacity_model_contract.json",
+      "sha256": "1eb3b2e327cbc175bca17a741e4a5137e83e8820e7389b249d1334671cf3e4e1"
+    },
+    {
+      "byteCount": 848,
+      "path": "capital_policy_conformance.json",
+      "sha256": "acab899bd66ad361d899141b281fb596e83bd162266e19aec25f5b28fc339e68"
+    },
+    {
+      "byteCount": 683,
+      "path": "correction_manifest.json",
+      "sha256": "a3b5a12df04498b33205c3f44cb23476212f4bca282a0f4548459a1ba6b4e25d"
+    },
+    {
+      "byteCount": 623,
+      "path": "correlation_cluster_policy_contract.json",
+      "sha256": "bfb92d771368ef4c8c9d9c5ec34e9ec09f232fa0559f6b017e86e07efae89b68"
+    },
+    {
+      "byteCount": 5354,
+      "path": "formal_portfolio_policy_v2.json",
+      "sha256": "d41c2e7fe7be173f29960a2c7a73c293f08f9ae0d5981a482d2ae55a55dece39"
+    },
+    {
+      "byteCount": 588,
+      "path": "formal_preregistration_reference.json",
+      "sha256": "a31a0691a3fd1982db77d308ccd0b6e4bf76b161cd44743d06ae069ef0f45a86"
+    },
+    {
+      "byteCount": 1081,
+      "path": "future_locked_oos_identity_reference.json",
+      "sha256": "5258d1a71d6d9fca0f42f6bece383da40311632446965408d5d8aebb208f535d"
+    },
+    {
+      "byteCount": 708,
+      "path": "portfolio_beta_policy_contract.json",
+      "sha256": "0351f03bc7d1d3890662adf2c93f35f4054e60fc19d2770a15a504b5919ae483"
+    },
+    {
+      "byteCount": 373,
+      "path": "route_decision.json",
+      "sha256": "42978a51f8f9020dc4419e0b602b65ec4ac11e21bbea71fb3395f76167641ea4"
+    },
+    {
+      "byteCount": 791,
+      "path": "signal_ranking_policy_contract.json",
+      "sha256": "37362aa5a432303c131a605db94c81e3d0ad51bddec0d15b35f30a76cb488bdd"
+    },
+    {
+      "byteCount": 237,
+      "path": "v17_closeout_provenance_reference.json",
+      "sha256": "7dd19bae8c84eceeaeac42100145a27b11a4cdcbccca9d28e02c2867c05268f0"
+    }
+  ],
+  "campaignId": "advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a",
+  "formalResultArtifactCount": 0,
+  "lockedOosContentArtifactCount": 0,
+  "manifestHash": "s01_v18_pre_result_artifact_manifest_f0af89cb293c7675d2cf2c7089cc2c9ebbf30de20937543bee3c2ec741d030a3",
+  "orderArtifactCount": 0,
+  "releaseArtifactCount": 0,
+  "schemaVersion": "s01_v18_pre_result_artifact_manifest_v1"
+}

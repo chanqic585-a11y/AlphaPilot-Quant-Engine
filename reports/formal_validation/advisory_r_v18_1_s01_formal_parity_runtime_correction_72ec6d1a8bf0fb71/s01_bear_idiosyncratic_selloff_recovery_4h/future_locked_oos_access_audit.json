@@ -1,0 +1,12 @@
+{
+  "contentReadCount": 0,
+  "futureLockedOosId": "s01_v18_1_future_locked_oos_1dedd104ae1e56a07af4841fa5f2f3ed9309b1fd73390a2daa54eb4bbb7b70a9",
+  "hashChainValid": true,
+  "identityHash": "s01_v18_1_future_locked_oos_identity_3b152dc47e4bd28e934cccf8cca0e4a5a670792cd315be444006fa3b03aa83e0",
+  "identityHashValid": true,
+  "ledgerEventCount": 1,
+  "lockedOosAccessCount": 0,
+  "schemaVersion": "s01_v18_1_future_locked_oos_access_audit_v1",
+  "status": "passed",
+  "strategyMetricReadCount": 0
+}

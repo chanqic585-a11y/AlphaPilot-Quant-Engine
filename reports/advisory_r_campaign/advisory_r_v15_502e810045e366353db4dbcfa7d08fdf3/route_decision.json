@@ -1,0 +1,24 @@
+{
+  "archivedCandidateIds": [
+    "s01_bear_idiosyncratic_selloff_recovery_4h",
+    "s02_btc_lead_lag_continuation_1h",
+    "s03_btc_lead_lag_overreaction_reversion_1h",
+    "s04_pair_residual_mean_reversion_1h",
+    "s05_correlation_break_recovery_4h",
+    "s06_correlation_break_decoupling_4h",
+    "s07_volatility_shock_asymmetry_4h",
+    "s08_utc_session_transition_1h",
+    "s09_beta_defensive_rotation_4h"
+  ],
+  "demoArm": false,
+  "demoReleaseCount": 0,
+  "diagnosticCandidateIds": [
+    "s10_orthogonal_weak_signal_matrix_4h"
+  ],
+  "formalCandidateIds": [],
+  "formalStageAllowed": false,
+  "hardStopReason": "zero_prefilter_survivors",
+  "maximumPerFamily": 1,
+  "maximumSurvivors": 6,
+  "orderCount": 0
+}

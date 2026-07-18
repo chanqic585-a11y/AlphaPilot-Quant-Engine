@@ -1,0 +1,18 @@
+{
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_9d02c18f878cc51a",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalEvidenceCount": 0,
+  "formalPass": false,
+  "formalResultArtifactCount": 0,
+  "formalResultRunCount": 0,
+  "formalRunAttemptCount": 1,
+  "formalRunClaimCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "reason": "Certified runtime metadata omitted runtimeRequested=true; execution failed closed before formal input read.",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_v18_2_failed_attempt_route_decision_v1",
+  "status": "closed_after_failed_formal_attempt"
+}

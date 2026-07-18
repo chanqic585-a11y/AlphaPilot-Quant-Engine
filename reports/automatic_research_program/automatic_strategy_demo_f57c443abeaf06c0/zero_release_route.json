@@ -1,0 +1,9 @@
+{
+  "applies": true,
+  "approvalCount": 0,
+  "demoArm": false,
+  "importCount": 0,
+  "orderCount": 0,
+  "schemaVersion": "automatic_v23_zero_release_route_v1",
+  "terminalRoute": "completed_zero_qualified_candidates"
+}

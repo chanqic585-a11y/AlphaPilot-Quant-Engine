@@ -1,0 +1,9 @@
+{
+  "futureLockedOosReadBeforeFinalEvaluation": "forbidden",
+  "ioGuardHash": "automatic_ioGuard_policy_5253fcb7ef9896144a15a060282bf7b15168763bf02756d85ece61b640e58b86",
+  "networkDuringFormal": "forbidden",
+  "rawCredentialStorage": "forbidden",
+  "resultArtifactPublish": "atomic_after_completion",
+  "schemaVersion": "automatic_io_guard_v1",
+  "withdrawApi": "absent"
+}

@@ -1,0 +1,7 @@
+{
+  "admissionBlocked": true,
+  "exactReason": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "v17_newey_west_alpha_not_run_v1",
+  "status": "not_run",
+  "value": null
+}

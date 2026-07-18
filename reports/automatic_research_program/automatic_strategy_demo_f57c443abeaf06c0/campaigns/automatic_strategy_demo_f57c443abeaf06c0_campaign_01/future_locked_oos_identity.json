@@ -1,0 +1,15 @@
+{
+  "accessCount": 0,
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "contentReadCount": 0,
+  "dataSnapshotId": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "lockedOosIdentityHash": "automatic_future_locked_oos_identity_c2ad216def8913cebe444662112caf23dc74c3944a8a66ea862baaae328f491f",
+  "resultReadCount": 0,
+  "schemaVersion": "automatic_future_locked_oos_identity_v1",
+  "status": "frozen_unread",
+  "window": {
+    "accessBeforeV22FinalEvaluation": 0,
+    "endExclusive": "2026-05-10T00:00:00Z",
+    "start": "2025-01-01T00:00:00Z"
+  }
+}

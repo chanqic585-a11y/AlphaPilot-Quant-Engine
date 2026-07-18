@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "s01_v18_3_closeout_patch_audit_v1",
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalResultCommit": "3e3f85e4309ef4719149768b906c862704e1e027",
+  "resultManifestHash": "sha256:230a8ae9b78c023e7b26974535d5cf9c38bb8c70e88f80fd3602229fa05a784b",
+  "formalRunClaimCount": 1,
+  "formalRunAttemptCount": 1,
+  "formalResultRunCount": 1,
+  "resultReadCount": 1,
+  "lockedOosAccessCount": 0,
+  "formalEvidenceCount": 0,
+  "releaseCount": 0,
+  "demoArm": false,
+  "orderCount": 0,
+  "route": "archive_s01_current_version",
+  "primaryBlocker": "capital_infeasible_under_frozen_policy",
+  "implementationOrEvidenceFailure": false,
+  "strategyPerformanceFailure": true,
+  "resultDrivenRepairAllowed": false,
+  "changeCounts": {
+    "strategyDefinition": 0,
+    "capitalPolicy": 0,
+    "capacityPolicy": 0,
+    "clusterPolicy": 0,
+    "betaPolicy": 0,
+    "rankingPolicyOrder": 0,
+    "exitPolicy": 0,
+    "universe": 0,
+    "split": 0,
+    "purge": 0,
+    "embargo": 0,
+    "cost": 0,
+    "funding": 0,
+    "benchmark": 0,
+    "statisticalMethods": 0,
+    "gateThresholds": 0
+  },
+  "implementationChanges": [
+    "exhaustive_event_disposition_evidence",
+    "immutable_ranking_evidence_records_for_every_assigned_event",
+    "real_signal_structural_certification",
+    "preclaim_dual_certification_validation",
+    "production_ranking_row_identity_compatibility"
+  ],
+  "preservedFailClosedAttempts": [
+    {
+      "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_a4e3b957c2e75dc2",
+      "reason": "formal_evidence_chain_fixture_not_certified",
+      "formalResultRunCount": 0,
+      "resultReadCount": 0
+    },
+    {
+      "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_8eb5b226cc5e3b8d",
+      "reason": "production_ranking_identity_shape_incompatible",
+      "formalResultRunCount": 0,
+      "resultReadCount": 0
+    }
+  ],
+  "eventEvidence": {
+    "rawEventCount": 884,
+    "assignedValidationEventCount": 417,
+    "explicitlyExcludedEventCount": 467,
+    "unclassifiedEventCount": 0,
+    "multiAssignedEventCount": 0,
+    "crossBoundaryLeakageCount": 0,
+    "conservationExact": true
+  },
+  "rankingEvidence": {
+    "assignedEventCount": 417,
+    "recordCount": 417,
+    "availableRecordCount": 0,
+    "unavailableRecordCount": 417,
+    "missingRecordCount": 0,
+    "missingStatusCount": 0,
+    "recordCoveragePct": 100.0,
+    "statusCoveragePct": 100.0,
+    "parityPct": 100.0,
+    "postEntryDataUseCount": 0
+  }
+}

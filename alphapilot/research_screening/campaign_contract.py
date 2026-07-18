@@ -6,6 +6,16 @@ from dataclasses import asdict, dataclass, field
 from typing import Any, Mapping, Sequence
 
 from alphapilot.evolution.registry.hashing import stable_hash
+from alphapilot.exit_policy import (
+    ExitPolicy,
+    canonical_exit_policy,
+    exit_policy_hash,
+    validate_exit_policy,
+)
+
+
+LEGACY_CANDIDATE_SCHEMA = "phase3c_candidate_v1"
+ADVISORY_CANDIDATE_SCHEMA = "phase3c_candidate_v2"
 
 
 @dataclass(frozen=True)
@@ -31,13 +41,15 @@ class CandidateSpec:
     eventDefinition: Mapping[str, Any]
     invalidation: str
     stopAtr: float
-    targetR: float
+    targetR: float | None
     maximumHoldBars: int
     requiredData: tuple[str, ...]
     expectedFailureRegimes: tuple[str, ...]
     factorConfirmations: tuple[str, ...] = field(default_factory=tuple)
     factorRanking: tuple[str, ...] = field(default_factory=tuple)
     factorVetoes: tuple[str, ...] = field(default_factory=tuple)
+    schemaVersion: str = LEGACY_CANDIDATE_SCHEMA
+    exitPolicy: ExitPolicy | None = None
 
     def __post_init__(self) -> None:
         if self.direction not in {"long", "short"}:
@@ -46,14 +58,58 @@ class CandidateSpec:
             raise ValueError("5m is disabled for the first formal campaign")
         if self.timeframe not in {"15m", "1h", "4h", "1d"}:
             raise ValueError("unsupported timeframe")
-        if self.targetR < 2:
-            raise ValueError("targetR must be at least 2R")
         if self.stopAtr <= 0 or self.maximumHoldBars <= 0:
             raise ValueError("stopAtr and maximumHoldBars must be positive")
+        if self.schemaVersion == LEGACY_CANDIDATE_SCHEMA:
+            if self.exitPolicy is not None:
+                raise ValueError("legacy candidates may not serialize exitPolicy")
+            if self.targetR is None or self.targetR < 2:
+                raise ValueError("targetR must be at least 2R")
+        elif self.schemaVersion == ADVISORY_CANDIDATE_SCHEMA:
+            if self.exitPolicy is None:
+                raise ValueError("schema-v2 candidates require exitPolicy")
+            validate_exit_policy(self.exitPolicy)
+            if self.exitPolicy.maximumHoldBars != self.maximumHoldBars:
+                raise ValueError("exitPolicy maximumHoldBars must match candidate maximumHoldBars")
+            if self.targetR is not None and self.targetR <= 0:
+                raise ValueError("advisory targetR must be positive when provided")
+        else:
+            raise ValueError(f"unsupported candidate schema: {self.schemaVersion}")
 
     def to_dict(self) -> dict[str, Any]:
-        payload = asdict(self)
-        payload["eventDefinition"] = dict(self.eventDefinition)
+        payload: dict[str, Any] = {
+            "candidateId": self.candidateId,
+            "familyId": self.familyId,
+            "marketMechanismId": self.marketMechanismId,
+            "direction": self.direction,
+            "timeframe": self.timeframe,
+            "causalRationale": self.causalRationale,
+            "eventDefinition": dict(self.eventDefinition),
+            "invalidation": self.invalidation,
+            "stopAtr": self.stopAtr,
+            "targetR": self.targetR,
+            "maximumHoldBars": self.maximumHoldBars,
+            "requiredData": self.requiredData,
+            "expectedFailureRegimes": self.expectedFailureRegimes,
+            "factorConfirmations": self.factorConfirmations,
+            "factorRanking": self.factorRanking,
+            "factorVetoes": self.factorVetoes,
+        }
+        if self.schemaVersion == ADVISORY_CANDIDATE_SCHEMA:
+            assert self.exitPolicy is not None
+            payload.update(
+                {
+                    "schemaVersion": self.schemaVersion,
+                    "riskMetric": "R",
+                    "targetRGateMode": "advisory",
+                    "minimumTargetR": None,
+                    "initialStopMayWiden": False,
+                    "exitPolicyRequired": True,
+                    "exitPolicyVersion": self.exitPolicy.version,
+                    "exitPolicy": canonical_exit_policy(self.exitPolicy),
+                    "exitPolicyHash": exit_policy_hash(self.exitPolicy),
+                }
+            )
         payload["definitionHash"] = stable_hash(payload, prefix="candidate_definition")
         return payload
 
@@ -85,6 +141,11 @@ def build_campaign_preregistration(
 ) -> dict[str, Any]:
     active_budget = budget or ExperimentBudget()
     _validate_budget(candidates, active_budget)
+    candidate_schemas = {candidate.schemaVersion for candidate in candidates}
+    if len(candidate_schemas) != 1:
+        raise ValueError("campaigns may not mix legacy and Advisory-R candidate schemas")
+    candidate_schema = next(iter(candidate_schemas), LEGACY_CANDIDATE_SCHEMA)
+    advisory = candidate_schema == ADVISORY_CANDIDATE_SCHEMA
     candidate_rows = [candidate.to_dict() for candidate in candidates]
     holdout_core = {
         "dataSnapshotHash": data_snapshot_hash,
@@ -94,7 +155,11 @@ def build_campaign_preregistration(
     }
     holdout_hash = stable_hash(holdout_core, prefix="holdout")
     core = {
-        "schemaVersion": "phase3c_campaign_preregistration_v1",
+        "schemaVersion": (
+            "phase3c_campaign_preregistration_v2"
+            if advisory
+            else "phase3c_campaign_preregistration_v1"
+        ),
         "codeCommit": code_commit,
         "externalReferenceManifestHash": external_reference_manifest_hash,
         "dataSnapshotHash": data_snapshot_hash,
@@ -152,7 +217,23 @@ def build_campaign_preregistration(
             "stress_2x": {"multiplier": 2.0},
         },
         "sameBarRule": "stop_first_conservative",
-        "riskPolicy": {"riskFractionPerEvent": 0.01, "initialStopMayWiden": False, "minimumTargetR": 2.0},
+        "riskPolicy": (
+            {
+                "riskFractionPerEvent": 0.01,
+                "initialStopMayWiden": False,
+                "riskMetric": "R",
+                "targetRGateMode": "advisory",
+                "minimumTargetR": None,
+                "exitPolicyRequired": True,
+                "exitPolicyVersion": candidates[0].exitPolicy.version,
+            }
+            if advisory
+            else {
+                "riskFractionPerEvent": 0.01,
+                "initialStopMayWiden": False,
+                "minimumTargetR": 2.0,
+            }
+        ),
         "stopRules": {
             "prescreenFailure": "stop_candidate_before_full_backtest",
             "formalFailure": "retain_failed_evidence_without_release",

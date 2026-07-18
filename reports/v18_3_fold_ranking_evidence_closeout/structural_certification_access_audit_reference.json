@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "s01_v18_3_structural_access_audit_reference_v1",
+  "source": "reports/formal_validation/v18_3_pre_result_certification/signal_evidence_access_audit.json",
+  "economicResultComputationDisabled": true,
+  "exitReplayDisabled": true,
+  "resultMetricWriterDisabled": true,
+  "economicMetricReadCount": 0,
+  "exitReplayCount": 0,
+  "resultMetricWriteCount": 0,
+  "resultReadCount": 0,
+  "formalRunAttemptCount": 0,
+  "formalRunClaimCount": 0,
+  "lockedOosAccessCount": 0
+}

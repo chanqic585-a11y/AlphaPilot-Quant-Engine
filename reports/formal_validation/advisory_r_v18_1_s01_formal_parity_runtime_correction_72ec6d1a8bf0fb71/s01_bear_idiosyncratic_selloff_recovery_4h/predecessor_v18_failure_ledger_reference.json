@@ -1,0 +1,11 @@
+{
+  "attemptCount": 1,
+  "path": "reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/s01_bear_idiosyncratic_selloff_recovery_4h/formal_run_ledger.json",
+  "resultExposed": false,
+  "schemaVersion": "s01_v18_1_predecessor_failure_reference_v1",
+  "selectionInformationGained": false,
+  "sha256": "b7d88fb3dae2060f00976ed71080d67a6389bfacf96051da558b6c4fb5dcf9a0",
+  "state": "failed",
+  "trialClassification": "implementation_failed_before_result",
+  "validComparableTrial": false
+}

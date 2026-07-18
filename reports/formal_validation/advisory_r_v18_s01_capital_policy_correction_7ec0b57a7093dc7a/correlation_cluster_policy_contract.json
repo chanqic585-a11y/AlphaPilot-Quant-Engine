@@ -1,0 +1,14 @@
+{
+  "clusterIdMethod": "sha256_of_sorted_component_members",
+  "definitionHash": "s01_correlation_cluster_policy_v1_61293655d64c0bbdf8ea174db277ec96404e8e89c8ce8972091fabdb3bc837c3",
+  "lookbackBars": 90,
+  "method": "positive_pearson_connected_components_union_find",
+  "minimumAlignedBars": 60,
+  "missingDataPolicy": "shared_unknown_cluster",
+  "recomputeSchedule": "utc_00_00_daily_using_strictly_prior_data",
+  "returnDefinition": "utc_daily_log_return",
+  "schemaVersion": "s01_correlation_cluster_policy_v1",
+  "threshold": 0.75,
+  "thresholdSign": "positive_only",
+  "zeroVariancePolicy": "shared_unknown_cluster"
+}

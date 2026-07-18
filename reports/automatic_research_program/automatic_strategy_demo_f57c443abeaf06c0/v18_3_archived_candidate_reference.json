@@ -1,0 +1,10 @@
+{
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "referenceOnly": true,
+  "releaseCount": 0,
+  "resultReadCount": 1,
+  "route": "archive_s01_current_version",
+  "schemaVersion": "v18_3_archived_candidate_reference_v1"
+}

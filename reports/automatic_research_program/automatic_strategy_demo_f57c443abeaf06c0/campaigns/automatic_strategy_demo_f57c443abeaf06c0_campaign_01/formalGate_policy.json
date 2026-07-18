@@ -1,0 +1,20 @@
+{
+  "formalGateHash": "automatic_formalGate_policy_8e4547535efbc20b63fdd7c30f82227d3d86f4b2b0b4e7bddcb02b91e93976f6",
+  "maximumDrawdownPct": 15.0,
+  "maximumSingleInstrumentPositiveContribution": 0.45,
+  "maximumSingleMonthPositiveContribution": 0.35,
+  "minimumAverageNetR": 0.0,
+  "minimumFormalEvents": {
+    "1h": 120,
+    "4h": 60
+  },
+  "minimumPositiveFoldCount": 3,
+  "minimumProfitFactor": 1.05,
+  "minimumStress1_5xAverageNetR": 0.0,
+  "minimumStress1_5xProfitFactor": 1.0,
+  "minimumTotalNetR": 0.0,
+  "resultDrivenRelaxationForbidden": true,
+  "schemaVersion": "automatic_formal_gate_policy_v1",
+  "targetRGateMode": "advisory",
+  "universalTwoRHardGate": false
+}

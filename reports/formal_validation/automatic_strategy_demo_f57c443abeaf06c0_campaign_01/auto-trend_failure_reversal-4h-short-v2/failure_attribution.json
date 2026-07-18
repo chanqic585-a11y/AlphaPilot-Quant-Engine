@@ -1,0 +1,19 @@
+{
+  "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "classification": "capital_infeasible",
+  "failedEconomicGates": [
+    "minimumFormalEvents",
+    "minimumProfitFactor",
+    "positiveAverageNetR",
+    "positiveTotalNetR",
+    "minimumPositiveFolds",
+    "stress1_5xProfitFactor",
+    "stress1_5xPositiveAverageNetR",
+    "stress1_5xPositiveTotalNetR",
+    "positiveBenchmarkIncrement",
+    "minimumPositiveIncrementalFolds"
+  ],
+  "gateRelaxationCount": 0,
+  "implementationFailure": false,
+  "primaryReason": "verified_quote_turnover_semantics_unavailable"
+}

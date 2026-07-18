@@ -5239,3 +5239,75 @@ workflow above.
 - V13.5.25: compare V13.5.21 local paper package against newly closed forward samples and flag any drift.
 - V13.5.26: consider exchange Dry-run review only after local paper validation and exchange balance are fresh, broad, and manually reviewed.
 - V13.6: consider exchange Dry-run candidate evaluation only after local paper validation is fresh, stable, broad, and reviewed.
+
+## V13.27.1.14 Advisory-R Exit Policy
+
+V13.27.1.14 introduces the immutable `advisory_r_exit_policy_v1` contract and
+connects it to the causal simulator, reports, and campaign contracts without
+running a new campaign. New Advisory-R research can preregister `fixed_r`,
+`partial_then_trailing`, `structure_or_time`, or `hybrid` exits; a fixed target
+below 2R is descriptive rather than an admission gate. Initial stops may
+tighten but never widen, every adaptive bound is preregistered, and policy
+canonicalization produces a stable `exitPolicyHash`.
+
+Legacy strategy behavior and historical evidence remain unchanged. Economic,
+cost, drawdown, walk-forward, statistical, locked-OOS, approval, Demo ARM, and
+Live boundaries are not relaxed. Migration evidence is under
+`reports/exit_policy/`; the implementation entry point is
+`alphapilot/exit_policy/`.
+
+## V13.27.1.15 Advisory-R Strategy Prefilter
+
+V13.27.1.15 preregistered ten candidates across eight independent mechanism
+families before reading market results. Each candidate froze one primary exit
+policy, while target R remained descriptive (`targetRGateMode=advisory` and
+`minimumTargetR=null`). The causal representative-universe prefilter used the
+existing governed snapshot and did not open locked holdout evidence.
+
+No candidate passed the economic prefilter after costs. Nine candidates were
+archived as economic failures and the tenth remained diagnostic-only, so the
+workflow stopped at `zero_prefilter_survivors` as designed. V13.27.1.16 through
+V13.27.1.18 were not executed, and Release, Demo ARM, and order counts all
+remained zero. Frozen reports are under
+`reports/advisory_r_campaign/advisory_r_v15_502e810045e366353db4dbcfa7d08fdf3/`.
+
+## V13.27.1.18 S01 Capital Policy Correction
+
+V13.27.1.18 corrects only the incomplete executable capital-policy contract
+found during the V17 independent closeout audit. It freezes deterministic
+capacity sizing, correlation clusters, signed BTC beta, same-timestamp signal
+ranking, and one canonical acceptance sequence. Strategy parameters, Bear
+definition, exit policy, split policy, universe, costs, and gates are unchanged.
+
+The pre-result campaign is
+`advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a`. Its code,
+preregistration, and tag have not yet been frozen remotely, so the mechanical
+route is `blocked_remote_freeze`: formal run count, Locked OOS access, Release,
+Demo ARM, and order count remain zero. Evidence is under
+`reports/formal_validation/advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a/`;
+the preregistration is under `research/preregistrations/`.
+
+The one-shot formal runner and atomic evidence publisher are implemented and
+covered by synthetic tests. They produce fold, capital competition, exposure,
+parity, cost, funding, benchmark, statistical, gate, route, failure, and
+manifest artifacts. Missing funding or comparable-candidate evidence remains
+explicitly unavailable and cannot be filled with zero or inferred after the
+run. These capabilities have not been used on formal inputs: the existing
+campaign directory remains pre-result contract evidence only.
+
+The pre-result formal-validation architecture is candidate-neutral. Candidate
+implementations enter through `CandidateAdapter`; S01 lives in
+`alphapilot/formal_validation/candidate_adapters/s01.py`, while Capacity,
+Cluster, Beta, and Ranking are independently versioned policy objects. The
+generic command requires both frozen identities and writes to a dynamic path:
+
+```powershell
+python -m alphapilot.scripts.run_formal_walk_forward `
+  --preregistration research/preregistrations/<campaignId>.json `
+  --candidate-id <candidateId>
+```
+
+Formal artifacts are published under
+`reports/formal_validation/<campaignId>/<candidateId>/`. The compatibility
+module `run_v18_s01_formal_walk_forward.py` delegates to this generic entry
+point and does not own a separate S01 execution engine.

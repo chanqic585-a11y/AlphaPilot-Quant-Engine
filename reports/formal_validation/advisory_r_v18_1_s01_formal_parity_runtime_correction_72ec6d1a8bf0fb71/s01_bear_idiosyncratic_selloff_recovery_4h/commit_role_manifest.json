@@ -1,0 +1,103 @@
+{
+  "schemaVersion": "s01_v18_1_commit_role_manifest_v1",
+  "v18CloseoutCommit": {
+    "branch": "main",
+    "commit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+    "containsCode": false,
+    "containsPreregistration": false,
+    "containsResult": false,
+    "purpose": "Close V18 without exposing a formal result.",
+    "pushed": true,
+    "remoteRef": "origin/main"
+  },
+  "v18FailureLedgerCommit": {
+    "branch": "main",
+    "commit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+    "containsCode": false,
+    "containsPreregistration": false,
+    "containsResult": false,
+    "purpose": "Record the terminal V18 pre-result implementation failure.",
+    "pushed": true,
+    "remoteRef": "origin/main"
+  },
+  "v18FreezeCommit": {
+    "branch": "main",
+    "commit": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01",
+    "containsCode": false,
+    "containsPreregistration": true,
+    "containsResult": false,
+    "purpose": "Freeze predecessor V18 before its one-shot run.",
+    "pushed": true,
+    "remoteRef": "refs/tags/v13.27.1.18"
+  },
+  "v18ImplementationCommit": {
+    "branch": "main",
+    "commit": "597e34aa583224a3801dba38fef06e8f8a1734ee",
+    "containsCode": true,
+    "containsPreregistration": false,
+    "containsResult": false,
+    "purpose": "Implement the predecessor V18 formal validation core.",
+    "pushed": true,
+    "remoteRef": "origin/main"
+  },
+  "v18PreregistrationCommit": {
+    "branch": "main",
+    "commit": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01",
+    "containsCode": false,
+    "containsPreregistration": true,
+    "containsResult": false,
+    "purpose": "Freeze the predecessor V18 preregistration.",
+    "pushed": true,
+    "remoteRef": "refs/tags/v13.27.1.18"
+  },
+  "v18_1CloseoutCommit": {
+    "branch": "feature/v13.27.1.18.1-formal-parity-remediation",
+    "commit": null,
+    "containsCode": false,
+    "containsPreregistration": false,
+    "containsResult": true,
+    "purpose": "Record the final mechanical route and V18.1 closeout.",
+    "pushed": false,
+    "remoteRef": "origin/feature/v13.27.1.18.1-formal-parity-remediation"
+  },
+  "v18_1CorrectionImplementationCommit": {
+    "branch": "feature/v13.27.1.18.1-formal-parity-remediation",
+    "commit": "32700c3dc36f33a1d79933f079ae19d3f2cf9b16",
+    "containsCode": true,
+    "containsPreregistration": false,
+    "containsResult": false,
+    "purpose": "Repair signal identity invocation through CandidateAdapter.",
+    "pushed": true,
+    "remoteRef": "origin/feature/v13.27.1.18.1-formal-parity-remediation"
+  },
+  "v18_1CorrectionPreregistrationCommit": {
+    "branch": "feature/v13.27.1.18.1-formal-parity-remediation",
+    "commit": "e72e1a386d18df7d7718a58fa63e3050fc292152",
+    "containsCode": false,
+    "containsPreregistration": true,
+    "containsResult": false,
+    "purpose": "Freeze the V18.1 correction preregistration remotely.",
+    "pushed": true,
+    "remoteRef": "origin/feature/v13.27.1.18.1-formal-parity-remediation"
+  },
+  "v18_1FreezeCommit": {
+    "branch": "feature/v13.27.1.18.1-formal-parity-remediation",
+    "commit": "b60d0e191431a353e79f9c954c31d4de0be25c92",
+    "containsCode": false,
+    "containsPreregistration": true,
+    "containsResult": false,
+    "purpose": "Freeze V18.1 correction code, preregistration, and pre-result evidence before Future OOS registration.",
+    "pushed": true,
+    "remoteRef": "refs/tags/v13.27.1.18.1"
+  },
+  "v18_1ResultCommit": {
+    "branch": "feature/v13.27.1.18.1-formal-parity-remediation",
+    "commit": null,
+    "containsCode": false,
+    "containsPreregistration": false,
+    "containsResult": true,
+    "purpose": "Record the single V18.1 formal validation result.",
+    "pushed": false,
+    "remoteRef": "origin/feature/v13.27.1.18.1-formal-parity-remediation"
+  }
+}

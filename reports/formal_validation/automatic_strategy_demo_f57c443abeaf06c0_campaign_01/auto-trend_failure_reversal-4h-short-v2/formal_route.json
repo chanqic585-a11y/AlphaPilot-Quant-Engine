@@ -1,0 +1,13 @@
+{
+  "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "cleanHoldoutStatus": "locked_unread",
+  "formalRunCount": 1,
+  "fundingStatus": "actual_available",
+  "implementationValid": true,
+  "lockedOosAccessCount": 0,
+  "releaseCount": 0,
+  "releaseEligible": false,
+  "resultReadCount": 1,
+  "schemaVersion": "automatic_v22_route_v1",
+  "status": "capital_infeasible"
+}

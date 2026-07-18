@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "advisory_r_exit_policy_bounds_v1",
+  "policyVersion": "advisory_r_exit_policy_v1",
+  "riskMetric": "R",
+  "targetRGateMode": "advisory",
+  "minimumTargetR": null,
+  "initialStopMayWiden": false,
+  "maximumHoldBars": 10000,
+  "maximumRMultiple": 20.0,
+  "maximumAtrMultiple": 20.0,
+  "supportedModes": [
+    "fixed_r",
+    "partial_then_trailing",
+    "structure_or_time",
+    "hybrid"
+  ],
+  "sameBarRule": "stop_first_conservative",
+  "entryReference": "next_bar_open",
+  "economicGatesUnchanged": true
+}

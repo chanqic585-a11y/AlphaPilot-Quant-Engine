@@ -1,0 +1,27 @@
+{
+  "blockers": [],
+  "demoArm": false,
+  "formalResultRunCount": 0,
+  "hashMatch": true,
+  "headCommit": "3f95d1093dc802f9eebc355821057cdd40e9503e",
+  "implementationCommit": "1d5421f0f0d86fa7f65f46dabed51febe2c1cc49",
+  "localPreregistrationSha256": "2cbb24bd74b213addad7c53f27be6a5e408074cc787c197e3aabb46f305cf490",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "predecessorV18TagUnchanged": true,
+  "predecessorV18_1TagUnchanged": true,
+  "predecessorV18_2TagUnchanged": true,
+  "preregistrationHash": "s01_v18_3_fold_ranking_evidence_correction_preregistration_a0ec3b2b48e42e3acf9608cf33ebc5dbebbdbf51e2031759b0ea00b344418423",
+  "releaseCount": 0,
+  "remotePreregistrationSha256": "2cbb24bd74b213addad7c53f27be6a5e408074cc787c197e3aabb46f305cf490",
+  "remoteTags": {
+    "v13.27.1.18": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01",
+    "v13.27.1.18.1": "b60d0e191431a353e79f9c954c31d4de0be25c92",
+    "v13.27.1.18.2-r2": "305a934a8c99e20185ea2bd2d7f1213e9985b224"
+  },
+  "resultReadCount": 0,
+  "route": "ready_for_authorization",
+  "schemaVersion": "s01_v18_3_remote_preregistration_freeze_audit_v1",
+  "status": "passed",
+  "upstreamCommit": "3f95d1093dc802f9eebc355821057cdd40e9503e"
+}

@@ -1,0 +1,93 @@
+{
+  "benchmarkHash": "automatic_benchmark_policy_faaf5ebda80b0c928c5a54e3441efd413541feba5c2d44e1f42be931bd1ebb26",
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01__auto-trend_failure_reversal-4h-short-v2",
+  "candidateHash": "generated_candidate_spec_fb12581f65a68cfa01530437945d2d41e1c2c6edb90f439d838630bf5c2f61ce",
+  "candidatePanelHash": "automatic_candidate_daily_return_panel_plan_1d6621a168fbb4277dec89741c225ec7bf00d276bc4fd90b55dbe2c57e88fe8f",
+  "candidateSpec": {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+    "candidateSpecHash": "generated_candidate_spec_fb12581f65a68cfa01530437945d2d41e1c2c6edb90f439d838630bf5c2f61ce",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "direction": "short",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "regime",
+        "liquidity_veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "trend_failure_reversal",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v1",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+    "familyId": "trend_failure_reversal",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "auto-hyp-07-trend_failure_reversal",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "marketRegime": "mechanism_conditioned",
+    "maximumHoldBars": 18,
+    "optionalFields": [
+      "reported_volume"
+    ],
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "requiredFields": [
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "simpleBenchmark": "ema_cross_reversal",
+    "strategyDefinitionHash": "generated_strategy_definition_1c0469bdd435437c2fd31e6d34b630b50c09f0b88e79fa5a993cb053512d4c33",
+    "timeframe": "4h"
+  },
+  "capitalPolicyHash": "automatic_capital_policy_3fb0b411d281137953386f3e6136deec15b99ce3499c529a81c9fbd393c49941",
+  "costHash": "automatic_cost_policy_3b8bbfdd46957ba591067687a031e915c2ee504edcd26691f5eb4f776a4957c7",
+  "dataProfileHash": "data_profile_cbd559be0db2103bd3c557721c2c8b66feb1a2b1604cf90f174b3c66ccf02613",
+  "dataSnapshotHash": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "demoArm": false,
+  "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+  "formalInputReadCount": 0,
+  "formalRunBudget": 1,
+  "formalRunCount": 0,
+  "gateHash": "automatic_formalGate_policy_8e4547535efbc20b63fdd7c30f82227d3d86f4b2b0b4e7bddcb02b91e93976f6",
+  "generatedAt": "2026-07-18T01:49:17.7049443Z",
+  "implementationCommit": "f448447991a21efb69281363701c86b8759d8d0f",
+  "ioGuardHash": "automatic_ioGuard_policy_5253fcb7ef9896144a15a060282bf7b15168763bf02756d85ece61b640e58b86",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "parentCampaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "preregistrationHash": "automatic_formal_preregistration_90d49332ac7a8d37e3eb5a09794e166ae836f1662dbeb5b31716c900a109df53",
+  "releaseCount": 0,
+  "resultDrivenMutationAllowed": false,
+  "resultReadCount": 0,
+  "runtimeHash": "automatic_runtime_policy_b2316d7fb24ffaf8b8defd4bd4931eaadf7c64219aed9b81b7d6e549482dc979",
+  "schemaVersion": "automatic_formal_preregistration_v1",
+  "sourceCandidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "splitHash": "automatic_split_policy_c1e796b455772586264bf0057ed4b44892195e2f5e5294f78db821957e0a1d14",
+  "statisticalPolicyHash": "automatic_statistics_policy_e29b8980155b5b2f8d57a1d0b15d111552b32a9184cf9cc8e4a39dcb9c944795",
+  "strategyDefinitionHash": "generated_strategy_definition_1c0469bdd435437c2fd31e6d34b630b50c09f0b88e79fa5a993cb053512d4c33",
+  "targetRGateMode": "advisory",
+  "universalTwoRHardGate": false,
+  "universeHash": "universe_bac8c3726d0f4fbabacdcad02798449dae154a28aecc581aa34cd71bb2ab917f"
+}

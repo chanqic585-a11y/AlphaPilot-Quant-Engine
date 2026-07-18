@@ -1,0 +1,75 @@
+{
+  "availableFields": [
+    "btc_returns",
+    "close",
+    "funding_rate",
+    "high",
+    "instrument_state",
+    "low",
+    "open",
+    "perpetual_price",
+    "pit_universe",
+    "reported_volume",
+    "residual_beta_inputs"
+  ],
+  "directionalEventGate": {
+    "coverageByRequiredField": {
+      "close": 96.555603,
+      "high": 96.555603,
+      "low": 96.555603,
+      "open": 96.555603
+    },
+    "dataProfileId": "ohlcv_core_directional_v1",
+    "minimumCoveragePct": 96.555603,
+    "minimumHistoryRows": 10000,
+    "missingDataPolicy": "block_before_candidate_id_and_do_not_consume_trial_budget",
+    "missingRequiredFields": [],
+    "optionalFields": [
+      "reported_volume"
+    ],
+    "requiredFields": [
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "schemaVersion": "candidate_data_gate_v1",
+    "status": "ready_for_candidate_creation",
+    "timeframes": [
+      "1h",
+      "4h"
+    ]
+  },
+  "directionalEventReady": true,
+  "instrumentCount": 8,
+  "instruments": [
+    "ADA-USDT-SWAP",
+    "BCH-USDT-SWAP",
+    "BTC-USDT-SWAP",
+    "ETC-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "LINK-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "rowCount": 672,
+  "schemaVersion": "data_capability_summary_v1",
+  "timeframes": [
+    "1d",
+    "1h",
+    "4h",
+    "event"
+  ],
+  "unavailableFields": [
+    "base_volume",
+    "basis",
+    "contract_volume",
+    "liquidation",
+    "open_interest",
+    "orderbook",
+    "quote_turnover",
+    "quote_volume",
+    "spot_price",
+    "vwap"
+  ]
+}

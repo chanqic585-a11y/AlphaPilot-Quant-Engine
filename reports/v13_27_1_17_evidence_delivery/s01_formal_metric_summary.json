@@ -1,0 +1,20 @@
+{
+  "acceptedSignalCount": null,
+  "averageGrossR": null,
+  "averageNetR": null,
+  "exactReason": "implementation_invalid_requires_new_campaign",
+  "feesR": null,
+  "formalResultStatus": "not_run",
+  "fundingR": null,
+  "maximumDrawdownPct": null,
+  "maximumDrawdownR": null,
+  "profitFactor": null,
+  "rawSignalCount": null,
+  "rejectedByCapitalCompetitionCount": null,
+  "schemaVersion": "v17_s01_formal_metric_summary_v1",
+  "slippageR": null,
+  "spreadR": null,
+  "totalNetR": null,
+  "tradeCount": null,
+  "winRatePct": null
+}

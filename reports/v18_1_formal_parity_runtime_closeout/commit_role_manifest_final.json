@@ -1,0 +1,41 @@
+{
+  "schemaVersion": "s01_v18_1_commit_role_manifest_final_v1",
+  "v18Predecessor": {
+    "implementationCommit": "597e34aa583224a3801dba38fef06e8f8a1734ee",
+    "preregistrationCommit": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01",
+    "freezeCommit": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01",
+    "failureLedgerCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+    "closeoutCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+    "tag": "v13.27.1.18"
+  },
+  "v18_1CorrectionImplementationCommit": {
+    "commit": "32700c3dc36f33a1d79933f079ae19d3f2cf9b16",
+    "pushed": true,
+    "remoteRef": "origin/feature/v13.27.1.18.1-formal-parity-remediation"
+  },
+  "v18_1CorrectionPreregistrationCommit": {
+    "commit": "e72e1a386d18df7d7718a58fa63e3050fc292152",
+    "pushed": true,
+    "remoteRef": "origin/feature/v13.27.1.18.1-formal-parity-remediation"
+  },
+  "v18_1FreezeCommit": {
+    "commit": "b60d0e191431a353e79f9c954c31d4de0be25c92",
+    "pushed": true,
+    "remoteRef": "refs/tags/v13.27.1.18.1"
+  },
+  "v18_1AuthorizationCommit": {
+    "commit": "5a5b256a95161baa72e2026d8e05886ccd074a7c",
+    "pushed": true,
+    "remoteRef": "origin/feature/v13.27.1.18.1-formal-parity-remediation"
+  },
+  "v18_1ResultCommit": {
+    "commit": "8ea936ad55e5f821c2d507a2e6d390c1200fad40",
+    "pushed": true,
+    "remoteRef": "origin/feature/v13.27.1.18.1-formal-parity-remediation"
+  },
+  "v18_1CloseoutCommit": {
+    "commit": "8ea936ad55e5f821c2d507a2e6d390c1200fad40",
+    "pushed": true,
+    "reason": "The result commit contains the immutable result manifest, mechanical route, failure attribution, and campaign summary. This sidecar adds no new strategy result."
+  }
+}

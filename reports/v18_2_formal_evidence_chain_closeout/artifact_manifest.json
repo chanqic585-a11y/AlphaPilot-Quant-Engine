@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "s01_v18_2_closeout_artifact_manifest_v1",
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalArtifactRoot": "reports/formal_validation/advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0/s01_bear_idiosyncratic_selloff_recovery_4h",
+  "formalArtifactManifest": "reports/formal_validation/advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0/s01_bear_idiosyncratic_selloff_recovery_4h/artifact_manifest.json",
+  "formalResultManifestHash": "sha256:a9b499063547c5a3db131c749b5db404ffed2c5160eb39c8c9aa03a75809129b",
+  "formalArtifactCount": 54,
+  "formalArtifactHashMismatchCount": 0,
+  "closeoutFiles": [
+    "artifact_manifest.json",
+    "commit_role_manifest_final.json",
+    "final_self_check.md",
+    "final_validation.json",
+    "gate_matrix.csv",
+    "patch_audit.json",
+    "statistical_availability_matrix.json"
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://alphapilot.local/schemas/advisory-r-exit-policy-v1.json",
+  "title": "AlphaPilot Advisory-R Exit Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "mode",
+    "maximumHoldBars",
+    "initialStopMayWiden",
+    "parameters"
+  ],
+  "properties": {
+    "version": {
+      "const": "advisory_r_exit_policy_v1"
+    },
+    "mode": {
+      "enum": [
+        "fixed_r",
+        "partial_then_trailing",
+        "structure_or_time",
+        "hybrid"
+      ]
+    },
+    "maximumHoldBars": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    },
+    "initialStopMayWiden": {
+      "const": false
+    },
+    "parameters": {
+      "type": "object"
+    }
+  },
+  "$defs": {
+    "structureRule": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "absoluteZscoreMaximum"],
+          "properties": {
+            "kind": {"const": "residual_neutral_zone"},
+            "absoluteZscoreMaximum": {"type": "number", "minimum": 0.01, "maximum": 5.0}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "minimumCorrelation"],
+          "properties": {
+            "kind": {"const": "correlation_recovery"},
+            "minimumCorrelation": {"type": "number", "minimum": -1.0, "maximum": 1.0}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "fastWindow", "slowWindow"],
+          "properties": {
+            "kind": {"const": "trend_invalidation"},
+            "fastWindow": {"type": "integer", "minimum": 2, "maximum": 500},
+            "slowWindow": {"type": "integer", "minimum": 3, "maximum": 1000}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "utcHour"],
+          "properties": {
+            "kind": {"const": "session_end"},
+            "utcHour": {"type": "integer", "minimum": 0, "maximum": 23}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "maximumRankPercentile"],
+          "properties": {
+            "kind": {"const": "beta_rank_exit"},
+            "maximumRankPercentile": {"type": "number", "minimum": 0.01, "maximum": 1.0}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "confirmationBars"],
+          "properties": {
+            "kind": {"const": "event_reversal"},
+            "confirmationBars": {"type": "integer", "minimum": 1, "maximum": 100}
+          }
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "fixed_r"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "parameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["targetR"],
+            "properties": {
+              "targetR": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 20.0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "const": "partial_then_trailing"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "parameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["partialAtR", "partialFraction", "trailingAtrMultiple"],
+            "properties": {
+              "partialAtR": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 20.0
+              },
+              "partialFraction": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "exclusiveMaximum": 1
+              },
+              "trailingAtrMultiple": {
+                "type": "number",
+                "exclusiveMinimum": 0,
+                "maximum": 20.0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {"const": "structure_or_time"}
+        }
+      },
+      "then": {
+        "properties": {
+          "parameters": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["structureRule"],
+            "properties": {
+              "structureRule": {"$ref": "#/$defs/structureRule"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "mode": {"const": "hybrid"}
+        }
+      },
+      "then": {
+        "properties": {
+          "parameters": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["partialAtR", "partialFraction", "remainderMode", "trailingAtrMultiple"],
+                "properties": {
+                  "partialAtR": {"type": "number", "exclusiveMinimum": 0, "maximum": 20.0},
+                  "partialFraction": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+                  "remainderMode": {"const": "trailing"},
+                  "trailingAtrMultiple": {"type": "number", "exclusiveMinimum": 0, "maximum": 20.0}
+                }
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["partialAtR", "partialFraction", "remainderMode", "structureRule"],
+                "properties": {
+                  "partialAtR": {"type": "number", "exclusiveMinimum": 0, "maximum": 20.0},
+                  "partialFraction": {"type": "number", "exclusiveMinimum": 0, "exclusiveMaximum": 1},
+                  "remainderMode": {"const": "structure"},
+                  "structureRule": {"$ref": "#/$defs/structureRule"}
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "notes": {
+    "authoritativeRuntimeValidator": "alphapilot.exit_policy.validation.validate_exit_policy",
+    "structureRuleGrammar": "alphapilot.exit_policy.schema.STRUCTURE_RULE_FIELDS",
+    "legacyCompatibility": "schema-v1 candidates remain byte-compatible and use their legacy adapter"
+  }
+}

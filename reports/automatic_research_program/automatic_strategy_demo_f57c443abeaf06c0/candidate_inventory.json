@@ -1,0 +1,933 @@
+{
+  "candidates": [
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-trend_pullback_continuation-4h-long-v1",
+      "candidateSpecHash": "generated_candidate_spec_d0b9fd26df7eada890477066e479dbcbba9ff9597ddb040e73cf68fea2118a20",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "long",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "trend_pullback_continuation",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "trend_pullback_continuation",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-01-trend_pullback_continuation",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "ema_regime_directional_hold",
+      "strategyDefinitionHash": "generated_strategy_definition_5f2227ca9969145287f74f59c502f537c81f6f2c250099841cc10edc712a796a",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-trend_pullback_continuation-4h-short-v2",
+      "candidateSpecHash": "generated_candidate_spec_da72a96b877223b72f915af944f085e83d7a59ebda815ba3d32a21c20e8f1688",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "short",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "trend_pullback_continuation",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "trend_pullback_continuation",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-01-trend_pullback_continuation",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "ema_regime_directional_hold",
+      "strategyDefinitionHash": "generated_strategy_definition_0361f0f367bb326486c9a0a48f94f2b405290ea2195640df94c036a77d5f5f50",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-volatility_compression_release-4h-long-v1",
+      "candidateSpecHash": "generated_candidate_spec_2cc8dcaca0d41b3dc791dc1e9ec12cb1e42c88b8c9e4a513b14d5415c413627a",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "long",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "volatility_compression_release",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "volatility_compression_release",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-02-volatility_compression_release",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "rolling_breakout",
+      "strategyDefinitionHash": "generated_strategy_definition_49cf21f46ad7f686ba0602915e738e1a2b698a5c3161e64fbe4073b91cace330",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-volatility_compression_release-4h-short-v2",
+      "candidateSpecHash": "generated_candidate_spec_5adacffd416f5dcf832e1e80097634d337bbf815afe52e526380738fe1a72fca",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "short",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "volatility_compression_release",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "volatility_compression_release",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-02-volatility_compression_release",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "rolling_breakout",
+      "strategyDefinitionHash": "generated_strategy_definition_2f2748c7c7c077ee1ffbfd5b81b3819506ed213eb3675ccf3622f7b5dadc4419",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-btc_shock_lag-1h-long-v1",
+      "candidateSpecHash": "generated_candidate_spec_a235dfb94435a9cc41a60f4edac2d34fd89a2925beb3712116ffee2c94f0c2cb",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "long",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "btc_shock_lag",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "btc_shock_lag",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-03-btc_shock_lag",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 36,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "btc_shock_same_direction",
+      "strategyDefinitionHash": "generated_strategy_definition_baaaa5c67cf1e52b1e5ed23230f246970377c6769e7f7104076c430dfbf8db5e",
+      "timeframe": "1h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-btc_shock_lag-1h-short-v2",
+      "candidateSpecHash": "generated_candidate_spec_1f8d75b85485d58b356821314fe78bafa9dadf6a4d715f05400c3f79fdcd2d3b",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "short",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "btc_shock_lag",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "btc_shock_lag",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-03-btc_shock_lag",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 36,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "btc_shock_same_direction",
+      "strategyDefinitionHash": "generated_strategy_definition_89a73cbaf8fc52678dbb34d044a773a9f96d224c53802277b61b00ff903c357c",
+      "timeframe": "1h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-volatility_shock_asymmetry-1h-long-v1",
+      "candidateSpecHash": "generated_candidate_spec_05ffe555144cff07e556385f4a958ab752887e3829c9726cd277dcade54bc1a8",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "long",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "volatility_shock_asymmetry",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "volatility_shock_asymmetry",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-04-volatility_shock_asymmetry",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 36,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "shock_reversal",
+      "strategyDefinitionHash": "generated_strategy_definition_2553fe820a4685520285ba534ec510e23a6d3250a0b19677aa1ee93832dda6f5",
+      "timeframe": "1h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-volatility_shock_asymmetry-1h-short-v2",
+      "candidateSpecHash": "generated_candidate_spec_fd873700f04a20a7b089a5b4e37e0ef2f36a385a5607e7116e9668181ee9d8a1",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "short",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "volatility_shock_asymmetry",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "volatility_shock_asymmetry",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-04-volatility_shock_asymmetry",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 36,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "shock_reversal",
+      "strategyDefinitionHash": "generated_strategy_definition_358aef12757506091ac0917b17092cba31eba94ad2fd8ee1e50ef630b0569532",
+      "timeframe": "1h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-cross_session_liquidity_transition-1h-long-v1",
+      "candidateSpecHash": "generated_candidate_spec_75591ec6514ef8adbfd6cc27d8a8809e2ba261e34c0b047f250878156976dbb9",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "long",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "cross_session_liquidity_transition",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "cross_session_liquidity_transition",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-05-cross_session_liquidity_transition",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 36,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "same_hour_unconditional",
+      "strategyDefinitionHash": "generated_strategy_definition_4707767cbd9996bbcad18eb0de0d4c42486ac9bde9a3a306e7420671f71972dc",
+      "timeframe": "1h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-cross_session_liquidity_transition-1h-short-v2",
+      "candidateSpecHash": "generated_candidate_spec_6b948f3a461dba09e4b790d0589128b6ce7dcc5f67bf97c1e58340ddf154270d",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "short",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "cross_session_liquidity_transition",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "cross_session_liquidity_transition",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-05-cross_session_liquidity_transition",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 36,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "same_hour_unconditional",
+      "strategyDefinitionHash": "generated_strategy_definition_1f7571cbe5a348613b8e8e200ace6a60ddbb661cd4997b888c2e741169b1cb67",
+      "timeframe": "1h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-residual_extreme_causal_recovery-4h-long-v1",
+      "candidateSpecHash": "generated_candidate_spec_31fca88ef8976dbfdc1c657c1445d02f09e3e07e0d38fece1fc0688aa950a627",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "long",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "residual_extreme_causal_recovery",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "residual_extreme_causal_recovery",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-06-residual_extreme_causal_recovery",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "raw_return_extreme_recovery",
+      "strategyDefinitionHash": "generated_strategy_definition_c34265582b2123f60e06ec3b9591b379b0b4b50fe3651706c1bd88ba06050b1d",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-residual_extreme_causal_recovery-4h-short-v2",
+      "candidateSpecHash": "generated_candidate_spec_519402fc3c954845bdd3b29fb13d4a36f0ca61929d78e670a8e5a369b78303b3",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "short",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "residual_extreme_causal_recovery",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "residual_extreme_causal_recovery",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-06-residual_extreme_causal_recovery",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "raw_return_extreme_recovery",
+      "strategyDefinitionHash": "generated_strategy_definition_533b574300aaa31ce432db51f369d27e83513e121ac82e97c6deb15ce8b74021",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-trend_failure_reversal-4h-long-v1",
+      "candidateSpecHash": "generated_candidate_spec_ba1a228851b1d741e2cfc44144586de5ca9f3215b20c4d6b4baf567e3f3b32a1",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "long",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "trend_failure_reversal",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "trend_failure_reversal",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-07-trend_failure_reversal",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "ema_cross_reversal",
+      "strategyDefinitionHash": "generated_strategy_definition_8628a10f9debd97a0f15d0e093a571224a2b873b6c51912af076d34840010efb",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+      "candidateSpecHash": "generated_candidate_spec_fb12581f65a68cfa01530437945d2d41e1c2c6edb90f439d838630bf5c2f61ce",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "short",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "trend_failure_reversal",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "trend_failure_reversal",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-07-trend_failure_reversal",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "ema_cross_reversal",
+      "strategyDefinitionHash": "generated_strategy_definition_1c0469bdd435437c2fd31e6d34b630b50c09f0b88e79fa5a993cb053512d4c33",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-breadth_correlation_directional_filter-4h-long-v1",
+      "candidateSpecHash": "generated_candidate_spec_8663141b9657792927b6fd37861ef593ebe4f93409fca10c007573f27b8508bc",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "long",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "breadth_correlation_directional_filter",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "breadth_correlation_directional_filter",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-08-breadth_correlation_directional_filter",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "single_asset_direction",
+      "strategyDefinitionHash": "generated_strategy_definition_aad6bccac7de18e8601eaa4c1541caa537061a8790c5048252e48ac8cd438e23",
+      "timeframe": "4h"
+    },
+    {
+      "GatePolicy": {
+        "economicGatesRemainHard": true,
+        "policyId": "v18_3_economic_gate_with_advisory_r",
+        "resultDrivenRelaxationForbidden": true,
+        "universalTwoRHardGate": false
+      },
+      "adapterType": "generated_directional_event_adapter",
+      "candidateId": "auto-breadth_correlation_directional_filter-4h-short-v2",
+      "candidateSpecHash": "generated_candidate_spec_d5da61087c6d2a347151d14a2f5091f5bbe744ef6d851d8ea18aa09681fb2bdc",
+      "capitalPolicyProfile": "v18_frozen_capital_policy",
+      "coreEngineChangedForCandidate": false,
+      "coreSetupCount": 1,
+      "direction": "short",
+      "entryDefinition": {
+        "confirmationRoles": [
+          "regime",
+          "liquidity_veto",
+          "ranking"
+        ],
+        "entryAtNextBarOpen": true,
+        "setupId": "breadth_correlation_directional_filter",
+        "setupVersion": "1",
+        "signalAtClosedBarOnly": true
+      },
+      "exitPolicy": {
+        "initialStopAuthoritative": true,
+        "maximumHoldAuthoritative": true,
+        "noStopWidening": true,
+        "policyId": "advisory_r_time_stop_v1",
+        "targetIsUniversalSelectionGate": false,
+        "targetR": 1.5
+      },
+      "exitPolicyHash": "generated_exit_policy_1f149494efa6ffd2d045cd6ee3e80710b9181e3fdfd6b64f3433087380924ee8",
+      "familyId": "breadth_correlation_directional_filter",
+      "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+      "hypothesisId": "auto-hyp-08-breadth_correlation_directional_filter",
+      "initialStop": {
+        "atrMultiple": 1.25,
+        "atrPeriod": 14,
+        "type": "atr"
+      },
+      "marketRegime": "mechanism_conditioned",
+      "maximumHoldBars": 18,
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "requiredDataProfile": "ohlcv_core_directional_v1",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "simpleBenchmark": "single_asset_direction",
+      "strategyDefinitionHash": "generated_strategy_definition_53c74a05a72a99a1332acd1082fa03ad526dcfc9656576abd39eb162054b728f",
+      "timeframe": "4h"
+    }
+  ],
+  "schemaVersion": "automatic_candidate_inventory_v1"
+}

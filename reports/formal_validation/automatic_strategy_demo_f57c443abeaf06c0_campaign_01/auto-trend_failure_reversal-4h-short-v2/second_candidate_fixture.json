@@ -1,0 +1,8 @@
+{
+  "coreEngineChangedForCandidate": false,
+  "passed": true,
+  "referenceEventCount": 20,
+  "schemaVersion": "generated_freqtrade_fixture_parity_v1",
+  "status": "passed",
+  "translatedEventCount": 20
+}

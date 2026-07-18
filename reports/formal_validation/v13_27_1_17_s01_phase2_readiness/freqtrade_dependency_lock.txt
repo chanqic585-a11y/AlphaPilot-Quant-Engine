@@ -1,0 +1,7 @@
+TA-Lib==0.6.8
+ccxt==4.5.61
+freqtrade==2026.6
+numpy==2.4.6
+pandas==3.0.3
+python==3.14.6
+technical==1.6.0

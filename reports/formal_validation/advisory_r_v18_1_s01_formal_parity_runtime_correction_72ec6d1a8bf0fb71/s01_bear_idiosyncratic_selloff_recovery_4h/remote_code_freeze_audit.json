@@ -1,0 +1,12 @@
+{
+  "blockers": [],
+  "branch": "feature/v13.27.1.18.1-formal-parity-remediation",
+  "hashMatch": true,
+  "localCommit": "e72e1a386d18df7d7718a58fa63e3050fc292152",
+  "pushed": true,
+  "remoteCommit": "e72e1a386d18df7d7718a58fa63e3050fc292152",
+  "route": "code_frozen_remotely",
+  "schemaVersion": "s01_v18_1_remote_code_freeze_audit_v1",
+  "status": "passed",
+  "worktreeClean": true
+}

@@ -1,0 +1,49 @@
+{
+  "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+  "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "methods": [
+    {
+      "method": "newey_west",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "benjamini_hochberg",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "benjamini_yekutieli",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "deflated_sharpe_ratio",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "probability_of_backtest_overfitting",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "white_reality_check",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "superior_predictive_ability",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    },
+    {
+      "method": "bootstrap_confidence_interval",
+      "reason": "no_capital_accepted_trades_under_frozen_capacity_policy",
+      "status": "unavailable"
+    }
+  ],
+  "schemaVersion": "automatic_strategy_demo_statistical_availability_v1",
+  "status": "unavailable",
+  "unavailableReason": "no_capital_accepted_trades_under_frozen_capacity_policy"
+}

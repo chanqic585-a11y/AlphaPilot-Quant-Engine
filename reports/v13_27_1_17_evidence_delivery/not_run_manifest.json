@@ -1,0 +1,6 @@
+{
+  "eventLevelArtifactUnavailable": true,
+  "exactReason": "implementation_invalid_requires_new_campaign",
+  "parquetArtifacts": [],
+  "status": "not_run"
+}

@@ -1,0 +1,19 @@
+{
+  "apiKeyPersisted": false,
+  "demoArm": false,
+  "demoOrderCreated": false,
+  "evidenceBasis": [
+    "frozen preregistration safety boundary",
+    "terminal route bundle",
+    "source safety scan"
+  ],
+  "exchangeDryRun": false,
+  "formalEvidenceCount": 0,
+  "liveOrderCreated": false,
+  "lockedOosAccessCount": 0,
+  "realAccountRead": false,
+  "realPositionRead": false,
+  "releaseCount": 0,
+  "tradeApiConnected": false,
+  "withdrawApiConnected": false
+}

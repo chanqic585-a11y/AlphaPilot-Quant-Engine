@@ -1,0 +1,20 @@
+{
+  "compileall": "passed",
+  "consoleCompileall": "passed",
+  "consoleFullTests": "417 passed",
+  "consoleGitDiffCheck": "passed",
+  "consoleHttpSmoke": "passed",
+  "consoleTargetedStage4Tests": "5 passed",
+  "deselectedCount": 0,
+  "focusedTests": "71 formal-focused passed",
+  "formalValidationTests": "passed",
+  "fullTests": "817 passed",
+  "gitDiffCheck": "passed",
+  "postFixRegressionTests": "2 LF/checkpoint tests passed; copied-route LF test passed after final patch",
+  "safetyScan": "passed_with_482_reviewable_text_matches",
+  "schemaVersion": "v17_test_manifest_v1",
+  "skippedCount": 0,
+  "status": "passed",
+  "subtestCount": 157,
+  "validateConfig": "passed"
+}

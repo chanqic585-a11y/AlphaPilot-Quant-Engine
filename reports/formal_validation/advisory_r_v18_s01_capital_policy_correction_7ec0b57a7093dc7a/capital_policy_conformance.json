@@ -1,0 +1,23 @@
+{
+  "auditHash": "s01_v18_capital_policy_conformance_ec5f81806335bbdc8e5102a339fc3921cf6cfe30bffdca0dac988b3e4234aab2",
+  "campaignId": "advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a",
+  "canonicalAcceptanceSequence": [
+    "ranking_validation",
+    "duplicate_symbol",
+    "capacity_and_sizing",
+    "single_symbol_risk",
+    "same_direction_risk",
+    "total_open_risk",
+    "correlation_cluster_risk",
+    "projected_portfolio_beta",
+    "maximum_positions"
+  ],
+  "fallbackFieldCount": 0,
+  "formalPortfolioPolicyV2Hash": "s01_formal_capital_competition_v2_9e46061fb47a557c94ac840e7b5dc9b5ff0629844d70adb9748a7cf7428fa17f",
+  "issues": [],
+  "resultDataAccessed": false,
+  "resultExecutionAllowed": false,
+  "schemaVersion": "s01_v18_capital_policy_conformance_v1",
+  "status": "passed",
+  "unusedResultAffectingFieldCount": 0
+}

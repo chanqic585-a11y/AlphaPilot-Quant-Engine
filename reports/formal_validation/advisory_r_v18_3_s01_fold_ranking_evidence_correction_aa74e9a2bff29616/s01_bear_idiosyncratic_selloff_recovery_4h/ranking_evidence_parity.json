@@ -1,0 +1,10 @@
+{
+  "fieldParityPct": 100.0,
+  "hashParityPct": 100.0,
+  "postEntryDataUseCount": 0,
+  "recordCoveragePct": 100.0,
+  "rejectionReasonParityPct": 100.0,
+  "schemaVersion": "ranking_evidence_record_parity_v1",
+  "statusCoveragePct": 100.0,
+  "unmappedCount": 0
+}

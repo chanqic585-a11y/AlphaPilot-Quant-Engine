@@ -1,0 +1,444 @@
+{
+  "benchmarkCount": 10,
+  "benchmarks": [
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "same_event_fixed_12_bar_exit",
+      "benchmarkNetR": 94.21461488477317,
+      "benchmarkObservationCount": 442,
+      "benchmarkPF": 1.3910055066773994,
+      "candidateEventCount": 442,
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "candidateNetR": 52.54714176734539,
+      "candidatePF": 1.4474995722849795,
+      "diagnosticOnly": true,
+      "incrementalNetR": -41.66747311742778,
+      "method": "same signal/direction/cost/risk; next-open after 12 bars",
+      "variantId": "S01"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "btc_impulse_next_6_bar_direction",
+      "benchmarkNetR": -694.4505879577707,
+      "benchmarkObservationCount": 8125,
+      "benchmarkPF": 0.8130259225632709,
+      "candidateEventCount": 8125,
+      "candidateId": "s02_btc_lead_lag_continuation_1h",
+      "candidateNetR": -559.7397408614368,
+      "candidatePF": 0.8617110788756271,
+      "diagnosticOnly": true,
+      "incrementalNetR": 134.71084709633396,
+      "method": "same signal/direction/cost/risk; next-open after 6 bars",
+      "variantId": "S02"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "btc_impulse_contemporaneous_reversal",
+      "benchmarkNetR": -136.09230182091088,
+      "benchmarkObservationCount": 2202,
+      "benchmarkPF": 0.7134530944363768,
+      "candidateEventCount": 2202,
+      "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+      "candidateNetR": -144.41335841108614,
+      "candidatePF": 0.8412621544084298,
+      "diagnosticOnly": true,
+      "incrementalNetR": -8.32105659017526,
+      "method": "same signal/direction/cost/risk; next-open after 1 bars",
+      "variantId": "S03"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "pair_residual_zero_cross",
+      "benchmarkNetR": -1376.0479421115463,
+      "benchmarkObservationCount": 537,
+      "benchmarkPF": 0.3105400990276233,
+      "candidateEventCount": 537,
+      "candidateId": "s04_pair_residual_mean_reversion_1h",
+      "candidateNetR": -1869.4734853775415,
+      "candidatePF": 0.007804608662593329,
+      "diagnosticOnly": true,
+      "incrementalNetR": -493.4255432659952,
+      "method": "same two-leg signal, direction, cost, risk, capital competition; independent zero-cross exit",
+      "variantId": "S04"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "correlation_break_equal_hold",
+      "benchmarkNetR": -0.5162334451810868,
+      "benchmarkObservationCount": 2,
+      "benchmarkPF": 0.0,
+      "candidateEventCount": 2,
+      "candidateId": "s05_correlation_break_recovery_4h",
+      "candidateNetR": -0.13092324164934344,
+      "candidatePF": 0.0,
+      "diagnosticOnly": true,
+      "incrementalNetR": 0.3853102035317434,
+      "method": "same two-leg signal, direction, cost, risk, capital competition; independent equal-hold exit",
+      "variantId": "S05"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "correlation_break_next_6_bar_direction",
+      "benchmarkNetR": 0,
+      "benchmarkObservationCount": 0,
+      "benchmarkPF": 0.0,
+      "candidateEventCount": 2,
+      "candidateId": "s06_correlation_break_decoupling_4h",
+      "candidateNetR": -0.10009942785330272,
+      "candidatePF": 0.9004715867671252,
+      "diagnosticOnly": true,
+      "incrementalNetR": -0.10009942785330272,
+      "method": "same signal/direction/cost/risk; next-open after 6 bars",
+      "variantId": "S06"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "volatility_shock_fixed_6_bar",
+      "benchmarkNetR": -23.6836288569169,
+      "benchmarkObservationCount": 946,
+      "benchmarkPF": 0.9175071655439108,
+      "candidateEventCount": 946,
+      "candidateId": "s07_volatility_shock_asymmetry_4h",
+      "candidateNetR": -54.42745662904098,
+      "candidatePF": 0.849109865327481,
+      "diagnosticOnly": true,
+      "incrementalNetR": -30.74382777212408,
+      "method": "same signal/direction/cost/risk; next-open after 6 bars",
+      "variantId": "S07"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "same_hour_unconditional_direction",
+      "benchmarkNetR": -1753.8518297671028,
+      "benchmarkObservationCount": 16789,
+      "benchmarkPF": 0.8803280775369834,
+      "candidateEventCount": 16789,
+      "candidateId": "s08_utc_session_transition_1h",
+      "candidateNetR": -2521.3555293206687,
+      "candidatePF": 0.7491299568169946,
+      "diagnosticOnly": true,
+      "incrementalNetR": -767.5036995535659,
+      "method": "same signal/direction/cost/risk; next-open after 12 bars",
+      "variantId": "S08"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "equal_weight_representative_universe",
+      "benchmarkNetR": 25.8260295504381,
+      "benchmarkObservationCount": 312,
+      "benchmarkPF": 1.0335408076397337,
+      "candidateEventCount": 312,
+      "candidateId": "s09_beta_defensive_rotation_4h",
+      "candidateNetR": -8.470968278339686,
+      "candidatePF": 0.9653562286091625,
+      "diagnosticOnly": true,
+      "incrementalNetR": -34.29699782877779,
+      "method": "equal-weight representative universe over the same entry/exit window, risk, cost, and capital competition",
+      "variantId": "S09"
+    },
+    {
+      "addedAsHardGate": false,
+      "benchmarkName": "equal_weight_component_signals",
+      "benchmarkNetR": 2515.7715625260685,
+      "benchmarkObservationCount": 9381,
+      "benchmarkPF": 2.3833963945597985,
+      "candidateEventCount": 9381,
+      "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+      "candidateNetR": 224.78599069507922,
+      "candidatePF": 1.041822283425623,
+      "diagnosticOnly": true,
+      "incrementalNetR": -2290.985571830989,
+      "method": "equal-weight three frozen component signals at the same event time, exit window, risk, cost, and capital competition",
+      "variantId": "S10"
+    }
+  ],
+  "diagnosticOnly": true,
+  "hardGateChanges": 0,
+  "schemaVersion": "advisory_r_simple_benchmarks_v2",
+  "weakSignalCorrelationAudit": {
+    "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+    "instrumentAudits": [
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": -0.0004735386365810921,
+            "volume_surprise": 0.206872764065752
+          },
+          "trend_slope": {
+            "residual_turn": -0.0004735386365810921,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.029311035889841717
+          },
+          "volume_surprise": {
+            "residual_turn": 0.206872764065752,
+            "trend_slope": 0.029311035889841717,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "ADA-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 13542,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": 0.004409638271728676,
+            "volume_surprise": 0.20948748630842617
+          },
+          "trend_slope": {
+            "residual_turn": 0.004409638271728676,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.02223795049068509
+          },
+          "volume_surprise": {
+            "residual_turn": 0.20948748630842617,
+            "trend_slope": 0.02223795049068509,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "ALGO-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 13160,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": 0.006856896430346584,
+            "volume_surprise": 0.21206916870232956
+          },
+          "trend_slope": {
+            "residual_turn": 0.006856896430346584,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.017806001748105614
+          },
+          "volume_surprise": {
+            "residual_turn": 0.21206916870232956,
+            "trend_slope": 0.017806001748105614,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "AVAX-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 12361,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": 0.004250086454473634,
+            "volume_surprise": 0.19648794977920006
+          },
+          "trend_slope": {
+            "residual_turn": 0.004250086454473634,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.0316574697700912
+          },
+          "volume_surprise": {
+            "residual_turn": 0.19648794977920006,
+            "trend_slope": 0.0316574697700912,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "BCH-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 13958,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": -0.0007139260366482277,
+            "volume_surprise": -0.02824442394396149
+          },
+          "trend_slope": {
+            "residual_turn": -0.0007139260366482277,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.03587660771555313
+          },
+          "volume_surprise": {
+            "residual_turn": -0.02824442394396149,
+            "trend_slope": 0.03587660771555313,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "BTC-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 13958,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": 0.007670098732552875,
+            "volume_surprise": 0.20926356394558132
+          },
+          "trend_slope": {
+            "residual_turn": 0.007670098732552875,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.03318548039435505
+          },
+          "volume_surprise": {
+            "residual_turn": 0.20926356394558132,
+            "trend_slope": 0.03318548039435505,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "DOGE-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 12812,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": -0.0005153598402760129,
+            "volume_surprise": 0.1752831195867424
+          },
+          "trend_slope": {
+            "residual_turn": -0.0005153598402760129,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.021117641110250773
+          },
+          "volume_surprise": {
+            "residual_turn": 0.1752831195867424,
+            "trend_slope": 0.021117641110250773,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "ETH-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 13958,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": 0.010655624298926037,
+            "volume_surprise": 0.20773687545530542
+          },
+          "trend_slope": {
+            "residual_turn": 0.010655624298926037,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.02279081222449921
+          },
+          "volume_surprise": {
+            "residual_turn": 0.20773687545530542,
+            "trend_slope": 0.02279081222449921,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "FIL-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 12744,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": 0.005017313520860999,
+            "volume_surprise": 0.18864972422604306
+          },
+          "trend_slope": {
+            "residual_turn": 0.005017313520860999,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.013928525777539748
+          },
+          "volume_surprise": {
+            "residual_turn": 0.18864972422604306,
+            "trend_slope": 0.013928525777539748,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "LTC-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 13958,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      },
+      {
+        "componentNames": [
+          "residual_turn",
+          "volume_surprise",
+          "trend_slope"
+        ],
+        "correlationMatrix": {
+          "residual_turn": {
+            "residual_turn": 1.0,
+            "trend_slope": -0.0036872847060023246,
+            "volume_surprise": 0.17032729433459604
+          },
+          "trend_slope": {
+            "residual_turn": -0.0036872847060023246,
+            "trend_slope": 1.0,
+            "volume_surprise": 0.021501645879647466
+          },
+          "volume_surprise": {
+            "residual_turn": 0.17032729433459604,
+            "trend_slope": 0.021501645879647466,
+            "volume_surprise": 1.0
+          }
+        },
+        "instrumentId": "XRP-USDT-SWAP",
+        "orthogonalityClaimed": false,
+        "rowCount": 13958,
+        "schemaVersion": "advisory_r_weak_signal_correlation_v1"
+      }
+    ],
+    "orthogonalityClaimed": false
+  }
+}

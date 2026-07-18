@@ -1,0 +1,17 @@
+{
+  "blockers": [
+    "canonical_event_identity_mapping_incomplete"
+  ],
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "demoArm": false,
+  "formalEvidenceCount": 0,
+  "formalInputReadCount": 1,
+  "formalPass": false,
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultDrivenParameterChangeCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_v18_formal_route_v1"
+}

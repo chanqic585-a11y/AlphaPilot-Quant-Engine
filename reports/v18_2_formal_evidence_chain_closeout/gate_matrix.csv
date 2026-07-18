@@ -1,0 +1,15 @@
+gateId,status,actual,required,reason
+exact_freqtrade_runtime,passed,true,true,
+canonical_identity_mapping,passed,100%,100%,no collisions or unmapped engine events
+fold_assignment,failed,466 unassigned,0 unassigned,real events require explicit exclusion identity
+ranking_evidence,failed,417 unavailable,0 unavailable,assigned events require frozen ranking fields
+pit_context,passed,100%,100%,
+capacity_semantics_implementation,passed,true,true,availability is 9 of 20 and unavailable symbols are rejected
+funding_contract,passed,true,true,actual funding unavailable for 20 of 20 and no zero fill used
+capital_acceptance_parity,passed,100%,100%,
+position_size_parity,passed,100%,100%,
+exit_leg_parity,passed,100%,100%,
+frozen_contract_diff,passed,0 changes,0 changes,
+future_locked_oos,passed,0 reads,0 reads,
+one_shot_accounting,passed,1/1/1/1,1/1/1/1,claim attempt result read
+safety_boundary,passed,0 release 0 ARM 0 orders,0 release 0 ARM 0 orders,

@@ -1,0 +1,469 @@
+{
+  "candidates": [
+    {
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 25.153991538192138,
+          "operator": "<=",
+          "passed": true,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": 0.1188849361252158,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 442,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 54,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.5925925925925926,
+          "operator": ">=",
+          "passed": true,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 1.4474995722849795,
+          "operator": ">=",
+          "passed": true,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": 52.54714176734539,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        }
+      },
+      "passed": true
+    },
+    {
+      "candidateId": "s02_btc_lead_lag_continuation_1h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 608.2690206938089,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.06889104502909991,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 8125,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 77,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.38961038961038963,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.8617110788756271,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -559.7397408614368,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "passed": false
+    },
+    {
+      "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 223.0437102718565,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.06558281490058408,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 2202,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 77,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.36363636363636365,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.8412621544084298,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -144.41335841108614,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "passed": false
+    },
+    {
+      "candidateId": "s04_pair_residual_mean_reversion_1h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 1874.3282566015712,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -3.481328650609947,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 537,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 75,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.0,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.007804608662593329,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -1869.4734853775415,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "passed": false
+    },
+    {
+      "candidateId": "s05_correlation_break_recovery_4h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 0.13092324164934344,
+          "operator": "<=",
+          "passed": true,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.06546162082467172,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 2,
+          "operator": ">=",
+          "passed": false,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 2,
+          "operator": ">=",
+          "passed": false,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.0,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.0,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -0.13092324164934344,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "passed": false
+    },
+    {
+      "candidateId": "s06_correlation_break_decoupling_4h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 1.00573720209014,
+          "operator": "<=",
+          "passed": true,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.05004971392665136,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 2,
+          "operator": ">=",
+          "passed": false,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 2,
+          "operator": ">=",
+          "passed": false,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.5,
+          "operator": ">=",
+          "passed": true,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.9004715867671252,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -0.10009942785330272,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "passed": false
+    },
+    {
+      "candidateId": "s07_volatility_shock_asymmetry_4h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 82.19751999245612,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.057534309333024294,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 946,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 74,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.4189189189189189,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.849109865327481,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -54.42745662904098,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "passed": false
+    },
+    {
+      "candidateId": "s08_utc_session_transition_1h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 2525.8611317006157,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.150179017768817,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 16789,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 77,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.14285714285714285,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.7491299568169946,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -2521.3555293206687,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "passed": false
+    },
+    {
+      "candidateId": "s09_beta_defensive_rotation_4h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 36.26502010092641,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumHistoryMonths": {
+          "observed": 68,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumNetReturn": {
+          "observed": -8.470968278339686,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.39705882352941174,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        }
+      },
+      "passed": false
+    },
+    {
+      "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 253.0935285006292,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": 0.02396183676527867,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 9381,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 77,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.5064935064935064,
+          "operator": ">=",
+          "passed": true,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 1.041822283425623,
+          "operator": ">=",
+          "passed": true,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": 224.78599069507922,
+          "operator": ">",
+          "passed": true,
+          "required": 0.0
+        }
+      },
+      "passed": false
+    }
+  ],
+  "gateChanges": 0,
+  "minimumTargetR": null,
+  "targetRGateMode": "advisory"
+}

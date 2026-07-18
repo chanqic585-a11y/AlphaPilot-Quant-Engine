@@ -1,0 +1,32 @@
+{
+  "familyWiseTrialIds": [
+    "auto-trend_pullback_continuation-4h-long-v1",
+    "auto-trend_pullback_continuation-4h-short-v2",
+    "auto-volatility_compression_release-4h-long-v1",
+    "auto-volatility_compression_release-4h-short-v2",
+    "auto-btc_shock_lag-1h-long-v1",
+    "auto-btc_shock_lag-1h-short-v2",
+    "auto-volatility_shock_asymmetry-1h-long-v1",
+    "auto-volatility_shock_asymmetry-1h-short-v2",
+    "auto-cross_session_liquidity_transition-1h-long-v1",
+    "auto-cross_session_liquidity_transition-1h-short-v2",
+    "auto-residual_extreme_causal_recovery-4h-long-v1",
+    "auto-residual_extreme_causal_recovery-4h-short-v2",
+    "auto-trend_failure_reversal-4h-long-v1",
+    "auto-trend_failure_reversal-4h-short-v2",
+    "auto-breadth_correlation_directional_filter-4h-long-v1",
+    "auto-breadth_correlation_directional_filter-4h-short-v2"
+  ],
+  "methods": [
+    "benjamini_hochberg",
+    "benjamini_yekutieli",
+    "deflated_sharpe_ratio",
+    "probability_of_backtest_overfitting",
+    "white_reality_check",
+    "superior_predictive_ability"
+  ],
+  "postResultCandidateAdditionAllowed": false,
+  "schemaVersion": "automatic_statistical_policy_v1",
+  "statisticsHash": "automatic_statistics_policy_e29b8980155b5b2f8d57a1d0b15d111552b32a9184cf9cc8e4a39dcb9c944795",
+  "unavailableMethodPolicy": "record_unavailable_with_reason"
+}

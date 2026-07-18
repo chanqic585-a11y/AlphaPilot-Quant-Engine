@@ -1,0 +1,10 @@
+{
+  "classification": "different_frozen_input_windows_and_preclaim_structural_scope",
+  "delta": 40,
+  "formalRawEventCount": 884,
+  "resultImpact": "none",
+  "s01ConclusionChanged": false,
+  "s01RerunPerformed": false,
+  "schemaVersion": "v18_3_structural_formal_event_delta_audit_v1",
+  "structuralCertificationRawEventCount": 924
+}

@@ -1,0 +1,21 @@
+{
+  "ccxtVersion": "4.5.61",
+  "credentialRequired": false,
+  "dependencyLockSha256": "c7bb852ffe0b35f41d99a43f8fac2a98fff2e07be25de7fb01175344a5ba77c3",
+  "dockerServerVersion": "29.6.1",
+  "freqtradeVersion": "2026.6",
+  "imageDigest": "sha256:87aa5c6d65359b34e9d99a0bb260a38c0efe0315253811e6f48c2afe8f278a6a",
+  "imageReference": "freqtradeorg/freqtrade@sha256:87aa5c6d65359b34e9d99a0bb260a38c0efe0315253811e6f48c2afe8f278a6a",
+  "lockedOosRequired": false,
+  "manifestHash": "freqtrade_runtime_manifest_3168af7af47bf57178fa1bf0f20b55d09afe2d573a25366016cf8403bed029ad",
+  "networkRequired": false,
+  "pythonVersion": "3.14.6",
+  "randomSeeds": [
+    13,
+    27,
+    111
+  ],
+  "schemaVersion": "freqtrade_runtime_manifest_v1",
+  "status": "pinned",
+  "timezone": "UTC"
+}

@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "s01_v18_3_v18_2_failure_taxonomy_reference_v1",
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "source": "reports/formal_validation/advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0/s01_bear_idiosyncratic_selloff_recovery_4h/v18_2_failure_taxonomy_clarification_sidecar.json",
+  "clarifiedBlockers": [
+    "formal_event_disposition_incomplete",
+    "frozen_ranking_evidence_record_incomplete"
+  ],
+  "canonicalEventIdentityWasCompleteForAdmittedEvents": true,
+  "originalArtifactsMutated": false,
+  "correctionCampaignVersion": "V13.27.1.18.3"
+}

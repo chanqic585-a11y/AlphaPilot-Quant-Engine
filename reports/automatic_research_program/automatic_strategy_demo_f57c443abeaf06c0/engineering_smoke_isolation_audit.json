@@ -1,0 +1,9 @@
+{
+  "engineeringSmokeLedger": "isolated_demo_engineering_smoke_store",
+  "engineeringSmokeRunCount": 0,
+  "isolated": true,
+  "promotionEvidenceContributionCount": 0,
+  "schemaVersion": "automatic_v24_engineering_smoke_isolation_v1",
+  "strategyEvidenceContributionCount": 0,
+  "strategyValidationLedger": "strategy_validation_release_store"
+}

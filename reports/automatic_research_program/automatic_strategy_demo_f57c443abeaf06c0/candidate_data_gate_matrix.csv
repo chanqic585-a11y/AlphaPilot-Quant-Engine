@@ -1,0 +1,17 @@
+﻿candidateId,dataGate,dataProfileId,implementationGate,noveltyGate,prefilterEligible
+auto-trend_pullback_continuation-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-trend_pullback_continuation-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-volatility_compression_release-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-volatility_compression_release-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-btc_shock_lag-1h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-btc_shock_lag-1h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-volatility_shock_asymmetry-1h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-volatility_shock_asymmetry-1h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-cross_session_liquidity_transition-1h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-cross_session_liquidity_transition-1h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-residual_extreme_causal_recovery-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-residual_extreme_causal_recovery-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-trend_failure_reversal-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-trend_failure_reversal-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-breadth_correlation_directional_filter-4h-long-v1,passed,ohlcv_core_directional_v1,passed,passed,True
+auto-breadth_correlation_directional_filter-4h-short-v2,passed,ohlcv_core_directional_v1,passed,passed,True

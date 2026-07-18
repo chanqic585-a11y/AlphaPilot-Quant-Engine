@@ -1,0 +1,25 @@
+{
+  "accessAudit": {
+    "allowedReadCount": 1,
+    "contractHash": "4b053b874fc7365c372adcb3b3bab08a0ee17e9977c80ece9fde7a077b370440",
+    "eventCount": 1,
+    "hashChainValid": true,
+    "lastEventHash": "8394b9a8a4431989cdc8a981fa918cbcf19ee40b1ed01dbbd0002339c155e7f0",
+    "schemaVersion": "alphapilot_freqtrade_io_access_audit_v1",
+    "status": "passed",
+    "unauthorizedAttemptCount": 0
+  },
+  "contractHash": "4b053b874fc7365c372adcb3b3bab08a0ee17e9977c80ece9fde7a077b370440",
+  "demoArm": false,
+  "fixtureOnly": true,
+  "formalResultCount": 0,
+  "lockedOosAccessCount": 0,
+  "lockedOosMounted": false,
+  "networkMode": "none",
+  "orderCount": 0,
+  "releaseCount": 0,
+  "repositoryReadOnly": true,
+  "runtimeImage": "freqtradeorg/freqtrade@sha256:87aa5c6d65359b34e9d99a0bb260a38c0efe0315253811e6f48c2afe8f278a6a",
+  "schemaVersion": "alphapilot_freqtrade_io_guard_readiness_v1",
+  "status": "passed"
+}

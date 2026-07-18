@@ -1,0 +1,128 @@
+{
+  "base_volume": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "unavailable_without_verified_semantics",
+    "unit": "base_currency"
+  },
+  "basis": {
+    "availableAtRule": "unavailable_without_frozen_publication_timestamp",
+    "causal": true,
+    "status": "unavailable",
+    "unit": "decimal_return"
+  },
+  "btc_returns": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "derived_from_btc_close",
+    "unit": "decimal_return"
+  },
+  "close": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "source_reported",
+    "unit": "quote_currency_per_base_currency"
+  },
+  "contract_volume": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "unavailable_without_verified_semantics",
+    "unit": "contracts"
+  },
+  "funding_rate": {
+    "availableAtRule": "source_timestamp_plus_publication_delay",
+    "causal": true,
+    "status": "public_source_reported",
+    "unit": "decimal_rate"
+  },
+  "high": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "source_reported",
+    "unit": "quote_currency_per_base_currency"
+  },
+  "instrument_state": {
+    "availableAtRule": "effective_timestamp_of_frozen_snapshot",
+    "causal": true,
+    "status": "diagnostic_proxy",
+    "unit": "state"
+  },
+  "liquidation": {
+    "availableAtRule": "unavailable_without_frozen_publication_timestamp",
+    "causal": true,
+    "status": "unavailable",
+    "unit": "unavailable"
+  },
+  "low": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "source_reported",
+    "unit": "quote_currency_per_base_currency"
+  },
+  "open": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "source_reported",
+    "unit": "quote_currency_per_base_currency"
+  },
+  "open_interest": {
+    "availableAtRule": "unavailable_without_frozen_publication_timestamp",
+    "causal": true,
+    "status": "unavailable",
+    "unit": "unavailable"
+  },
+  "orderbook": {
+    "availableAtRule": "unavailable_without_frozen_publication_timestamp",
+    "causal": true,
+    "status": "unavailable",
+    "unit": "unavailable"
+  },
+  "perpetual_price": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "ready_proxy",
+    "unit": "quote_currency_per_base_currency"
+  },
+  "pit_universe": {
+    "availableAtRule": "effective_timestamp_of_frozen_snapshot",
+    "causal": true,
+    "status": "diagnostic_proxy",
+    "unit": "membership"
+  },
+  "quote_turnover": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "unavailable_without_verified_semantics",
+    "unit": "quote_currency"
+  },
+  "quote_volume": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "unavailable_without_verified_semantics",
+    "unit": "quote_currency"
+  },
+  "reported_volume": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "ready_proxy_semantics_unverified",
+    "unit": "source_reported_unknown"
+  },
+  "residual_beta_inputs": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "derived_from_synchronized_closes",
+    "unit": "decimal_return"
+  },
+  "spot_price": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "available_not_selected",
+    "unit": "quote_currency_per_base_currency"
+  },
+  "vwap": {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "status": "unavailable_without_verified_turnover",
+    "unit": "quote_currency_per_base_currency"
+  }
+}

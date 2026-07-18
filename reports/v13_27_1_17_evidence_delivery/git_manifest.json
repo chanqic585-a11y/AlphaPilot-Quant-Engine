@@ -1,0 +1,49 @@
+{
+  "console": {
+    "branch": "main",
+    "clean": false,
+    "commit": "1f4b8651b66d46087cf42e1cca4764f818f30f69",
+    "gitStatusShort": "?? backups/",
+    "mergedToOriginMain": true,
+    "originMain": "1f4b8651b66d46087cf42e1cca4764f818f30f69",
+    "path": "D:\\Codex-Workspace\\AlphaPilot-Control-Console",
+    "pushed": true,
+    "status": "available",
+    "tagsAtHead": [
+      "v13.27.1.10"
+    ]
+  },
+  "docs": {
+    "branch": "main",
+    "clean": true,
+    "commit": "9021c27c397cdb294d297ec8c05bf1459a16afc0",
+    "gitStatusShort": "",
+    "mergedToOriginMain": false,
+    "originMain": "cda2320d2d388d55e142adc34b3c104dfad9ea11",
+    "path": "D:\\Codex-Workspace\\AlphaPilot-Docs",
+    "pushed": false,
+    "status": "available",
+    "tagsAtHead": [
+      "v13.27.1.12-docs"
+    ]
+  },
+  "phase0Commit": "2a6d759",
+  "phase1Commit": "244b0f8",
+  "phase2Commit": "96a5fbce2907439b3e22a1ecd55ec3b9d07e7f47",
+  "preExistingChanges": [],
+  "quant": {
+    "branch": "feature/advisory-r-workflow-v13.27.1.14-18",
+    "clean": true,
+    "commit": "02305adbfe684300674db7103f5a6f098dfad3d0",
+    "gitStatusShort": "",
+    "mergedToOriginMain": false,
+    "originMain": "be0081cf3f0abf222d40874040170effa5770324",
+    "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\advisory-r-workflow-v13.27.1.14-18",
+    "pushed": false,
+    "status": "available",
+    "tagsAtHead": []
+  },
+  "resultsAfterCommit": null,
+  "resultsBeforeCommit": null,
+  "schemaVersion": "v17_git_manifest_v1"
+}

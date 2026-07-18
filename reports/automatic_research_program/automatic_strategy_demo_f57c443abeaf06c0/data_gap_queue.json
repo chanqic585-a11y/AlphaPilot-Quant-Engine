@@ -1,0 +1,65 @@
+{
+  "gaps": [
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "base_volume",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "basis",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "contract_volume",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "liquidation",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "open_interest",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "orderbook",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "quote_turnover",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "quote_volume",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "spot_price",
+      "status": "unavailable"
+    },
+    {
+      "action": "future_forward_collection_or_verified_public_source",
+      "blocksCoreDirectionalProfile": false,
+      "field": "vwap",
+      "status": "unavailable"
+    }
+  ],
+  "schemaVersion": "data_gap_queue_v1"
+}

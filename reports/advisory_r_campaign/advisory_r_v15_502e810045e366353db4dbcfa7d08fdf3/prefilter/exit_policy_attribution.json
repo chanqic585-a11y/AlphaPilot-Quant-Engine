@@ -1,0 +1,225 @@
+{
+  "candidates": [
+    {
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "diagnostics": {
+        "averageLossR": -0.4311333660870932,
+        "averageMaeR": -0.4949552957882554,
+        "averageMfeR": 0.5428231042856889,
+        "averageProfitGivebackR": 0.5161917114222562,
+        "averageRealizedGrossR": 0.026631392863432732,
+        "averageRealizedNetR": -0.027283648987379595,
+        "averageWinR": 0.4180290780815038,
+        "breakEvenWinRate": 0.5077160077530393,
+        "partialExitRatio": 0.1748046875,
+        "payoffRatio": 0.969605024717706,
+        "stopRatio": 0.154296875,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.78515625,
+        "timeExitRatio": 0.060546875,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_aa415db5c0527ec941e87a41eb3779413b2dce6cb6577f00356823fb5be56ba3",
+      "exitPolicyMode": "hybrid"
+    },
+    {
+      "candidateId": "s02_btc_lead_lag_continuation_1h",
+      "diagnostics": {
+        "averageLossR": -0.7627417711086948,
+        "averageMaeR": -0.8843594924183734,
+        "averageMfeR": 1.388855418440706,
+        "averageProfitGivebackR": 1.99653513322268,
+        "averageRealizedGrossR": -0.6076797147819742,
+        "averageRealizedNetR": -0.7326288091679717,
+        "averageWinR": 1.2661190396475241,
+        "breakEvenWinRate": 0.37594583475856946,
+        "partialExitRatio": 0.5591836734693878,
+        "payoffRatio": 1.6599576522564612,
+        "stopRatio": 0.4204081632653061,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.0,
+        "timeExitRatio": 0.02894248608534323,
+        "trailingExitRatio": 0.5506493506493506
+      },
+      "exitPolicyHash": "exit_policy_be7abc5c2ba80c4a153513cf73cccd901f13b09e1cd95a3f4e39d088b5b8e6d6",
+      "exitPolicyMode": "partial_then_trailing"
+    },
+    {
+      "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+      "diagnostics": {
+        "averageLossR": -0.7790539285344504,
+        "averageMaeR": -0.8363554238789013,
+        "averageMfeR": 0.8808677784477829,
+        "averageProfitGivebackR": 0.888023921273682,
+        "averageRealizedGrossR": -0.007156142825899188,
+        "averageRealizedNetR": -0.09892195260421877,
+        "averageWinR": 0.8451965584579626,
+        "breakEvenWinRate": 0.47963903029329336,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 1.0849012212131952,
+        "stopRatio": 0.34574868322046654,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.48118886380737397,
+        "timeExitRatio": 0.17306245297215953,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_68c41d73aaebc99d614cb65d5ebcc34dc9f693cc9ba02b86284f9ca5f0f7333d",
+      "exitPolicyMode": "structure_or_time"
+    },
+    {
+      "candidateId": "s04_pair_residual_mean_reversion_1h",
+      "diagnostics": {
+        "averageLossR": -0.7477659721086489,
+        "averageMaeR": -0.7652702513322676,
+        "averageMfeR": 0.9662291540327196,
+        "averageProfitGivebackR": 1.0686152904077484,
+        "averageRealizedGrossR": -0.10238613637502883,
+        "averageRealizedNetR": -0.18608405412002121,
+        "averageWinR": 0.7760562683604986,
+        "breakEvenWinRate": 0.4907173240091509,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 1.037833088569239,
+        "stopRatio": 0.3430034129692833,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.5034129692832765,
+        "timeExitRatio": 0.15358361774744028,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_933142f80308979beef57a8b5e9e41b8b015d5acc79b0d140e70c8c4689e3fff",
+      "exitPolicyMode": "structure_or_time"
+    },
+    {
+      "candidateId": "s05_correlation_break_recovery_4h",
+      "diagnostics": {
+        "averageLossR": -0.39941354893220654,
+        "averageMaeR": -0.620310627329999,
+        "averageMfeR": 0.3806982124828046,
+        "averageProfitGivebackR": 0.5820270236239495,
+        "averageRealizedGrossR": -0.2013288111411449,
+        "averageRealizedNetR": -0.22332700020331497,
+        "averageWinR": 0.24623712974039588,
+        "breakEvenWinRate": 0.6186217441192249,
+        "partialExitRatio": 0.2727272727272727,
+        "payoffRatio": 0.6164966872022419,
+        "stopRatio": 0.2727272727272727,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.45454545454545453,
+        "timeExitRatio": 0.2727272727272727,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_b5e45f1e506c0a123984d25bca0bab6f7cb9892056096afd73789227ca105f22",
+      "exitPolicyMode": "hybrid"
+    },
+    {
+      "candidateId": "s06_correlation_break_decoupling_4h",
+      "diagnostics": {
+        "averageLossR": -0.6474684612044698,
+        "averageMaeR": -1.0519079605960917,
+        "averageMfeR": 0.93004569386366,
+        "averageProfitGivebackR": 1.55004569386366,
+        "averageRealizedGrossR": -0.62,
+        "averageRealizedNetR": -0.6474684612044698,
+        "averageWinR": 0.0,
+        "breakEvenWinRate": 1.0,
+        "partialExitRatio": 0.6666666666666666,
+        "payoffRatio": 0.0,
+        "stopRatio": 0.3333333333333333,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.0,
+        "timeExitRatio": 0.0,
+        "trailingExitRatio": 0.6666666666666666
+      },
+      "exitPolicyHash": "exit_policy_6ec878a8cba8e29f82a7210202007cb539390ddcb146c91bcccd1fe009e2996c",
+      "exitPolicyMode": "partial_then_trailing"
+    },
+    {
+      "candidateId": "s07_volatility_shock_asymmetry_4h",
+      "diagnostics": {
+        "averageLossR": -0.603929649668946,
+        "averageMaeR": -0.7529651819699734,
+        "averageMfeR": 0.9593605663112914,
+        "averageProfitGivebackR": 1.387623399806342,
+        "averageRealizedGrossR": -0.4282628334950506,
+        "averageRealizedNetR": -0.4563109116036688,
+        "averageWinR": 0.5375993418472035,
+        "breakEvenWinRate": 0.5290532734230623,
+        "partialExitRatio": 0.4695077149155033,
+        "payoffRatio": 0.8901688170830782,
+        "stopRatio": 0.34166054371785454,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.0,
+        "timeExitRatio": 0.2446730345334313,
+        "trailingExitRatio": 0.4136664217487142
+      },
+      "exitPolicyHash": "exit_policy_4816d1dde152a188c7ec58e2e0bd100a04845c349684af701105588f305d7401",
+      "exitPolicyMode": "partial_then_trailing"
+    },
+    {
+      "candidateId": "s08_utc_session_transition_1h",
+      "diagnostics": {
+        "averageLossR": -1.105390034283014,
+        "averageMaeR": -0.9315834544207695,
+        "averageMfeR": 1.1123094741368034,
+        "averageProfitGivebackR": 1.0802273309943733,
+        "averageRealizedGrossR": 0.03208214314243001,
+        "averageRealizedNetR": -0.13450660786015203,
+        "averageWinR": 0.9877527428444918,
+        "breakEvenWinRate": 0.5281006371672267,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 0.8935784765647674,
+        "stopRatio": 0.4931823656950132,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.0,
+        "timeExitRatio": 0.07092266923632859,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_23aa1ea819f6ffa5d4c59933b5f92152299d901657014b0cdda6ad6b04183aee",
+      "exitPolicyMode": "fixed_r"
+    },
+    {
+      "candidateId": "s09_beta_defensive_rotation_4h",
+      "diagnostics": {
+        "averageLossR": -0.406255979113802,
+        "averageMaeR": -0.4401218180556063,
+        "averageMfeR": 0.43344656888523847,
+        "averageProfitGivebackR": 0.44190805045217785,
+        "averageRealizedGrossR": -0.008461481566939377,
+        "averageRealizedNetR": -0.07094306573661022,
+        "averageWinR": 0.4190660190259472,
+        "breakEvenWinRate": 0.4922393684277055,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 1.0315319418561881,
+        "stopRatio": 0.10691613765452723,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.8718120057912908,
+        "timeExitRatio": 0.02127185655418198,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_22378d4be22c861b2b0a075295e070058943f39ab509c8188a4a2532e22b9607",
+      "exitPolicyMode": "structure_or_time"
+    },
+    {
+      "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+      "diagnostics": {
+        "averageLossR": -0.763948084906344,
+        "averageMaeR": -0.8002609589186978,
+        "averageMfeR": 1.2224329109647807,
+        "averageProfitGivebackR": 1.163841303900592,
+        "averageRealizedGrossR": 0.05859160706418878,
+        "averageRealizedNetR": -0.004553483766649495,
+        "averageWinR": 1.4056183799069644,
+        "breakEvenWinRate": 0.3521201573200395,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 1.8399396604015124,
+        "stopRatio": 0.39316531396838955,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.39256727894062365,
+        "timeExitRatio": 0.21426740709098677,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_5120f20692a4377a7c5a925044e3e829afcce9b46dc50d8afd7b43881a0402e8",
+      "exitPolicyMode": "structure_or_time"
+    }
+  ],
+  "postResultPolicyChanges": 0
+}

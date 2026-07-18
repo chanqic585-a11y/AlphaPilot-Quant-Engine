@@ -1,0 +1,333 @@
+{
+  "benchmarkHash": "s01_formal_benchmark_f8e4ea5eac162386bd0b08dad2f648fd2b68bb5eba1533329f278bac45e5fdb1",
+  "benchmarkPolicy": {
+    "benchmarkHash": "s01_formal_benchmark_f8e4ea5eac162386bd0b08dad2f648fd2b68bb5eba1533329f278bac45e5fdb1",
+    "benchmarkMayChangeAfterResults": false,
+    "diagnosticBenchmarks": [
+      "no_trade",
+      "btc_contextual_return"
+    ],
+    "mainGateBenchmark": "same_event_fixed_12_bar_exit",
+    "schemaVersion": "s01_formal_benchmark_policy_v1"
+  },
+  "campaignId": "advisory_r_v17",
+  "candidateCount": 1,
+  "capitalCompetitionPolicy": {
+    "capacityRequirement": "capacityPassed_true",
+    "capitalCompetitionPolicyHash": "s01_formal_capital_competition_4caa9056ade48231babf791b34f8ab3567bf753fcb3d80d191abe06336d3ba84",
+    "duplicateSymbolPolicy": "reject_while_open",
+    "initial_capital": 10000.0,
+    "maximum_concurrent_positions": 6,
+    "maximum_correlation_cluster_risk": 0.02,
+    "maximum_open_risk": 0.06,
+    "maximum_portfolio_beta": 1.5,
+    "maximum_same_direction_risk": 0.04,
+    "maximum_single_symbol_risk": 0.01,
+    "rankingPolicy": [
+      "residual_z_more_extreme_first",
+      "recovery_confirmation_stronger_first",
+      "liquidity_higher_first",
+      "symbol_id_ascending_tiebreak"
+    ],
+    "resultDrivenRiskReductionAllowed": false,
+    "risk_per_trade": 0.01,
+    "schemaVersion": "s01_formal_capital_competition_v1",
+    "source": "existing_alphapilot_standard_capital_competition_policy"
+  },
+  "capitalCompetitionPolicyHash": "s01_formal_capital_competition_4caa9056ade48231babf791b34f8ab3567bf753fcb3d80d191abe06336d3ba84",
+  "coreUniverse": {
+    "fixedCohortLimitation": true,
+    "instrumentCount": 20,
+    "instrumentIds": [
+      "AAVE-USDT-SWAP",
+      "ADA-USDT-SWAP",
+      "ALGO-USDT-SWAP",
+      "ATOM-USDT-SWAP",
+      "AVAX-USDT-SWAP",
+      "BCH-USDT-SWAP",
+      "BTC-USDT-SWAP",
+      "COMP-USDT-SWAP",
+      "DOGE-USDT-SWAP",
+      "ETC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "FIL-USDT-SWAP",
+      "LINK-USDT-SWAP",
+      "LTC-USDT-SWAP",
+      "NEO-USDT-SWAP",
+      "SOL-USDT-SWAP",
+      "TRX-USDT-SWAP",
+      "XRP-USDT-SWAP",
+      "XTZ-USDT-SWAP",
+      "YFI-USDT-SWAP"
+    ],
+    "selection": "frozen_v16_fixed_core"
+  },
+  "coreUniverseHash": "minimal_fixed_core_universe_c96658fbc82fbf43f396dab7857e8803ad73a7fc0eb45607b4b75ffcb53cee34",
+  "costChanges": 0,
+  "costModel": {
+    "baseComponentsBpsPerSide": {
+      "fee": 5.0,
+      "slippage": 2.5,
+      "spreadProxy": 2.5
+    },
+    "baseRoundTripCostRate": 0.002,
+    "conservativeFundingStress": {
+      "applyByObservedSettlementCount": true,
+      "evidenceStatusWhenInsufficient": "partial_or_proxy",
+      "method": "adverse_quantile_from_available_same_exchange_history",
+      "quantile": 0.9
+    },
+    "costModelHash": "s01_formal_cost_model_cb68c2cf24c1ea1afabec0ab881c3230e1f64d2b54dd3989ef610b26357da192",
+    "gapPolicy": "execute_at_observed_gap_open_when_stop_or_exit_is_crossed",
+    "historicalFundingMissingValue": null,
+    "missingFundingMayBeFilledWithZero": false,
+    "partialExitLegsChargedSeparately": true,
+    "scenarios": [
+      {
+        "multiplier": 1.0,
+        "scenarioId": "base"
+      },
+      {
+        "multiplier": 1.5,
+        "scenarioId": "cost_1_5x"
+      },
+      {
+        "multiplier": 2.0,
+        "scenarioId": "cost_2_0x"
+      }
+    ],
+    "schemaVersion": "s01_formal_cost_model_v1",
+    "source": "v16_round_trip_cost_model"
+  },
+  "costModelHash": "s01_formal_cost_model_cb68c2cf24c1ea1afabec0ab881c3230e1f64d2b54dd3989ef610b26357da192",
+  "dataSnapshotHash": "minimal_shared_snapshot_785e47b180c17327dcb35e37d9f12c22e86eae8150e0adf5e1b44fb298f89e3b",
+  "dataSnapshotId": "minimal_snapshot_785e47b180c17327dcb35e37",
+  "embargoBars": 24,
+  "exitPolicyChanges": 0,
+  "exitPolicyHash": "exit_policy_aa415db5c0527ec941e87a41eb3779413b2dce6cb6577f00356823fb5be56ba3",
+  "frozenAt": "2026-07-17T00:00:00Z",
+  "gates": {
+    "economic": {
+      "averageNetRMinimumExclusive": 0.0,
+      "benchmarkPositiveIncrementFoldMinimum": 3,
+      "benchmarkTotalIncrementalNetRMinimumExclusive": 0.0,
+      "completeFoldCount": 5,
+      "conservativeFundingAverageNetRMinimumExclusive": 0.0,
+      "cost1_5xAverageNetRMinimumExclusive": 0.0,
+      "cost1_5xProfitFactorMinimum": 1.0,
+      "cost1_5xTotalNetRMinimumExclusive": 0.0,
+      "maximumDrawdownPercent": 25.0,
+      "positiveFoldMinimum": 3,
+      "profitFactorMinimum": 1.05,
+      "totalNetRMinimumExclusive": 0.0
+    },
+    "riskAndEvidence": {
+      "exitLegParity": 1.0,
+      "maximumSingleMonthPositiveContribution": 0.35,
+      "maximumSingleSymbolPositiveContribution": 0.35,
+      "requiresCleanLockedOosForAdmission": true,
+      "requiresNoLeakage": true,
+      "requiresZeroHoldoutAccess": true,
+      "translationParity": 1.0
+    },
+    "statistics": {
+      "campaignBhQMaximum": 0.1,
+      "deflatedSharpeRatioMinimum": 0.9,
+      "neweyWestAlphaMinimumExclusive": 0.0,
+      "neweyWestOneSidedPMaximum": 0.05,
+      "pboMaximum": 0.4,
+      "spaPMaximum": 0.1
+    }
+  },
+  "implementationConformanceHash": "advisory_r_implementation_conformance_bundle_da045062e6a280f0103b2870aa2bfd3b8b28d1008d8d89d09c959ee930a7653e",
+  "lockedOosPolicy": {
+    "accessCount": 0,
+    "admissionRequiresCleanHoldout": true,
+    "cleanLockedOosAvailable": false,
+    "contentRead": false,
+    "formalWalkForwardMayRunWithoutCleanHoldout": true,
+    "releaseAllowedWithoutCleanHoldout": false
+  },
+  "parameterChanges": 0,
+  "preregistrationHash": "s01_formal_walk_forward_preregistration_05e26d4f8da2a3d47f22a91464e179f19096889bdc9e3839892ee8eca0e34b6b",
+  "purgeBars": 24,
+  "riskConfig": {
+    "addingToLossAllowed": false,
+    "capitalCompetitionPolicyHash": "s01_formal_capital_competition_4caa9056ade48231babf791b34f8ab3567bf753fcb3d80d191abe06336d3ba84",
+    "initialStopMayWiden": false,
+    "martingaleAllowed": false
+  },
+  "riskConfigHash": "s01_formal_risk_config_faad5d62220e2b6f6a46f8a5308fc85d709ec77c8177875c6352e2f4201ac296",
+  "safetyBoundary": {
+    "demoArm": false,
+    "formalEvidenceCount": 0,
+    "lockedOosAccessCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0
+  },
+  "schemaVersion": "s01_formal_walk_forward_preregistration_v1",
+  "sourceCampaignId": "advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02",
+  "sourceCandidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "sourcePreregistrationHash": "advisory_r_correction_preregistration_f145806af31b6774c3e3ffa2168b38d712c889b56f6190337ce23e8677f2cbae",
+  "splitPolicy": {
+    "barHours": 4,
+    "commonCutoffExclusive": "2026-05-15T04:00:00Z",
+    "commonStart": "2021-01-22T04:00:00Z",
+    "embargoBars": 24,
+    "eventMayCrossFoldBoundary": false,
+    "foldCount": 5,
+    "folds": [
+      {
+        "embargoEndExclusive": 4701,
+        "embargoEndExclusiveTimestamp": "2023-03-16T16:00:00Z",
+        "embargoStart": 4677,
+        "embargoStartTimestamp": "2023-03-12T16:00:00Z",
+        "foldId": "fold_001",
+        "purgeEndExclusive": 4677,
+        "purgeEndExclusiveTimestamp": "2023-03-12T16:00:00Z",
+        "purgeStart": 4653,
+        "purgeStartTimestamp": "2023-03-08T16:00:00Z",
+        "testEndExclusive": 6087,
+        "testEndExclusiveTimestamp": "2023-11-02T16:00:00Z",
+        "testSize": 1386,
+        "testStart": 4701,
+        "testStartTimestamp": "2023-03-16T16:00:00Z",
+        "trainEndExclusive": 4653,
+        "trainEndExclusiveTimestamp": "2023-03-08T16:00:00Z",
+        "trainSize": 4653,
+        "trainStart": 0,
+        "trainStartTimestamp": "2021-01-22T04:00:00Z"
+      },
+      {
+        "embargoEndExclusive": 6087,
+        "embargoEndExclusiveTimestamp": "2023-11-02T16:00:00Z",
+        "embargoStart": 6063,
+        "embargoStartTimestamp": "2023-10-29T16:00:00Z",
+        "foldId": "fold_002",
+        "purgeEndExclusive": 6063,
+        "purgeEndExclusiveTimestamp": "2023-10-29T16:00:00Z",
+        "purgeStart": 6039,
+        "purgeStartTimestamp": "2023-10-25T16:00:00Z",
+        "testEndExclusive": 7473,
+        "testEndExclusiveTimestamp": "2024-06-20T16:00:00Z",
+        "testSize": 1386,
+        "testStart": 6087,
+        "testStartTimestamp": "2023-11-02T16:00:00Z",
+        "trainEndExclusive": 6039,
+        "trainEndExclusiveTimestamp": "2023-10-25T16:00:00Z",
+        "trainSize": 6039,
+        "trainStart": 0,
+        "trainStartTimestamp": "2021-01-22T04:00:00Z"
+      },
+      {
+        "embargoEndExclusive": 7473,
+        "embargoEndExclusiveTimestamp": "2024-06-20T16:00:00Z",
+        "embargoStart": 7449,
+        "embargoStartTimestamp": "2024-06-16T16:00:00Z",
+        "foldId": "fold_003",
+        "purgeEndExclusive": 7449,
+        "purgeEndExclusiveTimestamp": "2024-06-16T16:00:00Z",
+        "purgeStart": 7425,
+        "purgeStartTimestamp": "2024-06-12T16:00:00Z",
+        "testEndExclusive": 8859,
+        "testEndExclusiveTimestamp": "2025-02-06T16:00:00Z",
+        "testSize": 1386,
+        "testStart": 7473,
+        "testStartTimestamp": "2024-06-20T16:00:00Z",
+        "trainEndExclusive": 7425,
+        "trainEndExclusiveTimestamp": "2024-06-12T16:00:00Z",
+        "trainSize": 7425,
+        "trainStart": 0,
+        "trainStartTimestamp": "2021-01-22T04:00:00Z"
+      },
+      {
+        "embargoEndExclusive": 8859,
+        "embargoEndExclusiveTimestamp": "2025-02-06T16:00:00Z",
+        "embargoStart": 8835,
+        "embargoStartTimestamp": "2025-02-02T16:00:00Z",
+        "foldId": "fold_004",
+        "purgeEndExclusive": 8835,
+        "purgeEndExclusiveTimestamp": "2025-02-02T16:00:00Z",
+        "purgeStart": 8811,
+        "purgeStartTimestamp": "2025-01-29T16:00:00Z",
+        "testEndExclusive": 10245,
+        "testEndExclusiveTimestamp": "2025-09-25T16:00:00Z",
+        "testSize": 1386,
+        "testStart": 8859,
+        "testStartTimestamp": "2025-02-06T16:00:00Z",
+        "trainEndExclusive": 8811,
+        "trainEndExclusiveTimestamp": "2025-01-29T16:00:00Z",
+        "trainSize": 8811,
+        "trainStart": 0,
+        "trainStartTimestamp": "2021-01-22T04:00:00Z"
+      },
+      {
+        "embargoEndExclusive": 10245,
+        "embargoEndExclusiveTimestamp": "2025-09-25T16:00:00Z",
+        "embargoStart": 10221,
+        "embargoStartTimestamp": "2025-09-21T16:00:00Z",
+        "foldId": "fold_005",
+        "purgeEndExclusive": 10221,
+        "purgeEndExclusiveTimestamp": "2025-09-21T16:00:00Z",
+        "purgeStart": 10197,
+        "purgeStartTimestamp": "2025-09-17T16:00:00Z",
+        "testEndExclusive": 11631,
+        "testEndExclusiveTimestamp": "2026-05-14T16:00:00Z",
+        "testSize": 1386,
+        "testStart": 10245,
+        "testStartTimestamp": "2025-09-25T16:00:00Z",
+        "trainEndExclusive": 10197,
+        "trainEndExclusiveTimestamp": "2025-09-17T16:00:00Z",
+        "trainSize": 10197,
+        "trainStart": 0,
+        "trainStartTimestamp": "2021-01-22T04:00:00Z"
+      }
+    ],
+    "maximumHoldBars": 24,
+    "minimumTrainBars": 4653,
+    "minimumTrainFraction": 0.4,
+    "mode": "expanding",
+    "ordering": "chronological_utc",
+    "purgeBars": 24,
+    "sampleCount": 11634,
+    "schemaVersion": "s01_purged_walk_forward_split_v1",
+    "splitPolicyHash": "s01_formal_split_policy_329d65aeeac0294ab61932f05c2eec159f762c613066aeb5a67aae05928dcc04",
+    "testBarsPerFold": 1386,
+    "timeframe": "4h",
+    "unusedTailBars": 3
+  },
+  "splitPolicyHash": "s01_formal_split_policy_329d65aeeac0294ab61932f05c2eec159f762c613066aeb5a67aae05928dcc04",
+  "statisticalPolicy": {
+    "benjaminiHochberg": {
+      "campaignFamilySize": 10,
+      "maximumQ": 0.1
+    },
+    "dailyReturnPanel": true,
+    "deflatedSharpeRatio": {
+      "actualTrials": 10,
+      "minimum": 0.9
+    },
+    "neweyWest": {
+      "alpha": 0.05,
+      "maximumLagDays": 5,
+      "oneSided": true
+    },
+    "probabilityOfBacktestOverfittingMaximum": 0.4,
+    "spaPValueMaximum": 0.1
+  },
+  "stoppingRules": {
+    "economicGateFailure": "archive_s01_current_version",
+    "economicPassStatisticalFailure": "weak_or_selection_sensitive_edge",
+    "postResultParameterChangeAllowed": false,
+    "sameFormalWindowRerunAllowed": false,
+    "walkForwardPassNoCleanHoldout": "walk_forward_research_pass_no_clean_holdout"
+  },
+  "strategyDefinitionHash": "advisory_r_strategy_062a7c3c3bd7b9f8f741c9506a40efabd3225bd57645f093eda0f86901ac2c37",
+  "trialLineagePolicy": {
+    "formalCandidateCount": 1,
+    "parameterSearchAllowed": false,
+    "selectionBiasFamilySize": 10,
+    "sourceVariantId": "S01"
+  },
+  "universeChanges": 0
+}

@@ -1,0 +1,2 @@
+schemaVersion,status,exactReason,admissionBlocked,value
+v17_s01_gate_matrix_not_run_v1,not_run,implementation_invalid_requires_new_campaign,True,

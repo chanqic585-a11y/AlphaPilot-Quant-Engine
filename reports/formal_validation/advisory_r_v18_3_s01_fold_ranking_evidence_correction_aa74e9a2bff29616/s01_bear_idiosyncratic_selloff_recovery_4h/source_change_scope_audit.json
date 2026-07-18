@@ -1,0 +1,16 @@
+{
+  "allowedScope": [
+    "formal_runtime_binding",
+    "canonical_event_identity",
+    "fold_assignment",
+    "ranking_evidence",
+    "pit_portfolio_context",
+    "capacity_semantics",
+    "funding_registry"
+  ],
+  "candidateSpecificCoreImportCount": 0,
+  "exitPolicyChangeCount": 0,
+  "schemaVersion": "source_change_scope_audit_v1",
+  "status": "passed",
+  "strategyParameterChangeCount": 0
+}

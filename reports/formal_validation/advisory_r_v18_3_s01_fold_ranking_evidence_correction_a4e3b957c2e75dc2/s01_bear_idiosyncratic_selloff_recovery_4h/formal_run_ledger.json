@@ -1,0 +1,19 @@
+{
+  "attemptCount": 1,
+  "checkpoint": {
+    "checkpointId": "before_formal_input_read",
+    "deterministic": true
+  },
+  "claimedAt": "2026-07-17T22:07:48.966775Z",
+  "failedAt": "2026-07-17T22:07:50.480323Z",
+  "failureReason": "RuntimeError",
+  "identity": {
+    "codeCommit": "c2a0786177a4a28d7e73a408728ac3b62f44b682",
+    "inputSnapshotHash": "minimal_shared_snapshot_785e47b180c17327dcb35e37d9f12c22e86eae8150e0adf5e1b44fb298f89e3b",
+    "preregistrationHash": "s01_v18_3_fold_ranking_evidence_correction_preregistration_3ae02544b5d4a476f49cf72b6a934ec222e6cfcfde4b68e54e268086f9b7bd85"
+  },
+  "resumed": false,
+  "runId": "s01_bear_idiosyncratic_selloff_recovery_4h-v18-3-formal-001",
+  "schemaVersion": "s01_v18_atomic_run_ledger_v1",
+  "state": "failed"
+}

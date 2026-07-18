@@ -1,0 +1,12 @@
+{
+  "blockers": [
+    "canonical_event_identity_mapping_incomplete"
+  ],
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "implementationOrEvidenceFailure": true,
+  "primaryBlocker": "canonical_event_identity_mapping_incomplete",
+  "resultDrivenRepairAllowed": false,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_v18_formal_failure_attribution_v1",
+  "strategyPerformanceFailure": false
+}

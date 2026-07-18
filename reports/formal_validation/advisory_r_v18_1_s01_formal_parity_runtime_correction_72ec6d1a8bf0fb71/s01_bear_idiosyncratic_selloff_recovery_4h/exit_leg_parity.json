@@ -1,0 +1,10 @@
+{
+  "blockers": [
+    "numeric_mismatch",
+    "freqtrade_runtime_not_loaded"
+  ],
+  "exitLegParityPct": 0.0,
+  "passed": false,
+  "schemaVersion": "s01_v18_exit_leg_parity_v1",
+  "status": "failed"
+}

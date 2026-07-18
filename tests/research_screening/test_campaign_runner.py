@@ -78,6 +78,45 @@ def test_event_contract_contains_required_identity_and_evidence_fields() -> None
     assert event["dataHash"] == "data_hash"
 
 
+def test_event_contract_records_advisory_exit_policy_identity() -> None:
+    event = build_event_contract(
+        raw_event={
+            "signalTimestamp": "2021-04-01T00:00:00+00:00",
+            "entryTimestamp": "2021-04-01T01:00:00+00:00",
+            "exitTimestamp": "2021-04-01T04:00:00+00:00",
+            "grossR": 1.25,
+            "feesR": 0.1,
+            "slippageR": 0.1,
+            "fundingR": 0.0,
+            "spreadProxyR": 0.1,
+            "netR": 0.95,
+        },
+        candidate={
+            "candidateId": "candidate_advisory",
+            "familyId": "family_a",
+            "marketMechanismId": "mechanism_a",
+            "direction": "long",
+            "timeframe": "1h",
+            "maximumHoldBars": 24,
+            "factorConfirmations": [],
+            "factorRanking": [],
+            "factorVetoes": [],
+            "definitionHash": "candidate_definition_hash",
+            "schemaVersion": "phase3c_candidate_v2",
+            "exitPolicyVersion": "advisory_r_exit_policy_v1",
+            "exitPolicyHash": "exit_policy_hash",
+        },
+        symbol="BTC-USDT-SWAP",
+        data_hash="data_hash",
+        split="walk_forward",
+        fold_id="fold_002",
+    )
+
+    assert event["targetReference"] == "advisory_exit_policy"
+    assert event["exitPolicyVersion"] == "advisory_r_exit_policy_v1"
+    assert event["exitPolicyHash"] == "exit_policy_hash"
+
+
 def test_benjamini_hochberg_is_monotonic_and_bounded() -> None:
     adjusted = benjamini_hochberg([0.01, 0.04, 0.03, 0.8])
 

@@ -1,0 +1,32 @@
+{
+  "baselineArtifacts": [
+    {
+      "path": "reports/formal_validation/advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616/s01_bear_idiosyncratic_selloff_recovery_4h/artifact_manifest.json",
+      "sha256": "b9e7b0e33ffe0ce45597031f0ce146ade3f1be3ab06cbde63b48343418a6a3c8",
+      "sizeBytes": 11798
+    },
+    {
+      "path": "reports/formal_validation/advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616/s01_bear_idiosyncratic_selloff_recovery_4h/formal_evidence_chain_certification.json",
+      "sha256": "924d8942dfcfc9765d25791db647cbab0bb0b39a7c67555ceb2a624a407b434c",
+      "sizeBytes": 1126
+    },
+    {
+      "path": "reports/v18_3_fold_ranking_evidence_closeout/artifact_manifest.json",
+      "sha256": "3ab6d33839301a4dfbb24ee2318fd4e5663d013a437da359d6abbf01f4c15b45",
+      "sizeBytes": 1373
+    },
+    {
+      "path": "reports/v18_3_fold_ranking_evidence_closeout/patch_audit.json",
+      "sha256": "521db1027792d2c0a5391f1d707fdff597ac24422d2b99ec09d9ed0b17f6258d",
+      "sizeBytes": 2668
+    }
+  ],
+  "candidateNeutralCore": [
+    "alphapilot.formal_validation.candidate_adapter",
+    "alphapilot.formal_validation.generic_formal_runner",
+    "alphapilot.formal_validation.policy_objects",
+    "alphapilot.evolution.promotion.strategy_validation_release"
+  ],
+  "reuseRule": "do_not_modify_v18_3_artifacts_or_s01_conclusion",
+  "schemaVersion": "v18_3_reusable_core_manifest_v1"
+}

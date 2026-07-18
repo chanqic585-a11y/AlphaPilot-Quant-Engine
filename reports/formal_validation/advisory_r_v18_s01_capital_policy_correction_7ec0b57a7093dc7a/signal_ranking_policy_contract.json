@@ -1,0 +1,27 @@
+{
+  "batchDefinition": "same_expected_entry_timestamp",
+  "definitionHash": "s01_signal_ranking_policy_v1_4ad51e23bd84f934b8cb54ed39978de087690850f4d0cd55bf96759876a96314",
+  "duplicateInstrumentPolicy": "reject_duplicate_rows",
+  "fields": [
+    {
+      "name": "eventExtremeResidualZ",
+      "order": "ascending"
+    },
+    {
+      "name": "recoverySizeZ",
+      "order": "descending"
+    },
+    {
+      "name": "liquidity30d",
+      "order": "descending"
+    },
+    {
+      "name": "instrumentId",
+      "order": "ascending"
+    }
+  ],
+  "missingDataPolicy": "reject_if_any_of_first_three_fields_missing_or_nonfinite",
+  "mixedTimestampPolicy": "reject_entire_batch",
+  "schemaVersion": "s01_signal_ranking_policy_v1",
+  "tiePolicy": "instrument_id_is_final_tiebreak_and_must_be_unique"
+}

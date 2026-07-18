@@ -1,0 +1,1000 @@
+{
+  "results": [
+    {
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "complexityScore": 4,
+      "diagnosticOnly": false,
+      "eventCount": 1024,
+      "exitDiagnostics": {
+        "averageLossR": -0.4311333660870932,
+        "averageMaeR": -0.4949552957882554,
+        "averageMfeR": 0.5428231042856889,
+        "averageProfitGivebackR": 0.5161917114222562,
+        "averageRealizedGrossR": 0.026631392863432732,
+        "averageRealizedNetR": -0.027283648987379595,
+        "averageWinR": 0.4180290780815038,
+        "breakEvenWinRate": 0.5077160077530393,
+        "partialExitRatio": 0.1748046875,
+        "payoffRatio": 0.969605024717706,
+        "stopRatio": 0.154296875,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.78515625,
+        "timeExitRatio": 0.060546875,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_aa415db5c0527ec941e87a41eb3779413b2dce6cb6577f00356823fb5be56ba3",
+      "exitPolicyMode": "hybrid",
+      "failedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "idiosyncratic_selloff_recovery",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 41.95752544167832,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.027283648987379595,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 1024,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 58,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.39655172413793105,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.8793252272579568,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -27.938456563076706,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 0.4195752544167832,
+      "metrics": {
+        "averageNetR": -0.027283648987379595,
+        "eventCount": 1024,
+        "folds": {},
+        "maximumDrawdownPct": 41.95752544167832,
+        "maximumDrawdownR": 41.95752544167832,
+        "observedMonthCount": 58,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.39655172413793105,
+        "profitFactor": 0.8793252272579568,
+        "singleInstrumentPositiveContribution": 0.12759789783008404,
+        "singleMonthPositiveContribution": 0.08805548091214868,
+        "totalNetR": -27.938456563076706
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -27.938456563076706,
+      "strategyType": "event",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 1024.0,
+      "variantId": "S01"
+    },
+    {
+      "candidateId": "s02_btc_lead_lag_continuation_1h",
+      "complexityScore": 4,
+      "diagnosticOnly": false,
+      "eventCount": 2695,
+      "exitDiagnostics": {
+        "averageLossR": -0.7627417711086948,
+        "averageMaeR": -0.8843594924183734,
+        "averageMfeR": 1.388855418440706,
+        "averageProfitGivebackR": 1.99653513322268,
+        "averageRealizedGrossR": -0.6076797147819742,
+        "averageRealizedNetR": -0.7326288091679717,
+        "averageWinR": 1.2661190396475241,
+        "breakEvenWinRate": 0.37594583475856946,
+        "partialExitRatio": 0.5591836734693878,
+        "payoffRatio": 1.6599576522564612,
+        "stopRatio": 0.4204081632653061,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.0,
+        "timeExitRatio": 0.02894248608534323,
+        "trailingExitRatio": 0.5506493506493506
+      },
+      "exitPolicyHash": "exit_policy_be7abc5c2ba80c4a153513cf73cccd901f13b09e1cd95a3f4e39d088b5b8e6d6",
+      "exitPolicyMode": "partial_then_trailing",
+      "failedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "btc_lead_lag",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 1974.434640707683,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.7326288091679717,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 2695,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 77,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.0,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.02500877818842126,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -1974.4346407076837,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 19.74434640707683,
+      "metrics": {
+        "averageNetR": -0.7326288091679717,
+        "eventCount": 2695,
+        "folds": {},
+        "maximumDrawdownPct": 1974.434640707683,
+        "maximumDrawdownR": 1974.434640707683,
+        "observedMonthCount": 77,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.0,
+        "profitFactor": 0.02500877818842126,
+        "singleInstrumentPositiveContribution": 0.21360330169725839,
+        "singleMonthPositiveContribution": 0.11883425429649049,
+        "totalNetR": -1974.4346407076837
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -1974.4346407076837,
+      "strategyType": "event",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 2695.0,
+      "variantId": "S02"
+    },
+    {
+      "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+      "complexityScore": 4,
+      "diagnosticOnly": false,
+      "eventCount": 2658,
+      "exitDiagnostics": {
+        "averageLossR": -0.7790539285344504,
+        "averageMaeR": -0.8363554238789013,
+        "averageMfeR": 0.8808677784477829,
+        "averageProfitGivebackR": 0.888023921273682,
+        "averageRealizedGrossR": -0.007156142825899188,
+        "averageRealizedNetR": -0.09892195260421877,
+        "averageWinR": 0.8451965584579626,
+        "breakEvenWinRate": 0.47963903029329336,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 1.0849012212131952,
+        "stopRatio": 0.34574868322046654,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.48118886380737397,
+        "timeExitRatio": 0.17306245297215953,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_68c41d73aaebc99d614cb65d5ebcc34dc9f693cc9ba02b86284f9ca5f0f7333d",
+      "exitPolicyMode": "structure_or_time",
+      "failedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "btc_lead_lag",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 300.59628250283805,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.09892195260421877,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 2658,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 77,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.37662337662337664,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.7815502001361077,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -262.93455002201347,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 3.0059628250283805,
+      "metrics": {
+        "averageNetR": -0.09892195260421877,
+        "eventCount": 2658,
+        "folds": {},
+        "maximumDrawdownPct": 300.59628250283805,
+        "maximumDrawdownR": 300.59628250283805,
+        "observedMonthCount": 77,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.37662337662337664,
+        "profitFactor": 0.7815502001361077,
+        "singleInstrumentPositiveContribution": 0.1536282046112318,
+        "singleMonthPositiveContribution": 0.04354216798747293,
+        "totalNetR": -262.93455002201347
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -262.93455002201347,
+      "strategyType": "event",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 2658.0,
+      "variantId": "S03"
+    },
+    {
+      "candidateId": "s04_pair_residual_mean_reversion_1h",
+      "complexityScore": 5,
+      "diagnosticOnly": false,
+      "eventCount": 586,
+      "exitDiagnostics": {
+        "averageLossR": -0.7477659721086489,
+        "averageMaeR": -0.7652702513322676,
+        "averageMfeR": 0.9662291540327196,
+        "averageProfitGivebackR": 1.0686152904077484,
+        "averageRealizedGrossR": -0.10238613637502883,
+        "averageRealizedNetR": -0.18608405412002121,
+        "averageWinR": 0.7760562683604986,
+        "breakEvenWinRate": 0.4907173240091509,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 1.037833088569239,
+        "stopRatio": 0.3430034129692833,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.5034129692832765,
+        "timeExitRatio": 0.15358361774744028,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_933142f80308979beef57a8b5e9e41b8b015d5acc79b0d140e70c8c4689e3fff",
+      "exitPolicyMode": "structure_or_time",
+      "failedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "pair_residual_mean_reversion",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 109.82642143229427,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.18608405412002121,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 586,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 76,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.2236842105263158,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.6058701273809611,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -109.04525571433243,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 1.0982642143229426,
+      "metrics": {
+        "averageNetR": -0.18608405412002121,
+        "eventCount": 586,
+        "folds": {},
+        "maximumDrawdownPct": 109.82642143229427,
+        "maximumDrawdownR": 109.82642143229427,
+        "observedMonthCount": 76,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.2236842105263158,
+        "profitFactor": 0.6058701273809611,
+        "singleInstrumentPositiveContribution": 0.2552178951517544,
+        "singleMonthPositiveContribution": 0.13257963048379034,
+        "totalNetR": -109.04525571433243
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -109.04525571433243,
+      "strategyType": "event",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 586.0,
+      "variantId": "S04"
+    },
+    {
+      "candidateId": "s05_correlation_break_recovery_4h",
+      "complexityScore": 5,
+      "diagnosticOnly": false,
+      "eventCount": 11,
+      "exitDiagnostics": {
+        "averageLossR": -0.39941354893220654,
+        "averageMaeR": -0.620310627329999,
+        "averageMfeR": 0.3806982124828046,
+        "averageProfitGivebackR": 0.5820270236239495,
+        "averageRealizedGrossR": -0.2013288111411449,
+        "averageRealizedNetR": -0.22332700020331497,
+        "averageWinR": 0.24623712974039588,
+        "breakEvenWinRate": 0.6186217441192249,
+        "partialExitRatio": 0.2727272727272727,
+        "payoffRatio": 0.6164966872022419,
+        "stopRatio": 0.2727272727272727,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.45454545454545453,
+        "timeExitRatio": 0.2727272727272727,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_b5e45f1e506c0a123984d25bca0bab6f7cb9892056096afd73789227ca105f22",
+      "exitPolicyMode": "hybrid",
+      "failedGates": [
+        "minimumAverageRealizedNetR",
+        "minimumEvents",
+        "minimumHistoryMonths",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "correlation_break",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 2.550215434772684,
+          "operator": "<=",
+          "passed": true,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.22332700020331497,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 11,
+          "operator": ">=",
+          "passed": false,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 7,
+          "operator": ">=",
+          "passed": false,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.0,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.2311862577008407,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -2.4565970022364647,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 0.025502154347726843,
+      "metrics": {
+        "averageNetR": -0.22332700020331497,
+        "eventCount": 11,
+        "folds": {},
+        "maximumDrawdownPct": 2.550215434772684,
+        "maximumDrawdownR": 2.550215434772684,
+        "observedMonthCount": 7,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.0,
+        "profitFactor": 0.2311862577008407,
+        "singleInstrumentPositiveContribution": 1.0,
+        "singleMonthPositiveContribution": 0.46392313433834187,
+        "totalNetR": -2.4565970022364647
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -2.4565970022364647,
+      "strategyType": "event",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 11.0,
+      "variantId": "S05"
+    },
+    {
+      "candidateId": "s06_correlation_break_decoupling_4h",
+      "complexityScore": 5,
+      "diagnosticOnly": false,
+      "eventCount": 3,
+      "exitDiagnostics": {
+        "averageLossR": -0.6474684612044698,
+        "averageMaeR": -1.0519079605960917,
+        "averageMfeR": 0.93004569386366,
+        "averageProfitGivebackR": 1.55004569386366,
+        "averageRealizedGrossR": -0.62,
+        "averageRealizedNetR": -0.6474684612044698,
+        "averageWinR": 0.0,
+        "breakEvenWinRate": 1.0,
+        "partialExitRatio": 0.6666666666666666,
+        "payoffRatio": 0.0,
+        "stopRatio": 0.3333333333333333,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.0,
+        "timeExitRatio": 0.0,
+        "trailingExitRatio": 0.6666666666666666
+      },
+      "exitPolicyHash": "exit_policy_6ec878a8cba8e29f82a7210202007cb539390ddcb146c91bcccd1fe009e2996c",
+      "exitPolicyMode": "partial_then_trailing",
+      "failedGates": [
+        "minimumAverageRealizedNetR",
+        "minimumEvents",
+        "minimumHistoryMonths",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "correlation_break",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 1.9424053836134092,
+          "operator": "<=",
+          "passed": true,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.6474684612044698,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 3,
+          "operator": ">=",
+          "passed": false,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 3,
+          "operator": ">=",
+          "passed": false,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.0,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.0,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -1.9424053836134092,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 0.019424053836134093,
+      "metrics": {
+        "averageNetR": -0.6474684612044698,
+        "eventCount": 3,
+        "folds": {},
+        "maximumDrawdownPct": 1.9424053836134092,
+        "maximumDrawdownR": 1.9424053836134092,
+        "observedMonthCount": 3,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.0,
+        "profitFactor": 0.0,
+        "singleInstrumentPositiveContribution": 0.0,
+        "singleMonthPositiveContribution": 0.0,
+        "totalNetR": -1.9424053836134092
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -1.9424053836134092,
+      "strategyType": "event",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 3.0,
+      "variantId": "S06"
+    },
+    {
+      "candidateId": "s07_volatility_shock_asymmetry_4h",
+      "complexityScore": 3,
+      "diagnosticOnly": false,
+      "eventCount": 1361,
+      "exitDiagnostics": {
+        "averageLossR": -0.603929649668946,
+        "averageMaeR": -0.7529651819699734,
+        "averageMfeR": 0.9593605663112914,
+        "averageProfitGivebackR": 1.387623399806342,
+        "averageRealizedGrossR": -0.4282628334950506,
+        "averageRealizedNetR": -0.4563109116036688,
+        "averageWinR": 0.5375993418472035,
+        "breakEvenWinRate": 0.5290532734230623,
+        "partialExitRatio": 0.4695077149155033,
+        "payoffRatio": 0.8901688170830782,
+        "stopRatio": 0.34166054371785454,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.0,
+        "timeExitRatio": 0.2446730345334313,
+        "trailingExitRatio": 0.4136664217487142
+      },
+      "exitPolicyHash": "exit_policy_4816d1dde152a188c7ec58e2e0bd100a04845c349684af701105588f305d7401",
+      "exitPolicyMode": "partial_then_trailing",
+      "failedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "volatility_shock_asymmetry",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 621.0391506925927,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.4563109116036688,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 1361,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 74,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.02702702702702703,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.13221072726297192,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -621.0391506925932,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 6.210391506925927,
+      "metrics": {
+        "averageNetR": -0.4563109116036688,
+        "eventCount": 1361,
+        "folds": {},
+        "maximumDrawdownPct": 621.0391506925927,
+        "maximumDrawdownR": 621.0391506925927,
+        "observedMonthCount": 74,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.02702702702702703,
+        "profitFactor": 0.13221072726297192,
+        "singleInstrumentPositiveContribution": 0.16829853015502727,
+        "singleMonthPositiveContribution": 0.10451987037690662,
+        "totalNetR": -621.0391506925932
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -621.0391506925932,
+      "strategyType": "event",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 1361.0,
+      "variantId": "S07"
+    },
+    {
+      "candidateId": "s08_utc_session_transition_1h",
+      "complexityScore": 2,
+      "diagnosticOnly": false,
+      "eventCount": 20755,
+      "exitDiagnostics": {
+        "averageLossR": -1.105390034283014,
+        "averageMaeR": -0.9315834544207695,
+        "averageMfeR": 1.1123094741368034,
+        "averageProfitGivebackR": 1.0802273309943733,
+        "averageRealizedGrossR": 0.03208214314243001,
+        "averageRealizedNetR": -0.13450660786015203,
+        "averageWinR": 0.9877527428444918,
+        "breakEvenWinRate": 0.5281006371672267,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 0.8935784765647674,
+        "stopRatio": 0.4931823656950132,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.0,
+        "timeExitRatio": 0.07092266923632859,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_23aa1ea819f6ffa5d4c59933b5f92152299d901657014b0cdda6ad6b04183aee",
+      "exitPolicyMode": "fixed_r",
+      "failedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "utc_session_transition",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 2794.5296309461587,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.13450660786015203,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 20755,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 77,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.16883116883116883,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.7730481662373307,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -2791.6846461374557,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 27.945296309461586,
+      "metrics": {
+        "averageNetR": -0.13450660786015203,
+        "eventCount": 20755,
+        "folds": {},
+        "maximumDrawdownPct": 2794.5296309461587,
+        "maximumDrawdownR": 2794.5296309461587,
+        "observedMonthCount": 77,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.16883116883116883,
+        "profitFactor": 0.7730481662373307,
+        "singleInstrumentPositiveContribution": 0.11094556270850894,
+        "singleMonthPositiveContribution": 0.01809572752682607,
+        "totalNetR": -2791.6846461374557
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -2791.6846461374557,
+      "strategyType": "event",
+      "targetRAdvisory": 1.2,
+      "targetRGateMode": "advisory",
+      "turnover": 20755.0,
+      "variantId": "S08"
+    },
+    {
+      "candidateId": "s09_beta_defensive_rotation_4h",
+      "complexityScore": 4,
+      "diagnosticOnly": false,
+      "eventCount": 8979,
+      "exitDiagnostics": {
+        "averageLossR": -0.406255979113802,
+        "averageMaeR": -0.4401218180556063,
+        "averageMfeR": 0.43344656888523847,
+        "averageProfitGivebackR": 0.44190805045217785,
+        "averageRealizedGrossR": -0.008461481566939377,
+        "averageRealizedNetR": -0.07094306573661022,
+        "averageWinR": 0.4190660190259472,
+        "breakEvenWinRate": 0.4922393684277055,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 1.0315319418561881,
+        "stopRatio": 0.10691613765452723,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.8718120057912908,
+        "timeExitRatio": 0.02127185655418198,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_22378d4be22c861b2b0a075295e070058943f39ab509c8188a4a2532e22b9607",
+      "exitPolicyMode": "structure_or_time",
+      "failedGates": [
+        "maximumDrawdownPct",
+        "minimumNetReturn",
+        "minimumPositiveMonthRatio"
+      ],
+      "familyId": "beta_defensive_rotation",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 699.3068373771821,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumHistoryMonths": {
+          "observed": 75,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumNetReturn": {
+          "observed": -636.9977872490232,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.28,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        }
+      },
+      "maximumDrawdown": 6.993068373771821,
+      "metrics": {
+        "averageNetR": -0.07094306573661022,
+        "eventCount": 8979,
+        "folds": {},
+        "maximumDrawdownPct": 699.3068373771821,
+        "maximumDrawdownR": 699.3068373771821,
+        "observedMonthCount": 75,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.28,
+        "profitFactor": 0.7058766692724393,
+        "singleInstrumentPositiveContribution": 0.13714541782497192,
+        "singleMonthPositiveContribution": 0.04125338994588865,
+        "totalNetR": -636.9977872490232
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -636.9977872490232,
+      "strategyType": "portfolio",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 8979.0,
+      "variantId": "S09"
+    },
+    {
+      "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+      "complexityScore": 6,
+      "diagnosticOnly": true,
+      "eventCount": 11705,
+      "exitDiagnostics": {
+        "averageLossR": -0.763948084906344,
+        "averageMaeR": -0.8002609589186978,
+        "averageMfeR": 1.2224329109647807,
+        "averageProfitGivebackR": 1.163841303900592,
+        "averageRealizedGrossR": 0.05859160706418878,
+        "averageRealizedNetR": -0.004553483766649495,
+        "averageWinR": 1.4056183799069644,
+        "breakEvenWinRate": 0.3521201573200395,
+        "partialExitRatio": 0.0,
+        "payoffRatio": 1.8399396604015124,
+        "stopRatio": 0.39316531396838955,
+        "stopThenRecoverCount": 0,
+        "structureExitRatio": 0.39256727894062365,
+        "timeExitRatio": 0.21426740709098677,
+        "trailingExitRatio": 0.0
+      },
+      "exitPolicyHash": "exit_policy_5120f20692a4377a7c5a925044e3e829afcce9b46dc50d8afd7b43881a0402e8",
+      "exitPolicyMode": "structure_or_time",
+      "failedGates": [
+        "maximumDrawdownPct",
+        "minimumAverageRealizedNetR",
+        "minimumPositiveMonthRatio",
+        "minimumProfitFactor",
+        "minimumTotalRealizedNetR"
+      ],
+      "familyId": "orthogonal_weak_signal_matrix",
+      "gates": {
+        "maximumDrawdownPct": {
+          "observed": 461.35263597920743,
+          "operator": "<=",
+          "passed": false,
+          "required": 35.0
+        },
+        "minimumAverageRealizedNetR": {
+          "observed": -0.004553483766649495,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        },
+        "minimumEvents": {
+          "observed": 11705,
+          "operator": ">=",
+          "passed": true,
+          "required": 30
+        },
+        "minimumHistoryMonths": {
+          "observed": 77,
+          "operator": ">=",
+          "passed": true,
+          "required": 24
+        },
+        "minimumPositiveMonthRatio": {
+          "observed": 0.4935064935064935,
+          "operator": ">=",
+          "passed": false,
+          "required": 0.5
+        },
+        "minimumProfitFactor": {
+          "observed": 0.990829756659437,
+          "operator": ">=",
+          "passed": false,
+          "required": 1.03
+        },
+        "minimumTotalRealizedNetR": {
+          "observed": -53.298527488632345,
+          "operator": ">",
+          "passed": false,
+          "required": 0.0
+        }
+      },
+      "maximumDrawdown": 4.613526359792075,
+      "metrics": {
+        "averageNetR": -0.004553483766649495,
+        "eventCount": 11705,
+        "folds": {},
+        "maximumDrawdownPct": 461.35263597920743,
+        "maximumDrawdownR": 461.35263597920743,
+        "observedMonthCount": 77,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.4935064935064935,
+        "profitFactor": 0.990829756659437,
+        "singleInstrumentPositiveContribution": 0.11002028517287968,
+        "singleMonthPositiveContribution": 0.02791332916055781,
+        "totalNetR": -53.298527488632345
+      },
+      "passed": false,
+      "simpleBenchmarkIncrement": -53.298527488632345,
+      "strategyType": "event",
+      "targetRAdvisory": null,
+      "targetRGateMode": "advisory",
+      "turnover": 11705.0,
+      "variantId": "S10"
+    }
+  ],
+  "route": {
+    "archivedCandidateIds": [
+      "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "s02_btc_lead_lag_continuation_1h",
+      "s03_btc_lead_lag_overreaction_reversion_1h",
+      "s04_pair_residual_mean_reversion_1h",
+      "s05_correlation_break_recovery_4h",
+      "s06_correlation_break_decoupling_4h",
+      "s07_volatility_shock_asymmetry_4h",
+      "s08_utc_session_transition_1h",
+      "s09_beta_defensive_rotation_4h"
+    ],
+    "demoArm": false,
+    "demoReleaseCount": 0,
+    "diagnosticCandidateIds": [
+      "s10_orthogonal_weak_signal_matrix_4h"
+    ],
+    "formalCandidateIds": [],
+    "formalStageAllowed": false,
+    "hardStopReason": "zero_prefilter_survivors",
+    "maximumPerFamily": 1,
+    "maximumSurvivors": 6,
+    "orderCount": 0
+  }
+}

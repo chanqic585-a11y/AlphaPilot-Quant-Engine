@@ -30,6 +30,7 @@ def write_json_atomic(
     temporary.write_text(
         json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True),
         encoding="utf-8",
+        newline="\n",
     )
     for attempt in range(replace_attempts):
         try:

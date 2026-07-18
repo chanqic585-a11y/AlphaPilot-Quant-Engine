@@ -1,0 +1,17 @@
+{
+  "campaignId": "advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "closeoutCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+  "failureLedgerCommit": "369119cee4704d5b9bbb7c14b674ae03e4a0a359",
+  "formalResultArtifactCount": 0,
+  "formalResultRunCount": 0,
+  "formalRunAttemptCount": 1,
+  "formalRunClaimCount": 1,
+  "freezeCommit": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01",
+  "implementationCommit": "597e34aa583224a3801dba38fef06e8f8a1734ee",
+  "preregistrationCommit": "aa2df4b5e8fc4e9c447edd3c5fef0a03de26ec01",
+  "preregistrationHash": "s01_v18_formal_walk_forward_preregistration_6377381087af8b947c307ab13fcb9c2575d76f2725da1dbdc23137c955626625",
+  "resultReadCount": 0,
+  "schemaVersion": "s01_v18_1_predecessor_identity_v1",
+  "tag": "v13.27.1.18"
+}

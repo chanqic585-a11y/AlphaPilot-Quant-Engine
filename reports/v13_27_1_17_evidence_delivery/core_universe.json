@@ -1,0 +1,27 @@
+{
+  "fixedCohortLimitation": true,
+  "instrumentCount": 20,
+  "instrumentIds": [
+    "AAVE-USDT-SWAP",
+    "ADA-USDT-SWAP",
+    "ALGO-USDT-SWAP",
+    "ATOM-USDT-SWAP",
+    "AVAX-USDT-SWAP",
+    "BCH-USDT-SWAP",
+    "BTC-USDT-SWAP",
+    "COMP-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETC-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "LINK-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "NEO-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "TRX-USDT-SWAP",
+    "XRP-USDT-SWAP",
+    "XTZ-USDT-SWAP",
+    "YFI-USDT-SWAP"
+  ],
+  "selection": "frozen_v16_fixed_core"
+}

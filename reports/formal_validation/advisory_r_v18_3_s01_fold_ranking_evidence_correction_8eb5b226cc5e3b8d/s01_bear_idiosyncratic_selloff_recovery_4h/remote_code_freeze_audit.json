@@ -1,0 +1,13 @@
+{
+  "blockers": [],
+  "branch": "feature/v13.27.1.18.3-fold-ranking-closure",
+  "hashMatch": true,
+  "headCommit": "1d5421f0f0d86fa7f65f46dabed51febe2c1cc49",
+  "localCommit": "1d5421f0f0d86fa7f65f46dabed51febe2c1cc49",
+  "pushed": true,
+  "remoteCommit": "1d5421f0f0d86fa7f65f46dabed51febe2c1cc49",
+  "route": "code_frozen_remotely",
+  "schemaVersion": "s01_v18_3_remote_code_freeze_audit_v1",
+  "status": "passed",
+  "worktreeClean": true
+}

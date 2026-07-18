@@ -1,0 +1,9 @@
+{
+  "applies": false,
+  "approvalRequired": false,
+  "automaticApprovalAllowed": false,
+  "releaseHashes": [],
+  "requiredApprovalType": null,
+  "schemaVersion": "automatic_v24_demo_approval_request_v1",
+  "status": "not_required_zero_release"
+}

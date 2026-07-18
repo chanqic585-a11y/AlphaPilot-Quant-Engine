@@ -1,0 +1,35 @@
+{
+  "acceptedTradeCount": 0,
+  "completeFoldCount": 5,
+  "failedGates": [
+    "minimumFormalEvents",
+    "minimumProfitFactor",
+    "positiveAverageNetR",
+    "positiveTotalNetR",
+    "minimumPositiveFolds",
+    "stress1_5xProfitFactor",
+    "stress1_5xPositiveAverageNetR",
+    "stress1_5xPositiveTotalNetR",
+    "positiveBenchmarkIncrement",
+    "minimumPositiveIncrementalFolds"
+  ],
+  "gateMatrixHash": "automatic_v22_gate_matrix_36a8b5816e049e2cf4e190ac798ccc67d596ac2bd66eba0ffb95b2a6bfcbc81d",
+  "gates": {
+    "fiveCompleteFolds": true,
+    "maximumDrawdown": true,
+    "minimumFormalEvents": false,
+    "minimumPositiveFolds": false,
+    "minimumPositiveIncrementalFolds": false,
+    "minimumProfitFactor": false,
+    "positiveAverageNetR": false,
+    "positiveBenchmarkIncrement": false,
+    "positiveTotalNetR": false,
+    "stress1_5xPositiveAverageNetR": false,
+    "stress1_5xPositiveTotalNetR": false,
+    "stress1_5xProfitFactor": false
+  },
+  "implementationBlockers": [],
+  "passed": false,
+  "positiveFoldCount": 0,
+  "schemaVersion": "automatic_v22_economic_gate_matrix_v1"
+}

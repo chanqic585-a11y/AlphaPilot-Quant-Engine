@@ -1,0 +1,2 @@
+﻿campaignId,candidateId,route,releaseEligible,acceptedTradeCount,completeFoldCount,formalRunCount,resultReadCount,lockedOosAccessCount,failureClass
+automatic_strategy_demo_f57c443abeaf06c0_campaign_01,auto-trend_failure_reversal-4h-short-v2,capital_infeasible,false,0,5,1,1,0,capital_infeasible

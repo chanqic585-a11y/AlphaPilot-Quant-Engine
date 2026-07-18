@@ -1,0 +1,14 @@
+{
+  "authorizationHash": "s01_v18_3_formal_run_authorization_f9893c9895743a0be158a271388d52d3b82bffb0043aa8ab963792fc5638a880",
+  "campaignId": "advisory_r_v18_3_s01_fold_ranking_evidence_correction_aa74e9a2bff29616",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "demoArm": false,
+  "formalResultRunCount": 0,
+  "formalRunClaimCount": 0,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v18_3_formal_run_authorization_state_v1",
+  "stage": "formal_run_authorized"
+}

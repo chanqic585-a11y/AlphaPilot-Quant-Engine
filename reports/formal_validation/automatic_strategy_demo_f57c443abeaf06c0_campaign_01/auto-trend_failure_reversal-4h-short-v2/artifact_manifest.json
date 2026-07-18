@@ -1,0 +1,152 @@
+{
+  "artifactCount": 29,
+  "artifacts": [
+    {
+      "relativePath": "actual_signal_parity.json",
+      "sha256": "4d716ca39d48eb6ada7758ddebebcef621880ba6497375b5ba10cfc59b6ec1e8",
+      "sizeBytes": 251
+    },
+    {
+      "relativePath": "assigned_events.parquet",
+      "sha256": "ac1a6922a439ce15688a8587158deedc4024e42accd14933c273cd40f34f1343",
+      "sizeBytes": 216295
+    },
+    {
+      "relativePath": "capacity_evidence_coverage.json",
+      "sha256": "b60539c23afb3d2bc5e612c5d6ee883a012b8c179c63267b4cd066718ce9bdf3",
+      "sizeBytes": 281
+    },
+    {
+      "relativePath": "capital_decisions.parquet",
+      "sha256": "dbf85dc6658d48de00e0da0c62d0951118e65eb26245e7e616a03b4dddcdc172",
+      "sizeBytes": 253548
+    },
+    {
+      "relativePath": "catalog_access_report.json",
+      "sha256": "e01310ffc762fd7106f472fdd3c03c40af9a3e95651e96558873d65eb2a3f294",
+      "sizeBytes": 5283
+    },
+    {
+      "relativePath": "event_dispositions.parquet",
+      "sha256": "eb2724515cfdc0d9ab6b3fc2b6e58eeed1fc6dbf63ecbdf34ee493c6d2cd734e",
+      "sizeBytes": 356438
+    },
+    {
+      "relativePath": "exit_leg_parity.json",
+      "sha256": "fe1997496f5727908e13e34183caff746229e412d7123c7afe54e479f10c764b",
+      "sizeBytes": 167
+    },
+    {
+      "relativePath": "failure_attribution.json",
+      "sha256": "27c7e80c08353e8497027b089feec3e17920db612795e7397473f2bbeb67dc12",
+      "sizeBytes": 574
+    },
+    {
+      "relativePath": "fold_metrics.csv",
+      "sha256": "59ec99fef18f586d4e94b0d8adc2830f1fe127dab08f043f77b047a5407614a7",
+      "sizeBytes": 2085
+    },
+    {
+      "relativePath": "fold_metrics.json",
+      "sha256": "5f49e0d386cb7aee9cdcc2a75e1e6a8535cd2cebd157c2531d7aa32bf7294102",
+      "sizeBytes": 4399
+    },
+    {
+      "relativePath": "fold_rejected_events.parquet",
+      "sha256": "e0c9621b945c73dbd7e58e4f91934e03137a472da164b6414d8801898332a9f7",
+      "sizeBytes": 21258
+    },
+    {
+      "relativePath": "formal_event_disposition_audit.json",
+      "sha256": "0cdefc93a22df23819c5c61d5542682b0ba1a80ef0281c1f19e324111b012cb0",
+      "sizeBytes": 1009
+    },
+    {
+      "relativePath": "formal_event_disposition_contract.json",
+      "sha256": "bc2737e110be60c9dcd8e1c9a9fb8709bf33267fb397b5d469d21e3733139225",
+      "sizeBytes": 1275
+    },
+    {
+      "relativePath": "formal_events.parquet",
+      "sha256": "e9233069ac8f17a03cd5a5cb7c57e0bfc7e862a43da482efc9820d52d4224a8d",
+      "sizeBytes": 208616
+    },
+    {
+      "relativePath": "formal_fold_assignment_audit.json",
+      "sha256": "195ac140ed974fe84032ed7947a4497e1a4bd649a65746594e99281f94bf0eb0",
+      "sizeBytes": 224
+    },
+    {
+      "relativePath": "formal_fold_boundaries.json",
+      "sha256": "0daa400ae5e8ccfeee4a8f46c8a4b787dbc695e4271c3b117021400c6659344e",
+      "sizeBytes": 2324
+    },
+    {
+      "relativePath": "formal_route.json",
+      "sha256": "f6f2fcf88554d76b7b54f553a1de771598a21add3f838112c9e678b303dc6d09",
+      "sizeBytes": 377
+    },
+    {
+      "relativePath": "formal_run_accounting.json",
+      "sha256": "556d67efe9594e72ae8037126f3fa638b0dc09737d57b0267a746dbad3cac149",
+      "sizeBytes": 251
+    },
+    {
+      "relativePath": "formal_summary.md",
+      "sha256": "87a8141f21e48b516161aa2263de1bb627a3bdfe3091cff4a5e2d7a4aae4ed15",
+      "sizeBytes": 602
+    },
+    {
+      "relativePath": "funding_input_registry.json",
+      "sha256": "159f262e98ee1ab93dd3122d4a30caea11a7ecce21bb0f1ab6f7589c42c9087a",
+      "sizeBytes": 2294
+    },
+    {
+      "relativePath": "gate_matrix.json",
+      "sha256": "d479a95f407860ca643b72857b31ae9845023724e0e501e96cf9cb231d1dc179",
+      "sizeBytes": 1094
+    },
+    {
+      "relativePath": "next_campaign_decision.json",
+      "sha256": "0bed0e9d2b08d3439af32f2e7c0b117096c83c33f63891bc8f9cbf64a047a7d9",
+      "sizeBytes": 196
+    },
+    {
+      "relativePath": "pit_contexts.parquet",
+      "sha256": "87bbfb7e6c2ad2c03870ca1b9ba8831ac6b8828fc9386205c1b35d590ce1cd2c",
+      "sizeBytes": 182477
+    },
+    {
+      "relativePath": "position_sizes.parquet",
+      "sha256": "34f405e2164a3ec450db3f54850ddb88df1f069ad813c8804378c9718b4ca5e3",
+      "sizeBytes": 172675
+    },
+    {
+      "relativePath": "preregistration_reference.json",
+      "sha256": "7030747b2b3cc8136ac6f868db5bee58046a35e93cc917ce05cffc3c17359879",
+      "sizeBytes": 332
+    },
+    {
+      "relativePath": "ranking_evidence.parquet",
+      "sha256": "ca9da00a4baf57334721aeede19a0c1e7332c75e44fa16188403e65ae97be449",
+      "sizeBytes": 198617
+    },
+    {
+      "relativePath": "runtime_binding.json",
+      "sha256": "5d363dc85d8636cd2122937508ee5c9137a88c00fdc0c5906f60378ac58a6b5d",
+      "sizeBytes": 1188
+    },
+    {
+      "relativePath": "second_candidate_fixture.json",
+      "sha256": "52c6923b88a1ffcff49f003bcff45d41a57a7ce254eb6a9398407d3ad4f3f88b",
+      "sizeBytes": 203
+    },
+    {
+      "relativePath": "statistical_audit.json",
+      "sha256": "c51e17ca704189e7d765cc6a42e0cc048409f2def1fcb32099e2067a34207795",
+      "sizeBytes": 1651
+    }
+  ],
+  "manifestHash": "artifact_manifest_2e7690c92b74028498b71ce7f6e6f9678df3445dc629a449d52269e208a29a46",
+  "schemaVersion": "automatic_strategy_demo_artifact_manifest_v1"
+}

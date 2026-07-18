@@ -1,0 +1,81 @@
+{
+  "artifactHashes": [
+    {
+      "byteCount": 12793,
+      "path": "research/preregistrations/advisory_r_v17_s01_formal_walk_forward.json",
+      "sha256": "1385088443a13be03f518ae52c79e6f69e67428bb1c412b4cc0e442103faaacd"
+    },
+    {
+      "byteCount": 658,
+      "path": "reports/formal_validation/advisory_r_v17/campaign_summary.json",
+      "sha256": "f9c832b66d04dbb9997a6a120612e8b196be2ef22b9712b2c711a4283321c4f2"
+    },
+    {
+      "byteCount": 891,
+      "path": "reports/formal_validation/advisory_r_v17/route_decision.json",
+      "sha256": "f6f7ac3f7698b534df97cd85b83712e222cd59d311cf5269a71b972359994966"
+    },
+    {
+      "byteCount": 2745,
+      "path": "reports/formal_validation/advisory_r_v17/formal_execution_contract_audit.json",
+      "sha256": "f93c66c6267fd92063f425aaf549895d0c38e0555e151efe9abba68cc03fc791"
+    },
+    {
+      "byteCount": 3573,
+      "path": "reports/v13_27_1_17_evidence_delivery/final_self_check.json",
+      "sha256": "67e5748d80214dfe49c1ecacffc43b64caea347dc55030dff47aea251385cde1"
+    }
+  ],
+  "blockerCodes": [
+    "capacity_model_not_frozen",
+    "correlation_cluster_policy_not_frozen",
+    "portfolio_beta_policy_not_frozen",
+    "ranking_field_definitions_not_frozen"
+  ],
+  "branchPushStatus": "not_published_local_ahead_27",
+  "campaignId": "advisory_r_v17",
+  "demoArm": false,
+  "evidenceZipHashes": [
+    {
+      "byteCount": 56711,
+      "path": "reports/v13_27_1_17_evidence_delivery/AlphaPilot-V13.27.1.17-core-evidence.zip",
+      "sha256": "b4f817afeb69910a3cfad55a1ae3c3fa83c9e73572b16704cbc698dc3c5b14f3"
+    },
+    {
+      "byteCount": 1839,
+      "path": "reports/v13_27_1_17_evidence_delivery/AlphaPilot-V13.27.1.17-event-and-return-evidence.zip",
+      "sha256": "a1b207686568aa6b0f6e9921caf0adfd5b700b329212b0d3e5514638ac8cc71c"
+    },
+    {
+      "byteCount": 9831,
+      "path": "reports/v13_27_1_17_evidence_delivery/AlphaPilot-V13.27.1.17-source-runtime-evidence.zip",
+      "sha256": "a517027663d995abbe78516148f3959f9c0d8e581b7cda8619a6bb54f6a1d941"
+    }
+  ],
+  "externalPublicationReviewStatus": "pending_explicit_user_approval",
+  "finalCloseoutCommit": "8b7f5aa01de9bf4240d8d4613973291ca19ab83c",
+  "formalResultsExist": false,
+  "formalRunCount": 0,
+  "localTag": "v13.27.1.17",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "originalArtifactsModified": false,
+  "originalEvidenceCommit": "02305adbfe684300674db7103f5a6f098dfad3d0",
+  "releaseCount": 0,
+  "remoteFreezeStatus": "not_published",
+  "remoteTagExists": false,
+  "resultReadCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "safetyBoundary": {
+    "demoArm": false,
+    "lockedOosAccessCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0
+  },
+  "schemaVersion": "v17_closeout_provenance_sidecar_v1",
+  "sidecarHash": "v17_closeout_provenance_sidecar_fb46c738084b3c1d2ca02f95cc32d504d1e20877d370e1d4571e9650f85625a1",
+  "status": "completed_terminal_pre_run",
+  "supersededByCampaignFamily": "advisory_r_v18_s01_capital_policy_correction",
+  "tagTarget": "8b7f5aa01de9bf4240d8d4613973291ca19ab83c",
+  "upstreamCommit": "be0081cf3f0abf222d40874040170effa5770324"
+}

@@ -1,0 +1,323 @@
+{
+  "blockers": [
+    {
+      "code": "freqtrade_runtime_missing",
+      "message": "Freqtrade is unavailable in the audited execution runtime."
+    }
+  ],
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "frozenContracts": {
+    "capitalCompetitionPolicyFrozen": true,
+    "capitalCompetitionPolicyHash": "s01_formal_capital_competition_4caa9056ade48231babf791b34f8ab3567bf753fcb3d80d191abe06336d3ba84",
+    "freqtradePackageAvailable": false,
+    "s01TranslationAvailable": true,
+    "splitPolicyFrozen": true,
+    "splitPolicyHash": "s01_formal_split_policy_329d65aeeac0294ab61932f05c2eec159f762c613066aeb5a67aae05928dcc04",
+    "timerangeGuardCliAvailable": true,
+    "timerangeGuardModuleAvailable": true,
+    "translationPaths": [
+      "user_data/strategies/AlphaPilotS01BearRecovery4H.py"
+    ]
+  },
+  "gates": {
+    "formalExecution": {
+      "blockers": [
+        {
+          "code": "freqtrade_runtime_missing",
+          "message": "Freqtrade is unavailable in the audited execution runtime."
+        }
+      ],
+      "status": "blocked"
+    },
+    "lockedOosAdmission": {
+      "blockers": [
+        {
+          "code": "locked_oos_identity_incomplete",
+          "message": "The Locked OOS boundary, content hash, zero-access record, and one-shot unlock ledger are not all available."
+        },
+        {
+          "code": "formal_walk_forward_not_completed",
+          "message": "The preregistered formal Walk-forward has not been completed."
+        }
+      ],
+      "status": "blocked"
+    }
+  },
+  "generatedAt": "2026-07-17T03:59:23.054817Z",
+  "holdoutLineage": {
+    "accessCountSources": {
+      "campaignSummary": 0,
+      "correctionManifest": 0,
+      "prefilterResults": 0,
+      "preregistration": 0,
+      "routeDecision": 0
+    },
+    "accessCountsConsistent": true,
+    "admissionRule": "Locked OOS remains unavailable until a frozen boundary, content hash, and zero-access one-shot ledger are all present.",
+    "campaignId": "advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02",
+    "cleanLockedOosAvailable": false,
+    "contentFilesRead": [],
+    "holdoutBoundaryPresent": false,
+    "holdoutHashPresent": false,
+    "metadataFilesRead": {
+      "campaignSummary": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/campaign_summary.json",
+      "correctionManifest": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/correction_manifest.json",
+      "prefilterResults": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/prefilter_results.json",
+      "preregistration": "research/preregistrations/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02.json",
+      "routeDecision": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/route_decision.json"
+    },
+    "metadataOnly": true,
+    "metricsComputed": false,
+    "missingIdentityFields": [
+      "holdoutBoundary",
+      "holdoutHash"
+    ],
+    "recordedAccessCount": 0,
+    "schemaVersion": "formal_validation_holdout_lineage_audit_v1",
+    "status": "limitation",
+    "unlockLedgerPresent": false
+  },
+  "identity": {
+    "artifactCount": 21,
+    "artifacts": [
+      {
+        "logicalRole": "benchmarkComparison",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/benchmark_comparison.json",
+        "sha256": "c2949c9b43666ea04844a5a99dcf3b3e0a3d30fa07e64e36c6ad9a0b0a5c096f",
+        "sizeBytes": 6137
+      },
+      {
+        "logicalRole": "campaignSummaryJson",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/campaign_summary.json",
+        "sha256": "f4283346caf396e4d0e0db414e3487805631da91ee54e1585190778b1f808c85",
+        "sizeBytes": 768
+      },
+      {
+        "logicalRole": "campaignSummaryMarkdown",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/campaign_summary.md",
+        "sha256": "0f50e948b757fa22ca58e86ce6b1531b9fa65c4bb4171b1ef838b1b9fa73c395",
+        "sizeBytes": 729
+      },
+      {
+        "logicalRole": "candidateEvents",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/candidate_events.parquet",
+        "sha256": "ffc6ba7819403b450bb7ee54dbc447050f48f31c5abcceb9f91b102906a6a359",
+        "sizeBytes": 11614401
+      },
+      {
+        "logicalRole": "conformanceMatrixCsv",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/conformance_matrix.csv",
+        "sha256": "a641566bd8df2ecd6030257950ebbbac396814c3afcf8cc4cfd4a0f13ea4fd0a",
+        "sizeBytes": 7142
+      },
+      {
+        "logicalRole": "conformanceMatrixJson",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/conformance_matrix.json",
+        "sha256": "757640badc12c9148db308c07cadcb3393f77e091dfcb0fb420b4bfde2458184",
+        "sizeBytes": 13413
+      },
+      {
+        "logicalRole": "correctedVsV15Comparison",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/corrected_vs_v15_comparison.json",
+        "sha256": "d0ab162ccfbfb33e4c64cf95b1cb9c0b3d4a0fdf857d395c9ba5b08c7f349dc5",
+        "sizeBytes": 7324
+      },
+      {
+        "logicalRole": "correctionManifest",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/correction_manifest.json",
+        "sha256": "1b65d0e8db3f28252ddb753eb03817e0dbbcdd31f088ccdd5af7885a56ca8532",
+        "sizeBytes": 5636
+      },
+      {
+        "logicalRole": "eventSchema",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/event_schema.json",
+        "sha256": "3b8da05b872396cb7b6552ae86851e027fdcd2e35506a8d16326e66c0385a9df",
+        "sizeBytes": 847
+      },
+      {
+        "logicalRole": "exitLegParity",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/exit_leg_parity.json",
+        "sha256": "fbc5d7893f452135a78b469fbf78f693312cfd00c997bd7a58ee7377c1af44be",
+        "sizeBytes": 188
+      },
+      {
+        "logicalRole": "exitPolicyAttribution",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/exit_policy_attribution.json",
+        "sha256": "c850632eeff755a4e327734053a1fff78563b2d87311c3b7ad5037d6e01b1e2c",
+        "sizeBytes": 9020
+      },
+      {
+        "logicalRole": "failureAttribution",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/failure_attribution.json",
+        "sha256": "9953d8998f3dde7b8e13bdda8e4f375d0eba7b2e54f49465fb00fa2b77709c1a",
+        "sizeBytes": 574
+      },
+      {
+        "logicalRole": "implementationParity",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/implementation_parity.json",
+        "sha256": "f98dea03039ff98b7c88b68cbb0a173d9419ca718301d887a29fd44f8c6decfb",
+        "sizeBytes": 3417
+      },
+      {
+        "logicalRole": "noveltyAudit",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/novelty_audit.json",
+        "sha256": "8c2d4c0b023275c021aa1e8e3d3bb700b307f19685c111f95d02cf24d850f842",
+        "sizeBytes": 15840
+      },
+      {
+        "logicalRole": "prefilterGateMatrix",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/prefilter_gate_matrix.json",
+        "sha256": "c680a5c1993893318e6ee45ddb8c624b8000658527e43bead394bfccda8e632e",
+        "sizeBytes": 12681
+      },
+      {
+        "logicalRole": "prefilterResults",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/prefilter_results.json",
+        "sha256": "7086e38ff02029f17818af8cd2d3d4390dafdb285f759fe0e0cff9b161c23ef6",
+        "sizeBytes": 32945
+      },
+      {
+        "logicalRole": "routeDecision",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/route_decision.json",
+        "sha256": "1505a64283d1bc924f6cfa7eea9d592a1befe6b95ae6fd855daf5e341c4b69f8",
+        "sizeBytes": 973
+      },
+      {
+        "logicalRole": "simpleBenchmarks",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/simple_benchmarks.json",
+        "sha256": "7c557367ab30587800f5ebae666ad021c3a58ae67210d967ad703460be431751",
+        "sizeBytes": 15476
+      },
+      {
+        "logicalRole": "strategyInventory",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/strategy_inventory.json",
+        "sha256": "955fed7aeda70641454cbe0d7b1b4d113767d31bf68647992d4e78427efedc91",
+        "sizeBytes": 17748
+      },
+      {
+        "logicalRole": "trialLedgerCsv",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/trial_ledger.csv",
+        "sha256": "27b9b9ca88c6ca3b73b702f66f771ae23f025bfb0e13104fb9e420d90be50e4c",
+        "sizeBytes": 9807
+      },
+      {
+        "logicalRole": "trialLedgerJson",
+        "path": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/trial_ledger.json",
+        "sha256": "70f8c6a9c328e7b65753113071959979dd6e3ece9d48073b07108a7fcf919bc2",
+        "sizeBytes": 16649
+      }
+    ],
+    "baselineCommit": "6d885eee532d45a2c7c1cbeb37c92fe2ac031c3b",
+    "baselineTag": "v13.27.1.16",
+    "campaignId": "advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02",
+    "candidateIds": [
+      "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "s02_btc_lead_lag_continuation_1h",
+      "s03_btc_lead_lag_overreaction_reversion_1h",
+      "s04_pair_residual_mean_reversion_1h",
+      "s05_correlation_break_recovery_4h",
+      "s06_correlation_break_decoupling_4h",
+      "s07_volatility_shock_asymmetry_4h",
+      "s08_utc_session_transition_1h",
+      "s09_beta_defensive_rotation_4h",
+      "s10_orthogonal_weak_signal_matrix_4h"
+    ],
+    "checks": {
+      "artifactBundleComplete": true,
+      "baselineTagMatches": true,
+      "candidateCountFrozen": true,
+      "datasetGridComplete": true,
+      "preregistrationHashValid": true,
+      "representativeIsSubset": true,
+      "s01Present": true,
+      "snapshotHashValid": true,
+      "snapshotLinkMatches": true,
+      "sourceCommitExists": true,
+      "sourceCommitIsAncestor": true
+    },
+    "coreUniverseHash": "minimal_fixed_core_universe_c96658fbc82fbf43f396dab7857e8803ad73a7fc0eb45607b4b75ffcb53cee34",
+    "invalidArtifactHashes": [],
+    "missingArtifacts": [],
+    "preregistrationHash": "advisory_r_correction_preregistration_f145806af31b6774c3e3ffa2168b38d712c889b56f6190337ce23e8677f2cbae",
+    "preregistrationPath": "research/preregistrations/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02.json",
+    "schemaVersion": "formal_validation_v16_identity_audit_v1",
+    "snapshotHash": "minimal_shared_snapshot_785e47b180c17327dcb35e37d9f12c22e86eae8150e0adf5e1b44fb298f89e3b",
+    "snapshotId": "minimal_snapshot_785e47b180c17327dcb35e37",
+    "snapshotPath": "research/data_snapshots/minimal_snapshot_785e47b180c17327dcb35e37.json",
+    "sourceCodeCommit": "b32cabc",
+    "status": "ready",
+    "tagCommit": "6d885eee532d45a2c7c1cbeb37c92fe2ac031c3b",
+    "universeMapping": {
+      "datasetGridComplete": true,
+      "datasetReferenceCount": 40,
+      "formalCoreCount": 20,
+      "formalCoreInstruments": [
+        "AAVE-USDT-SWAP",
+        "ADA-USDT-SWAP",
+        "ALGO-USDT-SWAP",
+        "ATOM-USDT-SWAP",
+        "AVAX-USDT-SWAP",
+        "BCH-USDT-SWAP",
+        "BTC-USDT-SWAP",
+        "COMP-USDT-SWAP",
+        "DOGE-USDT-SWAP",
+        "ETC-USDT-SWAP",
+        "ETH-USDT-SWAP",
+        "FIL-USDT-SWAP",
+        "LINK-USDT-SWAP",
+        "LTC-USDT-SWAP",
+        "NEO-USDT-SWAP",
+        "SOL-USDT-SWAP",
+        "TRX-USDT-SWAP",
+        "XRP-USDT-SWAP",
+        "XTZ-USDT-SWAP",
+        "YFI-USDT-SWAP"
+      ],
+      "representativeCount": 10,
+      "representativeInstruments": [
+        "ADA-USDT-SWAP",
+        "ALGO-USDT-SWAP",
+        "AVAX-USDT-SWAP",
+        "BCH-USDT-SWAP",
+        "BTC-USDT-SWAP",
+        "DOGE-USDT-SWAP",
+        "ETH-USDT-SWAP",
+        "FIL-USDT-SWAP",
+        "LTC-USDT-SWAP",
+        "XRP-USDT-SWAP"
+      ],
+      "representativeIsSubset": true,
+      "timeframes": [
+        "1h",
+        "4h"
+      ]
+    }
+  },
+  "phase": "V13.27.1.17-phase1",
+  "preregistration": {
+    "campaignId": "advisory_r_v17",
+    "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+    "containingCommit": "5aad8adc51beef2277a8f7bfe3e9b7128bd9093b",
+    "exists": true,
+    "hashValid": true,
+    "identityValid": true,
+    "path": "research/preregistrations/advisory_r_v17_s01_formal_walk_forward.json",
+    "preregistrationHash": "s01_formal_walk_forward_preregistration_05e26d4f8da2a3d47f22a91464e179f19096889bdc9e3839892ee8eca0e34b6b",
+    "published": true,
+    "schemaVersion": "s01_formal_preregistration_audit_v1",
+    "status": "published",
+    "tracked": true,
+    "upstream": "origin/feature/advisory-r-workflow-v13.27.1.14-18",
+    "workingTreeMatchesCommit": true
+  },
+  "route": "blocked",
+  "safetyBoundary": {
+    "demoArm": false,
+    "formalResultCount": 0,
+    "lockedOosAccessCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0
+  },
+  "schemaVersion": "formal_validation_phase1_readiness_audit_v1",
+  "scope": "prerequisite_freeze_only"
+}

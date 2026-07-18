@@ -1,0 +1,22 @@
+{
+  "capacityRequirement": "capacityPassed_true",
+  "capitalCompetitionPolicyHash": "s01_formal_capital_competition_4caa9056ade48231babf791b34f8ab3567bf753fcb3d80d191abe06336d3ba84",
+  "duplicateSymbolPolicy": "reject_while_open",
+  "initial_capital": 10000.0,
+  "maximum_concurrent_positions": 6,
+  "maximum_correlation_cluster_risk": 0.02,
+  "maximum_open_risk": 0.06,
+  "maximum_portfolio_beta": 1.5,
+  "maximum_same_direction_risk": 0.04,
+  "maximum_single_symbol_risk": 0.01,
+  "rankingPolicy": [
+    "residual_z_more_extreme_first",
+    "recovery_confirmation_stronger_first",
+    "liquidity_higher_first",
+    "symbol_id_ascending_tiebreak"
+  ],
+  "resultDrivenRiskReductionAllowed": false,
+  "risk_per_trade": 0.01,
+  "schemaVersion": "s01_formal_capital_competition_v1",
+  "source": "existing_alphapilot_standard_capital_competition_policy"
+}

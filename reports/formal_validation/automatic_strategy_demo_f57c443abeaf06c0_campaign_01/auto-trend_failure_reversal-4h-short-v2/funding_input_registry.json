@@ -1,0 +1,74 @@
+{
+  "actualInstrumentCount": 8,
+  "fundingRegistryHash": "automatic_v22_funding_registry_f11af4e5084f7b8af69fcf97e62407cd553257b2a7f2d00f7b3095167e5f2e89",
+  "instrumentCount": 8,
+  "rows": [
+    {
+      "actualObservationCount": 2193,
+      "crossExchangeSubstitution": false,
+      "instrumentId": "ADA-USDT-SWAP",
+      "status": "actual",
+      "stressScenario": "preregistered_cost_stress_separate",
+      "zeroFillUsed": false
+    },
+    {
+      "actualObservationCount": 2193,
+      "crossExchangeSubstitution": false,
+      "instrumentId": "BCH-USDT-SWAP",
+      "status": "actual",
+      "stressScenario": "preregistered_cost_stress_separate",
+      "zeroFillUsed": false
+    },
+    {
+      "actualObservationCount": 2193,
+      "crossExchangeSubstitution": false,
+      "instrumentId": "BTC-USDT-SWAP",
+      "status": "actual",
+      "stressScenario": "preregistered_cost_stress_separate",
+      "zeroFillUsed": false
+    },
+    {
+      "actualObservationCount": 2193,
+      "crossExchangeSubstitution": false,
+      "instrumentId": "ETC-USDT-SWAP",
+      "status": "actual",
+      "stressScenario": "preregistered_cost_stress_separate",
+      "zeroFillUsed": false
+    },
+    {
+      "actualObservationCount": 2193,
+      "crossExchangeSubstitution": false,
+      "instrumentId": "ETH-USDT-SWAP",
+      "status": "actual",
+      "stressScenario": "preregistered_cost_stress_separate",
+      "zeroFillUsed": false
+    },
+    {
+      "actualObservationCount": 2193,
+      "crossExchangeSubstitution": false,
+      "instrumentId": "LINK-USDT-SWAP",
+      "status": "actual",
+      "stressScenario": "preregistered_cost_stress_separate",
+      "zeroFillUsed": false
+    },
+    {
+      "actualObservationCount": 2193,
+      "crossExchangeSubstitution": false,
+      "instrumentId": "LTC-USDT-SWAP",
+      "status": "actual",
+      "stressScenario": "preregistered_cost_stress_separate",
+      "zeroFillUsed": false
+    },
+    {
+      "actualObservationCount": 2193,
+      "crossExchangeSubstitution": false,
+      "instrumentId": "XRP-USDT-SWAP",
+      "status": "actual",
+      "stressScenario": "preregistered_cost_stress_separate",
+      "zeroFillUsed": false
+    }
+  ],
+  "schemaVersion": "automatic_v22_funding_registry_v1",
+  "status": "actual_available",
+  "zeroFillUsed": false
+}

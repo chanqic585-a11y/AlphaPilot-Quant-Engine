@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "s01_v18_2_final_validation_v1",
+  "campaignId": "advisory_r_v18_2_s01_formal_evidence_chain_correction_e100fc1eafa9abd0",
+  "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+  "validatedAt": "2026-07-17T20:50:59Z",
+  "formalResultRerunCountDuringCloseout": 0,
+  "formalValidationTests": {"status": "passed", "passed": 166},
+  "fullTests": {"status": "passed", "passed": 926, "subtestsPassed": 157, "scope": "tests", "importMode": "importlib"},
+  "compileall": {"status": "passed", "scope": "alphapilot"},
+  "validateConfig": {"status": "passed", "liveTradingEnabled": false, "tradeApiEnabled": false, "withdrawApiEnabled": false},
+  "safetyScan": {"status": "passed_with_reviewed_existing_matches", "newExecutableTradingCapabilityDetected": false},
+  "gitDiffCheck": "passed",
+  "jsonSidecarParseCheck": "passed",
+  "formalResultArtifactCount": 54,
+  "formalResultArtifactHashMismatchCount": 0,
+  "lockedOosAccessCount": 0,
+  "releaseCount": 0,
+  "demoArm": false,
+  "orderCount": 0
+}

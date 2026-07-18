@@ -1,0 +1,92 @@
+{
+  "BearDefinitionChanges": 0,
+  "CandidateAdapterContractVersionChange": 1,
+  "GateChanges": 0,
+  "benchmarkChanges": 0,
+  "campaignIdentityChange": 1,
+  "capitalPolicyNumericChanges": 0,
+  "capitalPolicySemanticChanges": 0,
+  "comparisons": {
+    "benchmarkHash": {
+      "unchanged": true,
+      "v18": "s01_formal_benchmark_f8e4ea5eac162386bd0b08dad2f648fd2b68bb5eba1533329f278bac45e5fdb1",
+      "v18_1": "s01_formal_benchmark_f8e4ea5eac162386bd0b08dad2f648fd2b68bb5eba1533329f278bac45e5fdb1"
+    },
+    "capacityModelHash": {
+      "unchanged": true,
+      "v18": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+      "v18_1": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5"
+    },
+    "capitalAcceptanceSequenceHash": {
+      "unchanged": true,
+      "v18": "s01_v18_capital_acceptance_sequence_7d1171010c4667e315a25c43d9a704ff406207b650ad511f0faaad09b9f94f85",
+      "v18_1": "s01_v18_capital_acceptance_sequence_7d1171010c4667e315a25c43d9a704ff406207b650ad511f0faaad09b9f94f85"
+    },
+    "coreUniverseHash": {
+      "unchanged": true,
+      "v18": "minimal_fixed_core_universe_c96658fbc82fbf43f396dab7857e8803ad73a7fc0eb45607b4b75ffcb53cee34",
+      "v18_1": "minimal_fixed_core_universe_c96658fbc82fbf43f396dab7857e8803ad73a7fc0eb45607b4b75ffcb53cee34"
+    },
+    "correlationClusterPolicyHash": {
+      "unchanged": true,
+      "v18": "s01_correlation_cluster_policy_v1_61293655d64c0bbdf8ea174db277ec96404e8e89c8ce8972091fabdb3bc837c3",
+      "v18_1": "s01_correlation_cluster_policy_v1_61293655d64c0bbdf8ea174db277ec96404e8e89c8ce8972091fabdb3bc837c3"
+    },
+    "costModelHash": {
+      "unchanged": true,
+      "v18": "s01_formal_cost_model_cb68c2cf24c1ea1afabec0ab881c3230e1f64d2b54dd3989ef610b26357da192",
+      "v18_1": "s01_formal_cost_model_cb68c2cf24c1ea1afabec0ab881c3230e1f64d2b54dd3989ef610b26357da192"
+    },
+    "exitPolicyHash": {
+      "unchanged": true,
+      "v18": "exit_policy_aa415db5c0527ec941e87a41eb3779413b2dce6cb6577f00356823fb5be56ba3",
+      "v18_1": "exit_policy_aa415db5c0527ec941e87a41eb3779413b2dce6cb6577f00356823fb5be56ba3"
+    },
+    "formalPortfolioPolicyV2Hash": {
+      "unchanged": true,
+      "v18": "s01_formal_capital_competition_v2_9e46061fb47a557c94ac840e7b5dc9b5ff0629844d70adb9748a7cf7428fa17f",
+      "v18_1": "s01_formal_capital_competition_v2_9e46061fb47a557c94ac840e7b5dc9b5ff0629844d70adb9748a7cf7428fa17f"
+    },
+    "ioGuardHash": {
+      "unchanged": true,
+      "v18": "4b053b874fc7365c372adcb3b3bab08a0ee17e9977c80ece9fde7a077b370440",
+      "v18_1": "4b053b874fc7365c372adcb3b3bab08a0ee17e9977c80ece9fde7a077b370440"
+    },
+    "portfolioBetaPolicyHash": {
+      "unchanged": true,
+      "v18": "s01_portfolio_beta_policy_v1_995df91f9e02d9b221a716cadc13f659fcfa6c3caf4c560e6e4c5665d5da0b90",
+      "v18_1": "s01_portfolio_beta_policy_v1_995df91f9e02d9b221a716cadc13f659fcfa6c3caf4c560e6e4c5665d5da0b90"
+    },
+    "runtimeHash": {
+      "unchanged": true,
+      "v18": "freqtrade_runtime_manifest_3168af7af47bf57178fa1bf0f20b55d09afe2d573a25366016cf8403bed029ad",
+      "v18_1": "freqtrade_runtime_manifest_3168af7af47bf57178fa1bf0f20b55d09afe2d573a25366016cf8403bed029ad"
+    },
+    "signalRankingPolicyHash": {
+      "unchanged": true,
+      "v18": "s01_signal_ranking_policy_v1_4ad51e23bd84f934b8cb54ed39978de087690850f4d0cd55bf96759876a96314",
+      "v18_1": "s01_signal_ranking_policy_v1_4ad51e23bd84f934b8cb54ed39978de087690850f4d0cd55bf96759876a96314"
+    },
+    "splitPolicyHash": {
+      "unchanged": true,
+      "v18": "s01_formal_split_policy_329d65aeeac0294ab61932f05c2eec159f762c613066aeb5a67aae05928dcc04",
+      "v18_1": "s01_formal_split_policy_329d65aeeac0294ab61932f05c2eec159f762c613066aeb5a67aae05928dcc04"
+    },
+    "strategyDefinitionHash": {
+      "unchanged": true,
+      "v18": "advisory_r_strategy_062a7c3c3bd7b9f8f741c9506a40efabd3225bd57645f093eda0f86901ac2c37",
+      "v18_1": "advisory_r_strategy_062a7c3c3bd7b9f8f741c9506a40efabd3225bd57645f093eda0f86901ac2c37"
+    }
+  },
+  "costChanges": 0,
+  "exitPolicyChanges": 0,
+  "implementationCommitChange": 1,
+  "preregistrationIdentityChange": 1,
+  "schemaVersion": "s01_v18_1_frozen_contract_diff_audit_v1",
+  "signalIdentityInvocationRepair": 1,
+  "splitChanges": 0,
+  "statisticalPolicyChanges": 0,
+  "status": "passed",
+  "strategyParameterChanges": 0,
+  "universeChanges": 0
+}

@@ -1,0 +1,8 @@
+{
+  "rejectedSignalCount": 884,
+  "rejectionBreakdown": {
+    "reject_formal_evidence_unavailable": 467,
+    "reject_ranking_field_unavailable": 417
+  },
+  "schemaVersion": "s01_v18_capital_rejection_breakdown_v1"
+}

@@ -1,0 +1,16 @@
+{
+  "alignment": "intersection_of_strictly_prior_utc_days",
+  "benchmark": "BTC-USDT-SWAP",
+  "benchmarkBeta": 1.0,
+  "contributionFormula": "direction_sign_times_mark_notional_over_current_equity_times_beta",
+  "definitionHash": "s01_portfolio_beta_policy_v1_995df91f9e02d9b221a716cadc13f659fcfa6c3caf4c560e6e4c5665d5da0b90",
+  "lookbackBars": 90,
+  "maximumAbsoluteProjectedBeta": 1.5,
+  "method": "ols_covariance_ratio_without_intercept_equivalent_slope",
+  "minimumAlignedBars": 60,
+  "missingDataPolicy": "reject_candidate",
+  "returnDefinition": "utc_daily_log_return",
+  "schemaVersion": "s01_portfolio_beta_policy_v1",
+  "varianceEpsilon": 1e-18,
+  "zeroBenchmarkVariancePolicy": "reject_candidate"
+}

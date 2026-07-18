@@ -1,0 +1,13 @@
+{
+  "economicMetricReadCount": 0,
+  "economicResultComputationDisabled": true,
+  "exitReplayCount": 0,
+  "exitReplayDisabled": true,
+  "formalRunAttemptCount": 0,
+  "formalRunClaimCount": 0,
+  "lockedOosAccessCount": 0,
+  "resultMetricWriteCount": 0,
+  "resultMetricWriterDisabled": true,
+  "resultReadCount": 0,
+  "schemaVersion": "v18_3_signal_evidence_access_audit_v1"
+}

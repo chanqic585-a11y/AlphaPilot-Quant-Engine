@@ -1,0 +1,13 @@
+{
+  "demoArm": false,
+  "formalEvidenceCount": 0,
+  "formalResultArtifactCount": 0,
+  "formalResultRunCount": 0,
+  "formalRunAttemptCount": 1,
+  "formalRunClaimCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "s01_v18_3_operational_attempt_ledger_v1"
+}

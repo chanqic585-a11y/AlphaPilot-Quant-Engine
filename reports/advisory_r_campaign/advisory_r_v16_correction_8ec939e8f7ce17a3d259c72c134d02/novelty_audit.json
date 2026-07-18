@@ -1,0 +1,398 @@
+{
+  "candidates": [
+    {
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "candidateReplaced": false,
+      "familyId": "idiosyncratic_selloff_recovery",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.0425531914893617,
+          "semanticOverlap": 0.09090909090909091,
+          "signalOverlap": 0.00819672131147541,
+          "strategyId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778"
+        },
+        {
+          "exitPolicyOverlap": 0.02127659574468085,
+          "semanticOverlap": 0.08333333333333333,
+          "signalOverlap": 0.007042253521126761,
+          "strategyId": "strategy_version_26aeb30fb49c410273164169fe7f3378df9b42ddcb63f32a84b8f22620b156aa"
+        },
+        {
+          "exitPolicyOverlap": 0.02127659574468085,
+          "semanticOverlap": 0.08333333333333333,
+          "signalOverlap": 0.007142857142857143,
+          "strategyId": "strategy_version_7f42ff1f4e210f740b33bbe8a2145650f7921e043bce5a49338038be7c7f22e5"
+        },
+        {
+          "exitPolicyOverlap": 0.02127659574468085,
+          "semanticOverlap": 0.08333333333333333,
+          "signalOverlap": 0.007042253521126761,
+          "strategyId": "strategy_version_912e6c76fd9be3a157110cfd841138b89e35bfdc02fb31fd88de5b0465dd52e3"
+        },
+        {
+          "exitPolicyOverlap": 0.05555555555555555,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.012987012987012988,
+          "strategyId": "strategy_version_b79a48926c60f1361b18d9256a706d4c89e8263e0a5ca1b7b4a04d49db40d1a9"
+        }
+      ]
+    },
+    {
+      "candidateId": "s02_btc_lead_lag_continuation_1h",
+      "candidateReplaced": false,
+      "familyId": "btc_lead_lag",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.047619047619047616,
+          "semanticOverlap": 0.08333333333333333,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778"
+        },
+        {
+          "exitPolicyOverlap": 0.023809523809523808,
+          "semanticOverlap": 0.07692307692307693,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_26aeb30fb49c410273164169fe7f3378df9b42ddcb63f32a84b8f22620b156aa"
+        },
+        {
+          "exitPolicyOverlap": 0.023809523809523808,
+          "semanticOverlap": 0.07692307692307693,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_7f42ff1f4e210f740b33bbe8a2145650f7921e043bce5a49338038be7c7f22e5"
+        },
+        {
+          "exitPolicyOverlap": 0.023809523809523808,
+          "semanticOverlap": 0.07692307692307693,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_912e6c76fd9be3a157110cfd841138b89e35bfdc02fb31fd88de5b0465dd52e3"
+        },
+        {
+          "exitPolicyOverlap": 0.06451612903225806,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_b79a48926c60f1361b18d9256a706d4c89e8263e0a5ca1b7b4a04d49db40d1a9"
+        }
+      ]
+    },
+    {
+      "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+      "candidateReplaced": false,
+      "familyId": "btc_lead_lag",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.1,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.09090909090909091,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_26aeb30fb49c410273164169fe7f3378df9b42ddcb63f32a84b8f22620b156aa"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.09090909090909091,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_7f42ff1f4e210f740b33bbe8a2145650f7921e043bce5a49338038be7c7f22e5"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.09090909090909091,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_912e6c76fd9be3a157110cfd841138b89e35bfdc02fb31fd88de5b0465dd52e3"
+        },
+        {
+          "exitPolicyOverlap": 0.05,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_efdfb8d728ab2c36e846f1773c6d5bd524c39c28c9bc05b009abcfe1d7cd5122"
+        }
+      ]
+    },
+    {
+      "candidateId": "s04_pair_residual_mean_reversion_1h",
+      "candidateReplaced": false,
+      "familyId": "pair_residual_mean_reversion",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0625,
+          "strategyId": "freqtrade::AlphaPilotBatchB_EMATrendShort4H"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0625,
+          "strategyId": "freqtrade::AlphaPilotBatchD_BreakdownRetestShort4H"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0625,
+          "strategyId": "freqtrade::AlphaPilotBatchF_BollingerReversionShort4H"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0625,
+          "strategyId": "freqtrade::AlphaPilotLowFrequencyDirectional4HV01"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0625,
+          "strategyId": "freqtrade::AlphaPilotShortRejection1HV01"
+        }
+      ]
+    },
+    {
+      "candidateId": "s05_correlation_break_recovery_4h",
+      "candidateReplaced": false,
+      "familyId": "correlation_break",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.05555555555555555,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_b79a48926c60f1361b18d9256a706d4c89e8263e0a5ca1b7b4a04d49db40d1a9"
+        },
+        {
+          "exitPolicyOverlap": 0.0425531914893617,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778"
+        },
+        {
+          "exitPolicyOverlap": 0.041666666666666664,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_088bf157d71a8d1dd0112e7ad49342f5bca594e8c49755f08b8d692b08941e1e"
+        },
+        {
+          "exitPolicyOverlap": 0.037037037037037035,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_43859382282f4cdeb65b2c03a88bed89d22be7de22d232792ef8192805c27313"
+        },
+        {
+          "exitPolicyOverlap": 0.037037037037037035,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_e941bd5162ebef4bae97bc3340750898cb8c036021c37c5a3ea0547ac60d6da9"
+        }
+      ]
+    },
+    {
+      "candidateId": "s06_correlation_break_decoupling_4h",
+      "candidateReplaced": false,
+      "familyId": "correlation_break",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.034482758620689655,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_6cf37c25ddfbeac31172f995d0f943d7ef1cf7412a6e142320aca30a813e6a9e"
+        },
+        {
+          "exitPolicyOverlap": 0.03333333333333333,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_07b1418e7bd677f369d4324107846eb7e89e37418259510f43c24b81264e2066"
+        },
+        {
+          "exitPolicyOverlap": 0.03333333333333333,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_4bad11c8c9421bb6ad2e14dc21443f03ebc8e06de44e78ef66cb3dea203696d2"
+        },
+        {
+          "exitPolicyOverlap": 0.03225806451612903,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_9d6fc684a332bf985f820e2bb9e36e55991300dc96fb3a6f4f448aa645e7f7bb"
+        },
+        {
+          "exitPolicyOverlap": 0.027777777777777776,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_0dab3d1e18d9ca2b7e134d10b5da056adb0955d1ac6dfb018c287f926dbb9ce2"
+        }
+      ]
+    },
+    {
+      "candidateId": "s07_volatility_shock_asymmetry_4h",
+      "candidateReplaced": false,
+      "familyId": "volatility_shock_asymmetry",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.05,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_efdfb8d728ab2c36e846f1773c6d5bd524c39c28c9bc05b009abcfe1d7cd5122"
+        },
+        {
+          "exitPolicyOverlap": 0.034482758620689655,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_41229069456cb26804da55216affd5d5b59d73c282f2011e2a745d78cc0a99cc"
+        },
+        {
+          "exitPolicyOverlap": 0.034482758620689655,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_4cc537b0d26717bf553e51f4d6dd9042523bae420e2013a1c71d8900b4d5fd9c"
+        },
+        {
+          "exitPolicyOverlap": 0.034482758620689655,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_c99f0d05baef1c0935cdcb5498f61b543e1a4c90b3579d88a6407bc7fe1e9f4e"
+        },
+        {
+          "exitPolicyOverlap": 0.034482758620689655,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_e54c6d21101670f4035a95cc288935478405df861927c1913f85d66ba7e7ba12"
+        }
+      ]
+    },
+    {
+      "candidateId": "s08_utc_session_transition_1h",
+      "candidateReplaced": false,
+      "familyId": "utc_session_transition",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.03571428571428571,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_f43f35d8b888e5ba4c4547c64ab694f05ae154efb87f4a1e54079acca262acd1"
+        },
+        {
+          "exitPolicyOverlap": 0.029411764705882353,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_0dab3d1e18d9ca2b7e134d10b5da056adb0955d1ac6dfb018c287f926dbb9ce2"
+        },
+        {
+          "exitPolicyOverlap": 0.029411764705882353,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_1373c55a0b9b420840b6d01374e174c021527f190c8a5b2ce53888996b3dd8bc"
+        },
+        {
+          "exitPolicyOverlap": 0.029411764705882353,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_3b81321505e0f36008a1b3930cb7f73131dbea7bcc010bec1a9dcd0e08868343"
+        },
+        {
+          "exitPolicyOverlap": 0.029411764705882353,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_56f30d9be22f531e5c43ee34c2e091944781080b42036dc6ebb766f42559f748"
+        }
+      ]
+    },
+    {
+      "candidateId": "s09_beta_defensive_rotation_4h",
+      "candidateReplaced": false,
+      "familyId": "beta_defensive_rotation",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.08333333333333333,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_a2c0736f1f1de60ef2e571761970cbf64c35688ebc4631c55c2dc6570a557778"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.07692307692307693,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_26aeb30fb49c410273164169fe7f3378df9b42ddcb63f32a84b8f22620b156aa"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.07692307692307693,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_7f42ff1f4e210f740b33bbe8a2145650f7921e043bce5a49338038be7c7f22e5"
+        },
+        {
+          "exitPolicyOverlap": 0.0,
+          "semanticOverlap": 0.07692307692307693,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_912e6c76fd9be3a157110cfd841138b89e35bfdc02fb31fd88de5b0465dd52e3"
+        },
+        {
+          "exitPolicyOverlap": 0.03333333333333333,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_6cf37c25ddfbeac31172f995d0f943d7ef1cf7412a6e142320aca30a813e6a9e"
+        }
+      ]
+    },
+    {
+      "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+      "candidateReplaced": false,
+      "familyId": "orthogonal_weak_signal_matrix",
+      "historicalFamilyMatches": [],
+      "noveltyStatus": "overlap_recorded_frozen_candidate_retained",
+      "topHistoricalOverlaps": [
+        {
+          "exitPolicyOverlap": 0.08333333333333333,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_43859382282f4cdeb65b2c03a88bed89d22be7de22d232792ef8192805c27313"
+        },
+        {
+          "exitPolicyOverlap": 0.08,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_b5058256b2435926a06fb8f360a0891a57b1983d755029ae51185378156dab7f"
+        },
+        {
+          "exitPolicyOverlap": 0.07317073170731707,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_478f9f11defb41a12d3422e919a786c410331a2e623c5fe6106771b90d883cdf"
+        },
+        {
+          "exitPolicyOverlap": 0.07317073170731707,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_d481c4d476b7157aab07300ddb2d88b0263826a676157229d1c5979c0f649052"
+        },
+        {
+          "exitPolicyOverlap": 0.07142857142857142,
+          "semanticOverlap": 0.0,
+          "signalOverlap": 0.0,
+          "strategyId": "strategy_version_66e6438416f92c8ffd1d81825ebc346cef2e2d1126c06aec40edcad669a48f82"
+        }
+      ]
+    }
+  ],
+  "historyStrategyFamilyCount": 72,
+  "historyStrategyIdentityCount": 186,
+  "postResultCandidateReplacementAllowed": false,
+  "schemaVersion": "advisory_r_novelty_audit_v2"
+}

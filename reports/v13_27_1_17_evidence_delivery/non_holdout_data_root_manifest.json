@@ -1,0 +1,19 @@
+{
+  "allowedEndExclusive": "2026-05-15T04:00:00Z",
+  "allowedFileCount": 1,
+  "allowedStart": "2021-01-22T04:00:00Z",
+  "contractHash": "4b053b874fc7365c372adcb3b3bab08a0ee17e9977c80ece9fde7a077b370440",
+  "files": [
+    {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\advisory-r-workflow-v13.27.1.14-18\\reports\\formal_validation\\v13_27_1_17_s01_phase2_fixture_data\\ETH_USDT_USDT-4h-futures.feather",
+      "relativePath": "ETH_USDT_USDT-4h-futures.feather",
+      "sha256": "439cdd3b0f940d52d488d39a21dabbcf86e7f72800e6a6ee3d7f7a32eee5061e",
+      "sizeBytes": 51
+    }
+  ],
+  "fixtureOnly": true,
+  "inputRoot": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\.worktrees\\advisory-r-workflow-v13.27.1.14-18\\reports\\formal_validation\\v13_27_1_17_s01_phase2_fixture_data",
+  "notFormalMarketData": true,
+  "schemaVersion": "alphapilot_non_holdout_fixture_manifest_v1",
+  "status": "ready"
+}

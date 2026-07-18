@@ -1,0 +1,14 @@
+{
+  "capitalHash": "automatic_capital_policy_3fb0b411d281137953386f3e6136deec15b99ce3499c529a81c9fbd393c49941",
+  "initialCapital": 10000.0,
+  "maximumAbsolutePortfolioBeta": 1.5,
+  "maximumConcurrentPositions": 6,
+  "maximumCorrelationClusterRisk": 0.02,
+  "maximumOpenRisk": 0.06,
+  "maximumSameDirectionRisk": 0.04,
+  "maximumSingleSymbolRisk": 0.01,
+  "numericChangesFromV18": 0,
+  "riskPerTrade": 0.01,
+  "schemaVersion": "automatic_capital_policy_v1",
+  "source": "v18_frozen_numeric_policy"
+}

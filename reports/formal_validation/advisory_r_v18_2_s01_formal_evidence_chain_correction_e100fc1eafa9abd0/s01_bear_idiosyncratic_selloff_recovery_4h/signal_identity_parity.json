@@ -1,0 +1,9 @@
+{
+  "blockers": [],
+  "implementationEventCount": 884,
+  "passed": true,
+  "referenceEventCount": 884,
+  "schemaVersion": "s01_v18_signal_identity_parity_v1",
+  "signalIdentityParityPct": 100.0,
+  "status": "passed"
+}

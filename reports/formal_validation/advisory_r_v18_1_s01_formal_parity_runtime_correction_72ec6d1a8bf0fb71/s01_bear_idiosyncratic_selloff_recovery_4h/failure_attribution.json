@@ -1,0 +1,20 @@
+{
+  "blockers": [
+    "translation_parity_failed",
+    "canonical_event_identity_mapping_incomplete",
+    "formal_event_fold_assignment_incomplete",
+    "frozen_signal_ranking_evidence_incomplete",
+    "adapter_signal_ranking_evidence_incomplete",
+    "point_in_time_portfolio_context_incomplete",
+    "adapter_point_in_time_context_incomplete",
+    "capacity_data_semantics_failed",
+    "registered_funding_stress_input_unavailable"
+  ],
+  "campaignId": "advisory_r_v18_1_s01_formal_parity_runtime_correction_72ec6d1a8bf0fb71",
+  "implementationOrEvidenceFailure": true,
+  "primaryBlocker": "translation_parity_failed",
+  "resultDrivenRepairAllowed": false,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_v18_formal_failure_attribution_v1",
+  "strategyPerformanceFailure": false
+}

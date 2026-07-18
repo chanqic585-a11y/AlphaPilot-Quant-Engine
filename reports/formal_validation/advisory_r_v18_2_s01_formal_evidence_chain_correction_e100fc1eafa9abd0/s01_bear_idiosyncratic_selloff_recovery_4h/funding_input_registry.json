@@ -1,0 +1,205 @@
+{
+  "rows": [
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_f629348d12c646ec040493a59f85c89d11609074b3c458665c07353dfe1423a5",
+      "fundingStatus": "unavailable",
+      "instrumentId": "AAVE-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_5644688019c2d2ace27655be4630c21ddf0f941b688f090a031d885e9ea72d64",
+      "fundingStatus": "unavailable",
+      "instrumentId": "ADA-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_dcc12dc6aba7751eb44d51f431404995dada8071b5df4a7d8301db6b924d0bb7",
+      "fundingStatus": "unavailable",
+      "instrumentId": "ALGO-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_9a6c2303d85c3292e31cb9e79abc10d6ae466a435171a826a685f6b7f7fe4989",
+      "fundingStatus": "unavailable",
+      "instrumentId": "ATOM-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_00d1f858ce397f8af11297b6d24e7ad9f5cfeb3dec546457dab18990927c1767",
+      "fundingStatus": "unavailable",
+      "instrumentId": "AVAX-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_195af135ba706c63ab686d52e8463bc71d4e43eff8a9758f023798fbd12f5dd4",
+      "fundingStatus": "unavailable",
+      "instrumentId": "BCH-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_985d02b5edc1b4df97dd3dcbd9b8bfeabb3dd0abd999455223e2050451aa6f16",
+      "fundingStatus": "unavailable",
+      "instrumentId": "BTC-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_f40340624c76f03f37170eb26fa00f59d9b2b135ab5585133c17213fe96d7398",
+      "fundingStatus": "unavailable",
+      "instrumentId": "COMP-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_8d9dedcd617dcb878178f5248a666af7b54bb645e7573f06bdafc458ced5bb9b",
+      "fundingStatus": "unavailable",
+      "instrumentId": "DOGE-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_cf4c66bc73777fb9c51f16d0527d88f100e6771aea9c916324488fb472bafe4e",
+      "fundingStatus": "unavailable",
+      "instrumentId": "ETC-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_bcfa3c9ff6aa54927218d56489e55c9356871d4ee1e29cf576997c95a83abcaf",
+      "fundingStatus": "unavailable",
+      "instrumentId": "ETH-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_42f83917f745f9414a86c6b74fc89f4c200c4909345ccae965ba49c027040b3e",
+      "fundingStatus": "unavailable",
+      "instrumentId": "FIL-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_3d09bc7232d77d0a18fff41f1a4e908f98aa71391df33ec5f8ad482e5343d851",
+      "fundingStatus": "unavailable",
+      "instrumentId": "LINK-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_d01a34925540c3ba3b589b7d833044d8f2c9f2b5d3a4f1e34c31560c19e4fc2c",
+      "fundingStatus": "unavailable",
+      "instrumentId": "LTC-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_651f4592a13076996d40a2388dee37b5b21090ae2cc23a38ddbbff40e28d9d7d",
+      "fundingStatus": "unavailable",
+      "instrumentId": "NEO-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_cf9afcb896bab42ffdb6c9ecb2bf40d89df1a79e67ce04811376e44412102fff",
+      "fundingStatus": "unavailable",
+      "instrumentId": "SOL-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_00ad39301b82f0fb974004e81587a2fb712ca818b2c376e46fdfcce896264523",
+      "fundingStatus": "unavailable",
+      "instrumentId": "TRX-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_6eb56c4b30aae33b6f8832e33c9d52163b58cfd5973350d293459da0aa3e70ce",
+      "fundingStatus": "unavailable",
+      "instrumentId": "XRP-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_aad8a0aa82d94dee39f009a6fd2ec0dcae8c6402285156857504380268c13913",
+      "fundingStatus": "unavailable",
+      "instrumentId": "XTZ-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    },
+    {
+      "crossExchangeSubstitution": false,
+      "fundingInputHash": "funding_input_286977b025e0159b910f2b4b2cd729314fc672589805632f56db8285259d29fc",
+      "fundingStatus": "unavailable",
+      "instrumentId": "YFI-USDT-SWAP",
+      "provenance": "unavailable_no_substitution",
+      "rates": [],
+      "schemaVersion": "funding_input_registry_v1",
+      "zeroFillUsed": false
+    }
+  ],
+  "schemaVersion": "funding_input_registry_collection_v1"
+}

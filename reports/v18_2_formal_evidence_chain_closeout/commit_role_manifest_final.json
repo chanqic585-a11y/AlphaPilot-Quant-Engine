@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "s01_v18_2_commit_role_manifest_final_v1",
+  "branch": "feature/v13.27.1.18.2-formal-evidence-chain",
+  "remote": "origin",
+  "implementationCommit": "a95552913139bbf579d5e1e961880d987728ae48",
+  "preregistrationCommit": "305a934a8c99e20185ea2bd2d7f1213e9985b224",
+  "freezeCommit": "6d88ad369f266a2f0c4c176273e3fc5e3fbfc957",
+  "authorizationCommit": "e36a9e59c617fbe016cd8303db4348a7cd010a2f",
+  "resultAndMechanicalCloseoutCommit": "6752c721b39578cf7d4aec1569c55e0d77745452",
+  "freezeTag": "v13.27.1.18.2-r2",
+  "freezeTagCommit": "305a934a8c99e20185ea2bd2d7f1213e9985b224",
+  "allRecordedCommitsPushed": true,
+  "supplementalCloseoutCommitCapturedByGitHistory": true
+}

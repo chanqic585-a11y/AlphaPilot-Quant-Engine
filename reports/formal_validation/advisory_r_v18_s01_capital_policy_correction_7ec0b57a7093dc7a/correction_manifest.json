@@ -1,0 +1,17 @@
+{
+  "BearDefinitionChanges": 0,
+  "GateChanges": 0,
+  "campaignId": "advisory_r_v18_s01_capital_policy_correction_7ec0b57a7093dc7a",
+  "correctionOfCampaignId": "advisory_r_v17",
+  "correctionReason": "capital_policy_execution_contract_incomplete",
+  "costChanges": 0,
+  "exitPolicyChanges": 0,
+  "formalPortfolioPolicyDefinitionChanges": 1,
+  "lockedOosAccessCount": 0,
+  "manifestHash": "s01_v18_capital_policy_correction_manifest_940480d594e3012e6f397770614faface1ce82c2c541d8302002109a09739d06",
+  "resultDataAccessed": false,
+  "schemaVersion": "s01_v18_capital_policy_correction_manifest_v1",
+  "splitPolicyChanges": 0,
+  "strategyParameterChanges": 0,
+  "universeChanges": 0
+}

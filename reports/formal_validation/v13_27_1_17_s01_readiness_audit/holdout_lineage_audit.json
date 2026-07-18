@@ -1,0 +1,33 @@
+{
+  "accessCountSources": {
+    "campaignSummary": 0,
+    "correctionManifest": 0,
+    "prefilterResults": 0,
+    "preregistration": 0,
+    "routeDecision": 0
+  },
+  "accessCountsConsistent": true,
+  "admissionRule": "Locked OOS remains unavailable until a frozen boundary, content hash, and zero-access one-shot ledger are all present.",
+  "campaignId": "advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02",
+  "cleanLockedOosAvailable": false,
+  "contentFilesRead": [],
+  "holdoutBoundaryPresent": false,
+  "holdoutHashPresent": false,
+  "metadataFilesRead": {
+    "campaignSummary": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/campaign_summary.json",
+    "correctionManifest": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/correction_manifest.json",
+    "prefilterResults": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/prefilter_results.json",
+    "preregistration": "research/preregistrations/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02.json",
+    "routeDecision": "reports/advisory_r_campaign/advisory_r_v16_correction_8ec939e8f7ce17a3d259c72c134d02/route_decision.json"
+  },
+  "metadataOnly": true,
+  "metricsComputed": false,
+  "missingIdentityFields": [
+    "holdoutBoundary",
+    "holdoutHash"
+  ],
+  "recordedAccessCount": 0,
+  "schemaVersion": "formal_validation_holdout_lineage_audit_v1",
+  "status": "limitation",
+  "unlockLedgerPresent": false
+}

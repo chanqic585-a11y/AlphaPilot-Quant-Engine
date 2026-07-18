@@ -1,0 +1,15 @@
+{
+  "accessCountAfterV17": 0,
+  "accessCountBeforeV17": 0,
+  "accessCountDuringV17": 0,
+  "cleanLockedOosAvailable": false,
+  "contentHashRecomputed": false,
+  "contentReadCount": 0,
+  "endTime": null,
+  "holdoutId": null,
+  "metadataSource": "reports\\formal_validation\\v13_27_1_17_s01_phase2_readiness\\future_locked_oos_readiness.json",
+  "preexistingHash": null,
+  "route": "future_locked_oos_required",
+  "selectionContaminated": false,
+  "startTime": null
+}

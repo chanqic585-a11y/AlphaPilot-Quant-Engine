@@ -1,0 +1,29 @@
+{
+  "artifacts": [
+    {
+      "logicalRole": "phase1ReadinessJson",
+      "path": "phase1_readiness_audit.json",
+      "sha256": "7b66a939644cc72aa25c3c7fd41fc753fbd4cdadb6b04a0aa042f9a2368a0a92",
+      "sizeBytes": 13962
+    },
+    {
+      "logicalRole": "phase1ReadinessMarkdown",
+      "path": "phase1_readiness_audit.md",
+      "sha256": "d82659fcb858c27f3d3c977282920fafd929674719e8ef979ab70c41446fdea4",
+      "sizeBytes": 869
+    },
+    {
+      "logicalRole": "holdoutLineageJson",
+      "path": "holdout_lineage_audit.json",
+      "sha256": "b45b75aaa645117072ce6fca8b2123376a9c0d8dd212506e9f9a912698632ced",
+      "sizeBytes": 1532
+    },
+    {
+      "logicalRole": "holdoutLineageMarkdown",
+      "path": "holdout_lineage_audit.md",
+      "sha256": "7ecefb503423fdb0995d19ee0d3b011eaff40dc2794cc7898dd0543b8d711984",
+      "sizeBytes": 468
+    }
+  ],
+  "schemaVersion": "formal_validation_phase1_manifest_v1"
+}

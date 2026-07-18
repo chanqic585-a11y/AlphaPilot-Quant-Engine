@@ -1,0 +1,89 @@
+from __future__ import annotations
+
+import math
+
+import pandas as pd
+
+from alphapilot.advisory_r_campaign.candidates import build_candidate_inventory
+from alphapilot.advisory_r_campaign.pair_replay import (
+    _simple_benchmark_result,
+    replay_pair_candidate,
+)
+
+
+def _frame(
+    multiplier: float,
+    bump: float = 0.0,
+    idiosyncratic_amplitude: float = 0.0,
+) -> pd.DataFrame:
+    dates = pd.date_range("2025-01-01", periods=600, freq="1h", tz="UTC")
+    closes = [
+        100.0
+        + index * 0.03 * multiplier
+        + math.sin(index * 0.23) * 2.0 * multiplier
+        + idiosyncratic_amplitude * math.sin(index * 0.11 + 0.4)
+        for index in range(600)
+    ]
+    for index in range(540, 546):
+        closes[index] += bump * (index - 539)
+    for index in range(546, 553):
+        closes[index] += bump * (553 - index)
+    return pd.DataFrame(
+        {
+            "date": dates,
+            "open": closes,
+            "high": [value + 0.15 for value in closes],
+            "low": [value - 0.15 for value in closes],
+            "close": closes,
+            "volume": [2_000.0] * 600,
+            "confirmed": [1] * 600,
+        }
+    )
+
+
+def test_s04_replay_is_two_leg_and_charges_both_legs() -> None:
+    candidate = next(row for row in build_candidate_inventory() if row["variantId"] == "S04")
+    events = replay_pair_candidate(
+        candidate,
+        {
+            "BTC-USDT-SWAP": _frame(1.0),
+            "ETH-USDT-SWAP": _frame(
+                1.2,
+                bump=0.02,
+                idiosyncratic_amplitude=0.05,
+            ),
+        },
+        round_trip_cost_rate=0.002,
+    )
+
+    assert events
+    assert all(len(row["marketLegs"]) == 2 for row in events)
+    assert all(row["marketLegCount"] == 2 for row in events)
+    assert all(row["twoLegCostMultiplier"] == 2.0 for row in events)
+    assert all(row["fundingR"] is None for row in events)
+    assert all(row["simpleBenchmarkName"] == "pair_residual_zero_cross" for row in events)
+    assert all(row["simpleBenchmarkExitIndex"] >= row["entryIndex"] for row in events)
+    assert all(math.isfinite(row["simpleBenchmarkNetR"]) for row in events)
+
+
+def test_s06_simple_benchmark_is_independent_fixed_six_bar_hold() -> None:
+    candidate = next(row for row in build_candidate_inventory() if row["variantId"] == "S06")
+    synthetic = pd.DataFrame({"open": [100.0 + index for index in range(12)]})
+
+    result = _simple_benchmark_result(
+        candidate,
+        pd.DataFrame(index=synthetic.index),
+        synthetic,
+        entry_position=2,
+        entry_price=102.0,
+        direction="long",
+        risk_distance=2.0,
+        maximum_hold_bars=30,
+        cost_r=0.25,
+    )
+
+    assert result["simpleBenchmarkName"] == "correlation_break_next_6_bar_direction"
+    assert result["simpleBenchmarkExitIndex"] == 8
+    assert result["simpleBenchmarkExitReason"] == "fixed_6_bar"
+    assert result["simpleBenchmarkGrossR"] == 3.0
+    assert result["simpleBenchmarkNetR"] == 2.75

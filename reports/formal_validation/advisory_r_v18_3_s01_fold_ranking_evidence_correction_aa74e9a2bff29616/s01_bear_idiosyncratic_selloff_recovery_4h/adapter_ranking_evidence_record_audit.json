@@ -1,0 +1,17 @@
+{
+  "assignedEventCount": 417,
+  "auditHash": "ranking_evidence_record_audit_a305f5a2e0c93bb6652f520f069e95f624bd4b2c43cf8ca516b0f113b642f0d8",
+  "availableRecordCount": 0,
+  "missingRankingFieldCount": 0,
+  "postEntryDataUseCount": 0,
+  "rankingEvidenceRecordCount": 417,
+  "rankingEvidenceRecordMissingCount": 0,
+  "rankingEvidenceStatusMissingCount": 0,
+  "rankingFieldUnavailableCount": 417,
+  "recordCount": 417,
+  "recordCoveragePct": 100.0,
+  "schemaVersion": "ranking_evidence_record_audit_v1",
+  "stableRejectedEventCount": 417,
+  "statusCoveragePct": 100.0,
+  "unavailableRecordCount": 417
+}

@@ -1,0 +1,9 @@
+{
+  "rejectedSignalCount": 884,
+  "rejectionBreakdown": {
+    "reject_cross_fold_event": 1,
+    "reject_ranking_field_unavailable": 417,
+    "reject_unassigned_signal": 466
+  },
+  "schemaVersion": "s01_v18_capital_rejection_breakdown_v1"
+}

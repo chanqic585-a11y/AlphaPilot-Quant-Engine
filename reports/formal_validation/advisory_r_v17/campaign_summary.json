@@ -1,0 +1,23 @@
+{
+  "blockerCodes": [
+    "capacity_model_not_frozen",
+    "correlation_cluster_policy_not_frozen",
+    "portfolio_beta_policy_not_frozen",
+    "ranking_field_definitions_not_frozen"
+  ],
+  "blockerCount": 4,
+  "campaignId": "advisory_r_v17",
+  "candidateCount": 1,
+  "demoArm": false,
+  "formalMetrics": null,
+  "formalPassCount": 0,
+  "formalRunCount": 0,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "requiresNewCampaign": true,
+  "resultReadCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_formal_campaign_summary_v1",
+  "status": "completed_terminal_pre_run"
+}

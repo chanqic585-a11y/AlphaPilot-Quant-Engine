@@ -1,0 +1,112 @@
+{
+  "candidateCount": 10,
+  "candidates": [
+    {
+      "candidateId": "s01_bear_idiosyncratic_selloff_recovery_4h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 442,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 442,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s02_btc_lead_lag_continuation_1h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 8125,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 8125,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s03_btc_lead_lag_overreaction_reversion_1h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 2202,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 2202,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s04_pair_residual_mean_reversion_1h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 537,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 537,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s05_correlation_break_recovery_4h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 2,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 2,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s06_correlation_break_decoupling_4h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 2,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 2,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s07_volatility_shock_asymmetry_4h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 946,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 946,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s08_utc_session_transition_1h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 16789,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 16789,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s09_beta_defensive_rotation_4h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 312,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 312,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    },
+    {
+      "candidateId": "s10_orthogonal_weak_signal_matrix_4h",
+      "changedEventCount": 0,
+      "evidenceEventCount": 9381,
+      "extraEventCount": 0,
+      "missingEventCount": 0,
+      "passed": true,
+      "rawEventCount": 9381,
+      "schemaVersion": "advisory_r_implementation_parity_v1"
+    }
+  ],
+  "changedEventCount": 0,
+  "evidenceEventCount": 38738,
+  "extraEventCount": 0,
+  "missingEventCount": 0,
+  "passed": true,
+  "rawEventCount": 38738,
+  "schemaVersion": "advisory_r_implementation_parity_v1"
+}
