@@ -1,0 +1,5 @@
+﻿hypothesisId,familyId,timeframe,sourceReferenceCount,duplicateOfV25Family
+v27-hyp-01-range_expansion_close_followthrough,range_expansion_close_followthrough,4h,3,false
+v27-hyp-02-liquidity_gap_reentry,liquidity_gap_reentry,1h,3,false
+v27-hyp-03-cross_section_dispersion_leader_followthrough,cross_section_dispersion_leader_followthrough,4h,3,false
+v27-hyp-04-opening_range_failure_reversal,opening_range_failure_reversal,1h,3,false

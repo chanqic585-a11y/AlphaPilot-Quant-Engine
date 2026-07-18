@@ -1,0 +1,24 @@
+{
+  "demoArm": false,
+  "formalCandidateIds": [],
+  "formalPassClaimCount": 0,
+  "formalRunCount": 0,
+  "maximumFormalCandidates": 6,
+  "maximumPerFamily": 1,
+  "orderCount": 0,
+  "prefilterFailedCandidateIds": [
+    "v27-cross_section_dispersion_leader_followthrough-4h-long-v1",
+    "v27-cross_section_dispersion_leader_followthrough-4h-short-v2",
+    "v27-liquidity_gap_reentry-1h-long-v1",
+    "v27-liquidity_gap_reentry-1h-short-v2",
+    "v27-opening_range_failure_reversal-1h-long-v1",
+    "v27-opening_range_failure_reversal-1h-short-v2",
+    "v27-range_expansion_close_followthrough-4h-long-v1",
+    "v27-range_expansion_close_followthrough-4h-short-v2"
+  ],
+  "readTrialCandidateIds": [],
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "automatic_prefilter_route_v1",
+  "terminalRoute": "completed_zero_prefilter_survivors"
+}

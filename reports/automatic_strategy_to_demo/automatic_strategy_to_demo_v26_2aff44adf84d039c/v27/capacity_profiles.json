@@ -1,0 +1,522 @@
+{
+  "1h": {
+    "availableAt": "candle_close_timestamp",
+    "commonCutoff": {
+      "end": "2026-05-11T11:00:00+00:00",
+      "start": "2020-03-10T09:00:00+00:00"
+    },
+    "coverageByInstrument": {
+      "ADA-USDT-SWAP": {
+        "1h": {
+          "contentHash": "8883858ed3c24ff919408e9869e4d122937e5d41d44cd7207c2323a4e4197151",
+          "end": "2026-05-11T11:00:00+00:00",
+          "rowCount": 54075,
+          "start": "2020-03-10T09:00:00+00:00"
+        }
+      },
+      "BCH-USDT-SWAP": {
+        "1h": {
+          "contentHash": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+          "end": "2026-05-15T10:00:00+00:00",
+          "rowCount": 55835,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "BTC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "8257950e9ca895d29faeccef58c26ce246e7c26c0364e37277bfbca1f2a9b608",
+          "end": "2026-05-17T02:00:00+00:00",
+          "rowCount": 55875,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "ETC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+          "end": "2026-05-17T13:00:00+00:00",
+          "rowCount": 55886,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "ETH-USDT-SWAP": {
+        "1h": {
+          "contentHash": "2df64d71c83cb9b80bcc63d63ef129df6c0ac718a207de614f133350d5ccbcfe",
+          "end": "2026-05-17T13:00:00+00:00",
+          "rowCount": 55886,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "LINK-USDT-SWAP": {
+        "1h": {
+          "contentHash": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+          "end": "2026-05-19T12:00:00+00:00",
+          "rowCount": 54362,
+          "start": "2020-03-06T11:00:00+00:00"
+        }
+      },
+      "LTC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+          "end": "2026-05-20T09:00:00+00:00",
+          "rowCount": 55954,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "XRP-USDT-SWAP": {
+        "1h": {
+          "contentHash": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+          "end": "2026-05-22T11:00:00+00:00",
+          "rowCount": 56004,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "eligibleInstruments": [
+      "ADA-USDT-SWAP",
+      "BCH-USDT-SWAP",
+      "BTC-USDT-SWAP",
+      "ETC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "LINK-USDT-SWAP",
+      "LTC-USDT-SWAP",
+      "XRP-USDT-SWAP"
+    ],
+    "excludedInstruments": [],
+    "fieldSet": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "quote_turnover"
+    ],
+    "instrumentSet": [
+      "ADA-USDT-SWAP",
+      "BCH-USDT-SWAP",
+      "BTC-USDT-SWAP",
+      "ETC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "LINK-USDT-SWAP",
+      "LTC-USDT-SWAP",
+      "XRP-USDT-SWAP"
+    ],
+    "knownLimitations": [
+      "Exchange portability is evaluated separately from turnover semantics.",
+      "The source exchange identity remains unverified when the profile source is unverified_local_exchange."
+    ],
+    "marketType": "swap",
+    "minimumHistoryRows": 10000,
+    "minimumLookback": {
+      "unit": "rows",
+      "value": 10000
+    },
+    "ohlcCoverageByInstrument": {
+      "ADA-USDT-SWAP": {
+        "1h": {
+          "contentHash": "8883858ed3c24ff919408e9869e4d122937e5d41d44cd7207c2323a4e4197151",
+          "end": "2026-05-11T11:00:00+00:00",
+          "rowCount": 54075,
+          "start": "2020-03-10T09:00:00+00:00"
+        }
+      },
+      "BCH-USDT-SWAP": {
+        "1h": {
+          "contentHash": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+          "end": "2026-05-15T10:00:00+00:00",
+          "rowCount": 55835,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "BTC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "8257950e9ca895d29faeccef58c26ce246e7c26c0364e37277bfbca1f2a9b608",
+          "end": "2026-05-17T02:00:00+00:00",
+          "rowCount": 55875,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "ETC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+          "end": "2026-05-17T13:00:00+00:00",
+          "rowCount": 55886,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "ETH-USDT-SWAP": {
+        "1h": {
+          "contentHash": "2df64d71c83cb9b80bcc63d63ef129df6c0ac718a207de614f133350d5ccbcfe",
+          "end": "2026-05-17T13:00:00+00:00",
+          "rowCount": 55886,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "LINK-USDT-SWAP": {
+        "1h": {
+          "contentHash": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+          "end": "2026-05-19T12:00:00+00:00",
+          "rowCount": 54362,
+          "start": "2020-03-06T11:00:00+00:00"
+        }
+      },
+      "LTC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+          "end": "2026-05-20T09:00:00+00:00",
+          "rowCount": 55954,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "XRP-USDT-SWAP": {
+        "1h": {
+          "contentHash": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+          "end": "2026-05-22T11:00:00+00:00",
+          "rowCount": 56004,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "profileHash": "data_profile_f3315f18882ba1005f0002475bd3d07754048ff1c1535f055a7f4d61bf1ddcf6",
+    "profileId": "ohlcv_verified_capacity_v2",
+    "requiredTimeframes": [
+      "1h"
+    ],
+    "selectionPolicy": "semantic_and_coverage_evidence_only",
+    "selectionUsesEconomicResults": false,
+    "sourceExchange": "unverified_local_exchange",
+    "status": "ready",
+    "strategyType": "directional_event",
+    "timeframes": [
+      "1h"
+    ],
+    "turnoverField": "volume_quote_currency",
+    "turnoverSemanticsByInstrument": {
+      "ADA-USDT-SWAP": {
+        "1h": {
+          "contentHash": "8883858ed3c24ff919408e9869e4d122937e5d41d44cd7207c2323a4e4197151",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "BCH-USDT-SWAP": {
+        "1h": {
+          "contentHash": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "BTC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "8257950e9ca895d29faeccef58c26ce246e7c26c0364e37277bfbca1f2a9b608",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "ETC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "ETH-USDT-SWAP": {
+        "1h": {
+          "contentHash": "2df64d71c83cb9b80bcc63d63ef129df6c0ac718a207de614f133350d5ccbcfe",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "LINK-USDT-SWAP": {
+        "1h": {
+          "contentHash": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "LTC-USDT-SWAP": {
+        "1h": {
+          "contentHash": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "XRP-USDT-SWAP": {
+        "1h": {
+          "contentHash": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      }
+    },
+    "turnoverUnit": "quote_asset",
+    "universeSelectionPolicy": "explicit_frozen_instrument_set",
+    "volumeProvenanceAuditHash": "volume_provenance_audit_ae591b9d0f0d419634154eeedb0bcd1fd3af647b9f51adaf553a8b641ada661f"
+  },
+  "4h": {
+    "availableAt": "candle_close_timestamp",
+    "commonCutoff": {
+      "end": "2026-05-11T08:00:00+00:00",
+      "start": "2020-03-10T08:00:00+00:00"
+    },
+    "coverageByInstrument": {
+      "ADA-USDT-SWAP": {
+        "4h": {
+          "contentHash": "dc442b69721d98dea475ac984720064bf426b4ccef83cf6b4e429b8f56e0022e",
+          "end": "2026-05-11T08:00:00+00:00",
+          "rowCount": 13519,
+          "start": "2020-03-10T08:00:00+00:00"
+        }
+      },
+      "BCH-USDT-SWAP": {
+        "4h": {
+          "contentHash": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+          "end": "2026-05-15T04:00:00+00:00",
+          "rowCount": 13958,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "BTC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "ca8d7b62b669fae1f81e60400577aa0cc6faddb3574bfd79282666d27a17f155",
+          "end": "2026-05-16T20:00:00+00:00",
+          "rowCount": 13968,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "ETC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+          "end": "2026-05-17T08:00:00+00:00",
+          "rowCount": 13971,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "ETH-USDT-SWAP": {
+        "4h": {
+          "contentHash": "4baa649b93c6f2a890a8de81c07854664dfce86666c7918c00600063d5f6d3c5",
+          "end": "2026-05-17T08:00:00+00:00",
+          "rowCount": 13971,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "LINK-USDT-SWAP": {
+        "4h": {
+          "contentHash": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+          "end": "2026-05-19T08:00:00+00:00",
+          "rowCount": 13591,
+          "start": "2020-03-06T08:00:00+00:00"
+        }
+      },
+      "LTC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+          "end": "2026-05-20T04:00:00+00:00",
+          "rowCount": 13988,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "XRP-USDT-SWAP": {
+        "4h": {
+          "contentHash": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+          "end": "2026-05-22T04:00:00+00:00",
+          "rowCount": 14000,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "eligibleInstruments": [
+      "ADA-USDT-SWAP",
+      "BCH-USDT-SWAP",
+      "BTC-USDT-SWAP",
+      "ETC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "LINK-USDT-SWAP",
+      "LTC-USDT-SWAP",
+      "XRP-USDT-SWAP"
+    ],
+    "excludedInstruments": [],
+    "fieldSet": [
+      "open",
+      "high",
+      "low",
+      "close",
+      "quote_turnover"
+    ],
+    "instrumentSet": [
+      "ADA-USDT-SWAP",
+      "BCH-USDT-SWAP",
+      "BTC-USDT-SWAP",
+      "ETC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "LINK-USDT-SWAP",
+      "LTC-USDT-SWAP",
+      "XRP-USDT-SWAP"
+    ],
+    "knownLimitations": [
+      "Exchange portability is evaluated separately from turnover semantics.",
+      "The source exchange identity remains unverified when the profile source is unverified_local_exchange."
+    ],
+    "marketType": "swap",
+    "minimumHistoryRows": 10000,
+    "minimumLookback": {
+      "unit": "rows",
+      "value": 10000
+    },
+    "ohlcCoverageByInstrument": {
+      "ADA-USDT-SWAP": {
+        "4h": {
+          "contentHash": "dc442b69721d98dea475ac984720064bf426b4ccef83cf6b4e429b8f56e0022e",
+          "end": "2026-05-11T08:00:00+00:00",
+          "rowCount": 13519,
+          "start": "2020-03-10T08:00:00+00:00"
+        }
+      },
+      "BCH-USDT-SWAP": {
+        "4h": {
+          "contentHash": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+          "end": "2026-05-15T04:00:00+00:00",
+          "rowCount": 13958,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "BTC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "ca8d7b62b669fae1f81e60400577aa0cc6faddb3574bfd79282666d27a17f155",
+          "end": "2026-05-16T20:00:00+00:00",
+          "rowCount": 13968,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "ETC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+          "end": "2026-05-17T08:00:00+00:00",
+          "rowCount": 13971,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "ETH-USDT-SWAP": {
+        "4h": {
+          "contentHash": "4baa649b93c6f2a890a8de81c07854664dfce86666c7918c00600063d5f6d3c5",
+          "end": "2026-05-17T08:00:00+00:00",
+          "rowCount": 13971,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "LINK-USDT-SWAP": {
+        "4h": {
+          "contentHash": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+          "end": "2026-05-19T08:00:00+00:00",
+          "rowCount": 13591,
+          "start": "2020-03-06T08:00:00+00:00"
+        }
+      },
+      "LTC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+          "end": "2026-05-20T04:00:00+00:00",
+          "rowCount": 13988,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      },
+      "XRP-USDT-SWAP": {
+        "4h": {
+          "contentHash": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+          "end": "2026-05-22T04:00:00+00:00",
+          "rowCount": 14000,
+          "start": "2020-01-01T00:00:00+00:00"
+        }
+      }
+    },
+    "profileHash": "data_profile_9ee8caa26453cce73bcfa93887cdefa3e2d6908471626eae42512f554ee50b53",
+    "profileId": "ohlcv_verified_capacity_v2",
+    "requiredTimeframes": [
+      "4h"
+    ],
+    "selectionPolicy": "semantic_and_coverage_evidence_only",
+    "selectionUsesEconomicResults": false,
+    "sourceExchange": "unverified_local_exchange",
+    "status": "ready",
+    "strategyType": "directional_event",
+    "timeframes": [
+      "4h"
+    ],
+    "turnoverField": "volume_quote_currency",
+    "turnoverSemanticsByInstrument": {
+      "ADA-USDT-SWAP": {
+        "4h": {
+          "contentHash": "dc442b69721d98dea475ac984720064bf426b4ccef83cf6b4e429b8f56e0022e",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "BCH-USDT-SWAP": {
+        "4h": {
+          "contentHash": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "BTC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "ca8d7b62b669fae1f81e60400577aa0cc6faddb3574bfd79282666d27a17f155",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "ETC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "ETH-USDT-SWAP": {
+        "4h": {
+          "contentHash": "4baa649b93c6f2a890a8de81c07854664dfce86666c7918c00600063d5f6d3c5",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "LINK-USDT-SWAP": {
+        "4h": {
+          "contentHash": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "LTC-USDT-SWAP": {
+        "4h": {
+          "contentHash": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      },
+      "XRP-USDT-SWAP": {
+        "4h": {
+          "contentHash": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+          "route": "A",
+          "semanticType": "exact_quote_turnover",
+          "verificationHash": "volume_semantics_verification_db9a4845fd741e68f9cbe4e54eff313c239344d3be4c20bcb91a6103f5a1a6cd"
+        }
+      }
+    },
+    "turnoverUnit": "quote_asset",
+    "universeSelectionPolicy": "explicit_frozen_instrument_set",
+    "volumeProvenanceAuditHash": "volume_provenance_audit_ae591b9d0f0d419634154eeedb0bcd1fd3af647b9f51adaf553a8b641ada661f"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "1h": {
+    "blockers": [],
+    "candidateIdCreationCount": 0,
+    "candidateTrialBudgetConsumed": 0,
+    "capacityCoveragePct": 100.0,
+    "dataProfileHash": "data_profile_f3315f18882ba1005f0002475bd3d07754048ff1c1535f055a7f4d61bf1ddcf6",
+    "economicReadCount": 0,
+    "eligibleInstrumentCount": 8,
+    "exitResultReadCount": 0,
+    "formalBudgetConsumed": 0,
+    "instrumentCount": 8,
+    "lockedOosReadCount": 0,
+    "receiptHash": "v27_data_readiness_receipt_cafe74e3b7ac8e1875f97b6d3bc4e9388ca81927bd4a1b1317aa7d5b461e10c6",
+    "requiredFields": [
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "schemaVersion": "v27_data_readiness_receipt_v1",
+    "semanticCheckCount": 32,
+    "semanticCoveragePct": 100.0,
+    "semanticPassCount": 32,
+    "statisticalResultReadCount": 0,
+    "status": "ready",
+    "timeframe": "1h"
+  },
+  "4h": {
+    "blockers": [],
+    "candidateIdCreationCount": 0,
+    "candidateTrialBudgetConsumed": 0,
+    "capacityCoveragePct": 100.0,
+    "dataProfileHash": "data_profile_9ee8caa26453cce73bcfa93887cdefa3e2d6908471626eae42512f554ee50b53",
+    "economicReadCount": 0,
+    "eligibleInstrumentCount": 8,
+    "exitResultReadCount": 0,
+    "formalBudgetConsumed": 0,
+    "instrumentCount": 8,
+    "lockedOosReadCount": 0,
+    "receiptHash": "v27_data_readiness_receipt_abc3cf0e7f21fcb58f69e60d2c75d22359925f11dc722b7a9bc7fe47ac15aa95",
+    "requiredFields": [
+      "open",
+      "high",
+      "low",
+      "close"
+    ],
+    "schemaVersion": "v27_data_readiness_receipt_v1",
+    "semanticCheckCount": 32,
+    "semanticCoveragePct": 100.0,
+    "semanticPassCount": 32,
+    "statisticalResultReadCount": 0,
+    "status": "ready",
+    "timeframe": "4h"
+  }
+}

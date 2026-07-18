@@ -1,0 +1,1602 @@
+[
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_5eceeb18133dc273ec44ab2c65aa5843b87c4c6ab5ff14f966fecb56def6f780",
+    "instrumentId": "ADA-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "8883858ed3c24ff919408e9869e4d122937e5d41d44cd7207c2323a4e4197151",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_95ac992cb3c414ac8349449c11dafc5e9a7f20fedf625fb80305c8d4a09344f8",
+    "instrumentId": "ADA-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "8883858ed3c24ff919408e9869e4d122937e5d41d44cd7207c2323a4e4197151",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_5d2a9e550ec22e6e724bdf6f8e03c787f40587fc2665f2e7415ad35c3591ef8a",
+    "instrumentId": "ADA-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "8883858ed3c24ff919408e9869e4d122937e5d41d44cd7207c2323a4e4197151",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_32aa9e47146f2c29a0a6462a423a8e70fa7842a908afaf4dd38166085780e10e",
+    "instrumentId": "ADA-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "8883858ed3c24ff919408e9869e4d122937e5d41d44cd7207c2323a4e4197151",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_e55b6570c3d69c18e730efe151252029fb10507217c16b587793c81ffaa9dc7f",
+    "instrumentId": "BCH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_a44851ad25c0e653758e38000d8345e41714f06842d3f3ff323b1e9345033074",
+    "instrumentId": "BCH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_fb998a2843b82c1e1790002a60081ff9d1ecdc3892e98688696594bdafe7e0d9",
+    "instrumentId": "BCH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_2c37e329db0660858d3cffe4faccff6f8624c82a3d5b3d2520506076c9824a7b",
+    "instrumentId": "BCH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_1c7f173fd7640244b82a67290c76928c076c07475cae9f26fd1b7d8895c1049b",
+    "instrumentId": "BTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "8257950e9ca895d29faeccef58c26ce246e7c26c0364e37277bfbca1f2a9b608",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_e69c2efe13b16956286912816321a9ec00a3f2e6e7bf9b7539008322f7623a1f",
+    "instrumentId": "BTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "8257950e9ca895d29faeccef58c26ce246e7c26c0364e37277bfbca1f2a9b608",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_18e5b105a986105c27541ca895527eb258bc9f84a3f07cd8cc612aab8b9d308e",
+    "instrumentId": "BTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "8257950e9ca895d29faeccef58c26ce246e7c26c0364e37277bfbca1f2a9b608",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_c31c8a1ed364eaf27f6f3431106439a8cc36c4f5573e9ed9179a92cbb672282c",
+    "instrumentId": "BTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "8257950e9ca895d29faeccef58c26ce246e7c26c0364e37277bfbca1f2a9b608",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_39270f79f4f5e244c3fb84423a8e67b82b875e1aa81a578c0bd54cc87e482bc6",
+    "instrumentId": "ETC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_2450d57028c88425886426b395a751826474cb1806abe581677bd70fecd55cea",
+    "instrumentId": "ETC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_c7c3c2c687432121f3ef32d37f77670fadc07e70ae16c1e8dc411aa4454533ae",
+    "instrumentId": "ETC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_32bfd97ef009236112a5b83b9ce0988f0be74f13cb5526880db2bfbeb5318ce5",
+    "instrumentId": "ETC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_2cf49bafb380fa0dbf902343887603dddd904ec4bcd3a652ee2bfa4f6f184819",
+    "instrumentId": "ETH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "2df64d71c83cb9b80bcc63d63ef129df6c0ac718a207de614f133350d5ccbcfe",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_df2694c3e01c34eb03ba709ab53511911b74d5480f164a94fc319166e7bfadc5",
+    "instrumentId": "ETH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "2df64d71c83cb9b80bcc63d63ef129df6c0ac718a207de614f133350d5ccbcfe",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_2b52fd5ef13340a83aa9761b9cd1386002bc827c9ff2134fa1c35a9feda85eae",
+    "instrumentId": "ETH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "2df64d71c83cb9b80bcc63d63ef129df6c0ac718a207de614f133350d5ccbcfe",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_8c6e217fbb1bfb9b8a893b0546e6f97512e5131ef4c2790858a7544f6c543a3a",
+    "instrumentId": "ETH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "2df64d71c83cb9b80bcc63d63ef129df6c0ac718a207de614f133350d5ccbcfe",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_66e66faee3d5d800cc27fc0919a4b17dbd3f404630a0892958fdbae573c58816",
+    "instrumentId": "LINK-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_258b5d62013df2f1ea223f6b9dcb31be9dcecdae115bf267d99ed0c6e373765d",
+    "instrumentId": "LINK-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_6064fcbfaa558a6a50e5215d45e0b0fe2ed7f8a45d527be41b68cb00ba5815b8",
+    "instrumentId": "LINK-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_b58a6cd05770b4837b0660186c0bf6ac239c07322a76e0d4d9c869a94700f2cc",
+    "instrumentId": "LINK-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_a3422fb377d7dd1c4fcabec452c9fd1766d3d41820b484d84b978e21f9a60fa0",
+    "instrumentId": "LTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_35ba4d5c16c27a0da8e898c31f73340df503e5847a88b996ebfc88bc6703647a",
+    "instrumentId": "LTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_f9cc2b96eef41a0f6bb1bf7c771ef33b27df66c742e21134a18afd322e0d53f8",
+    "instrumentId": "LTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_02bb1d3c9e5cc09e460c527d2747e5501830fee5726b3f83a830826ea4ddcc9f",
+    "instrumentId": "LTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_77c4e6d95e99e7c65707637ca4e9d722ebd914491b74d376739f86da0802926e",
+    "instrumentId": "XRP-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_0dc579ab9ef5ddcf427d8a96d6b83583773b910491ae0451f50153a0bf6e7558",
+    "instrumentId": "XRP-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_2897f19e2c280d080cb0e59f6f2bcee2f51e93381df2fd044972f4ce886bf566",
+    "instrumentId": "XRP-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_d90d4de574c43519b567109afda9e65ccfeab28327984405ba399e973f96ddba",
+    "instrumentId": "XRP-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 24624,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "1h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_dfe4176222b58387fdca13a5f73662bfe4d7a4d3f2faa73f073b5ec9e6d15f16",
+    "instrumentId": "ADA-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "dc442b69721d98dea475ac984720064bf426b4ccef83cf6b4e429b8f56e0022e",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_ae09b16d49b5cfd22c7254700f23324de00643557893e941a537f481198db0f3",
+    "instrumentId": "ADA-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "dc442b69721d98dea475ac984720064bf426b4ccef83cf6b4e429b8f56e0022e",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_be9b9a307567e815f7fd29e1d5366b9f3c76e15c287dd7b3d632b769e7adb590",
+    "instrumentId": "ADA-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "dc442b69721d98dea475ac984720064bf426b4ccef83cf6b4e429b8f56e0022e",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_cf77f634300456603d92353a7ccc2b6c0897705a356756e431d813221c4f070b",
+    "instrumentId": "ADA-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "dc442b69721d98dea475ac984720064bf426b4ccef83cf6b4e429b8f56e0022e",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_2f42b6db66d8b376098140a9844e6926fbae82c7887496cda92a3a46aece161c",
+    "instrumentId": "BCH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_a3e7369e9756ad99ecc817a9af5301671408c5bcac8ad302e2b9df081bcde473",
+    "instrumentId": "BCH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_1c51fbad228286935d0c7702abc22f2ac052de1ff4a44ce35bd034c0fc30b223",
+    "instrumentId": "BCH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_5fac25e52c339d552591733142fdff8fa2767ac178e6b32bb82b88a73b7fce2f",
+    "instrumentId": "BCH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_2e1e3b5f71b3fa89ae31c2267b722b8ac84b80d4f14a32517931d24be6941720",
+    "instrumentId": "BTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "ca8d7b62b669fae1f81e60400577aa0cc6faddb3574bfd79282666d27a17f155",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_53b7c5da21ab621a2e499126e9ed7bdca22107e447366432d2ce5a373c328ece",
+    "instrumentId": "BTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "ca8d7b62b669fae1f81e60400577aa0cc6faddb3574bfd79282666d27a17f155",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_1cb6c08940de45e80dcaa852c0e98ece4b92db4a32c2df42eb76de6339a98368",
+    "instrumentId": "BTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "ca8d7b62b669fae1f81e60400577aa0cc6faddb3574bfd79282666d27a17f155",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_b7a7d220a0de79bc4898e08d6cc572eeceac93cea330e5773a587e623cd13fc6",
+    "instrumentId": "BTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "ca8d7b62b669fae1f81e60400577aa0cc6faddb3574bfd79282666d27a17f155",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_a5fc77d61405ae36b218f9a9549c31498de9a6b6756d50cf4fed57666e919e0c",
+    "instrumentId": "ETC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_ed150089b544f7a22fc8d47ad357dfc1618c000feaefb0038422d89875dab521",
+    "instrumentId": "ETC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_daafbb44ecb44117a75a32b1124f83ffdab21c9d3d5889da64aa12e7436be8c2",
+    "instrumentId": "ETC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_e154f5fed49c4db7317e46ce5163342a23fda20e6e063af213576b6b5548d4da",
+    "instrumentId": "ETC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_7ceb27f4a0b434cda4d6b639b8652d58e820f2f3bb05dbd0facfb104333c32b9",
+    "instrumentId": "ETH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "4baa649b93c6f2a890a8de81c07854664dfce86666c7918c00600063d5f6d3c5",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_923989a6a384e9adbc48d8325b69be760bbed41abd0a5392d594b3cc3ee7c776",
+    "instrumentId": "ETH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "4baa649b93c6f2a890a8de81c07854664dfce86666c7918c00600063d5f6d3c5",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_13f88e8dd05b4e087e42384a992e5bbb58e244540b681f1a5c786f1fe71ae7f3",
+    "instrumentId": "ETH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "4baa649b93c6f2a890a8de81c07854664dfce86666c7918c00600063d5f6d3c5",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_82fb9ece9c135428b80092026de752264dd73a344e5365875fda9ad7674968fb",
+    "instrumentId": "ETH-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "4baa649b93c6f2a890a8de81c07854664dfce86666c7918c00600063d5f6d3c5",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_9781458771b0a1c226dfa2b3768e521d0d391c273313d6b8e71173ed4db85964",
+    "instrumentId": "LINK-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_cbba7d7d3e7ebcd3c307977f1ec73462322857dee2ac646d8d65780738f7e6fe",
+    "instrumentId": "LINK-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_8c75851a28fe05895f9674b3edc7684bf32136d3c83f671f7fd0d8db6f7aaea4",
+    "instrumentId": "LINK-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_ff4e6f9d047eac908bb9bb5df8472ee8cda2178f7a9c97207d936f704119aa30",
+    "instrumentId": "LINK-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_6ff442c4ae686ef60406a1029b6b1a0dcbc039df1b218b0f993c634fb8b6db5d",
+    "instrumentId": "LTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_0ed1348068d3f5f27acea86b7d71f19acb6153dd433714a5ad58e2c013ceb4e9",
+    "instrumentId": "LTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_44be77563eae79c7d9ab116d0bbc9c9b146cd8897a01216de845e39e337e671e",
+    "instrumentId": "LTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_6c6a333895092d051d48b9a161f297d9a190dc4037839b2c48ab8269900b169e",
+    "instrumentId": "LTC-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "open",
+    "hash": "v27_fixed_universe_semantics_89940521c0d1b081cf6fcca9bf18343534d5dc41b8f018b1980b9f282f77d3ee",
+    "instrumentId": "XRP-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "high",
+    "hash": "v27_fixed_universe_semantics_566ac802249199b49a7c8d0a5deda7fa1908358ba191fe82a848173395419a5c",
+    "instrumentId": "XRP-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "low",
+    "hash": "v27_fixed_universe_semantics_07cd4ae177b6c6bd0a5ac1d054de1e01c7cedf6f6afffc958050e16b3f23df77",
+    "instrumentId": "XRP-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  },
+  {
+    "availableAtRule": "candle_close_timestamp",
+    "causal": true,
+    "coveragePct": 100.0,
+    "field": "close",
+    "hash": "v27_fixed_universe_semantics_2b7936f637fae3ba9d3e83a6ff531ba57f50cbb82bf7289c709136493f5d0ffd",
+    "instrumentId": "XRP-USDT-SWAP",
+    "knownLimitations": [
+      "source exchange provenance remains unverified",
+      "historical dynamic-universe membership is not reconstructed"
+    ],
+    "pointInTime": true,
+    "pointInTimeScope": "closed_candle_availability_only",
+    "rowCount": 6156,
+    "schemaVersion": "v27_fixed_universe_field_semantics_v1",
+    "sourceHash": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+    "sourcePointInTime": false,
+    "status": "ready_fixed_universe_pit",
+    "timeframe": "4h",
+    "universeMembershipPIT": "not_applicable_fixed_universe",
+    "window": {
+      "endExclusive": "2023-01-01T00:00:00+00:00",
+      "start": "2020-03-11T00:00:00+00:00"
+    }
+  }
+]

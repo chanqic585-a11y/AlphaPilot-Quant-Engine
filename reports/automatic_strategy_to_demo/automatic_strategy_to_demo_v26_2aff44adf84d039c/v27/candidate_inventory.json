@@ -1,0 +1,834 @@
+[
+  {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "v27-range_expansion_close_followthrough-4h-long-v1",
+    "candidateRankingContract": {
+      "candidateId": "v27-range_expansion_close_followthrough-4h-long-v1",
+      "candidateRankingContractId": "candidate_ranking_contract_9c325580771d447e498754e2bd74efb36a80b211bef2d4269152430102ac55db",
+      "confirmationStrength": {
+        "availableAt": "signal_candle_close",
+        "formula": "directional_close_location_within_event_bar",
+        "lookback": "event_bar_and_prior_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "directional_close_location_within_event_bar",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close"
+        ]
+      },
+      "contractHash": "candidate_ranking_contract_9c325580771d447e498754e2bd74efb36a80b211bef2d4269152430102ac55db",
+      "economicResultReadPolicy": "forbidden",
+      "familyId": "range_expansion_close_followthrough",
+      "instrumentId": {
+        "exactCanonicalIdentity": true,
+        "order": "ascending"
+      },
+      "liquidity30d": {
+        "availableAt": "signal_candle_close",
+        "dataProfileHash": "data_profile_9ee8caa26453cce73bcfa93887cdefa3e2d6908471626eae42512f554ee50b53",
+        "formula": "sum(close * reported_volume) over trailing 30d closed bars",
+        "lookback": "30d/180_closed_bars",
+        "missingPolicy": "reject_signal",
+        "order": "descending"
+      },
+      "missingValuePolicy": "reject_signal",
+      "postEntryDataPolicy": "forbidden",
+      "primaryEventSeverity": {
+        "availableAt": "signal_candle_close",
+        "formula": "true_range / prior_atr14",
+        "lookback": "30d/180_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "true_range / prior_atr14",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "atr14"
+        ]
+      },
+      "schemaVersion": "candidate_ranking_contract_v1"
+    },
+    "candidateSpecHash": "v27_candidate_spec_175120399e6c4b119ed3d46224438465f27cf2fa5a956ff44453c373f86595e4",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "dataReadinessReceiptHash": "v27_data_readiness_receipt_abc3cf0e7f21fcb58f69e60d2c75d22359925f11dc722b7a9bc7fe47ac15aa95",
+    "direction": "long",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "filter",
+        "veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "range_expansion_close_followthrough",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v2",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "familyId": "range_expansion_close_followthrough",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "v27-hyp-01-range_expansion_close_followthrough",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "maximumHoldBars": 18,
+    "rankingLookbackBars": 180,
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "schemaVersion": "v27_directional_event_candidate_v1",
+    "strategyType": "directional_event",
+    "timeframe": "4h"
+  },
+  {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "v27-range_expansion_close_followthrough-4h-short-v2",
+    "candidateRankingContract": {
+      "candidateId": "v27-range_expansion_close_followthrough-4h-short-v2",
+      "candidateRankingContractId": "candidate_ranking_contract_f092855a46b64e33c09e6a5eb42483c52df59d784ece8947ad377d5aff39fa07",
+      "confirmationStrength": {
+        "availableAt": "signal_candle_close",
+        "formula": "directional_close_location_within_event_bar",
+        "lookback": "event_bar_and_prior_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "directional_close_location_within_event_bar",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close"
+        ]
+      },
+      "contractHash": "candidate_ranking_contract_f092855a46b64e33c09e6a5eb42483c52df59d784ece8947ad377d5aff39fa07",
+      "economicResultReadPolicy": "forbidden",
+      "familyId": "range_expansion_close_followthrough",
+      "instrumentId": {
+        "exactCanonicalIdentity": true,
+        "order": "ascending"
+      },
+      "liquidity30d": {
+        "availableAt": "signal_candle_close",
+        "dataProfileHash": "data_profile_9ee8caa26453cce73bcfa93887cdefa3e2d6908471626eae42512f554ee50b53",
+        "formula": "sum(close * reported_volume) over trailing 30d closed bars",
+        "lookback": "30d/180_closed_bars",
+        "missingPolicy": "reject_signal",
+        "order": "descending"
+      },
+      "missingValuePolicy": "reject_signal",
+      "postEntryDataPolicy": "forbidden",
+      "primaryEventSeverity": {
+        "availableAt": "signal_candle_close",
+        "formula": "true_range / prior_atr14",
+        "lookback": "30d/180_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "true_range / prior_atr14",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "atr14"
+        ]
+      },
+      "schemaVersion": "candidate_ranking_contract_v1"
+    },
+    "candidateSpecHash": "v27_candidate_spec_ac9bdfae8536ab8848b86fdf80b343cded8a0ca785c8fb76eeb38bf4a9f8886e",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "dataReadinessReceiptHash": "v27_data_readiness_receipt_abc3cf0e7f21fcb58f69e60d2c75d22359925f11dc722b7a9bc7fe47ac15aa95",
+    "direction": "short",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "filter",
+        "veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "range_expansion_close_followthrough",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v2",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "familyId": "range_expansion_close_followthrough",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "v27-hyp-01-range_expansion_close_followthrough",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "maximumHoldBars": 18,
+    "rankingLookbackBars": 180,
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "schemaVersion": "v27_directional_event_candidate_v1",
+    "strategyType": "directional_event",
+    "timeframe": "4h"
+  },
+  {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "v27-liquidity_gap_reentry-1h-long-v1",
+    "candidateRankingContract": {
+      "candidateId": "v27-liquidity_gap_reentry-1h-long-v1",
+      "candidateRankingContractId": "candidate_ranking_contract_6b3dff45c0f756b8ebe6b9d40130b6f1fa1f571677ee5c701210d590b36ae345",
+      "confirmationStrength": {
+        "availableAt": "signal_candle_close",
+        "formula": "directional_gap_reentry_fraction",
+        "lookback": "event_bar_and_prior_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "directional_gap_reentry_fraction",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close"
+        ]
+      },
+      "contractHash": "candidate_ranking_contract_6b3dff45c0f756b8ebe6b9d40130b6f1fa1f571677ee5c701210d590b36ae345",
+      "economicResultReadPolicy": "forbidden",
+      "familyId": "liquidity_gap_reentry",
+      "instrumentId": {
+        "exactCanonicalIdentity": true,
+        "order": "ascending"
+      },
+      "liquidity30d": {
+        "availableAt": "signal_candle_close",
+        "dataProfileHash": "data_profile_f3315f18882ba1005f0002475bd3d07754048ff1c1535f055a7f4d61bf1ddcf6",
+        "formula": "sum(close * reported_volume) over trailing 30d closed bars",
+        "lookback": "30d/720_closed_bars",
+        "missingPolicy": "reject_signal",
+        "order": "descending"
+      },
+      "missingValuePolicy": "reject_signal",
+      "postEntryDataPolicy": "forbidden",
+      "primaryEventSeverity": {
+        "availableAt": "signal_candle_close",
+        "formula": "absolute_open_gap / prior_atr14",
+        "lookback": "30d/720_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "absolute_open_gap / prior_atr14",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "atr14"
+        ]
+      },
+      "schemaVersion": "candidate_ranking_contract_v1"
+    },
+    "candidateSpecHash": "v27_candidate_spec_d0a09b01c2c08abb995548d206a89276a116d33ea04057c00d7cb86a87463546",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "dataReadinessReceiptHash": "v27_data_readiness_receipt_cafe74e3b7ac8e1875f97b6d3bc4e9388ca81927bd4a1b1317aa7d5b461e10c6",
+    "direction": "long",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "filter",
+        "veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "liquidity_gap_reentry",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v2",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "familyId": "liquidity_gap_reentry",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "v27-hyp-02-liquidity_gap_reentry",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "maximumHoldBars": 36,
+    "rankingLookbackBars": 720,
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "schemaVersion": "v27_directional_event_candidate_v1",
+    "strategyType": "directional_event",
+    "timeframe": "1h"
+  },
+  {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "v27-liquidity_gap_reentry-1h-short-v2",
+    "candidateRankingContract": {
+      "candidateId": "v27-liquidity_gap_reentry-1h-short-v2",
+      "candidateRankingContractId": "candidate_ranking_contract_2f6cf309d668e99d45c952bcf8b25c17d45cec2a9d0509af60e8ac62e852f5fc",
+      "confirmationStrength": {
+        "availableAt": "signal_candle_close",
+        "formula": "directional_gap_reentry_fraction",
+        "lookback": "event_bar_and_prior_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "directional_gap_reentry_fraction",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close"
+        ]
+      },
+      "contractHash": "candidate_ranking_contract_2f6cf309d668e99d45c952bcf8b25c17d45cec2a9d0509af60e8ac62e852f5fc",
+      "economicResultReadPolicy": "forbidden",
+      "familyId": "liquidity_gap_reentry",
+      "instrumentId": {
+        "exactCanonicalIdentity": true,
+        "order": "ascending"
+      },
+      "liquidity30d": {
+        "availableAt": "signal_candle_close",
+        "dataProfileHash": "data_profile_f3315f18882ba1005f0002475bd3d07754048ff1c1535f055a7f4d61bf1ddcf6",
+        "formula": "sum(close * reported_volume) over trailing 30d closed bars",
+        "lookback": "30d/720_closed_bars",
+        "missingPolicy": "reject_signal",
+        "order": "descending"
+      },
+      "missingValuePolicy": "reject_signal",
+      "postEntryDataPolicy": "forbidden",
+      "primaryEventSeverity": {
+        "availableAt": "signal_candle_close",
+        "formula": "absolute_open_gap / prior_atr14",
+        "lookback": "30d/720_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "absolute_open_gap / prior_atr14",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "atr14"
+        ]
+      },
+      "schemaVersion": "candidate_ranking_contract_v1"
+    },
+    "candidateSpecHash": "v27_candidate_spec_db3ff95ac349fff6da0ed40482a04297c752f30a652061cc2f8f6d3b83185271",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "dataReadinessReceiptHash": "v27_data_readiness_receipt_cafe74e3b7ac8e1875f97b6d3bc4e9388ca81927bd4a1b1317aa7d5b461e10c6",
+    "direction": "short",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "filter",
+        "veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "liquidity_gap_reentry",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v2",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "familyId": "liquidity_gap_reentry",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "v27-hyp-02-liquidity_gap_reentry",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "maximumHoldBars": 36,
+    "rankingLookbackBars": 720,
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "schemaVersion": "v27_directional_event_candidate_v1",
+    "strategyType": "directional_event",
+    "timeframe": "1h"
+  },
+  {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-long-v1",
+    "candidateRankingContract": {
+      "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-long-v1",
+      "candidateRankingContractId": "candidate_ranking_contract_97aa77f1320f9601ef7a437e31e21023334f63194250cb27ece2a11cae6524c1",
+      "confirmationStrength": {
+        "availableAt": "signal_candle_close",
+        "formula": "directional_cross_section_breadth_alignment",
+        "lookback": "event_bar_and_prior_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "directional_cross_section_breadth_alignment",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close"
+        ]
+      },
+      "contractHash": "candidate_ranking_contract_97aa77f1320f9601ef7a437e31e21023334f63194250cb27ece2a11cae6524c1",
+      "economicResultReadPolicy": "forbidden",
+      "familyId": "cross_section_dispersion_leader_followthrough",
+      "instrumentId": {
+        "exactCanonicalIdentity": true,
+        "order": "ascending"
+      },
+      "liquidity30d": {
+        "availableAt": "signal_candle_close",
+        "dataProfileHash": "data_profile_9ee8caa26453cce73bcfa93887cdefa3e2d6908471626eae42512f554ee50b53",
+        "formula": "sum(close * reported_volume) over trailing 30d closed bars",
+        "lookback": "30d/180_closed_bars",
+        "missingPolicy": "reject_signal",
+        "order": "descending"
+      },
+      "missingValuePolicy": "reject_signal",
+      "postEntryDataPolicy": "forbidden",
+      "primaryEventSeverity": {
+        "availableAt": "signal_candle_close",
+        "formula": "cross_section_return_zscore",
+        "lookback": "30d/180_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "cross_section_return_zscore",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "atr14"
+        ]
+      },
+      "schemaVersion": "candidate_ranking_contract_v1"
+    },
+    "candidateSpecHash": "v27_candidate_spec_cbfcdbd30d51de896808407672547580b33ff1f0a2947f2faad67899e076475f",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "dataReadinessReceiptHash": "v27_data_readiness_receipt_abc3cf0e7f21fcb58f69e60d2c75d22359925f11dc722b7a9bc7fe47ac15aa95",
+    "direction": "long",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "filter",
+        "veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "cross_section_dispersion_leader_followthrough",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v2",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "familyId": "cross_section_dispersion_leader_followthrough",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "v27-hyp-03-cross_section_dispersion_leader_followthrough",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "maximumHoldBars": 18,
+    "rankingLookbackBars": 180,
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "schemaVersion": "v27_directional_event_candidate_v1",
+    "strategyType": "directional_event",
+    "timeframe": "4h"
+  },
+  {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-short-v2",
+    "candidateRankingContract": {
+      "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-short-v2",
+      "candidateRankingContractId": "candidate_ranking_contract_ca51057183b353d01da2153a3e36a492e212c4e352a886726d15e54410675998",
+      "confirmationStrength": {
+        "availableAt": "signal_candle_close",
+        "formula": "directional_cross_section_breadth_alignment",
+        "lookback": "event_bar_and_prior_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "directional_cross_section_breadth_alignment",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close"
+        ]
+      },
+      "contractHash": "candidate_ranking_contract_ca51057183b353d01da2153a3e36a492e212c4e352a886726d15e54410675998",
+      "economicResultReadPolicy": "forbidden",
+      "familyId": "cross_section_dispersion_leader_followthrough",
+      "instrumentId": {
+        "exactCanonicalIdentity": true,
+        "order": "ascending"
+      },
+      "liquidity30d": {
+        "availableAt": "signal_candle_close",
+        "dataProfileHash": "data_profile_9ee8caa26453cce73bcfa93887cdefa3e2d6908471626eae42512f554ee50b53",
+        "formula": "sum(close * reported_volume) over trailing 30d closed bars",
+        "lookback": "30d/180_closed_bars",
+        "missingPolicy": "reject_signal",
+        "order": "descending"
+      },
+      "missingValuePolicy": "reject_signal",
+      "postEntryDataPolicy": "forbidden",
+      "primaryEventSeverity": {
+        "availableAt": "signal_candle_close",
+        "formula": "cross_section_return_zscore",
+        "lookback": "30d/180_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "cross_section_return_zscore",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "atr14"
+        ]
+      },
+      "schemaVersion": "candidate_ranking_contract_v1"
+    },
+    "candidateSpecHash": "v27_candidate_spec_6ff0c0c6341cd147a85a512c9117c926c8f37e35e095bc20664aa1aeab92105f",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "dataReadinessReceiptHash": "v27_data_readiness_receipt_abc3cf0e7f21fcb58f69e60d2c75d22359925f11dc722b7a9bc7fe47ac15aa95",
+    "direction": "short",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "filter",
+        "veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "cross_section_dispersion_leader_followthrough",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v2",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "familyId": "cross_section_dispersion_leader_followthrough",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "v27-hyp-03-cross_section_dispersion_leader_followthrough",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "maximumHoldBars": 18,
+    "rankingLookbackBars": 180,
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "schemaVersion": "v27_directional_event_candidate_v1",
+    "strategyType": "directional_event",
+    "timeframe": "4h"
+  },
+  {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "v27-opening_range_failure_reversal-1h-long-v1",
+    "candidateRankingContract": {
+      "candidateId": "v27-opening_range_failure_reversal-1h-long-v1",
+      "candidateRankingContractId": "candidate_ranking_contract_efb303852175bc501ff8d54ea3836a857f3afbd1205ce4bb28247f9a6e0acaf1",
+      "confirmationStrength": {
+        "availableAt": "signal_candle_close",
+        "formula": "directional_reentry_depth / prior_atr14",
+        "lookback": "event_bar_and_prior_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "directional_reentry_depth / prior_atr14",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close"
+        ]
+      },
+      "contractHash": "candidate_ranking_contract_efb303852175bc501ff8d54ea3836a857f3afbd1205ce4bb28247f9a6e0acaf1",
+      "economicResultReadPolicy": "forbidden",
+      "familyId": "opening_range_failure_reversal",
+      "instrumentId": {
+        "exactCanonicalIdentity": true,
+        "order": "ascending"
+      },
+      "liquidity30d": {
+        "availableAt": "signal_candle_close",
+        "dataProfileHash": "data_profile_f3315f18882ba1005f0002475bd3d07754048ff1c1535f055a7f4d61bf1ddcf6",
+        "formula": "sum(close * reported_volume) over trailing 30d closed bars",
+        "lookback": "30d/720_closed_bars",
+        "missingPolicy": "reject_signal",
+        "order": "descending"
+      },
+      "missingValuePolicy": "reject_signal",
+      "postEntryDataPolicy": "forbidden",
+      "primaryEventSeverity": {
+        "availableAt": "signal_candle_close",
+        "formula": "failed_boundary_excursion / prior_atr14",
+        "lookback": "30d/720_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "failed_boundary_excursion / prior_atr14",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "atr14"
+        ]
+      },
+      "schemaVersion": "candidate_ranking_contract_v1"
+    },
+    "candidateSpecHash": "v27_candidate_spec_ebd8eec450d23be7a155db4f3b5093534c62a07a0f26a10a156031b34637b120",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "dataReadinessReceiptHash": "v27_data_readiness_receipt_cafe74e3b7ac8e1875f97b6d3bc4e9388ca81927bd4a1b1317aa7d5b461e10c6",
+    "direction": "long",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "filter",
+        "veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "opening_range_failure_reversal",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v2",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "familyId": "opening_range_failure_reversal",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "v27-hyp-04-opening_range_failure_reversal",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "maximumHoldBars": 36,
+    "rankingLookbackBars": 720,
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "schemaVersion": "v27_directional_event_candidate_v1",
+    "strategyType": "directional_event",
+    "timeframe": "1h"
+  },
+  {
+    "GatePolicy": {
+      "economicGatesRemainHard": true,
+      "policyId": "v18_3_economic_gate_with_advisory_r",
+      "resultDrivenRelaxationForbidden": true,
+      "universalTwoRHardGate": false
+    },
+    "adapterType": "generated_directional_event_adapter",
+    "candidateId": "v27-opening_range_failure_reversal-1h-short-v2",
+    "candidateRankingContract": {
+      "candidateId": "v27-opening_range_failure_reversal-1h-short-v2",
+      "candidateRankingContractId": "candidate_ranking_contract_cad32573abdbe1e90add8fa65fc151b1268f921098093bba220dbd64f2735a3f",
+      "confirmationStrength": {
+        "availableAt": "signal_candle_close",
+        "formula": "directional_reentry_depth / prior_atr14",
+        "lookback": "event_bar_and_prior_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "directional_reentry_depth / prior_atr14",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close"
+        ]
+      },
+      "contractHash": "candidate_ranking_contract_cad32573abdbe1e90add8fa65fc151b1268f921098093bba220dbd64f2735a3f",
+      "economicResultReadPolicy": "forbidden",
+      "familyId": "opening_range_failure_reversal",
+      "instrumentId": {
+        "exactCanonicalIdentity": true,
+        "order": "ascending"
+      },
+      "liquidity30d": {
+        "availableAt": "signal_candle_close",
+        "dataProfileHash": "data_profile_f3315f18882ba1005f0002475bd3d07754048ff1c1535f055a7f4d61bf1ddcf6",
+        "formula": "sum(close * reported_volume) over trailing 30d closed bars",
+        "lookback": "30d/720_closed_bars",
+        "missingPolicy": "reject_signal",
+        "order": "descending"
+      },
+      "missingValuePolicy": "reject_signal",
+      "postEntryDataPolicy": "forbidden",
+      "primaryEventSeverity": {
+        "availableAt": "signal_candle_close",
+        "formula": "failed_boundary_excursion / prior_atr14",
+        "lookback": "30d/720_closed_bars",
+        "missingPolicy": "reject_signal",
+        "normalization": "dimensionless_at_signal_close",
+        "order": "descending",
+        "pointInTimeRule": "closed_bars_at_or_before_signal_only",
+        "semanticDefinition": "failed_boundary_excursion / prior_atr14",
+        "sourceVariables": [
+          "open",
+          "high",
+          "low",
+          "close",
+          "atr14"
+        ]
+      },
+      "schemaVersion": "candidate_ranking_contract_v1"
+    },
+    "candidateSpecHash": "v27_candidate_spec_03e20fa3a1a7cabd02ee1707a8159492d52f870e9b1fc811591e3973c7bac3b1",
+    "capitalPolicyProfile": "v18_frozen_capital_policy",
+    "coreEngineChangedForCandidate": false,
+    "coreSetupCount": 1,
+    "dataReadinessReceiptHash": "v27_data_readiness_receipt_cafe74e3b7ac8e1875f97b6d3bc4e9388ca81927bd4a1b1317aa7d5b461e10c6",
+    "direction": "short",
+    "entryDefinition": {
+      "confirmationRoles": [
+        "filter",
+        "veto",
+        "ranking"
+      ],
+      "entryAtNextBarOpen": true,
+      "setupId": "opening_range_failure_reversal",
+      "setupVersion": "1",
+      "signalAtClosedBarOnly": true
+    },
+    "exitPolicy": {
+      "initialStopAuthoritative": true,
+      "maximumHoldAuthoritative": true,
+      "noStopWidening": true,
+      "policyId": "advisory_r_time_stop_v2",
+      "targetIsUniversalSelectionGate": false,
+      "targetR": 1.5
+    },
+    "familyId": "opening_range_failure_reversal",
+    "freqtradeAdapterType": "generated_directional_event_freqtrade_adapter",
+    "hypothesisId": "v27-hyp-04-opening_range_failure_reversal",
+    "initialStop": {
+      "atrMultiple": 1.25,
+      "atrPeriod": 14,
+      "type": "atr"
+    },
+    "maximumHoldBars": 36,
+    "rankingLookbackBars": 720,
+    "requiredDataProfile": "ohlcv_core_directional_v1",
+    "schemaVersion": "v27_directional_event_candidate_v1",
+    "strategyType": "directional_event",
+    "timeframe": "1h"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "candidateTrialCount": 8,
+  "formalRunCount": 0,
+  "lockedOosReadCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v27_trial_lineage_v1",
+  "trials": [
+    {
+      "candidateId": "v27-range_expansion_close_followthrough-4h-long-v1",
+      "finalDisposition": "archived",
+      "postResultMutationCount": 0,
+      "stage": "prefilter"
+    },
+    {
+      "candidateId": "v27-range_expansion_close_followthrough-4h-short-v2",
+      "finalDisposition": "archived",
+      "postResultMutationCount": 0,
+      "stage": "prefilter"
+    },
+    {
+      "candidateId": "v27-liquidity_gap_reentry-1h-long-v1",
+      "finalDisposition": "archived",
+      "postResultMutationCount": 0,
+      "stage": "prefilter"
+    },
+    {
+      "candidateId": "v27-liquidity_gap_reentry-1h-short-v2",
+      "finalDisposition": "archived",
+      "postResultMutationCount": 0,
+      "stage": "prefilter"
+    },
+    {
+      "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-long-v1",
+      "finalDisposition": "archived",
+      "postResultMutationCount": 0,
+      "stage": "prefilter"
+    },
+    {
+      "candidateId": "v27-cross_section_dispersion_leader_followthrough-4h-short-v2",
+      "finalDisposition": "archived",
+      "postResultMutationCount": 0,
+      "stage": "prefilter"
+    },
+    {
+      "candidateId": "v27-opening_range_failure_reversal-1h-long-v1",
+      "finalDisposition": "archived",
+      "postResultMutationCount": 0,
+      "stage": "prefilter"
+    },
+    {
+      "candidateId": "v27-opening_range_failure_reversal-1h-short-v2",
+      "finalDisposition": "archived",
+      "postResultMutationCount": 0,
+      "stage": "prefilter"
+    }
+  ]
+}

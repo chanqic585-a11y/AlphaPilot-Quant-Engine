@@ -1,0 +1,21 @@
+{
+  "approvalCount": 0,
+  "candidateStatus": "closed_current_candidate_ranking_semantics_not_derivable",
+  "demoArm": false,
+  "derivationAuditHash": "ranking_semantics_derivation_audit_c6e15950989db7133cd8bc812fcdcbd4d18fd371c24add0c767c5dd21a258864",
+  "formalLedger": {
+    "attemptCount": 0,
+    "claimCount": 0,
+    "resultCount": 0,
+    "resultReadCount": 0
+  },
+  "historicalArtifactMutationCount": 0,
+  "lockedOosReadCount": 0,
+  "nextStage": "v27_new_candidate_research",
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resolutionHash": "v26_current_candidate_resolution_6d0af92bb78e4df106e94ae77acbae54916f54a27e0ab74c920381e97df989a4",
+  "schemaVersion": "v26_current_candidate_resolution_v1",
+  "sourceCandidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "structuralRevisionBudgetConsumed": 0
+}

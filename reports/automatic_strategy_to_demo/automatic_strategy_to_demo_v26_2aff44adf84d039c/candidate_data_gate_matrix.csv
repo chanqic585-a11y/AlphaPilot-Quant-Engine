@@ -1,0 +1,9 @@
+﻿candidateId,familyId,timeframe,direction,dataReadiness,structuralCertification,rankingCertification,capacityCertification,prefilterPassed,finalDisposition
+v27-range_expansion_close_followthrough-4h-long-v1,range_expansion_close_followthrough,4h,long,ready,passed,passed,passed,false,archived
+v27-range_expansion_close_followthrough-4h-short-v2,range_expansion_close_followthrough,4h,short,ready,passed,passed,failed,false,archived
+v27-liquidity_gap_reentry-1h-long-v1,liquidity_gap_reentry,1h,long,ready,passed,passed,failed,false,archived
+v27-liquidity_gap_reentry-1h-short-v2,liquidity_gap_reentry,1h,short,ready,passed,passed,failed,false,archived
+v27-cross_section_dispersion_leader_followthrough-4h-long-v1,cross_section_dispersion_leader_followthrough,4h,long,ready,passed,passed,failed,false,archived
+v27-cross_section_dispersion_leader_followthrough-4h-short-v2,cross_section_dispersion_leader_followthrough,4h,short,ready,passed,passed,failed,false,archived
+v27-opening_range_failure_reversal-1h-long-v1,opening_range_failure_reversal,1h,long,ready,passed,passed,passed,false,archived
+v27-opening_range_failure_reversal-1h-short-v2,opening_range_failure_reversal,1h,short,ready,passed,passed,passed,false,archived

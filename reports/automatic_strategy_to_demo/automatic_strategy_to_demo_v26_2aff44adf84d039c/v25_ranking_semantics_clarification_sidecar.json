@@ -1,0 +1,23 @@
+{
+  "authoritativeCandidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "authoritativeIdentitySources": [
+    "candidate_inventory",
+    "candidate_preregistration",
+    "trial_lineage",
+    "real_signal_capacity_certification"
+  ],
+  "candidateId": "auto-trend_failure_reversal-4h-short-v2",
+  "candidateIdentityAliasMismatchPreserved": true,
+  "capacityCertificationPassed": true,
+  "capacitySemanticsResolved": true,
+  "clarifiedCurrentStatus": "formal_data_blocked_ranking_semantics",
+  "historicalEvidenceMutationAllowed": false,
+  "legacyRouteCandidateIdAlias": "auto-trend_failure-reversal-4h-short-v2",
+  "oldCandidateMutable": false,
+  "remainingFormalMissingFields": [
+    "eventExtremeResidualZ",
+    "recoverySizeZ"
+  ],
+  "schemaVersion": "v25_ranking_semantics_clarification_sidecar_v1",
+  "sidecarHash": "v25_ranking_semantics_clarification_a421ad5a5d1f51c34bfb90b0ca4d6ec88ca18e1e00d9ec6124331e696d756ac0"
+}

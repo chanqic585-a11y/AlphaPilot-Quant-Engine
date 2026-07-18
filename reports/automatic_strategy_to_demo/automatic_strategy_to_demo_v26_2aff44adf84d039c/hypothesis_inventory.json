@@ -1,0 +1,134 @@
+{
+  "hypotheses": [
+    {
+      "confirmationRankingSemantic": "directional_close_location_within_event_bar",
+      "directions": [
+        "long",
+        "short"
+      ],
+      "displayNameZh": "区间扩张收盘延续",
+      "falsificationCondition": "扣除成本后延续不稳定，或表现集中于单一币种和月份。",
+      "familyId": "range_expansion_close_followthrough",
+      "hypothesisHash": "v27_hypothesis_55e2e00af2f67504ccb9b846dbebbb2440c3de44de18646071a74c9059a4f69b",
+      "hypothesisId": "v27-hyp-01-range_expansion_close_followthrough",
+      "marketMechanism": "异常区间扩张后，收盘仍靠近冲击方向一侧，测试次根延续。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "primaryRankingSemantic": "true_range / prior_atr14",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "resultDrivenFormulaSearchAllowed": false,
+      "schemaVersion": "v27_directional_event_hypothesis_v1",
+      "sourceReferences": [
+        "reports/automatic_research_program/automatic_strategy_demo_f57c443abeaf06c0/v25/volume_provenance_audit.json",
+        "reports/automatic_strategy_to_demo/automatic_strategy_to_demo_v26_2aff44adf84d039c/ranking_semantics_derivation_audit.json",
+        "reports/full_archived_strategy_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "4h"
+    },
+    {
+      "confirmationRankingSemantic": "directional_gap_reentry_fraction",
+      "directions": [
+        "long",
+        "short"
+      ],
+      "displayNameZh": "流动性缺口再进入",
+      "falsificationCondition": "缺口再进入在压力成本下没有正期望，或只来自不可交易尾部币种。",
+      "familyId": "liquidity_gap_reentry",
+      "hypothesisHash": "v27_hypothesis_3231a77084681e2e83d8ff4a2f9e52ef98096d42aa0ad5ad240fd06b1bea9fde",
+      "hypothesisId": "v27-hyp-02-liquidity_gap_reentry",
+      "marketMechanism": "开盘流动性缺口被同一根闭合 K 线重新吸收，测试回归延续。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "primaryRankingSemantic": "absolute_open_gap / prior_atr14",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "resultDrivenFormulaSearchAllowed": false,
+      "schemaVersion": "v27_directional_event_hypothesis_v1",
+      "sourceReferences": [
+        "reports/automatic_research_program/automatic_strategy_demo_f57c443abeaf06c0/v25/volume_provenance_audit.json",
+        "reports/automatic_strategy_to_demo/automatic_strategy_to_demo_v26_2aff44adf84d039c/ranking_semantics_derivation_audit.json",
+        "reports/full_archived_strategy_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "1h"
+    },
+    {
+      "confirmationRankingSemantic": "directional_cross_section_breadth_alignment",
+      "directions": [
+        "long",
+        "short"
+      ],
+      "displayNameZh": "横截面离散领涨延续",
+      "falsificationCondition": "横截面领先在 PIT 排名、容量和成本约束下不能保持。",
+      "familyId": "cross_section_dispersion_leader_followthrough",
+      "hypothesisHash": "v27_hypothesis_0607a68f1a2fc0fcb7de6ca3c1ded11ff85ecc151a232bfc2c4ab2c6a6193c40",
+      "hypothesisId": "v27-hyp-03-cross_section_dispersion_leader_followthrough",
+      "marketMechanism": "同周期横截面收益显著偏离时，测试领涨或领跌资产的短期延续。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "primaryRankingSemantic": "cross_section_return_zscore",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "resultDrivenFormulaSearchAllowed": false,
+      "schemaVersion": "v27_directional_event_hypothesis_v1",
+      "sourceReferences": [
+        "reports/automatic_research_program/automatic_strategy_demo_f57c443abeaf06c0/v25/volume_provenance_audit.json",
+        "reports/automatic_strategy_to_demo/automatic_strategy_to_demo_v26_2aff44adf84d039c/ranking_semantics_derivation_audit.json",
+        "reports/full_archived_strategy_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "4h"
+    },
+    {
+      "confirmationRankingSemantic": "directional_reentry_depth / prior_atr14",
+      "directions": [
+        "long",
+        "short"
+      ],
+      "displayNameZh": "开盘区间失败反转",
+      "falsificationCondition": "收回事件在独立窗口没有正期望，或回撤和成本不可接受。",
+      "familyId": "opening_range_failure_reversal",
+      "hypothesisHash": "v27_hypothesis_f1b88838386be5c57fb8b25706e56bbf73797b1e84b272b3a72678f82ef3a9ef",
+      "hypothesisId": "v27-hyp-04-opening_range_failure_reversal",
+      "marketMechanism": "前一根突破近期边界后，本根收回区间，测试失败突破反转。",
+      "optionalFields": [
+        "reported_volume"
+      ],
+      "primaryRankingSemantic": "failed_boundary_excursion / prior_atr14",
+      "requiredFields": [
+        "open",
+        "high",
+        "low",
+        "close"
+      ],
+      "resultDrivenFormulaSearchAllowed": false,
+      "schemaVersion": "v27_directional_event_hypothesis_v1",
+      "sourceReferences": [
+        "reports/automatic_research_program/automatic_strategy_demo_f57c443abeaf06c0/v25/volume_provenance_audit.json",
+        "reports/automatic_strategy_to_demo/automatic_strategy_to_demo_v26_2aff44adf84d039c/ranking_semantics_derivation_audit.json",
+        "reports/full_archived_strategy_inventory.json"
+      ],
+      "strategyType": "directional_event",
+      "timeframe": "1h"
+    }
+  ],
+  "hypothesisCount": 4,
+  "schemaVersion": "v27_hypothesis_inventory_v1"
+}

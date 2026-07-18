@@ -1,0 +1,77 @@
+{
+  "artifactCount": 14,
+  "artifacts": [
+    {
+      "path": "data_readiness_receipts.json",
+      "sha256": "40a82d21163ffc0a7b36242225528b1a32e3d0cce7f695031186fcb8c0276d34",
+      "sizeBytes": 1710
+    },
+    {
+      "path": "data_access_report.json",
+      "sha256": "b6bf0ec2985a7b546623e4488b286e95a9b5b0c1cb69e2143887f9560f22840e",
+      "sizeBytes": 7757
+    },
+    {
+      "path": "candidate_semantics_matrix.json",
+      "sha256": "92f355ae0a9177b3654dce2097100b166d857acf52d0d178aa63ac7736f1deea",
+      "sizeBytes": 61226
+    },
+    {
+      "path": "capacity_profiles.json",
+      "sha256": "12f88eb0005d6e1c0409e9c8344c82d85b972c12271a19e76413a767647d2cdd",
+      "sizeBytes": 18354
+    },
+    {
+      "path": "hypothesis_inventory.json",
+      "sha256": "7dd3cbfcc2a093a1045f945462a397cb95278f5c754159ae30237991171732d8",
+      "sizeBytes": 5409
+    },
+    {
+      "path": "candidate_inventory.json",
+      "sha256": "acd2531ed3b59a6c399044966353d84767b9d24864ae054f5f937a580ef335f8",
+      "sizeBytes": 32338
+    },
+    {
+      "path": "candidate_structural_certification.json",
+      "sha256": "869e8b432fccbdfa7f24595d2bb32c4760ed8eef184928c0b6365d6f36de254c",
+      "sizeBytes": 6336
+    },
+    {
+      "path": "candidate_ranking_certification.json",
+      "sha256": "9b6011ec79919b4a48cb2f1865dbb8260b0a4b52ec3e7b493af82824c5d16e8e",
+      "sizeBytes": 4880
+    },
+    {
+      "path": "candidate_ranking_evidence.json",
+      "sha256": "634d88a3af346fd15034b87471f3f5fdc3607d5139bfa239cd251826c98e4354",
+      "sizeBytes": 52669216
+    },
+    {
+      "path": "candidate_capacity_certification.json",
+      "sha256": "88654e28c0db733ca79d2c62a2af8f3ed214f2700bdab01558522df18c2b89b6",
+      "sizeBytes": 27289677
+    },
+    {
+      "path": "prefilter_results.json",
+      "sha256": "90dbc19a910a10df28c46c6996f1a35c0de8409a9a5a9cd46865723af99a023a",
+      "sizeBytes": 15364
+    },
+    {
+      "path": "prefilter_route.json",
+      "sha256": "f81526ad0408301f61449f9c352aa28084e667cd2bfe0da31ded6368c48f9778",
+      "sizeBytes": 851
+    },
+    {
+      "path": "v27_summary.json",
+      "sha256": "08e3d25873c9bf23c5191fddf3fb43c3691efa8945152695492ca6228b42362a",
+      "sizeBytes": 905
+    },
+    {
+      "path": "v27_summary.md",
+      "sha256": "fd39786a8e2c8768b5c2c6ac3335e32b036520ef91d397578277b9595987ae8c",
+      "sizeBytes": 331
+    }
+  ],
+  "manifestHash": "v27_artifact_manifest_e2868cc12ae739e0a41c4d561f11380a6236915a507a3bd81522c17d36cd96f2",
+  "schemaVersion": "v27_artifact_manifest_v1"
+}

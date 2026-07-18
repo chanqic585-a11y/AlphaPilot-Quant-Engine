@@ -1,0 +1,21 @@
+{
+  "approvalCount": 0,
+  "campaignCount": 1,
+  "candidateCount": 8,
+  "decisionHash": "v26_31_final_route_6bf0277557fcebccd25fd31c061f113c44bc83aea79c15e0fa25f904931f9ca5",
+  "demoArm": false,
+  "familyCount": 4,
+  "finalRoute": "completed_zero_qualified_candidates",
+  "formalCandidateCount": 0,
+  "formalRunCount": 0,
+  "generatedAt": "2026-07-18T16:34:08.3187308+08:00",
+  "lockedOosReadCount": 0,
+  "orderCount": 0,
+  "prefilterSurvivorCount": 0,
+  "programId": "automatic_strategy_to_demo_v26_2aff44adf84d039c",
+  "promptSha256": "9622fa42060d9c19303924098d75a5088b336ada955d43f6e64a28518b776afe",
+  "reason": "zero_prefilter_survivors",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v26_31_final_route_decision_v1"
+}
