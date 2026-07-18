@@ -719,7 +719,7 @@ def run_v27_candidate_research(
     next_stage = (
         "v28_formal_validation"
         if route["formalCandidateIds"]
-        else "completed_zero_prefilter_survivors"
+        else "completed_zero_qualified_candidates"
     )
     summary: dict[str, Any] = {
         "schemaVersion": "v27_candidate_research_summary_v1",

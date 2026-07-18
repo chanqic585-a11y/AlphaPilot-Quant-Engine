@@ -51,6 +51,31 @@ def _parse_args() -> argparse.Namespace:
     return parser.parse_args()
 
 
+def _v27_run_mode(state: dict[str, Any]) -> str:
+    next_stage = str(state.get("nextAllowedStage") or "")
+    if next_stage == "v27_new_candidate_research":
+        return "first_run"
+    zero_result_terminal_states = {
+        "completed_zero_prefilter_survivors",
+        "completed_zero_qualified_candidates",
+    }
+    protected_counts = (
+        "formalRunCount",
+        "resultReadCount",
+        "lockedOosReadCount",
+        "releaseCount",
+        "approvalCount",
+        "orderCount",
+    )
+    if (
+        state.get("stage") == "v27_completed"
+        and next_stage in zero_result_terminal_states
+        and all(int(state.get(key) or 0) == 0 for key in protected_counts)
+    ):
+        return "state_repair"
+    raise RuntimeError(f"v27_stage_not_allowed:{next_stage}")
+
+
 def main() -> int:
     args = _parse_args()
     repo = args.repo_root.resolve()
@@ -61,8 +86,7 @@ def main() -> int:
         raise FileNotFoundError(program_root / "program_state.json")
 
     state = _read_json(program_root / "program_state.json")
-    if state.get("nextAllowedStage") != "v27_new_candidate_research":
-        raise RuntimeError(f"v27_stage_not_allowed:{state.get('nextAllowedStage')}")
+    run_mode = _v27_run_mode(state)
 
     catalog_path = reports / "backtest_screening" / "data_readiness" / "dataset_catalog.json"
     source_matrix_path = source_root / "data_capability_matrix.parquet"
@@ -128,7 +152,7 @@ def main() -> int:
             "nextAllowedStage": summary["nextStage"],
             "terminalRoute": (
                 summary["nextStage"]
-                if summary["nextStage"] == "completed_zero_prefilter_survivors"
+                if summary["nextStage"] == "completed_zero_qualified_candidates"
                 else None
             ),
             "generatedAt": args.generated_at,
@@ -144,9 +168,10 @@ def main() -> int:
     budget = _read_json(program_root / "program_budget.json")
     budget.update(
         {
-            "campaignsConsumed": int(budget.get("campaignsConsumed") or 0) + 1,
+            "campaignsConsumed": int(budget.get("campaignsConsumed") or 0)
+            + (1 if run_mode == "first_run" else 0),
             "candidateTrialsConsumed": int(budget.get("candidateTrialsConsumed") or 0)
-            + int(summary["candidateTrialCount"]),
+            + (int(summary["candidateTrialCount"]) if run_mode == "first_run" else 0),
             "formalAttemptsConsumed": 0,
             "formalClaimsConsumed": 0,
             "formalResultsRead": 0,
@@ -162,7 +187,11 @@ def main() -> int:
         program_root / "program_ledger.jsonl",
         {
             "schemaVersion": "automatic_strategy_to_demo_ledger_event_v1",
-            "eventType": "v27_candidate_research_completed",
+            "eventType": (
+                "v27_candidate_research_completed"
+                if run_mode == "first_run"
+                else "v27_zero_result_state_repaired"
+            ),
             "createdAt": args.generated_at,
             "programId": args.program_id,
             "stage": state["stage"],

@@ -24,6 +24,7 @@ from alphapilot.research_factory.program_v27 import (
     materialize_v27_ranking_rows,
     run_v27_candidate_research,
 )
+from alphapilot.scripts.run_v27_candidate_research import _v27_run_mode
 
 
 def _matrix(timeframe: str) -> list[dict[str, object]]:
@@ -285,7 +286,7 @@ def test_v27_runner_writes_bounded_evidence_and_keeps_formal_budget_zero(
     assert summary["releaseCount"] == 0
     assert summary["nextStage"] in {
         "v28_formal_validation",
-        "completed_zero_prefilter_survivors",
+        "completed_zero_qualified_candidates",
     }
 
     root = tmp_path / "automatic_strategy_to_demo" / "v27-test-program" / "v27"
@@ -305,3 +306,30 @@ def test_v27_runner_writes_bounded_evidence_and_keeps_formal_budget_zero(
         "artifact_manifest.json",
     ):
         assert (root / name).is_file(), name
+
+
+def test_v27_run_mode_allows_only_zero_result_state_repair() -> None:
+    assert _v27_run_mode({"nextAllowedStage": "v27_new_candidate_research"}) == "first_run"
+    assert (
+        _v27_run_mode(
+            {
+                "stage": "v27_completed",
+                "nextAllowedStage": "completed_zero_prefilter_survivors",
+                "formalRunCount": 0,
+                "resultReadCount": 0,
+                "lockedOosReadCount": 0,
+                "releaseCount": 0,
+                "approvalCount": 0,
+                "orderCount": 0,
+            }
+        )
+        == "state_repair"
+    )
+    with pytest.raises(RuntimeError, match="v27_stage_not_allowed"):
+        _v27_run_mode(
+            {
+                "stage": "v27_completed",
+                "nextAllowedStage": "completed_zero_prefilter_survivors",
+                "resultReadCount": 1,
+            }
+        )
