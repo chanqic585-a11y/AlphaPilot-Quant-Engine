@@ -1,0 +1,48 @@
+{
+  "extensionResult": {
+    "approvalCount": 0,
+    "baseSnapshotArtifactCount": 11,
+    "baseSnapshotAuditHash": "v34a_base_snapshot_integrity_5caf3c5751852250e39cf76dbc623bda153cbbd7967aed6da890b7faf634e2ea",
+    "baseSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "baseSnapshotUnchanged": true,
+    "candidateCount": 0,
+    "checkpointPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\checkpoints\\v34b\\v34b_collection_8cd0fb06140ae7a87ecbcafc0a1aa991859d24e9d7905af0310ad075640708c9.json",
+    "collectionId": "v34b_collection_8cd0fb06140ae7a87ecbcafc0a1aa991859d24e9d7905af0310ad075640708c9",
+    "demoArm": false,
+    "demoReleaseCount": 0,
+    "formalRunCount": 0,
+    "forwardStreamsCompleted": [
+      "current_funding",
+      "index_price",
+      "instrument_state",
+      "mark_price",
+      "open_interest",
+      "order_book_summary",
+      "ticker_spread"
+    ],
+    "fundingInstrumentCount": 3,
+    "fundingPaths": [
+      "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\okx\\swap\\funding\\BTC-USDT-SWAP\\funding-history-v34b_funding_history_14ba6b614cd11b4361052c0b6c8c5adc060e345f9492166055fa7c874d735b0a.parquet",
+      "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\okx\\swap\\funding\\ETH-USDT-SWAP\\funding-history-v34b_funding_history_fbfd67056f44fa6798968b5451412b586bea29c2083df3da6ec41d0a1a89921d.parquet",
+      "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\okx\\swap\\funding\\SOL-USDT-SWAP\\funding-history-v34b_funding_history_b025c180cf3df2d4e68245a4275948b26168f073a1be4524ecf7770be560d0b6.parquet"
+    ],
+    "instrumentMetadataCount": 427,
+    "instrumentMetadataPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\metadata_snapshots\\pit\\2026-07-18\\instruments-v34b_instrument_metadata_387de889bb59e8896f86953b73adf326ea5f4749789197ed792b5af6979373cf.json",
+    "observedAt": "2026-07-18T18:43:56+00:00",
+    "orderCount": 0,
+    "privateAccountReadUsed": false,
+    "resultReadCount": 0,
+    "schemaVersion": "okx_official_v1_v34b_result_v1",
+    "scope": "v34b_public_data_only",
+    "snapshotId": "okx_official_v1_v34b_snapshot_e80523c6c48c15abbbf69f082240c3efe034ef05ee6e596a33c3af83b228cc51",
+    "snapshotManifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\manifests\\v34b\\snapshot-okx_official_v1_v34b_snapshot_e80523c6c48c15abbbf69f082240c3efe034ef05ee6e596a33c3af83b228cc51.json",
+    "snapshotManifestSha256": "d4b6050ffe6b617d9ad019117e0be363ce7731d144dcea51671358009a5c5e75",
+    "status": "completed",
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false
+  },
+  "implementationCommit": "e15f155633a8d92faf86696578fcd77e0c72b32d",
+  "programId": "alphapilot_dual_track_v33_6af4e494293f4167",
+  "schemaVersion": "v34b_okx_public_data_extension_receipt_v1",
+  "warehouseRoot": "D:\\Codex-Workspace\\回测数据"
+}

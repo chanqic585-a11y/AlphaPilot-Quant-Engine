@@ -11,11 +11,13 @@
   },
   "candidateCount": 0,
   "continuationOf": "automatic_strategy_renewal_v28_4e6ab55a5e949716",
+  "dataFoundationExtensionId": "okx_official_v1_v34b_snapshot_e80523c6c48c15abbbf69f082240c3efe034ef05ee6e596a33c3af83b228cc51",
+  "dataFoundationExtensionResultHash": "v34b_data_extension_result_b1ae934e595c33936d7b3e0b534caa95985240dc8b75e4566ab63e4733545611",
   "dataPilotResultHash": "v34a_data_pilot_result_cfb4589fe6dbb62a5d7f4ff87e84978c2870f0a7edb23cbf4ffa1d36c3da7d5d",
   "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
   "demoArm": false,
   "formalRunCount": 0,
-  "generatedAt": "2026-07-18T18:12:47+00:00",
+  "generatedAt": "2026-07-18T18:44:06+00:00",
   "historicalMutationCount": 0,
   "lockedOosReadCount": 0,
   "orderCount": 0,
@@ -33,6 +35,6 @@
   "releaseCount": 0,
   "resultReadCount": 0,
   "schemaVersion": "alphapilot_dual_track_summary_v1",
-  "summaryHash": "dual_track_summary_05b32e86927c21d845f6054d940561f564b604cdc57a6857403defa29a090005",
-  "topLevelState": "data_pilot_completed"
+  "summaryHash": "dual_track_summary_28075b5300e5ca5d12b5cbc1242d1efb68c868384a10ed2683e4608da2b4c44e",
+  "topLevelState": "data_foundation_extended"
 }

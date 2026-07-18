@@ -1,0 +1,72 @@
+{
+  "schemaVersion": "alphapilot.v34b.data_extension_closeout.v1",
+  "status": "completed_data_only",
+  "implementationCommit": "e15f155633a8d92faf86696578fcd77e0c72b32d",
+  "observedAt": "2026-07-18T18:43:56+00:00",
+  "warehouseRoot": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e",
+  "baseSnapshot": {
+    "snapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "artifactCount": 11,
+    "verifiedMismatchCount": 0,
+    "unchanged": true,
+    "auditHash": "v34a_base_snapshot_integrity_5caf3c5751852250e39cf76dbc623bda153cbbd7967aed6da890b7faf634e2ea"
+  },
+  "extensionSnapshot": {
+    "snapshotId": "okx_official_v1_v34b_snapshot_e80523c6c48c15abbbf69f082240c3efe034ef05ee6e596a33c3af83b228cc51",
+    "manifestSha256": "d4b6050ffe6b617d9ad019117e0be363ce7731d144dcea51671358009a5c5e75",
+    "resultHash": "v34b_data_extension_result_b1ae934e595c33936d7b3e0b534caa95985240dc8b75e4566ab63e4733545611",
+    "instrumentMetadataCount": 427,
+    "forwardStreamCount": 7,
+    "forwardInstrumentCountPerStream": 3
+  },
+  "fundingHistory": {
+    "instruments": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "SOL-USDT-SWAP"
+    ],
+    "rowsPerInstrument": 287,
+    "totalRows": 861,
+    "minimumFundingTime": "2026-04-14T08:00:00+00:00",
+    "maximumFundingTime": "2026-07-18T16:00:00+00:00",
+    "duplicateTimestampCount": 0,
+    "causalAvailabilityNullCount": 0
+  },
+  "resumability": {
+    "sameCollectionReplayElapsedMs": 545,
+    "ledgerRowsAfterReplay": {
+      "masterProgram": 3,
+      "researchTrack": 3,
+      "crossTrackReceipt": 3
+    },
+    "duplicateLedgerWrites": 0,
+    "manifestHashUnchanged": true
+  },
+  "sideEffects": {
+    "candidateCount": 0,
+    "formalRunCount": 0,
+    "resultReadCount": 0,
+    "releaseCount": 0,
+    "approvalCount": 0,
+    "orderCount": 0,
+    "demoArm": false,
+    "tradeApiUsed": false,
+    "withdrawApiUsed": false,
+    "privateAccountReadUsed": false,
+    "historicalMutationCount": 0,
+    "lockedOosReadCount": 0
+  },
+  "verification": {
+    "pytest": "1096 passed, 157 subtests passed",
+    "compileall": "passed",
+    "configValidation": "passed; liveTradingEnabled=false; tradeApiEnabled=false; withdrawApiEnabled=false",
+    "repositorySafetyScan": "passed with legacy and negative-context matches reviewed",
+    "targetedV34bSafetyScan": "public and market endpoints only; forbidden side effects locked to zero"
+  },
+  "knownLimitations": [
+    "OKX public funding history is recent-history only; this run covers approximately three months.",
+    "PIT instrument history starts with V34B collection; earlier product states are not reconstructed.",
+    "This is a resumable one-shot collector and evidence registration, not a permanent scheduler.",
+    "No strategy candidate, Formal validation, Demo execution, or live trading was performed."
+  ]
+}
