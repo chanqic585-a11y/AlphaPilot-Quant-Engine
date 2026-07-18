@@ -1,0 +1,19 @@
+{
+  "checkpointHash": "dee1ed55d512e7f2ee9fb599fd8718b27f6c42e0258b67bd91144da8d27dc952",
+  "createdAt": "2026-07-18T03:01:33Z",
+  "payload": {
+    "approvalCount": 0,
+    "campaignId": "automatic_strategy_demo_f57c443abeaf06c0_campaign_01",
+    "consoleAuditHash": "automatic_v24_release_import_audit_fe181dd8c437beea963e912f4bba81232508fe04bd54ec5e7645e16c5c9bbd2f",
+    "demoArm": false,
+    "importedReleaseCount": 0,
+    "orderCount": 0,
+    "programId": "automatic_strategy_demo_f57c443abeaf06c0",
+    "receiptHash": "automatic_v24_console_receipt_016dda5d6b8b95b1a58e39d4adf23992bef4bdacfea44c392614869dce5ecd9d",
+    "releaseCount": 0,
+    "status": "completed",
+    "terminalRoute": "completed_zero_qualified_candidates"
+  },
+  "schemaVersion": "automatic_strategy_demo_checkpoint_v1",
+  "stage": "v24"
+}

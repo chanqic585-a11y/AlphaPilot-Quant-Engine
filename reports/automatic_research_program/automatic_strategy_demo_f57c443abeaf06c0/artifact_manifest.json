@@ -1,5 +1,5 @@
 {
-  "artifactCount": 45,
+  "artifactCount": 47,
   "artifacts": [
     {
       "relativePath": "approval_requirements.json",
@@ -142,6 +142,16 @@
       "sizeBytes": 669
     },
     {
+      "relativePath": "checkpoints/v24.json",
+      "sha256": "dd774a780a72d24179d1d250fc96a7aac3ebf3177e6126d3a2515d7746630aaa",
+      "sizeBytes": 813
+    },
+    {
+      "relativePath": "console_v24_completion_receipt.json",
+      "sha256": "4fbcfd0746931369eec7b2f9dd9aaec21184de21320a202b308a1e0783eff42f",
+      "sizeBytes": 973
+    },
+    {
       "relativePath": "data_capability_matrix.csv",
       "sha256": "1bc26e8eaf4f46df970dab5792c89cc6c634b26f3a684f41e1dfa27fcda82337",
       "sizeBytes": 254614
@@ -193,13 +203,13 @@
     },
     {
       "relativePath": "program_ledger.jsonl",
-      "sha256": "4108947742edfd310923cb49629e474711011d82be0bfad0a9d368b0b17065a5",
-      "sizeBytes": 4925
+      "sha256": "03d55dab49063680e37e508541e9e35413cbe49831c4b4c0f81ac2633c2dcd1c",
+      "sizeBytes": 5934
     },
     {
       "relativePath": "program_state.json",
-      "sha256": "ba52c23e4f902fde2518a875d07a0473331131f43826d0b4bae196cf298f562e",
-      "sizeBytes": 752
+      "sha256": "56d53fc8141399dee5a941b5efd72bc97a115513c9da5027fb7a36932c403c06",
+      "sizeBytes": 729
     },
     {
       "relativePath": "release_inventory.json",
@@ -227,6 +237,6 @@
       "sizeBytes": 218
     }
   ],
-  "manifestHash": "artifact_manifest_b20e26f60eeff095f3583043c3e097a8a814732c3cbcd8b2e6c0c2f74297c136",
+  "manifestHash": "artifact_manifest_d2a6c3ae1d78993a6dc14feaa6f8a466ed11db090992fc9b16bd467ef9ca973d",
   "schemaVersion": "automatic_strategy_demo_artifact_manifest_v1"
 }
