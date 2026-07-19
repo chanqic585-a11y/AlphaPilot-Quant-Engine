@@ -10,7 +10,7 @@
 
 | Candidate | Timeframe | Status | OHLCV bars | Required bars | Funding window | Blockers |
 | --- | --- | --- | ---: | ---: | --- | --- |
-| v35_tsmom_crypto_adaptation | 4h | ready | 3382 | 900 | complete | none |
+| v35_tsmom_crypto_adaptation | 4h | ready | 3382 | 1380 | complete | none |
 
 ### v35_tsmom_crypto_adaptation
 
@@ -20,7 +20,7 @@
 - Funding `BTC-USDT-SWAP`: `2024-12-31T16:00:00+00:00` to `2026-07-19T00:00:00+00:00`, rows `1694`, full window `True`, provenance `True`.
 - Funding `ETH-USDT-SWAP`: `2024-12-31T16:00:00+00:00` to `2026-07-19T00:00:00+00:00`, rows `1694`, full window `True`, provenance `True`.
 - Funding `SOL-USDT-SWAP`: `2024-12-31T16:00:00+00:00` to `2026-07-19T00:00:00+00:00`, rows `1694`, full window `True`, provenance `True`.
-| v35_tsmom_source_replication | 1dutc | blocked | 563 | 840 | complete | purged_walk_forward_capacity_insufficient |
+| v35_tsmom_source_replication | 1dutc | blocked | 563 | 1320 | complete | purged_walk_forward_capacity_insufficient |
 
 ### v35_tsmom_source_replication
 

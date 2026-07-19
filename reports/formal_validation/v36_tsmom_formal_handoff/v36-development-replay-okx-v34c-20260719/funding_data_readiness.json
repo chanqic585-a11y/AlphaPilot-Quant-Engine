@@ -104,10 +104,10 @@
       "timeframe": "4h",
       "walkForwardCapacity": {
         "availableBars": 3382,
-        "foldCount": 3,
+        "foldCount": 5,
         "minimumTestBarsPerFold": 60,
         "purgeBarsPerFold": 180,
-        "requiredBars": 900,
+        "requiredBars": 1380,
         "sufficient": true,
         "warmupBars": 180
       }
@@ -215,10 +215,10 @@
       "timeframe": "1dutc",
       "walkForwardCapacity": {
         "availableBars": 563,
-        "foldCount": 3,
+        "foldCount": 5,
         "minimumTestBarsPerFold": 60,
         "purgeBarsPerFold": 180,
-        "requiredBars": 840,
+        "requiredBars": 1320,
         "sufficient": false,
         "warmupBars": 120
       }
@@ -230,18 +230,18 @@
   "formalRunCount": 0,
   "formalStart": "2025-01-01T00:00:00+00:00",
   "fundingRoot": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\_alphapilot\\canonical\\okx\\swap\\funding",
-  "generatedAt": "2026-07-19T00:00:00Z",
+  "generatedAt": "2026-07-19T03:12:09+00:00",
   "lockedOosAccessCount": 0,
   "mixedExchangeFundingUsed": false,
   "orderCount": 0,
-  "readinessHash": "v36_tsmom_formal_readiness_3045e3d65d4fa487caee8095d7a328b24db657346306c768cd3b928f4888852a",
+  "readinessHash": "v36_tsmom_formal_readiness_ed3dfda2c38f18826886bbea30d3555b9019c3862af5ac0261ea435b7e06ca51",
   "releaseCount": 0,
   "resultReadCount": 0,
   "schemaVersion": "v36_tsmom_formal_readiness_v1",
   "snapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
   "snapshotManifestPath": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
   "sourceBranch": "feature/v13.27.1.36-tsmom-formal-handoff",
-  "sourceCommit": "fc61a68e9ae42990cc44d2b2ad71290212c5d91f",
+  "sourceCommit": "b131037ea8874dfc32118ad4437fc862ef8b8fac",
   "status": "blocked",
   "zeroFillUsed": false
 }
