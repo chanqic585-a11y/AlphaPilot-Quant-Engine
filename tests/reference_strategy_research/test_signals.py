@@ -4,7 +4,10 @@ import numpy as np
 import pandas as pd
 
 from alphapilot.reference_strategy_research.candidates import build_selected_candidates
-from alphapilot.reference_strategy_research.signals import replay_reference_candidate_events
+from alphapilot.reference_strategy_research.signals import (
+    detect_reference_candidate_signals,
+    replay_reference_candidate_events,
+)
 
 
 COSTS = {"feeBpsPerSide": 0.0, "slippageBpsPerSide": 0.0, "spreadProxyBpsPerSide": 0.0}
@@ -39,8 +42,17 @@ def test_utc_range_breakout_uses_frozen_prior_range_and_next_bar_entry() -> None
     frame.loc[28, ["open", "high", "low", "close"]] = [101.0, 101.2, 99.8, 100.0]
     candidate = _candidate("ref_utc_session_range_breakout_1h_v1", "long")
 
+    signals = detect_reference_candidate_signals(candidate=candidate, frame=frame)
     events = replay_reference_candidate_events(candidate=candidate, frame=frame, costs=COSTS)
 
+    assert signals[0].fingerprint() == {
+        "signalPosition": 24,
+        "signalTimestamp": "2024-01-02T00:00:00+00:00",
+        "entryPosition": 25,
+        "entryTimestamp": "2024-01-02T01:00:00+00:00",
+        "entryPrice": 102.6,
+        "riskDistance": 3.6,
+    }
     assert len(events) == 1
     event = events[0]
     assert event["signalPosition"] == 24
@@ -69,8 +81,13 @@ def test_breakout_failure_requires_causal_second_test_and_next_bar_entry() -> No
     frame.loc[29, ["open", "high", "low", "close"]] = [105.0, 109.0, 104.0, 108.0]
     candidate = _candidate("ref_pa_breakout_failure_second_entry_4h_v1", "long")
 
+    signals = detect_reference_candidate_signals(candidate=candidate, frame=frame)
     events = replay_reference_candidate_events(candidate=candidate, frame=frame, costs=COSTS)
 
+    assert signals[0].signalPosition == 27
+    assert signals[0].entryPosition == 28
+    assert signals[0].entryPrice == 103.1
+    assert signals[0].riskDistance > 4.6
     assert len(events) == 1
     event = events[0]
     assert event["signalPosition"] == 27

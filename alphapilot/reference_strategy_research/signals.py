@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections.abc import Iterable
+from dataclasses import dataclass, field
 from typing import Any
 
 import numpy as np
@@ -11,6 +12,29 @@ import pandas as pd
 from alphapilot.exit_policy import ExitCosts, exit_execution_to_dict, replay_exit_policy
 from alphapilot.research_screening.campaign_contract import CandidateSpec
 from alphapilot.research_screening.campaign_signals import atr_series
+
+
+@dataclass(frozen=True)
+class ReferenceSignal:
+    """Pre-exit signal identity used for independent implementation parity."""
+
+    signalPosition: int
+    signalTimestamp: str
+    entryPosition: int
+    entryTimestamp: str
+    entryPrice: float
+    riskDistance: float
+    structureExitMask: pd.Series | None = field(default=None, repr=False, compare=False)
+
+    def fingerprint(self) -> dict[str, Any]:
+        return {
+            "signalPosition": self.signalPosition,
+            "signalTimestamp": self.signalTimestamp,
+            "entryPosition": self.entryPosition,
+            "entryTimestamp": self.entryTimestamp,
+            "entryPrice": round(self.entryPrice, 12),
+            "riskDistance": round(self.riskDistance, 12),
+        }
 
 
 def _costs(payload: dict[str, float]) -> ExitCosts:
@@ -30,7 +54,7 @@ def _session_signals(
     candidate: CandidateSpec,
     frame: pd.DataFrame,
     atr: pd.Series,
-) -> Iterable[tuple[int, float, pd.Series]]:
+) -> Iterable[ReferenceSignal]:
     definition = candidate.eventDefinition
     range_bars = int(definition["rangeBars"])
     breakout_window = int(definition["breakoutWindowBars"])
@@ -78,7 +102,15 @@ def _session_signals(
                 if candidate.direction == "long"
                 else pd.to_numeric(frame["close"], errors="coerce").ge(midpoint)
             )
-            yield position, float(risk), structure.fillna(False).astype(bool)
+            yield ReferenceSignal(
+                signalPosition=int(position),
+                signalTimestamp=pd.Timestamp(frame.iloc[position]["date"]).isoformat(),
+                entryPosition=int(position + 1),
+                entryTimestamp=pd.Timestamp(frame.iloc[position + 1]["date"]).isoformat(),
+                entryPrice=float(entry),
+                riskDistance=float(risk),
+                structureExitMask=structure.fillna(False).astype(bool),
+            )
             break
 
 
@@ -86,7 +118,7 @@ def _second_entry_signals(
     candidate: CandidateSpec,
     frame: pd.DataFrame,
     atr: pd.Series,
-) -> Iterable[tuple[int, float, None]]:
+) -> Iterable[ReferenceSignal]:
     definition = candidate.eventDefinition
     window = int(definition["boundaryWindowBars"])
     failure_window = int(definition["failureWindowBars"])
@@ -161,8 +193,53 @@ def _second_entry_signals(
             )
             risk = entry - stop if candidate.direction == "long" else stop - entry
             if np.isfinite(risk) and risk > 0 and stop > 0:
-                yield signal_position, float(risk), None
+                yield ReferenceSignal(
+                    signalPosition=int(signal_position),
+                    signalTimestamp=pd.Timestamp(frame.iloc[signal_position]["date"]).isoformat(),
+                    entryPosition=int(signal_position + 1),
+                    entryTimestamp=pd.Timestamp(frame.iloc[signal_position + 1]["date"]).isoformat(),
+                    entryPrice=float(entry),
+                    riskDistance=float(risk),
+                )
             break
+
+
+def _ordered_frame(frame: pd.DataFrame) -> pd.DataFrame:
+    ordered = (
+        frame.sort_values("date")
+        .drop_duplicates("date", keep="last")
+        .reset_index(drop=True)
+        .copy()
+    )
+    required = {"date", "open", "high", "low", "close", "volume"}
+    missing = required - set(ordered)
+    if missing:
+        raise ValueError(f"frame is missing columns: {sorted(missing)}")
+    return ordered
+
+
+def _signals_for_ordered_frame(
+    candidate: CandidateSpec,
+    ordered: pd.DataFrame,
+    atr: pd.Series,
+) -> Iterable[ReferenceSignal]:
+    if candidate.marketMechanismId == "reference_utc_session_range_breakout":
+        return _session_signals(candidate, ordered, atr)
+    if candidate.marketMechanismId == "reference_breakout_failure_second_entry":
+        return _second_entry_signals(candidate, ordered, atr)
+    raise ValueError(f"unsupported reference mechanism: {candidate.marketMechanismId}")
+
+
+def detect_reference_candidate_signals(
+    *,
+    candidate: CandidateSpec,
+    frame: pd.DataFrame,
+) -> list[ReferenceSignal]:
+    """Return causal pre-exit signal fingerprints for the frozen candidate."""
+
+    ordered = _ordered_frame(frame)
+    atr = atr_series(ordered, window=int(candidate.eventDefinition.get("atrWindow", 20)))
+    return list(_signals_for_ordered_frame(candidate, ordered, atr))
 
 
 def replay_reference_candidate_events(
@@ -176,38 +253,24 @@ def replay_reference_candidate_events(
 
     if candidate.exitPolicy is None:
         raise ValueError("reference candidates require a preregistered exit policy")
-    ordered = (
-        frame.sort_values("date")
-        .drop_duplicates("date", keep="last")
-        .reset_index(drop=True)
-        .copy()
-    )
-    required = {"date", "open", "high", "low", "close", "volume"}
-    missing = required - set(ordered)
-    if missing:
-        raise ValueError(f"frame is missing columns: {sorted(missing)}")
+    ordered = _ordered_frame(frame)
     atr = atr_series(ordered, window=int(candidate.eventDefinition.get("atrWindow", 20)))
-    if candidate.marketMechanismId == "reference_utc_session_range_breakout":
-        signals = _session_signals(candidate, ordered, atr)
-    elif candidate.marketMechanismId == "reference_breakout_failure_second_entry":
-        signals = _second_entry_signals(candidate, ordered, atr)
-    else:
-        raise ValueError(f"unsupported reference mechanism: {candidate.marketMechanismId}")
+    signals = _signals_for_ordered_frame(candidate, ordered, atr)
 
     events: list[dict[str, Any]] = []
     next_allowed = 0
-    for signal_position, risk_distance, structure_mask in signals:
-        if signal_position < next_allowed:
+    for signal in signals:
+        if signal.signalPosition < next_allowed:
             continue
         result = replay_exit_policy(
             frame=ordered,
-            signalPosition=int(signal_position),
+            signalPosition=signal.signalPosition,
             direction=candidate.direction,
-            riskDistance=float(risk_distance),
+            riskDistance=signal.riskDistance,
             policy=candidate.exitPolicy,
             costs=_costs(costs),
             atrValues=atr,
-            structureExitMask=structure_mask,
+            structureExitMask=signal.structureExitMask,
             fundingRate=funding_rate,
         )
         event = exit_execution_to_dict(result)
