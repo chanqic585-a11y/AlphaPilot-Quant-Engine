@@ -1,0 +1,226 @@
+{
+  "candidates": [
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1_long",
+      "causalRationale": "The first confirmed break of a frozen UTC pre-session range can capture liquidity repricing at crypto session transitions.",
+      "definitionHash": "candidate_definition_4e93e4ea60aa41300ef3636ab60ebf9761663e1951e4a7afe1ee58d1d1312fb8",
+      "direction": "long",
+      "eventDefinition": {
+        "atrWindow": 20,
+        "breakoutBufferAtr": 0.1,
+        "breakoutWindowBars": 12,
+        "entryReference": "next_bar_open",
+        "maximumRangeAtr": 2.5,
+        "maximumStopAtr": 2.0,
+        "minimumRangeAtr": 0.5,
+        "rangeBars": 4,
+        "sessionAnchorUtcHour": 0
+      },
+      "exitPolicy": {
+        "initialStopMayWiden": false,
+        "maximumHoldBars": 12,
+        "mode": "structure_or_time",
+        "parameters": {
+          "structureRule": {
+            "kind": "frozen_range_midpoint"
+          }
+        },
+        "version": "advisory_r_exit_policy_v1"
+      },
+      "exitPolicyHash": "exit_policy_5e24c90013c13ab618ccac425180d6fdadc71f06a0ebefad519d60d2757b9be2",
+      "exitPolicyRequired": true,
+      "exitPolicyVersion": "advisory_r_exit_policy_v1",
+      "expectedFailureRegimes": [
+        "range_reentry",
+        "overnight_gap",
+        "thin_liquidity"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "reference_utc_session_range_breakout",
+      "initialStopMayWiden": false,
+      "invalidation": "Initial stop is frozen at the opposite session-range boundary or the preregistered ATR cap.",
+      "marketMechanismId": "reference_utc_session_range_breakout",
+      "maximumHoldBars": 12,
+      "minimumTargetR": null,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "riskMetric": "R",
+      "schemaVersion": "phase3c_candidate_v2",
+      "stopAtr": 2.0,
+      "targetR": null,
+      "targetRGateMode": "advisory",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1_short",
+      "causalRationale": "The first confirmed break of a frozen UTC pre-session range can capture liquidity repricing at crypto session transitions.",
+      "definitionHash": "candidate_definition_eb1dfda03f4437bd762180f490b1b00534622b9d44aa90564c9c6b62b285ce77",
+      "direction": "short",
+      "eventDefinition": {
+        "atrWindow": 20,
+        "breakoutBufferAtr": 0.1,
+        "breakoutWindowBars": 12,
+        "entryReference": "next_bar_open",
+        "maximumRangeAtr": 2.5,
+        "maximumStopAtr": 2.0,
+        "minimumRangeAtr": 0.5,
+        "rangeBars": 4,
+        "sessionAnchorUtcHour": 0
+      },
+      "exitPolicy": {
+        "initialStopMayWiden": false,
+        "maximumHoldBars": 12,
+        "mode": "structure_or_time",
+        "parameters": {
+          "structureRule": {
+            "kind": "frozen_range_midpoint"
+          }
+        },
+        "version": "advisory_r_exit_policy_v1"
+      },
+      "exitPolicyHash": "exit_policy_5e24c90013c13ab618ccac425180d6fdadc71f06a0ebefad519d60d2757b9be2",
+      "exitPolicyRequired": true,
+      "exitPolicyVersion": "advisory_r_exit_policy_v1",
+      "expectedFailureRegimes": [
+        "range_reentry",
+        "overnight_gap",
+        "thin_liquidity"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "reference_utc_session_range_breakout",
+      "initialStopMayWiden": false,
+      "invalidation": "Initial stop is frozen at the opposite session-range boundary or the preregistered ATR cap.",
+      "marketMechanismId": "reference_utc_session_range_breakout",
+      "maximumHoldBars": 12,
+      "minimumTargetR": null,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "riskMetric": "R",
+      "schemaVersion": "phase3c_candidate_v2",
+      "stopAtr": 2.0,
+      "targetR": null,
+      "targetRGateMode": "advisory",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1_long",
+      "causalRationale": "A failed breakout traps late participants; a second failed attempt offers a more robust reversal entry than the first fade.",
+      "definitionHash": "candidate_definition_ac3a6f098b397f1a66d8c142b6f359d35eae1a915f7132f3af1909d40da0aae4",
+      "direction": "long",
+      "eventDefinition": {
+        "atrWindow": 20,
+        "boundaryWindowBars": 20,
+        "entryReference": "next_bar_open",
+        "failureWindowBars": 2,
+        "maximumFirstBreakAtr": 0.5,
+        "maximumStopAtr": 2.5,
+        "retestToleranceAtr": 0.1,
+        "retestWindowBars": 6,
+        "stopBufferAtr": 0.1
+      },
+      "exitPolicy": {
+        "initialStopMayWiden": false,
+        "maximumHoldBars": 20,
+        "mode": "hybrid",
+        "parameters": {
+          "partialAtR": 1.0,
+          "partialFraction": 0.5,
+          "remainderMode": "trailing",
+          "trailingAtrMultiple": 1.5
+        },
+        "version": "advisory_r_exit_policy_v1"
+      },
+      "exitPolicyHash": "exit_policy_24ecc69ace0b2c7c3d91791794d89be07a70bda08285fbb8112d0a17bebaf7dc",
+      "exitPolicyRequired": true,
+      "exitPolicyVersion": "advisory_r_exit_policy_v1",
+      "expectedFailureRegimes": [
+        "persistent_breakout",
+        "gap_through_stop",
+        "thin_liquidity"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "reference_breakout_failure_second_entry",
+      "initialStopMayWiden": false,
+      "invalidation": "Initial stop is frozen beyond the failed-test extreme plus the preregistered ATR buffer.",
+      "marketMechanismId": "reference_breakout_failure_second_entry",
+      "maximumHoldBars": 20,
+      "minimumTargetR": null,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "riskMetric": "R",
+      "schemaVersion": "phase3c_candidate_v2",
+      "stopAtr": 2.5,
+      "targetR": null,
+      "targetRGateMode": "advisory",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1_short",
+      "causalRationale": "A failed breakout traps late participants; a second failed attempt offers a more robust reversal entry than the first fade.",
+      "definitionHash": "candidate_definition_1076d6c5f2bad80407704fd70eabdc8163e8d0c6f184ce65d062c69404e52776",
+      "direction": "short",
+      "eventDefinition": {
+        "atrWindow": 20,
+        "boundaryWindowBars": 20,
+        "entryReference": "next_bar_open",
+        "failureWindowBars": 2,
+        "maximumFirstBreakAtr": 0.5,
+        "maximumStopAtr": 2.5,
+        "retestToleranceAtr": 0.1,
+        "retestWindowBars": 6,
+        "stopBufferAtr": 0.1
+      },
+      "exitPolicy": {
+        "initialStopMayWiden": false,
+        "maximumHoldBars": 20,
+        "mode": "hybrid",
+        "parameters": {
+          "partialAtR": 1.0,
+          "partialFraction": 0.5,
+          "remainderMode": "trailing",
+          "trailingAtrMultiple": 1.5
+        },
+        "version": "advisory_r_exit_policy_v1"
+      },
+      "exitPolicyHash": "exit_policy_24ecc69ace0b2c7c3d91791794d89be07a70bda08285fbb8112d0a17bebaf7dc",
+      "exitPolicyRequired": true,
+      "exitPolicyVersion": "advisory_r_exit_policy_v1",
+      "expectedFailureRegimes": [
+        "persistent_breakout",
+        "gap_through_stop",
+        "thin_liquidity"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "reference_breakout_failure_second_entry",
+      "initialStopMayWiden": false,
+      "invalidation": "Initial stop is frozen beyond the failed-test extreme plus the preregistered ATR buffer.",
+      "marketMechanismId": "reference_breakout_failure_second_entry",
+      "maximumHoldBars": 20,
+      "minimumTargetR": null,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "riskMetric": "R",
+      "schemaVersion": "phase3c_candidate_v2",
+      "stopAtr": 2.5,
+      "targetR": null,
+      "targetRGateMode": "advisory",
+      "timeframe": "4h"
+    }
+  ],
+  "directionalCandidateCount": 4,
+  "parentCandidateCount": 2,
+  "runId": "v37b-reference-c714273e3046-231c239eb744",
+  "schemaVersion": "reference_strategy_selected_candidates_v1"
+}
