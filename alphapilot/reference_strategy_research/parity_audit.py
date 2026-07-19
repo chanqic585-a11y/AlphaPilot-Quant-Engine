@@ -10,6 +10,7 @@ import numpy as np
 import pandas as pd
 
 from alphapilot.research_screening.campaign_contract import CandidateSpec
+from alphapilot.research_screening.campaign_metrics import evaluate_candidate_gates
 
 from .signals import detect_reference_candidate_signals
 
@@ -289,3 +290,103 @@ def audit_parquet_signal_parity(
         fixture_id=fixture_id,
         provenance=provenance,
     )
+
+
+def _positive_gate_event(
+    *,
+    index: int,
+    timestamp: pd.Timestamp,
+    split: str,
+    fold_id: str,
+) -> dict[str, Any]:
+    net_r = -0.25 if index % 5 == 0 else 1.0
+    fees_r = 0.01
+    slippage_r = 0.01
+    funding_r = 0.01
+    spread_r = 0.01
+    return {
+        "netR": net_r,
+        "grossR": net_r + fees_r + slippage_r + funding_r + spread_r,
+        "feesR": fees_r,
+        "slippageR": slippage_r,
+        "fundingR": funding_r,
+        "spreadProxyR": spread_r,
+        "split": split,
+        "foldId": fold_id,
+        "symbol": ("BTC-USDT-SWAP", "ETH-USDT-SWAP", "SOL-USDT-SWAP", "XRP-USDT-SWAP")[
+            index % 4
+        ],
+        "entryTimestamp": timestamp.isoformat(),
+    }
+
+
+def _known_positive_gate_events(
+    preregistration: dict[str, Any],
+    timeframe: str,
+) -> list[dict[str, Any]]:
+    sample_rule = preregistration["sampleGates"][timeframe]
+    development_count = int(sample_rule["minimumEvents"])
+    development_months = int(sample_rule["minimumMonths"])
+    development_starts = pd.date_range(
+        "2020-01-01T00:00:00Z", periods=development_months, freq="MS"
+    )
+    rows: list[dict[str, Any]] = []
+    for index in range(development_count):
+        month = development_starts[index % development_months]
+        timestamp = month + pd.Timedelta(hours=index // development_months)
+        rows.append(
+            _positive_gate_event(
+                index=index,
+                timestamp=timestamp,
+                split="development",
+                fold_id="",
+            )
+        )
+
+    oos_months = pd.date_range("2023-01-01T00:00:00Z", periods=12, freq="MS")
+    for index in range(120):
+        split = "walk_forward" if index < 100 else "holdout"
+        fold_id = f"fold_{(index // 20) + 1:03d}" if split == "walk_forward" else ""
+        month = oos_months[index % len(oos_months)]
+        timestamp = month + pd.Timedelta(hours=index // len(oos_months))
+        rows.append(
+            _positive_gate_event(
+                index=index + development_count,
+                timestamp=timestamp,
+                split=split,
+                fold_id=fold_id,
+            )
+        )
+    return rows
+
+
+def build_gate_reachability_report(
+    *,
+    preregistration: dict[str, Any],
+    timeframe: str,
+) -> dict[str, Any]:
+    """Prove the unchanged gate implementation accepts an explicit positive fixture."""
+
+    events = _known_positive_gate_events(preregistration, timeframe)
+    gates = evaluate_candidate_gates(
+        events=events,
+        timeframe=timeframe,
+        preregistration=preregistration,
+        holdout_access_before_final_evaluation=0,
+    )
+    gate_flags = {
+        name: bool(gates[name])
+        for name in ("samplePassed", "prescreenPassed", "basePassed", "formalPassed")
+    }
+    return {
+        "schemaVersion": "reference_gate_reachability_v1",
+        "timeframe": timeframe,
+        "fixture": "deterministic_known_positive_cost_aware_events",
+        "eventCount": len(events),
+        "developmentEventCount": sum(row["split"] == "development" for row in events),
+        "walkForwardEventCount": sum(row["split"] == "walk_forward" for row in events),
+        "holdoutEventCount": sum(row["split"] == "holdout" for row in events),
+        "allGatesReachable": all(gate_flags.values()),
+        "gateFlags": gate_flags,
+        "gates": gates,
+    }

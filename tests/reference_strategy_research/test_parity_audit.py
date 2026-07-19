@@ -1,11 +1,16 @@
 from __future__ import annotations
 
+import json
 import numpy as np
 import pandas as pd
 import pytest
+from pathlib import Path
 
 from alphapilot.reference_strategy_research.candidates import build_selected_candidates
-from alphapilot.reference_strategy_research.parity_audit import audit_signal_parity
+from alphapilot.reference_strategy_research.parity_audit import (
+    audit_signal_parity,
+    build_gate_reachability_report,
+)
 
 
 def _candidate(parent_id: str, direction: str):
@@ -85,3 +90,19 @@ def test_independent_oracle_matches_second_entry_production_signals(direction: s
     assert result["parityPassed"] is True
     assert result["productionSignalCount"] == result["oracleSignalCount"] == 1
     assert result["mismatches"] == []
+
+
+def test_unchanged_v37b_gates_are_reachable_with_known_positive_events() -> None:
+    repo_root = Path(__file__).resolve().parents[2]
+    preregistration_path = repo_root / "research" / "preregistrations" / (
+        "phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980.json"
+    )
+    preregistration = json.loads(preregistration_path.read_text(encoding="utf-8"))
+
+    report = build_gate_reachability_report(preregistration=preregistration, timeframe="1h")
+
+    assert report["allGatesReachable"] is True
+    assert report["gates"]["samplePassed"] is True
+    assert report["gates"]["prescreenPassed"] is True
+    assert report["gates"]["basePassed"] is True
+    assert report["gates"]["formalPassed"] is True
