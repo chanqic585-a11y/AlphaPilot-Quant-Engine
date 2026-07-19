@@ -1,0 +1,48 @@
+{
+  "candidates": [
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1_long",
+      "expectedFailureRegimes": [
+        "range_reentry",
+        "overnight_gap",
+        "thin_liquidity"
+      ],
+      "labels": [
+        "market_mechanism_prescreen_failed"
+      ]
+    },
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1_short",
+      "expectedFailureRegimes": [
+        "range_reentry",
+        "overnight_gap",
+        "thin_liquidity"
+      ],
+      "labels": [
+        "market_mechanism_prescreen_failed"
+      ]
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1_long",
+      "expectedFailureRegimes": [
+        "persistent_breakout",
+        "gap_through_stop",
+        "thin_liquidity"
+      ],
+      "labels": [
+        "freqtrade_translation_not_executed"
+      ]
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1_short",
+      "expectedFailureRegimes": [
+        "persistent_breakout",
+        "gap_through_stop",
+        "thin_liquidity"
+      ],
+      "labels": [
+        "market_mechanism_prescreen_failed"
+      ]
+    }
+  ]
+}

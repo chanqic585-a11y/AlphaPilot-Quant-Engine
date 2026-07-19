@@ -7,7 +7,10 @@
     "dedupe_complete",
     "data_audit_complete",
     "implementation_verified",
-    "preregistered"
+    "preregistered",
+    "campaign_running",
+    "campaign_complete",
+    "closeout_complete"
   ],
   "artifactHashes": {
     "source_verified": "f1de3800cf7b95c5b8236c26115522b2be87a82cce99750310582c74b64ada29",
@@ -15,6 +18,9 @@
     "dedupe_complete": "8ef44dbe31d0223a62fa6d51fcf7fcc7532fe703971eec60305f3b741dc79333",
     "data_audit_complete": "68a2a9f5fbb50aac48382470f608bad3e256f7e6cba5082bbd2d1c638869c1fd",
     "implementation_verified": "1556d63e62ca4cda82a2aa6b3ca2b647666404b0129e7bcdef2714998206ac05",
-    "preregistered": "6f2af9e20d7b1dbd95f65d3e9815e4e334f7b5a193fae49162aee2b87a48071a"
+    "preregistered": "6f2af9e20d7b1dbd95f65d3e9815e4e334f7b5a193fae49162aee2b87a48071a",
+    "campaign_running": "33f239bb970392d0cde0413c51b5779ffcc429771cc8259da34ce69c9fefae04",
+    "campaign_complete": "5e17e5bf481af3a6fd2b8efff741b20c9bf316658b2f787f416924b10358cfe7",
+    "closeout_complete": "81852b7af9848c77f112df3b8298e6014ad358104454b33bb206fc0e3046b0a7"
   }
 }
