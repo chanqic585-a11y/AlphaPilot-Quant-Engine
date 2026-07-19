@@ -490,6 +490,56 @@ MIGRATIONS: tuple[Migration, ...] = (
             "CREATE INDEX IF NOT EXISTS idx_evaluation_bindings_snapshot ON EvaluationBindings(dataSnapshotId, createdAt)",
         ),
     ),
+    Migration(
+        version=8,
+        name="create_strategy_acquisition_projection_v8",
+        statements=(
+            """
+            CREATE TABLE IF NOT EXISTS StrategyArtifacts (
+              artifactId TEXT PRIMARY KEY,
+              artifactType TEXT NOT NULL,
+              name TEXT NOT NULL,
+              familyId TEXT NOT NULL,
+              sourceEquivalenceClass TEXT NOT NULL,
+              status TEXT NOT NULL,
+              authorityRef TEXT NOT NULL,
+              artifactJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL,
+              createdAt TEXT NOT NULL,
+              updatedAt TEXT NOT NULL
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_strategy_artifacts_family ON StrategyArtifacts(familyId, status)",
+            "CREATE INDEX IF NOT EXISTS idx_strategy_artifacts_authority ON StrategyArtifacts(authorityRef)",
+            """
+            CREATE TABLE IF NOT EXISTS ArtifactLifecycleEvents (
+              eventId TEXT PRIMARY KEY,
+              artifactId TEXT NOT NULL,
+              previousStatus TEXT,
+              nextStatus TEXT NOT NULL,
+              reasonCode TEXT NOT NULL,
+              evidenceJson TEXT NOT NULL,
+              previousEventHash TEXT,
+              eventHash TEXT NOT NULL UNIQUE,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (artifactId) REFERENCES StrategyArtifacts(artifactId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_artifact_lifecycle_history ON ArtifactLifecycleEvents(artifactId, createdAt, eventId)",
+            """
+            CREATE TABLE IF NOT EXISTS ArtifactBenchHistory (
+              benchId TEXT PRIMARY KEY,
+              artifactId TEXT NOT NULL,
+              benchType TEXT NOT NULL,
+              resultJson TEXT NOT NULL,
+              contentHash TEXT NOT NULL UNIQUE,
+              createdAt TEXT NOT NULL,
+              FOREIGN KEY (artifactId) REFERENCES StrategyArtifacts(artifactId)
+            )
+            """,
+            "CREATE INDEX IF NOT EXISTS idx_artifact_bench_history ON ArtifactBenchHistory(artifactId, createdAt, benchId)",
+        ),
+    ),
 )
 
 

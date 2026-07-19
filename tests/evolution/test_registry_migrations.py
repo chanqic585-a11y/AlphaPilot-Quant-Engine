@@ -101,7 +101,7 @@ class RegistryMigrationTests(unittest.TestCase):
         self.assertEqual(table_count, 0)
         self.assertEqual(migration_count, 0)
 
-    def test_v5_registry_upgrades_to_workflow_v6_without_rebuilding_old_tables(
+    def test_v5_registry_upgrades_to_latest_without_rebuilding_old_tables(
         self,
     ) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -135,6 +135,15 @@ class RegistryMigrationTests(unittest.TestCase):
                     )
                     """
                 ).fetchone()[0]
+                acquisition_table_count = connection.execute(
+                    """
+                    SELECT COUNT(*) FROM sqlite_master
+                    WHERE type = 'table' AND name IN (
+                      'StrategyArtifacts', 'ArtifactLifecycleEvents',
+                      'ArtifactBenchHistory'
+                    )
+                    """
+                ).fetchone()[0]
                 foreign_key_violations = connection.execute(
                     "PRAGMA foreign_key_check"
                 ).fetchall()
@@ -142,16 +151,17 @@ class RegistryMigrationTests(unittest.TestCase):
                 connection.close()
 
         self.assertEqual(initial_count, 5)
-        self.assertEqual(upgraded_count, 2)
+        self.assertEqual(upgraded_count, 3)
         self.assertEqual(repeated_count, 0)
         self.assertEqual(workflow_table_count, 5)
+        self.assertEqual(acquisition_table_count, 3)
         self.assertEqual(
             preserved_strategy_family_sql,
             old_strategy_family_sql,
         )
         self.assertEqual(foreign_key_violations, [])
 
-    def test_v6_registry_upgrades_to_evaluation_bindings_v7_without_rebuilding_workflow_tables(
+    def test_v6_registry_upgrades_to_latest_without_rebuilding_workflow_tables(
         self,
     ) -> None:
         with tempfile.TemporaryDirectory() as directory:
@@ -184,6 +194,15 @@ class RegistryMigrationTests(unittest.TestCase):
                     )
                     """
                 ).fetchone()[0]
+                acquisition_table_count = connection.execute(
+                    """
+                    SELECT COUNT(*) FROM sqlite_master
+                    WHERE type = 'table' AND name IN (
+                      'StrategyArtifacts', 'ArtifactLifecycleEvents',
+                      'ArtifactBenchHistory'
+                    )
+                    """
+                ).fetchone()[0]
                 foreign_key_violations = connection.execute(
                     "PRAGMA foreign_key_check"
                 ).fetchall()
@@ -191,9 +210,10 @@ class RegistryMigrationTests(unittest.TestCase):
                 connection.close()
 
         self.assertEqual(initial_count, 6)
-        self.assertEqual(upgraded_count, 1)
+        self.assertEqual(upgraded_count, 2)
         self.assertEqual(repeated_count, 0)
         self.assertEqual(new_table_count, 2)
+        self.assertEqual(acquisition_table_count, 3)
         self.assertEqual(preserved_workflow_sql, old_workflow_sql)
         self.assertEqual(foreign_key_violations, [])
 

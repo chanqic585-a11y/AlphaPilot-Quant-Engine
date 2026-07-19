@@ -1,0 +1,62 @@
+{
+  "schemaVersion": "alphapilot_vibe_selective_integration_map_v1",
+  "adoptNow": [
+    {
+      "component": "strategy-development-manager",
+      "alphaPilotTarget": "strategy_acquisition",
+      "mode": "clean_room_rewrite",
+      "authority": "AlphaPilot Program/Campaign Ledger"
+    },
+    {
+      "component": "strategy-store-lifecycle",
+      "alphaPilotTarget": "artifact_index_and_bench_history",
+      "mode": "schema_adaptation",
+      "authority": "projection_only"
+    },
+    {
+      "component": "alpha-zoo-operators-and-bench",
+      "alphaPilotTarget": "factor_lab",
+      "mode": "selected_subset",
+      "constraint": "crypto semantics and PIT readiness required"
+    },
+    {
+      "component": "generated-strategy-ast-sandbox",
+      "alphaPilotTarget": "generated_candidate_sandbox",
+      "mode": "hardened_adaptation",
+      "constraint": "network and dangerous calls forbidden even when unreachable"
+    },
+    {
+      "component": "alpha-compare",
+      "alphaPilotTarget": "artifact_similarity",
+      "mode": "extended",
+      "constraint": "source, formula, mechanism, signal, event, return, holding and parameter evidence"
+    }
+  ],
+  "defer": [
+    {
+      "component": "decay-monitoring",
+      "activateAfter": "three independent periodic benches or sufficient closed Demo trades",
+      "restriction": "never mutate an active Release in place"
+    },
+    {
+      "component": "shadow-account-attribution",
+      "activateAfter": "real closed Demo or Live trades",
+      "restriction": "no synthetic PnL represented as exchange evidence"
+    },
+    {
+      "component": "research-ui",
+      "activateIn": "V38",
+      "restriction": "reuse the current Console stack"
+    }
+  ],
+  "reject": [
+    "whole-repository-merge",
+    "runtime-submodule-or-package-dependency",
+    "cross-exchange-formal-data-fallback",
+    "generic-vibe-strategy-gates",
+    "automatic-in-place-parameter-updates",
+    "vibe-live-or-broker-connectors",
+    "unbounded-llm-strategy-daemon",
+    "whole-frontend-migration"
+  ]
+}
