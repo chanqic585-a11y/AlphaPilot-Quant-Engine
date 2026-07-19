@@ -2,21 +2,21 @@
   "artifacts": [
     {
       "path": "funding_data_readiness.json",
-      "sha256": "3c762766711f91bdb9c6522da48771a0f337522ecc1a7dec1f9616e8c623635e"
+      "sha256": "007f6b8aac804e3130f64791329c25f728e2f80286461666126f8ee4572cf73a"
     },
     {
       "path": "funding_data_readiness.md",
-      "sha256": "f7846e48fecb6dfd86d7f707de368ce215904aa274c0f4e299ed16be8c03b536"
+      "sha256": "8df898533cbfb22032ad9d92470a8098b2c5fbac6047072abc6717209e820b2e"
     },
     {
       "path": "formal_preflight.json",
-      "sha256": "09956a06712fe2625e6d0f852031b2cdf6ecee9e1ad3891da4c0f0b3228ba0cc"
+      "sha256": "0626cdefc7c3b4acde9bfb3036686fb0889f5f6367540dafc6aa6f76c0ff4964"
     }
   ],
   "formalInputReadCount": 0,
   "formalRunCount": 0,
   "lockedOosAccessCount": 0,
-  "readinessHash": "v36_tsmom_formal_readiness_e0409125d96097591f3e88a163c97f5062c3339077ec0aa2f46cb14f37a85fb1",
+  "readinessHash": "v36_tsmom_formal_readiness_3045e3d65d4fa487caee8095d7a328b24db657346306c768cd3b928f4888852a",
   "releaseCount": 0,
   "resultReadCount": 0,
   "schemaVersion": "v36_tsmom_formal_readiness_manifest_v1",

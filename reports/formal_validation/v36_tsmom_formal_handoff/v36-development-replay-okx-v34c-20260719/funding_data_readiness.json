@@ -1,12 +1,10 @@
 {
-  "blockedCandidateCount": 2,
+  "blockedCandidateCount": 1,
   "campaignId": "v36-development-replay-okx-v34c-20260719",
   "candidateCount": 2,
   "candidates": [
     {
-      "blockers": [
-        "funding_window_incomplete"
-      ],
+      "blockers": [],
       "candidateId": "v35_tsmom_crypto_adaptation",
       "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
       "formalWindow": {
@@ -15,39 +13,39 @@
         "start": "2025-01-01T00:00:00+00:00"
       },
       "fundingCoverage": {
-        "fullWindowCovered": false,
+        "fullWindowCovered": true,
         "instruments": [
           {
-            "fileCount": 61,
-            "firstTimestamp": "2026-04-07T08:00:00+00:00",
-            "fullWindowCovered": false,
+            "fileCount": 80,
+            "firstTimestamp": "2024-12-31T16:00:00+00:00",
+            "fullWindowCovered": true,
             "instrumentId": "BTC-USDT-SWAP",
-            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "lastTimestamp": "2026-07-19T00:00:00+00:00",
             "maximumGapHours": 8.0,
             "provenanceValid": true,
-            "rowCount": 295,
+            "rowCount": 1694,
             "zeroFilled": false
           },
           {
-            "fileCount": 61,
-            "firstTimestamp": "2026-04-07T08:00:00+00:00",
-            "fullWindowCovered": false,
+            "fileCount": 80,
+            "firstTimestamp": "2024-12-31T16:00:00+00:00",
+            "fullWindowCovered": true,
             "instrumentId": "ETH-USDT-SWAP",
-            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "lastTimestamp": "2026-07-19T00:00:00+00:00",
             "maximumGapHours": 8.0,
             "provenanceValid": true,
-            "rowCount": 295,
+            "rowCount": 1694,
             "zeroFilled": false
           },
           {
-            "fileCount": 61,
-            "firstTimestamp": "2026-04-07T08:00:00+00:00",
-            "fullWindowCovered": false,
+            "fileCount": 80,
+            "firstTimestamp": "2024-12-31T16:00:00+00:00",
+            "fullWindowCovered": true,
             "instrumentId": "SOL-USDT-SWAP",
-            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "lastTimestamp": "2026-07-19T00:00:00+00:00",
             "maximumGapHours": 8.0,
             "provenanceValid": true,
-            "rowCount": 295,
+            "rowCount": 1694,
             "zeroFilled": false
           }
         ],
@@ -101,7 +99,7 @@
         ]
       },
       "selectedTrialId": "v36_trial_43b2c0f5804b1f0596bc6d5691d79013699a5e1b3db0a07e7a3332ac3f6f0599",
-      "status": "blocked",
+      "status": "ready",
       "strategyDefinitionHash": "v36_replay_definition_500e95aa9039039462514ee499bbb4548246b6b479b656e13a407967885d312e",
       "timeframe": "4h",
       "walkForwardCapacity": {
@@ -116,7 +114,6 @@
     },
     {
       "blockers": [
-        "funding_window_incomplete",
         "purged_walk_forward_capacity_insufficient"
       ],
       "candidateId": "v35_tsmom_source_replication",
@@ -127,39 +124,39 @@
         "start": "2025-01-01T00:00:00+00:00"
       },
       "fundingCoverage": {
-        "fullWindowCovered": false,
+        "fullWindowCovered": true,
         "instruments": [
           {
-            "fileCount": 61,
-            "firstTimestamp": "2026-04-07T08:00:00+00:00",
-            "fullWindowCovered": false,
+            "fileCount": 80,
+            "firstTimestamp": "2024-12-31T16:00:00+00:00",
+            "fullWindowCovered": true,
             "instrumentId": "BTC-USDT-SWAP",
-            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "lastTimestamp": "2026-07-19T00:00:00+00:00",
             "maximumGapHours": 8.0,
             "provenanceValid": true,
-            "rowCount": 295,
+            "rowCount": 1694,
             "zeroFilled": false
           },
           {
-            "fileCount": 61,
-            "firstTimestamp": "2026-04-07T08:00:00+00:00",
-            "fullWindowCovered": false,
+            "fileCount": 80,
+            "firstTimestamp": "2024-12-31T16:00:00+00:00",
+            "fullWindowCovered": true,
             "instrumentId": "ETH-USDT-SWAP",
-            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "lastTimestamp": "2026-07-19T00:00:00+00:00",
             "maximumGapHours": 8.0,
             "provenanceValid": true,
-            "rowCount": 295,
+            "rowCount": 1694,
             "zeroFilled": false
           },
           {
-            "fileCount": 61,
-            "firstTimestamp": "2026-04-07T08:00:00+00:00",
-            "fullWindowCovered": false,
+            "fileCount": 80,
+            "firstTimestamp": "2024-12-31T16:00:00+00:00",
+            "fullWindowCovered": true,
             "instrumentId": "SOL-USDT-SWAP",
-            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "lastTimestamp": "2026-07-19T00:00:00+00:00",
             "maximumGapHours": 8.0,
             "provenanceValid": true,
-            "rowCount": 295,
+            "rowCount": 1694,
             "zeroFilled": false
           }
         ],
@@ -229,22 +226,22 @@
   ],
   "demoArm": false,
   "formalInputReadCount": 0,
-  "formalReadyCandidateCount": 0,
+  "formalReadyCandidateCount": 1,
   "formalRunCount": 0,
   "formalStart": "2025-01-01T00:00:00+00:00",
   "fundingRoot": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\_alphapilot\\canonical\\okx\\swap\\funding",
-  "generatedAt": "2026-07-19T01:21:49+00:00",
+  "generatedAt": "2026-07-19T00:00:00Z",
   "lockedOosAccessCount": 0,
   "mixedExchangeFundingUsed": false,
   "orderCount": 0,
-  "readinessHash": "v36_tsmom_formal_readiness_e0409125d96097591f3e88a163c97f5062c3339077ec0aa2f46cb14f37a85fb1",
+  "readinessHash": "v36_tsmom_formal_readiness_3045e3d65d4fa487caee8095d7a328b24db657346306c768cd3b928f4888852a",
   "releaseCount": 0,
   "resultReadCount": 0,
   "schemaVersion": "v36_tsmom_formal_readiness_v1",
   "snapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
   "snapshotManifestPath": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
   "sourceBranch": "feature/v13.27.1.36-tsmom-formal-handoff",
-  "sourceCommit": "c434243335799c374e5bd0297e78e61b31ee597e",
+  "sourceCommit": "fc61a68e9ae42990cc44d2b2ad71290212c5d91f",
   "status": "blocked",
   "zeroFillUsed": false
 }
