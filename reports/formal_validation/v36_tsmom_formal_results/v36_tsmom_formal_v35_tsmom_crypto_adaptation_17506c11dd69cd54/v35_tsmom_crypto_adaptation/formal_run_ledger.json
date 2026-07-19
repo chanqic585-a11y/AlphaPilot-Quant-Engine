@@ -1,0 +1,19 @@
+{
+  "attemptCount": 1,
+  "checkpoint": {
+    "checkpointId": "before_formal_input_read",
+    "deterministic": true
+  },
+  "claimedAt": "2026-07-19T03:50:09.716872Z",
+  "failedAt": "2026-07-19T03:50:11.581246Z",
+  "failureReason": "FileNotFoundError",
+  "identity": {
+    "codeCommit": "07a45406299538bd54aac2d37b5ef5aec706f565",
+    "inputSnapshotHash": "v36_tsmom_formal_data_snapshot_39709209ecc3e3b1bcfbc3d0a473aed42a127257803736e6a21f2f91e8300651",
+    "preregistrationHash": "v36_tsmom_formal_preregistration_f477cec79685d9fc66e22fa6c898106723c1e813d89e1ac305af16746281f648"
+  },
+  "resumed": false,
+  "runId": "v35_tsmom_crypto_adaptation-v36-formal-001",
+  "schemaVersion": "s01_v18_atomic_run_ledger_v1",
+  "state": "failed"
+}

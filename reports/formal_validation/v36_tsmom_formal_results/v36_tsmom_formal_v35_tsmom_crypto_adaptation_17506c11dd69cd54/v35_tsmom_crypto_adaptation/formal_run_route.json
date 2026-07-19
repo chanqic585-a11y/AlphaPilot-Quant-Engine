@@ -1,0 +1,20 @@
+{
+  "blockers": [
+    "artifact_staging_temp_path_exceeded_windows_path_limit"
+  ],
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_17506c11dd69cd54",
+  "candidateId": "v35_tsmom_crypto_adaptation",
+  "demoArm": false,
+  "failureReason": "FileNotFoundError",
+  "formalInputReadCount": 1,
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "observedDestinationPathLength": 189,
+  "observedStagingPathLength": 242,
+  "observedTemporaryPathLength": 264,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "route": "formal_run_failed_closed",
+  "schemaVersion": "v36_tsmom_formal_run_route_v1"
+}
