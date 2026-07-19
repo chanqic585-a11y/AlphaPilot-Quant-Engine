@@ -1,0 +1,169 @@
+{
+  "authorityModel": "projection_only_existing_program_campaign_ledger_remains_authority",
+  "migrationVersion": 8,
+  "schemaVersion": "alphapilot_strategy_artifact_store_schema_v1",
+  "tables": {
+    "ArtifactBenchHistory": [
+      {
+        "name": "benchId",
+        "notNull": false,
+        "primaryKey": true,
+        "type": "TEXT"
+      },
+      {
+        "name": "artifactId",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "benchType",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "resultJson",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "contentHash",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "createdAt",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      }
+    ],
+    "ArtifactLifecycleEvents": [
+      {
+        "name": "eventId",
+        "notNull": false,
+        "primaryKey": true,
+        "type": "TEXT"
+      },
+      {
+        "name": "artifactId",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "previousStatus",
+        "notNull": false,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "nextStatus",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "reasonCode",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "evidenceJson",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "previousEventHash",
+        "notNull": false,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "eventHash",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "createdAt",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      }
+    ],
+    "StrategyArtifacts": [
+      {
+        "name": "artifactId",
+        "notNull": false,
+        "primaryKey": true,
+        "type": "TEXT"
+      },
+      {
+        "name": "artifactType",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "name",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "familyId",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "sourceEquivalenceClass",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "status",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "authorityRef",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "artifactJson",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "contentHash",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "createdAt",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      },
+      {
+        "name": "updatedAt",
+        "notNull": true,
+        "primaryKey": false,
+        "type": "TEXT"
+      }
+    ]
+  }
+}

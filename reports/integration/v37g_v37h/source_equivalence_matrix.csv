@@ -1,0 +1,4 @@
+﻿artifactId,familyId,sourceEquivalenceClass,authorityRef,status
+vibe-alpha-compare,artifact-similarity,mechanism_only,integration:v37g-v37h-vibe-audit,mechanism_extracted
+vibe-generated-code-sandbox,generated-candidate-sandbox,mechanism_only,integration:v37g-v37h-vibe-audit,mechanism_extracted
+vibe-strategy-development-manager,strategy-development-manager,mechanism_only,integration:v37g-v37h-vibe-audit,mechanism_extracted

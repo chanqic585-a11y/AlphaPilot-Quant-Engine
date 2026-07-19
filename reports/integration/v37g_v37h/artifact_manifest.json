@@ -1,0 +1,86 @@
+{
+  "artifacts": [
+    {
+      "path": "artifact_lifecycle_history.jsonl",
+      "sha256": "e5f40a93e957c69a4a73e20e29557d466ee7b6da3ac68a84265c37fb901d7e93",
+      "sizeBytes": 3388
+    },
+    {
+      "path": "artifact_similarity_matrix.parquet",
+      "sha256": "afd9215c7daae8327de67d6bd41da737bd1cf5ef27702296856b633db8581f71",
+      "sizeBytes": 9356
+    },
+    {
+      "path": "artifact_similarity_summary.csv",
+      "sha256": "c129b71ab7241be6c046b3518b1ef01056571188bde85a96be0e5bb2e599b1c7",
+      "sizeBytes": 746
+    },
+    {
+      "path": "candidate_dedup_decision.json",
+      "sha256": "7552162fcf5e1879826e7630696ec4d6aba884451eec9c0a27505e5f56b93ac2",
+      "sizeBytes": 1424
+    },
+    {
+      "path": "factor_bench_matrix.csv",
+      "sha256": "2998748d0dace30eae41ea62879c0b02b9b9f8926d4424e2f744c0ad451af58d",
+      "sizeBytes": 746
+    },
+    {
+      "path": "factor_registry.json",
+      "sha256": "f133628d85f3474ee709e99cae6a7c660286507fcaefe3cf6e84618b75dc05af",
+      "sizeBytes": 5651
+    },
+    {
+      "path": "generated_candidate_sandbox_audit.json",
+      "sha256": "ce0300b6e1bfaf4af271381cf1a5027efb561092b977869d071ef1bbac4861ef",
+      "sizeBytes": 1721
+    },
+    {
+      "path": "mechanism_inventory.json",
+      "sha256": "39bcee60732d6a6f161ed3a0a8f1562724d25d7301e7bbd99a4b9748db26233f",
+      "sizeBytes": 1502
+    },
+    {
+      "path": "source_equivalence_matrix.csv",
+      "sha256": "57a177cdd7fef3d58cc2e7a5fb63e21e338bbcd2896efed319c446fe1e5ddd10",
+      "sizeBytes": 432
+    },
+    {
+      "path": "source_inventory.json",
+      "sha256": "31beac76508cb9a7885ebaf503a38836e2eceb7cf119617e8704429cfdc400bb",
+      "sizeBytes": 4549
+    },
+    {
+      "path": "strategy_artifact_store_schema.json",
+      "sha256": "ca985e5832b14d6950967ab8baf184a9c7d2adcea44531edfb742286a30f7107",
+      "sizeBytes": 3715
+    },
+    {
+      "path": "v37g_v37h_closeout.md",
+      "sha256": "676d9766e91f7b6476bba2a80901fd892e95b561dc720aa3261e1238ba55743a",
+      "sizeBytes": 549
+    },
+    {
+      "path": "verification_summary.json",
+      "sha256": "0ae4571bd02bd41f1f1ee7a323ce29a0904b1ab4ffdafc067c7c6aedd49f4f2e",
+      "sizeBytes": 742
+    },
+    {
+      "path": "vibe_component_adoption_map.json",
+      "sha256": "c336e0332fa1656de5820b2129f5f2758885e35a393256403f090a61de7ffd1d",
+      "sizeBytes": 2098
+    },
+    {
+      "path": "vibe_license_notice.md",
+      "sha256": "aea287943be46cbd847bc04efac2e7aebf018ba936fb35f86233f05fe66d4ac7",
+      "sizeBytes": 528
+    },
+    {
+      "path": "vibe_trading_source_manifest.json",
+      "sha256": "28460f60f834a1668180f7e8f4d302c67149063996600013e6c4dfe53d68c0ad",
+      "sizeBytes": 2887
+    }
+  ],
+  "schemaVersion": "alphapilot_v37g_v37h_artifact_manifest_v1",
+  "sourceCommit": "7d42de944466e1a1f12f0df3933624fe665dee3c"
+}

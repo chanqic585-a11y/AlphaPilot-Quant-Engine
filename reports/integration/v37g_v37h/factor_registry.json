@@ -1,0 +1,166 @@
+[
+  {
+    "definitionHash": "factor_definition_8f9c87c46121190b8e2c4f6ade10e96fa5fe2e0fe47addcba1a58e46dd736aa2",
+    "factorId": "basis",
+    "formula": "safe_div(mark_price - index_price, index_price)",
+    "name": "Perpetual basis",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "mark_price",
+      "index_price"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "basis"
+  },
+  {
+    "definitionHash": "factor_definition_5da1774dd339e9f434b7eb8561c0ab17bd4b4b7eccad80b335f29ab5ced0415c",
+    "factorId": "beta",
+    "formula": "rolling_beta(returns, market_returns, 30, 15)",
+    "name": "Rolling beta",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "returns",
+      "market_returns"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "beta"
+  },
+  {
+    "definitionHash": "factor_definition_e8e5d43cfe04b074122af974c5b8535887b295484557a2649fd170a825e5edf6",
+    "factorId": "correlation-regime",
+    "formula": "ts_corr(returns, market_returns, 30, 15)",
+    "name": "Correlation regime",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "returns",
+      "market_returns"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "correlation_regime"
+  },
+  {
+    "definitionHash": "factor_definition_537f64e14b1af87487ce5caa1fb16c66bbcf631ba9dd609be6120ceaac2ae734",
+    "factorId": "funding",
+    "formula": "ts_mean(funding_rate, 3, 3)",
+    "name": "Funding persistence",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "funding_rate",
+      "funding_available_at"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "funding"
+  },
+  {
+    "definitionHash": "factor_definition_d1064b7c903455197f2bcdc19a5744bc1a45ca948fb749dd6dbf348cf7f5b600",
+    "factorId": "liquidity",
+    "formula": "safe_div(volume, absolute(returns))",
+    "name": "Return-adjusted volume",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "volume",
+      "returns"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "liquidity"
+  },
+  {
+    "definitionHash": "factor_definition_01a42b9ffe314acf9b4d7ffe6b96407d2c7d1cfda24adb45a1d907a4addd89a5",
+    "factorId": "range-atr",
+    "formula": "ts_mean(safe_div(high - low, close), 14, 7)",
+    "name": "Normalized range",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "high",
+      "low",
+      "close"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "range_atr"
+  },
+  {
+    "definitionHash": "factor_definition_4a3e48513065003170a175a73d642d0fd65b16d5553285ab71ed55256473314d",
+    "factorId": "residual-momentum",
+    "formula": "rolling_residual(returns, market_returns, 20, 10)",
+    "name": "Residual momentum",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "returns",
+      "market_returns"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "residual_momentum"
+  },
+  {
+    "definitionHash": "factor_definition_6ab0b7760dedfe34cc0e6e11567b1883b277557681e4f4355b7033ad752054e6",
+    "factorId": "short-reversal",
+    "formula": "-delta(close, 3)",
+    "name": "Short-term reversal",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "close"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "short_term_reversal"
+  },
+  {
+    "definitionHash": "factor_definition_891eb920d1a6336ad113c072c734032505a729976db208bdafaf6033f66d2ad6",
+    "factorId": "ts-momentum",
+    "formula": "delta(close, 20)",
+    "name": "TS momentum",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "close"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "ts_momentum"
+  },
+  {
+    "definitionHash": "factor_definition_2e5997f0117ca1dcb5818f3c23da4714ac3f2bee89289db1f99ef0f7cc6db239",
+    "factorId": "turnover-change",
+    "formula": "delta(turnover, 5)",
+    "name": "Turnover change",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "turnover"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "turnover_change"
+  },
+  {
+    "definitionHash": "factor_definition_65f66416cc26440a23389d0178b1c88147a7536bca009f0ccb159eb6ab6f57b2",
+    "factorId": "volatility",
+    "formula": "ts_std(returns, 20, 10)",
+    "name": "Rolling volatility",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "returns"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "volatility"
+  },
+  {
+    "definitionHash": "factor_definition_7f230a9e8e35a2d5706f6389c981d2f1cf444f3dc74f96cc1bdb710ca5228f5c",
+    "factorId": "xs-momentum",
+    "formula": "rank(delta(close, 20))",
+    "name": "Cross-sectional momentum",
+    "notes": "bounded research-only clean-room definition",
+    "pointInTimeReady": true,
+    "requiredFields": [
+      "close"
+    ],
+    "sourceArtifactId": "vibe-alpha-compare",
+    "theme": "cross_sectional_momentum"
+  }
+]

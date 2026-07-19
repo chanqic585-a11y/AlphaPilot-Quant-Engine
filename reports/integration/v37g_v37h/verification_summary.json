@@ -1,0 +1,22 @@
+{
+  "artifactStoreAuthority": "projection_only_existing_program_campaign_ledger_remains_authority",
+  "cleanRoom": true,
+  "copiedCodeCount": 0,
+  "factorCount": 12,
+  "factorQualificationScope": "research_only",
+  "pinnedCommitVerified": true,
+  "runtimeDependency": false,
+  "sandboxDangerousFixtureRejected": true,
+  "sandboxSafeFixturePassed": true,
+  "schemaVersion": "alphapilot_v37g_v37h_verification_summary_v1",
+  "sideEffects": {
+    "demoArmCount": 0,
+    "formalRunCount": 0,
+    "liveCount": 0,
+    "lockedOosReadCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0
+  },
+  "similarityPolicyHash": "similarity_policy_d1c5d4bcc78a1bf93dbcae0b133b37528a576d3349c4bbd281071ad1e109021c",
+  "status": "passed"
+}

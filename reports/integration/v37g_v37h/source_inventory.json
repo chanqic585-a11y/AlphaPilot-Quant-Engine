@@ -1,0 +1,137 @@
+[
+  {
+    "artifactId": "vibe-alpha-compare",
+    "artifactType": "factor_comparison_reference",
+    "name": "Vibe Alpha Compare",
+    "familyId": "artifact-similarity",
+    "authorityRef": "integration:v37g-v37h-vibe-audit",
+    "sourceIds": [
+      "vibe:agent/src/tools/alpha_compare_tool.py"
+    ],
+    "sourceHashes": [
+      "1e9d1ecb38275ec52afe086b9353d8455bee989d"
+    ],
+    "licenseClass": "MIT_reference_clean_room",
+    "sourceEquivalenceClass": "mechanism_only",
+    "marketMechanism": "multi-dimensional factor and strategy comparison",
+    "formula": null,
+    "requiredFields": [
+      "source_locator",
+      "source_hash"
+    ],
+    "universe": [],
+    "timeframe": "not_applicable",
+    "entryRules": [],
+    "exitRules": [],
+    "positionSizing": "not_applicable",
+    "riskManagement": "AlphaPilot gates remain authoritative",
+    "dataProfile": {
+      "pointInTime": true,
+      "runtimeDependency": false
+    },
+    "evidence": [
+      {
+        "sourceId": "vibe:agent/src/tools/alpha_compare_tool.py",
+        "sourcePath": "agent/src/tools/alpha_compare_tool.py",
+        "locator": "pinned Git blob",
+        "sourceHash": "1e9d1ecb38275ec52afe086b9353d8455bee989d",
+        "extractionConfidence": 1.0
+      }
+    ],
+    "candidateId": null,
+    "candidateHash": null,
+    "status": "mechanism_extracted",
+    "createdAt": "2026-07-20T00:00:00+00:00",
+    "updatedAt": "2026-07-19T21:47:56.378692+00:00"
+  },
+  {
+    "artifactId": "vibe-generated-code-sandbox",
+    "artifactType": "sandbox_reference",
+    "name": "Vibe Generated Code Sandbox",
+    "familyId": "generated-candidate-sandbox",
+    "authorityRef": "integration:v37g-v37h-vibe-audit",
+    "sourceIds": [
+      "vibe:agent/src/shadow_account/codegen.py"
+    ],
+    "sourceHashes": [
+      "30700b9a0229660f4cdd765a575f256a75bbc21f"
+    ],
+    "licenseClass": "MIT_reference_clean_room",
+    "sourceEquivalenceClass": "mechanism_only",
+    "marketMechanism": "generated signal code validation before isolated research execution",
+    "formula": null,
+    "requiredFields": [
+      "source_locator",
+      "source_hash"
+    ],
+    "universe": [],
+    "timeframe": "not_applicable",
+    "entryRules": [],
+    "exitRules": [],
+    "positionSizing": "not_applicable",
+    "riskManagement": "AlphaPilot gates remain authoritative",
+    "dataProfile": {
+      "pointInTime": true,
+      "runtimeDependency": false
+    },
+    "evidence": [
+      {
+        "sourceId": "vibe:agent/src/shadow_account/codegen.py",
+        "sourcePath": "agent/src/shadow_account/codegen.py",
+        "locator": "pinned Git blob",
+        "sourceHash": "30700b9a0229660f4cdd765a575f256a75bbc21f",
+        "extractionConfidence": 1.0
+      }
+    ],
+    "candidateId": null,
+    "candidateHash": null,
+    "status": "mechanism_extracted",
+    "createdAt": "2026-07-20T00:00:00+00:00",
+    "updatedAt": "2026-07-19T21:47:56.382694+00:00"
+  },
+  {
+    "artifactId": "vibe-strategy-development-manager",
+    "artifactType": "strategy_workflow_reference",
+    "name": "Vibe Strategy Development Manager",
+    "familyId": "strategy-development-manager",
+    "authorityRef": "integration:v37g-v37h-vibe-audit",
+    "sourceIds": [
+      "vibe:agent/src/skills/strategy-dev-manager/SKILL.md"
+    ],
+    "sourceHashes": [
+      "9036e781b063242b64d042b61fc1df1fa0453ce4"
+    ],
+    "licenseClass": "MIT_reference_clean_room",
+    "sourceEquivalenceClass": "mechanism_only",
+    "marketMechanism": "source-backed acquisition and lifecycle orchestration",
+    "formula": null,
+    "requiredFields": [
+      "source_locator",
+      "source_hash"
+    ],
+    "universe": [],
+    "timeframe": "not_applicable",
+    "entryRules": [],
+    "exitRules": [],
+    "positionSizing": "not_applicable",
+    "riskManagement": "AlphaPilot gates remain authoritative",
+    "dataProfile": {
+      "pointInTime": true,
+      "runtimeDependency": false
+    },
+    "evidence": [
+      {
+        "sourceId": "vibe:agent/src/skills/strategy-dev-manager/SKILL.md",
+        "sourcePath": "agent/src/skills/strategy-dev-manager/SKILL.md",
+        "locator": "pinned Git blob",
+        "sourceHash": "9036e781b063242b64d042b61fc1df1fa0453ce4",
+        "extractionConfidence": 1.0
+      }
+    ],
+    "candidateId": null,
+    "candidateHash": null,
+    "status": "mechanism_extracted",
+    "createdAt": "2026-07-20T00:00:00+00:00",
+    "updatedAt": "2026-07-19T21:47:56.375692+00:00"
+  }
+]

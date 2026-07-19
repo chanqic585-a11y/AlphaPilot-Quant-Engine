@@ -5521,3 +5521,29 @@ attribution, and campaign summaries.
   clarification is published as a sidecar under `reports/integration/v37f/`.
 - No Release, Demo ARM, order, live trading, credential, or withdrawal behavior
   is added by this integration step.
+
+## V13.27.1.37G-V37H Selective Vibe Research Integration
+
+V37G/V37H pins the public `HKUDS/Vibe-Trading` repository at commit
+`7d42de944466e1a1f12f0df3933624fe665dee3c` and selectively adapts research
+workflow concepts without creating a runtime dependency or copying source
+code. The source paths, Git blob identifiers, MIT provenance, adoption map,
+and rejected components are frozen under
+`research/external_capabilities/vibe_trading/`.
+
+The new Strategy Acquisition Manager records source-backed artifacts and an
+append-only lifecycle as a projection over the existing Program/Campaign
+Ledger. It does not become a second authority. Formula and rule extraction is
+blocked unless source locator evidence is present, and compiled EX4/EX5 files
+remain metadata-only black boxes.
+
+The generated-candidate runner adds whole-module AST checks, a minimal secret-
+free environment, an independent process, deterministic hash seed, bounded
+input/output, and a hard wall-clock timeout. It is a research execution guard,
+not an OS-grade security boundary. The bounded Factor Lab provides 12
+point-in-time-ready research themes, research-only benches, and a frozen
+multi-dimensional artifact similarity policy. Factor results cannot imply a
+strategy Formal Pass.
+
+Evidence is under `reports/integration/v37g_v37h/`. Formal runs, Locked OOS
+reads, Release, Demo ARM, orders, and Live side effects remain zero.

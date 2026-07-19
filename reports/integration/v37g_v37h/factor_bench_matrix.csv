@@ -1,0 +1,13 @@
+factorId,ic,rankIc,evidenceScope,strategyFormalPass,researchRank
+xs-momentum,0.005,0.006,synthetic_fixture_only,False,1
+volatility,0.004,0.005,synthetic_fixture_only,False,2
+turnover-change,0.003,0.004,synthetic_fixture_only,False,3
+ts-momentum,0.002,0.003,synthetic_fixture_only,False,4
+short-reversal,0.001,0.002,synthetic_fixture_only,False,5
+residual-momentum,0.0,0.001,synthetic_fixture_only,False,6
+liquidity,-0.002,-0.001,synthetic_fixture_only,False,7
+range-atr,-0.001,0.0,synthetic_fixture_only,False,8
+funding,-0.003,-0.002,synthetic_fixture_only,False,9
+correlation-regime,-0.004,-0.003,synthetic_fixture_only,False,10
+beta,-0.005,-0.004,synthetic_fixture_only,False,11
+basis,-0.006,-0.005,synthetic_fixture_only,False,12
