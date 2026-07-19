@@ -1,0 +1,25 @@
+{
+  "blockedCandidates": [
+    {
+      "blockers": [
+        "purged_walk_forward_capacity_insufficient"
+      ],
+      "candidateId": "v35_tsmom_source_replication",
+      "demoArm": false,
+      "formalInputReadCount": 0,
+      "formalRunClaimBudget": 0,
+      "formalRunCount": 0,
+      "lockedOosAccessCount": 0,
+      "orderCount": 0,
+      "releaseCount": 0,
+      "resultReadCount": 0,
+      "status": "blocked_before_preregistration",
+      "timeframe": "1dutc"
+    }
+  ],
+  "campaignId": "v36-4-event-funding-remediation-okx-v34c-20260719",
+  "evidenceHash": "v36_tsmom_blocked_evidence_aca0d326fa6334f28ab8e40933d90f930b70b8e721f63252adb664a459d9c4e1",
+  "implementationCommit": "192c5923d525fb30c930d845e596be41933b4472",
+  "schemaVersion": "v36_tsmom_blocked_candidate_evidence_v1",
+  "sourceReadinessHash": "v36_tsmom_formal_readiness_0a8020b49c5dd58f9782e3c90f116d9365a1a8c94e59adce8a41bf0c608d44fb"
+}
