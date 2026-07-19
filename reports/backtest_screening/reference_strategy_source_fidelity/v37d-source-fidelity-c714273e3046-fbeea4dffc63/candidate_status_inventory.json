@@ -1,0 +1,20 @@
+{
+  "demoReadyCount": 0,
+  "developmentStableCandidateIds": [
+    "v35_tsmom_crypto_adaptation",
+    "v35_tsmom_source_replication"
+  ],
+  "developmentStableCount": 2,
+  "formalPassCandidateIds": [],
+  "formalPassCount": 0,
+  "interpretation": {
+    "demoReady": "Has an immutable approved Demo Release.",
+    "developmentStable": "Stable in the development neighborhood; locked OOS not yet read.",
+    "formalPass": "Passed the frozen formal validation workflow.",
+    "researchEligible": "Eligible for bounded research recheck only."
+  },
+  "referenceDirectionalCandidateCount": 4,
+  "researchEligibleCount": 6,
+  "schemaVersion": "reference_strategy_candidate_status_inventory_v1",
+  "strictlyUsableStrategyCount": 0
+}

@@ -1,0 +1,52 @@
+{
+  "artifacts": [
+    {
+      "path": "source_identity_matrix.csv",
+      "sha256": "bd685e0d46efb066248502a08b764e63b078821c7c724fb739fc8183c7bdb350"
+    },
+    {
+      "path": "source_admission.json",
+      "sha256": "6cea7f6732230882fa48c3229cde8352287f8bcefebba0c40312908f3b41fad7"
+    },
+    {
+      "path": "normalized_vs_source_comparison.json",
+      "sha256": "587ad5522aead33ad837a8f124877215924546a4199f1aa379c509cac53ce53c"
+    },
+    {
+      "path": "candidate_status_inventory.json",
+      "sha256": "3108e5df2f9c3bf39902542b7463edf0feebca992573ab9b87b22ad7406fad5a"
+    },
+    {
+      "path": "reproduction_plan.json",
+      "sha256": "5c00aa682eadddd95d789642cb99d566eec19e79a82b88371eb0f913581b8ee6"
+    },
+    {
+      "path": "final_conclusion.md",
+      "sha256": "ce75d1dc45d9afcd502b5b5decb190342d4f86c984e1437adbb05328ae53d464"
+    }
+  ],
+  "inputIdentity": {
+    "packageSha256": "c714273e3046b6f229f2deafc2e572ef3aef10d6664015106a7e51ce46359342",
+    "v36CampaignSummarySha256": "d2beb59c8c1baf7ce3db6bf8d98d994838a73d3d778ba4c5a3a71de75d5c71fa",
+    "v36SelectionSha256": "d94d89aa0d7906550d6b31ba41eec8327d38e86a0337c9c6917e70e02cf347fb",
+    "v37bCloseoutSha256": "da627afd669db7f4ecced228adb20b48863355e43f477c62623c073eab1ca5a0",
+    "v37bSourceVerificationSha256": "618539d42d6511e763bce32bb97ea8562e085cfb60965eac255af203b677ea04",
+    "v37cManifestVerification": {
+      "manifestPresent": true,
+      "manifestSha256": "9c16a98ecde011736315be28b2ebab1e2e03081600e3c7f29e506a7b2e411899",
+      "verifiedArtifactCount": 6
+    },
+    "v37cReassessmentSha256": "eb8e829a1b902a488c3ee9a7de96ffb8900f140f6b54f832a9abb1e414a97423",
+    "v37cSourceAuditSha256": "853ca622167b8d0d5f74292e85fef2ed104b8f19bd0784c59f3d44fb0376322d"
+  },
+  "runId": "v37d-source-fidelity-c714273e3046-fbeea4dffc63",
+  "safety": {
+    "demoOrLiveMutations": 0,
+    "forcedWinner": false,
+    "gateThresholdsChanged": false,
+    "networkDownloads": 0,
+    "ordersCreated": 0
+  },
+  "schemaVersion": "v37d_source_fidelity_artifact_manifest_v1",
+  "status": "completed_no_source_faithful_candidates"
+}
