@@ -1,0 +1,94 @@
+{
+  "allRequiredBranchesIntegrated": true,
+  "branchReceipts": [
+    {
+      "branch": "feature/v13.27.1.33-34a-official-data-pilot",
+      "commit": "c072a07126e0af4c2679e6057654f67b29d57a4c",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.33-34a-official-data-pilot",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.34b-funding-pit-forward",
+      "commit": "26cd638f3b80a26b6b29f45e5ab706fea7fac375",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.34b-funding-pit-forward",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.34c-public-data-scheduler",
+      "commit": "94de8373e743a38f477db47175db638ca6ad16a0",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.34c-public-data-scheduler",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.35-standard-replication-playbook",
+      "commit": "8d0a70db6b3b3cedfd81cf303964c5e265fbc094",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.35-standard-replication-playbook",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.36-strategy-research",
+      "commit": "27c1e6f065684b4a3867b654f626fec9f52f3d94",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.36-strategy-research",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.36-tsmom-formal-handoff",
+      "commit": "3c947c32d602bb24f8da235d545037013ff6d602",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.36-tsmom-formal-handoff",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.36.5-mechanism-renewal",
+      "commit": "adb424b944852bbabd384f8796e3033b50bba4a4",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.36.5-mechanism-renewal",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.37a-funding-data-capability",
+      "commit": "4f91c056b12e22b3d523d4bd8250c05847cf8449",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.37a-funding-data-capability",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.37b-reference-strategy-campaign",
+      "commit": "c2743a39cc3cd55cf180385fb904f8032124f6e5",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.37b-reference-strategy-campaign",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.37c-reference-strategy-parity-audit",
+      "commit": "a61f5c56accb7afc45d7517878d030aaddb78a60",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.37c-reference-strategy-parity-audit",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.37d-source-faithful-reproduction",
+      "commit": "a976db7fe9effbd970ae1d5326760d7056754b15",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.37d-source-faithful-reproduction",
+      "status": "integrated"
+    },
+    {
+      "branch": "feature/v13.27.1.37e-candidate-replay-tsmom-formal-closure",
+      "commit": "cc674848985f82644d0369df5cf3ea46d173ef0f",
+      "isAncestorOfIntegratedHead": true,
+      "sourceRef": "origin/feature/v13.27.1.37e-candidate-replay-tsmom-formal-closure",
+      "status": "integrated"
+    }
+  ],
+  "formalResultRerunCount": 0,
+  "historicalArtifactModificationCount": 0,
+  "historyPolicy": "merge_or_linear_ancestor_no_rebase_of_result_history",
+  "integratedHead": "cc674848985f82644d0369df5cf3ea46d173ef0f",
+  "schemaVersion": "alphapilot_v37f_integration_merge_receipt_v1"
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": "alphapilot_v37f_verification_summary_v1",
+  "status": "passed",
+  "checks": [
+    {
+      "name": "alphapilot_test_suite",
+      "command": "python -m pytest tests -q --import-mode=importlib",
+      "result": "1272 passed, 164 subtests passed",
+      "durationSeconds": 125.06
+    },
+    {
+      "name": "config_validation",
+      "command": "python -m alphapilot.scripts.validate_config",
+      "result": "passed; liveTradingEnabled=false; tradeApiEnabled=false; withdrawApiEnabled=false"
+    },
+    {
+      "name": "safety_scan",
+      "command": "powershell -ExecutionPolicy Bypass -File scripts/check_safety.ps1",
+      "result": "completed; matches are existing tests, defensive filters, and negative boundary statements"
+    },
+    {
+      "name": "third_party_test_isolation",
+      "command": "python -m pytest -q --import-mode=importlib",
+      "result": "not part of AlphaPilot acceptance; collection reached isolated third_party/tradingagents tests whose separate optional dependencies are not installed"
+    },
+    {
+      "name": "historical_artifact_integrity",
+      "result": "0 historical artifacts modified; 0 Formal results rerun"
+    }
+  ]
+}

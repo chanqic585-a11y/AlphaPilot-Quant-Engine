@@ -5506,3 +5506,18 @@ python -m alphapilot.scripts.run_v37a_funding_carry_data_readiness `
 
 See `docs/V13.27.1.37A-funding-carry-data-readiness.md` and
 `reports/data_readiness/v37a/v37a-funding-carry-59d53e096fc6f74326f4/`.
+## V13.27.1.37F Integration Baseline
+
+V37F integrates the V33-V37 research lineage without rewriting historical
+result artifacts. It adds an auditable inherited-budget reconciliation and one
+`FormalGateEvaluation` source for gate matrices, route decisions, failure
+attribution, and campaign summaries.
+
+- Development trials used: 48.
+- Full backtests used: 1 of the inherited 96; 95 remain.
+- Formal attempts recorded: 8; no Formal result was rerun by V37F.
+- Legal fold exclusions no longer fail `fold_assignment_complete`.
+- Historical V37E admission and route decisions remain unchanged; the semantic
+  clarification is published as a sidecar under `reports/integration/v37f/`.
+- No Release, Demo ARM, order, live trading, credential, or withdrawal behavior
+  is added by this integration step.

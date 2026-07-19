@@ -29,6 +29,10 @@ from .canonical_event_identity import (
     map_canonical_identity,
 )
 from .formal_event_contract import canonicalize_formal_event
+from .formal_gate_evaluation import (
+    build_fold_assignment_gate,
+    evaluate_formal_gates,
+)
 from .formal_fold_assignment import (
     assign_formal_events_by_signal_timestamp,
     build_formal_event_dispositions,
@@ -450,12 +454,7 @@ def _build_gate_matrix(
             threshold=0,
             passed=int(context_audit.get("missingContextFieldCount", 0)) == 0,
         ),
-        _gate_row(
-            "fold_assignment_complete",
-            actual=int(fold_assignment.get("rejectedEventCount", 0)),
-            threshold=0,
-            passed=int(fold_assignment.get("rejectedEventCount", 0)) == 0,
-        ),
+        build_fold_assignment_gate(fold_assignment),
         _gate_row(
             "complete_fold_count",
             actual=len(fold_results),
@@ -595,60 +594,6 @@ def _build_gate_matrix(
         "failedCount": sum(row["passed"] is False for row in rows),
         "notEvaluableCount": sum(row["passed"] is None for row in rows),
     }
-
-
-def _route(
-    *,
-    bundle: FormalInputBundle,
-    gate_matrix: Mapping[str, Any],
-    implementation_blockers: Sequence[str],
-    funding_unavailable_is_route_cap: bool = False,
-) -> tuple[str, list[str]]:
-    stopping = bundle.preregistration.get("stoppingRules") or {}
-    blockers = list(dict.fromkeys(str(value) for value in implementation_blockers))
-    if blockers:
-        return str(
-            stopping.get("implementationInvalid")
-            or "implementation_invalid_requires_new_campaign"
-        ), blockers
-    economic_gate_ids = {
-        "complete_fold_count",
-        "minimum_profit_factor",
-        "positive_average_net_r",
-        "positive_total_net_r",
-        "maximum_drawdown",
-        "positive_fold_minimum",
-        "cost_1_5x_profit_factor",
-        "cost_1_5x_average_net_r",
-        "cost_1_5x_total_net_r",
-        "conservative_funding_average_net_r",
-        "benchmark_total_incremental_net_r",
-        "benchmark_positive_increment_fold_minimum",
-    }
-    failed = [
-        str(row["gateId"])
-        for row in gate_matrix["gates"]
-        if row["gateId"] in economic_gate_ids
-        and not (
-            funding_unavailable_is_route_cap
-            and row["gateId"] == "conservative_funding_average_net_r"
-            and row["passed"] is None
-        )
-        and row["passed"] is not True
-    ]
-    if failed:
-        return str(stopping.get("economicGateFailure") or "archive_s01_current_version"), failed
-    comparable = (
-        bundle.preregistration.get("statisticalPolicy", {}).get(
-            "comparableCandidatePanel", {}
-        )
-    )
-    if comparable.get("status") == "unavailable_predeclared":
-        return str(
-            stopping.get("statisticsUnavailable")
-            or "walk_forward_research_pass_statistics_unavailable"
-        ), ["comparable_candidate_panel_unavailable_predeclared"]
-    return "walk_forward_research_pass_no_clean_holdout", ["clean_locked_oos_unavailable"]
 
 
 def _summary_markdown(summary: Mapping[str, Any]) -> str:
@@ -1416,46 +1361,46 @@ def execute_v18_formal_campaign(
             implementation_blockers.append("source_change_scope_failed")
         if frozen_contract_audit.get("status") != "passed":
             implementation_blockers.append("frozen_contract_diff_failed")
-    route, blockers = _route(
-        bundle=bundle,
-        gate_matrix=gate_matrix,
+    stopping_rules = preregistration.get("stoppingRules") or {}
+    comparable_status = (
+        preregistration.get("statisticalPolicy", {})
+        .get("comparableCandidatePanel", {})
+        .get("status")
+    )
+    gate_evaluation = evaluate_formal_gates(
+        gate_rows=gate_matrix["gates"],
         implementation_blockers=implementation_blockers,
+        stopping_rules=stopping_rules,
+        comparable_candidate_panel_status=comparable_status,
         funding_unavailable_is_route_cap=evidence_enabled,
     )
     if evidence_enabled:
-        if route.startswith("walk_forward_research_pass_") and not bool(
+        if gate_evaluation.route.startswith("walk_forward_research_pass_") and not bool(
             funding_coverage.get("formalEvidenceAvailable")
         ):
-            route = cap_route_for_funding(
-                route, {"fundingStatus": "unavailable"}
+            gate_evaluation = gate_evaluation.with_route(
+                cap_route_for_funding(
+                    gate_evaluation.route, {"fundingStatus": "unavailable"}
+                ),
+                ["registered_funding_input_unavailable"],
             )
-            blockers = ["registered_funding_input_unavailable"]
         if (
             not implementation_blockers
             and int(reference_replay.get("acceptedSignalCount") or 0) == 0
         ):
-            route = str(
-                preregistration.get("stoppingRules", {}).get(
-                    "economicGateFailure", "archive_s01_current_version"
-                )
+            gate_evaluation = gate_evaluation.with_route(
+                str(
+                    stopping_rules.get(
+                        "economicGateFailure", "archive_s01_current_version"
+                    )
+                ),
+                ["capital_infeasible_under_frozen_policy"],
             )
-            blockers = ["capital_infeasible_under_frozen_policy"]
+    route = gate_evaluation.route
+    blockers = list(gate_evaluation.blockers)
+    gate_matrix = gate_evaluation.gate_matrix
 
-    route_payload = {
-        "schemaVersion": "s01_v18_formal_route_v1",
-        "campaignId": campaign_id,
-        "route": route,
-        "blockers": blockers,
-        "formalRunCount": 1,
-        "formalInputReadCount": 1,
-        "resultDrivenParameterChangeCount": 0,
-        "lockedOosAccessCount": 0,
-        "releaseCount": 0,
-        "demoArm": False,
-        "orderCount": 0,
-        "formalPass": False,
-        "formalEvidenceCount": 0,
-    }
+    route_payload = gate_evaluation.route_payload(campaign_id)
     summary = {
         "schemaVersion": "s01_v18_formal_campaign_summary_v1",
         **route_payload,
@@ -1470,17 +1415,17 @@ def execute_v18_formal_campaign(
         "formalPass": False,
         "formalEvidenceCount": 0,
     }
-    failure = {
-        "schemaVersion": "s01_v18_formal_failure_attribution_v1",
-        "campaignId": campaign_id,
-        "route": route,
-        "primaryBlocker": blockers[0] if blockers else None,
-        "blockers": blockers,
-        "strategyPerformanceFailure": route == "archive_s01_current_version",
-        "implementationOrEvidenceFailure": route
-        == "implementation_invalid_requires_new_campaign",
-        "resultDrivenRepairAllowed": False,
-    }
+    failure = gate_evaluation.failure_attribution(
+        campaign_id,
+        economic_failure_route=str(
+            stopping_rules.get("economicGateFailure")
+            or "archive_s01_current_version"
+        ),
+        implementation_failure_route=str(
+            stopping_rules.get("implementationInvalid")
+            or "implementation_invalid_requires_new_campaign"
+        ),
+    )
     exposure = pd.DataFrame(
         [
             row

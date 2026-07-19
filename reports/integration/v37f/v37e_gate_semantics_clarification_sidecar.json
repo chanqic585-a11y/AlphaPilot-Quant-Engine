@@ -1,0 +1,28 @@
+{
+  "clarification": {
+    "blockerProjection": "Prospective Formal reports derive gate_matrix, route_decision, failure_attribution, and campaign_summary from one evaluation.",
+    "foldAssignment": "Legal exclusions do not fail fold_assignment_complete; only unclassified, multi-assigned, unknown-disposition, or cross-boundary-leakage events fail it."
+  },
+  "historicalAdmissionChanged": false,
+  "historicalArtifactRefs": [
+    {
+      "path": "reports/formal_validation/v37e2_tsmom_formal_results/v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a/v37e_tsmom_daily_capacity_successor/gate_matrix.json",
+      "sha256": "eb5819014ab181a52d8389592b0e94249f000dcc21d6a3a489fe1e85d0977f90"
+    },
+    {
+      "path": "reports/formal_validation/v37e2_tsmom_formal_results/v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a/v37e_tsmom_daily_capacity_successor/route_decision.json",
+      "sha256": "bd6063a83b4475c9c02ce3f3a107621b55a68b4c9a8f1603c65e31daeed207de"
+    },
+    {
+      "path": "reports/formal_validation/v37e2_tsmom_formal_results/v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a/v37e_tsmom_daily_capacity_successor/failure_attribution.json",
+      "sha256": "470d768aa4085b533aa579deacd43520dcdaf22553b8ca2d3c50dca5a4819a8f"
+    },
+    {
+      "path": "reports/formal_validation/v37e2_tsmom_formal_results/v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a/v37e_tsmom_daily_capacity_successor/campaign_summary.json",
+      "sha256": "d006a368cf50f575245c8b9d1d93269d1253a5b27090b585054c0cdb7965426b"
+    }
+  ],
+  "historicalRouteChanged": false,
+  "reportingConsistencyPatched": true,
+  "schemaVersion": "alphapilot_v37e_gate_semantics_clarification_sidecar_v1"
+}

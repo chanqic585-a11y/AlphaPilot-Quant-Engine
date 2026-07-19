@@ -1,0 +1,30 @@
+{
+  "artifacts": [
+    {
+      "path": "budget_reconciliation.json",
+      "sha256": "badb5fff2fca4e789663a92e1ac827406fb649cf5f63e4ecc9107edce6f26168",
+      "sizeBytes": 5192
+    },
+    {
+      "path": "formal_gate_parity_audit.json",
+      "sha256": "f1eec9bd252b0a3d58ab99586298f1756eac4b084c4f8bda25947ebe01fcdc44",
+      "sizeBytes": 5367
+    },
+    {
+      "path": "integration_merge_receipt.json",
+      "sha256": "ed8fdc374f8140a2ca6b7b34f1bd5f8225a68bbeceb4b3e001ab08cfb9e118e5",
+      "sizeBytes": 3855
+    },
+    {
+      "path": "v37e_gate_semantics_clarification_sidecar.json",
+      "sha256": "6c7829e8a4f1fce4a8424f639434be95f09bce0cb0dc7a2842a485494f9eea1f",
+      "sizeBytes": 1785
+    },
+    {
+      "path": "verification_summary.json",
+      "sha256": "cd687bd4478b3222b188e2a0b03eab46c0964f7e9b3cee0ff745115864614bc6",
+      "sizeBytes": 1184
+    }
+  ],
+  "schemaVersion": "alphapilot_v37f_integration_artifact_manifest_v1"
+}
