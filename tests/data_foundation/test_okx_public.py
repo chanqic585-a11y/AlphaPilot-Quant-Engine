@@ -275,6 +275,42 @@ class OkxPublicTests(unittest.TestCase):
         self.assertEqual(parsed[2][1]["after"], ["3000"])
         self.assertTrue(all("OK-ACCESS" not in url for url in calls))
 
+    def test_historical_market_data_uses_public_batch_endpoint(self) -> None:
+        calls: list[str] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(str(getattr(request, "full_url")))
+            return _Response(
+                {
+                    "code": "0",
+                    "msg": "",
+                    "data": [{"dateAggrType": "monthly", "details": []}],
+                }
+            )
+
+        data = OkxPublicClient(
+            opener=opener,
+            throttle_seconds=0,
+        ).historical_market_data(
+            module=3,
+            instrument_type="SWAP",
+            instrument_family_list=("BTC-USDT", "ETH-USDT"),
+            date_aggregation_type="monthly",
+            begin_ms=1735689600000,
+            end_ms=1738281600000,
+        )
+
+        self.assertEqual(data[0]["dateAggrType"], "monthly")
+        parsed = urlparse(calls[0])
+        query = parse_qs(parsed.query)
+        self.assertEqual(parsed.path, "/api/v5/public/market-data-history")
+        self.assertEqual(query["module"], ["3"])
+        self.assertEqual(query["instType"], ["SWAP"])
+        self.assertEqual(query["instFamilyList"], ["BTC-USDT,ETH-USDT"])
+        self.assertEqual(query["dateAggrType"], ["monthly"])
+        self.assertNotIn("OK-ACCESS", calls[0])
+
     def test_public_tickers_uses_unauthenticated_swap_market_endpoint(self) -> None:
         calls: list[object] = []
 

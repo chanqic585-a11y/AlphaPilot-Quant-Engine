@@ -269,6 +269,34 @@ class OkxPublicClient:
             if isinstance(item, dict)
         ]
 
+    def historical_market_data(
+        self,
+        *,
+        module: int,
+        instrument_type: str,
+        instrument_family_list: tuple[str, ...],
+        date_aggregation_type: str,
+        begin_ms: int,
+        end_ms: int,
+    ) -> list[dict[str, Any]]:
+        """Return OKX public historical archive descriptors."""
+
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/market-data-history",
+                {
+                    "module": int(module),
+                    "instType": instrument_type,
+                    "instFamilyList": ",".join(instrument_family_list),
+                    "dateAggrType": date_aggregation_type,
+                    "begin": int(begin_ms),
+                    "end": int(end_ms),
+                },
+            )
+            if isinstance(item, dict)
+        ]
+
     def history_candle_page(
         self,
         *,
