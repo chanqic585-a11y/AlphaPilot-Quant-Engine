@@ -37,7 +37,6 @@ from .formal_input import FormalInputBundle
 from .formal_statistics import newey_west_alpha
 from .formal_stress import (
     build_funding_stress,
-    build_s01_benchmark,
     build_utc_daily_returns,
 )
 from .formal_walk_forward import assign_events_to_folds
@@ -64,7 +63,6 @@ from .v18_formal_execution import (
     attach_point_in_time_context,
     build_daily_market_evidence,
     build_locked_cost_stress,
-    build_signal_feature_evidence,
     compare_capital_replays,
     replay_v18_capital_policy,
     summarize_capital_replay,
@@ -948,17 +946,21 @@ def execute_v18_formal_campaign(
             "unmappedInternalCount": identity_audit["unmappedInternalCount"],
             "unmappedFreqtradeCount": identity_audit["unmappedFreqtradeCount"],
         }
-    reference_features, ranking_audit = build_signal_feature_evidence(
-        reference_events,
-        bundle.frames,
-        bundle.candidate,
-        include_source_bar_hashes=v18_3_enabled,
+    reference_features, ranking_audit = (
+        candidate_adapter.build_formal_ranking_evidence(
+            events=reference_events,
+            frames=bundle.frames,
+            candidate=bundle.candidate,
+            include_source_bar_hashes=v18_3_enabled,
+        )
     )
-    adapter_features, adapter_ranking_audit = build_signal_feature_evidence(
-        adapter_events,
-        bundle.frames,
-        bundle.candidate,
-        include_source_bar_hashes=v18_3_enabled,
+    adapter_features, adapter_ranking_audit = (
+        candidate_adapter.build_formal_ranking_evidence(
+            events=adapter_events,
+            frames=bundle.frames,
+            candidate=bundle.candidate,
+            include_source_bar_hashes=v18_3_enabled,
+        )
     )
     frozen_ranking: list[dict[str, Any]] = []
     adapter_ranking: list[dict[str, Any]] = []
@@ -1202,7 +1204,11 @@ def execute_v18_formal_campaign(
                 "realizedNetR": trade_by_id[signal_id]["realizedNetR"],
             }
         )
-    benchmark = build_s01_benchmark(accepted_raw, bundle.frames, hold_bars=12)
+    benchmark = candidate_adapter.build_formal_benchmark(
+        events=accepted_raw,
+        frames=bundle.frames,
+        preregistration=preregistration,
+    )
     split = preregistration["splitPolicy"]
     daily_returns = _daily_return_panel(
         trades=reference_replay["trades"],

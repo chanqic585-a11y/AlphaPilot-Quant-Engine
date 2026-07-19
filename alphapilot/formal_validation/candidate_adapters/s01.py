@@ -17,7 +17,11 @@ from alphapilot.formal_validation.candidate_adapter import (
     CandidateAdapterIdentityError,
     resolve_candidate_signal_identity,
 )
+from alphapilot.formal_validation.formal_stress import build_s01_benchmark
 from alphapilot.formal_validation.s01_event_identity import with_s01_signal_id
+from alphapilot.formal_validation.v18_formal_execution import (
+    build_signal_feature_evidence,
+)
 
 from .s01_parity import run_s01_formal_adapter_parity
 
@@ -125,3 +129,34 @@ class S01CandidateAdapter:
             repo_root=repo_root,
             candidate_adapter=self,
         )
+
+    def build_formal_ranking_evidence(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        candidate: Mapping[str, Any],
+        include_source_bar_hashes: bool = False,
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        return build_signal_feature_evidence(
+            events,
+            frames,
+            candidate,
+            include_source_bar_hashes=include_source_bar_hashes,
+        )
+
+    def build_formal_benchmark(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        preregistration: Mapping[str, Any],
+    ) -> dict[str, Any]:
+        hold_bars = int(
+            dict(preregistration.get("benchmarkPolicy") or {}).get(
+                "holdBars", 12
+            )
+        )
+        if hold_bars != 12:
+            raise ValueError("s01_benchmark_hold_bars_mismatch")
+        return build_s01_benchmark(events, frames, hold_bars=hold_bars)

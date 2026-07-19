@@ -57,6 +57,23 @@ class CandidateAdapter(Protocol):
         repo_root: Path,
     ) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]: ...
 
+    def build_formal_ranking_evidence(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        candidate: Mapping[str, Any],
+        include_source_bar_hashes: bool = False,
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]: ...
+
+    def build_formal_benchmark(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        preregistration: Mapping[str, Any],
+    ) -> dict[str, Any]: ...
+
 
 def resolve_candidate_signal_identity(
     *,

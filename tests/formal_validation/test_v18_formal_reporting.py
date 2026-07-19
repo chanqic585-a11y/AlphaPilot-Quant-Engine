@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from dataclasses import dataclass, replace
-from typing import Any, Mapping
+from typing import Any, Mapping, Sequence
 
 import pandas as pd
 
@@ -12,6 +12,10 @@ from alphapilot.formal_validation.executable_capital_policy import (
 )
 from alphapilot.formal_validation.formal_input import FormalInputBundle
 from alphapilot.formal_validation.formal_parity import canonicalize_formal_event
+from alphapilot.formal_validation.formal_stress import build_s01_benchmark
+from alphapilot.formal_validation.v18_formal_execution import (
+    build_signal_feature_evidence,
+)
 from alphapilot.formal_validation.v18_formal_reporting import (
     _apply_stable_rejections,
     execute_v18_formal_campaign,
@@ -75,6 +79,31 @@ class _SyntheticAdapter:
 
     def replay(self, **_: object):
         raise AssertionError("test injects replay runner")
+
+    def build_formal_ranking_evidence(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        candidate: Mapping[str, Any],
+        include_source_bar_hashes: bool = False,
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        return build_signal_feature_evidence(
+            events,
+            frames,
+            candidate,
+            include_source_bar_hashes=include_source_bar_hashes,
+        )
+
+    def build_formal_benchmark(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        preregistration: Mapping[str, Any],
+    ) -> dict[str, Any]:
+        del preregistration
+        return build_s01_benchmark(events, frames, hold_bars=12)
 
 
 

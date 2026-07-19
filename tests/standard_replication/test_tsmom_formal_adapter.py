@@ -140,6 +140,10 @@ def test_tsmom_replay_and_parity_are_non_empty_exact_and_deterministic(
         "direction",
         "signalTimestamp",
         "entryTimestamp",
+        "entryIndex",
+        "riskDistance",
+        "initialStop",
+        "stopPrice",
         "exitTimestamp",
         "signalId",
         "grossR",
@@ -149,3 +153,22 @@ def test_tsmom_replay_and_parity_are_non_empty_exact_and_deterministic(
         "maeR",
     }
     assert required.issubset(first[0])
+
+    ranking_rows, ranking_audit = adapter.build_formal_ranking_evidence(
+        events=first,
+        frames=frames,
+        candidate=candidate,
+        include_source_bar_hashes=True,
+    )
+    benchmark = adapter.build_formal_benchmark(
+        events=[{**first[0], "realizedNetR": first[0]["netR"]}],
+        frames=frames,
+        preregistration={"benchmarkPolicy": {"holdBars": 12}},
+    )
+
+    assert ranking_rows
+    assert ranking_audit["missingRankingFieldCount"] == 0
+    assert ranking_audit["lookaheadReadCount"] == 0
+    assert all(row["sourceBarHashes"] for row in ranking_rows)
+    assert benchmark["events"]
+    assert benchmark["holdBars"] == 12

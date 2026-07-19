@@ -17,6 +17,9 @@ from alphapilot.formal_validation.dual_engine_parity import (
     evaluate_dual_engine_parity,
 )
 from alphapilot.formal_validation.formal_parity import canonicalize_formal_event
+from alphapilot.formal_validation.formal_stress import (
+    build_same_event_fixed_hold_benchmark,
+)
 
 from .registry import ReplicationFamily, ReplicationVariant
 from .tsmom_engine import (
@@ -26,6 +29,7 @@ from .tsmom_engine import (
     replay_tsmom_events,
 )
 from .tsmom_translated import translated_replay_tsmom_events
+from .tsmom_formal_evidence import build_tsmom_formal_ranking_evidence
 
 
 class CanonicalReplicationCandidateAdapter:
@@ -175,6 +179,47 @@ class CanonicalReplicationCandidateAdapter:
             }
         )
         return report, reference, translated
+
+    def build_formal_ranking_evidence(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        candidate: Mapping[str, Any],
+        include_source_bar_hashes: bool = False,
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        return build_tsmom_formal_ranking_evidence(
+            events=events,
+            frames=frames,
+            candidate=candidate,
+            include_source_bar_hashes=include_source_bar_hashes,
+        )
+
+    def build_formal_benchmark(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        preregistration: Mapping[str, Any],
+    ) -> dict[str, Any]:
+        hold_bars = int(
+            dict(preregistration.get("benchmarkPolicy") or {}).get(
+                "holdBars", 12
+            )
+        )
+        if hold_bars != 12:
+            raise CandidateAdapterContractError(
+                "tsmom_benchmark_hold_bars_mismatch"
+            )
+        result = build_same_event_fixed_hold_benchmark(
+            events,
+            frames,
+            hold_bars=hold_bars,
+        )
+        return {
+            **result,
+            "schemaVersion": "v36_tsmom_same_event_benchmark_v1",
+        }
 
     def _identify_event(self, event: Mapping[str, Any]) -> dict[str, Any]:
         identified = dict(event)
