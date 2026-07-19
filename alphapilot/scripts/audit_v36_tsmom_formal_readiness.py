@@ -14,6 +14,21 @@ from alphapilot.standard_replication.tsmom_formal_readiness import (
 )
 
 
+def _snapshot_manifest_path(campaign: dict[str, object]) -> Path:
+    candidates = (
+        campaign.get("developmentReplay"),
+        campaign.get("snapshotAudit"),
+        campaign,
+    )
+    for candidate in candidates:
+        if not isinstance(candidate, dict):
+            continue
+        value = str(candidate.get("snapshotManifestPath") or "").strip()
+        if value:
+            return Path(value).resolve()
+    raise ValueError("snapshot_manifest_path_missing")
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--campaign-input", type=Path, required=True)
@@ -33,9 +48,7 @@ def run(argv: Sequence[str] | None = None) -> dict[str, object]:
     args = _parser().parse_args(argv)
     campaign_path = args.campaign_input.resolve()
     campaign = json.loads(campaign_path.read_text(encoding="utf-8"))
-    snapshot_path = Path(
-        str((campaign.get("developmentReplay") or {}).get("snapshotManifestPath"))
-    ).resolve()
+    snapshot_path = _snapshot_manifest_path(campaign)
     formal_start = args.formal_start or str(
         (campaign.get("comparisonPanel") or {}).get("developmentEnd") or ""
     )
