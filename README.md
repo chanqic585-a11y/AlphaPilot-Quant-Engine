@@ -5547,3 +5547,23 @@ strategy Formal Pass.
 
 Evidence is under `reports/integration/v37g_v37h/`. Formal runs, Locked OOS
 reads, Release, Demo ARM, orders, and Live side effects remain zero.
+
+## V13.27.1.37I-V37J Bounded Acquisition and Formal Route
+
+V37I runs two bounded development campaigns across four strategy families and
+five immutable candidate identities. Each executable candidate receives three
+preregistered parameter trials on the first 80% of the causal V37A panel; the
+remaining 20% stays locked and unread. Transaction costs are included, archived
+TSMOM identities are not revived, and the source-faithful Turtle candidate is
+blocked as an exact duplicate before evaluation.
+
+The completed campaign has zero prefilter survivors. Funding Carry source and
+OKX variants, distance-selected Pair RV, and Funding Surprise Event all fail
+development economics after costs. Turtle fails duplicate-identity screening.
+This is a valid terminal research outcome: V37J records zero Formal candidates,
+zero Formal runs, zero locked-OOS reads, zero Releases, Demo ARM false, and zero
+orders. No failed candidate is repaired in place or forced through a gate.
+
+Evidence is under `reports/strategy_acquisition/v37i_v37j/`. Funding Carry also
+remains ineligible for Demo until independent forward spot/perpetual order-book
+evidence exists, even if a future version passes economic screening.

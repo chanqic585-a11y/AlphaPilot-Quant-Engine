@@ -1,0 +1,21 @@
+{
+  "budgetReset": false,
+  "campaignsUsed": 2,
+  "candidatesRegistered": 5,
+  "developmentTrialsUsed": 12,
+  "familiesUsed": 4,
+  "fullBacktestsRemainingAfter": 91,
+  "fullBacktestsUsed": 4,
+  "inheritedBudgetPath": "reports\\integration\\v37f\\budget_reconciliation.json",
+  "inheritedFullBacktestsRemainingBefore": 95,
+  "policy": {
+    "maximumCampaigns": 2,
+    "maximumFamilies": 6,
+    "maximumInitialCandidates": 12,
+    "maximumStructuralRevisionPerFamily": 1,
+    "maximumVariantsPerFamily": 2
+  },
+  "policyHash": "v37i_acquisition_budget_e04f3c41909aed5e8c861b7938fa481dcf7014df353d28bef6199cf9b51b02c4",
+  "schemaVersion": "alphapilot_v37i_experiment_budget_v1",
+  "structuralRevisionsUsed": 0
+}

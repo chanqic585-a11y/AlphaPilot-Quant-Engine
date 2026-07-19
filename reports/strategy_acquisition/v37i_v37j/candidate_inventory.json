@@ -1,0 +1,667 @@
+{
+  "candidateCount": 5,
+  "candidates": [
+    {
+      "campaign_id": "v37i_campaign_a_funding_carry",
+      "candidate_hash": "v37i_candidate_d533de0616d5d53c5a556c26a65620a0b6a3b5666790974b52b8c79ef6b6c5b2",
+      "candidate_id": "v37i_funding_carry_source_replication",
+      "family_id": "crypto_funding_carry_v1",
+      "mechanism": "spot long plus perpetual short receives positive funding after dual-leg costs",
+      "name": "OKX positive-funding delta-neutral carry source replication",
+      "parameter_trials": [
+        {
+          "basisCapPct": 0.15,
+          "costBps": 20.0,
+          "enterFunding": 0.0001,
+          "exitFunding": 0.0,
+          "minimumTurnover": 0.0
+        },
+        {
+          "basisCapPct": 0.1,
+          "costBps": 20.0,
+          "enterFunding": 0.0002,
+          "exitFunding": 2e-05,
+          "minimumTurnover": 0.0
+        },
+        {
+          "basisCapPct": 0.1,
+          "costBps": 20.0,
+          "enterFunding": 0.0003,
+          "exitFunding": 5e-05,
+          "minimumTurnover": 0.0
+        }
+      ],
+      "prefilter_blocker": null,
+      "result": {
+        "bestMaximumDrawdown": 0.042249501779659124,
+        "bestNetReturn": -0.03082558362453227,
+        "bestProfitFactor": 0.8685810553942961,
+        "bestTradeCount": 134,
+        "campaignId": "v37i_campaign_a_funding_carry",
+        "candidateHash": "v37i_candidate_d533de0616d5d53c5a556c26a65620a0b6a3b5666790974b52b8c79ef6b6c5b2",
+        "candidateId": "v37i_funding_carry_source_replication",
+        "familyId": "crypto_funding_carry_v1",
+        "lockedOosReadCount": 0,
+        "passedTrialCount": 0,
+        "prefilterPassed": false,
+        "reasonCode": "economic_prefilter_failed",
+        "selectedTrialIndex": null,
+        "status": "prefilter_failed",
+        "trialCount": 3,
+        "trials": [
+          {
+            "metrics": {
+              "averageNetReturn": -0.0015457293181437687,
+              "maximumDrawdown": 0.0857281012380903,
+              "netReturn": -1.2783181461048967,
+              "perAsset": {
+                "BTC": {
+                  "averageNetReturn": -0.0014316737658462521,
+                  "maximumDrawdown": 0.017613770154387306,
+                  "netReturn": -0.3436017038031005,
+                  "profitFactor": 0.2136674773614461,
+                  "tradeCount": 240,
+                  "transactionCost": 0.0
+                },
+                "ETH": {
+                  "averageNetReturn": -0.0014757391893583914,
+                  "maximumDrawdown": 0.026288341921621435,
+                  "netReturn": -0.3940223635586905,
+                  "profitFactor": 0.19958338687023577,
+                  "tradeCount": 267,
+                  "transactionCost": 0.0
+                },
+                "SOL": {
+                  "averageNetReturn": -0.0016896689960722057,
+                  "maximumDrawdown": 0.08572810123809006,
+                  "netReturn": -0.5406940787431058,
+                  "profitFactor": 0.18299793142379223,
+                  "tradeCount": 320,
+                  "transactionCost": 0.0
+                }
+              },
+              "profitFactor": 0.196552662630632,
+              "profitableAssetCount": 0,
+              "tradeCount": 827,
+              "transactionCost": 1.6539999999999286
+            },
+            "parameters": {
+              "basisCapPct": 0.15,
+              "costBps": 20.0,
+              "enterFunding": 0.0001,
+              "exitFunding": 0.0,
+              "minimumTurnover": 0.0
+            },
+            "passed": false,
+            "trialIndex": 1
+          },
+          {
+            "metrics": {
+              "averageNetReturn": -0.0009800749764207414,
+              "maximumDrawdown": 0.05364001687596512,
+              "netReturn": -0.27442099339780757,
+              "perAsset": {
+                "BTC": {
+                  "averageNetReturn": -0.00023763907393331815,
+                  "maximumDrawdown": 0.00492103526005011,
+                  "netReturn": -0.013307788140265816,
+                  "profitFactor": 0.8339324897021512,
+                  "tradeCount": 56,
+                  "transactionCost": 0.0
+                },
+                "ETH": {
+                  "averageNetReturn": -0.000823414620062581,
+                  "maximumDrawdown": 0.0151764871323844,
+                  "netReturn": -0.06999024270531938,
+                  "profitFactor": 0.5341961742219196,
+                  "tradeCount": 85,
+                  "transactionCost": 0.0
+                },
+                "SOL": {
+                  "averageNetReturn": -0.0013749853421023194,
+                  "maximumDrawdown": 0.053640016875965216,
+                  "netReturn": -0.1911229625522224,
+                  "profitFactor": 0.34910934955018563,
+                  "tradeCount": 139,
+                  "transactionCost": 0.0
+                }
+              },
+              "profitFactor": 0.4763204976350375,
+              "profitableAssetCount": 0,
+              "tradeCount": 280,
+              "transactionCost": 0.5600000000000004
+            },
+            "parameters": {
+              "basisCapPct": 0.1,
+              "costBps": 20.0,
+              "enterFunding": 0.0002,
+              "exitFunding": 2e-05,
+              "minimumTurnover": 0.0
+            },
+            "passed": false,
+            "trialIndex": 2
+          },
+          {
+            "metrics": {
+              "averageNetReturn": -0.00023004166883979307,
+              "maximumDrawdown": 0.042249501779659124,
+              "netReturn": -0.03082558362453227,
+              "perAsset": {
+                "BTC": {
+                  "averageNetReturn": 0.0007566736743990074,
+                  "maximumDrawdown": 0.0038545509072891657,
+                  "netReturn": 0.021186862883172206,
+                  "profitFactor": 1.674982936651446,
+                  "tradeCount": 28,
+                  "transactionCost": 0.0
+                },
+                "ETH": {
+                  "averageNetReturn": 0.00038387916575981484,
+                  "maximumDrawdown": 0.00811520875637719,
+                  "netReturn": 0.013819649967353334,
+                  "profitFactor": 1.2705180002838787,
+                  "tradeCount": 36,
+                  "transactionCost": 0.0
+                },
+                "SOL": {
+                  "averageNetReturn": -0.0009404585210722544,
+                  "maximumDrawdown": 0.04216671960241969,
+                  "netReturn": -0.0658320964750578,
+                  "profitFactor": 0.5671362979980685,
+                  "tradeCount": 70,
+                  "transactionCost": 0.0
+                }
+              },
+              "profitFactor": 0.8685810553942961,
+              "profitableAssetCount": 2,
+              "tradeCount": 134,
+              "transactionCost": 0.2680000000000002
+            },
+            "parameters": {
+              "basisCapPct": 0.1,
+              "costBps": 20.0,
+              "enterFunding": 0.0003,
+              "exitFunding": 5e-05,
+              "minimumTurnover": 0.0
+            },
+            "passed": false,
+            "trialIndex": 3
+          }
+        ]
+      },
+      "similarity_classification": "same_family_variant",
+      "source_equivalence_class": "source_faithful_reproduction",
+      "source_path": "research/canonical_replications/crypto_funding_carry_v1.json",
+      "timeframe": "8h_funding_event"
+    },
+    {
+      "campaign_id": "v37i_campaign_a_funding_carry",
+      "candidate_hash": "v37i_candidate_8cad909f9da6151e9e671673f5402e23abb6c45190df7cd835b5fe0e435199e9",
+      "candidate_id": "v37i_funding_carry_okx_adaptation",
+      "family_id": "crypto_funding_carry_v1",
+      "mechanism": "funding carry with preregistered basis and turnover gates",
+      "name": "OKX capacity-gated positive-funding carry adaptation",
+      "parameter_trials": [
+        {
+          "basisCapPct": 0.12,
+          "costBps": 20.0,
+          "enterFunding": 0.00015,
+          "exitFunding": 1e-05,
+          "minimumTurnover": 1000000.0
+        },
+        {
+          "basisCapPct": 0.1,
+          "costBps": 40.0,
+          "enterFunding": 0.00025,
+          "exitFunding": 3e-05,
+          "minimumTurnover": 2000000.0
+        },
+        {
+          "basisCapPct": 0.08,
+          "costBps": 60.0,
+          "enterFunding": 0.00035,
+          "exitFunding": 5e-05,
+          "minimumTurnover": 3000000.0
+        }
+      ],
+      "prefilter_blocker": null,
+      "result": {
+        "bestMaximumDrawdown": 0.007144393391880582,
+        "bestNetReturn": -0.1650283272932932,
+        "bestProfitFactor": 0.3794376427019495,
+        "bestTradeCount": 66,
+        "campaignId": "v37i_campaign_a_funding_carry",
+        "candidateHash": "v37i_candidate_8cad909f9da6151e9e671673f5402e23abb6c45190df7cd835b5fe0e435199e9",
+        "candidateId": "v37i_funding_carry_okx_adaptation",
+        "familyId": "crypto_funding_carry_v1",
+        "lockedOosReadCount": 0,
+        "passedTrialCount": 0,
+        "prefilterPassed": false,
+        "reasonCode": "economic_prefilter_failed",
+        "selectedTrialIndex": null,
+        "status": "prefilter_failed",
+        "trialCount": 3,
+        "trials": [
+          {
+            "metrics": {
+              "averageNetReturn": -0.0011478384266429369,
+              "maximumDrawdown": 0.04408229216200313,
+              "netReturn": -0.45110050167067417,
+              "perAsset": {
+                "BTC": {
+                  "averageNetReturn": -0.0010023718338758659,
+                  "maximumDrawdown": 0.010622347282028913,
+                  "netReturn": -0.11627513272960044,
+                  "profitFactor": 0.4075543816057111,
+                  "tradeCount": 116,
+                  "transactionCost": 0.0
+                },
+                "ETH": {
+                  "averageNetReturn": -0.0013094402200048273,
+                  "maximumDrawdown": 0.02016393658889565,
+                  "netReturn": -0.20296323410074824,
+                  "profitFactor": 0.2927048060437203,
+                  "tradeCount": 155,
+                  "transactionCost": 0.0
+                },
+                "SOL": {
+                  "averageNetReturn": -0.00108083717082234,
+                  "maximumDrawdown": 0.04408229216200315,
+                  "netReturn": -0.1318621348403255,
+                  "profitFactor": 0.45473000724205936,
+                  "tradeCount": 122,
+                  "transactionCost": 0.0
+                }
+              },
+              "profitFactor": 0.37783440092336246,
+              "profitableAssetCount": 0,
+              "tradeCount": 393,
+              "transactionCost": 0.7860000000000006
+            },
+            "parameters": {
+              "basisCapPct": 0.12,
+              "costBps": 20.0,
+              "enterFunding": 0.00015,
+              "exitFunding": 1e-05,
+              "minimumTurnover": 1000000.0
+            },
+            "passed": false,
+            "trialIndex": 1
+          },
+          {
+            "metrics": {
+              "averageNetReturn": -0.001850118806802156,
+              "maximumDrawdown": 0.015680185726282603,
+              "netReturn": -0.24606580130468675,
+              "perAsset": {
+                "BTC": {
+                  "averageNetReturn": -0.0010243055067885368,
+                  "maximumDrawdown": 0.0038545509072891657,
+                  "netReturn": -0.03175347071044464,
+                  "profitFactor": 0.569861751539005,
+                  "tradeCount": 31,
+                  "transactionCost": 0.0
+                },
+                "ETH": {
+                  "averageNetReturn": -0.0024348097683373534,
+                  "maximumDrawdown": 0.011830694516252212,
+                  "netReturn": -0.13147972749021708,
+                  "profitFactor": 0.2871130183732131,
+                  "tradeCount": 54,
+                  "transactionCost": 0.0
+                },
+                "SOL": {
+                  "averageNetReturn": -0.0017256792313338556,
+                  "maximumDrawdown": 0.015329805377698392,
+                  "netReturn": -0.08283260310402507,
+                  "profitFactor": 0.472820814727223,
+                  "tradeCount": 48,
+                  "transactionCost": 0.0
+                }
+              },
+              "profitFactor": 0.40761067047262556,
+              "profitableAssetCount": 0,
+              "tradeCount": 133,
+              "transactionCost": 0.5320000000000004
+            },
+            "parameters": {
+              "basisCapPct": 0.1,
+              "costBps": 40.0,
+              "enterFunding": 0.00025,
+              "exitFunding": 3e-05,
+              "minimumTurnover": 2000000.0
+            },
+            "passed": false,
+            "trialIndex": 2
+          },
+          {
+            "metrics": {
+              "averageNetReturn": -0.002500429201413533,
+              "maximumDrawdown": 0.007144393391880582,
+              "netReturn": -0.1650283272932932,
+              "perAsset": {
+                "BTC": {
+                  "averageNetReturn": -0.0026802436096963218,
+                  "maximumDrawdown": 0.003854550907289162,
+                  "netReturn": -0.050924628584230115,
+                  "profitFactor": 0.2340642102722826,
+                  "tradeCount": 19,
+                  "transactionCost": 0.0
+                },
+                "ETH": {
+                  "averageNetReturn": -0.002075564077364465,
+                  "maximumDrawdown": 0.002675546259391752,
+                  "netReturn": -0.043586845624653765,
+                  "profitFactor": 0.47869215456184894,
+                  "tradeCount": 21,
+                  "transactionCost": 0.0
+                },
+                "SOL": {
+                  "averageNetReturn": -0.0027121866570926655,
+                  "maximumDrawdown": 0.0070616112146410556,
+                  "netReturn": -0.0705168530844093,
+                  "profitFactor": 0.3912361185375567,
+                  "tradeCount": 26,
+                  "transactionCost": 0.0
+                }
+              },
+              "profitFactor": 0.3794376427019495,
+              "profitableAssetCount": 0,
+              "tradeCount": 66,
+              "transactionCost": 0.3960000000000003
+            },
+            "parameters": {
+              "basisCapPct": 0.08,
+              "costBps": 60.0,
+              "enterFunding": 0.00035,
+              "exitFunding": 5e-05,
+              "minimumTurnover": 3000000.0
+            },
+            "passed": false,
+            "trialIndex": 3
+          }
+        ]
+      },
+      "similarity_classification": "same_family_variant",
+      "source_equivalence_class": "clean_room_normalized_variant",
+      "source_path": "research/canonical_replications/crypto_funding_carry_v1.json",
+      "timeframe": "8h_funding_event"
+    },
+    {
+      "campaign_id": "v37i_campaign_b_source_faithful",
+      "candidate_hash": "v37i_candidate_b28bf34243d63a8c8fbb4dc0ca1aa8cff2285c74d9471d1a27a7e86d5447a353",
+      "candidate_id": "v37i_turtle_source_faithful_candidate",
+      "family_id": "crypto_tsmom_turtle_v1",
+      "mechanism": "directional persistence with Donchian confirmation",
+      "name": "Source-faithful Turtle Donchian candidate",
+      "parameter_trials": [
+        {
+          "entryDonchianBars": 40,
+          "exitDonchianBars": 20,
+          "lookbackBars": 60
+        },
+        {
+          "entryDonchianBars": 55,
+          "exitDonchianBars": 20,
+          "lookbackBars": 120
+        },
+        {
+          "entryDonchianBars": 80,
+          "exitDonchianBars": 30,
+          "lookbackBars": 240
+        }
+      ],
+      "prefilter_blocker": "duplicate_archived_identity",
+      "result": {
+        "campaignId": "v37i_campaign_b_source_faithful",
+        "candidateHash": "v37i_candidate_b28bf34243d63a8c8fbb4dc0ca1aa8cff2285c74d9471d1a27a7e86d5447a353",
+        "candidateId": "v37i_turtle_source_faithful_candidate",
+        "familyId": "crypto_tsmom_turtle_v1",
+        "lockedOosReadCount": 0,
+        "passedTrialCount": 0,
+        "prefilterPassed": false,
+        "reasonCode": "duplicate_archived_identity",
+        "status": "prefilter_failed",
+        "trialCount": 0,
+        "trials": []
+      },
+      "similarity_classification": "exact_duplicate",
+      "source_equivalence_class": "source_faithful_reproduction",
+      "source_path": "research/canonical_replications/crypto_tsmom_turtle_v1.json",
+      "timeframe": "1d"
+    },
+    {
+      "campaign_id": "v37i_campaign_b_source_faithful",
+      "candidate_hash": "v37i_candidate_74db7f255f252d93c23fcdc4b99d0a26fd4d27b7068a1db85176932a5b5cb9ba",
+      "candidate_id": "v37i_distance_selected_pair_rv_source_faithful",
+      "family_id": "crypto_pair_relative_value_v2",
+      "mechanism": "formation-window normalized-price distance followed by convergence trading",
+      "name": "Distance-selected multi-asset pair relative value",
+      "parameter_trials": [
+        {
+          "costBps": 20.0,
+          "entryZ": 1.5,
+          "formationBars": 90,
+          "maximumHoldBars": 30
+        },
+        {
+          "costBps": 40.0,
+          "entryZ": 2.0,
+          "formationBars": 180,
+          "maximumHoldBars": 60
+        },
+        {
+          "costBps": 60.0,
+          "entryZ": 2.5,
+          "formationBars": 270,
+          "maximumHoldBars": 90
+        }
+      ],
+      "prefilter_blocker": null,
+      "result": {
+        "bestMaximumDrawdown": 0.43077345493729347,
+        "bestNetReturn": -0.2848848933508109,
+        "bestProfitFactor": 0.5542605025466684,
+        "bestTradeCount": 13,
+        "campaignId": "v37i_campaign_b_source_faithful",
+        "candidateHash": "v37i_candidate_74db7f255f252d93c23fcdc4b99d0a26fd4d27b7068a1db85176932a5b5cb9ba",
+        "candidateId": "v37i_distance_selected_pair_rv_source_faithful",
+        "familyId": "crypto_pair_relative_value_v2",
+        "lockedOosReadCount": 0,
+        "passedTrialCount": 0,
+        "prefilterPassed": false,
+        "reasonCode": "economic_prefilter_failed",
+        "selectedTrialIndex": null,
+        "status": "prefilter_failed",
+        "trialCount": 3,
+        "trials": [
+          {
+            "metrics": {
+              "averageNetReturn": -0.009427015207920482,
+              "maximumDrawdown": 0.9412460534937772,
+              "netReturn": -0.8012962926732409,
+              "profitFactor": 0.6877095463231714,
+              "profitableAssetCount": 0,
+              "selectedPair": [
+                "BTC",
+                "ETH"
+              ],
+              "tradeCount": 85,
+              "transactionCost": 0.17000000000000012
+            },
+            "parameters": {
+              "costBps": 20.0,
+              "entryZ": 1.5,
+              "formationBars": 90,
+              "maximumHoldBars": 30
+            },
+            "passed": false,
+            "trialIndex": 1
+          },
+          {
+            "metrics": {
+              "averageNetReturn": -0.048572648384523825,
+              "maximumDrawdown": 1.7133217419130498,
+              "netReturn": -1.3114615063821433,
+              "profitFactor": 0.45411659681944944,
+              "profitableAssetCount": 0,
+              "selectedPair": [
+                "ETH",
+                "SOL"
+              ],
+              "tradeCount": 27,
+              "transactionCost": 0.10800000000000008
+            },
+            "parameters": {
+              "costBps": 40.0,
+              "entryZ": 2.0,
+              "formationBars": 180,
+              "maximumHoldBars": 60
+            },
+            "passed": false,
+            "trialIndex": 2
+          },
+          {
+            "metrics": {
+              "averageNetReturn": -0.021914222565446992,
+              "maximumDrawdown": 0.43077345493729347,
+              "netReturn": -0.2848848933508109,
+              "profitFactor": 0.5542605025466684,
+              "profitableAssetCount": 0,
+              "selectedPair": [
+                "BTC",
+                "ETH"
+              ],
+              "tradeCount": 13,
+              "transactionCost": 0.07800000000000003
+            },
+            "parameters": {
+              "costBps": 60.0,
+              "entryZ": 2.5,
+              "formationBars": 270,
+              "maximumHoldBars": 90
+            },
+            "passed": false,
+            "trialIndex": 3
+          }
+        ]
+      },
+      "similarity_classification": "mechanism_related",
+      "source_equivalence_class": "source_faithful_reproduction",
+      "source_path": "research/canonical_replications/crypto_pair_relative_value_v1.json",
+      "timeframe": "8h_aligned_panel"
+    },
+    {
+      "campaign_id": "v37i_campaign_b_source_faithful",
+      "candidate_hash": "v37i_candidate_1b71e4d6b45c1a513c6899b61b2894ae8ea913d80b71a30ac5262daf5e9dc61c",
+      "candidate_id": "v37i_funding_surprise_event_candidate",
+      "family_id": "crypto_funding_event_v1",
+      "mechanism": "post-settlement funding surprise with embargoed one-period basis exposure",
+      "name": "Causal funding-surprise event candidate",
+      "parameter_trials": [
+        {
+          "baselineBars": 30,
+          "basisCapPct": 0.2,
+          "costBps": 20.0,
+          "surpriseZ": 1.5
+        },
+        {
+          "baselineBars": 60,
+          "basisCapPct": 0.15,
+          "costBps": 40.0,
+          "surpriseZ": 2.0
+        },
+        {
+          "baselineBars": 90,
+          "basisCapPct": 0.1,
+          "costBps": 60.0,
+          "surpriseZ": 2.5
+        }
+      ],
+      "prefilter_blocker": null,
+      "result": {
+        "bestMaximumDrawdown": 1.2887732888388626,
+        "bestNetReturn": -1.2887732888388617,
+        "bestProfitFactor": 0.0,
+        "bestTradeCount": 222,
+        "campaignId": "v37i_campaign_b_source_faithful",
+        "candidateHash": "v37i_candidate_1b71e4d6b45c1a513c6899b61b2894ae8ea913d80b71a30ac5262daf5e9dc61c",
+        "candidateId": "v37i_funding_surprise_event_candidate",
+        "familyId": "crypto_funding_event_v1",
+        "lockedOosReadCount": 0,
+        "passedTrialCount": 0,
+        "prefilterPassed": false,
+        "reasonCode": "economic_prefilter_failed",
+        "selectedTrialIndex": null,
+        "status": "prefilter_failed",
+        "trialCount": 3,
+        "trials": [
+          {
+            "metrics": {
+              "averageNetReturn": -0.001960850420123968,
+              "maximumDrawdown": 1.8412385444964066,
+              "netReturn": -1.841238544496406,
+              "profitFactor": 0.0009457682777046177,
+              "profitableAssetCount": 0,
+              "tradeCount": 939,
+              "transactionCost": 1.8780000000000014
+            },
+            "parameters": {
+              "baselineBars": 30,
+              "basisCapPct": 0.2,
+              "costBps": 20.0,
+              "surpriseZ": 1.5
+            },
+            "passed": false,
+            "trialIndex": 1
+          },
+          {
+            "metrics": {
+              "averageNetReturn": -0.0038704973986325125,
+              "maximumDrawdown": 1.660443384013349,
+              "netReturn": -1.660443384013348,
+              "profitFactor": 0.0,
+              "profitableAssetCount": 0,
+              "tradeCount": 429,
+              "transactionCost": 1.7160000000000013
+            },
+            "parameters": {
+              "baselineBars": 60,
+              "basisCapPct": 0.15,
+              "costBps": 40.0,
+              "surpriseZ": 2.0
+            },
+            "passed": false,
+            "trialIndex": 2
+          },
+          {
+            "metrics": {
+              "averageNetReturn": -0.005805285084859738,
+              "maximumDrawdown": 1.2887732888388626,
+              "netReturn": -1.2887732888388617,
+              "profitFactor": 0.0,
+              "profitableAssetCount": 0,
+              "tradeCount": 222,
+              "transactionCost": 1.332000000000001
+            },
+            "parameters": {
+              "baselineBars": 90,
+              "basisCapPct": 0.1,
+              "costBps": 60.0,
+              "surpriseZ": 2.5
+            },
+            "passed": false,
+            "trialIndex": 3
+          }
+        ]
+      },
+      "similarity_classification": "mechanism_related",
+      "source_equivalence_class": "clean_room_normalized_variant",
+      "source_path": "research/canonical_replications/crypto_event_driven_v1.json",
+      "timeframe": "8h_funding_event"
+    }
+  ],
+  "frozenAt": "2026-07-20T00:00:00+08:00",
+  "lockedOosReadCount": 0,
+  "schemaVersion": "alphapilot_v37i_candidate_inventory_v1"
+}

@@ -1,0 +1,40 @@
+{
+  "byReason": {
+    "duplicate_archived_identity": 1,
+    "economic_prefilter_failed": 4
+  },
+  "failureCount": 5,
+  "failures": [
+    {
+      "candidateHash": "v37i_candidate_d533de0616d5d53c5a556c26a65620a0b6a3b5666790974b52b8c79ef6b6c5b2",
+      "candidateId": "v37i_funding_carry_source_replication",
+      "evidenceRef": "prefilter_matrix.csv",
+      "reasonCode": "economic_prefilter_failed"
+    },
+    {
+      "candidateHash": "v37i_candidate_8cad909f9da6151e9e671673f5402e23abb6c45190df7cd835b5fe0e435199e9",
+      "candidateId": "v37i_funding_carry_okx_adaptation",
+      "evidenceRef": "prefilter_matrix.csv",
+      "reasonCode": "economic_prefilter_failed"
+    },
+    {
+      "candidateHash": "v37i_candidate_b28bf34243d63a8c8fbb4dc0ca1aa8cff2285c74d9471d1a27a7e86d5447a353",
+      "candidateId": "v37i_turtle_source_faithful_candidate",
+      "evidenceRef": "prefilter_matrix.csv",
+      "reasonCode": "duplicate_archived_identity"
+    },
+    {
+      "candidateHash": "v37i_candidate_74db7f255f252d93c23fcdc4b99d0a26fd4d27b7068a1db85176932a5b5cb9ba",
+      "candidateId": "v37i_distance_selected_pair_rv_source_faithful",
+      "evidenceRef": "prefilter_matrix.csv",
+      "reasonCode": "economic_prefilter_failed"
+    },
+    {
+      "candidateHash": "v37i_candidate_1b71e4d6b45c1a513c6899b61b2894ae8ea913d80b71a30ac5262daf5e9dc61c",
+      "candidateId": "v37i_funding_surprise_event_candidate",
+      "evidenceRef": "prefilter_matrix.csv",
+      "reasonCode": "economic_prefilter_failed"
+    }
+  ],
+  "schemaVersion": "alphapilot_v37i_failure_attribution_v1"
+}
