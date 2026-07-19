@@ -283,7 +283,7 @@ def _failure_labels(gates: Mapping[str, Any], *, translation_passed: bool) -> li
         labels.append("market_mechanism_prescreen_failed")
     if gates["prescreenPassed"] and not translation_passed:
         labels.append("freqtrade_translation_not_executed")
-    if gates["prescreenPassed"] and translation_passed and not gates["basePassed"]:
+    if gates["prescreenPassed"] and not gates["basePassed"]:
         labels.append("out_of_sample_failed")
     if gates["basePassed"] and not gates["formalPassed"]:
         for name, row in gates["formalGates"].items():
@@ -397,6 +397,7 @@ def run_campaign(repo_root: Path | str, preregistration_path: Path | str) -> dic
                 "fullBacktestExecuted": bool(selection_gates["prescreenPassed"]),
                 "fullBacktestEngine": "not_run" if not selection_gates["prescreenPassed"] else "causal_event_replay_reference",
                 "freqtradeTranslationPassed": translation_passed,
+                "economicBasePassed": bool(gates["basePassed"]),
                 "basePassed": bool(gates["basePassed"] and translation_passed),
                 "formalPassed": formal_passed,
                 "rawPValue": pvalue,
