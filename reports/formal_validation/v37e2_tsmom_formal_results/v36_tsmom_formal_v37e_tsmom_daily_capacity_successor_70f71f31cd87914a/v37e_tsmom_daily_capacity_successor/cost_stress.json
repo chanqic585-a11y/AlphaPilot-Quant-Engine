@@ -1,0 +1,3948 @@
+{
+  "baseAcceptedSignalIds": [
+    "replication_signal_5c19eb176b29f965455d1758353b39c533d41c01cc4ab141eec553dce7e72792",
+    "replication_signal_729d331e1ea2c257554491a874568373b02798f3e92e8440498ec4beed0daf86",
+    "replication_signal_9b2328e1e2e8d34e2f97abf60786b26d8d27d1735cf3a0d89d2ec9e94087678e",
+    "replication_signal_d92794b3660958210036b94af72bd16636127d7bb7110360128964a5ff5a020f",
+    "replication_signal_dfe4fefd69e96823659a5a3dfa8e76d552520cf331abececb5c05296a9bf2383",
+    "replication_signal_efac9a0becaa7822416ad319471c1534c11a298ba6c5a4b4df0394c64a3d79cf"
+  ],
+  "scenarios": [
+    {
+      "acceptedSignalIds": [
+        "replication_signal_5c19eb176b29f965455d1758353b39c533d41c01cc4ab141eec553dce7e72792",
+        "replication_signal_729d331e1ea2c257554491a874568373b02798f3e92e8440498ec4beed0daf86",
+        "replication_signal_9b2328e1e2e8d34e2f97abf60786b26d8d27d1735cf3a0d89d2ec9e94087678e",
+        "replication_signal_d92794b3660958210036b94af72bd16636127d7bb7110360128964a5ff5a020f",
+        "replication_signal_dfe4fefd69e96823659a5a3dfa8e76d552520cf331abececb5c05296a9bf2383",
+        "replication_signal_efac9a0becaa7822416ad319471c1534c11a298ba6c5a4b4df0394c64a3d79cf"
+      ],
+      "metrics": {
+        "averageNetR": 0.4477138591264745,
+        "lossCount": 2,
+        "maximumDrawdownPercent": 1.6421368816633184,
+        "maximumSingleMonthPositiveContribution": 0.7761729863731331,
+        "maximumSingleSymbolPositiveContribution": 0.6636669145892871,
+        "netPnl": 266.269813700932,
+        "netReturnPercent": 2.662698137009323,
+        "positiveContributionByMonth": {
+          "2025-12": 0.0,
+          "2026-01": 0.0,
+          "2026-02": 334.12966522867754,
+          "2026-06": 96.35383663858516
+        },
+        "positiveContributionBySymbol": {
+          "ETH-USDT-SWAP": 285.69765746583784,
+          "SOL-USDT-SWAP": 144.78584440142487
+        },
+        "profitFactor": 2.621483669687942,
+        "profitFactorStatus": "defined",
+        "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+        "totalNetR": 2.686283154758847,
+        "tradeCount": 6,
+        "winCount": 4
+      },
+      "multiplier": 1.0,
+      "scenarioId": "base",
+      "trades": [
+        {
+          "actualNotional": 546.8467372233401,
+          "availableAt": "2025-12-18T00:00:00Z",
+          "baseNonFundingCostR": 0.011024558976132824,
+          "beta": 1.649914235836695,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 692759.10993395,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.011024558976132824,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 1804919435.352,
+              "timestamp": "2025-11-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1757967470.9841,
+              "timestamp": "2025-11-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2416046285.513,
+              "timestamp": "2025-11-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2907773080.9899,
+              "timestamp": "2025-11-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 895896231.4387,
+              "timestamp": "2025-11-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1094130626.1729,
+              "timestamp": "2025-11-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1672838436.0614,
+              "timestamp": "2025-11-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1220269144.2784,
+              "timestamp": "2025-11-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1418059755.8301,
+              "timestamp": "2025-11-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 860873871.3239,
+              "timestamp": "2025-11-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1306861186.7471,
+              "timestamp": "2025-11-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 611231666.1929,
+              "timestamp": "2025-11-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 925162102.5742,
+              "timestamp": "2025-11-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1784152367.6875,
+              "timestamp": "2025-12-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1781567941.1341,
+              "timestamp": "2025-12-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1548803132.1805,
+              "timestamp": "2025-12-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1119288068.3395,
+              "timestamp": "2025-12-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1347212941.7001,
+              "timestamp": "2025-12-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 499734881.4702,
+              "timestamp": "2025-12-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1111981394.2596,
+              "timestamp": "2025-12-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1352976683.9057,
+              "timestamp": "2025-12-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1670799569.2105,
+              "timestamp": "2025-12-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1649545895.2997,
+              "timestamp": "2025-12-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1518152397.8062,
+              "timestamp": "2025-12-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1506286160.6532,
+              "timestamp": "2025-12-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 503327813.169,
+              "timestamp": "2025-12-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 712735889.3398,
+              "timestamp": "2025-12-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1543576959.0037,
+              "timestamp": "2025-12-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1180315536.4131,
+              "timestamp": "2025-12-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1839824888.1185,
+              "timestamp": "2025-12-17T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 352,
+          "entryPrice": 119.52,
+          "entryTimestamp": "2025-12-19T00:00:00Z",
+          "eventExtremeResidualZ": -0.3637283083147025,
+          "exitIndex": 370,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-01-06T00:00:00+00:00",
+              "exitReason": "donchian_reversal",
+              "feesR": 0.011024558976132824,
+              "fundingR": 0.009709955306662318,
+              "grossR": -0.8435374149659866,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": -0.8448520186354571,
+              "price": 137.81,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-01-05T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 137.81,
+          "exitReason": "donchian_reversal",
+          "exitTimestamp": "2026-01-06T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-01-05T00:00:00+00:00",
+          "expectedEntryTimestamp": "2025-12-19T00:00:00+00:00",
+          "foldId": "fold_002",
+          "fundingR": 0.009709955306662318,
+          "grossPnl": -83.68329002522496,
+          "grossR": -0.8435374149659866,
+          "initialQuantity": 4.575357573823127,
+          "initialRiskAmount": 99.2051905944199,
+          "initialStop": 141.2025,
+          "initialStopPrice": 141.2025,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 1385518219.8679,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.9371613052000463,
+          "markNotional": 546.8467372233401,
+          "medianDailyQuoteTurnover30d": 1385518219.8679,
+          "mfeR": 0.09270148737461043,
+          "netPnl": -84.77698349967166,
+          "netR": -0.8448520186354571,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2025-12-19T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.09094788399271388,
+          "quantity": 4.575357573823127,
+          "realizedGrossR": -0.8435374149659866,
+          "realizedNetR": -0.8545619739421194,
+          "reason": null,
+          "recoverySizeZ": 0.15680848610630682,
+          "remainingFraction": 1.0,
+          "riskAmount": 99.2051905944199,
+          "riskBasedNotional": 546.8467372233401,
+          "riskBudget": 99.20519059441992,
+          "riskDistance": 21.682500000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.011024558976132824,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 351,
+          "signalId": "replication_signal_5c19eb176b29f965455d1758353b39c533d41c01cc4ab141eec553dce7e72792",
+          "signalIndex": 351,
+          "signalTimestamp": "2025-12-18T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2025-12-18T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.1814131526104417,
+          "stopPrice": 141.2025,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 967.2261112315125,
+          "availableAt": "2026-06-02T00:00:00Z",
+          "baseNonFundingCostR": 0.019025486182190375,
+          "beta": 1.1842800865948115,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 3431952.3011484626,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.019025486182190375,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 4200778167.65873,
+              "timestamp": "2026-05-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11268926230.29734,
+              "timestamp": "2026-05-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7088964998.4927,
+              "timestamp": "2026-05-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9815647108.8118,
+              "timestamp": "2026-05-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7677837507.08532,
+              "timestamp": "2026-05-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6183051557.11377,
+              "timestamp": "2026-05-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3281229180.08931,
+              "timestamp": "2026-05-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6327776638.44376,
+              "timestamp": "2026-05-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6101558438.95003,
+              "timestamp": "2026-05-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6876292302.93454,
+              "timestamp": "2026-05-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7671937058.20538,
+              "timestamp": "2026-05-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8157295570.41725,
+              "timestamp": "2026-05-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8034859073.64382,
+              "timestamp": "2026-05-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4617792404.99473,
+              "timestamp": "2026-05-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5190850084.81001,
+              "timestamp": "2026-05-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9577789510.62513,
+              "timestamp": "2026-05-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6105735389.19046,
+              "timestamp": "2026-05-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5679591381.37845,
+              "timestamp": "2026-05-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6851516901.65931,
+              "timestamp": "2026-05-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6209095330.47586,
+              "timestamp": "2026-05-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8028149147.91993,
+              "timestamp": "2026-05-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4636792242.9781,
+              "timestamp": "2026-05-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4555261173.07389,
+              "timestamp": "2026-05-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8121866758.23788,
+              "timestamp": "2026-05-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7182596926.46619,
+              "timestamp": "2026-05-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8600576233.84209,
+              "timestamp": "2026-05-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7666971320.32842,
+              "timestamp": "2026-05-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2411152945.06061,
+              "timestamp": "2026-05-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3591646152.5053,
+              "timestamp": "2026-05-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7714352898.43678,
+              "timestamp": "2026-06-01T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 518,
+          "entryPrice": 1858.79,
+          "entryTimestamp": "2026-06-03T00:00:00Z",
+          "eventExtremeResidualZ": -0.20754588280434005,
+          "exitIndex": 536,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-06-21T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.019025486182190375,
+              "fundingR": -0.008603967974154041,
+              "grossR": 0.7813203684749235,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 0.753690914318579,
+              "price": 1706.12,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-06-21T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 1706.12,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-06-21T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-06-21T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-06-03T00:00:00+00:00",
+          "foldId": "fold_005",
+          "fundingR": -0.008603967974154041,
+          "grossPnl": 79.44222338280018,
+          "grossR": 0.7813203684749235,
+          "initialQuantity": 0.5203525472116337,
+          "initialRiskAmount": 101.67688772515326,
+          "initialStop": 2054.19,
+          "initialStopPrice": 2054.19,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 6863904602.296925,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.17400204708290684,
+          "markNotional": 967.2261112315125,
+          "medianDailyQuoteTurnover30d": 6863904602.296925,
+          "mfeR": 1.8177584442169907,
+          "netPnl": 77.50777116033714,
+          "netR": 0.753690914318579,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-06-03T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.2124420023707625,
+          "quantity": 0.5203525472116337,
+          "realizedGrossR": 0.7813203684749235,
+          "realizedNetR": 0.7622948822927331,
+          "reason": null,
+          "recoverySizeZ": 1.2305527123848523,
+          "remainingFraction": 1.0,
+          "riskAmount": 101.67688772515326,
+          "riskBasedNotional": 967.2261112315125,
+          "riskBudget": 101.67688772515326,
+          "riskDistance": 195.40000000000003,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.019025486182190375,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 517,
+          "signalId": "replication_signal_729d331e1ea2c257554491a874568373b02798f3e92e8440498ec4beed0daf86",
+          "signalIndex": 517,
+          "signalTimestamp": "2026-06-02T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-06-02T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.10512214935522576,
+          "stopPrice": 2054.19,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 756.0460394711461,
+          "availableAt": "2026-01-30T00:00:00Z",
+          "baseNonFundingCostR": 0.015371936278861653,
+          "beta": 1.4035340128225473,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 4596073.44179599,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.015371936278861653,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 6010424112.3528,
+              "timestamp": "2025-12-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3117956032.09005,
+              "timestamp": "2026-01-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11083291991.96359,
+              "timestamp": "2026-01-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4140390369.8656,
+              "timestamp": "2026-01-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5258350314.24096,
+              "timestamp": "2026-01-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13053701480.05706,
+              "timestamp": "2026-01-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12084741970.46613,
+              "timestamp": "2026-01-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11049161516.79316,
+              "timestamp": "2026-01-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10250913142.55021,
+              "timestamp": "2026-01-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9229667246.94669,
+              "timestamp": "2026-01-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1841031141.21467,
+              "timestamp": "2026-01-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3976184484.36049,
+              "timestamp": "2026-01-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10183189852.73474,
+              "timestamp": "2026-01-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11097012867.08675,
+              "timestamp": "2026-01-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12745245829.54382,
+              "timestamp": "2026-01-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11280753171.75542,
+              "timestamp": "2026-01-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7303000854.89026,
+              "timestamp": "2026-01-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3386380159.34659,
+              "timestamp": "2026-01-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5125261688.60276,
+              "timestamp": "2026-01-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8964203405.34948,
+              "timestamp": "2026-01-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14551140246.04597,
+              "timestamp": "2026-01-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15400223491.59384,
+              "timestamp": "2026-01-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8850323151.56962,
+              "timestamp": "2026-01-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9154626520.23727,
+              "timestamp": "2026-01-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2062833144.65712,
+              "timestamp": "2026-01-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7726795672.26904,
+              "timestamp": "2026-01-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10650014248.78441,
+              "timestamp": "2026-01-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9646454929.91103,
+              "timestamp": "2026-01-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8376644173.20338,
+              "timestamp": "2026-01-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12734616004.81352,
+              "timestamp": "2026-01-29T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 395,
+          "entryPrice": 2705.48,
+          "entryTimestamp": "2026-01-31T00:00:00Z",
+          "eventExtremeResidualZ": -0.39634972165512017,
+          "exitIndex": 413,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-02-18T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.015371936278861653,
+              "fundingR": 0.003122803225954515,
+              "grossR": 2.131831450060724,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 2.1195823170078167,
+              "price": 1955.07,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-02-18T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 1955.07,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-02-18T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-02-18T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-01-31T00:00:00+00:00",
+          "foldId": "fold_003",
+          "fundingR": 0.003122803225954515,
+          "grossPnl": 209.70197838444298,
+          "grossR": 2.131831450060724,
+          "initialQuantity": 0.2794498719159432,
+          "initialRiskAmount": 98.36705353909183,
+          "initialStop": 3057.4825,
+          "initialStopPrice": 3057.4825,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 9192146883.59198,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.023096426871968546,
+          "markNotional": 756.0460394711461,
+          "medianDailyQuoteTurnover30d": 9192146883.59198,
+          "mfeR": 2.742821428825079,
+          "netPnl": 208.1898863055007,
+          "netR": 2.1195823170078167,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-01-31T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.10787517705161594,
+          "quantity": 0.2794498719159432,
+          "realizedGrossR": 2.131831450060724,
+          "realizedNetR": 2.1164595137818623,
+          "reason": null,
+          "recoverySizeZ": 0.33387546963445014,
+          "remainingFraction": 1.0,
+          "riskAmount": 98.36705353909183,
+          "riskBasedNotional": 756.0460394711461,
+          "riskBudget": 98.36705353909183,
+          "riskDistance": 352.00250000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.015371936278861653,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 394,
+          "signalId": "replication_signal_9b2328e1e2e8d34e2f97abf60786b26d8d27d1735cf3a0d89d2ec9e94087678e",
+          "signalIndex": 394,
+          "signalTimestamp": "2026-01-30T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-01-30T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.13010722681372625,
+          "stopPrice": 3057.4825,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 867.440084123275,
+          "availableAt": "2026-06-02T00:00:00Z",
+          "baseNonFundingCostR": 0.017062679700977582,
+          "beta": 1.169622615002044,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 304276.231526075,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.017062679700977582,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 289213337.4228,
+              "timestamp": "2026-05-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 839725674.6106,
+              "timestamp": "2026-05-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 567374479.4225,
+              "timestamp": "2026-05-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 818426693.2152,
+              "timestamp": "2026-05-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 823234798.6882,
+              "timestamp": "2026-05-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 864975291.8654,
+              "timestamp": "2026-05-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 656313552.3267,
+              "timestamp": "2026-05-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1147916207.5512,
+              "timestamp": "2026-05-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1053658483.9033,
+              "timestamp": "2026-05-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 868349119.2222,
+              "timestamp": "2026-05-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 964522397.8153,
+              "timestamp": "2026-05-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 755969344.6474,
+              "timestamp": "2026-05-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 679528024.5816,
+              "timestamp": "2026-05-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 506391358.0551,
+              "timestamp": "2026-05-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 525440195.9257,
+              "timestamp": "2026-05-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 597435248.3957,
+              "timestamp": "2026-05-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 370803239.6075,
+              "timestamp": "2026-05-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 512642103.2462,
+              "timestamp": "2026-05-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 635160704.7322,
+              "timestamp": "2026-05-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 579900855.6872,
+              "timestamp": "2026-05-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 802518422.9098,
+              "timestamp": "2026-05-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 464003375.6283,
+              "timestamp": "2026-05-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 340893543.8304,
+              "timestamp": "2026-05-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 562832651.2272,
+              "timestamp": "2026-05-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 498742083.3634,
+              "timestamp": "2026-05-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 621533690.3641,
+              "timestamp": "2026-05-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 437856476.5542,
+              "timestamp": "2026-05-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 219174907.0547,
+              "timestamp": "2026-05-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 281373764.6551,
+              "timestamp": "2026-05-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 619669677.7086,
+              "timestamp": "2026-06-01T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 518,
+          "entryPrice": 74.18,
+          "entryTimestamp": "2026-06-03T00:00:00Z",
+          "eventExtremeResidualZ": -0.2899396956063941,
+          "exitIndex": 536,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-06-21T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.017062679700977582,
+              "fundingR": -0.021834134381403414,
+              "grossR": 0.20241518113858606,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 0.16351836705620507,
+              "price": 72.42,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-06-21T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 72.42,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-06-21T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-06-21T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-06-03T00:00:00+00:00",
+          "foldId": "fold_005",
+          "fundingR": -0.021834134381403414,
+          "grossPnl": 20.580945646494577,
+          "grossR": 0.20241518113858606,
+          "initialQuantity": 11.693719117326435,
+          "initialRiskAmount": 101.67688772515326,
+          "initialStop": 82.875,
+          "initialStopPrice": 82.875,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 608552463.05215,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.21506612995974594,
+          "markNotional": 867.440084123275,
+          "medianDailyQuoteTurnover30d": 608552463.05215,
+          "mfeR": 1.628522139160438,
+          "netPnl": 18.846065478248025,
+          "netR": 0.16351836705620507,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-06-03T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.09978448025399851,
+          "quantity": 11.693719117326435,
+          "realizedGrossR": 0.20241518113858606,
+          "realizedNetR": 0.18535250143760848,
+          "reason": null,
+          "recoverySizeZ": 1.403105232892466,
+          "remainingFraction": 1.0,
+          "riskAmount": 101.67688772515326,
+          "riskBasedNotional": 867.440084123275,
+          "riskBudget": 101.67688772515326,
+          "riskDistance": 8.694999999999997,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.017062679700977582,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 517,
+          "signalId": "replication_signal_d92794b3660958210036b94af72bd16636127d7bb7110360128964a5ff5a020f",
+          "signalIndex": 517,
+          "signalTimestamp": "2026-06-02T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-06-02T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.11721488271771356,
+          "stopPrice": 82.875,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 583.4065299422793,
+          "availableAt": "2026-01-31T00:00:00Z",
+          "baseNonFundingCostR": 0.011776598715442612,
+          "beta": 1.4482703333528657,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 594345.181089725,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.011776598715442612,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 574482397.4644,
+              "timestamp": "2026-01-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1298036234.0388,
+              "timestamp": "2026-01-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 623946443.5827,
+              "timestamp": "2026-01-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 842528681.4577,
+              "timestamp": "2026-01-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1448152581.8374,
+              "timestamp": "2026-01-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1787238901.5523,
+              "timestamp": "2026-01-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1180938183.9126,
+              "timestamp": "2026-01-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1492663072.2082,
+              "timestamp": "2026-01-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1732144832.3288,
+              "timestamp": "2026-01-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 412592051.3629,
+              "timestamp": "2026-01-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 938974975.3777,
+              "timestamp": "2026-01-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1824165540.1052,
+              "timestamp": "2026-01-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1824611565.6672,
+              "timestamp": "2026-01-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1447784691.9535,
+              "timestamp": "2026-01-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1196442540.4463,
+              "timestamp": "2026-01-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 943575807.8829,
+              "timestamp": "2026-01-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 415747530.254,
+              "timestamp": "2026-01-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 812849185.2546,
+              "timestamp": "2026-01-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1206140490.4185,
+              "timestamp": "2026-01-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1566699938.616,
+              "timestamp": "2026-01-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1388567779.2298,
+              "timestamp": "2026-01-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 707084002.7112,
+              "timestamp": "2026-01-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 858659161.9207,
+              "timestamp": "2026-01-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 214080713.6883,
+              "timestamp": "2026-01-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1223667479.2453,
+              "timestamp": "2026-01-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 951820013.8951,
+              "timestamp": "2026-01-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 810706576.8461,
+              "timestamp": "2026-01-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 673881941.4744,
+              "timestamp": "2026-01-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1360873906.7219,
+              "timestamp": "2026-01-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1593011361.8515,
+              "timestamp": "2026-01-30T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 396,
+          "entryPrice": 105.43,
+          "entryTimestamp": "2026-02-01T00:00:00Z",
+          "eventExtremeResidualZ": -0.5469622755005585,
+          "exitIndex": 414,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-02-19T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.011776598715442612,
+              "fundingR": -0.03485530985020012,
+              "grossR": 1.2828818765707908,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 1.2362499680051482,
+              "price": 82.46,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-02-19T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 82.46,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-02-19T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-02-19T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-02-01T00:00:00+00:00",
+          "foldId": "fold_003",
+          "fundingR": -0.03485530985020012,
+          "grossPnl": 127.10659198306139,
+          "grossR": 1.2828818765707908,
+          "initialQuantity": 5.533591292253432,
+          "initialRiskAmount": 99.0789520877977,
+          "initialStop": 123.33500000000001,
+          "initialStopPrice": 123.33500000000001,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 1188690362.17945,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.0670203853672152,
+          "markNotional": 583.4065299422793,
+          "medianDailyQuoteTurnover30d": 1188690362.17945,
+          "mfeR": 2.1345992739458253,
+          "netPnl": 125.93977892317683,
+          "netR": 1.2362499680051482,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-02-01T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.18229394644565955,
+          "quantity": 5.533591292253432,
+          "realizedGrossR": 1.2828818765707908,
+          "realizedNetR": 1.2711052778553482,
+          "reason": null,
+          "recoverySizeZ": 0.8852275900586432,
+          "remainingFraction": 1.0,
+          "riskAmount": 99.0789520877977,
+          "riskBasedNotional": 583.4065299422793,
+          "riskBudget": 99.0789520877977,
+          "riskDistance": 17.905000000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.011776598715442612,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 395,
+          "signalId": "replication_signal_dfe4fefd69e96823659a5a3dfa8e76d552520cf331abececb5c05296a9bf2383",
+          "signalIndex": 395,
+          "signalTimestamp": "2026-01-31T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-01-31T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.1698283221094565,
+          "stopPrice": 123.33500000000001,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 459.5346724579139,
+          "availableAt": "2025-11-20T00:00:00Z",
+          "baseNonFundingCostR": 0.009190693449158283,
+          "beta": 1.5118454237041197,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 6704156.564351666,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.009190693449158283,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 19540346153.18951,
+              "timestamp": "2025-10-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15362814275.16338,
+              "timestamp": "2025-10-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11177897180.63413,
+              "timestamp": "2025-10-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12402701884.8306,
+              "timestamp": "2025-10-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4290483202.05115,
+              "timestamp": "2025-10-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9772215638.24291,
+              "timestamp": "2025-10-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13784808818.94407,
+              "timestamp": "2025-10-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13711010212.47427,
+              "timestamp": "2025-10-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13389394632.53942,
+              "timestamp": "2025-10-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15517539069.81067,
+              "timestamp": "2025-10-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11976559878.54259,
+              "timestamp": "2025-10-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4100716243.62317,
+              "timestamp": "2025-11-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6410164189.04896,
+              "timestamp": "2025-11-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 18967303912.89729,
+              "timestamp": "2025-11-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 25547215209.45952,
+              "timestamp": "2025-11-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14376871214.01418,
+              "timestamp": "2025-11-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13427231624.86724,
+              "timestamp": "2025-11-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14218125100.33021,
+              "timestamp": "2025-11-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6873364505.93385,
+              "timestamp": "2025-11-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9258965941.426,
+              "timestamp": "2025-11-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10118160388.90066,
+              "timestamp": "2025-11-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11464227958.00576,
+              "timestamp": "2025-11-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13283106925.8124,
+              "timestamp": "2025-11-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 19047318469.52419,
+              "timestamp": "2025-11-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 18620124041.32194,
+              "timestamp": "2025-11-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5856020722.27941,
+              "timestamp": "2025-11-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11815922995.68348,
+              "timestamp": "2025-11-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15342621714.7418,
+              "timestamp": "2025-11-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14389302100.26414,
+              "timestamp": "2025-11-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 17020532640.42246,
+              "timestamp": "2025-11-19T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 324,
+          "entryPrice": 2832.79,
+          "entryTimestamp": "2025-11-21T00:00:00Z",
+          "eventExtremeResidualZ": -0.2192895667343715,
+          "exitIndex": 343,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2025-12-10T00:00:00+00:00",
+              "exitReason": "donchian_reversal",
+              "feesR": 0.009190693449158283,
+              "fundingR": -0.0004423589135258093,
+              "grossR": -0.7851763532174273,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": -0.7948094055801114,
+              "price": 3316.81,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2025-12-09T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 3316.81,
+          "exitReason": "donchian_reversal",
+          "exitTimestamp": "2025-12-10T00:00:00+00:00",
+          "exitTriggerTimestamp": "2025-12-09T00:00:00+00:00",
+          "expectedEntryTimestamp": "2025-11-21T00:00:00+00:00",
+          "foldId": "fold_002",
+          "fundingR": -0.0004423589135258093,
+          "grossPnl": -78.51763532174273,
+          "grossR": -0.7851763532174273,
+          "initialQuantity": 0.16221981596161875,
+          "initialRiskAmount": 100.0,
+          "initialStop": 3449.2375,
+          "initialStopPrice": 3449.2375,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 13408313128.703331,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.9173368372813585,
+          "markNotional": 459.5346724579139,
+          "medianDailyQuoteTurnover30d": 13408313128.703331,
+          "mfeR": 0.34325713057478524,
+          "netPnl": -79.43670466665856,
+          "netR": -0.7948094055801114,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2025-11-21T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.06947453915888688,
+          "quantity": 0.16221981596161875,
+          "realizedGrossR": -0.7851763532174273,
+          "realizedNetR": -0.7943670466665855,
+          "reason": null,
+          "recoverySizeZ": 0.15710989175882692,
+          "remainingFraction": 1.0,
+          "riskAmount": 100.0,
+          "riskBasedNotional": 459.5346724579139,
+          "riskBudget": 100.0,
+          "riskDistance": 616.4475,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.009190693449158283,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 323,
+          "signalId": "replication_signal_efac9a0becaa7822416ad319471c1534c11a298ba6c5a4b4df0394c64a3d79cf",
+          "signalIndex": 323,
+          "signalTimestamp": "2025-11-20T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2025-11-20T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.21761143607538866,
+          "stopPrice": 3449.2375,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        }
+      ]
+    },
+    {
+      "acceptedSignalIds": [
+        "replication_signal_5c19eb176b29f965455d1758353b39c533d41c01cc4ab141eec553dce7e72792",
+        "replication_signal_729d331e1ea2c257554491a874568373b02798f3e92e8440498ec4beed0daf86",
+        "replication_signal_9b2328e1e2e8d34e2f97abf60786b26d8d27d1735cf3a0d89d2ec9e94087678e",
+        "replication_signal_d92794b3660958210036b94af72bd16636127d7bb7110360128964a5ff5a020f",
+        "replication_signal_dfe4fefd69e96823659a5a3dfa8e76d552520cf331abececb5c05296a9bf2383",
+        "replication_signal_efac9a0becaa7822416ad319471c1534c11a298ba6c5a4b4df0394c64a3d79cf"
+      ],
+      "metrics": {
+        "averageNetR": 0.4407595296845776,
+        "lossCount": 2,
+        "maximumDrawdownPercent": 1.6522006957601114,
+        "maximumSingleMonthPositiveContribution": 0.7788038967060102,
+        "maximumSingleSymbolPositiveContribution": 0.6645638887059521,
+        "netPnl": 262.08931352648324,
+        "netReturnPercent": 2.6208931352648346,
+        "positiveContributionByMonth": {
+          "2025-12": 0.0,
+          "2026-01": 0.0,
+          "2026-02": 332.7902126592641,
+          "2026-06": 94.51917044323038
+        },
+        "positiveContributionBySymbol": {
+          "ETH-USDT-SWAP": 283.9743853151352,
+          "SOL-USDT-SWAP": 143.3349977873593
+        },
+        "profitFactor": 2.586304340623133,
+        "profitFactorStatus": "defined",
+        "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+        "totalNetR": 2.6445571781074655,
+        "tradeCount": 6,
+        "winCount": 4
+      },
+      "multiplier": 1.5,
+      "scenarioId": "cost_1_5x",
+      "trades": [
+        {
+          "actualNotional": 546.8467372233401,
+          "availableAt": "2025-12-18T00:00:00Z",
+          "baseNonFundingCostR": 0.011024558976132824,
+          "beta": 1.649914235836695,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 692759.10993395,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.011024558976132824,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 1804919435.352,
+              "timestamp": "2025-11-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1757967470.9841,
+              "timestamp": "2025-11-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2416046285.513,
+              "timestamp": "2025-11-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2907773080.9899,
+              "timestamp": "2025-11-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 895896231.4387,
+              "timestamp": "2025-11-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1094130626.1729,
+              "timestamp": "2025-11-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1672838436.0614,
+              "timestamp": "2025-11-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1220269144.2784,
+              "timestamp": "2025-11-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1418059755.8301,
+              "timestamp": "2025-11-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 860873871.3239,
+              "timestamp": "2025-11-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1306861186.7471,
+              "timestamp": "2025-11-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 611231666.1929,
+              "timestamp": "2025-11-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 925162102.5742,
+              "timestamp": "2025-11-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1784152367.6875,
+              "timestamp": "2025-12-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1781567941.1341,
+              "timestamp": "2025-12-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1548803132.1805,
+              "timestamp": "2025-12-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1119288068.3395,
+              "timestamp": "2025-12-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1347212941.7001,
+              "timestamp": "2025-12-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 499734881.4702,
+              "timestamp": "2025-12-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1111981394.2596,
+              "timestamp": "2025-12-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1352976683.9057,
+              "timestamp": "2025-12-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1670799569.2105,
+              "timestamp": "2025-12-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1649545895.2997,
+              "timestamp": "2025-12-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1518152397.8062,
+              "timestamp": "2025-12-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1506286160.6532,
+              "timestamp": "2025-12-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 503327813.169,
+              "timestamp": "2025-12-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 712735889.3398,
+              "timestamp": "2025-12-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1543576959.0037,
+              "timestamp": "2025-12-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1180315536.4131,
+              "timestamp": "2025-12-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1839824888.1185,
+              "timestamp": "2025-12-17T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 352,
+          "entryPrice": 119.52,
+          "entryTimestamp": "2025-12-19T00:00:00Z",
+          "eventExtremeResidualZ": -0.3637283083147025,
+          "exitIndex": 370,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-01-06T00:00:00+00:00",
+              "exitReason": "donchian_reversal",
+              "feesR": 0.011024558976132824,
+              "fundingR": 0.009709955306662318,
+              "grossR": -0.8435374149659866,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": -0.8448520186354571,
+              "price": 137.81,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-01-05T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 137.81,
+          "exitReason": "donchian_reversal",
+          "exitTimestamp": "2026-01-06T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-01-05T00:00:00+00:00",
+          "expectedEntryTimestamp": "2025-12-19T00:00:00+00:00",
+          "foldId": "fold_002",
+          "fundingR": 0.009709955306662318,
+          "grossPnl": -83.68329002522496,
+          "grossR": -0.8435374149659866,
+          "initialQuantity": 4.575357573823127,
+          "initialRiskAmount": 99.2051905944199,
+          "initialStop": 141.2025,
+          "initialStopPrice": 141.2025,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 1385518219.8679,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.9371613052000463,
+          "markNotional": 546.8467372233401,
+          "medianDailyQuoteTurnover30d": 1385518219.8679,
+          "mfeR": 0.09270148737461043,
+          "netPnl": -85.32383023689499,
+          "netR": -0.8448520186354571,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2025-12-19T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.09094788399271388,
+          "quantity": 4.575357573823127,
+          "realizedGrossR": -0.8435374149659866,
+          "realizedNetR": -0.8600742534301858,
+          "reason": null,
+          "recoverySizeZ": 0.15680848610630682,
+          "remainingFraction": 1.0,
+          "riskAmount": 99.2051905944199,
+          "riskBasedNotional": 546.8467372233401,
+          "riskBudget": 99.20519059441992,
+          "riskDistance": 21.682500000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.016536838464199236,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 351,
+          "signalId": "replication_signal_5c19eb176b29f965455d1758353b39c533d41c01cc4ab141eec553dce7e72792",
+          "signalIndex": 351,
+          "signalTimestamp": "2025-12-18T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2025-12-18T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.1814131526104417,
+          "stopPrice": 141.2025,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 967.2261112315125,
+          "availableAt": "2026-06-02T00:00:00Z",
+          "baseNonFundingCostR": 0.019025486182190375,
+          "beta": 1.1842800865948115,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 3431952.3011484626,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.019025486182190375,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 4200778167.65873,
+              "timestamp": "2026-05-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11268926230.29734,
+              "timestamp": "2026-05-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7088964998.4927,
+              "timestamp": "2026-05-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9815647108.8118,
+              "timestamp": "2026-05-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7677837507.08532,
+              "timestamp": "2026-05-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6183051557.11377,
+              "timestamp": "2026-05-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3281229180.08931,
+              "timestamp": "2026-05-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6327776638.44376,
+              "timestamp": "2026-05-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6101558438.95003,
+              "timestamp": "2026-05-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6876292302.93454,
+              "timestamp": "2026-05-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7671937058.20538,
+              "timestamp": "2026-05-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8157295570.41725,
+              "timestamp": "2026-05-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8034859073.64382,
+              "timestamp": "2026-05-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4617792404.99473,
+              "timestamp": "2026-05-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5190850084.81001,
+              "timestamp": "2026-05-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9577789510.62513,
+              "timestamp": "2026-05-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6105735389.19046,
+              "timestamp": "2026-05-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5679591381.37845,
+              "timestamp": "2026-05-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6851516901.65931,
+              "timestamp": "2026-05-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6209095330.47586,
+              "timestamp": "2026-05-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8028149147.91993,
+              "timestamp": "2026-05-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4636792242.9781,
+              "timestamp": "2026-05-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4555261173.07389,
+              "timestamp": "2026-05-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8121866758.23788,
+              "timestamp": "2026-05-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7182596926.46619,
+              "timestamp": "2026-05-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8600576233.84209,
+              "timestamp": "2026-05-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7666971320.32842,
+              "timestamp": "2026-05-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2411152945.06061,
+              "timestamp": "2026-05-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3591646152.5053,
+              "timestamp": "2026-05-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7714352898.43678,
+              "timestamp": "2026-06-01T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 518,
+          "entryPrice": 1858.79,
+          "entryTimestamp": "2026-06-03T00:00:00Z",
+          "eventExtremeResidualZ": -0.20754588280434005,
+          "exitIndex": 536,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-06-21T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.019025486182190375,
+              "fundingR": -0.008603967974154041,
+              "grossR": 0.7813203684749235,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 0.753690914318579,
+              "price": 1706.12,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-06-21T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 1706.12,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-06-21T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-06-21T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-06-03T00:00:00+00:00",
+          "foldId": "fold_005",
+          "fundingR": -0.008603967974154041,
+          "grossPnl": 79.44222338280018,
+          "grossR": 0.7813203684749235,
+          "initialQuantity": 0.5203525472116337,
+          "initialRiskAmount": 101.67688772515326,
+          "initialStop": 2054.19,
+          "initialStopPrice": 2054.19,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 6863904602.296925,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.17400204708290684,
+          "markNotional": 967.2261112315125,
+          "medianDailyQuoteTurnover30d": 6863904602.296925,
+          "mfeR": 1.8177584442169907,
+          "netPnl": 76.54054504910563,
+          "netR": 0.753690914318579,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-06-03T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.2124420023707625,
+          "quantity": 0.5203525472116337,
+          "realizedGrossR": 0.7813203684749235,
+          "realizedNetR": 0.752782139201638,
+          "reason": null,
+          "recoverySizeZ": 1.2305527123848523,
+          "remainingFraction": 1.0,
+          "riskAmount": 101.67688772515326,
+          "riskBasedNotional": 967.2261112315125,
+          "riskBudget": 101.67688772515326,
+          "riskDistance": 195.40000000000003,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.028538229273285563,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 517,
+          "signalId": "replication_signal_729d331e1ea2c257554491a874568373b02798f3e92e8440498ec4beed0daf86",
+          "signalIndex": 517,
+          "signalTimestamp": "2026-06-02T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-06-02T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.10512214935522576,
+          "stopPrice": 2054.19,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 756.0460394711461,
+          "availableAt": "2026-01-30T00:00:00Z",
+          "baseNonFundingCostR": 0.015371936278861653,
+          "beta": 1.4035340128225473,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 4596073.44179599,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.015371936278861653,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 6010424112.3528,
+              "timestamp": "2025-12-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3117956032.09005,
+              "timestamp": "2026-01-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11083291991.96359,
+              "timestamp": "2026-01-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4140390369.8656,
+              "timestamp": "2026-01-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5258350314.24096,
+              "timestamp": "2026-01-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13053701480.05706,
+              "timestamp": "2026-01-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12084741970.46613,
+              "timestamp": "2026-01-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11049161516.79316,
+              "timestamp": "2026-01-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10250913142.55021,
+              "timestamp": "2026-01-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9229667246.94669,
+              "timestamp": "2026-01-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1841031141.21467,
+              "timestamp": "2026-01-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3976184484.36049,
+              "timestamp": "2026-01-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10183189852.73474,
+              "timestamp": "2026-01-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11097012867.08675,
+              "timestamp": "2026-01-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12745245829.54382,
+              "timestamp": "2026-01-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11280753171.75542,
+              "timestamp": "2026-01-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7303000854.89026,
+              "timestamp": "2026-01-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3386380159.34659,
+              "timestamp": "2026-01-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5125261688.60276,
+              "timestamp": "2026-01-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8964203405.34948,
+              "timestamp": "2026-01-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14551140246.04597,
+              "timestamp": "2026-01-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15400223491.59384,
+              "timestamp": "2026-01-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8850323151.56962,
+              "timestamp": "2026-01-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9154626520.23727,
+              "timestamp": "2026-01-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2062833144.65712,
+              "timestamp": "2026-01-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7726795672.26904,
+              "timestamp": "2026-01-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10650014248.78441,
+              "timestamp": "2026-01-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9646454929.91103,
+              "timestamp": "2026-01-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8376644173.20338,
+              "timestamp": "2026-01-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12734616004.81352,
+              "timestamp": "2026-01-29T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 395,
+          "entryPrice": 2705.48,
+          "entryTimestamp": "2026-01-31T00:00:00Z",
+          "eventExtremeResidualZ": -0.39634972165512017,
+          "exitIndex": 413,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-02-18T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.015371936278861653,
+              "fundingR": 0.003122803225954515,
+              "grossR": 2.131831450060724,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 2.1195823170078167,
+              "price": 1955.07,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-02-18T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 1955.07,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-02-18T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-02-18T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-01-31T00:00:00+00:00",
+          "foldId": "fold_003",
+          "fundingR": 0.003122803225954515,
+          "grossPnl": 209.70197838444298,
+          "grossR": 2.131831450060724,
+          "initialQuantity": 0.2794498719159432,
+          "initialRiskAmount": 98.36705353909183,
+          "initialStop": 3057.4825,
+          "initialStopPrice": 3057.4825,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 9192146883.59198,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.023096426871968546,
+          "markNotional": 756.0460394711461,
+          "medianDailyQuoteTurnover30d": 9192146883.59198,
+          "mfeR": 2.742821428825079,
+          "netPnl": 207.43384026602956,
+          "netR": 2.1195823170078167,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-01-31T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.10787517705161594,
+          "quantity": 0.2794498719159432,
+          "realizedGrossR": 2.131831450060724,
+          "realizedNetR": 2.1087735456424315,
+          "reason": null,
+          "recoverySizeZ": 0.33387546963445014,
+          "remainingFraction": 1.0,
+          "riskAmount": 98.36705353909183,
+          "riskBasedNotional": 756.0460394711461,
+          "riskBudget": 98.36705353909183,
+          "riskDistance": 352.00250000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.02305790441829248,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 394,
+          "signalId": "replication_signal_9b2328e1e2e8d34e2f97abf60786b26d8d27d1735cf3a0d89d2ec9e94087678e",
+          "signalIndex": 394,
+          "signalTimestamp": "2026-01-30T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-01-30T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.13010722681372625,
+          "stopPrice": 3057.4825,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 867.440084123275,
+          "availableAt": "2026-06-02T00:00:00Z",
+          "baseNonFundingCostR": 0.017062679700977582,
+          "beta": 1.169622615002044,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 304276.231526075,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.017062679700977582,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 289213337.4228,
+              "timestamp": "2026-05-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 839725674.6106,
+              "timestamp": "2026-05-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 567374479.4225,
+              "timestamp": "2026-05-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 818426693.2152,
+              "timestamp": "2026-05-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 823234798.6882,
+              "timestamp": "2026-05-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 864975291.8654,
+              "timestamp": "2026-05-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 656313552.3267,
+              "timestamp": "2026-05-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1147916207.5512,
+              "timestamp": "2026-05-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1053658483.9033,
+              "timestamp": "2026-05-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 868349119.2222,
+              "timestamp": "2026-05-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 964522397.8153,
+              "timestamp": "2026-05-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 755969344.6474,
+              "timestamp": "2026-05-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 679528024.5816,
+              "timestamp": "2026-05-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 506391358.0551,
+              "timestamp": "2026-05-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 525440195.9257,
+              "timestamp": "2026-05-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 597435248.3957,
+              "timestamp": "2026-05-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 370803239.6075,
+              "timestamp": "2026-05-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 512642103.2462,
+              "timestamp": "2026-05-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 635160704.7322,
+              "timestamp": "2026-05-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 579900855.6872,
+              "timestamp": "2026-05-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 802518422.9098,
+              "timestamp": "2026-05-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 464003375.6283,
+              "timestamp": "2026-05-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 340893543.8304,
+              "timestamp": "2026-05-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 562832651.2272,
+              "timestamp": "2026-05-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 498742083.3634,
+              "timestamp": "2026-05-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 621533690.3641,
+              "timestamp": "2026-05-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 437856476.5542,
+              "timestamp": "2026-05-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 219174907.0547,
+              "timestamp": "2026-05-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 281373764.6551,
+              "timestamp": "2026-05-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 619669677.7086,
+              "timestamp": "2026-06-01T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 518,
+          "entryPrice": 74.18,
+          "entryTimestamp": "2026-06-03T00:00:00Z",
+          "eventExtremeResidualZ": -0.2899396956063941,
+          "exitIndex": 536,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-06-21T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.017062679700977582,
+              "fundingR": -0.021834134381403414,
+              "grossR": 0.20241518113858606,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 0.16351836705620507,
+              "price": 72.42,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-06-21T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 72.42,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-06-21T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-06-21T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-06-03T00:00:00+00:00",
+          "foldId": "fold_005",
+          "fundingR": -0.021834134381403414,
+          "grossPnl": 20.580945646494577,
+          "grossR": 0.20241518113858606,
+          "initialQuantity": 11.693719117326435,
+          "initialRiskAmount": 101.67688772515326,
+          "initialStop": 82.875,
+          "initialStopPrice": 82.875,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 608552463.05215,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.21506612995974594,
+          "markNotional": 867.440084123275,
+          "medianDailyQuoteTurnover30d": 608552463.05215,
+          "mfeR": 1.628522139160438,
+          "netPnl": 17.97862539412475,
+          "netR": 0.16351836705620507,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-06-03T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.09978448025399851,
+          "quantity": 11.693719117326435,
+          "realizedGrossR": 0.20241518113858606,
+          "realizedNetR": 0.1768211615871197,
+          "reason": null,
+          "recoverySizeZ": 1.403105232892466,
+          "remainingFraction": 1.0,
+          "riskAmount": 101.67688772515326,
+          "riskBasedNotional": 867.440084123275,
+          "riskBudget": 101.67688772515326,
+          "riskDistance": 8.694999999999997,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.025594019551466375,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 517,
+          "signalId": "replication_signal_d92794b3660958210036b94af72bd16636127d7bb7110360128964a5ff5a020f",
+          "signalIndex": 517,
+          "signalTimestamp": "2026-06-02T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-06-02T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.11721488271771356,
+          "stopPrice": 82.875,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 583.4065299422793,
+          "availableAt": "2026-01-31T00:00:00Z",
+          "baseNonFundingCostR": 0.011776598715442612,
+          "beta": 1.4482703333528657,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 594345.181089725,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.011776598715442612,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 574482397.4644,
+              "timestamp": "2026-01-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1298036234.0388,
+              "timestamp": "2026-01-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 623946443.5827,
+              "timestamp": "2026-01-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 842528681.4577,
+              "timestamp": "2026-01-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1448152581.8374,
+              "timestamp": "2026-01-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1787238901.5523,
+              "timestamp": "2026-01-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1180938183.9126,
+              "timestamp": "2026-01-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1492663072.2082,
+              "timestamp": "2026-01-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1732144832.3288,
+              "timestamp": "2026-01-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 412592051.3629,
+              "timestamp": "2026-01-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 938974975.3777,
+              "timestamp": "2026-01-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1824165540.1052,
+              "timestamp": "2026-01-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1824611565.6672,
+              "timestamp": "2026-01-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1447784691.9535,
+              "timestamp": "2026-01-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1196442540.4463,
+              "timestamp": "2026-01-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 943575807.8829,
+              "timestamp": "2026-01-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 415747530.254,
+              "timestamp": "2026-01-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 812849185.2546,
+              "timestamp": "2026-01-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1206140490.4185,
+              "timestamp": "2026-01-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1566699938.616,
+              "timestamp": "2026-01-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1388567779.2298,
+              "timestamp": "2026-01-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 707084002.7112,
+              "timestamp": "2026-01-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 858659161.9207,
+              "timestamp": "2026-01-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 214080713.6883,
+              "timestamp": "2026-01-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1223667479.2453,
+              "timestamp": "2026-01-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 951820013.8951,
+              "timestamp": "2026-01-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 810706576.8461,
+              "timestamp": "2026-01-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 673881941.4744,
+              "timestamp": "2026-01-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1360873906.7219,
+              "timestamp": "2026-01-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1593011361.8515,
+              "timestamp": "2026-01-30T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 396,
+          "entryPrice": 105.43,
+          "entryTimestamp": "2026-02-01T00:00:00Z",
+          "eventExtremeResidualZ": -0.5469622755005585,
+          "exitIndex": 414,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-02-19T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.011776598715442612,
+              "fundingR": -0.03485530985020012,
+              "grossR": 1.2828818765707908,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 1.2362499680051482,
+              "price": 82.46,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-02-19T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 82.46,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-02-19T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-02-19T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-02-01T00:00:00+00:00",
+          "foldId": "fold_003",
+          "fundingR": -0.03485530985020012,
+          "grossPnl": 127.10659198306139,
+          "grossR": 1.2828818765707908,
+          "initialQuantity": 5.533591292253432,
+          "initialRiskAmount": 99.0789520877977,
+          "initialStop": 123.33500000000001,
+          "initialStopPrice": 123.33500000000001,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 1188690362.17945,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.0670203853672152,
+          "markNotional": 583.4065299422793,
+          "medianDailyQuoteTurnover30d": 1188690362.17945,
+          "mfeR": 2.1345992739458253,
+          "netPnl": 125.35637239323454,
+          "netR": 1.2362499680051482,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-02-01T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.18229394644565955,
+          "quantity": 5.533591292253432,
+          "realizedGrossR": 1.2828818765707908,
+          "realizedNetR": 1.2652169784976268,
+          "reason": null,
+          "recoverySizeZ": 0.8852275900586432,
+          "remainingFraction": 1.0,
+          "riskAmount": 99.0789520877977,
+          "riskBasedNotional": 583.4065299422793,
+          "riskBudget": 99.0789520877977,
+          "riskDistance": 17.905000000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.017664898073163918,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 395,
+          "signalId": "replication_signal_dfe4fefd69e96823659a5a3dfa8e76d552520cf331abececb5c05296a9bf2383",
+          "signalIndex": 395,
+          "signalTimestamp": "2026-01-31T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-01-31T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.1698283221094565,
+          "stopPrice": 123.33500000000001,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 459.5346724579139,
+          "availableAt": "2025-11-20T00:00:00Z",
+          "baseNonFundingCostR": 0.009190693449158283,
+          "beta": 1.5118454237041197,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 6704156.564351666,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.009190693449158283,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 19540346153.18951,
+              "timestamp": "2025-10-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15362814275.16338,
+              "timestamp": "2025-10-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11177897180.63413,
+              "timestamp": "2025-10-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12402701884.8306,
+              "timestamp": "2025-10-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4290483202.05115,
+              "timestamp": "2025-10-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9772215638.24291,
+              "timestamp": "2025-10-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13784808818.94407,
+              "timestamp": "2025-10-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13711010212.47427,
+              "timestamp": "2025-10-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13389394632.53942,
+              "timestamp": "2025-10-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15517539069.81067,
+              "timestamp": "2025-10-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11976559878.54259,
+              "timestamp": "2025-10-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4100716243.62317,
+              "timestamp": "2025-11-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6410164189.04896,
+              "timestamp": "2025-11-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 18967303912.89729,
+              "timestamp": "2025-11-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 25547215209.45952,
+              "timestamp": "2025-11-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14376871214.01418,
+              "timestamp": "2025-11-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13427231624.86724,
+              "timestamp": "2025-11-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14218125100.33021,
+              "timestamp": "2025-11-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6873364505.93385,
+              "timestamp": "2025-11-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9258965941.426,
+              "timestamp": "2025-11-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10118160388.90066,
+              "timestamp": "2025-11-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11464227958.00576,
+              "timestamp": "2025-11-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13283106925.8124,
+              "timestamp": "2025-11-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 19047318469.52419,
+              "timestamp": "2025-11-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 18620124041.32194,
+              "timestamp": "2025-11-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5856020722.27941,
+              "timestamp": "2025-11-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11815922995.68348,
+              "timestamp": "2025-11-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15342621714.7418,
+              "timestamp": "2025-11-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14389302100.26414,
+              "timestamp": "2025-11-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 17020532640.42246,
+              "timestamp": "2025-11-19T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 324,
+          "entryPrice": 2832.79,
+          "entryTimestamp": "2025-11-21T00:00:00Z",
+          "eventExtremeResidualZ": -0.2192895667343715,
+          "exitIndex": 343,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2025-12-10T00:00:00+00:00",
+              "exitReason": "donchian_reversal",
+              "feesR": 0.009190693449158283,
+              "fundingR": -0.0004423589135258093,
+              "grossR": -0.7851763532174273,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": -0.7948094055801114,
+              "price": 3316.81,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2025-12-09T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 3316.81,
+          "exitReason": "donchian_reversal",
+          "exitTimestamp": "2025-12-10T00:00:00+00:00",
+          "exitTriggerTimestamp": "2025-12-09T00:00:00+00:00",
+          "expectedEntryTimestamp": "2025-11-21T00:00:00+00:00",
+          "foldId": "fold_002",
+          "fundingR": -0.0004423589135258093,
+          "grossPnl": -78.51763532174273,
+          "grossR": -0.7851763532174273,
+          "initialQuantity": 0.16221981596161875,
+          "initialRiskAmount": 100.0,
+          "initialStop": 3449.2375,
+          "initialStopPrice": 3449.2375,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 13408313128.703331,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.9173368372813585,
+          "markNotional": 459.5346724579139,
+          "medianDailyQuoteTurnover30d": 13408313128.703331,
+          "mfeR": 0.34325713057478524,
+          "netPnl": -79.89623933911648,
+          "netR": -0.7948094055801114,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2025-11-21T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.06947453915888688,
+          "quantity": 0.16221981596161875,
+          "realizedGrossR": -0.7851763532174273,
+          "realizedNetR": -0.7989623933911647,
+          "reason": null,
+          "recoverySizeZ": 0.15710989175882692,
+          "remainingFraction": 1.0,
+          "riskAmount": 100.0,
+          "riskBasedNotional": 459.5346724579139,
+          "riskBudget": 100.0,
+          "riskDistance": 616.4475,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.013786040173737425,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 323,
+          "signalId": "replication_signal_efac9a0becaa7822416ad319471c1534c11a298ba6c5a4b4df0394c64a3d79cf",
+          "signalIndex": 323,
+          "signalTimestamp": "2025-11-20T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2025-11-20T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.21761143607538866,
+          "stopPrice": 3449.2375,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        }
+      ]
+    },
+    {
+      "acceptedSignalIds": [
+        "replication_signal_5c19eb176b29f965455d1758353b39c533d41c01cc4ab141eec553dce7e72792",
+        "replication_signal_729d331e1ea2c257554491a874568373b02798f3e92e8440498ec4beed0daf86",
+        "replication_signal_9b2328e1e2e8d34e2f97abf60786b26d8d27d1735cf3a0d89d2ec9e94087678e",
+        "replication_signal_d92794b3660958210036b94af72bd16636127d7bb7110360128964a5ff5a020f",
+        "replication_signal_dfe4fefd69e96823659a5a3dfa8e76d552520cf331abececb5c05296a9bf2383",
+        "replication_signal_efac9a0becaa7822416ad319471c1534c11a298ba6c5a4b4df0394c64a3d79cf"
+      ],
+      "metrics": {
+        "averageNetR": 0.43380520024268066,
+        "lossCount": 2,
+        "maximumDrawdownPercent": 1.6622645098569229,
+        "maximumSingleMonthPositiveContribution": 0.7814741851456292,
+        "maximumSingleSymbolPositiveContribution": 0.665474288267821,
+        "netPnl": 257.90881335203267,
+        "netReturnPercent": 2.579088133520324,
+        "positiveContributionByMonth": {
+          "2025-12": 0.0,
+          "2026-01": 0.0,
+          "2026-02": 331.4507600898507,
+          "2026-06": 92.6845042478756
+        },
+        "positiveContributionBySymbol": {
+          "ETH-USDT-SWAP": 282.2511131644325,
+          "SOL-USDT-SWAP": 141.88415117329376
+        },
+        "profitFactor": 2.5515509825462863,
+        "profitFactorStatus": "defined",
+        "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+        "totalNetR": 2.602831201456084,
+        "tradeCount": 6,
+        "winCount": 4
+      },
+      "multiplier": 2.0,
+      "scenarioId": "cost_2_0x",
+      "trades": [
+        {
+          "actualNotional": 546.8467372233401,
+          "availableAt": "2025-12-18T00:00:00Z",
+          "baseNonFundingCostR": 0.011024558976132824,
+          "beta": 1.649914235836695,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 692759.10993395,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.011024558976132824,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 1804919435.352,
+              "timestamp": "2025-11-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1757967470.9841,
+              "timestamp": "2025-11-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2416046285.513,
+              "timestamp": "2025-11-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2907773080.9899,
+              "timestamp": "2025-11-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 895896231.4387,
+              "timestamp": "2025-11-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1094130626.1729,
+              "timestamp": "2025-11-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1672838436.0614,
+              "timestamp": "2025-11-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1220269144.2784,
+              "timestamp": "2025-11-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1418059755.8301,
+              "timestamp": "2025-11-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 860873871.3239,
+              "timestamp": "2025-11-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1306861186.7471,
+              "timestamp": "2025-11-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 611231666.1929,
+              "timestamp": "2025-11-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 925162102.5742,
+              "timestamp": "2025-11-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1784152367.6875,
+              "timestamp": "2025-12-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1781567941.1341,
+              "timestamp": "2025-12-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1548803132.1805,
+              "timestamp": "2025-12-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1119288068.3395,
+              "timestamp": "2025-12-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1347212941.7001,
+              "timestamp": "2025-12-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 499734881.4702,
+              "timestamp": "2025-12-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1111981394.2596,
+              "timestamp": "2025-12-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1352976683.9057,
+              "timestamp": "2025-12-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1670799569.2105,
+              "timestamp": "2025-12-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1649545895.2997,
+              "timestamp": "2025-12-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1518152397.8062,
+              "timestamp": "2025-12-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1506286160.6532,
+              "timestamp": "2025-12-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 503327813.169,
+              "timestamp": "2025-12-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 712735889.3398,
+              "timestamp": "2025-12-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1543576959.0037,
+              "timestamp": "2025-12-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1180315536.4131,
+              "timestamp": "2025-12-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1839824888.1185,
+              "timestamp": "2025-12-17T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 352,
+          "entryPrice": 119.52,
+          "entryTimestamp": "2025-12-19T00:00:00Z",
+          "eventExtremeResidualZ": -0.3637283083147025,
+          "exitIndex": 370,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-01-06T00:00:00+00:00",
+              "exitReason": "donchian_reversal",
+              "feesR": 0.011024558976132824,
+              "fundingR": 0.009709955306662318,
+              "grossR": -0.8435374149659866,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": -0.8448520186354571,
+              "price": 137.81,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-01-05T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 137.81,
+          "exitReason": "donchian_reversal",
+          "exitTimestamp": "2026-01-06T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-01-05T00:00:00+00:00",
+          "expectedEntryTimestamp": "2025-12-19T00:00:00+00:00",
+          "foldId": "fold_002",
+          "fundingR": 0.009709955306662318,
+          "grossPnl": -83.68329002522496,
+          "grossR": -0.8435374149659866,
+          "initialQuantity": 4.575357573823127,
+          "initialRiskAmount": 99.2051905944199,
+          "initialStop": 141.2025,
+          "initialStopPrice": 141.2025,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 1385518219.8679,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.9371613052000463,
+          "markNotional": 546.8467372233401,
+          "medianDailyQuoteTurnover30d": 1385518219.8679,
+          "mfeR": 0.09270148737461043,
+          "netPnl": -85.87067697411833,
+          "netR": -0.8448520186354571,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2025-12-19T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.09094788399271388,
+          "quantity": 4.575357573823127,
+          "realizedGrossR": -0.8435374149659866,
+          "realizedNetR": -0.8655865329182522,
+          "reason": null,
+          "recoverySizeZ": 0.15680848610630682,
+          "remainingFraction": 1.0,
+          "riskAmount": 99.2051905944199,
+          "riskBasedNotional": 546.8467372233401,
+          "riskBudget": 99.20519059441992,
+          "riskDistance": 21.682500000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.02204911795226565,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 351,
+          "signalId": "replication_signal_5c19eb176b29f965455d1758353b39c533d41c01cc4ab141eec553dce7e72792",
+          "signalIndex": 351,
+          "signalTimestamp": "2025-12-18T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2025-12-18T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.1814131526104417,
+          "stopPrice": 141.2025,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 967.2261112315125,
+          "availableAt": "2026-06-02T00:00:00Z",
+          "baseNonFundingCostR": 0.019025486182190375,
+          "beta": 1.1842800865948115,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 3431952.3011484626,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.019025486182190375,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 4200778167.65873,
+              "timestamp": "2026-05-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11268926230.29734,
+              "timestamp": "2026-05-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7088964998.4927,
+              "timestamp": "2026-05-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9815647108.8118,
+              "timestamp": "2026-05-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7677837507.08532,
+              "timestamp": "2026-05-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6183051557.11377,
+              "timestamp": "2026-05-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3281229180.08931,
+              "timestamp": "2026-05-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6327776638.44376,
+              "timestamp": "2026-05-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6101558438.95003,
+              "timestamp": "2026-05-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6876292302.93454,
+              "timestamp": "2026-05-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7671937058.20538,
+              "timestamp": "2026-05-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8157295570.41725,
+              "timestamp": "2026-05-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8034859073.64382,
+              "timestamp": "2026-05-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4617792404.99473,
+              "timestamp": "2026-05-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5190850084.81001,
+              "timestamp": "2026-05-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9577789510.62513,
+              "timestamp": "2026-05-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6105735389.19046,
+              "timestamp": "2026-05-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5679591381.37845,
+              "timestamp": "2026-05-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6851516901.65931,
+              "timestamp": "2026-05-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6209095330.47586,
+              "timestamp": "2026-05-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8028149147.91993,
+              "timestamp": "2026-05-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4636792242.9781,
+              "timestamp": "2026-05-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4555261173.07389,
+              "timestamp": "2026-05-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8121866758.23788,
+              "timestamp": "2026-05-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7182596926.46619,
+              "timestamp": "2026-05-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8600576233.84209,
+              "timestamp": "2026-05-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7666971320.32842,
+              "timestamp": "2026-05-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2411152945.06061,
+              "timestamp": "2026-05-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3591646152.5053,
+              "timestamp": "2026-05-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7714352898.43678,
+              "timestamp": "2026-06-01T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 518,
+          "entryPrice": 1858.79,
+          "entryTimestamp": "2026-06-03T00:00:00Z",
+          "eventExtremeResidualZ": -0.20754588280434005,
+          "exitIndex": 536,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-06-21T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.019025486182190375,
+              "fundingR": -0.008603967974154041,
+              "grossR": 0.7813203684749235,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 0.753690914318579,
+              "price": 1706.12,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-06-21T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 1706.12,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-06-21T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-06-21T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-06-03T00:00:00+00:00",
+          "foldId": "fold_005",
+          "fundingR": -0.008603967974154041,
+          "grossPnl": 79.44222338280018,
+          "grossR": 0.7813203684749235,
+          "initialQuantity": 0.5203525472116337,
+          "initialRiskAmount": 101.67688772515326,
+          "initialStop": 2054.19,
+          "initialStopPrice": 2054.19,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 6863904602.296925,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.17400204708290684,
+          "markNotional": 967.2261112315125,
+          "medianDailyQuoteTurnover30d": 6863904602.296925,
+          "mfeR": 1.8177584442169907,
+          "netPnl": 75.57331893787412,
+          "netR": 0.753690914318579,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-06-03T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.2124420023707625,
+          "quantity": 0.5203525472116337,
+          "realizedGrossR": 0.7813203684749235,
+          "realizedNetR": 0.7432693961105428,
+          "reason": null,
+          "recoverySizeZ": 1.2305527123848523,
+          "remainingFraction": 1.0,
+          "riskAmount": 101.67688772515326,
+          "riskBasedNotional": 967.2261112315125,
+          "riskBudget": 101.67688772515326,
+          "riskDistance": 195.40000000000003,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.03805097236438075,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 517,
+          "signalId": "replication_signal_729d331e1ea2c257554491a874568373b02798f3e92e8440498ec4beed0daf86",
+          "signalIndex": 517,
+          "signalTimestamp": "2026-06-02T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-06-02T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.10512214935522576,
+          "stopPrice": 2054.19,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 756.0460394711461,
+          "availableAt": "2026-01-30T00:00:00Z",
+          "baseNonFundingCostR": 0.015371936278861653,
+          "beta": 1.4035340128225473,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 4596073.44179599,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.015371936278861653,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 6010424112.3528,
+              "timestamp": "2025-12-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3117956032.09005,
+              "timestamp": "2026-01-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11083291991.96359,
+              "timestamp": "2026-01-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4140390369.8656,
+              "timestamp": "2026-01-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5258350314.24096,
+              "timestamp": "2026-01-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13053701480.05706,
+              "timestamp": "2026-01-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12084741970.46613,
+              "timestamp": "2026-01-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11049161516.79316,
+              "timestamp": "2026-01-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10250913142.55021,
+              "timestamp": "2026-01-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9229667246.94669,
+              "timestamp": "2026-01-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1841031141.21467,
+              "timestamp": "2026-01-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3976184484.36049,
+              "timestamp": "2026-01-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10183189852.73474,
+              "timestamp": "2026-01-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11097012867.08675,
+              "timestamp": "2026-01-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12745245829.54382,
+              "timestamp": "2026-01-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11280753171.75542,
+              "timestamp": "2026-01-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7303000854.89026,
+              "timestamp": "2026-01-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 3386380159.34659,
+              "timestamp": "2026-01-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5125261688.60276,
+              "timestamp": "2026-01-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8964203405.34948,
+              "timestamp": "2026-01-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14551140246.04597,
+              "timestamp": "2026-01-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15400223491.59384,
+              "timestamp": "2026-01-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8850323151.56962,
+              "timestamp": "2026-01-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9154626520.23727,
+              "timestamp": "2026-01-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 2062833144.65712,
+              "timestamp": "2026-01-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 7726795672.26904,
+              "timestamp": "2026-01-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10650014248.78441,
+              "timestamp": "2026-01-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9646454929.91103,
+              "timestamp": "2026-01-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 8376644173.20338,
+              "timestamp": "2026-01-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12734616004.81352,
+              "timestamp": "2026-01-29T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 395,
+          "entryPrice": 2705.48,
+          "entryTimestamp": "2026-01-31T00:00:00Z",
+          "eventExtremeResidualZ": -0.39634972165512017,
+          "exitIndex": 413,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-02-18T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.015371936278861653,
+              "fundingR": 0.003122803225954515,
+              "grossR": 2.131831450060724,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 2.1195823170078167,
+              "price": 1955.07,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-02-18T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 1955.07,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-02-18T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-02-18T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-01-31T00:00:00+00:00",
+          "foldId": "fold_003",
+          "fundingR": 0.003122803225954515,
+          "grossPnl": 209.70197838444298,
+          "grossR": 2.131831450060724,
+          "initialQuantity": 0.2794498719159432,
+          "initialRiskAmount": 98.36705353909183,
+          "initialStop": 3057.4825,
+          "initialStopPrice": 3057.4825,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 9192146883.59198,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.023096426871968546,
+          "markNotional": 756.0460394711461,
+          "medianDailyQuoteTurnover30d": 9192146883.59198,
+          "mfeR": 2.742821428825079,
+          "netPnl": 206.6777942265584,
+          "netR": 2.1195823170078167,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-01-31T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.10787517705161594,
+          "quantity": 0.2794498719159432,
+          "realizedGrossR": 2.131831450060724,
+          "realizedNetR": 2.1010875775030007,
+          "reason": null,
+          "recoverySizeZ": 0.33387546963445014,
+          "remainingFraction": 1.0,
+          "riskAmount": 98.36705353909183,
+          "riskBasedNotional": 756.0460394711461,
+          "riskBudget": 98.36705353909183,
+          "riskDistance": 352.00250000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.030743872557723307,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 394,
+          "signalId": "replication_signal_9b2328e1e2e8d34e2f97abf60786b26d8d27d1735cf3a0d89d2ec9e94087678e",
+          "signalIndex": 394,
+          "signalTimestamp": "2026-01-30T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-01-30T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.13010722681372625,
+          "stopPrice": 3057.4825,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 867.440084123275,
+          "availableAt": "2026-06-02T00:00:00Z",
+          "baseNonFundingCostR": 0.017062679700977582,
+          "beta": 1.169622615002044,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 304276.231526075,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.017062679700977582,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 289213337.4228,
+              "timestamp": "2026-05-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 839725674.6106,
+              "timestamp": "2026-05-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 567374479.4225,
+              "timestamp": "2026-05-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 818426693.2152,
+              "timestamp": "2026-05-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 823234798.6882,
+              "timestamp": "2026-05-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 864975291.8654,
+              "timestamp": "2026-05-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 656313552.3267,
+              "timestamp": "2026-05-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1147916207.5512,
+              "timestamp": "2026-05-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1053658483.9033,
+              "timestamp": "2026-05-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 868349119.2222,
+              "timestamp": "2026-05-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 964522397.8153,
+              "timestamp": "2026-05-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 755969344.6474,
+              "timestamp": "2026-05-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 679528024.5816,
+              "timestamp": "2026-05-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 506391358.0551,
+              "timestamp": "2026-05-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 525440195.9257,
+              "timestamp": "2026-05-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 597435248.3957,
+              "timestamp": "2026-05-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 370803239.6075,
+              "timestamp": "2026-05-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 512642103.2462,
+              "timestamp": "2026-05-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 635160704.7322,
+              "timestamp": "2026-05-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 579900855.6872,
+              "timestamp": "2026-05-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 802518422.9098,
+              "timestamp": "2026-05-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 464003375.6283,
+              "timestamp": "2026-05-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 340893543.8304,
+              "timestamp": "2026-05-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 562832651.2272,
+              "timestamp": "2026-05-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 498742083.3634,
+              "timestamp": "2026-05-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 621533690.3641,
+              "timestamp": "2026-05-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 437856476.5542,
+              "timestamp": "2026-05-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 219174907.0547,
+              "timestamp": "2026-05-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 281373764.6551,
+              "timestamp": "2026-05-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 619669677.7086,
+              "timestamp": "2026-06-01T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 518,
+          "entryPrice": 74.18,
+          "entryTimestamp": "2026-06-03T00:00:00Z",
+          "eventExtremeResidualZ": -0.2899396956063941,
+          "exitIndex": 536,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-06-21T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.017062679700977582,
+              "fundingR": -0.021834134381403414,
+              "grossR": 0.20241518113858606,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 0.16351836705620507,
+              "price": 72.42,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-06-21T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 72.42,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-06-21T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-06-21T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-06-03T00:00:00+00:00",
+          "foldId": "fold_005",
+          "fundingR": -0.021834134381403414,
+          "grossPnl": 20.580945646494577,
+          "grossR": 0.20241518113858606,
+          "initialQuantity": 11.693719117326435,
+          "initialRiskAmount": 101.67688772515326,
+          "initialStop": 82.875,
+          "initialStopPrice": 82.875,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 608552463.05215,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.21506612995974594,
+          "markNotional": 867.440084123275,
+          "medianDailyQuoteTurnover30d": 608552463.05215,
+          "mfeR": 1.628522139160438,
+          "netPnl": 17.111185310001478,
+          "netR": 0.16351836705620507,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-06-03T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.09978448025399851,
+          "quantity": 11.693719117326435,
+          "realizedGrossR": 0.20241518113858606,
+          "realizedNetR": 0.1682898217366309,
+          "reason": null,
+          "recoverySizeZ": 1.403105232892466,
+          "remainingFraction": 1.0,
+          "riskAmount": 101.67688772515326,
+          "riskBasedNotional": 867.440084123275,
+          "riskBudget": 101.67688772515326,
+          "riskDistance": 8.694999999999997,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.034125359401955165,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 517,
+          "signalId": "replication_signal_d92794b3660958210036b94af72bd16636127d7bb7110360128964a5ff5a020f",
+          "signalIndex": 517,
+          "signalTimestamp": "2026-06-02T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-06-02T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.11721488271771356,
+          "stopPrice": 82.875,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 583.4065299422793,
+          "availableAt": "2026-01-31T00:00:00Z",
+          "baseNonFundingCostR": 0.011776598715442612,
+          "beta": 1.4482703333528657,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 594345.181089725,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.011776598715442612,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 574482397.4644,
+              "timestamp": "2026-01-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1298036234.0388,
+              "timestamp": "2026-01-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 623946443.5827,
+              "timestamp": "2026-01-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 842528681.4577,
+              "timestamp": "2026-01-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1448152581.8374,
+              "timestamp": "2026-01-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1787238901.5523,
+              "timestamp": "2026-01-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1180938183.9126,
+              "timestamp": "2026-01-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1492663072.2082,
+              "timestamp": "2026-01-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1732144832.3288,
+              "timestamp": "2026-01-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 412592051.3629,
+              "timestamp": "2026-01-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 938974975.3777,
+              "timestamp": "2026-01-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1824165540.1052,
+              "timestamp": "2026-01-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1824611565.6672,
+              "timestamp": "2026-01-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1447784691.9535,
+              "timestamp": "2026-01-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1196442540.4463,
+              "timestamp": "2026-01-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 943575807.8829,
+              "timestamp": "2026-01-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 415747530.254,
+              "timestamp": "2026-01-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 812849185.2546,
+              "timestamp": "2026-01-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1206140490.4185,
+              "timestamp": "2026-01-19T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1566699938.616,
+              "timestamp": "2026-01-20T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1388567779.2298,
+              "timestamp": "2026-01-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 707084002.7112,
+              "timestamp": "2026-01-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 858659161.9207,
+              "timestamp": "2026-01-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 214080713.6883,
+              "timestamp": "2026-01-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1223667479.2453,
+              "timestamp": "2026-01-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 951820013.8951,
+              "timestamp": "2026-01-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 810706576.8461,
+              "timestamp": "2026-01-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 673881941.4744,
+              "timestamp": "2026-01-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1360873906.7219,
+              "timestamp": "2026-01-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 1593011361.8515,
+              "timestamp": "2026-01-30T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 396,
+          "entryPrice": 105.43,
+          "entryTimestamp": "2026-02-01T00:00:00Z",
+          "eventExtremeResidualZ": -0.5469622755005585,
+          "exitIndex": 414,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2026-02-19T00:00:00+00:00",
+              "exitReason": "maximum_hold",
+              "feesR": 0.011776598715442612,
+              "fundingR": -0.03485530985020012,
+              "grossR": 1.2828818765707908,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": 1.2362499680051482,
+              "price": 82.46,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2026-02-19T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 82.46,
+          "exitReason": "maximum_hold",
+          "exitTimestamp": "2026-02-19T00:00:00+00:00",
+          "exitTriggerTimestamp": "2026-02-19T00:00:00+00:00",
+          "expectedEntryTimestamp": "2026-02-01T00:00:00+00:00",
+          "foldId": "fold_003",
+          "fundingR": -0.03485530985020012,
+          "grossPnl": 127.10659198306139,
+          "grossR": 1.2828818765707908,
+          "initialQuantity": 5.533591292253432,
+          "initialRiskAmount": 99.0789520877977,
+          "initialStop": 123.33500000000001,
+          "initialStopPrice": 123.33500000000001,
+          "instrumentId": "SOL-USDT-SWAP",
+          "liquidity30d": 1188690362.17945,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.0670203853672152,
+          "markNotional": 583.4065299422793,
+          "medianDailyQuoteTurnover30d": 1188690362.17945,
+          "mfeR": 2.1345992739458253,
+          "netPnl": 124.77296586329228,
+          "netR": 1.2362499680051482,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2026-02-01T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.18229394644565955,
+          "quantity": 5.533591292253432,
+          "realizedGrossR": 1.2828818765707908,
+          "realizedNetR": 1.2593286791399056,
+          "reason": null,
+          "recoverySizeZ": 0.8852275900586432,
+          "remainingFraction": 1.0,
+          "riskAmount": 99.0789520877977,
+          "riskBasedNotional": 583.4065299422793,
+          "riskBudget": 99.0789520877977,
+          "riskDistance": 17.905000000000005,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.023553197430885225,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 395,
+          "signalId": "replication_signal_dfe4fefd69e96823659a5a3dfa8e76d552520cf331abececb5c05296a9bf2383",
+          "signalIndex": 395,
+          "signalTimestamp": "2026-01-31T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2026-01-31T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.1698283221094565,
+          "stopPrice": 123.33500000000001,
+          "symbol": "SOL-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        },
+        {
+          "actualNotional": 459.5346724579139,
+          "availableAt": "2025-11-20T00:00:00Z",
+          "baseNonFundingCostR": 0.009190693449158283,
+          "beta": 1.5118454237041197,
+          "candidateId": "v37e_tsmom_daily_capacity_successor",
+          "capacityNotional": 6704156.564351666,
+          "capacityPassed": true,
+          "capacityPolicyHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+          "correlationCluster": "corr_cluster_ed1f065dcf0d809f1d0f4512c7503fd42dbb3e904083ca9bbcccedf8dea571b9",
+          "costR": 0.009190693449158283,
+          "dailyLiquidity": [
+            {
+              "quoteVolume": 19540346153.18951,
+              "timestamp": "2025-10-21T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15362814275.16338,
+              "timestamp": "2025-10-22T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11177897180.63413,
+              "timestamp": "2025-10-23T00:00:00Z"
+            },
+            {
+              "quoteVolume": 12402701884.8306,
+              "timestamp": "2025-10-24T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4290483202.05115,
+              "timestamp": "2025-10-25T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9772215638.24291,
+              "timestamp": "2025-10-26T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13784808818.94407,
+              "timestamp": "2025-10-27T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13711010212.47427,
+              "timestamp": "2025-10-28T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13389394632.53942,
+              "timestamp": "2025-10-29T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15517539069.81067,
+              "timestamp": "2025-10-30T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11976559878.54259,
+              "timestamp": "2025-10-31T00:00:00Z"
+            },
+            {
+              "quoteVolume": 4100716243.62317,
+              "timestamp": "2025-11-01T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6410164189.04896,
+              "timestamp": "2025-11-02T00:00:00Z"
+            },
+            {
+              "quoteVolume": 18967303912.89729,
+              "timestamp": "2025-11-03T00:00:00Z"
+            },
+            {
+              "quoteVolume": 25547215209.45952,
+              "timestamp": "2025-11-04T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14376871214.01418,
+              "timestamp": "2025-11-05T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13427231624.86724,
+              "timestamp": "2025-11-06T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14218125100.33021,
+              "timestamp": "2025-11-07T00:00:00Z"
+            },
+            {
+              "quoteVolume": 6873364505.93385,
+              "timestamp": "2025-11-08T00:00:00Z"
+            },
+            {
+              "quoteVolume": 9258965941.426,
+              "timestamp": "2025-11-09T00:00:00Z"
+            },
+            {
+              "quoteVolume": 10118160388.90066,
+              "timestamp": "2025-11-10T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11464227958.00576,
+              "timestamp": "2025-11-11T00:00:00Z"
+            },
+            {
+              "quoteVolume": 13283106925.8124,
+              "timestamp": "2025-11-12T00:00:00Z"
+            },
+            {
+              "quoteVolume": 19047318469.52419,
+              "timestamp": "2025-11-13T00:00:00Z"
+            },
+            {
+              "quoteVolume": 18620124041.32194,
+              "timestamp": "2025-11-14T00:00:00Z"
+            },
+            {
+              "quoteVolume": 5856020722.27941,
+              "timestamp": "2025-11-15T00:00:00Z"
+            },
+            {
+              "quoteVolume": 11815922995.68348,
+              "timestamp": "2025-11-16T00:00:00Z"
+            },
+            {
+              "quoteVolume": 15342621714.7418,
+              "timestamp": "2025-11-17T00:00:00Z"
+            },
+            {
+              "quoteVolume": 14389302100.26414,
+              "timestamp": "2025-11-18T00:00:00Z"
+            },
+            {
+              "quoteVolume": 17020532640.42246,
+              "timestamp": "2025-11-19T00:00:00Z"
+            }
+          ],
+          "direction": "short",
+          "entryIndex": 324,
+          "entryPrice": 2832.79,
+          "entryTimestamp": "2025-11-21T00:00:00Z",
+          "eventExtremeResidualZ": -0.2192895667343715,
+          "exitIndex": 343,
+          "exitLegCount": 1,
+          "exitLegs": [
+            {
+              "ambiguousPath": false,
+              "executionTimestamp": "2025-12-10T00:00:00+00:00",
+              "exitReason": "donchian_reversal",
+              "feesR": 0.009190693449158283,
+              "fundingR": -0.0004423589135258093,
+              "grossR": -0.7851763532174273,
+              "isGapFill": false,
+              "legFraction": 1.0,
+              "legIndex": 0,
+              "netR": -0.7948094055801114,
+              "price": 3316.81,
+              "slippageR": 0.0,
+              "spreadProxyR": 0.0,
+              "triggerTimestamp": "2025-12-09T00:00:00+00:00"
+            }
+          ],
+          "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+          "exitPrice": 3316.81,
+          "exitReason": "donchian_reversal",
+          "exitTimestamp": "2025-12-10T00:00:00+00:00",
+          "exitTriggerTimestamp": "2025-12-09T00:00:00+00:00",
+          "expectedEntryTimestamp": "2025-11-21T00:00:00+00:00",
+          "foldId": "fold_002",
+          "fundingR": -0.0004423589135258093,
+          "grossPnl": -78.51763532174273,
+          "grossR": -0.7851763532174273,
+          "initialQuantity": 0.16221981596161875,
+          "initialRiskAmount": 100.0,
+          "initialStop": 3449.2375,
+          "initialStopPrice": 3449.2375,
+          "instrumentId": "ETH-USDT-SWAP",
+          "liquidity30d": 13408313128.703331,
+          "liquiditySource": "quote_volume",
+          "lookaheadReadCount": 0,
+          "maeR": -0.9173368372813585,
+          "markNotional": 459.5346724579139,
+          "medianDailyQuoteTurnover30d": 13408313128.703331,
+          "mfeR": 0.34325713057478524,
+          "netPnl": -80.35577401157438,
+          "netR": -0.7948094055801114,
+          "observationCount": 30,
+          "pointInTimeContextAsOf": "2025-11-21T00:00:00Z",
+          "positionSizingMode": "continuous_research_notional",
+          "projectedPortfolioBeta": -0.06947453915888688,
+          "quantity": 0.16221981596161875,
+          "realizedGrossR": -0.7851763532174273,
+          "realizedNetR": -0.8035577401157439,
+          "reason": null,
+          "recoverySizeZ": 0.15710989175882692,
+          "remainingFraction": 1.0,
+          "riskAmount": 100.0,
+          "riskBasedNotional": 459.5346724579139,
+          "riskBudget": 100.0,
+          "riskDistance": 616.4475,
+          "riskUtilization": 1.0,
+          "scenarioCostR": 0.018381386898316567,
+          "schemaVersion": "s01_capacity_model_v1",
+          "setupId": "tsmom_turtle",
+          "signalBarIndex": 323,
+          "signalId": "replication_signal_efac9a0becaa7822416ad319471c1534c11a298ba6c5a4b4df0394c64a3d79cf",
+          "signalIndex": 323,
+          "signalTimestamp": "2025-11-20T00:00:00+00:00",
+          "sourceBarHashes": [],
+          "sourceTimestamp": "2025-11-20T00:00:00Z",
+          "split": "test",
+          "stopDistancePct": 0.21761143607538866,
+          "stopPrice": 3449.2375,
+          "symbol": "ETH-USDT-SWAP",
+          "unrealizedPnl": 0.0
+        }
+      ]
+    }
+  ],
+  "schemaVersion": "s01_v18_locked_cost_stress_v1",
+  "selectionFrozenFrom": "base",
+  "selectionIdentityStable": true
+}

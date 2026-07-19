@@ -1,0 +1,51 @@
+{
+  "baseAcceptedTradeCount": 6,
+  "baseMetrics": {
+    "averageNetR": 0.4388966903620301,
+    "lossCount": 2,
+    "maximumDrawdownPercent": 2.4422208174862887,
+    "maximumSingleMonthPositiveContribution": 0.7801752387241456,
+    "maximumSingleSymbolPositiveContribution": 0.6720922077238298,
+    "netPnl": 260.94775763814323,
+    "netReturnPercent": 2.609477576381436,
+    "positiveContributionByMonth": {
+      "2025-12": 0.0,
+      "2026-01": 0.0,
+      "2026-02": 330.98341860614374,
+      "2026-06": 93.25898512281243
+    },
+    "positiveContributionBySymbol": {
+      "ETH-USDT-SWAP": 285.1300137322585,
+      "SOL-USDT-SWAP": 139.1123899966977
+    },
+    "profitFactor": 2.5980178400521403,
+    "profitFactorStatus": "defined",
+    "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+    "totalNetR": 2.6333801421721805,
+    "tradeCount": 6,
+    "winCount": 4
+  },
+  "baseRawSignalCount": 8,
+  "baseRejectedSignalCount": 2,
+  "blockers": [
+    "positive_fold_minimum",
+    "benchmark_total_incremental_net_r",
+    "benchmark_positive_increment_fold_minimum"
+  ],
+  "campaignId": "v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a",
+  "cleanLockedOosAvailable": false,
+  "demoArm": false,
+  "formalAdmissionPassed": false,
+  "formalEvidenceCount": 0,
+  "formalInputReadCount": 1,
+  "formalPass": false,
+  "formalRunCount": 1,
+  "fundingGateEvaluable": true,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultDrivenParameterChangeCount": 0,
+  "route": "archive_s01_current_version",
+  "schemaVersion": "s01_v18_formal_route_v1",
+  "statisticsUnavailablePredeclared": true
+}

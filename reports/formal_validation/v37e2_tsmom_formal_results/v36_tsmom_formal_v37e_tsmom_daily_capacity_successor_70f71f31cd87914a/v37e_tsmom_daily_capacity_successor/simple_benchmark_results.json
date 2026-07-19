@@ -1,0 +1,122 @@
+{
+  "benchmarkName": "same_event_fixed_12_bar_exit",
+  "events": [
+    {
+      "benchmarkCostR": 0.009190693449158283,
+      "benchmarkExitIndex": 336,
+      "benchmarkExitPrice": 2994.45,
+      "benchmarkExitTimestamp": "2025-12-03T00:00:00+00:00",
+      "benchmarkGrossR": -0.2622445544835527,
+      "benchmarkNetR": -0.271435247932711,
+      "candidateId": "v37e_tsmom_daily_capacity_successor",
+      "candidateNetR": -0.7948094055801114,
+      "entryTimestamp": "2025-11-21T00:00:00+00:00",
+      "foldId": "fold_002",
+      "incrementalNetR": -0.5233741576474004,
+      "signalId": "replication_signal_efac9a0becaa7822416ad319471c1534c11a298ba6c5a4b4df0394c64a3d79cf",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "benchmarkCostR": 0.011024558976132824,
+      "benchmarkExitIndex": 364,
+      "benchmarkExitPrice": 124.93,
+      "benchmarkExitTimestamp": "2025-12-31T00:00:00+00:00",
+      "benchmarkGrossR": -0.24950997348091825,
+      "benchmarkNetR": -0.26053453245705105,
+      "candidateId": "v37e_tsmom_daily_capacity_successor",
+      "candidateNetR": -0.8448520186354571,
+      "entryTimestamp": "2025-12-19T00:00:00+00:00",
+      "foldId": "fold_002",
+      "incrementalNetR": -0.5843174861784061,
+      "signalId": "replication_signal_5c19eb176b29f965455d1758353b39c533d41c01cc4ab141eec553dce7e72792",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "benchmarkCostR": 0.015371936278861653,
+      "benchmarkExitIndex": 407,
+      "benchmarkExitPrice": 1940.26,
+      "benchmarkExitTimestamp": "2026-02-12T00:00:00+00:00",
+      "benchmarkGrossR": 2.173905014879155,
+      "benchmarkNetR": 2.1585330786002936,
+      "candidateId": "v37e_tsmom_daily_capacity_successor",
+      "candidateNetR": 2.1195823170078167,
+      "entryTimestamp": "2026-01-31T00:00:00+00:00",
+      "foldId": "fold_003",
+      "incrementalNetR": -0.0389507615924769,
+      "signalId": "replication_signal_9b2328e1e2e8d34e2f97abf60786b26d8d27d1735cf3a0d89d2ec9e94087678e",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "benchmarkCostR": 0.011776598715442612,
+      "benchmarkExitIndex": 408,
+      "benchmarkExitPrice": 78.35,
+      "benchmarkExitTimestamp": "2026-02-13T00:00:00+00:00",
+      "benchmarkGrossR": 1.512426696453505,
+      "benchmarkNetR": 1.5006500977380623,
+      "candidateId": "v37e_tsmom_daily_capacity_successor",
+      "candidateNetR": 1.2362499680051482,
+      "entryTimestamp": "2026-02-01T00:00:00+00:00",
+      "foldId": "fold_003",
+      "incrementalNetR": -0.26440012973291416,
+      "signalId": "replication_signal_dfe4fefd69e96823659a5a3dfa8e76d552520cf331abececb5c05296a9bf2383",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "benchmarkCostR": 0.019025486182190375,
+      "benchmarkExitIndex": 530,
+      "benchmarkExitPrice": 1724.6,
+      "benchmarkExitTimestamp": "2026-06-15T00:00:00+00:00",
+      "benchmarkGrossR": 0.6867451381780963,
+      "benchmarkNetR": 0.667719651995906,
+      "candidateId": "v37e_tsmom_daily_capacity_successor",
+      "candidateNetR": 0.753690914318579,
+      "entryTimestamp": "2026-06-03T00:00:00+00:00",
+      "foldId": "fold_005",
+      "incrementalNetR": 0.08597126232267305,
+      "signalId": "replication_signal_729d331e1ea2c257554491a874568373b02798f3e92e8440498ec4beed0daf86",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "benchmarkCostR": 0.017062679700977582,
+      "benchmarkExitIndex": 530,
+      "benchmarkExitPrice": 71.24,
+      "benchmarkExitTimestamp": "2026-06-15T00:00:00+00:00",
+      "benchmarkGrossR": 0.33812535940195665,
+      "benchmarkNetR": 0.32106267970097907,
+      "candidateId": "v37e_tsmom_daily_capacity_successor",
+      "candidateNetR": 0.16351836705620507,
+      "entryTimestamp": "2026-06-03T00:00:00+00:00",
+      "foldId": "fold_005",
+      "incrementalNetR": -0.157544312644774,
+      "signalId": "replication_signal_d92794b3660958210036b94af72bd16636127d7bb7110360128964a5ff5a020f",
+      "symbol": "SOL-USDT-SWAP"
+    }
+  ],
+  "folds": [
+    {
+      "benchmarkNetR": -0.5319697803897621,
+      "candidateNetR": -1.6396614242155685,
+      "eventCount": 2,
+      "foldId": "fold_002",
+      "incrementalNetR": -1.1076916438258064
+    },
+    {
+      "benchmarkNetR": 3.659183176338356,
+      "candidateNetR": 3.3558322850129647,
+      "eventCount": 2,
+      "foldId": "fold_003",
+      "incrementalNetR": -0.30335089132539106
+    },
+    {
+      "benchmarkNetR": 0.9887823316968851,
+      "candidateNetR": 0.9172092813747841,
+      "eventCount": 2,
+      "foldId": "fold_005",
+      "incrementalNetR": -0.07157305032210096
+    }
+  ],
+  "holdBars": 12,
+  "positiveIncrementFoldCount": 0,
+  "schemaVersion": "v36_tsmom_same_event_benchmark_v1",
+  "totalIncrementalNetR": -1.4826155854732985
+}

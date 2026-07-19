@@ -8,3 +8,5 @@ research/data_snapshots/*.json text eol=lf
 research/data_snapshots/*.sha256 text eol=lf
 reports/automatic_strategy_to_demo/** text eol=lf
 reports/automatic_strategy_to_demo/**/*.zip -text -eol
+reports/formal_validation/v37e2_tsmom_formal_results/** -text -diff
+reports/formal_validation/v37e_tsmom_closure/** -text -diff

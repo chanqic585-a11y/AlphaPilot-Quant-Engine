@@ -1,0 +1,22 @@
+{
+  "adapterRuntimeBase": "alphapilot.standard_replication.tsmom_translated",
+  "blockers": [],
+  "canonicalIdentityParityPct": 100.0,
+  "coreEngineChangedForCandidate": false,
+  "extraEventCount": 0,
+  "fullFormalInput": true,
+  "implementationEventCount": 19,
+  "malformedReasons": [],
+  "matchedEventCount": 19,
+  "matchedLegCount": 19,
+  "mismatchedEventCount": 0,
+  "mismatches": [],
+  "missingEventCount": 0,
+  "numericTolerance": 1e-09,
+  "passed": true,
+  "referenceEventCount": 19,
+  "schemaVersion": "v36_tsmom_formal_parity_v1",
+  "status": "passed",
+  "syntheticFixtureOnly": false,
+  "zeroSignalParityRejected": true
+}

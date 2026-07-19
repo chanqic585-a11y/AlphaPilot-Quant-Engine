@@ -1,0 +1,121 @@
+{
+  "campaignId": "v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a",
+  "foldAssignmentAudit": {
+    "acceptedEventCount": 8,
+    "boundaryRejectedEventCount": 2,
+    "eventMayCrossFoldBoundary": false,
+    "inputEventCount": 19,
+    "outsideWindowEventCount": 9,
+    "rejectedEventCount": 11,
+    "schemaVersion": "s01_formal_fold_assignment_audit_v1"
+  },
+  "folds": [
+    {
+      "averageNetR": 0.0,
+      "foldId": "fold_001",
+      "lossCount": 0,
+      "maximumDrawdownPercent": 0.0,
+      "maximumSingleMonthPositiveContribution": 0.0,
+      "maximumSingleSymbolPositiveContribution": 0.0,
+      "netPnl": 0.0,
+      "netReturnPercent": 0.0,
+      "positiveContributionByMonth": {},
+      "positiveContributionBySymbol": {},
+      "profitFactor": null,
+      "profitFactorStatus": "undefined_no_losses",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": 0,
+      "tradeCount": 0,
+      "winCount": 0
+    },
+    {
+      "averageNetR": -0.8198307121077842,
+      "foldId": "fold_002",
+      "lossCount": 2,
+      "maximumDrawdownPercent": 1.632946460908224,
+      "maximumSingleMonthPositiveContribution": 0.0,
+      "maximumSingleSymbolPositiveContribution": 0.0,
+      "netPnl": -163.29464609082243,
+      "netReturnPercent": -1.6329464609082245,
+      "positiveContributionByMonth": {
+        "2025-12": 0.0,
+        "2026-01": 0.0
+      },
+      "positiveContributionBySymbol": {
+        "ETH-USDT-SWAP": 0.0,
+        "SOL-USDT-SWAP": 0.0
+      },
+      "profitFactor": 0.0,
+      "profitFactorStatus": "defined",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": -1.6396614242155685,
+      "tradeCount": 2,
+      "winCount": 0
+    },
+    {
+      "averageNetR": 1.6779161425064824,
+      "foldId": "fold_003",
+      "lossCount": 0,
+      "maximumDrawdownPercent": 0.0,
+      "maximumSingleMonthPositiveContribution": 1.0,
+      "maximumSingleSymbolPositiveContribution": 0.6299320616593271,
+      "netPnl": 330.98341860614346,
+      "netReturnPercent": 3.3098341860614333,
+      "positiveContributionByMonth": {
+        "2026-02": 330.98341860614374
+      },
+      "positiveContributionBySymbol": {
+        "ETH-USDT-SWAP": 208.49706725762022,
+        "SOL-USDT-SWAP": 122.48635134852353
+      },
+      "profitFactor": null,
+      "profitFactorStatus": "undefined_no_losses",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": 3.3558322850129647,
+      "tradeCount": 2,
+      "winCount": 2
+    },
+    {
+      "averageNetR": 0.0,
+      "foldId": "fold_004",
+      "lossCount": 0,
+      "maximumDrawdownPercent": 0.0,
+      "maximumSingleMonthPositiveContribution": 0.0,
+      "maximumSingleSymbolPositiveContribution": 0.0,
+      "netPnl": 0.0,
+      "netReturnPercent": 0.0,
+      "positiveContributionByMonth": {},
+      "positiveContributionBySymbol": {},
+      "profitFactor": null,
+      "profitFactorStatus": "undefined_no_losses",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": 0,
+      "tradeCount": 0,
+      "winCount": 0
+    },
+    {
+      "averageNetR": 0.45860464068739204,
+      "foldId": "fold_005",
+      "lossCount": 0,
+      "maximumDrawdownPercent": 0.0,
+      "maximumSingleMonthPositiveContribution": 1.0,
+      "maximumSingleSymbolPositiveContribution": 0.8217218574030225,
+      "netPnl": 93.25898512281128,
+      "netReturnPercent": 0.932589851228105,
+      "positiveContributionByMonth": {
+        "2026-06": 93.25898512281243
+      },
+      "positiveContributionBySymbol": {
+        "ETH-USDT-SWAP": 76.63294647463827,
+        "SOL-USDT-SWAP": 16.626038648174163
+      },
+      "profitFactor": null,
+      "profitFactorStatus": "undefined_no_losses",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": 0.9172092813747841,
+      "tradeCount": 2,
+      "winCount": 2
+    }
+  ],
+  "schemaVersion": "s01_v18_fold_results_v1"
+}
