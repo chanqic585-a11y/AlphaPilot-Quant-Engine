@@ -1,0 +1,16 @@
+{
+  "blockers": [
+    "core_universe_count_mismatch"
+  ],
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_698f82e3131181ad",
+  "candidateId": "v35_tsmom_crypto_adaptation",
+  "demoArm": false,
+  "formalInputReadCount": 1,
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "v36_tsmom_formal_run_route_v1"
+}

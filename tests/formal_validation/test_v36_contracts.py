@@ -4,6 +4,7 @@ from copy import deepcopy
 
 import pytest
 
+from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.formal_validation.v36_contracts import (
     build_v36_data_snapshot,
     build_v36_formal_run_authorization,
@@ -149,10 +150,15 @@ def test_v36_snapshot_is_deterministic_and_requires_explicit_same_exchange_fundi
     assert first["fundingRequired"] is True
     assert first["missingFundingMayBeFilledWithZero"] is False
     assert len(first["fundingDatasetReferences"]) == 3
+    assert first["coreUniverse"]["instrumentCount"] == len(UNIVERSE)
 
     tampered = deepcopy(first)
     tampered["fundingDatasetReferences"][0]["exchange"] = "binance"
     assert not verify_v36_data_snapshot(tampered)
+
+    missing_count = deepcopy(first)
+    del missing_count["coreUniverse"]["instrumentCount"]
+    assert not verify_v36_data_snapshot(missing_count)
 
 
 def test_v36_split_is_exactly_five_purged_folds_and_rejects_1d_capacity() -> None:
@@ -191,6 +197,7 @@ def test_v36_preregistration_preserves_policy_objects_and_is_tamper_evident() ->
     assert first["exitPolicyChanges"] == 0
     assert first["costChanges"] == 0
     assert first["formalRunClaimBudget"] == 1
+    assert first["coreUniverse"]["instrumentCount"] == len(UNIVERSE)
     assert first["lockedOosPolicy"]["contentRead"] is False
     assert first["lockedOosPolicy"]["accessCount"] == 0
     assert first["capitalCompetitionPolicyHash"] == "capital-hash"
@@ -199,6 +206,18 @@ def test_v36_preregistration_preserves_policy_objects_and_is_tamper_evident() ->
     tampered = deepcopy(first)
     tampered["splitPolicy"]["folds"][0]["testEndExclusive"] += 1
     assert not verify_v36_preregistration(tampered)
+
+    missing_count = deepcopy(first)
+    del missing_count["coreUniverse"]["instrumentCount"]
+    missing_count["preregistrationHash"] = stable_hash(
+        {
+            key: value
+            for key, value in missing_count.items()
+            if key != "preregistrationHash"
+        },
+        prefix="v36_tsmom_formal_preregistration",
+    )
+    assert not verify_v36_preregistration(missing_count)
 
 
 def test_v36_authorization_stays_zero_budget_until_all_freezes_pass() -> None:

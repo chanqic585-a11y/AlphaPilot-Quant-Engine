@@ -1,0 +1,18 @@
+{
+  "blockers": [],
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "headCommit": "7953f8af853fccff41147cff758843d0e5991cc2",
+  "implementationCommit": "b131037ea8874dfc32118ad4437fc862ef8b8fac",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "remoteFreezeTag": "v13.27.1.36-formal-handoff",
+  "remoteTagCommit": "7953f8af853fccff41147cff758843d0e5991cc2",
+  "resultReadCount": 0,
+  "route": "ready_for_authorization",
+  "schemaVersion": "v36_tsmom_remote_freeze_audit_v1",
+  "status": "passed",
+  "upstreamRef": "origin/feature/v13.27.1.36-tsmom-formal-handoff"
+}

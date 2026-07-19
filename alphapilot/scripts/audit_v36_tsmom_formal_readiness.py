@@ -29,11 +29,30 @@ def _snapshot_manifest_path(campaign: dict[str, object]) -> Path:
     raise ValueError("snapshot_manifest_path_missing")
 
 
+def _campaign_id(
+    campaign: dict[str, object],
+    *,
+    campaign_path: Path,
+    override: str | None,
+) -> str:
+    value = str(override or campaign.get("campaignId") or campaign_path.stem).strip()
+    if (
+        not value
+        or value in {".", ".."}
+        or Path(value).name != value
+        or "/" in value
+        or "\\" in value
+    ):
+        raise ValueError(f"campaign_id_invalid:{value}")
+    return value
+
+
 def _parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--campaign-input", type=Path, required=True)
     parser.add_argument("--funding-root", type=Path)
     parser.add_argument("--output-dir", type=Path)
+    parser.add_argument("--campaign-id")
     parser.add_argument("--candidate-id", action="append", dest="candidate_ids")
     parser.add_argument("--formal-start")
     parser.add_argument("--fold-count", type=int, default=3)
@@ -60,7 +79,11 @@ def run(argv: Sequence[str] | None = None) -> dict[str, object]:
         if args.funding_root
         else data_root / "_alphapilot" / "canonical" / "okx" / "swap" / "funding"
     )
-    campaign_id = str(campaign.get("campaignId") or campaign_path.stem)
+    campaign_id = _campaign_id(
+        campaign,
+        campaign_path=campaign_path,
+        override=args.campaign_id,
+    )
     output_dir = (
         args.output_dir.resolve()
         if args.output_dir

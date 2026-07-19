@@ -3,6 +3,7 @@ from pathlib import Path
 import pytest
 
 from alphapilot.scripts.audit_v36_tsmom_formal_readiness import (
+    _campaign_id,
     _snapshot_manifest_path,
 )
 
@@ -22,3 +23,26 @@ def test_snapshot_manifest_path_accepts_persisted_audit_shapes(tmp_path: Path) -
 def test_snapshot_manifest_path_fails_closed_when_reference_is_absent() -> None:
     with pytest.raises(ValueError, match="snapshot_manifest_path_missing"):
         _snapshot_manifest_path({"campaignId": "fixture"})
+
+
+def test_campaign_id_can_be_overridden_for_a_new_remediation_identity(
+    tmp_path: Path,
+) -> None:
+    campaign_path = tmp_path / "source_campaign.json"
+
+    assert (
+        _campaign_id(
+            {"campaignId": "source-campaign"},
+            campaign_path=campaign_path,
+            override="v36-1-remediation",
+        )
+        == "v36-1-remediation"
+    )
+    assert (
+        _campaign_id(
+            {"campaignId": "source-campaign"},
+            campaign_path=campaign_path,
+            override=None,
+        )
+        == "source-campaign"
+    )

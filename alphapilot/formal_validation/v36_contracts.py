@@ -39,8 +39,14 @@ def _core_universe(universe: Sequence[str]) -> tuple[list[str], str]:
     instruments = sorted({str(value).strip() for value in universe if str(value).strip()})
     if len(instruments) != len(universe) or not instruments:
         raise ValueError("core_universe_invalid")
+    core = {
+        "instrumentCount": len(instruments),
+        "instrumentIds": instruments,
+        "provider": "okx",
+        "exchange": "okx",
+    }
     digest = stable_hash(
-        {"instrumentIds": instruments, "provider": "okx", "exchange": "okx"},
+        core,
         prefix="v36_tsmom_core_universe",
     )
     return instruments, digest
@@ -99,7 +105,12 @@ def build_v36_data_snapshot(
         "sourceSnapshotId": str(source_snapshot_id),
         "commonStart": _iso(_utc(common_start)),
         "commonCutoffExclusive": _iso(_utc(common_cutoff_exclusive)),
-        "coreUniverse": {"instrumentIds": instruments, "provider": "okx", "exchange": "okx"},
+        "coreUniverse": {
+            "instrumentCount": len(instruments),
+            "instrumentIds": instruments,
+            "provider": "okx",
+            "exchange": "okx",
+        },
         "coreUniverseHash": core_hash,
         "datasetReferences": dataset,
         "fundingDatasetReferences": funding,
@@ -117,9 +128,14 @@ def build_v36_data_snapshot(
 
 def verify_v36_data_snapshot(payload: Mapping[str, Any]) -> bool:
     try:
-        instruments, core_hash = _core_universe(
-            list(dict(payload["coreUniverse"])["instrumentIds"])
-        )
+        universe = dict(payload["coreUniverse"])
+        instruments, core_hash = _core_universe(list(universe["instrumentIds"]))
+        if int(universe.get("instrumentCount", -1)) != len(instruments):
+            return False
+        if str(universe.get("provider") or "").lower() != "okx":
+            return False
+        if str(universe.get("exchange") or "").lower() != "okx":
+            return False
         if payload.get("coreUniverseHash") != core_hash:
             return False
         if payload.get("fundingRequired") is not True:
@@ -424,6 +440,16 @@ def verify_v36_preregistration(payload: Mapping[str, Any]) -> bool:
         ):
             return False
         if int(payload.get("formalRunClaimBudget", 0)) != 1:
+            return False
+        universe = dict(payload.get("coreUniverse") or {})
+        instruments, core_hash = _core_universe(list(universe.get("instrumentIds") or []))
+        if int(universe.get("instrumentCount", -1)) != len(instruments):
+            return False
+        if str(universe.get("provider") or "").lower() != "okx":
+            return False
+        if str(universe.get("exchange") or "").lower() != "okx":
+            return False
+        if payload.get("coreUniverseHash") != core_hash:
             return False
         locked = dict(payload.get("lockedOosPolicy") or {})
         if locked.get("contentRead") is not False or int(locked.get("accessCount", -1)) != 0:
