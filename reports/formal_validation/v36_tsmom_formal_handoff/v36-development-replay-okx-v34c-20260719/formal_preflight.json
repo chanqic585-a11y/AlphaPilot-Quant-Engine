@@ -1,0 +1,27 @@
+{
+  "allowedToCreatePreregistration": false,
+  "allowedToRunFormal": false,
+  "blockedCandidates": [
+    {
+      "blockers": [
+        "funding_window_incomplete"
+      ],
+      "candidateId": "v35_tsmom_crypto_adaptation"
+    },
+    {
+      "blockers": [
+        "funding_window_incomplete",
+        "purged_walk_forward_capacity_insufficient"
+      ],
+      "candidateId": "v35_tsmom_source_replication"
+    }
+  ],
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "lockedOosAccessCount": 0,
+  "readinessHash": "v36_tsmom_formal_readiness_e0409125d96097591f3e88a163c97f5062c3339077ec0aa2f46cb14f37a85fb1",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_preflight_v1",
+  "status": "blocked_before_preregistration"
+}

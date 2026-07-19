@@ -1,0 +1,250 @@
+{
+  "blockedCandidateCount": 2,
+  "campaignId": "v36-development-replay-okx-v34c-20260719",
+  "candidateCount": 2,
+  "candidates": [
+    {
+      "blockers": [
+        "funding_window_incomplete"
+      ],
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "formalWindow": {
+        "cutoffExclusive": "2026-07-18T16:00:00+00:00",
+        "metadataOnlyAudit": true,
+        "start": "2025-01-01T00:00:00+00:00"
+      },
+      "fundingCoverage": {
+        "fullWindowCovered": false,
+        "instruments": [
+          {
+            "fileCount": 61,
+            "firstTimestamp": "2026-04-07T08:00:00+00:00",
+            "fullWindowCovered": false,
+            "instrumentId": "BTC-USDT-SWAP",
+            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 295,
+            "zeroFilled": false
+          },
+          {
+            "fileCount": 61,
+            "firstTimestamp": "2026-04-07T08:00:00+00:00",
+            "fullWindowCovered": false,
+            "instrumentId": "ETH-USDT-SWAP",
+            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 295,
+            "zeroFilled": false
+          },
+          {
+            "fileCount": 61,
+            "firstTimestamp": "2026-04-07T08:00:00+00:00",
+            "fullWindowCovered": false,
+            "instrumentId": "SOL-USDT-SWAP",
+            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 295,
+            "zeroFilled": false
+          }
+        ],
+        "maximumAllowedGapHours": 8,
+        "provenanceValid": true,
+        "required": true,
+        "sameExchangeRequired": true,
+        "scheduleComplete": true,
+        "zeroFilled": false
+      },
+      "ohlcvCoverage": {
+        "commonRowCount": 3382,
+        "instrumentCount": 3,
+        "partitions": [
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "BTC-USDT-SWAP",
+            "lastTimestamp": "2026-07-18T12:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\1577836800000-1784376000000-908d716580268d08.parquet",
+            "rowCount": 3382,
+            "sha256": "ed116bb5f3750400194e7a0566d0cd678e6d70950f02efee5545e4ab21525908",
+            "timeframe": "4h"
+          },
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "ETH-USDT-SWAP",
+            "lastTimestamp": "2026-07-18T12:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\1577836800000-1784376000000-9eb22547a6afd1f3.parquet",
+            "rowCount": 3382,
+            "sha256": "0f0ebbe16ae7d14fb392d9be665de0ed324be0cda0eb15bd951a959d27b1af41",
+            "timeframe": "4h"
+          },
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "SOL-USDT-SWAP",
+            "lastTimestamp": "2026-07-18T12:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\SOL-USDT-SWAP\\4h\\1611288000000-1784376000000-2493782114ab0d2e.parquet",
+            "rowCount": 3382,
+            "sha256": "75605b3065b8e0ed7945e6e8696298df8d82d2653ef7438635603a4d5d0c73ad",
+            "timeframe": "4h"
+          }
+        ]
+      },
+      "selectedTrialId": "v36_trial_43b2c0f5804b1f0596bc6d5691d79013699a5e1b3db0a07e7a3332ac3f6f0599",
+      "status": "blocked",
+      "strategyDefinitionHash": "v36_replay_definition_500e95aa9039039462514ee499bbb4548246b6b479b656e13a407967885d312e",
+      "timeframe": "4h",
+      "walkForwardCapacity": {
+        "availableBars": 3382,
+        "foldCount": 3,
+        "minimumTestBarsPerFold": 60,
+        "purgeBarsPerFold": 180,
+        "requiredBars": 900,
+        "sufficient": true,
+        "warmupBars": 180
+      }
+    },
+    {
+      "blockers": [
+        "funding_window_incomplete",
+        "purged_walk_forward_capacity_insufficient"
+      ],
+      "candidateId": "v35_tsmom_source_replication",
+      "exitPolicyHash": "v36_tsmom_exit_policy_311993d65953bdc4cd6f134cefaaff8278c1144b0391e77e129253fb7c719781",
+      "formalWindow": {
+        "cutoffExclusive": "2026-07-18T00:00:00+00:00",
+        "metadataOnlyAudit": true,
+        "start": "2025-01-01T00:00:00+00:00"
+      },
+      "fundingCoverage": {
+        "fullWindowCovered": false,
+        "instruments": [
+          {
+            "fileCount": 61,
+            "firstTimestamp": "2026-04-07T08:00:00+00:00",
+            "fullWindowCovered": false,
+            "instrumentId": "BTC-USDT-SWAP",
+            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 295,
+            "zeroFilled": false
+          },
+          {
+            "fileCount": 61,
+            "firstTimestamp": "2026-04-07T08:00:00+00:00",
+            "fullWindowCovered": false,
+            "instrumentId": "ETH-USDT-SWAP",
+            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 295,
+            "zeroFilled": false
+          },
+          {
+            "fileCount": 61,
+            "firstTimestamp": "2026-04-07T08:00:00+00:00",
+            "fullWindowCovered": false,
+            "instrumentId": "SOL-USDT-SWAP",
+            "lastTimestamp": "2026-07-14T08:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 295,
+            "zeroFilled": false
+          }
+        ],
+        "maximumAllowedGapHours": 8,
+        "provenanceValid": true,
+        "required": true,
+        "sameExchangeRequired": true,
+        "scheduleComplete": true,
+        "zeroFilled": false
+      },
+      "ohlcvCoverage": {
+        "commonRowCount": 563,
+        "instrumentCount": 3,
+        "partitions": [
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "BTC-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T00:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\BTC-USDT-SWAP\\1dutc\\1577836800000-1784246400000-3fdbe4fc03e18bb9.parquet",
+            "rowCount": 563,
+            "sha256": "7496b63b4a8a94657708dff39eeed01f98b71670af0ef6d76500b01c4ed58348",
+            "timeframe": "1dutc"
+          },
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "ETH-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T00:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\ETH-USDT-SWAP\\1dutc\\1577836800000-1784246400000-7eb09e7a8ff012f7.parquet",
+            "rowCount": 563,
+            "sha256": "3f217d0012dbf072d2b8a23a48c218e507c672b7b97f28f956e5630a79456f35",
+            "timeframe": "1dutc"
+          },
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "SOL-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T00:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\SOL-USDT-SWAP\\1dutc\\1611360000000-1784246400000-fddc673e61145699.parquet",
+            "rowCount": 563,
+            "sha256": "815e2b4296e00f635d7e9abea5212a2178730ad45cf066a3369ae3ed04db6b66",
+            "timeframe": "1dutc"
+          }
+        ]
+      },
+      "selectedTrialId": "v36_trial_ec2562d73795444e90789e7f77a3e129030b7d92c0f3614cf3f33375fdaf41c0",
+      "status": "blocked",
+      "strategyDefinitionHash": "v36_replay_definition_de5d64cd919032532992c30d51624e968c2d0e32e097c167040c8f494ae45727",
+      "timeframe": "1dutc",
+      "walkForwardCapacity": {
+        "availableBars": 563,
+        "foldCount": 3,
+        "minimumTestBarsPerFold": 60,
+        "purgeBarsPerFold": 180,
+        "requiredBars": 840,
+        "sufficient": false,
+        "warmupBars": 120
+      }
+    }
+  ],
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalReadyCandidateCount": 0,
+  "formalRunCount": 0,
+  "formalStart": "2025-01-01T00:00:00+00:00",
+  "fundingRoot": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\_alphapilot\\canonical\\okx\\swap\\funding",
+  "generatedAt": "2026-07-19T01:21:49+00:00",
+  "lockedOosAccessCount": 0,
+  "mixedExchangeFundingUsed": false,
+  "orderCount": 0,
+  "readinessHash": "v36_tsmom_formal_readiness_e0409125d96097591f3e88a163c97f5062c3339077ec0aa2f46cb14f37a85fb1",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_readiness_v1",
+  "snapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+  "snapshotManifestPath": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
+  "sourceBranch": "feature/v13.27.1.36-tsmom-formal-handoff",
+  "sourceCommit": "c434243335799c374e5bd0297e78e61b31ee597e",
+  "status": "blocked",
+  "zeroFillUsed": false
+}
