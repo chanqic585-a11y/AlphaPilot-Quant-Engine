@@ -13,6 +13,11 @@ import pandas as pd
 
 from alphapilot.evolution.registry.hashing import stable_hash
 from alphapilot.standard_replication import ReplicationSourceRegistry
+from alphapilot.standard_replication.tsmom_engine import (
+    SELECTED_TSMOM_TRIALS,
+    base_tsmom_definition,
+    scale_tsmom_definition,
+)
 
 from .contracts import V36ContractError
 
@@ -22,28 +27,12 @@ _SYMBOLS = ("BTC-USDT-SWAP", "ETH-USDT-SWAP", "SOL-USDT-SWAP")
 # These are frozen research definitions, not optimized outputs. The three
 # preregistered parameter scales are applied only inside the Development split.
 _REPLAY_DEFINITIONS: dict[str, dict[str, Any]] = {
-    "v35_tsmom_source_replication": {
-        "familyId": "crypto_tsmom_turtle_v1",
-        "timeframe": "1dutc",
-        "lookbackBars": 120,
-        "entryDonchianBars": 55,
-        "exitDonchianBars": 20,
-        "atrBars": 20,
-        "stopAtr": 2.5,
-        "minimumMomentum": 0.04,
-        "maximumHoldBars": 180,
-    },
-    "v35_tsmom_crypto_adaptation": {
-        "familyId": "crypto_tsmom_turtle_v1",
-        "timeframe": "4h",
-        "lookbackBars": 180,
-        "entryDonchianBars": 60,
-        "exitDonchianBars": 24,
-        "atrBars": 20,
-        "stopAtr": 2.5,
-        "minimumMomentum": 0.025,
-        "maximumHoldBars": 180,
-    },
+    "v35_tsmom_source_replication": base_tsmom_definition(
+        "v35_tsmom_source_replication"
+    ),
+    "v35_tsmom_crypto_adaptation": base_tsmom_definition(
+        "v35_tsmom_crypto_adaptation"
+    ),
     "v35_pair_rv_source_replication": {
         "familyId": "crypto_pair_relative_value_v1",
         "timeframe": "4h",
@@ -262,6 +251,11 @@ def _requirements_for_registry(
 def _scaled_definition(candidate_id: str, scale: float) -> dict[str, Any]:
     if candidate_id not in _REPLAY_DEFINITIONS:
         raise V36ContractError(f"development_replay_definition_missing:{candidate_id}")
+    if candidate_id in SELECTED_TSMOM_TRIALS:
+        return scale_tsmom_definition(
+            candidate_id,
+            parameter_scale=float(scale),
+        )
     result = dict(_REPLAY_DEFINITIONS[candidate_id])
     for key in (
         "lookbackBars",

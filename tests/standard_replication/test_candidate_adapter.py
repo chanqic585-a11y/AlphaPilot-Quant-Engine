@@ -61,12 +61,23 @@ class CanonicalReplicationCandidateAdapterTests(unittest.TestCase):
                 requested_candidate_id="different",
             )
 
-    def test_v35_adapter_fails_closed_before_v36_execution_implementation(self) -> None:
+    def test_non_selected_v35_adapter_remains_fail_closed(self) -> None:
+        registry = ReplicationSourceRegistry.load(
+            Path(__file__).resolve().parents[2]
+            / "research"
+            / "source_registry"
+            / "strategy_research_source_registry.json"
+        )
+        family = registry.require("crypto_pair_relative_value_v1")
+        adapter = CanonicalReplicationCandidateAdapter(
+            family=family,
+            variant=family.variants[0],
+        )
         with self.assertRaisesRegex(
             CandidateAdapterContractError,
-            "replication_not_executable_until_v36",
+            "replication_not_executable_until_selected",
         ):
-            self.adapter.replay(
+            adapter.replay(
                 candidate={},
                 frames={},
                 round_trip_cost_rate=0.001,
