@@ -35,7 +35,7 @@ from .tsmom_formal_evidence import build_tsmom_formal_ranking_evidence
 class CanonicalReplicationCandidateAdapter:
     """Execute only the two Development-selected V36 TSMOM identities."""
 
-    adapter_version = "v36.0"
+    adapter_version = "v36.1"
 
     def __init__(
         self,
@@ -62,6 +62,7 @@ class CanonicalReplicationCandidateAdapter:
     ) -> str:
         if str(candidate_id) != self.candidate_id:
             raise CandidateAdapterIdentityError("candidate_id_mismatch")
+        del signal_context
         identity = {
             "candidateId": self.candidate_id,
             "familyId": self.family.family_id,
@@ -69,7 +70,6 @@ class CanonicalReplicationCandidateAdapter:
             "direction": str(direction),
             "signalTimestamp": str(signal_timestamp),
             "expectedEntryTimestamp": expected_entry_timestamp,
-            "signalContext": dict(signal_context),
         }
         return stable_hash(identity, prefix="replication_signal")
 

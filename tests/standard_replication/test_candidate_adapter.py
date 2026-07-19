@@ -42,8 +42,19 @@ class CanonicalReplicationCandidateAdapterTests(unittest.TestCase):
 
         first = self.adapter.signal_identity(**arguments)
         second = self.adapter.signal_identity(**arguments)
+        enriched = self.adapter.signal_identity(
+            **{
+                **arguments,
+                "signal_context": {
+                    **arguments["signal_context"],
+                    "exitLegs": [{"exitReason": "time_exit"}],
+                    "formalEvidence": {"status": "available"},
+                },
+            }
+        )
 
         self.assertEqual(first, second)
+        self.assertEqual(first, enriched)
         self.assertTrue(first.startswith("replication_signal_"))
 
     def test_adapter_enforces_exact_frozen_candidate_identity(self) -> None:

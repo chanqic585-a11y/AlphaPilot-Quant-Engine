@@ -362,3 +362,13 @@ def test_capital_parity_fails_on_changed_acceptance_reason() -> None:
     assert report["status"] == "failed"
     assert report["capitalAcceptanceParityPct"] == 0.0
     assert "capital_acceptance_mismatch" in report["blockers"]
+
+
+def test_capital_parity_treats_two_empty_replays_as_exactly_equal() -> None:
+    report = compare_capital_replays({"decisions": []}, {"decisions": []})
+
+    assert report["status"] == "passed"
+    assert report["passed"] is True
+    assert report["capitalAcceptanceParityPct"] == 100.0
+    assert report["positionSizeParityPct"] == 100.0
+    assert report["blockers"] == []

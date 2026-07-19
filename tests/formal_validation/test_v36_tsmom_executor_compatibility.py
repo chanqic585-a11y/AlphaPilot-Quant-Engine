@@ -34,6 +34,8 @@ def _frames() -> dict[str, pd.DataFrame]:
         ("BTC-USDT-SWAP", "ETH-USDT-SWAP", "SOL-USDT-SWAP")
     ):
         scaled = close * (1.0 + offset * 0.04)
+        funding_event = np.arange(len(dates)) % 8 == 0
+        funding_rate = np.where(funding_event, 0.0001 * (offset + 1), 0.0)
         frame = pd.DataFrame(
             {
                 "date": dates,
@@ -43,6 +45,9 @@ def _frames() -> dict[str, pd.DataFrame]:
                 "close": scaled,
                 "volume": np.full(len(dates), 10_000_000.0 + offset),
                 "funding_rate": np.zeros(len(dates)),
+                "fundingRate": funding_rate,
+                "fundingEventPresent": funding_event,
+                "fundingEventCount": funding_event.astype(int),
             }
         )
         frame.loc[0, "open"] = scaled[0]
@@ -87,6 +92,11 @@ def _bundle(repo_root: Path) -> tuple[FormalInputBundle, object]:
             "baseRoundTripCostRate": 0.001,
             "historicalFundingMissingValue": None,
             "missingFundingMayBeFilledWithZero": False,
+            "conservativeFundingStress": {
+                "method": "adverse_quantile_from_available_same_exchange_history",
+                "quantile": 0.9,
+                "applyByObservedSettlementCount": True,
+            },
             "scenarios": [
                 {"scenarioId": "base", "multiplier": 1.0},
                 {"scenarioId": "cost_1_5x", "multiplier": 1.5},
@@ -143,7 +153,16 @@ def _bundle(repo_root: Path) -> tuple[FormalInputBundle, object]:
             snapshot={"snapshotId": "v36-contract-snapshot"},
             frames=frames,
             commonIndex=common_index,
-            inputMapping={"schemaVersion": "v36-contract-fixture", "verifiedPartitionCount": 3},
+            inputMapping={
+                "schemaVersion": "v36-contract-fixture",
+                "verifiedPartitionCount": 3,
+                "fundingEvidence": {
+                    "scheduleComplete": True,
+                    "sameExchangeVerified": True,
+                    "missingRateZeroFilled": False,
+                    "nonSettlementCashflowZeroApplied": True,
+                },
+            },
             holdoutLineage={"contentRead": False, "lockedOosAccessCount": 0},
         ),
         adapter,
@@ -171,3 +190,24 @@ def test_tsmom_adapter_executes_through_the_complete_generic_formal_core(
     assert result["releaseCount"] == 0
     assert result["demoArm"] is False
     assert result["orderCount"] == 0
+    failure = json.loads(
+        (tmp_path / "formal" / "failure_attribution.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    capital = json.loads(
+        (tmp_path / "formal" / "capital_competition_results.json").read_text(
+            encoding="utf-8"
+        )
+    )
+    funding = json.loads(
+        (tmp_path / "formal" / "funding_stress.json").read_text(encoding="utf-8")
+    )
+    blockers = set(failure["blockers"])
+    assert capital["rawSignalCount"] > 0
+    assert capital["acceptedSignalCount"] > 0
+    assert funding["gateEvaluable"] is True
+    assert "capital_policy_parity_failed" not in blockers
+    assert "canonical_event_identity_mapping_incomplete" not in blockers
+    assert "formal_event_fold_assignment_incomplete" not in blockers
+    assert "registered_funding_stress_input_unavailable" not in blockers
