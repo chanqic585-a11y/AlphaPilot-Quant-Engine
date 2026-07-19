@@ -1,0 +1,2917 @@
+{
+  "eventCount": 97,
+  "events": [
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 2958.54,
+      "entryTimestamp": "2025-02-02T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-02-13T00:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03073169211592397,
+          "fundingR": -0.0023860726868966493,
+          "grossR": 1.1424119663446561,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 1.1092942015418354,
+          "price": 2738.58,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-02-12T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 3151.08,
+      "signalId": "replication_signal_29abbe35ade0def0553378c3ebca5871751ed3eed4ac535a49fd32cefd1196ad",
+      "signalTimestamp": "2025-02-02T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 203.53,
+      "entryTimestamp": "2025-02-02T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-02-04T00:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.025336341710106576,
+          "fundingR": -0.00733387611606787,
+          "grossR": -0.9999999999999991,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0326702178261737,
+          "price": 219.59625,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-02-04T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 219.59625,
+      "signalId": "replication_signal_1bc86ab616fe33083e11da03d450f5335a5d0a800ef00712f80b7ed98000d47b",
+      "signalTimestamp": "2025-02-02T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 94048.1,
+      "entryTimestamp": "2025-02-03T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-02-03T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.04490522502305288,
+          "fundingR": 0.0004213096940413354,
+          "grossR": -1.0000000000000004,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.044483915329012,
+          "price": 98236.83750000001,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-02-03T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 98236.83750000001,
+      "signalId": "replication_signal_96af03656c220afea4cd6fc5aa19ce77fa17cbfeafbaa78c12b680621000e7d9",
+      "signalTimestamp": "2025-02-03T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 181.38,
+      "entryTimestamp": "2025-02-17T08:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-03-02T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.038200342240358065,
+          "fundingR": -0.026393722529756407,
+          "grossR": 2.5252073186784267,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 2.460613253908312,
+          "price": 157.4,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-03-02T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 190.87625,
+      "signalId": "replication_signal_2438237e55d1358b7a40eda70f06e0f0876d74f0ecb7ff9ec736f44364ae9108",
+      "signalTimestamp": "2025-02-17T04:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 91550.1,
+      "entryTimestamp": "2025-02-25T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-03-02T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.06952600102523218,
+          "fundingR": 0.017390030074486907,
+          "grossR": -1.000000000000002,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0521359709507472,
+          "price": 94183.65000000001,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-03-02T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 94183.65000000001,
+      "signalId": "replication_signal_3c3117b155a64120d4695c56cda626a4c9301db29af0e088e578cf1b11c540dc",
+      "signalTimestamp": "2025-02-24T20:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 2513.95,
+      "entryTimestamp": "2025-02-25T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-03-02T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.02999023270032288,
+          "fundingR": -0.0014618635745197819,
+          "grossR": 0.16605900641957472,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.13460691014473206,
+          "price": 2486.11,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-03-02T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2681.6012499999997,
+      "signalId": "replication_signal_b3e8748d80ef1b9cc5b4a4fc31bcb27b73755d90f2cb5a290387278db3191c9b",
+      "signalTimestamp": "2025-02-24T20:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 121.93,
+      "entryTimestamp": "2025-03-10T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-03-14T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.020072847000720248,
+          "fundingR": -0.00687226323494233,
+          "grossR": -0.8404156806255775,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.86736079086124,
+          "price": 132.14,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-03-14T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 134.07875,
+      "signalId": "replication_signal_4b1b6688ce9f02690c21417d5e30a3b651d9e9b738cb87f66fdce3c98ef7d91a",
+      "signalTimestamp": "2025-03-10T12:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 79075.1,
+      "entryTimestamp": "2025-03-10T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-03-12T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.0329655571333655,
+          "fundingR": 0.0014094078281867706,
+          "grossR": -1.0000000000000007,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0315561493051795,
+          "price": 83872.5375,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-03-12T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 83872.5375,
+      "signalId": "replication_signal_1b4dfd3bf8323565dbc12524b8f469d12adcbbad779a8869e871fbb9a912c8e5",
+      "signalTimestamp": "2025-03-10T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 1869.6,
+      "entryTimestamp": "2025-03-10T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-03-19T12:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.02089595194020467,
+          "fundingR": -0.0037365311170499643,
+          "grossR": -0.8845796514267761,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.9092121344840307,
+          "price": 2027.89,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-03-19T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2048.54375,
+      "signalId": "replication_signal_61a5dc2f34a53fe516f4752d0828179d691f562c9d7ac646d5a2b216c2e5c611",
+      "signalTimestamp": "2025-03-10T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 82294.0,
+      "entryTimestamp": "2025-03-29T12:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-04-01T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.06386403651302545,
+          "fundingR": 0.010929468612607934,
+          "grossR": -1.0000000000000022,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0529345679004196,
+          "price": 84871.1625,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-04-01T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 84871.1625,
+      "signalId": "replication_signal_ceb80bc35c5efa86d739849b416d62dcefdbb1d4c24bbf2d4d41b5fab85f7c1c",
+      "signalTimestamp": "2025-03-29T08:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 1844.72,
+      "entryTimestamp": "2025-03-29T12:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-04-01T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.040567258133238006,
+          "fundingR": 0.004501137462026248,
+          "grossR": -0.810918537047981,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.8469846577191927,
+          "price": 1918.47,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-04-01T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 1935.6662500000002,
+      "signalId": "replication_signal_aa114661f0b79ac9a16247509d4ea8dbb15ed3c25bbe383c0f1fed4a36c0992d",
+      "signalTimestamp": "2025-03-29T08:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 117.37,
+      "entryTimestamp": "2025-04-03T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-04-12T08:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.02236684135302524,
+          "fundingR": 0.007801103323229582,
+          "grossR": -0.6555502620295371,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.6701160000593328,
+          "price": 124.25,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-04-12T04:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 127.86500000000001,
+      "signalId": "replication_signal_eee584f9f9002fa45c8841eb1300a5bcbb20ccfc62bf8e9ca21ad7f03e74e861",
+      "signalTimestamp": "2025-04-02T20:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 79611.3,
+      "entryTimestamp": "2025-04-06T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-04-09T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.05003282938383045,
+          "fundingR": 0.005219001681421918,
+          "grossR": -1.0000000000000018,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0448138277024102,
+          "price": 82793.6625,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-04-09T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 82793.6625,
+      "signalId": "replication_signal_0fb7674e68f825f5b5db222d6b5c1f720161a5381146eadd4844e7a3029fdc54",
+      "signalTimestamp": "2025-04-06T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 1626.18,
+      "entryTimestamp": "2025-04-06T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-04-14T12:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03148422695756342,
+          "fundingR": 3.6819962650034604e-05,
+          "grossR": -0.47743855955276343,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.5088859665476768,
+          "price": 1675.5,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-04-14T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 1729.48125,
+      "signalId": "replication_signal_1cdb7a17b3d91fa1c34629954bd22a2d9437228c2f2d8f18ee615747160ab216",
+      "signalTimestamp": "2025-04-06T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 138.77,
+      "entryTimestamp": "2025-04-19T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-04-30T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03261818716027621,
+          "fundingR": -0.010986136845086314,
+          "grossR": 0.3948876156897297,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.35128329168436717,
+          "price": 142.13,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-04-30T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 130.26125000000002,
+      "signalId": "replication_signal_b9156321f40614a6f60a47dedff225337366230a0cdf49a67765e9fdfacdc63f",
+      "signalTimestamp": "2025-04-19T00:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 87216.7,
+      "entryTimestamp": "2025-04-21T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-05-05T04:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.11909257094090037,
+          "fundingR": -0.08032065895656196,
+          "grossR": 4.6379859184979715,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 4.43857268860051,
+          "price": 94009.9,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-05-05T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 85752.0125,
+      "signalId": "replication_signal_174f60dda9ce78336fbcdaadf089b6020ccaac27a50dc5e71312e19932d647e3",
+      "signalTimestamp": "2025-04-21T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 99104.0,
+      "entryTimestamp": "2025-05-08T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-05-29T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.06905089336648712,
+          "fundingR": -0.16827795124785236,
+          "grossR": 2.295414066548507,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 2.0580852219341677,
+          "price": 105692.9,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-05-29T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 96233.5375,
+      "signalId": "replication_signal_73ba678f736166c237eccaf5183bc7bf369ee023fa8b51130401d53bba7b4af5",
+      "signalTimestamp": "2025-05-08T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 1900.15,
+      "entryTimestamp": "2025-05-08T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-05-18T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.043329865317465986,
+          "fundingR": -0.04479613748333655,
+          "grossR": 5.781229957956244,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 5.693103955155442,
+          "price": 2407.2,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-05-18T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 1812.4437500000001,
+      "signalId": "replication_signal_3a731c4175a6744e2584ce945f3f165d89b08139cd2100bb1eb5e990e7d0f939",
+      "signalTimestamp": "2025-05-08T00:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 154.51,
+      "entryTimestamp": "2025-05-08T12:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-05-19T08:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.043242259926534944,
+          "fundingR": -0.040071419387426005,
+          "grossR": 1.0187161098478237,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.9354024305338627,
+          "price": 161.79,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-05-19T04:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 147.36375,
+      "signalId": "replication_signal_01ffbbef2651f9b53f38eb88439d503bf8cd01638c05803cbbad2c6063691735",
+      "signalTimestamp": "2025-05-08T08:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 184.94,
+      "entryTimestamp": "2025-05-23T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-05-23T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.0348573447991518,
+          "fundingR": -0.0017428672399575902,
+          "grossR": -1.0,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0366002120391093,
+          "price": 174.32874999999999,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-05-23T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 174.32874999999999,
+      "signalId": "replication_signal_7b0dc1000ed912d3f25d25c63c9be218d7960f8d9a75d3d21ab572021bf2f219",
+      "signalTimestamp": "2025-05-23T00:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 2761.52,
+      "entryTimestamp": "2025-05-29T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-05-29T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.040901560735378525,
+          "fundingR": -0.0020450780367689265,
+          "grossR": -0.9999999999999988,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0429466387721462,
+          "price": 2626.4875,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-05-29T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2626.4875,
+      "signalId": "replication_signal_1130878af64245d027cb5664e46c7c893464b4d320482552957d56ce42f3d0c3",
+      "signalTimestamp": "2025-05-29T00:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 107700.0,
+      "entryTimestamp": "2025-06-09T12:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-06-12T20:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.10498866765773891,
+          "fundingR": -0.024872844219039746,
+          "grossR": -0.9999999999999973,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.129861511876776,
+          "price": 105648.35,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-06-12T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 105648.35,
+      "signalId": "replication_signal_d3fd9c772685f2215fef47f763932121d6df12f4516d35cbf7c5fafd006560fd",
+      "signalTimestamp": "2025-06-09T08:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 2679.15,
+      "entryTimestamp": "2025-06-10T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-06-13T00:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.059100798279356534,
+          "fundingR": -0.021398423896063327,
+          "grossR": -0.9999999999999988,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0804992221754186,
+          "price": 2588.4862500000004,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-06-13T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2588.4862500000004,
+      "signalId": "replication_signal_65450576f963f17cfc7a7ac553c3807cb7e836af5cbb68ca665412d7e270cbfc",
+      "signalTimestamp": "2025-06-09T20:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 2413.45,
+      "entryTimestamp": "2025-06-20T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-06-26T04:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.037566713039079346,
+          "fundingR": -0.0028042643012308145,
+          "grossR": -0.5802064383068579,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.6205774156471681,
+          "price": 2488.0,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-06-26T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2541.93875,
+      "signalId": "replication_signal_1dbc8edfc96c5fd7e1a330936ab96e79cd4f4bb31836aa9c6beca9c65bb6a4be",
+      "signalTimestamp": "2025-06-20T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 139.71,
+      "entryTimestamp": "2025-06-20T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-06-25T08:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03369042954031651,
+          "fundingR": 0.004937029291976937,
+          "grossR": -0.8693293142426503,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.8980827144909899,
+          "price": 146.92,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-06-25T04:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 148.00375,
+      "signalId": "replication_signal_2f21d940b01e3a7167b28caa655031ec21ea3cbabb082e83c274b38189ee2ac3",
+      "signalTimestamp": "2025-06-20T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 102217.6,
+      "entryTimestamp": "2025-06-21T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-06-23T20:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.08117903765399613,
+          "fundingR": 0.003934699829359053,
+          "grossR": -0.9999999999999978,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0772443378246348,
+          "price": 104735.925,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-06-23T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 104735.925,
+      "signalId": "replication_signal_58a1008085d67b07bf2e56233eb0f15bc1095b2323d92b72ec5f3205ee887f05",
+      "signalTimestamp": "2025-06-21T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 109627.5,
+      "entryTimestamp": "2025-07-02T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-07-04T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.09413873607943095,
+          "fundingR": -0.011788155026615519,
+          "grossR": -0.9999999999999984,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.105926891106045,
+          "price": 107298.4375,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-07-04T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 107298.4375,
+      "signalId": "replication_signal_310f698eb9f909163c07bb834db635a58b970acbcbc3d75a53962ea11c2158ce",
+      "signalTimestamp": "2025-07-02T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 2603.62,
+      "entryTimestamp": "2025-07-02T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-07-04T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.04420501283983106,
+          "fundingR": -0.007152626849702495,
+          "grossR": -1.0000000000000009,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0513576396895343,
+          "price": 2485.8224999999998,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-07-04T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2485.8224999999998,
+      "signalId": "replication_signal_646e1344bd230a9f1414f6b82e714a94f06559cf8acdfbb45e3e316a37a53a0e",
+      "signalTimestamp": "2025-07-02T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 2655.29,
+      "entryTimestamp": "2025-07-09T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-08-01T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.052773328033389674,
+          "fundingR": -0.16042472712044648,
+          "grossR": 8.568120838716094,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 8.354922783562259,
+          "price": 3517.5,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-08-01T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2554.66,
+      "signalId": "replication_signal_59038d039810d73909adf0f3e84fcf1c5a2ee51e9217c67d376c9ffb4e28685f",
+      "signalTimestamp": "2025-07-09T12:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 111710.9,
+      "entryTimestamp": "2025-07-09T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-07-25T04:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.09361804297042794,
+          "fundingR": -0.21250365532708604,
+          "grossR": 1.558458428049156,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 1.2523367297516421,
+          "price": 115430.2,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-07-25T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 109324.375,
+      "signalId": "replication_signal_dbe93acf4cfa1ea96be5caf6024ac9b0f8baa6d4e15da82b4589be83ab9fa201",
+      "signalTimestamp": "2025-07-09T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 174.13,
+      "entryTimestamp": "2025-07-16T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-07-25T04:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03648611838658982,
+          "fundingR": -0.04560764798323727,
+          "grossR": 0.3687794656888432,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.2866856993190161,
+          "price": 177.65,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-07-25T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 164.58499999999998,
+      "signalId": "replication_signal_c1c1887a3837718182b4f56fad75aac58dbe2c23086d59d4dc1e4b215b59ec11",
+      "signalTimestamp": "2025-07-16T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 3908.46,
+      "entryTimestamp": "2025-08-08T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-08-18T04:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.04102374095527989,
+          "fundingR": -0.0556658231136984,
+          "grossR": 2.1539652446584507,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 2.0572756805894725,
+          "price": 4318.89,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-08-18T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 3717.91375,
+      "signalId": "replication_signal_db38e50406ac696ccf788dc9d8aa0bc73300990737de724c074f784d6c03143b",
+      "signalTimestamp": "2025-08-07T20:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 184.92,
+      "entryTimestamp": "2025-08-10T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-08-11T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.040375545851528416,
+          "fundingR": -0.007884140291493296,
+          "grossR": -1.0000000000000004,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0482596861430222,
+          "price": 175.76,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-08-11T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 175.76,
+      "signalId": "replication_signal_f0a2dae1d0a8f62759359106e7b8e5a2d27ecc59683fb6f9940cb0b4724ed9d0",
+      "signalTimestamp": "2025-08-10T00:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 121706.0,
+      "entryTimestamp": "2025-08-11T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-08-11T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.09789047183374727,
+          "fundingR": -0.009789047183374727,
+          "grossR": -0.9999999999999992,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.1076795190171214,
+          "price": 119219.425,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-08-11T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 119219.425,
+      "signalId": "replication_signal_1adff3d242d652c6d82c7279ad78b93ea32e9bee5d12bdde77613dcf4570bec7",
+      "signalTimestamp": "2025-08-11T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 190.62,
+      "entryTimestamp": "2025-08-12T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-08-18T04:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03312609970674486,
+          "fundingR": -0.01739229924926719,
+          "grossR": -0.7012056044314101,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.7517240033874222,
+          "price": 182.55,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-08-18T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 179.11125,
+      "signalId": "replication_signal_ac85403fcd6f428854a8495e070306b601eaa0169f8fa16d35d049574e3f4116",
+      "signalTimestamp": "2025-08-12T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 123361.7,
+      "entryTimestamp": "2025-08-14T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-08-14T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.07334935747359672,
+          "fundingR": -0.007334935747359673,
+          "grossR": -0.9999999999999983,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0806842932209548,
+          "price": 119998.02500000001,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-08-14T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 119998.02500000001,
+      "signalId": "replication_signal_51299b11552347b4f72cb1c28e086a7c3d1481d159d2f4ea7d9185f399c9b80f",
+      "signalTimestamp": "2025-08-13T20:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 115257.3,
+      "entryTimestamp": "2025-08-18T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-09-03T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.10639953842603286,
+          "fundingR": 0.2252967487912625,
+          "grossR": 1.4231710131548605,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 1.5420682235200902,
+          "price": 112174.0,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-09-03T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 117423.8,
+      "signalId": "replication_signal_46f09ae9d57eb57a708edc31a1eccf3e0980d34ab0f3cd0b45b25a538cbabe00",
+      "signalTimestamp": "2025-08-18T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 4832.79,
+      "entryTimestamp": "2025-08-22T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-08-25T08:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.03294588030779455,
+          "fundingR": -0.01317835212311782,
+          "grossR": -1.0000000000000013,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0461242324309137,
+          "price": 4539.412499999999,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-08-25T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 4539.412499999999,
+      "signalId": "replication_signal_7fb1f9105d6f7a669ac3122d3c1d2c4071fb5357a6bc25e2e62f859e8d3ca347",
+      "signalTimestamp": "2025-08-22T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 219.16,
+      "entryTimestamp": "2025-09-09T08:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-09-22T04:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.05581028171255771,
+          "fundingR": -0.006385135725491221,
+          "grossR": 1.7227439121438808,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 1.660548494705832,
+          "price": 232.69,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-09-22T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 211.30625,
+      "signalId": "replication_signal_4aff781133c2e332fc9db7d3e1136998de3ff5991e9e8cb0ee99dca6efe8827a",
+      "signalTimestamp": "2025-09-09T04:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 4303.0,
+      "entryTimestamp": "2025-09-22T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-09-29T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.07090130169714959,
+          "fundingR": -0.03277779383226792,
+          "grossR": 1.1510957324106157,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 1.0474166368811981,
+          "price": 4163.28,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-09-29T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 4424.38,
+      "signalId": "replication_signal_7ce7399b0b3965c494f88a55d31713780411a4fe44a7d416acdbd597b696036c",
+      "signalTimestamp": "2025-09-22T00:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 112459.2,
+      "entryTimestamp": "2025-09-22T08:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-09-29T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.13208544624374197,
+          "fundingR": 0.020634068363098404,
+          "grossR": -0.9999999999999979,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.1114513778806414,
+          "price": 114162.025,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-09-29T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 114162.025,
+      "signalId": "replication_signal_d27536a2519ff0cdb53062399f4ffea6a718837dbbde5d0e4e588c4a0f22548c",
+      "signalTimestamp": "2025-09-22T04:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 116728.6,
+      "entryTimestamp": "2025-10-01T12:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-10T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.09798370486178516,
+          "fundingR": -0.09998087491175214,
+          "grossR": 0.9411517819200541,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.7431872021465168,
+          "price": 118971.0,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-10T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 114345.9875,
+      "signalId": "replication_signal_a255ed5f70238becef98522750e8fef03756c6c6cf3b8179f438eaebb49a8281",
+      "signalTimestamp": "2025-10-01T08:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 4435.39,
+      "entryTimestamp": "2025-10-02T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-09T12:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.0502198979555732,
+          "fundingR": -0.035881503908328144,
+          "grossR": -0.364529300620619,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.4506307024845203,
+          "price": 4371.0,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-09T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 4258.75125,
+      "signalId": "replication_signal_378a738483da193e6af6e41b90aa014e2fc8f3ccf0ec6dcd2b4bb6dc2731f4ab",
+      "signalTimestamp": "2025-10-02T12:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 227.04,
+      "entryTimestamp": "2025-10-02T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-07T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.039623036649214634,
+          "fundingR": -0.0064308587582275175,
+          "grossR": -0.29581151832460595,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.3418654137320481,
+          "price": 223.65,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-07T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 215.57999999999998,
+      "signalId": "replication_signal_6f1e0919d83dc4b80c5451d8d798128ed828f6df46c2a08335a60b8ca7bf4d63",
+      "signalTimestamp": "2025-10-02T12:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 3995.07,
+      "entryTimestamp": "2025-10-10T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-13T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.030836864652078248,
+          "fundingR": -0.03183905730448315,
+          "grossR": -0.9999999999999998,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0626759219565611,
+          "price": 4254.18,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-13T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 4254.18,
+      "signalId": "replication_signal_afda1f4fd9108bedaca180c6d3a2547605ba45dd50081499011490c054f68049",
+      "signalTimestamp": "2025-10-10T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 187.89,
+      "entryTimestamp": "2025-10-11T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-14T00:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.01759063779988297,
+          "fundingR": -0.07892729819517923,
+          "grossR": -1.0000000000000004,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0965179359950625,
+          "price": 209.2525,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-14T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 209.2525,
+      "signalId": "replication_signal_79ea3bd93cfae4fbd5785be3ec64aff10ea9633b50900a0c421da1ac67b4a8ef",
+      "signalTimestamp": "2025-10-10T20:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 114508.4,
+      "entryTimestamp": "2025-10-27T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-29T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.08889799800091229,
+          "fundingR": -0.015966281408111904,
+          "grossR": -1.0000000000000022,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.1048642794090264,
+          "price": 111932.22499999999,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-29T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 111932.22499999999,
+      "signalId": "replication_signal_e9c680d4a7c558a4373f6a436d3085ce4b3d83b99135fb6d7fb27d12a7ba86f0",
+      "signalTimestamp": "2025-10-26T20:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 4157.45,
+      "entryTimestamp": "2025-10-27T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-28T20:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.055136766022346774,
+          "fundingR": -0.00813138074125863,
+          "grossR": -0.9999999999999997,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0632681467636051,
+          "price": 4006.645,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-28T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 4006.645,
+      "signalId": "replication_signal_4294f7f6f88397c2cef4f2405461f9fbcea3b0d36104151acf39d55c381bbfc4",
+      "signalTimestamp": "2025-10-26T20:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 106485.0,
+      "entryTimestamp": "2025-10-30T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-31T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.05254496558190034,
+          "fundingR": 0.00015452024579803614,
+          "grossR": -0.9999999999999991,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0523904453361015,
+          "price": 110538.09999999999,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-31T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 110538.09999999999,
+      "signalId": "replication_signal_434667db54bcf8554134afb1e4cd7f8426eb22848cbbe73e1f5ff56bab107a29",
+      "signalTimestamp": "2025-10-30T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 3684.36,
+      "entryTimestamp": "2025-10-30T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-10-31T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.03407559668664777,
+          "fundingR": -0.0030547001428304675,
+          "grossR": -0.9999999999999992,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0371302968294775,
+          "price": 3900.60625,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-10-31T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 3900.60625,
+      "signalId": "replication_signal_5f02eaed879da6456e484150201690d9d6f06c268d12f7a8629b73af12c79a3d",
+      "signalTimestamp": "2025-10-30T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 177.41,
+      "entryTimestamp": "2025-11-03T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-11-09T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03944635908838246,
+          "fundingR": -0.005806731999548519,
+          "grossR": 1.2573652028904958,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 1.2121121118025648,
+          "price": 166.1,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-11-09T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 186.405,
+      "signalId": "replication_signal_ca6b55de852db7f99e4f78c881e11ed37724f297e74f21ae875c282ec2a5b17a",
+      "signalTimestamp": "2025-11-03T00:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 105701.6,
+      "entryTimestamp": "2025-11-03T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-11-09T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.07505883188354341,
+          "fundingR": 0.03648540625726791,
+          "grossR": 0.3329309426593331,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.2943575170330576,
+          "price": 104763.9,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-11-09T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 108518.1,
+      "signalId": "replication_signal_1893635a81998e31a865c656eba4b56f7843b81e09ea23afd7ea1a860d2f7ab4",
+      "signalTimestamp": "2025-11-03T12:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 3587.3,
+      "entryTimestamp": "2025-11-03T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-11-09T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.04428628746026361,
+          "fundingR": -0.006527446456338877,
+          "grossR": 0.4586278201290098,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.4078140862124073,
+          "price": 3513.0,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-11-09T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 3749.3050000000003,
+      "signalId": "replication_signal_c4a25454c4d47518d9250d029c4d1f68a1c6d94b1da7f10c14e7f56f90169212",
+      "signalTimestamp": "2025-11-03T12:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 98629.4,
+      "entryTimestamp": "2025-11-13T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-11-26T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.04752880514661591,
+          "fundingR": 0.030400424215775736,
+          "grossR": 2.100016866250632,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 2.082888485319792,
+          "price": 89913.7,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-11-26T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 102779.7,
+      "signalId": "replication_signal_9ba39e3b3f3d074a3d91d9d7d54c5fb573fc0b5ff498d5de34d58c0f606c90b4",
+      "signalTimestamp": "2025-11-13T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 142.63,
+      "entryTimestamp": "2025-11-13T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-11-25T00:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.024995399780941948,
+          "fundingR": -0.00031524505325075615,
+          "grossR": 0.37327491785323025,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.34796427301903754,
+          "price": 138.37,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-11-24T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 154.0425,
+      "signalId": "replication_signal_cfc2d5588d3e26120f989b9c78412a70d9c62359756bed5dcd032f5e150c2e7e",
+      "signalTimestamp": "2025-11-13T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 2980.69,
+      "entryTimestamp": "2025-11-17T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-11-26T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.02766253487468317,
+          "fundingR": 0.010614074899466745,
+          "grossR": -0.23210732991885294,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.24915578989406933,
+          "price": 3030.71,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-11-26T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 3196.19375,
+      "signalId": "replication_signal_c8f9c0206655d5075d9c316c2d7d509a510c98c9800513ee04faf09b4cb796a1",
+      "signalTimestamp": "2025-11-17T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 86984.4,
+      "entryTimestamp": "2025-12-15T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-12-17T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.0724228755789145,
+          "fundingR": 0.005470736426288254,
+          "grossR": -1.0,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0669521391526262,
+          "price": 89386.525,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-12-17T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 89386.525,
+      "signalId": "replication_signal_ff750d0c849c7927ee838b84a76036bd8a58e7098023b297a2709628ca1d7e16",
+      "signalTimestamp": "2025-12-15T12:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 126.77,
+      "entryTimestamp": "2025-12-15T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-12-17T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.040140906392242263,
+          "fundingR": 0.002461036578307641,
+          "grossR": -0.999999999999998,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0376798698139327,
+          "price": 133.08624999999998,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-12-17T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 133.08624999999998,
+      "signalId": "replication_signal_6db97a694fedccd7fd209bb726394cf1676b5d37dd522e6e3ab6e9d707f939ea",
+      "signalTimestamp": "2025-12-15T12:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 2818.61,
+      "entryTimestamp": "2025-12-17T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-12-19T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.03107618522601985,
+          "fundingR": -0.0006583224708825702,
+          "grossR": -1.0000000000000007,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0317345076969031,
+          "price": 3000.01,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-12-19T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 3000.01,
+      "signalId": "replication_signal_c7d10369ef25f12ee396d4eb0267ca71a9b68fd9f79f01135beacd4ccdf38fba",
+      "signalTimestamp": "2025-12-17T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 122.32,
+      "entryTimestamp": "2025-12-17T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-12-29T00:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.02845892104115167,
+          "fundingR": 0.017114599949344847,
+          "grossR": -0.33851970335902415,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.349864024450831,
+          "price": 125.23,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-12-28T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 130.91625,
+      "signalId": "replication_signal_89aa17e4128dd598a6ae175c514e9827d53f31d86f9841088e6e07ac2e99d9f3",
+      "signalTimestamp": "2025-12-17T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 84433.0,
+      "entryTimestamp": "2025-12-18T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2025-12-19T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.041520895251735794,
+          "fundingR": 0.0009906747337396664,
+          "grossR": -1.0,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0405302205179963,
+          "price": 88500.0125,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2025-12-19T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 88500.0125,
+      "signalId": "replication_signal_5eca89420b04f2c46b86f515df1539f821ab95567f1b8f7d6a46c194a9d25e75",
+      "signalTimestamp": "2025-12-18T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 92844.1,
+      "entryTimestamp": "2026-01-05T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-01-07T16:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.08831046167382045,
+          "fundingR": -0.014163026962777542,
+          "grossR": -0.9999999999999966,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.1024734886365946,
+          "price": 90741.42500000002,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-01-07T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 90741.42500000002,
+      "signalId": "replication_signal_431e00ab2a0bd6e98496fed5edc3cbe55f88b253363b25ee1cfbdbd80d155779",
+      "signalTimestamp": "2026-01-05T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 3184.8,
+      "entryTimestamp": "2026-01-05T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-01-08T04:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.06583480833580968,
+          "fundingR": -0.011712351604495842,
+          "grossR": -0.9999999999999988,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0775471599403044,
+          "price": 3088.0487500000004,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-01-08T04:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 3088.0487500000004,
+      "signalId": "replication_signal_5bcaebcdcda06b514aa1f21e00cc1b2f804078bea9baab718d822c525ef6e8dc",
+      "signalTimestamp": "2026-01-05T00:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 138.19,
+      "entryTimestamp": "2026-01-05T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-01-19T00:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.04857293497363794,
+          "fundingR": -0.0010279746779031733,
+          "grossR": -0.06854130052723834,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.11814221017877945,
+          "price": 137.8,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-01-18T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 132.5,
+      "signalId": "replication_signal_5c0f6cd2b7882ef6e32847dda919fb3fc905151560550a24378132ec3585a132",
+      "signalTimestamp": "2026-01-05T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 95394.2,
+      "entryTimestamp": "2026-01-14T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-01-19T00:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.07967734559748595,
+          "fundingR": -0.030213221329651648,
+          "grossR": -0.7388142680399422,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.8487048349670798,
+          "price": 93625.1,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-01-18T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 92999.6875,
+      "signalId": "replication_signal_2b6cb9095b91b00327c6a4b53247bfe113362e57e4d7fd71bb03b625d50ceb9c",
+      "signalTimestamp": "2026-01-13T20:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 3324.07,
+      "entryTimestamp": "2026-01-14T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-01-19T00:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.05880902727865808,
+          "fundingR": -0.020733955781507978,
+          "grossR": -0.999999999999999,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.079542983060165,
+          "price": 3211.0237500000003,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-01-19T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 3211.0237500000003,
+      "signalId": "replication_signal_1adb50586d8e41b86ae7b35cd8cef60281006717a69e5ec9881ba452f32e02f2",
+      "signalTimestamp": "2026-01-13T20:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 2810.77,
+      "entryTimestamp": "2026-01-25T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-01-26T08:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.05533760720569956,
+          "fundingR": -0.003521103881347749,
+          "grossR": -0.9999999999999978,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.058858711087045,
+          "price": 2912.35625,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-01-26T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2912.35625,
+      "signalId": "replication_signal_bbc6dca09ebdc1c4275adcdce1c78d3ec5ce4e2aed1e7b672a5006a71e701ab1",
+      "signalTimestamp": "2026-01-25T16:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 117.89,
+      "entryTimestamp": "2026-01-25T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-01-26T00:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.050072736925935835,
+          "fundingR": -0.002879782390095991,
+          "grossR": -1.0000000000000004,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0529525193160323,
+          "price": 122.59875,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-01-26T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 122.59875,
+      "signalId": "replication_signal_5bb4744ca0045be50e66398acf0be71472d31c3a787e113a8ddf0c50215b7802",
+      "signalTimestamp": "2026-01-25T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 84901.5,
+      "entryTimestamp": "2026-01-29T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-02-14T12:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.055950344123134765,
+          "fundingR": 0.037073393691330295,
+          "grossR": 4.755596377130952,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 4.736719426699148,
+          "price": 70468.8,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-02-14T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 87936.3875,
+      "signalId": "replication_signal_773627cb826cf4506f16db45ce6763973ad0f0a53f2a44a5d1982319001ba455",
+      "signalTimestamp": "2026-01-29T12:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 2739.44,
+      "entryTimestamp": "2026-01-30T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-02-14T12:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03657860081617671,
+          "fundingR": 0.0020760906239561516,
+          "grossR": 4.281172022999831,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 4.24666951280761,
+          "price": 2098.19,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-02-14T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2889.2237499999997,
+      "signalId": "replication_signal_d914ef96a616f8962ec50ff5f0b1b469e004f76414eae7cb6d54e6e01164f2a0",
+      "signalTimestamp": "2026-01-30T00:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 114.34,
+      "entryTimestamp": "2026-01-30T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-02-14T12:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03780615829716884,
+          "fundingR": -0.1059284308000168,
+          "grossR": 4.485224219880142,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 4.341489630782957,
+          "price": 87.21,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-02-14T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 120.38875,
+      "signalId": "replication_signal_1bf677317c9601a2cc9a5854c88d6bab990b53dcbc55c3e2bb15981602fc1796",
+      "signalTimestamp": "2026-01-30T00:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 64899.2,
+      "entryTimestamp": "2026-02-23T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-02-25T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.0629825619127915,
+          "fundingR": -0.0012201905010355632,
+          "grossR": -1.0000000000000036,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0642027524138307,
+          "price": 66960.0625,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-02-25T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 66960.0625,
+      "signalId": "replication_signal_b4810fbff4c064d1f18b31e9e28cae3472953eae573f26c68afc4892e2b0bcf9",
+      "signalTimestamp": "2026-02-23T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 1861.58,
+      "entryTimestamp": "2026-02-23T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-02-23T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.05133357461696226,
+          "fundingR": -0.0057030316774609935,
+          "grossR": -0.9999999999999996,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0570366062944228,
+          "price": 1934.1087499999999,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-02-23T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 1934.1087499999999,
+      "signalId": "replication_signal_1103876bcf5d478d3ec437e603227e2c92304c69f25c039828b6eaeece2bcdd9",
+      "signalTimestamp": "2026-02-23T00:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 1830.93,
+      "entryTimestamp": "2026-02-24T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-02-25T00:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.04522001142274979,
+          "fundingR": -0.0029077223563578527,
+          "grossR": -0.9999999999999997,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0481277337791073,
+          "price": 1911.90875,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-02-25T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 1911.90875,
+      "signalId": "replication_signal_be17afad01fc234865538d78e750b79eb2029537e885b048aeb47f61950d9654",
+      "signalTimestamp": "2026-02-24T00:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 76.84,
+      "entryTimestamp": "2026-02-24T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-02-25T00:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.0365795894079143,
+          "fundingR": -0.0034999475663731613,
+          "grossR": -1.0,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0400795369742875,
+          "price": 81.04125,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-02-25T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 81.04125,
+      "signalId": "replication_signal_85c27f0a084df34f8212022a7a7000e02f23e525ee34b17b81141ab7ee28f3db",
+      "signalTimestamp": "2026-02-24T00:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 2234.89,
+      "entryTimestamp": "2026-03-16T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-03-19T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.043799902008819204,
+          "fundingR": -0.005201932099608762,
+          "grossR": -1.0000000000000018,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0490018341084297,
+          "price": 2132.8399999999997,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-03-19T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2132.8399999999997,
+      "signalId": "replication_signal_5258e8deb602c629d90b18f572ac8b0b48892dc23783e237751826d4c065ca27",
+      "signalTimestamp": "2026-03-16T00:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 95.17,
+      "entryTimestamp": "2026-03-16T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-03-18T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.04394574314574312,
+          "fundingR": 0.00017512000895858338,
+          "grossR": -0.9999999999999988,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0437706231367834,
+          "price": 90.83875,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-03-18T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 90.83875,
+      "signalId": "replication_signal_e221f49745ff157a425972787fb66798190c165ee44a1da54f0a03ff49724646",
+      "signalTimestamp": "2026-03-16T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 74842.2,
+      "entryTimestamp": "2026-03-17T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-03-18T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.06349588262430342,
+          "fundingR": -0.0033266271047707693,
+          "grossR": -0.9999999999999992,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0668225097290733,
+          "price": 72484.8125,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-03-18T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 72484.8125,
+      "signalId": "replication_signal_2d05d358819844d7c8d8fb439b3a6dc6bf53ac72f8680e61c437ca7d1b7d2bc0",
+      "signalTimestamp": "2026-03-16T20:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 71904.7,
+      "entryTimestamp": "2026-04-08T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-04-27T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.057654636023773916,
+          "fundingR": 0.0017613421125128388,
+          "grossR": 1.9457769135938596,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 1.8898836196825985,
+          "price": 76758.1,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-04-27T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 69410.375,
+      "signalId": "replication_signal_31c3d46c29a15d2beb2a0f9fde16dcbcf13f76ea54c153f1553b724724c4d370",
+      "signalTimestamp": "2026-04-07T20:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 2239.25,
+      "entryTimestamp": "2026-04-08T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-04-20T00:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.042353386213989305,
+          "fundingR": -0.017336994864394467,
+          "grossR": 0.21978177863416368,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.16009139755577992,
+          "price": 2262.49,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-04-19T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2133.50875,
+      "signalId": "replication_signal_fde6a2d82bc7a076f10517984eb948717c725074e4961200364fd4c8bb4331c9",
+      "signalTimestamp": "2026-04-07T20:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 80284.7,
+      "entryTimestamp": "2026-05-04T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-05-04T08:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.09715947992224588,
+          "fundingR": -0.003908074473433424,
+          "grossR": -1.0000000000000022,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.1010675543956816,
+          "price": 78632.0625,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-05-04T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 78632.0625,
+      "signalId": "replication_signal_4fa1bb9503ef6e3c8c067dec14eee50cdbb90c06d6888fbab08aee04dda54041",
+      "signalTimestamp": "2026-05-04T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 80848.6,
+      "entryTimestamp": "2026-05-05T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-05-13T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.07675833995941303,
+          "fundingR": -0.013000584433716409,
+          "grossR": -0.9724315535881733,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0621904779813027,
+          "price": 78800.1,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-05-13T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 78742.02500000001,
+      "signalId": "replication_signal_af5755710caae8c9395a850e55bcdab01232846f9b939e380ecfed5c4ce4790d",
+      "signalTimestamp": "2026-05-05T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 2409.77,
+      "entryTimestamp": "2026-05-06T12:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-05-07T00:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.054465002613326666,
+          "fundingR": -0.004017219302750464,
+          "grossR": -1.000000000000002,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0584822219160792,
+          "price": 2321.28125,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-05-07T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2321.28125,
+      "signalId": "replication_signal_b2f1d29cdbf3a4072b1b8f7c04466aa93d4bd9034493e14ffe857ea5142c06ff",
+      "signalTimestamp": "2026-05-06T08:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 89.82,
+      "entryTimestamp": "2026-05-06T12:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-05-13T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.06199827437446076,
+          "fundingR": -0.014302370549229414,
+          "grossR": 0.19672131147541244,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 0.12042066655172226,
+          "price": 90.39,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-05-13T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 86.9225,
+      "signalId": "replication_signal_1dbad52449a10e82248ec2d3dcd75a04a5656e57ed15244f549c55f49b3f2956",
+      "signalTimestamp": "2026-05-06T08:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 2221.66,
+      "entryTimestamp": "2026-05-15T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-06-14T16:00:00+00:00",
+          "exitReason": "maximum_hold",
+          "feesR": 0.05578030944983219,
+          "fundingR": 0.062051011079041776,
+          "grossR": 6.991808680915178,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 6.998079382544388,
+          "price": 1664.71,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-06-14T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 2301.3174999999997,
+      "signalId": "replication_signal_f6002905aab67634d73064382b702c770938cc514910ae4245889c5647025675",
+      "signalTimestamp": "2026-05-15T12:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 85.17,
+      "entryTimestamp": "2026-05-18T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-05-21T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.05265533230293662,
+          "fundingR": -0.00037680934132623255,
+          "grossR": -0.8098918083462144,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.8629239499904773,
+          "price": 87.79,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-05-21T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 88.405,
+      "signalId": "replication_signal_f1913655f5cf7c47615ddf2e02baaa1e988a611013dcd4d693d4486302a1546c",
+      "signalTimestamp": "2026-05-17T20:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 75830.4,
+      "entryTimestamp": "2026-05-22T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-05-25T04:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.08455782445674138,
+          "fundingR": 0.010859148518066552,
+          "grossR": -0.999999999999998,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0736986759386729,
+          "price": 77623.97499999999,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-05-25T04:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 77623.97499999999,
+      "signalId": "replication_signal_7da942d90025bcab225e05cbf74d04579ca1293d324e4a68dfa20ce8ba7dcf02",
+      "signalTimestamp": "2026-05-22T16:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 82.2,
+      "entryTimestamp": "2026-05-23T08:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-05-23T20:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.04690442225392301,
+          "fundingR": -0.005293165122436455,
+          "grossR": -0.9999999999999994,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.052197587376359,
+          "price": 85.705,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-05-23T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 85.705,
+      "signalId": "replication_signal_005dc778bcfd1137f39af1f97d3ccebbfae3bdea5be1c132125735c215e66242",
+      "signalTimestamp": "2026-05-23T04:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 73228.0,
+      "entryTimestamp": "2026-05-28T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-06-14T00:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.07004992257516793,
+          "fundingR": 0.03567798723652532,
+          "grossR": 4.214206709354959,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 4.1798347740163155,
+          "price": 64417.2,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-06-13T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 75318.7375,
+      "signalId": "replication_signal_4fd553ec4517b2ad7484e06bb20f27e658884e58a6f7c6c2846e29a7099e85e9",
+      "signalTimestamp": "2026-05-28T00:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 80.65,
+      "entryTimestamp": "2026-05-28T04:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-06-14T00:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.04934608030592734,
+          "fundingR": -0.03909650300107744,
+          "grossR": 3.600764818355643,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": 3.5123222350486385,
+          "price": 68.88,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-06-13T20:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 83.91875,
+      "signalId": "replication_signal_9342c33eb4b4b10a61bdfab2a42cc3b8924e1eae91c3116357a07fc06290dc7c",
+      "signalTimestamp": "2026-05-28T00:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 60252.7,
+      "entryTimestamp": "2026-06-24T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-07-02T16:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.05453195689679552,
+          "fundingR": 0.023472120780833772,
+          "grossR": -0.6021777865769172,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.6332376226928791,
+          "price": 61583.4,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-07-02T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 62462.5125,
+      "signalId": "replication_signal_f5f9602e416f21f161cb54a3a48ba3836c16ffe0e9b96daeb1ddc995204c7db5",
+      "signalTimestamp": "2026-06-24T12:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 1617.45,
+      "entryTimestamp": "2026-06-24T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-06-29T20:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.042432569807670184,
+          "fundingR": -0.0008448388847445518,
+          "grossR": -0.09614848579251889,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.13942589448493362,
+          "price": 1624.78,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-06-29T16:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 1693.6862500000002,
+      "signalId": "replication_signal_f9dc1568efb44a4dd7c60ae7cd758563c556aec9a34677e05d8e87807c231a92",
+      "signalTimestamp": "2026-06-24T12:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "short",
+      "entryPrice": 66.08,
+      "entryTimestamp": "2026-06-24T20:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-06-26T04:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.032491702519975435,
+          "fundingR": -0.0032530936859597823,
+          "grossR": -0.9999999999999996,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0357447962059347,
+          "price": 70.1475,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-06-26T04:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 70.1475,
+      "signalId": "replication_signal_cacfa8981b29ef8fbdf1e2e846d7763982184f6dd91ed525d0385bb8d7197f32",
+      "signalTimestamp": "2026-06-24T16:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 82.33,
+      "entryTimestamp": "2026-07-02T12:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-07-08T04:00:00+00:00",
+          "exitReason": "donchian_reversal",
+          "feesR": 0.03315580166121316,
+          "fundingR": -0.011696503949237245,
+          "grossR": -0.7329473949156804,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.7777997005261308,
+          "price": 78.69,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-07-08T00:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 77.36375,
+      "signalId": "replication_signal_938243b85938a3b9de7720e232f03d247146e312b8e300d0e201b6b73113d251",
+      "signalTimestamp": "2026-07-02T08:00:00+00:00",
+      "symbol": "SOL-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 63613.4,
+      "entryTimestamp": "2026-07-06T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-07-06T12:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.08874327764796158,
+          "fundingR": -0.007100114332232886,
+          "grossR": -1.000000000000002,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0958433919801964,
+          "price": 62179.75,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-07-06T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 62179.75,
+      "signalId": "replication_signal_6fb257b3ca8bc74fc837f9cfcc300d7b2da18ae04456cbe5bdf25b242ed69cb7",
+      "signalTimestamp": "2026-07-05T20:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 64025.5,
+      "entryTimestamp": "2026-07-07T00:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-07-08T08:00:00+00:00",
+          "exitReason": "initial_stop",
+          "feesR": 0.07291263932582677,
+          "fundingR": -0.011961978892054725,
+          "grossR": -1.0,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -1.0848746182178814,
+          "price": 62269.275,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-07-08T08:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 62269.275,
+      "signalId": "replication_signal_0743533917e9bed170f1cacaa473ff4b882ed740c5eadb9a15ae41e6918f7bae",
+      "signalTimestamp": "2026-07-06T20:00:00+00:00",
+      "symbol": "BTC-USDT-SWAP"
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "direction": "long",
+      "entryPrice": 1874.51,
+      "entryTimestamp": "2026-07-14T16:00:00+00:00",
+      "exitLegCount": 1,
+      "exitLegs": [
+        {
+          "ambiguousPath": false,
+          "executionTimestamp": "2026-07-18T12:00:00+00:00",
+          "exitReason": "maximum_hold",
+          "feesR": 0.05135116255179261,
+          "fundingR": -0.010442822858761547,
+          "grossR": -0.4306406876005896,
+          "isGapFill": false,
+          "legFraction": 1.0,
+          "legIndex": 0,
+          "netR": -0.49243467301114374,
+          "price": 1843.07,
+          "slippageR": 0.0,
+          "spreadProxyR": 0.0,
+          "triggerTimestamp": "2026-07-18T12:00:00+00:00"
+        }
+      ],
+      "exitPolicyHash": "v36_tsmom_exit_policy_d608e75474fae769bb44d038d46e254f1cdee1b3de8bd259337adf4e3fc3f347",
+      "initialStop": 1801.5025,
+      "signalId": "replication_signal_9d7cda9668eb329b8eb1d81598b77c547afe1f606cf06c6d24327b649d534857",
+      "signalTimestamp": "2026-07-14T12:00:00+00:00",
+      "symbol": "ETH-USDT-SWAP"
+    }
+  ],
+  "formalPerformanceClaimed": false,
+  "schemaVersion": "s01_v18_freqtrade_results_v1"
+}

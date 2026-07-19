@@ -1,0 +1,19 @@
+{
+  "attemptCount": 1,
+  "checkpoint": {
+    "checkpointId": "before_formal_input_read",
+    "deterministic": true
+  },
+  "claimedAt": "2026-07-19T03:59:48.049471Z",
+  "completedAt": "2026-07-19T03:59:50.142788Z",
+  "identity": {
+    "codeCommit": "9b397f36249676004373b1c17eebb03b29f8bf3a",
+    "inputSnapshotHash": "v36_tsmom_formal_data_snapshot_39709209ecc3e3b1bcfbc3d0a473aed42a127257803736e6a21f2f91e8300651",
+    "preregistrationHash": "v36_tsmom_formal_preregistration_e6f5d043345670bcf1f6a0e4c6e2afbaca1a913f04a105444e845beff04c259f"
+  },
+  "resultManifestHash": "sha256:7d11ba0dc426d8d0eab10ddfedc6ec688035cf6b05467b361f7732280c587df0",
+  "resumed": false,
+  "runId": "v35_tsmom_crypto_adaptation-v36-formal-001",
+  "schemaVersion": "s01_v18_atomic_run_ledger_v1",
+  "state": "completed"
+}

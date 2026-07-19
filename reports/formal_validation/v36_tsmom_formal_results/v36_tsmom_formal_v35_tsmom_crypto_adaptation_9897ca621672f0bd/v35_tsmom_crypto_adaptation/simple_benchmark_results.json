@@ -1,0 +1,9 @@
+{
+  "benchmarkName": "same_event_fixed_12_bar_exit",
+  "events": [],
+  "folds": [],
+  "holdBars": 12,
+  "positiveIncrementFoldCount": 0,
+  "schemaVersion": "v36_tsmom_same_event_benchmark_v1",
+  "totalIncrementalNetR": 0
+}
