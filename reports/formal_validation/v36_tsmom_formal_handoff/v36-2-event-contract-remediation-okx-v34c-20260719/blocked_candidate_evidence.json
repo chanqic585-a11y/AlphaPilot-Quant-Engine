@@ -1,0 +1,25 @@
+{
+  "blockedCandidates": [
+    {
+      "blockers": [
+        "purged_walk_forward_capacity_insufficient"
+      ],
+      "candidateId": "v35_tsmom_source_replication",
+      "demoArm": false,
+      "formalInputReadCount": 0,
+      "formalRunClaimBudget": 0,
+      "formalRunCount": 0,
+      "lockedOosAccessCount": 0,
+      "orderCount": 0,
+      "releaseCount": 0,
+      "resultReadCount": 0,
+      "status": "blocked_before_preregistration",
+      "timeframe": "1dutc"
+    }
+  ],
+  "campaignId": "v36-2-event-contract-remediation-okx-v34c-20260719",
+  "evidenceHash": "v36_tsmom_blocked_evidence_de869652a550c3b472ef1f46409dc874851f1a224bc404cbfafdb78c338cda62",
+  "implementationCommit": "42cdb3992eb91f09e6047b4d892d520ea0bcb1de",
+  "schemaVersion": "v36_tsmom_blocked_candidate_evidence_v1",
+  "sourceReadinessHash": "v36_tsmom_formal_readiness_1552257201e7282adfc894c191a3939579c2a9467b4f8efed0020af657625137"
+}
