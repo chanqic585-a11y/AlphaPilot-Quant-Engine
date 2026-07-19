@@ -63,6 +63,23 @@ def _manifest_target(repo: Path, manifest: Path, value: str) -> Path:
     raise RuntimeError(f"manifest artifact is missing: {value}")
 
 
+def _verify_frozen_hash(path: Path, expected: str) -> dict[str, str]:
+    observed = sha256_file(path)
+    verification_mode = "exact_bytes"
+    if observed != expected:
+        raw = path.read_bytes()
+        normalized = hashlib.sha256(raw.replace(b"\r\n", b"\n")).hexdigest()
+        if path.suffix.lower() not in {".json", ".md", ".csv"} or normalized != expected:
+            raise RuntimeError(f"artifact hash mismatch: {path}")
+        verification_mode = "lf_normalized_git_checkout"
+    return {
+        "path": str(path),
+        "sha256": expected,
+        "observedCheckoutSha256": observed,
+        "verificationMode": verification_mode,
+    }
+
+
 def _verify_manifest(repo: Path, manifest: Path) -> dict[str, Any]:
     payload = _load_json(manifest)
     rows = payload.get("artifacts")
@@ -73,10 +90,8 @@ def _verify_manifest(repo: Path, manifest: Path) -> dict[str, Any]:
         if not isinstance(row, dict):
             raise RuntimeError(f"invalid manifest row: {manifest}")
         target = _manifest_target(repo, manifest, str(row.get("path") or ""))
-        observed = sha256_file(target)
-        if observed != row.get("sha256"):
-            raise RuntimeError(f"artifact hash mismatch: {target}")
-        verified.append({"path": str(target), "sha256": observed})
+        expected = str(row.get("sha256") or "")
+        verified.append(_verify_frozen_hash(target, expected))
     return {
         "manifestPath": str(manifest),
         "manifestSha256": sha256_file(manifest),
@@ -262,8 +277,10 @@ def run_v37c_reference_strategy_parity_audit(
     workflow_chain = _verify_manifest(repo, run_dir / "workflow_artifact_manifest.json")
     implementation = _load_json(run_dir / "implementation_evidence.json")
     selected_path = run_dir / "selected_candidates.json"
-    if implementation.get("selectedCandidatesSha256") != sha256_file(selected_path):
-        raise RuntimeError("V37B selected-candidate hash mismatch")
+    selected_verification = _verify_frozen_hash(
+        selected_path,
+        str(implementation.get("selectedCandidatesSha256") or ""),
+    )
     campaign_id = str(_load_json(run_dir / "campaign_start.json")["campaignId"])
     campaign_dir = repo / "reports" / "backtest_screening" / campaign_id
     campaign_chain = _verify_manifest(repo, campaign_dir / "artifact_manifest.json")
@@ -302,6 +319,7 @@ def run_v37c_reference_strategy_parity_audit(
         "v37bCodeCommit": implementation.get("codeCommit"),
         "campaignId": campaign_id,
         "preregistrationHash": preregistration.get("preregistrationHash"),
+        "selectedCandidates": selected_verification,
         "workflowManifest": workflow_chain,
         "campaignManifest": campaign_chain,
     }

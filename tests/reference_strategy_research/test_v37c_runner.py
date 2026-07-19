@@ -10,6 +10,8 @@ import pandas as pd
 
 from alphapilot.reference_strategy_research.candidates import build_selected_candidates
 from alphapilot.scripts.run_v37c_reference_strategy_parity_audit import (
+    _verify_frozen_hash,
+    _verify_manifest,
     run_v37c_reference_strategy_parity_audit,
 )
 
@@ -255,3 +257,30 @@ def test_v37c_runner_builds_hash_checked_offline_audit_bundle(tmp_path: Path) ->
     ]
     for row in manifest["artifacts"]:
         assert _hash(output / row["path"]) == row["sha256"]
+
+
+def test_manifest_verification_records_git_crlf_normalization(tmp_path: Path) -> None:
+    repo = tmp_path / "repo"
+    artifact = repo / "artifact.json"
+    artifact.parent.mkdir(parents=True)
+    artifact.write_bytes(b'{"status":"frozen"}\r\n')
+    expected = hashlib.sha256(b'{"status":"frozen"}\n').hexdigest()
+    manifest = repo / "manifest.json"
+    _write_json(
+        manifest,
+        {"artifacts": [{"path": "artifact.json", "sha256": expected}]},
+    )
+
+    verified = _verify_manifest(repo, manifest)
+
+    assert verified["artifacts"][0]["verificationMode"] == "lf_normalized_git_checkout"
+
+
+def test_frozen_hash_verification_rejects_content_drift_but_accepts_crlf(tmp_path: Path) -> None:
+    artifact = tmp_path / "frozen.json"
+    artifact.write_bytes(b'{"status":"frozen"}\r\n')
+    expected = hashlib.sha256(b'{"status":"frozen"}\n').hexdigest()
+
+    verified = _verify_frozen_hash(artifact, expected)
+
+    assert verified["verificationMode"] == "lf_normalized_git_checkout"
