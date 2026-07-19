@@ -138,6 +138,39 @@ def test_late_funding_blocks_formal_without_zero_fill(tmp_path: Path) -> None:
     assert candidate["fundingCoverage"]["fullWindowCovered"] is False
 
 
+def test_funding_gap_before_formal_window_does_not_block_formal(
+    tmp_path: Path,
+) -> None:
+    snapshot = _write_snapshot(tmp_path, timeframe="4h", periods=1_200)
+    funding_root = tmp_path / "funding"
+    _write_funding(
+        funding_root,
+        start="2022-01-01T00:00:00Z",
+        end="2025-07-20T00:00:00Z",
+    )
+    missing_timestamp = pd.Timestamp("2022-12-18T08:00:00Z").value // 1_000_000
+    for symbol in SYMBOLS:
+        path = funding_root / symbol / "fixture.parquet"
+        frame = pd.read_parquet(path)
+        frame = frame[frame["timestamp_ms"] != missing_timestamp]
+        frame.to_parquet(path, index=False)
+
+    result = build_tsmom_formal_readiness(
+        snapshot_manifest_path=snapshot,
+        funding_root=funding_root,
+        candidate_ids=["v35_tsmom_crypto_adaptation"],
+        formal_start="2025-01-01T00:00:00Z",
+    )
+
+    candidate = result["candidates"][0]
+    assert result["status"] == "ready"
+    assert "funding_schedule_incomplete" not in candidate["blockers"]
+    assert all(
+        row["maximumGapHours"] <= 8
+        for row in candidate["fundingCoverage"]["instruments"]
+    )
+
+
 def test_missing_funding_and_short_daily_window_are_separate_blockers(
     tmp_path: Path,
 ) -> None:
@@ -153,6 +186,42 @@ def test_missing_funding_and_short_daily_window_are_separate_blockers(
     blockers = result["candidates"][0]["blockers"]
     assert "funding_evidence_missing" in blockers
     assert "purged_walk_forward_capacity_insufficient" in blockers
+
+
+def test_daily_capacity_successor_fits_five_locked_oos_folds(
+    tmp_path: Path,
+) -> None:
+    snapshot = _write_snapshot(tmp_path, timeframe="1dutc", periods=563)
+    funding_root = tmp_path / "funding"
+    _write_funding(
+        funding_root,
+        start="2025-01-01T00:00:00Z",
+        end="2026-07-18T00:00:00Z",
+    )
+
+    result = build_tsmom_formal_readiness(
+        snapshot_manifest_path=snapshot,
+        funding_root=funding_root,
+        candidate_ids=["v37e_tsmom_daily_capacity_successor"],
+        formal_start="2025-01-01T00:00:00Z",
+        fold_count=5,
+        minimum_test_bars=60,
+    )
+
+    candidate = result["candidates"][0]
+    assert result["status"] == "ready"
+    assert candidate["status"] == "ready"
+    assert candidate["walkForwardCapacity"] == {
+        "foldCount": 5,
+        "warmupBars": 120,
+        "purgeBarsPerFold": 18,
+        "minimumTestBarsPerFold": 60,
+        "requiredBars": 510,
+        "availableBars": 563,
+        "sufficient": True,
+    }
+    assert result["formalRunCount"] == 0
+    assert result["lockedOosAccessCount"] == 0
 
 
 def test_non_okx_funding_provenance_is_rejected(tmp_path: Path) -> None:

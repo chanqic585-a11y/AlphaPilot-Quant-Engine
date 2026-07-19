@@ -11,8 +11,13 @@ from alphapilot.research_factory.generated_candidate_adapter import (
 from alphapilot.standard_replication.candidate_adapter import (
     CanonicalReplicationCandidateAdapter,
 )
-from alphapilot.standard_replication.registry import ReplicationSourceRegistry
+from alphapilot.standard_replication.registry import (
+    ReplicationFamily,
+    ReplicationSourceRegistry,
+    ReplicationVariant,
+)
 from alphapilot.standard_replication.tsmom_engine import SELECTED_TSMOM_TRIALS
+from alphapilot.standard_replication.tsmom_engine import build_tsmom_candidate_spec
 
 from .s01 import S01CandidateAdapter
 
@@ -33,10 +38,45 @@ def get_candidate_adapter(candidate_id: str) -> CandidateAdapter:
             / "source_registry"
             / "strategy_research_source_registry.json"
         )
-        family = registry.require("crypto_tsmom_turtle_v1")
-        variant = next(
-            row for row in family.variants if row.candidate_id == normalized
-        )
+        candidate = build_tsmom_candidate_spec(normalized)
+        if normalized == "v37e_tsmom_daily_capacity_successor":
+            source_family = registry.require("crypto_tsmom_turtle_v1")
+            variant = ReplicationVariant(
+                candidate_id=normalized,
+                adaptation="metadata_only_capacity_successor",
+                definition_path=(
+                    "research/canonical_replications/"
+                    "crypto_tsmom_daily_capacity_successor_v1.json"
+                ),
+            )
+            family = ReplicationFamily(
+                family_id=str(candidate["familyId"]),
+                title="Crypto daily TSMOM metadata-capacity successor",
+                source=source_family.source,
+                mechanism=(
+                    "Persistent daily directional trends with a bounded "
+                    "holding horizon for purged validation."
+                ),
+                formula=(
+                    "sign(120-day return) with 55-day Donchian confirmation, "
+                    "ATR risk and an 18-day maximum hold"
+                ),
+                parameters={"timeframes": ["1d"], "maximumHoldBars": [18]},
+                universe=source_family.universe,
+                cost_assumptions=source_family.cost_assumptions,
+                adaptation_limits=(
+                    "metadata-only change before locked OOS read",
+                    "new candidate identity required",
+                    "no locked OOS tuning",
+                ),
+                replication_state="formal_successor",
+                variants=(variant,),
+            )
+        else:
+            family = registry.require(str(candidate["familyId"]))
+            variant = next(
+                row for row in family.variants if row.candidate_id == normalized
+            )
         return CanonicalReplicationCandidateAdapter(
             family=family,
             variant=variant,

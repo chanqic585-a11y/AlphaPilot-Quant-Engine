@@ -9,6 +9,7 @@ from alphapilot.formal_validation.candidate_adapter import (
     validate_candidate_binding,
     validate_formal_replay_event_indices,
 )
+from alphapilot.formal_validation.candidate_adapters import get_candidate_adapter
 from alphapilot.standard_replication.candidate_adapter import (
     CanonicalReplicationCandidateAdapter,
 )
@@ -94,6 +95,20 @@ class CanonicalReplicationCandidateAdapterTests(unittest.TestCase):
                 frames={},
                 round_trip_cost_rate=0.001,
             )
+
+    def test_daily_capacity_successor_uses_registered_candidate_adapter(self) -> None:
+        adapter = get_candidate_adapter(
+            "v37e_tsmom_daily_capacity_successor"
+        )
+
+        self.assertEqual(
+            adapter.candidate_id,
+            "v37e_tsmom_daily_capacity_successor",
+        )
+        self.assertEqual(
+            adapter.variant.adaptation,
+            "metadata_only_capacity_successor",
+        )
 
     def test_formal_replay_event_indices_fail_closed_before_fold_assignment(self) -> None:
         with self.assertRaisesRegex(

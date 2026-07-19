@@ -238,27 +238,46 @@ def _candidate_readiness(
             funding_provenance = False
             funding_contiguous = False
             continue
-        valid_rates = frame["fundingRate"].notna().all()
-        endpoints = sorted(set(frame["sourceEndpoint"].astype(str)))
+        formal_frame = frame[frame["timestamp"] >= formal_start]
+        if cutoff_exclusive is not None:
+            formal_frame = formal_frame[
+                formal_frame["timestamp"] < cutoff_exclusive
+            ]
+        valid_rates = (
+            not formal_frame.empty
+            and formal_frame["fundingRate"].notna().all()
+        )
+        endpoints = sorted(
+            set(formal_frame["sourceEndpoint"].astype(str))
+        )
         provenance_valid = bool(endpoints) and all(
             _is_okx_endpoint(endpoint) for endpoint in endpoints
         )
-        gaps = frame["timestamp"].diff().dropna()
+        gaps = formal_frame["timestamp"].diff().dropna()
         maximum_gap = gaps.max() if not gaps.empty else pd.Timedelta(0)
         contiguous = bool(valid_rates and maximum_gap <= _FUNDING_MAX_GAP)
         full_window = bool(
             cutoff_exclusive is not None
-            and frame.iloc[0]["timestamp"] <= formal_start
-            and frame.iloc[-1]["timestamp"]
+            and not formal_frame.empty
+            and formal_frame.iloc[0]["timestamp"] <= formal_start
+            and formal_frame.iloc[-1]["timestamp"]
             >= cutoff_exclusive - _FUNDING_MAX_GAP
         )
         funding_rows.append(
             {
                 "instrumentId": symbol,
                 "fileCount": len(paths),
-                "rowCount": len(frame),
-                "firstTimestamp": frame.iloc[0]["timestamp"].isoformat(),
-                "lastTimestamp": frame.iloc[-1]["timestamp"].isoformat(),
+                "rowCount": len(formal_frame),
+                "firstTimestamp": (
+                    formal_frame.iloc[0]["timestamp"].isoformat()
+                    if not formal_frame.empty
+                    else None
+                ),
+                "lastTimestamp": (
+                    formal_frame.iloc[-1]["timestamp"].isoformat()
+                    if not formal_frame.empty
+                    else None
+                ),
                 "maximumGapHours": float(maximum_gap / pd.Timedelta(hours=1)),
                 "fullWindowCovered": full_window,
                 "provenanceValid": provenance_valid,

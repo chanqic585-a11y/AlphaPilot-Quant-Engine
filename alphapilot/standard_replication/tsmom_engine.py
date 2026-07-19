@@ -19,6 +19,9 @@ SELECTED_TSMOM_TRIALS = {
     "v35_tsmom_source_replication": (
         "v36_trial_ec2562d73795444e90789e7f77a3e129030b7d92c0f3614cf3f33375fdaf41c0"
     ),
+    "v37e_tsmom_daily_capacity_successor": (
+        "v37e_metadata_only_capacity_successor_20260719"
+    ),
 }
 
 _BASE_DEFINITIONS: dict[str, dict[str, Any]] = {
@@ -43,6 +46,17 @@ _BASE_DEFINITIONS: dict[str, dict[str, Any]] = {
         "stopAtr": 2.5,
         "minimumMomentum": 0.025,
         "maximumHoldBars": 180,
+    },
+    "v37e_tsmom_daily_capacity_successor": {
+        "familyId": "crypto_tsmom_daily_capacity_v1",
+        "timeframe": "1dutc",
+        "lookbackBars": 120,
+        "entryDonchianBars": 55,
+        "exitDonchianBars": 20,
+        "atrBars": 20,
+        "stopAtr": 2.5,
+        "minimumMomentum": 0.04,
+        "maximumHoldBars": 18,
     },
 }
 
