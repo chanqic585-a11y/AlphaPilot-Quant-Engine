@@ -700,7 +700,10 @@ def _publish_artifacts(
 ) -> str:
     destination = Path(output_root).resolve()
     destination.mkdir(parents=True, exist_ok=True)
-    staging = destination.parent / f".v18-formal-staging-{uuid.uuid4().hex}"
+    staging_root = (
+        destination.parents[1] if len(destination.parents) > 1 else destination.parent
+    )
+    staging = staging_root / f".f-{uuid.uuid4().hex[:12]}"
     staging.mkdir(parents=False, exist_ok=False)
     try:
         for name, payload in json_payloads.items():

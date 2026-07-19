@@ -6,7 +6,7 @@ from alphapilot.formal_validation import v18_formal_reporting as reporting
 from alphapilot.formal_validation.candidate_adapters import get_candidate_adapter
 
 
-def test_formal_artifact_staging_is_a_sibling_of_long_destination(
+def test_formal_artifact_staging_avoids_long_campaign_and_candidate_segments(
     tmp_path: Path, monkeypatch
 ) -> None:
     destination = (
@@ -37,5 +37,6 @@ def test_formal_artifact_staging_is_a_sibling_of_long_destination(
 
     assert observed_paths
     staging = observed_paths[0].parent
-    assert staging.parent == destination.parent
+    assert staging.parent == destination.parents[1]
+    assert len(str(staging)) < len(str(destination.parent))
     assert (destination / "artifact_manifest.json").is_file()
