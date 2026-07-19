@@ -1,0 +1,30 @@
+{
+  "approvalCount": 0,
+  "blockedFamilyCount": 1,
+  "blockedFamilyIds": [
+    "crypto_funding_carry_v1"
+  ],
+  "campaignHash": "v36_campaign_a27acefc528db30e35d576c91778edd7da5b2db5426139a6447ed3c5ecddf649",
+  "campaignId": "v36-5-intraday-session-development-okx-v34c-20260719",
+  "candidateCount": 3,
+  "demoArm": false,
+  "demoReleaseCount": 0,
+  "developmentEvidenceCount": 6,
+  "developmentPhaseStatus": "no_stable_candidates",
+  "developmentProjectionCount": 6,
+  "developmentReplayStatus": "completed",
+  "eligibleCandidateCount": 2,
+  "formalRunCount": 0,
+  "lockedOosReadCount": 0,
+  "orderCount": 0,
+  "privateAccountReadUsed": false,
+  "registryId": "alphapilot_v36_5_independent_mechanism_sources",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_automatic_candidate_research_summary_v1",
+  "stableSelectionCount": 0,
+  "status": "research_blocked_data",
+  "tradeApiUsed": false,
+  "trialCount": 6,
+  "withdrawApiUsed": false
+}

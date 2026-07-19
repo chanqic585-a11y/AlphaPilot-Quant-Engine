@@ -20,13 +20,100 @@ from alphapilot.standard_replication.tsmom_engine import (
 )
 
 from .contracts import V36ContractError
+from .btc_downside_spillover import replay_btc_downside_spillover
+from .intraday_session import replay_intraday_session
 
 
 _SYMBOLS = ("BTC-USDT-SWAP", "ETH-USDT-SWAP", "SOL-USDT-SWAP")
+_FIXED_CORE_SYMBOLS = (
+    "BTC-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "BCH-USDT-SWAP",
+    "LTC-USDT-SWAP",
+    "ETC-USDT-SWAP",
+    "XRP-USDT-SWAP",
+    "LINK-USDT-SWAP",
+    "YFI-USDT-SWAP",
+    "NEO-USDT-SWAP",
+    "ATOM-USDT-SWAP",
+    "ADA-USDT-SWAP",
+    "TRX-USDT-SWAP",
+    "COMP-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "AAVE-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "ALGO-USDT-SWAP",
+    "AVAX-USDT-SWAP",
+    "XTZ-USDT-SWAP",
+)
 
 # These are frozen research definitions, not optimized outputs. The three
 # preregistered parameter scales are applied only inside the Development split.
 _REPLAY_DEFINITIONS: dict[str, dict[str, Any]] = {
+    "v36_6_btc_downside_spillover_source_replication": {
+        "candidateId": "v36_6_btc_downside_spillover_source_replication",
+        "familyId": "crypto_btc_downside_spillover_v1",
+        "timeframe": "1h",
+        "shockLookbackBars": 2160,
+        "shockQuantile": 0.05,
+        "minimumShockReturn": -0.02,
+        "atrBars": 24,
+        "stopAtr": 2.5,
+        "maximumHoldBars": 3,
+        "targetSymbols": ["ETH-USDT-SWAP", "XRP-USDT-SWAP", "LTC-USDT-SWAP"],
+        "minimumEventCount": 30,
+        "maximumConcentration": 0.45,
+        "adaptation": False,
+    },
+    "v36_6_btc_downside_spillover_crypto_adaptation": {
+        "candidateId": "v36_6_btc_downside_spillover_crypto_adaptation",
+        "familyId": "crypto_btc_downside_spillover_v1",
+        "timeframe": "1h",
+        "shockLookbackBars": 2160,
+        "shockQuantile": 0.05,
+        "minimumShockReturn": -0.02,
+        "atrBars": 24,
+        "stopAtr": 2.5,
+        "maximumHoldBars": 3,
+        "targetSymbols": [
+            symbol for symbol in _FIXED_CORE_SYMBOLS if symbol != "BTC-USDT-SWAP"
+        ],
+        "minimumEventCount": 150,
+        "maximumConcentration": 0.12,
+        "adaptation": True,
+        "betaLookbackBars": 336,
+        "minimumBeta": 0.5,
+        "minimumVolumeRatio": 0.5,
+        "maximumVolumeRatio": 3.0,
+    },
+    "v36_5_intraday_session_source_replication": {
+        "candidateId": "v36_5_intraday_session_source_replication",
+        "familyId": "crypto_intraday_session_predictability_v1",
+        "timeframe": "1h",
+        "sessionHours": 8,
+        "lookbackSessions": 20,
+        "minimumSessionMean": 0.001,
+        "atrBars": 24,
+        "stopAtr": 3.0,
+        "maximumHoldBars": 7,
+        "adaptation": False,
+    },
+    "v36_5_intraday_session_crypto_adaptation": {
+        "candidateId": "v36_5_intraday_session_crypto_adaptation",
+        "familyId": "crypto_intraday_session_predictability_v1",
+        "timeframe": "1h",
+        "sessionHours": 8,
+        "lookbackSessions": 20,
+        "minimumSessionMean": 0.001,
+        "atrBars": 24,
+        "stopAtr": 3.0,
+        "maximumHoldBars": 7,
+        "adaptation": True,
+        "minimumVolumeRatio": 0.8,
+        "maximumVolumeRatio": 2.5,
+        "maximumRealizedVolatility": 0.04,
+    },
     "v35_tsmom_source_replication": base_tsmom_definition(
         "v35_tsmom_source_replication"
     ),
@@ -242,6 +329,13 @@ def _requirements_for_registry(
         family_id = str(definition["familyId"])
         if family_id == "crypto_pair_relative_value_v1":
             symbols = ("BTC-USDT-SWAP", "ETH-USDT-SWAP")
+        elif family_id == "crypto_btc_downside_spillover_v1":
+            symbols = tuple(
+                dict.fromkeys(
+                    ("BTC-USDT-SWAP",)
+                    + tuple(str(value) for value in definition["targetSymbols"])
+                )
+            )
         else:
             symbols = _SYMBOLS
         requirements.update((symbol, timeframe) for symbol in symbols)
@@ -264,12 +358,19 @@ def _scaled_definition(candidate_id: str, scale: float) -> dict[str, Any]:
         "windowBars",
         "residualWindowBars",
         "betaWindowBars",
+        "lookbackSessions",
+        "shockLookbackBars",
+        "betaLookbackBars",
     ):
         if key in result:
             result[key] = max(8, int(round(float(result[key]) * scale)))
     for key in ("minimumMomentum", "entryZ"):
         if key in result:
             result[key] = float(result[key]) * scale
+    if "minimumSessionMean" in result:
+        result["minimumSessionMean"] = float(result["minimumSessionMean"]) * scale
+    if "minimumShockReturn" in result:
+        result["minimumShockReturn"] = float(result["minimumShockReturn"]) * scale
     result["parameterScale"] = float(scale)
     result["definitionHash"] = stable_hash(result, prefix="v36_replay_definition")
     return result
@@ -679,6 +780,7 @@ def build_development_evidence(
         for trial in preregistration["trialsByCandidate"][candidate_id]:
             definition = _scaled_definition(candidate_id, float(trial["parameterScale"]))
             family_id = str(family.family_id)
+            prefilter: dict[str, Any] | None = None
             if family_id == "crypto_tsmom_turtle_v1":
                 metrics, events = _replay_tsmom(
                     frames=frames,
@@ -697,21 +799,37 @@ def build_development_evidence(
                     definition=definition,
                     round_trip_cost_rate=cost_rate,
                 )
+            elif family_id == "crypto_intraday_session_predictability_v1":
+                metrics, events, prefilter = replay_intraday_session(
+                    frames=frames,
+                    definition=definition,
+                    round_trip_cost_rate=cost_rate,
+                )
+            elif family_id == "crypto_btc_downside_spillover_v1":
+                metrics, events, prefilter = replay_btc_downside_spillover(
+                    frames=frames,
+                    definition=definition,
+                    round_trip_cost_rate=cost_rate,
+                )
             else:
                 raise V36ContractError(f"development_replay_family_unsupported:{family_id}")
-            evidence.append(
-                {
-                    "candidateId": candidate_id,
-                    "trialId": trial["trialId"],
-                    "trialIndex": trial["trialIndex"],
-                    "strategyType": trial["strategyType"],
-                    "split": "development",
-                    "metrics": metrics,
-                    "definitionHash": definition["definitionHash"],
-                    "eventEvidenceHash": stable_hash(events, prefix="v36_development_events"),
-                    "lockedOosReadCount": 0,
-                }
-            )
+            evidence_row = {
+                "candidateId": candidate_id,
+                "trialId": trial["trialId"],
+                "trialIndex": trial["trialIndex"],
+                "strategyType": trial["strategyType"],
+                "split": "development",
+                "metrics": metrics,
+                "definitionHash": definition["definitionHash"],
+                "eventEvidenceHash": stable_hash(
+                    events, prefix="v36_development_events"
+                ),
+                "lockedOosReadCount": 0,
+            }
+            if prefilter is not None:
+                evidence_row["prefilterPassed"] = bool(prefilter["passed"])
+                evidence_row["prefilter"] = prefilter
+            evidence.append(evidence_row)
             trial_audit.append(
                 {
                     "candidateId": candidate_id,

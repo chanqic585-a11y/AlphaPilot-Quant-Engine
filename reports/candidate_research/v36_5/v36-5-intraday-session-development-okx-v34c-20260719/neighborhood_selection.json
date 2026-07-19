@@ -1,0 +1,43 @@
+{
+  "campaignId": "v36-5-intraday-session-development-okx-v34c-20260719",
+  "comparisonPanelHash": "v36_comparison_panel_3a1f90a7d0edff50913ba570cf9b2c7a49e9bd8d950d5327c50559b87f6d3ee7",
+  "eligibleSelectionCount": 0,
+  "lockedOosReadCount": 0,
+  "schemaVersion": "v36_neighborhood_selection_set_v1",
+  "selections": [
+    {
+      "candidateId": "v36_5_intraday_session_crypto_adaptation",
+      "eligible": false,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 0,
+        "prefilterMajority": false,
+        "prefilterPositiveCount": 0,
+        "sameDirectionMajority": false,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "cheap_prefilter_failed",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": null
+    },
+    {
+      "candidateId": "v36_5_intraday_session_source_replication",
+      "eligible": false,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 0,
+        "prefilterMajority": false,
+        "prefilterPositiveCount": 0,
+        "sameDirectionMajority": false,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "cheap_prefilter_failed",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": null
+    }
+  ]
+}

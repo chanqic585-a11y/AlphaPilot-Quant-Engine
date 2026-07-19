@@ -141,6 +141,10 @@ class ResearchService:
                 "artifactPath": str(result.get("artifactPath") or ""),
                 "policyHash": self.policy.policy_hash,
                 "candidateCount": int(result.get("candidateCount") or 0),
+                "eligibleCandidateCount": int(
+                    result.get("eligibleCandidateCount") or 0
+                ),
+                "trialCount": int(result.get("trialCount") or 0),
                 "blockedFamilyCount": int(
                     result.get("blockedFamilyCount") or 0
                 ),

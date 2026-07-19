@@ -1,0 +1,43 @@
+{
+  "campaignId": "v36-6-btc-downside-spillover-development-core20-20260719",
+  "comparisonPanelHash": "v36_comparison_panel_cd94b3c2b8a757fc4d167abd7308d3e7719964caaadc69c5f6b7842b1bb020b5",
+  "eligibleSelectionCount": 0,
+  "lockedOosReadCount": 0,
+  "schemaVersion": "v36_neighborhood_selection_set_v1",
+  "selections": [
+    {
+      "candidateId": "v36_6_btc_downside_spillover_crypto_adaptation",
+      "eligible": false,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 0,
+        "prefilterMajority": false,
+        "prefilterPositiveCount": 0,
+        "sameDirectionMajority": false,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "cheap_prefilter_failed",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": null
+    },
+    {
+      "candidateId": "v36_6_btc_downside_spillover_source_replication",
+      "eligible": false,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 1,
+        "prefilterMajority": false,
+        "prefilterPositiveCount": 0,
+        "sameDirectionMajority": false,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "cheap_prefilter_failed",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": null
+    }
+  ]
+}

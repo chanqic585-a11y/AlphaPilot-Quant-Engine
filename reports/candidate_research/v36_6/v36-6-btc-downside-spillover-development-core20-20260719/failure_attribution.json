@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "v36_candidate_research_failure_attribution_v1",
+  "campaignId": "v36-6-btc-downside-spillover-development-core20-20260719",
+  "status": "research_zero_qualified",
+  "primaryBlocker": "no_stable_positive_parameter_neighborhood",
+  "blockers": [
+    "crypto_adaptation_negative_after_cost_expectancy",
+    "source_replication_adjacent_scales_negative",
+    "subperiod_instability",
+    "center_point_not_robust"
+  ],
+  "strategyPerformanceFailure": true,
+  "implementationOrEvidenceFailure": false,
+  "dataCapabilityBlocker": false,
+  "resultDrivenRepairAllowed": false,
+  "route": "archive_btc_downside_spillover_family",
+  "formalRunCount": 0,
+  "resultReadCount": 0,
+  "lockedOosReadCount": 0,
+  "releaseCount": 0,
+  "demoReleaseCount": 0,
+  "orderCount": 0
+}

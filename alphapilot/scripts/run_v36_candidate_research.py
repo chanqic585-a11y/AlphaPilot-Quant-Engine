@@ -22,6 +22,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--state-root", required=True, type=Path)
     parser.add_argument("--output-root", required=True, type=Path)
     parser.add_argument("--job-json", required=True, type=Path)
+    parser.add_argument("--registry-path", type=Path)
     parser.add_argument("--now", required=True)
     parser.add_argument("--owner", default="v36-candidate-research-cli")
     return parser
@@ -37,10 +38,11 @@ def main(argv: Sequence[str] | None = None) -> int:
     candidate_ids = tuple(
         str(value) for value in campaign_input.get("candidateIds") or []
     )
-    registry = ReplicationSourceRegistry.load(
+    registry_path = args.registry_path or (
         args.repo_root
         / "research/source_registry/strategy_research_source_registry.json"
     )
+    registry = ReplicationSourceRegistry.load(registry_path)
     policy = ResearchServicePolicy.default()
     state_root = Path(args.state_root)
     state_store = ResearchServiceStateStore(

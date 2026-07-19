@@ -116,6 +116,7 @@ def project_development_evidence(evidence: Mapping[str, object]) -> dict[str, An
         "maxDrawdownR": _number(metrics["maxDrawdownR"], name="maxDrawdownR"),
         "typeSpecificMetrics": dict(metrics),
         "lockedOosReadCount": 0,
+        "prefilterPassed": bool(evidence.get("prefilterPassed", True)),
     }
 
 
@@ -150,7 +151,14 @@ def select_stable_neighborhood(
     )
     drawdown_baseline = max(median(drawdowns), 1e-12)
     drawdown_uncontrolled = max(drawdowns) > drawdown_baseline * 2.0
-    eligible = same_direction_majority and not isolated_spike and not drawdown_uncontrolled
+    prefilter_positive_count = sum(bool(row.get("prefilterPassed", True)) for row in rows)
+    prefilter_majority = prefilter_positive_count > len(rows) / 2
+    eligible = (
+        prefilter_majority
+        and same_direction_majority
+        and not isolated_spike
+        and not drawdown_uncontrolled
+    )
     selected = rows[len(rows) // 2] if eligible else None
 
     return {
@@ -158,13 +166,23 @@ def select_stable_neighborhood(
         "candidateId": normalized_candidate_id,
         "eligible": eligible,
         "selectedTrialId": str(selected["trialId"]) if selected is not None else None,
-        "reason": "stable_parameter_neighborhood" if eligible else "unstable_parameter_neighborhood",
+        "reason": (
+            "stable_parameter_neighborhood"
+            if eligible
+            else (
+                "cheap_prefilter_failed"
+                if not prefilter_majority
+                else "unstable_parameter_neighborhood"
+            )
+        ),
         "gate": {
             "sameDirectionMajority": same_direction_majority,
             "isolatedSpike": isolated_spike,
             "drawdownUncontrolled": drawdown_uncontrolled,
             "positiveTrialCount": positive_count,
             "trialCount": len(rows),
+            "prefilterMajority": prefilter_majority,
+            "prefilterPositiveCount": prefilter_positive_count,
         },
         "lockedOosReadCount": 0,
     }

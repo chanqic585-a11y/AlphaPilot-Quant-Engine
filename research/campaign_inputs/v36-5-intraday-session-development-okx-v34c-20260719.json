@@ -1,0 +1,28 @@
+{
+  "campaignId": "v36-5-intraday-session-development-okx-v34c-20260719",
+  "createdAt": "2026-07-19T08:00:00Z",
+  "familyIds": [
+    "crypto_funding_carry_v1",
+    "crypto_intraday_session_predictability_v1"
+  ],
+  "candidateIds": [
+    "v36_5_funding_carry_source_replication",
+    "v36_5_intraday_session_crypto_adaptation",
+    "v36_5_intraday_session_source_replication"
+  ],
+  "comparisonPanel": {
+    "developmentStart": "2021-02-01T00:00:00Z",
+    "developmentEnd": "2025-01-01T00:00:00Z",
+    "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "costPolicyHash": "cost-policy-v13-development-round-trip-12bps",
+    "capitalPolicyHash": "capital-policy-v18-development-unit-risk",
+    "benchmarkPolicyHash": "benchmark-policy-v32-development-increment",
+    "randomSeed": 365
+  },
+  "developmentReplay": {
+    "snapshotManifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
+    "roundTripCostRate": 0.0012
+  },
+  "developmentEvidence": [],
+  "formalOutcomes": []
+}

@@ -1,0 +1,22 @@
+{
+  "schemaVersion": "v36_5_canonical_replication_plan_v1",
+  "familyId": "crypto_intraday_session_predictability_v1",
+  "status": "registered_development_only",
+  "priority": 1,
+  "hypothesis": "The conditional sign of broad UTC session returns has short-lived, time-varying persistence that may survive crypto execution costs.",
+  "falsification": [
+    "negative net expectancy after costs",
+    "unstable parameter neighborhood",
+    "subperiod sign instability",
+    "excessive instrument concentration"
+  ],
+  "sessionsUtc": ["00:00-08:00", "08:00-16:00", "16:00-24:00"],
+  "entryTiming": "next session open using only prior completed sessions",
+  "exitPolicies": ["session_close", "initial_atr_stop"],
+  "variantBudget": 2,
+  "parameterTrialCountPerVariant": 3,
+  "lockedOosReadCount": 0,
+  "releaseCount": 0,
+  "demoArm": false,
+  "orderCount": 0
+}

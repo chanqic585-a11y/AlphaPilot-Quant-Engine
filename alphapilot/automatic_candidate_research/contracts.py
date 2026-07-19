@@ -24,6 +24,9 @@ FAMILY_STRATEGY_TYPES: Final[dict[str, str]] = {
     "crypto_cross_sectional_factor_v1": "portfolio",
     "crypto_event_driven_v1": "event",
     "chan_structure_parser_v1": "context",
+    "crypto_intraday_session_predictability_v1": "directional",
+    "crypto_funding_carry_v1": "pair",
+    "crypto_btc_downside_spillover_v1": "directional",
 }
 
 ELIGIBLE_REPLICATION_STATES: Final[frozenset[str]] = frozenset({"registered"})

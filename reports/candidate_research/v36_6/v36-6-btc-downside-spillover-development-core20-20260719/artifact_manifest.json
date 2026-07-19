@@ -1,0 +1,36 @@
+{
+  "artifacts": [
+    {
+      "path": "preregistration.json",
+      "sha256": "6a9a4ad09adc9916333a2f3cd6fc39e40b837fb95c70812594ddd722520689b5"
+    },
+    {
+      "path": "development_replay_audit.json",
+      "sha256": "6aa0bcbf4f9b9db1eef38396033076c2408ef4d977c0943ca0dccd2ee69f1e99"
+    },
+    {
+      "path": "development_projection.json",
+      "sha256": "9bb055d523a15ae0580eda2a59d63bf3e2fa0a0391519ff9a4c62d413361f0f2"
+    },
+    {
+      "path": "neighborhood_selection.json",
+      "sha256": "d43606ca0d6059e706c71abdd7478c89666a574a489d9b234031e2af3b1e03fe"
+    },
+    {
+      "path": "formal_route.json",
+      "sha256": "6ba4431a83e42891c3f3f984ca53f7881e71d91d9773b276a0de8badcf328726"
+    },
+    {
+      "path": "immutable_releases.json",
+      "sha256": "b6a45ef79c0d65ae028f005830f59c9712e16f15629b6b06fb4856dc162ca2a6"
+    },
+    {
+      "path": "campaign_summary.json",
+      "sha256": "14880cfba901445992b80b4ff8f1129cb1c14f70ced679d7f9dae7bdaf20b6c3"
+    }
+  ],
+  "campaignHash": "v36_campaign_54a274a392554aebe18128e3b8e0470aa3b2590a37dd496ba42f363a0505f75c",
+  "campaignId": "v36-6-btc-downside-spillover-development-core20-20260719",
+  "manifestHash": "v36_manifest_f53e372284c56dbff8a269aa9c175de9383eaaa229cdd1ae5ddd6dced1befb48",
+  "schemaVersion": "v36_artifact_manifest_v1"
+}
