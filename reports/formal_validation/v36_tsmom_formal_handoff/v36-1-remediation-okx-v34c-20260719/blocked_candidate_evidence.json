@@ -1,0 +1,25 @@
+{
+  "blockedCandidates": [
+    {
+      "blockers": [
+        "purged_walk_forward_capacity_insufficient"
+      ],
+      "candidateId": "v35_tsmom_source_replication",
+      "demoArm": false,
+      "formalInputReadCount": 0,
+      "formalRunClaimBudget": 0,
+      "formalRunCount": 0,
+      "lockedOosAccessCount": 0,
+      "orderCount": 0,
+      "releaseCount": 0,
+      "resultReadCount": 0,
+      "status": "blocked_before_preregistration",
+      "timeframe": "1dutc"
+    }
+  ],
+  "campaignId": "v36-1-remediation-okx-v34c-20260719",
+  "evidenceHash": "v36_tsmom_blocked_evidence_cdca39a1c5a94afdfa5e3eb126f296ce026504237969deebc7eb061443f7b2b4",
+  "implementationCommit": "1e091a327cfb7a21880a6fd1fd033b6697231a6a",
+  "schemaVersion": "v36_tsmom_blocked_candidate_evidence_v1",
+  "sourceReadinessHash": "v36_tsmom_formal_readiness_2d2f2958e95756438d746762dabddbadede823bdb990847d87bec991a564776b"
+}
