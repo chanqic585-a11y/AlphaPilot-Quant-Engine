@@ -14,6 +14,9 @@ from alphapilot.formal_validation.v36_contracts import (
     verify_v36_formal_run_authorization,
     verify_v36_preregistration,
 )
+from alphapilot.standard_replication.candidate_adapter import (
+    CanonicalReplicationCandidateAdapter,
+)
 
 
 CANDIDATE_ID = "v35_tsmom_crypto_adaptation"
@@ -202,6 +205,19 @@ def test_v36_preregistration_preserves_policy_objects_and_is_tamper_evident() ->
     assert first["lockedOosPolicy"]["accessCount"] == 0
     assert first["capitalCompetitionPolicyHash"] == "capital-hash"
     assert first["signalRankingPolicyHash"] == "ranking-hash"
+    assert (
+        first["candidateAdapter"]["adapterVersion"]
+        == CanonicalReplicationCandidateAdapter.adapter_version
+    )
+    assert first["implementationConformanceHash"] == stable_hash(
+        {
+            "implementationCommit": IMPLEMENTATION_COMMIT,
+            "candidateId": CANDIDATE_ID,
+            "adapterId": "canonical_replication:crypto_tsmom_turtle_v1",
+            "adapterVersion": CanonicalReplicationCandidateAdapter.adapter_version,
+        },
+        prefix="v36_tsmom_implementation_conformance",
+    )
 
     tampered = deepcopy(first)
     tampered["splitPolicy"]["folds"][0]["testEndExclusive"] += 1

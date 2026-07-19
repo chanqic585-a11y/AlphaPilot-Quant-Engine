@@ -10,6 +10,9 @@ from alphapilot.evolution.evaluation.purged_walk_forward import (
     build_purged_walk_forward,
 )
 from alphapilot.evolution.registry.hashing import stable_hash
+from alphapilot.standard_replication.candidate_adapter import (
+    CanonicalReplicationCandidateAdapter,
+)
 
 
 V36_PREREGISTRATION_HASH_PREFIX = "v36_tsmom_formal_preregistration"
@@ -17,6 +20,7 @@ V36_SNAPSHOT_HASH_PREFIX = "v36_tsmom_formal_data_snapshot"
 V36_AUTHORIZATION_HASH_PREFIX = "v36_tsmom_formal_run_authorization"
 V36_FORMAL_FOLD_COUNT = 5
 V36_MINIMUM_TEST_BARS = 60
+V36_TSMOM_ADAPTER_ID = "canonical_replication:crypto_tsmom_turtle_v1"
 _TIMEFRAME_HOURS = {"4h": 4, "1dutc": 24}
 
 
@@ -329,6 +333,7 @@ def build_v36_preregistration(
         "signalRankingPolicyHash": policies.get("signalRankingPolicyHash"),
     }
     campaign_hash = stable_hash(campaign_seed)
+    adapter_version = CanonicalReplicationCandidateAdapter.adapter_version
     core: dict[str, Any] = {
         "schemaVersion": "v36_tsmom_formal_preregistration_v1",
         "campaignId": f"v36_tsmom_formal_{candidate_id}_{campaign_hash[:16]}",
@@ -344,14 +349,14 @@ def build_v36_preregistration(
             {
                 "implementationCommit": implementation_commit,
                 "candidateId": candidate_id,
-                "adapterId": "canonical_replication:crypto_tsmom_turtle_v1",
-                "adapterVersion": "v36.0",
+                "adapterId": V36_TSMOM_ADAPTER_ID,
+                "adapterVersion": adapter_version,
             },
             prefix="v36_tsmom_implementation_conformance",
         ),
         "candidateAdapter": {
-            "adapterId": "canonical_replication:crypto_tsmom_turtle_v1",
-            "adapterVersion": "v36.0",
+            "adapterId": V36_TSMOM_ADAPTER_ID,
+            "adapterVersion": adapter_version,
             "candidateId": candidate_id,
             "contractSchemaVersion": "formal_candidate_adapter_contract_v2",
         },
