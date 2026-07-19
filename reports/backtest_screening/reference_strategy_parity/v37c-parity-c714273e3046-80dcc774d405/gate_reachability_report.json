@@ -1,0 +1,723 @@
+{
+  "allGatesReachable": true,
+  "schemaVersion": "reference_gate_reachability_bundle_v1",
+  "thresholdsChanged": false,
+  "timeframes": {
+    "1h": {
+      "allGatesReachable": true,
+      "developmentEventCount": 150,
+      "eventCount": 270,
+      "fixture": "deterministic_known_positive_cost_aware_events",
+      "gateFlags": {
+        "basePassed": true,
+        "formalPassed": true,
+        "prescreenPassed": true,
+        "samplePassed": true
+      },
+      "gates": {
+        "baseGates": {
+          "maximumDrawdownPct": {
+            "evidenceHash": "gate_evidence_62c98ebdd2c47623b83bf0b32dbf28b72deaf91b65add0d6c21fd81dfdd6a178",
+            "observed": 0.25,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "<= 25.0"
+          },
+          "oosAverageNetR": {
+            "evidenceHash": "gate_evidence_b132cdbb863cb2fbdf5506bfd6ce97c71c2a1562a79ea743fd876d21cce80c11",
+            "observed": 0.75,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "> 0.0"
+          },
+          "oosProfitFactor": {
+            "evidenceHash": "gate_evidence_02f812aac5bcb9bd0da664a36352db760803d77521307f1be8ccddbd2909c1e7",
+            "observed": 16.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 1.05"
+          },
+          "oosTotalNetR": {
+            "evidenceHash": "gate_evidence_50fe9c5dc5ccd3e9210121f5a31701d33c958f4630b7647e6a18ab112fb12875",
+            "observed": 90.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "> 0.0"
+          },
+          "positiveFoldCount": {
+            "evidenceHash": "gate_evidence_4d2308c938717a475fce3995ffc64d167fa5ee3d97e61b0cd34b030e687c1c79",
+            "observed": 5,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 3"
+          }
+        },
+        "basePassed": true,
+        "developmentMetrics": {
+          "averageNetR": 0.75,
+          "eventCount": 150,
+          "folds": {},
+          "maximumDrawdownPct": 0.25,
+          "maximumDrawdownR": 0.25,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 16.0,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.09166666666666666,
+          "totalNetR": 112.5
+        },
+        "formalGates": {
+          "holdoutAccessBeforeFinalEvaluation": {
+            "evidenceHash": "gate_evidence_885db1d0bcd2ce949b6d6000a43f8624722847b63fa97b567bcdfdd28536232b",
+            "observed": 0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "== 0"
+          },
+          "maximumDrawdownPct": {
+            "evidenceHash": "gate_evidence_ffd1f42a38f297b8c66898ad8c582e2c67e8bb28abfa49a3362449f7215131f2",
+            "observed": 0.25,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "<= 20.0"
+          },
+          "oosAverageNetR": {
+            "evidenceHash": "gate_evidence_7afffee3012d9ca2e6a0b8d038b9443a6bfc5a49582ab19429fc4cacf2b98410",
+            "observed": 0.75,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 0.05"
+          },
+          "oosProfitFactor": {
+            "evidenceHash": "gate_evidence_cc0ee8ae88a6b0d1e987a3365c6ddb3317c7a51cbab86b75154c80982b20b1b9",
+            "observed": 16.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 1.15"
+          },
+          "oosTotalNetR": {
+            "evidenceHash": "gate_evidence_50fe9c5dc5ccd3e9210121f5a31701d33c958f4630b7647e6a18ab112fb12875",
+            "observed": 90.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "> 0.0"
+          },
+          "positiveFoldCount": {
+            "evidenceHash": "gate_evidence_a4b9fdfbb1e3ff54aaa0f53f96d722ae4f8dc6f2a087a3541106ca394af6da1f",
+            "observed": 5,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 4"
+          },
+          "singleInstrumentPositiveContribution": {
+            "evidenceHash": "gate_evidence_5047a73bb23dfedbb4bfb5d39085ac1e28d3519882b94253a8c33d42427f0a70",
+            "observed": 0.25,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "<= 0.35"
+          },
+          "singleMonthPositiveContribution": {
+            "evidenceHash": "gate_evidence_37683db1670cd7d4378ffa40316f5cd520f02eaf46f12921172d2295d3105094",
+            "observed": 0.08333333333333333,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "<= 0.35"
+          },
+          "stress1_5xAverageNetR": {
+            "evidenceHash": "gate_evidence_3d8d6dfce59bbab3ccdb42d9f457675f2c6cac14c1102bb03bba41a200a42bf9",
+            "observed": 0.73,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "> 0.0"
+          },
+          "stress1_5xProfitFactor": {
+            "evidenceHash": "gate_evidence_576b3e611671a49fd8b9ec1fa946a9677914bcb9c53f7b1fad1c59905520ce2c",
+            "observed": 14.51851851851852,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 1.05"
+          }
+        },
+        "formalPassed": true,
+        "holdoutMetrics": {
+          "averageNetR": 0.75,
+          "eventCount": 20,
+          "folds": {},
+          "maximumDrawdownPct": 0.25,
+          "maximumDrawdownR": 0.25,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 0.9166666666666666,
+          "profitFactor": 16.0,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.125,
+          "totalNetR": 15.0
+        },
+        "oosMetrics": {
+          "averageNetR": 0.75,
+          "eventCount": 120,
+          "folds": {
+            "fold_001": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_002": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_003": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_004": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_005": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            }
+          },
+          "maximumDrawdownPct": 0.25,
+          "maximumDrawdownR": 0.25,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 5,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 16.0,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.08333333333333333,
+          "totalNetR": 90.0
+        },
+        "prescreenGates": {
+          "developmentAverageNetR": {
+            "evidenceHash": "gate_evidence_6ca0ee43f441d77b4d91e87741379edcacce2794576357362d54767a6a45d775",
+            "observed": 0.75,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 0.03"
+          },
+          "developmentProfitFactor": {
+            "evidenceHash": "gate_evidence_50e4e5b0807c03e7e1f387a35189c7e0eae62bf5d2c262113b85fdb02a63d29b",
+            "observed": 16.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 1.08"
+          },
+          "positiveDevelopmentMonthRatio": {
+            "evidenceHash": "gate_evidence_ac79a5ac58f30b31cd4f88870ce6e7a2eba5499a42836e5145b6faca8e1149cd",
+            "observed": 1.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 0.6"
+          }
+        },
+        "prescreenPassed": true,
+        "sampleGates": {
+          "minimumEvents": {
+            "evidenceHash": "gate_evidence_a52aebff313cc00a4ca29f1bd94232b46843d8f80b3a1bae5e71d69f87ca02bd",
+            "observed": 150,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 150"
+          },
+          "minimumMonths": {
+            "evidenceHash": "gate_evidence_cc1866c00a02e08dc66f30f7998f684b09dc708899fe2cfb1607e51fca95ab99",
+            "observed": 12,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 12"
+          }
+        },
+        "samplePassed": true,
+        "stress1_5xMetrics": {
+          "averageNetR": 0.73,
+          "eventCount": 120,
+          "folds": {
+            "fold_001": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_002": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_003": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_004": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_005": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            }
+          },
+          "maximumDrawdownPct": 0.2700000000000031,
+          "maximumDrawdownR": 0.2700000000000031,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 5,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 14.51851851851852,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.08333333333333334,
+          "totalNetR": 87.6
+        },
+        "stress2xMetrics": {
+          "averageNetR": 0.7100000000000001,
+          "eventCount": 120,
+          "folds": {
+            "fold_001": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_002": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_003": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_004": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_005": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            }
+          },
+          "maximumDrawdownPct": 0.29000000000000625,
+          "maximumDrawdownR": 0.29000000000000625,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 5,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 13.241379310344831,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.08333333333333333,
+          "totalNetR": 85.2
+        },
+        "walkForwardMetrics": {
+          "averageNetR": 0.75,
+          "eventCount": 100,
+          "folds": {
+            "fold_001": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_002": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_003": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_004": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_005": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            }
+          },
+          "maximumDrawdownPct": 0.25,
+          "maximumDrawdownR": 0.25,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 5,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 16.0,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.1,
+          "totalNetR": 75.0
+        }
+      },
+      "holdoutEventCount": 20,
+      "schemaVersion": "reference_gate_reachability_v1",
+      "timeframe": "1h",
+      "walkForwardEventCount": 100
+    },
+    "4h": {
+      "allGatesReachable": true,
+      "developmentEventCount": 80,
+      "eventCount": 200,
+      "fixture": "deterministic_known_positive_cost_aware_events",
+      "gateFlags": {
+        "basePassed": true,
+        "formalPassed": true,
+        "prescreenPassed": true,
+        "samplePassed": true
+      },
+      "gates": {
+        "baseGates": {
+          "maximumDrawdownPct": {
+            "evidenceHash": "gate_evidence_62c98ebdd2c47623b83bf0b32dbf28b72deaf91b65add0d6c21fd81dfdd6a178",
+            "observed": 0.25,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "<= 25.0"
+          },
+          "oosAverageNetR": {
+            "evidenceHash": "gate_evidence_b132cdbb863cb2fbdf5506bfd6ce97c71c2a1562a79ea743fd876d21cce80c11",
+            "observed": 0.75,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "> 0.0"
+          },
+          "oosProfitFactor": {
+            "evidenceHash": "gate_evidence_02f812aac5bcb9bd0da664a36352db760803d77521307f1be8ccddbd2909c1e7",
+            "observed": 16.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 1.05"
+          },
+          "oosTotalNetR": {
+            "evidenceHash": "gate_evidence_50fe9c5dc5ccd3e9210121f5a31701d33c958f4630b7647e6a18ab112fb12875",
+            "observed": 90.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "> 0.0"
+          },
+          "positiveFoldCount": {
+            "evidenceHash": "gate_evidence_4d2308c938717a475fce3995ffc64d167fa5ee3d97e61b0cd34b030e687c1c79",
+            "observed": 5,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 3"
+          }
+        },
+        "basePassed": true,
+        "developmentMetrics": {
+          "averageNetR": 0.75,
+          "eventCount": 80,
+          "folds": {},
+          "maximumDrawdownPct": 0.25,
+          "maximumDrawdownR": 0.25,
+          "observedMonthCount": 18,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 16.0,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.0625,
+          "totalNetR": 60.0
+        },
+        "formalGates": {
+          "holdoutAccessBeforeFinalEvaluation": {
+            "evidenceHash": "gate_evidence_885db1d0bcd2ce949b6d6000a43f8624722847b63fa97b567bcdfdd28536232b",
+            "observed": 0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "== 0"
+          },
+          "maximumDrawdownPct": {
+            "evidenceHash": "gate_evidence_ffd1f42a38f297b8c66898ad8c582e2c67e8bb28abfa49a3362449f7215131f2",
+            "observed": 0.25,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "<= 20.0"
+          },
+          "oosAverageNetR": {
+            "evidenceHash": "gate_evidence_7afffee3012d9ca2e6a0b8d038b9443a6bfc5a49582ab19429fc4cacf2b98410",
+            "observed": 0.75,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 0.05"
+          },
+          "oosProfitFactor": {
+            "evidenceHash": "gate_evidence_cc0ee8ae88a6b0d1e987a3365c6ddb3317c7a51cbab86b75154c80982b20b1b9",
+            "observed": 16.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 1.15"
+          },
+          "oosTotalNetR": {
+            "evidenceHash": "gate_evidence_50fe9c5dc5ccd3e9210121f5a31701d33c958f4630b7647e6a18ab112fb12875",
+            "observed": 90.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "> 0.0"
+          },
+          "positiveFoldCount": {
+            "evidenceHash": "gate_evidence_a4b9fdfbb1e3ff54aaa0f53f96d722ae4f8dc6f2a087a3541106ca394af6da1f",
+            "observed": 5,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 4"
+          },
+          "singleInstrumentPositiveContribution": {
+            "evidenceHash": "gate_evidence_5047a73bb23dfedbb4bfb5d39085ac1e28d3519882b94253a8c33d42427f0a70",
+            "observed": 0.25,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "<= 0.35"
+          },
+          "singleMonthPositiveContribution": {
+            "evidenceHash": "gate_evidence_37683db1670cd7d4378ffa40316f5cd520f02eaf46f12921172d2295d3105094",
+            "observed": 0.08333333333333333,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "<= 0.35"
+          },
+          "stress1_5xAverageNetR": {
+            "evidenceHash": "gate_evidence_3d8d6dfce59bbab3ccdb42d9f457675f2c6cac14c1102bb03bba41a200a42bf9",
+            "observed": 0.73,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": "> 0.0"
+          },
+          "stress1_5xProfitFactor": {
+            "evidenceHash": "gate_evidence_576b3e611671a49fd8b9ec1fa946a9677914bcb9c53f7b1fad1c59905520ce2c",
+            "observed": 14.51851851851852,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 1.05"
+          }
+        },
+        "formalPassed": true,
+        "holdoutMetrics": {
+          "averageNetR": 0.75,
+          "eventCount": 20,
+          "folds": {},
+          "maximumDrawdownPct": 0.25,
+          "maximumDrawdownR": 0.25,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 0,
+          "positiveMonthRatio": 0.9166666666666666,
+          "profitFactor": 16.0,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.125,
+          "totalNetR": 15.0
+        },
+        "oosMetrics": {
+          "averageNetR": 0.75,
+          "eventCount": 120,
+          "folds": {
+            "fold_001": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_002": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_003": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_004": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_005": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            }
+          },
+          "maximumDrawdownPct": 0.25,
+          "maximumDrawdownR": 0.25,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 5,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 16.0,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.08333333333333333,
+          "totalNetR": 90.0
+        },
+        "prescreenGates": {
+          "developmentAverageNetR": {
+            "evidenceHash": "gate_evidence_6ca0ee43f441d77b4d91e87741379edcacce2794576357362d54767a6a45d775",
+            "observed": 0.75,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 0.03"
+          },
+          "developmentProfitFactor": {
+            "evidenceHash": "gate_evidence_50e4e5b0807c03e7e1f387a35189c7e0eae62bf5d2c262113b85fdb02a63d29b",
+            "observed": 16.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 1.08"
+          },
+          "positiveDevelopmentMonthRatio": {
+            "evidenceHash": "gate_evidence_ac79a5ac58f30b31cd4f88870ce6e7a2eba5499a42836e5145b6faca8e1149cd",
+            "observed": 1.0,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 0.6"
+          }
+        },
+        "prescreenPassed": true,
+        "sampleGates": {
+          "minimumEvents": {
+            "evidenceHash": "gate_evidence_07eba4719e45aaae23e78a0f2491c4f9d6da4f2a6a29e1c8352b584d2e514ada",
+            "observed": 80,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 80"
+          },
+          "minimumMonths": {
+            "evidenceHash": "gate_evidence_ec789b2775e0d209be91cad30885d79b00dfa92622bd6616c3a230763bf971c1",
+            "observed": 18,
+            "passed": true,
+            "reasonZh": "达到预注册门槛。",
+            "required": ">= 18"
+          }
+        },
+        "samplePassed": true,
+        "stress1_5xMetrics": {
+          "averageNetR": 0.73,
+          "eventCount": 120,
+          "folds": {
+            "fold_001": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_002": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_003": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_004": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_005": {
+              "averageNetR": 0.73,
+              "eventCount": 20,
+              "positive": true
+            }
+          },
+          "maximumDrawdownPct": 0.2700000000000031,
+          "maximumDrawdownR": 0.2700000000000031,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 5,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 14.51851851851852,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.08333333333333334,
+          "totalNetR": 87.6
+        },
+        "stress2xMetrics": {
+          "averageNetR": 0.7100000000000001,
+          "eventCount": 120,
+          "folds": {
+            "fold_001": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_002": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_003": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_004": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_005": {
+              "averageNetR": 0.7100000000000001,
+              "eventCount": 20,
+              "positive": true
+            }
+          },
+          "maximumDrawdownPct": 0.29000000000000625,
+          "maximumDrawdownR": 0.29000000000000625,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 5,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 13.241379310344831,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.08333333333333333,
+          "totalNetR": 85.2
+        },
+        "walkForwardMetrics": {
+          "averageNetR": 0.75,
+          "eventCount": 100,
+          "folds": {
+            "fold_001": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_002": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_003": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_004": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            },
+            "fold_005": {
+              "averageNetR": 0.75,
+              "eventCount": 20,
+              "positive": true
+            }
+          },
+          "maximumDrawdownPct": 0.25,
+          "maximumDrawdownR": 0.25,
+          "observedMonthCount": 12,
+          "positiveFoldCount": 5,
+          "positiveMonthRatio": 1.0,
+          "profitFactor": 16.0,
+          "singleInstrumentPositiveContribution": 0.25,
+          "singleMonthPositiveContribution": 0.1,
+          "totalNetR": 75.0
+        }
+      },
+      "holdoutEventCount": 20,
+      "schemaVersion": "reference_gate_reachability_v1",
+      "timeframe": "4h",
+      "walkForwardEventCount": 100
+    }
+  }
+}

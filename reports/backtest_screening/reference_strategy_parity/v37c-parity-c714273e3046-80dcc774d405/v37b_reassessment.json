@@ -1,0 +1,404 @@
+{
+  "candidates": [
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1_long",
+      "correctedFailureLabels": [
+        "market_mechanism_prescreen_failed"
+      ],
+      "developmentMetrics": {
+        "averageNetR": -0.13507438713537373,
+        "eventCount": 4090,
+        "folds": {},
+        "maximumDrawdownPct": 573.5265341721049,
+        "maximumDrawdownR": 573.5265341721049,
+        "observedMonthCount": 42,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.23809523809523808,
+        "profitFactor": 0.7464589036349569,
+        "singleInstrumentPositiveContribution": 0.13078235815129946,
+        "singleMonthPositiveContribution": 0.04147013894528353,
+        "totalNetR": -552.4542433836785
+      },
+      "economicBasePassed": false,
+      "endToEndBasePassed": false,
+      "formalPassed": false,
+      "oosMetrics": {
+        "averageNetR": -0.225022996810989,
+        "eventCount": 1924,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.197940726681772,
+            "eventCount": 348,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.22111982569727218,
+            "eventCount": 406,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.3541706487941457,
+            "eventCount": 391,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.2202090520501356,
+            "eventCount": 410,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.12335986104858301,
+            "eventCount": 369,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 441.9098630194046,
+        "maximumDrawdownR": 441.9098630194046,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.10526315789473684,
+        "profitFactor": 0.6153863942050903,
+        "singleInstrumentPositiveContribution": 0.15157827521561368,
+        "singleMonthPositiveContribution": 0.114908185475722,
+        "totalNetR": -432.94424586434286
+      },
+      "prescreenPassed": false,
+      "translationPassed": false
+    },
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1_short",
+      "correctedFailureLabels": [
+        "market_mechanism_prescreen_failed"
+      ],
+      "developmentMetrics": {
+        "averageNetR": -0.06756389060728948,
+        "eventCount": 3847,
+        "folds": {},
+        "maximumDrawdownPct": 372.3717830692606,
+        "maximumDrawdownR": 372.3717830692606,
+        "observedMonthCount": 42,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.38095238095238093,
+        "profitFactor": 0.8664108988705356,
+        "singleInstrumentPositiveContribution": 0.14184041001373018,
+        "singleMonthPositiveContribution": 0.049471419539498136,
+        "totalNetR": -259.91828716624264
+      },
+      "economicBasePassed": false,
+      "endToEndBasePassed": false,
+      "formalPassed": false,
+      "oosMetrics": {
+        "averageNetR": -0.16864337966390835,
+        "eventCount": 1745,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.31729274753589504,
+            "eventCount": 364,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.14914942229747735,
+            "eventCount": 322,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.13368977313013916,
+            "eventCount": 396,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.08456626138763138,
+            "eventCount": 341,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.15212353458990419,
+            "eventCount": 322,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 312.9215892380326,
+        "maximumDrawdownR": 312.9215892380326,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.15789473684210525,
+        "profitFactor": 0.6884592734678813,
+        "singleInstrumentPositiveContribution": 0.15452516657068,
+        "singleMonthPositiveContribution": 0.08982006819705753,
+        "totalNetR": -294.2826975135201
+      },
+      "prescreenPassed": false,
+      "translationPassed": false
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1_long",
+      "correctedFailureLabels": [
+        "freqtrade_translation_not_executed",
+        "out_of_sample_failed"
+      ],
+      "developmentMetrics": {
+        "averageNetR": 0.2369987970288206,
+        "eventCount": 143,
+        "folds": {},
+        "maximumDrawdownPct": 11.901114049616556,
+        "maximumDrawdownR": 11.901114049616556,
+        "observedMonthCount": 34,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.6176470588235294,
+        "profitFactor": 1.5874448764634508,
+        "singleInstrumentPositiveContribution": 0.17704466263158256,
+        "singleMonthPositiveContribution": 0.1928668344919641,
+        "totalNetR": 33.89082797512135
+      },
+      "economicBasePassed": false,
+      "endToEndBasePassed": false,
+      "formalPassed": false,
+      "oosMetrics": {
+        "averageNetR": -0.22825413428896313,
+        "eventCount": 164,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.12708259539800162,
+            "eventCount": 6,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.2591066168262095,
+            "eventCount": 10,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.4240986385611315,
+            "eventCount": 27,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.5011720787747939,
+            "eventCount": 16,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.15382613185387076,
+            "eventCount": 13,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 39.870655329989994,
+        "maximumDrawdownR": 39.870655329989994,
+        "observedMonthCount": 30,
+        "positiveFoldCount": 1,
+        "positiveMonthRatio": 0.2,
+        "profitFactor": 0.6231838087164326,
+        "singleInstrumentPositiveContribution": 0.18884231153295788,
+        "singleMonthPositiveContribution": 0.2155832764359955,
+        "totalNetR": -37.43367802338995
+      },
+      "prescreenPassed": true,
+      "translationPassed": false
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1_short",
+      "correctedFailureLabels": [
+        "market_mechanism_prescreen_failed"
+      ],
+      "developmentMetrics": {
+        "averageNetR": -0.029054585615304815,
+        "eventCount": 231,
+        "folds": {},
+        "maximumDrawdownPct": 20.16376715149959,
+        "maximumDrawdownR": 20.16376715149959,
+        "observedMonthCount": 40,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.45,
+        "profitFactor": 0.9416425089480195,
+        "singleInstrumentPositiveContribution": 0.1766850977142618,
+        "singleMonthPositiveContribution": 0.11518004878188684,
+        "totalNetR": -6.7116092771354126
+      },
+      "economicBasePassed": false,
+      "endToEndBasePassed": false,
+      "formalPassed": false,
+      "oosMetrics": {
+        "averageNetR": -0.04923229158198657,
+        "eventCount": 102,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.2191502614341061,
+            "eventCount": 10,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.07493888834977461,
+            "eventCount": 22,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.22207264524062234,
+            "eventCount": 28,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.19497537971772388,
+            "eventCount": 19,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": 0.18947936823328387,
+            "eventCount": 23,
+            "positive": true
+          }
+        },
+        "maximumDrawdownPct": 20.089096290850545,
+        "maximumDrawdownR": 20.089096290850545,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 2,
+        "positiveMonthRatio": 0.47368421052631576,
+        "profitFactor": 0.9060016022493367,
+        "singleInstrumentPositiveContribution": 0.24593103013698606,
+        "singleMonthPositiveContribution": 0.1479738921746325,
+        "totalNetR": -5.02169374136263
+      },
+      "prescreenPassed": false,
+      "translationPassed": false
+    }
+  ],
+  "conclusion": "V37B remains valid evidence that its normalized candidates failed the frozen OOS economics. It is not evidence that the original external strategies failed because source equivalence was not established.",
+  "demoOrLiveMutations": 0,
+  "executableParityPassed": true,
+  "forcedWinner": false,
+  "gateThresholdsChanged": false,
+  "gatesReachable": true,
+  "inputIdentity": {
+    "campaignId": "phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980",
+    "campaignManifest": {
+      "artifacts": [
+        {
+          "observedCheckoutSha256": "df9379c89da14866ff1a1f7708d7ae74879dee277ca4500df02b6e855cb9ae5d",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980\\campaign_summary.json",
+          "sha256": "c4c5d0c2e6a6ba5866c5f967971878b98e8b0d1d066a38443ebefcb5f0836787",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "89421a08474b39ee1b06150ca597f56327cf2a77f2c444c03c8528050ce25606",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980\\campaign_summary.md",
+          "sha256": "89421a08474b39ee1b06150ca597f56327cf2a77f2c444c03c8528050ce25606",
+          "verificationMode": "exact_bytes"
+        },
+        {
+          "observedCheckoutSha256": "a05f051b2fa3af4eddc3c70050cb0202a7dff73f8d8cdc4435e427a0a41ed370",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980\\candidate_results.parquet",
+          "sha256": "a05f051b2fa3af4eddc3c70050cb0202a7dff73f8d8cdc4435e427a0a41ed370",
+          "verificationMode": "exact_bytes"
+        },
+        {
+          "observedCheckoutSha256": "c6deb1ab10648ee0b33b810baa9a7200d7c45d46144f85ff9edf29dcf8b0d009",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980\\console_projection.json",
+          "sha256": "f76f7687d91936f4281574cf14b4ae8cd097a7bef6ed8ef9972b52135ecbe458",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "efba90600c9026bbe3829e37312a1835d70cf8ebc33bea080462fa57c6713ff8",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980\\experiment_budget.json",
+          "sha256": "b3f23f29c210f877fc055b98ab7791f9eb41f2dea86c8ec1359b8082977f0bf0",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "658dfcae7ce21853e91a06247ffa814a84bb0c431c5cfecaf339a13ced78b89e",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980\\failure_attribution.json",
+          "sha256": "e05c8a3d30ae81e0be6451ca039f9a8ce0fd3929e143c72f3521cc22080eb533",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "598bdbd1579bcdbd68a8799b9db256fe7ca151e070a3ab90afbdecb71ad4016b",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980\\gate_matrix.json",
+          "sha256": "ad40f30c2bf9189b35e2bb34cf3527155e349d6e21d192faed0d3b2012688527",
+          "verificationMode": "lf_normalized_git_checkout"
+        }
+      ],
+      "manifestPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980\\artifact_manifest.json",
+      "manifestSha256": "33e94c61ed02ef75c70890a115d978af7482eba969dbf08af30072e9c852fa8e",
+      "verifiedArtifactCount": 7
+    },
+    "packageSha256": "c714273e3046b6f229f2deafc2e572ef3aef10d6664015106a7e51ce46359342",
+    "preregistrationHash": "campaign_preregistration_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980",
+    "selectedCandidates": {
+      "observedCheckoutSha256": "072cc789c14d2fbcfc93687cc4383a90decd41ee801d9a5b8652f566a1090ab5",
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\selected_candidates.json",
+      "sha256": "3b2c00cdec66b565984f6aea14c802f8edb34f2ae7c8254ad3be6c58984554b4",
+      "verificationMode": "lf_normalized_git_checkout"
+    },
+    "v37bCodeCommit": "231c239eb744887b23763b8bbe59e4afe238d83f",
+    "v37bRunId": "v37b-reference-c714273e3046-231c239eb744",
+    "workflowManifest": {
+      "artifacts": [
+        {
+          "observedCheckoutSha256": "204321ee0dd962fa38f6fab2278d1250dacbe4fddd9af52621766acba8ad5ee9",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\campaign_start.json",
+          "sha256": "33f239bb970392d0cde0413c51b5779ffcc429771cc8259da34ce69c9fefae04",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "c999752b2f2c18f8fef5bb03d664b18b2e452a95837d99c2a01ff22264fb8644",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\candidate_inventory.json",
+          "sha256": "ba5f94abb54f7d2076330d8fdcb5335c7903e307fc9bb6de126c0f5bb457f29b",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "da627afd669db7f4ecced228adb20b48863355e43f477c62623c073eab1ca5a0",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\closeout.json",
+          "sha256": "81852b7af9848c77f112df3b8298e6014ad358104454b33bb206fc0e3046b0a7",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "d0f21dce51f6c2d61f822d1841b5bc9be65e127204a6eed4335101fde20350c8",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\closeout.md",
+          "sha256": "d0f21dce51f6c2d61f822d1841b5bc9be65e127204a6eed4335101fde20350c8",
+          "verificationMode": "exact_bytes"
+        },
+        {
+          "observedCheckoutSha256": "2bb26926f2cdd5e6f31c117cd0ec5ad100d0eb8c85c2135b39fa2d985bc1c067",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\data_gap_audit.json",
+          "sha256": "68a2a9f5fbb50aac48382470f608bad3e256f7e6cba5082bbd2d1c638869c1fd",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "bb5aa04d59fe82b61491b492d12b981b814f625b663e27fbcb84ea16068558df",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\implementation_evidence.json",
+          "sha256": "1556d63e62ca4cda82a2aa6b3ca2b647666404b0129e7bcdef2714998206ac05",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "072cc789c14d2fbcfc93687cc4383a90decd41ee801d9a5b8652f566a1090ab5",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\selected_candidates.json",
+          "sha256": "3b2c00cdec66b565984f6aea14c802f8edb34f2ae7c8254ad3be6c58984554b4",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "8ef44dbe31d0223a62fa6d51fcf7fcc7532fe703971eec60305f3b741dc79333",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\semantic_dedupe_matrix.csv",
+          "sha256": "8ef44dbe31d0223a62fa6d51fcf7fcc7532fe703971eec60305f3b741dc79333",
+          "verificationMode": "exact_bytes"
+        },
+        {
+          "observedCheckoutSha256": "618539d42d6511e763bce32bb97ea8562e085cfb60965eac255af203b677ea04",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\source_verification.json",
+          "sha256": "f1de3800cf7b95c5b8236c26115522b2be87a82cce99750310582c74b64ada29",
+          "verificationMode": "lf_normalized_git_checkout"
+        },
+        {
+          "observedCheckoutSha256": "e4ba0c20a7e66de45b876c719b2143c9ff52360d379dc886c4e5fa991948ce69",
+          "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\workflow_state.json",
+          "sha256": "e4ba0c20a7e66de45b876c719b2143c9ff52360d379dc886c4e5fa991948ce69",
+          "verificationMode": "exact_bytes"
+        }
+      ],
+      "manifestPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\reports\\backtest_screening\\reference_strategy_research\\v37b-reference-c714273e3046-231c239eb744\\workflow_artifact_manifest.json",
+      "manifestSha256": "b32d5a7f9733b4bb4ca9b47292c599eaba58f93aaddfa15773a7d16f29dcaf2a",
+      "verifiedArtifactCount": 10
+    }
+  },
+  "networkDownloads": 0,
+  "schemaVersion": "v37b_reference_strategy_reassessment_v1",
+  "sourceEquivalenceEstablished": false,
+  "v37bArtifactsRewritten": false
+}
