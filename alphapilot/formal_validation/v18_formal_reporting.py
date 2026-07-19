@@ -22,6 +22,7 @@ from .candidate_adapter import (
     CandidateAdapter,
     resolve_candidate_signal_identity,
     validate_candidate_binding,
+    validate_formal_replay_event_indices,
 )
 from .canonical_event_identity import (
     audit_canonical_identity_mapping,
@@ -823,6 +824,7 @@ def execute_v18_formal_campaign(
                 ),
             }
         )
+    validate_formal_replay_event_indices(raw_events)
     disposition_contract: dict[str, Any] = {}
     disposition_rows: list[dict[str, Any]] = []
     disposition_audit: dict[str, Any] = {}

@@ -7,6 +7,7 @@ from alphapilot.formal_validation.candidate_adapter import (
     CandidateAdapterContractError,
     CandidateAdapterIdentityError,
     validate_candidate_binding,
+    validate_formal_replay_event_indices,
 )
 from alphapilot.standard_replication.candidate_adapter import (
     CanonicalReplicationCandidateAdapter,
@@ -81,6 +82,23 @@ class CanonicalReplicationCandidateAdapterTests(unittest.TestCase):
                 candidate={},
                 frames={},
                 round_trip_cost_rate=0.001,
+            )
+
+    def test_formal_replay_event_indices_fail_closed_before_fold_assignment(self) -> None:
+        with self.assertRaisesRegex(
+            CandidateAdapterContractError,
+            "candidate_adapter_event_contract_missing:exitIndex",
+        ):
+            validate_formal_replay_event_indices(
+                [{"signalIndex": 4, "entryIndex": 5}]
+            )
+
+        with self.assertRaisesRegex(
+            CandidateAdapterContractError,
+            "candidate_adapter_event_index_order_invalid",
+        ):
+            validate_formal_replay_event_indices(
+                [{"signalIndex": 5, "entryIndex": 4, "exitIndex": 6}]
             )
 
 

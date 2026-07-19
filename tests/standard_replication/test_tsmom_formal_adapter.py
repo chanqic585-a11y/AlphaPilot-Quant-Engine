@@ -139,12 +139,14 @@ def test_tsmom_replay_and_parity_are_non_empty_exact_and_deterministic(
         "symbol",
         "direction",
         "signalTimestamp",
+        "signalIndex",
         "entryTimestamp",
         "entryIndex",
         "riskDistance",
         "initialStop",
         "stopPrice",
         "exitTimestamp",
+        "exitIndex",
         "signalId",
         "grossR",
         "costR",
@@ -153,6 +155,8 @@ def test_tsmom_replay_and_parity_are_non_empty_exact_and_deterministic(
         "maeR",
     }
     assert required.issubset(first[0])
+    assert first[0]["signalIndex"] == first[0]["signalBarIndex"]
+    assert first[0]["signalIndex"] < first[0]["entryIndex"] <= first[0]["exitIndex"]
 
     ranking_rows, ranking_audit = adapter.build_formal_ranking_evidence(
         events=first,

@@ -1,0 +1,16 @@
+{
+  "blockers": [
+    "event_contract_missing_signal_index"
+  ],
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_6fe0fb16fae3a84a",
+  "candidateId": "v35_tsmom_crypto_adaptation",
+  "demoArm": false,
+  "formalInputReadCount": 1,
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "v36_tsmom_formal_run_route_v1"
+}
