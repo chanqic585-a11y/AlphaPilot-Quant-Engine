@@ -161,6 +161,34 @@ def test_backfill_writes_raw_canonical_manifest_and_resumes(tmp_path: Path) -> N
     assert persisted["mixedExchangeFundingUsed"] is False
 
 
+def test_backfill_splits_archive_discovery_into_at_most_twenty_month_windows(
+    tmp_path: Path,
+) -> None:
+    client = _FakeHistoricalClient()
+    backfill = OkxHistoricalFundingBackfill(
+        warehouse_root=tmp_path,
+        client=client,
+        archive_loader=lambda _: _archive_bytes(),
+        instruments=(INSTRUMENT,),
+        begin="2022-03-01T00:00:00Z",
+        end="2026-07-19T00:00:00Z",
+        observed_at="2026-07-19T00:00:00Z",
+    )
+
+    backfill._discover(INSTRUMENT)
+
+    assert len(client.calls) == 3
+    first, second, third = client.calls
+    assert first["begin_ms"] == 1646092800000
+    assert first["end_ms"] < second["begin_ms"]
+    assert second["end_ms"] < third["begin_ms"]
+    assert third["end_ms"] == 1784419200000
+    for call in client.calls:
+        begin = pd.Timestamp(int(call["begin_ms"]), unit="ms", tz="UTC")
+        end = pd.Timestamp(int(call["end_ms"]), unit="ms", tz="UTC")
+        assert end <= begin + pd.DateOffset(months=20)
+
+
 def test_backfill_can_append_recent_public_funding_tail(tmp_path: Path) -> None:
     backfill = OkxHistoricalFundingBackfill(
         warehouse_root=tmp_path,

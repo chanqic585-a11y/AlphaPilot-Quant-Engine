@@ -190,19 +190,38 @@ class OkxHistoricalFundingBackfill:
 
     def _discover(self, instrument_id: str) -> list[dict[str, str]]:
         family = instrument_id.removesuffix("-SWAP")
-        response = self.client.historical_market_data(
-            module=3,
-            instrument_type="SWAP",
-            instrument_family_list=(family,),
-            date_aggregation_type="monthly",
-            begin_ms=_timestamp_ms(self.begin),
-            end_ms=_timestamp_ms(self.end),
-        )
-        return [
-            item
-            for item in _archive_descriptors(response)
-            if item["filename"].startswith(f"{instrument_id}-fundingrates-")
-        ]
+        cursor = pd.Timestamp(self.begin)
+        end = pd.Timestamp(self.end)
+        if cursor.tzinfo is None:
+            cursor = cursor.tz_localize("UTC")
+        else:
+            cursor = cursor.tz_convert("UTC")
+        if end.tzinfo is None:
+            end = end.tz_localize("UTC")
+        else:
+            end = end.tz_convert("UTC")
+
+        discovered: dict[tuple[str, str], dict[str, str]] = {}
+        while cursor <= end:
+            # OKX rejects an exact 20-calendar-month span as 50077, so keep
+            # every discovery window strictly below that documented ceiling.
+            maximum_end = cursor + pd.DateOffset(months=19)
+            window_end = min(end, maximum_end - pd.Timedelta(milliseconds=1))
+            response = self.client.historical_market_data(
+                module=3,
+                instrument_type="SWAP",
+                instrument_family_list=(family,),
+                date_aggregation_type="monthly",
+                begin_ms=int(cursor.value // 1_000_000),
+                end_ms=int(window_end.value // 1_000_000),
+            )
+            for item in _archive_descriptors(response):
+                if item["filename"].startswith(
+                    f"{instrument_id}-fundingrates-"
+                ):
+                    discovered[(item["filename"], item["url"])] = item
+            cursor = window_end + pd.Timedelta(milliseconds=1)
+        return sorted(discovered.values(), key=lambda item: item["filename"])
 
     def _artifact_paths(
         self, instrument_id: str, filename: str

@@ -5474,3 +5474,35 @@ python -m alphapilot.scripts.run_v36_candidate_research `
 
 See `docs/V13.27.1.36-automatic-candidate-research.md` and the approved design
 under `docs/superpowers/specs/`.
+
+## V13.27.1.37A Funding Carry Data Readiness
+
+V37A closes the historical data-capability blocker for the preregistered
+`crypto_funding_carry_v1` family without starting a strategy experiment. It
+reuses immutable OKX perpetual OHLCV and realized funding artifacts, adds the
+matching OKX Spot 1h partitions for BTC, ETH, and SOL, and builds a causal
+same-exchange panel from March 2022 onward.
+
+The final audit contains 4,802 aligned observations per asset and about 1,600
+days of coverage. Historical research and Formal data readiness pass. Forward
+execution evidence remains blocked because historical quote turnover is only
+a capacity proxy and must not be represented as historical order-book data.
+Cost assumptions are preregistered dual-leg stress values, not account fee
+claims. Candidate, Formal, result-read, Release, Demo ARM, and order counters
+remain zero.
+
+Run the audit-only route, which reuses all verified local artifacts and makes
+no network requests:
+
+```powershell
+python -m alphapilot.scripts.run_v37a_funding_carry_data_readiness `
+  --warehouse-root D:\Codex-Workspace\<approved-backtest-data-directory> `
+  --report-root reports\data_readiness\v37a `
+  --preregistration-path research\canonical_replications\crypto_funding_carry_v1.json `
+  --asset BTC --asset ETH --asset SOL `
+  --begin 2022-03-01T00:00:00+00:00 `
+  --end 2026-07-19T00:00:00+00:00
+```
+
+See `docs/V13.27.1.37A-funding-carry-data-readiness.md` and
+`reports/data_readiness/v37a/v37a-funding-carry-59d53e096fc6f74326f4/`.

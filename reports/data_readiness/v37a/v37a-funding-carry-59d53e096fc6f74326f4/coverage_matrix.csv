@@ -1,0 +1,4 @@
+asset,rowCount,coverageDays,staleFraction,dualLegQuoteTurnoverAvailable,zeroTurnoverRowCount,medianDualLegQuoteTurnover,status
+BTC,4802,1600.333333,0.0,True,1,14612125.172615,ready
+ETH,4802,1600.333333,0.0,True,1,10125039.77577466,ready
+SOL,4802,1600.333275,0.0,True,1,2600999.8057554653,ready

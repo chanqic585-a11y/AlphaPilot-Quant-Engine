@@ -1,0 +1,86 @@
+{
+  "capacityEvidence": {
+    "forwardOrderBookByAsset": {
+      "BTC": false,
+      "ETH": false,
+      "SOL": false
+    },
+    "historicalOrderBookClaim": false,
+    "historicalProxy": "minimum_spot_perpetual_quote_turnover"
+  },
+  "costEvidence": {
+    "classification": "preregistered_stress_assumption",
+    "includesDualLegSlippage": true,
+    "includesPerpetualFees": true,
+    "includesSpotFees": true,
+    "notAccountFeeClaim": true,
+    "roundTripCostBps": [
+      20.0,
+      40.0,
+      60.0
+    ]
+  },
+  "costPolicyHash": "v37a_dual_leg_cost_stress_d6700754fb6e7adecb34bd7b7bbd5c8eb495724ccac462e0e3d56578894af099",
+  "crossExchangeSubstitution": false,
+  "dataPolicyHash": "v37a_funding_carry_data_policy_741ba1e6729ba616ad2c84581eeb67b419cf8ec83a50aed809dede483d54cd8e",
+  "familyId": "crypto_funding_carry_v1",
+  "formalBlockers": [],
+  "formalResearchDataReady": true,
+  "forwardBlockers": [
+    "missing_forward_order_book:BTC",
+    "missing_forward_order_book:ETH",
+    "missing_forward_order_book:SOL"
+  ],
+  "forwardExecutionEvidenceReady": false,
+  "historicalBlockers": [],
+  "historicalResearchReady": true,
+  "observedAt": "2026-07-19T06:47:30+00:00",
+  "perAsset": [
+    {
+      "asset": "BTC",
+      "coverageDays": 1600.333333,
+      "dualLegQuoteTurnoverAvailable": true,
+      "medianDualLegQuoteTurnover": 14612125.172615,
+      "rowCount": 4802,
+      "staleFraction": 0.0,
+      "status": "ready",
+      "zeroTurnoverRowCount": 1
+    },
+    {
+      "asset": "ETH",
+      "coverageDays": 1600.333333,
+      "dualLegQuoteTurnoverAvailable": true,
+      "medianDualLegQuoteTurnover": 10125039.77577466,
+      "rowCount": 4802,
+      "staleFraction": 0.0,
+      "status": "ready",
+      "zeroTurnoverRowCount": 1
+    },
+    {
+      "asset": "SOL",
+      "coverageDays": 1600.333275,
+      "dualLegQuoteTurnoverAvailable": true,
+      "medianDualLegQuoteTurnover": 2600999.8057554653,
+      "rowCount": 4802,
+      "staleFraction": 0.0,
+      "status": "ready",
+      "zeroTurnoverRowCount": 1
+    }
+  ],
+  "preregistrationPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37A-data-worktree\\research\\canonical_replications\\crypto_funding_carry_v1.json",
+  "preregistrationSha256": "74c968410db3f9e840a86e6e72c0b1b47833cabf3c3c4b101741ae0148e9e93e",
+  "readinessHash": "v37a_funding_readiness_b2d16c9dd4ccc64c1a6c2d37e8371229516a14099832525f878935eae7ce9e8f",
+  "requestedBeginMs": 1646092800000,
+  "requestedEndMs": 1784419200000,
+  "runId": "v37a_funding_carry_data_readiness_59d53e096fc6f74326f42101210225e47ab59524ded64f6d387810161f060837",
+  "schemaVersion": "v37a_funding_carry_data_readiness_v1",
+  "sideEffects": {
+    "candidateCount": 0,
+    "demoArmCount": 0,
+    "formalRunCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0,
+    "resultReadCount": 0
+  },
+  "zeroFillUsed": false
+}
