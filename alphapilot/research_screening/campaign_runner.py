@@ -17,6 +17,9 @@ import pandas as pd
 from alphapilot.data_foundation.checkpoint import write_json_atomic
 from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
 from alphapilot.exit_policy import exit_policy_from_dict
+from alphapilot.reference_strategy_research.signals import (
+    replay_reference_candidate_events,
+)
 
 from .campaign_contract import CandidateSpec
 from .campaign_metrics import evaluate_candidate_gates
@@ -159,7 +162,11 @@ def _candidate_from_row(row: Mapping[str, Any]) -> CandidateSpec:
 def _verify_source_hashes(repo: Path, preregistration: Mapping[str, Any]) -> None:
     source_root = repo / "alphapilot" / "research_screening"
     for name, expected in preregistration["implementationSourceHashes"].items():
-        if sha256_file(source_root / name) != expected:
+        relative = Path(str(name))
+        if relative.is_absolute() or ".." in relative.parts:
+            raise RuntimeError(f"invalid implementation source path: {name}")
+        source_path = repo / relative if len(relative.parts) > 1 else source_root / relative
+        if sha256_file(source_path) != expected:
             raise RuntimeError(f"implementation source changed after preregistration: {name}")
 
 
@@ -231,13 +238,21 @@ def _raw_events_for_candidate(
         if candidate.marketMechanismId == "funding_crowding_reversal":
             funding_frame = _read_verified_parquet(funding_catalog[symbol])
             funding_rate = align_funding_to_bars(frame, funding_frame)
-        raw = replay_candidate_events(
-            candidate=candidate,
-            frame=frame,
-            benchmark_close=benchmark_close,
-            funding_rate=funding_rate,
-            costs=dict(costs),
-        )
+        if candidate.marketMechanismId.startswith("reference_"):
+            raw = replay_reference_candidate_events(
+                candidate=candidate,
+                frame=frame,
+                funding_rate=funding_rate,
+                costs=dict(costs),
+            )
+        else:
+            raw = replay_candidate_events(
+                candidate=candidate,
+                frame=frame,
+                benchmark_close=benchmark_close,
+                funding_rate=funding_rate,
+                costs=dict(costs),
+            )
         for event in raw:
             split, fold_id = assign_event_partition(
                 event["signalTimestamp"],

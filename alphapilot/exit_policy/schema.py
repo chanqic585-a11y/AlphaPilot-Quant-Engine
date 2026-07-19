@@ -14,5 +14,6 @@ STRUCTURE_RULE_FIELDS: dict[str, frozenset[str]] = {
     "session_end": frozenset({"kind", "utcHour"}),
     "beta_rank_exit": frozenset({"kind", "maximumRankPercentile"}),
     "event_reversal": frozenset({"kind", "confirmationBars"}),
+    "frozen_range_midpoint": frozenset({"kind"}),
 }
 
