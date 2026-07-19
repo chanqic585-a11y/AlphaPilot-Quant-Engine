@@ -1,0 +1,24 @@
+{
+  "artifacts": [
+    {
+      "path": "funding_data_readiness.json",
+      "sha256": "15d35d9fa798fdac21e4b5098d025e871c499d6f0771d225469b9409beed0c10"
+    },
+    {
+      "path": "funding_data_readiness.md",
+      "sha256": "5d52c9214491bc22bacea20722f8a385adb7c6b2d6b41f93b86eb5e3c588f887"
+    },
+    {
+      "path": "formal_preflight.json",
+      "sha256": "a50bf9ce3e8498b6889574da682f9bbd11e40f4c633d59a74ac6f8eeb6cc44ab"
+    }
+  ],
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "lockedOosAccessCount": 0,
+  "readinessHash": "v36_tsmom_formal_readiness_b00197820742b9068b1203c0088f8b5c116f019e879f221c8c6764b6ecacfdf3",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_readiness_manifest_v1",
+  "status": "ready"
+}

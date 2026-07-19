@@ -1,0 +1,136 @@
+{
+  "blockedCandidateCount": 0,
+  "campaignId": "v37e1-tsmom-daily-capacity-formal-20260719",
+  "candidateCount": 1,
+  "candidates": [
+    {
+      "blockers": [],
+      "candidateId": "v37e_tsmom_daily_capacity_successor",
+      "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+      "formalWindow": {
+        "cutoffExclusive": "2026-07-18T00:00:00+00:00",
+        "metadataOnlyAudit": true,
+        "start": "2025-01-01T00:00:00+00:00"
+      },
+      "fundingCoverage": {
+        "fullWindowCovered": true,
+        "instruments": [
+          {
+            "fileCount": 114,
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "fullWindowCovered": true,
+            "instrumentId": "BTC-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T16:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 1689,
+            "zeroFilled": false
+          },
+          {
+            "fileCount": 114,
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "fullWindowCovered": true,
+            "instrumentId": "ETH-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T16:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 1689,
+            "zeroFilled": false
+          },
+          {
+            "fileCount": 114,
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "fullWindowCovered": true,
+            "instrumentId": "SOL-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T16:00:00+00:00",
+            "maximumGapHours": 8.0,
+            "provenanceValid": true,
+            "rowCount": 1689,
+            "zeroFilled": false
+          }
+        ],
+        "maximumAllowedGapHours": 8,
+        "provenanceValid": true,
+        "required": true,
+        "sameExchangeRequired": true,
+        "scheduleComplete": true,
+        "zeroFilled": false
+      },
+      "ohlcvCoverage": {
+        "commonRowCount": 563,
+        "instrumentCount": 3,
+        "partitions": [
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "BTC-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T00:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\BTC-USDT-SWAP\\1dutc\\1577836800000-1784246400000-3fdbe4fc03e18bb9.parquet",
+            "rowCount": 563,
+            "sha256": "7496b63b4a8a94657708dff39eeed01f98b71670af0ef6d76500b01c4ed58348",
+            "timeframe": "1dutc"
+          },
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "ETH-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T00:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\ETH-USDT-SWAP\\1dutc\\1577836800000-1784246400000-7eb09e7a8ff012f7.parquet",
+            "rowCount": 563,
+            "sha256": "3f217d0012dbf072d2b8a23a48c218e507c672b7b97f28f956e5630a79456f35",
+            "timeframe": "1dutc"
+          },
+          {
+            "contentColumnsRead": [
+              "date_or_timestamp_ms"
+            ],
+            "firstTimestamp": "2025-01-01T00:00:00+00:00",
+            "instrumentId": "SOL-USDT-SWAP",
+            "lastTimestamp": "2026-07-17T00:00:00+00:00",
+            "path": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\canonical\\swap\\ohlcv\\SOL-USDT-SWAP\\1dutc\\1611360000000-1784246400000-fddc673e61145699.parquet",
+            "rowCount": 563,
+            "sha256": "815e2b4296e00f635d7e9abea5212a2178730ad45cf066a3369ae3ed04db6b66",
+            "timeframe": "1dutc"
+          }
+        ]
+      },
+      "selectedTrialId": "v37e_metadata_only_capacity_successor_20260719",
+      "status": "ready",
+      "strategyDefinitionHash": "v36_replay_definition_b3b445432f083f2563fc0db5f85cf124133aec5e5e4e435db856d6be3e2acaa2",
+      "timeframe": "1dutc",
+      "walkForwardCapacity": {
+        "availableBars": 563,
+        "foldCount": 5,
+        "minimumTestBarsPerFold": 60,
+        "purgeBarsPerFold": 18,
+        "requiredBars": 510,
+        "sufficient": true,
+        "warmupBars": 120
+      }
+    }
+  ],
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalReadyCandidateCount": 1,
+  "formalRunCount": 0,
+  "formalStart": "2025-01-01T00:00:00+00:00",
+  "fundingRoot": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\_alphapilot\\canonical\\okx\\swap\\funding",
+  "generatedAt": "2026-07-19T16:38:46+00:00",
+  "lockedOosAccessCount": 0,
+  "mixedExchangeFundingUsed": false,
+  "orderCount": 0,
+  "readinessHash": "v36_tsmom_formal_readiness_b00197820742b9068b1203c0088f8b5c116f019e879f221c8c6764b6ecacfdf3",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_readiness_v1",
+  "snapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+  "snapshotManifestPath": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
+  "sourceBranch": "feature/v13.27.1.37e-candidate-replay-tsmom-formal-closure",
+  "sourceCommit": "a2e25fd147cc9ec09379b7bb79cc01e2745ced48",
+  "status": "ready",
+  "zeroFillUsed": false
+}
