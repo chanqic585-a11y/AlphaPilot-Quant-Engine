@@ -47,6 +47,7 @@ def _add_funding_fixture(
     data_root: Path,
     *,
     drop_timestamp: pd.Timestamp | None = None,
+    prepend_timestamp: pd.Timestamp | None = None,
 ) -> None:
     dates = pd.date_range("2025-01-01", periods=4, freq="8h", tz="UTC")
     references = []
@@ -55,6 +56,8 @@ def _add_funding_fixture(
         path = data_root / relative
         path.parent.mkdir(parents=True, exist_ok=True)
         selected_dates = [value for value in dates if value != drop_timestamp]
+        if prepend_timestamp is not None:
+            selected_dates.insert(0, prepend_timestamp)
         pd.DataFrame(
             {
                 "instrument_id": [symbol] * len(selected_dates),
@@ -289,6 +292,21 @@ def test_load_formal_input_rejects_incomplete_funding_schedule(tmp_path: Path) -
 
     with pytest.raises(FormalInputError, match="funding_schedule_incomplete"):
         _load(repo_root, data_root, preregistration_path)
+
+
+def test_load_formal_input_ignores_funding_gap_before_formal_window(
+    tmp_path: Path,
+) -> None:
+    repo_root, data_root, preregistration_path = _fixture(tmp_path)
+    _add_funding_fixture(
+        repo_root,
+        data_root,
+        prepend_timestamp=pd.Timestamp("2024-01-01T00:00:00Z"),
+    )
+
+    bundle = _load(repo_root, data_root, preregistration_path)
+
+    assert bundle.inputMapping["fundingEvidence"]["scheduleComplete"] is True
 
 
 def test_load_formal_input_rejects_missing_required_funding(tmp_path: Path) -> None:

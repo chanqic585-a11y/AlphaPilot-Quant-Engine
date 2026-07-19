@@ -328,6 +328,10 @@ def _load_funding_reference(
     if (conflicts > 1).any():
         raise FormalInputError(f"funding_duplicate_conflict:{instrument_id}")
     combined = combined.drop_duplicates("timestamp", keep="last").reset_index(drop=True)
+    combined = combined[
+        (combined["timestamp"] >= start)
+        & (combined["timestamp"] < cutoff_exclusive)
+    ].reset_index(drop=True)
     maximum_gap = pd.Timedelta(hours=maximum_gap_hours)
     observed_gap = combined["timestamp"].diff().dropna().max()
     if pd.notna(observed_gap) and observed_gap > maximum_gap:

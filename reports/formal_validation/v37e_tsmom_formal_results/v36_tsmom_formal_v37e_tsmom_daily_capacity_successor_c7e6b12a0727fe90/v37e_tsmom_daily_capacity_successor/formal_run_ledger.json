@@ -1,0 +1,19 @@
+{
+  "attemptCount": 1,
+  "checkpoint": {
+    "checkpointId": "before_formal_input_read",
+    "deterministic": true
+  },
+  "claimedAt": "2026-07-19T16:34:49.294551Z",
+  "failedAt": "2026-07-19T16:34:49.711202Z",
+  "failureReason": "FormalInputError",
+  "identity": {
+    "codeCommit": "68bb52714420d4830cf1907bb0ce4a181374c353",
+    "inputSnapshotHash": "v36_tsmom_formal_data_snapshot_56eb0d019a0d2f33f93ee4661e0f1c8c7b76bdd803299e1b905b519c87351ff5",
+    "preregistrationHash": "v36_tsmom_formal_preregistration_c74da549b72a03d911d7f409fec76073631365f6660a975db823004cf777d87b"
+  },
+  "resumed": false,
+  "runId": "v37e_tsmom_daily_capacity_successor-v36-formal-001",
+  "schemaVersion": "s01_v18_atomic_run_ledger_v1",
+  "state": "failed"
+}
