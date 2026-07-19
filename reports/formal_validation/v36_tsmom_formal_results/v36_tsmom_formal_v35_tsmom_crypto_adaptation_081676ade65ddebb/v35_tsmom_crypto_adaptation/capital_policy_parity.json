@@ -1,0 +1,15 @@
+{
+  "blockers": [],
+  "capitalAcceptanceParityPct": 100.0,
+  "demoArm": false,
+  "implementationDecisionCount": 46,
+  "lockedOosAccessCount": 0,
+  "mismatches": [],
+  "orderCount": 0,
+  "passed": true,
+  "positionSizeParityPct": 100.0,
+  "referenceDecisionCount": 46,
+  "releaseCount": 0,
+  "schemaVersion": "s01_v18_capital_policy_parity_v1",
+  "status": "passed"
+}

@@ -1,0 +1,19 @@
+{
+  "alpha": -6.093082530365009e-05,
+  "annualizedAlpha": -0.022239751235832283,
+  "hacStandardError": 0.00018716398237818044,
+  "hacT": -0.3255478138979447,
+  "hypothesis": {
+    "alternative": "alpha_gt_zero",
+    "null": "alpha_lte_zero"
+  },
+  "lag": 5,
+  "lagSensitivity": {
+    "10": 0.630679814885338,
+    "2": 0.6230429165622792
+  },
+  "missingValuePolicy": "drop_only_explicit_null_pairs",
+  "oneSidedP": 0.6276167493330829,
+  "sampleCount": 563,
+  "schemaVersion": "s01_newey_west_alpha_v1"
+}

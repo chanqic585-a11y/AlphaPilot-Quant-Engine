@@ -1,0 +1,160 @@
+{
+  "failedCount": 13,
+  "gates": [
+    {
+      "actual": null,
+      "gateId": "translation_parity",
+      "passed": true,
+      "reason": null,
+      "status": "passed",
+      "threshold": 100.0
+    },
+    {
+      "actual": 100.0,
+      "gateId": "capital_policy_parity",
+      "passed": true,
+      "reason": null,
+      "status": "passed",
+      "threshold": 100.0
+    },
+    {
+      "actual": 0,
+      "gateId": "ranking_evidence_complete",
+      "passed": true,
+      "reason": null,
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "actual": 0,
+      "gateId": "point_in_time_context_complete",
+      "passed": true,
+      "reason": null,
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "actual": 51,
+      "gateId": "fold_assignment_complete",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0
+    },
+    {
+      "actual": 5,
+      "gateId": "complete_fold_count",
+      "passed": true,
+      "reason": null,
+      "status": "passed",
+      "threshold": 5
+    },
+    {
+      "actual": 0.4892523858942939,
+      "gateId": "minimum_profit_factor",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 1.05
+    },
+    {
+      "actual": -0.3602150619945275,
+      "gateId": "positive_average_net_r",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0.0
+    },
+    {
+      "actual": -12.96774223180299,
+      "gateId": "positive_total_net_r",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0.0
+    },
+    {
+      "actual": 19.289520256033647,
+      "gateId": "maximum_drawdown",
+      "passed": true,
+      "reason": null,
+      "status": "passed",
+      "threshold": 25.0
+    },
+    {
+      "actual": 1,
+      "gateId": "positive_fold_minimum",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 3
+    },
+    {
+      "actual": 0.4703194745767438,
+      "gateId": "cost_1_5x_profit_factor",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 1.0
+    },
+    {
+      "actual": -0.38454052308068365,
+      "gateId": "cost_1_5x_average_net_r",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0.0
+    },
+    {
+      "actual": -13.843458830904611,
+      "gateId": "cost_1_5x_total_net_r",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0.0
+    },
+    {
+      "actual": -0.39892695138266077,
+      "gateId": "conservative_funding_average_net_r",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0.0
+    },
+    {
+      "actual": -3.2086633132609395,
+      "gateId": "benchmark_total_incremental_net_r",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0.0
+    },
+    {
+      "actual": 1,
+      "gateId": "benchmark_positive_increment_fold_minimum",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 3
+    },
+    {
+      "actual": 0.590137131676836,
+      "gateId": "single_symbol_concentration",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0.35
+    },
+    {
+      "actual": 0.5311737599107209,
+      "gateId": "single_month_concentration",
+      "passed": false,
+      "reason": null,
+      "status": "failed",
+      "threshold": 0.35
+    }
+  ],
+  "notEvaluableCount": 0,
+  "passedCount": 6,
+  "schemaVersion": "s01_v18_formal_gate_matrix_v1"
+}
