@@ -1,0 +1,119 @@
+{
+  "approvalCount": 0,
+  "auditHash": "v36_development_replay_audit_cef7126590ec6c3fdb3847a22d4a75ea01205f5089c90b51cedb7f390c395aac",
+  "campaignId": "v36-5-intraday-session-development-okx-v34c-20260719",
+  "comparisonPanelHash": "v36_comparison_panel_3a1f90a7d0edff50913ba570cf9b2c7a49e9bd8d950d5327c50559b87f6d3ee7",
+  "demoArm": false,
+  "evidenceCount": 6,
+  "formalRunCount": 0,
+  "lockedOosReadCount": 0,
+  "orderCount": 0,
+  "privateAccountReadUsed": false,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_development_replay_audit_v1",
+  "snapshotAudit": {
+    "developmentEnd": "2025-01-01T00:00:00+00:00",
+    "developmentStart": "2021-02-01T00:00:00+00:00",
+    "lockedOosReadCount": 0,
+    "partitions": [
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "BTC-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T23:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\1577836800000-1784394000000-d2e39319ddf0ec79.parquet",
+        "outputSha256": "e1a3f7c9b6eae83d3aaf81a3a0e17f72f101fc4de5255de77e7e572ada1596fb",
+        "rowCount": 34320,
+        "timeframe": "1h"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "ETH-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T23:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\1577836800000-1784394000000-1e7dafd76313d9fc.parquet",
+        "outputSha256": "88da1559f39823033d1a99bdf65d3432c7c32cc41bdc429816b7e53c65ced820",
+        "rowCount": 34320,
+        "timeframe": "1h"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "SOL-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T23:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\1611295200000-1784394000000-820d0e7916a9e826.parquet",
+        "outputSha256": "16d9df7ce968bf3433ffde8fe61588664c95fd6fa00165c7af5f4509444a0457",
+        "rowCount": 34320,
+        "timeframe": "1h"
+      }
+    ],
+    "schemaVersion": "v36_development_snapshot_audit_v1",
+    "snapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "snapshotManifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
+    "snapshotManifestSha256": "09b77a5ddebcc48d225609be4cf0a2e15eaced469c13276b535c098bd9e0c5f2",
+    "verifiedPartitionCount": 3
+  },
+  "status": "completed",
+  "tradeApiUsed": false,
+  "trialAudit": [
+    {
+      "candidateId": "v36_5_intraday_session_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_0e9f09008f7072345f6548af88c711002082ee71a5d47d205aa7328dfed21ed4",
+      "eventCount": 7188,
+      "eventEvidenceHash": "v36_development_events_39cc61c030886f56b3ca16b99d6ac8340477d9cf7388d944172c2d00ed00a25d",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_8f9e4b5f6c5f908712c11d5e4ad20c3b7e1b8a5e6bb018032983fabc76b96d19",
+      "trialIndex": 0
+    },
+    {
+      "candidateId": "v36_5_intraday_session_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_c878370f8bb458440baf13b849c073d78b1db05569e9311bff58f95206e2a483",
+      "eventCount": 6889,
+      "eventEvidenceHash": "v36_development_events_4f026e35d7c7f6b04f552674cb6abb9b6d4fa3034c3b684cd1a9660e36ef9973",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_ce7e8df2fcc246539225267570a49ea5b60d05250fc5c76cc8427b9b7a58f2fa",
+      "trialIndex": 1
+    },
+    {
+      "candidateId": "v36_5_intraday_session_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_6f4c8d9929b570c8f9510d109dceb1c2ca5d5668378fdecc004931073f2382a0",
+      "eventCount": 6611,
+      "eventEvidenceHash": "v36_development_events_aac60ec8bf4a8d3a4f93b33c843988f010e47532b982125f0ff3f5062c75da62",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_3df10f1200aea9bc40990b79a49b345586c4ec52174cf7c850769c21fa46fc00",
+      "trialIndex": 2
+    },
+    {
+      "candidateId": "v36_5_intraday_session_source_replication",
+      "definitionHash": "v36_replay_definition_1a061465b6776cbcef10cc471c7f68e1fa09ca03ec9246fccbb8c0fdd7d78f24",
+      "eventCount": 10476,
+      "eventEvidenceHash": "v36_development_events_b21939285b8f1d82d749de4b6eb20dccdc3cff53374336c45116caecafb18589",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_10c36b5e5f9c8bb8c5a75b8a7d7a2fb338d3d51c7e86fabdf3e90953a6f76839",
+      "trialIndex": 0
+    },
+    {
+      "candidateId": "v36_5_intraday_session_source_replication",
+      "definitionHash": "v36_replay_definition_52f23e140ca0111699fbbd4aeba14d7a9959f6623826ae0b4f0329dbcfba8060",
+      "eventCount": 10057,
+      "eventEvidenceHash": "v36_development_events_87a79f60a4ba39455b0f19cc6e555a01de2a7ab262752cf5623c07c712d4a4c5",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_7f14de224394c151b64c9453b774bc920bef3ea97828b64dfacca391c1eefd70",
+      "trialIndex": 1
+    },
+    {
+      "candidateId": "v36_5_intraday_session_source_replication",
+      "definitionHash": "v36_replay_definition_e367311a2e0efb85b2437ba1d2842a448855c1a79136c88d0979711b32ce0399",
+      "eventCount": 9675,
+      "eventEvidenceHash": "v36_development_events_097fca12eb4d70c9e9d0bfdffacd35de000cda89b39fb11c903b4628283b0140",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_fc97cfeb1e6d4b062d48fc7c5910a52e6d9a4dde1d47b5f8fa41e41fcb2e7988",
+      "trialIndex": 2
+    }
+  ],
+  "withdrawApiUsed": false
+}

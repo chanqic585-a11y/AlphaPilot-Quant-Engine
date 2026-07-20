@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "v36_candidate_research_failure_attribution_v1",
+  "campaignId": "v36-5-intraday-session-development-okx-v34c-20260719",
+  "status": "research_blocked_data",
+  "primaryBlocker": "after_cost_expectancy_and_stability",
+  "blockers": [
+    "intraday_session_source_replication_negative_after_cost_expectancy",
+    "intraday_session_crypto_adaptation_negative_after_cost_expectancy",
+    "no_stable_positive_parameter_neighborhood",
+    "funding_carry_missing_same_exchange_causal_data"
+  ],
+  "strategyPerformanceFailure": true,
+  "implementationOrEvidenceFailure": false,
+  "dataCapabilityBlocker": true,
+  "resultDrivenRepairAllowed": false,
+  "route": "close_ohlcv_intraday_family_and_keep_funding_carry_data_blocked",
+  "formalRunCount": 0,
+  "resultReadCount": 0,
+  "lockedOosReadCount": 0,
+  "releaseCount": 0,
+  "demoReleaseCount": 0,
+  "orderCount": 0
+}

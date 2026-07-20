@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "v35_strategy_research_source_registry_v1",
+  "registryId": "alphapilot_v36_6_final_bounded_mechanism_source",
+  "families": [
+    {
+      "familyId": "crypto_btc_downside_spillover_v1",
+      "title": "BTC downside spillover into liquid altcoin perpetuals",
+      "source": {
+        "url": "https://www.sciencedirect.com/science/article/pii/S1544612319310311",
+        "license": "citation_only",
+        "summary": "The cited study reports asymmetric short-run transmission from Bitcoin changes to major alternative cryptocurrencies. AlphaPilot converts that observation into a causal, falsifiable next-bar hypothesis; it does not copy source text or treat the result as a guaranteed trading rule.",
+        "citation": "Katsiampa, Corbet and Lucey, High frequency volatility co-movements in cryptocurrency markets, Research in International Business and Finance, 2019."
+      },
+      "mechanism": "Extreme completed BTC downside moves may be followed by delayed downside adjustment in positively exposed liquid altcoins.",
+      "formula": "BTC return below a prior-only rolling downside threshold; short selected targets at the next hourly open for at most three bars with an ATR stop.",
+      "parameters": {
+        "timeframes": ["1h"],
+        "shockLookbackBars": 2160,
+        "shockQuantile": 0.05,
+        "minimumShockReturn": -0.02,
+        "maximumHoldBars": 3,
+        "stopAtr": 2.5
+      },
+      "universe": {
+        "instrumentType": "USDT perpetual swap",
+        "selection": "frozen 20-asset fixed core cohort; no historical PIT claim"
+      },
+      "costAssumptions": {
+        "required": true,
+        "components": ["fees", "slippage", "funding proxy"]
+      },
+      "adaptationLimits": [
+        "source targets are fixed to ETH, XRP and LTC",
+        "adaptation uses the frozen 20-asset cohort only",
+        "one lagged beta and volume gate only",
+        "no target mining after results",
+        "no Locked OOS tuning"
+      ],
+      "replicationState": "registered",
+      "variants": [
+        {
+          "candidateId": "v36_6_btc_downside_spillover_source_replication",
+          "adaptation": "source_replication",
+          "definitionPath": "research/canonical_replications/crypto_btc_downside_spillover_v1.json"
+        },
+        {
+          "candidateId": "v36_6_btc_downside_spillover_crypto_adaptation",
+          "adaptation": "crypto_adaptation",
+          "definitionPath": "research/canonical_replications/crypto_btc_downside_spillover_v1.json"
+        }
+      ]
+    }
+  ]
+}

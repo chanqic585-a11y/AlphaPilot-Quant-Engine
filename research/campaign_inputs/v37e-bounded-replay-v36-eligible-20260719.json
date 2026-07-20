@@ -1,0 +1,41 @@
+{
+  "campaignId": "v37e-bounded-replay-v36-eligible-20260719",
+  "createdAt": "2026-07-19T16:02:48Z",
+  "familyIds": [
+    "crypto_conditional_mean_reversion_v1",
+    "crypto_pair_relative_value_v1",
+    "crypto_tsmom_turtle_v1"
+  ],
+  "candidateIds": [
+    "v35_conditional_mr_crypto_adaptation",
+    "v35_conditional_mr_source_replication",
+    "v35_pair_rv_crypto_adaptation",
+    "v35_pair_rv_source_replication",
+    "v35_tsmom_crypto_adaptation",
+    "v35_tsmom_source_replication"
+  ],
+  "comparisonPanel": {
+    "developmentStart": "2021-02-01T00:00:00Z",
+    "developmentEnd": "2025-01-01T00:00:00Z",
+    "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "costPolicyHash": "cost-policy-v13-development-round-trip-12bps",
+    "capitalPolicyHash": "capital-policy-v18-development-unit-risk",
+    "benchmarkPolicyHash": "benchmark-policy-v32-development-increment",
+    "randomSeed": 36
+  },
+  "developmentReplay": {
+    "snapshotManifestPath": "D:\\Codex-Workspace\\\u56de\u6d4b\u6570\u636e\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
+    "roundTripCostRate": 0.0012
+  },
+  "continuationPolicy": {
+    "mode": "deterministic_reproducibility_replay",
+    "parameterChanges": 0,
+    "exitPolicyChanges": 0,
+    "gateChanges": 0,
+    "lockedOosReadCount": 0,
+    "resultDrivenOptimization": false,
+    "forcedWinner": false
+  },
+  "developmentEvidence": [],
+  "formalOutcomes": []
+}

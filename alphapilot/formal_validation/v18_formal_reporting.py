@@ -22,12 +22,17 @@ from .candidate_adapter import (
     CandidateAdapter,
     resolve_candidate_signal_identity,
     validate_candidate_binding,
+    validate_formal_replay_event_indices,
 )
 from .canonical_event_identity import (
     audit_canonical_identity_mapping,
     map_canonical_identity,
 )
 from .formal_event_contract import canonicalize_formal_event
+from .formal_gate_evaluation import (
+    build_fold_assignment_gate,
+    evaluate_formal_gates,
+)
 from .formal_fold_assignment import (
     assign_formal_events_by_signal_timestamp,
     build_formal_event_dispositions,
@@ -37,7 +42,6 @@ from .formal_input import FormalInputBundle
 from .formal_statistics import newey_west_alpha
 from .formal_stress import (
     build_funding_stress,
-    build_s01_benchmark,
     build_utc_daily_returns,
 )
 from .formal_walk_forward import assign_events_to_folds
@@ -64,7 +68,6 @@ from .v18_formal_execution import (
     attach_point_in_time_context,
     build_daily_market_evidence,
     build_locked_cost_stress,
-    build_signal_feature_evidence,
     compare_capital_replays,
     replay_v18_capital_policy,
     summarize_capital_replay,
@@ -127,14 +130,27 @@ def _signal_id(event: Mapping[str, Any]) -> str:
     return str(canonicalize_formal_event(event)["signalId"])
 
 
+def _event_scope_identity(event: Mapping[str, Any]) -> tuple[str, ...]:
+    return (
+        str(event.get("candidateId") or ""),
+        str(event.get("symbol") or event.get("instrumentId") or ""),
+        str(event.get("direction") or event.get("side") or ""),
+        str(event.get("signalTimestamp") or ""),
+        str(event.get("entryTimestamp") or event.get("expectedEntryTimestamp") or ""),
+    )
+
+
 def _merge_canonical_events(
     canonical_events: Sequence[Mapping[str, Any]],
     assigned_raw: Sequence[Mapping[str, Any]],
 ) -> tuple[list[dict[str, Any]], list[str]]:
     raw_by_id = {_signal_id(row): dict(row) for row in assigned_raw}
+    assigned_scope = {_event_scope_identity(row) for row in assigned_raw}
     merged: list[dict[str, Any]] = []
     missing: list[str] = []
     for canonical in canonical_events:
+        if _event_scope_identity(canonical) not in assigned_scope:
+            continue
         signal_id = str(canonical.get("signalId") or "")
         raw = raw_by_id.get(signal_id)
         if raw is None:
@@ -249,10 +265,64 @@ def _registered_funding_rate(bundle: FormalInputBundle) -> float | None:
     value = stress.get("adverseRatePerSettlement")
     if value is None:
         value = bundle.snapshot.get("adverseFundingRatePerSettlement")
-    if value is None:
+    if value is not None:
+        rate = float(value)
+        return rate if math.isfinite(rate) and rate >= 0.0 else None
+
+    if (
+        stress.get("method")
+        != "adverse_quantile_from_available_same_exchange_history"
+        or stress.get("applyByObservedSettlementCount") is not True
+    ):
         return None
-    rate = float(value)
-    return rate if math.isfinite(rate) and rate >= 0.0 else None
+    funding_evidence = bundle.inputMapping.get("fundingEvidence") or {}
+    if (
+        funding_evidence.get("sameExchangeVerified") is not True
+        or funding_evidence.get("scheduleComplete") is not True
+        or funding_evidence.get("missingRateZeroFilled") is not False
+    ):
+        return None
+    try:
+        quantile = float(stress["quantile"])
+    except (KeyError, TypeError, ValueError):
+        return None
+    if not math.isfinite(quantile) or not 0.0 <= quantile <= 1.0:
+        return None
+
+    observed_rates: list[float] = []
+    for frame in bundle.frames.values():
+        if not {"fundingRate", "fundingEventPresent"}.issubset(frame.columns):
+            return None
+        settlement_rows = frame.loc[
+            frame["fundingEventPresent"].fillna(False).astype(bool)
+        ]
+        for raw_rate in pd.to_numeric(
+            settlement_rows["fundingRate"], errors="coerce"
+        ):
+            rate = float(raw_rate)
+            if not math.isfinite(rate):
+                return None
+            observed_rates.append(abs(rate))
+    if not observed_rates:
+        return None
+    return float(np.quantile(np.asarray(observed_rates, dtype="float64"), quantile))
+
+
+def _legacy_fold_assignment_is_complete(
+    *,
+    fold_audit: Mapping[str, Any],
+    fold_rejected: Sequence[Mapping[str, Any]],
+) -> bool:
+    allowed_reasons = {"outside_test_windows", "event_crosses_test_boundary"}
+    input_count = int(fold_audit.get("inputEventCount") or 0)
+    accepted_count = int(fold_audit.get("acceptedEventCount") or 0)
+    rejected_count = int(fold_audit.get("rejectedEventCount") or 0)
+    reasons = {str(row.get("foldAssignmentReason") or "") for row in fold_rejected}
+    return bool(
+        input_count == accepted_count + rejected_count
+        and rejected_count == len(fold_rejected)
+        and reasons.issubset(allowed_reasons)
+    )
 
 
 def _funding_metrics(
@@ -384,12 +454,7 @@ def _build_gate_matrix(
             threshold=0,
             passed=int(context_audit.get("missingContextFieldCount", 0)) == 0,
         ),
-        _gate_row(
-            "fold_assignment_complete",
-            actual=int(fold_assignment.get("rejectedEventCount", 0)),
-            threshold=0,
-            passed=int(fold_assignment.get("rejectedEventCount", 0)) == 0,
-        ),
+        build_fold_assignment_gate(fold_assignment),
         _gate_row(
             "complete_fold_count",
             actual=len(fold_results),
@@ -531,60 +596,6 @@ def _build_gate_matrix(
     }
 
 
-def _route(
-    *,
-    bundle: FormalInputBundle,
-    gate_matrix: Mapping[str, Any],
-    implementation_blockers: Sequence[str],
-    funding_unavailable_is_route_cap: bool = False,
-) -> tuple[str, list[str]]:
-    stopping = bundle.preregistration.get("stoppingRules") or {}
-    blockers = list(dict.fromkeys(str(value) for value in implementation_blockers))
-    if blockers:
-        return str(
-            stopping.get("implementationInvalid")
-            or "implementation_invalid_requires_new_campaign"
-        ), blockers
-    economic_gate_ids = {
-        "complete_fold_count",
-        "minimum_profit_factor",
-        "positive_average_net_r",
-        "positive_total_net_r",
-        "maximum_drawdown",
-        "positive_fold_minimum",
-        "cost_1_5x_profit_factor",
-        "cost_1_5x_average_net_r",
-        "cost_1_5x_total_net_r",
-        "conservative_funding_average_net_r",
-        "benchmark_total_incremental_net_r",
-        "benchmark_positive_increment_fold_minimum",
-    }
-    failed = [
-        str(row["gateId"])
-        for row in gate_matrix["gates"]
-        if row["gateId"] in economic_gate_ids
-        and not (
-            funding_unavailable_is_route_cap
-            and row["gateId"] == "conservative_funding_average_net_r"
-            and row["passed"] is None
-        )
-        and row["passed"] is not True
-    ]
-    if failed:
-        return str(stopping.get("economicGateFailure") or "archive_s01_current_version"), failed
-    comparable = (
-        bundle.preregistration.get("statisticalPolicy", {}).get(
-            "comparableCandidatePanel", {}
-        )
-    )
-    if comparable.get("status") == "unavailable_predeclared":
-        return str(
-            stopping.get("statisticsUnavailable")
-            or "walk_forward_research_pass_statistics_unavailable"
-        ), ["comparable_candidate_panel_unavailable_predeclared"]
-    return "walk_forward_research_pass_no_clean_holdout", ["clean_locked_oos_unavailable"]
-
-
 def _summary_markdown(summary: Mapping[str, Any]) -> str:
     blockers = "\n".join(f"- `{value}`" for value in summary["blockers"])
     return (
@@ -634,7 +645,10 @@ def _publish_artifacts(
 ) -> str:
     destination = Path(output_root).resolve()
     destination.mkdir(parents=True, exist_ok=True)
-    staging = destination / f".v18-formal-staging-{uuid.uuid4().hex}"
+    staging_root = (
+        destination.parents[1] if len(destination.parents) > 1 else destination.parent
+    )
+    staging = staging_root / f".f-{uuid.uuid4().hex[:12]}"
     staging.mkdir(parents=False, exist_ok=False)
     try:
         for name, payload in json_payloads.items():
@@ -825,6 +839,7 @@ def execute_v18_formal_campaign(
                 ),
             }
         )
+    validate_formal_replay_event_indices(raw_events)
     disposition_contract: dict[str, Any] = {}
     disposition_rows: list[dict[str, Any]] = []
     disposition_audit: dict[str, Any] = {}
@@ -882,14 +897,6 @@ def execute_v18_formal_campaign(
         adapter_canonical,
         assigned_raw,
     )
-    if v18_3_enabled:
-        assigned_signal_ids = {_signal_id(row) for row in assigned_raw}
-        reference_missing = [
-            signal_id for signal_id in reference_missing if signal_id in assigned_signal_ids
-        ]
-        adapter_missing = [
-            signal_id for signal_id in adapter_missing if signal_id in assigned_signal_ids
-        ]
     identity_contract: dict[str, Any] = {}
     identity_audit: dict[str, Any] = {}
     identity_collision_audit: dict[str, Any] = {}
@@ -948,17 +955,21 @@ def execute_v18_formal_campaign(
             "unmappedInternalCount": identity_audit["unmappedInternalCount"],
             "unmappedFreqtradeCount": identity_audit["unmappedFreqtradeCount"],
         }
-    reference_features, ranking_audit = build_signal_feature_evidence(
-        reference_events,
-        bundle.frames,
-        bundle.candidate,
-        include_source_bar_hashes=v18_3_enabled,
+    reference_features, ranking_audit = (
+        candidate_adapter.build_formal_ranking_evidence(
+            events=reference_events,
+            frames=bundle.frames,
+            candidate=bundle.candidate,
+            include_source_bar_hashes=v18_3_enabled,
+        )
     )
-    adapter_features, adapter_ranking_audit = build_signal_feature_evidence(
-        adapter_events,
-        bundle.frames,
-        bundle.candidate,
-        include_source_bar_hashes=v18_3_enabled,
+    adapter_features, adapter_ranking_audit = (
+        candidate_adapter.build_formal_ranking_evidence(
+            events=adapter_events,
+            frames=bundle.frames,
+            candidate=bundle.candidate,
+            include_source_bar_hashes=v18_3_enabled,
+        )
     )
     frozen_ranking: list[dict[str, Any]] = []
     adapter_ranking: list[dict[str, Any]] = []
@@ -1202,7 +1213,11 @@ def execute_v18_formal_campaign(
                 "realizedNetR": trade_by_id[signal_id]["realizedNetR"],
             }
         )
-    benchmark = build_s01_benchmark(accepted_raw, bundle.frames, hold_bars=12)
+    benchmark = candidate_adapter.build_formal_benchmark(
+        events=accepted_raw,
+        frames=bundle.frames,
+        preregistration=preregistration,
+    )
     split = preregistration["splitPolicy"]
     daily_returns = _daily_return_panel(
         trades=reference_replay["trades"],
@@ -1257,7 +1272,13 @@ def execute_v18_formal_campaign(
         implementation_blockers.append("capital_policy_parity_failed")
     if reference_missing or adapter_missing:
         implementation_blockers.append("canonical_event_identity_mapping_incomplete")
-    if fold_rejected and not evidence_enabled:
+    if (
+        not evidence_enabled
+        and not _legacy_fold_assignment_is_complete(
+            fold_audit=fold_audit,
+            fold_rejected=fold_rejected,
+        )
+    ):
         implementation_blockers.append("formal_event_fold_assignment_incomplete")
     if int(ranking_audit.get("missingRankingFieldCount", 0)) > 0:
         implementation_blockers.append("frozen_signal_ranking_evidence_incomplete")
@@ -1340,46 +1361,46 @@ def execute_v18_formal_campaign(
             implementation_blockers.append("source_change_scope_failed")
         if frozen_contract_audit.get("status") != "passed":
             implementation_blockers.append("frozen_contract_diff_failed")
-    route, blockers = _route(
-        bundle=bundle,
-        gate_matrix=gate_matrix,
+    stopping_rules = preregistration.get("stoppingRules") or {}
+    comparable_status = (
+        preregistration.get("statisticalPolicy", {})
+        .get("comparableCandidatePanel", {})
+        .get("status")
+    )
+    gate_evaluation = evaluate_formal_gates(
+        gate_rows=gate_matrix["gates"],
         implementation_blockers=implementation_blockers,
+        stopping_rules=stopping_rules,
+        comparable_candidate_panel_status=comparable_status,
         funding_unavailable_is_route_cap=evidence_enabled,
     )
     if evidence_enabled:
-        if route.startswith("walk_forward_research_pass_") and not bool(
+        if gate_evaluation.route.startswith("walk_forward_research_pass_") and not bool(
             funding_coverage.get("formalEvidenceAvailable")
         ):
-            route = cap_route_for_funding(
-                route, {"fundingStatus": "unavailable"}
+            gate_evaluation = gate_evaluation.with_route(
+                cap_route_for_funding(
+                    gate_evaluation.route, {"fundingStatus": "unavailable"}
+                ),
+                ["registered_funding_input_unavailable"],
             )
-            blockers = ["registered_funding_input_unavailable"]
         if (
             not implementation_blockers
             and int(reference_replay.get("acceptedSignalCount") or 0) == 0
         ):
-            route = str(
-                preregistration.get("stoppingRules", {}).get(
-                    "economicGateFailure", "archive_s01_current_version"
-                )
+            gate_evaluation = gate_evaluation.with_route(
+                str(
+                    stopping_rules.get(
+                        "economicGateFailure", "archive_s01_current_version"
+                    )
+                ),
+                ["capital_infeasible_under_frozen_policy"],
             )
-            blockers = ["capital_infeasible_under_frozen_policy"]
+    route = gate_evaluation.route
+    blockers = list(gate_evaluation.blockers)
+    gate_matrix = gate_evaluation.gate_matrix
 
-    route_payload = {
-        "schemaVersion": "s01_v18_formal_route_v1",
-        "campaignId": campaign_id,
-        "route": route,
-        "blockers": blockers,
-        "formalRunCount": 1,
-        "formalInputReadCount": 1,
-        "resultDrivenParameterChangeCount": 0,
-        "lockedOosAccessCount": 0,
-        "releaseCount": 0,
-        "demoArm": False,
-        "orderCount": 0,
-        "formalPass": False,
-        "formalEvidenceCount": 0,
-    }
+    route_payload = gate_evaluation.route_payload(campaign_id)
     summary = {
         "schemaVersion": "s01_v18_formal_campaign_summary_v1",
         **route_payload,
@@ -1394,17 +1415,17 @@ def execute_v18_formal_campaign(
         "formalPass": False,
         "formalEvidenceCount": 0,
     }
-    failure = {
-        "schemaVersion": "s01_v18_formal_failure_attribution_v1",
-        "campaignId": campaign_id,
-        "route": route,
-        "primaryBlocker": blockers[0] if blockers else None,
-        "blockers": blockers,
-        "strategyPerformanceFailure": route == "archive_s01_current_version",
-        "implementationOrEvidenceFailure": route
-        == "implementation_invalid_requires_new_campaign",
-        "resultDrivenRepairAllowed": False,
-    }
+    failure = gate_evaluation.failure_attribution(
+        campaign_id,
+        economic_failure_route=str(
+            stopping_rules.get("economicGateFailure")
+            or "archive_s01_current_version"
+        ),
+        implementation_failure_route=str(
+            stopping_rules.get("implementationInvalid")
+            or "implementation_invalid_requires_new_campaign"
+        ),
+    )
     exposure = pd.DataFrame(
         [
             row

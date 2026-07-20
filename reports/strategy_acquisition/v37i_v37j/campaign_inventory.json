@@ -1,0 +1,27 @@
+{
+  "campaignCount": 2,
+  "campaigns": [
+    {
+      "campaignId": "v37i_campaign_a_funding_carry",
+      "candidateCount": 2,
+      "prefilterSurvivorCount": 0,
+      "status": "completed_zero_qualified_candidates"
+    },
+    {
+      "campaignId": "v37i_campaign_b_source_faithful",
+      "candidateCount": 3,
+      "prefilterSurvivorCount": 0,
+      "status": "completed_zero_qualified_candidates"
+    }
+  ],
+  "frozenAt": "2026-07-20T00:00:00+08:00",
+  "policy": {
+    "maximumCampaigns": 2,
+    "maximumFamilies": 6,
+    "maximumInitialCandidates": 12,
+    "maximumStructuralRevisionPerFamily": 1,
+    "maximumVariantsPerFamily": 2
+  },
+  "policyHash": "v37i_acquisition_budget_e04f3c41909aed5e8c861b7938fa481dcf7014df353d28bef6199cf9b51b02c4",
+  "schemaVersion": "alphapilot_v37i_campaign_inventory_v1"
+}

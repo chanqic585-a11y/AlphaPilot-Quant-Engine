@@ -1,0 +1,19 @@
+{
+  "attemptCount": 1,
+  "checkpoint": {
+    "checkpointId": "before_formal_input_read",
+    "deterministic": true
+  },
+  "claimedAt": "2026-07-19T03:17:18.800885Z",
+  "failedAt": "2026-07-19T03:17:18.815871Z",
+  "failureReason": "FormalInputError",
+  "identity": {
+    "codeCommit": "7953f8af853fccff41147cff758843d0e5991cc2",
+    "inputSnapshotHash": "v36_tsmom_formal_data_snapshot_2b1dcf30544488e37b4978c91cb32c90f1a26da4c2233e4c71a14954c1bd27ea",
+    "preregistrationHash": "v36_tsmom_formal_preregistration_f2a58c39a5b6317b50be0b63fec1efa1883c2c12708aa5112d395b8b637f832e"
+  },
+  "resumed": false,
+  "runId": "v35_tsmom_crypto_adaptation-v36-formal-001",
+  "schemaVersion": "s01_v18_atomic_run_ledger_v1",
+  "state": "failed"
+}

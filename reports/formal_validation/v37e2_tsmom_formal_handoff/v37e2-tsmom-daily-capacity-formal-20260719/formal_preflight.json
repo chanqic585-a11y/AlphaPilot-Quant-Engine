@@ -1,0 +1,13 @@
+{
+  "allowedToCreatePreregistration": true,
+  "allowedToRunFormal": false,
+  "blockedCandidates": [],
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "lockedOosAccessCount": 0,
+  "readinessHash": "v36_tsmom_formal_readiness_6008aa150c247dd088f03474c7888033c2f602f53f217cf1b9765a66de2a6c15",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_preflight_v1",
+  "status": "ready_to_preregister"
+}

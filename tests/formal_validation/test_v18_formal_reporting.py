@@ -3,17 +3,24 @@ from __future__ import annotations
 import json
 from pathlib import Path
 from dataclasses import dataclass, replace
-from typing import Any, Mapping
+from typing import Any, Mapping, Sequence
 
 import pandas as pd
+import pytest
 
 from alphapilot.formal_validation.executable_capital_policy import (
     build_capital_policy_v2,
 )
 from alphapilot.formal_validation.formal_input import FormalInputBundle
 from alphapilot.formal_validation.formal_parity import canonicalize_formal_event
+from alphapilot.formal_validation.formal_stress import build_s01_benchmark
+from alphapilot.formal_validation.v18_formal_execution import (
+    build_signal_feature_evidence,
+)
 from alphapilot.formal_validation.v18_formal_reporting import (
     _apply_stable_rejections,
+    _merge_canonical_events,
+    _registered_funding_rate,
     execute_v18_formal_campaign,
 )
 
@@ -50,6 +57,94 @@ def test_stable_rejection_accepts_canonical_signal_id_without_symbol() -> None:
     assert result["rawSignalCount"] == 1
     assert result["rejectedSignalCount"] == 1
 
+
+def test_registered_funding_rate_uses_verified_settlement_rows_only() -> None:
+    bundle, _ = _bundle()
+    frame = bundle.frames["BTC-USDT-SWAP"].copy()
+    frame["fundingRate"] = [0.0] * len(frame)
+    frame["fundingEventPresent"] = [False] * len(frame)
+    frame["fundingEventCount"] = [0] * len(frame)
+    for index, rate in zip((8, 16, 24), (0.0001, -0.0005, 0.0009), strict=True):
+        frame.loc[index, "fundingRate"] = rate
+        frame.loc[index, "fundingEventPresent"] = True
+        frame.loc[index, "fundingEventCount"] = 1
+    verified = replace(
+        bundle,
+        preregistration={
+            **bundle.preregistration,
+            "costModel": {
+                **bundle.preregistration["costModel"],
+                "conservativeFundingStress": {
+                    "method": "adverse_quantile_from_available_same_exchange_history",
+                    "quantile": 0.9,
+                    "applyByObservedSettlementCount": True,
+                },
+            },
+        },
+        frames={"BTC-USDT-SWAP": frame},
+        inputMapping={
+            **bundle.inputMapping,
+            "fundingEvidence": {
+                "scheduleComplete": True,
+                "sameExchangeVerified": True,
+                "missingRateZeroFilled": False,
+                "nonSettlementCashflowZeroApplied": True,
+            },
+        },
+    )
+
+    assert _registered_funding_rate(verified) == pytest.approx(0.00082)
+
+
+def test_registered_funding_rate_fails_closed_without_verified_history() -> None:
+    bundle, _ = _bundle()
+    unverified = replace(
+        bundle,
+        preregistration={
+            **bundle.preregistration,
+            "costModel": {
+                **bundle.preregistration["costModel"],
+                "conservativeFundingStress": {
+                    "method": "adverse_quantile_from_available_same_exchange_history",
+                    "quantile": 0.9,
+                    "applyByObservedSettlementCount": True,
+                },
+            },
+        },
+    )
+
+    assert _registered_funding_rate(unverified) is None
+
+
+def test_canonical_merge_ignores_outside_scope_but_reports_in_scope_id_mismatch() -> None:
+    assigned = {
+        "candidateId": "candidate-1",
+        "signalId": "raw-id",
+        "symbol": "BTC-USDT-SWAP",
+        "direction": "long",
+        "signalTimestamp": "2025-01-02T00:00:00+00:00",
+        "entryTimestamp": "2025-01-03T00:00:00+00:00",
+        "foldId": "fold-1",
+    }
+    in_scope_mismatch = {
+        **assigned,
+        "signalId": "wrong-id",
+    }
+    outside_scope = {
+        **in_scope_mismatch,
+        "signalId": "outside-id",
+        "signalTimestamp": "2024-12-01T00:00:00+00:00",
+        "entryTimestamp": "2024-12-02T00:00:00+00:00",
+    }
+
+    merged, missing = _merge_canonical_events(
+        [in_scope_mismatch, outside_scope],
+        [assigned],
+    )
+
+    assert merged == []
+    assert missing == ["wrong-id"]
+
 @dataclass(frozen=True)
 class _SyntheticAdapter:
     candidate_id: str = "S01"
@@ -75,6 +170,31 @@ class _SyntheticAdapter:
 
     def replay(self, **_: object):
         raise AssertionError("test injects replay runner")
+
+    def build_formal_ranking_evidence(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        candidate: Mapping[str, Any],
+        include_source_bar_hashes: bool = False,
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+        return build_signal_feature_evidence(
+            events,
+            frames,
+            candidate,
+            include_source_bar_hashes=include_source_bar_hashes,
+        )
+
+    def build_formal_benchmark(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        preregistration: Mapping[str, Any],
+    ) -> dict[str, Any]:
+        del preregistration
+        return build_s01_benchmark(events, frames, hold_bars=12)
 
 
 

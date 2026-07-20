@@ -1,0 +1,31 @@
+{
+  "approvalCount": 0,
+  "blockedFamilyCount": 2,
+  "blockedFamilyIds": [
+    "crypto_cross_sectional_factor_v1",
+    "crypto_event_driven_v1"
+  ],
+  "campaignHash": "v36_campaign_3b31a788e479992b95fd1ecb186089915c1d9d64659772b4efc1fa849d29bdb0",
+  "campaignId": "v37e-bounded-replay-v36-eligible-20260719",
+  "candidateCount": 9,
+  "demoArm": false,
+  "demoReleaseCount": 0,
+  "developmentEvidenceCount": 18,
+  "developmentPhaseStatus": "stable_candidates_selected",
+  "developmentProjectionCount": 18,
+  "developmentReplayStatus": "completed",
+  "eligibleCandidateCount": 6,
+  "formalRunCount": 0,
+  "lockedOosReadCount": 0,
+  "orderCount": 0,
+  "privateAccountReadUsed": false,
+  "registryId": "alphapilot_v35_canonical_strategy_sources",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_automatic_candidate_research_summary_v1",
+  "stableSelectionCount": 2,
+  "status": "research_blocked_data",
+  "tradeApiUsed": false,
+  "trialCount": 18,
+  "withdrawApiUsed": false
+}

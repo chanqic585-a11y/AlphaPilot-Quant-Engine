@@ -143,13 +143,13 @@ def build_funding_stress(
     }
 
 
-def build_s01_benchmark(
+def build_same_event_fixed_hold_benchmark(
     events: Sequence[Mapping[str, Any]],
     frames: Mapping[str, pd.DataFrame],
     *,
     hold_bars: int = 12,
 ) -> dict[str, Any]:
-    """Apply the preregistered same-event fixed-12-bar benchmark."""
+    """Apply a preregistered same-event fixed-hold benchmark."""
 
     rows: list[dict[str, Any]] = []
     for event in events:
@@ -194,13 +194,32 @@ def build_s01_benchmark(
             }
         )
     return {
-        "schemaVersion": "s01_formal_same_event_benchmark_v1",
+        "schemaVersion": "formal_same_event_fixed_hold_benchmark_v1",
         "benchmarkName": "same_event_fixed_12_bar_exit",
         "holdBars": hold_bars,
         "events": rows,
         "folds": by_fold,
         "totalIncrementalNetR": sum(float(row["incrementalNetR"]) for row in rows),
         "positiveIncrementFoldCount": sum(float(row["incrementalNetR"]) > 0 for row in by_fold),
+    }
+
+
+def build_s01_benchmark(
+    events: Sequence[Mapping[str, Any]],
+    frames: Mapping[str, pd.DataFrame],
+    *,
+    hold_bars: int = 12,
+) -> dict[str, Any]:
+    """Preserve the frozen S01 benchmark contract through the shared builder."""
+
+    result = build_same_event_fixed_hold_benchmark(
+        events,
+        frames,
+        hold_bars=hold_bars,
+    )
+    return {
+        **result,
+        "schemaVersion": "s01_formal_same_event_benchmark_v1",
     }
 
 

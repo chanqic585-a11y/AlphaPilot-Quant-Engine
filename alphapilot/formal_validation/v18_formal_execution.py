@@ -801,8 +801,9 @@ def compare_capital_replays(
             mismatches.append(
                 {"signalId": signal_id, "reason": "capital_acceptance_mismatch"}
             )
-    denominator = max(len(identities), 1)
-    acceptance_pct = acceptance_matches / denominator * 100.0
+    acceptance_pct = (
+        acceptance_matches / len(identities) * 100.0 if identities else 100.0
+    )
     size_pct = (
         size_matches / accepted_denominator * 100.0
         if accepted_denominator

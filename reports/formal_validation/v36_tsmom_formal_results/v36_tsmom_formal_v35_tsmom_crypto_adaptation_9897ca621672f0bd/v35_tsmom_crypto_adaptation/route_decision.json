@@ -1,0 +1,20 @@
+{
+  "blockers": [
+    "capital_policy_parity_failed",
+    "canonical_event_identity_mapping_incomplete",
+    "formal_event_fold_assignment_incomplete",
+    "registered_funding_stress_input_unavailable"
+  ],
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_9897ca621672f0bd",
+  "demoArm": false,
+  "formalEvidenceCount": 0,
+  "formalInputReadCount": 1,
+  "formalPass": false,
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultDrivenParameterChangeCount": 0,
+  "route": "implementation_invalid_requires_new_campaign",
+  "schemaVersion": "s01_v18_formal_route_v1"
+}

@@ -5351,3 +5351,219 @@ Resume only from a new immutable catalog containing verified PIT OHLCV evidence.
 If a future run generates a Release, execution must stop at
 `blocked_waiting_exact_release_approval` until the user approves that exact
 Release hash. See `docs/V13.27.1.28-32-research-renewal-closeout.md`.
+
+## V13.27.1.33-34B Dual-Track Data Foundation
+
+V33 freezes a dual-track program ledger so research/data work and Demo product
+work cannot silently promote each other. V34A created the bounded immutable OKX
+public OHLCV snapshot for BTC, ETH, and SOL across 1h, 4h, and UTC daily bars.
+
+V34B extends that accepted warehouse with recent public funding history, daily
+point-in-time SWAP instrument metadata, and resumable append-only forward
+snapshots for instrument state, current funding, open interest, mark price,
+index price, ticker spread, and order-book summaries. Historical instrument
+state is not reconstructed, unavailable long funding history is not fabricated,
+and settled funding cannot be used before its funding timestamp.
+
+This stage is data-only. It creates no candidate, Formal run, result read,
+Release, approval, Demo ARM, account access, or order. Run it explicitly with:
+
+```powershell
+python -m alphapilot.scripts.run_v34b_okx_funding_pit_forward `
+  --program-root reports\dual_track\<programId> `
+  --warehouse-root D:\Codex-Workspace\回测数据 `
+  --implementation-commit <commit>
+```
+
+The executable plan is
+`docs/superpowers/plans/2026-07-19-v13.27.1.34b-funding-pit-forward.md`.
+
+## V13.27.1.34C Public Data Scheduler
+
+V34C adds a resumable foreground scheduler around the accepted V34B public-data
+collectors. Durable task state, a single-owner lease, append-only cycle receipts,
+incremental funding high-water marks, and mechanical quality reports prevent
+duplicate work and make collection failures observable.
+
+The default policy collects metadata daily; funding and instrument state hourly;
+current funding, open interest, and quality every 15 minutes; and mark price,
+index price, ticker spread, and order-book summaries every 5 minutes. The real
+two-cycle pilot correctly skipped non-due tasks on the second cycle, preserved
+all V34A/V34B hashes, and finished with `healthy` quality.
+
+Run the explicit foreground launcher with:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\start_v34c_public_data_service.ps1 `
+  -ProgramRoot reports\dual_track\alphapilot_dual_track_v33_6af4e494293f4167 `
+  -BaseSnapshotId okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240 `
+  -WarehouseRoot D:\Codex-Workspace\回测数据
+```
+
+V34C remains public-data-only: candidate, Formal, result-read, Locked-OOS,
+Release, approval, Demo ARM, and order counts stay zero. See
+`docs/V13.27.1.34C-public-data-scheduler.md` and the committed V34C closeout.
+
+## V13.27.1.35 Standard Replication Background Research
+
+V35 starts the research side of the dual-track program. It replaces free-form
+indicator composition with six bounded, source-registered research families:
+time-series momentum/Turtle, BTC-ETH relative value, conditional mean
+reversion, cross-sectional ranking, public event-driven research, and a
+context-only Chan structure parser. Each source record stores only URL,
+license, concise summary, and citation; no long source text or third-party code
+is copied.
+
+The deterministic service uses an atomic state file, single-writer lease,
+hash-chained receipts, explicit pause/resume, and a frozen resource budget. It
+stops at `ready_for_prefilter` or `waiting_exact_release_approval`. It cannot
+read Locked OOS evidence early, approve/import a Demo Release, ARM execution,
+read private accounts, or submit orders.
+
+Run one cycle:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\run_strategy_research_cycle.ps1
+```
+
+Run a bounded background window, pause/resume, and inspect status:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\start_strategy_research_background.ps1 -MaxCycles 288 -IntervalSeconds 300
+powershell -ExecutionPolicy Bypass -File scripts\pause_strategy_research.ps1
+powershell -ExecutionPolicy Bypass -File scripts\resume_strategy_research.ps1
+powershell -ExecutionPolicy Bypass -File scripts\get_strategy_research_status.ps1
+```
+
+The registry is under `research/source_registry/`, frozen replication plans are
+under `research/canonical_replications/`, and runtime state is written under
+`reports/background_research/v35/`. See
+`docs/V13.27.1.35-standard-replication-background-research.md`.
+
+## V13.27.1.36 Automatic Candidate Research
+
+V36 extends the frozen V35 registry with a bounded, deterministic candidate
+research route. Eligible candidates receive three preregistered parameter
+trials, selection reads Development evidence only, and stable-neighborhood
+checks reject isolated best points. Directional, pair, portfolio, and event
+families retain separate evidence contracts.
+
+An optional `developmentReplay` block now runs the executable V35 families
+against a frozen, hash-verified local OKX public snapshot. The first real
+Development campaign generated all 18 preregistered trials and selected two
+stable time-series-momentum neighborhoods while keeping Formal, Locked OOS,
+Release, ARM, private-account, and order counters at zero. See
+`docs/V13.27.1.36-automatic-candidate-research.md`.
+
+Formal statistics remain owned by the existing Formal Validation modules. V36
+only validates and routes immutable Formal outcome records. Only
+`formal_pass` may emit `immutable_release_ready`; every emitted Release remains
+`approved=false`, `demoArm=false`, and `orders=0`. Data-blocked and zero-winner
+runs are valid terminal research results and are never forced through a gate.
+
+Run one bounded campaign through the V35 service interface:
+
+```powershell
+python -m alphapilot.scripts.run_v36_candidate_research `
+  --repo-root D:\Codex-Workspace\AlphaPilot-Quant-Engine `
+  --state-root D:\Codex-Workspace\AlphaPilot-Quant-Engine\reports\background_research\v36 `
+  --output-root D:\Codex-Workspace\AlphaPilot-Quant-Engine\reports\candidate_research\v36 `
+  --job-json <frozen-campaign-input.json> `
+  --now <UTC-ISO-8601>
+```
+
+See `docs/V13.27.1.36-automatic-candidate-research.md` and the approved design
+under `docs/superpowers/specs/`.
+
+## V13.27.1.37A Funding Carry Data Readiness
+
+V37A closes the historical data-capability blocker for the preregistered
+`crypto_funding_carry_v1` family without starting a strategy experiment. It
+reuses immutable OKX perpetual OHLCV and realized funding artifacts, adds the
+matching OKX Spot 1h partitions for BTC, ETH, and SOL, and builds a causal
+same-exchange panel from March 2022 onward.
+
+The final audit contains 4,802 aligned observations per asset and about 1,600
+days of coverage. Historical research and Formal data readiness pass. Forward
+execution evidence remains blocked because historical quote turnover is only
+a capacity proxy and must not be represented as historical order-book data.
+Cost assumptions are preregistered dual-leg stress values, not account fee
+claims. Candidate, Formal, result-read, Release, Demo ARM, and order counters
+remain zero.
+
+Run the audit-only route, which reuses all verified local artifacts and makes
+no network requests:
+
+```powershell
+python -m alphapilot.scripts.run_v37a_funding_carry_data_readiness `
+  --warehouse-root D:\Codex-Workspace\<approved-backtest-data-directory> `
+  --report-root reports\data_readiness\v37a `
+  --preregistration-path research\canonical_replications\crypto_funding_carry_v1.json `
+  --asset BTC --asset ETH --asset SOL `
+  --begin 2022-03-01T00:00:00+00:00 `
+  --end 2026-07-19T00:00:00+00:00
+```
+
+See `docs/V13.27.1.37A-funding-carry-data-readiness.md` and
+`reports/data_readiness/v37a/v37a-funding-carry-59d53e096fc6f74326f4/`.
+## V13.27.1.37F Integration Baseline
+
+V37F integrates the V33-V37 research lineage without rewriting historical
+result artifacts. It adds an auditable inherited-budget reconciliation and one
+`FormalGateEvaluation` source for gate matrices, route decisions, failure
+attribution, and campaign summaries.
+
+- Development trials used: 48.
+- Full backtests used: 1 of the inherited 96; 95 remain.
+- Formal attempts recorded: 8; no Formal result was rerun by V37F.
+- Legal fold exclusions no longer fail `fold_assignment_complete`.
+- Historical V37E admission and route decisions remain unchanged; the semantic
+  clarification is published as a sidecar under `reports/integration/v37f/`.
+- No Release, Demo ARM, order, live trading, credential, or withdrawal behavior
+  is added by this integration step.
+
+## V13.27.1.37G-V37H Selective Vibe Research Integration
+
+V37G/V37H pins the public `HKUDS/Vibe-Trading` repository at commit
+`7d42de944466e1a1f12f0df3933624fe665dee3c` and selectively adapts research
+workflow concepts without creating a runtime dependency or copying source
+code. The source paths, Git blob identifiers, MIT provenance, adoption map,
+and rejected components are frozen under
+`research/external_capabilities/vibe_trading/`.
+
+The new Strategy Acquisition Manager records source-backed artifacts and an
+append-only lifecycle as a projection over the existing Program/Campaign
+Ledger. It does not become a second authority. Formula and rule extraction is
+blocked unless source locator evidence is present, and compiled EX4/EX5 files
+remain metadata-only black boxes.
+
+The generated-candidate runner adds whole-module AST checks, a minimal secret-
+free environment, an independent process, deterministic hash seed, bounded
+input/output, and a hard wall-clock timeout. It is a research execution guard,
+not an OS-grade security boundary. The bounded Factor Lab provides 12
+point-in-time-ready research themes, research-only benches, and a frozen
+multi-dimensional artifact similarity policy. Factor results cannot imply a
+strategy Formal Pass.
+
+Evidence is under `reports/integration/v37g_v37h/`. Formal runs, Locked OOS
+reads, Release, Demo ARM, orders, and Live side effects remain zero.
+
+## V13.27.1.37I-V37J Bounded Acquisition and Formal Route
+
+V37I runs two bounded development campaigns across four strategy families and
+five immutable candidate identities. Each executable candidate receives three
+preregistered parameter trials on the first 80% of the causal V37A panel; the
+remaining 20% stays locked and unread. Transaction costs are included, archived
+TSMOM identities are not revived, and the source-faithful Turtle candidate is
+blocked as an exact duplicate before evaluation.
+
+The completed campaign has zero prefilter survivors. Funding Carry source and
+OKX variants, distance-selected Pair RV, and Funding Surprise Event all fail
+development economics after costs. Turtle fails duplicate-identity screening.
+This is a valid terminal research outcome: V37J records zero Formal candidates,
+zero Formal runs, zero locked-OOS reads, zero Releases, Demo ARM false, and zero
+orders. No failed candidate is repaired in place or forced through a gate.
+
+Evidence is under `reports/strategy_acquisition/v37i_v37j/`. Funding Carry also
+remains ineligible for Demo until independent forward spot/perpetual order-book
+evidence exists, even if a future version passes economic screening.

@@ -1,0 +1,25 @@
+{
+  "blockedCandidates": [
+    {
+      "blockers": [
+        "purged_walk_forward_capacity_insufficient"
+      ],
+      "candidateId": "v35_tsmom_source_replication",
+      "demoArm": false,
+      "formalInputReadCount": 0,
+      "formalRunClaimBudget": 0,
+      "formalRunCount": 0,
+      "lockedOosAccessCount": 0,
+      "orderCount": 0,
+      "releaseCount": 0,
+      "resultReadCount": 0,
+      "status": "blocked_before_preregistration",
+      "timeframe": "1dutc"
+    }
+  ],
+  "campaignId": "v36-3-artifact-publication-remediation-okx-v34c-20260719",
+  "evidenceHash": "v36_tsmom_blocked_evidence_18bbf7153b7b98b31c095f02aa0267b04862d42f5f449bb5ea0cbeb68f141622",
+  "implementationCommit": "6931c9387afec50b9a22da4a402e37bfb77515d1",
+  "schemaVersion": "v36_tsmom_blocked_candidate_evidence_v1",
+  "sourceReadinessHash": "v36_tsmom_formal_readiness_1ad5a58c94e64be01d0de65bdd196959cac4d2785d1e201e756de54a71809355"
+}

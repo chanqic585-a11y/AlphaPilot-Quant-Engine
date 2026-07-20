@@ -1,0 +1,99 @@
+{
+  "campaignId": "v36-development-replay-okx-v34c-20260719",
+  "comparisonPanelHash": "v36_comparison_panel_a19de2de4293c2474ff5de44a377cf14bbbcd02dc89ea9d23f8347cee2f4877d",
+  "eligibleSelectionCount": 2,
+  "lockedOosReadCount": 0,
+  "schemaVersion": "v36_neighborhood_selection_set_v1",
+  "selections": [
+    {
+      "candidateId": "v35_conditional_mr_crypto_adaptation",
+      "eligible": false,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 0,
+        "sameDirectionMajority": false,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "unstable_parameter_neighborhood",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": null
+    },
+    {
+      "candidateId": "v35_conditional_mr_source_replication",
+      "eligible": false,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 0,
+        "sameDirectionMajority": false,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "unstable_parameter_neighborhood",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": null
+    },
+    {
+      "candidateId": "v35_pair_rv_crypto_adaptation",
+      "eligible": false,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 0,
+        "sameDirectionMajority": false,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "unstable_parameter_neighborhood",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": null
+    },
+    {
+      "candidateId": "v35_pair_rv_source_replication",
+      "eligible": false,
+      "gate": {
+        "drawdownUncontrolled": true,
+        "isolatedSpike": false,
+        "positiveTrialCount": 0,
+        "sameDirectionMajority": false,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "unstable_parameter_neighborhood",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": null
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "eligible": true,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 3,
+        "sameDirectionMajority": true,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "stable_parameter_neighborhood",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": "v36_trial_43b2c0f5804b1f0596bc6d5691d79013699a5e1b3db0a07e7a3332ac3f6f0599"
+    },
+    {
+      "candidateId": "v35_tsmom_source_replication",
+      "eligible": true,
+      "gate": {
+        "drawdownUncontrolled": false,
+        "isolatedSpike": false,
+        "positiveTrialCount": 3,
+        "sameDirectionMajority": true,
+        "trialCount": 3
+      },
+      "lockedOosReadCount": 0,
+      "reason": "stable_parameter_neighborhood",
+      "schemaVersion": "v36_stable_neighborhood_v1",
+      "selectedTrialId": "v36_trial_ec2562d73795444e90789e7f77a3e129030b7d92c0f3614cf3f33375fdaf41c0"
+    }
+  ]
+}

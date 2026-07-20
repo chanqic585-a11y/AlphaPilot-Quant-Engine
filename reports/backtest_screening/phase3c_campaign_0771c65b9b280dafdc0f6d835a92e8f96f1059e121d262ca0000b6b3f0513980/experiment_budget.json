@@ -1,0 +1,11 @@
+{
+  "exceeded": false,
+  "fullBacktestCount": 1,
+  "initialCandidateCount": 4,
+  "maximumFamilies": 8,
+  "maximumFullBacktests": 48,
+  "maximumInitialCandidates": 16,
+  "maximumInitialVariantsPerFamily": 2,
+  "maximumStructuralRevisionsPerFamily": 1,
+  "structuralRevisionCount": 0
+}

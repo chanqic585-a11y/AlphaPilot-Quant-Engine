@@ -1,0 +1,165 @@
+{
+  "blockedFamilyCount": 0,
+  "blockedFamilyIds": [],
+  "campaignId": "v36-6-btc-downside-spillover-development-core20-20260719",
+  "candidateCount": 2,
+  "candidateIds": [
+    "v36_6_btc_downside_spillover_crypto_adaptation",
+    "v36_6_btc_downside_spillover_source_replication"
+  ],
+  "comparisonPanel": {
+    "benchmarkPolicyHash": "benchmark-policy-v32-development-increment",
+    "candidateIds": [
+      "v36_6_btc_downside_spillover_crypto_adaptation",
+      "v36_6_btc_downside_spillover_source_replication"
+    ],
+    "capitalPolicyHash": "capital-policy-v18-development-unit-risk",
+    "costPolicyHash": "cost-policy-v13-development-round-trip-12bps",
+    "dataSnapshotId": "fixed_core_snapshot_98c0723a16525652f22323997408e5684e0c62476086b7bd9bbbc5bc87cf13b2",
+    "developmentEnd": "2025-01-01T00:00:00Z",
+    "developmentStart": "2021-01-01T00:00:00Z",
+    "randomSeed": 366,
+    "trialIds": [
+      "v36_trial_021503f17ed90148eb3efb2a576714a0e7be906cf473bc26749f0009e5fc2cef",
+      "v36_trial_0496c0be3228c85828c37e8856e55146bb84f0c129cffea646229a5b9fac61e5",
+      "v36_trial_2899132006040fd23acc39b2bb47f8a7cde93d031b01765a426c98feabe993fe",
+      "v36_trial_3d3051e2fb746902590878cfef392f697a274a65d4db3a784e34efe1f882512f",
+      "v36_trial_9f7aae1e4055999a141935e5d3b5bfdb1024b5363cced96ddad313b0a3cb3619",
+      "v36_trial_f18a22873368eac4c890a5eaea46dc2a86b1e0dc5e41755bd4f8a224baa74bdb"
+    ]
+  },
+  "comparisonPanelHash": "v36_comparison_panel_cd94b3c2b8a757fc4d167abd7308d3e7719964caaadc69c5f6b7842b1bb020b5",
+  "contextOnlyCandidateIds": [],
+  "createdAt": "2026-07-19T10:00:00Z",
+  "eligibleCandidateCount": 2,
+  "eligibleCandidateIds": [
+    "v36_6_btc_downside_spillover_crypto_adaptation",
+    "v36_6_btc_downside_spillover_source_replication"
+  ],
+  "lockedOosReadCount": 0,
+  "preregistrationHash": "v36_preregistration_0dc26ce9d8b49df3a757c282dcd8938ba8834f58c42c21376b58712edce9001a",
+  "schemaVersion": "v36_candidate_preregistration_v1",
+  "selectionSplit": "development",
+  "sourceRegistryId": "alphapilot_v36_6_final_bounded_mechanism_source",
+  "trialCount": 6,
+  "trialsByCandidate": {
+    "v36_6_btc_downside_spillover_crypto_adaptation": [
+      {
+        "baseParameters": {
+          "maximumHoldBars": 3,
+          "minimumShockReturn": -0.02,
+          "shockLookbackBars": 2160,
+          "shockQuantile": 0.05,
+          "stopAtr": 2.5,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_6_btc_downside_spillover_crypto_adaptation",
+        "familyId": "crypto_btc_downside_spillover_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "directional",
+        "trialId": "v36_trial_9f7aae1e4055999a141935e5d3b5bfdb1024b5363cced96ddad313b0a3cb3619",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "maximumHoldBars": 3,
+          "minimumShockReturn": -0.02,
+          "shockLookbackBars": 2160,
+          "shockQuantile": 0.05,
+          "stopAtr": 2.5,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_6_btc_downside_spillover_crypto_adaptation",
+        "familyId": "crypto_btc_downside_spillover_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "directional",
+        "trialId": "v36_trial_3d3051e2fb746902590878cfef392f697a274a65d4db3a784e34efe1f882512f",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "maximumHoldBars": 3,
+          "minimumShockReturn": -0.02,
+          "shockLookbackBars": 2160,
+          "shockQuantile": 0.05,
+          "stopAtr": 2.5,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_6_btc_downside_spillover_crypto_adaptation",
+        "familyId": "crypto_btc_downside_spillover_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "directional",
+        "trialId": "v36_trial_f18a22873368eac4c890a5eaea46dc2a86b1e0dc5e41755bd4f8a224baa74bdb",
+        "trialIndex": 2
+      }
+    ],
+    "v36_6_btc_downside_spillover_source_replication": [
+      {
+        "baseParameters": {
+          "maximumHoldBars": 3,
+          "minimumShockReturn": -0.02,
+          "shockLookbackBars": 2160,
+          "shockQuantile": 0.05,
+          "stopAtr": 2.5,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_6_btc_downside_spillover_source_replication",
+        "familyId": "crypto_btc_downside_spillover_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "directional",
+        "trialId": "v36_trial_2899132006040fd23acc39b2bb47f8a7cde93d031b01765a426c98feabe993fe",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "maximumHoldBars": 3,
+          "minimumShockReturn": -0.02,
+          "shockLookbackBars": 2160,
+          "shockQuantile": 0.05,
+          "stopAtr": 2.5,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_6_btc_downside_spillover_source_replication",
+        "familyId": "crypto_btc_downside_spillover_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "directional",
+        "trialId": "v36_trial_021503f17ed90148eb3efb2a576714a0e7be906cf473bc26749f0009e5fc2cef",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "maximumHoldBars": 3,
+          "minimumShockReturn": -0.02,
+          "shockLookbackBars": 2160,
+          "shockQuantile": 0.05,
+          "stopAtr": 2.5,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_6_btc_downside_spillover_source_replication",
+        "familyId": "crypto_btc_downside_spillover_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "directional",
+        "trialId": "v36_trial_0496c0be3228c85828c37e8856e55146bb84f0c129cffea646229a5b9fac61e5",
+        "trialIndex": 2
+      }
+    ]
+  }
+}

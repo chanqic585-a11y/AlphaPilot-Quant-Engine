@@ -1,0 +1,11 @@
+{
+  "averageNetR95Pct": {
+    "lower": -0.4020260300186164,
+    "upper": 1.2894145574960862
+  },
+  "method": "deterministic_trade_bootstrap",
+  "sampleCount": 6,
+  "schemaVersion": "s01_v18_uncertainty_intervals_v1",
+  "seed": 1801,
+  "status": "available"
+}

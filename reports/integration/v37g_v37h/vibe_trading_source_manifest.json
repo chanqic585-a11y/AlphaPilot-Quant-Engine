@@ -1,0 +1,78 @@
+{
+  "cleanRoomRewrite": true,
+  "commit": "7d42de944466e1a1f12f0df3933624fe665dee3c",
+  "commitUrl": "https://github.com/HKUDS/Vibe-Trading/commit/7d42de944466e1a1f12f0df3933624fe665dee3c",
+  "copiedCode": [],
+  "license": "MIT",
+  "paths": [
+    {
+      "adoptionDecision": "adapt_workflow_concepts",
+      "blobSha": "9036e781b063242b64d042b61fc1df1fa0453ce4",
+      "path": "agent/src/skills/strategy-dev-manager/SKILL.md"
+    },
+    {
+      "adoptionDecision": "adapt_source_evidence_contract",
+      "blobSha": "7d9935fcef16b9830f641044c29890378f9286a0",
+      "path": "agent/src/skills/strategy-dev-manager/references/strategy_extraction_guide.md"
+    },
+    {
+      "adoptionDecision": "adapt_lifecycle_schema",
+      "blobSha": "22dbd197e69c903ea8d74ee5cb7579434023b18c",
+      "path": "agent/src/strategy_store/models.py"
+    },
+    {
+      "adoptionDecision": "adapt_projection_store",
+      "blobSha": "3dcce3d17359e705a3cc5237ff8fc5515319e6ed",
+      "path": "agent/src/strategy_store/store.py"
+    },
+    {
+      "adoptionDecision": "adapt_append_only_history",
+      "blobSha": "8f17ead3512afc5e52ae6acfbed6c1d82ac74934",
+      "path": "agent/src/strategy_store/sqlite_store.py"
+    },
+    {
+      "adoptionDecision": "adapt_bounded_factor_registry",
+      "blobSha": "1896bba7f1a77e165df186a7d4765d675fce4f6e",
+      "path": "agent/src/factors/registry.py"
+    },
+    {
+      "adoptionDecision": "adapt_factor_comparison",
+      "blobSha": "e6f2a3ff0c1d895df20244e2cdd85357b0505b47",
+      "path": "agent/src/factors/compare_runner.py"
+    },
+    {
+      "adoptionDecision": "adapt_research_only_bench",
+      "blobSha": "ca3ca593cc51295ee47e710337bcbd6f54ba1067",
+      "path": "agent/src/tools/alpha_bench_tool.py"
+    },
+    {
+      "adoptionDecision": "adapt_multidimensional_dedup",
+      "blobSha": "1e9d1ecb38275ec52afe086b9353d8455bee989d",
+      "path": "agent/src/tools/alpha_compare_tool.py"
+    },
+    {
+      "adoptionDecision": "harden_ast_sandbox_concept",
+      "blobSha": "30700b9a0229660f4cdd765a575f256a75bbc21f",
+      "path": "agent/src/shadow_account/codegen.py"
+    },
+    {
+      "adoptionDecision": "adapt_adversarial_test_concepts",
+      "blobSha": "279afa1a724405ac501b7badb2c31641601dca6e",
+      "path": "agent/tests/test_shadow_codegen_security.py"
+    },
+    {
+      "adoptionDecision": "retain_license_provenance",
+      "blobSha": "08701c0ee954c73edbc0d64178641cadd7faf58a",
+      "path": "LICENSE"
+    },
+    {
+      "adoptionDecision": "review_security_boundary",
+      "blobSha": "f28cee83e25336366290ee00db9b00e38516a08b",
+      "path": "SECURITY.md"
+    }
+  ],
+  "repository": "HKUDS/Vibe-Trading",
+  "repositoryUrl": "https://github.com/HKUDS/Vibe-Trading",
+  "runtimeDependency": false,
+  "schemaVersion": "alphapilot_vibe_trading_source_manifest_v1"
+}

@@ -1,0 +1,27 @@
+{
+  "blockedCandidateIds": [
+    "v35_tsmom_source_replication"
+  ],
+  "blockedEvidencePath": "reports/formal_validation/v36_tsmom_formal_handoff/v36-1-remediation-okx-v34c-20260719/blocked_candidate_evidence.json",
+  "campaignId": "v36-1-remediation-okx-v34c-20260719",
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "implementationCommit": "1e091a327cfb7a21880a6fd1fd033b6697231a6a",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "preparationHash": "v36_tsmom_formal_handoff_preparation_c9330f7ed488d730fde2a22c5b79b52f1ff898599bc2e7c6bd15ab98d3bd7083",
+  "preparedCandidateIds": [
+    "v35_tsmom_crypto_adaptation"
+  ],
+  "preregistrationPaths": [
+    "D:\\Codex-Workspace\\AlphaPilot-Quant-V36-worktree\\research\\preregistrations\\v36_tsmom_formal_v35_tsmom_crypto_adaptation_6fe0fb16fae3a84a.json"
+  ],
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_handoff_preparation_v1",
+  "snapshotPaths": [
+    "D:\\Codex-Workspace\\AlphaPilot-Quant-V36-worktree\\research\\data_snapshots\\v36_tsmom_formal_snapshot_09e5f763f1b7b768.json"
+  ],
+  "status": "prepared_zero_budget"
+}

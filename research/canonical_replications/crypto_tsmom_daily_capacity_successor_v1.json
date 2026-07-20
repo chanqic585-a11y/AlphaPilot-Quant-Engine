@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "v37e_metadata_only_capacity_successor_v1",
+  "candidateId": "v37e_tsmom_daily_capacity_successor",
+  "familyId": "crypto_tsmom_daily_capacity_v1",
+  "parentCandidateId": "v35_tsmom_source_replication",
+  "createdAt": "2026-07-19T16:02:48Z",
+  "selectionBasis": "formal_window_metadata_only",
+  "lockedOosResultReadsBeforeFreeze": 0,
+  "rationale": "The original 180-day maximum hold cannot form five purged folds in the post-development daily window. The successor keeps the source momentum, breakout, ATR, stop and minimum-momentum rules while bounding maximum hold to 18 daily bars so the already-defined five-fold, 60-bar Formal policy is executable without reading OOS returns.",
+  "definition": {
+    "timeframe": "1dutc",
+    "lookbackBars": 120,
+    "entryDonchianBars": 55,
+    "exitDonchianBars": 20,
+    "atrBars": 20,
+    "stopAtr": 2.5,
+    "minimumMomentum": 0.04,
+    "maximumHoldBars": 18
+  },
+  "unchangedFields": [
+    "timeframe",
+    "lookbackBars",
+    "entryDonchianBars",
+    "exitDonchianBars",
+    "atrBars",
+    "stopAtr",
+    "minimumMomentum",
+    "universe",
+    "costPolicy",
+    "formalGatePolicy"
+  ],
+  "changedFields": {
+    "maximumHoldBars": {
+      "from": 180,
+      "to": 18,
+      "reason": "walk_forward_capacity_from_metadata_only"
+    }
+  },
+  "prohibitions": [
+    "no OOS metric inspection before freeze",
+    "no result-driven tuning",
+    "no forced Formal pass",
+    "no release on failure"
+  ]
+}

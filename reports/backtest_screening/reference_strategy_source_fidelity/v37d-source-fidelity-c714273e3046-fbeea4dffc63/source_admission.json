@@ -1,0 +1,73 @@
+{
+  "archiveSha256": "c714273e3046b6f229f2deafc2e572ef3aef10d6664015106a7e51ce46359342",
+  "candidateCount": 2,
+  "candidates": [
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1",
+      "equivalenceStatus": "deterministic_normalization_only",
+      "materialGaps": [
+        "20-bar boundary and ATR tolerances are package normalization choices",
+        "confirmation, stop and hybrid exit rules are deterministic research assumptions",
+        "source material is contextual prose rather than one executable algorithm"
+      ],
+      "missingRequirementCount": 3,
+      "sourceFaithfulReady": false,
+      "sourceIdentityVerified": true,
+      "sourceStatus": "normalization_only",
+      "sources": [
+        {
+          "path": "references/price_action_docs/文件15-二次入场机会.txt",
+          "sha256": "6302fd329d73ab55031f5a436a90b58287f4c87fdce83d41aab29ce31bf9d509",
+          "sizeBytes": 13825,
+          "sourceType": "qualitative_documentation",
+          "summary": "Qualitative price-action reference requiring deterministic normalization."
+        },
+        {
+          "path": "references/price_action_docs/文件18-突破失败与突破测试.txt",
+          "sha256": "848e09c4209fcb593958d749b4c3e703b453181c5f4267226c0518e9844c95a9",
+          "sizeBytes": 2285,
+          "sourceType": "qualitative_documentation",
+          "summary": "Qualitative price-action reference requiring deterministic normalization."
+        },
+        {
+          "path": "references/price_action_docs/文件16-K线信号识别.txt",
+          "sha256": "d3dca29f6c350ad6a0247d3af27450605c9fcba50a2d87b4a8dd1a80d20db010",
+          "sizeBytes": 20020,
+          "sourceType": "qualitative_documentation",
+          "summary": "Qualitative price-action reference requiring deterministic normalization."
+        }
+      ],
+      "translationClass": "documentation_normalization"
+    },
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1",
+      "equivalenceStatus": "not_source_equivalent",
+      "materialGaps": [
+        "source break-even and trailing behavior is replaced by a frozen AlphaPilot exit policy",
+        "source broker-time, pip, spread and order lifecycle semantics are not reproduced",
+        "source defaults and V37B ATR-normalized range/window parameters differ materially",
+        "source uses MetaTrader pending-order execution while V37B uses close confirmation and next-bar open"
+      ],
+      "missingRequirementCount": 4,
+      "sourceFaithfulReady": false,
+      "sourceIdentityVerified": true,
+      "sourceStatus": "insufficient_source_evidence",
+      "sources": [
+        {
+          "path": "references/mql_sources/模拟可赚钱值得研究.mq4",
+          "sha256": "b96b8045487ff67de9a9bfe44771975eeb3d87d24541ef8e7f33158505c119e5",
+          "sizeBytes": 14951,
+          "sourceType": "mql_source",
+          "summary": "MetaTrader strategy source with platform-specific execution semantics."
+        }
+      ],
+      "translationClass": "clean_room_research_variant"
+    }
+  ],
+  "insufficientSourceEvidenceCount": 1,
+  "manifestHash": "b0a1cc1e17e9c3ef7c1e4ad03c5a2be80a949901986e12bfc94008d5a2d540a4",
+  "normalizationOnlyCount": 1,
+  "schemaVersion": "reference_strategy_source_admission_v1",
+  "sourceArchiveSha256": "c878e5554802c4913cf2b762b715886345fbb8670bd5a5d24abe9f3eb7ceea3d",
+  "sourceFaithfulReadyCount": 0
+}

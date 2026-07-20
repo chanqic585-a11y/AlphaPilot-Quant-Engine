@@ -1,0 +1,32 @@
+{
+  "capacityEvidence": {
+    "forwardOrderBookByAsset": {
+      "BTC": false,
+      "ETH": false,
+      "SOL": false
+    },
+    "historicalOrderBookClaim": false,
+    "historicalProxy": "minimum_spot_perpetual_quote_turnover"
+  },
+  "costEvidence": {
+    "classification": "preregistered_stress_assumption",
+    "includesDualLegSlippage": true,
+    "includesPerpetualFees": true,
+    "includesSpotFees": true,
+    "notAccountFeeClaim": true,
+    "roundTripCostBps": [
+      20.0,
+      40.0,
+      60.0
+    ]
+  },
+  "schemaVersion": "v37a_cost_capacity_evidence_v1",
+  "sideEffects": {
+    "candidateCount": 0,
+    "demoArmCount": 0,
+    "formalRunCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0,
+    "resultReadCount": 0
+  }
+}

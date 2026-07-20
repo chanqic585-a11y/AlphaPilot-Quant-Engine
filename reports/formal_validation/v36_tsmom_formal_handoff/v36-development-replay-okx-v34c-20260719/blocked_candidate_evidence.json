@@ -1,0 +1,25 @@
+{
+  "blockedCandidates": [
+    {
+      "blockers": [
+        "purged_walk_forward_capacity_insufficient"
+      ],
+      "candidateId": "v35_tsmom_source_replication",
+      "demoArm": false,
+      "formalInputReadCount": 0,
+      "formalRunClaimBudget": 0,
+      "formalRunCount": 0,
+      "lockedOosAccessCount": 0,
+      "orderCount": 0,
+      "releaseCount": 0,
+      "resultReadCount": 0,
+      "status": "blocked_before_preregistration",
+      "timeframe": "1dutc"
+    }
+  ],
+  "campaignId": "v36-development-replay-okx-v34c-20260719",
+  "evidenceHash": "v36_tsmom_blocked_evidence_7f098ddac5c4067e167172bcfd3601b90fd8cf18c44b2b0f3b8c3797bf8d21b6",
+  "implementationCommit": "b131037ea8874dfc32118ad4437fc862ef8b8fac",
+  "schemaVersion": "v36_tsmom_blocked_candidate_evidence_v1",
+  "sourceReadinessHash": "v36_tsmom_formal_readiness_ed3dfda2c38f18826886bbea30d3555b9019c3862af5ac0261ea435b7e06ca51"
+}

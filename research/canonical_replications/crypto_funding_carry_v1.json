@@ -1,0 +1,24 @@
+{
+  "schemaVersion": "v36_5_canonical_replication_plan_v1",
+  "familyId": "crypto_funding_carry_v1",
+  "status": "data_blocked",
+  "priority": 2,
+  "hypothesis": "A hedged spot-perpetual position may earn funding carry after dual-leg costs when basis and capacity remain controlled.",
+  "falsification": [
+    "carry does not exceed dual-leg costs",
+    "basis risk dominates funding income",
+    "capacity is insufficient",
+    "point-in-time alignment is unavailable"
+  ],
+  "requiredAlignedData": [
+    "same_exchange_spot",
+    "same_exchange_perpetual",
+    "funding_rate",
+    "dual_leg_cost_and_capacity"
+  ],
+  "executionCandidateCount": 0,
+  "lockedOosReadCount": 0,
+  "releaseCount": 0,
+  "demoArm": false,
+  "orderCount": 0
+}

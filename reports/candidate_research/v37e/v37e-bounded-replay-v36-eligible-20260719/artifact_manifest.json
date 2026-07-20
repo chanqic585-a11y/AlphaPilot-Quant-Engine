@@ -1,0 +1,36 @@
+{
+  "artifacts": [
+    {
+      "path": "preregistration.json",
+      "sha256": "8e0ea3ffab14fdd413af9bf27999b0eaca3421e5e0c67e6859614f59fb7c9ee0"
+    },
+    {
+      "path": "development_replay_audit.json",
+      "sha256": "a305e81756025a144f40258e8c4840ade4444860c707e0abf84be1bc114b88e6"
+    },
+    {
+      "path": "development_projection.json",
+      "sha256": "8d2a85e3c9b5f905415d3be9560c72dd2803eab2b757838d557b1b1abf21d6b0"
+    },
+    {
+      "path": "neighborhood_selection.json",
+      "sha256": "8a80a2fccd8a7052efeb3351cd8d610a31d096f1c3b3c563db641361efdb0b2e"
+    },
+    {
+      "path": "formal_route.json",
+      "sha256": "3cd70c5076783bb41e64d43dc3ec47a90f5ff599a1d2586f51dd2b67db0d1dd2"
+    },
+    {
+      "path": "immutable_releases.json",
+      "sha256": "3e280319285c649c2e470eb4d7e9d2ef5ef96d12726bd17e5fb37a9e99e4ed3c"
+    },
+    {
+      "path": "campaign_summary.json",
+      "sha256": "5fbc70b958a4c5a758e57c4d2f4f554f671cc9db2dbd1dc669cfb1480fe3be94"
+    }
+  ],
+  "campaignHash": "v36_campaign_3b31a788e479992b95fd1ecb186089915c1d9d64659772b4efc1fa849d29bdb0",
+  "campaignId": "v37e-bounded-replay-v36-eligible-20260719",
+  "manifestHash": "v36_manifest_b7b0496b18756acf95f661f9e33661e876a034d48f51145ade7ddfad32cd04bf",
+  "schemaVersion": "v36_artifact_manifest_v1"
+}

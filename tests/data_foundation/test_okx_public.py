@@ -32,6 +32,83 @@ class _Response:
 
 
 class OkxPublicTests(unittest.TestCase):
+    def test_public_derivatives_snapshot_methods_use_only_public_endpoints(self) -> None:
+        calls: list[str] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(str(getattr(request, "full_url")))
+            return _Response({"code": "0", "msg": "", "data": []})
+
+        client = OkxPublicClient(opener=opener, throttle_seconds=0)
+        client.current_funding_rate(instrument_id="BTC-USDT-SWAP")
+        client.open_interest(instrument_id="BTC-USDT-SWAP")
+        client.mark_price(instrument_id="BTC-USDT-SWAP")
+        client.index_ticker(instrument_id="BTC-USDT")
+        client.order_book(instrument_id="BTC-USDT-SWAP", depth=5)
+
+        parsed = [(urlparse(url).path, parse_qs(urlparse(url).query)) for url in calls]
+        self.assertEqual(
+            parsed,
+            [
+                ("/api/v5/public/funding-rate", {"instId": ["BTC-USDT-SWAP"]}),
+                ("/api/v5/public/open-interest", {"instType": ["SWAP"], "instId": ["BTC-USDT-SWAP"]}),
+                ("/api/v5/public/mark-price", {"instType": ["SWAP"], "instId": ["BTC-USDT-SWAP"]}),
+                ("/api/v5/market/index-tickers", {"instId": ["BTC-USDT"]}),
+                ("/api/v5/market/books", {"instId": ["BTC-USDT-SWAP"], "sz": ["5"]}),
+            ],
+        )
+
+    def test_raw_history_rows_support_1dutc_and_preserve_documented_fields(self) -> None:
+        calls: list[str] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(str(getattr(request, "full_url")))
+            return _Response(
+                {
+                    "code": "0",
+                    "msg": "",
+                    "data": [
+                        ["2000", "1", "2", "0.5", "1.5", "3", "4", "5", "0"],
+                        ["1000", "1", "2", "0.5", "1.5", "6", "7", "8", "1"],
+                    ],
+                }
+            )
+
+        rows, request_count = OkxPublicClient(
+            opener=opener,
+            throttle_seconds=0,
+        ).history_candle_rows(
+            instrument_id="BTC-USDT-SWAP",
+            timeframe="1dutc",
+            start_exclusive_ms=0,
+            max_pages=1,
+        )
+
+        self.assertEqual(request_count, 1)
+        self.assertEqual(rows, [["1000", "1", "2", "0.5", "1.5", "6", "7", "8", "1"]])
+        query = parse_qs(urlparse(calls[0]).query)
+        self.assertEqual(query["bar"], ["1Dutc"])
+
+    def test_public_client_records_auditable_request_receipts(self) -> None:
+        def opener(_request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            return _Response({"code": "0", "msg": "", "data": []})
+
+        client = OkxPublicClient(opener=opener, throttle_seconds=0)
+        client.public_instruments(instrument_type="SWAP")
+
+        self.assertEqual(len(client.request_audit_records), 1)
+        receipt = client.request_audit_records[0]
+        self.assertEqual(receipt["method"], "GET")
+        self.assertEqual(receipt["path"], "/api/v5/public/instruments")
+        self.assertEqual(receipt["parameters"], {"instType": "SWAP"})
+        self.assertEqual(receipt["responseCode"], "0")
+        self.assertEqual(len(receipt["rawPayloadSha256"]), 64)
+        self.assertTrue(receipt["requestStartedAt"].endswith("+00:00"))
+        self.assertTrue(receipt["requestCompletedAt"].endswith("+00:00"))
+
     def test_history_candles_reports_page_level_progress(self) -> None:
         pages = [
             [
@@ -197,6 +274,42 @@ class OkxPublicTests(unittest.TestCase):
         self.assertEqual(parsed[2][0], "/api/v5/market/history-candles")
         self.assertEqual(parsed[2][1]["after"], ["3000"])
         self.assertTrue(all("OK-ACCESS" not in url for url in calls))
+
+    def test_historical_market_data_uses_public_batch_endpoint(self) -> None:
+        calls: list[str] = []
+
+        def opener(request: object, timeout: int) -> _Response:
+            self.assertEqual(timeout, 30)
+            calls.append(str(getattr(request, "full_url")))
+            return _Response(
+                {
+                    "code": "0",
+                    "msg": "",
+                    "data": [{"dateAggrType": "monthly", "details": []}],
+                }
+            )
+
+        data = OkxPublicClient(
+            opener=opener,
+            throttle_seconds=0,
+        ).historical_market_data(
+            module=3,
+            instrument_type="SWAP",
+            instrument_family_list=("BTC-USDT", "ETH-USDT"),
+            date_aggregation_type="monthly",
+            begin_ms=1735689600000,
+            end_ms=1738281600000,
+        )
+
+        self.assertEqual(data[0]["dateAggrType"], "monthly")
+        parsed = urlparse(calls[0])
+        query = parse_qs(parsed.query)
+        self.assertEqual(parsed.path, "/api/v5/public/market-data-history")
+        self.assertEqual(query["module"], ["3"])
+        self.assertEqual(query["instType"], ["SWAP"])
+        self.assertEqual(query["instFamilyList"], ["BTC-USDT,ETH-USDT"])
+        self.assertEqual(query["dateAggrType"], ["monthly"])
+        self.assertNotIn("OK-ACCESS", calls[0])
 
     def test_public_tickers_uses_unauthenticated_swap_market_endpoint(self) -> None:
         calls: list[object] = []

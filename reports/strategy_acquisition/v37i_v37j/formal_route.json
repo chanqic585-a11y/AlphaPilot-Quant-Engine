@@ -1,0 +1,25 @@
+{
+  "approved": false,
+  "demoArm": false,
+  "formalCandidateCount": 0,
+  "formalCandidateIds": [],
+  "formalRunCount": 0,
+  "formalSequence": [
+    "code_commit_push",
+    "candidate_freeze",
+    "panel_freeze",
+    "preregistration_commit_push",
+    "future_locked_oos_identity",
+    "one_shot_authorization",
+    "formal_execution"
+  ],
+  "lockedOosReadCount": 0,
+  "orders": 0,
+  "privateAccountReadUsed": false,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "alphapilot_v37j_formal_route_v1",
+  "status": "completed_zero_qualified_candidates",
+  "tradeApiUsed": false,
+  "withdrawApiUsed": false
+}

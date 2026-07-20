@@ -1,0 +1,60 @@
+{
+  "boundaryClaim": "research_execution_guard_not_os_security_boundary",
+  "promotionRequirements": [
+    "ast_passed",
+    "sandbox_passed",
+    "candidate_adapter_passed",
+    "synthetic_fixture_passed",
+    "real_signal_structural_certification_passed"
+  ],
+  "safeCandidate": {
+    "audit": {
+      "calls": [
+        "int"
+      ],
+      "deterministicHashSeed": 0,
+      "imports": [],
+      "inheritedSecretEnvironmentKeys": [],
+      "maxProcesses": 1,
+      "memoryEnforcement": "declared_limit_not_os_enforced",
+      "memoryMb": 128,
+      "offline": true,
+      "passed": true,
+      "processIsolation": "independent_python_process",
+      "reasons": [],
+      "securityBoundary": "research_execution_guard_not_os_security_boundary",
+      "timeoutSeconds": 2.0,
+      "wallClockEnforcement": "hard_timeout"
+    },
+    "error": null,
+    "output": {
+      "signal": 1
+    },
+    "status": "passed"
+  },
+  "schemaVersion": "alphapilot_generated_candidate_sandbox_audit_v1",
+  "unreachableNetworkHelper": {
+    "audit": {
+      "calls": [],
+      "deterministicHashSeed": 0,
+      "imports": [
+        "requests"
+      ],
+      "maxProcesses": 1,
+      "memoryEnforcement": "declared_limit_not_os_enforced",
+      "memoryMb": 128,
+      "offline": true,
+      "passed": false,
+      "processIsolation": "independent_python_process",
+      "reasons": [
+        "forbidden_import:requests"
+      ],
+      "securityBoundary": "research_execution_guard_not_os_security_boundary",
+      "timeoutSeconds": 2.0,
+      "wallClockEnforcement": "hard_timeout"
+    },
+    "error": "forbidden_import:requests",
+    "output": null,
+    "status": "rejected"
+  }
+}

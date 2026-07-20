@@ -1,0 +1,19 @@
+{
+  "attemptCount": 1,
+  "checkpoint": {
+    "checkpointId": "before_formal_input_read",
+    "deterministic": true
+  },
+  "claimedAt": "2026-07-19T16:40:28.289650Z",
+  "failedAt": "2026-07-19T16:40:30.862169Z",
+  "failureReason": "FileNotFoundError",
+  "identity": {
+    "codeCommit": "b7c5e4b99880b6b55cb8fdeb92afdfe75bf33afd",
+    "inputSnapshotHash": "v36_tsmom_formal_data_snapshot_56eb0d019a0d2f33f93ee4661e0f1c8c7b76bdd803299e1b905b519c87351ff5",
+    "preregistrationHash": "v36_tsmom_formal_preregistration_177ea4093f8f976302f901ef6c4c927bdd77c5b137bae77412507e9d1f13eb36"
+  },
+  "resumed": false,
+  "runId": "v37e_tsmom_daily_capacity_successor-v36-formal-001",
+  "schemaVersion": "s01_v18_atomic_run_ledger_v1",
+  "state": "failed"
+}

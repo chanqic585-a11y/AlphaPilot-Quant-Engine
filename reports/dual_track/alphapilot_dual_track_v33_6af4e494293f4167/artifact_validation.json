@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "v33_v34a_artifact_validation_v1",
+  "generatedAt": "2026-07-18T18:17:15.3080538Z",
+  "programId": "alphapilot_dual_track_v33_6af4e494293f4167",
+  "warehouseRoot": "D:\\Codex-Workspace\\回测数据",
+  "warehouseProfile": "okx_official_v1",
+  "status": "passed",
+  "partitionCount": 9,
+  "partitionPassCount": 9,
+  "partitionChecks": {
+    "pathExists": true,
+    "sha256Matches": true,
+    "requiredColumnsPresent": true,
+    "confirmedCandlesOnly": true,
+    "noDuplicateTimestamps": true,
+    "strictlyIncreasing": true,
+    "timestampAligned": true,
+    "availableAtExact": true,
+    "gapFree": true,
+    "ohlcSane": true
+  },
+  "partitions": [
+    {"instrumentId": "BTC-USDT-SWAP", "timeframe": "1h", "rows": 57378, "start": "2020-01-01T00:00:00+00:00", "end": "2026-07-18T17:00:00+00:00", "passed": true},
+    {"instrumentId": "BTC-USDT-SWAP", "timeframe": "4h", "rows": 14344, "start": "2020-01-01T00:00:00+00:00", "end": "2026-07-18T12:00:00+00:00", "passed": true},
+    {"instrumentId": "BTC-USDT-SWAP", "timeframe": "1dutc", "rows": 2390, "start": "2020-01-01T00:00:00+00:00", "end": "2026-07-17T00:00:00+00:00", "passed": true},
+    {"instrumentId": "ETH-USDT-SWAP", "timeframe": "1h", "rows": 57378, "start": "2020-01-01T00:00:00+00:00", "end": "2026-07-18T17:00:00+00:00", "passed": true},
+    {"instrumentId": "ETH-USDT-SWAP", "timeframe": "4h", "rows": 14344, "start": "2020-01-01T00:00:00+00:00", "end": "2026-07-18T12:00:00+00:00", "passed": true},
+    {"instrumentId": "ETH-USDT-SWAP", "timeframe": "1dutc", "rows": 2390, "start": "2020-01-01T00:00:00+00:00", "end": "2026-07-17T00:00:00+00:00", "passed": true},
+    {"instrumentId": "SOL-USDT-SWAP", "timeframe": "1h", "rows": 48084, "start": "2021-01-22T06:00:00+00:00", "end": "2026-07-18T17:00:00+00:00", "passed": true},
+    {"instrumentId": "SOL-USDT-SWAP", "timeframe": "4h", "rows": 12021, "start": "2021-01-22T04:00:00+00:00", "end": "2026-07-18T12:00:00+00:00", "passed": true},
+    {"instrumentId": "SOL-USDT-SWAP", "timeframe": "1dutc", "rows": 2002, "start": "2021-01-23T00:00:00+00:00", "end": "2026-07-17T00:00:00+00:00", "passed": true}
+  ],
+  "snapshot": {
+    "snapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "identityRecomputed": true,
+    "identityMatches": true,
+    "manifestExists": true,
+    "partitionEntries": 9
+  },
+  "ledgerValidation": {
+    "master_program_ledger.jsonl": {"recordCount": 2, "hashChainValid": true},
+    "research_track_ledger.jsonl": {"recordCount": 2, "hashChainValid": true},
+    "demo_product_track_ledger.jsonl": {"recordCount": 1, "hashChainValid": true},
+    "cross_track_receipt_ledger.jsonl": {"recordCount": 2, "hashChainValid": true}
+  },
+  "publicRequestAudit": {
+    "requestCountOnIdempotencyRun": 10,
+    "allResponseCodeZero": true
+  },
+  "acquisitionEvidence": {
+    "initialRun": {
+      "reusedPartitionCount": 6,
+      "downloadedRowCount": 7148,
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-V33-V34A-run-output.json",
+      "outputSha256": "f1cbcd5c920086d1a9c0785c4cf4254bc9a39614c04e376a07ac35d3de135a5c"
+    },
+    "frozenRun": {
+      "reusedPartitionCount": 9,
+      "downloadedRowCount": 0,
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-V33-V34A-final-run-output.json",
+      "outputSha256": "b0f5b5400ff71ac448b0c942c07a78c9e77eae7e6be9cdf7629ebecda86f443b"
+    },
+    "idempotencyRun": {
+      "reusedPartitionCount": 9,
+      "downloadedRowCount": 0,
+      "sameSnapshotId": true,
+      "sameProgramSummaryHash": true,
+      "outputPath": "D:\\Codex-Workspace\\AlphaPilot-V33-V34A-idempotency-run-output.json",
+      "outputSha256": "4de29219310e459e75096e570ef63c6c61b8fd457a446043902858de9ac647d6"
+    }
+  },
+  "sideEffects": {
+    "candidateCount": 0,
+    "formalRunCount": 0,
+    "resultReadCount": 0,
+    "releaseCount": 0,
+    "approvalCount": 0,
+    "orderCount": 0,
+    "demoArm": false
+  }
+}

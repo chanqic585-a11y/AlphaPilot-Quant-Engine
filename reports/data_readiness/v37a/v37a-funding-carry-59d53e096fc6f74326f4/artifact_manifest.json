@@ -1,0 +1,154 @@
+{
+  "costPolicyHash": "v37a_dual_leg_cost_stress_d6700754fb6e7adecb34bd7b7bbd5c8eb495724ccac462e0e3d56578894af099",
+  "dataOnly": true,
+  "dataPolicyHash": "v37a_funding_carry_data_policy_741ba1e6729ba616ad2c84581eeb67b419cf8ec83a50aed809dede483d54cd8e",
+  "panelArtifacts": [
+    {
+      "asset": "BTC",
+      "endTimestampMs": 1784390400000,
+      "joinDirection": "backward_asof",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\aligned_panel\\BTC\\panel-8992bbb886a1f7a8c4f7.parquet",
+      "rowCount": 4802,
+      "sha256": "b351b5e9ce4e13fb8ad6a5d8a8b023b47a7c03ea8da02d6209998c0fb85c1ddb",
+      "startTimestampMs": 1646121600000,
+      "zeroFillUsed": false
+    },
+    {
+      "asset": "ETH",
+      "endTimestampMs": 1784390400000,
+      "joinDirection": "backward_asof",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\aligned_panel\\ETH\\panel-c4c7bb5e142b23cb154e.parquet",
+      "rowCount": 4802,
+      "sha256": "b3f73084e46c252adc8e41bd0131bae78dbd540aae1dce687c97b9f03971fdc4",
+      "startTimestampMs": 1646121600000,
+      "zeroFillUsed": false
+    },
+    {
+      "asset": "SOL",
+      "endTimestampMs": 1784390400000,
+      "joinDirection": "backward_asof",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\aligned_panel\\SOL\\panel-56223a016af9d540de37.parquet",
+      "rowCount": 4802,
+      "sha256": "f77311982dbbe706ce9c9a396b20521e9e75c48fb1c599d154fd3fc6c0d981db",
+      "startTimestampMs": 1646121605000,
+      "zeroFillUsed": false
+    }
+  ],
+  "preregistrationPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37A-data-worktree\\research\\canonical_replications\\crypto_funding_carry_v1.json",
+  "preregistrationSha256": "74c968410db3f9e840a86e6e72c0b1b47833cabf3c3c4b101741ae0148e9e93e",
+  "reportArtifacts": [
+    {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37A-data-worktree\\reports\\data_readiness\\v37a\\v37a-funding-carry-59d53e096fc6f74326f4\\cost_capacity_evidence.json",
+      "sha256": "533f99ebde13fba6f80fdf4b7a4f004b84f248e3452c228dfd14b87a43cd4ef6"
+    },
+    {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37A-data-worktree\\reports\\data_readiness\\v37a\\v37a-funding-carry-59d53e096fc6f74326f4\\coverage_matrix.csv",
+      "sha256": "c4ec1843dfc82812a77934bdf8a47b6bd88e6c17c7476fad7ae9449bd4ca8eb8"
+    },
+    {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37A-data-worktree\\reports\\data_readiness\\v37a\\v37a-funding-carry-59d53e096fc6f74326f4\\funding_carry_data_readiness.json",
+      "sha256": "11019a88dcedec50f1b559ca98cb0f799db05b423dbc9e5b74da3a865cfe6cca"
+    },
+    {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37A-data-worktree\\reports\\data_readiness\\v37a\\v37a-funding-carry-59d53e096fc6f74326f4\\funding_carry_data_readiness.md",
+      "sha256": "5ea5430f25e0640ea2562c72a2037b71a159dd2c7b86e42d53ca329db12571e8"
+    },
+    {
+      "path": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37A-data-worktree\\reports\\data_readiness\\v37a\\v37a-funding-carry-59d53e096fc6f74326f4\\request_audit.json",
+      "sha256": "fe1d6d4db9744c98beeb7bea768044ecaec2b8b9b3a1930d4cae6ee3ee967c4c"
+    }
+  ],
+  "runId": "v37a_funding_carry_data_readiness_59d53e096fc6f74326f42101210225e47ab59524ded64f6d387810161f060837",
+  "schemaVersion": "v37a_funding_carry_artifact_manifest_v1",
+  "sideEffects": {
+    "candidateCount": 0,
+    "demoArmCount": 0,
+    "formalRunCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0,
+    "resultReadCount": 0
+  },
+  "sourceArtifacts": [
+    {
+      "asset": "BTC",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\manifests\\spot\\BTC-USDT-1h-53c2f6a3ef211d38db71.json",
+      "manifestSha256": "1ddea5121317872cb61a16a7cbcad0d5b68013ba301c8485b23104d20255a81f",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\spot\\ohlcv\\BTC-USDT\\1h\\1646092800000-1784437200000-58522f6047190705.parquet",
+      "rowCount": 38430,
+      "sha256": "63c40007e9a7bea8788383e3685a1ac10847503003db98162af1efe8d461a522",
+      "sourceType": "okx_spot_ohlcv"
+    },
+    {
+      "asset": "BTC",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\manifests\\BTC-USDT-SWAP-1h-okx_official_v1_mani.json",
+      "manifestSha256": "8432b11e88a2b8d5e78369644bc4845854e57ecba77cd90de06ab695ddbcf697",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\1577836800000-1784394000000-d2e39319ddf0ec79.parquet",
+      "rowCount": 57378,
+      "sha256": "e1a3f7c9b6eae83d3aaf81a3a0e17f72f101fc4de5255de77e7e572ada1596fb",
+      "sourceType": "okx_perpetual_ohlcv"
+    },
+    {
+      "asset": "BTC",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\manifests\\funding\\BTC-USDT-SWAP-5502b9d5858b968abcca.json",
+      "manifestSha256": "f264422f885dba415ad108f12953e93f7ba1ccde5a1630417f942640a327fed3",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\funding\\BTC-USDT-SWAP\\1646064000000-1784390400000-6f9a73645634c830.parquet",
+      "rowCount": 4804,
+      "sha256": "d5ac607e98818f3169810ac881b6bbf96826a5d4fd1574c43af62798a4fc9066",
+      "sourceType": "okx_realized_funding"
+    },
+    {
+      "asset": "ETH",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\manifests\\spot\\ETH-USDT-1h-981cc3b8853278f481e2.json",
+      "manifestSha256": "a11210453f847824bee333d0b94e8c3766ea15ef0bf6d6110693f86db55927ba",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\spot\\ohlcv\\ETH-USDT\\1h\\1646092800000-1784437200000-47a200be935a25c5.parquet",
+      "rowCount": 38430,
+      "sha256": "5f48f418ba025d09c0aa6465fe4d7204cf808d05093f0a79717cd351e5de3465",
+      "sourceType": "okx_spot_ohlcv"
+    },
+    {
+      "asset": "ETH",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\manifests\\ETH-USDT-SWAP-1h-okx_official_v1_mani.json",
+      "manifestSha256": "752f7543c9e8c40301ed67b1443dda59d86d9bb05ed370fd08bcb89579fa74b5",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\1577836800000-1784394000000-1e7dafd76313d9fc.parquet",
+      "rowCount": 57378,
+      "sha256": "88da1559f39823033d1a99bdf65d3432c7c32cc41bdc429816b7e53c65ced820",
+      "sourceType": "okx_perpetual_ohlcv"
+    },
+    {
+      "asset": "ETH",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\manifests\\funding\\ETH-USDT-SWAP-9d0191b29aadb0d0412a.json",
+      "manifestSha256": "99271d395b39bc321fc6f245f086ae6d9d70d861d0fb9025c8637199cb57fb7a",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\funding\\ETH-USDT-SWAP\\1646064000000-1784390400000-b07d823d3cbbff31.parquet",
+      "rowCount": 4804,
+      "sha256": "f9720476857dac6893760df111ef8983e6063c9cda508b30614e939a6f49125a",
+      "sourceType": "okx_realized_funding"
+    },
+    {
+      "asset": "SOL",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\manifests\\spot\\SOL-USDT-1h-db6ce88210396c0fe1be.json",
+      "manifestSha256": "6556154a82f612649a8d4c9324a83b629d006ca9d06a110a9e719f18de244ca4",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\spot\\ohlcv\\SOL-USDT\\1h\\1646092800000-1784437200000-baad38eb736f5da2.parquet",
+      "rowCount": 38430,
+      "sha256": "4807913dfea9b5960c941c8479dc993b7a38c15e4da7ff3d7903798985f74f25",
+      "sourceType": "okx_spot_ohlcv"
+    },
+    {
+      "asset": "SOL",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\manifests\\SOL-USDT-SWAP-1h-okx_official_v1_mani.json",
+      "manifestSha256": "57c3db690d2d628a813237e4631b1f74bc5fcb91188bb875b8cb1f96cee5e903",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\1611295200000-1784394000000-820d0e7916a9e826.parquet",
+      "rowCount": 48084,
+      "sha256": "16d9df7ce968bf3433ffde8fe61588664c95fd6fa00165c7af5f4509444a0457",
+      "sourceType": "okx_perpetual_ohlcv"
+    },
+    {
+      "asset": "SOL",
+      "manifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\manifests\\funding\\SOL-USDT-SWAP-da7b6b1a8629c7478640.json",
+      "manifestSha256": "148d368d88585d5f2b57ec653dec8d9d5b95ab7955a5c15cfb62b0157807ac54",
+      "path": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\funding_carry_v37a\\canonical\\funding\\SOL-USDT-SWAP\\1646064003000-1784390400000-996ffe69e9fe7270.parquet",
+      "rowCount": 4804,
+      "sha256": "a021fae1a0a9779c609d7bc275d062e57f9d71966f3976eb0ea5c3fac1e54370",
+      "sourceType": "okx_realized_funding"
+    }
+  ]
+}

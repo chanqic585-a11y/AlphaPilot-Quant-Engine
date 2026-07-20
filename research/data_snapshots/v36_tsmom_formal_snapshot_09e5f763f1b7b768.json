@@ -1,0 +1,1053 @@
+{
+  "candidateId": "v35_tsmom_crypto_adaptation",
+  "commonCutoffExclusive": "2026-07-18T16:00:00Z",
+  "commonStart": "2025-01-01T00:00:00Z",
+  "coreUniverse": {
+    "exchange": "okx",
+    "instrumentCount": 3,
+    "instrumentIds": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "SOL-USDT-SWAP"
+    ],
+    "provider": "okx"
+  },
+  "coreUniverseHash": "v36_tsmom_core_universe_40f1c093be7316bee1b6316139263b8f3622b85249037c567e87c2a88ce73429",
+  "datasetReferences": [
+    {
+      "columnMap": {
+        "confirmed": "confirm",
+        "volume": "volCcyQuote"
+      },
+      "exchange": "okx",
+      "instrumentId": "BTC-USDT-SWAP",
+      "path": "okx_official_v1/canonical/swap/ohlcv/BTC-USDT-SWAP/4h/1577836800000-1784376000000-908d716580268d08.parquet",
+      "provider": "okx",
+      "sha256": "ed116bb5f3750400194e7a0566d0cd678e6d70950f02efee5545e4ab21525908",
+      "timeframe": "4h"
+    },
+    {
+      "columnMap": {
+        "confirmed": "confirm",
+        "volume": "volCcyQuote"
+      },
+      "exchange": "okx",
+      "instrumentId": "ETH-USDT-SWAP",
+      "path": "okx_official_v1/canonical/swap/ohlcv/ETH-USDT-SWAP/4h/1577836800000-1784376000000-9eb22547a6afd1f3.parquet",
+      "provider": "okx",
+      "sha256": "0f0ebbe16ae7d14fb392d9be665de0ed324be0cda0eb15bd951a959d27b1af41",
+      "timeframe": "4h"
+    },
+    {
+      "columnMap": {
+        "confirmed": "confirm",
+        "volume": "volCcyQuote"
+      },
+      "exchange": "okx",
+      "instrumentId": "SOL-USDT-SWAP",
+      "path": "okx_official_v1/canonical/swap/ohlcv/SOL-USDT-SWAP/4h/1611288000000-1784376000000-2493782114ab0d2e.parquet",
+      "provider": "okx",
+      "sha256": "75605b3065b8e0ed7945e6e8696298df8d82d2653ef7438635603a4d5d0c73ad",
+      "timeframe": "4h"
+    }
+  ],
+  "fundingDatasetReferences": [
+    {
+      "exchange": "okx",
+      "instrumentId": "BTC-USDT-SWAP",
+      "maximumGapHours": 8,
+      "partitions": [
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-01.parquet",
+          "sha256": "b51531c650be08d1a4173b82869b235fdd8ad42b89bea41bf5f19321bfc15fd3"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-02.parquet",
+          "sha256": "ba159d4983d81ccf1e1522eef5d8eda10d9588879458095042d062fd08e50640"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-03.parquet",
+          "sha256": "47dea5688af454287c00b5e7c1b2a312a49870bf9b17b8c01f6f0a083b764666"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-04.parquet",
+          "sha256": "40a447e5b089e18f0be047b3aae962597bd7e0177fc4b2309b5605f8a0f3b5be"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-05.parquet",
+          "sha256": "73a6bac26ffa0afd06bea157705072107ced20195285691f8caba808fb35930a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-06.parquet",
+          "sha256": "b0bd0405af1c02913379d250722b218d3774600d8323f96b059b79537fcb5ce0"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-07.parquet",
+          "sha256": "07c5672fc79b787212f905a7a989fd201b714bb3d90a97739a930f6b3cb13af2"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-08.parquet",
+          "sha256": "d483ef84f8a415da027435c3bac3d892e5599c146c593fb31e0fdc2e17a75201"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-09.parquet",
+          "sha256": "4ae5b84c42757c748f5728e76ce6d09f5ce2d246d6111bb7e17bca6adb78ff6b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-10.parquet",
+          "sha256": "9f5e6c324fede9e97014f2e8fb377e23296be017f3a174b808312b8487e9e192"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-11.parquet",
+          "sha256": "d12d48ccce60b8a0b96c4c309b4d48ef4b2b343463b5775a1fd6b4db1ec5b5f4"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2025-12.parquet",
+          "sha256": "1cf84616b02ae2ce3075f3234e300d47482f1016f645684c3d0a8952f91974e8"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2026-01.parquet",
+          "sha256": "f34d7e2b8610fd9786c4d4e6a58874ff8085551c684351624f641f34e1591664"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2026-02.parquet",
+          "sha256": "d307df331029e7fe3ae47fbb64b9a56abacfeba9ce31da3fdf09f4808ebda49a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2026-03.parquet",
+          "sha256": "44d663155e7d65a820f8a0ddd3fa012046add37716d36644e4b45e5ac1599344"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2026-04.parquet",
+          "sha256": "d304a8b14e57d9517166b918dca7bdd77e6ffdf275cf996f861df908648443f7"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2026-05.parquet",
+          "sha256": "5e202bb37c1c7dc90d374d116add5cbb83ffd66f90f853151db2c5ccbc917571"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/BTC-USDT-SWAP-fundingrates-2026-06.parquet",
+          "sha256": "37375c8ea2e3826444e25e0ff6986965d2911546a3da46048541adff5cda3ad6"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-023d971db4fe458c.parquet",
+          "sha256": "b05b6cd234e8470f649cbd05f6845eaaa0bde4824433772b037a9d9b65e0963c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-05309eb96f522a04.parquet",
+          "sha256": "5ee1ad07e4bd9f4b930be455f4000e7acc2ba7df418251f2d4d48e1357891323"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-089dce4079f35dd8.parquet",
+          "sha256": "d0a3fe6fe9760575de1fb77edc32344f1ee4fa386f7b30463888d419a836cc23"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-0c781b753a2f688f.parquet",
+          "sha256": "7f2008d3b5b5e767c48186a0449ffacd4bccb4753b2692f46afb0d37fb726edb"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-0d8fe899075d88d7.parquet",
+          "sha256": "893566d396d8ab56ff90fcf1041a9c662c5cd53a0c24a54d0ade09857160cf9e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-1510c12b0e6e28bb.parquet",
+          "sha256": "bb09bc1754d13f1a3a4e1dd692953039800bfe8ece81b562ae4cd4614b1ac9e2"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-1d14fef30791a48b.parquet",
+          "sha256": "b2e9187550b6f576a975ded1a90f83f9010bd4fe440c5cbd63ee95961dd43518"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-1e3d3f9153be57be.parquet",
+          "sha256": "ef839e4b297c4435da996806230e9c9b71d02f789b165c8556eff044d938862f"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-31cb404665a992d6.parquet",
+          "sha256": "24110d210b2daf5b51b720953d817fa01be07f0eefa6dd060e504bad5e1d64b5"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-352173bd59d3eb3a.parquet",
+          "sha256": "dfd91940b6b6361dffee571c4b72823eeb218158f8e27799b3d8a4e9b608e6d6"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-3f82d8f473c6db14.parquet",
+          "sha256": "b29792e983b3e7d8a94268fa56db2e7854fd269b56662965e0de81989f6b56db"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-41873af52d2fe25c.parquet",
+          "sha256": "436ec8d8419c480e413396806227517aabbb8b07a9b725c88e6597cd833045d0"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-42a890a1b7cce48c.parquet",
+          "sha256": "21cee028b70a6df38e74ffe0e067698e13abd176bee284dc7b9457ac636ea24e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-45e9da3fdc3c49d2.parquet",
+          "sha256": "717deb941286137388b3e6117b2d3e23bc196d00206e56032db390939d3ea061"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-47ec2c622579812a.parquet",
+          "sha256": "738013756ab434abfe82fba91bdc86a9019f1777903eec0e8959c6b8bffabbd3"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-4ab65ee44fe98652.parquet",
+          "sha256": "bc220989331bb8123847a1a30167c73b2dab85cf1b3dbbc11c3b7c03e2653f5b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-5849b54817da303f.parquet",
+          "sha256": "cf6c6dd6976d0a9257d3f68689749c42ef64c5fab49ad9096da161555f5d8afa"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-5b455a852b1360c1.parquet",
+          "sha256": "f248dc1b03126ad3ce5470257333b4b290b20fb73cd0ebc9dbc375755dc769fd"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-5db1e7594b68307c.parquet",
+          "sha256": "974945cfb701a1289978b22923995ddb59dbdf538cc8426b948743aec330805c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-5eeda5ae3dd2ed25.parquet",
+          "sha256": "b19aedb9d04b4494cd14dbc98f92953e4040e9a0e88bcdf112be5444a2f90990"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-6440f27fc2cb1edd.parquet",
+          "sha256": "f1d44813f67edb0317f82d3e046aeac2a2fe15f421ceac8c1b778759b6d99221"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-697bf0944d5655b0.parquet",
+          "sha256": "7d97e9d108912f73b4abac3b6dc71760e83d9075715227778fb89664f2e6eb60"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-6e918c949f12250f.parquet",
+          "sha256": "bd45d9c87d33081f1f4c6a7dbdb1b35519047bc9185b17e777de583cd2565ad0"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-70f6644ea2d73190.parquet",
+          "sha256": "32370b535f4e54ec5693c0976bbb5baf124d9fb5c29f4c43519e50f310fb4afa"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-76e98062f4398352.parquet",
+          "sha256": "115fad0e8fb1cc331ecbf47a800c03c2c2f16dd0af8c16d1cd6ea7a66f50fe3d"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-770d031ff95a5912.parquet",
+          "sha256": "f2587f103ec9ca8dc737a85a4f73f6b03eb8a4edcb5f46f09e0cfd0826c8e100"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-7710fcbe391f230c.parquet",
+          "sha256": "f6ea95ff5a288f52e30778fcac8b16429afb8cafefb9962cbdc9c1fcba23be46"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-77c3588ffd3de0bc.parquet",
+          "sha256": "0ce690892e06986dad9c7c9388dc39c2dab524b0eb094eb6c1e57b7e06ea1a01"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-79d596115f811b58.parquet",
+          "sha256": "02bc105794cfc289a6942933e013df49ee7716af87aab8dc740591e71dd3fbce"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-7f97bd0e31d15433.parquet",
+          "sha256": "54ccc624ae2e9c62f75d8167f5fced25754fd89fb3c3c94c46e16a3877fd1491"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-8da40ff5cf12c82f.parquet",
+          "sha256": "8e8d95789283af3abf3d2235b66aef7067287f1669d9dd8e7b96a552ca6e8e4d"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-8e996e7aeb7417ce.parquet",
+          "sha256": "a8111bbee21412de3fa633ad0a4d7de6fd9a745fbea3bcdf564c9136849d2821"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-8eefa6a7b15f4d92.parquet",
+          "sha256": "4be1a99581c5da3c907c70db9306da59e5616e0b70b3b5da3262a9bc1f744952"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-8f5f77ae977b79be.parquet",
+          "sha256": "6cbb2070d91fd3212620ec52dd971309a654f73aa84e8f3bc869dbf13afc8ac0"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-93982337a715d34c.parquet",
+          "sha256": "44ce67398996ed4dad47a0f02da3cff2a5e4c9f17323b6b6efacd1e740b45e37"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-93ea28977d09f4ca.parquet",
+          "sha256": "06469d19c147e3d43ae92e44907146c46b1dc4b2dea99aa1fe1a5b29c268fc5f"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-98e913d9598040c7.parquet",
+          "sha256": "51ac6107bb6de18cfd87c7e88732385cddc7a2503bac250c2a1a64c01dd66d4b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-9f4ea688681cdbe1.parquet",
+          "sha256": "8d56764ca3e2f46084d1421ffb87068c24737e9516d62aa7d875fd782f12f332"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-a26762d041b9f77b.parquet",
+          "sha256": "bc7efd13a73cde878128573eadc04cc7204496b439a3d2460e520fec0ff0a4b1"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-aded6320b5adc312.parquet",
+          "sha256": "55e5321e2e9f330e86fc7aac3f32a467858e9112347025d9162d79795388820e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-b08275b0caca28a9.parquet",
+          "sha256": "e111a978619b8a2bf9984de6ea32d7652b35aa3039f038b681ff1fe3e8f853fb"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-b2ba650c51496afb.parquet",
+          "sha256": "2e42f13af23d63719966fa5ebe0cac792d7ee323be70e97d74ccaa2951684385"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-b76ca9f6b5837ce1.parquet",
+          "sha256": "39c7d3c2dfe73b2b9f62a158370ff5f7ccae52c57c6d9e19466164600781459d"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-b786bd7b986110af.parquet",
+          "sha256": "55abe1d069d72084421a5e0e92f7b72471e97c80a971a0737bbcd07452955aba"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-ba4220b2c40b22e5.parquet",
+          "sha256": "b1be173a25779e2e0d76a4ecaf647de83549b336c30eb85295423ddc49264e57"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-bb487704eb3e13c9.parquet",
+          "sha256": "aada1d3a9995e932cedd412f6729cd185705a8e7542cde5f004f0c9ddf111759"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-bb705c6e7a6934b2.parquet",
+          "sha256": "f75b35f77484e07863c969370f0e11c114f71bb23bbb4f47cb4ef1cebe3c2f1c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-bb9a257d452703b2.parquet",
+          "sha256": "332871535c99f9dadf6b95f767b499fdc87ca105f763d0bceb0fb08c2cc87210"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-bc444563556d78d7.parquet",
+          "sha256": "ef707355dd8a10620d039c9495eb0dc915e47867dbbc7ca5dbdd224007f38c0f"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-c13bbe54d02044a0.parquet",
+          "sha256": "4882900264482518a71fe3c0b8eac925d2903a9863029e737a3a8ebb1d9f89a9"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-cbaa38a4b2affe10.parquet",
+          "sha256": "3628a58ae17ea33ae915c77923c5c24fc7571996c69af3bbff26263483cf06b6"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-cd7bd5ac777b67f1.parquet",
+          "sha256": "e3300e81cd71381489006cf7cd293c7c52be31348f9561812b4e7ac37851d37a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-d1ccb04adbd1f4b7.parquet",
+          "sha256": "aabaabcac987a2e706141b6a0e815fa47b70988afaeac7510adf0aafec7fa3b1"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-d33244498077378c.parquet",
+          "sha256": "e29cff88a6e71fdbae3efadfa1ffde82baafd2eb0a8b5bf63dbbfdbd11582b94"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-d532cd7ad2a4b147.parquet",
+          "sha256": "847fbbb53197967a828f7b9f25f3714469b5a32433292af104e10f673b238fc6"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-dc8af43a1f64c569.parquet",
+          "sha256": "5694aa718117a61f9076f9e430da67f820bc65f992647c71b27d11c46eeb37bd"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-e43b8abbd79206d4.parquet",
+          "sha256": "0c5fbadd1ebad12a57944085344362bfbbf006fac3115c5731f754a06502e6f5"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-f220af09f62da0f9.parquet",
+          "sha256": "76879108469bd360264911b521a4ad7d68a97ff51bc3b95aa08225044757dae1"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-f792235d2572a412.parquet",
+          "sha256": "27557ed1bed22f717f6aa5217256bb32256bad8b31e3f8211cb26b85f3688659"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-f9fa82183d62a689.parquet",
+          "sha256": "01672ad6cb8cddb8418f68a7bd86d55c271d21830f1808c6497ff89884139d8c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-fd41a6b214dcecc0.parquet",
+          "sha256": "fcd87d01e5f1e076aa04b442245d6d1d670bd21d2b33f84d9fcf4b5e75f12f67"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/BTC-USDT-SWAP/funding-recent-dd96b7096229135a.parquet",
+          "sha256": "0977b66507273cb3fd46ed9708d3dd2c95089c7ae3c558ed6d32c7a535dfe306"
+        }
+      ],
+      "provider": "okx",
+      "sourceEndpointContains": "okx.com/"
+    },
+    {
+      "exchange": "okx",
+      "instrumentId": "ETH-USDT-SWAP",
+      "maximumGapHours": 8,
+      "partitions": [
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-01.parquet",
+          "sha256": "80956e5d50f88e0900191416c3321afdaef56734919a2053328d79ad2316e173"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-02.parquet",
+          "sha256": "29d0ad8f12182414f63292975a5c13c2c592b6dd778ce90dc7d5e2e9e87f47fb"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-03.parquet",
+          "sha256": "e21db0d655d521336e52e20d39d874a83bcabf94e380d2032484f4acb3619076"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-04.parquet",
+          "sha256": "68315a62892c52219081958ab4e8afa3c6f94e02bc16a57c0e8f8fba9d53ede8"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-05.parquet",
+          "sha256": "606b7ec434de2313ddd7511b263d753359dd25d20bdfbdb4b4a5dfd85111efcb"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-06.parquet",
+          "sha256": "53ae954ddc7706f7e1a1523b934408b21452dcf42209927979aabe280fe77f98"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-07.parquet",
+          "sha256": "db1552e08142a8bf8e3169637f546c31e328ed35c89f3e1d14dff6c40dd2b94b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-08.parquet",
+          "sha256": "90d14203e235864ac5cd0aa2dd470eebae21ea55a149f8b6fc29d086bff47fce"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-09.parquet",
+          "sha256": "f5943a9dde16bab79ecff389066fa1028ad16803d0bfc97a2b018ca83960eb33"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-10.parquet",
+          "sha256": "9461941be1a1cf37dea3fc29682414b59685456362c1c3f183918950ea185257"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-11.parquet",
+          "sha256": "2853351d0153482c1e87fc7d32073dfca91ffdb4dfa5b4e232c20171e1bbcf81"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2025-12.parquet",
+          "sha256": "8dbc3b24ac7a94991219d9607b6d498dedd96671b1cea5ab073de0f69303367e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2026-01.parquet",
+          "sha256": "20faa3a6dc23101681e2a2cb6a31c309f30759c539f40c2a4be5ed083e49d684"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2026-02.parquet",
+          "sha256": "eff6ff253c6da9b2c687a071d964921962b08b4cb7a5731a9d0659805447d7c1"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2026-03.parquet",
+          "sha256": "05f8180b542ce85716284d0260c8f94e29c2e931093263e9e4760017e4615b50"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2026-04.parquet",
+          "sha256": "d73957ca5a39ff3c17530354e8e08f590398e39be7818ae623c4f63edf2db533"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2026-05.parquet",
+          "sha256": "c418eeca0e8473748aedc25caa9aff64c00b4bd4dc2c8dd0afdf8ca3bc6e54a2"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/ETH-USDT-SWAP-fundingrates-2026-06.parquet",
+          "sha256": "dd6e2892fcafb3931b2a8036e9cc73dad3f031fdbc01dba52bfa7b60b6104b0b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-0550f6c76c166069.parquet",
+          "sha256": "e8b8a5829cee20261f6ae658b1b3ae6896868bd513cf924f19a82e925de3dd07"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-05c2dc65f2bf8f1f.parquet",
+          "sha256": "3e7a4ef121682ab60b3efe5fd6c8034573cad874675bd9cf3b7454c5903ae547"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-0d7ddf3c080c9a92.parquet",
+          "sha256": "f3ac4e784c805d34a4bbdf97030041d1d0e889a669d6daf9b24505a2f10c68a3"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-161de68570750baa.parquet",
+          "sha256": "1e9b3dcfc175afba0f690b6477cb783112dcf186e5df78ce58e4ae7666d1f36e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-16c469a0d4a0a2ea.parquet",
+          "sha256": "f602d08e880f7465ebf34b8158caaaf062cce4868fcae9e91768cd96e2feba95"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-265373b061c0b607.parquet",
+          "sha256": "0921b7dc3c6f51911f56acd4653d4dbe5de3fcdadf9b8cbaa4a9263fd4a0f153"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-27bf9bb6ac955013.parquet",
+          "sha256": "c3c6f1e406d7dbc2d8afacda534bc6b27bba25f4b7b53a134f175c7ab8f46ca9"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-2c1719135df5fe45.parquet",
+          "sha256": "649dd59a256b8558558c014e4d6d6a33482b706c9bfb64fb229b74aa63d2192c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-2c442e11e066f3bf.parquet",
+          "sha256": "29d10323b41299b8a707aa08c405868d9e161547c48d6d53d6879b0fab731318"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-2dc201e72eacfb28.parquet",
+          "sha256": "22aa9893d85ecb3cee430fe2e268acabaa2b0d12930c70c80ae6f46a855f3b3a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-2e0c2da28d22337d.parquet",
+          "sha256": "f2197f74394c11d47b52a161b2221e9665318a212a1da2443b6855f0f582f545"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-3086d4b659177dc8.parquet",
+          "sha256": "664efb7006f19905fe1a827093a897d55b793b6fa301e0d9e19d8a2937d393ea"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-3660230da189dcbe.parquet",
+          "sha256": "82cc3b5ae37a600dd937b82b7548ddac013978e4f4be179ad4b29c3d6cd9128a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-3701f672732a98ba.parquet",
+          "sha256": "79fa316ffeb4812170d86faf4d4b19fe250873279bb5380b31ceab9daf65906c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-5807cb302cbc65f8.parquet",
+          "sha256": "add786df542f55b9b150da752c974da26f8c7b7ee11760fd6082871c60292eea"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-5d1387d7b4b53f0d.parquet",
+          "sha256": "5d668a7083b62a8dbae7dcc95430fd94b44b3410cacc55e781cb853b447fb694"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-5f4eadb32efad20a.parquet",
+          "sha256": "f9281a95b72bef2c526c64b621e69cce7aaefca9996c014b5d8c29e95b337686"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-601f9fe95d1ca763.parquet",
+          "sha256": "dcdcdcdb31232c79493b6dc5c4d5c4a0fc22afef5cc4bf9491262cd714374309"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-60461123b053c9e0.parquet",
+          "sha256": "03cc614a7d31ac0a7ebd3ae7740dbc90ab5b822c1b20bf552553a647cfc75872"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-637675c6dbdc29c2.parquet",
+          "sha256": "f45d659c4575e643a8e6260d58e832f27773ba5d555e6f85f4f54d700d8ed2f3"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-677329a85161cc5a.parquet",
+          "sha256": "292894d4318311b066c85956c28e28f6f60ce184e58ee91891b6367d50e66115"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-68122b773b159d5c.parquet",
+          "sha256": "d34d4aadce6a3b53b33eb032652215fdfe282fa695c568bdfb0927bc16d28842"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-693cbe60539ff5c6.parquet",
+          "sha256": "2c56362440c44015e0b6237d8aa0991ca4cb6edb1aceccc1eee06df215b7a8b6"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-71b5d6816b4eeab1.parquet",
+          "sha256": "c60de6aca29f0862d1141a7e9f5691a0327714ed102538f804f3ccdcbace31d5"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-7461df7f2bec7a38.parquet",
+          "sha256": "974ae5108d60fd2dc19b79cb3b0cb11a0e02cfa0943325f0cafb8bb8069d0c26"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-7ccc11e7d882d397.parquet",
+          "sha256": "fcf8c962ccf1f680dd600288b8d02ff128444ba1fc9ecf35861ff26813e6d9aa"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-80b11b88fb9182f8.parquet",
+          "sha256": "64e80d723d6c8ff73b8c7ae054f56924ff950e493f547a8d05a0e7ace027364e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-80c5e5f0964294e6.parquet",
+          "sha256": "392de9a4a7ab147bab55399d7ea147f3e13abb5e745f3db38f1e9262a4cb8414"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-819c206af8c8dbb8.parquet",
+          "sha256": "abee8ab7487fcd2ebcee4f8f52e1f30d47697eded4285abfb2ecd0e8c7a4c6d1"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-907d9456efd897ae.parquet",
+          "sha256": "b4ba11c05c7e1039293a94f465c59d6c76f7c927606b2534df9bcdf17df18bb7"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-91a5e682a8fb1b0e.parquet",
+          "sha256": "70262d1f8e3b5cd1a84f206fc4dfb02cfc92287ff81e8d9766a4d98184c216dd"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-933edc52137f61c0.parquet",
+          "sha256": "352def0a8aa1ed6c0ecc555fc6c2700c2bb40ec66be39d8321947522d2be76fc"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-962ee355b18592b9.parquet",
+          "sha256": "1efcbf6f83c836667d1dc27a80431b898dbe8ec69cf9e4f0135a2c5180c8be82"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-984083a3bd78168e.parquet",
+          "sha256": "a07131c5a90fa4587fa40be210233d9c768fedbb44684f5ccd9a9e4fb0200d44"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-9ce9d7abf8be7e41.parquet",
+          "sha256": "3ddeba68c2d9f90f39b56ec67fdacc2adca0e1f3b9175f50f076d88ca8e4deb8"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-9f44e9e3ab791390.parquet",
+          "sha256": "fe9dae981256d5cd9004e633d06c907c307b77a9b3fca92356ba91362c1e7e1e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-a5303db7eb618e7a.parquet",
+          "sha256": "7d117b193ad63e8d8d1e6c745de066eb9d099dec9905a56766f72bb0bbd98f3a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-b0cb18e83d6b50e4.parquet",
+          "sha256": "009446457d9e004ccf28b9a725478f05c23fcf9add601d556695a90bd4dd0dc7"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-b2944c9c901e62ef.parquet",
+          "sha256": "a56b40d3acb7c0f33a545e46d96dac6e7b32f8f10d149688c0b5b4bc19586e42"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-b33a6b8ef45685b3.parquet",
+          "sha256": "4791f766619212066f3817dcff7307dc64fcb30678eece9b029830f66c2c8243"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-b7eab86ac80ff3d8.parquet",
+          "sha256": "b0570d9859b33b0ef628125b434795862fe3827efb2a7a711cf0b0b5106a6d7b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-c0cd0de8c93d8125.parquet",
+          "sha256": "879c8e8d10b3337ecd9fa76219e0f43009530256b003020e0fdcd9e54cb867e8"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-cbd018b6da0cfa82.parquet",
+          "sha256": "c0258ddab703b371456505aff388eb9ae04ed3abd6e63de1e7a78ae2a97632ff"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-cdb86fd89d7084b5.parquet",
+          "sha256": "1db566e64157fd334f49167e2a763dc33f2b7e1f301a71b326f4ef16c6b9ac82"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-ced5d906718b2a86.parquet",
+          "sha256": "1583a6e235f22c10d120d461262ba83d25e1b344b9463b790475b1cac38e64ee"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-cfbad65696d96c02.parquet",
+          "sha256": "941a2b9619717448f982bba0a569012c33612726154f78a9e6379c32f37494c0"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-d8f45d818a6af37c.parquet",
+          "sha256": "032ef2f1894dcb91863ff1386ea825a67d63888169bdcaa3326d073b7a514eff"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-d99ac62e858ff2e4.parquet",
+          "sha256": "cd63f9ff07f368eb5fd8fbdb73b90304431ac7568bd35a987454b980114cbc70"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-dbcfba8630ae2d31.parquet",
+          "sha256": "d8727bb661a167d88f05b5cc28db464782002fe22c9022eb48697fd2543668ff"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-dc3f917aff23c40e.parquet",
+          "sha256": "20846715708691c82484f3e52db3c956103bb2ac59f41f19ae2b2479eb2ae858"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-dcd7a1116da4d0e4.parquet",
+          "sha256": "dfa1fc34fbba440cb412b65286e4e330bb2a1f85a619553e72981cfbc119ce0b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-dd4235e9bf48065a.parquet",
+          "sha256": "9b857bf2793cd2df7d6d9f4b866b93d00e498880aba22e918d2d96f26caa90cd"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-df1eae95c81f4b31.parquet",
+          "sha256": "ed7c0484e69c89dc26e1ca66926aec71fb27de2be61914d839ef13de7446dc02"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-dfc1700c6bae4292.parquet",
+          "sha256": "91fa4abe71eac8a13ac8ee7d259177fc8f617aa176a9fa74f8643d5d938e7bdc"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-e0b612fab5a54f0f.parquet",
+          "sha256": "8027c0c9546633be07332043cde31e410b07cbc485ede3d185789d6221b936b8"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-ea66fb15b4fea1f5.parquet",
+          "sha256": "20606d1d889dc285598fd9bf33f7a0cf439be0e2f2ef86bb3f6b907c1bd61563"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-ed2377dfd6712518.parquet",
+          "sha256": "495fef86556a644d6fcaed89181a58eaabfcd09041834e8c0f5e2ced8132f471"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-f17647df6da4184a.parquet",
+          "sha256": "b4998fcdb16e2c1972e2ad440ec002cd0de39960dd538cd165d8886c2bfcabf9"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-fc1539010c452f3d.parquet",
+          "sha256": "24ff1bf9b1b16c00fb209be719267620557956ce0a93b602e6e3cdb50a5fd07e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-fc86fce581c3964e.parquet",
+          "sha256": "633ece0f566ed380e3961a4b90a2bdf1328da8fcaaf3ca78e84180c5f64ff4af"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-fc9e844332e14065.parquet",
+          "sha256": "89d32e00c5f285ce0379777acbbca16a8f5842f2e6c041c5f1014385b52c2652"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/ETH-USDT-SWAP/funding-recent-1553004ae6f740a6.parquet",
+          "sha256": "05fde032928aa76ced8a34884d0730a5495d848ea181159eea5928998e42a20f"
+        }
+      ],
+      "provider": "okx",
+      "sourceEndpointContains": "okx.com/"
+    },
+    {
+      "exchange": "okx",
+      "instrumentId": "SOL-USDT-SWAP",
+      "maximumGapHours": 8,
+      "partitions": [
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-01511051cf21b984.parquet",
+          "sha256": "6616a1afcbcc521d0015b9a6ed991379b90fa093249dc31a8c390f67b6d2516f"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-0248ebd4be6205fe.parquet",
+          "sha256": "0cd99a06a8e8093f3362794442a3cadba57f145405dff44b043f1eecdba791ec"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-02cf248fc53ff1aa.parquet",
+          "sha256": "c0cf12ffc992339ce500a76cb988e084aa6cba59eb21eaec1aecefb7e63b7778"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-0448dd6e850eca0a.parquet",
+          "sha256": "16a6a23ccdad07d1eedd62f5a80a577946946de00d4c01d7fa48792d13742d0b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-05519d2b34601dad.parquet",
+          "sha256": "9324c026ebcd781d6f13887ad49e8e38410bcc2277adbf3f65c5fed115213018"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-05b9e86226bb66b9.parquet",
+          "sha256": "a070537d8a5416aef28dd362534f4ac7eb10e084bc93897acba13ad2de13f4e1"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-079ad79d5ee2f228.parquet",
+          "sha256": "8e405bbd07a22e4c18300330850c969c11cd5ae3093bf987e51f473b84164b69"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-07a8233c158df82c.parquet",
+          "sha256": "4840d2ea17d51a7060f5fc0ba976e8357015153c271dfc3636a31b34e8244bf4"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-0ec43be315cb7ded.parquet",
+          "sha256": "c9965b8ff388e2a17fe1d15cb55b29c5744d9adeaedff4bd88890a9c1641234a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-0edcdf182c90b03c.parquet",
+          "sha256": "292f581006e8fb062e9a4b953e4af750479fbf95dacb8c8c5ad420d327b87523"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-0f82156befd3b234.parquet",
+          "sha256": "91e4b2bce8eb8d2c4d34223b06b5d2fb8c61c832206e5e069dab53a2c8fb0849"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-11f8c9b8e9952f90.parquet",
+          "sha256": "0ebe7bf735592dccbdc821bb62135fb50472ad352b7116ffaea9cfd2c63b4b9b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-14a68875616b6802.parquet",
+          "sha256": "a739168c2dedd4097ccd89316fca92b9774a8750291672d011dd0e7659b9e30c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-1c97976854a5c420.parquet",
+          "sha256": "f239ce7a4fa6af6876e123295df1b9e000fed4336f406ad96aeed15ed3ac7826"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-1cb9dee18cb93c13.parquet",
+          "sha256": "978f6b3bd22e231b28451e63b01093edd5c1f69f0251fc535b84ab182bd40285"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-1d63f221c3e611fe.parquet",
+          "sha256": "dc7d1cc660ffe996f8bf01a5c1fa2be278b7e18616c0be7596c8063fa0b3846b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-1ee4288f782bebc8.parquet",
+          "sha256": "e6296c23f42683b64b5a6302bf60a50e1059a2c04e8f5d59f1cd909e5376506e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-242109105703630f.parquet",
+          "sha256": "9eb74cd9faf8a56febe8539df22792cace64ef00867207a180abd88305805666"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-25057f3d6c78e39f.parquet",
+          "sha256": "39ef0ffd064ffaecb29f2f69b96a77e39d9a72b53b328f98a0c68b1f9a62722f"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-2a35138c57598d0d.parquet",
+          "sha256": "eddbbee9baeb56cc01ce43100dd8bcddd1c887cb9da5aefe983b2bb8013988da"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-2de58d185b2c29fd.parquet",
+          "sha256": "cf76bc86a2cf9ced60653c810c1b36de38df9532a9fb06834e6b0aab8926b8a0"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-2e95e8503eeea650.parquet",
+          "sha256": "9ff48a8a004fc0418c39de496bed9aa1937140463ca09391c668b370c976756c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-2f6be3285349ebd2.parquet",
+          "sha256": "4d4bfd60fa594cee22acc1d5037e70bc016390911456aaa1e7756e04e879fb4a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-32f361d260886044.parquet",
+          "sha256": "711bc08c4dd71a9aeb444743e0ac0bceda8a07e5a89f63141a0ba94fef40afcc"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-3443d55958976f87.parquet",
+          "sha256": "42dbed4405aea620c5211a8aabfad2c77d36adcc5577121cd04fb977077a9e2d"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-3443feb8a59411db.parquet",
+          "sha256": "a4ef3fe87132d690c2018c17565254a285d7f5911023ebbf14b012ff637d56e7"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-41bb6efa8b3d06b3.parquet",
+          "sha256": "ea43a08c7057141324cd316f9a7a96af207f9e8897fcd7f3c0fb82c9cf1289b0"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-4c7bfcd2893c84ab.parquet",
+          "sha256": "5158e2c1a8902775c038e4f2ff417470da198f2320200d02d2e9c1181a19e021"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-5075596c0f982756.parquet",
+          "sha256": "0d81b64c711f93d24248eaa2f7d655154c5c17e846784faccd10a2e55c4883d4"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-52a563d09400f6da.parquet",
+          "sha256": "f9c655b1c4fafdfe3e328822bbe83ff0c934fc82cece7f575567b68396647938"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-56306e24f8762072.parquet",
+          "sha256": "9a5bfe5f2b8141908ef978836aab3d9b447a8dc6146a5e543595dc02e63223fb"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-5a0adfc300a5653b.parquet",
+          "sha256": "5441117b1351fcf8791e582b4b8bcc92b7f073830b0c4677045e8e4012feccad"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-673bfe7c72aaf8e0.parquet",
+          "sha256": "8f16fea28d0b5b87d2791465485491c76ca8b6819a25b997ee87a1b4d4e24254"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-6d4c4b96944e0735.parquet",
+          "sha256": "aa376c0d0d794c042e9b190ae762d40483ea525d395cb62eb6b3645e20d78384"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-72c07407ec417dda.parquet",
+          "sha256": "9f2fadbf58d34b694da5b889f9ef7c79769ac8632fcd92b44e534a178df65468"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-7c053e27d4fcaf1e.parquet",
+          "sha256": "e89ac4b8cce6bd7e524c719e213748a52109bb9b6ae6352bced8e3a96d10d5d3"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-7da023d4cd88c22c.parquet",
+          "sha256": "c18d28e73bba693ebac4e29b033efb6d51f8471dd27a2224b8cbae301b5f2780"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-7f80952abc9efc89.parquet",
+          "sha256": "f804fad40ab9452401fece062a9e267860fc55e0cefdd032a69234fde240b595"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-825eb1ed283af4b7.parquet",
+          "sha256": "32ab51bc2617799ce0a6883e43d7ca981acfb11df5a43093e234cc9b7e63ce94"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-8bee5d6760495766.parquet",
+          "sha256": "cc5d8e3a363887d6f8020a2791bfcb7631a45fe4ee570bdab374b779c61a0557"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-92b7ac2fc06f1fa0.parquet",
+          "sha256": "cb59a7a9da0112d39f95e8e46211a1a0fcfbf6d61cbab0d76f49c44921eab692"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-9a0cd82d3b2540b5.parquet",
+          "sha256": "f6f7017b8b3e863c7675b2643b8e1867dc5822a95801f2bdb1c4969f4c571caf"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-9b544be57429b4eb.parquet",
+          "sha256": "b6f392ac87b32f3a9059b539d75937addb8103da03bb5848fb69c5a70fa2852c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-9bcbbb38a724ece9.parquet",
+          "sha256": "320db02b6623b16ef49aebe61b39ca888e7b16d105a9828d98499fabfe5e78af"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-9ca63f1265394544.parquet",
+          "sha256": "d7a6858eaaf17bb046fedae717457515749b05e6a551ec747d4aff1f64f45d9c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-a06109415b2c65a6.parquet",
+          "sha256": "28d3b6629a096e9942754843618a1eaf1f587fee50d1a1794c9166745e8c68af"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-a5521aaf2d42a505.parquet",
+          "sha256": "7755c66795ee021f952d784ae6428e8e00149218e0ad8ce197905392dfbc0cd0"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-ad6fe0bf9e064531.parquet",
+          "sha256": "fe36ff241ed97958421b14c9176640eaca1ecdf9837570d433f184c3b3b11ff1"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-afea0ac6b87a94dc.parquet",
+          "sha256": "b15efb5789bd4dfc6276c6cbb19ad92cd45f981c5ece1b6d96a9a3c3d3193f4f"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-b2184fa97e0d234e.parquet",
+          "sha256": "fa29c7c3d9f59f009edbabe689fa20bb422adef4e4e0d1b69eba323a2d43a2be"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-b65d93dbf7b0c845.parquet",
+          "sha256": "5d1027ef272d5d6a9f1b2261017af714c21105760451cc9df85aa77202d62539"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-becba345e1c0afb6.parquet",
+          "sha256": "09a9a45177e2b825d1b04f68fbc3d504ed2273950e5296be6242b3fad53d8e0e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-caf771471adb8e9f.parquet",
+          "sha256": "0bc169e264ebd362a8e3bf0fd70fa07cdd699b239e54b521a476b5f22adfe40b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-cfdec6387d54c517.parquet",
+          "sha256": "7a660de930810dc3169317d0cdb5616f27022acb0b32a48b8da585f4ac268ecf"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-d076c759a92e037e.parquet",
+          "sha256": "9cefffcc4ee0f1bee87b69f2019c13b98b5e6017164225a3a6e2b4eb672543dc"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-d67aa9aa315e86f8.parquet",
+          "sha256": "3019ccbe8a1b5ebc2d521292b69e032ee85befab8e2ce6c273b0b6522e0c796c"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-d6a77ddb7003894b.parquet",
+          "sha256": "7c27638d6d4799421bfaf1414eedbed04136caaaefda403f6ed885ba4962ee98"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-d8e2944093eb2c08.parquet",
+          "sha256": "2fdabf3ec8ef55e345a2433cf4d005a9bea7c2556c3adc86b463c1a62b046122"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-dd65af0431aa9001.parquet",
+          "sha256": "414c95c897370085a5430aa8d667556ac761fe10efa9e986de06662782a84d3e"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-e160ce1aa6e0aefe.parquet",
+          "sha256": "786113a0db72d9f7775ff402d0009416a041e3d49d997aa21912d3ae257da5be"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-e25f8b49ce77c5eb.parquet",
+          "sha256": "11a45e017320a6dccfe298fa07951414526ca96996d8e109f7796b055d8b2681"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/funding-recent-3870c959e250d6b6.parquet",
+          "sha256": "4b1a4153955a88cdf3697460500734131f9df9bb43bab36ca5b5f3646e928619"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-01.parquet",
+          "sha256": "317a67ea385e4e7971875d80ef729d4b52c3e54c033dd8d25884d552142c5bcf"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-02.parquet",
+          "sha256": "84fcf449abdada10c4f0d9f3bf0161d5fee94d511408dd18e9fe5b2d4a8cb9fe"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-03.parquet",
+          "sha256": "9c38ab82faa2658ed6f9b8517d6e3b5394bfb4f7a58b75025160c7db723fdc9f"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-04.parquet",
+          "sha256": "482dedc4f2922842e7a98a33dd851b8679767d3b94bef0337fb0e38bfd2f1ac5"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-05.parquet",
+          "sha256": "42f9fa8ad289baf8b959697f456e2ca842546e90c4ad0066ea0de310c373d9cb"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-06.parquet",
+          "sha256": "711143fa07b46f1310e999a0dd245bbd8ac5751429b4f6e70afe0e7d12739b2a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-07.parquet",
+          "sha256": "40a209ac0bcfc1c902a5b3b37150c31e839c6006740707c15efa9860d9cd80c7"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-08.parquet",
+          "sha256": "4f3bb17082205f9482959da562a2cde44cf896add1a5967c9b12bed1ee02c70b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-09.parquet",
+          "sha256": "70beaee29a651d6ea090a0a2df0f174fa9834ed29f56884f53abfccedc86d877"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-10.parquet",
+          "sha256": "594fa084dcf36fe89441b94e7d66727e6cb5ae8754a0f9fcef8eedf3050d385a"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-11.parquet",
+          "sha256": "b1efa3a74f84bb57209bc55059efbed72cbfbabc62f0c15c6c87b3e1687ad2d7"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2025-12.parquet",
+          "sha256": "f38b04ce2e546a75f8a460fcbb99471ce7f395ed136990a07da7d75d87eb1e5f"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2026-01.parquet",
+          "sha256": "1b93e3357e59bfab9ce7db99e79b1e30f683538b190d4e97c4269345877b98f2"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2026-02.parquet",
+          "sha256": "5c31359c3cfa751fb2762799b803e84f21e8e014faacc368ddb88a9727e5aa0b"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2026-03.parquet",
+          "sha256": "d1d58bd211da15d7e264d726c7fabf51c00bd2cbff1934fefc99afa7726569d2"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2026-04.parquet",
+          "sha256": "63ed868adf5a71bacc187e50e58262bd29f3a7f36ba166f96e13e50dac056e29"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2026-05.parquet",
+          "sha256": "e4d9de884e2cfaefc68e6db1c34a9fda2984ff717cb9b564e6555374b5d04a68"
+        },
+        {
+          "path": "_alphapilot/canonical/okx/swap/funding/SOL-USDT-SWAP/SOL-USDT-SWAP-fundingrates-2026-06.parquet",
+          "sha256": "50da5747982697c6fbd31dce76ac4d61da61df692925b631943e13b4edbd0ed3"
+        }
+      ],
+      "provider": "okx",
+      "sourceEndpointContains": "okx.com/"
+    }
+  ],
+  "fundingRequired": true,
+  "lockedOosAccessCount": 0,
+  "lockedOosContentRead": false,
+  "missingFundingMayBeFilledWithZero": false,
+  "sameExchangeFundingRequired": true,
+  "schemaVersion": "v36_tsmom_formal_data_snapshot_v1",
+  "snapshotHash": "v36_tsmom_formal_data_snapshot_39709209ecc3e3b1bcfbc3d0a473aed42a127257803736e6a21f2f91e8300651",
+  "snapshotId": "v36_tsmom_formal_snapshot_09e5f763f1b7b768",
+  "sourceSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+  "timeframe": "4h"
+}

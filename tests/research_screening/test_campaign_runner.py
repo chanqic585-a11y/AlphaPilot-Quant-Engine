@@ -1,4 +1,5 @@
 from alphapilot.research_screening.campaign_runner import (
+    _failure_labels,
     assign_event_partition,
     benjamini_hochberg,
     build_event_contract,
@@ -124,3 +125,20 @@ def test_benjamini_hochberg_is_monotonic_and_bounded() -> None:
     assert all(0 <= value <= 1 for value in adjusted)
     assert adjusted[0] <= adjusted[1]
     assert adjusted[0] <= adjusted[2]
+
+
+def test_failure_labels_keep_oos_failure_separate_from_translation_status() -> None:
+    gates = {
+        "samplePassed": True,
+        "prescreenPassed": True,
+        "basePassed": False,
+        "formalPassed": False,
+        "formalGates": {},
+    }
+
+    labels = _failure_labels(gates, translation_passed=False)
+
+    assert labels == [
+        "freqtrade_translation_not_executed",
+        "out_of_sample_failed",
+    ]

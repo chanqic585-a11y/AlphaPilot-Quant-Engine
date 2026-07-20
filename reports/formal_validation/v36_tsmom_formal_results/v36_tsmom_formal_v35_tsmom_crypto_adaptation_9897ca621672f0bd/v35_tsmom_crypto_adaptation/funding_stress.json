@@ -1,0 +1,11 @@
+{
+  "adverseRatePerSettlement": null,
+  "events": [],
+  "fundingEvidenceStatus": "partial_or_proxy",
+  "gateEvaluable": false,
+  "historicalFundingMissingValue": null,
+  "metrics": null,
+  "proxyMethod": "unavailable_no_registered_same_exchange_history",
+  "rawFundingMissingFilledWithZero": false,
+  "schemaVersion": "s01_formal_funding_stress_v1"
+}

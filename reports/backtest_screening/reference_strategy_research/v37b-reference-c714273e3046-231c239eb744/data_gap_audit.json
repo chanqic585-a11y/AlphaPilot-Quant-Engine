@@ -1,0 +1,14 @@
+{
+  "catalogManifestHash": "data_manifest_4a178c9ef2b42a68bf551137358b908779863fb3f50267d83b56bf68d35fdf61",
+  "catalogPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-V37B-reference-worktree\\reports\\backtest_screening\\data_readiness\\dataset_catalog.json",
+  "downloadRequired": false,
+  "gapPlan": [],
+  "invalid": [],
+  "missing": [],
+  "networkCalls": 0,
+  "ready": true,
+  "requiredPartitionCount": 16,
+  "reusedDatasetCount": 16,
+  "runId": "v37b-reference-c714273e3046-231c239eb744",
+  "schemaVersion": "reference_strategy_data_gap_audit_v1"
+}

@@ -1,0 +1,25 @@
+{
+  "blockedCandidateIds": [],
+  "blockedEvidencePath": "reports/formal_validation/v36_tsmom_formal_handoff/v37e2-tsmom-daily-capacity-formal-20260719/blocked_candidate_evidence.json",
+  "campaignId": "v37e2-tsmom-daily-capacity-formal-20260719",
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "implementationCommit": "89a4194731a16da2de078bedd367dff09f03ebda",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "preparationHash": "v36_tsmom_formal_handoff_preparation_e24709b72ba93e99727b2fe3884812c33d7b4200b4992f9c8276f86078718f94",
+  "preparedCandidateIds": [
+    "v37e_tsmom_daily_capacity_successor"
+  ],
+  "preregistrationPaths": [
+    "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\research\\preregistrations\\v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a.json"
+  ],
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_handoff_preparation_v1",
+  "snapshotPaths": [
+    "D:\\Codex-Workspace\\AlphaPilot-Quant-V37C-parity-worktree\\research\\data_snapshots\\v36_tsmom_formal_snapshot_cb989b2860bb4f59.json"
+  ],
+  "status": "prepared_zero_budget"
+}

@@ -1,0 +1,16 @@
+{
+  "schemaVersion": "v37e_tsmom_closure_artifact_manifest_v1",
+  "campaignId": "v37e-tsmom-formal-closure-20260719",
+  "files": [
+    {
+      "path": "closure_summary.json",
+      "sizeBytes": 5915,
+      "sha256": "5eb31a91997d9c3b76ea09c691fd9e1008dca8989a3a4ab714c280365e130544"
+    },
+    {
+      "path": "closure_summary.md",
+      "sizeBytes": 3134,
+      "sha256": "b04825e75c1da6709977ffc0c83c7d84d277e8438f447d664e1075dfe22210ec"
+    }
+  ]
+}

@@ -70,7 +70,23 @@ def delay(values: PandasValue, periods: int) -> PandasValue:
 
 
 def delta(values: PandasValue, periods: int) -> PandasValue:
+    if periods <= 0:
+        raise ValueError("delta periods must be positive")
     return _sanitize(values - delay(values, periods))
+
+
+def vwap(
+    price: PandasValue,
+    volume: PandasValue,
+    *,
+    window: int,
+    min_periods: int,
+) -> PandasValue:
+    _window(window, min_periods)
+    valid_volume = volume.where(price.notna())
+    numerator = (price * volume).rolling(window, min_periods=min_periods).sum()
+    denominator = valid_volume.rolling(window, min_periods=min_periods).sum()
+    return safe_div(numerator, denominator)
 
 
 def ts_rank(values: PandasValue, window: int, min_periods: int) -> PandasValue:
@@ -237,6 +253,7 @@ OPERATOR_REGISTRY = {
         "winsorize",
         "delay",
         "delta",
+        "vwap",
         "ts_rank",
         "ts_corr",
         "ts_cov",

@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "v35_canonical_replication_plan_v1",
+  "familyId": "crypto_cross_sectional_factor_v1",
+  "status": "data_blocked",
+  "priority": 4,
+  "blocker": "point_in_time_universe_not_ready",
+  "hypothesis": "Relative momentum persists across a point-in-time liquid perpetual universe after turnover and funding costs.",
+  "variantBudget": 1
+}

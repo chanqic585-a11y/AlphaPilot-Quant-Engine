@@ -1,0 +1,8 @@
+{
+  "blockedCandidates": [],
+  "campaignId": "v37e2-tsmom-daily-capacity-formal-20260719",
+  "evidenceHash": "v36_tsmom_blocked_evidence_068c31c0e16acacd90cb48c0c6de94b2bf1226b546f1d000104d28b11ba839f0",
+  "implementationCommit": "89a4194731a16da2de078bedd367dff09f03ebda",
+  "schemaVersion": "v36_tsmom_blocked_candidate_evidence_v1",
+  "sourceReadinessHash": "v36_tsmom_formal_readiness_6008aa150c247dd088f03474c7888033c2f602f53f217cf1b9765a66de2a6c15"
+}

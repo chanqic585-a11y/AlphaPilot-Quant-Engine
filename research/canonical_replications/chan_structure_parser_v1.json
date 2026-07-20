@@ -1,0 +1,8 @@
+{
+  "schemaVersion": "v35_canonical_replication_plan_v1",
+  "familyId": "chan_structure_parser_v1",
+  "status": "registered_context_only",
+  "priority": 6,
+  "hypothesis": "A deterministic structure parser improves context labeling and exit interpretation without acting as an autonomous signal.",
+  "variantBudget": 1
+}

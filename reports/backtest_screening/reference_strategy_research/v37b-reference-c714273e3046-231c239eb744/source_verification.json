@@ -1,0 +1,11 @@
+{
+  "archivePath": "C:\\Users\\阿俊\\AppData\\Roaming\\Microsoft\\Windows\\Network Shortcuts\\AlphaPilot_Reference_Strategy_Extraction_and_Codex_Backtest_Package.zip",
+  "archiveSha256": "c714273e3046b6f229f2deafc2e572ef3aef10d6664015106a7e51ce46359342",
+  "candidateCount": 18,
+  "manifestHash": "b0a1cc1e17e9c3ef7c1e4ad03c5a2be80a949901986e12bfc94008d5a2d540a4",
+  "runId": "v37b-reference-c714273e3046-231c239eb744",
+  "schemaVersion": "reference_strategy_source_verification_v1",
+  "sourceArchiveSha256": "c878e5554802c4913cf2b762b715886345fbb8670bd5a5d24abe9f3eb7ceea3d",
+  "sourceFilesLoaded": false,
+  "status": "verified_metadata_only"
+}

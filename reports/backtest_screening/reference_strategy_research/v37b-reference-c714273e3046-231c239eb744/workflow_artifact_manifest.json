@@ -1,0 +1,47 @@
+{
+  "artifacts": [
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/campaign_start.json",
+      "sha256": "33f239bb970392d0cde0413c51b5779ffcc429771cc8259da34ce69c9fefae04"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/candidate_inventory.json",
+      "sha256": "ba5f94abb54f7d2076330d8fdcb5335c7903e307fc9bb6de126c0f5bb457f29b"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/closeout.json",
+      "sha256": "81852b7af9848c77f112df3b8298e6014ad358104454b33bb206fc0e3046b0a7"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/closeout.md",
+      "sha256": "d0f21dce51f6c2d61f822d1841b5bc9be65e127204a6eed4335101fde20350c8"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/data_gap_audit.json",
+      "sha256": "68a2a9f5fbb50aac48382470f608bad3e256f7e6cba5082bbd2d1c638869c1fd"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/implementation_evidence.json",
+      "sha256": "1556d63e62ca4cda82a2aa6b3ca2b647666404b0129e7bcdef2714998206ac05"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/selected_candidates.json",
+      "sha256": "3b2c00cdec66b565984f6aea14c802f8edb34f2ae7c8254ad3be6c58984554b4"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/semantic_dedupe_matrix.csv",
+      "sha256": "8ef44dbe31d0223a62fa6d51fcf7fcc7532fe703971eec60305f3b741dc79333"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/source_verification.json",
+      "sha256": "f1de3800cf7b95c5b8236c26115522b2be87a82cce99750310582c74b64ada29"
+    },
+    {
+      "path": "reports/backtest_screening/reference_strategy_research/v37b-reference-c714273e3046-231c239eb744/workflow_state.json",
+      "sha256": "e4ba0c20a7e66de45b876c719b2143c9ff52360d379dc886c4e5fa991948ce69"
+    }
+  ],
+  "manifestHash": "reference_strategy_workflow_artifacts_418705011949398679c018b9d2a0fa0820c2d89572c720eb9ac338667e5ec686",
+  "runId": "v37b-reference-c714273e3046-231c239eb744",
+  "schemaVersion": "reference_strategy_workflow_artifact_manifest_v1"
+}

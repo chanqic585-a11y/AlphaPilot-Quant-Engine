@@ -1,0 +1,26 @@
+{
+  "campaignId": "v36-6-btc-downside-spillover-development-core20-20260719",
+  "createdAt": "2026-07-19T10:00:00Z",
+  "familyIds": [
+    "crypto_btc_downside_spillover_v1"
+  ],
+  "candidateIds": [
+    "v36_6_btc_downside_spillover_crypto_adaptation",
+    "v36_6_btc_downside_spillover_source_replication"
+  ],
+  "comparisonPanel": {
+    "developmentStart": "2021-01-01T00:00:00Z",
+    "developmentEnd": "2025-01-01T00:00:00Z",
+    "dataSnapshotId": "fixed_core_snapshot_98c0723a16525652f22323997408e5684e0c62476086b7bd9bbbc5bc87cf13b2",
+    "costPolicyHash": "cost-policy-v13-development-round-trip-12bps",
+    "capitalPolicyHash": "capital-policy-v18-development-unit-risk",
+    "benchmarkPolicyHash": "benchmark-policy-v32-development-increment",
+    "randomSeed": 366
+  },
+  "developmentReplay": {
+    "snapshotManifestPath": "D:\\Codex-Workspace\\回测数据\\snapshots\\v36-fixed-core-20-1h-20260719.json",
+    "roundTripCostRate": 0.0012
+  },
+  "developmentEvidence": [],
+  "formalOutcomes": []
+}

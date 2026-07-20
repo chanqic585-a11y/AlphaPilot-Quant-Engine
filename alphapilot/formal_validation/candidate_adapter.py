@@ -57,6 +57,23 @@ class CandidateAdapter(Protocol):
         repo_root: Path,
     ) -> tuple[dict[str, Any], list[dict[str, Any]], list[dict[str, Any]]]: ...
 
+    def build_formal_ranking_evidence(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        candidate: Mapping[str, Any],
+        include_source_bar_hashes: bool = False,
+    ) -> tuple[list[dict[str, Any]], dict[str, Any]]: ...
+
+    def build_formal_benchmark(
+        self,
+        *,
+        events: Sequence[Mapping[str, Any]],
+        frames: Mapping[str, pd.DataFrame],
+        preregistration: Mapping[str, Any],
+    ) -> dict[str, Any]: ...
+
 
 def resolve_candidate_signal_identity(
     *,
@@ -117,3 +134,30 @@ def validate_candidate_binding(
             f"preregistration={frozen_candidate_id}:"
             f"requested={requested}:adapter={adapter_candidate_id}"
         )
+
+
+def validate_formal_replay_event_indices(
+    events: Sequence[Mapping[str, Any]],
+) -> None:
+    """Fail before fold assignment when an adapter omits index semantics."""
+
+    required = ("signalIndex", "entryIndex", "exitIndex")
+    for event_index, event in enumerate(events):
+        for field in required:
+            if field not in event or event[field] is None:
+                raise CandidateAdapterContractError(
+                    f"candidate_adapter_event_contract_missing:{field}:"
+                    f"event={event_index}"
+                )
+        try:
+            signal_index = int(event["signalIndex"])
+            entry_index = int(event["entryIndex"])
+            exit_index = int(event["exitIndex"])
+        except (TypeError, ValueError) as error:
+            raise CandidateAdapterContractError(
+                f"candidate_adapter_event_index_invalid:event={event_index}"
+            ) from error
+        if signal_index < 0 or not signal_index <= entry_index <= exit_index:
+            raise CandidateAdapterContractError(
+                f"candidate_adapter_event_index_order_invalid:event={event_index}"
+            )

@@ -1,0 +1,129 @@
+{
+  "schemaVersion": "v35_strategy_research_source_registry_v1",
+  "registryId": "alphapilot_v35_canonical_strategy_sources",
+  "families": [
+    {
+      "familyId": "crypto_tsmom_turtle_v1",
+      "title": "Crypto time-series momentum and Turtle trend",
+      "source": {
+        "url": "https://www.aqr.com/Insights/Research/Journal-Article/Time-Series-Momentum",
+        "license": "citation_only",
+        "summary": "Time-series momentum tests whether an instrument's own past return predicts its future return across markets.",
+        "citation": "Moskowitz, Ooi and Pedersen, Time Series Momentum, Journal of Financial Economics, 2012."
+      },
+      "mechanism": "Persistent directional trends with volatility-scaled exposure and diversified risk.",
+      "formula": "sign(lookback return) with Donchian confirmation and inverse-volatility sizing",
+      "parameters": {"timeframes": ["4h", "1d"], "lookbacks": [60, 120, 240]},
+      "universe": {"instrumentType": "USDT perpetual swap", "selection": "point-in-time liquid universe"},
+      "costAssumptions": {"required": true, "components": ["fees", "slippage", "funding"]},
+      "adaptationLimits": ["no fixed universal 2R exit", "at most one crypto adaptation", "no Locked OOS tuning"],
+      "replicationState": "registered",
+      "variants": [
+        {"candidateId": "v35_tsmom_source_replication", "adaptation": "source_replication", "definitionPath": "research/canonical_replications/crypto_tsmom_turtle_v1.json"},
+        {"candidateId": "v35_tsmom_crypto_adaptation", "adaptation": "crypto_adaptation", "definitionPath": "research/canonical_replications/crypto_tsmom_turtle_v1.json"}
+      ]
+    },
+    {
+      "familyId": "crypto_pair_relative_value_v1",
+      "title": "Crypto pair relative value",
+      "source": {
+        "url": "https://www.nber.org/papers/w7032",
+        "license": "citation_only",
+        "summary": "Pairs trading studies relative-price divergence and convergence using a predefined pair-selection rule.",
+        "citation": "Gatev, Goetzmann and Rouwenhorst, Pairs Trading: Performance of a Relative Value Arbitrage Rule, NBER Working Paper 7032."
+      },
+      "mechanism": "Temporary divergence of a stable relative-value relationship followed by convergence.",
+      "formula": "hedged residual z-score with half-life and structural-break controls",
+      "parameters": {"timeframes": ["1h", "4h"], "pairUniverse": ["BTC-USDT-SWAP/ETH-USDT-SWAP"]},
+      "universe": {"instrumentType": "USDT perpetual swap", "selection": "frozen pair list"},
+      "costAssumptions": {"required": true, "components": ["dual-leg fees", "dual-leg slippage", "dual-leg funding"]},
+      "adaptationLimits": ["fixed pair universe", "both legs required", "break detection required"],
+      "replicationState": "registered",
+      "variants": [
+        {"candidateId": "v35_pair_rv_source_replication", "adaptation": "source_replication", "definitionPath": "research/canonical_replications/crypto_pair_relative_value_v1.json"},
+        {"candidateId": "v35_pair_rv_crypto_adaptation", "adaptation": "crypto_adaptation", "definitionPath": "research/canonical_replications/crypto_pair_relative_value_v1.json"}
+      ]
+    },
+    {
+      "familyId": "crypto_conditional_mean_reversion_v1",
+      "title": "Conditional residual mean reversion",
+      "source": {
+        "url": "https://doi.org/10.1111/j.1540-6261.1985.tb05004.x",
+        "license": "citation_only",
+        "summary": "The cited work studies return reversals after extreme prior performance; AlphaPilot treats it as a hypothesis rather than proof for crypto.",
+        "citation": "De Bondt and Thaler, Does the Stock Market Overreact?, Journal of Finance, 1985."
+      },
+      "mechanism": "Residual dislocation can revert only under a preregistered range or liquidity regime.",
+      "formula": "market-residual excursion normalized by robust volatility with frozen regime filter",
+      "parameters": {"timeframes": ["1h", "4h"], "regime": "frozen range state"},
+      "universe": {"instrumentType": "USDT perpetual swap", "selection": "point-in-time liquid universe"},
+      "costAssumptions": {"required": true, "components": ["fees", "slippage", "funding"]},
+      "adaptationLimits": ["not unconditional RSI reversal", "regime preregistration required", "no OOS threshold search"],
+      "replicationState": "registered",
+      "variants": [
+        {"candidateId": "v35_conditional_mr_source_replication", "adaptation": "source_replication", "definitionPath": "research/canonical_replications/crypto_conditional_mean_reversion_v1.json"},
+        {"candidateId": "v35_conditional_mr_crypto_adaptation", "adaptation": "crypto_adaptation", "definitionPath": "research/canonical_replications/crypto_conditional_mean_reversion_v1.json"}
+      ]
+    },
+    {
+      "familyId": "crypto_cross_sectional_factor_v1",
+      "title": "Crypto cross-sectional factor ranking",
+      "source": {
+        "url": "https://doi.org/10.1111/j.1540-6261.1993.tb04702.x",
+        "license": "citation_only",
+        "summary": "Cross-sectional momentum ranks assets by past performance and compares future returns of winners and losers.",
+        "citation": "Jegadeesh and Titman, Returns to Buying Winners and Selling Losers, Journal of Finance, 1993."
+      },
+      "mechanism": "Relative return persistence across a point-in-time tradable cross-section.",
+      "formula": "cross-sectional rank of lagged return with neutralization and turnover controls",
+      "parameters": {"timeframes": ["4h", "1d"], "ranking": "point-in-time"},
+      "universe": {"instrumentType": "USDT perpetual swap", "selection": "PIT membership required"},
+      "costAssumptions": {"required": true, "components": ["fees", "slippage", "funding", "turnover"]},
+      "adaptationLimits": ["blocked without PIT universe", "delisting-aware", "no current Top-N backfill"],
+      "replicationState": "data_blocked",
+      "variants": [
+        {"candidateId": "v35_cross_sectional_source_replication", "adaptation": "source_replication", "definitionPath": "research/canonical_replications/crypto_cross_sectional_factor_v1.json"}
+      ]
+    },
+    {
+      "familyId": "crypto_event_driven_v1",
+      "title": "Crypto event-driven public-data study",
+      "source": {
+        "url": "https://www.okx.com/docs-v5/en/",
+        "license": "public_documentation_terms",
+        "summary": "OKX documents public market, instrument, funding, open-interest, and historical-data interfaces used to timestamp observable events.",
+        "citation": "OKX API v5 documentation, public market data and funding-rate history sections."
+      },
+      "mechanism": "A timestamped public event can change funding, positioning, liquidity, or volatility conditional on causal availability.",
+      "formula": "event-time surprise relative to a frozen pre-event baseline with embargoed entry",
+      "parameters": {"timeframes": ["5m", "15m", "1h"], "eventClock": "source timestamp"},
+      "universe": {"instrumentType": "USDT perpetual swap", "selection": "instruments observable at event time"},
+      "costAssumptions": {"required": true, "components": ["fees", "slippage", "funding", "latency stress"]},
+      "adaptationLimits": ["blocked without event provenance", "no retrospective timestamp", "embargo required"],
+      "replicationState": "data_blocked",
+      "variants": [
+        {"candidateId": "v35_event_driven_source_replication", "adaptation": "source_replication", "definitionPath": "research/canonical_replications/crypto_event_driven_v1.json"}
+      ]
+    },
+    {
+      "familyId": "chan_structure_parser_v1",
+      "title": "AlphaPilot Chan structure parser context",
+      "source": {
+        "url": "alphapilot://internal/technical-context/chan-structure-parser-v1",
+        "license": "AlphaPilot internal",
+        "summary": "An internal deterministic parser proposal for swing, segment, consolidation, divergence, and invalidation context.",
+        "citation": "AlphaPilot Internal Technical Context: Chan structure parser v1."
+      },
+      "mechanism": "Deterministic market-structure context can label and rank setups without becoming a standalone discretionary signal.",
+      "formula": "frozen swing and segment state machine with explicit invalidation",
+      "parameters": {"timeframes": ["15m", "1h", "4h"], "role": "context_only"},
+      "universe": {"instrumentType": "USDT perpetual swap", "selection": "same as parent candidate"},
+      "costAssumptions": {"required": false, "components": []},
+      "adaptationLimits": ["context only", "not first-round proven signal", "deterministic parser required"],
+      "replicationState": "registered_context_only",
+      "variants": [
+        {"candidateId": "v35_chan_context_replication", "adaptation": "source_replication", "definitionPath": "research/canonical_replications/chan_structure_parser_v1.json"}
+      ]
+    }
+  ]
+}

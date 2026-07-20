@@ -1,0 +1,9 @@
+{
+  "conclusion": "V37C validates the normalized AlphaPilot executable and its reachable gates. It does not establish equivalence to the original external strategy semantics.",
+  "normalizedCandidateCount": 4,
+  "normalizedFormalPassCount": 0,
+  "schemaVersion": "reference_strategy_normalized_vs_source_comparison_v1",
+  "sourceEquivalenceEstablished": false,
+  "v37cGateReachabilityPassed": true,
+  "v37cProductionOracleParityPassed": true
+}

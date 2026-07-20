@@ -1,0 +1,29 @@
+{
+  "acceptedSignalCount": 0,
+  "closedLegs": [],
+  "decisions": [],
+  "demoArm": false,
+  "equityCurve": [
+    {
+      "equity": 10000.0,
+      "positionCount": 0,
+      "timestamp": null
+    }
+  ],
+  "finalEquity": 10000.0,
+  "ignoredExitLegs": [],
+  "initialEquity": 10000.0,
+  "lookaheadReadCount": 0,
+  "maximumAbsoluteProjectedBeta": 0.0,
+  "maximumClusterRiskAmount": 0.0,
+  "maximumConcurrentPositions": 0,
+  "maximumOpenRiskAmount": 0.0,
+  "openPositions": [],
+  "orderCount": 0,
+  "rawSignalCount": 0,
+  "rejectedSignalCount": 0,
+  "rejectionBreakdown": {},
+  "releaseCount": 0,
+  "schemaVersion": "s01_v18_formal_capital_replay_v1",
+  "trades": []
+}

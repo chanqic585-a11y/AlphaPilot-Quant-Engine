@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import os
 import time
 import urllib.parse
@@ -18,13 +19,21 @@ from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
 
 
 OKX_GLOBAL_API = "https://openapi.okx.com"
-BAR_VALUES = {"5m": "5m", "15m": "15m", "1h": "1H", "4h": "4H", "1d": "1D"}
+BAR_VALUES = {
+    "5m": "5m",
+    "15m": "15m",
+    "1h": "1H",
+    "4h": "4H",
+    "1d": "1D",
+    "1dutc": "1Dutc",
+}
 TIMEFRAME_MILLISECONDS = {
     "5m": 5 * 60 * 1000,
     "15m": 15 * 60 * 1000,
     "1h": 60 * 60 * 1000,
     "4h": 4 * 60 * 60 * 1000,
     "1d": 24 * 60 * 60 * 1000,
+    "1dutc": 24 * 60 * 60 * 1000,
 }
 CANONICAL_SOURCE_NAMES = ("unknown", "okx")
 
@@ -90,6 +99,7 @@ class OkxPublicClient:
         self.opener = opener
         self.throttle_seconds = max(0.0, throttle_seconds)
         self.max_rate_limit_retries = max(0, int(max_rate_limit_retries))
+        self.request_audit_records: list[dict[str, Any]] = []
 
     def _get(self, path: str, parameters: dict[str, Any]) -> list[Any]:
         query = urllib.parse.urlencode(parameters)
@@ -103,8 +113,49 @@ class OkxPublicClient:
         )
         payload: dict[str, Any] = {}
         for attempt in range(self.max_rate_limit_retries + 1):
-            with self.opener(request, timeout=30) as response:
-                payload = json.loads(response.read().decode("utf-8"))
+            started_at = _utc_now()
+            try:
+                with self.opener(request, timeout=30) as response:
+                    raw_payload = response.read()
+                    http_status = getattr(response, "status", None)
+                    headers = getattr(response, "headers", None)
+                    server_date = headers.get("Date") if headers is not None else None
+                parsed = json.loads(raw_payload.decode("utf-8"))
+                if not isinstance(parsed, dict):
+                    raise RuntimeError("OKX public response is not an object")
+                payload = parsed
+            except Exception as error:
+                self.request_audit_records.append(
+                    {
+                        "method": "GET",
+                        "path": path,
+                        "parameters": dict(parameters),
+                        "attempt": attempt + 1,
+                        "requestStartedAt": started_at,
+                        "requestCompletedAt": _utc_now(),
+                        "httpStatus": None,
+                        "serverDate": None,
+                        "responseCode": None,
+                        "rawPayloadSha256": None,
+                        "errorType": type(error).__name__,
+                    }
+                )
+                raise
+            self.request_audit_records.append(
+                {
+                    "method": "GET",
+                    "path": path,
+                    "parameters": dict(parameters),
+                    "attempt": attempt + 1,
+                    "requestStartedAt": started_at,
+                    "requestCompletedAt": _utc_now(),
+                    "httpStatus": http_status,
+                    "serverDate": server_date,
+                    "responseCode": str(payload.get("code")),
+                    "rawPayloadSha256": hashlib.sha256(raw_payload).hexdigest(),
+                    "errorType": None,
+                }
+            )
             code = str(payload.get("code"))
             if code == "0":
                 break
@@ -142,6 +193,58 @@ class OkxPublicClient:
             if isinstance(item, dict)
         ]
 
+    def current_funding_rate(self, *, instrument_id: str) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/funding-rate",
+                {"instId": instrument_id},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def open_interest(self, *, instrument_id: str) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/open-interest",
+                {"instType": "SWAP", "instId": instrument_id},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def mark_price(self, *, instrument_id: str) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/mark-price",
+                {"instType": "SWAP", "instId": instrument_id},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def index_ticker(self, *, instrument_id: str) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/market/index-tickers",
+                {"instId": instrument_id},
+            )
+            if isinstance(item, dict)
+        ]
+
+    def order_book(
+        self, *, instrument_id: str, depth: int = 5
+    ) -> list[dict[str, Any]]:
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/market/books",
+                {"instId": instrument_id, "sz": max(1, min(int(depth), 400))},
+            )
+            if isinstance(item, dict)
+        ]
+
     def funding_rate_history(
         self,
         *,
@@ -162,6 +265,34 @@ class OkxPublicClient:
             dict(item)
             for item in self._get(
                 "/api/v5/public/funding-rate-history", parameters
+            )
+            if isinstance(item, dict)
+        ]
+
+    def historical_market_data(
+        self,
+        *,
+        module: int,
+        instrument_type: str,
+        instrument_family_list: tuple[str, ...],
+        date_aggregation_type: str,
+        begin_ms: int,
+        end_ms: int,
+    ) -> list[dict[str, Any]]:
+        """Return OKX public historical archive descriptors."""
+
+        return [
+            dict(item)
+            for item in self._get(
+                "/api/v5/public/market-data-history",
+                {
+                    "module": int(module),
+                    "instType": instrument_type,
+                    "instFamilyList": ",".join(instrument_family_list),
+                    "dateAggrType": date_aggregation_type,
+                    "begin": int(begin_ms),
+                    "end": int(end_ms),
+                },
             )
             if isinstance(item, dict)
         ]
@@ -291,6 +422,85 @@ class OkxPublicClient:
         frame["date"] = pd.to_datetime(frame["timestamp_ms"], unit="ms", utc=True)
         frame = frame.drop_duplicates(subset=["timestamp_ms"], keep="last").sort_values("timestamp_ms").reset_index(drop=True)
         return frame[["timestamp_ms", "date", "open", "high", "low", "close", "volume", "confirmed"]], request_count
+
+    def history_candle_rows(
+        self,
+        *,
+        instrument_id: str,
+        timeframe: str,
+        start_exclusive_ms: int,
+        max_pages: int = 500,
+        page_limit: int = 100,
+        initial_after_ms: int | None = None,
+        stop_requested: Callable[[], bool] | None = None,
+        page_progress: Callable[[dict[str, Any]], None] | None = None,
+    ) -> tuple[list[list[Any]], int]:
+        """Return confirmed raw rows so callers retain all OKX volume fields."""
+
+        if timeframe not in BAR_VALUES:
+            raise ValueError(f"Unsupported OKX timeframe: {timeframe}")
+        if start_exclusive_ms < 0:
+            raise ValueError("start_exclusive_ms must be non-negative")
+        if initial_after_ms is not None and initial_after_ms < 0:
+            raise ValueError("initial_after_ms must be non-negative")
+        cursor = initial_after_ms
+        request_count = 0
+        rows: list[list[Any]] = []
+        seen_cursors: set[int] = set()
+        for _ in range(max_pages):
+            if stop_requested is not None and stop_requested():
+                raise OkxHistoryCollectionStopped("official_history_collection_stopped")
+            parameters: dict[str, Any] = {
+                "instId": instrument_id,
+                "bar": BAR_VALUES[timeframe],
+                "limit": max(1, min(page_limit, 100)),
+            }
+            if cursor is not None:
+                parameters["after"] = cursor
+            data = self._get("/api/v5/market/history-candles", parameters)
+            request_count += 1
+            timestamps = [
+                int(item[0])
+                for item in data
+                if isinstance(item, list) and item
+            ]
+            page_rows = [
+                list(item)
+                for item in data
+                if isinstance(item, list)
+                and item
+                and int(item[0]) > start_exclusive_ms
+                and len(item) >= 9
+                and str(item[8]) == "1"
+            ]
+            rows.extend(page_rows)
+            oldest = min(timestamps) if timestamps else None
+            final_page = (
+                not timestamps
+                or oldest is None
+                or oldest <= start_exclusive_ms
+                or oldest in seen_cursors
+                or request_count >= max_pages
+            )
+            if page_progress is not None:
+                page_progress(
+                    {
+                        "requestCount": request_count,
+                        "rowCount": len(rows),
+                        "oldestTimestampMs": oldest,
+                        "maxPages": max_pages,
+                        "isFinalPage": final_page,
+                        "pageRows": page_rows,
+                    }
+                )
+            if final_page:
+                break
+            seen_cursors.add(oldest)
+            cursor = oldest
+            if self.throttle_seconds:
+                time.sleep(self.throttle_seconds)
+        unique = {int(row[0]): row for row in rows}
+        return [unique[key] for key in sorted(unique)], request_count
 
     def latest_completed_candles(
         self,

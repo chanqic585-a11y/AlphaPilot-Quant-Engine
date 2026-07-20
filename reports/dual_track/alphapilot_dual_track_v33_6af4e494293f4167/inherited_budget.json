@@ -1,0 +1,9 @@
+{
+  "budgetReset": false,
+  "campaignsUsed": 1,
+  "fullBacktestsRemaining": 96,
+  "fullBacktestsUsed": 0,
+  "maximumAdditionalFullBacktests": 96,
+  "predecessorProgramId": "automatic_strategy_renewal_v28_4e6ab55a5e949716",
+  "schemaVersion": "dual_track_inherited_budget_v1"
+}

@@ -1,0 +1,23 @@
+{
+  "codeCommit": "231c239eb744887b23763b8bbe59e4afe238d83f",
+  "runId": "v37b-reference-c714273e3046-231c239eb744",
+  "schemaVersion": "reference_strategy_implementation_evidence_v1",
+  "selectedCandidatesSha256": "3b2c00cdec66b565984f6aea14c802f8edb34f2ae7c8254ad3be6c58984554b4",
+  "sourceHashes": {
+    "alphapilot/exit_policy/schema.py": "4eb46bce0a092e19efe624de7fde1b48db055b1b5fc7a960f38985f923e289ad",
+    "alphapilot/reference_strategy_research/candidates.py": "aa642a1cc7441ee4cf00ecdc29f03e4b9adb4912b7eae44633e5a9501bfdbd87",
+    "alphapilot/reference_strategy_research/data_audit.py": "10c6f62b34823d72d49f20f8bbfa61cb29bf4ead0423e557f9bbc406241b5cb2",
+    "alphapilot/reference_strategy_research/gap_downloader.py": "dd6f905b374d3efd4b961d8df586070c6a822f88ad2f465c68eb4d1ddfbe91ad",
+    "alphapilot/reference_strategy_research/inventory.py": "918225596de35984d82886f07fae884287e0371fb8ccbda9a31222f086727735",
+    "alphapilot/reference_strategy_research/package_loader.py": "3e412068e08379fe1fb7b12caf13c97ba1d2fd593a6231655793b26dafaa8b38",
+    "alphapilot/reference_strategy_research/signals.py": "ad502f450baea1e0fea73be540f31939cb90bdd00ee74ce07f8f26083b297abd",
+    "alphapilot/reference_strategy_research/workflow.py": "0c61d184b2f4afc272811479e114e4c4a77cee982d4769ee79d6ccb1d2ec9fe3",
+    "alphapilot/reference_strategy_research/workflow_state.py": "a8e3c108cf1e3b50a8db4955bea374e86f6342840d2a0f95c457ecd5c9cb86dc",
+    "alphapilot/research_screening/campaign_runner.py": "68717fa0a147d35266f5b9978c267a44639e45b981c358a637a65cfc41a37766"
+  },
+  "testsRequired": [
+    "tests/reference_strategy_research",
+    "tests/research_screening/test_campaign_runner.py",
+    "tests/exit_policy/test_models_and_validation.py"
+  ]
+}

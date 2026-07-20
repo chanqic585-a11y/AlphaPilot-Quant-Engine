@@ -1,0 +1,37 @@
+[
+  {
+    "candidateId": "candidate-exact",
+    "classification": "exact_duplicate",
+    "decision": "reject_duplicate",
+    "policyHash": "similarity_policy_d1c5d4bcc78a1bf93dbcae0b133b37528a576d3349c4bbd281071ad1e109021c",
+    "qualificationScope": "research_only"
+  },
+  {
+    "candidateId": "candidate-near",
+    "classification": "near_duplicate",
+    "decision": "reject_near_duplicate",
+    "policyHash": "similarity_policy_d1c5d4bcc78a1bf93dbcae0b133b37528a576d3349c4bbd281071ad1e109021c",
+    "qualificationScope": "research_only"
+  },
+  {
+    "candidateId": "candidate-variant",
+    "classification": "same_family_variant",
+    "decision": "retain_one_bounded_variant",
+    "policyHash": "similarity_policy_d1c5d4bcc78a1bf93dbcae0b133b37528a576d3349c4bbd281071ad1e109021c",
+    "qualificationScope": "research_only"
+  },
+  {
+    "candidateId": "candidate-related",
+    "classification": "mechanism_related",
+    "decision": "retain_mechanism_research",
+    "policyHash": "similarity_policy_d1c5d4bcc78a1bf93dbcae0b133b37528a576d3349c4bbd281071ad1e109021c",
+    "qualificationScope": "research_only"
+  },
+  {
+    "candidateId": "candidate-independent",
+    "classification": "independent",
+    "decision": "retain_independent",
+    "policyHash": "similarity_policy_d1c5d4bcc78a1bf93dbcae0b133b37528a576d3349c4bbd281071ad1e109021c",
+    "qualificationScope": "research_only"
+  }
+]

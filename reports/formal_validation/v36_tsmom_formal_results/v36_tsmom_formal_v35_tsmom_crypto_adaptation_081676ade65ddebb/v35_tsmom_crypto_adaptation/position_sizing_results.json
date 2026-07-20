@@ -1,0 +1,293 @@
+{
+  "accepted": [
+    {
+      "accepted": true,
+      "actualNotional": 4444.899900045605,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 100.0,
+      "signalId": "replication_signal_7e993e3800c883b41f0409878b1054626293d7994396d15ab7dce9bec51f16d2"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2756.8383011173396,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 100.0,
+      "signalId": "replication_signal_9c820a5c7c97db6018c2313affbc1c18302b4f434627f3dd7a817c587946d691"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1666.8396312736384,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 97.83186757382734,
+      "signalId": "replication_signal_4ed2fa620e730fd23f11b6076bb0ba5710041af8a4f0a8364822eb6399985a6b"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2570.286057239897,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 97.83186757382734,
+      "signalId": "replication_signal_e5063963bdf3906d4ac6f6b31882a69152467108cc19e2295af686d7fbc04960"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1889.2370271215716,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 95.78765040842424,
+      "signalId": "replication_signal_296f108a1fbc8b53db9145ac622fc1c7c873d23f9aa6ad3ac9630f82f95d552a"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2146.1997925128044,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 96.92389746774374,
+      "signalId": "replication_signal_d5f5918ee22f9df50105564de87ca355e1cd9785bf4cf3bd48eab0a724bb6557"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1216.5757660418183,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 97.34397342741529,
+      "signalId": "replication_signal_443e63fa328dfd4b90ae86d9f1932cfc2c2e9b5eb026e5d0e94ce3aec8b8efad"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2313.3213726144872,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 97.34397342741529,
+      "signalId": "replication_signal_b947545be94b9c46b842499d59471d65a97d5eed48689593e8fefb94023d93bf"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2001.230148461403,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 99.71026209055219,
+      "signalId": "replication_signal_bca71bfd0e19f467677e06f77a2c7661591f99c24f5424ee2eabc3d93ae67d18"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 3610.6519526625084,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 99.71026209055219,
+      "signalId": "replication_signal_df9863185baf2b3e47afa0c65cc6381d178f178d6dfcbbe8a782c510f6c58dc7"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1388.9622298979925,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 97.61172799836999,
+      "signalId": "replication_signal_8f267d07917e898dfebd48633801aa3e4fe79b2da305f41c1983b0e883cb20ff"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1516.700069754606,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 97.61172799836999,
+      "signalId": "replication_signal_ac678a47c242a2a5c2dfda063bfd708bdeb88d5309cf60c3b09c9440b152af0e"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 3168.732218330344,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 96.26312579714049,
+      "signalId": "replication_signal_b6e60bf1e2c087aea6be21a725925be6fcd9b4ada682aaae30b2357de0b347d2"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 4250.5205406552805,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 96.2631257971405,
+      "signalId": "replication_signal_16442c77d7c74a4dc066cadb9a898e4d2037e7e859533d304478a6c582e4425e"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2768.8633763727953,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 94.16456977779731,
+      "signalId": "replication_signal_c847b7d756665dba199fdde28eb65937ba941e1276c887adcf5936c360a67cf9"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 3751.3914846120715,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 94.16456977779731,
+      "signalId": "replication_signal_065f3b64739376000b36577ccda656903174b2946f8c72412845eb1dc1d34ff4"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2555.1820141862754,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 92.34884351570214,
+      "signalId": "replication_signal_e8a98c65527a459cec1a48f97bb91e1cb625d151de4db35e01fc02604ccb5eec"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2312.0796733880834,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 92.34884351570214,
+      "signalId": "replication_signal_ae00c0665cc62dae8e40f2a8abe6cacfb823777e1c392e469a982c75fe48e94c"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2320.241902710249,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 90.39861026719016,
+      "signalId": "replication_signal_59acf40cfa6e116de131fff9226551b0e33f897ad52674da25fa70a3fc1c7a28"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2846.768033991797,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 90.39861026719016,
+      "signalId": "replication_signal_0b2b7125a6b3152ce2921f58656d76212851c1c5ce281aea122180bfc70b03f0"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1937.730426945085,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 88.48103936647722,
+      "signalId": "replication_signal_6ff9b5a4616c70b568dcdb7271a7ea3bb971c41e5f5589a9f1a8b07f9ed6bbc3"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1962.273604451499,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 89.30437689692707,
+      "signalId": "replication_signal_428e87bc9b1d64c01f7047c251d6a144ca0a1828360827babceed2ebbf149b85"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1834.3408020455256,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 86.6207387894592,
+      "signalId": "replication_signal_277c69b42a4beec4496dd08b83565a2c5696c3582e4a85af5f1610447b419c5e"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2497.0435835083376,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 86.62073878945921,
+      "signalId": "replication_signal_63b99672d7c4bc21d5c6f1310bc920cbc8123df1a5f961209a335a28623b3bc2"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 4294.276180149885,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 88.39644229439037,
+      "signalId": "replication_signal_a51067770c04689d964bfb7939e461b0ee38c36efe37256c26928326efd3761a"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 3355.227463829956,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 87.42313774904673,
+      "signalId": "replication_signal_ec73aac0e453715697f365891621dbe20ad697a185dcbe856bf0c162742130de"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2399.3010338612053,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 88.1043208937308,
+      "signalId": "replication_signal_9d0ca485f458903ef607a0bf4f6b11af145dd6a579efc3332233305f7519d04a"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2252.64695327567,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 85.56196893092392,
+      "signalId": "replication_signal_98aeccc96eab57aa2777ab16fe7d1e79b1c600f96ee46ad7d7a25f128d0dace8"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1989.3017780241112,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 84.82363420893553,
+      "signalId": "replication_signal_0b0730143d176e830ee7a641f723375fb86deb9508104193d0f0d8198b0743ae"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2939.684298042133,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 83.93112197626417,
+      "signalId": "replication_signal_fddd33423b879fc0a679ecb12d55b9b76b5dc5d01250b28d1321eeb9ca427ecf"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2070.835942603659,
+      "instrumentId": "SOL-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 83.93112197626417,
+      "signalId": "replication_signal_ba4f4bb21a9979e3ef57799c0e63ee42612bfaf9fc5c396d9ad653a17dbe1f2a"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 1917.6813433933542,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 90.38723565814824,
+      "signalId": "replication_signal_c1fba0c66d31f9a0c99f07922005eb865f7ed5dc08ce3720c7641c21714c399d"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2464.4964194653203,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 90.38723565814823,
+      "signalId": "replication_signal_df9d414c8d3cd08222426744ca2a126445f913e6ae434a7c71e82f1563ef6be1"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 3979.6411018414983,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 89.68884646403225,
+      "signalId": "replication_signal_635c8bbd7144f08557e03925d5772e306f19d4ac856c8e5cf5622007bae3763a"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 3233.8941887271735,
+      "instrumentId": "BTC-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 88.70599716671288,
+      "signalId": "replication_signal_eb86847403a1600fd3c9bd3e03cba3866623fa3672822357a06ad188e2e13a4c"
+    },
+    {
+      "accepted": true,
+      "actualNotional": 2252.869173848241,
+      "instrumentId": "ETH-USDT-SWAP",
+      "reason": null,
+      "riskAmount": 87.7436483186141,
+      "signalId": "replication_signal_07c9f89a5a1748c1882b7b5e43e4d66b7b4f4557e3c5a2bc7961b160968efd93"
+    }
+  ],
+  "schemaVersion": "s01_v18_position_sizing_results_v1"
+}

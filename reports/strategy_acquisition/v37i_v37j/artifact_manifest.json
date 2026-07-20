@@ -1,0 +1,77 @@
+{
+  "artifacts": [
+    {
+      "path": "artifact_lifecycle_history.jsonl",
+      "sha256": "e6cc741fc3486a49e8982b2637343c0dfe3ca22f85a085c3b95bbe6a3b9dc3cb",
+      "sizeBytes": 17554
+    },
+    {
+      "path": "campaign_inventory.json",
+      "sha256": "60ff1341554cac2c6c1f918a8c1e6729a9e66488f37fe8a449d13216bb639b4f",
+      "sizeBytes": 809
+    },
+    {
+      "path": "campaign_summary.json",
+      "sha256": "dbd1f67de9457858189a63580973ac14ea99dba8fa0c3e55dd5fdc6426e702b2",
+      "sizeBytes": 630
+    },
+    {
+      "path": "campaign_summary.md",
+      "sha256": "9cd1f136c7a6ef7584294bfcf5809197fa5a848db4a7e05785cf807d61a5905d",
+      "sizeBytes": 543
+    },
+    {
+      "path": "candidate_inventory.json",
+      "sha256": "17eece0c709779f7b746f7762b4925036a92e1a95fb6dd3223cd01bc8c754116",
+      "sizeBytes": 24455
+    },
+    {
+      "path": "candidate_results.parquet",
+      "sha256": "b166d536f3101a09e2bd979ae19ac78ebf874851ef2d5ef0ce2de088a1bc8c3a",
+      "sizeBytes": 10189
+    },
+    {
+      "path": "development_data_audit.json",
+      "sha256": "858ca5094510adf3ce81cddc418d3f356ef831fc1c218e05bd045b837bfb8686",
+      "sizeBytes": 541
+    },
+    {
+      "path": "experiment_budget.json",
+      "sha256": "eadad418e305de74d3bd54ff21db4d0cdf22c438630a0082341bbddb79cb1a70",
+      "sizeBytes": 708
+    },
+    {
+      "path": "failure_attribution.json",
+      "sha256": "8e957987634cb1f4e9b84ef9e7eb5e59031a6e0c3ffa59587eebf2649f100353",
+      "sizeBytes": 1575
+    },
+    {
+      "path": "formal_matrix.csv",
+      "sha256": "66a2aa5598c8d0f4ef927a25764caa753839961efa89545b5b1c241e67892cf2",
+      "sizeBytes": 67
+    },
+    {
+      "path": "formal_route.json",
+      "sha256": "15f6690bec27b05f90b4109421410b3f164cdeb410b907f381fc0fada3b824eb",
+      "sizeBytes": 620
+    },
+    {
+      "path": "prefilter_matrix.csv",
+      "sha256": "d9e56175f0f9ab6f0f7f7d985fb28ab723a13b801ff9641772d383bd1462069b",
+      "sizeBytes": 1596
+    },
+    {
+      "path": "source_equivalence_matrix.csv",
+      "sha256": "c9174305a42a4b854ebebd288bb2182b6784062ecdacea9cf502b259256856ef",
+      "sizeBytes": 970
+    },
+    {
+      "path": "statistical_matrix.json",
+      "sha256": "02727c135bdfdcda89c8134f52b9487118f55903a934dac1cdec1131db6e9288",
+      "sizeBytes": 178
+    }
+  ],
+  "campaignSummaryHash": "v37i_v37j_summary_88dec56fd4f545078fb9df88938b42ce0b48786ec05362b19813dea063392d01",
+  "manifestHash": "v37i_v37j_manifest_f0cef63552bc170aaf4288cdf4cfeb53deff21173be5eb648d04e3758d6fdf0c",
+  "schemaVersion": "alphapilot_v37i_v37j_artifact_manifest_v1"
+}

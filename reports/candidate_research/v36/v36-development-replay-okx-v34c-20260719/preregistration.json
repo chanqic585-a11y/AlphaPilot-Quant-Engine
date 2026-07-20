@@ -1,0 +1,418 @@
+{
+  "blockedFamilyCount": 2,
+  "blockedFamilyIds": [
+    "crypto_cross_sectional_factor_v1",
+    "crypto_event_driven_v1"
+  ],
+  "campaignId": "v36-development-replay-okx-v34c-20260719",
+  "candidateCount": 9,
+  "candidateIds": [
+    "v35_chan_context_replication",
+    "v35_conditional_mr_crypto_adaptation",
+    "v35_conditional_mr_source_replication",
+    "v35_cross_sectional_source_replication",
+    "v35_event_driven_source_replication",
+    "v35_pair_rv_crypto_adaptation",
+    "v35_pair_rv_source_replication",
+    "v35_tsmom_crypto_adaptation",
+    "v35_tsmom_source_replication"
+  ],
+  "comparisonPanel": {
+    "benchmarkPolicyHash": "benchmark-policy-v32-development-increment",
+    "candidateIds": [
+      "v35_chan_context_replication",
+      "v35_conditional_mr_crypto_adaptation",
+      "v35_conditional_mr_source_replication",
+      "v35_cross_sectional_source_replication",
+      "v35_event_driven_source_replication",
+      "v35_pair_rv_crypto_adaptation",
+      "v35_pair_rv_source_replication",
+      "v35_tsmom_crypto_adaptation",
+      "v35_tsmom_source_replication"
+    ],
+    "capitalPolicyHash": "capital-policy-v18-development-unit-risk",
+    "costPolicyHash": "cost-policy-v13-development-round-trip-12bps",
+    "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "developmentEnd": "2025-01-01T00:00:00Z",
+    "developmentStart": "2021-02-01T00:00:00Z",
+    "randomSeed": 36,
+    "trialIds": [
+      "v36_trial_1654efbdb471a899fdb39838102c1c9f794364fcbb478196b3fc40f38809b486",
+      "v36_trial_20bb6ba4b9cf1bad8fa3d3d8630ce9f756f968d4efcc426b54a15e7d0443b04c",
+      "v36_trial_2917eb269d1563692ac37724b947e339458ebc5e243a57c8bf1a9a048eb746bb",
+      "v36_trial_43b2c0f5804b1f0596bc6d5691d79013699a5e1b3db0a07e7a3332ac3f6f0599",
+      "v36_trial_43c86dd299a8ad2904cc53c00ed541d6f6d523d58c2e9b99d758dc6855cb0693",
+      "v36_trial_45db6dab50a4ed266110d9dffd746b2c0cf1f35bf81b8cb199e4431b3d715b1b",
+      "v36_trial_5709d3a0f6027542ecd06b1956065cce886479e05b56fa5cae84c229cf11a852",
+      "v36_trial_5ad91ca50dbe631ec6e7d51634a3319ff82244c7c6f137f5efb8cfde0089f6ee",
+      "v36_trial_624683f2f2ff13951b48b0ceeb7f4064da8fe41ccc59f48415f0da83b7544e48",
+      "v36_trial_64f1945ca5bf8517ae1e73fd1e103bd207edc1532650dc46e89e043707bb7370",
+      "v36_trial_703c1a848e7b864e33cf0ca2616b4f7819619ff12e55ba1817fc2276da143751",
+      "v36_trial_735291d1d47573acafb548b455ccefd5936a7853bb0241b319dd102ee978eb18",
+      "v36_trial_9b22812bf2f4a4cbec339c39b8f7cd31aa272c162365973470dfbebf59a68089",
+      "v36_trial_b349b36c502ab82034660d8a85ac8819069d9f59751a448801045c47ca8881bf",
+      "v36_trial_c1736b3be300751b407bb70794798b04bc5495272196bcc25a91e764a76cf331",
+      "v36_trial_d31f33044ec1c7ba0c5d7b5304ee8e7497614bff3504d8d376f8edb8b3404efd",
+      "v36_trial_d403a7fb302428b779f4d51294070108b07b6d1dec9f8526919c6b1495e8e876",
+      "v36_trial_ec2562d73795444e90789e7f77a3e129030b7d92c0f3614cf3f33375fdaf41c0"
+    ]
+  },
+  "comparisonPanelHash": "v36_comparison_panel_a19de2de4293c2474ff5de44a377cf14bbbcd02dc89ea9d23f8347cee2f4877d",
+  "contextOnlyCandidateIds": [
+    "v35_chan_context_replication"
+  ],
+  "createdAt": "2026-07-19T08:00:00Z",
+  "eligibleCandidateCount": 6,
+  "eligibleCandidateIds": [
+    "v35_conditional_mr_crypto_adaptation",
+    "v35_conditional_mr_source_replication",
+    "v35_pair_rv_crypto_adaptation",
+    "v35_pair_rv_source_replication",
+    "v35_tsmom_crypto_adaptation",
+    "v35_tsmom_source_replication"
+  ],
+  "lockedOosReadCount": 0,
+  "preregistrationHash": "v36_preregistration_7346cc95e954b4b341d9ebfbb8674553bb6bd9ae73524f95ea844cef3eb76b8b",
+  "schemaVersion": "v36_candidate_preregistration_v1",
+  "selectionSplit": "development",
+  "sourceRegistryId": "alphapilot_v35_canonical_strategy_sources",
+  "trialCount": 18,
+  "trialsByCandidate": {
+    "v35_conditional_mr_crypto_adaptation": [
+      {
+        "baseParameters": {
+          "regime": "frozen range state",
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_conditional_mr_crypto_adaptation",
+        "familyId": "crypto_conditional_mean_reversion_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "directional",
+        "trialId": "v36_trial_703c1a848e7b864e33cf0ca2616b4f7819619ff12e55ba1817fc2276da143751",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "regime": "frozen range state",
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_conditional_mr_crypto_adaptation",
+        "familyId": "crypto_conditional_mean_reversion_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "directional",
+        "trialId": "v36_trial_2917eb269d1563692ac37724b947e339458ebc5e243a57c8bf1a9a048eb746bb",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "regime": "frozen range state",
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_conditional_mr_crypto_adaptation",
+        "familyId": "crypto_conditional_mean_reversion_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "directional",
+        "trialId": "v36_trial_20bb6ba4b9cf1bad8fa3d3d8630ce9f756f968d4efcc426b54a15e7d0443b04c",
+        "trialIndex": 2
+      }
+    ],
+    "v35_conditional_mr_source_replication": [
+      {
+        "baseParameters": {
+          "regime": "frozen range state",
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_conditional_mr_source_replication",
+        "familyId": "crypto_conditional_mean_reversion_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "directional",
+        "trialId": "v36_trial_5ad91ca50dbe631ec6e7d51634a3319ff82244c7c6f137f5efb8cfde0089f6ee",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "regime": "frozen range state",
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_conditional_mr_source_replication",
+        "familyId": "crypto_conditional_mean_reversion_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "directional",
+        "trialId": "v36_trial_c1736b3be300751b407bb70794798b04bc5495272196bcc25a91e764a76cf331",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "regime": "frozen range state",
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_conditional_mr_source_replication",
+        "familyId": "crypto_conditional_mean_reversion_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "directional",
+        "trialId": "v36_trial_1654efbdb471a899fdb39838102c1c9f794364fcbb478196b3fc40f38809b486",
+        "trialIndex": 2
+      }
+    ],
+    "v35_pair_rv_crypto_adaptation": [
+      {
+        "baseParameters": {
+          "pairUniverse": [
+            "BTC-USDT-SWAP/ETH-USDT-SWAP"
+          ],
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_pair_rv_crypto_adaptation",
+        "familyId": "crypto_pair_relative_value_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "pair",
+        "trialId": "v36_trial_b349b36c502ab82034660d8a85ac8819069d9f59751a448801045c47ca8881bf",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "pairUniverse": [
+            "BTC-USDT-SWAP/ETH-USDT-SWAP"
+          ],
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_pair_rv_crypto_adaptation",
+        "familyId": "crypto_pair_relative_value_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "pair",
+        "trialId": "v36_trial_5709d3a0f6027542ecd06b1956065cce886479e05b56fa5cae84c229cf11a852",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "pairUniverse": [
+            "BTC-USDT-SWAP/ETH-USDT-SWAP"
+          ],
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_pair_rv_crypto_adaptation",
+        "familyId": "crypto_pair_relative_value_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "pair",
+        "trialId": "v36_trial_624683f2f2ff13951b48b0ceeb7f4064da8fe41ccc59f48415f0da83b7544e48",
+        "trialIndex": 2
+      }
+    ],
+    "v35_pair_rv_source_replication": [
+      {
+        "baseParameters": {
+          "pairUniverse": [
+            "BTC-USDT-SWAP/ETH-USDT-SWAP"
+          ],
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_pair_rv_source_replication",
+        "familyId": "crypto_pair_relative_value_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "pair",
+        "trialId": "v36_trial_45db6dab50a4ed266110d9dffd746b2c0cf1f35bf81b8cb199e4431b3d715b1b",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "pairUniverse": [
+            "BTC-USDT-SWAP/ETH-USDT-SWAP"
+          ],
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_pair_rv_source_replication",
+        "familyId": "crypto_pair_relative_value_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "pair",
+        "trialId": "v36_trial_d31f33044ec1c7ba0c5d7b5304ee8e7497614bff3504d8d376f8edb8b3404efd",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "pairUniverse": [
+            "BTC-USDT-SWAP/ETH-USDT-SWAP"
+          ],
+          "timeframes": [
+            "1h",
+            "4h"
+          ]
+        },
+        "candidateId": "v35_pair_rv_source_replication",
+        "familyId": "crypto_pair_relative_value_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "pair",
+        "trialId": "v36_trial_d403a7fb302428b779f4d51294070108b07b6d1dec9f8526919c6b1495e8e876",
+        "trialIndex": 2
+      }
+    ],
+    "v35_tsmom_crypto_adaptation": [
+      {
+        "baseParameters": {
+          "lookbacks": [
+            60,
+            120,
+            240
+          ],
+          "timeframes": [
+            "4h",
+            "1d"
+          ]
+        },
+        "candidateId": "v35_tsmom_crypto_adaptation",
+        "familyId": "crypto_tsmom_turtle_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "directional",
+        "trialId": "v36_trial_735291d1d47573acafb548b455ccefd5936a7853bb0241b319dd102ee978eb18",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "lookbacks": [
+            60,
+            120,
+            240
+          ],
+          "timeframes": [
+            "4h",
+            "1d"
+          ]
+        },
+        "candidateId": "v35_tsmom_crypto_adaptation",
+        "familyId": "crypto_tsmom_turtle_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "directional",
+        "trialId": "v36_trial_43b2c0f5804b1f0596bc6d5691d79013699a5e1b3db0a07e7a3332ac3f6f0599",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "lookbacks": [
+            60,
+            120,
+            240
+          ],
+          "timeframes": [
+            "4h",
+            "1d"
+          ]
+        },
+        "candidateId": "v35_tsmom_crypto_adaptation",
+        "familyId": "crypto_tsmom_turtle_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "directional",
+        "trialId": "v36_trial_9b22812bf2f4a4cbec339c39b8f7cd31aa272c162365973470dfbebf59a68089",
+        "trialIndex": 2
+      }
+    ],
+    "v35_tsmom_source_replication": [
+      {
+        "baseParameters": {
+          "lookbacks": [
+            60,
+            120,
+            240
+          ],
+          "timeframes": [
+            "4h",
+            "1d"
+          ]
+        },
+        "candidateId": "v35_tsmom_source_replication",
+        "familyId": "crypto_tsmom_turtle_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "directional",
+        "trialId": "v36_trial_43c86dd299a8ad2904cc53c00ed541d6f6d523d58c2e9b99d758dc6855cb0693",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "lookbacks": [
+            60,
+            120,
+            240
+          ],
+          "timeframes": [
+            "4h",
+            "1d"
+          ]
+        },
+        "candidateId": "v35_tsmom_source_replication",
+        "familyId": "crypto_tsmom_turtle_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "directional",
+        "trialId": "v36_trial_ec2562d73795444e90789e7f77a3e129030b7d92c0f3614cf3f33375fdaf41c0",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "lookbacks": [
+            60,
+            120,
+            240
+          ],
+          "timeframes": [
+            "4h",
+            "1d"
+          ]
+        },
+        "candidateId": "v35_tsmom_source_replication",
+        "familyId": "crypto_tsmom_turtle_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "directional",
+        "trialId": "v36_trial_64f1945ca5bf8517ae1e73fd1e103bd207edc1532650dc46e89e043707bb7370",
+        "trialIndex": 2
+      }
+    ]
+  }
+}

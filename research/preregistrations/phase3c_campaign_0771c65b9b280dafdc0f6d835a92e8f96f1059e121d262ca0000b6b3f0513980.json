@@ -1,0 +1,557 @@
+{
+  "baseGates": {
+    "maximumDrawdownPct": {
+      "operator": "<=",
+      "required": 25.0
+    },
+    "oosAverageNetR": {
+      "operator": ">",
+      "required": 0.0
+    },
+    "oosProfitFactor": {
+      "operator": ">=",
+      "required": 1.05
+    },
+    "oosTotalNetR": {
+      "operator": ">",
+      "required": 0.0
+    },
+    "positiveFoldCount": {
+      "operator": ">=",
+      "required": 3
+    }
+  },
+  "campaignId": "phase3c_campaign_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980",
+  "candidates": [
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1_long",
+      "causalRationale": "The first confirmed break of a frozen UTC pre-session range can capture liquidity repricing at crypto session transitions.",
+      "definitionHash": "candidate_definition_4e93e4ea60aa41300ef3636ab60ebf9761663e1951e4a7afe1ee58d1d1312fb8",
+      "direction": "long",
+      "eventDefinition": {
+        "atrWindow": 20,
+        "breakoutBufferAtr": 0.1,
+        "breakoutWindowBars": 12,
+        "entryReference": "next_bar_open",
+        "maximumRangeAtr": 2.5,
+        "maximumStopAtr": 2.0,
+        "minimumRangeAtr": 0.5,
+        "rangeBars": 4,
+        "sessionAnchorUtcHour": 0
+      },
+      "exitPolicy": {
+        "initialStopMayWiden": false,
+        "maximumHoldBars": 12,
+        "mode": "structure_or_time",
+        "parameters": {
+          "structureRule": {
+            "kind": "frozen_range_midpoint"
+          }
+        },
+        "version": "advisory_r_exit_policy_v1"
+      },
+      "exitPolicyHash": "exit_policy_5e24c90013c13ab618ccac425180d6fdadc71f06a0ebefad519d60d2757b9be2",
+      "exitPolicyRequired": true,
+      "exitPolicyVersion": "advisory_r_exit_policy_v1",
+      "expectedFailureRegimes": [
+        "range_reentry",
+        "overnight_gap",
+        "thin_liquidity"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "reference_utc_session_range_breakout",
+      "initialStopMayWiden": false,
+      "invalidation": "Initial stop is frozen at the opposite session-range boundary or the preregistered ATR cap.",
+      "marketMechanismId": "reference_utc_session_range_breakout",
+      "maximumHoldBars": 12,
+      "minimumTargetR": null,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "riskMetric": "R",
+      "schemaVersion": "phase3c_candidate_v2",
+      "stopAtr": 2.0,
+      "targetR": null,
+      "targetRGateMode": "advisory",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1_short",
+      "causalRationale": "The first confirmed break of a frozen UTC pre-session range can capture liquidity repricing at crypto session transitions.",
+      "definitionHash": "candidate_definition_eb1dfda03f4437bd762180f490b1b00534622b9d44aa90564c9c6b62b285ce77",
+      "direction": "short",
+      "eventDefinition": {
+        "atrWindow": 20,
+        "breakoutBufferAtr": 0.1,
+        "breakoutWindowBars": 12,
+        "entryReference": "next_bar_open",
+        "maximumRangeAtr": 2.5,
+        "maximumStopAtr": 2.0,
+        "minimumRangeAtr": 0.5,
+        "rangeBars": 4,
+        "sessionAnchorUtcHour": 0
+      },
+      "exitPolicy": {
+        "initialStopMayWiden": false,
+        "maximumHoldBars": 12,
+        "mode": "structure_or_time",
+        "parameters": {
+          "structureRule": {
+            "kind": "frozen_range_midpoint"
+          }
+        },
+        "version": "advisory_r_exit_policy_v1"
+      },
+      "exitPolicyHash": "exit_policy_5e24c90013c13ab618ccac425180d6fdadc71f06a0ebefad519d60d2757b9be2",
+      "exitPolicyRequired": true,
+      "exitPolicyVersion": "advisory_r_exit_policy_v1",
+      "expectedFailureRegimes": [
+        "range_reentry",
+        "overnight_gap",
+        "thin_liquidity"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "reference_utc_session_range_breakout",
+      "initialStopMayWiden": false,
+      "invalidation": "Initial stop is frozen at the opposite session-range boundary or the preregistered ATR cap.",
+      "marketMechanismId": "reference_utc_session_range_breakout",
+      "maximumHoldBars": 12,
+      "minimumTargetR": null,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "riskMetric": "R",
+      "schemaVersion": "phase3c_candidate_v2",
+      "stopAtr": 2.0,
+      "targetR": null,
+      "targetRGateMode": "advisory",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1_long",
+      "causalRationale": "A failed breakout traps late participants; a second failed attempt offers a more robust reversal entry than the first fade.",
+      "definitionHash": "candidate_definition_ac3a6f098b397f1a66d8c142b6f359d35eae1a915f7132f3af1909d40da0aae4",
+      "direction": "long",
+      "eventDefinition": {
+        "atrWindow": 20,
+        "boundaryWindowBars": 20,
+        "entryReference": "next_bar_open",
+        "failureWindowBars": 2,
+        "maximumFirstBreakAtr": 0.5,
+        "maximumStopAtr": 2.5,
+        "retestToleranceAtr": 0.1,
+        "retestWindowBars": 6,
+        "stopBufferAtr": 0.1
+      },
+      "exitPolicy": {
+        "initialStopMayWiden": false,
+        "maximumHoldBars": 20,
+        "mode": "hybrid",
+        "parameters": {
+          "partialAtR": 1.0,
+          "partialFraction": 0.5,
+          "remainderMode": "trailing",
+          "trailingAtrMultiple": 1.5
+        },
+        "version": "advisory_r_exit_policy_v1"
+      },
+      "exitPolicyHash": "exit_policy_24ecc69ace0b2c7c3d91791794d89be07a70bda08285fbb8112d0a17bebaf7dc",
+      "exitPolicyRequired": true,
+      "exitPolicyVersion": "advisory_r_exit_policy_v1",
+      "expectedFailureRegimes": [
+        "persistent_breakout",
+        "gap_through_stop",
+        "thin_liquidity"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "reference_breakout_failure_second_entry",
+      "initialStopMayWiden": false,
+      "invalidation": "Initial stop is frozen beyond the failed-test extreme plus the preregistered ATR buffer.",
+      "marketMechanismId": "reference_breakout_failure_second_entry",
+      "maximumHoldBars": 20,
+      "minimumTargetR": null,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "riskMetric": "R",
+      "schemaVersion": "phase3c_candidate_v2",
+      "stopAtr": 2.5,
+      "targetR": null,
+      "targetRGateMode": "advisory",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1_short",
+      "causalRationale": "A failed breakout traps late participants; a second failed attempt offers a more robust reversal entry than the first fade.",
+      "definitionHash": "candidate_definition_1076d6c5f2bad80407704fd70eabdc8163e8d0c6f184ce65d062c69404e52776",
+      "direction": "short",
+      "eventDefinition": {
+        "atrWindow": 20,
+        "boundaryWindowBars": 20,
+        "entryReference": "next_bar_open",
+        "failureWindowBars": 2,
+        "maximumFirstBreakAtr": 0.5,
+        "maximumStopAtr": 2.5,
+        "retestToleranceAtr": 0.1,
+        "retestWindowBars": 6,
+        "stopBufferAtr": 0.1
+      },
+      "exitPolicy": {
+        "initialStopMayWiden": false,
+        "maximumHoldBars": 20,
+        "mode": "hybrid",
+        "parameters": {
+          "partialAtR": 1.0,
+          "partialFraction": 0.5,
+          "remainderMode": "trailing",
+          "trailingAtrMultiple": 1.5
+        },
+        "version": "advisory_r_exit_policy_v1"
+      },
+      "exitPolicyHash": "exit_policy_24ecc69ace0b2c7c3d91791794d89be07a70bda08285fbb8112d0a17bebaf7dc",
+      "exitPolicyRequired": true,
+      "exitPolicyVersion": "advisory_r_exit_policy_v1",
+      "expectedFailureRegimes": [
+        "persistent_breakout",
+        "gap_through_stop",
+        "thin_liquidity"
+      ],
+      "factorConfirmations": [],
+      "factorRanking": [],
+      "factorVetoes": [],
+      "familyId": "reference_breakout_failure_second_entry",
+      "initialStopMayWiden": false,
+      "invalidation": "Initial stop is frozen beyond the failed-test extreme plus the preregistered ATR buffer.",
+      "marketMechanismId": "reference_breakout_failure_second_entry",
+      "maximumHoldBars": 20,
+      "minimumTargetR": null,
+      "requiredData": [
+        "ohlcv"
+      ],
+      "riskMetric": "R",
+      "schemaVersion": "phase3c_candidate_v2",
+      "stopAtr": 2.5,
+      "targetR": null,
+      "targetRGateMode": "advisory",
+      "timeframe": "4h"
+    }
+  ],
+  "codeCommit": "231c239eb744887b23763b8bbe59e4afe238d83f",
+  "costScenarios": {
+    "base": {
+      "feeBpsPerSide": 5.0,
+      "multiplier": 1.0,
+      "slippageBpsPerSide": 3.0,
+      "spreadProxyBpsPerSide": 2.0
+    },
+    "stress_1_5x": {
+      "multiplier": 1.5
+    },
+    "stress_2x": {
+      "multiplier": 2.0
+    }
+  },
+  "dataSnapshotHash": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "experimentBudget": {
+    "maximumFamilies": 8,
+    "maximumFullBacktests": 48,
+    "maximumInitialCandidates": 16,
+    "maximumInitialVariantsPerFamily": 2,
+    "maximumStructuralRevisionsPerFamily": 1
+  },
+  "externalReferenceManifestHash": "b0a1cc1e17e9c3ef7c1e4ad03c5a2be80a949901986e12bfc94008d5a2d540a4",
+  "factorDiscoveryBranch": {
+    "enabled": false
+  },
+  "factorRegistryHash": "b01935325a3253051d6c419f1d44316d950d3a09daecc23328ca6140221adb0e",
+  "factorShortlistHash": "factor_shortlist_5bdaeea71852321b56ba85c3890e4a497dccb5002c0ea4fd0b7d04e3be77a416",
+  "formalGates": {
+    "holdoutAccessBeforeFinalEvaluation": {
+      "operator": "==",
+      "required": 0
+    },
+    "maximumDrawdownPct": {
+      "operator": "<=",
+      "required": 20.0
+    },
+    "oosAverageNetR": {
+      "operator": ">=",
+      "required": 0.05
+    },
+    "oosProfitFactor": {
+      "operator": ">=",
+      "required": 1.15
+    },
+    "oosTotalNetR": {
+      "operator": ">",
+      "required": 0.0
+    },
+    "positiveFoldCount": {
+      "operator": ">=",
+      "required": 4
+    },
+    "singleInstrumentPositiveContribution": {
+      "operator": "<=",
+      "required": 0.35
+    },
+    "singleMonthPositiveContribution": {
+      "operator": "<=",
+      "required": 0.35
+    },
+    "stress1_5xAverageNetR": {
+      "operator": ">",
+      "required": 0.0
+    },
+    "stress1_5xProfitFactor": {
+      "operator": ">=",
+      "required": 1.05
+    }
+  },
+  "holdout": {
+    "accessCountBeforeFinalEvaluation": 0,
+    "dataSnapshotHash": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+    "hash": "holdout_a832347244e40d5976aed65b86303e08f4e63a4631d520b0997decf7b714dcb2",
+    "ratio": 0.2,
+    "selectionAccessPolicy": "locked_until_final_evaluation",
+    "timeBoundaries": {
+      "1h": {
+        "coveragePolicy": "intersection_of_frozen_instrument_histories",
+        "developmentEnd": "2023-08-01T13:42:00+00:00",
+        "developmentStart": "2020-03-10T09:00:00+00:00",
+        "holdoutEnd": "2026-05-11T11:00:00+00:00",
+        "holdoutStart": "2025-02-14T20:12:00+00:00",
+        "walkForwardEnd": "2025-02-14T20:12:00+00:00",
+        "walkForwardFolds": [
+          {
+            "end": "2023-11-22T05:24:00+00:00",
+            "foldId": "fold_001",
+            "start": "2023-08-01T13:42:00+00:00"
+          },
+          {
+            "end": "2024-03-13T21:06:00+00:00",
+            "foldId": "fold_002",
+            "start": "2023-11-22T05:24:00+00:00"
+          },
+          {
+            "end": "2024-07-04T12:48:00+00:00",
+            "foldId": "fold_003",
+            "start": "2024-03-13T21:06:00+00:00"
+          },
+          {
+            "end": "2024-10-25T04:30:00+00:00",
+            "foldId": "fold_004",
+            "start": "2024-07-04T12:48:00+00:00"
+          },
+          {
+            "end": "2025-02-14T20:12:00+00:00",
+            "foldId": "fold_005",
+            "start": "2024-10-25T04:30:00+00:00"
+          }
+        ],
+        "walkForwardStart": "2023-08-01T13:42:00+00:00"
+      },
+      "4h": {
+        "coveragePolicy": "intersection_of_frozen_instrument_histories",
+        "developmentEnd": "2023-08-01T11:36:00+00:00",
+        "developmentStart": "2020-03-10T08:00:00+00:00",
+        "holdoutEnd": "2026-05-11T08:00:00+00:00",
+        "holdoutStart": "2025-02-14T17:36:00+00:00",
+        "walkForwardEnd": "2025-02-14T17:36:00+00:00",
+        "walkForwardFolds": [
+          {
+            "end": "2023-11-22T03:12:00+00:00",
+            "foldId": "fold_001",
+            "start": "2023-08-01T11:36:00+00:00"
+          },
+          {
+            "end": "2024-03-13T18:48:00+00:00",
+            "foldId": "fold_002",
+            "start": "2023-11-22T03:12:00+00:00"
+          },
+          {
+            "end": "2024-07-04T10:24:00+00:00",
+            "foldId": "fold_003",
+            "start": "2024-03-13T18:48:00+00:00"
+          },
+          {
+            "end": "2024-10-25T02:00:00+00:00",
+            "foldId": "fold_004",
+            "start": "2024-07-04T10:24:00+00:00"
+          },
+          {
+            "end": "2025-02-14T17:36:00+00:00",
+            "foldId": "fold_005",
+            "start": "2024-10-25T02:00:00+00:00"
+          }
+        ],
+        "walkForwardStart": "2023-08-01T11:36:00+00:00"
+      }
+    }
+  },
+  "implementationSourceHashes": {
+    "alphapilot/exit_policy/schema.py": "4eb46bce0a092e19efe624de7fde1b48db055b1b5fc7a960f38985f923e289ad",
+    "alphapilot/reference_strategy_research/candidates.py": "aa642a1cc7441ee4cf00ecdc29f03e4b9adb4912b7eae44633e5a9501bfdbd87",
+    "alphapilot/reference_strategy_research/data_audit.py": "10c6f62b34823d72d49f20f8bbfa61cb29bf4ead0423e557f9bbc406241b5cb2",
+    "alphapilot/reference_strategy_research/gap_downloader.py": "dd6f905b374d3efd4b961d8df586070c6a822f88ad2f465c68eb4d1ddfbe91ad",
+    "alphapilot/reference_strategy_research/inventory.py": "918225596de35984d82886f07fae884287e0371fb8ccbda9a31222f086727735",
+    "alphapilot/reference_strategy_research/package_loader.py": "3e412068e08379fe1fb7b12caf13c97ba1d2fd593a6231655793b26dafaa8b38",
+    "alphapilot/reference_strategy_research/signals.py": "ad502f450baea1e0fea73be540f31939cb90bdd00ee74ce07f8f26083b297abd",
+    "alphapilot/reference_strategy_research/workflow.py": "0c61d184b2f4afc272811479e114e4c4a77cee982d4769ee79d6ccb1d2ec9fe3",
+    "alphapilot/reference_strategy_research/workflow_state.py": "a8e3c108cf1e3b50a8db4955bea374e86f6342840d2a0f95c457ecd5c9cb86dc",
+    "alphapilot/research_screening/campaign_runner.py": "68717fa0a147d35266f5b9978c267a44639e45b981c358a637a65cfc41a37766"
+  },
+  "preregistrationHash": "campaign_preregistration_0771c65b9b280dafdc0f6d835a92e8f96f1059e121d262ca0000b6b3f0513980",
+  "prescreenGates": {
+    "developmentAverageNetR": {
+      "operator": ">=",
+      "required": 0.03
+    },
+    "developmentProfitFactor": {
+      "operator": ">=",
+      "required": 1.08
+    },
+    "positiveDevelopmentMonthRatio": {
+      "operator": ">=",
+      "required": 0.6
+    }
+  },
+  "riskPolicy": {
+    "exitPolicyRequired": true,
+    "exitPolicyVersion": "advisory_r_exit_policy_v1",
+    "initialStopMayWiden": false,
+    "minimumTargetR": null,
+    "riskFractionPerEvent": 0.01,
+    "riskMetric": "R",
+    "targetRGateMode": "advisory"
+  },
+  "sameBarRule": "stop_first_conservative",
+  "sampleGates": {
+    "15m": {
+      "minimumEvents": 300,
+      "minimumMonths": 12
+    },
+    "1d": {
+      "minimumEvents": 40,
+      "minimumMonths": 24
+    },
+    "1h": {
+      "minimumEvents": 150,
+      "minimumMonths": 12
+    },
+    "4h": {
+      "minimumEvents": 80,
+      "minimumMonths": 18
+    }
+  },
+  "schemaVersion": "phase3c_campaign_preregistration_v2",
+  "splitPolicy": {
+    "embargoPolicy": "candidate_maximum_hold_bars",
+    "purged": true,
+    "ratios": {
+      "development": 0.55,
+      "holdout": 0.2,
+      "walkForward": 0.25
+    },
+    "timeBoundaries": {
+      "1h": {
+        "coveragePolicy": "intersection_of_frozen_instrument_histories",
+        "developmentEnd": "2023-08-01T13:42:00+00:00",
+        "developmentStart": "2020-03-10T09:00:00+00:00",
+        "holdoutEnd": "2026-05-11T11:00:00+00:00",
+        "holdoutStart": "2025-02-14T20:12:00+00:00",
+        "walkForwardEnd": "2025-02-14T20:12:00+00:00",
+        "walkForwardFolds": [
+          {
+            "end": "2023-11-22T05:24:00+00:00",
+            "foldId": "fold_001",
+            "start": "2023-08-01T13:42:00+00:00"
+          },
+          {
+            "end": "2024-03-13T21:06:00+00:00",
+            "foldId": "fold_002",
+            "start": "2023-11-22T05:24:00+00:00"
+          },
+          {
+            "end": "2024-07-04T12:48:00+00:00",
+            "foldId": "fold_003",
+            "start": "2024-03-13T21:06:00+00:00"
+          },
+          {
+            "end": "2024-10-25T04:30:00+00:00",
+            "foldId": "fold_004",
+            "start": "2024-07-04T12:48:00+00:00"
+          },
+          {
+            "end": "2025-02-14T20:12:00+00:00",
+            "foldId": "fold_005",
+            "start": "2024-10-25T04:30:00+00:00"
+          }
+        ],
+        "walkForwardStart": "2023-08-01T13:42:00+00:00"
+      },
+      "4h": {
+        "coveragePolicy": "intersection_of_frozen_instrument_histories",
+        "developmentEnd": "2023-08-01T11:36:00+00:00",
+        "developmentStart": "2020-03-10T08:00:00+00:00",
+        "holdoutEnd": "2026-05-11T08:00:00+00:00",
+        "holdoutStart": "2025-02-14T17:36:00+00:00",
+        "walkForwardEnd": "2025-02-14T17:36:00+00:00",
+        "walkForwardFolds": [
+          {
+            "end": "2023-11-22T03:12:00+00:00",
+            "foldId": "fold_001",
+            "start": "2023-08-01T11:36:00+00:00"
+          },
+          {
+            "end": "2024-03-13T18:48:00+00:00",
+            "foldId": "fold_002",
+            "start": "2023-11-22T03:12:00+00:00"
+          },
+          {
+            "end": "2024-07-04T10:24:00+00:00",
+            "foldId": "fold_003",
+            "start": "2024-03-13T18:48:00+00:00"
+          },
+          {
+            "end": "2024-10-25T02:00:00+00:00",
+            "foldId": "fold_004",
+            "start": "2024-07-04T10:24:00+00:00"
+          },
+          {
+            "end": "2025-02-14T17:36:00+00:00",
+            "foldId": "fold_005",
+            "start": "2024-10-25T02:00:00+00:00"
+          }
+        ],
+        "walkForwardStart": "2023-08-01T11:36:00+00:00"
+      }
+    },
+    "walkForwardFolds": 5
+  },
+  "stopRules": {
+    "formalFailure": "retain_failed_evidence_without_release",
+    "noForcedWinner": true,
+    "prescreenFailure": "stop_candidate_before_full_backtest"
+  },
+  "universePolicy": {
+    "crossSectionalUse": "disabled",
+    "instruments": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "XRP-USDT-SWAP",
+      "LTC-USDT-SWAP",
+      "BCH-USDT-SWAP",
+      "ETC-USDT-SWAP",
+      "ADA-USDT-SWAP",
+      "LINK-USDT-SWAP"
+    ],
+    "mode": "frozen_time_series_instruments",
+    "pitStatus": "diagnostic_proxy"
+  }
+}

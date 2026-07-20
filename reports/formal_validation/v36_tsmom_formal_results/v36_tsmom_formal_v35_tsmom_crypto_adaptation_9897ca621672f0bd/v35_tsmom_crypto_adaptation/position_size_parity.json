@@ -1,0 +1,9 @@
+{
+  "blockers": [
+    "capital_acceptance_mismatch"
+  ],
+  "passed": false,
+  "positionSizeParityPct": 100.0,
+  "schemaVersion": "s01_v18_position_size_parity_v1",
+  "status": "failed"
+}

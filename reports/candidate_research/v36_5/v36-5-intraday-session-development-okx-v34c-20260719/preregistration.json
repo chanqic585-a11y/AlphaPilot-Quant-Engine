@@ -1,0 +1,175 @@
+{
+  "blockedFamilyCount": 1,
+  "blockedFamilyIds": [
+    "crypto_funding_carry_v1"
+  ],
+  "campaignId": "v36-5-intraday-session-development-okx-v34c-20260719",
+  "candidateCount": 3,
+  "candidateIds": [
+    "v36_5_funding_carry_source_replication",
+    "v36_5_intraday_session_crypto_adaptation",
+    "v36_5_intraday_session_source_replication"
+  ],
+  "comparisonPanel": {
+    "benchmarkPolicyHash": "benchmark-policy-v32-development-increment",
+    "candidateIds": [
+      "v36_5_funding_carry_source_replication",
+      "v36_5_intraday_session_crypto_adaptation",
+      "v36_5_intraday_session_source_replication"
+    ],
+    "capitalPolicyHash": "capital-policy-v18-development-unit-risk",
+    "costPolicyHash": "cost-policy-v13-development-round-trip-12bps",
+    "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "developmentEnd": "2025-01-01T00:00:00Z",
+    "developmentStart": "2021-02-01T00:00:00Z",
+    "randomSeed": 365,
+    "trialIds": [
+      "v36_trial_10c36b5e5f9c8bb8c5a75b8a7d7a2fb338d3d51c7e86fabdf3e90953a6f76839",
+      "v36_trial_3df10f1200aea9bc40990b79a49b345586c4ec52174cf7c850769c21fa46fc00",
+      "v36_trial_7f14de224394c151b64c9453b774bc920bef3ea97828b64dfacca391c1eefd70",
+      "v36_trial_8f9e4b5f6c5f908712c11d5e4ad20c3b7e1b8a5e6bb018032983fabc76b96d19",
+      "v36_trial_ce7e8df2fcc246539225267570a49ea5b60d05250fc5c76cc8427b9b7a58f2fa",
+      "v36_trial_fc97cfeb1e6d4b062d48fc7c5910a52e6d9a4dde1d47b5f8fa41e41fcb2e7988"
+    ]
+  },
+  "comparisonPanelHash": "v36_comparison_panel_3a1f90a7d0edff50913ba570cf9b2c7a49e9bd8d950d5327c50559b87f6d3ee7",
+  "contextOnlyCandidateIds": [],
+  "createdAt": "2026-07-19T08:00:00Z",
+  "eligibleCandidateCount": 2,
+  "eligibleCandidateIds": [
+    "v36_5_intraday_session_crypto_adaptation",
+    "v36_5_intraday_session_source_replication"
+  ],
+  "lockedOosReadCount": 0,
+  "preregistrationHash": "v36_preregistration_ab3202723d8579a2e90d6fdea421d406e5d3721f5fdf73353302b228cf9dc54c",
+  "schemaVersion": "v36_candidate_preregistration_v1",
+  "selectionSplit": "development",
+  "sourceRegistryId": "alphapilot_v36_5_independent_mechanism_sources",
+  "trialCount": 6,
+  "trialsByCandidate": {
+    "v36_5_intraday_session_crypto_adaptation": [
+      {
+        "baseParameters": {
+          "atrBars": 24,
+          "lookbackSessions": 20,
+          "maximumHoldBars": 7,
+          "minimumSessionMean": 0.001,
+          "sessionHours": 8,
+          "stopAtr": 3.0,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_5_intraday_session_crypto_adaptation",
+        "familyId": "crypto_intraday_session_predictability_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "directional",
+        "trialId": "v36_trial_8f9e4b5f6c5f908712c11d5e4ad20c3b7e1b8a5e6bb018032983fabc76b96d19",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "atrBars": 24,
+          "lookbackSessions": 20,
+          "maximumHoldBars": 7,
+          "minimumSessionMean": 0.001,
+          "sessionHours": 8,
+          "stopAtr": 3.0,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_5_intraday_session_crypto_adaptation",
+        "familyId": "crypto_intraday_session_predictability_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "directional",
+        "trialId": "v36_trial_ce7e8df2fcc246539225267570a49ea5b60d05250fc5c76cc8427b9b7a58f2fa",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "atrBars": 24,
+          "lookbackSessions": 20,
+          "maximumHoldBars": 7,
+          "minimumSessionMean": 0.001,
+          "sessionHours": 8,
+          "stopAtr": 3.0,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_5_intraday_session_crypto_adaptation",
+        "familyId": "crypto_intraday_session_predictability_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "directional",
+        "trialId": "v36_trial_3df10f1200aea9bc40990b79a49b345586c4ec52174cf7c850769c21fa46fc00",
+        "trialIndex": 2
+      }
+    ],
+    "v36_5_intraday_session_source_replication": [
+      {
+        "baseParameters": {
+          "atrBars": 24,
+          "lookbackSessions": 20,
+          "maximumHoldBars": 7,
+          "minimumSessionMean": 0.001,
+          "sessionHours": 8,
+          "stopAtr": 3.0,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_5_intraday_session_source_replication",
+        "familyId": "crypto_intraday_session_predictability_v1",
+        "neighborhoodOffset": -1,
+        "parameterScale": 0.9,
+        "strategyType": "directional",
+        "trialId": "v36_trial_10c36b5e5f9c8bb8c5a75b8a7d7a2fb338d3d51c7e86fabdf3e90953a6f76839",
+        "trialIndex": 0
+      },
+      {
+        "baseParameters": {
+          "atrBars": 24,
+          "lookbackSessions": 20,
+          "maximumHoldBars": 7,
+          "minimumSessionMean": 0.001,
+          "sessionHours": 8,
+          "stopAtr": 3.0,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_5_intraday_session_source_replication",
+        "familyId": "crypto_intraday_session_predictability_v1",
+        "neighborhoodOffset": 0,
+        "parameterScale": 1.0,
+        "strategyType": "directional",
+        "trialId": "v36_trial_7f14de224394c151b64c9453b774bc920bef3ea97828b64dfacca391c1eefd70",
+        "trialIndex": 1
+      },
+      {
+        "baseParameters": {
+          "atrBars": 24,
+          "lookbackSessions": 20,
+          "maximumHoldBars": 7,
+          "minimumSessionMean": 0.001,
+          "sessionHours": 8,
+          "stopAtr": 3.0,
+          "timeframes": [
+            "1h"
+          ]
+        },
+        "candidateId": "v36_5_intraday_session_source_replication",
+        "familyId": "crypto_intraday_session_predictability_v1",
+        "neighborhoodOffset": 1,
+        "parameterScale": 1.1,
+        "strategyType": "directional",
+        "trialId": "v36_trial_fc97cfeb1e6d4b062d48fc7c5910a52e6d9a4dde1d47b5f8fa41e41fcb2e7988",
+        "trialIndex": 2
+      }
+    ]
+  }
+}

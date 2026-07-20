@@ -1,0 +1,8 @@
+candidateId,equivalenceStatus,translationClass,materialGap
+ref_pa_breakout_failure_second_entry_4h_v1,deterministic_normalization_only,documentation_normalization,source material is contextual prose rather than one executable algorithm
+ref_pa_breakout_failure_second_entry_4h_v1,deterministic_normalization_only,documentation_normalization,20-bar boundary and ATR tolerances are package normalization choices
+ref_pa_breakout_failure_second_entry_4h_v1,deterministic_normalization_only,documentation_normalization,"confirmation, stop and hybrid exit rules are deterministic research assumptions"
+ref_utc_session_range_breakout_1h_v1,not_source_equivalent,clean_room_research_variant,source uses MetaTrader pending-order execution while V37B uses close confirmation and next-bar open
+ref_utc_session_range_breakout_1h_v1,not_source_equivalent,clean_room_research_variant,"source broker-time, pip, spread and order lifecycle semantics are not reproduced"
+ref_utc_session_range_breakout_1h_v1,not_source_equivalent,clean_room_research_variant,source defaults and V37B ATR-normalized range/window parameters differ materially
+ref_utc_session_range_breakout_1h_v1,not_source_equivalent,clean_room_research_variant,source break-even and trailing behavior is replaced by a frozen AlphaPilot exit policy

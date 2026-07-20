@@ -1,0 +1,24 @@
+{
+  "developmentFraction": 0.8,
+  "lockedOosReadCount": 0,
+  "perAsset": {
+    "BTC": {
+      "developmentRowCount": 3841,
+      "lockedOosReadCount": 0,
+      "reservedLockedOosRowCount": 961,
+      "totalRowCount": 4802
+    },
+    "ETH": {
+      "developmentRowCount": 3841,
+      "lockedOosReadCount": 0,
+      "reservedLockedOosRowCount": 961,
+      "totalRowCount": 4802
+    },
+    "SOL": {
+      "developmentRowCount": 3841,
+      "lockedOosReadCount": 0,
+      "reservedLockedOosRowCount": 961,
+      "totalRowCount": 4802
+    }
+  }
+}

@@ -1,0 +1,1372 @@
+{
+  "candidates": {
+    "ref_pa_breakout_failure_second_entry_4h_v1_long": {
+      "baseGates": {
+        "maximumDrawdownPct": {
+          "evidenceHash": "gate_evidence_3091eba227e50927bdddfa87f5abb55d90345db9668a8b51513d544a21fb5533",
+          "observed": 39.870655329989994,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "<= 25.0"
+        },
+        "oosAverageNetR": {
+          "evidenceHash": "gate_evidence_fe755dd320d4f645324a6d8efde12cd76e2bb57456bfb76a4071c3db16cf8b2a",
+          "observed": -0.22825413428896313,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "oosProfitFactor": {
+          "evidenceHash": "gate_evidence_8e61d19b01ba9356614e364447ea429a4b6c959194d1fb5fa04f0f0bf2d592d1",
+          "observed": 0.6231838087164326,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.05"
+        },
+        "oosTotalNetR": {
+          "evidenceHash": "gate_evidence_448205128cf9608a22f49747b503025553e6caa7d459768cb3c6d92f5d5eb40f",
+          "observed": -37.43367802338995,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "positiveFoldCount": {
+          "evidenceHash": "gate_evidence_bdbe5f4d3ca9b70c7e469245647019411a25cc25f460826d2d5a07f2b2d466d8",
+          "observed": 1,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 3"
+        }
+      },
+      "basePassed": false,
+      "developmentMetrics": {
+        "averageNetR": 0.2369987970288206,
+        "eventCount": 143,
+        "folds": {},
+        "maximumDrawdownPct": 11.901114049616556,
+        "maximumDrawdownR": 11.901114049616556,
+        "observedMonthCount": 34,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.6176470588235294,
+        "profitFactor": 1.5874448764634508,
+        "singleInstrumentPositiveContribution": 0.17704466263158256,
+        "singleMonthPositiveContribution": 0.1928668344919641,
+        "totalNetR": 33.89082797512135
+      },
+      "formalGates": {
+        "holdoutAccessBeforeFinalEvaluation": {
+          "evidenceHash": "gate_evidence_885db1d0bcd2ce949b6d6000a43f8624722847b63fa97b567bcdfdd28536232b",
+          "observed": 0,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "== 0"
+        },
+        "maximumDrawdownPct": {
+          "evidenceHash": "gate_evidence_accff3fdd1f4d98eea508cc35b47913a742605cf87c68cd8a906a354cdb102c2",
+          "observed": 39.870655329989994,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "<= 20.0"
+        },
+        "oosAverageNetR": {
+          "evidenceHash": "gate_evidence_2c5c688e58a1a6d6354d939da092b7fe13890c2015b709a000142126ccad3931",
+          "observed": -0.22825413428896313,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.05"
+        },
+        "oosProfitFactor": {
+          "evidenceHash": "gate_evidence_1c6cceb1f9dc46481c604384496112158c4f1a55c970745ea7927688b510e20e",
+          "observed": 0.6231838087164326,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.15"
+        },
+        "oosTotalNetR": {
+          "evidenceHash": "gate_evidence_448205128cf9608a22f49747b503025553e6caa7d459768cb3c6d92f5d5eb40f",
+          "observed": -37.43367802338995,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "positiveFoldCount": {
+          "evidenceHash": "gate_evidence_60d5a6a1b61dc73f6781b4aa5c381a54d8a95b44d7a1c426240e58dd4ba297ba",
+          "observed": 1,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 4"
+        },
+        "singleInstrumentPositiveContribution": {
+          "evidenceHash": "gate_evidence_18c8754f08e35b6fd49357d4f0ef6e5ae2b905b4caacb3372d7e72c96da8d21b",
+          "observed": 0.18884231153295788,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 0.35"
+        },
+        "singleMonthPositiveContribution": {
+          "evidenceHash": "gate_evidence_2559f2b85568039a28fb0a5c7368744ca11a1ab261513547927e4d785be445d5",
+          "observed": 0.2155832764359955,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 0.35"
+        },
+        "stress1_5xAverageNetR": {
+          "evidenceHash": "gate_evidence_555a4ed409dcec4314307aaac03a26d330b0757d7285ab2e4ff42a312a29fecd",
+          "observed": -0.27180161089324695,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "stress1_5xProfitFactor": {
+          "evidenceHash": "gate_evidence_ed4129ffa89c3a1ac06e3bbb864bb6450c5f3d0adc808cf0234186ff492d9027",
+          "observed": 0.5709065829280892,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.05"
+        }
+      },
+      "formalPassed": false,
+      "holdoutMetrics": {
+        "averageNetR": -0.15365164360726408,
+        "eventCount": 92,
+        "folds": {},
+        "maximumDrawdownPct": 14.181939750569326,
+        "maximumDrawdownR": 14.181939750569324,
+        "observedMonthCount": 14,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.21428571428571427,
+        "profitFactor": 0.744106767792236,
+        "singleInstrumentPositiveContribution": 0.22583914592560406,
+        "singleMonthPositiveContribution": 0.3246853414438509,
+        "totalNetR": -14.135951211868294
+      },
+      "oosMetrics": {
+        "averageNetR": -0.22825413428896313,
+        "eventCount": 164,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.12708259539800162,
+            "eventCount": 6,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.2591066168262095,
+            "eventCount": 10,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.4240986385611315,
+            "eventCount": 27,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.5011720787747939,
+            "eventCount": 16,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.15382613185387076,
+            "eventCount": 13,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 39.870655329989994,
+        "maximumDrawdownR": 39.870655329989994,
+        "observedMonthCount": 30,
+        "positiveFoldCount": 1,
+        "positiveMonthRatio": 0.2,
+        "profitFactor": 0.6231838087164326,
+        "singleInstrumentPositiveContribution": 0.18884231153295788,
+        "singleMonthPositiveContribution": 0.2155832764359955,
+        "totalNetR": -37.43367802338995
+      },
+      "prescreenGates": {
+        "developmentAverageNetR": {
+          "evidenceHash": "gate_evidence_2363e0cc6648616b6281cfb8e141f20db7c1044b932b9f189699a3548a320ccb",
+          "observed": 0.2369987970288206,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 0.03"
+        },
+        "developmentProfitFactor": {
+          "evidenceHash": "gate_evidence_921a713563076c5d660b814614fb0e2d7946789553de5d9bbc893fd3dc31ed96",
+          "observed": 1.5874448764634508,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 1.08"
+        },
+        "positiveDevelopmentMonthRatio": {
+          "evidenceHash": "gate_evidence_1b8762030c4ae50c981c5afe7cb65b86a01ac7e65c36a926c9d55d43a3b68a99",
+          "observed": 0.6176470588235294,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 0.6"
+        }
+      },
+      "prescreenPassed": true,
+      "sampleGates": {
+        "minimumEvents": {
+          "evidenceHash": "gate_evidence_762dea29f386d80b6f71a460bccd17d64dd1bfcf81dff581645eacd9b8a2a145",
+          "observed": 143,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 80"
+        },
+        "minimumMonths": {
+          "evidenceHash": "gate_evidence_8aa7b261478603de70b64e53bd2cc1ad7edcb89e7b2899b95194a87441f9afb2",
+          "observed": 34,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 18"
+        }
+      },
+      "samplePassed": true,
+      "stress1_5xMetrics": {
+        "averageNetR": -0.27180161089324695,
+        "eventCount": 164,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.06307064843194776,
+            "eventCount": 6,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.29961301403712304,
+            "eventCount": 10,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.45993731267086585,
+            "eventCount": 27,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.5374430776505557,
+            "eventCount": 16,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.1893363437086377,
+            "eventCount": 13,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 46.39682803300728,
+        "maximumDrawdownR": 46.39682803300728,
+        "observedMonthCount": 30,
+        "positiveFoldCount": 1,
+        "positiveMonthRatio": 0.2,
+        "profitFactor": 0.5709065829280892,
+        "singleInstrumentPositiveContribution": 0.18927226538495176,
+        "singleMonthPositiveContribution": 0.22116391297443527,
+        "totalNetR": -44.5754641864925
+      },
+      "stress2xMetrics": {
+        "averageNetR": -0.31534908749753077,
+        "eventCount": 164,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.0009412985341061275,
+            "eventCount": 6,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.3401194112480365,
+            "eventCount": 10,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.4957759867806002,
+            "eventCount": 27,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.5737140765263175,
+            "eventCount": 16,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.2248465555634046,
+            "eventCount": 13,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 52.92300073602454,
+        "maximumDrawdownR": 52.92300073602454,
+        "observedMonthCount": 30,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.2,
+        "profitFactor": 0.5236610277482423,
+        "singleInstrumentPositiveContribution": 0.19046453498554264,
+        "singleMonthPositiveContribution": 0.2271333317692351,
+        "totalNetR": -51.71725034959505
+      },
+      "walkForwardMetrics": {
+        "averageNetR": -0.3235795390489119,
+        "eventCount": 72,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.12708259539800162,
+            "eventCount": 6,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.2591066168262095,
+            "eventCount": 10,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.4240986385611315,
+            "eventCount": 27,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.5011720787747939,
+            "eventCount": 16,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.15382613185387076,
+            "eventCount": 13,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 26.577506673634822,
+        "maximumDrawdownR": 26.577506673634822,
+        "observedMonthCount": 16,
+        "positiveFoldCount": 1,
+        "positiveMonthRatio": 0.1875,
+        "profitFactor": 0.4717118093525503,
+        "singleInstrumentPositiveContribution": 0.26308885327068443,
+        "singleMonthPositiveContribution": 0.1669748569257024,
+        "totalNetR": -23.297726811521656
+      }
+    },
+    "ref_pa_breakout_failure_second_entry_4h_v1_short": {
+      "baseGates": {
+        "maximumDrawdownPct": {
+          "evidenceHash": "gate_evidence_45733dfb86e70920a5a03ac1675a413a1abd386cdfd8a017dba4e69c3b7a094a",
+          "observed": 20.089096290850545,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 25.0"
+        },
+        "oosAverageNetR": {
+          "evidenceHash": "gate_evidence_06777f64817947985e7957bbe04e48db4b55b722fb42ec9c8135cf5eb8cf0355",
+          "observed": -0.04923229158198657,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "oosProfitFactor": {
+          "evidenceHash": "gate_evidence_2fd51cc71df6512eec6291dd33ba9e6534de48e22fed17308fb920420fc94716",
+          "observed": 0.9060016022493367,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.05"
+        },
+        "oosTotalNetR": {
+          "evidenceHash": "gate_evidence_29854fcde0fb4f64a97df59c92e54bfa761c72a3f34bf1a67f5f832b3967f22f",
+          "observed": -5.02169374136263,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "positiveFoldCount": {
+          "evidenceHash": "gate_evidence_91f59d3721335ddada4160eb7d0f0da0700a5bc005d33bbb529c7a9a9ea90031",
+          "observed": 2,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 3"
+        }
+      },
+      "basePassed": false,
+      "developmentMetrics": {
+        "averageNetR": -0.029054585615304815,
+        "eventCount": 231,
+        "folds": {},
+        "maximumDrawdownPct": 20.16376715149959,
+        "maximumDrawdownR": 20.16376715149959,
+        "observedMonthCount": 40,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.45,
+        "profitFactor": 0.9416425089480195,
+        "singleInstrumentPositiveContribution": 0.1766850977142618,
+        "singleMonthPositiveContribution": 0.11518004878188684,
+        "totalNetR": -6.7116092771354126
+      },
+      "formalGates": {
+        "holdoutAccessBeforeFinalEvaluation": {
+          "evidenceHash": "gate_evidence_885db1d0bcd2ce949b6d6000a43f8624722847b63fa97b567bcdfdd28536232b",
+          "observed": 0,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "== 0"
+        },
+        "maximumDrawdownPct": {
+          "evidenceHash": "gate_evidence_20f5b19749482baeacc1b247b9cfa813dde8c79cba9d2142fd8332f1181509d8",
+          "observed": 20.089096290850545,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "<= 20.0"
+        },
+        "oosAverageNetR": {
+          "evidenceHash": "gate_evidence_9effd79b7c95c450c72c195b1d12f70d34eb4f8411d7dbb68a274835977ee061",
+          "observed": -0.04923229158198657,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.05"
+        },
+        "oosProfitFactor": {
+          "evidenceHash": "gate_evidence_d97e400effe75299703eb1010236a830944397054bcb389d13cf2b7254046f39",
+          "observed": 0.9060016022493367,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.15"
+        },
+        "oosTotalNetR": {
+          "evidenceHash": "gate_evidence_29854fcde0fb4f64a97df59c92e54bfa761c72a3f34bf1a67f5f832b3967f22f",
+          "observed": -5.02169374136263,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "positiveFoldCount": {
+          "evidenceHash": "gate_evidence_e906b02a7ba0a5a56a36329201c1cd75695039a06b2ad641e19ec003a89df2b4",
+          "observed": 2,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 4"
+        },
+        "singleInstrumentPositiveContribution": {
+          "evidenceHash": "gate_evidence_a9d1e2d907857e0d3a4183f9499d932ecb5d7e1351e68b8f4384e9b06b0e92bf",
+          "observed": 0.24593103013698606,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 0.35"
+        },
+        "singleMonthPositiveContribution": {
+          "evidenceHash": "gate_evidence_3807ba74c1b2dc5cda0f5e9c228606de18cc81bcf5fe2a3883679b7c56a8bdc3",
+          "observed": 0.1479738921746325,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 0.35"
+        },
+        "stress1_5xAverageNetR": {
+          "evidenceHash": "gate_evidence_7fa48d17be5cf77f6b80e84d1f9d49d36403a5bc70b6220120015e2f61947141",
+          "observed": -0.09576314469182205,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "stress1_5xProfitFactor": {
+          "evidenceHash": "gate_evidence_e5afb811e84c2a195038f75391e23adcdc5970d360ce782ddcbee382a6feec6c",
+          "observed": 0.8267708224658071,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.05"
+        }
+      },
+      "formalPassed": false,
+      "holdoutMetrics": {
+        "averageNetR": 0.0,
+        "eventCount": 0,
+        "folds": {},
+        "maximumDrawdownPct": 0.0,
+        "maximumDrawdownR": 0.0,
+        "observedMonthCount": 0,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.0,
+        "profitFactor": 0.0,
+        "singleInstrumentPositiveContribution": 0.0,
+        "singleMonthPositiveContribution": 0.0,
+        "totalNetR": 0
+      },
+      "oosMetrics": {
+        "averageNetR": -0.04923229158198657,
+        "eventCount": 102,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.2191502614341061,
+            "eventCount": 10,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.07493888834977461,
+            "eventCount": 22,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.22207264524062234,
+            "eventCount": 28,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.19497537971772388,
+            "eventCount": 19,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": 0.18947936823328387,
+            "eventCount": 23,
+            "positive": true
+          }
+        },
+        "maximumDrawdownPct": 20.089096290850545,
+        "maximumDrawdownR": 20.089096290850545,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 2,
+        "positiveMonthRatio": 0.47368421052631576,
+        "profitFactor": 0.9060016022493367,
+        "singleInstrumentPositiveContribution": 0.24593103013698606,
+        "singleMonthPositiveContribution": 0.1479738921746325,
+        "totalNetR": -5.02169374136263
+      },
+      "prescreenGates": {
+        "developmentAverageNetR": {
+          "evidenceHash": "gate_evidence_68c0cfe76e07119dc1e17df7deadd4c7eb268a6dda5fe892c9809e8a6f393e87",
+          "observed": -0.029054585615304815,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.03"
+        },
+        "developmentProfitFactor": {
+          "evidenceHash": "gate_evidence_097de8de1576966f783d6d6bb70a9801520b9db3f72b9c92de503e8caa7d57bd",
+          "observed": 0.9416425089480195,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.08"
+        },
+        "positiveDevelopmentMonthRatio": {
+          "evidenceHash": "gate_evidence_2d56dd350498b634de84c4ae88ebfc7d134e49aec2267e3b7c59ab34c75d993a",
+          "observed": 0.45,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.6"
+        }
+      },
+      "prescreenPassed": false,
+      "sampleGates": {
+        "minimumEvents": {
+          "evidenceHash": "gate_evidence_54e2231d066bcc7764da67ee0e750c0d4972361b8ae4c55600788b76066a690e",
+          "observed": 231,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 80"
+        },
+        "minimumMonths": {
+          "evidenceHash": "gate_evidence_1b20ffea517d5722cf1d19484cf4628da0f71e048971c7dcd2b51e3e02ee16a3",
+          "observed": 40,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 18"
+        }
+      },
+      "samplePassed": true,
+      "stress1_5xMetrics": {
+        "averageNetR": -0.09576314469182205,
+        "eventCount": 102,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.17113380175040932,
+            "eventCount": 10,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.1155059057698466,
+            "eventCount": 22,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.27554934866195696,
+            "eventCount": 28,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.25115472486929535,
+            "eventCount": 19,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": 0.15431620373556904,
+            "eventCount": 23,
+            "positive": true
+          }
+        },
+        "maximumDrawdownPct": 24.22250524381377,
+        "maximumDrawdownR": 24.22250524381377,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 2,
+        "positiveMonthRatio": 0.42105263157894735,
+        "profitFactor": 0.8267708224658071,
+        "singleInstrumentPositiveContribution": 0.24707334798559075,
+        "singleMonthPositiveContribution": 0.15025138766116553,
+        "totalNetR": -9.76784075856585
+      },
+      "stress2xMetrics": {
+        "averageNetR": -0.14229399780165758,
+        "eventCount": 102,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.1231173420667125,
+            "eventCount": 10,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.1560729231899186,
+            "eventCount": 22,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.3290260520832916,
+            "eventCount": 28,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.3073340700208669,
+            "eventCount": 19,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": 0.11915303923785422,
+            "eventCount": 23,
+            "positive": true
+          }
+        },
+        "maximumDrawdownPct": 28.355914196776983,
+        "maximumDrawdownR": 28.355914196776983,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 2,
+        "positiveMonthRatio": 0.42105263157894735,
+        "profitFactor": 0.7557094364849489,
+        "singleInstrumentPositiveContribution": 0.24796156742148256,
+        "singleMonthPositiveContribution": 0.15249783982608417,
+        "totalNetR": -14.513987775769072
+      },
+      "walkForwardMetrics": {
+        "averageNetR": -0.04923229158198657,
+        "eventCount": 102,
+        "folds": {
+          "fold_001": {
+            "averageNetR": 0.2191502614341061,
+            "eventCount": 10,
+            "positive": true
+          },
+          "fold_002": {
+            "averageNetR": -0.07493888834977461,
+            "eventCount": 22,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.22207264524062234,
+            "eventCount": 28,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.19497537971772388,
+            "eventCount": 19,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": 0.18947936823328387,
+            "eventCount": 23,
+            "positive": true
+          }
+        },
+        "maximumDrawdownPct": 20.089096290850545,
+        "maximumDrawdownR": 20.089096290850545,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 2,
+        "positiveMonthRatio": 0.47368421052631576,
+        "profitFactor": 0.9060016022493367,
+        "singleInstrumentPositiveContribution": 0.24593103013698606,
+        "singleMonthPositiveContribution": 0.1479738921746325,
+        "totalNetR": -5.02169374136263
+      }
+    },
+    "ref_utc_session_range_breakout_1h_v1_long": {
+      "baseGates": {
+        "maximumDrawdownPct": {
+          "evidenceHash": "gate_evidence_14f0c470cece8bb6e7fb5a608fd2dca99734dbd0f14463357a37619c0644d952",
+          "observed": 441.9098630194046,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "<= 25.0"
+        },
+        "oosAverageNetR": {
+          "evidenceHash": "gate_evidence_8cea1274f17315f19ca258bebaad7697d468c9e5e53a57d4d14d9d0fb5e674d9",
+          "observed": -0.225022996810989,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "oosProfitFactor": {
+          "evidenceHash": "gate_evidence_1e90d27b0d9f0923683b3de1b6f19710877a328f3fd9540010644b7312ce45eb",
+          "observed": 0.6153863942050903,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.05"
+        },
+        "oosTotalNetR": {
+          "evidenceHash": "gate_evidence_7e081bef9c95584220840b403cd477a9b7d5da966b67060729814dc8c2766e5d",
+          "observed": -432.94424586434286,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "positiveFoldCount": {
+          "evidenceHash": "gate_evidence_8639613a85c56d651fb5f7be54df0c129fa01d04de13f0fdb513b703431ab8c5",
+          "observed": 0,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 3"
+        }
+      },
+      "basePassed": false,
+      "developmentMetrics": {
+        "averageNetR": -0.13507438713537373,
+        "eventCount": 4090,
+        "folds": {},
+        "maximumDrawdownPct": 573.5265341721049,
+        "maximumDrawdownR": 573.5265341721049,
+        "observedMonthCount": 42,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.23809523809523808,
+        "profitFactor": 0.7464589036349569,
+        "singleInstrumentPositiveContribution": 0.13078235815129946,
+        "singleMonthPositiveContribution": 0.04147013894528353,
+        "totalNetR": -552.4542433836785
+      },
+      "formalGates": {
+        "holdoutAccessBeforeFinalEvaluation": {
+          "evidenceHash": "gate_evidence_885db1d0bcd2ce949b6d6000a43f8624722847b63fa97b567bcdfdd28536232b",
+          "observed": 0,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "== 0"
+        },
+        "maximumDrawdownPct": {
+          "evidenceHash": "gate_evidence_fff9c89895f21748910511ed4e15511e4748ef2aee5fbc0d5dd545d32815b410",
+          "observed": 441.9098630194046,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "<= 20.0"
+        },
+        "oosAverageNetR": {
+          "evidenceHash": "gate_evidence_6d3f437a1027c86ae53446b73e800b786c63366effdead33ec5c548377b0e599",
+          "observed": -0.225022996810989,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.05"
+        },
+        "oosProfitFactor": {
+          "evidenceHash": "gate_evidence_88001056fa87742974ea20eba83e43550ecf36bc27b22a1a671e84f163a44746",
+          "observed": 0.6153863942050903,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.15"
+        },
+        "oosTotalNetR": {
+          "evidenceHash": "gate_evidence_7e081bef9c95584220840b403cd477a9b7d5da966b67060729814dc8c2766e5d",
+          "observed": -432.94424586434286,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "positiveFoldCount": {
+          "evidenceHash": "gate_evidence_7975c076b411f058622aa63a5a9b03a68d2e11f3437ebb48794bba100af86642",
+          "observed": 0,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 4"
+        },
+        "singleInstrumentPositiveContribution": {
+          "evidenceHash": "gate_evidence_1c19519d537435cd0b0b8b648f0a439e82260c00884171ef2e02ff8eb52c11ac",
+          "observed": 0.15157827521561368,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 0.35"
+        },
+        "singleMonthPositiveContribution": {
+          "evidenceHash": "gate_evidence_9a30caa8e16229056a6a55b4f079db803b914886ce82f6c56bedb4067b6afa11",
+          "observed": 0.114908185475722,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 0.35"
+        },
+        "stress1_5xAverageNetR": {
+          "evidenceHash": "gate_evidence_89f47c895a832b015a450e67aa2f019889c98962efdd8ad7a83aeae01dffa378",
+          "observed": -0.29321959145876475,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "stress1_5xProfitFactor": {
+          "evidenceHash": "gate_evidence_f54985f263cd2ad7a2642c787a681580fe95653ba1c31ed51990403d9479e20c",
+          "observed": 0.5365917722675438,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.05"
+        }
+      },
+      "formalPassed": false,
+      "holdoutMetrics": {
+        "averageNetR": 0.0,
+        "eventCount": 0,
+        "folds": {},
+        "maximumDrawdownPct": 0.0,
+        "maximumDrawdownR": 0.0,
+        "observedMonthCount": 0,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.0,
+        "profitFactor": 0.0,
+        "singleInstrumentPositiveContribution": 0.0,
+        "singleMonthPositiveContribution": 0.0,
+        "totalNetR": 0
+      },
+      "oosMetrics": {
+        "averageNetR": -0.225022996810989,
+        "eventCount": 1924,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.197940726681772,
+            "eventCount": 348,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.22111982569727218,
+            "eventCount": 406,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.3541706487941457,
+            "eventCount": 391,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.2202090520501356,
+            "eventCount": 410,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.12335986104858301,
+            "eventCount": 369,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 441.9098630194046,
+        "maximumDrawdownR": 441.9098630194046,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.10526315789473684,
+        "profitFactor": 0.6153863942050903,
+        "singleInstrumentPositiveContribution": 0.15157827521561368,
+        "singleMonthPositiveContribution": 0.114908185475722,
+        "totalNetR": -432.94424586434286
+      },
+      "prescreenGates": {
+        "developmentAverageNetR": {
+          "evidenceHash": "gate_evidence_fcb0860628e8af16ac55902f35ff3d225c15b0263ce6e755e20cef14ed7b934b",
+          "observed": -0.13507438713537373,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.03"
+        },
+        "developmentProfitFactor": {
+          "evidenceHash": "gate_evidence_2b75bea21a689b42a04b16c62cab809f4d1e629b2a983f4ef9715205e557fdb5",
+          "observed": 0.7464589036349569,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.08"
+        },
+        "positiveDevelopmentMonthRatio": {
+          "evidenceHash": "gate_evidence_92ac5a696f0e0420e1516f605ea1ecc44714e47e010b54aff38d93de0c63105f",
+          "observed": 0.23809523809523808,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.6"
+        }
+      },
+      "prescreenPassed": false,
+      "sampleGates": {
+        "minimumEvents": {
+          "evidenceHash": "gate_evidence_72f5713436df683fc1b23cb7abe2c4e6c4edd921ec9e4bdb8d454e4ee4719f5c",
+          "observed": 4090,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 150"
+        },
+        "minimumMonths": {
+          "evidenceHash": "gate_evidence_940439752ff0e38d818d5bd7b9726bf5627a8cc8cabe0a56114e8aeb5bc1d162",
+          "observed": 42,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 12"
+        }
+      },
+      "samplePassed": true,
+      "stress1_5xMetrics": {
+        "averageNetR": -0.29321959145876475,
+        "eventCount": 1924,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.2932643104906631,
+            "eventCount": 348,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.28685149607567867,
+            "eventCount": 406,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.425773973859847,
+            "eventCount": 391,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.2844924950257964,
+            "eventCount": 410,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.1694234682097843,
+            "eventCount": 369,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 572.2532598349005,
+        "maximumDrawdownR": 572.2532598349005,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.05263157894736842,
+        "profitFactor": 0.5365917722675438,
+        "singleInstrumentPositiveContribution": 0.1534327897848269,
+        "singleMonthPositiveContribution": 0.1182144128484928,
+        "totalNetR": -564.1544939666634
+      },
+      "stress2xMetrics": {
+        "averageNetR": -0.36141618610654047,
+        "eventCount": 1924,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.38858789429955415,
+            "eventCount": 348,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.35258316645408516,
+            "eventCount": 406,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.4973772989255483,
+            "eventCount": 391,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.3487759380014572,
+            "eventCount": 410,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.2154870753709856,
+            "eventCount": 369,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 702.5966566503954,
+        "maximumDrawdownR": 702.5966566503954,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.05263157894736842,
+        "profitFactor": 0.46952077505309137,
+        "singleInstrumentPositiveContribution": 0.1554702132322705,
+        "singleMonthPositiveContribution": 0.12161331017254226,
+        "totalNetR": -695.3647420689839
+      },
+      "walkForwardMetrics": {
+        "averageNetR": -0.225022996810989,
+        "eventCount": 1924,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.197940726681772,
+            "eventCount": 348,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.22111982569727218,
+            "eventCount": 406,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.3541706487941457,
+            "eventCount": 391,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.2202090520501356,
+            "eventCount": 410,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.12335986104858301,
+            "eventCount": 369,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 441.9098630194046,
+        "maximumDrawdownR": 441.9098630194046,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.10526315789473684,
+        "profitFactor": 0.6153863942050903,
+        "singleInstrumentPositiveContribution": 0.15157827521561368,
+        "singleMonthPositiveContribution": 0.114908185475722,
+        "totalNetR": -432.94424586434286
+      }
+    },
+    "ref_utc_session_range_breakout_1h_v1_short": {
+      "baseGates": {
+        "maximumDrawdownPct": {
+          "evidenceHash": "gate_evidence_eb8d9e95474eb2afd8246c8400f160913ba5ce080f46c3e670124dc8fec3fa14",
+          "observed": 312.9215892380326,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "<= 25.0"
+        },
+        "oosAverageNetR": {
+          "evidenceHash": "gate_evidence_c104d58611cb4a4a73c64c065733125e574679df72487b7c86cb298bf8723607",
+          "observed": -0.16864337966390835,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "oosProfitFactor": {
+          "evidenceHash": "gate_evidence_b3053df786f045421c62733f6c422901533cd4ccce9bcabe9b8a04889107c995",
+          "observed": 0.6884592734678813,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.05"
+        },
+        "oosTotalNetR": {
+          "evidenceHash": "gate_evidence_5840631750e2b62dfc1eaa0305941b90c1c0ae0eef3b1f10301e9fcccd9dc67d",
+          "observed": -294.2826975135201,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "positiveFoldCount": {
+          "evidenceHash": "gate_evidence_8639613a85c56d651fb5f7be54df0c129fa01d04de13f0fdb513b703431ab8c5",
+          "observed": 0,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 3"
+        }
+      },
+      "basePassed": false,
+      "developmentMetrics": {
+        "averageNetR": -0.06756389060728948,
+        "eventCount": 3847,
+        "folds": {},
+        "maximumDrawdownPct": 372.3717830692606,
+        "maximumDrawdownR": 372.3717830692606,
+        "observedMonthCount": 42,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.38095238095238093,
+        "profitFactor": 0.8664108988705356,
+        "singleInstrumentPositiveContribution": 0.14184041001373018,
+        "singleMonthPositiveContribution": 0.049471419539498136,
+        "totalNetR": -259.91828716624264
+      },
+      "formalGates": {
+        "holdoutAccessBeforeFinalEvaluation": {
+          "evidenceHash": "gate_evidence_885db1d0bcd2ce949b6d6000a43f8624722847b63fa97b567bcdfdd28536232b",
+          "observed": 0,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "== 0"
+        },
+        "maximumDrawdownPct": {
+          "evidenceHash": "gate_evidence_9e268e36032dd9692be3e966bad94bdba0554555b83cde89af5f4a48418a3744",
+          "observed": 312.9215892380326,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "<= 20.0"
+        },
+        "oosAverageNetR": {
+          "evidenceHash": "gate_evidence_ea0b83aea09fdd06a76a284ba0fd4816219286be70c112d947db1253f894a2a2",
+          "observed": -0.16864337966390835,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.05"
+        },
+        "oosProfitFactor": {
+          "evidenceHash": "gate_evidence_6801dbce8cbb64b8d838695f17cefc71b4f317f93a135efa56e9c3f1f23d7ed6",
+          "observed": 0.6884592734678813,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.15"
+        },
+        "oosTotalNetR": {
+          "evidenceHash": "gate_evidence_5840631750e2b62dfc1eaa0305941b90c1c0ae0eef3b1f10301e9fcccd9dc67d",
+          "observed": -294.2826975135201,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "positiveFoldCount": {
+          "evidenceHash": "gate_evidence_7975c076b411f058622aa63a5a9b03a68d2e11f3437ebb48794bba100af86642",
+          "observed": 0,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 4"
+        },
+        "singleInstrumentPositiveContribution": {
+          "evidenceHash": "gate_evidence_7a4195bab9ce20393a4ec10b70e86f33d91c5ce44356eda7c6691bf9840be5a5",
+          "observed": 0.15452516657068,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 0.35"
+        },
+        "singleMonthPositiveContribution": {
+          "evidenceHash": "gate_evidence_5bdb9bca3ed8f229150b0082e9366b0fde0e911e4c9c09fae2395f1617f938e0",
+          "observed": 0.08982006819705753,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": "<= 0.35"
+        },
+        "stress1_5xAverageNetR": {
+          "evidenceHash": "gate_evidence_e6b3eee5b3c42edf232eaf6d00e4a137bb1b02ff01cb9c7860fb33bf938c9177",
+          "observed": -0.2376174605039417,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": "> 0.0"
+        },
+        "stress1_5xProfitFactor": {
+          "evidenceHash": "gate_evidence_d5996ed229404c8bd8e2bced2780ff605d25ba2f2fa14b41182e0b9404eee795",
+          "observed": 0.5954551629010848,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.05"
+        }
+      },
+      "formalPassed": false,
+      "holdoutMetrics": {
+        "averageNetR": 0.0,
+        "eventCount": 0,
+        "folds": {},
+        "maximumDrawdownPct": 0.0,
+        "maximumDrawdownR": 0.0,
+        "observedMonthCount": 0,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.0,
+        "profitFactor": 0.0,
+        "singleInstrumentPositiveContribution": 0.0,
+        "singleMonthPositiveContribution": 0.0,
+        "totalNetR": 0
+      },
+      "oosMetrics": {
+        "averageNetR": -0.16864337966390835,
+        "eventCount": 1745,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.31729274753589504,
+            "eventCount": 364,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.14914942229747735,
+            "eventCount": 322,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.13368977313013916,
+            "eventCount": 396,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.08456626138763138,
+            "eventCount": 341,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.15212353458990419,
+            "eventCount": 322,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 312.9215892380326,
+        "maximumDrawdownR": 312.9215892380326,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.15789473684210525,
+        "profitFactor": 0.6884592734678813,
+        "singleInstrumentPositiveContribution": 0.15452516657068,
+        "singleMonthPositiveContribution": 0.08982006819705753,
+        "totalNetR": -294.2826975135201
+      },
+      "prescreenGates": {
+        "developmentAverageNetR": {
+          "evidenceHash": "gate_evidence_6aece3d26bb3e2efbfd4d58b1af9632d5563e89c8b551d444abcb7666db0bbac",
+          "observed": -0.06756389060728948,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.03"
+        },
+        "developmentProfitFactor": {
+          "evidenceHash": "gate_evidence_9f6c3196b603163b34463f0f7866788e01a95ceb8b0f55e895e4066ae637da28",
+          "observed": 0.8664108988705356,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 1.08"
+        },
+        "positiveDevelopmentMonthRatio": {
+          "evidenceHash": "gate_evidence_d4f866187efc96131d1d30a399e116c492e0b2ef629a3dd174bb59cccffcd0eb",
+          "observed": 0.38095238095238093,
+          "passed": false,
+          "reasonZh": "未达到预注册门槛。",
+          "required": ">= 0.6"
+        }
+      },
+      "prescreenPassed": false,
+      "sampleGates": {
+        "minimumEvents": {
+          "evidenceHash": "gate_evidence_11362476e7c08f5cc7a6337821fd548cadf003408a19ba8da49e6ffe8dfa2dcc",
+          "observed": 3847,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 150"
+        },
+        "minimumMonths": {
+          "evidenceHash": "gate_evidence_940439752ff0e38d818d5bd7b9726bf5627a8cc8cabe0a56114e8aeb5bc1d162",
+          "observed": 42,
+          "passed": true,
+          "reasonZh": "达到预注册门槛。",
+          "required": ">= 12"
+        }
+      },
+      "samplePassed": true,
+      "stress1_5xMetrics": {
+        "averageNetR": -0.2376174605039417,
+        "eventCount": 1745,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.4123038571825888,
+            "eventCount": 364,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.21207133735490705,
+            "eventCount": 322,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.20096806145924273,
+            "eventCount": 396,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.1534856919218867,
+            "eventCount": 341,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.19986000202923093,
+            "eventCount": 322,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 427.73848665217605,
+        "maximumDrawdownR": 427.73848665217605,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.15789473684210525,
+        "profitFactor": 0.5954551629010848,
+        "singleInstrumentPositiveContribution": 0.1560170716077917,
+        "singleMonthPositiveContribution": 0.09275413033698492,
+        "totalNetR": -414.64246857937826
+      },
+      "stress2xMetrics": {
+        "averageNetR": -0.3065915413439751,
+        "eventCount": 1745,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.5073149668292826,
+            "eventCount": 364,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.27499325241233674,
+            "eventCount": 322,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.2682463497883463,
+            "eventCount": 396,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.22240512245614208,
+            "eventCount": 341,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.2475964694685577,
+            "eventCount": 322,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 543.155277092188,
+        "maximumDrawdownR": 543.155277092188,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.10526315789473684,
+        "profitFactor": 0.5169731927082853,
+        "singleInstrumentPositiveContribution": 0.1573366681961945,
+        "singleMonthPositiveContribution": 0.09632748773440415,
+        "totalNetR": -535.0022396452365
+      },
+      "walkForwardMetrics": {
+        "averageNetR": -0.16864337966390835,
+        "eventCount": 1745,
+        "folds": {
+          "fold_001": {
+            "averageNetR": -0.31729274753589504,
+            "eventCount": 364,
+            "positive": false
+          },
+          "fold_002": {
+            "averageNetR": -0.14914942229747735,
+            "eventCount": 322,
+            "positive": false
+          },
+          "fold_003": {
+            "averageNetR": -0.13368977313013916,
+            "eventCount": 396,
+            "positive": false
+          },
+          "fold_004": {
+            "averageNetR": -0.08456626138763138,
+            "eventCount": 341,
+            "positive": false
+          },
+          "fold_005": {
+            "averageNetR": -0.15212353458990419,
+            "eventCount": 322,
+            "positive": false
+          }
+        },
+        "maximumDrawdownPct": 312.9215892380326,
+        "maximumDrawdownR": 312.9215892380326,
+        "observedMonthCount": 19,
+        "positiveFoldCount": 0,
+        "positiveMonthRatio": 0.15789473684210525,
+        "profitFactor": 0.6884592734678813,
+        "singleInstrumentPositiveContribution": 0.15452516657068,
+        "singleMonthPositiveContribution": 0.08982006819705753,
+        "totalNetR": -294.2826975135201
+      }
+    }
+  }
+}

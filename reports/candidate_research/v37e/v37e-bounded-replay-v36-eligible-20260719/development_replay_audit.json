@@ -1,0 +1,293 @@
+{
+  "approvalCount": 0,
+  "auditHash": "v36_development_replay_audit_f4401c105e3ee95ce0ff8a765f240d7079046a0070257e9abbe681e5f80d73c9",
+  "campaignId": "v37e-bounded-replay-v36-eligible-20260719",
+  "comparisonPanelHash": "v36_comparison_panel_a19de2de4293c2474ff5de44a377cf14bbbcd02dc89ea9d23f8347cee2f4877d",
+  "demoArm": false,
+  "evidenceCount": 18,
+  "formalRunCount": 0,
+  "lockedOosReadCount": 0,
+  "orderCount": 0,
+  "privateAccountReadUsed": false,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_development_replay_audit_v1",
+  "snapshotAudit": {
+    "developmentEnd": "2025-01-01T00:00:00+00:00",
+    "developmentStart": "2021-02-01T00:00:00+00:00",
+    "lockedOosReadCount": 0,
+    "partitions": [
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "BTC-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T00:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\BTC-USDT-SWAP\\1dutc\\1577836800000-1784246400000-3fdbe4fc03e18bb9.parquet",
+        "outputSha256": "7496b63b4a8a94657708dff39eeed01f98b71670af0ef6d76500b01c4ed58348",
+        "rowCount": 1430,
+        "timeframe": "1dutc"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "BTC-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T23:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\1577836800000-1784394000000-d2e39319ddf0ec79.parquet",
+        "outputSha256": "e1a3f7c9b6eae83d3aaf81a3a0e17f72f101fc4de5255de77e7e572ada1596fb",
+        "rowCount": 34320,
+        "timeframe": "1h"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "BTC-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T20:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\1577836800000-1784376000000-908d716580268d08.parquet",
+        "outputSha256": "ed116bb5f3750400194e7a0566d0cd678e6d70950f02efee5545e4ab21525908",
+        "rowCount": 8580,
+        "timeframe": "4h"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "ETH-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T00:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\ETH-USDT-SWAP\\1dutc\\1577836800000-1784246400000-7eb09e7a8ff012f7.parquet",
+        "outputSha256": "3f217d0012dbf072d2b8a23a48c218e507c672b7b97f28f956e5630a79456f35",
+        "rowCount": 1430,
+        "timeframe": "1dutc"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "ETH-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T23:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\1577836800000-1784394000000-1e7dafd76313d9fc.parquet",
+        "outputSha256": "88da1559f39823033d1a99bdf65d3432c7c32cc41bdc429816b7e53c65ced820",
+        "rowCount": 34320,
+        "timeframe": "1h"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "ETH-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T20:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\1577836800000-1784376000000-9eb22547a6afd1f3.parquet",
+        "outputSha256": "0f0ebbe16ae7d14fb392d9be665de0ed324be0cda0eb15bd951a959d27b1af41",
+        "rowCount": 8580,
+        "timeframe": "4h"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "SOL-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T00:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\SOL-USDT-SWAP\\1dutc\\1611360000000-1784246400000-fddc673e61145699.parquet",
+        "outputSha256": "815e2b4296e00f635d7e9abea5212a2178730ad45cf066a3369ae3ed04db6b66",
+        "rowCount": 1430,
+        "timeframe": "1dutc"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "SOL-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T23:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\1611295200000-1784394000000-820d0e7916a9e826.parquet",
+        "outputSha256": "16d9df7ce968bf3433ffde8fe61588664c95fd6fa00165c7af5f4509444a0457",
+        "rowCount": 34320,
+        "timeframe": "1h"
+      },
+      {
+        "firstTimestamp": "2021-02-01T00:00:00+00:00",
+        "instrumentId": "SOL-USDT-SWAP",
+        "lastTimestamp": "2024-12-31T20:00:00+00:00",
+        "outputPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\canonical\\swap\\ohlcv\\SOL-USDT-SWAP\\4h\\1611288000000-1784376000000-2493782114ab0d2e.parquet",
+        "outputSha256": "75605b3065b8e0ed7945e6e8696298df8d82d2653ef7438635603a4d5d0c73ad",
+        "rowCount": 8580,
+        "timeframe": "4h"
+      }
+    ],
+    "schemaVersion": "v36_development_snapshot_audit_v1",
+    "snapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "snapshotManifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
+    "snapshotManifestSha256": "09b77a5ddebcc48d225609be4cf0a2e15eaced469c13276b535c098bd9e0c5f2",
+    "verifiedPartitionCount": 9
+  },
+  "status": "completed",
+  "tradeApiUsed": false,
+  "trialAudit": [
+    {
+      "candidateId": "v35_conditional_mr_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_589def82c67351aa3147a6f990c05107cf1f846de94c0116a5b57462fc6203d4",
+      "eventCount": 657,
+      "eventEvidenceHash": "v36_development_events_ca89f028a8ccba0c9350e72d5cf74c97a529a5e47ef1853699bf52101150ebe0",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_703c1a848e7b864e33cf0ca2616b4f7819619ff12e55ba1817fc2276da143751",
+      "trialIndex": 0
+    },
+    {
+      "candidateId": "v35_conditional_mr_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_ad0420abc2fb0f27ee8214e24c023c76c5d9e570f8d223976612097e87884e61",
+      "eventCount": 498,
+      "eventEvidenceHash": "v36_development_events_3040eba5f73d333ed2f9919056816355325960b8a9d48310a6ded8acad0a79bc",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_2917eb269d1563692ac37724b947e339458ebc5e243a57c8bf1a9a048eb746bb",
+      "trialIndex": 1
+    },
+    {
+      "candidateId": "v35_conditional_mr_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_bf14e1fcdfdde62c6b066a5ca04e75544f542d03077875f4c3397bcc0b977834",
+      "eventCount": 374,
+      "eventEvidenceHash": "v36_development_events_259ca0cc582b73e11cbc574f6b42002860d047e6c34172156c3aec9b1785ac2f",
+      "strategyType": "directional",
+      "timeframe": "1h",
+      "trialId": "v36_trial_20bb6ba4b9cf1bad8fa3d3d8630ce9f756f968d4efcc426b54a15e7d0443b04c",
+      "trialIndex": 2
+    },
+    {
+      "candidateId": "v35_conditional_mr_source_replication",
+      "definitionHash": "v36_replay_definition_b11c0f7e6126cf8c85d35bfc10578c116bce57e3674f02368a66a249d8ecd6d6",
+      "eventCount": 147,
+      "eventEvidenceHash": "v36_development_events_e25d2f50e0dd11dac75f0db96777b66bd5d04717a686b45709da36610ddd11f7",
+      "strategyType": "directional",
+      "timeframe": "4h",
+      "trialId": "v36_trial_5ad91ca50dbe631ec6e7d51634a3319ff82244c7c6f137f5efb8cfde0089f6ee",
+      "trialIndex": 0
+    },
+    {
+      "candidateId": "v35_conditional_mr_source_replication",
+      "definitionHash": "v36_replay_definition_86ed560bc9fde70c4a5378caf987d0d2895b863b339537b9f388ca8ac5dac229",
+      "eventCount": 106,
+      "eventEvidenceHash": "v36_development_events_70ac3a30e5083bbc643691c977a010e718c909ecc334e55434842f80afcd1482",
+      "strategyType": "directional",
+      "timeframe": "4h",
+      "trialId": "v36_trial_c1736b3be300751b407bb70794798b04bc5495272196bcc25a91e764a76cf331",
+      "trialIndex": 1
+    },
+    {
+      "candidateId": "v35_conditional_mr_source_replication",
+      "definitionHash": "v36_replay_definition_053d399f381124ba5dcc201f6a78b08aebbdca800dd663e5383636e992192b05",
+      "eventCount": 83,
+      "eventEvidenceHash": "v36_development_events_dea630dea592fe41c0301e0c91187b6d9e23dae42c674f22b408bad7adbd666d",
+      "strategyType": "directional",
+      "timeframe": "4h",
+      "trialId": "v36_trial_1654efbdb471a899fdb39838102c1c9f794364fcbb478196b3fc40f38809b486",
+      "trialIndex": 2
+    },
+    {
+      "candidateId": "v35_pair_rv_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_04a6b7a5b3b743f07858aa31bfa37501a917ca576edd39d721a46b10af2dfb01",
+      "eventCount": 217,
+      "eventEvidenceHash": "v36_development_events_7b7322ebc202e62b086f03a492bbaf6c9aa89677bba50a11df45c6125f261829",
+      "strategyType": "pair",
+      "timeframe": "1h",
+      "trialId": "v36_trial_b349b36c502ab82034660d8a85ac8819069d9f59751a448801045c47ca8881bf",
+      "trialIndex": 0
+    },
+    {
+      "candidateId": "v35_pair_rv_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_79a7c17b5d885c7cebd6aa366016358cdcf5d8f91ac59e1291ff38edaecd96b8",
+      "eventCount": 150,
+      "eventEvidenceHash": "v36_development_events_b2e39e5ee2d1446435277a1a11f43233afda378082f2175176dd68e0896ac8a2",
+      "strategyType": "pair",
+      "timeframe": "1h",
+      "trialId": "v36_trial_5709d3a0f6027542ecd06b1956065cce886479e05b56fa5cae84c229cf11a852",
+      "trialIndex": 1
+    },
+    {
+      "candidateId": "v35_pair_rv_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_8dca3bf7db9c58f81e93d2fde245ef5085c2f2df08d4ce86fc3203e968fca09f",
+      "eventCount": 113,
+      "eventEvidenceHash": "v36_development_events_428665a47f643590232d662f63f102ef52dec20f5a57e82acf0e6d1e2a938fb0",
+      "strategyType": "pair",
+      "timeframe": "1h",
+      "trialId": "v36_trial_624683f2f2ff13951b48b0ceeb7f4064da8fe41ccc59f48415f0da83b7544e48",
+      "trialIndex": 2
+    },
+    {
+      "candidateId": "v35_pair_rv_source_replication",
+      "definitionHash": "v36_replay_definition_4f5af21294b4f4390dd6ed44c488f9ef54bd8ee4eb44640b9b3318cb05d9f4db",
+      "eventCount": 101,
+      "eventEvidenceHash": "v36_development_events_04e3fa47a38e3fc581a127e46072db450f736a51ddb3cd127f7a5eb77872f129",
+      "strategyType": "pair",
+      "timeframe": "4h",
+      "trialId": "v36_trial_45db6dab50a4ed266110d9dffd746b2c0cf1f35bf81b8cb199e4431b3d715b1b",
+      "trialIndex": 0
+    },
+    {
+      "candidateId": "v35_pair_rv_source_replication",
+      "definitionHash": "v36_replay_definition_c99e687a21414ae4b0974ad5b465e9217078f93a0232d072b03d175dd3a8feb3",
+      "eventCount": 75,
+      "eventEvidenceHash": "v36_development_events_4801ee0aac4328c36b5760c4d333a25732cf91af4669eed2817843a71291322f",
+      "strategyType": "pair",
+      "timeframe": "4h",
+      "trialId": "v36_trial_d31f33044ec1c7ba0c5d7b5304ee8e7497614bff3504d8d376f8edb8b3404efd",
+      "trialIndex": 1
+    },
+    {
+      "candidateId": "v35_pair_rv_source_replication",
+      "definitionHash": "v36_replay_definition_5c51b7abacbc9889723a1941fccd2e42f3f1111c9869fa499ab44c3dad6eb6be",
+      "eventCount": 61,
+      "eventEvidenceHash": "v36_development_events_c3a1308f50929ee62edaa7d29d961c0e26a4fea0422439ffd674cac3a94efa8c",
+      "strategyType": "pair",
+      "timeframe": "4h",
+      "trialId": "v36_trial_d403a7fb302428b779f4d51294070108b07b6d1dec9f8526919c6b1495e8e876",
+      "trialIndex": 2
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_5a30561878970ab8612bcd4b12968535346b37031614da8b3fe854aa64012a26",
+      "eventCount": 256,
+      "eventEvidenceHash": "v36_development_events_4ec24d26b070598b91f8d6b23283f1de91c141b74355edcee361c1a6fb8d632e",
+      "strategyType": "directional",
+      "timeframe": "4h",
+      "trialId": "v36_trial_735291d1d47573acafb548b455ccefd5936a7853bb0241b319dd102ee978eb18",
+      "trialIndex": 0
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_500e95aa9039039462514ee499bbb4548246b6b479b656e13a407967885d312e",
+      "eventCount": 243,
+      "eventEvidenceHash": "v36_development_events_e32a93241d19bea8dfeac45aca79cdbe06a992ce3779ef28e6dc4562f01c9106",
+      "strategyType": "directional",
+      "timeframe": "4h",
+      "trialId": "v36_trial_43b2c0f5804b1f0596bc6d5691d79013699a5e1b3db0a07e7a3332ac3f6f0599",
+      "trialIndex": 1
+    },
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "definitionHash": "v36_replay_definition_65c06539ee8158bbcf22fdd20f6c88bd7bf0721365497ba8bdf48d463ff04c48",
+      "eventCount": 216,
+      "eventEvidenceHash": "v36_development_events_225be266de90a6e3d50bc77a8d2ce6a35d48ae588c1f2d629c8f09eefd7e4527",
+      "strategyType": "directional",
+      "timeframe": "4h",
+      "trialId": "v36_trial_9b22812bf2f4a4cbec339c39b8f7cd31aa272c162365973470dfbebf59a68089",
+      "trialIndex": 2
+    },
+    {
+      "candidateId": "v35_tsmom_source_replication",
+      "definitionHash": "v36_replay_definition_f3a2bf1f027aff61be6797c3048d6d1aa522375abcbaa277bd16070acddde59d",
+      "eventCount": 43,
+      "eventEvidenceHash": "v36_development_events_221557034e89e1c8a5182c6561fa4a6dbadd313d46d70b044703cf8323734edd",
+      "strategyType": "directional",
+      "timeframe": "1dutc",
+      "trialId": "v36_trial_43c86dd299a8ad2904cc53c00ed541d6f6d523d58c2e9b99d758dc6855cb0693",
+      "trialIndex": 0
+    },
+    {
+      "candidateId": "v35_tsmom_source_replication",
+      "definitionHash": "v36_replay_definition_de5d64cd919032532992c30d51624e968c2d0e32e097c167040c8f494ae45727",
+      "eventCount": 39,
+      "eventEvidenceHash": "v36_development_events_cfc8ffc6ee4fd92169476e4222c8200a92964e3bc7d19406e22e400114a07052",
+      "strategyType": "directional",
+      "timeframe": "1dutc",
+      "trialId": "v36_trial_ec2562d73795444e90789e7f77a3e129030b7d92c0f3614cf3f33375fdaf41c0",
+      "trialIndex": 1
+    },
+    {
+      "candidateId": "v35_tsmom_source_replication",
+      "definitionHash": "v36_replay_definition_b7da8f5031fe285c88a8e651de6792e6852d82da9048123ed091c62f5c9a4905",
+      "eventCount": 32,
+      "eventEvidenceHash": "v36_development_events_967e91164642c2a48fb9aa0b35a543638b4519ac995cfe2000ddbcd17bdd0ab2",
+      "strategyType": "directional",
+      "timeframe": "1dutc",
+      "trialId": "v36_trial_64f1945ca5bf8517ae1e73fd1e103bd207edc1532650dc46e89e043707bb7370",
+      "trialIndex": 2
+    }
+  ],
+  "withdrawApiUsed": false
+}

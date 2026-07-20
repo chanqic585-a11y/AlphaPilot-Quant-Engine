@@ -1,0 +1,62 @@
+{
+  "adoptNow": [
+    {
+      "alphaPilotTarget": "strategy_acquisition",
+      "authority": "AlphaPilot Program/Campaign Ledger",
+      "component": "strategy-development-manager",
+      "mode": "clean_room_rewrite"
+    },
+    {
+      "alphaPilotTarget": "artifact_index_and_bench_history",
+      "authority": "projection_only",
+      "component": "strategy-store-lifecycle",
+      "mode": "schema_adaptation"
+    },
+    {
+      "alphaPilotTarget": "factor_lab",
+      "component": "alpha-zoo-operators-and-bench",
+      "constraint": "crypto semantics and PIT readiness required",
+      "mode": "selected_subset"
+    },
+    {
+      "alphaPilotTarget": "generated_candidate_sandbox",
+      "component": "generated-strategy-ast-sandbox",
+      "constraint": "network and dangerous calls forbidden even when unreachable",
+      "mode": "hardened_adaptation"
+    },
+    {
+      "alphaPilotTarget": "artifact_similarity",
+      "component": "alpha-compare",
+      "constraint": "source, formula, mechanism, signal, event, return, holding and parameter evidence",
+      "mode": "extended"
+    }
+  ],
+  "defer": [
+    {
+      "activateAfter": "three independent periodic benches or sufficient closed Demo trades",
+      "component": "decay-monitoring",
+      "restriction": "never mutate an active Release in place"
+    },
+    {
+      "activateAfter": "real closed Demo or Live trades",
+      "component": "shadow-account-attribution",
+      "restriction": "no synthetic PnL represented as exchange evidence"
+    },
+    {
+      "activateIn": "V38",
+      "component": "research-ui",
+      "restriction": "reuse the current Console stack"
+    }
+  ],
+  "reject": [
+    "whole-repository-merge",
+    "runtime-submodule-or-package-dependency",
+    "cross-exchange-formal-data-fallback",
+    "generic-vibe-strategy-gates",
+    "automatic-in-place-parameter-updates",
+    "vibe-live-or-broker-connectors",
+    "unbounded-llm-strategy-daemon",
+    "whole-frontend-migration"
+  ],
+  "schemaVersion": "alphapilot_vibe_selective_integration_map_v1"
+}

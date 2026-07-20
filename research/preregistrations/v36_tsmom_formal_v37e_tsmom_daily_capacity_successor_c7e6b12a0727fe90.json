@@ -1,0 +1,526 @@
+{
+  "GateChanges": 0,
+  "GateHash": "s01_v18_gate_ab7f03aedacea19300cc4a2be04512b737d62d8dbfa5bc4e7d60bce0692f3f73",
+  "benchmarkChanges": 0,
+  "benchmarkPolicy": {
+    "benchmarkHash": "s01_formal_benchmark_f8e4ea5eac162386bd0b08dad2f648fd2b68bb5eba1533329f278bac45e5fdb1",
+    "benchmarkMayChangeAfterResults": false,
+    "diagnosticBenchmarks": [
+      "no_trade",
+      "btc_contextual_return"
+    ],
+    "mainGateBenchmark": "same_event_fixed_12_bar_exit",
+    "schemaVersion": "s01_formal_benchmark_policy_v1"
+  },
+  "campaignId": "v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_c7e6b12a0727fe90",
+  "candidateAdapter": {
+    "adapterId": "canonical_replication:crypto_tsmom_turtle_v1",
+    "adapterVersion": "v36.1",
+    "candidateId": "v37e_tsmom_daily_capacity_successor",
+    "contractSchemaVersion": "formal_candidate_adapter_contract_v2"
+  },
+  "candidateCount": 1,
+  "capacityModelHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+  "capitalCompetitionPolicy": {
+    "acceptanceSequence": [
+      "ranking_validation",
+      "duplicate_symbol",
+      "capacity_and_sizing",
+      "single_symbol_risk",
+      "same_direction_risk",
+      "total_open_risk",
+      "correlation_cluster_risk",
+      "projected_portfolio_beta",
+      "maximum_positions"
+    ],
+    "capacityModel": {
+      "definitionHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+      "inputs": [
+        "currentEquity",
+        "entryPrice",
+        "stopPrice",
+        "priorDailyLiquidity",
+        "instrumentMetadataOnlyWhenVolumeConversionRequiresIt"
+      ],
+      "invalidInputPolicy": "reject_nonpositive_equity_price_or_stop_distance",
+      "lookbackCompletedUtcDays": 30,
+      "method": "median_prior_completed_utc_daily_quote_turnover",
+      "minimumCompletedUtcDays": 24,
+      "minimumRiskUtilization": 0.5,
+      "missingDataPolicy": "reject_without_verified_quote_turnover_semantics",
+      "pointInTimePolicy": "strictly_prior_completed_utc_days_only",
+      "positionQuantization": "continuous_research_notional_without_historical_exchange_lot_assumption",
+      "riskBudgetFraction": 0.01,
+      "schemaVersion": "s01_capacity_model_v1",
+      "sourcePriority": [
+        "quote_volume",
+        "base_volume_times_close",
+        "verified_contract_volume_times_contract_value_multiplier_and_close"
+      ],
+      "thresholds": {
+        "maximumTurnoverParticipation": 0.0005,
+        "minimumRiskUtilization": 0.5
+      },
+      "turnoverParticipationFraction": 0.0005
+    },
+    "capacityRequirement": "capacity_v1_passed_with_continuous_research_notional",
+    "capitalCompetitionPolicyHash": "s01_formal_capital_competition_v2_9e46061fb47a557c94ac840e7b5dc9b5ff0629844d70adb9748a7cf7428fa17f",
+    "correlationClusterPolicy": {
+      "clusterIdMethod": "sha256_of_sorted_component_members",
+      "definitionHash": "s01_correlation_cluster_policy_v1_61293655d64c0bbdf8ea174db277ec96404e8e89c8ce8972091fabdb3bc837c3",
+      "lookbackBars": 90,
+      "method": "positive_pearson_connected_components_union_find",
+      "minimumAlignedBars": 60,
+      "missingDataPolicy": "shared_unknown_cluster",
+      "recomputeSchedule": "utc_00_00_daily_using_strictly_prior_data",
+      "returnDefinition": "utc_daily_log_return",
+      "schemaVersion": "s01_correlation_cluster_policy_v1",
+      "threshold": 0.75,
+      "thresholdSign": "positive_only",
+      "zeroVariancePolicy": "shared_unknown_cluster"
+    },
+    "duplicateSymbolPolicy": "reject_while_open",
+    "eventOrderingPolicy": {
+      "entryBatchPolicy": "rank_all_same_timestamp_candidates_then_accept_sequentially",
+      "sameTimestampOrder": [
+        "exit",
+        "funding",
+        "mark_and_equity",
+        "entry"
+      ]
+    },
+    "fallbackFieldPolicy": "no_result_affecting_fallback_fields",
+    "initial_capital": 10000.0,
+    "maximum_concurrent_positions": 6,
+    "maximum_correlation_cluster_risk": 0.02,
+    "maximum_open_risk": 0.06,
+    "maximum_portfolio_beta": 1.5,
+    "maximum_same_direction_risk": 0.04,
+    "maximum_single_symbol_risk": 0.01,
+    "portfolioBetaPolicy": {
+      "alignment": "intersection_of_strictly_prior_utc_days",
+      "benchmark": "BTC-USDT-SWAP",
+      "benchmarkBeta": 1.0,
+      "contributionFormula": "direction_sign_times_mark_notional_over_current_equity_times_beta",
+      "definitionHash": "s01_portfolio_beta_policy_v1_995df91f9e02d9b221a716cadc13f659fcfa6c3caf4c560e6e4c5665d5da0b90",
+      "lookbackBars": 90,
+      "maximumAbsoluteProjectedBeta": 1.5,
+      "method": "ols_covariance_ratio_without_intercept_equivalent_slope",
+      "minimumAlignedBars": 60,
+      "missingDataPolicy": "reject_candidate",
+      "returnDefinition": "utc_daily_log_return",
+      "schemaVersion": "s01_portfolio_beta_policy_v1",
+      "varianceEpsilon": 1e-18,
+      "zeroBenchmarkVariancePolicy": "reject_candidate"
+    },
+    "positionAccountingPolicy": {
+      "currentEquity": "realized_cash_plus_marked_open_position_pnl_after_same_timestamp_updates",
+      "duplicateSymbol": "any_open_position_with_same_instrument_id",
+      "markNotional": "absolute_mark_price_times_open_quantity"
+    },
+    "rankingFieldDefinitions": {
+      "liquidity_higher_first": "liquidity30d descending",
+      "recovery_confirmation_stronger_first": "recoverySizeZ descending",
+      "residual_z_more_extreme_first": "eventExtremeResidualZ ascending",
+      "symbol_id_ascending_tiebreak": "instrumentId ascending unique final tiebreak"
+    },
+    "rankingPolicy": {
+      "batchDefinition": "same_expected_entry_timestamp",
+      "definitionHash": "s01_signal_ranking_policy_v1_4ad51e23bd84f934b8cb54ed39978de087690850f4d0cd55bf96759876a96314",
+      "duplicateInstrumentPolicy": "reject_duplicate_rows",
+      "fields": [
+        {
+          "name": "eventExtremeResidualZ",
+          "order": "ascending"
+        },
+        {
+          "name": "recoverySizeZ",
+          "order": "descending"
+        },
+        {
+          "name": "liquidity30d",
+          "order": "descending"
+        },
+        {
+          "name": "instrumentId",
+          "order": "ascending"
+        }
+      ],
+      "missingDataPolicy": "reject_if_any_of_first_three_fields_missing_or_nonfinite",
+      "mixedTimestampPolicy": "reject_entire_batch",
+      "schemaVersion": "s01_signal_ranking_policy_v1",
+      "tiePolicy": "instrument_id_is_final_tiebreak_and_must_be_unique"
+    },
+    "resultDrivenRiskReductionAllowed": false,
+    "risk_per_trade": 0.01,
+    "schemaVersion": "s01_formal_capital_competition_v2",
+    "source": "v18_executable_capital_policy_correction"
+  },
+  "capitalCompetitionPolicyHash": "s01_formal_capital_competition_v2_9e46061fb47a557c94ac840e7b5dc9b5ff0629844d70adb9748a7cf7428fa17f",
+  "capitalPolicyNumericChanges": 0,
+  "coreUniverse": {
+    "exchange": "okx",
+    "instrumentCount": 3,
+    "instrumentIds": [
+      "BTC-USDT-SWAP",
+      "ETH-USDT-SWAP",
+      "SOL-USDT-SWAP"
+    ],
+    "provider": "okx"
+  },
+  "coreUniverseHash": "v36_tsmom_core_universe_40f1c093be7316bee1b6316139263b8f3622b85249037c567e87c2a88ce73429",
+  "correlationClusterPolicyHash": "s01_correlation_cluster_policy_v1_61293655d64c0bbdf8ea174db277ec96404e8e89c8ce8972091fabdb3bc837c3",
+  "costChanges": 0,
+  "costModel": {
+    "baseComponentsBpsPerSide": {
+      "fee": 5.0,
+      "slippage": 2.5,
+      "spreadProxy": 2.5
+    },
+    "baseRoundTripCostRate": 0.002,
+    "conservativeFundingStress": {
+      "applyByObservedSettlementCount": true,
+      "evidenceStatusWhenInsufficient": "partial_or_proxy",
+      "method": "adverse_quantile_from_available_same_exchange_history",
+      "quantile": 0.9
+    },
+    "costModelHash": "s01_formal_cost_model_cb68c2cf24c1ea1afabec0ab881c3230e1f64d2b54dd3989ef610b26357da192",
+    "gapPolicy": "execute_at_observed_gap_open_when_stop_or_exit_is_crossed",
+    "historicalFundingMissingValue": null,
+    "missingFundingMayBeFilledWithZero": false,
+    "partialExitLegsChargedSeparately": true,
+    "scenarios": [
+      {
+        "multiplier": 1.0,
+        "scenarioId": "base"
+      },
+      {
+        "multiplier": 1.5,
+        "scenarioId": "cost_1_5x"
+      },
+      {
+        "multiplier": 2.0,
+        "scenarioId": "cost_2_0x"
+      }
+    ],
+    "schemaVersion": "s01_formal_cost_model_v1",
+    "source": "v16_round_trip_cost_model"
+  },
+  "costModelHash": "s01_formal_cost_model_cb68c2cf24c1ea1afabec0ab881c3230e1f64d2b54dd3989ef610b26357da192",
+  "dataSnapshotHash": "v36_tsmom_formal_data_snapshot_56eb0d019a0d2f33f93ee4661e0f1c8c7b76bdd803299e1b905b519c87351ff5",
+  "dataSnapshotId": "v36_tsmom_formal_snapshot_cb989b2860bb4f59",
+  "exitPolicyChanges": 0,
+  "exitPolicyHash": "v36_tsmom_exit_policy_7100479392c259f87c19e1a3b10066417d772a6506fa4fb8115412f57e4409cd",
+  "formalPolicyObjects": {
+    "beta": {
+      "definitionHash": "s01_portfolio_beta_policy_v1_995df91f9e02d9b221a716cadc13f659fcfa6c3caf4c560e6e4c5665d5da0b90",
+      "policyId": "beta",
+      "schemaVersion": "s01_portfolio_beta_policy_v1",
+      "version": "1"
+    },
+    "capacity": {
+      "definitionHash": "s01_capacity_model_v1_3483827779e7ff4ebdb83079583e6556352c902e17aeeb6e5621545d1efd0dd5",
+      "policyId": "capacity",
+      "schemaVersion": "s01_capacity_model_v1",
+      "version": "1"
+    },
+    "cluster": {
+      "definitionHash": "s01_correlation_cluster_policy_v1_61293655d64c0bbdf8ea174db277ec96404e8e89c8ce8972091fabdb3bc837c3",
+      "policyId": "cluster",
+      "schemaVersion": "s01_correlation_cluster_policy_v1",
+      "version": "1"
+    },
+    "ranking": {
+      "definitionHash": "s01_signal_ranking_policy_v1_4ad51e23bd84f934b8cb54ed39978de087690850f4d0cd55bf96759876a96314",
+      "policyId": "ranking",
+      "schemaVersion": "s01_signal_ranking_policy_v1",
+      "version": "1"
+    }
+  },
+  "formalPortfolioPolicyV2Hash": "s01_formal_capital_competition_v2_9e46061fb47a557c94ac840e7b5dc9b5ff0629844d70adb9748a7cf7428fa17f",
+  "formalRunClaimBudget": 1,
+  "formalRunPolicy": {
+    "claimBoundary": "before_first_formal_input_content_read",
+    "concurrentRunPolicy": "atomic_single_writer_claim",
+    "maximumRunClaims": 1,
+    "postResultRerunAllowed": false,
+    "researchOnly": true
+  },
+  "fundingChanges": 0,
+  "fundingInputPolicy": {
+    "maximumGapHours": 8,
+    "missingValueMayBeFilledWithZero": false,
+    "required": true,
+    "sameExchangeRequired": true,
+    "snapshotFundingHash": "v36_tsmom_funding_references_0504b27a587bb23b734c32cc7ff44d558bcc62323ee8b6cb2cd342be86ac993e"
+  },
+  "gates": {
+    "economic": {
+      "averageNetRMinimumExclusive": 0.0,
+      "benchmarkPositiveIncrementFoldMinimum": 3,
+      "benchmarkTotalIncrementalNetRMinimumExclusive": 0.0,
+      "completeFoldCount": 5,
+      "conservativeFundingAverageNetRMinimumExclusive": 0.0,
+      "cost1_5xAverageNetRMinimumExclusive": 0.0,
+      "cost1_5xProfitFactorMinimum": 1.0,
+      "cost1_5xTotalNetRMinimumExclusive": 0.0,
+      "maximumDrawdownPercent": 25.0,
+      "positiveFoldMinimum": 3,
+      "profitFactorMinimum": 1.05,
+      "totalNetRMinimumExclusive": 0.0
+    },
+    "riskAndEvidence": {
+      "exitLegParity": 1.0,
+      "maximumSingleMonthPositiveContribution": 0.35,
+      "maximumSingleSymbolPositiveContribution": 0.35,
+      "requiresCleanLockedOosForAdmission": true,
+      "requiresNoLeakage": true,
+      "requiresZeroHoldoutAccess": true,
+      "translationParity": 1.0
+    },
+    "statistics": {
+      "campaignBhQMaximum": 0.1,
+      "deflatedSharpeRatioMinimum": 0.9,
+      "neweyWestAlphaMinimumExclusive": 0.0,
+      "neweyWestOneSidedPMaximum": 0.05,
+      "pboMaximum": 0.4,
+      "spaPMaximum": 0.1
+    }
+  },
+  "implementationCommit": "b112c6a5f370e4f3e05f66157c45ded1f9f2834b",
+  "implementationConformanceHash": "v36_tsmom_implementation_conformance_8a8c40521392e9732943082f146adf3e39f67dfba094a173348578b52d9a951f",
+  "lockedOosPolicy": {
+    "accessCount": 0,
+    "cleanLockedOosAvailable": false,
+    "contentRead": false,
+    "identityMayContainPerformanceData": false,
+    "identityMetadataOnly": true
+  },
+  "parameterChanges": 0,
+  "portfolioBetaPolicyHash": "s01_portfolio_beta_policy_v1_995df91f9e02d9b221a716cadc13f659fcfa6c3caf4c560e6e4c5665d5da0b90",
+  "preregistrationHash": "v36_tsmom_formal_preregistration_c74da549b72a03d911d7f409fec76073631365f6660a975db823004cf777d87b",
+  "remoteFreezePolicy": {
+    "exactRemoteBytesRequired": true,
+    "preregistrationMustExistOnUpstreamBeforeRun": true,
+    "snapshotMustExistOnUpstreamBeforeRun": true,
+    "tag": "v13.27.1.37e-formal-freeze",
+    "tagRequiredBeforeRun": true
+  },
+  "resultDrivenChanges": 0,
+  "runLedgerPolicy": {
+    "attemptCountIncrementsAt": "first_formal_input_content_read",
+    "resumeDoesNotCreateNewAttempt": true,
+    "states": [
+      "not_started",
+      "running",
+      "completed",
+      "failed"
+    ]
+  },
+  "safetyBoundary": {
+    "demoArm": false,
+    "formalInputReadCount": 0,
+    "formalRunCount": 0,
+    "liveTradingIntegration": false,
+    "lockedOosAccessCount": 0,
+    "orderCount": 0,
+    "releaseCount": 0,
+    "resultReadCount": 0,
+    "withdrawIntegration": false
+  },
+  "schemaVersion": "v36_tsmom_formal_preregistration_v1",
+  "selectedTrialId": "v37e_metadata_only_capacity_successor_20260719",
+  "signalRankingPolicyHash": "s01_signal_ranking_policy_v1_4ad51e23bd84f934b8cb54ed39978de087690850f4d0cd55bf96759876a96314",
+  "sourceCampaignId": "v37e-tsmom-daily-capacity-formal-20260719",
+  "sourceCandidateId": "v37e_tsmom_daily_capacity_successor",
+  "sourceReadinessHash": "v36_tsmom_formal_readiness_e323ed511dc3d288c0b2875842fe23a5f616970377375ccbd335ca638ffc5c9c",
+  "splitPolicy": {
+    "barHours": 24,
+    "commonCutoffExclusive": "2026-07-18T00:00:00Z",
+    "commonStart": "2025-01-01T00:00:00Z",
+    "embargoBars": 18,
+    "eventMayCrossFoldBoundary": false,
+    "foldCount": 5,
+    "folds": [
+      {
+        "embargoEndExclusive": 261,
+        "embargoEndExclusiveTimestamp": "2025-09-19T00:00:00Z",
+        "embargoStart": 243,
+        "embargoStartTimestamp": "2025-09-01T00:00:00Z",
+        "foldId": "fold_001",
+        "purgeEndExclusive": 243,
+        "purgeEndExclusiveTimestamp": "2025-09-01T00:00:00Z",
+        "purgeStart": 225,
+        "purgeStartTimestamp": "2025-08-14T00:00:00Z",
+        "testEndExclusive": 321,
+        "testEndExclusiveTimestamp": "2025-11-18T00:00:00Z",
+        "testSize": 60,
+        "testStart": 261,
+        "testStartTimestamp": "2025-09-19T00:00:00Z",
+        "trainEndExclusive": 225,
+        "trainEndExclusiveTimestamp": "2025-08-14T00:00:00Z",
+        "trainSize": 225,
+        "trainStart": 0,
+        "trainStartTimestamp": "2025-01-01T00:00:00Z"
+      },
+      {
+        "embargoEndExclusive": 321,
+        "embargoEndExclusiveTimestamp": "2025-11-18T00:00:00Z",
+        "embargoStart": 303,
+        "embargoStartTimestamp": "2025-10-31T00:00:00Z",
+        "foldId": "fold_002",
+        "purgeEndExclusive": 303,
+        "purgeEndExclusiveTimestamp": "2025-10-31T00:00:00Z",
+        "purgeStart": 285,
+        "purgeStartTimestamp": "2025-10-13T00:00:00Z",
+        "testEndExclusive": 381,
+        "testEndExclusiveTimestamp": "2026-01-17T00:00:00Z",
+        "testSize": 60,
+        "testStart": 321,
+        "testStartTimestamp": "2025-11-18T00:00:00Z",
+        "trainEndExclusive": 285,
+        "trainEndExclusiveTimestamp": "2025-10-13T00:00:00Z",
+        "trainSize": 285,
+        "trainStart": 0,
+        "trainStartTimestamp": "2025-01-01T00:00:00Z"
+      },
+      {
+        "embargoEndExclusive": 381,
+        "embargoEndExclusiveTimestamp": "2026-01-17T00:00:00Z",
+        "embargoStart": 363,
+        "embargoStartTimestamp": "2025-12-30T00:00:00Z",
+        "foldId": "fold_003",
+        "purgeEndExclusive": 363,
+        "purgeEndExclusiveTimestamp": "2025-12-30T00:00:00Z",
+        "purgeStart": 345,
+        "purgeStartTimestamp": "2025-12-12T00:00:00Z",
+        "testEndExclusive": 441,
+        "testEndExclusiveTimestamp": "2026-03-18T00:00:00Z",
+        "testSize": 60,
+        "testStart": 381,
+        "testStartTimestamp": "2026-01-17T00:00:00Z",
+        "trainEndExclusive": 345,
+        "trainEndExclusiveTimestamp": "2025-12-12T00:00:00Z",
+        "trainSize": 345,
+        "trainStart": 0,
+        "trainStartTimestamp": "2025-01-01T00:00:00Z"
+      },
+      {
+        "embargoEndExclusive": 441,
+        "embargoEndExclusiveTimestamp": "2026-03-18T00:00:00Z",
+        "embargoStart": 423,
+        "embargoStartTimestamp": "2026-02-28T00:00:00Z",
+        "foldId": "fold_004",
+        "purgeEndExclusive": 423,
+        "purgeEndExclusiveTimestamp": "2026-02-28T00:00:00Z",
+        "purgeStart": 405,
+        "purgeStartTimestamp": "2026-02-10T00:00:00Z",
+        "testEndExclusive": 501,
+        "testEndExclusiveTimestamp": "2026-05-17T00:00:00Z",
+        "testSize": 60,
+        "testStart": 441,
+        "testStartTimestamp": "2026-03-18T00:00:00Z",
+        "trainEndExclusive": 405,
+        "trainEndExclusiveTimestamp": "2026-02-10T00:00:00Z",
+        "trainSize": 405,
+        "trainStart": 0,
+        "trainStartTimestamp": "2025-01-01T00:00:00Z"
+      },
+      {
+        "embargoEndExclusive": 501,
+        "embargoEndExclusiveTimestamp": "2026-05-17T00:00:00Z",
+        "embargoStart": 483,
+        "embargoStartTimestamp": "2026-04-29T00:00:00Z",
+        "foldId": "fold_005",
+        "purgeEndExclusive": 483,
+        "purgeEndExclusiveTimestamp": "2026-04-29T00:00:00Z",
+        "purgeStart": 465,
+        "purgeStartTimestamp": "2026-04-11T00:00:00Z",
+        "testEndExclusive": 561,
+        "testEndExclusiveTimestamp": "2026-07-16T00:00:00Z",
+        "testSize": 60,
+        "testStart": 501,
+        "testStartTimestamp": "2026-05-17T00:00:00Z",
+        "trainEndExclusive": 465,
+        "trainEndExclusiveTimestamp": "2026-04-11T00:00:00Z",
+        "trainSize": 465,
+        "trainStart": 0,
+        "trainStartTimestamp": "2025-01-01T00:00:00Z"
+      }
+    ],
+    "maximumHoldBars": 18,
+    "minimumTrainBars": 225,
+    "minimumTrainFraction": 0.4,
+    "mode": "expanding",
+    "ordering": "chronological_utc",
+    "purgeBars": 18,
+    "sampleCount": 563,
+    "schemaVersion": "v36_tsmom_purged_walk_forward_split_v1",
+    "splitPolicyHash": "v36_tsmom_split_policy_b9c09fdc344b495399af7a6713a5489b3a063dede0ac7e2439b6266a89d42e5d",
+    "testBarsPerFold": 60,
+    "timeframe": "1dutc",
+    "unusedTailBars": 2
+  },
+  "splitPolicyChanges": 0,
+  "splitPolicyHash": "v36_tsmom_split_policy_b9c09fdc344b495399af7a6713a5489b3a063dede0ac7e2439b6266a89d42e5d",
+  "statisticalPolicy": {
+    "benjaminiHochberg": {
+      "campaignFamilySize": 10,
+      "maximumQ": 0.1
+    },
+    "comparableCandidatePanel": {
+      "availableS01Statistic": "newey_west_one_sided_when_daily_return_panel_exists",
+      "decisionPolicy": "route_to_walk_forward_research_pass_statistics_unavailable",
+      "panelHash": null,
+      "reason": "Only S01 is a frozen formal candidate; no point-in-time daily-return panel for all ten selection-family trials was frozen before results.",
+      "retroactiveConstructionAllowed": false,
+      "status": "unavailable_predeclared",
+      "unavailableStatistics": [
+        "campaign_benjamini_hochberg",
+        "deflated_sharpe_ratio",
+        "probability_of_backtest_overfitting",
+        "spa_or_white_reality_check"
+      ]
+    },
+    "dailyReturnPanel": true,
+    "deflatedSharpeRatio": {
+      "actualTrials": 10,
+      "minimum": 0.9
+    },
+    "multipleTestingResultsMayBeReconstructedAfterRun": false,
+    "neweyWest": {
+      "alpha": 0.05,
+      "maximumLagDays": 5,
+      "oneSided": true
+    },
+    "probabilityOfBacktestOverfittingMaximum": 0.4,
+    "spaPValueMaximum": 0.1
+  },
+  "stoppingRules": {
+    "allowedTerminalRoutes": [
+      "archive_s01_current_version",
+      "weak_or_selection_sensitive_edge",
+      "walk_forward_research_pass_statistics_unavailable",
+      "walk_forward_research_pass_no_clean_holdout",
+      "implementation_invalid_requires_new_campaign",
+      "blocked_remote_freeze"
+    ],
+    "economicGateFailure": "archive_s01_current_version",
+    "economicPassStatisticalFailure": "weak_or_selection_sensitive_edge",
+    "implementationInvalid": "implementation_invalid_requires_new_campaign",
+    "postResultParameterChangeAllowed": false,
+    "remoteFreezeMissing": "blocked_remote_freeze",
+    "sameFormalWindowRerunAllowed": false,
+    "statisticsUnavailable": "walk_forward_research_pass_statistics_unavailable",
+    "walkForwardPassNoCleanHoldout": "walk_forward_research_pass_no_clean_holdout"
+  },
+  "strategyDefinitionHash": "v36_replay_definition_b3b445432f083f2563fc0db5f85cf124133aec5e5e4e435db856d6be3e2acaa2",
+  "strategyParameterChanges": 0,
+  "trialLineagePolicy": {
+    "formalCandidateCount": 1,
+    "parameterSearchAllowed": false,
+    "selectionBiasFamilySize": 10,
+    "sourceVariantId": "S01"
+  },
+  "universeChanges": 0
+}

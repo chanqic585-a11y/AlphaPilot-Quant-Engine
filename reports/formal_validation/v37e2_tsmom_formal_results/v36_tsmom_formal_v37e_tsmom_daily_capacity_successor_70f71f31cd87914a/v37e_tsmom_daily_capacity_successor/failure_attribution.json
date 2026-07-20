@@ -1,0 +1,14 @@
+{
+  "blockers": [
+    "positive_fold_minimum",
+    "benchmark_total_incremental_net_r",
+    "benchmark_positive_increment_fold_minimum"
+  ],
+  "campaignId": "v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a",
+  "implementationOrEvidenceFailure": false,
+  "primaryBlocker": "positive_fold_minimum",
+  "resultDrivenRepairAllowed": false,
+  "route": "archive_s01_current_version",
+  "schemaVersion": "s01_v18_formal_failure_attribution_v1",
+  "strategyPerformanceFailure": true
+}

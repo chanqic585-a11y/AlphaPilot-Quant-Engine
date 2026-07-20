@@ -1,0 +1,21 @@
+{
+  "approved": false,
+  "campaignCount": 2,
+  "candidateCount": 5,
+  "demoArm": false,
+  "familyCount": 4,
+  "formalCandidateCount": 0,
+  "formalRunCount": 0,
+  "frozenAt": "2026-07-20T00:00:00+08:00",
+  "lockedOosReadCount": 0,
+  "orderCount": 0,
+  "prefilterSurvivorCount": 0,
+  "privateAccountReadUsed": false,
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "alphapilot_v37i_v37j_campaign_summary_v1",
+  "status": "completed_zero_qualified_candidates",
+  "summaryHash": "v37i_v37j_summary_88dec56fd4f545078fb9df88938b42ce0b48786ec05362b19813dea063392d01",
+  "tradeApiUsed": false,
+  "withdrawApiUsed": false
+}

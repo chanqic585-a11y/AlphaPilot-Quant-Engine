@@ -209,6 +209,12 @@ def test_formal_core_modules_do_not_import_s01_implementation() -> None:
         joined = "\n".join(imports)
         assert not any(value in joined for value in forbidden), (path, imports)
 
+    reporting_source = (
+        REPO_ROOT / "alphapilot/formal_validation/v18_formal_reporting.py"
+    ).read_text(encoding="utf-8")
+    assert "build_s01_benchmark" not in reporting_source
+    assert "build_signal_feature_evidence" not in reporting_source
+
 
 def test_formal_parity_has_no_unresolved_signal_id_symbol() -> None:
     path = REPO_ROOT / "alphapilot/formal_validation/formal_parity.py"

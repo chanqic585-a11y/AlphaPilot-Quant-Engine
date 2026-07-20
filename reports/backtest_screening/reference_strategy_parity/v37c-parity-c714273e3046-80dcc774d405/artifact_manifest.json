@@ -1,0 +1,30 @@
+{
+  "artifacts": [
+    {
+      "path": "source_lineage_audit.json",
+      "sha256": "853ca622167b8d0d5f74292e85fef2ed104b8f19bd0784c59f3d44fb0376322d"
+    },
+    {
+      "path": "translation_gap_matrix.csv",
+      "sha256": "053f2b48f65c59b25a39f8643be7068e5abd4366ba0bb21b461b48b09fa7c5c3"
+    },
+    {
+      "path": "signal_parity_report.json",
+      "sha256": "080ec9f7c6e1edf2bac995824c96cc0a121d959dc407dc9d3efa316c9f715c0d"
+    },
+    {
+      "path": "gate_reachability_report.json",
+      "sha256": "1744692da6d4863a9a509eb926b0ed4bcff1fdeaf8d8afb414b2c3c1c4ffd75e"
+    },
+    {
+      "path": "v37b_reassessment.json",
+      "sha256": "eb8e829a1b902a488c3ee9a7de96ffb8900f140f6b54f832a9abb1e414a97423"
+    },
+    {
+      "path": "final_conclusion.md",
+      "sha256": "c6b7aa53c0a56bf45068341cdf45678f719c5da4d6633f58ef83b92082c4fcb6"
+    }
+  ],
+  "runId": "v37c-parity-c714273e3046-80dcc774d405",
+  "schemaVersion": "v37c_reference_strategy_parity_artifact_manifest_v1"
+}

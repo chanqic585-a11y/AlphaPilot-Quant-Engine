@@ -1,0 +1,20 @@
+{
+  "allowedToCreatePreregistration": false,
+  "allowedToRunFormal": false,
+  "blockedCandidates": [
+    {
+      "blockers": [
+        "purged_walk_forward_capacity_insufficient"
+      ],
+      "candidateId": "v35_tsmom_source_replication"
+    }
+  ],
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "lockedOosAccessCount": 0,
+  "readinessHash": "v36_tsmom_formal_readiness_1ad5a58c94e64be01d0de65bdd196959cac4d2785d1e201e756de54a71809355",
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_preflight_v1",
+  "status": "blocked_before_preregistration"
+}

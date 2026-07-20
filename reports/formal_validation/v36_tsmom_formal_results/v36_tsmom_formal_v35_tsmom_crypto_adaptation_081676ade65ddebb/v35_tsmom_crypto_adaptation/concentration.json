@@ -1,0 +1,22 @@
+{
+  "byMonth": {
+    "2025-10": 0.0,
+    "2025-11": 392.26116821280806,
+    "2025-12": 0.0,
+    "2026-01": 0.0,
+    "2026-02": 0.0,
+    "2026-03": 0.0,
+    "2026-04": 177.5703504931227,
+    "2026-05": 0.0,
+    "2026-06": 645.611368188406,
+    "2026-07": 0.0
+  },
+  "bySymbol": {
+    "BTC-USDT-SWAP": 717.277978988837,
+    "ETH-USDT-SWAP": 53.39416580807165,
+    "SOL-USDT-SWAP": 444.77074209742807
+  },
+  "maximumSingleMonthPositiveContribution": 0.5311737599107209,
+  "maximumSingleSymbolPositiveContribution": 0.590137131676836,
+  "schemaVersion": "s01_v18_concentration_v1"
+}

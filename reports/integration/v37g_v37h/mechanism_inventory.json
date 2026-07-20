@@ -1,0 +1,32 @@
+[
+  {
+    "artifactId": "vibe-strategy-development-manager",
+    "doesNotProve": "original strategy performance or unobserved implementation",
+    "equivalence": "mechanism_only",
+    "familyId": "strategy-development-manager",
+    "marketMechanism": "source-backed acquisition and lifecycle orchestration",
+    "proves": "the AlphaPilot clean-room implementation only",
+    "sourceHash": "9036e781b063242b64d042b61fc1df1fa0453ce4",
+    "sourcePath": "agent/src/skills/strategy-dev-manager/SKILL.md"
+  },
+  {
+    "artifactId": "vibe-alpha-compare",
+    "doesNotProve": "original strategy performance or unobserved implementation",
+    "equivalence": "mechanism_only",
+    "familyId": "artifact-similarity",
+    "marketMechanism": "multi-dimensional factor and strategy comparison",
+    "proves": "the AlphaPilot clean-room implementation only",
+    "sourceHash": "1e9d1ecb38275ec52afe086b9353d8455bee989d",
+    "sourcePath": "agent/src/tools/alpha_compare_tool.py"
+  },
+  {
+    "artifactId": "vibe-generated-code-sandbox",
+    "doesNotProve": "original strategy performance or unobserved implementation",
+    "equivalence": "mechanism_only",
+    "familyId": "generated-candidate-sandbox",
+    "marketMechanism": "generated signal code validation before isolated research execution",
+    "proves": "the AlphaPilot clean-room implementation only",
+    "sourceHash": "30700b9a0229660f4cdd765a575f256a75bbc21f",
+    "sourcePath": "agent/src/shadow_account/codegen.py"
+  }
+]

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": "v36_6_canonical_replication_plan_v1",
+  "familyId": "crypto_btc_downside_spillover_v1",
+  "status": "registered",
+  "mechanism": "An extreme completed BTC hourly loss may transmit to positively exposed liquid altcoin perpetuals over the next few closed bars.",
+  "sourceReplication": {
+    "targets": [
+      "ETH-USDT-SWAP",
+      "XRP-USDT-SWAP",
+      "LTC-USDT-SWAP"
+    ],
+    "timeframe": "1h",
+    "shockLookbackBars": 2160,
+    "shockQuantile": 0.05,
+    "minimumShockReturn": -0.02,
+    "maximumHoldBars": 3
+  },
+  "cryptoAdaptation": {
+    "universe": "frozen_20_asset_core_cohort",
+    "minimumLaggedBeta": 0.5,
+    "liquidityGate": "lagged within-instrument volume ratio",
+    "maximumHoldBars": 3
+  },
+  "costPolicy": "round_trip_12bps_included",
+  "variantBudget": 2,
+  "parameterTrialCountPerVariant": 3,
+  "lockedOosReadCount": 0,
+  "formalRunCount": 0,
+  "adaptationLimits": [
+    "one source replication and one crypto adaptation only",
+    "three preregistered neighborhood scales only",
+    "no post-result target or hour search",
+    "no historical PIT universe claim",
+    "no Locked OOS tuning"
+  ]
+}

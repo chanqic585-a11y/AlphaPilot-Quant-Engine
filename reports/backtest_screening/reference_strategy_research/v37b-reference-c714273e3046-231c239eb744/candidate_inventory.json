@@ -1,0 +1,187 @@
+{
+  "candidateCount": 18,
+  "candidates": [
+    {
+      "candidateId": "ref_turtle_donchian_20_10_4h_v1",
+      "disposition": "duplicate_existing",
+      "familyId": "canonical_turtle_trend_following",
+      "overlapWith": "crypto_tsmom_turtle_v1",
+      "reason": "semantic family already registered",
+      "semanticFingerprint": "reference_semantic_6b180e6ca4b5d0e02b81a681e49937dc36017acb25737ae4ae46e14843e75984",
+      "sourceCandidateSpecHash": "e468f5c0e2eb7d0de93b8b8ad2a76f37f95e9da99fd5f32596422030845f557d",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_turtle_donchian_55_20_1d_v1",
+      "disposition": "insufficient_evidence",
+      "familyId": "canonical_turtle_trend_following",
+      "overlapWith": null,
+      "reason": "package metadata is not formal AlphaPilot evidence",
+      "semanticFingerprint": "reference_semantic_b265b07b3c206f2ee386b736b215490badd34a454266ecfd5161a8aff9f152d5",
+      "sourceCandidateSpecHash": "478d049c2879d748908c525edaee95baeffa14659207771dfa10a3aa66e09db7",
+      "timeframe": "1d"
+    },
+    {
+      "candidateId": "ref_utc_session_range_breakout_1h_v1",
+      "disposition": "selected_bounded_research",
+      "familyId": "utc_session_range_breakout",
+      "overlapWith": null,
+      "reason": "incremental causal hypothesis",
+      "semanticFingerprint": "reference_semantic_6c54171fd682b79db16d929c99548bf8649dd198fa8ad81976ef26f081ef3ede",
+      "sourceCandidateSpecHash": "0f5a05b4eb5b0eca5c1fc328cdc282395049210885161eace14f18114271bfba",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_pa_breakout_failure_second_entry_4h_v1",
+      "disposition": "selected_bounded_research",
+      "familyId": "price_action_breakout_failure_second_entry",
+      "overlapWith": null,
+      "reason": "incremental causal hypothesis",
+      "semanticFingerprint": "reference_semantic_0bbaffb37c888dc32817c70df5ef575f0c9f8c319676f5488047d69fae98d162",
+      "sourceCandidateSpecHash": "93c73e123a1d40017901986711c8f6919efcdbd649bb63ebd6ae5924d0730666",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_pa_wedge_pullback_continuation_4h_v1",
+      "disposition": "research_later",
+      "familyId": "price_action_wedge_pullback_continuation",
+      "overlapWith": null,
+      "reason": "requires a separate bounded hypothesis campaign",
+      "semanticFingerprint": "reference_semantic_18fc1748c809a9e1cc00aab8a6e571b67b23d011d17d6f9cc82e41730bf99185",
+      "sourceCandidateSpecHash": "3db8f81cbc7924b5e2836199336bb871b6311978ab35adb62fe4fb733516b46b",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_pa_spike_pullback_continuation_1h_v1",
+      "disposition": "research_later",
+      "familyId": "price_action_spike_pullback_continuation",
+      "overlapWith": null,
+      "reason": "requires a separate bounded hypothesis campaign",
+      "semanticFingerprint": "reference_semantic_500c93d2f08df994ea3a7931250a4c3c1029564af68c10e98cfb1a8854995d3e",
+      "sourceCandidateSpecHash": "c9818cb91d666a5120597e7d0cc2ca20b65e7841e08ad78c955f71519a689f19",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_pa_channel_h2_l2_pullback_4h_v1",
+      "disposition": "forward_data_required",
+      "familyId": "price_action_second_pullback_channel",
+      "overlapWith": null,
+      "reason": "requires unavailable point-in-time forward evidence",
+      "semanticFingerprint": "reference_semantic_62261da04d514587d0907c8518a107124a97a85f06e647efbc483b0fa0f02700",
+      "sourceCandidateSpecHash": "031c067dec1fd10114d0852730fb85ae10d1c831473c4f67ae61c1457f4a0b38",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_pa_flag_breakout_retest_4h_v1",
+      "disposition": "insufficient_evidence",
+      "familyId": "price_action_flag_breakout_retest",
+      "overlapWith": null,
+      "reason": "package metadata is not formal AlphaPilot evidence",
+      "semanticFingerprint": "reference_semantic_48d4a904ed4cb895756eaa0fca2cc3fb28c1db78b3bdc33caebb090972ef6dc2",
+      "sourceCandidateSpecHash": "2a42c487d33c3724070e612323aadbea260c9b45c6d5195c331c1e765516621d",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_bollinger_band_expansion_4h_v1",
+      "disposition": "insufficient_evidence",
+      "familyId": "bollinger_curvature_expansion",
+      "overlapWith": null,
+      "reason": "package metadata is not formal AlphaPilot evidence",
+      "semanticFingerprint": "reference_semantic_db637eb9b0e1e91553157750b3fae1b6e2995d74d136f03a2bc0c3bbeb2a77ff",
+      "sourceCandidateSpecHash": "62844fc53278bb1e8cdd9be8b3f6c6eb70301da1d822ea4065732f6c4d42829d",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_pa_range_boundary_second_entry_1h_v1",
+      "disposition": "insufficient_evidence",
+      "familyId": "price_action_range_boundary_second_entry",
+      "overlapWith": null,
+      "reason": "package metadata is not formal AlphaPilot evidence",
+      "semanticFingerprint": "reference_semantic_bfda1d24268f5b183f1b347d806efa4b2e39bdb0cc6b1aed5b063d1f3bd1a550",
+      "sourceCandidateSpecHash": "fb46c1e513da67a5dfc9deb582435efc3ea323dfb445854dedffeccdd3fed484",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_pair_residual_mean_reversion_4h_v1",
+      "disposition": "insufficient_evidence",
+      "familyId": "clean_pair_relative_value",
+      "overlapWith": null,
+      "reason": "package metadata is not formal AlphaPilot evidence",
+      "semanticFingerprint": "reference_semantic_473a8c3e15375f4cccab51766f3abc79ef498bfd49336aab9190bb3bf3eb7a21",
+      "sourceCandidateSpecHash": "428807d207a7ef130db4dee628f743dc063b764cf3016091fc586bab3a10bfa3",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_ma_stack_session_trend_4h_v1",
+      "disposition": "insufficient_evidence",
+      "familyId": "ma_stack_session_trend",
+      "overlapWith": null,
+      "reason": "package metadata is not formal AlphaPilot evidence",
+      "semanticFingerprint": "reference_semantic_7c4d9cdf43dbde3cc219031273146e90a449c4e3f0c31c6526ca291ba886217d",
+      "sourceCandidateSpecHash": "6712ad1a9923b6fb21d678ff92589888c97f9a55238a2ac30e74758a0d82389b",
+      "timeframe": "4h"
+    },
+    {
+      "candidateId": "ref_fractal_multitimeframe_session_breakout_15m_v1",
+      "disposition": "research_later",
+      "familyId": "fractal_multitimeframe_session_breakout",
+      "overlapWith": null,
+      "reason": "requires a separate bounded hypothesis campaign",
+      "semanticFingerprint": "reference_semantic_5e61eb08745af37a6aa5c4e1423186e42dfc5af8c76452b88dcea246dea36570",
+      "sourceCandidateSpecHash": "6cd10bd10ec430316c5edcbd9cf90939df0707497fb5b07397b6100716745e4a",
+      "timeframe": "15m"
+    },
+    {
+      "candidateId": "ref_box_breakout_no_grid_1h_v1",
+      "disposition": "insufficient_evidence",
+      "familyId": "single_box_breakout",
+      "overlapWith": null,
+      "reason": "package metadata is not formal AlphaPilot evidence",
+      "semanticFingerprint": "reference_semantic_471e4b6816896b527d6ce45929900ba937eb04411744c8428f3a64f4a8cdb3bd",
+      "sourceCandidateSpecHash": "9f500a860e1143ff9e3d98cf2f9cdb6321669109a28b2ba8e40d409b0c8259af",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_trend_filtered_boll_stoch_reversion_1h_v1",
+      "disposition": "insufficient_evidence",
+      "familyId": "trend_filtered_boll_stoch_reversion",
+      "overlapWith": null,
+      "reason": "package metadata is not formal AlphaPilot evidence",
+      "semanticFingerprint": "reference_semantic_4768f73382d9da7b3f5909852de08df08fcb7c6f489e815a86f6372dfb326c6d",
+      "sourceCandidateSpecHash": "be99bf12fb0761282b6bb01a56dac9e13f0879e2782676418d77335b1e81761c",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "ref_tick_speed_momentum_forward_v1",
+      "disposition": "forward_data_required",
+      "familyId": "tick_speed_momentum",
+      "overlapWith": null,
+      "reason": "requires unavailable point-in-time forward evidence",
+      "semanticFingerprint": "reference_semantic_074a7d58894ad75794c3db4efb58b17d0f81d93c716aaf708523254dade4a03c",
+      "sourceCandidateSpecHash": "28546dd7bb305ba30e0afc9c73b2bdaae4eea759e63091cd6ac2fc5e884e9973",
+      "timeframe": "tick"
+    },
+    {
+      "candidateId": "ref_event_news_breakout_forward_v1",
+      "disposition": "forward_data_required",
+      "familyId": "event_driven_news",
+      "overlapWith": null,
+      "reason": "requires unavailable point-in-time forward evidence",
+      "semanticFingerprint": "reference_semantic_aead7f58e58bad373e975b2832095a83fbc6ad9a4c2cdba135f1f0c995265d32",
+      "sourceCandidateSpecHash": "bcf0f13f9900fb349413e94bf39a303aa24c8a773bfa2d7178570aba5a98f7ba",
+      "timeframe": "event"
+    },
+    {
+      "candidateId": "ref_okx_spot_perp_basis_forward_v1",
+      "disposition": "forward_data_required",
+      "familyId": "okx_basis_relative_value",
+      "overlapWith": null,
+      "reason": "requires unavailable point-in-time forward evidence",
+      "semanticFingerprint": "reference_semantic_549819877cf22e0f062a0b518d978e9a42222e37469bc8d6fb4b5485d25043e5",
+      "sourceCandidateSpecHash": "f1ce548f7ddb49f27398999b1c89d6eb5a68dc174580c9b4a8ec77b9a9b9c980",
+      "timeframe": "funding_interval"
+    }
+  ],
+  "runId": "v37b-reference-c714273e3046-231c239eb744",
+  "schemaVersion": "reference_strategy_candidate_inventory_v1"
+}

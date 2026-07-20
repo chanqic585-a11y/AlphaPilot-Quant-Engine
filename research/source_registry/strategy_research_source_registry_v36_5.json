@@ -1,0 +1,92 @@
+{
+  "schemaVersion": "v35_strategy_research_source_registry_v1",
+  "registryId": "alphapilot_v36_5_independent_mechanism_sources",
+  "families": [
+    {
+      "familyId": "crypto_intraday_session_predictability_v1",
+      "title": "Crypto intraday session predictability",
+      "source": {
+        "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3309565",
+        "license": "citation_only",
+        "summary": "The cited research documents smooth intraday seasonality and time-varying short-horizon predictability in Bitcoin; AlphaPilot treats it as a falsifiable hypothesis rather than a guaranteed anomaly.",
+        "citation": "Baur and Dimpfl, Bitcoin at High Frequency, 2019 working paper. Supporting periodicity context: Petukhina et al., arXiv:2109.12142."
+      },
+      "mechanism": "Broad UTC sessions may retain a short-lived conditional return sign because liquidity and participation vary systematically through the day.",
+      "formula": "sign(rolling mean of prior completed returns for the same frozen UTC session), entered at the next session open",
+      "parameters": {
+        "timeframes": ["1h"],
+        "sessionHours": 8,
+        "lookbackSessions": 20,
+        "minimumSessionMean": 0.001,
+        "atrBars": 24,
+        "stopAtr": 3.0,
+        "maximumHoldBars": 7
+      },
+      "universe": {
+        "instrumentType": "USDT perpetual swap",
+        "selection": "frozen BTC, ETH and SOL Development panel"
+      },
+      "costAssumptions": {
+        "required": true,
+        "components": ["fees", "slippage", "funding"]
+      },
+      "adaptationLimits": [
+        "three broad UTC sessions only",
+        "no 24-hour post-result search",
+        "one lagged liquidity and volatility gate at most",
+        "no Locked OOS tuning"
+      ],
+      "replicationState": "registered",
+      "variants": [
+        {
+          "candidateId": "v36_5_intraday_session_source_replication",
+          "adaptation": "source_replication",
+          "definitionPath": "research/canonical_replications/crypto_intraday_session_predictability_v1.json"
+        },
+        {
+          "candidateId": "v36_5_intraday_session_crypto_adaptation",
+          "adaptation": "crypto_adaptation",
+          "definitionPath": "research/canonical_replications/crypto_intraday_session_predictability_v1.json"
+        }
+      ]
+    },
+    {
+      "familyId": "crypto_funding_carry_v1",
+      "title": "Hedged crypto funding carry",
+      "source": {
+        "url": "https://arxiv.org/abs/2212.06888",
+        "license": "citation_only",
+        "summary": "The cited work formalizes perpetual-futures pricing and funding; AlphaPilot requires aligned same-exchange spot, perpetual, funding and dual-leg execution evidence before testing a carry strategy.",
+        "citation": "Ackerer, Hugonnier and Jermann, Fundamentals of Perpetual Futures, 2022."
+      },
+      "mechanism": "A delta-hedged spot-perpetual position may collect funding when carry exceeds basis risk and dual-leg costs.",
+      "formula": "funding income minus spot-perpetual basis change, fees, slippage and capacity costs",
+      "parameters": {
+        "timeframes": ["funding_interval"],
+        "alignment": "same exchange and point in time"
+      },
+      "universe": {
+        "instrumentType": "same-exchange spot and USDT perpetual pairs",
+        "selection": "blocked until PIT aligned universe exists"
+      },
+      "costAssumptions": {
+        "required": true,
+        "components": ["dual-leg fees", "dual-leg slippage", "funding", "basis risk", "capacity"]
+      },
+      "adaptationLimits": [
+        "no naked directional proxy",
+        "both legs required",
+        "same-exchange PIT alignment required",
+        "no execution candidate while data-blocked"
+      ],
+      "replicationState": "data_blocked",
+      "variants": [
+        {
+          "candidateId": "v36_5_funding_carry_source_replication",
+          "adaptation": "source_replication",
+          "definitionPath": "research/canonical_replications/crypto_funding_carry_v1.json"
+        }
+      ]
+    }
+  ]
+}

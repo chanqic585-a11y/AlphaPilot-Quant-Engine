@@ -1,0 +1,18 @@
+{
+  "blockers": [],
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "headCommit": "ede34adba736c273bab38da5ba07b5f1292fed69",
+  "implementationCommit": "89a4194731a16da2de078bedd367dff09f03ebda",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "remoteFreezeTag": "v13.27.1.37e.2-formal-freeze",
+  "remoteTagCommit": "ede34adba736c273bab38da5ba07b5f1292fed69",
+  "resultReadCount": 0,
+  "route": "ready_for_authorization",
+  "schemaVersion": "v36_tsmom_remote_freeze_audit_v1",
+  "status": "passed",
+  "upstreamRef": "origin/feature/v13.27.1.37e-candidate-replay-tsmom-formal-closure"
+}

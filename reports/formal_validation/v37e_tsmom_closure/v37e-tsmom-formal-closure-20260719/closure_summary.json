@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "v37e_tsmom_formal_closure_v1",
+  "campaignId": "v37e-tsmom-formal-closure-20260719",
+  "status": "completed",
+  "sourceBranch": "feature/v13.27.1.37e-candidate-replay-tsmom-formal-closure",
+  "objective": "Close deterministic replay, Formal data readiness, and out-of-sample walk-forward evidence for the two TSMOM candidates without forcing admission.",
+  "deterministicReplay": {
+    "campaignId": "v37e-bounded-replay-v36-eligible-20260719",
+    "candidateCount": 9,
+    "eligibleCandidateCount": 6,
+    "trialCount": 18,
+    "stableSelectionCount": 2,
+    "stableCandidateIds": [
+      "v35_tsmom_crypto_adaptation",
+      "v35_tsmom_source_replication"
+    ],
+    "formalRunCount": 0,
+    "resultReadCount": 0,
+    "lockedOosReadCount": 0,
+    "releaseCount": 0,
+    "artifactPath": "reports/candidate_research/v37e/v37e-bounded-replay-v36-eligible-20260719"
+  },
+  "formalBranches": [
+    {
+      "candidateId": "v35_tsmom_crypto_adaptation",
+      "timeframe": "4h",
+      "formalStatus": "completed",
+      "route": "archive_s01_current_version",
+      "formalRunCount": 1,
+      "formalInputReadCount": 1,
+      "formalWalkForwardOosEvidence": true,
+      "lockedOosAccessCount": 0,
+      "tradeCount": 36,
+      "winCount": 8,
+      "lossCount": 28,
+      "profitFactor": 0.4892523858942939,
+      "averageNetR": -0.3602150619945275,
+      "totalNetR": -12.96774223180299,
+      "maximumDrawdownPercent": 19.289520256033647,
+      "strategyPerformanceFailure": true,
+      "implementationOrEvidenceFailure": false,
+      "releaseCount": 0,
+      "demoArm": false,
+      "orderCount": 0,
+      "artifactPath": "reports/formal_validation/v36_tsmom_formal_results/v36_tsmom_formal_v35_tsmom_crypto_adaptation_081676ade65ddebb/v35_tsmom_crypto_adaptation"
+    },
+    {
+      "candidateId": "v35_tsmom_source_replication",
+      "timeframe": "1dutc",
+      "formalStatus": "superseded_before_formal_by_new_identity",
+      "availableBars": 563,
+      "requiredBars": 1320,
+      "originalMaximumHoldingBars": 180,
+      "resolution": "Preserve the original identity and preregister a metadata-only capacity successor. Do not manufacture unavailable calendar history.",
+      "successorCandidateId": "v37e_tsmom_daily_capacity_successor",
+      "evidencePath": "reports/formal_validation/v36_tsmom_formal_handoff/v36-development-replay-okx-v34c-20260719/funding_data_readiness.json"
+    },
+    {
+      "candidateId": "v37e_tsmom_daily_capacity_successor",
+      "parentCandidateId": "v35_tsmom_source_replication",
+      "timeframe": "1dutc",
+      "formalStatus": "completed",
+      "route": "archive_s01_current_version",
+      "formalRunCount": 1,
+      "formalInputReadCount": 1,
+      "formalWalkForwardOosEvidence": true,
+      "lockedOosAccessCount": 0,
+      "walkForwardCapacity": {
+        "availableBars": 563,
+        "requiredBars": 510,
+        "foldCount": 5,
+        "minimumTestBarsPerFold": 60,
+        "purgeBarsPerFold": 18,
+        "warmupBars": 120
+      },
+      "tradeCount": 6,
+      "rawSignalCount": 8,
+      "rejectedSignalCount": 2,
+      "winCount": 4,
+      "lossCount": 2,
+      "profitFactor": 2.5980178400521403,
+      "averageNetR": 0.4388966903620301,
+      "totalNetR": 2.6333801421721805,
+      "netReturnPercent": 2.609477576381436,
+      "maximumDrawdownPercent": 2.4422208174862887,
+      "positiveFoldCount": 2,
+      "requiredPositiveFoldCount": 3,
+      "benchmarkTotalIncrementalNetR": -1.48262,
+      "benchmarkPositiveIncrementFoldCount": 0,
+      "maximumSingleSymbolPositiveContribution": 0.6720922077238298,
+      "maximumSingleMonthPositiveContribution": 0.7801752387241456,
+      "routeBlockers": [
+        "positive_fold_minimum",
+        "benchmark_total_incremental_net_r",
+        "benchmark_positive_increment_fold_minimum"
+      ],
+      "strategyPerformanceFailure": true,
+      "implementationOrEvidenceFailure": false,
+      "releaseCount": 0,
+      "demoArm": false,
+      "orderCount": 0,
+      "resultManifestSha256": "5e0767b4651acc1dbfa1ed645a639d451e67c50be4c88568d8ee2c93f6c494cc",
+      "artifactPath": "reports/formal_validation/v37e2_tsmom_formal_results/v36_tsmom_formal_v37e_tsmom_daily_capacity_successor_70f71f31cd87914a/v37e_tsmom_daily_capacity_successor"
+    }
+  ],
+  "engineeringRemediation": [
+    {
+      "issue": "Funding readiness and Formal input used different time windows.",
+      "resolution": "Filter funding observations to the frozen Formal window before schedule and gap checks.",
+      "regressionTest": "tests/formal_validation/test_formal_input.py::test_load_formal_input_ignores_funding_gap_before_formal_window",
+      "status": "resolved"
+    },
+    {
+      "issue": "Formal artifact staging exceeded the Windows path-length boundary.",
+      "resolution": "Stage artifacts under the short Formal output root and atomically publish them to the immutable destination.",
+      "regressionTest": "tests/formal_validation/test_v18_formal_artifact_publication.py",
+      "status": "resolved"
+    }
+  ],
+  "evidenceInterpretation": {
+    "separateLockedOosReadRequiredAfterTerminalFormalFailure": false,
+    "reason": "Both branches reached terminal preregistered Formal routes. Reading or tuning against an additional locked OOS set after a terminal failure would add no admission value and would contaminate future research evidence.",
+    "resultDrivenParameterChangeCount": 0,
+    "forcedPass": false
+  },
+  "finalCounters": {
+    "completedFormalRuns": 2,
+    "unresolvedEngineeringBlockerCount": 0,
+    "unresolvedDataBlockerCount": 0,
+    "terminalStrategyPerformanceFailureCount": 2,
+    "releaseCount": 0,
+    "demoArmCount": 0,
+    "orderCount": 0
+  },
+  "finalDecision": "archive_both_current_identities",
+  "nextResearchBoundary": "Any future TSMOM work must start from a new falsifiable hypothesis and new preregistered identity; it must not tune these frozen results into a pass."
+}

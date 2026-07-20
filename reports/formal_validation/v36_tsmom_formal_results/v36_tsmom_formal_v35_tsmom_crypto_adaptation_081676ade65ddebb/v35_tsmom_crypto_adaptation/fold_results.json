@@ -1,0 +1,140 @@
+{
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_081676ade65ddebb",
+  "foldAssignmentAudit": {
+    "acceptedEventCount": 46,
+    "boundaryRejectedEventCount": 5,
+    "eventMayCrossFoldBoundary": false,
+    "inputEventCount": 97,
+    "outsideWindowEventCount": 46,
+    "rejectedEventCount": 51,
+    "schemaVersion": "s01_formal_fold_assignment_audit_v1"
+  },
+  "folds": [
+    {
+      "averageNetR": -0.02585927649805112,
+      "foldId": "fold_001",
+      "lossCount": 4,
+      "maximumDrawdownPercent": 4.212349591575712,
+      "maximumSingleMonthPositiveContribution": 1.0,
+      "maximumSingleSymbolPositiveContribution": 0.5168919531113014,
+      "netPnl": -28.973790944761276,
+      "netReturnPercent": -0.28973790944761824,
+      "positiveContributionByMonth": {
+        "2025-10": 0.0,
+        "2025-11": 392.2611682128081
+      },
+      "positiveContributionBySymbol": {
+        "BTC-USDT-SWAP": 202.75664136723913,
+        "ETH-USDT-SWAP": 39.52693067795297,
+        "SOL-USDT-SWAP": 149.97759616761599
+      },
+      "profitFactor": 0.9312170314574362,
+      "profitFactorStatus": "defined",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": -0.20687421198440897,
+      "tradeCount": 8,
+      "winCount": 4
+    },
+    {
+      "averageNetR": -0.9706310238121514,
+      "foldId": "fold_002",
+      "lossCount": 10,
+      "maximumDrawdownPercent": 9.311651823362025,
+      "maximumSingleMonthPositiveContribution": 0.0,
+      "maximumSingleSymbolPositiveContribution": 0.0,
+      "netPnl": -931.1651823362026,
+      "netReturnPercent": -9.311651823362022,
+      "positiveContributionByMonth": {
+        "2025-12": 0.0,
+        "2026-01": 0.0
+      },
+      "positiveContributionBySymbol": {
+        "BTC-USDT-SWAP": 0.0,
+        "ETH-USDT-SWAP": 0.0,
+        "SOL-USDT-SWAP": 0.0
+      },
+      "profitFactor": 0.0,
+      "profitFactorStatus": "defined",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": -9.706310238121514,
+      "tradeCount": 10,
+      "winCount": 0
+    },
+    {
+      "averageNetR": -1.0535029539883667,
+      "foldId": "fold_003",
+      "lossCount": 4,
+      "maximumDrawdownPercent": 3.7778714777309506,
+      "maximumSingleMonthPositiveContribution": 0.0,
+      "maximumSingleSymbolPositiveContribution": 0.0,
+      "netPnl": -377.78714777309506,
+      "netReturnPercent": -3.777871477730954,
+      "positiveContributionByMonth": {
+        "2026-02": 0.0,
+        "2026-03": 0.0
+      },
+      "positiveContributionBySymbol": {
+        "BTC-USDT-SWAP": 0.0,
+        "ETH-USDT-SWAP": 0.0,
+        "SOL-USDT-SWAP": 0.0
+      },
+      "profitFactor": 0.0,
+      "profitFactorStatus": "defined",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": -4.214011815953467,
+      "tradeCount": 4,
+      "winCount": 0
+    },
+    {
+      "averageNetR": -0.4409838249173602,
+      "foldId": "fold_004",
+      "lossCount": 5,
+      "maximumDrawdownPercent": 4.387412873947757,
+      "maximumSingleMonthPositiveContribution": 1.0,
+      "maximumSingleSymbolPositiveContribution": 0.9219056836256245,
+      "netPnl": -268.96168131950253,
+      "netReturnPercent": -2.689616813195028,
+      "positiveContributionByMonth": {
+        "2026-04": 177.5703504931227,
+        "2026-05": 0.0
+      },
+      "positiveContributionBySymbol": {
+        "BTC-USDT-SWAP": 163.70311536300403,
+        "ETH-USDT-SWAP": 13.86723513011868,
+        "SOL-USDT-SWAP": 0.0
+      },
+      "profitFactor": 0.3976654256410335,
+      "profitFactorStatus": "defined",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": -3.0868867744215214,
+      "tradeCount": 7,
+      "winCount": 2
+    },
+    {
+      "averageNetR": 0.6066201155254171,
+      "foldId": "fold_005",
+      "lossCount": 5,
+      "maximumDrawdownPercent": 2.889141244072428,
+      "maximumSingleMonthPositiveContribution": 1.0,
+      "maximumSingleSymbolPositiveContribution": 0.5433891649755092,
+      "netPnl": 338.04461946641277,
+      "netReturnPercent": 3.380446194664133,
+      "positiveContributionByMonth": {
+        "2026-06": 645.611368188406,
+        "2026-07": 0.0
+      },
+      "positiveContributionBySymbol": {
+        "BTC-USDT-SWAP": 350.81822225859395,
+        "ETH-USDT-SWAP": 0.0,
+        "SOL-USDT-SWAP": 294.79314592981206
+      },
+      "profitFactor": 2.0990935166790785,
+      "profitFactorStatus": "defined",
+      "schemaVersion": "s01_v18_formal_portfolio_metrics_v1",
+      "totalNetR": 4.246340808677919,
+      "tradeCount": 7,
+      "winCount": 2
+    }
+  ],
+  "schemaVersion": "s01_v18_fold_results_v1"
+}
