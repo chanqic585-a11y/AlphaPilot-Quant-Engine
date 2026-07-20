@@ -105,6 +105,16 @@ def generate_patch_evidence(
     root.mkdir(parents=True, exist_ok=True)
     previous_release_path = root / "provisional_release.json"
     previous_release = _read(previous_release_path) if previous_release_path.is_file() else None
+    previous_approval_path = root / "demo_approval_request.json"
+    previous_approval = (
+        _read(previous_approval_path) if previous_approval_path.is_file() else None
+    )
+    previous_approval_md_path = root / "demo_approval_request.md"
+    previous_approval_md = (
+        previous_approval_md_path.read_text(encoding="utf-8")
+        if previous_approval_md_path.is_file()
+        else None
+    )
 
     verification = dict(v46_evidence_verification)
     verified_rows = list(verification.get("verifiedArtifacts") or [])
@@ -308,51 +318,6 @@ def generate_patch_evidence(
         "v46EvidenceZipSha256": v46_evidence_zip_sha256,
         "v46ArtifactManifestSha256": verification.get("manifestSha256"),
     }
-    approval = {
-        "schemaVersion": "demo_exact_hash_approval_request_v1",
-        "releaseId": release["releaseId"],
-        "releaseHash": release["releaseHash"],
-        "riskOverlayHash": risk["riskOverlayHash"],
-        "portfolioComponents": candidate_ids,
-        "cooldownSemantics": cooldown,
-        "executionIdentityHash": execution_identity["executionIdentityHash"],
-        "executionInstruments": universe["executionIntersection"],
-        "riskLimits": {
-            "riskPerTradePercent": risk["riskPerTradePercent"],
-            "maximumPortfolioOpenRiskPercent": risk["maximumPortfolioOpenRiskPercent"],
-            "maximumConcurrentPositions": risk["maximumConcurrentPositions"],
-        },
-        "knownLimitations": [
-            "V46 remains development_selected_result and is not a Formal Pass.",
-            "No clean historical OOS pass exists for this frozen release.",
-            "No post-approval closed OKX Demo strategy trade exists yet.",
-            "The exact public and authenticated instrument lists were not retained; the runtime eligible intersection was retained.",
-            "Live promotion is forbidden and must not be inferred from Demo evidence.",
-        ],
-        "approvalRequired": True,
-        "approvalReady": False,
-        "approved": False,
-        "demoArm": False,
-        "route": "blocked_waiting_exact_release_approval",
-        "requiredUserApproval": (
-            "Approve the exact Release Hash and exact Risk Overlay Hash in a later message."
-        ),
-    }
-    approval_md = (
-        "# V46 Portfolio Provisional Demo Approval Request\n\n"
-        f"- Release ID: `{release['releaseId']}`\n"
-        f"- Release Hash: `{release['releaseHash']}`\n"
-        f"- Risk Overlay Hash: `{risk['riskOverlayHash']}`\n"
-        f"- Components: {', '.join(candidate_ids)}\n"
-        "- Cooldown: same canonical instrument across all three components; previous "
-        "accepted closed-trade exit timestamp + 1,209,600 elapsed UTC seconds; entry at "
-        "the exact boundary is allowed.\n"
-        f"- Demo instruments: {', '.join(universe['executionIntersection'])}\n"
-        "- Formal pass: false\n- Live eligible: false\n- Approved: false\n- Demo ARM: false\n"
-        "- Route: `blocked_waiting_exact_release_approval`\n\n"
-        "A later approval must name both exact hashes. This document is not approval.\n"
-    )
-
     payloads = {
         "v46_portfolio_component_manifest.json": component_manifest,
         "v46_portfolio_cooldown_semantics_audit.json": cooldown,
@@ -365,10 +330,15 @@ def generate_patch_evidence(
         "demo_execution_universe_audit.json": universe,
         "cooldown_approval_wording_parity_audit.json": cooldown_wording_audit,
         "provisional_release_binding_audit.json": binding_audit,
-        "demo_approval_request.json": approval,
         "patch_implementation_receipt.json": dict(implementation_receipt),
         "patch_test_summary.json": dict(test_summary),
     }
+    if previous_approval is not None:
+        payloads["superseded_demo_approval_request_original.json"] = {
+            **dict(previous_approval),
+            "superseded": True,
+            "supersededReason": "pre_arm_readiness_not_yet_complete",
+        }
     if hash_changed:
         payloads["superseded_release_original.json"] = previous_release
         payloads["provisional_release_supersession.json"] = {
@@ -386,7 +356,12 @@ def generate_patch_evidence(
     for name, payload in payloads.items():
         _write(root / name, payload)
     (root / "cooldown_rejected_signal_ledger.jsonl").write_text("", encoding="utf-8")
-    (root / "demo_approval_request.md").write_text(approval_md, encoding="utf-8")
+    if previous_approval_md is not None:
+        (root / "superseded_demo_approval_request_original.md").write_text(
+            previous_approval_md, encoding="utf-8"
+        )
+    previous_approval_path.unlink(missing_ok=True)
+    previous_approval_md_path.unlink(missing_ok=True)
     _write(root / "patch_artifact_manifest.json", _manifest(root, generated_at))
     return {
         "releaseId": release["releaseId"],

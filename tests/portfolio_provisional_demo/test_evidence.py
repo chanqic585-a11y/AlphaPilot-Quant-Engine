@@ -26,6 +26,13 @@ def test_generator_writes_complete_unapproved_sidecar_bundle(tmp_path: Path) -> 
             "demoArm": False,
         },
     )
+    _write(
+        output / "demo_approval_request.json",
+        {"releaseId": "old_release", "releaseHash": "old_release_hash"},
+    )
+    (output / "demo_approval_request.md").write_text(
+        "# Superseded approval request\n", encoding="utf-8"
+    )
     components = [
         ("short_1h", "short", "1h", "short_rejection", "short_hash"),
         ("long_1d", "long", "1d", "mean_reversion", "long_hash"),
@@ -141,8 +148,8 @@ def test_generator_writes_complete_unapproved_sidecar_bundle(tmp_path: Path) -> 
         "provisional_portfolio_risk_overlay.json",
         "demo_execution_universe_audit.json",
         "cooldown_rejected_signal_ledger.jsonl",
-        "demo_approval_request.json",
-        "demo_approval_request.md",
+        "superseded_demo_approval_request_original.json",
+        "superseded_demo_approval_request_original.md",
         "patch_implementation_receipt.json",
         "patch_test_summary.json",
         "patch_artifact_manifest.json",
@@ -152,6 +159,8 @@ def test_generator_writes_complete_unapproved_sidecar_bundle(tmp_path: Path) -> 
         "superseded_release_original.json",
     }
     assert required <= {path.name for path in output.iterdir()}
+    assert not (output / "demo_approval_request.json").exists()
+    assert not (output / "demo_approval_request.md").exists()
     release = json.loads((output / "provisional_release.json").read_text(encoding="utf-8"))
     component_manifest = json.loads(
         (output / "v46_portfolio_component_manifest.json").read_text(encoding="utf-8")
