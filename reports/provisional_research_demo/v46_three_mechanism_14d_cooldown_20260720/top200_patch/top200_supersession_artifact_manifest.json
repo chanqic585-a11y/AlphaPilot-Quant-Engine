@@ -1,0 +1,30 @@
+{
+  "approved": false,
+  "artifactCount": 5,
+  "artifacts": [
+    {
+      "path": "superseding_provisional_release.json",
+      "sha256": "e3c5be2b7c4f22b88564a8d3738f154441fdaaf306d59f9be0555fd6e504e5ec"
+    },
+    {
+      "path": "superseding_release_hash_audit.json",
+      "sha256": "0229c85cdde4342cdd38839ed4a491ede837084e6e0554d93f97a6983c66fb86"
+    },
+    {
+      "path": "superseding_demo_approval_request.json",
+      "sha256": "49d8855855a68e85beab7028bcf31ed04f5e3fcc0a78b85e3f8d77b00219adcb"
+    },
+    {
+      "path": "old_release_supersession_overlay.json",
+      "sha256": "408286cffc1eb7dfe47af49eacb9491ed746e49358fe583346d2379e1225cdc7"
+    }
+  ],
+  "demoArm": false,
+  "live": false,
+  "manifestIncludedInArtifactCount": true,
+  "releaseHash": "provisional_demo_release_96aa2aa4bdb320e91745474f287dda9e4836b8a901910f252bcf447d718010d0",
+  "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
+  "schemaVersion": "top200_supersession_artifact_manifest_v1",
+  "strategyOrderCount": 0,
+  "withdraw": false
+}

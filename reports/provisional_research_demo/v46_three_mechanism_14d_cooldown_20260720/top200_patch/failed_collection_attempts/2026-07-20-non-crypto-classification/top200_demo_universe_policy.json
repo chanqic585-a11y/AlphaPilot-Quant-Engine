@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "okx_demo_top200_universe_policy_v1",
+  "policyId": "okx_demo_top200_liquid_usdt_swap_forward_v1",
+  "purpose": "provisional_forward_collection",
+  "maximumInstrumentCount": 200,
+  "refreshCadence": "daily_frozen_snapshot",
+  "instrumentType": "SWAP",
+  "settleCurrency": "USDT",
+  "assetClass": "crypto_native",
+  "rankingMetric": "medianDailyQuoteTurnover",
+  "rankingWindowCompleteUtcDays": 30,
+  "quoteTurnoverSource": "okx_completed_1Dutc_volCcyQuote",
+  "rankingDirection": "descending",
+  "tieBreak": "canonical_instrument_id_ascending",
+  "resultBasedSelectionAllowed": false,
+  "historicalBacktestMutationAllowed": false,
+  "eligibleIntersection": [
+    "okx_public_live_usdt_swap",
+    "authenticated_demo_account_instrument",
+    "runtime_market_data_ready",
+    "component_lookback_ready",
+    "exact_quote_turnover_ready",
+    "capacity_ready",
+    "instrument_constraints_ready"
+  ],
+  "excludedAssetClasses": [
+    "tokenized_equity",
+    "stablecoin_fx_like",
+    "unknown_asset_class"
+  ],
+  "policyHash": "top200_universe_policy_2bf7e14ddf8f3f38ead07d26b60d5935feeb2a1019292392bb530fc8d824b45a"
+}

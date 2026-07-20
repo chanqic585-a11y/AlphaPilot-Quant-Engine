@@ -1,0 +1,2171 @@
+{
+  "schemaVersion": "okx_demo_top200_universe_readiness_audit_v1",
+  "generatedAt": "2026-07-20T16:41:27Z",
+  "utcDate": "2026-07-20",
+  "policyId": "okx_demo_top200_liquid_usdt_swap_forward_v1",
+  "policyHash": "top200_universe_policy_2bf7e14ddf8f3f38ead07d26b60d5935feeb2a1019292392bb530fc8d824b45a",
+  "publicInstrumentCount": 426,
+  "authenticatedInstrumentCount": 116,
+  "marketReadinessCount": 426,
+  "eligibleBeforeLimitCount": 0,
+  "selectedCount": 0,
+  "maximumInstrumentCount": 200,
+  "rejectionReasonCounts": {
+    "asset_class_not_crypto_native": 6,
+    "authenticated_demo_instrument_missing": 304,
+    "history_not_ready": 101,
+    "invalid_instrument_identity": 15
+  },
+  "rejections": [
+    {
+      "instId": "BTC-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "ETH-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "SOL-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "DOGE-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "HYPE-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "XRP-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "SUI-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "BCH-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "ADA-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "DOT-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "ETC-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "FIL-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "LINK-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "LTC-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "UNI-USD-SWAP",
+      "reason": "invalid_instrument_identity"
+    },
+    {
+      "instId": "BTC-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ETH-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "OKB-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SOL-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "DOGE-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "HYPE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ZEC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "XRP-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "SUI-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "BCH-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "0G-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "1INCH-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "2Z-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "A-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AAOI-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "AAPL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AAVE-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ACH-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ACT-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ACU-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ADA-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ADBE-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "AERO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AEVO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AGLD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AIXBT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ALAB-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ALGO-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ALLO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AMAT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AMD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AMZN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ANIME-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ANTHROPIC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "APE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "API3-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "APLD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "APP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "APR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "APT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ARB-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ARKM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ARM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ARX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ASML-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ASTER-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ASTS-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "AT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ATH-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ATOM-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "AUCTION-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "AVAX-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "AVGO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AVNT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AXS-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "AXTI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "AZTEC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BABY-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BAND-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "BARD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BASED-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BAT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BB-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BEAT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BERA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BICO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BIGTIME-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BILL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BIO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BLEND-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BLUR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BMNR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BNB-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "BOME-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "BONK-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BOT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BRETT-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "BREV-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BSB-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BSP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "BZ-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CAP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CBRS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CELO-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CFX-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CGNX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CHIP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CHZ-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CIEN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CL-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "COAI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "COHR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "COIN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "COMP-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CORE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "COST-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CRCL-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CRDO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CRO-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CRV-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CRWV-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "CRWD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CSCO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "CVX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "DASH-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "DELL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "DKNG-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "DOOD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "DOT-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "DRAM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "DYDX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "EDEN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "EDGE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "EGLD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "EIGEN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ENA-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ENJ-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ENS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ENSO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ESP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ETC-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ETHW-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ETHFI-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "EWJ-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "EWY-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "EWZ-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "F-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "FARTCOIN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "FIL-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "FLNC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "FLOKI-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "FLOW-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "FOGO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GALA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GAS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GEV-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GIGGLE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GLM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GLW-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GME-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GMT-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "GMX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GOOGL-USDT-SWAP",
+      "reason": "asset_class_not_crypto_native"
+    },
+    {
+      "instId": "GPS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GRASS-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "GRT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "H-USDT-SWAP",
+      "reason": "asset_class_not_crypto_native"
+    },
+    {
+      "instId": "HBAR-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "HIMS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "HMSTR-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "HOME-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "HOOD-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "HPE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "HUMA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "HYUNDAI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "IBM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ICP-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ICX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "IMX-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "INFQ-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "INIT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "INJ-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "INTC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "IOST-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "IOTA-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "DATA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "IREN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "IRYS-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ISRG-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "IWM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "JELLYJELLY-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "JNJ-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "JTO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "JUP-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "KAITO-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "KAT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "KGEN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "KIOXIA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "KITE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "KLAC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "KMNO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "KORU-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "KSM-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "LA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LAB-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LAYER-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LDO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LIGHT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LINK-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "LINEA-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "LIT-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "LITE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LLY-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LPT-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "LQTY-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "LRCX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LTC-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "LUNA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "LUNR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MAGIC-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "MANA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MASK-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ME-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MEGA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MEME-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MERL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "METIS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MET-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "META-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MEW-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MINA-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "MINIMAX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MMT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MON-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MOODENG-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MORPHO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MOVE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MRVL-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "MSFT-USDT-SWAP",
+      "reason": "asset_class_not_crypto_native"
+    },
+    {
+      "instId": "MSTR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MU-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MUBARAK-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MUU-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "MVLL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NBIS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NEAR-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "NEIRO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NEO-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "NES-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NFLX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NG-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NIGHT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NMR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NOK-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "NOT-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "NOW-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "NVDA-USDT-SWAP",
+      "reason": "asset_class_not_crypto_native"
+    },
+    {
+      "instId": "O-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "OFC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "OL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ON-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ONDO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ONDS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ONE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ONT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "OP-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "OPENAI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "OPG-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "OPN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ORCL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ORDI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ORDER-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "OSCR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PARTI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PENGU-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PENDLE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PENG-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PEOPLE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PEPE-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "PI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PIEVERSE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PIPPIN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PLTR-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "PLUME-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PNUT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "POET-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "POL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "POPCAT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PROVE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PROS-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "PUMP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "PYTH-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "QCOM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "QNT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "QQQ-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "QTUM-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "RAM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RAVE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RAY-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RDDT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RDW-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RECALL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RENDER-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RESOLV-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RIVER-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RIVN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RKLB-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RLS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ROBO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ROK-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RSR-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "RVN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "S-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SAHARA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SAMSUNG-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SAND-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "SAPIEN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SATS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SEI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SENT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SHAZ-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SHELL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SHIB-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "SHLD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SIGN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SIMO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SKHYNIX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SKHY-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SKY-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "SLX-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "SMCI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SMH-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SNDK-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SNOW-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SNX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SNXX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SOFTBANK-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SONY-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SOON-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SOPH-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SOXL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SOXS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SPACE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SPCX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SPK-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "SPX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SPY-USDT-SWAP",
+      "reason": "asset_class_not_crypto_native"
+    },
+    {
+      "instId": "SQQQ-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SSV-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "STABLE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "STRK-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "STRC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "STX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "SUSHI-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "SYRUP-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "TAO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TER-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "THETA-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "TIA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "GRAM-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "TQQQ-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TRB-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TRIA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TRUMP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TRUST-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TRUTH-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TRX-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "TSEM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TSLA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TSM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TTMI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TTWO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TURBO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "TWLO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "UB-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "UMA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "UNH-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "UNI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "UP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "URNM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "USAR-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "USDC-USDT-SWAP",
+      "reason": "asset_class_not_crypto_native"
+    },
+    {
+      "instId": "USELESS-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "USO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "UVXY-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "VANA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "VIRTUAL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "VRT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "VVV-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "W-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WAL-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WCT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WDC-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WEN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WET-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WIF-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WLD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WLFI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "WOO-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "XAG-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "XAU-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "XBI-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "XCU-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "XLE-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "XLM-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "XPL-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "XPT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "XTZ-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "YB-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "YFI-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "YGG-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ZAMA-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ZBT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ZEN-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ZETA-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ZHIPU-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ZIL-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ZK-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ZKP-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ZM-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ZORA-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "ZRO-USDT-SWAP",
+      "reason": "history_not_ready"
+    },
+    {
+      "instId": "ZRX-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "XPD-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    },
+    {
+      "instId": "EWT-USDT-SWAP",
+      "reason": "authenticated_demo_instrument_missing"
+    }
+  ],
+  "snapshotHash": "demo_top200_universe_snapshot_8c0a408103d24eb4179e65a0807a56d829bf04df5e035b08035053250cba2aad",
+  "status": "blocked_empty_universe",
+  "collectionStatus": "completed_with_rejections",
+  "collectionErrors": [
+    {
+      "instId": "BTC-USDT-SWAP",
+      "error": "hourly_candles:BTC-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ETH-USDT-SWAP",
+      "error": "hourly_candles:ETH-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SOL-USDT-SWAP",
+      "error": "hourly_candles:SOL-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "DOGE-USDT-SWAP",
+      "error": "hourly_candles:DOGE-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "XRP-USDT-SWAP",
+      "error": "hourly_candles:XRP-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SUI-USDT-SWAP",
+      "error": "hourly_candles:SUI-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "BCH-USDT-SWAP",
+      "error": "hourly_candles:BCH-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "1INCH-USDT-SWAP",
+      "error": "hourly_candles:1INCH-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "2Z-USDT-SWAP",
+      "error": "hourly_candles:2Z-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "AAOI-USDT-SWAP",
+      "error": "hourly_candles:AAOI-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "AAVE-USDT-SWAP",
+      "error": "hourly_candles:AAVE-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ACT-USDT-SWAP",
+      "error": "hourly_candles:ACT-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ADA-USDT-SWAP",
+      "error": "hourly_candles:ADA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ADBE-USDT-SWAP",
+      "error": "hourly_candles:ADBE-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ALGO-USDT-SWAP",
+      "error": "hourly_candles:ALGO-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ARB-USDT-SWAP",
+      "error": "hourly_candles:ARB-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ASTER-USDT-SWAP",
+      "error": "hourly_candles:ASTER-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ASTS-USDT-SWAP",
+      "error": "hourly_candles:ASTS-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ATOM-USDT-SWAP",
+      "error": "hourly_candles:ATOM-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "AUCTION-USDT-SWAP",
+      "error": "hourly_candles:AUCTION-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "AVAX-USDT-SWAP",
+      "error": "hourly_candles:AVAX-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "AXS-USDT-SWAP",
+      "error": "hourly_candles:AXS-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "BAND-USDT-SWAP",
+      "error": "hourly_candles:BAND-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "BNB-USDT-SWAP",
+      "error": "hourly_candles:BNB-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "BOME-USDT-SWAP",
+      "error": "hourly_candles:BOME-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "BRETT-USDT-SWAP",
+      "error": "hourly_candles:BRETT-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "BZ-USDT-SWAP",
+      "error": "hourly_candles:BZ-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "CELO-USDT-SWAP",
+      "error": "hourly_candles:CELO-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "CFX-USDT-SWAP",
+      "error": "hourly_candles:CFX-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "CHZ-USDT-SWAP",
+      "error": "hourly_candles:CHZ-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "CL-USDT-SWAP",
+      "error": "hourly_candles:CL-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "COMP-USDT-SWAP",
+      "error": "hourly_candles:COMP-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "CRCL-USDT-SWAP",
+      "error": "hourly_candles:CRCL-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "CRO-USDT-SWAP",
+      "error": "hourly_candles:CRO-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "CRV-USDT-SWAP",
+      "error": "hourly_candles:CRV-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "CRWV-USDT-SWAP",
+      "error": "hourly_candles:CRWV-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "DOT-USDT-SWAP",
+      "error": "hourly_candles:DOT-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ENA-USDT-SWAP",
+      "error": "hourly_candles:ENA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ETC-USDT-SWAP",
+      "error": "hourly_candles:ETC-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ETHW-USDT-SWAP",
+      "error": "hourly_candles:ETHW-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ETHFI-USDT-SWAP",
+      "error": "hourly_candles:ETHFI-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "EWJ-USDT-SWAP",
+      "error": "hourly_candles:EWJ-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "FIL-USDT-SWAP",
+      "error": "hourly_candles:FIL-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "FLOKI-USDT-SWAP",
+      "error": "hourly_candles:FLOKI-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "GMT-USDT-SWAP",
+      "error": "hourly_candles:GMT-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "GOOGL-USDT-SWAP",
+      "error": "hourly_candles:GOOGL-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "GRASS-USDT-SWAP",
+      "error": "hourly_candles:GRASS-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "H-USDT-SWAP",
+      "error": "hourly_candles:H-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "HBAR-USDT-SWAP",
+      "error": "hourly_candles:HBAR-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "HMSTR-USDT-SWAP",
+      "error": "hourly_candles:HMSTR-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "HOME-USDT-SWAP",
+      "error": "hourly_candles:HOME-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "HOOD-USDT-SWAP",
+      "error": "hourly_candles:HOOD-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ICP-USDT-SWAP",
+      "error": "hourly_candles:ICP-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "IMX-USDT-SWAP",
+      "error": "hourly_candles:IMX-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "INJ-USDT-SWAP",
+      "error": "hourly_candles:INJ-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "IOTA-USDT-SWAP",
+      "error": "hourly_candles:IOTA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "IRYS-USDT-SWAP",
+      "error": "hourly_candles:IRYS-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "JUP-USDT-SWAP",
+      "error": "hourly_candles:JUP-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "KAITO-USDT-SWAP",
+      "error": "hourly_candles:KAITO-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "KSM-USDT-SWAP",
+      "error": "hourly_candles:KSM-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "LINK-USDT-SWAP",
+      "error": "hourly_candles:LINK-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "LINEA-USDT-SWAP",
+      "error": "hourly_candles:LINEA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "LIT-USDT-SWAP",
+      "error": "hourly_candles:LIT-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "LPT-USDT-SWAP",
+      "error": "hourly_candles:LPT-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "LQTY-USDT-SWAP",
+      "error": "hourly_candles:LQTY-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "LTC-USDT-SWAP",
+      "error": "hourly_candles:LTC-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "MAGIC-USDT-SWAP",
+      "error": "hourly_candles:MAGIC-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "MASK-USDT-SWAP",
+      "error": "hourly_candles:MASK-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "MET-USDT-SWAP",
+      "error": "hourly_candles:MET-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "MINA-USDT-SWAP",
+      "error": "hourly_candles:MINA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "MRVL-USDT-SWAP",
+      "error": "hourly_candles:MRVL-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "MSFT-USDT-SWAP",
+      "error": "hourly_candles:MSFT-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "NEAR-USDT-SWAP",
+      "error": "hourly_candles:NEAR-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "NEO-USDT-SWAP",
+      "error": "hourly_candles:NEO-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "NOT-USDT-SWAP",
+      "error": "hourly_candles:NOT-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "NOW-USDT-SWAP",
+      "error": "hourly_candles:NOW-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "NVDA-USDT-SWAP",
+      "error": "hourly_candles:NVDA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "OP-USDT-SWAP",
+      "error": "hourly_candles:OP-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "PEPE-USDT-SWAP",
+      "error": "hourly_candles:PEPE-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "PLTR-USDT-SWAP",
+      "error": "hourly_candles:PLTR-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "PROS-USDT-SWAP",
+      "error": "hourly_candles:PROS-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "QTUM-USDT-SWAP",
+      "error": "hourly_candles:QTUM-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SAND-USDT-SWAP",
+      "error": "hourly_candles:SAND-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SHIB-USDT-SWAP",
+      "error": "hourly_candles:SHIB-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SKY-USDT-SWAP",
+      "error": "hourly_candles:SKY-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SLX-USDT-SWAP",
+      "error": "hourly_candles:SLX-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SPK-USDT-SWAP",
+      "error": "hourly_candles:SPK-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SPY-USDT-SWAP",
+      "error": "hourly_candles:SPY-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "STRK-USDT-SWAP",
+      "error": "hourly_candles:STRK-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SUSHI-USDT-SWAP",
+      "error": "hourly_candles:SUSHI-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "SYRUP-USDT-SWAP",
+      "error": "hourly_candles:SYRUP-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "THETA-USDT-SWAP",
+      "error": "hourly_candles:THETA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "GRAM-USDT-SWAP",
+      "error": "hourly_candles:GRAM-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "TRX-USDT-SWAP",
+      "error": "hourly_candles:TRX-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "USAR-USDT-SWAP",
+      "error": "hourly_candles:USAR-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "USDC-USDT-SWAP",
+      "error": "hourly_candles:USDC-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "XAU-USDT-SWAP",
+      "error": "hourly_candles:XAU-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "XLM-USDT-SWAP",
+      "error": "hourly_candles:XLM-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "XPL-USDT-SWAP",
+      "error": "hourly_candles:XPL-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "XTZ-USDT-SWAP",
+      "error": "hourly_candles:XTZ-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "YB-USDT-SWAP",
+      "error": "hourly_candles:YB-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "YFI-USDT-SWAP",
+      "error": "hourly_candles:YFI-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "YGG-USDT-SWAP",
+      "error": "hourly_candles:YGG-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ZAMA-USDT-SWAP",
+      "error": "hourly_candles:ZAMA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ZETA-USDT-SWAP",
+      "error": "hourly_candles:ZETA-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ZIL-USDT-SWAP",
+      "error": "hourly_candles:ZIL-USDT-SWAP:Parameter bar error"
+    },
+    {
+      "instId": "ZRO-USDT-SWAP",
+      "error": "hourly_candles:ZRO-USDT-SWAP:Parameter bar error"
+    }
+  ],
+  "inputReadiness": {
+    "schemaVersion": "okx_demo_top200_input_readiness_v1",
+    "generatedAt": "2026-07-20T16:41:27Z",
+    "publicInstrumentCount": 426,
+    "authenticatedInstrumentCount": 143,
+    "exactQuoteTurnoverReadyCount": 107,
+    "componentLookbackReadyCount": 0,
+    "capacityReadyCount": 418,
+    "dailyLookbackRequirement": 200,
+    "hourlyLookbackRequirement": 240,
+    "maximumMinimumOrderNotionalUsdt": 100.0,
+    "resultMetricsUsed": false
+  }
+}

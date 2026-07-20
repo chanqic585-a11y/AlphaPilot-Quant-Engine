@@ -1,0 +1,21 @@
+{
+  "actualInstrumentCount": 82,
+  "approvalRequired": true,
+  "approved": false,
+  "demoArm": false,
+  "dynamicUniversePolicyHash": "top200_universe_policy_2bf7e14ddf8f3f38ead07d26b60d5935feeb2a1019292392bb530fc8d824b45a",
+  "dynamicUniversePolicyId": "okx_demo_top200_liquid_usdt_swap_forward_v1",
+  "dynamicUniverseSnapshotHash": "demo_top200_universe_snapshot_5615357b51716e05159e3af6eee436d35ecd76083520a3578ea7bcbcf7adb594",
+  "engineeringSmokeEvidenceHash": "engineering_smoke_evidence_a35c363b83a0b1c6baf30b25fa3a246cbbc06cce444a90ccb08b7d13ab5ccda1",
+  "executionIntersectionHash": "demo_execution_intersection_4285a3e6dd2155945b6498c130e5a99a9943f7503007b02ccbbed66e1e76960d",
+  "generatedAt": "2026-07-20T16:59:12.899103Z",
+  "live": false,
+  "oldReleaseUnchanged": true,
+  "releaseHash": "provisional_demo_release_96aa2aa4bdb320e91745474f287dda9e4836b8a901910f252bcf447d718010d0",
+  "releaseId": "provisional_research_demo_top200_1fc1e9895d79de78e457bc9c",
+  "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
+  "schemaVersion": "top200_superseding_release_hash_audit_v1",
+  "status": "blocked_waiting_exact_release_approval",
+  "strategyOrderCount": 0,
+  "withdraw": false
+}

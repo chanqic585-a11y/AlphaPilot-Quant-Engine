@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-07-20T16:59:12.899103Z",
+  "historicalArtifactMutation": false,
+  "oldApproved": false,
+  "oldDemoArm": false,
+  "oldReleaseHash": "provisional_demo_release_c1e28ecf59fb7fcc2b4876eec5e6fd04c50002bef28c69c03bedf164af7cd225",
+  "oldReleaseId": "provisional_research_demo_v46_a3669d95101ba65f68fa89b1",
+  "oldReleaseStatus": "superseded_unapproved",
+  "reason": "dynamic_top200_execution_identity_supersession",
+  "schemaVersion": "provisional_release_supersession_overlay_v1",
+  "supersedingReleaseHash": "provisional_demo_release_96aa2aa4bdb320e91745474f287dda9e4836b8a901910f252bcf447d718010d0",
+  "supersedingReleaseId": "provisional_research_demo_top200_1fc1e9895d79de78e457bc9c"
+}

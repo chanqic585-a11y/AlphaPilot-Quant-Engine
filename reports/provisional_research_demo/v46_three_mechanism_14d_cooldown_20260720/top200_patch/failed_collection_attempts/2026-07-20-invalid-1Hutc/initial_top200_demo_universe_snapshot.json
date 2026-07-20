@@ -1,0 +1,15 @@
+{
+  "schemaVersion": "okx_demo_top200_universe_snapshot_v1",
+  "utcDate": "2026-07-20",
+  "policyId": "okx_demo_top200_liquid_usdt_swap_forward_v1",
+  "policyHash": "top200_universe_policy_2bf7e14ddf8f3f38ead07d26b60d5935feeb2a1019292392bb530fc8d824b45a",
+  "maximumInstrumentCount": 200,
+  "actualInstrumentCount": 0,
+  "instrumentIds": [],
+  "rankedInstruments": [],
+  "status": "blocked_empty_universe",
+  "generatedAt": "2026-07-20T16:41:27Z",
+  "resultIndependent": true,
+  "dailyFrozen": true,
+  "snapshotHash": "demo_top200_universe_snapshot_8c0a408103d24eb4179e65a0807a56d829bf04df5e035b08035053250cba2aad"
+}
