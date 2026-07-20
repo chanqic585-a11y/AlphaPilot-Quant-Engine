@@ -1,0 +1,46 @@
+{
+  "amendOrRebaseUsed": false,
+  "console": {
+    "branch": "feature/v13.27.1.47-demo-truth-audit",
+    "remoteBranchMatchesSourceCommit": true,
+    "remoteBranchSha": "65e667bcccdfa2052114e4b52d4816b4c8749f7f",
+    "remoteTagMatchesSourceCommit": true,
+    "sourceCommit": "65e667bcccdfa2052114e4b52d4816b4c8749f7f",
+    "tag": "v13.27.1.46-prearm-readiness.2",
+    "tagObjectSha": "bfa87ad16bbb27cafdef2fdb647a284b43fd2f2a",
+    "tagTargetSha": "65e667bcccdfa2052114e4b52d4816b4c8749f7f"
+  },
+  "docs": {
+    "aheadOfUpstreamBy": 0,
+    "behindUpstreamBy": 23,
+    "branch": "main",
+    "head": "9021c27c397cdb294d297ec8c05bf1459a16afc0",
+    "status": "unmodified_not_part_of_patch",
+    "upstream": "5958da9f2bb237b15603bb743d69e431e7cfd908",
+    "worktreeClean": true
+  },
+  "existingTagsMoved": false,
+  "forcePushUsed": false,
+  "generatedAt": "2026-07-20T15:05:35.968787Z",
+  "historicalArtifactMutationCount": 0,
+  "historicalArtifactScope": "reports/portfolio_rescue/v13_27_1_46_20260720",
+  "quant": {
+    "branch": "feature/v13.27.1.47-50-portfolio-oos-research",
+    "evidenceCommit": "0c568e6eccd42aed487eab91eae8e2844e0d3eef",
+    "remoteBranchMatchesEvidenceCommit": true,
+    "remoteBranchSha": "0c568e6eccd42aed487eab91eae8e2844e0d3eef",
+    "remoteTagMatchesSourceCommit": true,
+    "sourceCommit": "4b8b0c131a796bb5522e154e4a166269a46de5ee",
+    "tag": "v13.27.1.46-prearm-readiness.2",
+    "tagObjectSha": "3a49fb0cf791be6efae0e4d7de6d0920a34254f9",
+    "tagTargetSha": "4b8b0c131a796bb5522e154e4a166269a46de5ee"
+  },
+  "remoteVerified": true,
+  "schemaVersion": "provisional_demo_remote_freeze_receipt_v1",
+  "status": "verified",
+  "worktreeCleanObservedBeforeReceiptGeneration": {
+    "console": true,
+    "docs": true,
+    "quant": true
+  }
+}

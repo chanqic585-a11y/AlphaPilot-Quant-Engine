@@ -1,5 +1,5 @@
 {
-  "artifactCount": 23,
+  "artifactCount": 26,
   "artifacts": [
     {
       "bytes": 960,
@@ -50,6 +50,21 @@
       "bytes": 2824,
       "path": "provisional_demo_pre_arm_private_read_audit.json",
       "sha256": "8027dfcde65b127cac87a02274a5ae703431d957d7e4d13536014d3db1865c9d"
+    },
+    {
+      "bytes": 1188,
+      "path": "provisional_demo_pre_arm_readiness.json",
+      "sha256": "ab39a71f56da249ecfe5a5b5d8992dd1271fbf1e857a5aa32d1807e06f03ba35"
+    },
+    {
+      "bytes": 848,
+      "path": "provisional_demo_pre_arm_readiness.md",
+      "sha256": "c5a9ec336d11c717f07078279124e4c2e108cef0c0fba49a21be3cf764310e0c"
+    },
+    {
+      "bytes": 1815,
+      "path": "provisional_demo_remote_freeze_receipt.json",
+      "sha256": "3d21ed7cdafe39a4d09de4e84c5eb7befd05383d1ccdad4252c01a8abb3793f0"
     },
     {
       "bytes": 682,
@@ -117,6 +132,6 @@
       "sha256": "1bc6c8e60efd910d4e51511f9f03f5b2057c8ae9953f832f658b83ad7c5f425e"
     }
   ],
-  "generatedAt": "2026-07-20T15:04:31.631852Z",
-  "manifestHash": "patch_artifact_manifest_d7567672aacc90131ede65fa382b78bab952dceb0a168904a3106c08aadc48dc"
+  "generatedAt": "2026-07-20T15:05:35.968787Z",
+  "manifestHash": "patch_artifact_manifest_d756c6e6f311802341705da3fccb35dca0605a1e630c420762da32dde1c23fa3"
 }
