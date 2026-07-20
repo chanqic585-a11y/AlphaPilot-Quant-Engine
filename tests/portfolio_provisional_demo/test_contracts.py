@@ -7,8 +7,10 @@ import pytest
 from alphapilot.portfolio_provisional_demo.contracts import (
     build_cooldown_rejection,
     build_cooldown_semantics,
+    build_execution_identity,
     build_portfolio_definition,
     build_provisional_release,
+    build_release_binding_audit,
     build_risk_overlay,
     build_universe_audit,
     cooldown_is_blocked,
@@ -84,8 +86,16 @@ def test_cooldown_is_utc_elapsed_time_from_previous_accepted_same_pair_exit() ->
     )
     previous_exit = datetime(2026, 7, 1, tzinfo=UTC)
 
-    assert semantics["anchorEvent"] == "previous_accepted_same_pair_exit"
-    assert semantics["durationSeconds"] == 14 * 24 * 60 * 60
+    assert semantics["cooldownScope"] == "canonical_instrument_id"
+    assert semantics["cooldownAnchor"] == "previous_accepted_closed_trade_exit_timestamp"
+    assert semantics["cooldownDurationSeconds"] == 14 * 24 * 60 * 60
+    assert semantics["timezone"] == "UTC"
+    assert (
+        semantics["boundaryRule"]
+        == "entry_timestamp_greater_than_or_equal_to_cooldown_end_is_allowed"
+    )
+    assert semantics["crossComponentScope"] == "all_three_portfolio_components"
+    assert semantics["cooldownSemanticsHash"].startswith("portfolio_cooldown_semantics_")
     assert semantics["boundaryEqualityAllowed"] is True
     assert semantics["clock"] == "utc_elapsed_time"
     assert cooldown_is_blocked(
@@ -197,6 +207,15 @@ def test_provisional_release_cannot_claim_formal_or_live_and_requires_exact_hash
         historical_metrics={"profitFactor": 1.6, "expectancyR": 0.3},
         cost_stress_metrics={"profitFactor": 1.36},
         replay_parity_percent=100.0,
+        execution_identity=build_execution_identity(
+            portfolio_definition=definition,
+            risk_overlay=risk,
+            universe_audit=universe,
+            quant_implementation_commit="a" * 40,
+            console_execution_commit="b" * 40,
+            quant_runtime_implementation_hash="quant_runtime_hash",
+            console_runtime_implementation_hash="console_runtime_hash",
+        ),
         generated_at="2026-07-20T00:00:00Z",
     )
 
@@ -208,6 +227,14 @@ def test_provisional_release_cannot_claim_formal_or_live_and_requires_exact_hash
     assert release["approved"] is False
     assert release["demoArm"] is False
     assert release["route"] == "blocked_waiting_exact_release_approval"
+    binding = build_release_binding_audit(
+        release=release,
+        portfolio_definition=definition,
+        risk_overlay=risk,
+        universe_audit=universe,
+    )
+    assert binding["allRequiredBindingsPresent"] is True
+    assert binding["transitiveHashChainVerified"] is True
 
     with pytest.raises(PermissionError, match="exact_release_hash_approval_required"):
         validate_exact_approval(
@@ -223,6 +250,47 @@ def test_provisional_release_cannot_claim_formal_or_live_and_requires_exact_hash
             "riskOverlayHash": risk["riskOverlayHash"],
         },
     )["status"] == "approved_not_armed"
+
+
+def test_execution_commit_change_requires_a_new_release_hash() -> None:
+    definition = _definition()
+    risk = build_risk_overlay(
+        {"riskPerTradePercent": 0.25, "maxOpenRiskPercent": 1.0, "maxConcurrentPositions": 3}
+    )
+    universe = build_universe_audit(
+        research_instruments=["BTC-USDT-SWAP"],
+        public_snapshot_hash="public_hash",
+        public_count=20,
+        authenticated_hash="authenticated_hash",
+        authenticated_count=116,
+        authenticated_exact_list_retained=False,
+        runtime_snapshot_hash="runtime_hash",
+        runtime_instruments=["BTC-USDT-SWAP"],
+    )
+
+    def release_for(commit: str) -> dict:
+        identity = build_execution_identity(
+            portfolio_definition=definition,
+            risk_overlay=risk,
+            universe_audit=universe,
+            quant_implementation_commit=commit,
+            console_execution_commit="b" * 40,
+            quant_runtime_implementation_hash="quant_runtime_hash",
+            console_runtime_implementation_hash="console_runtime_hash",
+        )
+        return build_provisional_release(
+            release_id="provisional_release_1",
+            portfolio_definition=definition,
+            risk_overlay=risk,
+            universe_audit=universe,
+            historical_metrics={"profitFactor": 1.6, "expectancyR": 0.3},
+            cost_stress_metrics={"profitFactor": 1.36},
+            replay_parity_percent=100.0,
+            execution_identity=identity,
+            generated_at="2026-07-20T00:00:00Z",
+        )
+
+    assert release_for("a" * 40)["releaseHash"] != release_for("c" * 40)["releaseHash"]
 
 
 def test_cooldown_rejection_is_diagnostic_only() -> None:

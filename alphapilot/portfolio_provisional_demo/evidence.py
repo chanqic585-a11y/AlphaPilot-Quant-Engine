@@ -11,8 +11,10 @@ from alphapilot.evolution.registry.hashing import stable_hash
 
 from .contracts import (
     build_cooldown_semantics,
+    build_execution_identity,
     build_portfolio_definition,
     build_provisional_release,
+    build_release_binding_audit,
     build_risk_overlay,
     build_universe_audit,
 )
@@ -94,12 +96,15 @@ def generate_patch_evidence(
     replay_parity_audit: Mapping[str, Any],
     generated_at: str,
     implementation_receipt: Mapping[str, Any],
+    console_runtime_implementation_sha256: str,
     test_summary: Mapping[str, Any],
 ) -> dict[str, Any]:
     v46 = Path(v46_report_dir).resolve()
     v49 = Path(v49_identity_dir).resolve()
     root = Path(output_dir).resolve()
     root.mkdir(parents=True, exist_ok=True)
+    previous_release_path = root / "provisional_release.json"
+    previous_release = _read(previous_release_path) if previous_release_path.is_file() else None
 
     verification = dict(v46_evidence_verification)
     verified_rows = list(verification.get("verifiedArtifacts") or [])
@@ -139,6 +144,7 @@ def generate_patch_evidence(
         candidate_id = str(sleeve["candidateId"])
         contract = contracts[candidate_id]
         strategy = dict(contract.get("strategy") or {})
+        risk_envelope = dict(contract.get("riskEnvelope") or {})
         components.append(
             {
                 **dict(sleeve),
@@ -147,6 +153,9 @@ def generate_patch_evidence(
                 "sourceContractHash": contract.get("contractHash"),
                 "sourceReleaseHash": contract.get("releaseContentHash"),
                 "sourceReleaseMode": contract.get("releaseMode"),
+                "sourceRiskEnvelopeHash": stable_hash(
+                    risk_envelope, prefix="source_risk_envelope"
+                ),
                 "sourcePath": contract.get("_sourcePath"),
             }
         )
@@ -182,6 +191,16 @@ def generate_patch_evidence(
         runtime_snapshot_hash=runtime_snapshot_hash,
         runtime_instruments=runtime_instruments,
     )
+    source_commits = dict(implementation_receipt.get("sourceCommits") or {})
+    execution_identity = build_execution_identity(
+        portfolio_definition=definition,
+        risk_overlay=risk,
+        universe_audit=universe,
+        quant_implementation_commit=str(source_commits.get("quant") or ""),
+        console_execution_commit=str(source_commits.get("console") or ""),
+        quant_runtime_implementation_hash=replay_implementation_sha256,
+        console_runtime_implementation_hash=console_runtime_implementation_sha256,
+    )
     release_id = "provisional_research_demo_v46_" + definition["portfolioDefinitionHash"].split("_")[-1][:24]
     release = build_provisional_release(
         release_id=release_id,
@@ -191,8 +210,43 @@ def generate_patch_evidence(
         historical_metrics=dict(summary["bestPolicyMetrics"]),
         cost_stress_metrics=dict(selected_result["stressMetrics"]["plus_0.10R"]),
         replay_parity_percent=replay_parity_percent,
+        execution_identity=execution_identity,
         generated_at=generated_at,
     )
+    binding_audit = build_release_binding_audit(
+        release=release,
+        portfolio_definition=definition,
+        risk_overlay=risk,
+        universe_audit=universe,
+    )
+    if binding_audit["status"] != "passed":
+        raise ValueError("provisional_release_binding_incomplete")
+    previous_hash = str((previous_release or {}).get("releaseHash") or "")
+    hash_changed = bool(previous_hash and previous_hash != release["releaseHash"])
+    cooldown_wording_audit = {
+        "schemaVersion": "cooldown_approval_wording_parity_audit_v1",
+        "status": "passed",
+        "cooldownScope": cooldown["cooldownScope"],
+        "cooldownAnchor": cooldown["cooldownAnchor"],
+        "cooldownDurationSeconds": cooldown["cooldownDurationSeconds"],
+        "timezone": cooldown["timezone"],
+        "boundaryRule": cooldown["boundaryRule"],
+        "crossComponentScope": cooldown["crossComponentScope"],
+        "implementationSha256": cooldown["implementationSha256"],
+        "approvalWordingCorrected": True,
+        "previousWording": "same-pair exit",
+        "correctedWording": (
+            "same canonical instrument across all three components; previous accepted "
+            "closed-trade exit timestamp plus 1209600 UTC seconds; equality is allowed"
+        ),
+        "previousReleaseHash": previous_hash or None,
+        "releaseHashChanged": hash_changed,
+        "decision": (
+            "superseding_release_required"
+            if hash_changed
+            else "new_release_or_existing_hash_already_complete"
+        ),
+    }
 
     component_manifest = {
         "schemaVersion": "v46_portfolio_component_manifest_v1",
@@ -261,6 +315,7 @@ def generate_patch_evidence(
         "riskOverlayHash": risk["riskOverlayHash"],
         "portfolioComponents": candidate_ids,
         "cooldownSemantics": cooldown,
+        "executionIdentityHash": execution_identity["executionIdentityHash"],
         "executionInstruments": universe["executionIntersection"],
         "riskLimits": {
             "riskPerTradePercent": risk["riskPerTradePercent"],
@@ -275,6 +330,7 @@ def generate_patch_evidence(
             "Live promotion is forbidden and must not be inferred from Demo evidence.",
         ],
         "approvalRequired": True,
+        "approvalReady": False,
         "approved": False,
         "demoArm": False,
         "route": "blocked_waiting_exact_release_approval",
@@ -288,8 +344,9 @@ def generate_patch_evidence(
         f"- Release Hash: `{release['releaseHash']}`\n"
         f"- Risk Overlay Hash: `{risk['riskOverlayHash']}`\n"
         f"- Components: {', '.join(candidate_ids)}\n"
-        "- Cooldown: previous accepted same-pair exit + 14 x 24 elapsed UTC hours; "
-        "equality at the boundary is allowed.\n"
+        "- Cooldown: same canonical instrument across all three components; previous "
+        "accepted closed-trade exit timestamp + 1,209,600 elapsed UTC seconds; entry at "
+        "the exact boundary is allowed.\n"
         f"- Demo instruments: {', '.join(universe['executionIntersection'])}\n"
         "- Formal pass: false\n- Live eligible: false\n- Approved: false\n- Demo ARM: false\n"
         "- Route: `blocked_waiting_exact_release_approval`\n\n"
@@ -306,10 +363,26 @@ def generate_patch_evidence(
         "provisional_release_hash_audit.json": hash_audit,
         "provisional_portfolio_risk_overlay.json": risk,
         "demo_execution_universe_audit.json": universe,
+        "cooldown_approval_wording_parity_audit.json": cooldown_wording_audit,
+        "provisional_release_binding_audit.json": binding_audit,
         "demo_approval_request.json": approval,
         "patch_implementation_receipt.json": dict(implementation_receipt),
         "patch_test_summary.json": dict(test_summary),
     }
+    if hash_changed:
+        payloads["superseded_release_original.json"] = previous_release
+        payloads["provisional_release_supersession.json"] = {
+            "schemaVersion": "provisional_release_supersession_v1",
+            "oldReleaseId": previous_release.get("releaseId"),
+            "oldReleaseHash": previous_hash,
+            "oldReleaseStatus": "superseded_unapproved",
+            "oldApproved": bool(previous_release.get("approved")),
+            "oldDemoArm": bool(previous_release.get("demoArm")),
+            "supersedingReleaseId": release["releaseId"],
+            "supersedingReleaseHash": release["releaseHash"],
+            "reason": "execution_identity_and_explicit_cooldown_semantics_were_not_fully_bound",
+            "generatedAt": generated_at,
+        }
     for name, payload in payloads.items():
         _write(root / name, payload)
     (root / "cooldown_rejected_signal_ledger.jsonl").write_text("", encoding="utf-8")

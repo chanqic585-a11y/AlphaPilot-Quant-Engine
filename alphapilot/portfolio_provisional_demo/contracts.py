@@ -29,11 +29,19 @@ def build_cooldown_semantics(
 ) -> dict[str, Any]:
     if pair_cooldown_days <= 0:
         raise ValueError("pair_cooldown_must_be_positive")
-    return {
-        "schemaVersion": "portfolio_cooldown_semantics_v1",
+    core = {
+        "schemaVersion": "portfolio_cooldown_semantics_v2",
+        "cooldownScope": "canonical_instrument_id",
+        "cooldownAnchor": "previous_accepted_closed_trade_exit_timestamp",
+        "cooldownDurationSeconds": int(pair_cooldown_days) * 24 * 60 * 60,
+        "timezone": "UTC",
+        "boundaryRule": (
+            "entry_timestamp_greater_than_or_equal_to_cooldown_end_is_allowed"
+        ),
+        "crossComponentScope": "all_three_portfolio_components",
         "pairCooldownDays": int(pair_cooldown_days),
         "durationSeconds": int(pair_cooldown_days) * 24 * 60 * 60,
-        "anchorEvent": "previous_accepted_same_pair_exit",
+        "anchorEvent": "previous_accepted_closed_trade_exit_timestamp",
         "clock": "utc_elapsed_time",
         "boundaryEqualityAllowed": True,
         "candidateOrder": ["entry_timestamp", "candidate_id", "instrument_id"],
@@ -42,6 +50,12 @@ def build_cooldown_semantics(
         "implementationPath": implementation_path,
         "implementationSha256": implementation_sha256,
         "notAWaitingPeriod": True,
+    }
+    return {
+        **core,
+        "cooldownSemanticsHash": stable_hash(
+            core, prefix="portfolio_cooldown_semantics"
+        ),
     }
 
 
@@ -170,6 +184,142 @@ def build_risk_overlay(existing: Mapping[str, Any]) -> dict[str, Any]:
     return {**core, "riskOverlayHash": stable_hash(core, prefix="risk_overlay")}
 
 
+def _required_text(value: Any, name: str) -> str:
+    text = str(value or "").strip()
+    if not text:
+        raise ValueError(f"{name}_missing")
+    return text
+
+
+def build_execution_identity(
+    *,
+    portfolio_definition: Mapping[str, Any],
+    risk_overlay: Mapping[str, Any],
+    universe_audit: Mapping[str, Any],
+    quant_implementation_commit: str,
+    console_execution_commit: str,
+    quant_runtime_implementation_hash: str,
+    console_runtime_implementation_hash: str,
+) -> dict[str, Any]:
+    components = list(portfolio_definition.get("components") or [])
+    if len(components) != 3:
+        raise ValueError("execution_identity_requires_three_components")
+    component_identities = [
+        {
+            "candidateId": _required_text(row.get("candidateId"), "component_id"),
+            "strategyDefinitionHash": _required_text(
+                row.get("strategyDefinitionHash"), "strategy_definition_hash"
+            ),
+            "sourceContractHash": _required_text(
+                row.get("sourceContractHash") or row.get("strategyDefinitionHash"),
+                "source_contract_hash",
+            ),
+            "sourceReleaseHash": _required_text(
+                row.get("sourceReleaseHash") or row.get("strategyDefinitionHash"),
+                "source_release_hash",
+            ),
+        }
+        for row in components
+    ]
+    exit_policies = [
+        {
+            "candidateId": row["candidateId"],
+            "forwardSignalPolicy": deepcopy(
+                dict((row.get("strategyDefinition") or {}).get("forwardSignalPolicy") or {})
+            ),
+        }
+        for row in components
+    ]
+    risk_sources = [
+        {
+            "candidateId": row["candidateId"],
+            "sourceRiskEnvelopeHash": str(row.get("sourceRiskEnvelopeHash") or ""),
+        }
+        for row in components
+    ]
+    core = {
+        "schemaVersion": "provisional_demo_execution_identity_v1",
+        "componentIdentities": component_identities,
+        "portfolioDefinitionHash": _required_text(
+            portfolio_definition.get("portfolioDefinitionHash"),
+            "portfolio_definition_hash",
+        ),
+        "cooldownSemanticsHash": _required_text(
+            (portfolio_definition.get("cooldownSemantics") or {}).get(
+                "cooldownSemanticsHash"
+            ),
+            "cooldown_semantics_hash",
+        ),
+        "quantImplementationCommit": _required_text(
+            quant_implementation_commit, "quant_implementation_commit"
+        ),
+        "consoleExecutionCommit": _required_text(
+            console_execution_commit, "console_execution_commit"
+        ),
+        "quantRuntimeImplementationHash": _required_text(
+            quant_runtime_implementation_hash, "quant_runtime_implementation_hash"
+        ),
+        "consoleRuntimeImplementationHash": _required_text(
+            console_runtime_implementation_hash, "console_runtime_implementation_hash"
+        ),
+        "candidatePortfolioRuntimeHash": stable_hash(
+            {
+                "portfolioDefinitionHash": portfolio_definition[
+                    "portfolioDefinitionHash"
+                ],
+                "components": component_identities,
+            },
+            prefix="candidate_portfolio_runtime",
+        ),
+        "exitPolicyHash": stable_hash(
+            exit_policies, prefix="portfolio_exit_policy"
+        ),
+        "riskProfileHash": stable_hash(
+            {
+                "componentRiskSources": risk_sources,
+                "riskOverlayHash": risk_overlay["riskOverlayHash"],
+            },
+            prefix="portfolio_risk_profile",
+        ),
+        "riskOverlayHash": _required_text(
+            risk_overlay.get("riskOverlayHash"), "risk_overlay_hash"
+        ),
+        "researchUniverseHash": _required_text(
+            universe_audit.get("researchUniverseHash"), "research_universe_hash"
+        ),
+        "publicUniverseSnapshotHash": _required_text(
+            universe_audit.get("publicUniverseSnapshotHash"),
+            "public_universe_snapshot_hash",
+        ),
+        "authenticatedDemoUniverseHash": _required_text(
+            universe_audit.get("authenticatedDemoUniverseHash"),
+            "authenticated_demo_universe_hash",
+        ),
+        "confirmedRuntimeUniverseHash": _required_text(
+            universe_audit.get("confirmedRuntimeUniverseHash"),
+            "confirmed_runtime_universe_hash",
+        ),
+        "executionIntersectionHash": _required_text(
+            universe_audit.get("executionIntersectionHash"),
+            "execution_intersection_hash",
+        ),
+        "costModelHash": stable_hash(
+            portfolio_definition.get("costModel") or {}, prefix="cost_model"
+        ),
+        "evidenceClassification": {
+            "historicalEvidenceClass": "development_selected_result",
+            "strategyQualification": "provisional_research_only",
+            "formalPass": False,
+        },
+    }
+    return {
+        **core,
+        "executionIdentityHash": stable_hash(
+            core, prefix="provisional_demo_execution_identity"
+        ),
+    }
+
+
 def _normalized_instruments(values: Iterable[str]) -> list[str]:
     return sorted({str(value).upper().strip() for value in values if str(value).strip()})
 
@@ -232,6 +382,7 @@ def build_provisional_release(
     historical_metrics: Mapping[str, Any],
     cost_stress_metrics: Mapping[str, Any],
     replay_parity_percent: float,
+    execution_identity: Mapping[str, Any],
     generated_at: str,
 ) -> dict[str, Any]:
     if float(replay_parity_percent) != 100.0:
@@ -268,6 +419,8 @@ def build_provisional_release(
         "riskOverlayHash": risk_overlay["riskOverlayHash"],
         "executionIntersectionHash": universe_audit["executionIntersectionHash"],
         "executionInstruments": list(universe_audit["executionIntersection"]),
+        "executionIdentity": deepcopy(dict(execution_identity)),
+        "executionIdentityHash": execution_identity["executionIdentityHash"],
         "historicalMetrics": deepcopy(dict(historical_metrics)),
         "additionalCostStress0_10R": deepcopy(dict(cost_stress_metrics)),
         "replayParityPercent": float(replay_parity_percent),
@@ -293,6 +446,87 @@ def validate_provisional_release(release: Mapping[str, Any]) -> None:
         raise PermissionError("provisional_release_claims_forbidden_qualification")
     if release.get("route") != "blocked_waiting_exact_release_approval":
         raise PermissionError("provisional_release_must_wait_for_exact_approval")
+    identity = dict(release.get("executionIdentity") or {})
+    identity_hash = str(identity.pop("executionIdentityHash", ""))
+    if not identity_hash or release.get("executionIdentityHash") != identity_hash:
+        raise ValueError("execution_identity_hash_missing")
+    if stable_hash(identity, prefix="provisional_demo_execution_identity") != identity_hash:
+        raise ValueError("execution_identity_hash_mismatch")
+
+
+def build_release_binding_audit(
+    *,
+    release: Mapping[str, Any],
+    portfolio_definition: Mapping[str, Any],
+    risk_overlay: Mapping[str, Any],
+    universe_audit: Mapping[str, Any],
+) -> dict[str, Any]:
+    identity = dict(release.get("executionIdentity") or {})
+    component_rows = list(identity.get("componentIdentities") or [])
+    required_checks = {
+        "threeComponentIds": len(component_rows) == 3
+        and all(str(row.get("candidateId") or "") for row in component_rows),
+        "threeComponentDefinitionHashes": len(component_rows) == 3
+        and all(str(row.get("strategyDefinitionHash") or "") for row in component_rows),
+        "portfolioDefinitionHash": bool(identity.get("portfolioDefinitionHash")),
+        "cooldownSemanticsHash": bool(identity.get("cooldownSemanticsHash")),
+        "quantImplementationCommit": bool(identity.get("quantImplementationCommit")),
+        "consoleExecutionCommit": bool(identity.get("consoleExecutionCommit")),
+        "candidatePortfolioRuntimeHash": bool(identity.get("candidatePortfolioRuntimeHash")),
+        "exitPolicyHash": bool(identity.get("exitPolicyHash")),
+        "riskProfileHash": bool(identity.get("riskProfileHash")),
+        "riskOverlayHash": bool(identity.get("riskOverlayHash")),
+        "researchUniverseHash": bool(identity.get("researchUniverseHash")),
+        "publicUniverseSnapshotHash": bool(identity.get("publicUniverseSnapshotHash")),
+        "authenticatedDemoUniverseHash": bool(identity.get("authenticatedDemoUniverseHash")),
+        "confirmedRuntimeUniverseHash": bool(identity.get("confirmedRuntimeUniverseHash")),
+        "executionIntersectionHash": bool(identity.get("executionIntersectionHash")),
+        "costModelHash": bool(identity.get("costModelHash")),
+        "evidenceClassification": bool(identity.get("evidenceClassification")),
+    }
+    identity_body = dict(identity)
+    identity_hash = str(identity_body.pop("executionIdentityHash", ""))
+    chain_checks = {
+        "executionIdentityHash": bool(identity_hash)
+        and stable_hash(identity_body, prefix="provisional_demo_execution_identity")
+        == identity_hash
+        and release.get("executionIdentityHash") == identity_hash,
+        "portfolioDefinitionHash": identity.get("portfolioDefinitionHash")
+        == portfolio_definition.get("portfolioDefinitionHash")
+        == release.get("portfolioDefinitionHash"),
+        "cooldownSemanticsHash": identity.get("cooldownSemanticsHash")
+        == (portfolio_definition.get("cooldownSemantics") or {}).get(
+            "cooldownSemanticsHash"
+        ),
+        "riskOverlayHash": identity.get("riskOverlayHash")
+        == risk_overlay.get("riskOverlayHash")
+        == release.get("riskOverlayHash"),
+        "researchUniverseHash": identity.get("researchUniverseHash")
+        == universe_audit.get("researchUniverseHash"),
+        "publicUniverseSnapshotHash": identity.get("publicUniverseSnapshotHash")
+        == universe_audit.get("publicUniverseSnapshotHash"),
+        "authenticatedDemoUniverseHash": identity.get(
+            "authenticatedDemoUniverseHash"
+        )
+        == universe_audit.get("authenticatedDemoUniverseHash"),
+        "confirmedRuntimeUniverseHash": identity.get("confirmedRuntimeUniverseHash")
+        == universe_audit.get("confirmedRuntimeUniverseHash"),
+        "executionIntersectionHash": identity.get("executionIntersectionHash")
+        == universe_audit.get("executionIntersectionHash")
+        == release.get("executionIntersectionHash"),
+    }
+    all_present = all(required_checks.values())
+    chain_verified = all(chain_checks.values())
+    return {
+        "schemaVersion": "provisional_release_binding_audit_v1",
+        "releaseId": release.get("releaseId"),
+        "releaseHash": release.get("releaseHash"),
+        "requiredBindings": required_checks,
+        "hashChainChecks": chain_checks,
+        "allRequiredBindingsPresent": all_present,
+        "transitiveHashChainVerified": chain_verified,
+        "status": "passed" if all_present and chain_verified else "blocked",
+    }
 
 
 def validate_exact_approval(

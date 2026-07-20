@@ -35,6 +35,7 @@ def main() -> int:
     parser.add_argument("--patch-manifest", type=Path, required=True)
     parser.add_argument("--quant-source-commit", required=True)
     parser.add_argument("--console-source-commit", required=True)
+    parser.add_argument("--console-runtime-implementation-sha256", required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--generated-at")
     parser.add_argument("--test-evidence", action="append", default=[])
@@ -120,6 +121,7 @@ def main() -> int:
         replay_parity_audit=replay_audit,
         generated_at=generated_at,
         implementation_receipt=implementation_receipt,
+        console_runtime_implementation_sha256=args.console_runtime_implementation_sha256,
         test_summary=test_summary,
     )
     print(json.dumps(result, ensure_ascii=False, sort_keys=True))

@@ -16,6 +16,16 @@ def test_generator_writes_complete_unapproved_sidecar_bundle(tmp_path: Path) -> 
     v49 = tmp_path / "v49"
     contracts = tmp_path / "contracts"
     output = tmp_path / "output"
+    _write(
+        output / "provisional_release.json",
+        {
+            "schemaVersion": "provisional_research_demo_v1",
+            "releaseId": "old_release",
+            "releaseHash": "old_release_hash",
+            "approved": False,
+            "demoArm": False,
+        },
+    )
     components = [
         ("short_1h", "short", "1h", "short_rejection", "short_hash"),
         ("long_1d", "long", "1d", "mean_reversion", "long_hash"),
@@ -110,9 +120,13 @@ def test_generator_writes_complete_unapproved_sidecar_bundle(tmp_path: Path) -> 
         replay_parity_audit={"status": "passed", "parityPercent": 100.0},
         generated_at="2026-07-20T00:00:00Z",
         implementation_receipt={
-            "patchCommit": "source_commit",
+            "sourceCommits": {
+                "quant": "a" * 40,
+                "console": "b" * 40,
+            },
             "unresolvedImplementationBlockers": [],
         },
+        console_runtime_implementation_sha256="console_runtime_hash",
         test_summary={"status": "passed"},
     )
 
@@ -132,6 +146,10 @@ def test_generator_writes_complete_unapproved_sidecar_bundle(tmp_path: Path) -> 
         "patch_implementation_receipt.json",
         "patch_test_summary.json",
         "patch_artifact_manifest.json",
+        "cooldown_approval_wording_parity_audit.json",
+        "provisional_release_binding_audit.json",
+        "provisional_release_supersession.json",
+        "superseded_release_original.json",
     }
     assert required <= {path.name for path in output.iterdir()}
     release = json.loads((output / "provisional_release.json").read_text(encoding="utf-8"))
@@ -146,4 +164,14 @@ def test_generator_writes_complete_unapproved_sidecar_bundle(tmp_path: Path) -> 
     assert release["route"] == "blocked_waiting_exact_release_approval"
     assert release["approved"] is False
     assert release["demoArm"] is False
+    assert release["releaseHash"] != "old_release_hash"
+    binding = json.loads(
+        (output / "provisional_release_binding_audit.json").read_text(encoding="utf-8")
+    )
+    supersession = json.loads(
+        (output / "provisional_release_supersession.json").read_text(encoding="utf-8")
+    )
+    assert binding["allRequiredBindingsPresent"] is True
+    assert binding["transitiveHashChainVerified"] is True
+    assert supersession["oldReleaseStatus"] == "superseded_unapproved"
     assert result["route"] == "blocked_waiting_exact_release_approval"
