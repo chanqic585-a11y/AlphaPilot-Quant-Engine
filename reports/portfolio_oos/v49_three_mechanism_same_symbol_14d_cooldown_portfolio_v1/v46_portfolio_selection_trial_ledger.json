@@ -1,0 +1,50 @@
+{
+  "generatedAt": "2026-07-20T05:38:53.544034Z",
+  "observedPolicyTrialCount": 6,
+  "policyTrials": [
+    {
+      "metricsReadDuringDevelopment": true,
+      "observedOrder": 1,
+      "policyHash": "portfolio_rescue_policy_a525b0ea5810d144bf32fb3d13dbb84519d8cce50b23464d1a7b560d5f0e844d",
+      "policyId": "raw_baseline",
+      "selected": false
+    },
+    {
+      "metricsReadDuringDevelopment": true,
+      "observedOrder": 2,
+      "policyHash": "portfolio_rescue_policy_dda651f97adec6a8bacbf607dd8b6221b68d08ef1a0b3ebcb83a247f7e60e88d",
+      "policyId": "pair_7d_cooldown",
+      "selected": false
+    },
+    {
+      "metricsReadDuringDevelopment": true,
+      "observedOrder": 3,
+      "policyHash": "portfolio_rescue_policy_7ac5bdcb1880061efdc7daae8dbd9945f0785618c05534f86dff1c3be66cc378",
+      "policyId": "pair_14d_cooldown",
+      "selected": true
+    },
+    {
+      "metricsReadDuringDevelopment": true,
+      "observedOrder": 4,
+      "policyHash": "portfolio_rescue_policy_d811f46ad7e273582c8bd9785b917da07224fb5203d60132ff31c010d72f588f",
+      "policyId": "pair_14d_max2",
+      "selected": false
+    },
+    {
+      "metricsReadDuringDevelopment": true,
+      "observedOrder": 5,
+      "policyHash": "portfolio_rescue_policy_634bce2627910ee89b43a31c05d143c248064830742fc1d701210f42b333eb9a",
+      "policyId": "pair_14d_max2_direction1",
+      "selected": false
+    },
+    {
+      "metricsReadDuringDevelopment": true,
+      "observedOrder": 6,
+      "policyHash": "portfolio_rescue_policy_a4e8ce0f501b15ce7b785509e3416e69984e09f8a12979795e64b8a2b227b69b",
+      "policyId": "pair_14d_max2_direction1_loss21d",
+      "selected": false
+    }
+  ],
+  "selectedPolicyId": "pair_14d_cooldown",
+  "upstreamStrategySelectionTrialCount": "unavailable"
+}

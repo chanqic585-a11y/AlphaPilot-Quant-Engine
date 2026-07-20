@@ -1,0 +1,10 @@
+{
+  "benchmarks": [
+    "each_component_standalone",
+    "v46_raw_baseline_union",
+    "zero_exposure"
+  ],
+  "candidateHash": "portfolio_oos_candidate_b858842be93cc1b73e6afc8d22a34ea3656bf76cbbef42f566c8f8d8a6033f60",
+  "resultReadCount": 0,
+  "status": "frozen_pre_result_read"
+}

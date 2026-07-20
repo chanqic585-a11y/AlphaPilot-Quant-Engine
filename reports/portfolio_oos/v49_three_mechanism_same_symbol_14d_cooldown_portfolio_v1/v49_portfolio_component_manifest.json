@@ -1,0 +1,33 @@
+{
+  "candidateHash": "portfolio_oos_candidate_b858842be93cc1b73e6afc8d22a34ea3656bf76cbbef42f566c8f8d8a6033f60",
+  "candidateId": "v49_three_mechanism_same_symbol_14d_cooldown_portfolio_v1",
+  "componentCount": 3,
+  "components": [
+    {
+      "candidateId": "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+      "direction": "short",
+      "family": "short_rejection",
+      "ledgerSha256": "3158fe95ed56711a265f74ba63f14b58491b582d3c9a8a55db13b6081f7efac0",
+      "sleeveHash": "portfolio_rescue_sleeve_3852ce4b2907c1e1180e2032edb6c40fce808f6aff92f1837fecee5a9ad9e955",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "v13_7_20_lf_research_candidate_117",
+      "direction": "long",
+      "family": "mean_reversion",
+      "ledgerSha256": "5490412d463670af90e03febadc5a85241dddb56fb7d306ef184d1c1ae34f6a2",
+      "sleeveHash": "portfolio_rescue_sleeve_391b48d790ed58f9ef4afc29a78be08c3c3482bf0571edcb653ec978f7db2979",
+      "timeframe": "1d"
+    },
+    {
+      "candidateId": "v13_7_20_lf_research_candidate_090",
+      "direction": "long",
+      "family": "squeeze_breakout",
+      "ledgerSha256": "151c95db5e7bd2ac2bb2145dc7c5b43dca0e0a1da472a67b2d37c6a80b792c2f",
+      "sleeveHash": "portfolio_rescue_sleeve_6094459a8a104b1f76afa7f8baec0bacf8d4b5cb9c357f46aae68286d78ebb13",
+      "timeframe": "1d"
+    }
+  ],
+  "frozenAt": "2026-07-20T05:38:53.544034Z",
+  "sourceCampaignHash": "portfolio_rescue_campaign_8ca0bba489c9064340e97e3d657fa5b4e0a94caacc5ebb32c18b78abfaf466c4"
+}

@@ -1,0 +1,56 @@
+{
+  "artifactCount": 10,
+  "artifacts": [
+    {
+      "bytes": 4427,
+      "path": "v46_evidence_verification.json",
+      "sha256": "5029ec402eb94a061c4717d6cffe8e606659573f3c89ceee7fad27b236ca0a4d"
+    },
+    {
+      "bytes": 364,
+      "path": "v46_git_publish_receipt.json",
+      "sha256": "6379da3145babedb6f7baf98e713174ebaa05364c040fcfbc5639884605dc335"
+    },
+    {
+      "bytes": 557,
+      "path": "v46_portfolio_selection_bias_audit.json",
+      "sha256": "b3ab086caa219fa09b9be50f97932581d7c8e8f677d816518c2bc057f99407f2"
+    },
+    {
+      "bytes": 1816,
+      "path": "v46_portfolio_selection_trial_ledger.json",
+      "sha256": "58b8a1b45f3ede53693930eb8e9ba54264402c826726dd0bba39453c45fe153f"
+    },
+    {
+      "bytes": 292,
+      "path": "v49_portfolio_benchmark_policy.json",
+      "sha256": "ded4967c9299786b4ee7906ec813ab8305a29760c4397728ed589fab6b89b179"
+    },
+    {
+      "bytes": 2185,
+      "path": "v49_portfolio_candidate_spec.json",
+      "sha256": "24a747bed998f45065b94c4f39ecde0de304249a2e517a6bf3a5cdb8f715f02a"
+    },
+    {
+      "bytes": 1531,
+      "path": "v49_portfolio_component_manifest.json",
+      "sha256": "1b287ee25354179d50ad5d38e4dc52bfed7d5fe394bef60073de5d2f92b29b83"
+    },
+    {
+      "bytes": 205,
+      "path": "v49_portfolio_oos_access_ledger.jsonl",
+      "sha256": "27a1ce3bd326e0d790c1856a16e4ebe596d74cad1a7dbc86c1b713dd5ad61747"
+    },
+    {
+      "bytes": 462,
+      "path": "v49_portfolio_oos_identity.json",
+      "sha256": "cfe2770e2f2df802fd960974a195ec7f5f86601c67576381680e2dae45c70e85"
+    },
+    {
+      "bytes": 663,
+      "path": "v49_portfolio_policy.json",
+      "sha256": "c3b68948d7980642297d6dd5a0155ad96b58d075e5481e93e11e0d744c24a249"
+    }
+  ],
+  "generatedAt": "2026-07-20T05:38:53.544034Z"
+}

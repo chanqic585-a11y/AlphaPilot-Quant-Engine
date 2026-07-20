@@ -1,0 +1,10 @@
+{
+  "candidateHash": "portfolio_oos_candidate_b858842be93cc1b73e6afc8d22a34ea3656bf76cbbef42f566c8f8d8a6033f60",
+  "candidateId": "v49_three_mechanism_same_symbol_14d_cooldown_portfolio_v1",
+  "frozenAt": "2026-07-20T05:38:53.544034Z",
+  "historicalUnreadIntervalAvailable": false,
+  "resultReadCount": 0,
+  "routeReason": "no_provably_unread_historical_interval_registered",
+  "status": "frozen_pre_result_read",
+  "validationRoute": "forward_only"
+}

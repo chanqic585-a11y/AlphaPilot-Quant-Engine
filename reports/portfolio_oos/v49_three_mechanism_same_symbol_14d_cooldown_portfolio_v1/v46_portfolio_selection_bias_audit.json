@@ -1,0 +1,20 @@
+{
+  "forbiddenLabels": [
+    "oos_pass",
+    "formal_pass",
+    "forward_pass",
+    "live_candidate"
+  ],
+  "formalStatisticalPassAllowed": false,
+  "generatedAt": "2026-07-20T05:38:53.544034Z",
+  "permittedUse": [
+    "fresh_preregistered_forward_validation",
+    "research_only"
+  ],
+  "policySelectionResultReadBeforeChoice": true,
+  "policyTrialCount": 6,
+  "provisionalResearchDemoAllowed": true,
+  "selectionTrialCount": "unavailable",
+  "status": "selection_bias_disclosed",
+  "upstreamStrategySelectionHistoryAvailable": false
+}

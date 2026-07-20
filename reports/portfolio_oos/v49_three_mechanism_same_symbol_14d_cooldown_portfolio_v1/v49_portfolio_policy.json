@@ -1,0 +1,19 @@
+{
+  "candidateHash": "portfolio_oos_candidate_b858842be93cc1b73e6afc8d22a34ea3656bf76cbbef42f566c8f8d8a6033f60",
+  "candidateId": "v49_three_mechanism_same_symbol_14d_cooldown_portfolio_v1",
+  "policy": {
+    "additional_cost_stress_r": [
+      0.05,
+      0.1
+    ],
+    "losing_pair_cooldown_days": 0,
+    "maximum_concurrent_positions": 99,
+    "pair_cooldown_days": 14,
+    "policy_hash": "portfolio_rescue_policy_7ac5bdcb1880061efdc7daae8dbd9945f0785618c05534f86dff1c3be66cc378",
+    "policy_id": "pair_14d_cooldown",
+    "same_direction_cap": 99,
+    "version": "v13.27.1.46"
+  },
+  "policyMutationAllowed": false,
+  "status": "frozen"
+}
