@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-07-20T14:52:39.854137Z",
+  "oldApproved": false,
+  "oldDemoArm": false,
+  "oldReleaseHash": "provisional_demo_release_96085cf8a1d1dc089bf6dc4aae3eacb0d051b8e53ef4e5cd58546ea014a8bdcb",
+  "oldReleaseId": "provisional_research_demo_v46_02eca564b2d7b09401521993",
+  "oldReleaseStatus": "superseded_unapproved",
+  "reason": "execution_identity_and_explicit_cooldown_semantics_were_not_fully_bound",
+  "schemaVersion": "provisional_release_supersession_v1",
+  "supersedingReleaseHash": "provisional_demo_release_c1e28ecf59fb7fcc2b4876eec5e6fd04c50002bef28c69c03bedf164af7cd225",
+  "supersedingReleaseId": "provisional_research_demo_v46_a3669d95101ba65f68fa89b1"
+}

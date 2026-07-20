@@ -1,0 +1,38 @@
+{
+  "allRequiredBindingsPresent": true,
+  "hashChainChecks": {
+    "authenticatedDemoUniverseHash": true,
+    "confirmedRuntimeUniverseHash": true,
+    "cooldownSemanticsHash": true,
+    "executionIdentityHash": true,
+    "executionIntersectionHash": true,
+    "portfolioDefinitionHash": true,
+    "publicUniverseSnapshotHash": true,
+    "researchUniverseHash": true,
+    "riskOverlayHash": true
+  },
+  "releaseHash": "provisional_demo_release_c1e28ecf59fb7fcc2b4876eec5e6fd04c50002bef28c69c03bedf164af7cd225",
+  "releaseId": "provisional_research_demo_v46_a3669d95101ba65f68fa89b1",
+  "requiredBindings": {
+    "authenticatedDemoUniverseHash": true,
+    "candidatePortfolioRuntimeHash": true,
+    "confirmedRuntimeUniverseHash": true,
+    "consoleExecutionCommit": true,
+    "cooldownSemanticsHash": true,
+    "costModelHash": true,
+    "evidenceClassification": true,
+    "executionIntersectionHash": true,
+    "exitPolicyHash": true,
+    "portfolioDefinitionHash": true,
+    "publicUniverseSnapshotHash": true,
+    "quantImplementationCommit": true,
+    "researchUniverseHash": true,
+    "riskOverlayHash": true,
+    "riskProfileHash": true,
+    "threeComponentDefinitionHashes": true,
+    "threeComponentIds": true
+  },
+  "schemaVersion": "provisional_release_binding_audit_v1",
+  "status": "passed",
+  "transitiveHashChainVerified": true
+}

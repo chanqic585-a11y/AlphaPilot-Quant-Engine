@@ -1,0 +1,18 @@
+{
+  "approvalGranted": false,
+  "demoArm": false,
+  "evidenceHash": "engineering_smoke_evidence_3347652ed144d6b9be81f16b860c1a2fc190c0ab109a24d820c4f13969779eca",
+  "generatedAt": "2026-07-20T15:04:18.091931Z",
+  "instruction": "A later approval must explicitly authorize the isolated engineering smoke lifecycle. It must not be treated as strategy Release approval.",
+  "live": false,
+  "orderCount": 0,
+  "reason": "missing_compatible_smoke_evidence",
+  "releaseHash": "provisional_demo_release_c1e28ecf59fb7fcc2b4876eec5e6fd04c50002bef28c69c03bedf164af7cd225",
+  "releaseId": "provisional_research_demo_v46_a3669d95101ba65f68fa89b1",
+  "requestType": "engineering_smoke_only",
+  "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
+  "route": "waiting_engineering_smoke_approval",
+  "schemaVersion": "provisional_demo_engineering_smoke_approval_request_v1",
+  "strategyReleaseApprovalAccepted": false,
+  "withdraw": false
+}

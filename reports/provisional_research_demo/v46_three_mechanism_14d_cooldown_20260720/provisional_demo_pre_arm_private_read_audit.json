@@ -1,0 +1,107 @@
+{
+  "accountConfigRead": {
+    "accountIdentityHash": "demo_account_identity_99f99ca291436eef8787d2e21f967db2a4f36c0b577d0aae6868a531b4670977",
+    "rowCount": 1,
+    "status": "verified"
+  },
+  "accountSite": "global",
+  "balanceRead": {
+    "rowCount": 1,
+    "status": "verified"
+  },
+  "credentialsRetained": false,
+  "demoHeaderRequired": true,
+  "environment": "okx_demo",
+  "executionIntersectionHashMatches": true,
+  "expectedExecutionIntersectionHash": "demo_execution_intersection_1bcd5f70a24d1d2527a29965d95d1c47473f0e85a442dfda744354d95e0bd514",
+  "expectedInstruments": [
+    "BTC-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "generatedAt": "2026-07-20T14:58:08.850189Z",
+  "instrumentChecks": [
+    {
+      "instrumentId": "BTC-USDT-SWAP",
+      "instrumentType": "SWAP",
+      "present": true,
+      "settleCurrency": "USDT",
+      "state": "live",
+      "tradable": true
+    },
+    {
+      "instrumentId": "DOGE-USDT-SWAP",
+      "instrumentType": "SWAP",
+      "present": true,
+      "settleCurrency": "USDT",
+      "state": "live",
+      "tradable": true
+    },
+    {
+      "instrumentId": "ETH-USDT-SWAP",
+      "instrumentType": "SWAP",
+      "present": true,
+      "settleCurrency": "USDT",
+      "state": "live",
+      "tradable": true
+    },
+    {
+      "instrumentId": "SOL-USDT-SWAP",
+      "instrumentType": "SWAP",
+      "present": true,
+      "settleCurrency": "USDT",
+      "state": "live",
+      "tradable": true
+    },
+    {
+      "instrumentId": "XRP-USDT-SWAP",
+      "instrumentType": "SWAP",
+      "present": true,
+      "settleCurrency": "USDT",
+      "state": "live",
+      "tradable": true
+    }
+  ],
+  "instrumentRead": {
+    "rowCount": 143,
+    "status": "verified"
+  },
+  "live": false,
+  "networkRequestMade": true,
+  "observedExecutionIntersectionHash": "demo_execution_intersection_1bcd5f70a24d1d2527a29965d95d1c47473f0e85a442dfda744354d95e0bd514",
+  "orderRequestMade": false,
+  "pendingOrderRead": {
+    "rowCount": 0,
+    "status": "verified"
+  },
+  "positionRead": {
+    "rowCount": 0,
+    "status": "verified"
+  },
+  "privateReadVerified": true,
+  "rawResponsesRetained": false,
+  "readOnly": true,
+  "recentFillRead": {
+    "rowCount": 0,
+    "status": "verified"
+  },
+  "schemaVersion": "provisional_demo_pre_arm_private_read_audit_v1",
+  "serverTimeRead": {
+    "offsetMilliseconds": -348,
+    "roundTripMilliseconds": 338,
+    "status": "verified"
+  },
+  "signatureHeadersRetained": false,
+  "status": "verified",
+  "verifiedInstrumentCount": 5,
+  "verifiedInstruments": [
+    "BTC-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "withdraw": false
+}

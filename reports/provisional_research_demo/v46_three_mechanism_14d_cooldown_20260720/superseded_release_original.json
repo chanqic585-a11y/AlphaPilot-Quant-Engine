@@ -1,0 +1,62 @@
+{
+  "additionalCostStress0_10R": {
+    "expectancyR": 0.204485,
+    "lossCount": 196,
+    "maxDrawdownR": 17.6861,
+    "pairCount": 27,
+    "profitFactor": 1.3687,
+    "stopHitRatePct": 55.4974,
+    "targetHitRatePct": 38.4817,
+    "totalR": 78.1131,
+    "tradeCount": 382,
+    "winCount": 186,
+    "winRatePct": 48.6911
+  },
+  "approvalRequired": true,
+  "approved": false,
+  "automaticLivePromotionAllowed": false,
+  "cleanHistoricalOosPass": false,
+  "componentIds": [
+    "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+    "v13_7_20_lf_research_candidate_117",
+    "v13_7_20_lf_research_candidate_090"
+  ],
+  "demoArm": false,
+  "evidenceClass": "historical_selected_forward_collection",
+  "executionInstruments": [
+    "BTC-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "executionIntersectionHash": "demo_execution_intersection_1bcd5f70a24d1d2527a29965d95d1c47473f0e85a442dfda744354d95e0bd514",
+  "formalPass": false,
+  "forwardEvidenceStatus": "collecting",
+  "generatedAt": "2026-07-20T06:44:08.639092Z",
+  "historicalEvidenceClass": "development_selected_result",
+  "historicalMetrics": {
+    "expectancyR": 0.304485,
+    "lossCount": 193,
+    "maxDrawdownR": 12.9224,
+    "pairCount": 27,
+    "profitFactor": 1.6046,
+    "stopHitRatePct": 55.4974,
+    "targetHitRatePct": 38.4817,
+    "totalR": 116.3131,
+    "tradeCount": 382,
+    "winCount": 189,
+    "winRatePct": 49.4764
+  },
+  "livePromotionEligible": false,
+  "portfolioCandidateId": "v49_three_mechanism_same_symbol_14d_cooldown_portfolio_v1",
+  "portfolioDefinitionHash": "portfolio_provisional_definition_02eca564b2d7b09401521993a0c9a15191252c233317f009a574d2a937f0a9a4",
+  "releaseHash": "provisional_demo_release_96085cf8a1d1dc089bf6dc4aae3eacb0d051b8e53ef4e5cd58546ea014a8bdcb",
+  "releaseId": "provisional_research_demo_v46_02eca564b2d7b09401521993",
+  "releasePurpose": "provisional_research_demo",
+  "replayParityPercent": 100.0,
+  "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
+  "route": "blocked_waiting_exact_release_approval",
+  "schemaVersion": "provisional_research_demo_v1",
+  "strategyQualification": "provisional_research_only"
+}

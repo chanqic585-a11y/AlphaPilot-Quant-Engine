@@ -49,5 +49,7 @@
   },
   "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
   "route": "blocked_waiting_exact_release_approval",
-  "schemaVersion": "demo_exact_hash_approval_request_v1"
+  "schemaVersion": "demo_exact_hash_approval_request_v1",
+  "superseded": true,
+  "supersededReason": "pre_arm_readiness_not_yet_complete"
 }

@@ -1,6 +1,7 @@
 {
-  "anchorEvent": "previous_accepted_same_pair_exit",
+  "anchorEvent": "previous_accepted_closed_trade_exit_timestamp",
   "boundaryEqualityAllowed": true,
+  "boundaryRule": "entry_timestamp_greater_than_or_equal_to_cooldown_end_is_allowed",
   "candidateOrder": [
     "entry_timestamp",
     "candidate_id",
@@ -8,11 +9,17 @@
   ],
   "clock": "utc_elapsed_time",
   "completedTradeRule": "accepted_exit_timestamp_lte_candidate_entry_timestamp",
+  "cooldownAnchor": "previous_accepted_closed_trade_exit_timestamp",
+  "cooldownDurationSeconds": 1209600,
+  "cooldownScope": "canonical_instrument_id",
+  "cooldownSemanticsHash": "portfolio_cooldown_semantics_70864f03d286b132ac69473fce19d29f58c51d818066883bed708b8cfbfb312c",
+  "crossComponentScope": "all_three_portfolio_components",
   "durationSeconds": 1209600,
   "implementationPath": "alphapilot/portfolio_rescue/replay.py",
   "implementationSha256": "0f75853cc5a83c4cca9d83db8a6d9885ab66400957a6e740db7f784e966d3924",
   "notAWaitingPeriod": true,
   "pairCooldownDays": 14,
   "rejectionRule": "candidate_entry_lt_latest_same_pair_accepted_exit_plus_duration",
-  "schemaVersion": "portfolio_cooldown_semantics_v1"
+  "schemaVersion": "portfolio_cooldown_semantics_v2",
+  "timezone": "UTC"
 }

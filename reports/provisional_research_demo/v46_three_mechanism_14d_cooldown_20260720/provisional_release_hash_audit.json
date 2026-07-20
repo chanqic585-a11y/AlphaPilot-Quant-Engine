@@ -3,9 +3,9 @@
   "demoArm": false,
   "exactApprovalRequired": true,
   "executionIntersectionHash": "demo_execution_intersection_1bcd5f70a24d1d2527a29965d95d1c47473f0e85a442dfda744354d95e0bd514",
-  "portfolioDefinitionHash": "portfolio_provisional_definition_02eca564b2d7b09401521993a0c9a15191252c233317f009a574d2a937f0a9a4",
-  "releaseHash": "provisional_demo_release_96085cf8a1d1dc089bf6dc4aae3eacb0d051b8e53ef4e5cd58546ea014a8bdcb",
-  "releaseId": "provisional_research_demo_v46_02eca564b2d7b09401521993",
+  "portfolioDefinitionHash": "portfolio_provisional_definition_a3669d95101ba65f68fa89b17ef5cce84f4623b236b53ba88a7a1f53e329db79",
+  "releaseHash": "provisional_demo_release_c1e28ecf59fb7fcc2b4876eec5e6fd04c50002bef28c69c03bedf164af7cd225",
+  "releaseId": "provisional_research_demo_v46_a3669d95101ba65f68fa89b1",
   "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
   "v46ArtifactManifestSha256": "a3c8863295c9247d293923563f357f3d726130b85b0373a565e40c7978a08ca1",
   "v46EvidenceZipSha256": "b15c8ce2aee5800ffb2a321b5ac82c70dc0f41c7ee09c02e5b05adc31663d741"

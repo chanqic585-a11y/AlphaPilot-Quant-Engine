@@ -13,6 +13,7 @@
       "sourcePath": "demo_release_contract_demo_release_top100_101a9c3a91a1199213edd0454f33d033.json",
       "sourceReleaseHash": "demo_release_content_964825c820b8a7ff4a5aec03260d6c777b16a8aa3feb906c6916555d23950d17",
       "sourceReleaseMode": "experimental_override",
+      "sourceRiskEnvelopeHash": "source_risk_envelope_b747368f3c952521bc87b79bc208d8ab3e599556b21d233e64a006342d2249d7",
       "strategyDefinition": {
         "familyKey": "short_rejection",
         "forwardSignalPolicy": {
@@ -56,6 +57,7 @@
       "sourcePath": "demo_release_contract_demo_release_top100_b8d58642cb97e8faf7ce98a24b86b395.json",
       "sourceReleaseHash": "demo_release_content_c2ac7451ce0d8773fb1a383760cb8df2e8f64cbca6955e1993e2ded7d4831c6d",
       "sourceReleaseMode": "experimental_override",
+      "sourceRiskEnvelopeHash": "source_risk_envelope_b747368f3c952521bc87b79bc208d8ab3e599556b21d233e64a006342d2249d7",
       "strategyDefinition": {
         "familyKey": "mean_reversion",
         "forwardSignalPolicy": {
@@ -114,6 +116,7 @@
       "sourcePath": "demo_release_contract_demo_release_top100_600814e4c07d7f8edf4b057f0e6137f9.json",
       "sourceReleaseHash": "demo_release_content_62683fcdbe8d22e01684e57a24bf396dd37941b094c412b19d9236ac649962c9",
       "sourceReleaseMode": "experimental_override",
+      "sourceRiskEnvelopeHash": "source_risk_envelope_b747368f3c952521bc87b79bc208d8ab3e599556b21d233e64a006342d2249d7",
       "strategyDefinition": {
         "familyKey": "squeeze_breakout",
         "forwardSignalPolicy": {
@@ -164,6 +167,6 @@
       "timeframe": "1d"
     }
   ],
-  "portfolioDefinitionHash": "portfolio_provisional_definition_02eca564b2d7b09401521993a0c9a15191252c233317f009a574d2a937f0a9a4",
+  "portfolioDefinitionHash": "portfolio_provisional_definition_a3669d95101ba65f68fa89b17ef5cce84f4623b236b53ba88a7a1f53e329db79",
   "schemaVersion": "v46_portfolio_component_manifest_v1"
 }

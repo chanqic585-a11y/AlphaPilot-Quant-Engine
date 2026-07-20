@@ -1,0 +1,17 @@
+{
+  "approvalWordingCorrected": true,
+  "boundaryRule": "entry_timestamp_greater_than_or_equal_to_cooldown_end_is_allowed",
+  "cooldownAnchor": "previous_accepted_closed_trade_exit_timestamp",
+  "cooldownDurationSeconds": 1209600,
+  "cooldownScope": "canonical_instrument_id",
+  "correctedWording": "same canonical instrument across all three components; previous accepted closed-trade exit timestamp plus 1209600 UTC seconds; equality is allowed",
+  "crossComponentScope": "all_three_portfolio_components",
+  "decision": "superseding_release_required",
+  "implementationSha256": "0f75853cc5a83c4cca9d83db8a6d9885ab66400957a6e740db7f784e966d3924",
+  "previousReleaseHash": "provisional_demo_release_96085cf8a1d1dc089bf6dc4aae3eacb0d051b8e53ef4e5cd58546ea014a8bdcb",
+  "previousWording": "same-pair exit",
+  "releaseHashChanged": true,
+  "schemaVersion": "cooldown_approval_wording_parity_audit_v1",
+  "status": "passed",
+  "timezone": "UTC"
+}

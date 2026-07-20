@@ -3,7 +3,7 @@
     "interrupted": false,
     "preserved": true
   },
-  "generatedAt": "2026-07-20T06:44:08.639092Z",
+  "generatedAt": "2026-07-20T14:52:39.854137Z",
   "historicalEvidence": {
     "formalPass": false,
     "historicalEvidenceClass": "development_selected_result",
@@ -12,9 +12,9 @@
     "v46EvidenceZipSha256": "b15c8ce2aee5800ffb2a321b5ac82c70dc0f41c7ee09c02e5b05adc31663d741"
   },
   "patchInstruction": {
-    "filename": "AlphaPilot_V47-V53_Immediate_V46_Portfolio_Provisional_Demo_Route_Patch_CN.md",
-    "manifestFilename": "AlphaPilot_V47-V53_Immediate_V46_Portfolio_Provisional_Demo_Route_Patch_Manifest.json",
-    "sha256": "e41de0425d7b303d74b12e710d759d591bfd1fb4d6d51a674dc1529ed9938b79",
+    "filename": "AlphaPilot_V46_Provisional_Demo_Pre_Approval_Readiness_Patch_CN.md",
+    "manifestFilename": "AlphaPilot_V46_Provisional_Demo_Pre_Approval_Readiness_Patch_Manifest.json",
+    "sha256": "878abe07d81b44b6a85b83d71a180fd12d8b7d5839aae146f61a09b989efcef2",
     "verified": true
   },
   "runtimeSources": {
@@ -32,8 +32,8 @@
   },
   "schemaVersion": "v46_provisional_demo_patch_implementation_receipt_v1",
   "sourceCommits": {
-    "console": "e825a9d8d0e5694c894bdf51cc239dc1eeea37a5",
-    "quant": "82b767c2f1920bf852a93b4f963121caa649f531"
+    "console": "65e667bcccdfa2052114e4b52d4816b4c8749f7f",
+    "quant": "4b8b0c131a796bb5522e154e4a166269a46de5ee"
   },
   "unresolvedImplementationBlockers": []
 }

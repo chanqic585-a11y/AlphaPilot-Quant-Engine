@@ -1,11 +1,25 @@
 {
-  "evidence": [
-    "Quant provisional+V49+V46 relevant: 22 passed",
-    "Console Demo relevant: 37 passed",
-    "Console full: 475 passed",
-    "Quant full: 1343 passed; 1 unrelated frozen S01 publication-readiness baseline failed",
-    "compileall and git diff --check passed"
-  ],
-  "schemaVersion": "v46_provisional_demo_patch_test_summary_v1",
-  "status": "passed"
+  "collectionScopeAudit": {
+    "projectSuitePassed": true,
+    "projectTestRoot": "tests",
+    "rootPytestIncludesUninstalledThirdPartySuite": true,
+    "status": "documented"
+  },
+  "fullProjectSuites": {
+    "console": "471 passed",
+    "quant": "1347 passed, 164 subtests passed"
+  },
+  "historicalException": {
+    "currentHeadResolved": true,
+    "exactTestNodeId": "tests/formal_validation/test_phase2_readiness.py::test_repository_phase2_audit_uses_docker_evidence_and_preserves_zero_effects",
+    "executionPathImpact": false,
+    "introducedByThisPatch": false,
+    "status": "accepted_pre_existing_exception"
+  },
+  "schemaVersion": "v46_provisional_demo_patch_test_summary_v2",
+  "status": "passed",
+  "targeted": [
+    "Quant provisional targeted: 15 passed",
+    "Console Demo relevant: 223 passed"
+  ]
 }

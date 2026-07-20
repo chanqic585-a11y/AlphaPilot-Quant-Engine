@@ -1,0 +1,23 @@
+{
+  "demoArm": false,
+  "engineeringSmokeReady": false,
+  "evidenceHash": "engineering_smoke_evidence_3347652ed144d6b9be81f16b860c1a2fc190c0ab109a24d820c4f13969779eca",
+  "generatedAt": "2026-07-20T15:04:18.091931Z",
+  "lifecycleComplete": false,
+  "live": false,
+  "orderRequestMade": false,
+  "schemaVersion": "provisional_demo_engineering_smoke_compatibility_audit_v1",
+  "separateApprovalRequired": true,
+  "status": "missing_compatible_smoke_evidence",
+  "statusByCheck": {
+    "cancelAudit": "not_run",
+    "evidenceIsolationAudit": "completed",
+    "fillCloseAudit": "not_run",
+    "reconciliationAudit": "not_run",
+    "restartAudit": "not_run",
+    "smokeContract": "not_run"
+  },
+  "strategyEvidenceIsolationVerified": true,
+  "strategyReleaseApprovalAccepted": false,
+  "withdraw": false
+}

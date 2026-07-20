@@ -23,6 +23,52 @@
   ],
   "demoArm": false,
   "evidenceClass": "historical_selected_forward_collection",
+  "executionIdentity": {
+    "authenticatedDemoUniverseHash": "6b8b6bbbf315ac102cdc1fab590192747018823137e21b72c59bf535aa01d8fa",
+    "candidatePortfolioRuntimeHash": "candidate_portfolio_runtime_4e5868d7fbfad58285b7c8a46350f1cdfd13321d4e40dec3119776c785e11de2",
+    "componentIdentities": [
+      {
+        "candidateId": "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+        "sourceContractHash": "console_contract_861e8257a0997e0ea5f3a82aff039b251da0f7ad1692b825da461e0438cf11cd",
+        "sourceReleaseHash": "demo_release_content_964825c820b8a7ff4a5aec03260d6c777b16a8aa3feb906c6916555d23950d17",
+        "strategyDefinitionHash": "legacy_content_ae63ee7f53c7eaee9466487df79966b9d8f3a654efc174816ddefdce9ccd2aec"
+      },
+      {
+        "candidateId": "v13_7_20_lf_research_candidate_117",
+        "sourceContractHash": "console_contract_b040995c2db9c24115eaa62014f436b855aa6bb736ea88992561e9a793bda366",
+        "sourceReleaseHash": "demo_release_content_c2ac7451ce0d8773fb1a383760cb8df2e8f64cbca6955e1993e2ded7d4831c6d",
+        "strategyDefinitionHash": "legacy_content_8b400c9bfa2e6339aa198363dc6e277b6d70c56f8beb48be48710665e473d20d"
+      },
+      {
+        "candidateId": "v13_7_20_lf_research_candidate_090",
+        "sourceContractHash": "console_contract_6e70ddfa27cd9cb033f676c93812d95e81417cbae4c9e12a50c3872829805ba6",
+        "sourceReleaseHash": "demo_release_content_62683fcdbe8d22e01684e57a24bf396dd37941b094c412b19d9236ac649962c9",
+        "strategyDefinitionHash": "legacy_content_5ad3774b694e30763df33d95c45f81e843d94a54e3ea6ffc1c477e5a6f6bfa0e"
+      }
+    ],
+    "confirmedRuntimeUniverseHash": "demo_runtime_universe_snapshot_d1aee6a3200b25737cd2ba29e7bea09923ef1edad5f41a8751af97eb06bce565",
+    "consoleExecutionCommit": "65e667bcccdfa2052114e4b52d4816b4c8749f7f",
+    "consoleRuntimeImplementationHash": "2044321d730e577250a41ce07bb7de925695c456d0587edb67da40199f170d94",
+    "cooldownSemanticsHash": "portfolio_cooldown_semantics_70864f03d286b132ac69473fce19d29f58c51d818066883bed708b8cfbfb312c",
+    "costModelHash": "cost_model_b6662f138559e36d7eba5e58c167abd1eecc8ea0ad4d360cfbb7f3f80141ee04",
+    "evidenceClassification": {
+      "formalPass": false,
+      "historicalEvidenceClass": "development_selected_result",
+      "strategyQualification": "provisional_research_only"
+    },
+    "executionIdentityHash": "provisional_demo_execution_identity_63cd07985c72af02dffd53825c703b211c9ee4044a36f15ff24d8c305031713f",
+    "executionIntersectionHash": "demo_execution_intersection_1bcd5f70a24d1d2527a29965d95d1c47473f0e85a442dfda744354d95e0bd514",
+    "exitPolicyHash": "portfolio_exit_policy_e610d4b9673faeff323d476329c13030f73e5bad23904d965075bec8189d6c79",
+    "portfolioDefinitionHash": "portfolio_provisional_definition_a3669d95101ba65f68fa89b17ef5cce84f4623b236b53ba88a7a1f53e329db79",
+    "publicUniverseSnapshotHash": "0ce33eb7ff15d4421903e27c322551bbd506c3b713039f2b23c15b17c9f94cef",
+    "quantImplementationCommit": "4b8b0c131a796bb5522e154e4a166269a46de5ee",
+    "quantRuntimeImplementationHash": "0f75853cc5a83c4cca9d83db8a6d9885ab66400957a6e740db7f784e966d3924",
+    "researchUniverseHash": "research_universe_853f4eb8cd7b6300916a2bee7d573a3275c73dd4e3a877618879c8c4ffa9a7cf",
+    "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
+    "riskProfileHash": "portfolio_risk_profile_f4efb208913c604bf1650ccf84047cf8b0cba7c8fd1e468935c8875085f636bb",
+    "schemaVersion": "provisional_demo_execution_identity_v1"
+  },
+  "executionIdentityHash": "provisional_demo_execution_identity_63cd07985c72af02dffd53825c703b211c9ee4044a36f15ff24d8c305031713f",
   "executionInstruments": [
     "BTC-USDT-SWAP",
     "DOGE-USDT-SWAP",
@@ -33,7 +79,7 @@
   "executionIntersectionHash": "demo_execution_intersection_1bcd5f70a24d1d2527a29965d95d1c47473f0e85a442dfda744354d95e0bd514",
   "formalPass": false,
   "forwardEvidenceStatus": "collecting",
-  "generatedAt": "2026-07-20T06:44:08.639092Z",
+  "generatedAt": "2026-07-20T14:52:39.854137Z",
   "historicalEvidenceClass": "development_selected_result",
   "historicalMetrics": {
     "expectancyR": 0.304485,
@@ -50,9 +96,9 @@
   },
   "livePromotionEligible": false,
   "portfolioCandidateId": "v49_three_mechanism_same_symbol_14d_cooldown_portfolio_v1",
-  "portfolioDefinitionHash": "portfolio_provisional_definition_02eca564b2d7b09401521993a0c9a15191252c233317f009a574d2a937f0a9a4",
-  "releaseHash": "provisional_demo_release_96085cf8a1d1dc089bf6dc4aae3eacb0d051b8e53ef4e5cd58546ea014a8bdcb",
-  "releaseId": "provisional_research_demo_v46_02eca564b2d7b09401521993",
+  "portfolioDefinitionHash": "portfolio_provisional_definition_a3669d95101ba65f68fa89b17ef5cce84f4623b236b53ba88a7a1f53e329db79",
+  "releaseHash": "provisional_demo_release_c1e28ecf59fb7fcc2b4876eec5e6fd04c50002bef28c69c03bedf164af7cd225",
+  "releaseId": "provisional_research_demo_v46_a3669d95101ba65f68fa89b1",
   "releasePurpose": "provisional_research_demo",
   "replayParityPercent": 100.0,
   "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
