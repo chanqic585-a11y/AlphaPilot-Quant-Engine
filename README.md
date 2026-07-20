@@ -5567,3 +5567,18 @@ orders. No failed candidate is repaired in place or forced through a gate.
 Evidence is under `reports/strategy_acquisition/v37i_v37j/`. Funding Carry also
 remains ineligible for Demo until independent forward spot/perpetual order-book
 evidence exists, even if a future version passes economic screening.
+
+## V13.27.1.41-V13.27.1.44 Mechanism Breakthrough Research
+
+V41-V44 replaces broad generation with two bounded, source-backed mechanism
+campaigns. Four immutable candidates were evaluated from breakout-trap second
+entry and spike-pullback continuation hypotheses. The inherited budget was not
+reset: four full backtests were consumed and 87 remain.
+
+No candidate passed the complete development gate. The closest candidate, the
+1h short spike-pullback continuation, passed PF, average net R, cost stress and
+mechanism-increment checks but failed positive-month consistency. It was not
+repaired in place or promoted. Therefore Formal was lawfully skipped with zero
+Formal runs, zero Locked OOS reads, and zero releases.
+
+Frozen evidence is under `reports/mechanism_breakthrough/v41_v45_20260720/`.
