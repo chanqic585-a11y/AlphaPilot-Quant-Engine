@@ -1,0 +1,3 @@
+{"engineeringOnly":true,"forwardEvidenceEligible":false,"instrumentId":"BTC-USDT-SWAP","quantity":"0","recordType":"engineering_smoke_position","recordedAt":"2026-07-20T16:12:24.783555Z","stage":"path_a_final","strategyQualification":false}
+{"engineeringOnly":true,"forwardEvidenceEligible":false,"instrumentId":"BTC-USDT-SWAP","quantity":"0.01","recordType":"engineering_smoke_position","recordedAt":"2026-07-20T16:16:26.295583Z","stage":"path_b_open","strategyQualification":false}
+{"engineeringOnly":true,"forwardEvidenceEligible":false,"instrumentId":"BTC-USDT-SWAP","quantity":"0","recordType":"engineering_smoke_position","recordedAt":"2026-07-20T16:16:27.447743Z","stage":"path_b_final","strategyQualification":false}

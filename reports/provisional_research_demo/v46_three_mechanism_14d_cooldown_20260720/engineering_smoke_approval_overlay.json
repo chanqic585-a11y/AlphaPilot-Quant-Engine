@@ -1,0 +1,14 @@
+{
+  "approvalDocumentSha256": "278e8fd0305b01054f31ae3180cab44a20f4791444a2b16a00db1e85c370b014",
+  "approvedRequestEvidenceHash": "engineering_smoke_evidence_3347652ed144d6b9be81f16b860c1a2fc190c0ab109a24d820c4f13969779eca",
+  "contractHash": "engineering_smoke_contract_a36cf4780a003388c653703294d062b2e081dfb9fa63acabac387c294bea8592",
+  "demoArm": false,
+  "generatedAt": "2026-07-20T16:16:17.528662Z",
+  "live": false,
+  "releaseId": "provisional_research_demo_v46_a3669d95101ba65f68fa89b1",
+  "requestType": "engineering_smoke_only",
+  "schemaVersion": "alphapilot_v46_engineering_smoke_approval_overlay_v1",
+  "status": "approved_engineering_smoke_only",
+  "strategyReleaseApprovalAccepted": false,
+  "withdraw": false
+}

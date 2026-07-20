@@ -1,0 +1,34 @@
+{
+  "accountMode": "2",
+  "accountSite": "global",
+  "blockers": [],
+  "credentialsRetained": false,
+  "demoHeaderRequired": true,
+  "environment": "okx_demo",
+  "generatedAt": "2026-07-20T16:16:20.600246Z",
+  "instrument": {
+    "ctType": "linear",
+    "ctVal": "0.01",
+    "instId": "BTC-USDT-SWAP",
+    "instType": "SWAP",
+    "lotSz": "0.01",
+    "minSz": "0.01",
+    "settleCcy": "USDT",
+    "state": "live",
+    "tickSz": "0.1"
+  },
+  "live": false,
+  "nonzeroPositionCount": 0,
+  "pendingOrderCount": 0,
+  "positionMode": "net_mode",
+  "rawResponsesRetained": false,
+  "recentFillCount": 0,
+  "schemaVersion": "alphapilot_v46_engineering_smoke_private_preflight_v1",
+  "serverTime": {
+    "offsetMilliseconds": -303,
+    "roundTripMilliseconds": 351,
+    "status": "verified"
+  },
+  "status": "passed",
+  "withdraw": false
+}

@@ -1,0 +1,19 @@
+{
+  "after": {
+    "strategyClosedTradeCount": 0,
+    "strategyOrderCount": 2
+  },
+  "before": {
+    "strategyClosedTradeCount": 0,
+    "strategyOrderCount": 2
+  },
+  "engineeringOnly": true,
+  "formalEvidenceDelta": 0,
+  "forwardEvidenceDelta": 0,
+  "generatedAt": "2026-07-20T16:16:28.650486Z",
+  "schemaVersion": "alphapilot_v46_engineering_smoke_strategy_evidence_isolation_audit_v1",
+  "status": "passed",
+  "strategyClosedTradeCountDelta": 0,
+  "strategyEvidenceChanged": false,
+  "strategyOrderCountDelta": 0
+}

@@ -1,0 +1,13 @@
+{
+  "contractHash": "engineering_smoke_contract_a36cf4780a003388c653703294d062b2e081dfb9fa63acabac387c294bea8592",
+  "orderAttemptCount": 3,
+  "pathAClientOrderId": "apv46A10e04d502c2dec92e3fd",
+  "pathAFilledSize": "0",
+  "schemaVersion": "alphapilot_v46_engineering_smoke_checkpoint_v1",
+  "status": "completed",
+  "strategyEvidenceBefore": {
+    "strategyClosedTradeCount": 0,
+    "strategyOrderCount": 2
+  },
+  "updatedAt": "2026-07-20T16:16:28.653486Z"
+}

@@ -1,0 +1,10 @@
+{
+  "checkpointReloaded": true,
+  "duplicateOrderPrevented": true,
+  "generatedAt": "2026-07-20T16:16:22.957756Z",
+  "orphanPositionCount": 0,
+  "priorStage": "path_a_completed",
+  "schemaVersion": "alphapilot_v46_engineering_smoke_restart_recovery_audit_v1",
+  "status": "passed",
+  "unknownOrderCount": 0
+}

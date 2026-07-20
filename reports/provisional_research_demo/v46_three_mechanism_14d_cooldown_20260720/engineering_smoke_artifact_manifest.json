@@ -1,0 +1,132 @@
+{
+  "artifactCount": 24,
+  "artifacts": [
+    {
+      "bytes": 728,
+      "path": "engineering_smoke_approval_overlay.json",
+      "sha256": "aec01f4a1cc01c0e0549d22b00aa5e62e421aaae4eb699d50120a9acf7fb64b9"
+    },
+    {
+      "bytes": 992,
+      "path": "engineering_smoke_approval_request.json",
+      "sha256": "26d00ff1db944fa7c604c1cd53ed974874536bc08abff82bdb7400833ecac667"
+    },
+    {
+      "bytes": 577,
+      "path": "engineering_smoke_approval_request.md",
+      "sha256": "49b9ac605d7304a892442adf1630f7e24ff9098cf63604acff006e8c8d7e561b"
+    },
+    {
+      "bytes": 365,
+      "path": "engineering_smoke_cancel_audit.json",
+      "sha256": "3e720ac53bfd254b76a750dee679c3cb98c47b921e83c445d1e39e416678e699"
+    },
+    {
+      "bytes": 824,
+      "path": "engineering_smoke_compatibility_audit.json",
+      "sha256": "839e2dc627bde4a036853615fed51f1bc6b153ae9ee5ea1811df9cc924abbe9e"
+    },
+    {
+      "bytes": 999,
+      "path": "engineering_smoke_completed_compatibility_audit.json",
+      "sha256": "a45722fe0875e539f7484154ea2ee62eedf339a39d5286a28d21f3337c489b1b"
+    },
+    {
+      "bytes": 1881,
+      "path": "engineering_smoke_contract.json",
+      "sha256": "18dce2bb7516c356dc5f43743ba66f2195c34a020f8d643558a7c49a6f54f059"
+    },
+    {
+      "bytes": 837,
+      "path": "engineering_smoke_contract_hash_audit.json",
+      "sha256": "37837ccc72a953e17a5573b57a18ce71320ef9f7041eae51512c7f2f414f9ef5"
+    },
+    {
+      "bytes": 6718,
+      "path": "engineering_smoke_explicit_approval_source.md",
+      "sha256": "278e8fd0305b01054f31ae3180cab44a20f4791444a2b16a00db1e85c370b014"
+    },
+    {
+      "bytes": 354,
+      "path": "engineering_smoke_fill_close_audit.json",
+      "sha256": "585af0d7feaca71aae32cd8beaf38fc2005dfafc624fdae938f28d78a4330a24"
+    },
+    {
+      "bytes": 841,
+      "path": "engineering_smoke_fill_ledger.jsonl",
+      "sha256": "0a4f4f9dc260d9569549cec4c065a3c7af3bb23e796070c4c99ee6487dec8951"
+    },
+    {
+      "bytes": 1116,
+      "path": "engineering_smoke_final_self_check.json",
+      "sha256": "2c82bafe2a61eaebff4c563603f087a88c0749a28a54814fc2ab40d3f1d4b1af"
+    },
+    {
+      "bytes": 248,
+      "path": "engineering_smoke_kill_switch_audit.json",
+      "sha256": "1c8111226fa606a7564e1389bf6e04310ba2848cb8657330b25f48e7b2cd4728"
+    },
+    {
+      "bytes": 1374,
+      "path": "engineering_smoke_order_ledger.jsonl",
+      "sha256": "0c06ebb7e02d83309d7abec1f2de1db79cd065c6537f14d4777cf128d0a3db4e"
+    },
+    {
+      "bytes": 725,
+      "path": "engineering_smoke_position_ledger.jsonl",
+      "sha256": "066f8e2a248ace28cbb7cb253ed76a98bc8f39f707c7ba48e930b5b07df7b561"
+    },
+    {
+      "bytes": 832,
+      "path": "engineering_smoke_private_preflight.json",
+      "sha256": "a7d847711da29d7909bcd695a7078bfa9bd7d12d57c28fc532c2881ca113b3d8"
+    },
+    {
+      "bytes": 300,
+      "path": "engineering_smoke_private_websocket_audit.json",
+      "sha256": "75d09834d089b68b77259f2c3ee739853a495eb183b7e2edb7cbf0d807ce3a14"
+    },
+    {
+      "bytes": 310,
+      "path": "engineering_smoke_rest_reconciliation_audit.json",
+      "sha256": "fcaf941b2e0467704419307c39f4217c25864d7be95f9bda12e9a9698799259a"
+    },
+    {
+      "bytes": 309,
+      "path": "engineering_smoke_restart_recovery_audit.json",
+      "sha256": "49f06808a7edc5df9298016d86567fc444a618d8727a831699ba3c683d9a2d33"
+    },
+    {
+      "bytes": 518,
+      "path": "engineering_smoke_strategy_evidence_isolation_audit.json",
+      "sha256": "11f8656673ace75a1c6f5d95d9e8ac10b9d4703f30ffac241a6f29660d68ac63"
+    },
+    {
+      "bytes": 1933,
+      "path": "provisional_demo_exact_release_approval_request.json",
+      "sha256": "3f8d1e9bd7b68ffba819dc631c830ac1d7cd8cf444161a84357a746f20dbba07"
+    },
+    {
+      "bytes": 1133,
+      "path": "provisional_demo_exact_release_approval_request.md",
+      "sha256": "c6c228239cab3e1910c1b97716b5db67c1d8c41a5e749a39f57e12e3b58a87ea"
+    },
+    {
+      "bytes": 1118,
+      "path": "updated_provisional_demo_pre_arm_readiness.json",
+      "sha256": "78d1fd4b93ded3c5f3c6216519255eea7099ba4cea7b149dc2f076f4ca73c477"
+    },
+    {
+      "bytes": 804,
+      "path": "updated_provisional_demo_pre_arm_readiness.md",
+      "sha256": "19e99dacefb8c4436d47ac1f49ed8d1ea33e8145133d098c1648a453a6df3e6a"
+    }
+  ],
+  "demoArm": false,
+  "generatedAt": "2026-07-20T16:18:37Z",
+  "live": false,
+  "manifestHash": "v46_engineering_smoke_manifest_51c09ee0af213538046e976a0d17510489310c42d687196bfe2705b161cb6b49",
+  "route": "blocked_waiting_exact_release_approval",
+  "schemaVersion": "v46_engineering_smoke_artifact_manifest_v1",
+  "withdraw": false
+}

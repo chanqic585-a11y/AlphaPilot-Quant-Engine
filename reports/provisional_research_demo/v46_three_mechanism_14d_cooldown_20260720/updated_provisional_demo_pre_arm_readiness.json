@@ -1,0 +1,31 @@
+{
+  "approvalReady": true,
+  "approved": false,
+  "blockers": [],
+  "cooldownSemanticParity": true,
+  "demoArm": false,
+  "engineeringSmokeReady": true,
+  "executionInstruments": [
+    "BTC-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "executionIntersectionHash": "demo_execution_intersection_1bcd5f70a24d1d2527a29965d95d1c47473f0e85a442dfda744354d95e0bd514",
+  "executionUniverseFresh": true,
+  "generatedAt": "2026-07-20T16:18:37Z",
+  "live": false,
+  "orderCount": 0,
+  "preExistingTestExceptionAccepted": true,
+  "privateReadVerified": true,
+  "releaseBindingComplete": true,
+  "releaseHash": "provisional_demo_release_c1e28ecf59fb7fcc2b4876eec5e6fd04c50002bef28c69c03bedf164af7cd225",
+  "releaseId": "provisional_research_demo_v46_a3669d95101ba65f68fa89b1",
+  "remoteFreezePassed": true,
+  "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
+  "route": "blocked_waiting_exact_release_approval",
+  "schemaVersion": "provisional_demo_pre_arm_readiness_v1",
+  "targetedTestsPassed": true,
+  "withdraw": false
+}

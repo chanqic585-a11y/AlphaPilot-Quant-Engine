@@ -1,0 +1,30 @@
+{
+  "demoArm": false,
+  "engineeringSmokeReady": true,
+  "evidenceHash": "engineering_smoke_evidence_a35c363b83a0b1c6baf30b25fa3a246cbbc06cce444a90ccb08b7d13ab5ccda1",
+  "finalSelfCheckComplete": true,
+  "generatedAt": "2026-07-20T16:18:37Z",
+  "killSwitchVerified": true,
+  "lifecycleComplete": true,
+  "live": false,
+  "orderRequestMade": false,
+  "privateWebsocketVerified": true,
+  "reconciliationComplete": true,
+  "schemaVersion": "provisional_demo_engineering_smoke_compatibility_audit_v1",
+  "separateApprovalRequired": false,
+  "status": "compatible",
+  "statusByCheck": {
+    "cancelAudit": "passed",
+    "evidenceIsolationAudit": "passed",
+    "fillCloseAudit": "passed",
+    "finalSelfCheck": "passed",
+    "killSwitchAudit": "passed",
+    "privateWebsocketAudit": "passed",
+    "reconciliationAudit": "passed",
+    "restartAudit": "passed",
+    "smokeContract": "passed"
+  },
+  "strategyEvidenceIsolationVerified": true,
+  "strategyReleaseApprovalAccepted": false,
+  "withdraw": false
+}

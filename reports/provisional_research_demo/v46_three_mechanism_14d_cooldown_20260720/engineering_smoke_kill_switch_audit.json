@@ -1,0 +1,8 @@
+{
+  "cancelAllAfterArmedSeconds": 10,
+  "cancelAllAfterDisarmed": true,
+  "environment": "okx_demo",
+  "generatedAt": "2026-07-20T16:16:24.734138Z",
+  "schemaVersion": "alphapilot_v46_engineering_smoke_kill_switch_audit_v1",
+  "status": "passed"
+}

@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-07-20T16:16:28.646486Z",
+  "nonzeroPositionCount": 0,
+  "orphanPositionCount": 0,
+  "pendingOrderCount": 0,
+  "phase": "final",
+  "recentFillCount": 2,
+  "schemaVersion": "alphapilot_v46_engineering_smoke_rest_reconciliation_audit_v1",
+  "status": "passed",
+  "unknownOrderCount": 0
+}
