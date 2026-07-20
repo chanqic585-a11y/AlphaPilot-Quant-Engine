@@ -1,0 +1,112 @@
+{
+  "artifactCount": 21,
+  "artifacts": [
+    {
+      "byteSize": 3470,
+      "path": "artifact_similarity_matrix.parquet",
+      "sha256": "f923fcb3a59b22f700a64cd0954599450993823ba1a639c2b121ce6933861521"
+    },
+    {
+      "byteSize": 423,
+      "path": "campaign_summary.json",
+      "sha256": "e0498d2d1d18a4c0bf42fcb35be877204ec8178cc71c8e9923b33cc92b3c74a0"
+    },
+    {
+      "byteSize": 289,
+      "path": "campaign_summary.md",
+      "sha256": "7cc4fd86dd25abb2d621b17413c1c8bb58e674400f71f57c9f6508b949681f3d"
+    },
+    {
+      "byteSize": 397,
+      "path": "candidate_adapters/v42_breakout_trap_second_entry_long_4h_v1.json",
+      "sha256": "f421128f2b4ec48309fa603224640105f93fe3d233ab62bbec154430816d31d9"
+    },
+    {
+      "byteSize": 398,
+      "path": "candidate_adapters/v42_breakout_trap_second_entry_short_4h_v1.json",
+      "sha256": "520e7ebc36f16e78c2e93330f66a82dbae5ae49ca85585d83ba0d1d9f840a8c1"
+    },
+    {
+      "byteSize": 398,
+      "path": "candidate_adapters/v42_spike_pullback_continuation_long_1h_v1.json",
+      "sha256": "956fb33b0a04c729d006029fc0d9648ec93372d629ac5d3306aac2ffc9fc5b31"
+    },
+    {
+      "byteSize": 399,
+      "path": "candidate_adapters/v42_spike_pullback_continuation_short_1h_v1.json",
+      "sha256": "0311f3513f84e17003c46b51ce854698fbf46380f8553271e3badbfa9c812293"
+    },
+    {
+      "byteSize": 702,
+      "path": "candidate_dedup_decisions.json",
+      "sha256": "0a9d5a0548614ce4585db513878ccb9834a31f63a98bc0bf79daeaa96cc5d3fd"
+    },
+    {
+      "byteSize": 1880,
+      "path": "candidate_specs/v42_breakout_trap_second_entry_long_4h_v1.json",
+      "sha256": "eed77a1faa9ad487f041cc68aa15d0428252ae92743dd6a7b2c43039ef1f45f2"
+    },
+    {
+      "byteSize": 1882,
+      "path": "candidate_specs/v42_breakout_trap_second_entry_short_4h_v1.json",
+      "sha256": "313aab20257d174423eb8da8cfee781988a500e49f9d54cea0a656da3feae84d"
+    },
+    {
+      "byteSize": 1935,
+      "path": "candidate_specs/v42_spike_pullback_continuation_long_1h_v1.json",
+      "sha256": "70c0721c2bb5e229ebf99c6e792d0bd6bcde75df2d331ddfb52895e6377d58b3"
+    },
+    {
+      "byteSize": 1937,
+      "path": "candidate_specs/v42_spike_pullback_continuation_short_1h_v1.json",
+      "sha256": "bb539f460aa3bb0af54ac6bf8cbb22fd44827c427af0421139885ab8d89e049d"
+    },
+    {
+      "byteSize": 69575,
+      "path": "data_snapshot.json",
+      "sha256": "df9d2222bba164cdba9d589ff74869e2a0091ad2ca1e1326c5722686eb9a5e80"
+    },
+    {
+      "byteSize": 549,
+      "path": "mechanism_dossiers/v42_breakout_trap_second_entry_long_4h_v1.json",
+      "sha256": "459d183662191e42a0fb4dc9aec8dd300d34a6403be2de5118b610b6e7781150"
+    },
+    {
+      "byteSize": 550,
+      "path": "mechanism_dossiers/v42_breakout_trap_second_entry_short_4h_v1.json",
+      "sha256": "d62d1c285f17d54aa7658872d335105248f09bed14f105df6a449486888d2cf5"
+    },
+    {
+      "byteSize": 562,
+      "path": "mechanism_dossiers/v42_spike_pullback_continuation_long_1h_v1.json",
+      "sha256": "af6f00b641ac7bb199b823aff702f4d167a6ea9676aa69333f7f125247967166"
+    },
+    {
+      "byteSize": 563,
+      "path": "mechanism_dossiers/v42_spike_pullback_continuation_short_1h_v1.json",
+      "sha256": "ba343f65da315bbab86acf93d66a78073c13c33c6f296212a73ee3ab53e69345"
+    },
+    {
+      "byteSize": 1536,
+      "path": "preregistrations/mechanism_breakthrough_campaign_52feb0057e92d3b6e92f6a239d213cff4dc5c56114a43e78ae162e15c07562d2.json",
+      "sha256": "32519b9f302ecbb9ccde7cbe2cc0659809c58ab451ee26cb73a4472e987eb342"
+    },
+    {
+      "byteSize": 1536,
+      "path": "preregistrations/mechanism_breakthrough_campaign_aa63925bdc4d2777f7c93ff62a20dc6ab14e972df51c5525934d3603885628bb.json",
+      "sha256": "8949a9b8848f908ba2d3cad02a3ef8754edd84ea258c76f2c6e0b7f26e6311bb"
+    },
+    {
+      "byteSize": 654,
+      "path": "source_equivalence_matrix.csv",
+      "sha256": "36c36be3131d2fde75653e79e2eb7b7e4d5dacc53bcaccaf2608981ddf381219"
+    },
+    {
+      "byteSize": 12600,
+      "path": "source_inventory.json",
+      "sha256": "8fdb9518ca194b6cc2539954c3beb48949e8d9c406482859a902a119287f835c"
+    }
+  ],
+  "manifestHash": "artifact_manifest_1bd17832840dadd2a8c40eb9a732c12800fedc0d0ba3b5a2b291b2aa3df56240",
+  "schemaVersion": "alphapilot_v41_v45_artifact_manifest_v1"
+}

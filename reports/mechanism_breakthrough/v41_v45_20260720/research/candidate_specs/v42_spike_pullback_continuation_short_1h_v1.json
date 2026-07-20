@@ -1,0 +1,59 @@
+{
+  "candidateId": "v42_spike_pullback_continuation_short_1h_v1",
+  "causalRationale": "Three unusually strong directional candles followed by a shallow two-to-four bar pullback can preserve one-sided order flow into a causal continuation confirmation.",
+  "definitionHash": "candidate_definition_49fe2b0469b46cecce45bc9f0bf460eedd0ffee5e21162e8c1f42e28afa8f481",
+  "direction": "short",
+  "eventDefinition": {
+    "atrWindow": 20,
+    "bodyMedianWindow": 20,
+    "entryReference": "next_bar_open",
+    "maximumDistanceAtr": 2.5,
+    "maximumRetracement": 0.5,
+    "minimumBodyMultiple": 1.5,
+    "outerCloseFraction": 0.25,
+    "pullbackBarsMaximum": 4,
+    "pullbackBarsMinimum": 2,
+    "sameBarRule": "stop_first_conservative",
+    "spikeBarsMin": 3,
+    "stopBufferAtr": 0.1
+  },
+  "exitPolicy": {
+    "initialStopMayWiden": false,
+    "maximumHoldBars": 24,
+    "mode": "hybrid",
+    "parameters": {
+      "partialAtR": 1.0,
+      "partialFraction": 0.5,
+      "remainderMode": "trailing",
+      "trailingAtrMultiple": 1.5
+    },
+    "version": "advisory_r_exit_policy_v1"
+  },
+  "exitPolicyHash": "exit_policy_fa2e3fa29b973ecb8a840f3b25d3ef78f84b8506389d858c60bf4dd061b80ac4",
+  "exitPolicyRequired": true,
+  "exitPolicyVersion": "advisory_r_exit_policy_v1",
+  "expectedFailureRegimes": [
+    "exhaustion_spike",
+    "deep_retrace",
+    "thin_liquidity"
+  ],
+  "factorConfirmations": [],
+  "factorRanking": [],
+  "factorVetoes": [],
+  "familyId": "v42_spike_pullback_continuation",
+  "initialStopMayWiden": false,
+  "invalidation": "Initial stop remains beyond the frozen pullback extreme plus 0.10 ATR20.",
+  "marketMechanismId": "v42_spike_pullback_continuation",
+  "maximumHoldBars": 24,
+  "minimumTargetR": null,
+  "requiredData": [
+    "ohlcv",
+    "quote_turnover"
+  ],
+  "riskMetric": "R",
+  "schemaVersion": "phase3c_candidate_v2",
+  "stopAtr": 2.5,
+  "targetR": null,
+  "targetRGateMode": "advisory",
+  "timeframe": "1h"
+}

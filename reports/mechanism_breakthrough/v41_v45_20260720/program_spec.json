@@ -1,0 +1,30 @@
+{
+  "baselineMergeReceiptHash": "integration_merge_b5070f5281764a877476b050b869e74c1d02e685d78f552221adaee51bee395f",
+  "budgetPolicyHash": "v41_v45_mechanism_budget_7cc1f41aafde8f3b7ea38f93d53c1ac3eb4e83b5d9ce0dadf9df7f7809cd6031",
+  "credentialsPersisted": false,
+  "frozenAt": "2026-07-20T00:00:00Z",
+  "liveEnabled": false,
+  "minimumTargetR": null,
+  "programId": "mechanism_breakthrough_and_demo_smoke_v41_7f633c4c0ee6c9fb8fff30571f5dbe38833e392425bd8d07f77d9dce92c552f9",
+  "schemaVersion": "alphapilot_v41_v45_successor_program_v1",
+  "targetRGateMode": "advisory",
+  "trackIsolation": {
+    "engineeringOrdersCountAsStrategyEvidence": false,
+    "engineeringSmokeQualifiesStrategy": false,
+    "sharedCredentials": false,
+    "sharedLedgers": false
+  },
+  "tracks": {
+    "product": {
+      "classification": "engineering_only",
+      "formalEligibility": false,
+      "ledger": "product_engineering_ledger.jsonl"
+    },
+    "research": {
+      "classification": "strategy_research",
+      "formalEligibility": true,
+      "ledger": "research_evidence_ledger.jsonl"
+    }
+  },
+  "withdrawEnabled": false
+}

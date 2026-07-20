@@ -1,0 +1,26 @@
+{
+  "decisions": [
+    {
+      "candidateId": "v42_breakout_trap_second_entry_long_4h_v1",
+      "closedIdentityRevived": false,
+      "decision": "admitted"
+    },
+    {
+      "candidateId": "v42_breakout_trap_second_entry_short_4h_v1",
+      "closedIdentityRevived": false,
+      "decision": "admitted"
+    },
+    {
+      "candidateId": "v42_spike_pullback_continuation_long_1h_v1",
+      "closedIdentityRevived": false,
+      "decision": "admitted"
+    },
+    {
+      "candidateId": "v42_spike_pullback_continuation_short_1h_v1",
+      "closedIdentityRevived": false,
+      "decision": "admitted"
+    }
+  ],
+  "rejectedDuplicateCount": 0,
+  "schemaVersion": "alphapilot_v41_v45_candidate_dedup_v1"
+}

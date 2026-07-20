@@ -1,0 +1,57 @@
+{
+  "candidateId": "v42_breakout_trap_second_entry_short_4h_v1",
+  "causalRationale": "A failed first breakout followed by a second failed boundary test can force late breakout participants to exit and reprice back through the range.",
+  "definitionHash": "candidate_definition_09f976ef4be972cc25293a19524010eda145122d53e562d3962a92c179b4cb55",
+  "direction": "short",
+  "eventDefinition": {
+    "atrWindow": 20,
+    "entryReference": "next_bar_open",
+    "failureWindowBars": 2,
+    "maximumDistanceAtr": 2.5,
+    "maximumFirstBreakAtr": 0.5,
+    "referenceBoundaryBars": 20,
+    "retestToleranceAtr": 0.1,
+    "sameBarRule": "stop_first_conservative",
+    "secondTestWindowBars": 6,
+    "stopBufferAtr": 0.1
+  },
+  "exitPolicy": {
+    "initialStopMayWiden": false,
+    "maximumHoldBars": 20,
+    "mode": "hybrid",
+    "parameters": {
+      "partialAtR": 1.0,
+      "partialFraction": 0.5,
+      "remainderMode": "trailing",
+      "trailingAtrMultiple": 1.5
+    },
+    "version": "advisory_r_exit_policy_v1"
+  },
+  "exitPolicyHash": "exit_policy_24ecc69ace0b2c7c3d91791794d89be07a70bda08285fbb8112d0a17bebaf7dc",
+  "exitPolicyRequired": true,
+  "exitPolicyVersion": "advisory_r_exit_policy_v1",
+  "expectedFailureRegimes": [
+    "persistent_breakout",
+    "gap_through_stop",
+    "thin_liquidity"
+  ],
+  "factorConfirmations": [],
+  "factorRanking": [],
+  "factorVetoes": [],
+  "familyId": "v42_breakout_trap_second_entry",
+  "initialStopMayWiden": false,
+  "invalidation": "Initial stop remains beyond both failed-test structural extremes plus 0.10 ATR20.",
+  "marketMechanismId": "v42_breakout_trap_second_entry",
+  "maximumHoldBars": 20,
+  "minimumTargetR": null,
+  "requiredData": [
+    "ohlcv",
+    "quote_turnover"
+  ],
+  "riskMetric": "R",
+  "schemaVersion": "phase3c_candidate_v2",
+  "stopAtr": 2.5,
+  "targetR": null,
+  "targetRGateMode": "advisory",
+  "timeframe": "4h"
+}

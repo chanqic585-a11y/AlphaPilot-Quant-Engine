@@ -1,0 +1,12 @@
+{
+  "candidateId": "v42_breakout_trap_second_entry_short_4h_v1",
+  "causal": true,
+  "entryReference": "next_bar_open",
+  "environmentAccess": false,
+  "exitLegParity": "shared_exit_policy_engine",
+  "fileEscape": false,
+  "networkAccess": false,
+  "realSignalStructuralCertification": "passed_pre_result",
+  "schemaVersion": "candidate_adapter_certification_v1",
+  "syntheticFixturePassed": true
+}

@@ -1,0 +1,310 @@
+{
+  "inventoryHash": "source_inventory_f7951b519abe8a6b4a4fe92a447175e95a5a889ea886a57ee9332a9a19d81482",
+  "networkCalls": 0,
+  "root": "D:\\Codex-Workspace\\artifacts\\AlphaPilot_V41-V45_Inputs_20260720\\reference_strategy_package\\AlphaPilot_Reference_Strategy_Extraction_Package",
+  "schemaVersion": "alphapilot_v41_v45_source_inventory_v1",
+  "sourceCount": 43,
+  "sources": [
+    {
+      "byteSize": 7345,
+      "copiedVerbatim": false,
+      "path": "candidates/candidate_matrix.csv",
+      "sha256": "7ad9031ce06153571fd9616cfe1177640d906cc206e9df12f28331d83ad5741c",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 62311,
+      "copiedVerbatim": false,
+      "path": "candidates/candidate_specs.json",
+      "sha256": "5c26e00a29e5a1f7009543dbbd63815dcd05fd87e4d4aaf154e32afe5169475f",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 5150,
+      "copiedVerbatim": false,
+      "path": "docs/AlphaPilot_Reference_Strategy_Codex_Backtest_Prompt_CN.md",
+      "sha256": "9a3841a51eb0395356ad8509b5f1bbdc2afad15fc87130c0dec1489cd74fb9af",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 11493,
+      "copiedVerbatim": false,
+      "path": "docs/AlphaPilot_Reference_Strategy_Extraction_Report_CN.md",
+      "sha256": "e8eccb628410163bd1a1300617decf6895c363db0634328b5a9ae0e4799540d5",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 14678,
+      "copiedVerbatim": false,
+      "path": "inventories/analyzed_source_inventory.csv",
+      "sha256": "241b4748efdc4ed9e9e19a0803a6e428a68ce3d49d3b16d570e468d272c5e703",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 30914,
+      "copiedVerbatim": false,
+      "path": "inventories/analyzed_source_inventory.json",
+      "sha256": "acfd5dbd2e259a47757d276507256915e02b31a05593bd4b68b5391aeb18b3c5",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 8737,
+      "copiedVerbatim": false,
+      "path": "inventories/archive_entry_inventory.csv",
+      "sha256": "767059da8dd63b390f19cb7e00cb0e0197318d4f58617010b9bf3cc31169e0a0",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 917,
+      "copiedVerbatim": false,
+      "path": "inventories/archive_summary.json",
+      "sha256": "9b2655fd3eca85669318bf655e13c12d00747682ce7e48e6d79ec150e4afada0",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 2440,
+      "copiedVerbatim": false,
+      "path": "inventories/risk_rejection_inventory.csv",
+      "sha256": "a6798d66e127387a7854fcc199dd3e2926f4a8f9fd9b031e9619bcb10c74c69c",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 4368,
+      "copiedVerbatim": false,
+      "path": "inventories/risk_rejection_inventory.json",
+      "sha256": "0e0b674ce20749c05c75b38a42a744f8e938e4c5a42c7b62fe31a6f0fcb44d59",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 8327,
+      "copiedVerbatim": false,
+      "path": "package_manifest.json",
+      "sha256": "39a5e6659ef03622120dfcb37c6b9e199cb4d06e5cb90abf9b4559b2b2a5bb06",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 471,
+      "copiedVerbatim": false,
+      "path": "README.md",
+      "sha256": "80ef7830cad9e3096b1ef7b1645b7d28738bd4e9dcc44f5718ff3d585f32df68",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 76769,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/[1mt5]三币趋势独立对冲.mq4",
+      "sha256": "c0182a7348df6d6a7596c6650ad28215beb046d7bf1e416c298a33349865da4a",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 183883,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/[1mt5]双币16对冲套利.mq4",
+      "sha256": "88572a61a3efd1e9a84fb4580bc0a1dde6d4d62be5099182a1eae0711b127e4a",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 38466,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/Auto Cash Generator V1.0(早盘头皮).mq4",
+      "sha256": "1a1731182162f6866485ce99966fa6312ce87dc0a64c72156377a051497a49a1",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 6812,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/BOLL趋势系统.mq4",
+      "sha256": "2958a69afc8aa42675e28051c998a3276d553186e6b2a0aa963224dbccb3b9a1",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 34861,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/叠箱体5.0破解源码版.mq4",
+      "sha256": "fc0cbe20691c4ff60b557528ef543f05379409db6f9a54c5ac073a49ffe7cf3d",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 14951,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/模拟可赚钱值得研究.mq4",
+      "sha256": "b96b8045487ff67de9a9bfe44771975eeb3d87d24541ef8e7f33158505c119e5",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 48266,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/突破.mq4",
+      "sha256": "b1e0347a0babedd734005a9d8dcc90ac633df7a6941e9f9c0b00f5117316e2e7",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 12117,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/突破跟随EA.mq4",
+      "sha256": "df2dd356087bb86a5854653cb8dd9fb268ab293b8e1240ca62f9af81145fb413",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 16715,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/随机震荡+布林+均线+马丁.mq4",
+      "sha256": "8e338ec60b46d40f9584449b2368511243d63c0200dc097a7901575b77a72547",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 13499,
+      "copiedVerbatim": false,
+      "path": "references/mql_sources/顺势加码非常暴利.mq4",
+      "sha256": "61989f7a5e40ff42deae3584d2faef04084ca4f0f81b657e2d0e55ca4af4d5d6",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 14047,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/上涨通道交易策略.txt",
+      "sha256": "81a789ba0b7106ba9745b92f0102528325e9c0964a2613f70e30b29c255e6e31",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 18273,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/下跌通道交易策略.txt",
+      "sha256": "0862c3fee4157aaf4a479fcd550d73edf4d67db051b102a51bb8f24c0085ae27",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 14871,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/文件14-楔形形态分析交易.txt",
+      "sha256": "fa3e61a6cb478ba2621b0ab00ba066231474c283a073ad15d4a5cc09bd3d04d4",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 13825,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/文件15-二次入场机会.txt",
+      "sha256": "6302fd329d73ab55031f5a436a90b58287f4c87fdce83d41aab29ce31bf9d509",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 20020,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/文件16-K线信号识别.txt",
+      "sha256": "d3dca29f6c350ad6a0247d3af27450605c9fcba50a2d87b4a8dd1a80d20db010",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 33720,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/文件17-止损和止盈与仓位管理.txt",
+      "sha256": "5ecbad781a96bf20e176c7c71275f197916fb8281acc1e5fce981dca5eb0cd06",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 2285,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/文件18-突破失败与突破测试.txt",
+      "sha256": "848e09c4209fcb593958d749b4c3e703b453181c5f4267226c0518e9844c95a9",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 2136,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/文件19-H1H2-L1L2计数.txt",
+      "sha256": "380113bd8c6befaba779ed34d2eacd94fe3093cde1ef07e8e094e8d38d91a459",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 2681,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/文件20-AlwaysIn与20GB.txt",
+      "sha256": "22c8ff91b9a0b82729f07699e2a999ac1f87b33827db35a5ec2053be80acb488",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 2214,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/文件21-铁丝网与无交易环境.txt",
+      "sha256": "54b7b88037f4611e4d429cbf4d85d280acbda060141b18677faded03fcd4cc4c",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 15286,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/极速上涨交易策略.txt",
+      "sha256": "4e32c0b62759524f58f23780b2ff3a2abb45decaf5abee85c9eac51497b4cd33",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 17500,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/极速下跌交易策略.txt",
+      "sha256": "7e190602ec1785708189ae6b1d6f22a334c0e8128522d3aa2b4d93a0207e38c2",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 20218,
+      "copiedVerbatim": false,
+      "path": "references/price_action_docs/震荡区间交易策略.txt",
+      "sha256": "ee8c825d8e9d96bda2564caafcee177a1f242cc0d7d7e9de3dc7db57ea2c1d99",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 7681,
+      "copiedVerbatim": false,
+      "path": "references/risk_examples/[1mt5.com]GBPUSD M15.set",
+      "sha256": "80928abe029731db1c448732eb98e6badd9c6b29dd5d26e77e350cdf441c7f74",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 1502,
+      "copiedVerbatim": false,
+      "path": "references/risk_examples/CoreX G 参数.set",
+      "sha256": "38f4ac4f89c11236a16266e4050396cc0e32736944067b139d102f27e57a84dd",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 2666,
+      "copiedVerbatim": false,
+      "path": "references/risk_examples/crazy_gold_setting.set",
+      "sha256": "39d944e5580e1ab92bda87ef1ccd92e52e3998a6a346f367f9f7e7b27d2019e6",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 2827,
+      "copiedVerbatim": false,
+      "path": "references/risk_examples/Nexus AC921 SharpeRatio.set",
+      "sha256": "ab6851bdab8f7b350445e916220a889bc8c0753fdf3afb42fac5a3726814ef59",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 2568,
+      "copiedVerbatim": false,
+      "path": "references/risk_examples/QE利润最大化参数.set",
+      "sha256": "fbda6a4cb7f68aaf447cff6a6192e8262296d3f2cbe679fcd62f4610731979b2",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 12033,
+      "copiedVerbatim": false,
+      "path": "references/risk_examples/Waka_Waka_EA.set",
+      "sha256": "ddf15a07aa811681ba8b116d763820752b7f2d75829acf73ba77473e1f159268",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 18640,
+      "copiedVerbatim": false,
+      "path": "references/risk_examples/宇川M1-2W_优化分析报告.html",
+      "sha256": "de35cff0c3b273113d3417fe450e22215f0f6210bae438c5af642ec4b4b748a5",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    },
+    {
+      "byteSize": 1193,
+      "copiedVerbatim": false,
+      "path": "schemas/candidate_spec.schema.json",
+      "sha256": "f58b315ceb693c1797b004d4a6aa01a2842cefd072f4564fd6bc905d45feb734",
+      "usage": "source_metadata_or_bounded_strategy_definition"
+    }
+  ]
+}

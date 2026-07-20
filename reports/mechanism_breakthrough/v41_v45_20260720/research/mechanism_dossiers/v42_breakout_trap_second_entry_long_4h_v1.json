@@ -1,0 +1,14 @@
+{
+  "candidateId": "v42_breakout_trap_second_entry_long_4h_v1",
+  "causalRationale": "A failed first breakout followed by a second failed boundary test can force late breakout participants to exit and reprice back through the range.",
+  "economicReadCountAtFreeze": 0,
+  "expectedFailureRegimes": [
+    "persistent_breakout",
+    "gap_through_stop",
+    "thin_liquidity"
+  ],
+  "familyId": "v42_breakout_trap_second_entry",
+  "formalClaim": false,
+  "resultDrivenFiltersAllowed": false,
+  "schemaVersion": "alphapilot_v41_v45_mechanism_dossier_v1"
+}

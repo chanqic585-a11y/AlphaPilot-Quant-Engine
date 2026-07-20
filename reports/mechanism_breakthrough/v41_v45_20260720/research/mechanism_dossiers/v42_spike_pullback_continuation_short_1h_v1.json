@@ -1,0 +1,14 @@
+{
+  "candidateId": "v42_spike_pullback_continuation_short_1h_v1",
+  "causalRationale": "Three unusually strong directional candles followed by a shallow two-to-four bar pullback can preserve one-sided order flow into a causal continuation confirmation.",
+  "economicReadCountAtFreeze": 0,
+  "expectedFailureRegimes": [
+    "exhaustion_spike",
+    "deep_retrace",
+    "thin_liquidity"
+  ],
+  "familyId": "v42_spike_pullback_continuation",
+  "formalClaim": false,
+  "resultDrivenFiltersAllowed": false,
+  "schemaVersion": "alphapilot_v41_v45_mechanism_dossier_v1"
+}

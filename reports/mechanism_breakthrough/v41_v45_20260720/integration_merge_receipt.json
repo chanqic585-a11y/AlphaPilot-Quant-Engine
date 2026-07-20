@@ -1,0 +1,13 @@
+{
+  "frozenAt": "2026-07-20T00:00:00Z",
+  "historicalArtifactMutationCount": 0,
+  "historicalTagMutationCount": 0,
+  "mergeCommits": {
+    "console": "b6c079684bbfb42248e4c2a1c4a1e924cab24f89",
+    "docs": "61f0d7072d8be4552775a6e87906f1d97b14e470",
+    "quant": "814213d8d1b7040216a4b673d67f9d722ed5123e"
+  },
+  "mergeStrategy": "merge_no_rebase_no_force_push",
+  "receiptHash": "integration_merge_b5070f5281764a877476b050b869e74c1d02e685d78f552221adaee51bee395f",
+  "schemaVersion": "alphapilot_v41_integration_merge_receipt_v1"
+}

@@ -1,0 +1,16 @@
+{
+  "budgetReset": false,
+  "inheritedFullBacktestsRemaining": 91,
+  "policy": {
+    "inherited_full_backtests": 91,
+    "maximum_campaigns": 2,
+    "maximum_candidates": 6,
+    "maximum_development_trials": 12,
+    "maximum_formal_candidates": 2,
+    "maximum_full_backtests": 6,
+    "maximum_mechanism_families": 3
+  },
+  "policyHash": "v41_v45_mechanism_budget_7cc1f41aafde8f3b7ea38f93d53c1ac3eb4e83b5d9ce0dadf9df7f7809cd6031",
+  "programId": "mechanism_breakthrough_and_demo_smoke_v41_7f633c4c0ee6c9fb8fff30571f5dbe38833e392425bd8d07f77d9dce92c552f9",
+  "schemaVersion": "alphapilot_v41_v45_program_budget_v1"
+}

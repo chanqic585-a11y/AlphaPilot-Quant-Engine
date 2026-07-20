@@ -1,0 +1,24 @@
+{
+  "budgetPolicyHash": "v41_v45_mechanism_budget_7cc1f41aafde8f3b7ea38f93d53c1ac3eb4e83b5d9ce0dadf9df7f7809cd6031",
+  "campaignId": "mechanism_breakthrough_campaign_52feb0057e92d3b6e92f6a239d213cff4dc5c56114a43e78ae162e15c07562d2",
+  "candidateHashes": {
+    "v42_breakout_trap_second_entry_long_4h_v1": "candidate_definition_ad8b6b88ed060f9819f60143cca65c61b4d3652f4c3b922076f1ca47b9cac9e4",
+    "v42_breakout_trap_second_entry_short_4h_v1": "candidate_definition_09f976ef4be972cc25293a19524010eda145122d53e562d3962a92c179b4cb55",
+    "v42_spike_pullback_continuation_long_1h_v1": "candidate_definition_b71430e2e5ca7e4afdaf7285cf15ce2f9177e79335bc17d5d4da2a17fcaa291b",
+    "v42_spike_pullback_continuation_short_1h_v1": "candidate_definition_49fe2b0469b46cecce45bc9f0bf460eedd0ffee5e21162e8c1f42e28afa8f481"
+  },
+  "codeCommit": "70e63b1a5ed98c28854e40fe6cb9a1e0ed1e4d79",
+  "dataSnapshotHash": "data_snapshot_b43d605e995cf24d499a40855b0f24eda60caeefea62a962de406072a629dbf8",
+  "frozenAt": "2026-07-20T00:00:00Z",
+  "gatePolicy": "current_authoritative_research_screening_gates",
+  "minimumTargetR": null,
+  "preregistrationHash": "preregistration_52feb0057e92d3b6e92f6a239d213cff4dc5c56114a43e78ae162e15c07562d2",
+  "schemaVersion": "alphapilot_v41_v45_preregistration_v1",
+  "sourceInventoryHash": "source_inventory_f7951b519abe8a6b4a4fe92a447175e95a5a889ea886a57ee9332a9a19d81482",
+  "splitPolicy": {
+    "developmentFraction": 0.8,
+    "lockedOosFraction": 0.2,
+    "lockedOosReadCount": 0
+  },
+  "targetRGateMode": "advisory"
+}

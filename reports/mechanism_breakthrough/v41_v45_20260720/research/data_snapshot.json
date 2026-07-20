@@ -1,0 +1,1396 @@
+{
+  "assets": [
+    {
+      "byte_size": 260398,
+      "instrument_id": "0G-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\0G-USDT-SWAP\\1h\\1758535200000-1784023200000-bb81f8816a30a464.parquet",
+      "sha256": "bb81f8816a30a46486ca904f7410d601427db2dff93c145326ad3e77aed536a2",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 78306,
+      "instrument_id": "0G-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\0G-USDT-SWAP\\4h\\1758528000000-1784001600000-7dfc00824bfcf9ca.parquet",
+      "sha256": "7dfc00824bfcf9ca4a0b72a961fccf8eda491012c7d3522c5b4fb730388589e3",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1756020,
+      "instrument_id": "1INCH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\1INCH-USDT-SWAP\\1h\\1608861600000-1784023200000-dd985356aafe0567.parquet",
+      "sha256": "dd985356aafe0567fafa5cb7420160a207f415ca8642a4446ac3d75450ee28bd",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 450883,
+      "instrument_id": "1INCH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\1INCH-USDT-SWAP\\4h\\1608854400000-1784001600000-4eb6913e6328b4d3.parquet",
+      "sha256": "4eb6913e6328b4d3a0cd5b310562329be991a52f0307a8150907f565221275a7",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 256992,
+      "instrument_id": "2Z-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\2Z-USDT-SWAP\\1h\\1759410000000-1784023200000-2e42d02bff5424fc.parquet",
+      "sha256": "2e42d02bff5424fcc1cc31cfe20d0d06a01a143d806dad32e0d8785b4cc7c5e4",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 81383,
+      "instrument_id": "2Z-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\2Z-USDT-SWAP\\4h\\1759406400000-1784001600000-6a2113bd45724be5.parquet",
+      "sha256": "6a2113bd45724be50b918b184fb858825305ab5d1db07ec71f0d10bde2abe0e1",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 354883,
+      "instrument_id": "A-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\A-USDT-SWAP\\1h\\1748512800000-1784023200000-4222e88fb40c8d34.parquet",
+      "sha256": "4222e88fb40c8d34207f8d1c71e956e96b427052d7d7426f4703c829fe82ad26",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 109623,
+      "instrument_id": "A-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\A-USDT-SWAP\\4h\\1748505600000-1784001600000-5fbfe2e196f6a6f5.parquet",
+      "sha256": "5fbfe2e196f6a6f553703a89ad526a344d431fddcada4c4c09494a3a458e6884",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 45063,
+      "instrument_id": "AAOI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAOI-USDT-SWAP\\1h\\1779786000000-1784023200000-33e2b847b531a4fa.parquet",
+      "sha256": "33e2b847b531a4fab0e9decdf7ca195047109fa11db751b04c5063b676b3b16c",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 19194,
+      "instrument_id": "AAOI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAOI-USDT-SWAP\\4h\\1779782400000-1784001600000-85dabb5b6bfe757c.parquet",
+      "sha256": "85dabb5b6bfe757cd697e33d211f4d08a08fecefaaa3c38269d2becf6b7304db",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 106199,
+      "instrument_id": "AAPL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAPL-USDT-SWAP\\1h\\1772611200000-1784023200000-8734f686204f1f1c.parquet",
+      "sha256": "8734f686204f1f1ce23a7a05092d81b53880b8486741cb246faabf3c0db18209",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 34939,
+      "instrument_id": "AAPL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAPL-USDT-SWAP\\4h\\1772611200000-1784001600000-5de8e0e224e2f81d.parquet",
+      "sha256": "5de8e0e224e2f81d7e93d103e90e3535bee54fe58c7ebe0e3099271a9fdf23ef",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1731193,
+      "instrument_id": "AAVE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAVE-USDT-SWAP\\1h\\1607572800000-1784023200000-1eeeafa6b5fa5252.parquet",
+      "sha256": "1eeeafa6b5fa5252db00bfe363bcdbde84794e106bdbf7643f10604e85dda1e9",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 435412,
+      "instrument_id": "AAVE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAVE-USDT-SWAP\\4h\\1607572800000-1784001600000-28332920cd568a5b.parquet",
+      "sha256": "28332920cd568a5b70f8edeeb12d4d1941cace818ac6ea8b615c2848d5afd6aa",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 700811,
+      "instrument_id": "ACH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACH-USDT-SWAP\\1h\\1708588800000-1784023200000-0e22befde8de81c9.parquet",
+      "sha256": "0e22befde8de81c9fb73294c02a043f653ad5908e49f8ff7aea649992e00959a",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 222887,
+      "instrument_id": "ACH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACH-USDT-SWAP\\4h\\1708588800000-1784001600000-5a10aa294e331291.parquet",
+      "sha256": "5a10aa294e33129163ec3e3e9dda0c3618bb5568cd1dfd9cc8e10d898fcba718",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 518800,
+      "instrument_id": "ACT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACT-USDT-SWAP\\1h\\1731582000000-1784023200000-260f2658fc897f8a.parquet",
+      "sha256": "260f2658fc897f8a7ff70b21c20b95c538fb841cbc4c715900150a2ba26eb5c4",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 164796,
+      "instrument_id": "ACT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACT-USDT-SWAP\\4h\\1731571200000-1784001600000-5c929ef958b2364b.parquet",
+      "sha256": "5c929ef958b2364b8feb0f6602da07780d86ac56f1dbb8d28b114162f3c05ca2",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 186848,
+      "instrument_id": "ACU-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACU-USDT-SWAP\\1h\\1769151600000-1784023200000-271d8ed1797012e6.parquet",
+      "sha256": "271d8ed1797012e6b6f6725197ab309466985037b31ec2653aad27c7d1db497c",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 59704,
+      "instrument_id": "ACU-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACU-USDT-SWAP\\4h\\1769140800000-1784001600000-8b1d400cd0c94a08.parquet",
+      "sha256": "8b1d400cd0c94a082976669a7cd2a7551942f965af5ff551006ce3ae1d4a97f7",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 2288971,
+      "instrument_id": "ADA-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADA-USDT-SWAP\\1h\\1583830800000-1784023200000-432aad98de65b2d8.parquet",
+      "sha256": "432aad98de65b2d8c8ed031f5973c49ecb68bb8c7ebc41faa5a14a26cc072853",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 606388,
+      "instrument_id": "ADA-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADA-USDT-SWAP\\4h\\1583827200000-1784001600000-9767cf028e402bc7.parquet",
+      "sha256": "9767cf028e402bc7482db4b7444ef4dd809fb26c4474f015095f26301b2d58aa",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 36861,
+      "instrument_id": "ADBE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADBE-USDT-SWAP\\1h\\1780477200000-1784023200000-7a1061855336c85a.parquet",
+      "sha256": "7a1061855336c85a6542c5ba92749823c18d382b2c00edd84f547f06ee47c652",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 17195,
+      "instrument_id": "ADBE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADBE-USDT-SWAP\\4h\\1780473600000-1784001600000-c1ae16f02045583a.parquet",
+      "sha256": "c1ae16f02045583abe535d6c0cfa565f76824b17170b555d053a25b25b7d7854",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 306885,
+      "instrument_id": "AERO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AERO-USDT-SWAP\\1h\\1751522400000-1784023200000-92824c33727d2fe2.parquet",
+      "sha256": "92824c33727d2fe246c75f2116732ee0274e1249a67c057586453ac7839c4bed",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 92472,
+      "instrument_id": "AERO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AERO-USDT-SWAP\\4h\\1751515200000-1784001600000-17e5327e90f257f6.parquet",
+      "sha256": "17e5327e90f257f6573129a13fabbd15526938b5a08facac3c8ad9d82a7901c3",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 743684,
+      "instrument_id": "AEVO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AEVO-USDT-SWAP\\1h\\1710324000000-1784023200000-96d67f0bb44db579.parquet",
+      "sha256": "96d67f0bb44db579000d5b773af0a8ec4b5c8e344ce4d742670fa670017cbc11",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 224912,
+      "instrument_id": "AEVO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AEVO-USDT-SWAP\\4h\\1710316800000-1784001600000-5447598ca0f52c21.parquet",
+      "sha256": "5447598ca0f52c213aaf98dafee5406d7d5e1fe95cac9d65b557488ebe40b4b9",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1525066,
+      "instrument_id": "AGLD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AGLD-USDT-SWAP\\1h\\1631005200000-1784023200000-bc6915e503656de5.parquet",
+      "sha256": "bc6915e503656de574a98b02314a838e6f2717dfb5043b400b0c54026680ea80",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 386526,
+      "instrument_id": "AGLD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AGLD-USDT-SWAP\\4h\\1631001600000-1784001600000-3e42535c848b9c0b.parquet",
+      "sha256": "3e42535c848b9c0b26c0a2da9b76d57f7a9b2952ff8e7212d0ce91f28cda1e68",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 81655,
+      "instrument_id": "AI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AI-USDT-SWAP\\1h\\1777464000000-1784023200000-da15dfefb54088d9.parquet",
+      "sha256": "da15dfefb54088d99d3b0d4c313ec718d1bb0a614d63404b51df5292ebdacfba",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 30875,
+      "instrument_id": "AI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AI-USDT-SWAP\\4h\\1777464000000-1784001600000-e8184e7147fa7705.parquet",
+      "sha256": "e8184e7147fa7705bddcbad50b88e5330f482005bd2e9b7096a68c32dd1ba04a",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 527659,
+      "instrument_id": "AIXBT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AIXBT-USDT-SWAP\\1h\\1735887600000-1784023200000-885a748a23f0d75b.parquet",
+      "sha256": "885a748a23f0d75b80d611d6b66f8c05360564d2ac26d834107195dc82eeb3d0",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 162121,
+      "instrument_id": "AIXBT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AIXBT-USDT-SWAP\\4h\\1735876800000-1784001600000-aae29d038b8f0990.parquet",
+      "sha256": "aae29d038b8f0990cbd6214308d300f9053d52fe56f8b52446e2836fe2570ed0",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 30902,
+      "instrument_id": "ALAB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALAB-USDT-SWAP\\1h\\1781600400000-1784023200000-1b72c0f62cc63899.parquet",
+      "sha256": "1b72c0f62cc638991060c93cd65b5ae3d0ee1f26f5714346c738de38a2231631",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 15200,
+      "instrument_id": "ALAB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALAB-USDT-SWAP\\4h\\1781596800000-1784001600000-3b8d3ed6a84741f4.parquet",
+      "sha256": "3b8d3ed6a84741f41bc1172350e3d31ea2fdbb00e9578bbac814ed8c11890d9a",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1846937,
+      "instrument_id": "ALGO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALGO-USDT-SWAP\\1h\\1589338800000-1784023200000-6ca5b34ad1e48cf4.parquet",
+      "sha256": "6ca5b34ad1e48cf452f3d45bc69868f456199233bd3d0458ee8f07d507eb1539",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 467770,
+      "instrument_id": "ALGO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALGO-USDT-SWAP\\4h\\1589328000000-1784001600000-dc0c0af35e2714ba.parquet",
+      "sha256": "dc0c0af35e2714ba74699ad5a0ab09f4d74816708b8e81c4c864b2fe8f7be3f4",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 248768,
+      "instrument_id": "ALLO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALLO-USDT-SWAP\\1h\\1762876800000-1784026800000-99b055fe1b0b78c2.parquet",
+      "sha256": "99b055fe1b0b78c2eb7bc0387ba4b40963288c72f897c184138440e5e19732ca",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 76588,
+      "instrument_id": "ALLO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALLO-USDT-SWAP\\4h\\1762876800000-1784016000000-caa26ae257fdff9d.parquet",
+      "sha256": "caa26ae257fdff9d6a5e093be098a0278bb8925b9977ba9bddbf8fcaf7caf2b0",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 43033,
+      "instrument_id": "AMAT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMAT-USDT-SWAP\\1h\\1779958800000-1784023200000-1681fa6e0c039ff4.parquet",
+      "sha256": "1681fa6e0c039ff48f62ec77c9807b6770fe1f4c09a1fae8d1ae9c807d4ac030",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 18736,
+      "instrument_id": "AMAT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMAT-USDT-SWAP\\4h\\1779955200000-1784001600000-cb4815e392cd0b74.parquet",
+      "sha256": "cb4815e392cd0b74ede5a02b8d6692aa501009c15bf6d8f7100570b054be7fe2",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 109288,
+      "instrument_id": "AMD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMD-USDT-SWAP\\1h\\1773223200000-1784023200000-aa62efbd88903f09.parquet",
+      "sha256": "aa62efbd88903f09ab5b4af1cf2b6b0442d173414cbdcda24c942fa263d02072",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 35105,
+      "instrument_id": "AMD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMD-USDT-SWAP\\4h\\1773216000000-1784001600000-1cabb3aa0598adbb.parquet",
+      "sha256": "1cabb3aa0598adbbf356cbe7d4dae0810bd83e9158396092cb16997939128d9e",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 111291,
+      "instrument_id": "AMZN-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMZN-USDT-SWAP\\1h\\1772089200000-1784023200000-58c9cee02f747c71.parquet",
+      "sha256": "58c9cee02f747c71cca1b2072fc13ecc67989bfd8db0dcb6216fe7bdeef7bee1",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 36298,
+      "instrument_id": "AMZN-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMZN-USDT-SWAP\\4h\\1772078400000-1784001600000-3cdee402c3384fb1.parquet",
+      "sha256": "3cdee402c3384fb143c778de4eab391a6840be43b994069bfe9b783d8337e3b5",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 479940,
+      "instrument_id": "ANIME-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANIME-USDT-SWAP\\1h\\1737644400000-1784023200000-05a71deadac1823c.parquet",
+      "sha256": "05a71deadac1823ce816948995e95e7592d6c71041359d464d9d7949a57ad6bc",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 153832,
+      "instrument_id": "ANIME-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANIME-USDT-SWAP\\4h\\1737633600000-1784001600000-86b4c07c25f66f7e.parquet",
+      "sha256": "86b4c07c25f66f7e50bffefae50325c15db7514c766b906a876c3ae30f0eb42f",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 57550,
+      "instrument_id": "ANTHROPIC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANTHROPIC-USDT-SWAP\\1h\\1778144400000-1784023200000-01e0a3c8a29a1f76.parquet",
+      "sha256": "01e0a3c8a29a1f76c518827a7e5e2c8849b164931c0f60ae2e1440ad315e23a9",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 22257,
+      "instrument_id": "ANTHROPIC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANTHROPIC-USDT-SWAP\\4h\\1778140800000-1784001600000-fc7e750fa584f165.parquet",
+      "sha256": "fc7e750fa584f16528bb48f2722ab86d9f12e865e042130d5a2a7a1fbb564d70",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1535073,
+      "instrument_id": "APE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APE-USDT-SWAP\\1h\\1647522000000-1784023200000-08b9bafb7531ddde.parquet",
+      "sha256": "08b9bafb7531ddde46b3d4940b07fba520e98d3d969831c298439c3b17b7a698",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 390254,
+      "instrument_id": "APE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APE-USDT-SWAP\\4h\\1647518400000-1784001600000-e2862002ad773eb7.parquet",
+      "sha256": "e2862002ad773eb745b92870371f4a80991f41e10de937abcaef937606657a2e",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1348757,
+      "instrument_id": "API3-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\API3-USDT-SWAP\\1h\\1646298000000-1784023200000-daf4278b12627f20.parquet",
+      "sha256": "daf4278b12627f200efac741572b490e44f2845befc478137e243c6a9fc47801",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 330997,
+      "instrument_id": "API3-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\API3-USDT-SWAP\\4h\\1646294400000-1784001600000-1b531ceaadbb7880.parquet",
+      "sha256": "1b531ceaadbb7880387f37c4e315f69731bc4e580c6c88de37eb46816f784c7a",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 15112,
+      "instrument_id": "APLD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APLD-USDT-SWAP\\1h\\1783328400000-1784023200000-f73d6721b33be50a.parquet",
+      "sha256": "f73d6721b33be50ac25038243314296c4674b8111e2c0fe0cf531d339b2c52ec",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 10968,
+      "instrument_id": "APLD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APLD-USDT-SWAP\\4h\\1783324800000-1784001600000-9554f2a6c2c15a87.parquet",
+      "sha256": "9554f2a6c2c15a874c1c3a2e2eb5d2887ac2c040fcf88f60d32467126bde7a24",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 271145,
+      "instrument_id": "APR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APR-USDT-SWAP\\1h\\1761285600000-1784023200000-2d58c10c1a50134a.parquet",
+      "sha256": "2d58c10c1a50134aa7d4caa1dd20a76cdc74b07b72ff2f0db222cb2fef002729",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 81924,
+      "instrument_id": "APR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APR-USDT-SWAP\\4h\\1761278400000-1784001600000-c6616a36ee0e4217.parquet",
+      "sha256": "c6616a36ee0e4217189a2ce125487b9c04d9c153399f6c2c2229a93a2d7dc86d",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1234245,
+      "instrument_id": "APT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APT-USDT-SWAP\\1h\\1666141200000-1784023200000-654f75cd2f6fc09d.parquet",
+      "sha256": "654f75cd2f6fc09d909bb45a40827e9dcdf0e7fbb694efcd4f2d016ee9a29acd",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 350049,
+      "instrument_id": "APT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APT-USDT-SWAP\\4h\\1666137600000-1784001600000-b4cfcbec876551dd.parquet",
+      "sha256": "b4cfcbec876551ddd4379d31cdc983df33af17cb9fdf12779c842362c274e521",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 959181,
+      "instrument_id": "AR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AR-USDT-SWAP\\1h\\1676354400000-1784023200000-7fa2abb8ec00ac39.parquet",
+      "sha256": "7fa2abb8ec00ac39ec99067ad92f027f3085fe298679c043eccad503877e9dd3",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 269868,
+      "instrument_id": "AR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AR-USDT-SWAP\\4h\\1676347200000-1784001600000-e48abb0401082609.parquet",
+      "sha256": "e48abb040108260969fe50cc0b68376bd66d5990ce4ed7c613b65168c811e5e2",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 978453,
+      "instrument_id": "ARB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARB-USDT-SWAP\\1h\\1679580000000-1784023200000-d5cb4bd5ce6c57be.parquet",
+      "sha256": "d5cb4bd5ce6c57beb01358c3b70a8bdaeaa513a78e114492b299b0dd7d749ea1",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 287173,
+      "instrument_id": "ARB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARB-USDT-SWAP\\4h\\1679572800000-1784001600000-1a06c57dd3e02320.parquet",
+      "sha256": "1a06c57dd3e02320b552719490df1bb5e2ec99daab4e669bcbdf839e5e47236e",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 485433,
+      "instrument_id": "ARKM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARKM-USDT-SWAP\\1h\\1732176000000-1784023200000-67ecee2c053562e9.parquet",
+      "sha256": "67ecee2c053562e989dfe56803ec9b8feca08e5cd9c51c0ced0e7ed0564dba27",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 150457,
+      "instrument_id": "ARKM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARKM-USDT-SWAP\\4h\\1732176000000-1784001600000-bf341cc8fb7f4ca3.parquet",
+      "sha256": "bf341cc8fb7f4ca3b9908b884b559fa4721380f9d18854e8687cedd92cbd36bc",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 62721,
+      "instrument_id": "ARM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARM-USDT-SWAP\\1h\\1777442400000-1784023200000-ce63b1f7a71fbfdb.parquet",
+      "sha256": "ce63b1f7a71fbfdbd81a0327811a73d7f6f86900e224307ffeff0bab1a80a26c",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 23995,
+      "instrument_id": "ARM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARM-USDT-SWAP\\4h\\1777435200000-1784001600000-3f1df6203198accc.parquet",
+      "sha256": "3f1df6203198acccb2d6ec6eb92056be21f4adc814f4a1a29f100159ea23d880",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 30485,
+      "instrument_id": "ARX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARX-USDT-SWAP\\1h\\1782129600000-1784023200000-216df8c992b21beb.parquet",
+      "sha256": "216df8c992b21beb9ecef49dfe6e5d67cca12c5e6ff87c04f39b1e4caffa83fa",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 15385,
+      "instrument_id": "ARX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARX-USDT-SWAP\\4h\\1782129600000-1784001600000-bb0cf5ee5bd05ddf.parquet",
+      "sha256": "bb0cf5ee5bd05ddf3feb45ff9381153f2ae6d46a2f7566629c8cf519fb6489c3",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 38515,
+      "instrument_id": "ASML-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASML-USDT-SWAP\\1h\\1780477200000-1784023200000-ae8b4a363f69e2a1.parquet",
+      "sha256": "ae8b4a363f69e2a1355a6e0dbacc870628ad202d588a830e8639f4a86d61a4d9",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 17140,
+      "instrument_id": "ASML-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASML-USDT-SWAP\\4h\\1780473600000-1784001600000-39ecc0a6943e2f36.parquet",
+      "sha256": "39ecc0a6943e2f364e1ad2732983c03bb99c22a41d961fd808c59ff9c3b738cc",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 231190,
+      "instrument_id": "ASTER-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTER-USDT-SWAP\\1h\\1758517200000-1784023200000-779b8cc290437a2a.parquet",
+      "sha256": "779b8cc290437a2a02625f1983ee705d477b053cdb627b27c6c328b40dcde907",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 73715,
+      "instrument_id": "ASTER-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTER-USDT-SWAP\\4h\\1758513600000-1784001600000-a63f0bbd29c381a3.parquet",
+      "sha256": "a63f0bbd29c381a3e6af585aef8c80c0570628a464bf8b606270c76a780dedc7",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 38934,
+      "instrument_id": "ASTS-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTS-USDT-SWAP\\1h\\1780398000000-1784023200000-558fc628856f257c.parquet",
+      "sha256": "558fc628856f257c757f6a15523bba4103c6253b473d5225143a9849f5765078",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 17676,
+      "instrument_id": "ASTS-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTS-USDT-SWAP\\4h\\1780387200000-1784001600000-a3d2c1fa09a4f279.parquet",
+      "sha256": "a3d2c1fa09a4f279d8711a9d0f299821ff118e7b96060fbc58001466ec68ad42",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 225793,
+      "instrument_id": "AT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AT-USDT-SWAP\\1h\\1761818400000-1784023200000-2852e90f7f4dae30.parquet",
+      "sha256": "2852e90f7f4dae30ffde390d321c5421586b58f1f9d413d1eec01bb2efa6288a",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 71932,
+      "instrument_id": "AT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AT-USDT-SWAP\\4h\\1761811200000-1784001600000-e924de62d1bfb0c8.parquet",
+      "sha256": "e924de62d1bfb0c84657adcf7f25e101009f7823a6ff561d3ee6540db0afd577",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 701810,
+      "instrument_id": "ATH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATH-USDT-SWAP\\1h\\1718247600000-1784023200000-3640c539a8fd92c0.parquet",
+      "sha256": "3640c539a8fd92c025b9aa7da5a5e361fdc18181ae0f9b6f051dd7d10e2e146d",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 219541,
+      "instrument_id": "ATH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATH-USDT-SWAP\\4h\\1718236800000-1784001600000-839078d4b95f1b69.parquet",
+      "sha256": "839078d4b95f1b691aeb74ac490f9962f542ff38eba2b1dd66b612732ef3a403",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1861662,
+      "instrument_id": "ATOM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATOM-USDT-SWAP\\1h\\1588737600000-1784023200000-2a7a0870517ce446.parquet",
+      "sha256": "2a7a0870517ce4464dafec41c7c9c53c0ea3bb487b44aec4ac6142c00d67819e",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 478579,
+      "instrument_id": "ATOM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATOM-USDT-SWAP\\4h\\1588737600000-1784001600000-56ad4628e0b1e70d.parquet",
+      "sha256": "56ad4628e0b1e70d53040a254b7275b869db84215b86fc2ac540227e94457dee",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 769675,
+      "instrument_id": "AUCTION-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AUCTION-USDT-SWAP\\1h\\1701414000000-1784023200000-462290878710de3f.parquet",
+      "sha256": "462290878710de3ffc8684d7ecd5c0d9b19e2cd256f4d062695c6c3cda77590b",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 217830,
+      "instrument_id": "AUCTION-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AUCTION-USDT-SWAP\\4h\\1701403200000-1784001600000-ecf8e8f38da54651.parquet",
+      "sha256": "ecf8e8f38da54651fbdeffe5ab97941a2e648460563e50b0afafe7e6d081af53",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1840292,
+      "instrument_id": "AVAX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\AVAX-USDT-SWAP\\1h\\part-all-458ad9b22b48fe58.parquet",
+      "sha256": "1dd7a47c573446e0fc83bfc807824a161ef364f66f3c773a448176af4d1468e9",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 472230,
+      "instrument_id": "AVAX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVAX-USDT-SWAP\\4h\\1600833600000-1783886400000-1aa00c47a34a599d.parquet",
+      "sha256": "1aa00c47a34a599d12f8b5698affdb5d2a5a56198d1eb65f1aa49cafe45aca3f",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 22789,
+      "instrument_id": "AVGO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVGO-USDT-SWAP\\4h\\1777435200000-1783785600000-5330f280bbb68541.parquet",
+      "sha256": "5330f280bbb68541c780ae021f3bc40bed4f48d3352fa63c9fff547f0c57473c",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 74945,
+      "instrument_id": "AVNT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVNT-USDT-SWAP\\4h\\1758542400000-1783785600000-256d13c071daf92f.parquet",
+      "sha256": "256d13c071daf92f0f3f8413e268e31ad5d5f28862747632c0a4301dc229ee4f",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 389193,
+      "instrument_id": "AXS-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AXS-USDT-SWAP\\4h\\1627444800000-1783886400000-d69d993caf3c9ff2.parquet",
+      "sha256": "d69d993caf3c9ff2a186e9dd2aca04940bbccd12eb705e91b5d8906d16750778",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 14765,
+      "instrument_id": "AXTI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AXTI-USDT-SWAP\\4h\\1781596800000-1783785600000-2860c1b7cd6836be.parquet",
+      "sha256": "2860c1b7cd6836bee22742b764958de038e8bc208069485ff9dca06db86a134e",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1750275,
+      "instrument_id": "BAND-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAND-USDT-SWAP\\1h\\part-all-d039bab25f9c118b.parquet",
+      "sha256": "e50d0886db8fa8b2331038c4cf7ce7db892aa9e93059ad19d2b00ea5a11d8813",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 429424,
+      "instrument_id": "BAND-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAND-USDT-SWAP\\4h\\part-all-1f5706eb6c901b5b.parquet",
+      "sha256": "0cc0e467f7cce2e4f093f06a2146dedd8b1cb184519a564ddc534ce270edd62d",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1639435,
+      "instrument_id": "BAT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAT-USDT-SWAP\\1h\\part-all-13eacbf5682ccc47.parquet",
+      "sha256": "2ad0b94d4d0cdbaff06d8bb7b1aca5e5335fa0bc68067b1686a26b713a588e56",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 407661,
+      "instrument_id": "BAT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAT-USDT-SWAP\\4h\\part-all-a198fa3928e4d1a8.parquet",
+      "sha256": "a42bc629ff30f1e39fe412bed6080654fd911c4bc40b1bff4d8542f8edbd7cca",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1975325,
+      "instrument_id": "BCH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\1h\\part-all-ff6d1f58c526a7f1.parquet",
+      "sha256": "584ab7dff9c2a9b4d56cb5055df9f4feb075eedf7f15b71ee0994e92e2a074f0",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 478285,
+      "instrument_id": "BCH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\4h\\part-all-f2b779ba03dd6b13.parquet",
+      "sha256": "2777adf494f4a6ede2ed74fa3d9f822282a63eb7b119d209d2ccd25562bf7340",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 85200,
+      "instrument_id": "BILL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BILL-USDT-SWAP\\1h\\1778054400000-1784023200000-45388ddd4ffe56f1.parquet",
+      "sha256": "45388ddd4ffe56f18cb2a147cec2add89d240a48aab4b354e7ca94816bb344c0",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 29957,
+      "instrument_id": "BILL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BILL-USDT-SWAP\\4h\\1778054400000-1784001600000-8157cb8f559a80f5.parquet",
+      "sha256": "8157cb8f559a80f57a229b47068c21e62552b530c6e81da6457d39cd8e41e3ee",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 2478248,
+      "instrument_id": "BTC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\1577836800000-1784044800000-720e2aa19d32658a.parquet",
+      "sha256": "720e2aa19d32658a6cf9ac018e55ed3abcb06115c747b40eb14b82fc450efbe0",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 549794,
+      "instrument_id": "BTC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\1577836800000-1784016000000-e8f6595d0f61eb74.parquet",
+      "sha256": "e8f6595d0f61eb74ac1543b40800c48e905e2d38e18db49a7c440343cfdb3758",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1749919,
+      "instrument_id": "CFX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CFX-USDT-SWAP\\1h\\part-all-566308bc6b0fc050.parquet",
+      "sha256": "44136a550cab534e3eea4c942d5d6a9563c8e0afea36c662644eda8303680465",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 480890,
+      "instrument_id": "CFX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CFX-USDT-SWAP\\4h\\part-all-a199c263eff7bdd4.parquet",
+      "sha256": "f163658125379d9094f491589d9627c439791a64ce10979d7def74d40ecdd185",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1792310,
+      "instrument_id": "CHZ-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CHZ-USDT-SWAP\\1h\\part-all-95d084a1dfc915a0.parquet",
+      "sha256": "3deeafeac10723d294c7c13c961c63a82099318f2055ae1ef41f84ce131d2a22",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 513348,
+      "instrument_id": "CHZ-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CHZ-USDT-SWAP\\4h\\part-all-67d177242c2e9430.parquet",
+      "sha256": "fe46e949e0a2fc6452ab6a2fbd9aea3be1a0a59f224644fdb849bdff2c277333",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1773831,
+      "instrument_id": "COMP-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\COMP-USDT-SWAP\\1h\\part-all-a5c93b9f9b6c771e.parquet",
+      "sha256": "5d456744eb786d1ccad9c1c1cc49dc397f0dc0a95179682a5ab4953190f88fb0",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 430962,
+      "instrument_id": "COMP-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\COMP-USDT-SWAP\\4h\\part-all-01c37d9b6e9baca6.parquet",
+      "sha256": "280e0a5e779bf5c52557458d7060dc2f3ab1d4179dd1cd62fac921e73c28b35a",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1705379,
+      "instrument_id": "CRO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRO-USDT-SWAP\\1h\\part-all-c40aee3404acf16b.parquet",
+      "sha256": "528398da8606c393c36e025f8f920cadc9bb198ebd8ca54f9372075e03242fe0",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 457301,
+      "instrument_id": "CRO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRO-USDT-SWAP\\4h\\part-all-c4eaa8c246e9f5bb.parquet",
+      "sha256": "1331e84d71cfe4e6b3ad0c5e37cc6e4c3a36ee0c7af983f7de4562743e7215c5",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1766792,
+      "instrument_id": "CRV-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRV-USDT-SWAP\\1h\\part-all-cf88b4a5abd0f832.parquet",
+      "sha256": "d4b4bac37f4aff03f78a89be8287d0c616fbab558174373e5d267319f4c9c200",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 443796,
+      "instrument_id": "CRV-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRV-USDT-SWAP\\4h\\part-all-070d49a809bd22b8.parquet",
+      "sha256": "0b5f080e2c61e36e651adc5eb482abe39b5545ec428c539fa6a544015ea4ff3f",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 2265238,
+      "instrument_id": "DOGE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\DOGE-USDT-SWAP\\1h\\1594350000000-1784044800000-62bf08864e2955b5.parquet",
+      "sha256": "62bf08864e2955b55af85c678a551f1e689e026150a7715b18d361598c5f9d56",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 617528,
+      "instrument_id": "DOGE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\DOGE-USDT-SWAP\\4h\\1594339200000-1784016000000-39c6057cc2ff26c2.parquet",
+      "sha256": "39c6057cc2ff26c2819de7fb64734235a8b3e35bb1c8fc6f57513e37e6681ea1",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1729392,
+      "instrument_id": "DOT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\DOT-USDT-SWAP\\1h\\part-all-01d31d1f365188be.parquet",
+      "sha256": "d988a8c0ab1b220d0eabc1974013086c3d187aa5fde4fa80cfa02e3967817fce",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 430256,
+      "instrument_id": "DOT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\DOT-USDT-SWAP\\4h\\part-all-57268a58c38d2d5d.parquet",
+      "sha256": "9d03128cf17243006c3888ef0fa5a86ca3476afd6de4a83c98f02dc01373ee51",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1637523,
+      "instrument_id": "EGLD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\EGLD-USDT-SWAP\\1h\\part-all-b3915584d2075da3.parquet",
+      "sha256": "085a57379784be1373159404936eb9865d47917d52216b20e399601404b940bf",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 403516,
+      "instrument_id": "EGLD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\EGLD-USDT-SWAP\\4h\\part-all-a3584f8512df9aba.parquet",
+      "sha256": "35db7935892559244f0fa47ce97ab1b3d724b132b8d5c4a975631aa7df6f1edd",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1995392,
+      "instrument_id": "ETC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\1h\\part-all-6cbcdf14dc51c01d.parquet",
+      "sha256": "5cded151ca22bdb3faafb9be9e45af1d23d5a5074d2c3aa7884cdc477d26dc7a",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 489454,
+      "instrument_id": "ETC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\4h\\part-all-8a30518646e19f75.parquet",
+      "sha256": "e47de5a5e622b1c37ae71b8f40f76f349a285133528e9538819c7b03701c4ef8",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 2395871,
+      "instrument_id": "ETH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\1577836800000-1784044800000-d63a700efdc78648.parquet",
+      "sha256": "d63a700efdc78648a568629e7ab37585e38bf2d963bbab8b13e96326416cf701",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 549928,
+      "instrument_id": "ETH-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\1577836800000-1784016000000-022a4f37a6dd49de.parquet",
+      "sha256": "022a4f37a6dd49de5154ac7059a049cd723a16697b44cc3ce9dd14c9f142a36b",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1811732,
+      "instrument_id": "FIL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\FIL-USDT-SWAP\\1h\\part-all-afca1f770864ac8f.parquet",
+      "sha256": "214c4b14b5e6e58a1e6f82f4557cef6023211c70e9285d248e6398d3a0ab3e28",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 454906,
+      "instrument_id": "FIL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\FIL-USDT-SWAP\\4h\\part-all-8f4d1f6a5fddb32c.parquet",
+      "sha256": "735be92aceb6dce6128ff4e52bb1c785e1952ce7b75c19b219ac054f854d878a",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 635177,
+      "instrument_id": "GAS-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GAS-USDT-SWAP\\1h\\part-all-3c75fb7ac5554f6c.parquet",
+      "sha256": "5bbdf77bb95b9d8029483ff440f2ac430f67d354630a09cc73e530c298c8945a",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 1768247,
+      "instrument_id": "GRT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GRT-USDT-SWAP\\1h\\part-all-35f3b24726650ebe.parquet",
+      "sha256": "99f3a7c517daf179fe734dec0649657ccfb10aaa4644fc8db877d523c78c0e31",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 464150,
+      "instrument_id": "GRT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GRT-USDT-SWAP\\4h\\part-all-735b531bc13b6dc3.parquet",
+      "sha256": "04727e280899e0987d500b032dafdaba5950199a939090ac0c3a369763cbe8e0",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 956586,
+      "instrument_id": "HBAR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\HBAR-USDT-SWAP\\1h\\part-all-5a248e5d5b0c9e5d.parquet",
+      "sha256": "64c18feabf9b138f42ad43b67b1134aa5e3aafb72442b787fdc9172cd50eb3dd",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 450705,
+      "instrument_id": "HYPE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\HYPE-USDT-SWAP\\1h\\1740121200000-1784044800000-f0902af4911b02e1.parquet",
+      "sha256": "f0902af4911b02e1fdb17fccc76f2e6575ee15de32f8df8c0a59aaf2a1c72829",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 124832,
+      "instrument_id": "HYPE-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\HYPE-USDT-SWAP\\4h\\1740110400000-1784016000000-849b069f90f6c1e8.parquet",
+      "sha256": "849b069f90f6c1e87a35a1e552e5c39b3eb6993205c457862e4d60aa408f814d",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1493277,
+      "instrument_id": "ICP-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICP-USDT-SWAP\\1h\\part-all-7ac189404e53ca51.parquet",
+      "sha256": "80547e69ce5ab5fe6bcb82fd50c4fc363a2ef0e037bcd2d51adcbef1bb677bf7",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 367494,
+      "instrument_id": "ICP-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICP-USDT-SWAP\\4h\\part-all-699e30d0cdc7ee8f.parquet",
+      "sha256": "f39bba97eb6b09bf3bcb65a24f6b87f379d5f353114781fefcabc2b400154bde",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 672958,
+      "instrument_id": "ICX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICX-USDT-SWAP\\1h\\part-all-1d0db8ef2f52452a.parquet",
+      "sha256": "4a45832065330621aebaef0726593048bdbc5e1e9f38ef79fbb935810de9b84e",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 2155211,
+      "instrument_id": "IOST-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOST-USDT-SWAP\\1h\\part-all-9d1d6c974789060d.parquet",
+      "sha256": "dcdc8037f57e430eaebb46d75d134f50f2fc99f0b198eeb34f6e4610279072c4",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 588381,
+      "instrument_id": "IOST-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOST-USDT-SWAP\\4h\\part-all-4700899d0e897033.parquet",
+      "sha256": "88dbd866e426012c3d1c8af11a52df6ce727a25f978ff62eee0dbed8223bd902",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1767046,
+      "instrument_id": "IOTA-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOTA-USDT-SWAP\\1h\\part-all-578df10e43a645f5.parquet",
+      "sha256": "fb76c2a353dbbc375144227ef8013babd7122595746ea8a6eefa93042bb6f769",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 442748,
+      "instrument_id": "IOTA-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOTA-USDT-SWAP\\4h\\part-all-cb518ed97dcaddf5.parquet",
+      "sha256": "9b17a70f8d83969dcc09db2c595c0d3bcca5514ca16519759d291a14b069fcec",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1736349,
+      "instrument_id": "KSM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\KSM-USDT-SWAP\\1h\\part-all-3edde6de19010378.parquet",
+      "sha256": "b85ce3a78bd36e32b9bfe5514ffe3dc0d7f2570bc10a31a01bc007ddfdedda85",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 420076,
+      "instrument_id": "KSM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\KSM-USDT-SWAP\\4h\\part-all-66c76616f64f69ac.parquet",
+      "sha256": "6d7ddec50bdb7a0e768627fd5e52b64b6d75605712a2ef31b3d0e6906d130683",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 288465,
+      "instrument_id": "LAB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\LAB-USDT-SWAP\\1h\\1761998400000-1784044800000-3cd44db240d68786.parquet",
+      "sha256": "3cd44db240d6878652a387c5a413d6c4f43282834c3527ff518e0c3f043201cc",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 82965,
+      "instrument_id": "LAB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\LAB-USDT-SWAP\\4h\\1761998400000-1784016000000-c3fd5a35572b7908.parquet",
+      "sha256": "c3fd5a35572b7908724b216643c711e6a7e8462a338162efdf89193e671ac495",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1948074,
+      "instrument_id": "LINK-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\1h\\part-all-e1d5e7578e977e3e.parquet",
+      "sha256": "a1a4ab9d669762dce2b4f215189ecd3f69403c56bf638996cd17ce5361ca1da8",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 494426,
+      "instrument_id": "LINK-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\4h\\part-all-c5a7bbc43e2eaeaa.parquet",
+      "sha256": "623bd2edfee76eb8ef94950d020f462691f869817bb1530fab6f905c5303a00e",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1561231,
+      "instrument_id": "LPT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LPT-USDT-SWAP\\1h\\part-all-470981c31510cca9.parquet",
+      "sha256": "5f87f1af9d35b11f24c862fbaac8b42007c7c7ea206f82061bac01bac2c3ea94",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 385250,
+      "instrument_id": "LPT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LPT-USDT-SWAP\\4h\\part-all-b1751e0be5aafe9e.parquet",
+      "sha256": "50a1aa475d02b6eb393135abffdca6b9ffbf8efbe514dafa798325ac63454a44",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1849592,
+      "instrument_id": "LRC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LRC-USDT-SWAP\\1h\\part-all-82a9384314433002.parquet",
+      "sha256": "189e2a5544497e8827185fb137943fc1665a5ca31a6b9b892690f58e372694fe",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 470563,
+      "instrument_id": "LRC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LRC-USDT-SWAP\\4h\\part-all-25623f9c39e28585.parquet",
+      "sha256": "5a32efb1e38c0fe2d1420885aefc776da0e289205189b00be45d7b20ecc03319",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1853448,
+      "instrument_id": "LTC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\1h\\part-all-0b00b20e3d27bd85.parquet",
+      "sha256": "d77fc6111288c330c9025ed1651f66908149e8bacb71f18dc7eb5201965452fb",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 460922,
+      "instrument_id": "LTC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\4h\\part-all-ebd367bc06529c8c.parquet",
+      "sha256": "1020b927db3ebd8b7510938867f1ad8d85fc180ca6b4537fd1cb5ee21c1ea334",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1611596,
+      "instrument_id": "MANA-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MANA-USDT-SWAP\\1h\\part-all-0e7904f2d2509163.parquet",
+      "sha256": "0ff67b0fe366622cccd43afd9839ebb5bb302a0a0478e1324bac33e598006247",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 415663,
+      "instrument_id": "MANA-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MANA-USDT-SWAP\\4h\\part-all-cc3b1e84d68a42de.parquet",
+      "sha256": "fa07325dd584983ade2c58d56b7f5eeec37a85d488ea2104942a87a4967a86cc",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1544342,
+      "instrument_id": "MASK-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MASK-USDT-SWAP\\1h\\part-all-dcd87f1cbd6b368c.parquet",
+      "sha256": "83e4fd2b4c844fcd33d4837cf1277d390c403fa2d39f0488b084db025cb2630f",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 385986,
+      "instrument_id": "MASK-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MASK-USDT-SWAP\\4h\\part-all-a00e75b6d98c8ed0.parquet",
+      "sha256": "c5835698b4735b4d0a175ed3ab923a5e88868b0f07123256ad38e2dc9fb80d08",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1739863,
+      "instrument_id": "NEAR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEAR-USDT-SWAP\\1h\\part-all-0a1f97c6ad1e4d63.parquet",
+      "sha256": "2fbf81b2bb61dd4fb515759820b572989b839ba719b69bd692555ce38d6a7ea8",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 437801,
+      "instrument_id": "NEAR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEAR-USDT-SWAP\\4h\\part-all-96ede9c8194e7321.parquet",
+      "sha256": "e64f222e4affa57239c571416b84f9ad12d3a5bdb011aca227a35358e6f11805",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1934389,
+      "instrument_id": "NEO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEO-USDT-SWAP\\1h\\part-all-0c1b2fd2ba3a206f.parquet",
+      "sha256": "4a6bdefc98531b3528c216a1a8a4959ce7a4f24220a49857851e3b2b36bad36c",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 487895,
+      "instrument_id": "NEO-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEO-USDT-SWAP\\4h\\part-all-a44df185d891046b.parquet",
+      "sha256": "0cd155dcd25182f3fa540f71fa5a5a70055badde8870075a18c1a74f6a8a701f",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 199554,
+      "instrument_id": "OKB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\OKB-USDT-SWAP\\1h\\part-all-544370f310ce2edb.parquet",
+      "sha256": "446de193de71c1961665dcffffb0de795f30f080e52773675494c4f506e01b3c",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 1795412,
+      "instrument_id": "ONT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ONT-USDT-SWAP\\1h\\part-all-059b0ef2ae6313e7.parquet",
+      "sha256": "2f3f9de8ad93f21381fc307ae472e3f82666c040d06e50e5f2a39d65092e79c5",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 456721,
+      "instrument_id": "ONT-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ONT-USDT-SWAP\\4h\\part-all-58bbae724544d10f.parquet",
+      "sha256": "49659c1a0ffcc3603b8dc4dabd1f43fe9d6f288daaebcfa7d513babddf9c9b77",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1760575,
+      "instrument_id": "QTUM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\QTUM-USDT-SWAP\\1h\\part-all-1e1febbc18f84fe3.parquet",
+      "sha256": "08fbfe82f1cc93c9b4cc28a1cc8429df7e16c148b2a714c4e558847a0c56fdfb",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 434745,
+      "instrument_id": "QTUM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\QTUM-USDT-SWAP\\4h\\part-all-d74dc8d6da6513b4.parquet",
+      "sha256": "80fe65a3a11c5e3ac35045fc0f5fb744ff2cf3ff167aecd20f62933ed2c2a572",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1996880,
+      "instrument_id": "RSR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RSR-USDT-SWAP\\1h\\part-all-0838a62dcafa2136.parquet",
+      "sha256": "e2a82209c2eeb0b57d501a5d9b5e1a1633aa4cfe652e4588d5ebaf3dc3510194",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 539034,
+      "instrument_id": "RSR-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RSR-USDT-SWAP\\4h\\part-all-1931ffdbfa7f5447.parquet",
+      "sha256": "14f45d3e7ce51afcedfecda057e8b0289016c80dcbb0ab842ab614401f2fb554",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1627369,
+      "instrument_id": "RVN-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RVN-USDT-SWAP\\1h\\part-all-8f02cf8112594625.parquet",
+      "sha256": "8cf1e9ad5eb27cb880b7ba0bbbab9e55db1f96a8ed2a298f7bb3ddf99c393782",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 1671892,
+      "instrument_id": "SAND-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SAND-USDT-SWAP\\1h\\part-all-01e79c9993da205d.parquet",
+      "sha256": "d1c3316db83eab66ad30cf76e74107da720f0997cabe35bd129c238d20db20e5",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 428331,
+      "instrument_id": "SAND-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SAND-USDT-SWAP\\4h\\part-all-521803f119e7e049.parquet",
+      "sha256": "2873054e547befec8bdadd81236cb5e24c6d45ad83a5fe9ac390479eae807ace",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1781344,
+      "instrument_id": "SHIB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SHIB-USDT-SWAP\\1h\\part-all-1fbcd5a351114327.parquet",
+      "sha256": "6a81244c412ded84e2432940fbba56b87521e2f94071b6ab7a1f0566d580a2b2",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 480411,
+      "instrument_id": "SHIB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SHIB-USDT-SWAP\\4h\\part-all-2612f38dee109ba2.parquet",
+      "sha256": "ec3783e68b81c8f86c552482b336e47e0883a923320ea0b54051b35ffaed04a6",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1727800,
+      "instrument_id": "SNX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SNX-USDT-SWAP\\1h\\part-all-0baa9a787ee37b71.parquet",
+      "sha256": "4f75ba57f1f51f005d11e48db9fb1d800fc9675451f0e6079d2d7ed94a39dbc2",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 436726,
+      "instrument_id": "SNX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SNX-USDT-SWAP\\4h\\part-all-2130745fe1fae9ff.parquet",
+      "sha256": "c0d9b5385694b18447aef3f8d7778084fece6d90200572168599ce50a37bb226",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1814344,
+      "instrument_id": "SOL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\1611295200000-1784044800000-c35d834fe0c138db.parquet",
+      "sha256": "c35d834fe0c138db49b61772a66dfdedc12b3ea2e9b57d70743d533753d45514",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 451337,
+      "instrument_id": "SOL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\SOL-USDT-SWAP\\4h\\1611288000000-1784016000000-fa9c9c5f3de74b7a.parquet",
+      "sha256": "fa9c9c5f3de74b7ab8bfbd282e58dbb1afd19793539cebd829f1fb25db7a3d0b",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1833325,
+      "instrument_id": "SUSHI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SUSHI-USDT-SWAP\\1h\\part-all-26053981658e16e8.parquet",
+      "sha256": "f0de1befdcb0e91850de2d0cad187ffee4e02ff22a18bc915d179321dc389ae6",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 465678,
+      "instrument_id": "SUSHI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SUSHI-USDT-SWAP\\4h\\part-all-82444ac2ae7f3bed.parquet",
+      "sha256": "4fdb204a93a774f3f5b606692bb6099468d8608fb4462b5864c0f7bd24d5cd91",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1926520,
+      "instrument_id": "THETA-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\THETA-USDT-SWAP\\1h\\part-all-65a151864ef2de72.parquet",
+      "sha256": "6e393d8659e414c102ad9fc8f8a32e1a4cb795b0f03c51dced13e6e1e07b031c",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 504941,
+      "instrument_id": "THETA-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\THETA-USDT-SWAP\\4h\\part-all-452da928a60d047c.parquet",
+      "sha256": "663eeba8e4afc5b48da6fd8d9e7877b22ec1d46a2af63d250f5a9454f94b2148",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1660417,
+      "instrument_id": "TRB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRB-USDT-SWAP\\1h\\part-all-8fd070b10aeadc72.parquet",
+      "sha256": "6e3fec42dccfe702c0e85bfb9f85eda54e12f8ac2743e2f79c4ec0325241a35e",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 407252,
+      "instrument_id": "TRB-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRB-USDT-SWAP\\4h\\part-all-0fbd0b6c836309f8.parquet",
+      "sha256": "105a2777c09c9ed9c79b6add51a41aaf841c242ad496600a3de78eeedc5cdb41",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 2083690,
+      "instrument_id": "TRX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRX-USDT-SWAP\\1h\\part-all-1affd0d28c224e8a.parquet",
+      "sha256": "67c41d442cfe6d57a66efdb681b70f27547cfdcb5059a8c2727dc6d9a3b1b865",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 598822,
+      "instrument_id": "TRX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRX-USDT-SWAP\\4h\\part-all-c38b9c26b6a18097.parquet",
+      "sha256": "03b4ed55ff1f24e664dad1b597a360c187a8afe1b415349714d58d2d308c9f89",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1738368,
+      "instrument_id": "UNI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\UNI-USDT-SWAP\\1h\\part-all-f4ec42042728ad3a.parquet",
+      "sha256": "74779660688e4011ea777b6e2c2e848280bec06a8f96cf8b96c6da0efa5ce847",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 428593,
+      "instrument_id": "UNI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\UNI-USDT-SWAP\\4h\\part-all-bfcd8b816f9fdee0.parquet",
+      "sha256": "05539105adbb18eea4c57b530762fe784e0124060b7cef11f5923c1ada3c9db6",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 605116,
+      "instrument_id": "USDC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\USDC-USDT-SWAP\\1h\\part-all-5378e87dfd833b73.parquet",
+      "sha256": "9147c551de1332225986ac85ad86f3da1ec28d7697af10ae22a597779c63ff8f",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 853857,
+      "instrument_id": "WLD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\WLD-USDT-SWAP\\1h\\1690196400000-1784026800000-d1647482520d83d2.parquet",
+      "sha256": "d1647482520d83d2992cb35bf285ee27624e2b33ec3a41d3f952a151fee3492c",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 250060,
+      "instrument_id": "WLD-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\WLD-USDT-SWAP\\4h\\1690185600000-1784016000000-3904519d3c4e1f61.parquet",
+      "sha256": "3904519d3c4e1f61503add954b0a73a7b5d02b4e9398e65fe31eedd92642293e",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 2052503,
+      "instrument_id": "XLM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XLM-USDT-SWAP\\1h\\part-all-3bfb0a8906db666d.parquet",
+      "sha256": "9d608795ab8809d5d881a245e4d206ba783997f28e707442f79e3662a87ab237",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 581829,
+      "instrument_id": "XLM-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XLM-USDT-SWAP\\4h\\part-all-a7e228ed7e5ae90c.parquet",
+      "sha256": "550b4467ab9361df926a8ea7614ffd12fb72ed1cdf1bfb975c133a4032804b14",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 2264811,
+      "instrument_id": "XRP-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\1h\\part-all-468c07e30c4fe659.parquet",
+      "sha256": "c5bc1145f0911c84641d0cead6b3410715bb7c804f6c35049db8414f6375cf68",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 601556,
+      "instrument_id": "XRP-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\4h\\part-all-f94bdda800a3be0d.parquet",
+      "sha256": "f41b3f7b1d720681347d76ab7f16cb350f6888ad7b52f1652db41577b66c8a74",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1910792,
+      "instrument_id": "XTZ-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XTZ-USDT-SWAP\\1h\\part-all-c17a41497ddebd02.parquet",
+      "sha256": "524ef2ce8fa62143fadd463a73cc54d46f87155c9c30d684364a21335dd68659",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 484181,
+      "instrument_id": "XTZ-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XTZ-USDT-SWAP\\4h\\part-all-f287a802fb10a108.parquet",
+      "sha256": "d200730127976d43e55928c31297768252753701d1dd2fedc9fbb95129e91c9f",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1650396,
+      "instrument_id": "YFI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\YFI-USDT-SWAP\\1h\\part-all-f14322af3612fa8f.parquet",
+      "sha256": "63f8bf0afff143d73fa2d41d58b2eca00c2872b93fb24f247cb988296a2136ec",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 392907,
+      "instrument_id": "YFI-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\YFI-USDT-SWAP\\4h\\part-all-2105f66dd7e51aa2.parquet",
+      "sha256": "9be923ffa8f4c855547a5d79d2ca9834ef6b0f64c4a75c26b117d039508bdd4e",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 217658,
+      "instrument_id": "ZEC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ZEC-USDT-SWAP\\1h\\1762398000000-1784044800000-346dc8360acaad7c.parquet",
+      "sha256": "346dc8360acaad7c156bd380e655fde9d45041e2b6fc263cba72e7134bf78b69",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 62480,
+      "instrument_id": "ZEC-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ZEC-USDT-SWAP\\4h\\1762387200000-1784016000000-d8390a5ea377f459.parquet",
+      "sha256": "d8390a5ea377f4590d8c09df892a5ac767c3c5c96d9df2e7befca88b56dd47f8",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1844162,
+      "instrument_id": "ZIL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZIL-USDT-SWAP\\1h\\part-all-0277b598a47a3c49.parquet",
+      "sha256": "79247d1f27ab4954858ef8af4dba448f1580a9fdca9bd86b3f266996787dcf5b",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 490654,
+      "instrument_id": "ZIL-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZIL-USDT-SWAP\\4h\\part-all-fa748457ef2319c9.parquet",
+      "sha256": "574c454df72fba4cfd5332ebfa252339064aa3c7a6aeb6e3fb117101badd084f",
+      "timeframe": "4h"
+    },
+    {
+      "byte_size": 1687330,
+      "instrument_id": "ZRX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZRX-USDT-SWAP\\1h\\part-all-5e03ed0a3865485c.parquet",
+      "sha256": "c1c6f930ddef559a0142036043cab97fc4b46604ceee495c514348ce9f8436e0",
+      "timeframe": "1h"
+    },
+    {
+      "byte_size": 424577,
+      "instrument_id": "ZRX-USDT-SWAP",
+      "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZRX-USDT-SWAP\\4h\\part-all-9fa945f8c62a58c7.parquet",
+      "sha256": "23385ed089ef1bf55b41287cc5e452547ebf1e235dbdaf500ee09cf6a0542175",
+      "timeframe": "4h"
+    }
+  ],
+  "dataRoot": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical",
+  "developmentFraction": 0.8,
+  "lockedOosPolicy": "reserved_not_read",
+  "networkCalls": 0,
+  "schemaVersion": "alphapilot_v41_v45_local_data_snapshot_v1",
+  "snapshotHash": "data_snapshot_b43d605e995cf24d499a40855b0f24eda60caeefea62a962de406072a629dbf8"
+}

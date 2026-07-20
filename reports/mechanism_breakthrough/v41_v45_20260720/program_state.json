@@ -1,0 +1,14 @@
+{
+  "demoCredentialsInjected": false,
+  "demoCredentialsPersisted": false,
+  "engineeringOrderCount": 0,
+  "formalRunCount": 0,
+  "liveEnabled": false,
+  "productTrackStatus": "blocked_demo_credentials_not_injected",
+  "programId": "mechanism_breakthrough_and_demo_smoke_v41_7f633c4c0ee6c9fb8fff30571f5dbe38833e392425bd8d07f77d9dce92c552f9",
+  "releaseCount": 0,
+  "researchTrackStatus": "ready",
+  "schemaVersion": "alphapilot_v41_v45_program_state_v1",
+  "strategyOrderCount": 0,
+  "withdrawEnabled": false
+}
