@@ -1,5 +1,5 @@
 {
-  "artifactCount": 21,
+  "artifactCount": 22,
   "artifacts": [
     {
       "byteSize": 3470,
@@ -87,6 +87,11 @@
       "sha256": "ba343f65da315bbab86acf93d66a78073c13c33c6f296212a73ee3ab53e69345"
     },
     {
+      "byteSize": 562,
+      "path": "preregistration_supersession.json",
+      "sha256": "d0ad2d0803103825b91cc07344b2d742c31e73d9fd5a0f4903a5ac57369e7574"
+    },
+    {
       "byteSize": 1536,
       "path": "preregistrations/mechanism_breakthrough_campaign_52feb0057e92d3b6e92f6a239d213cff4dc5c56114a43e78ae162e15c07562d2.json",
       "sha256": "32519b9f302ecbb9ccde7cbe2cc0659809c58ab451ee26cb73a4472e987eb342"
@@ -107,6 +112,6 @@
       "sha256": "8fdb9518ca194b6cc2539954c3beb48949e8d9c406482859a902a119287f835c"
     }
   ],
-  "manifestHash": "artifact_manifest_1bd17832840dadd2a8c40eb9a732c12800fedc0d0ba3b5a2b291b2aa3df56240",
+  "manifestHash": "artifact_manifest_1525f979e950170c2ad7170164b88a9f6c4369bcf3619cc45b76559ebc062494",
   "schemaVersion": "alphapilot_v41_v45_artifact_manifest_v1"
 }

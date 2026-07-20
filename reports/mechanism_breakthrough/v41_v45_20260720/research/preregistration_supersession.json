@@ -1,0 +1,9 @@
+{
+  "schemaVersion": "alphapilot_preregistration_supersession_v1",
+  "status": "superseded_before_economic_result_read",
+  "economicResultReadCountAtSupersession": 0,
+  "lockedOosReadCountAtSupersession": 0,
+  "supersededCampaignId": "mechanism_breakthrough_campaign_52feb0057e92d3b6e92f6a239d213cff4dc5c56114a43e78ae162e15c07562d2",
+  "supersededByCampaignId": "mechanism_breakthrough_campaign_aa63925bdc4d2777f7c93ff62a20dc6ab14e972df51c5525934d3603885628bb",
+  "reason": "CLI prepare-only result contract was corrected before any economic result was read."
+}
