@@ -1,0 +1,18 @@
+{
+  "environment": "okx_demo_only",
+  "feeRate": 0.0005,
+  "initialStopMayWiden": false,
+  "marginMode": "isolated",
+  "maxLeverage": 2,
+  "maximumConcurrentPositions": 3,
+  "maximumPortfolioOpenRiskPercent": 0.3,
+  "noAdding": true,
+  "noAveraging": true,
+  "noMartingale": true,
+  "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
+  "riskPerTradePercent": 0.1,
+  "schemaVersion": "provisional_portfolio_risk_overlay_v1",
+  "slippageRate": 0.0002,
+  "sourceRiskProfileHash": "fa915903d610cb17759e2bd386c8c8f87e9cf8cbf18983af17b97f197ff7abc9",
+  "tighteningRule": "minimum_of_existing_limit_and_provisional_cap"
+}

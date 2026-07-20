@@ -1,0 +1,11 @@
+{
+  "evidence": [
+    "Quant provisional+V49+V46 relevant: 22 passed",
+    "Console Demo relevant: 37 passed",
+    "Console full: 475 passed",
+    "Quant full: 1343 passed; 1 unrelated frozen S01 publication-readiness baseline failed",
+    "compileall and git diff --check passed"
+  ],
+  "schemaVersion": "v46_provisional_demo_patch_test_summary_v1",
+  "status": "passed"
+}

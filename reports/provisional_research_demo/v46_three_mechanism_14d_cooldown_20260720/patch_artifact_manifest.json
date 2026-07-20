@@ -1,0 +1,77 @@
+{
+  "artifactCount": 14,
+  "artifacts": [
+    {
+      "bytes": 0,
+      "path": "cooldown_rejected_signal_ledger.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 2253,
+      "path": "demo_approval_request.json",
+      "sha256": "a14f6eca5a07f0d63f95f72e6d71bf7715da71dba409313682f00d175628ff60"
+    },
+    {
+      "bytes": 898,
+      "path": "demo_approval_request.md",
+      "sha256": "983f101c5d5b616c52046bec4c01cbec21ccbdee7987e5a1984e5d760ecc3e3a"
+    },
+    {
+      "bytes": 2273,
+      "path": "demo_execution_universe_audit.json",
+      "sha256": "1f064faec0a5cae3fe379db7f01e8861cdbaf97a5495a61de5a5bbfbe6c2cc05"
+    },
+    {
+      "bytes": 1529,
+      "path": "patch_implementation_receipt.json",
+      "sha256": "67ecc0a113bfdd9d6fe372ced44cc7c2899fe4dff877c763afbd647b90e3a8d3"
+    },
+    {
+      "bytes": 385,
+      "path": "patch_test_summary.json",
+      "sha256": "dab7bd209ef73ebb1c67ebf421a14065843bda1f0dc38e5a397451477e749741"
+    },
+    {
+      "bytes": 682,
+      "path": "provisional_portfolio_risk_overlay.json",
+      "sha256": "990e354d0b6837ab0fcf87b4c8ab94b66c2dfd81c006e2fd734b6a67591e3d14"
+    },
+    {
+      "bytes": 2294,
+      "path": "provisional_release.json",
+      "sha256": "e7a632cff1e0b048a9425292b5f740cff7099735eb60bec8a18733de7f19a934"
+    },
+    {
+      "bytes": 824,
+      "path": "provisional_release_hash_audit.json",
+      "sha256": "a216e5244bfd768b3f6932193a6a432102d695f2aaef79911f880e47f077d5bc"
+    },
+    {
+      "bytes": 1387,
+      "path": "provisional_release_policy.json",
+      "sha256": "fb8e10405637a5ec2456f86b5558da152a8a7fc4f32978a557c66474d9acac47"
+    },
+    {
+      "bytes": 7453,
+      "path": "v46_portfolio_component_manifest.json",
+      "sha256": "82f29c5f415ab5c60fad23d5c64c99a263c9f8f4f65488c3af715f79ece890ea"
+    },
+    {
+      "bytes": 695,
+      "path": "v46_portfolio_cooldown_semantics_audit.json",
+      "sha256": "e16e5246461bada6d7b1ff82e9acfc966e35ec194161c8890f5f6681ccad8a13"
+    },
+    {
+      "bytes": 9541,
+      "path": "v46_portfolio_definition_hash.json",
+      "sha256": "08922b58c055e66665fecc80876903b668073668939c6bb390419fe028c83fec"
+    },
+    {
+      "bytes": 1684,
+      "path": "v46_portfolio_replay_parity_audit.json",
+      "sha256": "1bc6c8e60efd910d4e51511f9f03f5b2057c8ae9953f832f658b83ad7c5f425e"
+    }
+  ],
+  "generatedAt": "2026-07-20T06:44:08.639092Z",
+  "manifestHash": "patch_artifact_manifest_a331529265be0a185bf3325104a72db0b479e4b7557aa935489f243bd3cd6f22"
+}

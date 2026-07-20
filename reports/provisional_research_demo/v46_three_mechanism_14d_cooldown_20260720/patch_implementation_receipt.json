@@ -1,0 +1,39 @@
+{
+  "currentAtomicWork": {
+    "interrupted": false,
+    "preserved": true
+  },
+  "generatedAt": "2026-07-20T06:44:08.639092Z",
+  "historicalEvidence": {
+    "formalPass": false,
+    "historicalEvidenceClass": "development_selected_result",
+    "v46ArtifactsChanged": false,
+    "v46EvidenceZip": "AlphaPilot_V13.27.1.46_Demo_Replay_Portfolio_Rescue_Evidence_20260720.zip",
+    "v46EvidenceZipSha256": "b15c8ce2aee5800ffb2a321b5ac82c70dc0f41c7ee09c02e5b05adc31663d741"
+  },
+  "patchInstruction": {
+    "filename": "AlphaPilot_V47-V53_Immediate_V46_Portfolio_Provisional_Demo_Route_Patch_CN.md",
+    "manifestFilename": "AlphaPilot_V47-V53_Immediate_V46_Portfolio_Provisional_Demo_Route_Patch_Manifest.json",
+    "sha256": "e41de0425d7b303d74b12e710d759d591bfd1fb4d6d51a674dc1529ed9938b79",
+    "verified": true
+  },
+  "runtimeSources": {
+    "demoUniverseDatabase": "demo_instrument_universe.sqlite",
+    "demoUniverseDatabaseSha256": "ef0ece26dd2aa223b86fbc8e49efb7b1d03ead2c8935ceff2f8c945c978056fe",
+    "demoUniverseReadOnly": true
+  },
+  "safety": {
+    "approvalCreated": false,
+    "credentialRead": false,
+    "demoArm": false,
+    "liveEnabled": false,
+    "strategyOrderCreated": false,
+    "withdrawEnabled": false
+  },
+  "schemaVersion": "v46_provisional_demo_patch_implementation_receipt_v1",
+  "sourceCommits": {
+    "console": "e825a9d8d0e5694c894bdf51cc239dc1eeea37a5",
+    "quant": "82b767c2f1920bf852a93b4f963121caa649f531"
+  },
+  "unresolvedImplementationBlockers": []
+}

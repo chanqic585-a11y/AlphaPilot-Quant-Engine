@@ -1,0 +1,222 @@
+{
+  "allocationSemantics": "source_trade_ledger_native_risk_no_posthoc_weighting",
+  "candidateId": "v49_three_mechanism_same_symbol_14d_cooldown_portfolio_v1",
+  "componentWeightSemantics": "no_explicit_weights",
+  "componentWeights": null,
+  "components": [
+    {
+      "candidateId": "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+      "direction": "short",
+      "family": "short_rejection",
+      "ledgerSha256": "3158fe95ed56711a265f74ba63f14b58491b582d3c9a8a55db13b6081f7efac0",
+      "sleeveHash": "portfolio_rescue_sleeve_3852ce4b2907c1e1180e2032edb6c40fce808f6aff92f1837fecee5a9ad9e955",
+      "sourceContractHash": "console_contract_861e8257a0997e0ea5f3a82aff039b251da0f7ad1692b825da461e0438cf11cd",
+      "sourcePath": "demo_release_contract_demo_release_top100_101a9c3a91a1199213edd0454f33d033.json",
+      "sourceReleaseHash": "demo_release_content_964825c820b8a7ff4a5aec03260d6c777b16a8aa3feb906c6916555d23950d17",
+      "sourceReleaseMode": "experimental_override",
+      "strategyDefinition": {
+        "familyKey": "short_rejection",
+        "forwardSignalPolicy": {
+          "direction": "short",
+          "family": "short_rejection",
+          "parameters": {
+            "max_hold": 12,
+            "rsi_high": 60,
+            "stop_atr": 1.0,
+            "targetRewardRiskRatio": 2.0,
+            "trend_tolerance": 1.0,
+            "upper_buffer": 0.006,
+            "volume_min": 1.2
+          },
+          "policyType": "strategy_family_params_v1"
+        },
+        "marketDefinition": {
+          "exchange": "okx",
+          "instrumentType": "SWAP",
+          "settleCurrency": "USDT",
+          "timeframe": "1h",
+          "universePolicy": {
+            "mode": "okx_usdt_linear_perpetual_full_market",
+            "policyVersion": "okx_full_market_policy_v2_top100",
+            "ranking": "public_quote_volume_proxy_then_spread",
+            "screeningLimit": 100
+          }
+        },
+        "strategyContentHash": "legacy_content_ae63ee7f53c7eaee9466487df79966b9d8f3a654efc174816ddefdce9ccd2aec"
+      },
+      "strategyDefinitionHash": "legacy_content_ae63ee7f53c7eaee9466487df79966b9d8f3a654efc174816ddefdce9ccd2aec",
+      "timeframe": "1h"
+    },
+    {
+      "candidateId": "v13_7_20_lf_research_candidate_117",
+      "direction": "long",
+      "family": "mean_reversion",
+      "ledgerSha256": "5490412d463670af90e03febadc5a85241dddb56fb7d306ef184d1c1ae34f6a2",
+      "sleeveHash": "portfolio_rescue_sleeve_391b48d790ed58f9ef4afc29a78be08c3c3482bf0571edcb653ec978f7db2979",
+      "sourceContractHash": "console_contract_b040995c2db9c24115eaa62014f436b855aa6bb736ea88992561e9a793bda366",
+      "sourcePath": "demo_release_contract_demo_release_top100_b8d58642cb97e8faf7ce98a24b86b395.json",
+      "sourceReleaseHash": "demo_release_content_c2ac7451ce0d8773fb1a383760cb8df2e8f64cbca6955e1993e2ded7d4831c6d",
+      "sourceReleaseMode": "experimental_override",
+      "strategyDefinition": {
+        "familyKey": "mean_reversion",
+        "forwardSignalPolicy": {
+          "direction": "long",
+          "family": "mean_reversion",
+          "parameters": {
+            "atrMultiplier": 1.2,
+            "bbWidthMultiplier": 1.35,
+            "breakoutMultiplier": 1.0,
+            "btcRegimes": [
+              "sideways"
+            ],
+            "btcReturn24hMinPct": -8.0,
+            "btcReturn3dMinPct": -10.0,
+            "candidateId": "lf_research_candidate_117",
+            "displayName": "1d sideways oversold reclaim ATR1.2",
+            "ema200FloorMultiplier": 0.86,
+            "family": "mean_reversion",
+            "maxHoldBars": 18,
+            "meanReversionLowMultiplier": 1.02,
+            "minVolumeRatio": 0.7,
+            "momentumReturnMin": 0.0,
+            "pullbackHigh": 1.02,
+            "pullbackLow": 0.98,
+            "rsiMax": 40,
+            "rsiMin": null,
+            "targetRewardRiskRatio": 2.0,
+            "timeframe": "1d"
+          },
+          "policyType": "strategy_family_params_v1"
+        },
+        "marketDefinition": {
+          "exchange": "okx",
+          "instrumentType": "SWAP",
+          "settleCurrency": "USDT",
+          "timeframe": "1d",
+          "universePolicy": {
+            "mode": "okx_usdt_linear_perpetual_full_market",
+            "policyVersion": "okx_full_market_policy_v2_top100",
+            "ranking": "public_quote_volume_proxy_then_spread",
+            "screeningLimit": 100
+          }
+        },
+        "strategyContentHash": "legacy_content_8b400c9bfa2e6339aa198363dc6e277b6d70c56f8beb48be48710665e473d20d"
+      },
+      "strategyDefinitionHash": "legacy_content_8b400c9bfa2e6339aa198363dc6e277b6d70c56f8beb48be48710665e473d20d",
+      "timeframe": "1d"
+    },
+    {
+      "candidateId": "v13_7_20_lf_research_candidate_090",
+      "direction": "long",
+      "family": "squeeze_breakout",
+      "ledgerSha256": "151c95db5e7bd2ac2bb2145dc7c5b43dca0e0a1da472a67b2d37c6a80b792c2f",
+      "sleeveHash": "portfolio_rescue_sleeve_6094459a8a104b1f76afa7f8baec0bacf8d4b5cb9c357f46aae68286d78ebb13",
+      "sourceContractHash": "console_contract_6e70ddfa27cd9cb033f676c93812d95e81417cbae4c9e12a50c3872829805ba6",
+      "sourcePath": "demo_release_contract_demo_release_top100_600814e4c07d7f8edf4b057f0e6137f9.json",
+      "sourceReleaseHash": "demo_release_content_62683fcdbe8d22e01684e57a24bf396dd37941b094c412b19d9236ac649962c9",
+      "sourceReleaseMode": "experimental_override",
+      "strategyDefinition": {
+        "familyKey": "squeeze_breakout",
+        "forwardSignalPolicy": {
+          "direction": "long",
+          "family": "squeeze_breakout",
+          "parameters": {
+            "atrMultiplier": 2.0,
+            "bbWidthMultiplier": 0.95,
+            "breakoutMultiplier": 0.998,
+            "btcRegimes": [
+              "bull",
+              "recovery"
+            ],
+            "btcReturn24hMinPct": -8.0,
+            "btcReturn3dMinPct": -10.0,
+            "candidateId": "lf_research_candidate_090",
+            "displayName": "1d trend squeeze breakout ATR2.0",
+            "ema200FloorMultiplier": 0.92,
+            "family": "squeeze_breakout",
+            "maxHoldBars": 16,
+            "meanReversionLowMultiplier": 1.01,
+            "minVolumeRatio": 1.1,
+            "momentumReturnMin": 0.0,
+            "pullbackHigh": 1.02,
+            "pullbackLow": 0.98,
+            "rsiMax": 76,
+            "rsiMin": 48,
+            "targetRewardRiskRatio": 2.0,
+            "timeframe": "1d"
+          },
+          "policyType": "strategy_family_params_v1"
+        },
+        "marketDefinition": {
+          "exchange": "okx",
+          "instrumentType": "SWAP",
+          "settleCurrency": "USDT",
+          "timeframe": "1d",
+          "universePolicy": {
+            "mode": "okx_usdt_linear_perpetual_full_market",
+            "policyVersion": "okx_full_market_policy_v2_top100",
+            "ranking": "public_quote_volume_proxy_then_spread",
+            "screeningLimit": 100
+          }
+        },
+        "strategyContentHash": "legacy_content_5ad3774b694e30763df33d95c45f81e843d94a54e3ea6ffc1c477e5a6f6bfa0e"
+      },
+      "strategyDefinitionHash": "legacy_content_5ad3774b694e30763df33d95c45f81e843d94a54e3ea6ffc1c477e5a6f6bfa0e",
+      "timeframe": "1d"
+    }
+  ],
+  "conflictResolution": "chronological_entry_then_candidate_id_then_instrument_id",
+  "cooldownSemantics": {
+    "anchorEvent": "previous_accepted_same_pair_exit",
+    "boundaryEqualityAllowed": true,
+    "candidateOrder": [
+      "entry_timestamp",
+      "candidate_id",
+      "instrument_id"
+    ],
+    "clock": "utc_elapsed_time",
+    "completedTradeRule": "accepted_exit_timestamp_lte_candidate_entry_timestamp",
+    "durationSeconds": 1209600,
+    "implementationPath": "alphapilot/portfolio_rescue/replay.py",
+    "implementationSha256": "0f75853cc5a83c4cca9d83db8a6d9885ab66400957a6e740db7f784e966d3924",
+    "notAWaitingPeriod": true,
+    "pairCooldownDays": 14,
+    "rejectionRule": "candidate_entry_lt_latest_same_pair_accepted_exit_plus_duration",
+    "schemaVersion": "portfolio_cooldown_semantics_v1"
+  },
+  "costModel": {
+    "additionalCostStressR": [
+      0.05,
+      0.1
+    ],
+    "feeRate": 0.0005,
+    "slippageRate": 0.0002
+  },
+  "exitPolicy": "component_native_frozen_forward_signal_policy",
+  "historicalEvidenceClass": "development_selected_result",
+  "mechanicsAudit": {
+    "noAdding": true,
+    "noAveraging": true,
+    "noGrid": true,
+    "noMartingale": true,
+    "noRecoveryPositionSizing": true,
+    "prohibitedPaths": []
+  },
+  "portfolioDefinitionHash": "portfolio_provisional_definition_02eca564b2d7b09401521993a0c9a15191252c233317f009a574d2a937f0a9a4",
+  "schemaVersion": "portfolio_provisional_definition_v1",
+  "selectedPolicy": {
+    "additional_cost_stress_r": [
+      0.05,
+      0.1
+    ],
+    "losing_pair_cooldown_days": 0,
+    "maximum_concurrent_positions": 99,
+    "pair_cooldown_days": 14,
+    "policy_hash": "portfolio_rescue_policy_7ac5bdcb1880061efdc7daae8dbd9945f0785618c05534f86dff1c3be66cc378",
+    "policy_id": "pair_14d_cooldown",
+    "same_direction_cap": 99,
+    "version": "v13.27.1.46"
+  },
+  "sourceCampaignHash": "portfolio_rescue_campaign_8ca0bba489c9064340e97e3d657fa5b4e0a94caacc5ebb32c18b78abfaf466c4",
+  "sourceCandidateHash": "portfolio_oos_candidate_b858842be93cc1b73e6afc8d22a34ea3656bf76cbbef42f566c8f8d8a6033f60"
+}

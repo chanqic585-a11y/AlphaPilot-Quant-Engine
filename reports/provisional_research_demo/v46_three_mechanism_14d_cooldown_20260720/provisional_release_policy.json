@@ -1,0 +1,40 @@
+{
+  "forwardEvidence": {
+    "automaticLivePromotionAllowed": false,
+    "eligible": "approved_release_closed_okx_demo_strategy_trades_only",
+    "excluded": [
+      "engineering_smoke",
+      "legacy_releases",
+      "shadow",
+      "local_simulation",
+      "open_orders",
+      "open_positions",
+      "historical_backtest",
+      "v46_development_results"
+    ],
+    "preliminaryReviewClosedTradeCount": 30,
+    "seriousReviewClosedTradeCount": 100
+  },
+  "freshHistoricalOosRequiredBeforeDemo": false,
+  "historicalEvidenceClass": "development_selected_result",
+  "legacyExperimentalOverride": {
+    "classification": "legacy_experimental_override",
+    "executionEnabled": false,
+    "forwardEvidenceEligible": false,
+    "livePromotionEligible": false
+  },
+  "provisionalAdmissionChecks": {
+    "componentIdentityComplete": true,
+    "cooldownSemanticsComplete": true,
+    "demoExecutionUniverseNonEmpty": true,
+    "riskOverlayComplete": true,
+    "unresolvedImplementationBlockerCount": 0,
+    "v46ArtifactCountVerified": 15,
+    "v46EvidenceZipSha256": "b15c8ce2aee5800ffb2a321b5ac82c70dc0f41c7ee09c02e5b05adc31663d741",
+    "v46EvidenceZipVerified": true,
+    "v46ReplayParityPercent": 100.0
+  },
+  "releasePurpose": "provisional_research_demo",
+  "schemaVersion": "provisional_release_policy_v1",
+  "validationRoute": "forward_only"
+}

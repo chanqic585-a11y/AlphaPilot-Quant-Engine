@@ -1,0 +1,18 @@
+{
+  "anchorEvent": "previous_accepted_same_pair_exit",
+  "boundaryEqualityAllowed": true,
+  "candidateOrder": [
+    "entry_timestamp",
+    "candidate_id",
+    "instrument_id"
+  ],
+  "clock": "utc_elapsed_time",
+  "completedTradeRule": "accepted_exit_timestamp_lte_candidate_entry_timestamp",
+  "durationSeconds": 1209600,
+  "implementationPath": "alphapilot/portfolio_rescue/replay.py",
+  "implementationSha256": "0f75853cc5a83c4cca9d83db8a6d9885ab66400957a6e740db7f784e966d3924",
+  "notAWaitingPeriod": true,
+  "pairCooldownDays": 14,
+  "rejectionRule": "candidate_entry_lt_latest_same_pair_accepted_exit_plus_duration",
+  "schemaVersion": "portfolio_cooldown_semantics_v1"
+}

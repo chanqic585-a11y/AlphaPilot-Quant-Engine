@@ -1,0 +1,53 @@
+{
+  "approvalRequired": true,
+  "approved": false,
+  "cooldownSemantics": {
+    "anchorEvent": "previous_accepted_same_pair_exit",
+    "boundaryEqualityAllowed": true,
+    "candidateOrder": [
+      "entry_timestamp",
+      "candidate_id",
+      "instrument_id"
+    ],
+    "clock": "utc_elapsed_time",
+    "completedTradeRule": "accepted_exit_timestamp_lte_candidate_entry_timestamp",
+    "durationSeconds": 1209600,
+    "implementationPath": "alphapilot/portfolio_rescue/replay.py",
+    "implementationSha256": "0f75853cc5a83c4cca9d83db8a6d9885ab66400957a6e740db7f784e966d3924",
+    "notAWaitingPeriod": true,
+    "pairCooldownDays": 14,
+    "rejectionRule": "candidate_entry_lt_latest_same_pair_accepted_exit_plus_duration",
+    "schemaVersion": "portfolio_cooldown_semantics_v1"
+  },
+  "demoArm": false,
+  "executionInstruments": [
+    "BTC-USDT-SWAP",
+    "DOGE-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "SOL-USDT-SWAP",
+    "XRP-USDT-SWAP"
+  ],
+  "knownLimitations": [
+    "V46 remains development_selected_result and is not a Formal Pass.",
+    "No clean historical OOS pass exists for this frozen release.",
+    "No post-approval closed OKX Demo strategy trade exists yet.",
+    "The exact public and authenticated instrument lists were not retained; the runtime eligible intersection was retained.",
+    "Live promotion is forbidden and must not be inferred from Demo evidence."
+  ],
+  "portfolioComponents": [
+    "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+    "v13_7_20_lf_research_candidate_117",
+    "v13_7_20_lf_research_candidate_090"
+  ],
+  "releaseHash": "provisional_demo_release_96085cf8a1d1dc089bf6dc4aae3eacb0d051b8e53ef4e5cd58546ea014a8bdcb",
+  "releaseId": "provisional_research_demo_v46_02eca564b2d7b09401521993",
+  "requiredUserApproval": "Approve the exact Release Hash and exact Risk Overlay Hash in a later message.",
+  "riskLimits": {
+    "maximumConcurrentPositions": 3,
+    "maximumPortfolioOpenRiskPercent": 0.3,
+    "riskPerTradePercent": 0.1
+  },
+  "riskOverlayHash": "risk_overlay_7221d23144dcd0a357136f6e9587a505d81c86439e223457d2d7393d287b8218",
+  "route": "blocked_waiting_exact_release_approval",
+  "schemaVersion": "demo_exact_hash_approval_request_v1"
+}
