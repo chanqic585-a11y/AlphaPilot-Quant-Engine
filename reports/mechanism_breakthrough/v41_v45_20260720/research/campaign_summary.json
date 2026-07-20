@@ -1,13 +1,37 @@
 {
+  "budget": {
+    "budgetReset": false,
+    "campaignsUsed": 2,
+    "candidateIdsUsed": 4,
+    "developmentTrialsUsed": 4,
+    "formalCandidatesUsed": 0,
+    "formalRunsUsed": 0,
+    "fullBacktestsRemainingAfter": 87,
+    "fullBacktestsUsed": 4,
+    "inheritedFullBacktestsRemainingBefore": 91,
+    "mechanismFamiliesUsed": 2,
+    "policy": {
+      "inherited_full_backtests": 91,
+      "maximum_campaigns": 2,
+      "maximum_candidates": 6,
+      "maximum_development_trials": 12,
+      "maximum_formal_candidates": 2,
+      "maximum_full_backtests": 6,
+      "maximum_mechanism_families": 3
+    },
+    "policyHash": "v41_v45_mechanism_budget_7cc1f41aafde8f3b7ea38f93d53c1ac3eb4e83b5d9ce0dadf9df7f7809cd6031",
+    "schemaVersion": "alphapilot_v41_v45_experiment_budget_v1"
+  },
   "campaignId": "mechanism_breakthrough_campaign_aa63925bdc4d2777f7c93ff62a20dc6ab14e972df51c5525934d3603885628bb",
   "candidateCount": 4,
-  "economicResultReadCount": 0,
   "formalCandidateCount": 0,
   "formalRunCount": 0,
+  "fundingCarryCandidateCreated": false,
   "lockedOosReadCount": 0,
   "networkCalls": 0,
   "prefilterSurvivorCount": 0,
   "releaseCount": 0,
+  "resultReadCount": 0,
   "schemaVersion": "alphapilot_v41_v45_campaign_summary_v1",
-  "status": "preregistered_not_run"
+  "status": "completed_zero_qualified_candidates"
 }

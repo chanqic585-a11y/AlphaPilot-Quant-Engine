@@ -1,6 +1,6 @@
 # V41-V45 Mechanism Breakthrough Campaign
 
-- Status: `preregistered_not_run`
+- Status: `completed_zero_qualified_candidates`
 - Candidate count: 4
 - Prefilter survivors: 0
 - Formal candidates: 0

@@ -1,0 +1,3579 @@
+{
+  "lockedOosReadCount": 0,
+  "networkCalls": 0,
+  "perCandidate": {
+    "v42_breakout_trap_second_entry_long_4h_v1": [
+      {
+        "developmentRowCount": 1416,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "0G-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\0G-USDT-SWAP\\4h\\1758528000000-1784001600000-7dfc00824bfcf9ca.parquet",
+        "reservedLockedOosRowCount": 354,
+        "totalRowCount": 1770
+      },
+      {
+        "developmentRowCount": 9731,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "1INCH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\1INCH-USDT-SWAP\\4h\\1608854400000-1784001600000-4eb6913e6328b4d3.parquet",
+        "reservedLockedOosRowCount": 2433,
+        "totalRowCount": 12164
+      },
+      {
+        "developmentRowCount": 1367,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "2Z-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\2Z-USDT-SWAP\\4h\\1759406400000-1784001600000-6a2113bd45724be5.parquet",
+        "reservedLockedOosRowCount": 342,
+        "totalRowCount": 1709
+      },
+      {
+        "developmentRowCount": 1972,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "A-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\A-USDT-SWAP\\4h\\1748505600000-1784001600000-5fbfe2e196f6a6f5.parquet",
+        "reservedLockedOosRowCount": 494,
+        "totalRowCount": 2466
+      },
+      {
+        "developmentRowCount": 235,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAOI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAOI-USDT-SWAP\\4h\\1779782400000-1784001600000-85dabb5b6bfe757c.parquet",
+        "reservedLockedOosRowCount": 59,
+        "totalRowCount": 294
+      },
+      {
+        "developmentRowCount": 633,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAPL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAPL-USDT-SWAP\\4h\\1772611200000-1784001600000-5de8e0e224e2f81d.parquet",
+        "reservedLockedOosRowCount": 159,
+        "totalRowCount": 792
+      },
+      {
+        "developmentRowCount": 9802,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAVE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAVE-USDT-SWAP\\4h\\1607572800000-1784001600000-28332920cd568a5b.parquet",
+        "reservedLockedOosRowCount": 2451,
+        "totalRowCount": 12253
+      },
+      {
+        "developmentRowCount": 4190,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACH-USDT-SWAP\\4h\\1708588800000-1784001600000-5a10aa294e331291.parquet",
+        "reservedLockedOosRowCount": 1048,
+        "totalRowCount": 5238
+      },
+      {
+        "developmentRowCount": 2913,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACT-USDT-SWAP\\4h\\1731571200000-1784001600000-5c929ef958b2364b.parquet",
+        "reservedLockedOosRowCount": 729,
+        "totalRowCount": 3642
+      },
+      {
+        "developmentRowCount": 826,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACU-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACU-USDT-SWAP\\4h\\1769140800000-1784001600000-8b1d400cd0c94a08.parquet",
+        "reservedLockedOosRowCount": 207,
+        "totalRowCount": 1033
+      },
+      {
+        "developmentRowCount": 11121,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ADA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADA-USDT-SWAP\\4h\\1583827200000-1784001600000-9767cf028e402bc7.parquet",
+        "reservedLockedOosRowCount": 2781,
+        "totalRowCount": 13902
+      },
+      {
+        "developmentRowCount": 196,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ADBE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADBE-USDT-SWAP\\4h\\1780473600000-1784001600000-c1ae16f02045583a.parquet",
+        "reservedLockedOosRowCount": 50,
+        "totalRowCount": 246
+      },
+      {
+        "developmentRowCount": 1805,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AERO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AERO-USDT-SWAP\\4h\\1751515200000-1784001600000-17e5327e90f257f6.parquet",
+        "reservedLockedOosRowCount": 452,
+        "totalRowCount": 2257
+      },
+      {
+        "developmentRowCount": 4094,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AEVO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AEVO-USDT-SWAP\\4h\\1710316800000-1784001600000-5447598ca0f52c21.parquet",
+        "reservedLockedOosRowCount": 1024,
+        "totalRowCount": 5118
+      },
+      {
+        "developmentRowCount": 8500,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AGLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AGLD-USDT-SWAP\\4h\\1631001600000-1784001600000-3e42535c848b9c0b.parquet",
+        "reservedLockedOosRowCount": 2126,
+        "totalRowCount": 10626
+      },
+      {
+        "developmentRowCount": 364,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AI-USDT-SWAP\\4h\\1777464000000-1784001600000-e8184e7147fa7705.parquet",
+        "reservedLockedOosRowCount": 91,
+        "totalRowCount": 455
+      },
+      {
+        "developmentRowCount": 2674,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AIXBT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AIXBT-USDT-SWAP\\4h\\1735876800000-1784001600000-aae29d038b8f0990.parquet",
+        "reservedLockedOosRowCount": 669,
+        "totalRowCount": 3343
+      },
+      {
+        "developmentRowCount": 134,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALAB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALAB-USDT-SWAP\\4h\\1781596800000-1784001600000-3b8d3ed6a84741f4.parquet",
+        "reservedLockedOosRowCount": 34,
+        "totalRowCount": 168
+      },
+      {
+        "developmentRowCount": 10816,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALGO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALGO-USDT-SWAP\\4h\\1589328000000-1784001600000-dc0c0af35e2714ba.parquet",
+        "reservedLockedOosRowCount": 2704,
+        "totalRowCount": 13520
+      },
+      {
+        "developmentRowCount": 1175,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALLO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALLO-USDT-SWAP\\4h\\1762876800000-1784016000000-caa26ae257fdff9d.parquet",
+        "reservedLockedOosRowCount": 294,
+        "totalRowCount": 1469
+      },
+      {
+        "developmentRowCount": 225,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMAT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMAT-USDT-SWAP\\4h\\1779955200000-1784001600000-cb4815e392cd0b74.parquet",
+        "reservedLockedOosRowCount": 57,
+        "totalRowCount": 282
+      },
+      {
+        "developmentRowCount": 600,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMD-USDT-SWAP\\4h\\1773216000000-1784001600000-1cabb3aa0598adbb.parquet",
+        "reservedLockedOosRowCount": 150,
+        "totalRowCount": 750
+      },
+      {
+        "developmentRowCount": 663,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMZN-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMZN-USDT-SWAP\\4h\\1772078400000-1784001600000-3cdee402c3384fb1.parquet",
+        "reservedLockedOosRowCount": 166,
+        "totalRowCount": 829
+      },
+      {
+        "developmentRowCount": 2576,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ANIME-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANIME-USDT-SWAP\\4h\\1737633600000-1784001600000-86b4c07c25f66f7e.parquet",
+        "reservedLockedOosRowCount": 645,
+        "totalRowCount": 3221
+      },
+      {
+        "developmentRowCount": 326,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ANTHROPIC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANTHROPIC-USDT-SWAP\\4h\\1778140800000-1784001600000-fc7e750fa584f165.parquet",
+        "reservedLockedOosRowCount": 82,
+        "totalRowCount": 408
+      },
+      {
+        "developmentRowCount": 7583,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APE-USDT-SWAP\\4h\\1647518400000-1784001600000-e2862002ad773eb7.parquet",
+        "reservedLockedOosRowCount": 1896,
+        "totalRowCount": 9479
+      },
+      {
+        "developmentRowCount": 7651,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "API3-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\API3-USDT-SWAP\\4h\\1646294400000-1784001600000-1b531ceaadbb7880.parquet",
+        "reservedLockedOosRowCount": 1913,
+        "totalRowCount": 9564
+      },
+      {
+        "developmentRowCount": 38,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APLD-USDT-SWAP\\4h\\1783324800000-1784001600000-9554f2a6c2c15a87.parquet",
+        "reservedLockedOosRowCount": 10,
+        "totalRowCount": 48
+      },
+      {
+        "developmentRowCount": 1263,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APR-USDT-SWAP\\4h\\1761278400000-1784001600000-c6616a36ee0e4217.parquet",
+        "reservedLockedOosRowCount": 316,
+        "totalRowCount": 1579
+      },
+      {
+        "developmentRowCount": 6548,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APT-USDT-SWAP\\4h\\1666137600000-1784001600000-b4cfcbec876551dd.parquet",
+        "reservedLockedOosRowCount": 1638,
+        "totalRowCount": 8186
+      },
+      {
+        "developmentRowCount": 5981,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AR-USDT-SWAP\\4h\\1676347200000-1784001600000-e48abb0401082609.parquet",
+        "reservedLockedOosRowCount": 1496,
+        "totalRowCount": 7477
+      },
+      {
+        "developmentRowCount": 5802,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARB-USDT-SWAP\\4h\\1679572800000-1784001600000-1a06c57dd3e02320.parquet",
+        "reservedLockedOosRowCount": 1451,
+        "totalRowCount": 7253
+      },
+      {
+        "developmentRowCount": 2880,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARKM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARKM-USDT-SWAP\\4h\\1732176000000-1784001600000-bf341cc8fb7f4ca3.parquet",
+        "reservedLockedOosRowCount": 720,
+        "totalRowCount": 3600
+      },
+      {
+        "developmentRowCount": 365,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARM-USDT-SWAP\\4h\\1777435200000-1784001600000-3f1df6203198accc.parquet",
+        "reservedLockedOosRowCount": 92,
+        "totalRowCount": 457
+      },
+      {
+        "developmentRowCount": 104,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARX-USDT-SWAP\\4h\\1782129600000-1784001600000-bb0cf5ee5bd05ddf.parquet",
+        "reservedLockedOosRowCount": 27,
+        "totalRowCount": 131
+      },
+      {
+        "developmentRowCount": 196,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASML-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASML-USDT-SWAP\\4h\\1780473600000-1784001600000-39ecc0a6943e2f36.parquet",
+        "reservedLockedOosRowCount": 50,
+        "totalRowCount": 246
+      },
+      {
+        "developmentRowCount": 1416,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASTER-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTER-USDT-SWAP\\4h\\1758513600000-1784001600000-a63f0bbd29c381a3.parquet",
+        "reservedLockedOosRowCount": 355,
+        "totalRowCount": 1771
+      },
+      {
+        "developmentRowCount": 201,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASTS-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTS-USDT-SWAP\\4h\\1780387200000-1784001600000-a3d2c1fa09a4f279.parquet",
+        "reservedLockedOosRowCount": 51,
+        "totalRowCount": 252
+      },
+      {
+        "developmentRowCount": 1233,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AT-USDT-SWAP\\4h\\1761811200000-1784001600000-e924de62d1bfb0c8.parquet",
+        "reservedLockedOosRowCount": 309,
+        "totalRowCount": 1542
+      },
+      {
+        "developmentRowCount": 3654,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ATH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATH-USDT-SWAP\\4h\\1718236800000-1784001600000-839078d4b95f1b69.parquet",
+        "reservedLockedOosRowCount": 914,
+        "totalRowCount": 4568
+      },
+      {
+        "developmentRowCount": 10848,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ATOM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATOM-USDT-SWAP\\4h\\1588737600000-1784001600000-56ad4628e0b1e70d.parquet",
+        "reservedLockedOosRowCount": 2713,
+        "totalRowCount": 13561
+      },
+      {
+        "developmentRowCount": 4589,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AUCTION-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AUCTION-USDT-SWAP\\4h\\1701403200000-1784001600000-ecf8e8f38da54651.parquet",
+        "reservedLockedOosRowCount": 1148,
+        "totalRowCount": 5737
+      },
+      {
+        "developmentRowCount": 10170,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AVAX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVAX-USDT-SWAP\\4h\\1600833600000-1783886400000-1aa00c47a34a599d.parquet",
+        "reservedLockedOosRowCount": 2543,
+        "totalRowCount": 12713
+      },
+      {
+        "developmentRowCount": 353,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AVGO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVGO-USDT-SWAP\\4h\\1777435200000-1783785600000-5330f280bbb68541.parquet",
+        "reservedLockedOosRowCount": 89,
+        "totalRowCount": 442
+      },
+      {
+        "developmentRowCount": 1403,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AVNT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVNT-USDT-SWAP\\4h\\1758542400000-1783785600000-256d13c071daf92f.parquet",
+        "reservedLockedOosRowCount": 351,
+        "totalRowCount": 1754
+      },
+      {
+        "developmentRowCount": 8692,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AXS-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AXS-USDT-SWAP\\4h\\1627444800000-1783886400000-d69d993caf3c9ff2.parquet",
+        "reservedLockedOosRowCount": 2173,
+        "totalRowCount": 10865
+      },
+      {
+        "developmentRowCount": 122,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AXTI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AXTI-USDT-SWAP\\4h\\1781596800000-1783785600000-2860c1b7cd6836be.parquet",
+        "reservedLockedOosRowCount": 31,
+        "totalRowCount": 153
+      },
+      {
+        "developmentRowCount": 9965,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BAND-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAND-USDT-SWAP\\4h\\part-all-1f5706eb6c901b5b.parquet",
+        "reservedLockedOosRowCount": 2492,
+        "totalRowCount": 12457
+      },
+      {
+        "developmentRowCount": 10013,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BAT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAT-USDT-SWAP\\4h\\part-all-a198fa3928e4d1a8.parquet",
+        "reservedLockedOosRowCount": 2504,
+        "totalRowCount": 12517
+      },
+      {
+        "developmentRowCount": 11166,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BCH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\4h\\part-all-f2b779ba03dd6b13.parquet",
+        "reservedLockedOosRowCount": 2792,
+        "totalRowCount": 13958
+      },
+      {
+        "developmentRowCount": 331,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BILL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BILL-USDT-SWAP\\4h\\1778054400000-1784001600000-8157cb8f559a80f5.parquet",
+        "reservedLockedOosRowCount": 83,
+        "totalRowCount": 414
+      },
+      {
+        "developmentRowCount": 11455,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BTC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\1577836800000-1784016000000-e8f6595d0f61eb74.parquet",
+        "reservedLockedOosRowCount": 2864,
+        "totalRowCount": 14319
+      },
+      {
+        "developmentRowCount": 9080,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CFX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CFX-USDT-SWAP\\4h\\part-all-a199c263eff7bdd4.parquet",
+        "reservedLockedOosRowCount": 2270,
+        "totalRowCount": 11350
+      },
+      {
+        "developmentRowCount": 9080,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CHZ-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CHZ-USDT-SWAP\\4h\\part-all-67d177242c2e9430.parquet",
+        "reservedLockedOosRowCount": 2270,
+        "totalRowCount": 11350
+      },
+      {
+        "developmentRowCount": 10299,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "COMP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\COMP-USDT-SWAP\\4h\\part-all-01c37d9b6e9baca6.parquet",
+        "reservedLockedOosRowCount": 2575,
+        "totalRowCount": 12874
+      },
+      {
+        "developmentRowCount": 8951,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CRO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRO-USDT-SWAP\\4h\\part-all-c4eaa8c246e9f5bb.parquet",
+        "reservedLockedOosRowCount": 2238,
+        "totalRowCount": 11189
+      },
+      {
+        "developmentRowCount": 9988,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CRV-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRV-USDT-SWAP\\4h\\part-all-070d49a809bd22b8.parquet",
+        "reservedLockedOosRowCount": 2498,
+        "totalRowCount": 12486
+      },
+      {
+        "developmentRowCount": 10538,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "DOGE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\DOGE-USDT-SWAP\\4h\\1594339200000-1784016000000-39c6057cc2ff26c2.parquet",
+        "reservedLockedOosRowCount": 2635,
+        "totalRowCount": 13173
+      },
+      {
+        "developmentRowCount": 10038,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "DOT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\DOT-USDT-SWAP\\4h\\part-all-57268a58c38d2d5d.parquet",
+        "reservedLockedOosRowCount": 2510,
+        "totalRowCount": 12548
+      },
+      {
+        "developmentRowCount": 9467,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "EGLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\EGLD-USDT-SWAP\\4h\\part-all-a3584f8512df9aba.parquet",
+        "reservedLockedOosRowCount": 2367,
+        "totalRowCount": 11834
+      },
+      {
+        "developmentRowCount": 11176,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ETC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\4h\\part-all-8a30518646e19f75.parquet",
+        "reservedLockedOosRowCount": 2795,
+        "totalRowCount": 13971
+      },
+      {
+        "developmentRowCount": 11455,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ETH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\1577836800000-1784016000000-022a4f37a6dd49de.parquet",
+        "reservedLockedOosRowCount": 2864,
+        "totalRowCount": 14319
+      },
+      {
+        "developmentRowCount": 10205,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "FIL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\FIL-USDT-SWAP\\4h\\part-all-8f4d1f6a5fddb32c.parquet",
+        "reservedLockedOosRowCount": 2552,
+        "totalRowCount": 12757
+      },
+      {
+        "developmentRowCount": 9484,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "GRT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GRT-USDT-SWAP\\4h\\part-all-735b531bc13b6dc3.parquet",
+        "reservedLockedOosRowCount": 2372,
+        "totalRowCount": 11856
+      },
+      {
+        "developmentRowCount": 2440,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "HYPE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\HYPE-USDT-SWAP\\4h\\1740110400000-1784016000000-849b069f90f6c1e8.parquet",
+        "reservedLockedOosRowCount": 610,
+        "totalRowCount": 3050
+      },
+      {
+        "developmentRowCount": 8789,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ICP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICP-USDT-SWAP\\4h\\part-all-699e30d0cdc7ee8f.parquet",
+        "reservedLockedOosRowCount": 2198,
+        "totalRowCount": 10987
+      },
+      {
+        "developmentRowCount": 10548,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "IOST-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOST-USDT-SWAP\\4h\\part-all-4700899d0e897033.parquet",
+        "reservedLockedOosRowCount": 2637,
+        "totalRowCount": 13185
+      },
+      {
+        "developmentRowCount": 10523,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "IOTA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOTA-USDT-SWAP\\4h\\part-all-cb518ed97dcaddf5.parquet",
+        "reservedLockedOosRowCount": 2631,
+        "totalRowCount": 13154
+      },
+      {
+        "developmentRowCount": 9980,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "KSM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\KSM-USDT-SWAP\\4h\\part-all-66c76616f64f69ac.parquet",
+        "reservedLockedOosRowCount": 2496,
+        "totalRowCount": 12476
+      },
+      {
+        "developmentRowCount": 1224,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LAB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\LAB-USDT-SWAP\\4h\\1761998400000-1784016000000-c3fd5a35572b7908.parquet",
+        "reservedLockedOosRowCount": 306,
+        "totalRowCount": 1530
+      },
+      {
+        "developmentRowCount": 10872,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LINK-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\4h\\part-all-c5a7bbc43e2eaeaa.parquet",
+        "reservedLockedOosRowCount": 2719,
+        "totalRowCount": 13591
+      },
+      {
+        "developmentRowCount": 8891,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LPT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LPT-USDT-SWAP\\4h\\part-all-b1751e0be5aafe9e.parquet",
+        "reservedLockedOosRowCount": 2223,
+        "totalRowCount": 11114
+      },
+      {
+        "developmentRowCount": 9979,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LRC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LRC-USDT-SWAP\\4h\\part-all-25623f9c39e28585.parquet",
+        "reservedLockedOosRowCount": 2495,
+        "totalRowCount": 12474
+      },
+      {
+        "developmentRowCount": 11190,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LTC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\4h\\part-all-ebd367bc06529c8c.parquet",
+        "reservedLockedOosRowCount": 2798,
+        "totalRowCount": 13988
+      },
+      {
+        "developmentRowCount": 9096,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "MANA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MANA-USDT-SWAP\\4h\\part-all-cc3b1e84d68a42de.parquet",
+        "reservedLockedOosRowCount": 2274,
+        "totalRowCount": 11370
+      },
+      {
+        "developmentRowCount": 9135,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "MASK-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MASK-USDT-SWAP\\4h\\part-all-a00e75b6d98c8ed0.parquet",
+        "reservedLockedOosRowCount": 2284,
+        "totalRowCount": 11419
+      },
+      {
+        "developmentRowCount": 9485,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "NEAR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEAR-USDT-SWAP\\4h\\part-all-96ede9c8194e7321.parquet",
+        "reservedLockedOosRowCount": 2372,
+        "totalRowCount": 11857
+      },
+      {
+        "developmentRowCount": 10905,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "NEO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEO-USDT-SWAP\\4h\\part-all-a44df185d891046b.parquet",
+        "reservedLockedOosRowCount": 2727,
+        "totalRowCount": 13632
+      },
+      {
+        "developmentRowCount": 10585,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ONT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ONT-USDT-SWAP\\4h\\part-all-58bbae724544d10f.parquet",
+        "reservedLockedOosRowCount": 2647,
+        "totalRowCount": 13232
+      },
+      {
+        "developmentRowCount": 10562,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "QTUM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\QTUM-USDT-SWAP\\4h\\part-all-d74dc8d6da6513b4.parquet",
+        "reservedLockedOosRowCount": 2641,
+        "totalRowCount": 13203
+      },
+      {
+        "developmentRowCount": 9980,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "RSR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RSR-USDT-SWAP\\4h\\part-all-1931ffdbfa7f5447.parquet",
+        "reservedLockedOosRowCount": 2495,
+        "totalRowCount": 12475
+      },
+      {
+        "developmentRowCount": 8996,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SAND-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SAND-USDT-SWAP\\4h\\part-all-521803f119e7e049.parquet",
+        "reservedLockedOosRowCount": 2250,
+        "totalRowCount": 11246
+      },
+      {
+        "developmentRowCount": 8819,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SHIB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SHIB-USDT-SWAP\\4h\\part-all-2612f38dee109ba2.parquet",
+        "reservedLockedOosRowCount": 2205,
+        "totalRowCount": 11024
+      },
+      {
+        "developmentRowCount": 10072,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SNX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SNX-USDT-SWAP\\4h\\part-all-2130745fe1fae9ff.parquet",
+        "reservedLockedOosRowCount": 2518,
+        "totalRowCount": 12590
+      },
+      {
+        "developmentRowCount": 9596,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SOL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\SOL-USDT-SWAP\\4h\\1611288000000-1784016000000-fa9c9c5f3de74b7a.parquet",
+        "reservedLockedOosRowCount": 2400,
+        "totalRowCount": 11996
+      },
+      {
+        "developmentRowCount": 10008,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SUSHI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SUSHI-USDT-SWAP\\4h\\part-all-82444ac2ae7f3bed.parquet",
+        "reservedLockedOosRowCount": 2502,
+        "totalRowCount": 12510
+      },
+      {
+        "developmentRowCount": 10393,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "THETA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\THETA-USDT-SWAP\\4h\\part-all-452da928a60d047c.parquet",
+        "reservedLockedOosRowCount": 2599,
+        "totalRowCount": 12992
+      },
+      {
+        "developmentRowCount": 9985,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "TRB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRB-USDT-SWAP\\4h\\part-all-0fbd0b6c836309f8.parquet",
+        "reservedLockedOosRowCount": 2497,
+        "totalRowCount": 12482
+      },
+      {
+        "developmentRowCount": 11200,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "TRX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRX-USDT-SWAP\\4h\\part-all-c38b9c26b6a18097.parquet",
+        "reservedLockedOosRowCount": 2800,
+        "totalRowCount": 14000
+      },
+      {
+        "developmentRowCount": 9951,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "UNI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\UNI-USDT-SWAP\\4h\\part-all-bfcd8b816f9fdee0.parquet",
+        "reservedLockedOosRowCount": 2488,
+        "totalRowCount": 12439
+      },
+      {
+        "developmentRowCount": 5213,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "WLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\WLD-USDT-SWAP\\4h\\1690185600000-1784016000000-3904519d3c4e1f61.parquet",
+        "reservedLockedOosRowCount": 1304,
+        "totalRowCount": 6517
+      },
+      {
+        "developmentRowCount": 10571,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XLM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XLM-USDT-SWAP\\4h\\part-all-a7e228ed7e5ae90c.parquet",
+        "reservedLockedOosRowCount": 2643,
+        "totalRowCount": 13214
+      },
+      {
+        "developmentRowCount": 11200,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XRP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\4h\\part-all-f94bdda800a3be0d.parquet",
+        "reservedLockedOosRowCount": 2800,
+        "totalRowCount": 14000
+      },
+      {
+        "developmentRowCount": 10662,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XTZ-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XTZ-USDT-SWAP\\4h\\part-all-f287a802fb10a108.parquet",
+        "reservedLockedOosRowCount": 2666,
+        "totalRowCount": 13328
+      },
+      {
+        "developmentRowCount": 10024,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "YFI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\YFI-USDT-SWAP\\4h\\part-all-2105f66dd7e51aa2.parquet",
+        "reservedLockedOosRowCount": 2506,
+        "totalRowCount": 12530
+      },
+      {
+        "developmentRowCount": 1202,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZEC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ZEC-USDT-SWAP\\4h\\1762387200000-1784016000000-d8390a5ea377f459.parquet",
+        "reservedLockedOosRowCount": 301,
+        "totalRowCount": 1503
+      },
+      {
+        "developmentRowCount": 9989,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZIL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZIL-USDT-SWAP\\4h\\part-all-fa748457ef2319c9.parquet",
+        "reservedLockedOosRowCount": 2498,
+        "totalRowCount": 12487
+      },
+      {
+        "developmentRowCount": 10081,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZRX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZRX-USDT-SWAP\\4h\\part-all-9fa945f8c62a58c7.parquet",
+        "reservedLockedOosRowCount": 2521,
+        "totalRowCount": 12602
+      }
+    ],
+    "v42_breakout_trap_second_entry_short_4h_v1": [
+      {
+        "developmentRowCount": 1416,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "0G-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\0G-USDT-SWAP\\4h\\1758528000000-1784001600000-7dfc00824bfcf9ca.parquet",
+        "reservedLockedOosRowCount": 354,
+        "totalRowCount": 1770
+      },
+      {
+        "developmentRowCount": 9731,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "1INCH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\1INCH-USDT-SWAP\\4h\\1608854400000-1784001600000-4eb6913e6328b4d3.parquet",
+        "reservedLockedOosRowCount": 2433,
+        "totalRowCount": 12164
+      },
+      {
+        "developmentRowCount": 1367,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "2Z-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\2Z-USDT-SWAP\\4h\\1759406400000-1784001600000-6a2113bd45724be5.parquet",
+        "reservedLockedOosRowCount": 342,
+        "totalRowCount": 1709
+      },
+      {
+        "developmentRowCount": 1972,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "A-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\A-USDT-SWAP\\4h\\1748505600000-1784001600000-5fbfe2e196f6a6f5.parquet",
+        "reservedLockedOosRowCount": 494,
+        "totalRowCount": 2466
+      },
+      {
+        "developmentRowCount": 235,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAOI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAOI-USDT-SWAP\\4h\\1779782400000-1784001600000-85dabb5b6bfe757c.parquet",
+        "reservedLockedOosRowCount": 59,
+        "totalRowCount": 294
+      },
+      {
+        "developmentRowCount": 633,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAPL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAPL-USDT-SWAP\\4h\\1772611200000-1784001600000-5de8e0e224e2f81d.parquet",
+        "reservedLockedOosRowCount": 159,
+        "totalRowCount": 792
+      },
+      {
+        "developmentRowCount": 9802,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAVE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAVE-USDT-SWAP\\4h\\1607572800000-1784001600000-28332920cd568a5b.parquet",
+        "reservedLockedOosRowCount": 2451,
+        "totalRowCount": 12253
+      },
+      {
+        "developmentRowCount": 4190,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACH-USDT-SWAP\\4h\\1708588800000-1784001600000-5a10aa294e331291.parquet",
+        "reservedLockedOosRowCount": 1048,
+        "totalRowCount": 5238
+      },
+      {
+        "developmentRowCount": 2913,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACT-USDT-SWAP\\4h\\1731571200000-1784001600000-5c929ef958b2364b.parquet",
+        "reservedLockedOosRowCount": 729,
+        "totalRowCount": 3642
+      },
+      {
+        "developmentRowCount": 826,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACU-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACU-USDT-SWAP\\4h\\1769140800000-1784001600000-8b1d400cd0c94a08.parquet",
+        "reservedLockedOosRowCount": 207,
+        "totalRowCount": 1033
+      },
+      {
+        "developmentRowCount": 11121,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ADA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADA-USDT-SWAP\\4h\\1583827200000-1784001600000-9767cf028e402bc7.parquet",
+        "reservedLockedOosRowCount": 2781,
+        "totalRowCount": 13902
+      },
+      {
+        "developmentRowCount": 196,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ADBE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADBE-USDT-SWAP\\4h\\1780473600000-1784001600000-c1ae16f02045583a.parquet",
+        "reservedLockedOosRowCount": 50,
+        "totalRowCount": 246
+      },
+      {
+        "developmentRowCount": 1805,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AERO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AERO-USDT-SWAP\\4h\\1751515200000-1784001600000-17e5327e90f257f6.parquet",
+        "reservedLockedOosRowCount": 452,
+        "totalRowCount": 2257
+      },
+      {
+        "developmentRowCount": 4094,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AEVO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AEVO-USDT-SWAP\\4h\\1710316800000-1784001600000-5447598ca0f52c21.parquet",
+        "reservedLockedOosRowCount": 1024,
+        "totalRowCount": 5118
+      },
+      {
+        "developmentRowCount": 8500,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AGLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AGLD-USDT-SWAP\\4h\\1631001600000-1784001600000-3e42535c848b9c0b.parquet",
+        "reservedLockedOosRowCount": 2126,
+        "totalRowCount": 10626
+      },
+      {
+        "developmentRowCount": 364,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AI-USDT-SWAP\\4h\\1777464000000-1784001600000-e8184e7147fa7705.parquet",
+        "reservedLockedOosRowCount": 91,
+        "totalRowCount": 455
+      },
+      {
+        "developmentRowCount": 2674,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AIXBT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AIXBT-USDT-SWAP\\4h\\1735876800000-1784001600000-aae29d038b8f0990.parquet",
+        "reservedLockedOosRowCount": 669,
+        "totalRowCount": 3343
+      },
+      {
+        "developmentRowCount": 134,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALAB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALAB-USDT-SWAP\\4h\\1781596800000-1784001600000-3b8d3ed6a84741f4.parquet",
+        "reservedLockedOosRowCount": 34,
+        "totalRowCount": 168
+      },
+      {
+        "developmentRowCount": 10816,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALGO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALGO-USDT-SWAP\\4h\\1589328000000-1784001600000-dc0c0af35e2714ba.parquet",
+        "reservedLockedOosRowCount": 2704,
+        "totalRowCount": 13520
+      },
+      {
+        "developmentRowCount": 1175,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALLO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALLO-USDT-SWAP\\4h\\1762876800000-1784016000000-caa26ae257fdff9d.parquet",
+        "reservedLockedOosRowCount": 294,
+        "totalRowCount": 1469
+      },
+      {
+        "developmentRowCount": 225,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMAT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMAT-USDT-SWAP\\4h\\1779955200000-1784001600000-cb4815e392cd0b74.parquet",
+        "reservedLockedOosRowCount": 57,
+        "totalRowCount": 282
+      },
+      {
+        "developmentRowCount": 600,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMD-USDT-SWAP\\4h\\1773216000000-1784001600000-1cabb3aa0598adbb.parquet",
+        "reservedLockedOosRowCount": 150,
+        "totalRowCount": 750
+      },
+      {
+        "developmentRowCount": 663,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMZN-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMZN-USDT-SWAP\\4h\\1772078400000-1784001600000-3cdee402c3384fb1.parquet",
+        "reservedLockedOosRowCount": 166,
+        "totalRowCount": 829
+      },
+      {
+        "developmentRowCount": 2576,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ANIME-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANIME-USDT-SWAP\\4h\\1737633600000-1784001600000-86b4c07c25f66f7e.parquet",
+        "reservedLockedOosRowCount": 645,
+        "totalRowCount": 3221
+      },
+      {
+        "developmentRowCount": 326,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ANTHROPIC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANTHROPIC-USDT-SWAP\\4h\\1778140800000-1784001600000-fc7e750fa584f165.parquet",
+        "reservedLockedOosRowCount": 82,
+        "totalRowCount": 408
+      },
+      {
+        "developmentRowCount": 7583,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APE-USDT-SWAP\\4h\\1647518400000-1784001600000-e2862002ad773eb7.parquet",
+        "reservedLockedOosRowCount": 1896,
+        "totalRowCount": 9479
+      },
+      {
+        "developmentRowCount": 7651,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "API3-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\API3-USDT-SWAP\\4h\\1646294400000-1784001600000-1b531ceaadbb7880.parquet",
+        "reservedLockedOosRowCount": 1913,
+        "totalRowCount": 9564
+      },
+      {
+        "developmentRowCount": 38,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APLD-USDT-SWAP\\4h\\1783324800000-1784001600000-9554f2a6c2c15a87.parquet",
+        "reservedLockedOosRowCount": 10,
+        "totalRowCount": 48
+      },
+      {
+        "developmentRowCount": 1263,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APR-USDT-SWAP\\4h\\1761278400000-1784001600000-c6616a36ee0e4217.parquet",
+        "reservedLockedOosRowCount": 316,
+        "totalRowCount": 1579
+      },
+      {
+        "developmentRowCount": 6548,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APT-USDT-SWAP\\4h\\1666137600000-1784001600000-b4cfcbec876551dd.parquet",
+        "reservedLockedOosRowCount": 1638,
+        "totalRowCount": 8186
+      },
+      {
+        "developmentRowCount": 5981,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AR-USDT-SWAP\\4h\\1676347200000-1784001600000-e48abb0401082609.parquet",
+        "reservedLockedOosRowCount": 1496,
+        "totalRowCount": 7477
+      },
+      {
+        "developmentRowCount": 5802,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARB-USDT-SWAP\\4h\\1679572800000-1784001600000-1a06c57dd3e02320.parquet",
+        "reservedLockedOosRowCount": 1451,
+        "totalRowCount": 7253
+      },
+      {
+        "developmentRowCount": 2880,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARKM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARKM-USDT-SWAP\\4h\\1732176000000-1784001600000-bf341cc8fb7f4ca3.parquet",
+        "reservedLockedOosRowCount": 720,
+        "totalRowCount": 3600
+      },
+      {
+        "developmentRowCount": 365,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARM-USDT-SWAP\\4h\\1777435200000-1784001600000-3f1df6203198accc.parquet",
+        "reservedLockedOosRowCount": 92,
+        "totalRowCount": 457
+      },
+      {
+        "developmentRowCount": 104,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARX-USDT-SWAP\\4h\\1782129600000-1784001600000-bb0cf5ee5bd05ddf.parquet",
+        "reservedLockedOosRowCount": 27,
+        "totalRowCount": 131
+      },
+      {
+        "developmentRowCount": 196,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASML-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASML-USDT-SWAP\\4h\\1780473600000-1784001600000-39ecc0a6943e2f36.parquet",
+        "reservedLockedOosRowCount": 50,
+        "totalRowCount": 246
+      },
+      {
+        "developmentRowCount": 1416,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASTER-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTER-USDT-SWAP\\4h\\1758513600000-1784001600000-a63f0bbd29c381a3.parquet",
+        "reservedLockedOosRowCount": 355,
+        "totalRowCount": 1771
+      },
+      {
+        "developmentRowCount": 201,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASTS-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTS-USDT-SWAP\\4h\\1780387200000-1784001600000-a3d2c1fa09a4f279.parquet",
+        "reservedLockedOosRowCount": 51,
+        "totalRowCount": 252
+      },
+      {
+        "developmentRowCount": 1233,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AT-USDT-SWAP\\4h\\1761811200000-1784001600000-e924de62d1bfb0c8.parquet",
+        "reservedLockedOosRowCount": 309,
+        "totalRowCount": 1542
+      },
+      {
+        "developmentRowCount": 3654,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ATH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATH-USDT-SWAP\\4h\\1718236800000-1784001600000-839078d4b95f1b69.parquet",
+        "reservedLockedOosRowCount": 914,
+        "totalRowCount": 4568
+      },
+      {
+        "developmentRowCount": 10848,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ATOM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATOM-USDT-SWAP\\4h\\1588737600000-1784001600000-56ad4628e0b1e70d.parquet",
+        "reservedLockedOosRowCount": 2713,
+        "totalRowCount": 13561
+      },
+      {
+        "developmentRowCount": 4589,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AUCTION-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AUCTION-USDT-SWAP\\4h\\1701403200000-1784001600000-ecf8e8f38da54651.parquet",
+        "reservedLockedOosRowCount": 1148,
+        "totalRowCount": 5737
+      },
+      {
+        "developmentRowCount": 10170,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AVAX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVAX-USDT-SWAP\\4h\\1600833600000-1783886400000-1aa00c47a34a599d.parquet",
+        "reservedLockedOosRowCount": 2543,
+        "totalRowCount": 12713
+      },
+      {
+        "developmentRowCount": 353,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AVGO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVGO-USDT-SWAP\\4h\\1777435200000-1783785600000-5330f280bbb68541.parquet",
+        "reservedLockedOosRowCount": 89,
+        "totalRowCount": 442
+      },
+      {
+        "developmentRowCount": 1403,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AVNT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AVNT-USDT-SWAP\\4h\\1758542400000-1783785600000-256d13c071daf92f.parquet",
+        "reservedLockedOosRowCount": 351,
+        "totalRowCount": 1754
+      },
+      {
+        "developmentRowCount": 8692,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AXS-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AXS-USDT-SWAP\\4h\\1627444800000-1783886400000-d69d993caf3c9ff2.parquet",
+        "reservedLockedOosRowCount": 2173,
+        "totalRowCount": 10865
+      },
+      {
+        "developmentRowCount": 122,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AXTI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AXTI-USDT-SWAP\\4h\\1781596800000-1783785600000-2860c1b7cd6836be.parquet",
+        "reservedLockedOosRowCount": 31,
+        "totalRowCount": 153
+      },
+      {
+        "developmentRowCount": 9965,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BAND-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAND-USDT-SWAP\\4h\\part-all-1f5706eb6c901b5b.parquet",
+        "reservedLockedOosRowCount": 2492,
+        "totalRowCount": 12457
+      },
+      {
+        "developmentRowCount": 10013,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BAT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAT-USDT-SWAP\\4h\\part-all-a198fa3928e4d1a8.parquet",
+        "reservedLockedOosRowCount": 2504,
+        "totalRowCount": 12517
+      },
+      {
+        "developmentRowCount": 11166,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BCH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\4h\\part-all-f2b779ba03dd6b13.parquet",
+        "reservedLockedOosRowCount": 2792,
+        "totalRowCount": 13958
+      },
+      {
+        "developmentRowCount": 331,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BILL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BILL-USDT-SWAP\\4h\\1778054400000-1784001600000-8157cb8f559a80f5.parquet",
+        "reservedLockedOosRowCount": 83,
+        "totalRowCount": 414
+      },
+      {
+        "developmentRowCount": 11455,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BTC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BTC-USDT-SWAP\\4h\\1577836800000-1784016000000-e8f6595d0f61eb74.parquet",
+        "reservedLockedOosRowCount": 2864,
+        "totalRowCount": 14319
+      },
+      {
+        "developmentRowCount": 9080,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CFX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CFX-USDT-SWAP\\4h\\part-all-a199c263eff7bdd4.parquet",
+        "reservedLockedOosRowCount": 2270,
+        "totalRowCount": 11350
+      },
+      {
+        "developmentRowCount": 9080,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CHZ-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CHZ-USDT-SWAP\\4h\\part-all-67d177242c2e9430.parquet",
+        "reservedLockedOosRowCount": 2270,
+        "totalRowCount": 11350
+      },
+      {
+        "developmentRowCount": 10299,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "COMP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\COMP-USDT-SWAP\\4h\\part-all-01c37d9b6e9baca6.parquet",
+        "reservedLockedOosRowCount": 2575,
+        "totalRowCount": 12874
+      },
+      {
+        "developmentRowCount": 8951,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CRO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRO-USDT-SWAP\\4h\\part-all-c4eaa8c246e9f5bb.parquet",
+        "reservedLockedOosRowCount": 2238,
+        "totalRowCount": 11189
+      },
+      {
+        "developmentRowCount": 9988,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CRV-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRV-USDT-SWAP\\4h\\part-all-070d49a809bd22b8.parquet",
+        "reservedLockedOosRowCount": 2498,
+        "totalRowCount": 12486
+      },
+      {
+        "developmentRowCount": 10538,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "DOGE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\DOGE-USDT-SWAP\\4h\\1594339200000-1784016000000-39c6057cc2ff26c2.parquet",
+        "reservedLockedOosRowCount": 2635,
+        "totalRowCount": 13173
+      },
+      {
+        "developmentRowCount": 10038,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "DOT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\DOT-USDT-SWAP\\4h\\part-all-57268a58c38d2d5d.parquet",
+        "reservedLockedOosRowCount": 2510,
+        "totalRowCount": 12548
+      },
+      {
+        "developmentRowCount": 9467,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "EGLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\EGLD-USDT-SWAP\\4h\\part-all-a3584f8512df9aba.parquet",
+        "reservedLockedOosRowCount": 2367,
+        "totalRowCount": 11834
+      },
+      {
+        "developmentRowCount": 11176,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ETC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\4h\\part-all-8a30518646e19f75.parquet",
+        "reservedLockedOosRowCount": 2795,
+        "totalRowCount": 13971
+      },
+      {
+        "developmentRowCount": 11455,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ETH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ETH-USDT-SWAP\\4h\\1577836800000-1784016000000-022a4f37a6dd49de.parquet",
+        "reservedLockedOosRowCount": 2864,
+        "totalRowCount": 14319
+      },
+      {
+        "developmentRowCount": 10205,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "FIL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\FIL-USDT-SWAP\\4h\\part-all-8f4d1f6a5fddb32c.parquet",
+        "reservedLockedOosRowCount": 2552,
+        "totalRowCount": 12757
+      },
+      {
+        "developmentRowCount": 9484,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "GRT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GRT-USDT-SWAP\\4h\\part-all-735b531bc13b6dc3.parquet",
+        "reservedLockedOosRowCount": 2372,
+        "totalRowCount": 11856
+      },
+      {
+        "developmentRowCount": 2440,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "HYPE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\HYPE-USDT-SWAP\\4h\\1740110400000-1784016000000-849b069f90f6c1e8.parquet",
+        "reservedLockedOosRowCount": 610,
+        "totalRowCount": 3050
+      },
+      {
+        "developmentRowCount": 8789,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ICP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICP-USDT-SWAP\\4h\\part-all-699e30d0cdc7ee8f.parquet",
+        "reservedLockedOosRowCount": 2198,
+        "totalRowCount": 10987
+      },
+      {
+        "developmentRowCount": 10548,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "IOST-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOST-USDT-SWAP\\4h\\part-all-4700899d0e897033.parquet",
+        "reservedLockedOosRowCount": 2637,
+        "totalRowCount": 13185
+      },
+      {
+        "developmentRowCount": 10523,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "IOTA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOTA-USDT-SWAP\\4h\\part-all-cb518ed97dcaddf5.parquet",
+        "reservedLockedOosRowCount": 2631,
+        "totalRowCount": 13154
+      },
+      {
+        "developmentRowCount": 9980,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "KSM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\KSM-USDT-SWAP\\4h\\part-all-66c76616f64f69ac.parquet",
+        "reservedLockedOosRowCount": 2496,
+        "totalRowCount": 12476
+      },
+      {
+        "developmentRowCount": 1224,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LAB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\LAB-USDT-SWAP\\4h\\1761998400000-1784016000000-c3fd5a35572b7908.parquet",
+        "reservedLockedOosRowCount": 306,
+        "totalRowCount": 1530
+      },
+      {
+        "developmentRowCount": 10872,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LINK-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\4h\\part-all-c5a7bbc43e2eaeaa.parquet",
+        "reservedLockedOosRowCount": 2719,
+        "totalRowCount": 13591
+      },
+      {
+        "developmentRowCount": 8891,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LPT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LPT-USDT-SWAP\\4h\\part-all-b1751e0be5aafe9e.parquet",
+        "reservedLockedOosRowCount": 2223,
+        "totalRowCount": 11114
+      },
+      {
+        "developmentRowCount": 9979,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LRC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LRC-USDT-SWAP\\4h\\part-all-25623f9c39e28585.parquet",
+        "reservedLockedOosRowCount": 2495,
+        "totalRowCount": 12474
+      },
+      {
+        "developmentRowCount": 11190,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LTC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\4h\\part-all-ebd367bc06529c8c.parquet",
+        "reservedLockedOosRowCount": 2798,
+        "totalRowCount": 13988
+      },
+      {
+        "developmentRowCount": 9096,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "MANA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MANA-USDT-SWAP\\4h\\part-all-cc3b1e84d68a42de.parquet",
+        "reservedLockedOosRowCount": 2274,
+        "totalRowCount": 11370
+      },
+      {
+        "developmentRowCount": 9135,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "MASK-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MASK-USDT-SWAP\\4h\\part-all-a00e75b6d98c8ed0.parquet",
+        "reservedLockedOosRowCount": 2284,
+        "totalRowCount": 11419
+      },
+      {
+        "developmentRowCount": 9485,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "NEAR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEAR-USDT-SWAP\\4h\\part-all-96ede9c8194e7321.parquet",
+        "reservedLockedOosRowCount": 2372,
+        "totalRowCount": 11857
+      },
+      {
+        "developmentRowCount": 10905,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "NEO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEO-USDT-SWAP\\4h\\part-all-a44df185d891046b.parquet",
+        "reservedLockedOosRowCount": 2727,
+        "totalRowCount": 13632
+      },
+      {
+        "developmentRowCount": 10585,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ONT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ONT-USDT-SWAP\\4h\\part-all-58bbae724544d10f.parquet",
+        "reservedLockedOosRowCount": 2647,
+        "totalRowCount": 13232
+      },
+      {
+        "developmentRowCount": 10562,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "QTUM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\QTUM-USDT-SWAP\\4h\\part-all-d74dc8d6da6513b4.parquet",
+        "reservedLockedOosRowCount": 2641,
+        "totalRowCount": 13203
+      },
+      {
+        "developmentRowCount": 9980,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "RSR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RSR-USDT-SWAP\\4h\\part-all-1931ffdbfa7f5447.parquet",
+        "reservedLockedOosRowCount": 2495,
+        "totalRowCount": 12475
+      },
+      {
+        "developmentRowCount": 8996,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SAND-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SAND-USDT-SWAP\\4h\\part-all-521803f119e7e049.parquet",
+        "reservedLockedOosRowCount": 2250,
+        "totalRowCount": 11246
+      },
+      {
+        "developmentRowCount": 8819,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SHIB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SHIB-USDT-SWAP\\4h\\part-all-2612f38dee109ba2.parquet",
+        "reservedLockedOosRowCount": 2205,
+        "totalRowCount": 11024
+      },
+      {
+        "developmentRowCount": 10072,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SNX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SNX-USDT-SWAP\\4h\\part-all-2130745fe1fae9ff.parquet",
+        "reservedLockedOosRowCount": 2518,
+        "totalRowCount": 12590
+      },
+      {
+        "developmentRowCount": 9596,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SOL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\SOL-USDT-SWAP\\4h\\1611288000000-1784016000000-fa9c9c5f3de74b7a.parquet",
+        "reservedLockedOosRowCount": 2400,
+        "totalRowCount": 11996
+      },
+      {
+        "developmentRowCount": 10008,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SUSHI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SUSHI-USDT-SWAP\\4h\\part-all-82444ac2ae7f3bed.parquet",
+        "reservedLockedOosRowCount": 2502,
+        "totalRowCount": 12510
+      },
+      {
+        "developmentRowCount": 10393,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "THETA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\THETA-USDT-SWAP\\4h\\part-all-452da928a60d047c.parquet",
+        "reservedLockedOosRowCount": 2599,
+        "totalRowCount": 12992
+      },
+      {
+        "developmentRowCount": 9985,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "TRB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRB-USDT-SWAP\\4h\\part-all-0fbd0b6c836309f8.parquet",
+        "reservedLockedOosRowCount": 2497,
+        "totalRowCount": 12482
+      },
+      {
+        "developmentRowCount": 11200,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "TRX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRX-USDT-SWAP\\4h\\part-all-c38b9c26b6a18097.parquet",
+        "reservedLockedOosRowCount": 2800,
+        "totalRowCount": 14000
+      },
+      {
+        "developmentRowCount": 9951,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "UNI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\UNI-USDT-SWAP\\4h\\part-all-bfcd8b816f9fdee0.parquet",
+        "reservedLockedOosRowCount": 2488,
+        "totalRowCount": 12439
+      },
+      {
+        "developmentRowCount": 5213,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "WLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\WLD-USDT-SWAP\\4h\\1690185600000-1784016000000-3904519d3c4e1f61.parquet",
+        "reservedLockedOosRowCount": 1304,
+        "totalRowCount": 6517
+      },
+      {
+        "developmentRowCount": 10571,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XLM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XLM-USDT-SWAP\\4h\\part-all-a7e228ed7e5ae90c.parquet",
+        "reservedLockedOosRowCount": 2643,
+        "totalRowCount": 13214
+      },
+      {
+        "developmentRowCount": 11200,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XRP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\4h\\part-all-f94bdda800a3be0d.parquet",
+        "reservedLockedOosRowCount": 2800,
+        "totalRowCount": 14000
+      },
+      {
+        "developmentRowCount": 10662,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XTZ-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XTZ-USDT-SWAP\\4h\\part-all-f287a802fb10a108.parquet",
+        "reservedLockedOosRowCount": 2666,
+        "totalRowCount": 13328
+      },
+      {
+        "developmentRowCount": 10024,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "YFI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\YFI-USDT-SWAP\\4h\\part-all-2105f66dd7e51aa2.parquet",
+        "reservedLockedOosRowCount": 2506,
+        "totalRowCount": 12530
+      },
+      {
+        "developmentRowCount": 1202,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZEC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ZEC-USDT-SWAP\\4h\\1762387200000-1784016000000-d8390a5ea377f459.parquet",
+        "reservedLockedOosRowCount": 301,
+        "totalRowCount": 1503
+      },
+      {
+        "developmentRowCount": 9989,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZIL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZIL-USDT-SWAP\\4h\\part-all-fa748457ef2319c9.parquet",
+        "reservedLockedOosRowCount": 2498,
+        "totalRowCount": 12487
+      },
+      {
+        "developmentRowCount": 10081,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZRX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZRX-USDT-SWAP\\4h\\part-all-9fa945f8c62a58c7.parquet",
+        "reservedLockedOosRowCount": 2521,
+        "totalRowCount": 12602
+      }
+    ],
+    "v42_spike_pullback_continuation_long_1h_v1": [
+      {
+        "developmentRowCount": 5664,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "0G-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\0G-USDT-SWAP\\1h\\1758535200000-1784023200000-bb81f8816a30a464.parquet",
+        "reservedLockedOosRowCount": 1417,
+        "totalRowCount": 7081
+      },
+      {
+        "developmentRowCount": 38925,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "1INCH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\1INCH-USDT-SWAP\\1h\\1608861600000-1784023200000-dd985356aafe0567.parquet",
+        "reservedLockedOosRowCount": 9732,
+        "totalRowCount": 48657
+      },
+      {
+        "developmentRowCount": 5470,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "2Z-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\2Z-USDT-SWAP\\1h\\1759410000000-1784023200000-2e42d02bff5424fc.parquet",
+        "reservedLockedOosRowCount": 1368,
+        "totalRowCount": 6838
+      },
+      {
+        "developmentRowCount": 7892,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "A-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\A-USDT-SWAP\\1h\\1748512800000-1784023200000-4222e88fb40c8d34.parquet",
+        "reservedLockedOosRowCount": 1973,
+        "totalRowCount": 9865
+      },
+      {
+        "developmentRowCount": 942,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAOI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAOI-USDT-SWAP\\1h\\1779786000000-1784023200000-33e2b847b531a4fa.parquet",
+        "reservedLockedOosRowCount": 236,
+        "totalRowCount": 1178
+      },
+      {
+        "developmentRowCount": 2536,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAPL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAPL-USDT-SWAP\\1h\\1772611200000-1784023200000-8734f686204f1f1c.parquet",
+        "reservedLockedOosRowCount": 635,
+        "totalRowCount": 3171
+      },
+      {
+        "developmentRowCount": 39212,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAVE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAVE-USDT-SWAP\\1h\\1607572800000-1784023200000-1eeeafa6b5fa5252.parquet",
+        "reservedLockedOosRowCount": 9803,
+        "totalRowCount": 49015
+      },
+      {
+        "developmentRowCount": 16764,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACH-USDT-SWAP\\1h\\1708588800000-1784023200000-0e22befde8de81c9.parquet",
+        "reservedLockedOosRowCount": 4191,
+        "totalRowCount": 20955
+      },
+      {
+        "developmentRowCount": 11654,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACT-USDT-SWAP\\1h\\1731582000000-1784023200000-260f2658fc897f8a.parquet",
+        "reservedLockedOosRowCount": 2914,
+        "totalRowCount": 14568
+      },
+      {
+        "developmentRowCount": 3305,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACU-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACU-USDT-SWAP\\1h\\1769151600000-1784023200000-271d8ed1797012e6.parquet",
+        "reservedLockedOosRowCount": 827,
+        "totalRowCount": 4132
+      },
+      {
+        "developmentRowCount": 44488,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ADA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADA-USDT-SWAP\\1h\\1583830800000-1784023200000-432aad98de65b2d8.parquet",
+        "reservedLockedOosRowCount": 11122,
+        "totalRowCount": 55610
+      },
+      {
+        "developmentRowCount": 788,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ADBE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADBE-USDT-SWAP\\1h\\1780477200000-1784023200000-7a1061855336c85a.parquet",
+        "reservedLockedOosRowCount": 198,
+        "totalRowCount": 986
+      },
+      {
+        "developmentRowCount": 7223,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AERO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AERO-USDT-SWAP\\1h\\1751522400000-1784023200000-92824c33727d2fe2.parquet",
+        "reservedLockedOosRowCount": 1806,
+        "totalRowCount": 9029
+      },
+      {
+        "developmentRowCount": 16378,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AEVO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AEVO-USDT-SWAP\\1h\\1710324000000-1784023200000-96d67f0bb44db579.parquet",
+        "reservedLockedOosRowCount": 4095,
+        "totalRowCount": 20473
+      },
+      {
+        "developmentRowCount": 34004,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AGLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AGLD-USDT-SWAP\\1h\\1631005200000-1784023200000-bc6915e503656de5.parquet",
+        "reservedLockedOosRowCount": 8502,
+        "totalRowCount": 42506
+      },
+      {
+        "developmentRowCount": 1458,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AI-USDT-SWAP\\1h\\1777464000000-1784023200000-da15dfefb54088d9.parquet",
+        "reservedLockedOosRowCount": 365,
+        "totalRowCount": 1823
+      },
+      {
+        "developmentRowCount": 10697,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AIXBT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AIXBT-USDT-SWAP\\1h\\1735887600000-1784023200000-885a748a23f0d75b.parquet",
+        "reservedLockedOosRowCount": 2675,
+        "totalRowCount": 13372
+      },
+      {
+        "developmentRowCount": 539,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALAB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALAB-USDT-SWAP\\1h\\1781600400000-1784023200000-1b72c0f62cc63899.parquet",
+        "reservedLockedOosRowCount": 135,
+        "totalRowCount": 674
+      },
+      {
+        "developmentRowCount": 43264,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALGO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALGO-USDT-SWAP\\1h\\1589338800000-1784023200000-6ca5b34ad1e48cf4.parquet",
+        "reservedLockedOosRowCount": 10816,
+        "totalRowCount": 54080
+      },
+      {
+        "developmentRowCount": 4700,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALLO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALLO-USDT-SWAP\\1h\\1762876800000-1784026800000-99b055fe1b0b78c2.parquet",
+        "reservedLockedOosRowCount": 1176,
+        "totalRowCount": 5876
+      },
+      {
+        "developmentRowCount": 904,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMAT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMAT-USDT-SWAP\\1h\\1779958800000-1784023200000-1681fa6e0c039ff4.parquet",
+        "reservedLockedOosRowCount": 226,
+        "totalRowCount": 1130
+      },
+      {
+        "developmentRowCount": 2400,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMD-USDT-SWAP\\1h\\1773223200000-1784023200000-aa62efbd88903f09.parquet",
+        "reservedLockedOosRowCount": 601,
+        "totalRowCount": 3001
+      },
+      {
+        "developmentRowCount": 2652,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMZN-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMZN-USDT-SWAP\\1h\\1772089200000-1784023200000-58c9cee02f747c71.parquet",
+        "reservedLockedOosRowCount": 664,
+        "totalRowCount": 3316
+      },
+      {
+        "developmentRowCount": 10307,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ANIME-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANIME-USDT-SWAP\\1h\\1737644400000-1784023200000-05a71deadac1823c.parquet",
+        "reservedLockedOosRowCount": 2577,
+        "totalRowCount": 12884
+      },
+      {
+        "developmentRowCount": 1307,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ANTHROPIC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANTHROPIC-USDT-SWAP\\1h\\1778144400000-1784023200000-01e0a3c8a29a1f76.parquet",
+        "reservedLockedOosRowCount": 327,
+        "totalRowCount": 1634
+      },
+      {
+        "developmentRowCount": 30334,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APE-USDT-SWAP\\1h\\1647522000000-1784023200000-08b9bafb7531ddde.parquet",
+        "reservedLockedOosRowCount": 7584,
+        "totalRowCount": 37918
+      },
+      {
+        "developmentRowCount": 30606,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "API3-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\API3-USDT-SWAP\\1h\\1646298000000-1784023200000-daf4278b12627f20.parquet",
+        "reservedLockedOosRowCount": 7652,
+        "totalRowCount": 38258
+      },
+      {
+        "developmentRowCount": 155,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APLD-USDT-SWAP\\1h\\1783328400000-1784023200000-f73d6721b33be50a.parquet",
+        "reservedLockedOosRowCount": 39,
+        "totalRowCount": 194
+      },
+      {
+        "developmentRowCount": 5053,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APR-USDT-SWAP\\1h\\1761285600000-1784023200000-2d58c10c1a50134a.parquet",
+        "reservedLockedOosRowCount": 1264,
+        "totalRowCount": 6317
+      },
+      {
+        "developmentRowCount": 26196,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APT-USDT-SWAP\\1h\\1666141200000-1784023200000-654f75cd2f6fc09d.parquet",
+        "reservedLockedOosRowCount": 6550,
+        "totalRowCount": 32746
+      },
+      {
+        "developmentRowCount": 23927,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AR-USDT-SWAP\\1h\\1676354400000-1784023200000-7fa2abb8ec00ac39.parquet",
+        "reservedLockedOosRowCount": 5982,
+        "totalRowCount": 29909
+      },
+      {
+        "developmentRowCount": 23210,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARB-USDT-SWAP\\1h\\1679580000000-1784023200000-d5cb4bd5ce6c57be.parquet",
+        "reservedLockedOosRowCount": 5803,
+        "totalRowCount": 29013
+      },
+      {
+        "developmentRowCount": 11522,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARKM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARKM-USDT-SWAP\\1h\\1732176000000-1784023200000-67ecee2c053562e9.parquet",
+        "reservedLockedOosRowCount": 2881,
+        "totalRowCount": 14403
+      },
+      {
+        "developmentRowCount": 1463,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARM-USDT-SWAP\\1h\\1777442400000-1784023200000-ce63b1f7a71fbfdb.parquet",
+        "reservedLockedOosRowCount": 366,
+        "totalRowCount": 1829
+      },
+      {
+        "developmentRowCount": 421,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARX-USDT-SWAP\\1h\\1782129600000-1784023200000-216df8c992b21beb.parquet",
+        "reservedLockedOosRowCount": 106,
+        "totalRowCount": 527
+      },
+      {
+        "developmentRowCount": 788,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASML-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASML-USDT-SWAP\\1h\\1780477200000-1784023200000-ae8b4a363f69e2a1.parquet",
+        "reservedLockedOosRowCount": 198,
+        "totalRowCount": 986
+      },
+      {
+        "developmentRowCount": 5668,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASTER-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTER-USDT-SWAP\\1h\\1758517200000-1784023200000-779b8cc290437a2a.parquet",
+        "reservedLockedOosRowCount": 1418,
+        "totalRowCount": 7086
+      },
+      {
+        "developmentRowCount": 806,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASTS-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTS-USDT-SWAP\\1h\\1780398000000-1784023200000-558fc628856f257c.parquet",
+        "reservedLockedOosRowCount": 202,
+        "totalRowCount": 1008
+      },
+      {
+        "developmentRowCount": 4935,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AT-USDT-SWAP\\1h\\1761818400000-1784023200000-2852e90f7f4dae30.parquet",
+        "reservedLockedOosRowCount": 1234,
+        "totalRowCount": 6169
+      },
+      {
+        "developmentRowCount": 14617,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ATH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATH-USDT-SWAP\\1h\\1718247600000-1784023200000-3640c539a8fd92c0.parquet",
+        "reservedLockedOosRowCount": 3655,
+        "totalRowCount": 18272
+      },
+      {
+        "developmentRowCount": 43397,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ATOM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATOM-USDT-SWAP\\1h\\1588737600000-1784023200000-2a7a0870517ce446.parquet",
+        "reservedLockedOosRowCount": 10850,
+        "totalRowCount": 54247
+      },
+      {
+        "developmentRowCount": 18358,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AUCTION-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AUCTION-USDT-SWAP\\1h\\1701414000000-1784023200000-462290878710de3f.parquet",
+        "reservedLockedOosRowCount": 4590,
+        "totalRowCount": 22948
+      },
+      {
+        "developmentRowCount": 39556,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AVAX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\AVAX-USDT-SWAP\\1h\\part-all-458ad9b22b48fe58.parquet",
+        "reservedLockedOosRowCount": 9890,
+        "totalRowCount": 49446
+      },
+      {
+        "developmentRowCount": 39863,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BAND-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAND-USDT-SWAP\\1h\\part-all-d039bab25f9c118b.parquet",
+        "reservedLockedOosRowCount": 9966,
+        "totalRowCount": 49829
+      },
+      {
+        "developmentRowCount": 40054,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BAT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAT-USDT-SWAP\\1h\\part-all-13eacbf5682ccc47.parquet",
+        "reservedLockedOosRowCount": 10014,
+        "totalRowCount": 50068
+      },
+      {
+        "developmentRowCount": 44668,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BCH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\1h\\part-all-ff6d1f58c526a7f1.parquet",
+        "reservedLockedOosRowCount": 11167,
+        "totalRowCount": 55835
+      },
+      {
+        "developmentRowCount": 1327,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BILL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BILL-USDT-SWAP\\1h\\1778054400000-1784023200000-45388ddd4ffe56f1.parquet",
+        "reservedLockedOosRowCount": 332,
+        "totalRowCount": 1659
+      },
+      {
+        "developmentRowCount": 45824,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BTC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\1577836800000-1784044800000-720e2aa19d32658a.parquet",
+        "reservedLockedOosRowCount": 11457,
+        "totalRowCount": 57281
+      },
+      {
+        "developmentRowCount": 36322,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CFX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CFX-USDT-SWAP\\1h\\part-all-566308bc6b0fc050.parquet",
+        "reservedLockedOosRowCount": 9081,
+        "totalRowCount": 45403
+      },
+      {
+        "developmentRowCount": 36322,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CHZ-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CHZ-USDT-SWAP\\1h\\part-all-95d084a1dfc915a0.parquet",
+        "reservedLockedOosRowCount": 9081,
+        "totalRowCount": 45403
+      },
+      {
+        "developmentRowCount": 41199,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "COMP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\COMP-USDT-SWAP\\1h\\part-all-a5c93b9f9b6c771e.parquet",
+        "reservedLockedOosRowCount": 10300,
+        "totalRowCount": 51499
+      },
+      {
+        "developmentRowCount": 35804,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CRO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRO-USDT-SWAP\\1h\\part-all-c40aee3404acf16b.parquet",
+        "reservedLockedOosRowCount": 8952,
+        "totalRowCount": 44756
+      },
+      {
+        "developmentRowCount": 39953,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CRV-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRV-USDT-SWAP\\1h\\part-all-cf88b4a5abd0f832.parquet",
+        "reservedLockedOosRowCount": 9989,
+        "totalRowCount": 49942
+      },
+      {
+        "developmentRowCount": 42155,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "DOGE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\DOGE-USDT-SWAP\\1h\\1594350000000-1784044800000-62bf08864e2955b5.parquet",
+        "reservedLockedOosRowCount": 10539,
+        "totalRowCount": 52694
+      },
+      {
+        "developmentRowCount": 40155,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "DOT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\DOT-USDT-SWAP\\1h\\part-all-01d31d1f365188be.parquet",
+        "reservedLockedOosRowCount": 10039,
+        "totalRowCount": 50194
+      },
+      {
+        "developmentRowCount": 37868,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "EGLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\EGLD-USDT-SWAP\\1h\\part-all-b3915584d2075da3.parquet",
+        "reservedLockedOosRowCount": 9468,
+        "totalRowCount": 47336
+      },
+      {
+        "developmentRowCount": 44708,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ETC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\1h\\part-all-6cbcdf14dc51c01d.parquet",
+        "reservedLockedOosRowCount": 11178,
+        "totalRowCount": 55886
+      },
+      {
+        "developmentRowCount": 45824,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ETH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\1577836800000-1784044800000-d63a700efdc78648.parquet",
+        "reservedLockedOosRowCount": 11457,
+        "totalRowCount": 57281
+      },
+      {
+        "developmentRowCount": 40824,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "FIL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\FIL-USDT-SWAP\\1h\\part-all-afca1f770864ac8f.parquet",
+        "reservedLockedOosRowCount": 10206,
+        "totalRowCount": 51030
+      },
+      {
+        "developmentRowCount": 18011,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "GAS-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GAS-USDT-SWAP\\1h\\part-all-3c75fb7ac5554f6c.parquet",
+        "reservedLockedOosRowCount": 4503,
+        "totalRowCount": 22514
+      },
+      {
+        "developmentRowCount": 37940,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "GRT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GRT-USDT-SWAP\\1h\\part-all-35f3b24726650ebe.parquet",
+        "reservedLockedOosRowCount": 9486,
+        "totalRowCount": 47426
+      },
+      {
+        "developmentRowCount": 19340,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "HBAR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\HBAR-USDT-SWAP\\1h\\part-all-5a248e5d5b0c9e5d.parquet",
+        "reservedLockedOosRowCount": 4835,
+        "totalRowCount": 24175
+      },
+      {
+        "developmentRowCount": 9761,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "HYPE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\HYPE-USDT-SWAP\\1h\\1740121200000-1784044800000-f0902af4911b02e1.parquet",
+        "reservedLockedOosRowCount": 2441,
+        "totalRowCount": 12202
+      },
+      {
+        "developmentRowCount": 35158,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ICP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICP-USDT-SWAP\\1h\\part-all-7ac189404e53ca51.parquet",
+        "reservedLockedOosRowCount": 8790,
+        "totalRowCount": 43948
+      },
+      {
+        "developmentRowCount": 15668,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ICX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICX-USDT-SWAP\\1h\\part-all-1d0db8ef2f52452a.parquet",
+        "reservedLockedOosRowCount": 3917,
+        "totalRowCount": 19585
+      },
+      {
+        "developmentRowCount": 42189,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "IOST-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOST-USDT-SWAP\\1h\\part-all-9d1d6c974789060d.parquet",
+        "reservedLockedOosRowCount": 10548,
+        "totalRowCount": 52737
+      },
+      {
+        "developmentRowCount": 42092,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "IOTA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOTA-USDT-SWAP\\1h\\part-all-578df10e43a645f5.parquet",
+        "reservedLockedOosRowCount": 10523,
+        "totalRowCount": 52615
+      },
+      {
+        "developmentRowCount": 39921,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "KSM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\KSM-USDT-SWAP\\1h\\part-all-3edde6de19010378.parquet",
+        "reservedLockedOosRowCount": 9981,
+        "totalRowCount": 49902
+      },
+      {
+        "developmentRowCount": 4900,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LAB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\LAB-USDT-SWAP\\1h\\1761998400000-1784044800000-3cd44db240d68786.parquet",
+        "reservedLockedOosRowCount": 1225,
+        "totalRowCount": 6125
+      },
+      {
+        "developmentRowCount": 43489,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LINK-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\1h\\part-all-e1d5e7578e977e3e.parquet",
+        "reservedLockedOosRowCount": 10873,
+        "totalRowCount": 54362
+      },
+      {
+        "developmentRowCount": 35564,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LPT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LPT-USDT-SWAP\\1h\\part-all-470981c31510cca9.parquet",
+        "reservedLockedOosRowCount": 8891,
+        "totalRowCount": 44455
+      },
+      {
+        "developmentRowCount": 39917,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LRC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LRC-USDT-SWAP\\1h\\part-all-82a9384314433002.parquet",
+        "reservedLockedOosRowCount": 9980,
+        "totalRowCount": 49897
+      },
+      {
+        "developmentRowCount": 44763,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LTC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\1h\\part-all-0b00b20e3d27bd85.parquet",
+        "reservedLockedOosRowCount": 11191,
+        "totalRowCount": 55954
+      },
+      {
+        "developmentRowCount": 36386,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "MANA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MANA-USDT-SWAP\\1h\\part-all-0e7904f2d2509163.parquet",
+        "reservedLockedOosRowCount": 9097,
+        "totalRowCount": 45483
+      },
+      {
+        "developmentRowCount": 36541,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "MASK-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MASK-USDT-SWAP\\1h\\part-all-dcd87f1cbd6b368c.parquet",
+        "reservedLockedOosRowCount": 9136,
+        "totalRowCount": 45677
+      },
+      {
+        "developmentRowCount": 37942,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "NEAR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEAR-USDT-SWAP\\1h\\part-all-0a1f97c6ad1e4d63.parquet",
+        "reservedLockedOosRowCount": 9486,
+        "totalRowCount": 47428
+      },
+      {
+        "developmentRowCount": 43620,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "NEO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEO-USDT-SWAP\\1h\\part-all-0c1b2fd2ba3a206f.parquet",
+        "reservedLockedOosRowCount": 10906,
+        "totalRowCount": 54526
+      },
+      {
+        "developmentRowCount": 4961,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "OKB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\OKB-USDT-SWAP\\1h\\part-all-544370f310ce2edb.parquet",
+        "reservedLockedOosRowCount": 1241,
+        "totalRowCount": 6202
+      },
+      {
+        "developmentRowCount": 42342,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ONT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ONT-USDT-SWAP\\1h\\part-all-059b0ef2ae6313e7.parquet",
+        "reservedLockedOosRowCount": 10586,
+        "totalRowCount": 52928
+      },
+      {
+        "developmentRowCount": 42248,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "QTUM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\QTUM-USDT-SWAP\\1h\\part-all-1e1febbc18f84fe3.parquet",
+        "reservedLockedOosRowCount": 10562,
+        "totalRowCount": 52810
+      },
+      {
+        "developmentRowCount": 39920,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "RSR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RSR-USDT-SWAP\\1h\\part-all-0838a62dcafa2136.parquet",
+        "reservedLockedOosRowCount": 9980,
+        "totalRowCount": 49900
+      },
+      {
+        "developmentRowCount": 35583,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "RVN-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RVN-USDT-SWAP\\1h\\part-all-8f02cf8112594625.parquet",
+        "reservedLockedOosRowCount": 8896,
+        "totalRowCount": 44479
+      },
+      {
+        "developmentRowCount": 35985,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SAND-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SAND-USDT-SWAP\\1h\\part-all-01e79c9993da205d.parquet",
+        "reservedLockedOosRowCount": 8997,
+        "totalRowCount": 44982
+      },
+      {
+        "developmentRowCount": 35277,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SHIB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SHIB-USDT-SWAP\\1h\\part-all-1fbcd5a351114327.parquet",
+        "reservedLockedOosRowCount": 8820,
+        "totalRowCount": 44097
+      },
+      {
+        "developmentRowCount": 40289,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SNX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SNX-USDT-SWAP\\1h\\part-all-0baa9a787ee37b71.parquet",
+        "reservedLockedOosRowCount": 10073,
+        "totalRowCount": 50362
+      },
+      {
+        "developmentRowCount": 38389,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SOL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\1611295200000-1784044800000-c35d834fe0c138db.parquet",
+        "reservedLockedOosRowCount": 9598,
+        "totalRowCount": 47987
+      },
+      {
+        "developmentRowCount": 40034,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SUSHI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SUSHI-USDT-SWAP\\1h\\part-all-26053981658e16e8.parquet",
+        "reservedLockedOosRowCount": 10009,
+        "totalRowCount": 50043
+      },
+      {
+        "developmentRowCount": 41576,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "THETA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\THETA-USDT-SWAP\\1h\\part-all-65a151864ef2de72.parquet",
+        "reservedLockedOosRowCount": 10394,
+        "totalRowCount": 51970
+      },
+      {
+        "developmentRowCount": 39942,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "TRB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRB-USDT-SWAP\\1h\\part-all-8fd070b10aeadc72.parquet",
+        "reservedLockedOosRowCount": 9986,
+        "totalRowCount": 49928
+      },
+      {
+        "developmentRowCount": 44801,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "TRX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRX-USDT-SWAP\\1h\\part-all-1affd0d28c224e8a.parquet",
+        "reservedLockedOosRowCount": 11201,
+        "totalRowCount": 56002
+      },
+      {
+        "developmentRowCount": 39807,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "UNI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\UNI-USDT-SWAP\\1h\\part-all-f4ec42042728ad3a.parquet",
+        "reservedLockedOosRowCount": 9952,
+        "totalRowCount": 49759
+      },
+      {
+        "developmentRowCount": 22409,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "USDC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\USDC-USDT-SWAP\\1h\\part-all-5378e87dfd833b73.parquet",
+        "reservedLockedOosRowCount": 5603,
+        "totalRowCount": 28012
+      },
+      {
+        "developmentRowCount": 20852,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "WLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\WLD-USDT-SWAP\\1h\\1690196400000-1784026800000-d1647482520d83d2.parquet",
+        "reservedLockedOosRowCount": 5213,
+        "totalRowCount": 26065
+      },
+      {
+        "developmentRowCount": 42284,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XLM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XLM-USDT-SWAP\\1h\\part-all-3bfb0a8906db666d.parquet",
+        "reservedLockedOosRowCount": 10572,
+        "totalRowCount": 52856
+      },
+      {
+        "developmentRowCount": 44803,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XRP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\1h\\part-all-468c07e30c4fe659.parquet",
+        "reservedLockedOosRowCount": 11201,
+        "totalRowCount": 56004
+      },
+      {
+        "developmentRowCount": 42648,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XTZ-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XTZ-USDT-SWAP\\1h\\part-all-c17a41497ddebd02.parquet",
+        "reservedLockedOosRowCount": 10663,
+        "totalRowCount": 53311
+      },
+      {
+        "developmentRowCount": 40094,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "YFI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\YFI-USDT-SWAP\\1h\\part-all-f14322af3612fa8f.parquet",
+        "reservedLockedOosRowCount": 10024,
+        "totalRowCount": 50118
+      },
+      {
+        "developmentRowCount": 4811,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZEC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ZEC-USDT-SWAP\\1h\\1762398000000-1784044800000-346dc8360acaad7c.parquet",
+        "reservedLockedOosRowCount": 1203,
+        "totalRowCount": 6014
+      },
+      {
+        "developmentRowCount": 39957,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZIL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZIL-USDT-SWAP\\1h\\part-all-0277b598a47a3c49.parquet",
+        "reservedLockedOosRowCount": 9990,
+        "totalRowCount": 49947
+      },
+      {
+        "developmentRowCount": 40326,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZRX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZRX-USDT-SWAP\\1h\\part-all-5e03ed0a3865485c.parquet",
+        "reservedLockedOosRowCount": 10082,
+        "totalRowCount": 50408
+      }
+    ],
+    "v42_spike_pullback_continuation_short_1h_v1": [
+      {
+        "developmentRowCount": 5664,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "0G-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\0G-USDT-SWAP\\1h\\1758535200000-1784023200000-bb81f8816a30a464.parquet",
+        "reservedLockedOosRowCount": 1417,
+        "totalRowCount": 7081
+      },
+      {
+        "developmentRowCount": 38925,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "1INCH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\1INCH-USDT-SWAP\\1h\\1608861600000-1784023200000-dd985356aafe0567.parquet",
+        "reservedLockedOosRowCount": 9732,
+        "totalRowCount": 48657
+      },
+      {
+        "developmentRowCount": 5470,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "2Z-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\2Z-USDT-SWAP\\1h\\1759410000000-1784023200000-2e42d02bff5424fc.parquet",
+        "reservedLockedOosRowCount": 1368,
+        "totalRowCount": 6838
+      },
+      {
+        "developmentRowCount": 7892,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "A-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\A-USDT-SWAP\\1h\\1748512800000-1784023200000-4222e88fb40c8d34.parquet",
+        "reservedLockedOosRowCount": 1973,
+        "totalRowCount": 9865
+      },
+      {
+        "developmentRowCount": 942,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAOI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAOI-USDT-SWAP\\1h\\1779786000000-1784023200000-33e2b847b531a4fa.parquet",
+        "reservedLockedOosRowCount": 236,
+        "totalRowCount": 1178
+      },
+      {
+        "developmentRowCount": 2536,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAPL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAPL-USDT-SWAP\\1h\\1772611200000-1784023200000-8734f686204f1f1c.parquet",
+        "reservedLockedOosRowCount": 635,
+        "totalRowCount": 3171
+      },
+      {
+        "developmentRowCount": 39212,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AAVE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AAVE-USDT-SWAP\\1h\\1607572800000-1784023200000-1eeeafa6b5fa5252.parquet",
+        "reservedLockedOosRowCount": 9803,
+        "totalRowCount": 49015
+      },
+      {
+        "developmentRowCount": 16764,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACH-USDT-SWAP\\1h\\1708588800000-1784023200000-0e22befde8de81c9.parquet",
+        "reservedLockedOosRowCount": 4191,
+        "totalRowCount": 20955
+      },
+      {
+        "developmentRowCount": 11654,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACT-USDT-SWAP\\1h\\1731582000000-1784023200000-260f2658fc897f8a.parquet",
+        "reservedLockedOosRowCount": 2914,
+        "totalRowCount": 14568
+      },
+      {
+        "developmentRowCount": 3305,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ACU-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ACU-USDT-SWAP\\1h\\1769151600000-1784023200000-271d8ed1797012e6.parquet",
+        "reservedLockedOosRowCount": 827,
+        "totalRowCount": 4132
+      },
+      {
+        "developmentRowCount": 44488,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ADA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADA-USDT-SWAP\\1h\\1583830800000-1784023200000-432aad98de65b2d8.parquet",
+        "reservedLockedOosRowCount": 11122,
+        "totalRowCount": 55610
+      },
+      {
+        "developmentRowCount": 788,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ADBE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ADBE-USDT-SWAP\\1h\\1780477200000-1784023200000-7a1061855336c85a.parquet",
+        "reservedLockedOosRowCount": 198,
+        "totalRowCount": 986
+      },
+      {
+        "developmentRowCount": 7223,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AERO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AERO-USDT-SWAP\\1h\\1751522400000-1784023200000-92824c33727d2fe2.parquet",
+        "reservedLockedOosRowCount": 1806,
+        "totalRowCount": 9029
+      },
+      {
+        "developmentRowCount": 16378,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AEVO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AEVO-USDT-SWAP\\1h\\1710324000000-1784023200000-96d67f0bb44db579.parquet",
+        "reservedLockedOosRowCount": 4095,
+        "totalRowCount": 20473
+      },
+      {
+        "developmentRowCount": 34004,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AGLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AGLD-USDT-SWAP\\1h\\1631005200000-1784023200000-bc6915e503656de5.parquet",
+        "reservedLockedOosRowCount": 8502,
+        "totalRowCount": 42506
+      },
+      {
+        "developmentRowCount": 1458,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AI-USDT-SWAP\\1h\\1777464000000-1784023200000-da15dfefb54088d9.parquet",
+        "reservedLockedOosRowCount": 365,
+        "totalRowCount": 1823
+      },
+      {
+        "developmentRowCount": 10697,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AIXBT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AIXBT-USDT-SWAP\\1h\\1735887600000-1784023200000-885a748a23f0d75b.parquet",
+        "reservedLockedOosRowCount": 2675,
+        "totalRowCount": 13372
+      },
+      {
+        "developmentRowCount": 539,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALAB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALAB-USDT-SWAP\\1h\\1781600400000-1784023200000-1b72c0f62cc63899.parquet",
+        "reservedLockedOosRowCount": 135,
+        "totalRowCount": 674
+      },
+      {
+        "developmentRowCount": 43264,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALGO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALGO-USDT-SWAP\\1h\\1589338800000-1784023200000-6ca5b34ad1e48cf4.parquet",
+        "reservedLockedOosRowCount": 10816,
+        "totalRowCount": 54080
+      },
+      {
+        "developmentRowCount": 4700,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ALLO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ALLO-USDT-SWAP\\1h\\1762876800000-1784026800000-99b055fe1b0b78c2.parquet",
+        "reservedLockedOosRowCount": 1176,
+        "totalRowCount": 5876
+      },
+      {
+        "developmentRowCount": 904,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMAT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMAT-USDT-SWAP\\1h\\1779958800000-1784023200000-1681fa6e0c039ff4.parquet",
+        "reservedLockedOosRowCount": 226,
+        "totalRowCount": 1130
+      },
+      {
+        "developmentRowCount": 2400,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMD-USDT-SWAP\\1h\\1773223200000-1784023200000-aa62efbd88903f09.parquet",
+        "reservedLockedOosRowCount": 601,
+        "totalRowCount": 3001
+      },
+      {
+        "developmentRowCount": 2652,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AMZN-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AMZN-USDT-SWAP\\1h\\1772089200000-1784023200000-58c9cee02f747c71.parquet",
+        "reservedLockedOosRowCount": 664,
+        "totalRowCount": 3316
+      },
+      {
+        "developmentRowCount": 10307,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ANIME-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANIME-USDT-SWAP\\1h\\1737644400000-1784023200000-05a71deadac1823c.parquet",
+        "reservedLockedOosRowCount": 2577,
+        "totalRowCount": 12884
+      },
+      {
+        "developmentRowCount": 1307,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ANTHROPIC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ANTHROPIC-USDT-SWAP\\1h\\1778144400000-1784023200000-01e0a3c8a29a1f76.parquet",
+        "reservedLockedOosRowCount": 327,
+        "totalRowCount": 1634
+      },
+      {
+        "developmentRowCount": 30334,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APE-USDT-SWAP\\1h\\1647522000000-1784023200000-08b9bafb7531ddde.parquet",
+        "reservedLockedOosRowCount": 7584,
+        "totalRowCount": 37918
+      },
+      {
+        "developmentRowCount": 30606,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "API3-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\API3-USDT-SWAP\\1h\\1646298000000-1784023200000-daf4278b12627f20.parquet",
+        "reservedLockedOosRowCount": 7652,
+        "totalRowCount": 38258
+      },
+      {
+        "developmentRowCount": 155,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APLD-USDT-SWAP\\1h\\1783328400000-1784023200000-f73d6721b33be50a.parquet",
+        "reservedLockedOosRowCount": 39,
+        "totalRowCount": 194
+      },
+      {
+        "developmentRowCount": 5053,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APR-USDT-SWAP\\1h\\1761285600000-1784023200000-2d58c10c1a50134a.parquet",
+        "reservedLockedOosRowCount": 1264,
+        "totalRowCount": 6317
+      },
+      {
+        "developmentRowCount": 26196,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "APT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\APT-USDT-SWAP\\1h\\1666141200000-1784023200000-654f75cd2f6fc09d.parquet",
+        "reservedLockedOosRowCount": 6550,
+        "totalRowCount": 32746
+      },
+      {
+        "developmentRowCount": 23927,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AR-USDT-SWAP\\1h\\1676354400000-1784023200000-7fa2abb8ec00ac39.parquet",
+        "reservedLockedOosRowCount": 5982,
+        "totalRowCount": 29909
+      },
+      {
+        "developmentRowCount": 23210,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARB-USDT-SWAP\\1h\\1679580000000-1784023200000-d5cb4bd5ce6c57be.parquet",
+        "reservedLockedOosRowCount": 5803,
+        "totalRowCount": 29013
+      },
+      {
+        "developmentRowCount": 11522,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARKM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARKM-USDT-SWAP\\1h\\1732176000000-1784023200000-67ecee2c053562e9.parquet",
+        "reservedLockedOosRowCount": 2881,
+        "totalRowCount": 14403
+      },
+      {
+        "developmentRowCount": 1463,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARM-USDT-SWAP\\1h\\1777442400000-1784023200000-ce63b1f7a71fbfdb.parquet",
+        "reservedLockedOosRowCount": 366,
+        "totalRowCount": 1829
+      },
+      {
+        "developmentRowCount": 421,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ARX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ARX-USDT-SWAP\\1h\\1782129600000-1784023200000-216df8c992b21beb.parquet",
+        "reservedLockedOosRowCount": 106,
+        "totalRowCount": 527
+      },
+      {
+        "developmentRowCount": 788,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASML-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASML-USDT-SWAP\\1h\\1780477200000-1784023200000-ae8b4a363f69e2a1.parquet",
+        "reservedLockedOosRowCount": 198,
+        "totalRowCount": 986
+      },
+      {
+        "developmentRowCount": 5668,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASTER-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTER-USDT-SWAP\\1h\\1758517200000-1784023200000-779b8cc290437a2a.parquet",
+        "reservedLockedOosRowCount": 1418,
+        "totalRowCount": 7086
+      },
+      {
+        "developmentRowCount": 806,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ASTS-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ASTS-USDT-SWAP\\1h\\1780398000000-1784023200000-558fc628856f257c.parquet",
+        "reservedLockedOosRowCount": 202,
+        "totalRowCount": 1008
+      },
+      {
+        "developmentRowCount": 4935,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AT-USDT-SWAP\\1h\\1761818400000-1784023200000-2852e90f7f4dae30.parquet",
+        "reservedLockedOosRowCount": 1234,
+        "totalRowCount": 6169
+      },
+      {
+        "developmentRowCount": 14617,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ATH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATH-USDT-SWAP\\1h\\1718247600000-1784023200000-3640c539a8fd92c0.parquet",
+        "reservedLockedOosRowCount": 3655,
+        "totalRowCount": 18272
+      },
+      {
+        "developmentRowCount": 43397,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ATOM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ATOM-USDT-SWAP\\1h\\1588737600000-1784023200000-2a7a0870517ce446.parquet",
+        "reservedLockedOosRowCount": 10850,
+        "totalRowCount": 54247
+      },
+      {
+        "developmentRowCount": 18358,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AUCTION-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\AUCTION-USDT-SWAP\\1h\\1701414000000-1784023200000-462290878710de3f.parquet",
+        "reservedLockedOosRowCount": 4590,
+        "totalRowCount": 22948
+      },
+      {
+        "developmentRowCount": 39556,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "AVAX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\AVAX-USDT-SWAP\\1h\\part-all-458ad9b22b48fe58.parquet",
+        "reservedLockedOosRowCount": 9890,
+        "totalRowCount": 49446
+      },
+      {
+        "developmentRowCount": 39863,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BAND-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAND-USDT-SWAP\\1h\\part-all-d039bab25f9c118b.parquet",
+        "reservedLockedOosRowCount": 9966,
+        "totalRowCount": 49829
+      },
+      {
+        "developmentRowCount": 40054,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BAT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BAT-USDT-SWAP\\1h\\part-all-13eacbf5682ccc47.parquet",
+        "reservedLockedOosRowCount": 10014,
+        "totalRowCount": 50068
+      },
+      {
+        "developmentRowCount": 44668,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BCH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\BCH-USDT-SWAP\\1h\\part-all-ff6d1f58c526a7f1.parquet",
+        "reservedLockedOosRowCount": 11167,
+        "totalRowCount": 55835
+      },
+      {
+        "developmentRowCount": 1327,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BILL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BILL-USDT-SWAP\\1h\\1778054400000-1784023200000-45388ddd4ffe56f1.parquet",
+        "reservedLockedOosRowCount": 332,
+        "totalRowCount": 1659
+      },
+      {
+        "developmentRowCount": 45824,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "BTC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\BTC-USDT-SWAP\\1h\\1577836800000-1784044800000-720e2aa19d32658a.parquet",
+        "reservedLockedOosRowCount": 11457,
+        "totalRowCount": 57281
+      },
+      {
+        "developmentRowCount": 36322,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CFX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CFX-USDT-SWAP\\1h\\part-all-566308bc6b0fc050.parquet",
+        "reservedLockedOosRowCount": 9081,
+        "totalRowCount": 45403
+      },
+      {
+        "developmentRowCount": 36322,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CHZ-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CHZ-USDT-SWAP\\1h\\part-all-95d084a1dfc915a0.parquet",
+        "reservedLockedOosRowCount": 9081,
+        "totalRowCount": 45403
+      },
+      {
+        "developmentRowCount": 41199,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "COMP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\COMP-USDT-SWAP\\1h\\part-all-a5c93b9f9b6c771e.parquet",
+        "reservedLockedOosRowCount": 10300,
+        "totalRowCount": 51499
+      },
+      {
+        "developmentRowCount": 35804,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CRO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRO-USDT-SWAP\\1h\\part-all-c40aee3404acf16b.parquet",
+        "reservedLockedOosRowCount": 8952,
+        "totalRowCount": 44756
+      },
+      {
+        "developmentRowCount": 39953,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "CRV-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\CRV-USDT-SWAP\\1h\\part-all-cf88b4a5abd0f832.parquet",
+        "reservedLockedOosRowCount": 9989,
+        "totalRowCount": 49942
+      },
+      {
+        "developmentRowCount": 42155,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "DOGE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\DOGE-USDT-SWAP\\1h\\1594350000000-1784044800000-62bf08864e2955b5.parquet",
+        "reservedLockedOosRowCount": 10539,
+        "totalRowCount": 52694
+      },
+      {
+        "developmentRowCount": 40155,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "DOT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\DOT-USDT-SWAP\\1h\\part-all-01d31d1f365188be.parquet",
+        "reservedLockedOosRowCount": 10039,
+        "totalRowCount": 50194
+      },
+      {
+        "developmentRowCount": 37868,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "EGLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\EGLD-USDT-SWAP\\1h\\part-all-b3915584d2075da3.parquet",
+        "reservedLockedOosRowCount": 9468,
+        "totalRowCount": 47336
+      },
+      {
+        "developmentRowCount": 44708,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ETC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ETC-USDT-SWAP\\1h\\part-all-6cbcdf14dc51c01d.parquet",
+        "reservedLockedOosRowCount": 11178,
+        "totalRowCount": 55886
+      },
+      {
+        "developmentRowCount": 45824,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ETH-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ETH-USDT-SWAP\\1h\\1577836800000-1784044800000-d63a700efdc78648.parquet",
+        "reservedLockedOosRowCount": 11457,
+        "totalRowCount": 57281
+      },
+      {
+        "developmentRowCount": 40824,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "FIL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\FIL-USDT-SWAP\\1h\\part-all-afca1f770864ac8f.parquet",
+        "reservedLockedOosRowCount": 10206,
+        "totalRowCount": 51030
+      },
+      {
+        "developmentRowCount": 18011,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "GAS-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GAS-USDT-SWAP\\1h\\part-all-3c75fb7ac5554f6c.parquet",
+        "reservedLockedOosRowCount": 4503,
+        "totalRowCount": 22514
+      },
+      {
+        "developmentRowCount": 37940,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "GRT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\GRT-USDT-SWAP\\1h\\part-all-35f3b24726650ebe.parquet",
+        "reservedLockedOosRowCount": 9486,
+        "totalRowCount": 47426
+      },
+      {
+        "developmentRowCount": 19340,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "HBAR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\HBAR-USDT-SWAP\\1h\\part-all-5a248e5d5b0c9e5d.parquet",
+        "reservedLockedOosRowCount": 4835,
+        "totalRowCount": 24175
+      },
+      {
+        "developmentRowCount": 9761,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "HYPE-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\HYPE-USDT-SWAP\\1h\\1740121200000-1784044800000-f0902af4911b02e1.parquet",
+        "reservedLockedOosRowCount": 2441,
+        "totalRowCount": 12202
+      },
+      {
+        "developmentRowCount": 35158,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ICP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICP-USDT-SWAP\\1h\\part-all-7ac189404e53ca51.parquet",
+        "reservedLockedOosRowCount": 8790,
+        "totalRowCount": 43948
+      },
+      {
+        "developmentRowCount": 15668,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ICX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ICX-USDT-SWAP\\1h\\part-all-1d0db8ef2f52452a.parquet",
+        "reservedLockedOosRowCount": 3917,
+        "totalRowCount": 19585
+      },
+      {
+        "developmentRowCount": 42189,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "IOST-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOST-USDT-SWAP\\1h\\part-all-9d1d6c974789060d.parquet",
+        "reservedLockedOosRowCount": 10548,
+        "totalRowCount": 52737
+      },
+      {
+        "developmentRowCount": 42092,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "IOTA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\IOTA-USDT-SWAP\\1h\\part-all-578df10e43a645f5.parquet",
+        "reservedLockedOosRowCount": 10523,
+        "totalRowCount": 52615
+      },
+      {
+        "developmentRowCount": 39921,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "KSM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\KSM-USDT-SWAP\\1h\\part-all-3edde6de19010378.parquet",
+        "reservedLockedOosRowCount": 9981,
+        "totalRowCount": 49902
+      },
+      {
+        "developmentRowCount": 4900,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LAB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\LAB-USDT-SWAP\\1h\\1761998400000-1784044800000-3cd44db240d68786.parquet",
+        "reservedLockedOosRowCount": 1225,
+        "totalRowCount": 6125
+      },
+      {
+        "developmentRowCount": 43489,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LINK-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LINK-USDT-SWAP\\1h\\part-all-e1d5e7578e977e3e.parquet",
+        "reservedLockedOosRowCount": 10873,
+        "totalRowCount": 54362
+      },
+      {
+        "developmentRowCount": 35564,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LPT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LPT-USDT-SWAP\\1h\\part-all-470981c31510cca9.parquet",
+        "reservedLockedOosRowCount": 8891,
+        "totalRowCount": 44455
+      },
+      {
+        "developmentRowCount": 39917,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LRC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LRC-USDT-SWAP\\1h\\part-all-82a9384314433002.parquet",
+        "reservedLockedOosRowCount": 9980,
+        "totalRowCount": 49897
+      },
+      {
+        "developmentRowCount": 44763,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "LTC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\LTC-USDT-SWAP\\1h\\part-all-0b00b20e3d27bd85.parquet",
+        "reservedLockedOosRowCount": 11191,
+        "totalRowCount": 55954
+      },
+      {
+        "developmentRowCount": 36386,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "MANA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MANA-USDT-SWAP\\1h\\part-all-0e7904f2d2509163.parquet",
+        "reservedLockedOosRowCount": 9097,
+        "totalRowCount": 45483
+      },
+      {
+        "developmentRowCount": 36541,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "MASK-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\MASK-USDT-SWAP\\1h\\part-all-dcd87f1cbd6b368c.parquet",
+        "reservedLockedOosRowCount": 9136,
+        "totalRowCount": 45677
+      },
+      {
+        "developmentRowCount": 37942,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "NEAR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEAR-USDT-SWAP\\1h\\part-all-0a1f97c6ad1e4d63.parquet",
+        "reservedLockedOosRowCount": 9486,
+        "totalRowCount": 47428
+      },
+      {
+        "developmentRowCount": 43620,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "NEO-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\NEO-USDT-SWAP\\1h\\part-all-0c1b2fd2ba3a206f.parquet",
+        "reservedLockedOosRowCount": 10906,
+        "totalRowCount": 54526
+      },
+      {
+        "developmentRowCount": 4961,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "OKB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\OKB-USDT-SWAP\\1h\\part-all-544370f310ce2edb.parquet",
+        "reservedLockedOosRowCount": 1241,
+        "totalRowCount": 6202
+      },
+      {
+        "developmentRowCount": 42342,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ONT-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ONT-USDT-SWAP\\1h\\part-all-059b0ef2ae6313e7.parquet",
+        "reservedLockedOosRowCount": 10586,
+        "totalRowCount": 52928
+      },
+      {
+        "developmentRowCount": 42248,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "QTUM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\QTUM-USDT-SWAP\\1h\\part-all-1e1febbc18f84fe3.parquet",
+        "reservedLockedOosRowCount": 10562,
+        "totalRowCount": 52810
+      },
+      {
+        "developmentRowCount": 39920,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "RSR-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RSR-USDT-SWAP\\1h\\part-all-0838a62dcafa2136.parquet",
+        "reservedLockedOosRowCount": 9980,
+        "totalRowCount": 49900
+      },
+      {
+        "developmentRowCount": 35583,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "RVN-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\RVN-USDT-SWAP\\1h\\part-all-8f02cf8112594625.parquet",
+        "reservedLockedOosRowCount": 8896,
+        "totalRowCount": 44479
+      },
+      {
+        "developmentRowCount": 35985,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SAND-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SAND-USDT-SWAP\\1h\\part-all-01e79c9993da205d.parquet",
+        "reservedLockedOosRowCount": 8997,
+        "totalRowCount": 44982
+      },
+      {
+        "developmentRowCount": 35277,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SHIB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SHIB-USDT-SWAP\\1h\\part-all-1fbcd5a351114327.parquet",
+        "reservedLockedOosRowCount": 8820,
+        "totalRowCount": 44097
+      },
+      {
+        "developmentRowCount": 40289,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SNX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SNX-USDT-SWAP\\1h\\part-all-0baa9a787ee37b71.parquet",
+        "reservedLockedOosRowCount": 10073,
+        "totalRowCount": 50362
+      },
+      {
+        "developmentRowCount": 38389,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SOL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\SOL-USDT-SWAP\\1h\\1611295200000-1784044800000-c35d834fe0c138db.parquet",
+        "reservedLockedOosRowCount": 9598,
+        "totalRowCount": 47987
+      },
+      {
+        "developmentRowCount": 40034,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "SUSHI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\SUSHI-USDT-SWAP\\1h\\part-all-26053981658e16e8.parquet",
+        "reservedLockedOosRowCount": 10009,
+        "totalRowCount": 50043
+      },
+      {
+        "developmentRowCount": 41576,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "THETA-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\THETA-USDT-SWAP\\1h\\part-all-65a151864ef2de72.parquet",
+        "reservedLockedOosRowCount": 10394,
+        "totalRowCount": 51970
+      },
+      {
+        "developmentRowCount": 39942,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "TRB-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRB-USDT-SWAP\\1h\\part-all-8fd070b10aeadc72.parquet",
+        "reservedLockedOosRowCount": 9986,
+        "totalRowCount": 49928
+      },
+      {
+        "developmentRowCount": 44801,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "TRX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\TRX-USDT-SWAP\\1h\\part-all-1affd0d28c224e8a.parquet",
+        "reservedLockedOosRowCount": 11201,
+        "totalRowCount": 56002
+      },
+      {
+        "developmentRowCount": 39807,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "UNI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\UNI-USDT-SWAP\\1h\\part-all-f4ec42042728ad3a.parquet",
+        "reservedLockedOosRowCount": 9952,
+        "totalRowCount": 49759
+      },
+      {
+        "developmentRowCount": 22409,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "USDC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\USDC-USDT-SWAP\\1h\\part-all-5378e87dfd833b73.parquet",
+        "reservedLockedOosRowCount": 5603,
+        "totalRowCount": 28012
+      },
+      {
+        "developmentRowCount": 20852,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "WLD-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\WLD-USDT-SWAP\\1h\\1690196400000-1784026800000-d1647482520d83d2.parquet",
+        "reservedLockedOosRowCount": 5213,
+        "totalRowCount": 26065
+      },
+      {
+        "developmentRowCount": 42284,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XLM-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XLM-USDT-SWAP\\1h\\part-all-3bfb0a8906db666d.parquet",
+        "reservedLockedOosRowCount": 10572,
+        "totalRowCount": 52856
+      },
+      {
+        "developmentRowCount": 44803,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XRP-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XRP-USDT-SWAP\\1h\\part-all-468c07e30c4fe659.parquet",
+        "reservedLockedOosRowCount": 11201,
+        "totalRowCount": 56004
+      },
+      {
+        "developmentRowCount": 42648,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "XTZ-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\XTZ-USDT-SWAP\\1h\\part-all-c17a41497ddebd02.parquet",
+        "reservedLockedOosRowCount": 10663,
+        "totalRowCount": 53311
+      },
+      {
+        "developmentRowCount": 40094,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "YFI-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\YFI-USDT-SWAP\\1h\\part-all-f14322af3612fa8f.parquet",
+        "reservedLockedOosRowCount": 10024,
+        "totalRowCount": 50118
+      },
+      {
+        "developmentRowCount": 4811,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZEC-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\okx\\swap\\ohlcv\\ZEC-USDT-SWAP\\1h\\1762398000000-1784044800000-346dc8360acaad7c.parquet",
+        "reservedLockedOosRowCount": 1203,
+        "totalRowCount": 6014
+      },
+      {
+        "developmentRowCount": 39957,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZIL-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZIL-USDT-SWAP\\1h\\part-all-0277b598a47a3c49.parquet",
+        "reservedLockedOosRowCount": 9990,
+        "totalRowCount": 49947
+      },
+      {
+        "developmentRowCount": 40326,
+        "economicResultReadScope": "development_only",
+        "instrumentId": "ZRX-USDT-SWAP",
+        "lockedOosReadCount": 0,
+        "path": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\canonical\\user_local\\swap\\ohlcv\\ZRX-USDT-SWAP\\1h\\part-all-5e03ed0a3865485c.parquet",
+        "reservedLockedOosRowCount": 10082,
+        "totalRowCount": 50408
+      }
+    ]
+  },
+  "schemaVersion": "alphapilot_v41_v45_development_data_audit_v1"
+}

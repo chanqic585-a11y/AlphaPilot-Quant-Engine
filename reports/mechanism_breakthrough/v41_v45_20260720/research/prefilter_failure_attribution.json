@@ -1,0 +1,31 @@
+{
+  "byReason": {
+    "developmentProfitFactor;developmentAverageNetR;positiveDevelopmentMonthRatio;stress1_5xPositive": 2,
+    "developmentProfitFactor;developmentAverageNetR;positiveDevelopmentMonthRatio;stress1_5xPositive;mechanismIncrementAverageNetR": 1,
+    "positiveDevelopmentMonthRatio": 1
+  },
+  "failureCount": 4,
+  "failures": [
+    {
+      "candidateId": "v42_breakout_trap_second_entry_long_4h_v1",
+      "evidenceRef": "prefilter_gate_matrix.csv",
+      "reasonCode": "developmentProfitFactor;developmentAverageNetR;positiveDevelopmentMonthRatio;stress1_5xPositive"
+    },
+    {
+      "candidateId": "v42_breakout_trap_second_entry_short_4h_v1",
+      "evidenceRef": "prefilter_gate_matrix.csv",
+      "reasonCode": "developmentProfitFactor;developmentAverageNetR;positiveDevelopmentMonthRatio;stress1_5xPositive"
+    },
+    {
+      "candidateId": "v42_spike_pullback_continuation_long_1h_v1",
+      "evidenceRef": "prefilter_gate_matrix.csv",
+      "reasonCode": "developmentProfitFactor;developmentAverageNetR;positiveDevelopmentMonthRatio;stress1_5xPositive;mechanismIncrementAverageNetR"
+    },
+    {
+      "candidateId": "v42_spike_pullback_continuation_short_1h_v1",
+      "evidenceRef": "prefilter_gate_matrix.csv",
+      "reasonCode": "positiveDevelopmentMonthRatio"
+    }
+  ],
+  "schemaVersion": "alphapilot_v41_v45_prefilter_failure_attribution_v1"
+}

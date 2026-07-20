@@ -1,0 +1,2 @@
+{"event": "budget_inherited", "frozenAt": "2026-07-20T00:00:00Z", "policyHash": "v41_v45_mechanism_budget_7cc1f41aafde8f3b7ea38f93d53c1ac3eb4e83b5d9ce0dadf9df7f7809cd6031", "remainingFullBacktests": 91}
+{"candidateCount": 4, "event": "bounded_prefilter_consumed", "remainingFullBacktests": 87}

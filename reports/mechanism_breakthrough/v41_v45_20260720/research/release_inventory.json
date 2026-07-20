@@ -1,0 +1,9 @@
+{
+  "approved": false,
+  "demoArmed": false,
+  "releaseCount": 0,
+  "releases": [],
+  "schemaVersion": "alphapilot_v41_v45_release_inventory_v1",
+  "status": "not_run_no_qualified_formal_candidate",
+  "strategyOrderCount": 0
+}

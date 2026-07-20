@@ -1,0 +1,16 @@
+{
+  "candidateCreated": false,
+  "capitalCountedOnce": true,
+  "closeFeeCount": 1,
+  "continuousPositionHeld": true,
+  "economicResultReadCount": 0,
+  "episodeCount": 1,
+  "fixtureId": "three_positive_funding_observations_one_episode",
+  "fundingCashflow": 0.003,
+  "fundingObservationCount": 3,
+  "netCashflow": 0.002,
+  "openFeeCount": 1,
+  "schemaVersion": "funding_carry_episode_semantics_audit_v1",
+  "status": "funding_carry_current_mechanism_closed",
+  "twoLegPricePnl": 0.0
+}
