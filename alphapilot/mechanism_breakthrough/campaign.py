@@ -360,6 +360,8 @@ def run_mechanism_breakthrough_campaign(
             "campaignId": campaign_id,
             "status": "preregistered_not_run",
             "candidateCount": len(candidates),
+            "prefilterSurvivorCount": 0,
+            "formalCandidateCount": 0,
             "economicResultReadCount": 0,
             "lockedOosReadCount": 0,
             "networkCalls": 0,
