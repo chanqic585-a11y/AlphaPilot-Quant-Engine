@@ -1,0 +1,12 @@
+{
+  "bypassedForwardEvidenceCount": 10,
+  "contractCount": 10,
+  "experimentalOverrideCount": 10,
+  "generatedAt": "2026-07-20T04:27:58.727812Z",
+  "loadWarnings": [],
+  "originalResearchApprovedCount": 10,
+  "releaseCountCreated": 0,
+  "replayCount": 10,
+  "status": "research_replay_only",
+  "totalReplayTrades": 1783
+}

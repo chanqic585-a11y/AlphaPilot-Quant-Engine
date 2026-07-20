@@ -1,0 +1,145 @@
+{
+  "campaignHash": "portfolio_rescue_campaign_8ca0bba489c9064340e97e3d657fa5b4e0a94caacc5ebb32c18b78abfaf466c4",
+  "campaignId": "v13_27_1_46_demo_replay_portfolio_rescue_20260720",
+  "contract": {
+    "campaignHash": "portfolio_rescue_campaign_8ca0bba489c9064340e97e3d657fa5b4e0a94caacc5ebb32c18b78abfaf466c4",
+    "campaignId": "v13_27_1_46_demo_replay_portfolio_rescue_20260720",
+    "formalCandidateCount": 0,
+    "lockedOosReadCount": 0,
+    "maximumDevelopmentTrials": 8,
+    "policies": [
+      {
+        "additional_cost_stress_r": [
+          0.05,
+          0.1
+        ],
+        "losing_pair_cooldown_days": 0,
+        "maximum_concurrent_positions": 99,
+        "pair_cooldown_days": 0,
+        "policy_hash": "portfolio_rescue_policy_a525b0ea5810d144bf32fb3d13dbb84519d8cce50b23464d1a7b560d5f0e844d",
+        "policy_id": "raw_baseline",
+        "same_direction_cap": 99,
+        "version": "v13.27.1.46"
+      },
+      {
+        "additional_cost_stress_r": [
+          0.05,
+          0.1
+        ],
+        "losing_pair_cooldown_days": 0,
+        "maximum_concurrent_positions": 99,
+        "pair_cooldown_days": 7,
+        "policy_hash": "portfolio_rescue_policy_dda651f97adec6a8bacbf607dd8b6221b68d08ef1a0b3ebcb83a247f7e60e88d",
+        "policy_id": "pair_7d_cooldown",
+        "same_direction_cap": 99,
+        "version": "v13.27.1.46"
+      },
+      {
+        "additional_cost_stress_r": [
+          0.05,
+          0.1
+        ],
+        "losing_pair_cooldown_days": 0,
+        "maximum_concurrent_positions": 99,
+        "pair_cooldown_days": 14,
+        "policy_hash": "portfolio_rescue_policy_7ac5bdcb1880061efdc7daae8dbd9945f0785618c05534f86dff1c3be66cc378",
+        "policy_id": "pair_14d_cooldown",
+        "same_direction_cap": 99,
+        "version": "v13.27.1.46"
+      },
+      {
+        "additional_cost_stress_r": [
+          0.05,
+          0.1
+        ],
+        "losing_pair_cooldown_days": 0,
+        "maximum_concurrent_positions": 2,
+        "pair_cooldown_days": 14,
+        "policy_hash": "portfolio_rescue_policy_d811f46ad7e273582c8bd9785b917da07224fb5203d60132ff31c010d72f588f",
+        "policy_id": "pair_14d_max2",
+        "same_direction_cap": 2,
+        "version": "v13.27.1.46"
+      },
+      {
+        "additional_cost_stress_r": [
+          0.05,
+          0.1
+        ],
+        "losing_pair_cooldown_days": 0,
+        "maximum_concurrent_positions": 2,
+        "pair_cooldown_days": 14,
+        "policy_hash": "portfolio_rescue_policy_634bce2627910ee89b43a31c05d143c248064830742fc1d701210f42b333eb9a",
+        "policy_id": "pair_14d_max2_direction1",
+        "same_direction_cap": 1,
+        "version": "v13.27.1.46"
+      },
+      {
+        "additional_cost_stress_r": [
+          0.05,
+          0.1
+        ],
+        "losing_pair_cooldown_days": 21,
+        "maximum_concurrent_positions": 2,
+        "pair_cooldown_days": 14,
+        "policy_hash": "portfolio_rescue_policy_a4e8ce0f501b15ce7b785509e3416e69984e09f8a12979795e64b8a2b227b69b",
+        "policy_id": "pair_14d_max2_direction1_loss21d",
+        "same_direction_cap": 1,
+        "version": "v13.27.1.46"
+      }
+    ],
+    "releaseCount": 0,
+    "sleeves": [
+      {
+        "candidate_id": "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+        "direction": "short",
+        "family": "short_rejection",
+        "selection_basis": "preexisting_source_rank_and_mechanism_distinctness",
+        "sleeve_hash": "portfolio_rescue_sleeve_3852ce4b2907c1e1180e2032edb6c40fce808f6aff92f1837fecee5a9ad9e955",
+        "source_rank": 1,
+        "timeframe": "1h"
+      },
+      {
+        "candidate_id": "v13_7_20_lf_research_candidate_117",
+        "direction": "long",
+        "family": "mean_reversion",
+        "selection_basis": "preexisting_source_rank_and_mechanism_distinctness",
+        "sleeve_hash": "portfolio_rescue_sleeve_391b48d790ed58f9ef4afc29a78be08c3c3482bf0571edcb653ec978f7db2979",
+        "source_rank": 2,
+        "timeframe": "1d"
+      },
+      {
+        "candidate_id": "v13_7_20_lf_research_candidate_090",
+        "direction": "long",
+        "family": "squeeze_breakout",
+        "selection_basis": "preexisting_source_rank_and_mechanism_distinctness",
+        "sleeve_hash": "portfolio_rescue_sleeve_6094459a8a104b1f76afa7f8baec0bacf8d4b5cb9c357f46aae68286d78ebb13",
+        "source_rank": 4,
+        "timeframe": "1d"
+      }
+    ],
+    "status": "development_only"
+  },
+  "formalCandidateCount": 0,
+  "frozenAt": "2026-07-20T04:32:34.607316Z",
+  "frozenBeforeResultRead": true,
+  "ledgers": [
+    {
+      "candidateId": "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+      "path": "D:/Codex-Workspace/worktrees/alphapilot-v46-replay-rescue/quant/reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_40_1h_short_rejection_2149_asset_filter_top10.parquet",
+      "sha256": "3158fe95ed56711a265f74ba63f14b58491b582d3c9a8a55db13b6081f7efac0"
+    },
+    {
+      "candidateId": "v13_7_20_lf_research_candidate_117",
+      "path": "D:/Codex-Workspace/worktrees/alphapilot-v46-replay-rescue/quant/reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_20_lf_research_candidate_117.parquet",
+      "sha256": "5490412d463670af90e03febadc5a85241dddb56fb7d306ef184d1c1ae34f6a2"
+    },
+    {
+      "candidateId": "v13_7_20_lf_research_candidate_090",
+      "path": "D:/Codex-Workspace/worktrees/alphapilot-v46-replay-rescue/quant/reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_20_lf_research_candidate_090.parquet",
+      "sha256": "151c95db5e7bd2ac2bb2145dc7c5b43dca0e0a1da472a67b2d37c6a80b792c2f"
+    }
+  ],
+  "lockedOosReadCount": 0,
+  "releaseCount": 0,
+  "status": "development_only"
+}

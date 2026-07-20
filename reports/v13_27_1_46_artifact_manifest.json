@@ -1,0 +1,190 @@
+{
+  "campaignId": "v13_27_1_46_demo_replay_portfolio_rescue_20260720",
+  "generatedAt": "2026-07-20T04:38:57.409614Z",
+  "status": "development_only",
+  "artifactCount": 35,
+  "artifacts": [
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/artifact_manifest.json",
+      "bytes": 3139,
+      "sha256": "0bb34d48d266d667fef1650b375b701bbff015cae9eeeefb269253f0924b8dca"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/comparison.csv",
+      "bytes": 3668,
+      "sha256": "befd4b50dafa1ea4a256cbbbe20399177498880754ea1efc9ccc866fdb4bd4e0"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/comparison.json",
+      "bytes": 8398,
+      "sha256": "cf5629ac76605a6a449afd5fd7651f10f789f593054d9d4d94e256534106d8fb"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/contract_inventory.json",
+      "bytes": 17156,
+      "sha256": "3d50d961c15605bce937244d98ae37756a229ab177bf14de6e66a35a638585f0"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/replay_results.json",
+      "bytes": 21016,
+      "sha256": "669a21b37615bcd95236f73a27575dbb37c8b4db1d8dde1b25a381e17e70e194"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/replay_summary.json",
+      "bytes": 334,
+      "sha256": "0e7834b602ed2b28c3c8205c3156e067d0dd601f893e2a3156288fce46c29ed9"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/replay_summary.md",
+      "bytes": 346,
+      "sha256": "ae041e8b5c76b452849f90b1569c752bd88f3c48577f77fb87a40edc51f3f872"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_20_lf_research_candidate_089.parquet",
+      "bytes": 34327,
+      "sha256": "3e3dc9942caca33c874a4a6b1a73b881853683748ca003f51f37dfe9d2bdf63f"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_20_lf_research_candidate_090.parquet",
+      "bytes": 26035,
+      "sha256": "151c95db5e7bd2ac2bb2145dc7c5b43dca0e0a1da472a67b2d37c6a80b792c2f"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_20_lf_research_candidate_108.parquet",
+      "bytes": 27061,
+      "sha256": "6c4fc715f8c1151ce31cab8bbd2c8c756f62ad41324de2a385ac9c3cf0cdd559"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_20_lf_research_candidate_115.parquet",
+      "bytes": 13168,
+      "sha256": "7a261387bd1d2e371dab03ca4837cb92f053bc6f35089d9ee86781bc58bd7446"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_20_lf_research_candidate_117.parquet",
+      "bytes": 13057,
+      "sha256": "5490412d463670af90e03febadc5a85241dddb56fb7d306ef184d1c1ae34f6a2"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_40_1h_short_rejection_2021_asset_filter_top10.parquet",
+      "bytes": 18812,
+      "sha256": "9ef0524d6b6f540f6543286eccfe39df67c45ef5f7a82bfaa7af752fbf238d88"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_40_1h_short_rejection_2077_asset_filter_top8.parquet",
+      "bytes": 21538,
+      "sha256": "d8914997d6c304cd18d3dc8e17560cccb1835a7f3dd2b96037a753e9126aa744"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_40_1h_short_rejection_2148_asset_filter_top10.parquet",
+      "bytes": 24283,
+      "sha256": "0e1a8e4de84f22ae695efd8003f87de940aa7beb661a94cfae166358a8f11b0c"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_40_1h_short_rejection_2149_asset_filter_top10.parquet",
+      "bytes": 24306,
+      "sha256": "3158fe95ed56711a265f74ba63f14b58491b582d3c9a8a55db13b6081f7efac0"
+    },
+    {
+      "path": "reports/demo_release_replay/v13_27_1_46_20260720/trade_ledgers/v13_7_40_1h_short_rejection_2150_asset_filter_top10.parquet",
+      "bytes": 24375,
+      "sha256": "da535e7f7717abf17d6cedae247802ca28b6c3b8db1ca6d30053fa073c12b04c"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/artifact_manifest.json",
+      "bytes": 2679,
+      "sha256": "a3c8863295c9247d293923563f357f3d726130b85b0373a565e40c7978a08ca1"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/campaign_summary.json",
+      "bytes": 1109,
+      "sha256": "aca80d448e774ba6ef8553d857fed257a4f8c08ac0f23c6592349e015220d6c4"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/campaign_summary.md",
+      "bytes": 390,
+      "sha256": "05369aa60b71f61b8c80b3687f3bb6b68f03b06b34dc333d3e772dc870ecb9da"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/experiment_budget.json",
+      "bytes": 120,
+      "sha256": "28dc44d32009c4c168226b490a4356b0e612ebbcbc577bf3ead7c88ffc02db81"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/failure_attribution.json",
+      "bytes": 3025,
+      "sha256": "99eafcaaf847266ede0b1543b3ea5b9c08e600a06f15d45724e35d25d06dd782"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/monthly_consistency.csv",
+      "bytes": 16817,
+      "sha256": "c5acff1166273059a8b5fb6fcc0640b4d9ce26b8aeaea571bd933093e8415a01"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/policy_ledgers/pair_14d_cooldown.parquet",
+      "bytes": 38386,
+      "sha256": "3c3925c78567c91d36d27a6d5d8aa26974f4545ad8167de08b853f3ee8b78326"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/policy_ledgers/pair_14d_max2.parquet",
+      "bytes": 31343,
+      "sha256": "fec11a1a65c3649d0853c5192b501f65c9585e24f4428425f3cbd25a13421d76"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/policy_ledgers/pair_14d_max2_direction1.parquet",
+      "bytes": 28084,
+      "sha256": "32d399ff41b0d2f3b4d081dea423ec5754bcf3cd546c1c9861e6b89ceea912a4"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/policy_ledgers/pair_14d_max2_direction1_loss21d.parquet",
+      "bytes": 27617,
+      "sha256": "da90975a1043d816d87f5ee5e8d6785cb2513d100e7b5fd6f96ed1434ab7205b"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/policy_ledgers/pair_7d_cooldown.parquet",
+      "bytes": 40971,
+      "sha256": "194758355c9a8781273a0add7a0dff6044f0db14b26c2d661dcba3eba00da5cd"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/policy_ledgers/raw_baseline.parquet",
+      "bytes": 43818,
+      "sha256": "f1977341557fa3231cb63b6f5c478fa2f07e35dbcaee0657e863375a885649c9"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/policy_matrix.csv",
+      "bytes": 1333,
+      "sha256": "9bf6cf1f11e4d5ce437c08a68dde5e1f7c4c5f2fad8fdc13f8c83f20d052c8b7"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/policy_results.json",
+      "bytes": 33207,
+      "sha256": "4325512fe422ac0edefe4e1963a4b1ce031e80073419990393ef452fff9b4587"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/preregistration.json",
+      "bytes": 5830,
+      "sha256": "8c38e2e545920f4ee485ccba5cff115f0415e6aa41a9112530d46675653f19c9"
+    },
+    {
+      "path": "reports/portfolio_rescue/v13_27_1_46_20260720/sleeve_attribution.csv",
+      "bytes": 2470,
+      "sha256": "f52301dd570e099be140b2f78ff55aaa990cb695a4957977b1d6ff948ff37470"
+    },
+    {
+      "path": "reports/v13_27_1_46_closeout.md",
+      "bytes": 3849,
+      "sha256": "2a0c4ccb5cfe4395d7a9fcfa0f2805d72e8150a836029a2e4567ef9aaa7dd4cb"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-07-20-demo-release-replay-and-portfolio-rescue.md",
+      "bytes": 6275,
+      "sha256": "b8f8db15f69e42aba115a5c8b73cc472e0119606860f6b9a4ceeffab3b96906c"
+    }
+  ],
+  "boundaries": {
+    "formalCandidateCount": 0,
+    "lockedOosReadCount": 0,
+    "releaseCountCreated": 0,
+    "consoleStateModified": false,
+    "privateExchangeAccessed": false
+  }
+}

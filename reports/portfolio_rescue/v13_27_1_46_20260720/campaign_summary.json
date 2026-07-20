@@ -1,0 +1,35 @@
+{
+  "bestPolicyChecks": {
+    "everySleevePositive": true,
+    "largestSleeveTradeShare75Pct": true,
+    "maximumDrawdown20R": true,
+    "minimumProfitFactor1_20": true,
+    "minimumTradeCount100": true,
+    "positiveExpectancy": true,
+    "positiveMonthRatio55Pct": true,
+    "stressProfitFactor1_05": true
+  },
+  "bestPolicyId": "pair_14d_cooldown",
+  "bestPolicyMetrics": {
+    "expectancyR": 0.304485,
+    "lossCount": 193,
+    "maxDrawdownR": 12.9224,
+    "pairCount": 27,
+    "profitFactor": 1.6046,
+    "stopHitRatePct": 55.4974,
+    "targetHitRatePct": 38.4817,
+    "totalR": 116.3131,
+    "tradeCount": 382,
+    "winCount": 189,
+    "winRatePct": 49.4764
+  },
+  "campaignHash": "portfolio_rescue_campaign_8ca0bba489c9064340e97e3d657fa5b4e0a94caacc5ebb32c18b78abfaf466c4",
+  "campaignId": "v13_27_1_46_demo_replay_portfolio_rescue_20260720",
+  "formalCandidateCount": 0,
+  "generatedAt": "2026-07-20T04:32:34.941150Z",
+  "lockedOosReadCount": 0,
+  "policyTrialCount": 6,
+  "releaseCount": 0,
+  "status": "development_only",
+  "warrantsFreshPreregisteredOos": true
+}

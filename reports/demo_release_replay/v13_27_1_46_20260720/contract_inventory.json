@@ -1,0 +1,451 @@
+[
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_6c7cc07bdc1eb3a2888bab03abcf55efb4543f7b27f47bfaf89c60a432524338",
+    "demoReleaseId": "demo_release_top100_1e2b32a9213262e128a96e1c3810a93c",
+    "direction": "long",
+    "familyKey": "breakout",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1d",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "atrMultiplier": 2.0,
+      "bbWidthMultiplier": 1.35,
+      "breakoutMultiplier": 0.998,
+      "btcRegimes": [
+        "bull",
+        "recovery"
+      ],
+      "btcReturn24hMinPct": -8.0,
+      "btcReturn3dMinPct": -10.0,
+      "candidateId": "lf_research_candidate_089",
+      "displayName": "1d trend breakout confirmation ATR2.0",
+      "ema200FloorMultiplier": 0.92,
+      "family": "breakout",
+      "maxHoldBars": 16,
+      "meanReversionLowMultiplier": 1.01,
+      "minVolumeRatio": 1.2,
+      "momentumReturnMin": 0.0,
+      "pullbackHigh": 1.02,
+      "pullbackLow": 0.98,
+      "rsiMax": 76,
+      "rsiMin": 50,
+      "targetRewardRiskRatio": 2.0,
+      "timeframe": "1d"
+    },
+    "releaseContentHash": "demo_release_content_0627536d60c260f32d643fb84d7c5b2980b69d5e2390e271e7981b4934d12f35",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_1e2b32a9213262e128a96e1c3810a93c.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_20_lf_research_candidate_089",
+    "timeframe": "1d"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_6e70ddfa27cd9cb033f676c93812d95e81417cbae4c9e12a50c3872829805ba6",
+    "demoReleaseId": "demo_release_top100_600814e4c07d7f8edf4b057f0e6137f9",
+    "direction": "long",
+    "familyKey": "squeeze_breakout",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1d",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "atrMultiplier": 2.0,
+      "bbWidthMultiplier": 0.95,
+      "breakoutMultiplier": 0.998,
+      "btcRegimes": [
+        "bull",
+        "recovery"
+      ],
+      "btcReturn24hMinPct": -8.0,
+      "btcReturn3dMinPct": -10.0,
+      "candidateId": "lf_research_candidate_090",
+      "displayName": "1d trend squeeze breakout ATR2.0",
+      "ema200FloorMultiplier": 0.92,
+      "family": "squeeze_breakout",
+      "maxHoldBars": 16,
+      "meanReversionLowMultiplier": 1.01,
+      "minVolumeRatio": 1.1,
+      "momentumReturnMin": 0.0,
+      "pullbackHigh": 1.02,
+      "pullbackLow": 0.98,
+      "rsiMax": 76,
+      "rsiMin": 48,
+      "targetRewardRiskRatio": 2.0,
+      "timeframe": "1d"
+    },
+    "releaseContentHash": "demo_release_content_62683fcdbe8d22e01684e57a24bf396dd37941b094c412b19d9236ac649962c9",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_600814e4c07d7f8edf4b057f0e6137f9.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_20_lf_research_candidate_090",
+    "timeframe": "1d"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_fb5615f2c823dc71413cb187d4918c9c9590caf980d83cffbdd5f645dd08359e",
+    "demoReleaseId": "demo_release_top100_598f3d38a75d69b6a44e2638d2bef722",
+    "direction": "long",
+    "familyKey": "squeeze_breakout",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1d",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "atrMultiplier": 2.0,
+      "bbWidthMultiplier": 0.95,
+      "breakoutMultiplier": 0.998,
+      "btcRegimes": [
+        "sideways",
+        "bull",
+        "recovery"
+      ],
+      "btcReturn24hMinPct": -8.0,
+      "btcReturn3dMinPct": -10.0,
+      "candidateId": "lf_research_candidate_108",
+      "displayName": "1d broad squeeze breakout ATR2.0",
+      "ema200FloorMultiplier": 0.92,
+      "family": "squeeze_breakout",
+      "maxHoldBars": 16,
+      "meanReversionLowMultiplier": 1.01,
+      "minVolumeRatio": 1.1,
+      "momentumReturnMin": 0.0,
+      "pullbackHigh": 1.02,
+      "pullbackLow": 0.98,
+      "rsiMax": 76,
+      "rsiMin": 48,
+      "targetRewardRiskRatio": 2.0,
+      "timeframe": "1d"
+    },
+    "releaseContentHash": "demo_release_content_871e8b8b3b265f2ad44ff1132ccb283ebb04eed655a7c4586eab47cb816065bb",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_598f3d38a75d69b6a44e2638d2bef722.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_20_lf_research_candidate_108",
+    "timeframe": "1d"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_6cfdc62d14706e0aa951a0270cf731e157ad1af3ee467582a13e946dc149bd5c",
+    "demoReleaseId": "demo_release_top100_31205f75acf4ea56bb42549c0d02dabc",
+    "direction": "long",
+    "familyKey": "mean_reversion",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1d",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "atrMultiplier": 1.0,
+      "bbWidthMultiplier": 1.35,
+      "breakoutMultiplier": 1.0,
+      "btcRegimes": [
+        "sideways"
+      ],
+      "btcReturn24hMinPct": -8.0,
+      "btcReturn3dMinPct": -10.0,
+      "candidateId": "lf_research_candidate_115",
+      "displayName": "1d sideways oversold reclaim ATR1.0",
+      "ema200FloorMultiplier": 0.86,
+      "family": "mean_reversion",
+      "maxHoldBars": 18,
+      "meanReversionLowMultiplier": 1.02,
+      "minVolumeRatio": 0.7,
+      "momentumReturnMin": 0.0,
+      "pullbackHigh": 1.02,
+      "pullbackLow": 0.98,
+      "rsiMax": 40,
+      "rsiMin": null,
+      "targetRewardRiskRatio": 2.0,
+      "timeframe": "1d"
+    },
+    "releaseContentHash": "demo_release_content_91aab193d313c48d0b6488eabeb36278107b0845df69cfdb5fc58fe9cbabfda9",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_31205f75acf4ea56bb42549c0d02dabc.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_20_lf_research_candidate_115",
+    "timeframe": "1d"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_b040995c2db9c24115eaa62014f436b855aa6bb736ea88992561e9a793bda366",
+    "demoReleaseId": "demo_release_top100_b8d58642cb97e8faf7ce98a24b86b395",
+    "direction": "long",
+    "familyKey": "mean_reversion",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1d",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "atrMultiplier": 1.2,
+      "bbWidthMultiplier": 1.35,
+      "breakoutMultiplier": 1.0,
+      "btcRegimes": [
+        "sideways"
+      ],
+      "btcReturn24hMinPct": -8.0,
+      "btcReturn3dMinPct": -10.0,
+      "candidateId": "lf_research_candidate_117",
+      "displayName": "1d sideways oversold reclaim ATR1.2",
+      "ema200FloorMultiplier": 0.86,
+      "family": "mean_reversion",
+      "maxHoldBars": 18,
+      "meanReversionLowMultiplier": 1.02,
+      "minVolumeRatio": 0.7,
+      "momentumReturnMin": 0.0,
+      "pullbackHigh": 1.02,
+      "pullbackLow": 0.98,
+      "rsiMax": 40,
+      "rsiMin": null,
+      "targetRewardRiskRatio": 2.0,
+      "timeframe": "1d"
+    },
+    "releaseContentHash": "demo_release_content_c2ac7451ce0d8773fb1a383760cb8df2e8f64cbca6955e1993e2ded7d4831c6d",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_b8d58642cb97e8faf7ce98a24b86b395.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_20_lf_research_candidate_117",
+    "timeframe": "1d"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_4c9f3cae7b2f623ee7cb808b9851818c0cc91cec96a8e1d3f903a6d5353b6643",
+    "demoReleaseId": "demo_release_top100_2be7d19a5cc6e41587e180a3417674ae",
+    "direction": "short",
+    "familyKey": "short_rejection",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1h",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "max_hold": 8,
+      "rsi_high": 62,
+      "stop_atr": 1.2,
+      "targetRewardRiskRatio": 2.0,
+      "trend_tolerance": 1.0,
+      "upper_buffer": 0.003,
+      "volume_min": 1.2
+    },
+    "releaseContentHash": "demo_release_content_ea6884030ea9c88c4bb68488c10c2244717e998c1a29f17b0ffc5292021637de",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_2be7d19a5cc6e41587e180a3417674ae.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_40_1h_short_rejection_2021_asset_filter_top10",
+    "timeframe": "1h"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_24eb37cf3a5bf850549e59fa4b9909c241f456e21e9ebea9c118504b30051068",
+    "demoReleaseId": "demo_release_top100_169bc383d8b31b9d90d3dc9eaf904f90",
+    "direction": "short",
+    "familyKey": "short_rejection",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1h",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "max_hold": 12,
+      "rsi_high": 60,
+      "stop_atr": 1.0,
+      "targetRewardRiskRatio": 2.0,
+      "trend_tolerance": 1.0,
+      "upper_buffer": 0.003,
+      "volume_min": 1.2
+    },
+    "releaseContentHash": "demo_release_content_5b9ed88c51cdf41263d1c3d83a3742913ca87ced039f3521f42c08a009e70998",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_169bc383d8b31b9d90d3dc9eaf904f90.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_40_1h_short_rejection_2077_asset_filter_top8",
+    "timeframe": "1h"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_2ddc7e979373f17ba468c18b0083fd21ad30f4e14a3fe3c9f8de287dde4f9801",
+    "demoReleaseId": "demo_release_top100_9c750252c0095acc11b6393959eb97f5",
+    "direction": "short",
+    "familyKey": "short_rejection",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1h",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "max_hold": 8,
+      "rsi_high": 60,
+      "stop_atr": 1.0,
+      "targetRewardRiskRatio": 2.0,
+      "trend_tolerance": 1.0,
+      "upper_buffer": 0.006,
+      "volume_min": 1.2
+    },
+    "releaseContentHash": "demo_release_content_6e22f1d624f9663d9b363021198dd5f19fdc153173cd84d99c106e955e475f3f",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_9c750252c0095acc11b6393959eb97f5.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_40_1h_short_rejection_2148_asset_filter_top10",
+    "timeframe": "1h"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_861e8257a0997e0ea5f3a82aff039b251da0f7ad1692b825da461e0438cf11cd",
+    "demoReleaseId": "demo_release_top100_101a9c3a91a1199213edd0454f33d033",
+    "direction": "short",
+    "familyKey": "short_rejection",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1h",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "max_hold": 12,
+      "rsi_high": 60,
+      "stop_atr": 1.0,
+      "targetRewardRiskRatio": 2.0,
+      "trend_tolerance": 1.0,
+      "upper_buffer": 0.006,
+      "volume_min": 1.2
+    },
+    "releaseContentHash": "demo_release_content_964825c820b8a7ff4a5aec03260d6c777b16a8aa3feb906c6916555d23950d17",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_101a9c3a91a1199213edd0454f33d033.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_40_1h_short_rejection_2149_asset_filter_top10",
+    "timeframe": "1h"
+  },
+  {
+    "bypassedEvidence": [
+      "local_forward_samples"
+    ],
+    "contractHash": "console_contract_6a1e89e205a02e7c68ef113ae162f23539ce5614ad219e9d59c9c1fad7e894b6",
+    "demoReleaseId": "demo_release_top100_3b97dd6c2bc2054b3a11f8f4a5f7cf07",
+    "direction": "short",
+    "familyKey": "short_rejection",
+    "marketDefinition": {
+      "exchange": "okx",
+      "instrumentType": "SWAP",
+      "settleCurrency": "USDT",
+      "timeframe": "1h",
+      "universePolicy": {
+        "mode": "okx_usdt_linear_perpetual_full_market",
+        "policyVersion": "okx_full_market_policy_v2_top100",
+        "ranking": "public_quote_volume_proxy_then_spread",
+        "screeningLimit": 100
+      }
+    },
+    "overrideActor": "user_manual",
+    "parameters": {
+      "max_hold": 16,
+      "rsi_high": 60,
+      "stop_atr": 1.0,
+      "targetRewardRiskRatio": 2.0,
+      "trend_tolerance": 1.0,
+      "upper_buffer": 0.006,
+      "volume_min": 1.2
+    },
+    "releaseContentHash": "demo_release_content_f03a14cac89aed4407ab568b20f3270c6d92c345b403aee02f9589700c83a666",
+    "releaseMode": "experimental_override",
+    "sourcePath": "D:\\Codex-Workspace\\AlphaPilot-Control-Console\\data\\demo_release_contracts\\demo_release_contract_demo_release_top100_3b97dd6c2bc2054b3a11f8f4a5f7cf07.json",
+    "status": "demo_eligible",
+    "strategyCandidateId": "v13_7_40_1h_short_rejection_2150_asset_filter_top10",
+    "timeframe": "1h"
+  }
+]

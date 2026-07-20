@@ -1,0 +1,87 @@
+{
+  "artifactCount": 16,
+  "artifacts": [
+    {
+      "bytes": 3668,
+      "path": "comparison.csv",
+      "sha256": "befd4b50dafa1ea4a256cbbbe20399177498880754ea1efc9ccc866fdb4bd4e0"
+    },
+    {
+      "bytes": 8398,
+      "path": "comparison.json",
+      "sha256": "cf5629ac76605a6a449afd5fd7651f10f789f593054d9d4d94e256534106d8fb"
+    },
+    {
+      "bytes": 17156,
+      "path": "contract_inventory.json",
+      "sha256": "3d50d961c15605bce937244d98ae37756a229ab177bf14de6e66a35a638585f0"
+    },
+    {
+      "bytes": 21016,
+      "path": "replay_results.json",
+      "sha256": "669a21b37615bcd95236f73a27575dbb37c8b4db1d8dde1b25a381e17e70e194"
+    },
+    {
+      "bytes": 334,
+      "path": "replay_summary.json",
+      "sha256": "0e7834b602ed2b28c3c8205c3156e067d0dd601f893e2a3156288fce46c29ed9"
+    },
+    {
+      "bytes": 346,
+      "path": "replay_summary.md",
+      "sha256": "ae041e8b5c76b452849f90b1569c752bd88f3c48577f77fb87a40edc51f3f872"
+    },
+    {
+      "bytes": 34327,
+      "path": "trade_ledgers/v13_7_20_lf_research_candidate_089.parquet",
+      "sha256": "3e3dc9942caca33c874a4a6b1a73b881853683748ca003f51f37dfe9d2bdf63f"
+    },
+    {
+      "bytes": 26035,
+      "path": "trade_ledgers/v13_7_20_lf_research_candidate_090.parquet",
+      "sha256": "151c95db5e7bd2ac2bb2145dc7c5b43dca0e0a1da472a67b2d37c6a80b792c2f"
+    },
+    {
+      "bytes": 27061,
+      "path": "trade_ledgers/v13_7_20_lf_research_candidate_108.parquet",
+      "sha256": "6c4fc715f8c1151ce31cab8bbd2c8c756f62ad41324de2a385ac9c3cf0cdd559"
+    },
+    {
+      "bytes": 13168,
+      "path": "trade_ledgers/v13_7_20_lf_research_candidate_115.parquet",
+      "sha256": "7a261387bd1d2e371dab03ca4837cb92f053bc6f35089d9ee86781bc58bd7446"
+    },
+    {
+      "bytes": 13057,
+      "path": "trade_ledgers/v13_7_20_lf_research_candidate_117.parquet",
+      "sha256": "5490412d463670af90e03febadc5a85241dddb56fb7d306ef184d1c1ae34f6a2"
+    },
+    {
+      "bytes": 18812,
+      "path": "trade_ledgers/v13_7_40_1h_short_rejection_2021_asset_filter_top10.parquet",
+      "sha256": "9ef0524d6b6f540f6543286eccfe39df67c45ef5f7a82bfaa7af752fbf238d88"
+    },
+    {
+      "bytes": 21538,
+      "path": "trade_ledgers/v13_7_40_1h_short_rejection_2077_asset_filter_top8.parquet",
+      "sha256": "d8914997d6c304cd18d3dc8e17560cccb1835a7f3dd2b96037a753e9126aa744"
+    },
+    {
+      "bytes": 24283,
+      "path": "trade_ledgers/v13_7_40_1h_short_rejection_2148_asset_filter_top10.parquet",
+      "sha256": "0e1a8e4de84f22ae695efd8003f87de940aa7beb661a94cfae166358a8f11b0c"
+    },
+    {
+      "bytes": 24306,
+      "path": "trade_ledgers/v13_7_40_1h_short_rejection_2149_asset_filter_top10.parquet",
+      "sha256": "3158fe95ed56711a265f74ba63f14b58491b582d3c9a8a55db13b6081f7efac0"
+    },
+    {
+      "bytes": 24375,
+      "path": "trade_ledgers/v13_7_40_1h_short_rejection_2150_asset_filter_top10.parquet",
+      "sha256": "da535e7f7717abf17d6cedae247802ca28b6c3b8db1ca6d30053fa073c12b04c"
+    }
+  ],
+  "generatedAt": "2026-07-20T04:27:58.914993Z",
+  "status": "research_replay_only"
+}

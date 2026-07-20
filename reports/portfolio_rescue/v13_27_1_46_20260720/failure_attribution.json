@@ -1,0 +1,111 @@
+[
+  {
+    "checks": {
+      "everySleevePositive": true,
+      "largestSleeveTradeShare75Pct": true,
+      "maximumDrawdown20R": true,
+      "minimumProfitFactor1_20": true,
+      "minimumTradeCount100": true,
+      "positiveExpectancy": true,
+      "positiveMonthRatio55Pct": true,
+      "stressProfitFactor1_05": true
+    },
+    "failedChecks": [],
+    "policyId": "raw_baseline",
+    "rejectionCounts": {}
+  },
+  {
+    "checks": {
+      "everySleevePositive": true,
+      "largestSleeveTradeShare75Pct": true,
+      "maximumDrawdown20R": true,
+      "minimumProfitFactor1_20": true,
+      "minimumTradeCount100": true,
+      "positiveExpectancy": true,
+      "positiveMonthRatio55Pct": true,
+      "stressProfitFactor1_05": true
+    },
+    "failedChecks": [],
+    "policyId": "pair_7d_cooldown",
+    "rejectionCounts": {
+      "pair_cooldown": 43
+    }
+  },
+  {
+    "checks": {
+      "everySleevePositive": true,
+      "largestSleeveTradeShare75Pct": true,
+      "maximumDrawdown20R": true,
+      "minimumProfitFactor1_20": true,
+      "minimumTradeCount100": true,
+      "positiveExpectancy": true,
+      "positiveMonthRatio55Pct": true,
+      "stressProfitFactor1_05": true
+    },
+    "failedChecks": [],
+    "policyId": "pair_14d_cooldown",
+    "rejectionCounts": {
+      "pair_cooldown": 80
+    }
+  },
+  {
+    "checks": {
+      "everySleevePositive": true,
+      "largestSleeveTradeShare75Pct": true,
+      "maximumDrawdown20R": true,
+      "minimumProfitFactor1_20": true,
+      "minimumTradeCount100": true,
+      "positiveExpectancy": true,
+      "positiveMonthRatio55Pct": true,
+      "stressProfitFactor1_05": true
+    },
+    "failedChecks": [],
+    "policyId": "pair_14d_max2",
+    "rejectionCounts": {
+      "maximum_concurrent_positions": 21,
+      "pair_cooldown": 59,
+      "same_direction_cap": 98
+    }
+  },
+  {
+    "checks": {
+      "everySleevePositive": false,
+      "largestSleeveTradeShare75Pct": true,
+      "maximumDrawdown20R": true,
+      "minimumProfitFactor1_20": true,
+      "minimumTradeCount100": true,
+      "positiveExpectancy": true,
+      "positiveMonthRatio55Pct": true,
+      "stressProfitFactor1_05": true
+    },
+    "failedChecks": [
+      "everySleevePositive"
+    ],
+    "policyId": "pair_14d_max2_direction1",
+    "rejectionCounts": {
+      "pair_cooldown": 52,
+      "same_direction_cap": 165
+    }
+  },
+  {
+    "checks": {
+      "everySleevePositive": false,
+      "largestSleeveTradeShare75Pct": true,
+      "maximumDrawdown20R": true,
+      "minimumProfitFactor1_20": true,
+      "minimumTradeCount100": true,
+      "positiveExpectancy": true,
+      "positiveMonthRatio55Pct": true,
+      "stressProfitFactor1_05": true
+    },
+    "failedChecks": [
+      "everySleevePositive"
+    ],
+    "policyId": "pair_14d_max2_direction1_loss21d",
+    "rejectionCounts": {
+      "losing_pair_cooldown": 14,
+      "pair_cooldown": 49,
+      "same_direction_cap": 161
+    }
+  }
+]

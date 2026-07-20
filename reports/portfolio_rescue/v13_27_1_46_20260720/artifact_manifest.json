@@ -1,0 +1,82 @@
+{
+  "artifactCount": 15,
+  "artifacts": [
+    {
+      "bytes": 1109,
+      "path": "campaign_summary.json",
+      "sha256": "aca80d448e774ba6ef8553d857fed257a4f8c08ac0f23c6592349e015220d6c4"
+    },
+    {
+      "bytes": 390,
+      "path": "campaign_summary.md",
+      "sha256": "05369aa60b71f61b8c80b3687f3bb6b68f03b06b34dc333d3e772dc870ecb9da"
+    },
+    {
+      "bytes": 120,
+      "path": "experiment_budget.json",
+      "sha256": "28dc44d32009c4c168226b490a4356b0e612ebbcbc577bf3ead7c88ffc02db81"
+    },
+    {
+      "bytes": 3025,
+      "path": "failure_attribution.json",
+      "sha256": "99eafcaaf847266ede0b1543b3ea5b9c08e600a06f15d45724e35d25d06dd782"
+    },
+    {
+      "bytes": 16817,
+      "path": "monthly_consistency.csv",
+      "sha256": "c5acff1166273059a8b5fb6fcc0640b4d9ce26b8aeaea571bd933093e8415a01"
+    },
+    {
+      "bytes": 38386,
+      "path": "policy_ledgers/pair_14d_cooldown.parquet",
+      "sha256": "3c3925c78567c91d36d27a6d5d8aa26974f4545ad8167de08b853f3ee8b78326"
+    },
+    {
+      "bytes": 31343,
+      "path": "policy_ledgers/pair_14d_max2.parquet",
+      "sha256": "fec11a1a65c3649d0853c5192b501f65c9585e24f4428425f3cbd25a13421d76"
+    },
+    {
+      "bytes": 28084,
+      "path": "policy_ledgers/pair_14d_max2_direction1.parquet",
+      "sha256": "32d399ff41b0d2f3b4d081dea423ec5754bcf3cd546c1c9861e6b89ceea912a4"
+    },
+    {
+      "bytes": 27617,
+      "path": "policy_ledgers/pair_14d_max2_direction1_loss21d.parquet",
+      "sha256": "da90975a1043d816d87f5ee5e8d6785cb2513d100e7b5fd6f96ed1434ab7205b"
+    },
+    {
+      "bytes": 40971,
+      "path": "policy_ledgers/pair_7d_cooldown.parquet",
+      "sha256": "194758355c9a8781273a0add7a0dff6044f0db14b26c2d661dcba3eba00da5cd"
+    },
+    {
+      "bytes": 43818,
+      "path": "policy_ledgers/raw_baseline.parquet",
+      "sha256": "f1977341557fa3231cb63b6f5c478fa2f07e35dbcaee0657e863375a885649c9"
+    },
+    {
+      "bytes": 1333,
+      "path": "policy_matrix.csv",
+      "sha256": "9bf6cf1f11e4d5ce437c08a68dde5e1f7c4c5f2fad8fdc13f8c83f20d052c8b7"
+    },
+    {
+      "bytes": 33207,
+      "path": "policy_results.json",
+      "sha256": "4325512fe422ac0edefe4e1963a4b1ce031e80073419990393ef452fff9b4587"
+    },
+    {
+      "bytes": 5830,
+      "path": "preregistration.json",
+      "sha256": "8c38e2e545920f4ee485ccba5cff115f0415e6aa41a9112530d46675653f19c9"
+    },
+    {
+      "bytes": 2470,
+      "path": "sleeve_attribution.csv",
+      "sha256": "f52301dd570e099be140b2f78ff55aaa990cb695a4957977b1d6ff948ff37470"
+    }
+  ],
+  "generatedAt": "2026-07-20T04:32:35.107579Z",
+  "status": "development_only"
+}
