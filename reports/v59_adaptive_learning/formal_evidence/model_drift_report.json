@@ -1,0 +1,12 @@
+{
+  "createsOrders": false,
+  "details": {},
+  "evidenceHash": "v59_model_drift_report_v1_ccf647c42a560cc1d51d5982ab4d150f412db4bf0d2a9751153119c827d6ac48",
+  "evidenceRef": null,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": null,
+  "reason": "no_live_eligible_champion_model",
+  "schemaVersion": "v59_model_drift_report_v1",
+  "status": "not_run"
+}

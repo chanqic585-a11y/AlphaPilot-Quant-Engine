@@ -1,0 +1,16 @@
+{
+  "campaignStatus": "completed_no_candidate",
+  "candidateCount": 0,
+  "createsOrders": false,
+  "demoLearningSampleCount": 0,
+  "formalPromotionEligible": false,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "liveEligibleModelCount": 0,
+  "liveLearningSampleCount": 0,
+  "modelHash": "model_c0f95f002107616d2cc0bce6c9d74a78f1a52dd965bf0d8603ec0d315ca81027",
+  "modelId": "model_record_bf5c9e80a0910d76db71b3f2471d99777db52239266791fc057fd5e01be23ccc",
+  "schemaVersion": "v59_evidence_artifact_summary_v1",
+  "status": "completed_with_blockers",
+  "summaryHash": "v59_evidence_summary_ae8d30e2b04a9990690fe660dbec9d148ef397064ff0a2fbbfa949c888fd215b"
+}

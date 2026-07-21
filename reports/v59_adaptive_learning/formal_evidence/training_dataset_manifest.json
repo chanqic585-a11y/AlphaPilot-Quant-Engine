@@ -1,0 +1,34 @@
+{
+  "blockers": [
+    "no_reconciled_closed_strategy_outcomes"
+  ],
+  "createsOrders": false,
+  "dataSnapshotId": "data_snapshot_6d3de6ffc13ee2ab0ea677bbea1fe3e59378131114598500cc4669d43fac534f",
+  "demoLearningSampleCount": 0,
+  "eligibleClosedOutcomeCount": 0,
+  "engineeringSmokeIncluded": false,
+  "evidenceHash": "v59_training_dataset_manifest_b15a0b2ebe8e74fe37e96eb874a925ef4450eeb562ce36ed66342d3fa1dd61b7",
+  "formalFeatureColumns": [
+    "factor_return_1",
+    "factor_return_6",
+    "factor_volatility_12",
+    "factor_volume_ratio_20",
+    "factor_ema_distance_20",
+    "factor_ema_distance_50",
+    "factor_rsi_14",
+    "factor_macd_histogram",
+    "factor_bollinger_position",
+    "factor_atr_pct_14"
+  ],
+  "formalMarketMatrixHash": null,
+  "formalMarketMatrixPath": "D:\\Codex-Workspace\\回测数据\\_alphapilot\\v59_factor_runs\\data_snapshot_6d3de6ffc13ee2ab0ea677bbea1fe3e59378131114598500cc4669d43fac534f\\4h\\factor-matrix-2a709f98dc553a1a.parquet",
+  "formalMarketRowCount": 235430,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "liveLearningSampleCount": 0,
+  "passed": false,
+  "schemaVersion": "v59_training_dataset_manifest_v1",
+  "status": "blocked",
+  "syntheticOutcomesUsed": false,
+  "walkForwardManifestHash": "walk_forward_6bcc7c6d19be94b92fb0e96708cb155850f362f8c96957b5a2a8d59532ff3c34"
+}

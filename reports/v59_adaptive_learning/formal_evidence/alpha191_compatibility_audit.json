@@ -1,0 +1,21 @@
+{
+  "allFactorsProductionValidated": false,
+  "blockers": [],
+  "catalogCount": 191,
+  "createsOrders": false,
+  "evidenceHash": "alpha191_compatibility_audit_990b7bc802ed04dcba0131c475d96acccc713233d88df3ffd13440681b6d5248",
+  "formulaConflictCount": 0,
+  "formulaReviewedCount": 8,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "numericCrossvalidatedCount": 8,
+  "numericCrossvalidationRef": "numeric_crosscheck_47b807d32c4be31922b31b3c0cbcb0402e09bb696c25fbe2286cb3bfe0007b40",
+  "numericSeedCount": 8,
+  "passed": true,
+  "predictiveValidationClaimed": false,
+  "productionValidatedCount": 0,
+  "schemaVersion": "alpha191_compatibility_audit_v2",
+  "status": "passed",
+  "unexpectedMismatchCount": 0,
+  "validationScope": "formula_and_numeric_compatibility_only"
+}

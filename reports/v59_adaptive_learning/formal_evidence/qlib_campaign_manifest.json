@@ -1,0 +1,20 @@
+{
+  "blockers": [
+    "c_formal_ready",
+    "docker_daemon_unavailable",
+    "fresh_holdout_ready",
+    "pit_median_at_least_30",
+    "qlib_package_unavailable"
+  ],
+  "campaignExecuted": false,
+  "createsOrders": false,
+  "dataReadinessStatus": "blocked",
+  "dockerDaemonAvailable": false,
+  "evidenceHash": "v59_qlib_preflight_audit_d297cb49e654a78322ceea388eb6fd6a95a178132e08dddcfb944ed903a1127a",
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "qlibPackageAvailable": false,
+  "schemaVersion": "v59_qlib_preflight_audit_v1",
+  "status": "blocked"
+}

@@ -1,0 +1,14 @@
+{
+  "createsOrders": false,
+  "details": {
+    "engineeringChecksPassed": true
+  },
+  "evidenceHash": "v59_live_model_inference_audit_v1_3d8435a731a5ef581131e30b28bc23294b08b5328c63acff642a1abec5f98460",
+  "evidenceRef": "v59_shadow_inference_audit_f6551f9354e9e9f50a90e39e1d19f0f6a1d1e8e818a86d186c78547b98f9368f",
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "research_only_model_not_live_eligible",
+  "schemaVersion": "v59_live_model_inference_audit_v1",
+  "status": "blocked"
+}

@@ -1,0 +1,15 @@
+{
+  "createsOrders": false,
+  "details": {
+    "eligibleSampleCount": 0,
+    "engineeringSmokeExcluded": true
+  },
+  "evidenceHash": "v59_demo_learning_sample_audit_v1_0934cea2779e622873f57c7bca51654dabf7ff76f41ab646116ead1be5fa4d4e",
+  "evidenceRef": null,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "no_reconciled_closed_demo_strategy_outcomes",
+  "schemaVersion": "v59_demo_learning_sample_audit_v1",
+  "status": "blocked"
+}

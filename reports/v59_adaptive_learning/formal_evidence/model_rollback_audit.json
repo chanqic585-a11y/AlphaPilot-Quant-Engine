@@ -1,0 +1,12 @@
+{
+  "createsOrders": false,
+  "details": {},
+  "evidenceHash": "v59_model_rollback_audit_v1_1695c9ab07c09590b6ac595b9cc1304725d296ab017d0c3327ab7aeefade8294",
+  "evidenceRef": null,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": null,
+  "reason": "no_champion_predecessor_pair",
+  "schemaVersion": "v59_model_rollback_audit_v1",
+  "status": "not_run"
+}

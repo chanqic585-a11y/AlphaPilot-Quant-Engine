@@ -1,0 +1,12 @@
+{
+  "createsOrders": false,
+  "details": {},
+  "evidenceHash": "v59_exact_model_release_approval_v1_595880761a4d6f2f8531e8d9cc2dd987d52750e1f3d853bea5508b464b549383",
+  "evidenceRef": null,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": null,
+  "reason": "no_live_eligible_model_release_exists",
+  "schemaVersion": "v59_exact_model_release_approval_v1",
+  "status": "not_run"
+}

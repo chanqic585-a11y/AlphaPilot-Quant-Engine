@@ -1,0 +1,28 @@
+{
+  "blockers": [
+    "research_only_model",
+    "purged_walk_forward_fold_count_zero"
+  ],
+  "createsOrders": false,
+  "deterministic": true,
+  "engineeringChecksPassed": true,
+  "evidenceHash": "v59_shadow_inference_audit_f6551f9354e9e9f50a90e39e1d19f0f6a1d1e8e818a86d186c78547b98f9368f",
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "iterationCount": 5,
+  "latencyMs": {
+    "maximum": 0.6133000133559108,
+    "p50": 0.5552000366151333,
+    "p95": 0.603180006146431,
+    "p99": 0.6112760119140148
+  },
+  "modelHash": "model_c0f95f002107616d2cc0bce6c9d74a78f1a52dd965bf0d8603ec0d315ca81027",
+  "modelType": "logistic_regression",
+  "passed": false,
+  "probabilitiesValid": true,
+  "researchOnly": true,
+  "rowCount": 512,
+  "schemaVersion": "v59_shadow_inference_engineering_audit_v1",
+  "status": "blocked",
+  "trainingFoldCount": 0
+}

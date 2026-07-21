@@ -1,0 +1,12 @@
+{
+  "createsOrders": false,
+  "details": {},
+  "evidenceHash": "alpha101_crypto_compatibility_audit_v1_f87674987d3277e00fd163d9b3796641db1040b0a76c92e2a7dde586d0f74964",
+  "evidenceRef": null,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": null,
+  "reason": "formal_crypto_validation_not_run",
+  "schemaVersion": "alpha101_crypto_compatibility_audit_v1",
+  "status": "not_run"
+}

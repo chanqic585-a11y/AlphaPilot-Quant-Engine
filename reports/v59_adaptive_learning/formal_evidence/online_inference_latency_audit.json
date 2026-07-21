@@ -1,0 +1,21 @@
+{
+  "createsOrders": false,
+  "details": {
+    "latencyMs": {
+      "maximum": 0.6133000133559108,
+      "p50": 0.5552000366151333,
+      "p95": 0.603180006146431,
+      "p99": 0.6112760119140148
+    },
+    "modelHash": "model_c0f95f002107616d2cc0bce6c9d74a78f1a52dd965bf0d8603ec0d315ca81027",
+    "rowCount": 512
+  },
+  "evidenceHash": "v59_online_inference_latency_audit_v1_cfa0881871258252130d970d88fe8a926b003b9d678332986b4eb9c202c0291b",
+  "evidenceRef": "v59_shadow_inference_audit_f6551f9354e9e9f50a90e39e1d19f0f6a1d1e8e818a86d186c78547b98f9368f",
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": true,
+  "reason": "research_model_latency_measurement_only",
+  "schemaVersion": "v59_online_inference_latency_audit_v1",
+  "status": "completed"
+}

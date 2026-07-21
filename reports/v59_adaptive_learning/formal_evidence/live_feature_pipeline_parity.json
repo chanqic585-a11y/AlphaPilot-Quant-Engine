@@ -1,0 +1,14 @@
+{
+  "createsOrders": false,
+  "details": {
+    "environmentNeutralFeatureHashImplemented": true
+  },
+  "evidenceHash": "v59_live_feature_pipeline_parity_v1_878c60fa0153ad7f304a10543a8997b532a84f8b623310678177363089dda0fb",
+  "evidenceRef": null,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "no_live_runtime_feature_replay",
+  "schemaVersion": "v59_live_feature_pipeline_parity_v1",
+  "status": "blocked"
+}

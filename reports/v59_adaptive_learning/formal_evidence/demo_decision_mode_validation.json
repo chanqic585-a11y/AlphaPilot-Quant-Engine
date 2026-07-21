@@ -1,0 +1,12 @@
+{
+  "createsOrders": false,
+  "details": {},
+  "evidenceHash": "v59_demo_decision_mode_validation_v1_d6cc31a863df01370b04513fe4846f3c36cf55fbaf3bf6aed4ce2be1e638be8c",
+  "evidenceRef": null,
+  "generatedAt": "2026-07-21T12:00:00Z",
+  "grantsLiveAuthority": false,
+  "passed": null,
+  "reason": "observer_only_no_decision_participation",
+  "schemaVersion": "v59_demo_decision_mode_validation_v1",
+  "status": "not_run"
+}
