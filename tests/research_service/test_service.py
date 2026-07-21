@@ -115,6 +115,8 @@ class ResearchServiceTests(unittest.TestCase):
             self.assertEqual(first["demoReleaseCount"], 0)
             self.assertFalse(first["demoArm"])
             self.assertEqual(first["orderCount"], 0)
+            self.assertEqual(first["workerBoundary"]["marketDataAccess"], "read_only")
+            self.assertFalse(first["workerBoundary"]["orderAccess"])
             self.assertEqual(second["status"], "idle")
             self.assertEqual(len(executor.calls), 1)
             self.assertEqual(receipts[1]["previousReceiptHash"], receipts[0]["receiptHash"])

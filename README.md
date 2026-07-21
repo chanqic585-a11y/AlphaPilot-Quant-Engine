@@ -5613,3 +5613,15 @@ Evidence is versioned under
 `reports/v60_2_adaptive_learning_technical_closure/`. Live and Withdraw remain
 disabled, and the existing risk profile remains a draft until a future exact
 approval package binds a newly hashed risk overlay.
+
+## V13.27.1.61 Research Worker Boundary
+
+Autonomous research now enters through a fail-closed worker boundary. The
+worker removes private exchange and execution credentials from its process,
+uses read-only market data, runs at below-normal priority, and is limited to one
+campaign. Its result contract rejects approval, ARM, private-account, Trade API,
+Withdraw API, Demo/Live Release, or order side effects.
+
+This is an execution-boundary hardening change, not a new strategy campaign.
+It does not read Locked OOS, generate a Release, approve or ARM Demo/Live, or
+create an order.

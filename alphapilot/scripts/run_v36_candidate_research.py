@@ -13,6 +13,7 @@ from alphapilot.research_service import (
     ResearchService,
     ResearchServicePolicy,
     ResearchServiceStateStore,
+    ResearchWorkerBoundary,
 )
 from alphapilot.standard_replication import ReplicationSourceRegistry
 
@@ -33,6 +34,8 @@ def build_parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = build_parser().parse_args(argv)
+    worker_boundary = ResearchWorkerBoundary.default()
+    worker_boundary.enforce_current_process_environment()
     campaign_input = json.loads(args.job_json.read_text(encoding="utf-8"))
     if not isinstance(campaign_input, dict):
         raise ValueError("campaign_input_must_be_object")
@@ -58,6 +61,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         campaign_inputs={campaign_id: campaign_input},
         max_formal_runs=policy.max_formal_runs_per_campaign,
         pause_file=args.pause_file,
+        worker_boundary=worker_boundary,
     )
     service = ResearchService(
         policy=policy,

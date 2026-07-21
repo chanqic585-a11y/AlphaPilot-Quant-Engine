@@ -12,6 +12,7 @@ from alphapilot.evolution.registry.hashing import stable_hash
 from .lease import ResearchServiceLease, ResearchServiceLeaseUnavailable
 from .policy import ResearchServicePolicy
 from .state import ResearchServiceStateStore
+from .worker_boundary import ResearchWorkerBoundary
 
 
 class ResearchExecutor(Protocol):
@@ -29,6 +30,7 @@ class ResearchService:
         receipt_path: Path,
         owner: str,
         pause_file: Path | None = None,
+        worker_boundary: ResearchWorkerBoundary | None = None,
     ) -> None:
         self.policy = policy
         self.state_store = state_store
@@ -37,6 +39,7 @@ class ResearchService:
         self.receipt_path = Path(receipt_path)
         self.owner = owner
         self.pause_file = Path(pause_file) if pause_file else None
+        self.worker_boundary = worker_boundary or ResearchWorkerBoundary.default()
 
     def enqueue(
         self,
@@ -185,13 +188,14 @@ class ResearchService:
                 "tradeApiUsed": False,
                 "withdrawApiUsed": False,
                 "privateAccountReadUsed": False,
+                "workerBoundary": self.worker_boundary.projection(),
             }
             return self._append_receipt(receipt)
         finally:
             lease.release()
 
-    @staticmethod
-    def _validate_execution_boundary(result: dict[str, object]) -> None:
+    def _validate_execution_boundary(self, result: dict[str, object]) -> None:
+        self.worker_boundary.assert_result(result)
         prohibited_truthy = (
             "demoReleaseCount",
             "approvalCount",
@@ -225,8 +229,8 @@ class ResearchService:
             os.fsync(handle.fileno())
         return receipt
 
-    @staticmethod
     def _zero_effect_result(
+        self,
         *,
         status: str,
         now: str,
@@ -249,4 +253,5 @@ class ResearchService:
             "tradeApiUsed": False,
             "withdrawApiUsed": False,
             "privateAccountReadUsed": False,
+            "workerBoundary": self.worker_boundary.projection(),
         }

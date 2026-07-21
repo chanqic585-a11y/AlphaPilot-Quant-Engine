@@ -15,6 +15,7 @@ from alphapilot.research_service import (
     ResearchService,
     ResearchServicePolicy,
     ResearchServiceStateStore,
+    ResearchWorkerBoundary,
 )
 from alphapilot.research_factory.program_v33 import record_v35_research_cycle
 from alphapilot.standard_replication import (
@@ -57,6 +58,8 @@ def _parser() -> argparse.ArgumentParser:
 
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
+    worker_boundary = ResearchWorkerBoundary.default()
+    worker_boundary.enforce_current_process_environment()
     repo_root = args.repo_root.resolve()
     state_root = args.state_root.resolve()
     registry = ReplicationSourceRegistry.load(
@@ -82,6 +85,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         receipt_path=state_root / "receipts.jsonl",
         owner=f"{socket.gethostname()}:{os.getpid()}",
         pause_file=state_root / "PAUSE",
+        worker_boundary=worker_boundary,
     )
 
     initial_now = str(args.now or _utc_now())
