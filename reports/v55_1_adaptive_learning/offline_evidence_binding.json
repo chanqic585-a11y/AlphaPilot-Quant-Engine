@@ -1,0 +1,33 @@
+{
+  "blockers": [
+    "no_validated_crypto_factor_subset",
+    "qlib_preflight:c_formal_ready",
+    "qlib_preflight:pit_median_at_least_30",
+    "qlib_preflight:fresh_holdout_ready",
+    "qlib_campaign_not_run"
+  ],
+  "dataSnapshotId": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "eligibleFactorCount": 0,
+  "eligibleFactors": [],
+  "evidence": {
+    "modelValidationReady": false,
+    "qlibCampaignReady": false,
+    "realFactorBenchReady": true,
+    "trainingDatasetReady": false,
+    "validatedCryptoFactorSubsetReady": false
+  },
+  "factorShortlistId": "factor_shortlist_5bdaeea71852321b56ba85c3890e4a497dccb5002c0ea4fd0b7d04e3be77a416",
+  "formalTrialCount": 32,
+  "liveDecisionAuthorityGranted": false,
+  "modelTrainingRun": false,
+  "offlineEvidenceHash": "adaptive_offline_evidence_8be9fa35060a823a147f7533c4631c14cd0c3a8158f9a32c9448b828af78650d",
+  "pitStatus": "diagnostic_proxy",
+  "predictiveValueClaimed": false,
+  "qlibBlockers": [
+    "c_formal_ready",
+    "pit_median_at_least_30",
+    "fresh_holdout_ready"
+  ],
+  "schemaVersion": "adaptive_learning_offline_evidence_v1",
+  "status": "blocked_no_validated_factor_subset"
+}
