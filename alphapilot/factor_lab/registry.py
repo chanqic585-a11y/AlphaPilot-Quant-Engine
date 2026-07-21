@@ -18,11 +18,33 @@ class FactorDefinition:
     pointInTimeReady: bool
     sourceArtifactId: str | None = None
     notes: str = ""
+    availableAtRule: str = "confirmed_bar_close"
+    normalizationPolicy: str = "none"
+    missingValuePolicy: str = "reject_signal"
+    implementationHash: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         result = asdict(self)
         result["requiredFields"] = list(self.requiredFields)
-        result["definitionHash"] = stable_hash(result, prefix="factor_definition")
+        result["canonicalFormula"] = result["formula"]
+        implementation_hash = result.pop("implementationHash") or stable_hash(
+            {
+                "factorId": self.factorId,
+                "canonicalFormula": self.formula,
+                "requiredFields": list(self.requiredFields),
+                "availableAtRule": self.availableAtRule,
+            },
+            prefix="factor_implementation",
+        )
+        result["implementationHash"] = implementation_hash
+        result["definitionHash"] = stable_hash(
+            {
+                key: value
+                for key, value in result.items()
+                if key not in {"definitionHash", "implementationHash"}
+            },
+            prefix="factor_definition",
+        )
         return result
 
 
