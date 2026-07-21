@@ -61,7 +61,6 @@ def main(argv: Sequence[str] | None = None) -> int:
         campaign_inputs={campaign_id: campaign_input},
         max_formal_runs=policy.max_formal_runs_per_campaign,
         pause_file=args.pause_file,
-        worker_boundary=worker_boundary,
     )
     service = ResearchService(
         policy=policy,
@@ -71,6 +70,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         receipt_path=state_root / "research_cycle_receipts.jsonl",
         owner=args.owner,
         pause_file=args.pause_file,
+        worker_boundary=worker_boundary,
     )
     state = state_store.load_or_initialize(now=args.now)
     existing = next(

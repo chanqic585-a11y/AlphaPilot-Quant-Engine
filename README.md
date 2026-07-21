@@ -5625,3 +5625,16 @@ Withdraw API, Demo/Live Release, or order side effects.
 This is an execution-boundary hardening change, not a new strategy campaign.
 It does not read Locked OOS, generate a Release, approve or ARM Demo/Live, or
 create an order.
+
+## V13.27.1.62 Strategy Factory Worker Compatibility
+
+The bounded V36 research worker now preserves its constructor contract when
+the Console launches it through the V61/V62 Strategy Factory boundary. This is
+an engineering compatibility correction only: candidate identity, data gates,
+experiment budgets, immutable evidence, OOS rules, and promotion thresholds
+are unchanged.
+
+The worker remains read-only with respect to private exchange state and has no
+approval, ARM, Release activation, order, Live, or Withdraw authority. Failed
+research remains evidence and may be archived; no strategy is tuned until it
+is forced through a gate.
