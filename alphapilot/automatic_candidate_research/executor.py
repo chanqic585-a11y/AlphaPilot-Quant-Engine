@@ -26,11 +26,52 @@ class AutomaticCandidateResearchExecutor:
         output_root: Path,
         campaign_inputs: Mapping[str, Mapping[str, object]],
         max_formal_runs: int = 4,
+        pause_file: Path | None = None,
     ) -> None:
         self.registry = registry
         self.output_root = Path(output_root)
         self.campaign_inputs = dict(campaign_inputs)
         self.max_formal_runs = max_formal_runs
+        self.pause_file = Path(pause_file) if pause_file else None
+
+    def _pause_requested(self) -> bool:
+        return bool(self.pause_file and self.pause_file.exists())
+
+    @staticmethod
+    def _paused_result(
+        *,
+        campaign_id: str,
+        preregistration: Mapping[str, object],
+        stage: str,
+        completed_trial_count: int = 0,
+    ) -> dict[str, object]:
+        return {
+            "schemaVersion": "v36_automatic_candidate_research_summary_v1",
+            "campaignId": campaign_id,
+            "status": "paused",
+            "pausedStage": stage,
+            "completedTrialCount": completed_trial_count,
+            "candidateCount": int(preregistration.get("candidateCount") or 0),
+            "eligibleCandidateCount": int(
+                preregistration.get("eligibleCandidateCount") or 0
+            ),
+            "trialCount": int(preregistration.get("trialCount") or 0),
+            "blockedFamilyCount": int(
+                preregistration.get("blockedFamilyCount") or 0
+            ),
+            "formalRunCount": 0,
+            "resultReadCount": 0,
+            "lockedOosReadCount": 0,
+            "releaseCount": 0,
+            "demoReleaseCount": 0,
+            "approvalCount": 0,
+            "demoArm": False,
+            "orderCount": 0,
+            "tradeApiUsed": False,
+            "withdrawApiUsed": False,
+            "privateAccountReadUsed": False,
+            "resumeMode": "deterministic_restart_from_frozen_input",
+        }
 
     def execute(self, job: Mapping[str, object]) -> dict[str, object]:
         campaign_id = str(job.get("campaignId") or "").strip()
@@ -47,6 +88,12 @@ class AutomaticCandidateResearchExecutor:
             created_at=str(campaign_input.get("createdAt") or ""),
             comparison_panel=comparison_panel,
         )
+        if self._pause_requested():
+            return self._paused_result(
+                campaign_id=campaign_id,
+                preregistration=preregistration,
+                stage="preregistration",
+            )
 
         development_replay_audit: dict[str, Any]
         raw_development_evidence = list(campaign_input.get("developmentEvidence") or [])
@@ -75,6 +122,7 @@ class AutomaticCandidateResearchExecutor:
                     preregistration=preregistration,
                     comparison_panel=comparison_panel,
                     replay_config=replay_config,
+                    pause_requested=self._pause_requested,
                 )
             )
         else:
@@ -94,6 +142,15 @@ class AutomaticCandidateResearchExecutor:
                 "tradeApiUsed": False,
                 "withdrawApiUsed": False,
             }
+        if development_replay_audit.get("status") == "paused":
+            return self._paused_result(
+                campaign_id=campaign_id,
+                preregistration=preregistration,
+                stage="development_replay",
+                completed_trial_count=int(
+                    development_replay_audit.get("evidenceCount") or 0
+                ),
+            )
         if "auditHash" not in development_replay_audit:
             development_replay_audit["auditHash"] = stable_hash(
                 development_replay_audit, prefix="v36_development_replay_audit"
@@ -107,6 +164,13 @@ class AutomaticCandidateResearchExecutor:
         projections_by_candidate: dict[str, list[dict[str, Any]]] = {}
         seen_trial_ids: set[str] = set()
         for raw_evidence in raw_development_evidence:
+            if self._pause_requested():
+                return self._paused_result(
+                    campaign_id=campaign_id,
+                    preregistration=preregistration,
+                    stage="development_projection",
+                    completed_trial_count=len(seen_trial_ids),
+                )
             if not isinstance(raw_evidence, Mapping):
                 raise V36ContractError("development_evidence_invalid")
             trial_id = str(raw_evidence.get("trialId") or "")
@@ -130,6 +194,13 @@ class AutomaticCandidateResearchExecutor:
         selections: list[dict[str, Any]] = []
         missing_candidate_ids: list[str] = []
         for candidate_id, trials in preregistration["trialsByCandidate"].items():
+            if self._pause_requested():
+                return self._paused_result(
+                    campaign_id=campaign_id,
+                    preregistration=preregistration,
+                    stage="neighborhood_selection",
+                    completed_trial_count=len(seen_trial_ids),
+                )
             projections = projections_by_candidate.get(candidate_id, [])
             if len(projections) != len(trials):
                 missing_candidate_ids.append(candidate_id)
@@ -154,6 +225,13 @@ class AutomaticCandidateResearchExecutor:
             )
 
         formal_outcomes = list(campaign_input.get("formalOutcomes") or [])
+        if self._pause_requested():
+            return self._paused_result(
+                campaign_id=campaign_id,
+                preregistration=preregistration,
+                stage="formal_routing",
+                completed_trial_count=len(seen_trial_ids),
+            )
         if len(formal_outcomes) > self.max_formal_runs:
             raise V36ContractError("formal_run_budget_exceeded")
         formal_route = route_formal_outcomes(
@@ -246,6 +324,13 @@ class AutomaticCandidateResearchExecutor:
             ("immutable_releases.json", immutable_releases),
             ("campaign_summary.json", summary_core),
         )
+        if self._pause_requested():
+            return self._paused_result(
+                campaign_id=campaign_id,
+                preregistration=preregistration,
+                stage="artifact_commit",
+                completed_trial_count=len(seen_trial_ids),
+            )
         for filename, payload in artifacts:
             write_json_atomic(campaign_root / filename, payload)
         manifest = {

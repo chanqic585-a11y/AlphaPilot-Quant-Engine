@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 from pathlib import Path
 from typing import Sequence
 
@@ -23,6 +24,8 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("--output-root", required=True, type=Path)
     parser.add_argument("--job-json", required=True, type=Path)
     parser.add_argument("--registry-path", type=Path)
+    parser.add_argument("--pause-file", type=Path)
+    parser.add_argument("--worker-exit-file", type=Path)
     parser.add_argument("--now", required=True)
     parser.add_argument("--owner", default="v36-candidate-research-cli")
     return parser
@@ -54,6 +57,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         output_root=args.output_root,
         campaign_inputs={campaign_id: campaign_input},
         max_formal_runs=policy.max_formal_runs_per_campaign,
+        pause_file=args.pause_file,
     )
     service = ResearchService(
         policy=policy,
@@ -62,6 +66,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         lease_path=state_root / "research_service.lock",
         receipt_path=state_root / "research_cycle_receipts.jsonl",
         owner=args.owner,
+        pause_file=args.pause_file,
     )
     state = state_store.load_or_initialize(now=args.now)
     existing = next(
@@ -76,11 +81,34 @@ def main(argv: Sequence[str] | None = None) -> int:
             queued_at=str(campaign_input.get("createdAt") or args.now),
         )
         receipt = service.run_cycle(now=args.now)
-    elif existing.get("status") == "queued":
+    elif existing.get("status") in {"queued", "paused"}:
+        if existing.get("status") == "paused":
+            existing["status"] = "queued"
+            state["status"] = "paused"
+            state_store.save(state)
         receipt = service.run_cycle(now=args.now)
     else:
         receipt = dict(existing.get("result") or {})
     print(json.dumps(receipt, ensure_ascii=False, sort_keys=True))
+    if args.worker_exit_file:
+        exit_path = Path(args.worker_exit_file)
+        exit_path.parent.mkdir(parents=True, exist_ok=True)
+        temporary = exit_path.with_suffix(exit_path.suffix + ".tmp")
+        temporary.write_text(
+            json.dumps(
+                {
+                    "schemaVersion": "v56_strategy_factory_worker_exit_v1",
+                    "campaignId": campaign_id,
+                    "status": str(receipt.get("status") or "unknown"),
+                    "stoppedAt": args.now,
+                },
+                ensure_ascii=False,
+                sort_keys=True,
+            )
+            + "\n",
+            encoding="utf-8",
+        )
+        os.replace(temporary, exit_path)
     return 0
 
 

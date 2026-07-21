@@ -132,3 +132,98 @@ def test_cli_accepts_an_explicit_frozen_registry_path(
     assert receipt["eligibleCandidateCount"] == 2
     assert receipt["blockedFamilyCount"] == 1
     assert receipt["trialCount"] == 6
+
+
+def test_cli_honors_explicit_pause_file_before_research_execution(
+    tmp_path: Path,
+    capsys,
+) -> None:
+    registry_path = (
+        REPO_ROOT
+        / "research/source_registry/strategy_research_source_registry_v36_5.json"
+    )
+    registry = ReplicationSourceRegistry.load(registry_path)
+    family = registry.items[0]
+    candidate_id = family.variants[0].candidate_id
+    job_path = tmp_path / "job.json"
+    job_path.write_text(
+        json.dumps(
+            {
+                "campaignId": "v56-paused-cli-smoke",
+                "createdAt": "2026-07-21T00:00:00Z",
+                "familyIds": [family.family_id],
+                "candidateIds": [candidate_id],
+                "comparisonPanel": {
+                    "developmentStart": "2024-01-01T00:00:00Z",
+                    "developmentEnd": "2025-01-01T00:00:00Z",
+                    "dataSnapshotId": "snapshot-fixture",
+                    "costPolicyHash": "cost-policy-fixture",
+                    "capitalPolicyHash": "capital-policy-fixture",
+                    "benchmarkPolicyHash": "benchmark-policy-fixture",
+                    "randomSeed": 56,
+                },
+                "developmentEvidence": [],
+                "formalOutcomes": [],
+            }
+        ),
+        encoding="utf-8",
+    )
+    pause_file = tmp_path / "PAUSE"
+    pause_file.write_text("paused\n", encoding="ascii")
+
+    worker_exit_file = tmp_path / "worker-stopped.json"
+    exit_code = main(
+        [
+            "--repo-root",
+            str(REPO_ROOT),
+            "--registry-path",
+            str(registry_path),
+            "--state-root",
+            str(tmp_path / "state"),
+            "--output-root",
+            str(tmp_path / "reports"),
+            "--job-json",
+            str(job_path),
+            "--pause-file",
+            str(pause_file),
+            "--worker-exit-file",
+            str(worker_exit_file),
+            "--now",
+            "2026-07-21T00:01:00Z",
+        ]
+    )
+
+    receipt = json.loads(capsys.readouterr().out)
+    assert exit_code == 0
+    assert receipt["status"] == "paused"
+    assert receipt["candidateCount"] == 0
+    assert receipt["demoArm"] is False
+    assert receipt["orderCount"] == 0
+    assert worker_exit_file.is_file()
+
+    pause_file.unlink()
+    exit_code = main(
+        [
+            "--repo-root",
+            str(REPO_ROOT),
+            "--registry-path",
+            str(registry_path),
+            "--state-root",
+            str(tmp_path / "state"),
+            "--output-root",
+            str(tmp_path / "reports"),
+            "--job-json",
+            str(job_path),
+            "--pause-file",
+            str(pause_file),
+            "--worker-exit-file",
+            str(worker_exit_file),
+            "--now",
+            "2026-07-21T00:02:00Z",
+        ]
+    )
+    resumed_receipt = json.loads(capsys.readouterr().out)
+
+    assert exit_code == 0
+    assert resumed_receipt["status"] == "research_blocked_data"
+    assert resumed_receipt["campaignId"] == "v56-paused-cli-smoke"

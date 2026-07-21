@@ -5582,3 +5582,14 @@ repaired in place or promoted. Therefore Formal was lawfully skipped with zero
 Formal runs, zero Locked OOS reads, and zero releases.
 
 Frozen evidence is under `reports/mechanism_breakthrough/v41_v45_20260720/`.
+
+## V13.27.1.56 Bounded Strategy Factory Pause Marker
+
+`alphapilot.scripts.run_v36_candidate_research` accepts `--pause-file PATH`.
+The runner checks this marker at bounded research checkpoints and exits without
+promoting a candidate, reading Locked OOS for tuning, or creating Demo/Live
+side effects. The Console Strategy Factory owns the marker and can resume the
+same frozen Program/Campaign run after removing it. An optional atomic
+`--worker-exit-file` lets the Console distinguish a requested pause from a
+completed worker handoff, so the UI cannot claim the job is paused while the
+worker is still active.

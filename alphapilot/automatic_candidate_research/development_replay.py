@@ -6,7 +6,7 @@ import hashlib
 import json
 import math
 from pathlib import Path
-from typing import Any, Mapping, Sequence
+from typing import Any, Callable, Mapping, Sequence
 
 import numpy as np
 import pandas as pd
@@ -752,8 +752,42 @@ def build_development_evidence(
     preregistration: Mapping[str, Any],
     comparison_panel: Mapping[str, object],
     replay_config: Mapping[str, object],
+    pause_requested: Callable[[], bool] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Generate all real Development evidence from one frozen public snapshot."""
+
+    def paused_audit(
+        *,
+        evidence: list[dict[str, Any]],
+        trial_audit: list[dict[str, Any]],
+        snapshot_audit: Mapping[str, object] | None,
+    ) -> dict[str, Any]:
+        return {
+            "schemaVersion": "v36_development_replay_audit_v1",
+            "status": "paused",
+            "campaignId": preregistration.get("campaignId"),
+            "comparisonPanelHash": preregistration.get("comparisonPanelHash"),
+            "evidenceCount": len(evidence),
+            "trialAudit": trial_audit,
+            "snapshotAudit": dict(snapshot_audit or {}),
+            "formalRunCount": 0,
+            "resultReadCount": 0,
+            "lockedOosReadCount": 0,
+            "releaseCount": 0,
+            "approvalCount": 0,
+            "demoArm": False,
+            "orderCount": 0,
+            "privateAccountReadUsed": False,
+            "tradeApiUsed": False,
+            "withdrawApiUsed": False,
+        }
+
+    if pause_requested and pause_requested():
+        return [], paused_audit(
+            evidence=[],
+            trial_audit=[],
+            snapshot_audit=None,
+        )
 
     manifest_path = Path(str(replay_config.get("snapshotManifestPath") or ""))
     cost_rate = float(replay_config.get("roundTripCostRate") or 0.0)
@@ -778,6 +812,12 @@ def build_development_evidence(
         if family is None:
             raise V36ContractError(f"candidate_not_registered:{candidate_id}")
         for trial in preregistration["trialsByCandidate"][candidate_id]:
+            if pause_requested and pause_requested():
+                return evidence, paused_audit(
+                    evidence=evidence,
+                    trial_audit=trial_audit,
+                    snapshot_audit=snapshot_audit,
+                )
             definition = _scaled_definition(candidate_id, float(trial["parameterScale"]))
             family_id = str(family.family_id)
             prefilter: dict[str, Any] | None = None

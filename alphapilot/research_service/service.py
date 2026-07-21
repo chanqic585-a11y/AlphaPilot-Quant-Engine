@@ -75,9 +75,6 @@ class ResearchService:
         return job
 
     def run_cycle(self, *, now: str) -> dict[str, Any]:
-        if self.pause_file and self.pause_file.exists():
-            return self._zero_effect_result(status="paused", now=now)
-
         lease = ResearchServiceLease(self.lease_path, owner=self.owner)
         try:
             lease.acquire(acquired_at=now)
@@ -89,6 +86,30 @@ class ResearchService:
 
         try:
             state = self.state_store.load_or_initialize(now=now)
+            if self.pause_file and self.pause_file.exists():
+                pending = next(
+                    (
+                        job
+                        for job in state["jobs"]
+                        if job.get("status") in {"queued", "running"}
+                    ),
+                    None,
+                )
+                pause_result = self._zero_effect_result(
+                    status="paused",
+                    now=now,
+                    campaign_id=(
+                        str(pending.get("campaignId") or "") if pending else None
+                    ),
+                )
+                if pending is not None:
+                    pending["status"] = "queued"
+                    pending["completedAt"] = None
+                    pending["result"] = pause_result
+                    state["status"] = "paused"
+                    state["updatedAt"] = now
+                    self.state_store.save(state)
+                return self._append_receipt(pause_result)
             if state.get("status") == "waiting_exact_release_approval":
                 return self._append_receipt(
                     self._zero_effect_result(
@@ -126,8 +147,9 @@ class ResearchService:
             if not service_status:
                 raise ValueError("research_executor_status_missing")
 
-            queued["status"] = executor_status
-            queued["completedAt"] = now
+            resumable_pause = executor_status == "paused"
+            queued["status"] = "queued" if resumable_pause else executor_status
+            queued["completedAt"] = None if resumable_pause else now
             queued["result"] = result
             state["status"] = service_status
             state["updatedAt"] = now
@@ -152,6 +174,10 @@ class ResearchService:
                 "resultReadCount": int(result.get("resultReadCount") or 0),
                 "lockedOosReadCount": int(result.get("lockedOosReadCount") or 0),
                 "releaseCount": int(result.get("releaseCount") or 0),
+                "pausedStage": str(result.get("pausedStage") or ""),
+                "completedTrialCount": int(
+                    result.get("completedTrialCount") or 0
+                ),
                 "demoReleaseCount": 0,
                 "approvalCount": 0,
                 "demoArm": False,
@@ -200,12 +226,17 @@ class ResearchService:
         return receipt
 
     @staticmethod
-    def _zero_effect_result(*, status: str, now: str) -> dict[str, Any]:
+    def _zero_effect_result(
+        *,
+        status: str,
+        now: str,
+        campaign_id: str | None = None,
+    ) -> dict[str, Any]:
         return {
             "schemaVersion": "v35_research_cycle_receipt_v1",
             "status": status,
             "cycleAt": now,
-            "campaignId": None,
+            "campaignId": campaign_id,
             "candidateCount": 0,
             "formalRunCount": 0,
             "resultReadCount": 0,

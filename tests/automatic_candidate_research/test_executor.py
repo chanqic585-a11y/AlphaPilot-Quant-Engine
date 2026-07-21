@@ -3,6 +3,8 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+import pytest
+
 from alphapilot.automatic_candidate_research.executor import (
     AutomaticCandidateResearchExecutor,
 )
@@ -55,6 +57,43 @@ def test_executor_writes_complete_zero_winner_artifact_set(tmp_path: Path) -> No
     manifest = json.loads((campaign_root / "artifact_manifest.json").read_text("utf-8"))
     assert len(manifest["artifacts"]) == 7
     assert all(item["sha256"] for item in manifest["artifacts"])
+
+
+def test_executor_honors_pause_at_a_safe_stage_boundary(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    registry = ReplicationSourceRegistry.load(REGISTRY_PATH)
+    campaign_input = _campaign_input(registry=registry, campaign_id="v56-safe-pause")
+    pause_file = tmp_path / "PAUSE"
+    from alphapilot.automatic_candidate_research import executor as executor_module
+
+    original = executor_module.build_preregistration
+
+    def build_then_pause(**kwargs):
+        result = original(**kwargs)
+        pause_file.write_text("paused\n", encoding="ascii")
+        return result
+
+    monkeypatch.setattr(executor_module, "build_preregistration", build_then_pause)
+    executor = AutomaticCandidateResearchExecutor(
+        registry=registry,
+        output_root=tmp_path / "reports",
+        campaign_inputs={"v56-safe-pause": campaign_input},
+        pause_file=pause_file,
+    )
+
+    result = executor.execute(_job(registry, "v56-safe-pause"))
+
+    assert result["status"] == "paused"
+    assert result["campaignId"] == "v56-safe-pause"
+    assert result["pausedStage"] == "preregistration"
+    assert result["formalRunCount"] == 0
+    assert result["lockedOosReadCount"] == 0
+    assert result["releaseCount"] == 0
+    assert result["demoArm"] is False
+    assert result["orderCount"] == 0
+    assert not (tmp_path / "reports/v56-safe-pause").exists()
 
 
 def test_executor_integrates_with_v35_service_without_execution_side_effects(
