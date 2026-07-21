@@ -1,0 +1,19 @@
+{
+  "artifactDigestVerified": true,
+  "artifactPath": "D:\\Codex-Workspace\\worktrees\\alphapilot-v54-v60\\quant\\reports\\v60_2_adaptive_learning_technical_closure\\20260721T151048Z\\research_model_artifact.json",
+  "artifactSha256": "cd9950a27c3a1e989335cde1ac5a7071a295cfe6da04c51688d02a559f67ef12",
+  "boundModelId": "model_record_a514033e969b43bc830c20565d60ba14e891f0c08304c0569f9a33290ec26cb2",
+  "createsOrders": false,
+  "generatedAt": "2026-07-21T15:18:03Z",
+  "grantsLiveAuthority": false,
+  "lifecycleBoundary": "shadow_only",
+  "liveEligible": false,
+  "modelHash": "model_752d2199a401a5423efa64d492e13e0e0039ea2c38f044c5c8b8b4bf8a48f969",
+  "receiptHash": "research_model_binding_745a0e1f56ea89a2a146027bd0ad1b14db2d7e6d5eddb99403fc0d42830f4304",
+  "registryBackupPath": "D:\\Codex-Workspace\\AlphaPilot-Quant-Engine\\data\\backups\\evolution_registry_before_v60_2_20260721T151803Z.sqlite",
+  "researchOnly": true,
+  "schemaVersion": "v60_2_research_model_registry_binding_v1",
+  "sourceModelId": "model_record_e1445caa0383fb81a67dd0712b5ec2e73aa96824f244ab912b35a2873c90e53d",
+  "sourceModelPreserved": true,
+  "status": "completed_research_only"
+}

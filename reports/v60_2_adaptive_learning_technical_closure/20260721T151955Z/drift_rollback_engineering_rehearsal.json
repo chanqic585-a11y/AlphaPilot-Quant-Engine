@@ -1,0 +1,27 @@
+{
+  "blockers": [
+    "no_live_eligible_champion_model",
+    "no_production_drift_observations",
+    "no_champion_predecessor_pair",
+    "exact_model_rollback_not_rehearsed"
+  ],
+  "createsOrders": false,
+  "criticalReasonCodes": [
+    "checksum_mismatch",
+    "rolling_profit_factor"
+  ],
+  "criticalRollbackAction": "rollback_demo_release",
+  "criticalWithoutPredecessorAction": "pause_demo_release",
+  "engineeringPassed": true,
+  "evidenceHash": "drift_rollback_rehearsal_f06649d0324d0e51babf83dfea2b4281792179646c991f9be434d316a5eff042",
+  "fixtureEvidenceExcludedFromProductionReadiness": true,
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "healthyAction": "continue_demo_release",
+  "passed": true,
+  "productionDriftMonitoringReady": false,
+  "productionObservationCount": 0,
+  "productionRollbackReady": false,
+  "schemaVersion": "v60_2_drift_rollback_engineering_rehearsal_v1",
+  "status": "completed_with_production_blockers"
+}

@@ -55,10 +55,13 @@ def _rolling_corr(frame: pd.DataFrame, left: str, right: str, window: int = 24) 
     if left not in frame.columns or right not in frame.columns:
         return pd.Series(np.nan, index=frame.index)
 
-    def corr_pair(group: pd.DataFrame) -> pd.Series:
-        return group[left].rolling(window, min_periods=max(8, window // 2)).corr(group[right])
-
-    return frame.groupby("pair", group_keys=False).apply(corr_pair).reset_index(level=0, drop=True)
+    result = pd.Series(np.nan, index=frame.index, dtype=float)
+    minimum_periods = max(8, window // 2)
+    for indices in frame.groupby("pair", sort=False).groups.values():
+        group = frame.loc[indices]
+        values = group[left].rolling(window, min_periods=minimum_periods).corr(group[right])
+        result.loc[indices] = values.to_numpy()
+    return result
 
 
 def add_alpha101_style_factors(panel: pd.DataFrame) -> pd.DataFrame:

@@ -1,0 +1,32 @@
+{
+  "blockers": [
+    "formal_factor_campaign_has_no_promotable_candidate",
+    "no_validated_live_eligible_model"
+  ],
+  "createsOrders": false,
+  "details": {
+    "campaignBlockers": [
+      "cost_stress_failed",
+      "instrument_stability_failed",
+      "insufficient_locked_trades",
+      "insufficient_oos_trades",
+      "locked_profit_factor_below_threshold",
+      "month_stability_failed",
+      "multiple_testing_not_significant",
+      "non_positive_locked_expectancy",
+      "non_positive_oos_expectancy",
+      "oos_profit_factor_below_threshold"
+    ],
+    "campaignStatus": "completed_no_candidate",
+    "formalPromotionEligible": false,
+    "liveEligibleModelCount": 0,
+    "observedPurgedWalkForwardFoldCount": 4
+  },
+  "evidenceHash": "v60_2_adaptive_ml_training_readiness_v1_0eb1ceb49d64fdb831d0a804e567cac38c778c67bdf2daf57f5d08e302c30862",
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "Training ran, but predictive and promotion evidence is not Live-ready.",
+  "schemaVersion": "v60_2_adaptive_ml_training_readiness_v1",
+  "status": "blocked"
+}

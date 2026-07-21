@@ -1,0 +1,19 @@
+{
+  "blockers": [
+    "c_formal_ready",
+    "pit_median_at_least_30",
+    "fresh_holdout_ready"
+  ],
+  "createsOrders": false,
+  "details": {
+    "modelCampaignRun": false,
+    "qlibCampaignMayRun": false
+  },
+  "evidenceHash": "v60_2_qlib_campaign_readiness_v1_e8d61829cb41e5fd0853ef535693ce7be9b981fb49a462f66c59ea49028cf9ee",
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "Qlib remains blocked by formal data/runtime prerequisites.",
+  "schemaVersion": "v60_2_qlib_campaign_readiness_v1",
+  "status": "blocked"
+}

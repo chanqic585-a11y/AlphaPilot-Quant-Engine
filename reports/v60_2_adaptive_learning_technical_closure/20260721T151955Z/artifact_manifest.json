@@ -1,0 +1,95 @@
+{
+  "artifactCount": 17,
+  "artifacts": [
+    {
+      "path": "adaptive_learning_technical_closure_matrix.json",
+      "sha256": "0bcb8246784022d12596acd53e2f89f705e0747ec308375fda5618c0575884a2",
+      "sizeBytes": 6564
+    },
+    {
+      "path": "adaptive_ml_training_readiness.json",
+      "sha256": "478f4d22e94fda26cc887651781b7ddabf602b949ed164ad665305470254329e",
+      "sizeBytes": 1125
+    },
+    {
+      "path": "alpha101_compatibility_audit.json",
+      "sha256": "2c8580959eb5c0cde5483ac484336b8f4980121c56b155eb6f2d5f4c09f1efbf",
+      "sizeBytes": 829
+    },
+    {
+      "path": "alpha101_prefix_invariance.json",
+      "sha256": "018951ed327bfc0388744665049a5d74039ea497029a502a86bd77ab36763980",
+      "sizeBytes": 523
+    },
+    {
+      "path": "continuous_learning_dataset_readiness.json",
+      "sha256": "dff6bf361ec2a5a84a2445b57ed917ed4211976ccdeece1e59f92eb36690ab02",
+      "sizeBytes": 561
+    },
+    {
+      "path": "demo_decision_mode_validation.json",
+      "sha256": "1ebe85f32870da71b79ae6ef4a2b7bd58df2d7399474f06dad970819eb754473",
+      "sizeBytes": 568
+    },
+    {
+      "path": "demo_outcome_training_sample_readiness.json",
+      "sha256": "9ec6178b9b497b3ff3deb4e370bd735f1a87432c979ad3cfa38671e60265d2c2",
+      "sizeBytes": 552
+    },
+    {
+      "path": "drift_rollback_engineering_rehearsal.json",
+      "sha256": "73780587fb57d2780a81ca711b7f9b72e528c0e09a507ef70f0d52289984e96a",
+      "sizeBytes": 969
+    },
+    {
+      "path": "final_closeout_cn.md",
+      "sha256": "61f1a9bad14dbba207a3706d61e01d15aad139cd002b4ed5e52fa24c9bb20cc5",
+      "sizeBytes": 1001
+    },
+    {
+      "path": "live_model_inference_readiness.json",
+      "sha256": "f129cf5d1b99d0646321e4e1e3a293036e26fbddb220b70c01002057b155a7a9",
+      "sizeBytes": 672
+    },
+    {
+      "path": "model_registry_readiness.json",
+      "sha256": "a57ebaff29e77219488e0853e7245d0d653379c3e5713e89767c9b62d64fc685",
+      "sizeBytes": 783
+    },
+    {
+      "path": "model_release_binding_readiness.json",
+      "sha256": "a49e7a4147234dcf49909e1426c1d871131c3bb70e8f0257b8afefb5cb9d5a7b",
+      "sizeBytes": 642
+    },
+    {
+      "path": "qlib_campaign_readiness.json",
+      "sha256": "85556e2ffeed8b1af94752198132c74862ed0440103eafd9388503d9ad20d065",
+      "sizeBytes": 574
+    },
+    {
+      "path": "research_model_artifact.json",
+      "sha256": "cd9950a27c3a1e989335cde1ac5a7071a295cfe6da04c51688d02a559f67ef12",
+      "sizeBytes": 2362
+    },
+    {
+      "path": "research_model_artifact_integrity.json",
+      "sha256": "373ca8c82f45fa1fdfd4acf452addfca109934af6731dcb0fc15a3ce48e71c63",
+      "sizeBytes": 757
+    },
+    {
+      "path": "technical_gap_register.json",
+      "sha256": "0815e37eab76d8114ad9c198b58820da7c4c08cf96e0f8b7d87de6a6eb1160e9",
+      "sizeBytes": 3879
+    },
+    {
+      "path": "validated_crypto_factor_subset.json",
+      "sha256": "24cff1f05a1ef2b54ecd0069313a5b049b7218ca57855d53f255ecc3dc915119",
+      "sizeBytes": 600
+    }
+  ],
+  "createsOrders": false,
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "manifestHash": "v60_2_manifest_d977416b8518011fa91debd9119d839623c446ab4ec0f15546e3dcf8527b1ddc",
+  "schemaVersion": "v60_2_adaptive_learning_technical_closure_manifest_v1"
+}

@@ -1,0 +1,20 @@
+{
+  "blockers": [
+    "research_model_artifact_not_registered_with_verified_binary"
+  ],
+  "createsOrders": false,
+  "details": {
+    "canonicalArtifactSha256": "cd9950a27c3a1e989335cde1ac5a7071a295cfe6da04c51688d02a559f67ef12",
+    "modelHash": "model_752d2199a401a5423efa64d492e13e0e0039ea2c38f044c5c8b8b4bf8a48f969",
+    "modelId": "model_record_e1445caa0383fb81a67dd0712b5ec2e73aa96824f244ab912b35a2873c90e53d",
+    "registryStatus": "shadow_candidate",
+    "researchOnly": true
+  },
+  "evidenceHash": "v60_2_model_registry_readiness_v1_8cc3570e9769f9288c37127b311d736b4b3e38fc0ea79d3a8afa53d0c430032b",
+  "generatedAt": "2026-07-21T15:10:48Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "Canonical research bytes exist, but the registry has no verified production artifact binding.",
+  "schemaVersion": "v60_2_model_registry_readiness_v1",
+  "status": "blocked"
+}

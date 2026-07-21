@@ -1,0 +1,22 @@
+{
+  "blockers": [],
+  "checkedFactorCount": 18,
+  "checkedRowCount": 90,
+  "createsOrders": false,
+  "evidenceHash": "alpha101_compatibility_4955aba082bcb702098cc5f9e760338b243e8609bba3289ab3f15b10381eb6db",
+  "externalSourceCodeCopied": false,
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "passed": true,
+  "pointInTimeCompatibilityReady": true,
+  "predictiveValidationClaimed": false,
+  "prefixCheckHash": "alpha101_prefix_check_bfe7dddbdb7a734f67b55450017bbc46eeca7186e593e37ad2bd3aa333968db3",
+  "registeredFactorCount": 2,
+  "registeredFactorIds": [
+    "cross_sectional_return_rank_20",
+    "volume_price_corr_20"
+  ],
+  "schemaVersion": "v60_2_alpha101_crypto_compatibility_audit_v1",
+  "status": "passed",
+  "validationScope": "bounded_implementation_and_point_in_time_compatibility_only"
+}

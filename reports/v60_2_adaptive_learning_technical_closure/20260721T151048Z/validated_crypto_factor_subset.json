@@ -1,0 +1,18 @@
+{
+  "blockers": [
+    "no_formal_eligible_crypto_factor"
+  ],
+  "createsOrders": false,
+  "details": {
+    "eligibleFactorCount": 0,
+    "factorBenchmarkStatus": "completed",
+    "formalTrialCount": 32
+  },
+  "evidenceHash": "v60_2_validated_crypto_factor_subset_v1_a22916daa2690bd5880ad7e616d1b8ba1e3ba2315e8786d4c2a7d632a10b32e3",
+  "generatedAt": "2026-07-21T15:10:48Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "The real Factor Bench completed, but no factor survived its formal gates.",
+  "schemaVersion": "v60_2_validated_crypto_factor_subset_v1",
+  "status": "blocked"
+}

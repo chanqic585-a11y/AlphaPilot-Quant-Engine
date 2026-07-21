@@ -1,0 +1,19 @@
+{
+  "blockers": [
+    "adaptive_learning_technical_readiness_incomplete"
+  ],
+  "createsOrders": false,
+  "details": {
+    "approvalRequest": null,
+    "newLiveReleaseHash": null,
+    "newModelHash": null,
+    "newModelPolicyHash": null
+  },
+  "evidenceHash": "v60_2_model_release_binding_readiness_v1_96e945d5036bf1fe11a4e368955c04596ba720a0eaad77373b3a7d8166f66bd4",
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "No successor Live identity may be minted before all technical evidence passes.",
+  "schemaVersion": "v60_2_model_release_binding_readiness_v1",
+  "status": "blocked"
+}

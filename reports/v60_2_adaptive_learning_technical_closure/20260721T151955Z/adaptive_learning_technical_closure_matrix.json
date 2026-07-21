@@ -1,0 +1,203 @@
+{
+  "approvalRequestActionable": false,
+  "capabilities": [
+    {
+      "blockers": [],
+      "capability": "factorProductionReady",
+      "evidenceHash": null,
+      "ready": true,
+      "source": "prior_verified_evidence"
+    },
+    {
+      "blockers": [],
+      "capability": "realFactorBenchReady",
+      "evidenceHash": null,
+      "ready": true,
+      "source": "prior_verified_evidence"
+    },
+    {
+      "blockers": [],
+      "capability": "alpha101Ready",
+      "evidenceHash": "alpha101_compatibility_4955aba082bcb702098cc5f9e760338b243e8609bba3289ab3f15b10381eb6db",
+      "ready": true,
+      "source": "new_evidence"
+    },
+    {
+      "blockers": [],
+      "capability": "alpha191CompatibilityReady",
+      "evidenceHash": null,
+      "ready": true,
+      "source": "prior_verified_evidence"
+    },
+    {
+      "blockers": [
+        "no_formal_eligible_crypto_factor"
+      ],
+      "capability": "validatedCryptoFactorSubsetReady",
+      "evidenceHash": "v60_2_validated_crypto_factor_subset_v1_a22916daa2690bd5880ad7e616d1b8ba1e3ba2315e8786d4c2a7d632a10b32e3",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [],
+      "capability": "boundedFactorMiningReady",
+      "evidenceHash": null,
+      "ready": true,
+      "source": "prior_verified_evidence"
+    },
+    {
+      "blockers": [
+        "formal_factor_campaign_has_no_promotable_candidate",
+        "no_validated_live_eligible_model"
+      ],
+      "capability": "adaptiveMlTrainingReady",
+      "evidenceHash": "v60_2_adaptive_ml_training_readiness_v1_0eb1ceb49d64fdb831d0a804e567cac38c778c67bdf2daf57f5d08e302c30862",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [
+        "c_formal_ready",
+        "pit_median_at_least_30",
+        "fresh_holdout_ready"
+      ],
+      "capability": "qlibOfflineCampaignReady",
+      "evidenceHash": "v60_2_qlib_campaign_readiness_v1_e8d61829cb41e5fd0853ef535693ce7be9b981fb49a462f66c59ea49028cf9ee",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [],
+      "capability": "modelRegistryReady",
+      "evidenceHash": "v60_2_model_registry_readiness_v1_9c8edfe752a0e4fd5efd053f27529ef5fe6adfa3255a9b7a4982e8fcfd4c5871",
+      "ready": true,
+      "source": "new_evidence"
+    },
+    {
+      "blockers": [
+        "no_closed_demo_learning_samples"
+      ],
+      "capability": "continuousLearningDatasetReady",
+      "evidenceHash": "v60_2_continuous_learning_dataset_readiness_v1_3599b4cfe1e8f24cef81e9b49b12b93b4569b17c0bb9db860f73938298c7606e",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [
+        "demo_learning_sample_count_zero"
+      ],
+      "capability": "demoOutcomeToTrainingSampleReady",
+      "evidenceHash": "v60_2_demo_outcome_training_sample_readiness_v1_5bbc4efd0c6170591f14e79dbb380b256f2b270be0dd90da4e162fcf1e61d8fe",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [],
+      "capability": "shadowInferenceReady",
+      "evidenceHash": null,
+      "ready": true,
+      "source": "prior_verified_evidence"
+    },
+    {
+      "blockers": [
+        "no_decision_participating_demo_mode",
+        "no_reconciled_closed_demo_outcomes"
+      ],
+      "capability": "demoDecisionModeValidated",
+      "evidenceHash": "demo_decision_mode_862e54da8956abd18f685526f3638016e1df60bd2cd47103552f4cb89efa4eb6",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [
+        "no_live_eligible_champion_model",
+        "no_production_drift_observations",
+        "no_champion_predecessor_pair",
+        "exact_model_rollback_not_rehearsed"
+      ],
+      "capability": "modelDriftMonitoringReady",
+      "evidenceHash": "drift_rollback_rehearsal_f06649d0324d0e51babf83dfea2b4281792179646c991f9be434d316a5eff042",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [
+        "no_live_eligible_champion_model",
+        "no_production_drift_observations",
+        "no_champion_predecessor_pair",
+        "exact_model_rollback_not_rehearsed"
+      ],
+      "capability": "modelRollbackReady",
+      "evidenceHash": "drift_rollback_rehearsal_f06649d0324d0e51babf83dfea2b4281792179646c991f9be434d316a5eff042",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [],
+      "capability": "onlineInferenceLatencyReady",
+      "evidenceHash": null,
+      "ready": true,
+      "source": "prior_verified_evidence"
+    },
+    {
+      "blockers": [],
+      "capability": "liveFeaturePipelineReady",
+      "evidenceHash": null,
+      "ready": true,
+      "source": "prior_verified_evidence"
+    },
+    {
+      "blockers": [
+        "no_live_eligible_decision_participating_model"
+      ],
+      "capability": "liveModelInferenceReady",
+      "evidenceHash": "v60_2_live_model_inference_readiness_v1_810e1aa72136ea568506baa1a337a04079d6e768d04c7c2828ba00b2a879402d",
+      "ready": false,
+      "source": "blocked"
+    },
+    {
+      "blockers": [
+        "adaptive_learning_technical_readiness_incomplete"
+      ],
+      "capability": "modelReleaseBindingReady",
+      "evidenceHash": "v60_2_model_release_binding_readiness_v1_96e945d5036bf1fe11a4e368955c04596ba720a0eaad77373b3a7d8166f66bd4",
+      "ready": false,
+      "source": "blocked"
+    }
+  ],
+  "changesRisk": false,
+  "createsOrders": false,
+  "evidence": {
+    "adaptiveMlTrainingReady": false,
+    "alpha101Ready": true,
+    "alpha191CompatibilityReady": true,
+    "boundedFactorMiningReady": true,
+    "continuousLearningDatasetReady": false,
+    "demoDecisionModeValidated": false,
+    "demoOutcomeToTrainingSampleReady": false,
+    "factorProductionReady": true,
+    "liveFeaturePipelineReady": true,
+    "liveModelInferenceReady": false,
+    "modelDriftMonitoringReady": false,
+    "modelRegistryReady": true,
+    "modelReleaseBindingReady": false,
+    "modelRollbackReady": false,
+    "onlineInferenceLatencyReady": true,
+    "qlibOfflineCampaignReady": false,
+    "realFactorBenchReady": true,
+    "shadowInferenceReady": true,
+    "validatedCryptoFactorSubsetReady": false
+  },
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "liveArmAllowed": false,
+  "liveEnabled": false,
+  "matrixHash": "adaptive_technical_closure_f7995c51efad209940f6c10d97027cb475276eeeb0b64cef5d26478ced1d29f3",
+  "passed": false,
+  "readyCount": 9,
+  "requiredCount": 19,
+  "schemaVersion": "v60_2_adaptive_learning_technical_closure_matrix_v1",
+  "status": "blocked_not_ready",
+  "successorIdentity": null,
+  "successorIdentityGenerationAllowed": false,
+  "withdrawAllowed": false
+}

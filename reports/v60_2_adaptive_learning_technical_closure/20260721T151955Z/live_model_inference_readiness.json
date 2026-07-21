@@ -1,0 +1,18 @@
+{
+  "blockers": [
+    "no_live_eligible_decision_participating_model"
+  ],
+  "createsOrders": false,
+  "details": {
+    "modelHash": "model_752d2199a401a5423efa64d492e13e0e0039ea2c38f044c5c8b8b4bf8a48f969",
+    "observerModelMayEnterLive": false,
+    "researchOnly": true
+  },
+  "evidenceHash": "v60_2_live_model_inference_readiness_v1_810e1aa72136ea568506baa1a337a04079d6e768d04c7c2828ba00b2a879402d",
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "The current model is research-only observer evidence and cannot enter Live.",
+  "schemaVersion": "v60_2_live_model_inference_readiness_v1",
+  "status": "blocked"
+}

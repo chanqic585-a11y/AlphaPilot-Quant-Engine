@@ -1,0 +1,18 @@
+{
+  "blockers": [],
+  "createsOrders": false,
+  "details": {
+    "canonicalArtifactSha256": "cd9950a27c3a1e989335cde1ac5a7071a295cfe6da04c51688d02a559f67ef12",
+    "modelHash": "model_752d2199a401a5423efa64d492e13e0e0039ea2c38f044c5c8b8b4bf8a48f969",
+    "modelId": "model_record_a514033e969b43bc830c20565d60ba14e891f0c08304c0569f9a33290ec26cb2",
+    "registryStatus": "shadow_candidate",
+    "researchOnly": true
+  },
+  "evidenceHash": "v60_2_model_registry_readiness_v1_9c8edfe752a0e4fd5efd053f27529ef5fe6adfa3255a9b7a4982e8fcfd4c5871",
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "passed": true,
+  "reason": "The registered model binary path and digest were verified.",
+  "schemaVersion": "v60_2_model_registry_readiness_v1",
+  "status": "passed"
+}

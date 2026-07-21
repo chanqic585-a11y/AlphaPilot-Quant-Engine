@@ -5593,3 +5593,23 @@ same frozen Program/Campaign run after removing it. An optional atomic
 `--worker-exit-file` lets the Console distinguish a requested pause from a
 completed worker handoff, so the UI cannot claim the job is paused while the
 worker is still active.
+
+## V60.2 Adaptive Learning Technical Closure
+
+V60.2 separates technical readiness from exact Live approval and Live ARM. A
+research-only model artifact can now be bound to immutable bytes and an actual
+SHA-256 in a new shadow registry record without mutating the historical record.
+The latest evidence closes 9 of 19 technical capabilities; it does not create a
+successor Model Policy, Live Release, approval request, ARM action, or order.
+
+The remaining capabilities require real evidence: an eligible crypto factor
+subset, validated purged walk-forward training, a completed Qlib campaign,
+closed Demo learning samples, a decision-participating Demo model mode, and
+production drift/rollback validation. Engineering fixtures and rehearsals do
+not satisfy these gates. The observer model remains research-only and cannot
+enter Live.
+
+Evidence is versioned under
+`reports/v60_2_adaptive_learning_technical_closure/`. Live and Withdraw remain
+disabled, and the existing risk profile remains a draft until a future exact
+approval package binds a newly hashed risk overlay.

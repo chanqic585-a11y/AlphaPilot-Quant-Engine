@@ -1,0 +1,18 @@
+{
+  "blockers": [
+    "no_decision_participating_demo_mode",
+    "no_reconciled_closed_demo_outcomes"
+  ],
+  "createsOrders": false,
+  "decisionCount": 0,
+  "engineeringSmokeExcluded": true,
+  "evidenceHash": "demo_decision_mode_862e54da8956abd18f685526f3638016e1df60bd2cd47103552f4cb89efa4eb6",
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "observerDecisionsExcluded": 0,
+  "passed": false,
+  "reconciledClosedOutcomeCount": 0,
+  "schemaVersion": "v60_2_demo_decision_mode_validation_v1",
+  "status": "blocked",
+  "validatedModes": []
+}

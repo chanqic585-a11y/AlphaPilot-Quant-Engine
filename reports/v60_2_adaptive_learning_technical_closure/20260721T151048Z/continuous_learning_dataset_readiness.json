@@ -1,0 +1,17 @@
+{
+  "blockers": [
+    "no_closed_demo_learning_samples"
+  ],
+  "createsOrders": false,
+  "details": {
+    "decisionCount": 0,
+    "reconciledClosedOutcomeCount": 0
+  },
+  "evidenceHash": "v60_2_continuous_learning_dataset_readiness_v1_3599b4cfe1e8f24cef81e9b49b12b93b4569b17c0bb9db860f73938298c7606e",
+  "generatedAt": "2026-07-21T15:10:48Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "No closed decision-participating Demo sample is available.",
+  "schemaVersion": "v60_2_continuous_learning_dataset_readiness_v1",
+  "status": "blocked"
+}

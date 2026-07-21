@@ -1,0 +1,16 @@
+{
+  "blockers": [
+    "demo_learning_sample_count_zero"
+  ],
+  "createsOrders": false,
+  "details": {
+    "reconciledClosedOutcomeCount": 0
+  },
+  "evidenceHash": "v60_2_demo_outcome_training_sample_readiness_v1_5bbc4efd0c6170591f14e79dbb380b256f2b270be0dd90da4e162fcf1e61d8fe",
+  "generatedAt": "2026-07-21T15:19:55Z",
+  "grantsLiveAuthority": false,
+  "passed": false,
+  "reason": "There are no reconciled closed Demo outcomes linked to model decisions.",
+  "schemaVersion": "v60_2_demo_outcome_training_sample_readiness_v1",
+  "status": "blocked"
+}

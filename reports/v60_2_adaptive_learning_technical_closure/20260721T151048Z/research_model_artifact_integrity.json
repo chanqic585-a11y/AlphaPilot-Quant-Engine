@@ -1,0 +1,15 @@
+{
+  "artifactIntegrityReady": true,
+  "artifactPath": "D:\\Codex-Workspace\\worktrees\\alphapilot-v54-v60\\quant\\reports\\v60_2_adaptive_learning_technical_closure\\20260721T151048Z\\research_model_artifact.json",
+  "artifactSha256": "cd9950a27c3a1e989335cde1ac5a7071a295cfe6da04c51688d02a559f67ef12",
+  "createsOrders": false,
+  "evidenceHash": "research_model_integrity_9fdc76ffdf571b8249612118e6221d5a9505be41f8e605f5224841f95df3e13a",
+  "generatedAt": "2026-07-21T15:10:48Z",
+  "grantsLiveAuthority": false,
+  "liveEligible": false,
+  "modelHash": "model_752d2199a401a5423efa64d492e13e0e0039ea2c38f044c5c8b8b4bf8a48f969",
+  "passed": true,
+  "researchOnly": true,
+  "schemaVersion": "v60_2_research_model_artifact_integrity_v1",
+  "status": "passed"
+}

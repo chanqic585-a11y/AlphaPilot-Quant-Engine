@@ -1,0 +1,16 @@
+{
+  "checkHash": "alpha101_prefix_check_bfe7dddbdb7a734f67b55450017bbc46eeca7186e593e37ad2bd3aa333968db3",
+  "checkedFactorCount": 18,
+  "checkedRowCount": 90,
+  "createsOrders": false,
+  "cutoff": "2025-01-05T20:00:00+00:00",
+  "deterministic": true,
+  "generatedAt": "2026-07-21T15:10:48Z",
+  "grantsLiveAuthority": false,
+  "passed": true,
+  "predictiveValidationClaimed": false,
+  "prefixInvariant": true,
+  "schemaVersion": "v60_2_alpha101_prefix_invariance_v1",
+  "status": "passed",
+  "usesSyntheticFixture": true
+}
