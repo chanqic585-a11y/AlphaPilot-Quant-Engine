@@ -139,8 +139,23 @@ class ResearchService:
             state["updatedAt"] = now
             self.state_store.save(state)
 
-            result = dict(self.executor.execute(dict(queued)))
-            self._validate_execution_boundary(result)
+            try:
+                result = dict(self.executor.execute(dict(queued)))
+                self._validate_execution_boundary(result)
+            except Exception as error:
+                failure = self._failure_result(
+                    now=now,
+                    campaign_id=str(queued.get("campaignId") or ""),
+                    candidate_count=len(queued.get("candidateIds") or []),
+                    error=error,
+                )
+                queued["status"] = "error"
+                queued["completedAt"] = now
+                queued["result"] = failure
+                state["status"] = "error"
+                state["updatedAt"] = now
+                self.state_store.save(state)
+                return self._append_receipt(failure)
             executor_status = str(result.get("status") or "").strip()
             service_status = (
                 "waiting_exact_release_approval"
@@ -254,4 +269,32 @@ class ResearchService:
             "withdrawApiUsed": False,
             "privateAccountReadUsed": False,
             "workerBoundary": self.worker_boundary.projection(),
+        }
+
+    def _failure_result(
+        self,
+        *,
+        now: str,
+        campaign_id: str,
+        candidate_count: int,
+        error: Exception,
+    ) -> dict[str, Any]:
+        raw_error_code = str(error).strip()
+        error_code_is_safe = bool(raw_error_code) and len(raw_error_code) <= 160
+        error_code_is_safe = error_code_is_safe and all(
+            character.isalnum() or character in "._:-"
+            for character in raw_error_code
+        )
+        error_code = (
+            raw_error_code if error_code_is_safe else "unexpected_research_worker_error"
+        )
+        return {
+            **self._zero_effect_result(
+                status="error",
+                now=now,
+                campaign_id=campaign_id,
+            ),
+            "candidateCount": candidate_count,
+            "errorType": type(error).__name__,
+            "errorCode": error_code,
         }

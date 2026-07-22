@@ -113,7 +113,7 @@ def main(argv: Sequence[str] | None = None) -> int:
             encoding="utf-8",
         )
         os.replace(temporary, exit_path)
-    return 0
+    return 1 if str(receipt.get("status") or "") == "error" else 0
 
 
 if __name__ == "__main__":
