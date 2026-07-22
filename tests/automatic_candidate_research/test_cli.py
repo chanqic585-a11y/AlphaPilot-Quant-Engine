@@ -225,5 +225,9 @@ def test_cli_honors_explicit_pause_file_before_research_execution(
     resumed_receipt = json.loads(capsys.readouterr().out)
 
     assert exit_code == 0
-    assert resumed_receipt["status"] == "research_blocked_data"
+    assert resumed_receipt["status"] == "research_zero_qualified"
     assert resumed_receipt["campaignId"] == "v56-paused-cli-smoke"
+    assert resumed_receipt["candidateCount"] == 1
+    assert resumed_receipt["eligibleCandidateCount"] == 1
+    assert resumed_receipt["blockedFamilyCount"] == 0
+    assert resumed_receipt["trialCount"] == 3
