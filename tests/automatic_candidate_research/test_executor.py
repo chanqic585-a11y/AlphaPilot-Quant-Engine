@@ -49,14 +49,131 @@ def test_executor_writes_complete_zero_winner_artifact_set(tmp_path: Path) -> No
         "development_replay_audit.json",
         "development_projection.json",
         "neighborhood_selection.json",
+        "formal_handoff.json",
         "formal_route.json",
         "immutable_releases.json",
         "campaign_summary.json",
         "artifact_manifest.json",
     }
     manifest = json.loads((campaign_root / "artifact_manifest.json").read_text("utf-8"))
-    assert len(manifest["artifacts"]) == 7
+    assert len(manifest["artifacts"]) == 8
     assert all(item["sha256"] for item in manifest["artifacts"])
+
+
+def test_executor_writes_partial_formal_handoff_without_starting_formal(
+    tmp_path: Path,
+) -> None:
+    registry = ReplicationSourceRegistry.load(REGISTRY_PATH)
+    campaign_input = _campaign_input(
+        registry=registry,
+        campaign_id="v36-formal-handoff",
+    )
+    preregistration = build_preregistration(
+        registry=registry,
+        campaign_id="v36-formal-handoff",
+        created_at=str(campaign_input["createdAt"]),
+        comparison_panel=campaign_input["comparisonPanel"],
+    )
+    trials = preregistration["trialsByCandidate"]["v35_tsmom_source_replication"]
+    campaign_input["developmentEvidence"] = [
+        _directional_evidence(trial) for trial in trials
+    ]
+    captured: dict[str, object] = {}
+
+    def formal_handoff_resolver(**kwargs):
+        captured.update(kwargs)
+        selection = next(
+            item for item in kwargs["selections"] if item.get("eligible")
+        )
+        return {
+            "schemaVersion": "v36_formal_handoff_v1",
+            "campaignId": "v36-formal-handoff",
+            "status": "ready_to_freeze",
+            "readinessHash": "readiness-fixture",
+            "handoffHash": "handoff-fixture",
+            "selectedCandidateCount": 1,
+            "formalReadyCandidateCount": 1,
+            "blockedCandidateCount": 0,
+            "readyCandidates": [
+                {
+                    "candidateId": selection["candidateId"],
+                    "selectedTrialId": selection["selectedTrialId"],
+                    "readinessStatus": "ready",
+                    "blockers": [],
+                }
+            ],
+            "blockedCandidates": [],
+            "formalRunCount": 0,
+            "formalInputReadCount": 0,
+            "resultReadCount": 0,
+            "lockedOosAccessCount": 0,
+            "releaseCount": 0,
+            "approvalCount": 0,
+            "demoArm": False,
+            "orderCount": 0,
+        }
+
+    executor = AutomaticCandidateResearchExecutor(
+        registry=registry,
+        output_root=tmp_path / "reports",
+        campaign_inputs={"v36-formal-handoff": campaign_input},
+        formal_handoff_resolver=formal_handoff_resolver,
+    )
+
+    result = executor.execute(_job(registry, "v36-formal-handoff"))
+
+    assert result["status"] == "awaiting_formal_validation"
+    assert result["formalHandoffStatus"] == "ready_to_freeze"
+    assert result["formalReadyCandidateCount"] == 1
+    assert result["formalBlockedCandidateCount"] == 0
+    assert result["formalRunCount"] == 0
+    assert result["resultReadCount"] == 0
+    assert result["releaseCount"] == 0
+    assert result["approvalCount"] == 0
+    assert result["demoArm"] is False
+    assert result["orderCount"] == 0
+    assert captured["campaign_input"] is campaign_input
+    handoff = json.loads(
+        (tmp_path / "reports/v36-formal-handoff/formal_handoff.json").read_text(
+            "utf-8"
+        )
+    )
+    assert handoff["handoffHash"] == "handoff-fixture"
+
+
+def test_executor_without_resolver_stops_at_external_readiness(
+    tmp_path: Path,
+) -> None:
+    registry = ReplicationSourceRegistry.load(REGISTRY_PATH)
+    campaign_input = _campaign_input(
+        registry=registry,
+        campaign_id="v36-external-readiness",
+    )
+    preregistration = build_preregistration(
+        registry=registry,
+        campaign_id="v36-external-readiness",
+        created_at=str(campaign_input["createdAt"]),
+        comparison_panel=campaign_input["comparisonPanel"],
+    )
+    trials = preregistration["trialsByCandidate"]["v35_tsmom_source_replication"]
+    campaign_input["developmentEvidence"] = [
+        _directional_evidence(trial) for trial in trials
+    ]
+    executor = AutomaticCandidateResearchExecutor(
+        registry=registry,
+        output_root=tmp_path / "reports",
+        campaign_inputs={"v36-external-readiness": campaign_input},
+    )
+
+    result = executor.execute(_job(registry, "v36-external-readiness"))
+
+    assert result["status"] == "awaiting_formal_validation"
+    assert result["formalHandoffStatus"] == "awaiting_external_readiness"
+    assert result["formalReadyCandidateCount"] == 0
+    assert result["formalBlockedCandidateCount"] == 1
+    assert result["formalRunCount"] == 0
+    assert result["resultReadCount"] == 0
+    assert result["releaseCount"] == 0
 
 
 def test_executor_honors_pause_at_a_safe_stage_boundary(

@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from dataclasses import replace
 from pathlib import Path
-from typing import Any, Mapping
+from typing import Any, Callable, Mapping
 
 from alphapilot.data_foundation.checkpoint import write_json_atomic
 from alphapilot.evolution.registry.hashing import sha256_file, stable_hash
@@ -12,9 +12,13 @@ from alphapilot.standard_replication import ReplicationSourceRegistry
 
 from .contracts import V36ContractError
 from .development_replay import build_development_evidence
+from .formal_handoff import build_formal_handoff_state
 from .formal_routing import route_formal_outcomes
 from .preregistration import build_preregistration
 from .selection import project_development_evidence, select_stable_neighborhood
+
+
+FormalHandoffResolver = Callable[..., Mapping[str, object]]
 
 
 class AutomaticCandidateResearchExecutor:
@@ -28,12 +32,14 @@ class AutomaticCandidateResearchExecutor:
         campaign_inputs: Mapping[str, Mapping[str, object]],
         max_formal_runs: int = 4,
         pause_file: Path | None = None,
+        formal_handoff_resolver: FormalHandoffResolver | None = None,
     ) -> None:
         self.registry = registry
         self.output_root = Path(output_root)
         self.campaign_inputs = dict(campaign_inputs)
         self.max_formal_runs = max_formal_runs
         self.pause_file = Path(pause_file) if pause_file else None
+        self.formal_handoff_resolver = formal_handoff_resolver
 
     def _pause_requested(self) -> bool:
         return bool(self.pause_file and self.pause_file.exists())
@@ -241,6 +247,31 @@ class AutomaticCandidateResearchExecutor:
             selections=selections,
             formal_outcomes=formal_outcomes,
         )
+        if formal_route["status"] == "awaiting_formal_validation":
+            if self.formal_handoff_resolver is None:
+                formal_handoff = build_formal_handoff_state(
+                    preregistration=preregistration,
+                    selections=selections,
+                    readiness_report=None,
+                )
+            else:
+                formal_handoff = dict(
+                    self.formal_handoff_resolver(
+                        preregistration=preregistration,
+                        selections=selections,
+                        campaign_input=campaign_input,
+                    )
+                )
+        else:
+            formal_handoff = build_formal_handoff_state(
+                preregistration=preregistration,
+                selections=(),
+                readiness_report=None,
+            )
+        self._validate_formal_handoff(
+            campaign_id=campaign_id,
+            formal_handoff=formal_handoff,
+        )
 
         campaign_root = self.output_root / campaign_id
         development_projection = {
@@ -301,6 +332,13 @@ class AutomaticCandidateResearchExecutor:
                     else "no_stable_candidates"
                 )
             ),
+            "formalHandoffStatus": formal_handoff["status"],
+            "formalReadyCandidateCount": formal_handoff[
+                "formalReadyCandidateCount"
+            ],
+            "formalBlockedCandidateCount": formal_handoff[
+                "blockedCandidateCount"
+            ],
             "formalRunCount": formal_route["formalRunCount"],
             "resultReadCount": formal_route["resultReadCount"],
             "lockedOosReadCount": formal_route["lockedOosReadCount"],
@@ -322,6 +360,7 @@ class AutomaticCandidateResearchExecutor:
             ("development_replay_audit.json", development_replay_audit),
             ("development_projection.json", development_projection),
             ("neighborhood_selection.json", neighborhood_selection),
+            ("formal_handoff.json", formal_handoff),
             ("formal_route.json", formal_route),
             ("immutable_releases.json", immutable_releases),
             ("campaign_summary.json", summary_core),
@@ -354,6 +393,32 @@ class AutomaticCandidateResearchExecutor:
             **summary_core,
             "artifactPath": str((campaign_root / "campaign_summary.json").resolve()),
         }
+
+    @staticmethod
+    def _validate_formal_handoff(
+        *,
+        campaign_id: str,
+        formal_handoff: Mapping[str, object],
+    ) -> None:
+        if str(formal_handoff.get("campaignId") or "") != campaign_id:
+            raise V36ContractError("formal_handoff_campaign_mismatch")
+        if not str(formal_handoff.get("status") or "").strip():
+            raise V36ContractError("formal_handoff_status_missing")
+        if not str(formal_handoff.get("handoffHash") or "").strip():
+            raise V36ContractError("formal_handoff_hash_missing")
+        for field in (
+            "formalRunCount",
+            "formalInputReadCount",
+            "resultReadCount",
+            "lockedOosAccessCount",
+            "releaseCount",
+            "approvalCount",
+            "orderCount",
+        ):
+            if int(formal_handoff.get(field) or 0) != 0:
+                raise V36ContractError(f"formal_handoff_nonzero_counter:{field}")
+        if bool(formal_handoff.get("demoArm")):
+            raise V36ContractError("formal_handoff_demo_arm_forbidden")
 
     def _scope_registry(
         self,
