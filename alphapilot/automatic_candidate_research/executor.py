@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+from dataclasses import replace
 from pathlib import Path
 from typing import Any, Mapping
 
@@ -79,11 +80,12 @@ class AutomaticCandidateResearchExecutor:
             raise V36ContractError("campaign_input_missing")
         campaign_input = self.campaign_inputs[campaign_id]
         self._validate_job_identity(job=job, campaign_input=campaign_input)
+        scoped_registry = self._scope_registry(campaign_input=campaign_input)
         comparison_panel = campaign_input.get("comparisonPanel")
         if not isinstance(comparison_panel, Mapping):
             raise V36ContractError("comparison_panel_missing")
         preregistration = build_preregistration(
-            registry=self.registry,
+            registry=scoped_registry,
             campaign_id=campaign_id,
             created_at=str(campaign_input.get("createdAt") or ""),
             comparison_panel=comparison_panel,
@@ -118,7 +120,7 @@ class AutomaticCandidateResearchExecutor:
         elif isinstance(replay_config, Mapping):
             raw_development_evidence, development_replay_audit = (
                 build_development_evidence(
-                    registry=self.registry,
+                    registry=scoped_registry,
                     preregistration=preregistration,
                     comparison_panel=comparison_panel,
                     replay_config=replay_config,
@@ -352,6 +354,49 @@ class AutomaticCandidateResearchExecutor:
             **summary_core,
             "artifactPath": str((campaign_root / "campaign_summary.json").resolve()),
         }
+
+    def _scope_registry(
+        self,
+        *,
+        campaign_input: Mapping[str, object],
+    ) -> ReplicationSourceRegistry:
+        family_ids = tuple(
+            str(value) for value in campaign_input.get("familyIds") or ()
+        )
+        candidate_ids = {
+            str(value) for value in campaign_input.get("candidateIds") or ()
+        }
+        family_lookup = {family.family_id: family for family in self.registry.items}
+        unknown_family_ids = sorted(set(family_ids) - set(family_lookup))
+        if unknown_family_ids:
+            raise V36ContractError(
+                f"family_not_registered:{unknown_family_ids[0]}"
+            )
+
+        scoped_families = []
+        selected_candidate_ids: set[str] = set()
+        for family_id in family_ids:
+            family = family_lookup[family_id]
+            variants = tuple(
+                variant
+                for variant in family.variants
+                if variant.candidate_id in candidate_ids
+            )
+            if not variants:
+                raise V36ContractError(
+                    f"family_without_selected_candidate:{family_id}"
+                )
+            selected_candidate_ids.update(
+                variant.candidate_id for variant in variants
+            )
+            scoped_families.append(replace(family, variants=variants))
+
+        unknown_candidate_ids = sorted(candidate_ids - selected_candidate_ids)
+        if unknown_candidate_ids:
+            raise V36ContractError(
+                f"candidate_not_registered_for_campaign:{unknown_candidate_ids[0]}"
+            )
+        return replace(self.registry, items=tuple(scoped_families))
 
     def _validate_job_identity(
         self,
