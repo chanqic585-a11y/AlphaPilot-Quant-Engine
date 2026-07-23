@@ -1,0 +1,8 @@
+{
+  "blockedCandidates": [],
+  "campaignId": "v62-4-1-formal-v35-tsmom-crypto-adaptation-20260723",
+  "evidenceHash": "v36_tsmom_blocked_evidence_24c5ed486b0dc7faee84ba86306fa29972400b3bdcd5535e020aecf972aca69a",
+  "implementationCommit": "8231608f0b1c20b00249ce02d4f69989b6bffaec",
+  "schemaVersion": "v36_tsmom_blocked_candidate_evidence_v1",
+  "sourceReadinessHash": "v36_tsmom_formal_readiness_3cd9043bb8e9c7840be8731582fc79ec2dac70223316930758c2b2814ae10229"
+}

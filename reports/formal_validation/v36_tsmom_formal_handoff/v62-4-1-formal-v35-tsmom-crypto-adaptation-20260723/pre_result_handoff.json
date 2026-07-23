@@ -1,0 +1,25 @@
+{
+  "blockedCandidateIds": [],
+  "blockedEvidencePath": "reports/formal_validation/v36_tsmom_formal_handoff/v62-4-1-formal-v35-tsmom-crypto-adaptation-20260723/blocked_candidate_evidence.json",
+  "campaignId": "v62-4-1-formal-v35-tsmom-crypto-adaptation-20260723",
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "implementationCommit": "8231608f0b1c20b00249ce02d4f69989b6bffaec",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "preparationHash": "v36_tsmom_formal_handoff_preparation_73c19e55b0190a9c1f10bb3e6818a77f08be174b501bcae854c27e41efb59cc8",
+  "preparedCandidateIds": [
+    "v35_tsmom_crypto_adaptation"
+  ],
+  "preregistrationPaths": [
+    "D:\\Codex-Workspace\\worktrees\\alphapilot-v62-4-1-blocker-closeout\\quant\\research\\preregistrations\\v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029.json"
+  ],
+  "releaseCount": 0,
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_handoff_preparation_v1",
+  "snapshotPaths": [
+    "D:\\Codex-Workspace\\worktrees\\alphapilot-v62-4-1-blocker-closeout\\quant\\research\\data_snapshots\\v36_tsmom_formal_snapshot_79592b6689b2a6db.json"
+  ],
+  "status": "prepared_zero_budget"
+}
