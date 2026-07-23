@@ -1,0 +1,34 @@
+{
+  "campaignId": "v62-4-real-trial-pilot-okx-20260723",
+  "createdAt": "2026-07-23T10:30:00Z",
+  "familyIds": [
+    "crypto_pair_relative_value_v1",
+    "crypto_tsmom_turtle_v1"
+  ],
+  "candidateIds": [
+    "v35_pair_rv_crypto_adaptation",
+    "v35_pair_rv_source_replication",
+    "v35_tsmom_crypto_adaptation",
+    "v35_tsmom_source_replication"
+  ],
+  "comparisonPanel": {
+    "developmentStart": "2021-02-01T00:00:00Z",
+    "developmentEnd": "2025-01-01T00:00:00Z",
+    "dataSnapshotId": "okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240",
+    "costPolicyHash": "cost-policy-v13-development-round-trip-12bps",
+    "capitalPolicyHash": "capital-policy-v18-development-unit-risk",
+    "benchmarkPolicyHash": "benchmark-policy-v32-development-increment",
+    "randomSeed": 624
+  },
+  "developmentReplay": {
+    "snapshotManifestPath": "D:\\Codex-Workspace\\回测数据\\okx_official_v1\\manifests\\snapshot-okx_official_v1_snapshot_12e78e3946f5a9eb19cf693936b8e9a9e510c05ab12d464f4e47662efd04b240.json",
+    "roundTripCostRate": 0.0012
+  },
+  "boundedPilotPolicy": {
+    "maximumFamilies": 4,
+    "maximumCandidates": 8,
+    "maximumConcurrentCampaigns": 1
+  },
+  "developmentEvidence": [],
+  "formalOutcomes": []
+}

@@ -317,6 +317,7 @@ class AutomaticCandidateResearchExecutor:
             "candidateCount": preregistration["candidateCount"],
             "eligibleCandidateCount": preregistration["eligibleCandidateCount"],
             "trialCount": preregistration["trialCount"],
+            "completedTrialCount": len(seen_trial_ids),
             "blockedFamilyCount": preregistration["blockedFamilyCount"],
             "blockedFamilyIds": preregistration["blockedFamilyIds"],
             "developmentProjectionCount": development_projection["projectionCount"],

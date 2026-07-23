@@ -126,6 +126,7 @@ def test_executor_writes_partial_formal_handoff_without_starting_formal(
     assert result["formalHandoffStatus"] == "ready_to_freeze"
     assert result["formalReadyCandidateCount"] == 1
     assert result["formalBlockedCandidateCount"] == 0
+    assert result["completedTrialCount"] == len(trials)
     assert result["formalRunCount"] == 0
     assert result["resultReadCount"] == 0
     assert result["releaseCount"] == 0
