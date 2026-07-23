@@ -1,0 +1,93 @@
+{
+  "armAllowed": false,
+  "budget": {
+    "formalRunBudget": 0,
+    "maximumCandidates": 6,
+    "maximumConcurrentCampaigns": 1,
+    "maximumFamilies": 3
+  },
+  "campaignId": "v63-fresh-mechanism-campaign-20260724",
+  "candidateIds": [
+    "v63_participation_shock_recovery_1h_conservative_v1",
+    "v63_participation_shock_recovery_1h_balanced_v1",
+    "v63_breadth_diffusion_lag_4h_low_turnover_v1",
+    "v63_breadth_diffusion_lag_4h_balanced_v1",
+    "v63_volatility_exhaustion_recovery_15m_strict_liquidity_v1",
+    "v63_volatility_exhaustion_recovery_15m_balanced_v1"
+  ],
+  "createdAt": "2026-07-23T22:20:22.6145426Z",
+  "dataSnapshotId": "data_snapshot_7e094bf71a54e5bd25d07427ff813e12c45f3f90866dc27e4f196efa891a2c0a",
+  "excludedCandidateIds": [
+    "v35_pair_rv_crypto_adaptation",
+    "v35_pair_rv_source_replication",
+    "v35_tsmom_crypto_adaptation",
+    "v35_tsmom_source_replication"
+  ],
+  "families": [
+    {
+      "candidateIds": [
+        "v63_participation_shock_recovery_1h_conservative_v1",
+        "v63_participation_shock_recovery_1h_balanced_v1"
+      ],
+      "direction": "long_or_flat",
+      "familyId": "v63_participation_shock_recovery_1h",
+      "hypothesis": "After a broad participation shock, liquid contracts whose close location and relative volume recover faster than market breadth may exhibit a bounded 1h continuation window.",
+      "hypothesisId": "v63_hypothesis_participation_shock_recovery",
+      "requiredInputs": [
+        "ohlcv",
+        "btc_reference_ohlcv",
+        "pit_universe"
+      ],
+      "timeframe": "1h"
+    },
+    {
+      "candidateIds": [
+        "v63_breadth_diffusion_lag_4h_low_turnover_v1",
+        "v63_breadth_diffusion_lag_4h_balanced_v1"
+      ],
+      "direction": "long_short_or_flat",
+      "familyId": "v63_breadth_diffusion_lag_4h",
+      "hypothesis": "A market breadth inflection may propagate from the most liquid contracts to second-tier liquid contracts with a bounded 4h lag.",
+      "hypothesisId": "v63_hypothesis_breadth_diffusion_lag",
+      "requiredInputs": [
+        "ohlcv",
+        "btc_reference_ohlcv",
+        "pit_universe"
+      ],
+      "timeframe": "4h"
+    },
+    {
+      "candidateIds": [
+        "v63_volatility_exhaustion_recovery_15m_strict_liquidity_v1",
+        "v63_volatility_exhaustion_recovery_15m_balanced_v1"
+      ],
+      "direction": "long_short_or_flat",
+      "familyId": "v63_volatility_exhaustion_recovery_15m",
+      "hypothesis": "Following a cross-sectional volatility burst and failed price continuation, contracts with improving close location may show a short-lived 15m exhaustion recovery.",
+      "hypothesisId": "v63_hypothesis_volatility_exhaustion_recovery",
+      "requiredInputs": [
+        "ohlcv",
+        "btc_reference_ohlcv",
+        "pit_universe"
+      ],
+      "timeframe": "15m"
+    }
+  ],
+  "formalRunCount": 0,
+  "lockedOosReadCount": 0,
+  "orderCapabilityEnabled": false,
+  "preregistrationHash": "v63_track_b_preregistration_4071b1f5b2ed4ea201b894c1b34464762bb76ef2b5fc17a04493feef75f12d48",
+  "releaseApprovalAllowed": false,
+  "resultReadCount": 0,
+  "safety": {
+    "armAllowed": false,
+    "liveAllowed": false,
+    "orderCapabilityEnabled": false,
+    "releaseApprovalAllowed": false,
+    "withdrawAllowed": false
+  },
+  "schemaVersion": "alphapilot_v63_track_b_preregistration_v1",
+  "selectionSplit": "development",
+  "sourceCandidateIds": [],
+  "status": "preregistered_dry_preparation_only"
+}

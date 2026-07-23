@@ -1,0 +1,59 @@
+{
+  "checks": {
+    "coverage": {
+      "command": "python -m coverage --version",
+      "reason": "coverage_module_unavailable_in_verified_test_runtime",
+      "status": "not_run"
+    },
+    "deployment_scripts": {
+      "allRolesStoppedAfterAcceptance": true,
+      "allSixRolesHealthy": true,
+      "consoleCommit": "4abaffc96348381f7406bf761bf8353b53124d1e",
+      "evidence": "D:/Codex-Workspace/runtime/v63",
+      "fencingTokenAfter": 4,
+      "fencingTokenBefore": 3,
+      "sameIdentityResumeVerified": true,
+      "status": "passed"
+    },
+    "factor_bench": {
+      "benchmarkStatus": "completed",
+      "eligibleFactorCount": 0,
+      "evidence": "reports/factor_lab/factor_benchmark_report.json",
+      "formalTrialCount": 32,
+      "readinessPassed": true,
+      "status": "passed"
+    },
+    "observer": {
+      "evidence": "reports/v55_1_adaptive_learning/offline_evidence_binding.json",
+      "reason": "no_validated_crypto_factor_subset_and_qlib_campaign_not_run",
+      "status": "blocked"
+    },
+    "qlib": {
+      "evidence": "reports/v13_27_1_12/qlib_readiness_gate.json",
+      "modelCampaignRun": false,
+      "qlibCampaignMayRun": false,
+      "reason": "c_formal_ready,pit_median_at_least_30,fresh_holdout_ready",
+      "status": "blocked"
+    },
+    "security_findings": {
+      "classification": "legacy_test_fixture_documentation_and_negative_safety_boundaries",
+      "evidence": "scripts/check_safety.ps1",
+      "matchedFileCount": 231,
+      "status": "passed",
+      "termMatchCount": 634,
+      "v63OrderCapabilityEnabled": false
+    }
+  },
+  "counts": {
+    "blocked": 2,
+    "not_run": 1,
+    "passed": 3
+  },
+  "demoArmAllowed": false,
+  "liveArmAllowed": false,
+  "orderCapabilityEnabled": false,
+  "overallStatus": "completed_with_blockers",
+  "schemaVersion": "alphapilot_v63_track_c_status_matrix_v1",
+  "statusMatrixHash": "v63_track_c_status_matrix_6ce77362bfcb540d6e56c61dec724cab6b907a3d0892b8b6c82a2bea78fd2e05",
+  "withdrawAllowed": false
+}

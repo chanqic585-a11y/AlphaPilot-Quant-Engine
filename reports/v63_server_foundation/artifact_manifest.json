@@ -1,0 +1,30 @@
+{
+  "artifactCount": 3,
+  "artifacts": [
+    {
+      "path": "research/preregistrations/v63-fresh-mechanism-campaign-20260724.json",
+      "sha256": "1eac455b841ec3fd02374a6a53b5d1befe1b08df0dd4c5b5c6b9282a0b189690",
+      "sizeBytes": 3451
+    },
+    {
+      "path": "reports/v63_server_foundation/track_b_campaign_preparation.json",
+      "sha256": "1eac455b841ec3fd02374a6a53b5d1befe1b08df0dd4c5b5c6b9282a0b189690",
+      "sizeBytes": 3451
+    },
+    {
+      "path": "reports/v63_server_foundation/track_c_status_matrix.json",
+      "sha256": "da6c960506ae4c2fc28cbd2ad3e0421b09539f8033d70dc19b1145a8f5efd442",
+      "sizeBytes": 1991
+    }
+  ],
+  "campaignId": "v63-fresh-mechanism-campaign-20260724",
+  "generatedAt": "2026-07-23T22:20:22.6145426Z",
+  "manifestHash": "v63_parallel_track_manifest_8d19026297c9e3b5018ffce31c5a464c6accbcb5fbe6826890dff2dff04e2707",
+  "safety": {
+    "demoArmAllowed": false,
+    "liveArmAllowed": false,
+    "orderCapabilityEnabled": false,
+    "withdrawAllowed": false
+  },
+  "schemaVersion": "alphapilot_v63_parallel_track_manifest_v1"
+}
