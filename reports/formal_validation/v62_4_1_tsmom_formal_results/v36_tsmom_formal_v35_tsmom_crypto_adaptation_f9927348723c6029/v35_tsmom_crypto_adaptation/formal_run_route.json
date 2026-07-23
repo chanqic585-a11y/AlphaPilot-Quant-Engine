@@ -1,0 +1,14 @@
+{
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029",
+  "candidateId": "v35_tsmom_crypto_adaptation",
+  "demoArm": false,
+  "formalInputReadCount": 1,
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultManifestHash": "sha256:0a453a646eda6420b95b6b6a852ea8aeeda77561bc455e84798ab0b173df6502",
+  "resultReadCount": 0,
+  "route": "archive_s01_current_version",
+  "schemaVersion": "v18_formal_run_route_v2"
+}

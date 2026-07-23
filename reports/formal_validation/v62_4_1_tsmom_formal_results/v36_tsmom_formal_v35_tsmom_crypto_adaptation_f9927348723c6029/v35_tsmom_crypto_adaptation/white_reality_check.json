@@ -1,0 +1,7 @@
+{
+  "reason": "No point-in-time daily-return panel for the ten-candidate selection family was frozen before results; retroactive construction is prohibited.",
+  "retroactiveConstructionAllowed": false,
+  "schemaVersion": "s01_v18_white_reality_check_v1",
+  "statisticalAdmissionBlocked": true,
+  "status": "unavailable_predeclared"
+}

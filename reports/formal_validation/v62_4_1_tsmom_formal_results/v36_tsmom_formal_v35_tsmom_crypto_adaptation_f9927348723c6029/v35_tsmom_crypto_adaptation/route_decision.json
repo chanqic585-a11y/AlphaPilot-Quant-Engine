@@ -1,0 +1,28 @@
+{
+  "blockers": [
+    "minimum_profit_factor",
+    "positive_average_net_r",
+    "positive_total_net_r",
+    "positive_fold_minimum",
+    "cost_1_5x_profit_factor",
+    "cost_1_5x_average_net_r",
+    "cost_1_5x_total_net_r",
+    "conservative_funding_average_net_r",
+    "benchmark_total_incremental_net_r",
+    "benchmark_positive_increment_fold_minimum",
+    "single_symbol_concentration",
+    "single_month_concentration"
+  ],
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029",
+  "demoArm": false,
+  "formalEvidenceCount": 0,
+  "formalInputReadCount": 1,
+  "formalPass": false,
+  "formalRunCount": 1,
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "resultDrivenParameterChangeCount": 0,
+  "route": "archive_s01_current_version",
+  "schemaVersion": "s01_v18_formal_route_v1"
+}

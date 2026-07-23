@@ -1,0 +1,18 @@
+{
+  "blockers": [],
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalRunCount": 0,
+  "headCommit": "1c22a36d57d1cd91d7c89c1a96e1a9b55c06c984",
+  "implementationCommit": "8231608f0b1c20b00249ce02d4f69989b6bffaec",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "releaseCount": 0,
+  "remoteFreezeTag": "v13.27.1.62.4.1-formal-freeze",
+  "remoteTagCommit": "1c22a36d57d1cd91d7c89c1a96e1a9b55c06c984",
+  "resultReadCount": 0,
+  "route": "ready_for_authorization",
+  "schemaVersion": "v36_tsmom_remote_freeze_audit_v1",
+  "status": "passed",
+  "upstreamRef": "origin/feature/v13.27.1.62.4.1-blocker-closeout"
+}

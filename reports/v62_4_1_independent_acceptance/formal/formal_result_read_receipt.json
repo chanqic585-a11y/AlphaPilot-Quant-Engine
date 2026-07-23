@@ -1,0 +1,208 @@
+{
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029",
+  "candidateId": "v35_tsmom_crypto_adaptation",
+  "demoArm": false,
+  "formalAttemptCount": 1,
+  "formalResultCount": 1,
+  "formalRunCount": 1,
+  "orderCount": 0,
+  "readArtifacts": [
+    {
+      "bytes": 2106,
+      "path": "D:\\Codex-Workspace\\validation\\v62-4-1-formal-v35-tsmom-20260723\\formal_results\\v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029\\v35_tsmom_crypto_adaptation\\campaign_summary.json",
+      "sha256": "3d498255d76e96ddd1460c2eb66f994ad9d9f39d1c2a14d15ce9f4f3eb9c7952",
+      "topLevelKeys": [
+        "baseAcceptedTradeCount",
+        "baseMetrics",
+        "baseRawSignalCount",
+        "baseRejectedSignalCount",
+        "blockers",
+        "campaignId",
+        "cleanLockedOosAvailable",
+        "demoArm",
+        "formalAdmissionPassed",
+        "formalEvidenceCount",
+        "formalInputReadCount",
+        "formalPass",
+        "formalRunCount",
+        "fundingGateEvaluable",
+        "lockedOosAccessCount",
+        "orderCount",
+        "releaseCount",
+        "resultDrivenParameterChangeCount",
+        "route",
+        "schemaVersion",
+        "statisticsUnavailablePredeclared"
+      ]
+    },
+    {
+      "bytes": 832,
+      "path": "D:\\Codex-Workspace\\validation\\v62-4-1-formal-v35-tsmom-20260723\\formal_results\\v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029\\v35_tsmom_crypto_adaptation\\route_decision.json",
+      "sha256": "0b3d005a0827634afe06c4866862f5852b9aef2ba318f12d0c64b7c2056eb78b",
+      "topLevelKeys": [
+        "blockers",
+        "campaignId",
+        "demoArm",
+        "formalEvidenceCount",
+        "formalInputReadCount",
+        "formalPass",
+        "formalRunCount",
+        "lockedOosAccessCount",
+        "orderCount",
+        "releaseCount",
+        "resultDrivenParameterChangeCount",
+        "route",
+        "schemaVersion"
+      ]
+    },
+    {
+      "bytes": 778,
+      "path": "D:\\Codex-Workspace\\validation\\v62-4-1-formal-v35-tsmom-20260723\\formal_results\\v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029\\v35_tsmom_crypto_adaptation\\failure_attribution.json",
+      "sha256": "73b25d37a10f1b7dc6d658948fba7881944016a5a2fad5d64dd30f28d0747d57",
+      "topLevelKeys": [
+        "blockers",
+        "campaignId",
+        "implementationOrEvidenceFailure",
+        "primaryBlocker",
+        "resultDrivenRepairAllowed",
+        "route",
+        "schemaVersion",
+        "strategyPerformanceFailure"
+      ]
+    },
+    {
+      "bytes": 7574,
+      "path": "D:\\Codex-Workspace\\validation\\v62-4-1-formal-v35-tsmom-20260723\\formal_results\\v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029\\v35_tsmom_crypto_adaptation\\gate_matrix.json",
+      "sha256": "9df42a6c7264d87c64c78f8c178df335f58f6ce9aedcebf85ca694144f9a6dc4",
+      "topLevelKeys": [
+        "failedAdmissionGateIds",
+        "failedCount",
+        "failedDiagnosticGateIds",
+        "gates",
+        "notEvaluableAdmissionGateIds",
+        "notEvaluableCount",
+        "passedCount",
+        "route",
+        "routeBlockers",
+        "schemaVersion"
+      ]
+    }
+  ],
+  "releaseCount": 0,
+  "resultManifestHash": "sha256:0a453a646eda6420b95b6b6a852ea8aeeda77561bc455e84798ab0b173df6502",
+  "resultReadAt": "2026-07-23T12:30:00Z",
+  "resultReadCount": 1,
+  "route": "archive_s01_current_version",
+  "schemaVersion": "v62_4_1_formal_result_read_receipt_v1",
+  "selectedResultFields": {
+    "averageNetR": [
+      -0.3602150619945275
+    ],
+    "blockers": [
+      [
+        "minimum_profit_factor",
+        "positive_average_net_r",
+        "positive_total_net_r",
+        "positive_fold_minimum",
+        "cost_1_5x_profit_factor",
+        "cost_1_5x_average_net_r",
+        "cost_1_5x_total_net_r",
+        "conservative_funding_average_net_r",
+        "benchmark_total_incremental_net_r",
+        "benchmark_positive_increment_fold_minimum",
+        "single_symbol_concentration",
+        "single_month_concentration"
+      ],
+      [
+        "minimum_profit_factor",
+        "positive_average_net_r",
+        "positive_total_net_r",
+        "positive_fold_minimum",
+        "cost_1_5x_profit_factor",
+        "cost_1_5x_average_net_r",
+        "cost_1_5x_total_net_r",
+        "conservative_funding_average_net_r",
+        "benchmark_total_incremental_net_r",
+        "benchmark_positive_increment_fold_minimum",
+        "single_symbol_concentration",
+        "single_month_concentration"
+      ],
+      [
+        "minimum_profit_factor",
+        "positive_average_net_r",
+        "positive_total_net_r",
+        "positive_fold_minimum",
+        "cost_1_5x_profit_factor",
+        "cost_1_5x_average_net_r",
+        "cost_1_5x_total_net_r",
+        "conservative_funding_average_net_r",
+        "benchmark_total_incremental_net_r",
+        "benchmark_positive_increment_fold_minimum",
+        "single_symbol_concentration",
+        "single_month_concentration"
+      ]
+    ],
+    "campaignId": [
+      "v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029",
+      "v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029",
+      "v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029"
+    ],
+    "formalPass": [
+      false,
+      false
+    ],
+    "profitFactor": [
+      0.4892523858942939
+    ],
+    "reason": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ],
+    "route": [
+      "archive_s01_current_version",
+      "archive_s01_current_version",
+      "archive_s01_current_version",
+      "archive_s01_current_version"
+    ],
+    "status": [
+      "passed",
+      "passed",
+      "passed",
+      "passed",
+      "passed",
+      "passed",
+      "failed",
+      "failed",
+      "failed",
+      "passed",
+      "failed",
+      "failed",
+      "failed",
+      "failed",
+      "failed",
+      "failed",
+      "failed",
+      "failed",
+      "failed"
+    ],
+    "tradeCount": [
+      36
+    ]
+  }
+}

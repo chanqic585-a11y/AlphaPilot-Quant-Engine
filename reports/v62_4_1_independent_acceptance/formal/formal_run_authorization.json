@@ -1,0 +1,20 @@
+{
+  "authorizationHash": "v36_tsmom_formal_run_authorization_cba78af8b3548ab2a3957b44f07f795fd8e78a3beebb3deef18d05fe04e4817c",
+  "authorizationStatus": "authorized",
+  "blockers": [],
+  "campaignId": "v36_tsmom_formal_v35_tsmom_crypto_adaptation_f9927348723c6029",
+  "candidateId": "v35_tsmom_crypto_adaptation",
+  "dataSnapshotHash": "v36_tsmom_formal_data_snapshot_c971faf815a27e3426ecf36358bc9df25eca588fc4e49cb785e83170861f077a",
+  "demoArm": false,
+  "formalInputReadCount": 0,
+  "formalRunClaimBudget": 1,
+  "formalRunCount": 0,
+  "implementationCommit": "8231608f0b1c20b00249ce02d4f69989b6bffaec",
+  "lockedOosAccessCount": 0,
+  "orderCount": 0,
+  "preregistrationHash": "v36_tsmom_formal_preregistration_d0477c239d3a655bf27eaeeab3151a0c68c31c3e1fc14f1848f854d40f1233c5",
+  "releaseCount": 0,
+  "remoteFreezeCommit": "1c22a36d57d1cd91d7c89c1a96e1a9b55c06c984",
+  "resultReadCount": 0,
+  "schemaVersion": "v36_tsmom_formal_run_authorization_v1"
+}
