@@ -108,6 +108,8 @@ def route_formal_outcomes(
 
     if releases:
         status = "immutable_release_ready"
+    elif not formal_outcomes and selected_trials:
+        status = "awaiting_formal_validation"
     elif not formal_outcomes and blocked_family_ids:
         status = "research_blocked_data"
     else:

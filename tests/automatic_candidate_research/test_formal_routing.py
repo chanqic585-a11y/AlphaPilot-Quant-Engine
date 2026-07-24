@@ -54,6 +54,37 @@ def test_zero_winner_and_data_blocked_are_valid_results() -> None:
     assert result["immutableReleases"] == []
 
 
+def test_stable_selection_without_formal_evidence_waits_for_formal_validation() -> None:
+    preregistration = _preregistration()
+    preregistration["blockedFamilyIds"] = []
+
+    result = route_formal_outcomes(
+        preregistration=preregistration,
+        selections=[_selection("candidate-a", "trial-a")],
+        formal_outcomes=[],
+    )
+
+    assert result["status"] == "awaiting_formal_validation"
+    assert result["formalRunCount"] == 0
+    assert result["resultReadCount"] == 0
+    assert result["releaseCount"] == 0
+
+
+def test_no_stable_selection_is_zero_qualified_when_data_is_available() -> None:
+    preregistration = _preregistration()
+    preregistration["blockedFamilyIds"] = []
+
+    result = route_formal_outcomes(
+        preregistration=preregistration,
+        selections=[],
+        formal_outcomes=[],
+    )
+
+    assert result["status"] == "research_zero_qualified"
+    assert result["formalRunCount"] == 0
+    assert result["releaseCount"] == 0
+
+
 def test_formal_route_rejects_panel_drift_and_unknown_outcome() -> None:
     drifted = _formal("candidate-a", "trial-a", "formal_pass", locked_reads=1)
     drifted["comparisonPanelHash"] = "wrong-panel"

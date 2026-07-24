@@ -9,6 +9,9 @@ from pathlib import Path
 from typing import Sequence
 
 from alphapilot.automatic_candidate_research import AutomaticCandidateResearchExecutor
+from alphapilot.automatic_candidate_research.formal_handoff import (
+    resolve_tsmom_formal_handoff,
+)
 from alphapilot.research_service import (
     ResearchService,
     ResearchServicePolicy,
@@ -61,6 +64,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         campaign_inputs={campaign_id: campaign_input},
         max_formal_runs=policy.max_formal_runs_per_campaign,
         pause_file=args.pause_file,
+        formal_handoff_resolver=resolve_tsmom_formal_handoff,
     )
     service = ResearchService(
         policy=policy,
